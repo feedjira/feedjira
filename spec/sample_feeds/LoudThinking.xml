@@ -1,0 +1,650 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" xml:lang="en-US">
+  <id>tag:www.loudthinking.com,2007:posts</id>
+  <link type="text/html" rel="alternate" href="http://www.loudthinking.com/" />
+  <link type="application/atom+xml" rel="self" href="http://feeds.feedburner.com/LoudThinking" />
+  <title>Loud Thinking by David Heinemeier Hansson</title>
+  <updated>2008-12-26T04:58:00-06:00</updated>
+  <author>
+    <name>David Heinemeier Hansson</name>
+    <email>david@loudthinking.com</email>
+  </author>
+  <entry>
+    <id>tag:www.loudthinking.com,2007:Post37</id>
+    <published>2008-12-26T04:58:00-06:00</published>
+    <updated>2008-12-26T04:59:13-06:00</updated>
+    <title>Bringing Merb's provides/display into Rails 3</title>
+    <content type="html">&lt;p&gt;The flow of Merb ideas into Rails 3 is already under way. Let me walk you through one of the first examples that I've been working on the design for. Merb has a feature related to Rails' respond_to structure that works for the generic cases where you have a single object or collection that you want to respond with in different formats. Here's an example:&lt;/p&gt;
+
+&lt;p&gt;&lt;pre style="font-size: 10px; line-height: 6px;"&gt;class Users &lt; Application
+&lt;br /&gt;  provides :xml, :json
+&lt;br /&gt;  
+&lt;br /&gt;  def index
+&lt;br /&gt;    @users = User.all
+&lt;br /&gt;    display @users
+&lt;br /&gt;  end
+&lt;br /&gt;end&lt;/pre&gt;&lt;/p&gt;
+
+&lt;p&gt;This controller can respond to html, xml, and json requests. When running display, it'll first check if there's a template available for the requested type, which is often the case with HTML, and otherwise fallback on trying to convert the display object. So @users.to_xml in the result of a XML request.&lt;/p&gt;
+
+&lt;p&gt;The applications I've worked on never actually had this case, though. I always had to do more than just convert the object to the type or render a template. Either I needed to do a redirect for one of the types instead of a render or I need to do something else besides the render. So I never got to spend much time with the default case that's staring you in the face from scaffolds:&lt;/p&gt;
+
+&lt;p&gt;&lt;pre style="font-size: 10px; line-height: 6px;"&gt;class PostsController &lt; ApplicationController
+&lt;br /&gt;  def index
+&lt;br /&gt;    @posts = Post.find(:all)
+&lt;br /&gt; 
+&lt;br /&gt;    respond_to do |format|
+&lt;br /&gt;      format.html
+&lt;br /&gt;      format.xml  { render :xml =&gt; @posts }
+&lt;br /&gt;    end
+&lt;br /&gt;  end
+&lt;br /&gt; 
+&lt;br /&gt;  def show
+&lt;br /&gt;    @post = Post.find(params[:id])
+&lt;br /&gt; 
+&lt;br /&gt;    respond_to do |format|
+&lt;br /&gt;      format.html
+&lt;br /&gt;      format.xml  { render :xml =&gt; @post }
+&lt;br /&gt;    end
+&lt;br /&gt;  end
+&lt;br /&gt;end&lt;/pre&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Cut duplication when possible, give full control when not&lt;/b&gt;
+&lt;br /&gt;But the duplication case is definitely real for some classes of applications. And it's pretty ugly. The respond_to blocks are repeated for index, show, and often even edit. That's three times a fairly heavy weight structure. This is where the provides/display setup comes handy and zaps that duplication.&lt;/p&gt;
+
+&lt;p&gt;For Rails 3, we wanted the best of both worlds. The full respond_to structure when you needed to do things that didn't map to the generic structure, but still have the generic approach at hand when the circumstances were available for its use.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Dealing with symmetry and progressive expansion in API design&lt;/b&gt;
+&lt;br /&gt;There were a couple of drawbacks with the provides/display duo, though, that we could deal with at the same time. The first was the lack of symmetry in the method names. The words "provides" and "display" doesn't reflect their close relationship and if you throw in the fact that they're actually both related to rendering, it's gets even more muddy.&lt;/p&gt;
+
+&lt;p&gt;The symmetry relates to another point in API design that I've been interested in lately: progressive expansion. There should be a smooth path from the simple case to the complex case. It should be like an Ogre, it should have layers. Here's what we arrived at:&lt;/p&gt;
+
+&lt;p&gt;&lt;pre style="font-size: 10px; line-height: 6px;"&gt;class PostsController &lt; ApplicationController
+&lt;br /&gt;  respond_to :html, :xml, :json
+&lt;br /&gt; 
+&lt;br /&gt;  def index
+&lt;br /&gt;    @posts = Post.find(:all)
+&lt;br /&gt;    respond_with(@posts)
+&lt;br /&gt;  end
+&lt;br /&gt; 
+&lt;br /&gt;  def show
+&lt;br /&gt;    @post = Post.find(params[:id])
+&lt;br /&gt;    respond_with(@post)
+&lt;br /&gt;  end
+&lt;br /&gt;end&lt;/pre&gt;&lt;/p&gt;
+
+&lt;p&gt;This is the vanilla provides/display example, but it has symmetry in respond_to as a class method, respond_with as a instance method, and the original respond_to blocks. So it also feels progressive when you unpack the respond_with and transform it into a full respond_to if you suddenly need per-format differences.&lt;/p&gt;
+
+&lt;p&gt;The design also extends the style to work just at an instance level without the class-level defaults:&lt;/p&gt;
+
+&lt;p&gt;&lt;pre style="font-size: 10px; line-height: 6px;"&gt;class DealsController &lt; SubjectsController
+&lt;br /&gt;  def index
+&lt;br /&gt;    @deals = Deal.all
+&lt;br /&gt;    respond_with(@deals, :to =&gt; [ :html, :xml, :json, :atom ])
+&lt;br /&gt;  end
+&lt;br /&gt; 
+&lt;br /&gt;  def new
+&lt;br /&gt;    respond_with(Deal.new, :to =&gt; [ :html, :xml ])
+&lt;br /&gt;  end
+&lt;br /&gt;end&lt;/pre&gt;&lt;/p&gt;
+
+&lt;p&gt;It's quite frequent that the index action has different format responsibilities than the new or the show or whatever. This design encompasses all of those scenarios.&lt;/p&gt;
+
+&lt;p&gt;Yehuda has also been interested in improving the performance of respond_to/with by cutting down on the blocks needed. Especially when you're just using respond_with that doesn't need to declare any blocks at all.&lt;/p&gt;
+
+&lt;p&gt;All in all, I think this is a great example of the kind of superior functionality that can come out of merging ideas from both camps. We're certainly excited to pull the same trick on many other framework elements. I've been exploring how a revised router that imports the best ideas from both could look and feel like. I'll do a write-up when there's something real to share.&lt;/p&gt;</content>
+    <link type="text/html" rel="alternate" href="http://feeds.feedburner.com/~r/LoudThinking/~3/495506608/37-bringing-merbs-providesdisplay-into-rails-3" />
+  <feedburner:origLink>http://www.loudthinking.com/posts/37-bringing-merbs-providesdisplay-into-rails-3</feedburner:origLink></entry>
+  <entry>
+    <id>tag:www.loudthinking.com,2007:Post36</id>
+    <published>2008-12-24T03:33:00-06:00</published>
+    <updated>2008-12-24T03:33:45-06:00</updated>
+    <title>Work on what you use and share the rest</title>
+    <content type="html">&lt;p&gt;It seems that we thoroughly caught the interwebs with surprise by announcing that &lt;a href="http://rubyonrails.org/merb"&gt;Merb is being merged into Rails 3&lt;/a&gt;. 96% of the feedback seems to be very positive. People incredibly excited about us closing the rift and emerging as a stronger community.&lt;/p&gt;
+
+&lt;p&gt;But I wanted to take a few minutes to address some concerns of the last 4%. The people who feel like this might not be such a good idea. And in particular, the people who feel like it might not be such a good idea because of various things that I've said or done over the years.&lt;/p&gt;
+
+&lt;p&gt;There's absolutely no pleasing everyone. You can't and shouldn't try to make everyone love you. The best you can do is make sure that they're hating you for the right reasons. So let's go through some of the reasons that at least in my mind are no longer valid.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;DHH != Rails&lt;/b&gt;
+&lt;br /&gt;I've been working on Rails for more than five years. Obviously I've poured much of my soul, talent, and dedication into this. And for the first formative years, I saw it as my outmost duty to ensure the integrity of that vision by ruling with a comparably hard hand. Nobody had keys to the repository but me for the first year or so.&lt;/p&gt;
+
+&lt;p&gt;But I don't need to do that anymore &amp;mdash; and haven't for a long time. The cultural impact of what is good Rails has spread far and wide and touched lots of programmers. These programmers share a similar &lt;a href="http://en.wikipedia.org/wiki/World_view"&gt;weltanschauung&lt;/a&gt;, but they don't need to care only about the things that I care about. In fact, the system works much better if they care about different things than I do.&lt;/p&gt;
+
+&lt;p&gt;My core philosophy about open source is that we should all be working on the things that we personally use and care about. Working for other people is just too hard and the quality of the work will reflect that. But if we all work on the things we care about and then share those solutions between us, the world gets richer much faster.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Defaults with choice&lt;/b&gt;
+&lt;br /&gt;So let's take a concrete example. Rails ships with a bunch of defaults. For the ORM, you get Active Record. For JavaScript, you get Prototype. For templating, you get ERb/Builder. And so on and so forth. Rails 3 will use the same defaults.&lt;/p&gt;
+
+&lt;p&gt;I personally use all of those default choices, so do many other Rails programmers. The vanilla ride is a great one and it'll remain a great one. But that doesn't mean it has to be the only one. There are lots of reasons why someone might want to use &lt;a href="http://datamapper.org/"&gt;Data Mapper&lt;/a&gt; or &lt;a href="http://sequel.rubyforge.org/"&gt;Sequel&lt;/a&gt; instead of Active Record. I won't think of them any less because they do. In fact, I believe Rails should have open arms to such alternatives.&lt;/p&gt;
+
+&lt;p&gt;This is all about working on what you use and sharing the rest. Just because you use jQuery and not Prototype, doesn't mean that we can't work together to improve the Rails Ajax helpers. By allowing Rails to bend to alternative drop-ins where appropriate, we can embrace a much larger community for the good of all.&lt;/p&gt;
+
+&lt;p&gt;In other words, just because you like reggae and I like &lt;a href="http://www.youtube.com/watch?v=XLjMPR3FSCc"&gt;Swedish&lt;/a&gt; &lt;a href="http://www.youtube.com/watch?v=NtJxy0zc7nU&amp;feature=PlayList&amp;p=6B2D0837D978162A&amp;playnext=1&amp;index=2"&gt;pop&lt;/a&gt; &lt;a href="http://www.youtube.com/watch?v=vW3sETUFAlo"&gt;music&lt;/a&gt; doesn't mean we can't bake a cake together. Even suits and punk rockers can have a good time together if they decide to.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Sharing the same sensibilities&lt;/b&gt;
+&lt;br /&gt;I think what really brought this change around was the realization that we largely share the same sensibilities about code. That we're all fundamentally Rubyists with very similar views about the big picture. That the rift in many ways was a false one. Founded on lack of communication and a mistaken notion that because we care about working on different things, we must somehow be in opposition.&lt;/p&gt;
+
+&lt;p&gt;But talking to Yehuda, Matt, Ezra, Carl, Daniel, and Michael, I learned &amp;mdash; as did we all &amp;mdash; that there are no real blockbuster oppositions. They had been working on things that they cared about which to most extends were entirely complimentary to what Jeremy, Michael, Rick, Pratik, Josh, and I had been working on from the Rails core.&lt;/p&gt;
+
+&lt;p&gt;Once we realized that, it seemed rather silly to continue the phantom drama. While there's undoubtedly a deep-founded need for humans to see and pursue conflict, there are much bigger and more worthwhile targets to chase together rather than amongst ourselves. Yes, I'm looking at you J2EE, .NET, and PHP :D.&lt;/p&gt;
+
+&lt;p&gt;So kumbaja motherfuckers and merry christmas!&lt;/p&gt;</content>
+    <link type="text/html" rel="alternate" href="http://feeds.feedburner.com/~r/LoudThinking/~3/493908599/36-work-on-what-you-use-and-share-the-rest" />
+  <feedburner:origLink>http://www.loudthinking.com/posts/36-work-on-what-you-use-and-share-the-rest</feedburner:origLink></entry>
+  <entry>
+    <id>tag:www.loudthinking.com,2007:Post35</id>
+    <published>2008-11-17T05:35:00-06:00</published>
+    <updated>2008-11-17T05:41:24-06:00</updated>
+    <title>Myth #6: Rails only speaks English</title>
+    <content type="html">&lt;p&gt;It used to be somewhat inconvenient to deal with UTF-8 in Rails because Ruby's primary method of dealing with them was through regular expressions. If you just did a naïve string operation, you'd often be surprised by results and think that Ruby was somehow fundamentally unable to deal with UTF-8. &lt;/p&gt;
+
+&lt;p&gt;Take the string "Iñtërnâtiônàlizætiøn". If you were to do a string[0,2] operation and expected to get the two first characters back, you'd get "I\303" because Ruby operated on the byte level, not the character level. And UTF-8 characters can be multibyte, so you'd only get 1.5 characters back. Yikes!&lt;/p&gt;
+
+&lt;p&gt;Rails dealt with this &lt;a href="http://weblog.rubyonrails.org/2007/1/19/rails-1-2-rest-admiration-http-lovefest-and-utf-8-celebrations"&gt;long ago&lt;/a&gt; by introducing a &lt;a href="http://api.rubyonrails.org/classes/ActiveSupport/Multibyte/Chars.html"&gt;character proxy&lt;/a&gt; on top of strings that is UTF-8 safe. Now you can just do s.first(2) and you'll get the two first characters back. No surprises. Everything inside of Rails uses this, so validations, truncating, and what have you is all UTF-8 safe.&lt;/p&gt;
+
+&lt;p&gt;Not only that, but we actually assume that all operations are going to happen with UTF-8. The default charset for responses sent with Rails is UTF-8. The default charset for database operations is UTF-8. So Rails assumes that everything coming in, everything going out, and all that's being manipulated is UTF-8.&lt;/p&gt;
+
+&lt;p&gt;This is a long way of saying that Rails is perfectly capable of dealing with all kinds of international texts that can be described in UTF-8. The early inconveniences of Ruby's regular expression-based approach has long been superseded. You need no longer worry that Rails doesn't speak your language. Basecamp, for example, has content in some 70+ languages at least. It works very well.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;But what about translations and locales?&lt;/b&gt;
+&lt;br /&gt;It was long a point of contention that Rails didn't ship with a internationalization framework in the box. There has, however, long been a wide variety of plugins that added this support. There was localize, globalize, and many others. Each with their own strengths and tailored to different situations.&lt;/p&gt;
+
+&lt;p&gt;All these plugins have powered Rails applications in other languages than English for a long time. Some made it possible to translate strings to multiple languages, others just made Rails work well for one other given language. But whatever your translation need was, there was probably a plugin out there that did it.&lt;/p&gt;
+
+&lt;p&gt;But obviously things could be better and with Rails 2.2 we've made them a whole lot more so. Rails 2.2 ships with &lt;a href="http://www.artweb-design.de/2008/7/18/the-ruby-on-rails-i18n-core-api"&gt;a simple internationalization framework&lt;/a&gt; that makes it silly easy to do translations and locales. There's a dedicated &lt;a href="http://groups.google.com/group/rails-i18n"&gt;discussion group&lt;/a&gt;, &lt;a href="http://rails-i18n.org/wiki"&gt;wiki&lt;/a&gt;, and &lt;a href="http://rails-i18n.org/"&gt;website&lt;/a&gt; for getting familiar with this work. I've been using it in a test with translating Basecamp to Danish and really like what I'm seeing.&lt;/p&gt;
+
+&lt;p&gt;So in summary, Rails is very capable of making sites that need to be translated into many different locales. Before Rails 2.2, you'd have to use one of the many plugins. After Rails 2.2, you can use what's in the box for most cases (or add additional plugins for more exotic support).&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Don't forget about time zones!&lt;/b&gt;
+&lt;br /&gt;Dealing well with content in UTF-8 and translating your application into many languages goes a long way to make your application ready for the world, but most sites also need to deal with time. When you deal with time in a global setting, you also need to deal with time zones.&lt;/p&gt;
+
+&lt;p&gt;I'm incredibly proud of the outstanding work that Geoff Buesing lead for the implementation of time zones in Rails 2.1. It's amazing how Geoff and team were able to reduce something so complex to something so simple. And it shows the great power of being an full-stack framework. Geoff was able to make changes to Rails, Action Pack, and Active Record to make the entire experience seamless.&lt;/p&gt;
+
+&lt;p&gt;To lean more about time zones in Rails, see &lt;a href="http://mad.ly/2008/04/09/rails-21-time-zone-support-an-overview/"&gt;Geoff's tutorial&lt;/a&gt; or watch &lt;a href=http://railscasts.com/episodes/106""&gt;the Railscast on Time Zones&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;i&gt;See the &lt;a href="http://www.loudthinking.com/posts/29-the-rails-myths"&gt;Rails Myths&lt;/a&gt; index for more myths about Rails.&lt;/i&gt;
+&lt;/p&gt;</content>
+    <link type="text/html" rel="alternate" href="http://feeds.feedburner.com/~r/LoudThinking/~3/455891372/35-myth-6-rails-only-speaks-english" />
+  <feedburner:origLink>http://www.loudthinking.com/posts/35-myth-6-rails-only-speaks-english</feedburner:origLink></entry>
+  <entry>
+    <id>tag:www.loudthinking.com,2007:Post34</id>
+    <published>2008-11-15T14:10:00-06:00</published>
+    <updated>2008-11-15T14:11:58-06:00</updated>
+    <title>Myth #5: Rails is hard because of Ruby</title>
+    <content type="html">&lt;p&gt;I've talked to lots of PHP and Java programmers who love the idea and concept of Rails, but are afraid of stepping in because of Ruby. The argument goes that since they already know PHP or Java, that it would be less work to just pick one of the Rails knockoffs in those languages. I really don't think so.&lt;/p&gt;
+
+&lt;p&gt;Ruby is actually an amazingly simple language to pickup the basics on. Yes, there's a lot of depth in the meta programming corners, but you really don't need to go there to get stuff done. Certainly not to get going. The base mechanics of getting productive takes much shorter than you likely think.&lt;/p&gt;
+
+&lt;p&gt;After all, Ruby is neither LISP nor Smalltalk. It's not a completely new and alien world if you're coming from PHP or Java. Lots of concepts and constructs are the same. The code even looks similar in many cases, just stated more succinctly.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Learn Ruby in the time it would take to learn a framework&lt;/b&gt;
+&lt;br /&gt;I'd argue that most programmers could get up and running in Ruby in about the same time it would take them to learn another framework in their current language anyway. I know it sounds a lot more scary to learn a whole new language rather than just another framework, but it really isn't.&lt;/p&gt;
+
+&lt;p&gt;The number one piece of feedback I get from people who dreaded the jump but did it anyway is: Why didn't I do this sooner?&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Learn while doing something real that matters to you&lt;/b&gt;
+&lt;br /&gt;Also, speaking from my own experience learning Ruby, I'd actually recommend trying to do something real. Don't just start with the basics of the language in a vacuum. Pick something you actually want done and just start doing it one step of the time. You'll learn as you go along and you'll have to motivation to keep it up because stuff is coming alive.&lt;/p&gt;
+
+&lt;p&gt;So don't write off Rails because you don't know Ruby. Your fears of starting from scratch again will quickly make way for the joy of the new language and you'll get to use the real Rails as a reward. Come on in, the water is fine!&lt;/p&gt;
+
+&lt;p&gt;&lt;i&gt;See the &lt;a href="http://www.loudthinking.com/posts/29-the-rails-myths"&gt;Rails Myths&lt;/a&gt; index for more myths about Rails.&lt;/i&gt;&lt;/p&gt;</content>
+    <link type="text/html" rel="alternate" href="http://feeds.feedburner.com/~r/LoudThinking/~3/454253303/34-myth-5-rails-is-hard-because-of-ruby" />
+  <feedburner:origLink>http://www.loudthinking.com/posts/34-myth-5-rails-is-hard-because-of-ruby</feedburner:origLink></entry>
+  <entry>
+    <id>tag:www.loudthinking.com,2007:Post33</id>
+    <published>2008-11-15T09:11:00-06:00</published>
+    <updated>2008-11-15T11:40:08-06:00</updated>
+    <title>Myth #4: Rails is a monolith</title>
+    <content type="html">&lt;p&gt;Rails is often accused of being a big monolithic framework. The charges usually contend that its intense mass makes it hard for people to understand the inner workings, thus making it hard to patch the framework, and that it results in slow running applications. Oy, let's start at the beginning.&lt;/p&gt;
+
+&lt;p&gt;Measuring lines of code is used to gauge the rough complexity of software. It's an easy but also incredibly crude way of measuring that rarely yields anything meaningful unless you apply intense rigor to the specifics. Most measurements of LOCs apply hardly any rigor and reduces what could otherwise be a somewhat useful indicator to an inverse dick measurement match.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Applying rigor to measuring LOCs in Rails&lt;/b&gt;
+&lt;br /&gt;The measurements of LOC in Rails have not failed to live up to the low standards traditionally set for these pull-down-your-pants experiments. Let's look at a few common mistakes people commit when trying to measure the LOCs in Rails:&lt;/p&gt;
+
+&lt;p&gt;&lt;ul&gt;&lt;li&gt;They count all lines including comments and whitespace in Ruby files, thus punishing well-documented and formatted code&lt;/li&gt;&lt;li&gt;They count tests, thus punishing well-tested code&lt;/li&gt;&lt;li&gt;They count bundled dependencies, thus punishing dependency-free code&lt;/li&gt;&lt;/ul&gt;&lt;/p&gt;
+
+&lt;p&gt;Now let's take a simple example of committing all these mistakes against a part of Rails and see how misleading the results turn out to be. I'm going to use Action Mailer as an example here:&lt;/p&gt;
+
+&lt;p&gt;&lt;ul&gt;&lt;li&gt;12,406 lines including comments, whitespace, tests, and dependencies&lt;/li&gt;&lt;li&gt;7,912 lines including tests and dependencies&lt;/li&gt;&lt;li&gt;6,409 lines including dependencies (t-mail and text-format)&lt;/li&gt;&lt;li&gt;667 lines with none of the above&lt;/li&gt;&lt;/ul&gt;&lt;/p&gt;
+
+&lt;p&gt;So the difference between committing all the mistakes and reality is a factor of 20. Even just the difference between committing the dependency mistake and reality is a factor of 10! In reality, if you were to work on Action Mailer for a patch, you would only have to comprehend a framework of 667 lines. A much less challenging task than digging into 12,406 lines.&lt;/p&gt;
+
+&lt;p&gt;Rails measured with all it's six major components without the mistakes is 34,097 lines divided across Action Mailer at 667, Active Resource at 878, Active Support at 6,684, Active Record at 9,295, Action Pack at 11,117 (the single piece most web frameworks should be comparing themselves to unless they also ship as a full stack), and Rail Ties at 5,447.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Looking at the monolithic charge&lt;/b&gt;
+&lt;br /&gt;That Rails is big in terms of lines of code is just one of the charges, though. More vague and  insidious is the charge that Rails is monolithic. That is one giant mass where all the pieces depend on each other and are intertwined in hard-to-understand ways. That it lacks coherence and cohesion.&lt;/p&gt;
+
+&lt;p&gt;First, Rails can include almost as much or as little of the six major pieces as you prefer. If you're making an application that doesn't need Action Mailer, Active Resource, or Active Record, you can swiftly cut them out of your runtime by uncommenting the following statement in config/environment.rb:&lt;/p&gt;
+
+&lt;p&gt;&lt;pre style="font-size: 10px;"&gt;# config.frameworks -= [ :active_record, :active_resource, :action_mailer ]&lt;/pre&gt;&lt;/p&gt;
+
+&lt;p&gt;Now you've reduced your reliance on Rails to the 23,248 lines in Action Pack, Active Support, and Rail Ties. But let's dig deeper and look at the inner workings of Action Pack and how much of that fits the monolithic charge. &lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Taking out the optional parts&lt;/b&gt;
+&lt;br /&gt;The Action Controller part of Action Pack consists of 8,282 lines which breaks down into two major halves. The essential, stuff that's needed to run the bare minimum of controllers, and the optional that adds specific features, which you could do without.&lt;/p&gt;
+
+&lt;p&gt;First the essentials of which there are 3,797 lines spread across these files and directories: base.rb, cgi_ext, cgi_ext.rb, cgi_process.rb, cookies.rb, dispatcher.rb, headers.rb, layout.rb, mime_type.rb, mime_types.rb, request.rb, response.rb, routing, routing.rb, session, session_management.rb, status_codes.rb, url_rewriter.rb.&lt;/p&gt;
+
+&lt;p&gt;The more interesting part is the optional parts of which there are 3,481 lines spread across these files and directories: assertions, assertions.rb, benchmarking.rb, caching, caching.rb, components.rb, filters.rb, flash.rb, helpers.rb, http_authentication.rb, integration.rb, mime_responds.rb, performance_test.rb, polymorphic_routes.rb, rack_process.rb, record_identifier.rb, request_forgery_protection.rb, request_profiler.rb, rescue.rb, resources.rb, streaming.rb, test_case.rb, test_process.rb, translation.rb, verification.rb.&lt;/p&gt;
+
+&lt;p&gt;All these optional parts can actually very easily be turned off as well, if you so please. If you look at actionpack/lib/action_controller.rb, you'll see something like the following:&lt;/p&gt;
+
+&lt;p&gt;&lt;pre style="font-size: 10px; line-height: 6px;"&gt;ActionController::Base.class_eval do
+&lt;br /&gt;  include ActionController::Flash
+&lt;br /&gt;  include ActionController::Benchmarking
+&lt;br /&gt;  include ActionController::Caching
+&lt;br /&gt;  ...&lt;/pre&gt;&lt;/p&gt;
+
+&lt;p&gt;This is where all the optional bits are being mixed into Action Pack. But they didn't need to be. If you really wanted to, you could just edit this 1 file and remove the optional bits you didn't need and you'd have some 3,500 lines of optional goodies to pick from.&lt;/p&gt;
+
+&lt;p&gt;For example, let's say you didn't need caching in your application. You comment the &lt;code&gt;include ActionController::Caching&lt;/code&gt; line out and delete the associated files and that's 349 lines for the savings there. Or let's say that you don't like the flash, that's another 96 lines. &lt;/p&gt;
+
+&lt;p&gt;The reason many of these pieces can be optional is because of a wonderful part of Active Support called alias_method_chain. With alias_method_chain, you can latch on to a method to embellish it with more stuff. For example, the Benchmarking module uses alias_method_chain like this to hook into perform_action and render:&lt;/p&gt;
+
+&lt;p&gt;&lt;pre style="font-size: 10px; line-height: 6px;"&gt;
+&lt;br /&gt;module Benchmarking
+&lt;br /&gt;  def self.included(base)
+&lt;br /&gt;    base.extend(ClassMethods)
+&lt;br /&gt; 
+&lt;br /&gt;    base.class_eval do
+&lt;br /&gt;      alias_method_chain :perform_action, :benchmark
+&lt;br /&gt;      alias_method_chain :render, :benchmark
+&lt;br /&gt;    end
+&lt;br /&gt;  end&lt;/pre&gt;&lt;/p&gt;
+
+&lt;p&gt;ActionController::Base declares render and perform_action, but doesn't know anything about benchmarking (why should it?). The Benchmarking modules adds in these concerns when it's included similar to how aspects work. So as you can see, alias_method_chain is a great enabler for clearly defined modules in Rails.&lt;/p&gt;
+
+&lt;p&gt;All the other frameworks in Rails works in a similar fashion. There's a handful of essential parts and then a handful of optional parts, which can use alias_method_chain if they need to decorate some of the essential pieces. This means that the code is very well defined and you can look at just a single piece in isolation.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;But why on earth would you bother?&lt;/b&gt;
+&lt;br /&gt;The analysis above of how you can bring Action Controller down to some 3,500 lines carefully side-stepped one important question: Why would you bother? And that's an answer I don't quite have for you. &lt;/p&gt;
+
+&lt;p&gt;The important part about being modular is that the pieces are understandable in isolation. That the individual modules have coherence and cohesion. Not that they're actually handed to you as a puzzle for you to figure out how to put together.&lt;/p&gt;
+
+&lt;p&gt;I'd much rather give someone a complete picture, which they can then turn into a puzzle if they're so inclined. As I've shown you above, it's actually really simple to deconstruct the frameworks in Rails and you can make them much smaller really easily if you decide that's a good use of your time and energy.&lt;/p&gt;
+
+&lt;p&gt;&lt;i&gt;See the &lt;a href="http://www.loudthinking.com/posts/29-the-rails-myths"&gt;Rails Myths&lt;/a&gt; index for more myths about Rails.&lt;/i&gt;&lt;/p&gt;</content>
+    <link type="text/html" rel="alternate" href="http://feeds.feedburner.com/~r/LoudThinking/~3/454069020/33-myth-4-rails-is-a-monolith" />
+  <feedburner:origLink>http://www.loudthinking.com/posts/33-myth-4-rails-is-a-monolith</feedburner:origLink></entry>
+  <entry>
+    <id>tag:www.loudthinking.com,2007:Post32</id>
+    <published>2008-11-14T09:35:00-06:00</published>
+    <updated>2008-11-17T08:51:59-06:00</updated>
+    <title>Myth #3: Rails forces you to use Prototype</title>
+    <content type="html">&lt;p&gt;There are lots of great JavaScript libraries out there. &lt;a href="http://prototypejs.org/"&gt;Prototype&lt;/a&gt; is one of the best and it ships along Rails as the default choice for adding Ajax to your application. &lt;/p&gt;
+
+&lt;p&gt;Does that mean you have to use Prototype if you prefer something else? Absolutely not! Does it mean that it's hard to use something else than Prototype? No way!&lt;/p&gt;
+
+&lt;p&gt;It's incredibly easy to use another JavaScript library with Rails. Let's say that you wanted to use &lt;a href="http://jquery.com/"&gt;jQuery&lt;/a&gt;. All you would have to do is add the jQuery libraries to public/javascripts and include something like this to the &lt;head&gt; in your layout to include the core and ui parts:&lt;/p&gt;
+
+&lt;p&gt;&lt;pre style="font-size: 10px"&gt;&amp;lt;%= javascript_include_tag "jquery", "jquery-ui" %&gt;&lt;/pre&gt;&lt;/p&gt;
+
+&lt;p&gt;Then say you have a form like the following that you want to Ajax:&lt;/p&gt;
+
+&lt;p&gt;&lt;pre style="font-size: 10px; line-height: 6px;"&gt;&amp;lt;% form_for(Comment.new) do |form| %&gt;
+&lt;br /&gt;  &amp;lt;%= form.text_area :body %&gt;
+&lt;br /&gt;  &amp;lt;%= form.submit %&gt;
+&lt;br /&gt;&amp;lt;% end %&gt;&lt;/pre&gt;&lt;/p&gt;
+
+&lt;p&gt;By virtue of the conventions, this form will have an id of new_comment, which you can decorate with an event in, say, application.js with jQuery like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;pre style="font-size: 10px; line-height: 6px;"&gt;
+&lt;br /&gt;$(document).ready(function() {
+&lt;br /&gt;  $("#new_comment").submit(function() {
+&lt;br /&gt;    $.post($(this).attr('action') + '.js', 
+&lt;br /&gt;      $(this).serializeArray(), null, 'script');
+&lt;br /&gt; 
+&lt;br /&gt;    return false;
+&lt;br /&gt;  });
+&lt;br /&gt;});
+&lt;br /&gt;&lt;/pre&gt;&lt;/p&gt;
+
+&lt;p&gt;This will make the form submit to /comments.js via Ajax, which you can then catch in the PostsController with a simple format alongside the HTML response:&lt;/p&gt;
+
+&lt;p&gt;&lt;pre style="font-size: 10px; line-height: 6px;"&gt;def create
+&lt;br /&gt;  @comment = Post.create(params[:comment])
+&lt;br /&gt; 
+&lt;br /&gt;  respond_to do |format|
+&lt;br /&gt;    format.html { redirect_to(@comment) }
+&lt;br /&gt;    format.js
+&lt;br /&gt;  end
+&lt;br /&gt;end&lt;/pre&gt;&lt;/p&gt;
+
+&lt;p&gt;The empty format.js simply tells the controller that there's a template ready to be rendered when a JavaScript request is incoming. This template would live in comments/create.js.erb and could look something like:&lt;/p&gt;
+
+&lt;p&gt;&lt;pre style="font-size: 10px; line-height: 6px;"&gt;$('#comments').append(
+&lt;br /&gt;  '&amp;lt;%= escape_javascript(render(:partial =&gt; @comment)) %&gt;');
+&lt;br /&gt;$('#new_comment textarea').val("");
+&lt;br /&gt;$('#&lt;%= dom_id(@comment) %&gt;').effect("highlight");&lt;/pre&gt;&lt;/p&gt;
+
+&lt;p&gt;This will append the newly created @comment model to a dom element with the id of comments by rendering the comments/comment partial. Then it clears the form and finally highlights the new comment as identified by dom id "comment_X".&lt;/p&gt;
+
+&lt;p&gt;That's pretty much it. You're now using Rails to create an Ajax application with jQuery and you even get to tell all the cool kids that your application is unobtrusive. That'll impress them for sure :).&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Rails loves all Ajax, not just the Prototype kind&lt;/b&gt;
+&lt;br /&gt;This is all to say that the base infrastructure of Rails is just as happy to return JavaScript made from any other package than Prototype. It's all just a mime type anyway.&lt;/p&gt;
+
+&lt;p&gt;Now if you don't want to put on the unobtrusive bandana and instead would like a little more help to define your JavaScript inline, like with remote_form_for and friends, you can have a look at something like &lt;a href="http://ennerchi.com/projects/jrails"&gt;jRails&lt;/a&gt;, which mimics the Prototype helpers for jQuery. There's apparently a &lt;a href="http://github.com/pointcom/mootools-on-rails/tree/master"&gt;similar project underway for MooTools&lt;/a&gt; too.&lt;/p&gt;
+
+&lt;p&gt;So by all means use the JavaScript library that suits your style, but please stop crying that Rails happens to include a default choice. That's what Rails is. A collection of default choices. You accept the ones where you don't care about the answer or simply just agree, you swap out the ones where you differ.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Update: &lt;/b&gt; Ryan Bates has created &lt;a href="http://railscasts.com/episodes/136-jquery"&gt;a screencast&lt;/a&gt; that shows you how to do the steps I outlined above and more.&lt;/p&gt;
+
+&lt;p&gt;&lt;i&gt;See the &lt;a href="http://www.loudthinking.com/posts/29-the-rails-myths"&gt;Rails Myths&lt;/a&gt; index for more myths about Rails.&lt;/i&gt;&lt;/p&gt;</content>
+    <link type="text/html" rel="alternate" href="http://feeds.feedburner.com/~r/LoudThinking/~3/453037012/32-myth-3-rails-forces-you-to-use-prototype" />
+  <feedburner:origLink>http://www.loudthinking.com/posts/32-myth-3-rails-forces-you-to-use-prototype</feedburner:origLink></entry>
+  <entry>
+    <id>tag:www.loudthinking.com,2007:Post31</id>
+    <published>2008-11-13T05:21:00-06:00</published>
+    <updated>2008-11-15T11:40:43-06:00</updated>
+    <title>Myth #2: Rails is expected to crash 400 times/day</title>
+    <content type="html">&lt;p&gt;Zed Shaw's &lt;a href="http://www.zedshaw.com/rants/rails_is_a_ghetto.html"&gt;infamous meltdown&lt;/a&gt; showed an angry man lashing out at anything and everything. It made a lot of people sad. It made me especially sad because this didn't feel like the same Zed that I had dinner with in Chicago or that I had talked to so many times before. I actually thought he might be in real trouble and in need of real help, but was assured by third party that he wasn't (Zed never replied to my emails after publishing).&lt;/p&gt;
+
+&lt;p&gt;But Zed's state of mind isn't really what this is about. This is about the one factual assault he made against Rails that despite being drenched in unbelievable bile somehow still stuck to parts of the public conscious.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;The origin of the claim&lt;/b&gt;
+&lt;br /&gt;Zed insinuated that it's normal for Rails to restart 400 times/day because Basecamp at one point did this with a memory watcher that would bounce its &lt;strike&gt;Mongrels&lt;/strike&gt; FCGIs when they hit 160MB &lt;strike&gt;250MB&lt;/strike&gt;. These FCGIs would then gracefully exit after the current request and boot up again. No crash, no lost data, no 500s.&lt;/p&gt;
+
+&lt;p&gt;But still an inconvenience, naturally. Nobody likes a memory leak. So I was happy when a patch emerged that fixed it and we could stop doing that. I believe the fix appeared some time in 2006. So even when Zed published his implosion at the end of 2007, this was already ancient history.&lt;/p&gt;
+
+&lt;p&gt;Yet lots of people didn't read it like that. I've received more than a handful of reports from people out talking Rails with customers who pull out the Zed rant and say that their consultants can't use Rails because it reboots 400 times/day. Eh, what?&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Fact: Rails doesn't explode every 4 minutes&lt;/b&gt;
+&lt;br /&gt;So let's make it clear once and for all: Rails doesn't spontaneously combust and restart itself. If we ever have an outright crash bug that can take down an entire Rails process, it's code red priority to get a fix out there. &lt;/p&gt;
+
+&lt;p&gt;A Rails application may of course still leak memory because of something done in user space that leaks. Just like an application on any other platform may leak memory.&lt;/p&gt;
+
+&lt;p&gt;&lt;small&gt;Update: Zed points out that the leak was occurring while Basecamp was still on FCGI, not Mongrel, which is correct. I don't know how that makes the story any different (it was the fastthread fix that stopped the leak and our minor apps were on Mongrel with leaks too), but let's definitely fix the facts.&lt;/small&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;i&gt;See the &lt;a href="http://www.loudthinking.com/posts/29-the-rails-myths"&gt;Rails Myths&lt;/a&gt; index for more myths about Rails.&lt;/i&gt;
+&lt;/p&gt;</content>
+    <link type="text/html" rel="alternate" href="http://feeds.feedburner.com/~r/LoudThinking/~3/451709205/31-myth-2-rails-is-expected-to-crash-400-timesday" />
+  <feedburner:origLink>http://www.loudthinking.com/posts/31-myth-2-rails-is-expected-to-crash-400-timesday</feedburner:origLink></entry>
+  <entry>
+    <id>tag:www.loudthinking.com,2007:Post30</id>
+    <published>2008-11-13T03:32:00-06:00</published>
+    <updated>2008-11-15T11:41:00-06:00</updated>
+    <title>Myth #1: Rails is hard to deploy</title>
+    <content type="html">&lt;p&gt;&lt;small&gt;&lt;i&gt;(If you don't want to bother with the history lesson, just &lt;a href="#mod_rails"&gt;skip straight to the answer&lt;/a&gt;)&lt;/i&gt;&lt;/small&gt;&lt;/p&gt;
+
+&lt;p&gt;Rails has traveled many different roads to deployment over the past five years. I launched Basecamp on mod_ruby back when I just had 1 application and didn't care that I then couldn't run more without them stepping over each other.&lt;/p&gt;
+
+&lt;p&gt;Heck, in the early days, you could even run Rails as CGI, if you didn't have a whole lot of load. We used to do that for development mode as the entire stack would reload between each request.&lt;/p&gt;
+
+&lt;p&gt;We then moved on to FCGI. That's actually still a viable platform. We ran for years on FCGI. But the platform really hadn't seen active development for a very long time and while things worked, they did seem a bit creaky, and there was too much gotcha-voodoo that you had to get down to run it well.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Then came the Mongrel&lt;/b&gt;
+&lt;br /&gt;Then came &lt;a href="http://mongrel.rubyforge.org/"&gt;Mongrel&lt;/a&gt; and the realization that we didn't need Yet Another Protocol to let application servers and web servers talk together. We could just use HTTP! So packs of Mongrels were thrown behind all sorts of proxies and load balancers.&lt;/p&gt;
+
+&lt;p&gt;Today, Mongrel (and it's ilk of similar Ruby-based web servers such as &lt;a href="http://code.macournoyer.com/thin/"&gt;Thin&lt;/a&gt; and &lt;a href="http://ebb.rubyforge.org/"&gt;Ebb&lt;/a&gt;) still the predominate deployment environment. And for many good reasons: It's stable, it's versatile, it's fast.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;The paradox of many Good Enough choices&lt;/b&gt;
+&lt;br /&gt;But it's also a jungle of options. Which web server do you run in front? Do you go with Apache, nginx, or even lighttpd? Do you rely on the built-in proxies of the web server or do you go with something like HAProxy or Pound? How many mongrels do you run behind it? Do you run them under process supervision with monit or god?&lt;/p&gt;
+
+&lt;p&gt;There are a lot of perfectly valid, solid answers from those questions. At 37signals, we've been running Apache 2.2 &lt;a href="http://www.37signals.com/svn/posts/1073-nuts-bolts-haproxy"&gt;with HAProxy&lt;/a&gt; against monit-watched Mongrels for a few years. When you've decided on which pieces to use, it's actually not a big deal to set it up.&lt;/p&gt;
+
+&lt;p&gt;But the availability of all these pieces that all seem to have their valid arguments lead to a paradox of choice. When you're done creating your Rails application, I can absolutely understand why you don't also want to become an expert on the pros and cons of web servers, proxies, load balancers, and process watchers.&lt;/p&gt;
+
+&lt;p&gt;And I think that's where this myth has its primary roots. The abundance of many Good Enough choices. The lack of a singular answer to How To Deploy Rails. No ifs, no buts, no "it depends".&lt;/p&gt;
+
+&lt;p&gt;&lt;b id="mod_rails"&gt;The one-piece solution with Phusion Passenger&lt;/b&gt;
+&lt;br /&gt;That's why I was so incredibly happy to see &lt;a href="http://www.phusion.nl/"&gt;the Phusion team&lt;/a&gt; come out of nowhere earlier this year with &lt;a href="http://www.modrails.com/"&gt;Passenger (aka mod_rails)&lt;/a&gt;. A single free, open source module for Apache that brought mod_php-like ease of deployment to Rails. &lt;/p&gt;
+
+&lt;p&gt;Once you've completed the incredibly simple installation, you get an Apache that acts as both web server, load balancer, application server and process watcher. You simply drop in your application and touch tmp/restart.txt when you want to bounce it and bam, you're up and running.&lt;/p&gt;
+
+&lt;p&gt;But somehow the message of Passenger has been a little slow to sink in. There's already a ton of big sites running off it. Including &lt;a href="http://www.shopify.com/"&gt;Shopify&lt;/a&gt;, &lt;a href="http://style.mtv.com/"&gt;MTV&lt;/a&gt;, &lt;a href="http://www.geni.com/"&gt;Geni&lt;/a&gt;, &lt;a href="http://www.yammer.com/"&gt;Yammer&lt;/a&gt;, and we'll be moving over first &lt;a href="http://www.tadalist.com/"&gt;Ta-da List&lt;/a&gt; shortly, then hopefully the rest of the &lt;a href="http://37signals.com/"&gt;37signals suite&lt;/a&gt; quickly thereafter.&lt;/p&gt;
+
+&lt;p&gt;So while there are still reasons to run your own custom multi-tier setup of manually configured pieces, just like there are people shying away from mod_php for their particulars, I think we've finally settled on a default answer. Something that doesn't require you to really think about the first deployment of your Rails application. Something that just works out of the box. Even if that box is a shared host!&lt;/p&gt;
+
+&lt;p&gt;In conclusion, Rails is no longer hard to deploy. Phusion Passenger has made it ridiculously easy.&lt;/p&gt;
+
+&lt;p&gt;&lt;i&gt;See the &lt;a href="http://www.loudthinking.com/posts/29-the-rails-myths"&gt;Rails Myths&lt;/a&gt; index for more myths about Rails.&lt;/i&gt;
+&lt;/p&gt;</content>
+    <link type="text/html" rel="alternate" href="http://feeds.feedburner.com/~r/LoudThinking/~3/451632686/30-myth-1-rails-is-hard-to-deploy" />
+  <feedburner:origLink>http://www.loudthinking.com/posts/30-myth-1-rails-is-hard-to-deploy</feedburner:origLink></entry>
+  <entry>
+    <id>tag:www.loudthinking.com,2007:Post29</id>
+    <published>2008-11-13T03:31:00-06:00</published>
+    <updated>2008-11-17T05:48:28-06:00</updated>
+    <title>The Rails Myths</title>
+    <content type="html">&lt;p&gt;&lt;a href="http://rubyonrails.org"&gt;Ruby on Rails&lt;/a&gt; has been around for more than five years. It's only natural that the public perception of what Rails is today is going to include bits and pieces from it's own long history of how things used to be.&lt;/p&gt;
+
+&lt;p&gt;Many things are not how they used to be. And plenty of things are, but got spun in a way to seem like they're not by people who had either an axe to grind, a competing offering to push, or no interest in finding out.&lt;/p&gt;
+
+&lt;p&gt;So I thought it would be about time to set the record straight on a number of unfounded fears, uncertainties, and doubts. I'll be going through these myths one at the time and showing you exactly why they're just not true.&lt;/p&gt;
+
+&lt;p&gt;This is not really to convince you that you should be using Rails. Only you can make that choice. But  to give you the facts so you can make your own informed decision. One that isn't founded in the many myths floating around.&lt;/p&gt;
+
+&lt;p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href="http://www.loudthinking.com/posts/30-myth-1-rails-is-hard-to-deploy"&gt;Myth #1: Rails is hard to deploy&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="http://www.loudthinking.com/posts/31-myth-2-rails-is-expected-to-crash-400-timesday"&gt;Myth #2: Rails is expected to crash 400 times/day&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="http://www.loudthinking.com/posts/32-myth-3-rails-forces-you-to-use-prototype"&gt;Myth #3: Rails forces you to use Prototype&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="http://www.loudthinking.com/posts/33-myth-4-rails-is-a-monolith"&gt;Myth #4: Rails is a monolith&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="http://www.loudthinking.com/posts/34-myth-5-rails-is-hard-because-of-ruby"&gt;Myth #5: Rails is hard because of Ruby&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="http://www.loudthinking.com/posts/35-myth-6-rails-only-speaks-english"&gt;Myth #6: Rails only speaks English&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/p&gt;</content>
+    <link type="text/html" rel="alternate" href="http://feeds.feedburner.com/~r/LoudThinking/~3/451632687/29-the-rails-myths" />
+  <feedburner:origLink>http://www.loudthinking.com/posts/29-the-rails-myths</feedburner:origLink></entry>
+  <entry>
+    <id>tag:www.loudthinking.com,2007:Post28</id>
+    <published>2008-07-27T18:55:00-05:00</published>
+    <updated>2008-07-27T18:58:20-05:00</updated>
+    <title>The startup school talk</title>
+    <content type="html">&lt;p&gt;I keep getting a flow of positive feedback about the presentation I delivered at Startup School in the Spring. Since it was never linked up here, I thought I'd made sure it made it into the archives: &lt;a href="http://www.omnisio.com/v/ZW4WTUGdjhG/david-heinemeier-hansson-at-startup-school-08"&gt;The secret to making money online&lt;/a&gt;.&lt;/p&gt;</content>
+    <link type="text/html" rel="alternate" href="http://feeds.feedburner.com/~r/LoudThinking/~3/347846737/28-the-startup-school-talk" />
+  <feedburner:origLink>http://www.loudthinking.com/posts/28-the-startup-school-talk</feedburner:origLink></entry>
+  <entry>
+    <id>tag:www.loudthinking.com,2007:Post27</id>
+    <published>2008-04-28T23:26:00-05:00</published>
+    <updated>2008-04-28T23:27:52-05:00</updated>
+    <title>Twitter me this</title>
+    <content type="html">&lt;p&gt;If a tweet is uttered with no followers, does it make a peep? I'm getting going with Twitter on &lt;a href="http://twitter.com/d2h"&gt;http://twitter.com/d2h&lt;/a&gt;.&lt;/p&gt;</content>
+    <link type="text/html" rel="alternate" href="http://feeds.feedburner.com/~r/LoudThinking/~3/279840900/27-twitter-me-this" />
+  <feedburner:origLink>http://www.loudthinking.com/posts/27-twitter-me-this</feedburner:origLink></entry>
+  <entry>
+    <id>tag:www.loudthinking.com,2007:Post26</id>
+    <published>2008-04-22T14:22:00-05:00</published>
+    <updated>2008-04-22T17:38:34-05:00</updated>
+    <title>The silent majority</title>
+    <content type="html">&lt;p&gt;I had a great time on the West coast recently with stops in Santa Barbara and &lt;a href="http://www.37signals.com/svn/posts/981-the-secret-to-making-money-online"&gt;Palo Alto&lt;/a&gt;. What always surprises me at events like these is the huge number of people I meet that are doing cool things with Rails that I've never heard of. The kind of people who are just really happy to be using Rails and happy to build businesses with it.&lt;/p&gt;
+
+&lt;p&gt;Most of them are not heavily involved with the community in the sense of always being in front of it. They're not the ones constantly commenting on the blogs. They're just enjoying working with the tools. That's a really refreshing sentiment.&lt;/p&gt;
+
+&lt;p&gt;It's easy for people to think that the interaction they witness on the web is a complete reflection of the world in general. Often it's quite the contrary. Which is why I so enjoy getting out of the web world and meeting people in the flesh. Hearing their stories, discussing their concerns, and sharing passions.&lt;/p&gt;
+
+&lt;p&gt;You can easily end up burning out on web participation because the loud minority twists your perception of what matters and who cares. But there's nothing like meeting people who tell you that working with Rails or listening to a talk or reading something you wrote either touched them, changed them, or made them move in a new direction. That's a big pay-off for getting involved with public sharing.&lt;/p&gt;
+
+&lt;p&gt;So thank you so very much to everyone who came up to me at any of the events out in California. It makes it all worth it to hear your stories. Keep on rocking with whatever it is that you're doing. Keep the passion and the optimism alive.&lt;/p&gt;</content>
+    <link type="text/html" rel="alternate" href="http://feeds.feedburner.com/~r/LoudThinking/~3/275616933/26-the-silent-majority" />
+  <feedburner:origLink>http://www.loudthinking.com/posts/26-the-silent-majority</feedburner:origLink></entry>
+  <entry>
+    <id>tag:www.loudthinking.com,2007:Post25</id>
+    <published>2008-04-11T10:32:00-05:00</published>
+    <updated>2008-04-11T10:35:21-05:00</updated>
+    <title>Going to California</title>
+    <content type="html">&lt;p&gt;I'll be speaking at an event put on by &lt;a href="http://www.appfolio.com/"&gt;AppFolio&lt;/a&gt; at 6:30PM on the 17th, at &lt;a href="http://startupschool.org/"&gt;Paul Graham's Startup School&lt;/a&gt; on the 19th at around noon, and finally meeting up with some people from the SD Forum Ruby conference on &lt;a href="http://latenightrubyromance.eventbrite.com/"&gt;the eve of the 19th&lt;/a&gt;. If you're at any of these events, do stop by and say hi.&lt;/p&gt;</content>
+    <link type="text/html" rel="alternate" href="http://feeds.feedburner.com/~r/LoudThinking/~3/268439143/25-going-to-california" />
+  <feedburner:origLink>http://www.loudthinking.com/posts/25-going-to-california</feedburner:origLink></entry>
+  <entry>
+    <id>tag:www.loudthinking.com,2007:Post24</id>
+    <published>2008-04-03T14:47:00-05:00</published>
+    <updated>2008-04-10T16:20:25-05:00</updated>
+    <title>Git's avalanche</title>
+    <content type="html">&lt;p&gt;I remember thinking how impressive the roll-out of Subversion was. They reached some magic point where the majority of the development world just flipped and most everyone who've previously been on CVS  switched in what seemed like an overnight transition. &lt;/p&gt;
+
+&lt;p&gt;Of course it didn't happen like that, but the perception of a sea of developers all collectively deciding to move on and knight Subversion the next savior seemed impressive at the time.&lt;/p&gt;
+
+&lt;p&gt;It's not so easy any more. First of all, Subversion is still a great SCM for the paradigm it embodies. It's unlikely to be out-gunned within its sphere any time soon. So any newcomers can't just out-SVN Subversion, like Subversion could out-CVS CVS. &lt;/p&gt;
+
+&lt;p&gt;Which means to topple Subversion, you have to bring a new paradigm to the table. The plethora of distributed version control systems seem to be that next paradigm. But it's not purely equitably "better", it's different. Better in many regards for many purposes, but not just better. Like SVN just felt better, period, than CVS.&lt;/p&gt;
+
+&lt;p&gt;So given all that, I think the &lt;a href="http://git.or.cz/"&gt;Git&lt;/a&gt; move is even more interesting. That camp is competing not only to convince people that a new paradigm is appropriate for many things, but also as that it, one-out-of-many, should be the one to embody it.&lt;/p&gt;
+
+&lt;p&gt;I think they're going to get it. Killer apps makes or breaks any platform. With &lt;a href="http://www.github.com"&gt;Github&lt;/a&gt;, I think the Git hub just scored one. Rails is going to be hosted there for the launch. &lt;a href="http://github.com/jamis/capistrano"&gt;Capistrano&lt;/a&gt;, &lt;a href="http://github.com/sstephenson/prototype"&gt;Prototype&lt;/a&gt;, and &lt;a href="http://github.com/madrobby/scriptaculous"&gt;Scriptaculous&lt;/a&gt; already moved there.&lt;/p&gt;
+
+&lt;p&gt;Go, go, Git.&lt;/p&gt;</content>
+    <link type="text/html" rel="alternate" href="http://feeds.feedburner.com/~r/LoudThinking/~3/263541698/24-gits-avalanche" />
+  <feedburner:origLink>http://www.loudthinking.com/posts/24-gits-avalanche</feedburner:origLink></entry>
+  <entry>
+    <id>tag:www.loudthinking.com,2007:Post23</id>
+    <published>2008-04-03T14:33:00-05:00</published>
+    <updated>2008-04-03T14:38:09-05:00</updated>
+    <title>The immediacy of PHP</title>
+    <content type="html">&lt;p&gt;I've been writing a little bit of PHP again today. That platform has really received an unfair reputation. For the small things I've been used it for lately, it's absolutely perfect. &lt;/p&gt;
+
+&lt;p&gt;I love the fact that it's all just self-contained. That the language includes so many helpful functions in the box. And that it managed to get distributed with just about every instance of Apache out there.&lt;/p&gt;
+
+&lt;p&gt;For the small chores, being quick and effective matters far more than long-term maintenance concerns. Or how pretty the code is. PHP scales down like no other package for the web and it deserves more credit for tackling that scope. &lt;/p&gt;</content>
+    <link type="text/html" rel="alternate" href="http://feeds.feedburner.com/~r/LoudThinking/~3/263525866/23-the-immediacy-of-php" />
+  <feedburner:origLink>http://www.loudthinking.com/posts/23-the-immediacy-of-php</feedburner:origLink></entry>
+  <entry>
+    <id>tag:www.loudthinking.com,2007:Post22</id>
+    <published>2008-01-29T12:51:00-06:00</published>
+    <updated>2008-01-29T12:52:08-06:00</updated>
+    <title>In it for the long haul</title>
+    <content type="html">&lt;p&gt;Announcing &lt;a href="http://weblog.rubyonrails.org/2008/1/29/railsconf-08-registration-is-open"&gt;RailsConf '08&lt;/a&gt; today, I stopped to think about that by the time this conference rolls around, I will have been working on Ruby on Rails for five years. Wow. There are so many memories from this wild ride that it's at once both hard to fathom that it's been so long and yet it feels like I've been doing it forever. Time can be funny like that.&lt;/p&gt;
+
+&lt;p&gt;But what pleases me the most is that I still absolutely love working on and with Ruby and Rails. It didn't pass, it wasn't just a phase, it wasn't a run for an exit event. I think that's significant because it means that I, and everyone else still involved with the project, are just as likely to keep at this for another five years or more.&lt;/p&gt;
+
+&lt;p&gt;When you do what you love for the sake of itself, the rewards are so much greater than if you just do it for external incentives. For lots of measures of "winning", we've long since won with Ruby on Rails. The impact on the industry, the adoption by thousands of companies and developers, the books, the conferences, and all that jazz. And yet, it doesn't really matter that much in the end. What matters is getting excited about continuing the work.&lt;/p&gt;
+
+&lt;p&gt;In light of this, I strongly recommend that you find a vocation in your life where you just really enjoy the act itself. Not just the results, not just the external incentives. The actual work. There's not enough time to spend it doing anything else.&lt;/p&gt;</content>
+    <link type="text/html" rel="alternate" href="http://feeds.feedburner.com/~r/LoudThinking/~3/225402880/22-in-it-for-the-long-haul" />
+  <feedburner:origLink>http://www.loudthinking.com/posts/22-in-it-for-the-long-haul</feedburner:origLink></entry>
+  <entry>
+    <id>tag:www.loudthinking.com,2007:Post21</id>
+    <published>2008-01-09T23:27:00-06:00</published>
+    <updated>2008-01-10T00:05:11-06:00</updated>
+    <title>The deal with shared hosts</title>
+    <content type="html">&lt;p&gt;Most Rails contributors are not big users of shared hosting and they tend to work on problems or enhancements that'll benefit their own usage of the framework. You don't have to have a degree in formal logic to deduce that work to improve life on shared hosting is not exactly a top priority for these people, myself included.&lt;/p&gt;
+
+&lt;p&gt;That's not a value judgement. It's not saying that shared hosting is bad or evil. It's simply saying that the Rails contributors generally don't use it. By extension, it's not something that we are personally invested in solving as a traditional "scratch your own itch" type of development.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Improve what is for profit and fun&lt;/b&gt;
+&lt;br /&gt;I'd love for Rails to be easy as pie to run in a shared hosting environment, though. I'd love for Rails to be easy as pie to run in any environment. In that "more people could have fun learning Rails and deploying their first hobby application" kind of way. But I don't &lt;i&gt;need&lt;/i&gt; it in the sense that I'm going to put in the work, personally, to make it happen.&lt;/p&gt;
+
+&lt;p&gt;Others might, though. The Dreamhost guys in particular &lt;a href="http://blog.dreamhost.com/2008/01/07/how-ruby-on-rails-could-be-much-better/"&gt;sounds like they're experiencing a lot of hurt&lt;/a&gt; running Rails in their shared hosting environments. That should be a great motivator to jump in and help improve things. The work I do every day to improve Rails is usually about removing hurt. Heck, it's currently in the slogan on the Rails site: "Web development that doesn't hurt".
+&lt;br /&gt;  
+&lt;br /&gt;Second, it sounds like they have a substantial economic interest in making the shared hosting scenario for Rails easier. I read that a fair number of their customers are going elsewhere because they can't get Rails to run well at Dreamhost. Before they leave, though, they probably tax the support system quite heavily as well. So there's direct costs, lost revenues, and probably also a great upside waiting if Rails ran great on their system.&lt;/p&gt;
+
+&lt;p&gt;That's both a personal motive for having a less stressful day and a profit motive for making your business more money. Sounds like a match made in heaven for someone like Dreamhost to get involved and help do the work to make Rails a great shared host experience. They might not have the man-power in-house today to make that happen, but I'm sure they could easily hire their way out of that. If the plan they want to pursue is a better mod_ruby, I'd start looking at that project for people who've contributed and ask if they'd like to earn a living improving the state of affairs.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;We'll work with you if you're willing to work with us&lt;/b&gt;
+&lt;br /&gt;Again, I'd love to see someone tackle this challenge and would be more than happy to work with a group pursuing this to get their results into Rails or working with Rails the best way we can. Consider that an open, standing invitation.&lt;/p&gt;
+
+&lt;p&gt;In exchange, I'll ask a few, small favors. Don't treat the current Rails community as your unpaid vendor. Wipe the wah-wah tears off your chin and retract the threats of imminent calamity if we don't drop everything we're doing to pursue your needs. Stop assuming that it's either a "complete lack of understanding of how web hosting works, or an utter disregard for the real world" that we're not working on issues that would benefit your business. Think of it more as we're all just working on the issues that matters most to our business or interests.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;The alternatives&lt;/b&gt;
+&lt;br /&gt;Now if you're a user of shared hosting and you're not satisfied with the results you're getting &amp;mdash; and you're not getting good vibes that things will be better &amp;mdash; there are alternatives. Lots of them in fact. And it doesn't have to cost an arm and a leg. Self-service VPS outfits like &lt;a href="http://www.slicehost.com/"&gt;Slice Host&lt;/a&gt; has plans starting at $20/month that runs Rails great (I use them to run this site). &lt;a href="http://railsmachine.com/"&gt;RailsMachine&lt;/a&gt; has a Rails-specific setup for $75/month. And for the more high-end stuff, you can get great setups from &lt;a href="http://www.joyent.com"&gt;Joyent&lt;/a&gt;, &lt;a href="http://www.engineyard.com/"&gt;Engine Yard&lt;/a&gt;, and tons of others.&lt;/p&gt;
+
+&lt;p&gt;So as a programmer looking to deploy Rails, you have tons of options in all price ranges. If you're a shared host looking to capitalize on a framework that's driving a lot of demand, it would seem that your best option is to actually get involved and help the community help you. &lt;/p&gt;</content>
+    <link type="text/html" rel="alternate" href="http://feeds.feedburner.com/~r/LoudThinking/~3/214200294/21-the-deal-with-shared-hosts" />
+  <feedburner:origLink>http://www.loudthinking.com/posts/21-the-deal-with-shared-hosts</feedburner:origLink></entry>
+  <entry>
+    <id>tag:www.loudthinking.com,2007:Post20</id>
+    <published>2007-12-30T12:25:00-06:00</published>
+    <updated>2007-12-30T12:26:04-06:00</updated>
+    <title>Don't overestimate the power of versions</title>
+    <content type="html">&lt;p&gt;I've long been impressed and puzzled by the power of big version numbers. To open source projects like Ruby on Rails, it's such a divorced measure of quality or features that I feel we need to take it's importance down a few notches. &lt;/p&gt;
+
+&lt;p&gt;First of all, nothing magical happens when a certain revision of the code base is blessed with a release. It's simply the decision that what we have now should have a label. So when edge revision 8441 is given the alias of Rails 2.0.2, it's just that, an alias.&lt;/p&gt;
+
+&lt;p&gt;In other realms of software development, it might very well imply a large amount of release preparation. Some projects and products go months in a strict feature-freeze mode where only bugs are sought out. Most open source software doesn't adhere to something this stringent, Rails certainly doesn't.&lt;/p&gt;
+
+&lt;p&gt;The only real software-related attribute of versions for Rails is to communicate issues of backwards compatibility. Slapping 2.0 on something is a license to break existing code that has been deprecated in the past. But this really happens so very rarely that it hardly deserves big attention.&lt;/p&gt;
+
+&lt;p&gt;All this is not to say that versions are meaningless, just that they're more about culture and information than about the quality of software. Having a big release is a worthy way of celebrating that things have moved forward since last time we did a release. And to give people a chance to catch up on all the new features. That's great.&lt;/p&gt;
+
+&lt;p&gt;But the problem is that lots of people, especially clients paying the bills of consultants, are overestimating the value of these release names to the point of avoiding newer versions of the repository that fix particular issues that they're dealing with. That doesn't make any sense at all. If you're encountering a bug or desiring a feature that's been included in the latest edge version, you're not doing yourself any favors by waiting for the whim of a release.&lt;/p&gt;
+
+&lt;p&gt;The great thing about open source is that you can control your own release schedule. If you happen to run in to a bug that was fixed 5 revisions past the latest release, you can simply tie your application to exactly that revision and see your problem go away. All the information is available about what changed between the official release and the revision you want to move to. And presumably your test suite will do a reasonable job of catching any adverse changes.&lt;/p&gt;
+
+&lt;p&gt;I think the main problem is that people do not differentiate between low-level systems, like their OS, web server, or database server, and high-level frameworks like Rails. The latter are never unstable in the traditional sense of the word like the former. The risk of applications crashing with segfaults because of a "bad version" of Rails is incredibly unlikely. So the fear and uncertainty of things just going awry in unexplained ways doesn't belong in this realm.&lt;/p&gt;
+
+&lt;p&gt;So please do take control of your own release schedule. It's perfectly fine to start off with a released version, but don't dream up dragons and demons lurking in a newer version of edge. Most of the time, edge is of considerably higher quality than the last released version because we've been committing loads of bug fixes since then. Take advantage of that when you can.&lt;/p&gt;</content>
+    <link type="text/html" rel="alternate" href="http://feeds.feedburner.com/~r/LoudThinking/~3/208570467/20-dont-overestimate-the-power-of-versions" />
+  <feedburner:origLink>http://www.loudthinking.com/posts/20-dont-overestimate-the-power-of-versions</feedburner:origLink></entry>
+  <entry>
+    <id>tag:www.loudthinking.com,2007:Post19</id>
+    <published>2007-12-07T10:50:00-06:00</published>
+    <updated>2007-12-07T10:52:58-06:00</updated>
+    <title>Rails 2.0 is out</title>
+    <content type="html">&lt;p&gt;Yes, yes, I've been awfully quiet here lately. But let's blame that on the long crunch session for Rails 2.0 and call it cheers, ye? It's out, gawd dammit. Finally. After about a year in development and oh-so-many we're-almost-there's. Feels good, does it.&lt;/p&gt;
+
+&lt;p&gt;Now I just have to put the final hand on the new screencast for Rails. The current one is awfully stale.&lt;/p&gt;
+
+&lt;p&gt;So dig in and get it: &lt;a href="http://weblog.rubyonrails.org/2007/12/7/rails-2-0-it-s-done"&gt;Rails 2.0&lt;/a&gt;.&lt;/p&gt;</content>
+    <link type="text/html" rel="alternate" href="http://feeds.feedburner.com/~r/LoudThinking/~3/196722743/19-rails-20-is-out" />
+  <feedburner:origLink>http://www.loudthinking.com/posts/19-rails-20-is-out</feedburner:origLink></entry>
+  <entry>
+    <id>tag:www.loudthinking.com,2007:Post18</id>
+    <published>2007-11-12T21:00:00-06:00</published>
+    <updated>2007-11-12T22:55:11-06:00</updated>
+    <title>Rackspace trouble knocks 37signals offline [back!]</title>
+    <content type="html">&lt;p&gt;Rackspace has had a major power incident at the data center keeping the 37signals suite of machines. Apparently, a traffic accident knocked power out to some vital cooling systems. When the power was restored through generators, the cooling systems failed to come back online.&lt;/p&gt;
+
+&lt;p&gt;They now have the cooling systems back up and are getting everything back online. We hope to be back very shortly.&lt;/p&gt;
+
+&lt;p&gt;No data has been harmed, the machines were preemptively shut down when the cooling systems failed.&lt;/p&gt;
+
+&lt;p&gt;A good number of other applications, such as Wesabe was hit by this as well. Hopefully they'll be back shortly as well.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;UPDATE:&lt;/b&gt; Everything is back in working order. &lt;a href="http://37signals.blogs.com/products/2007/11/downtime-explan.html"&gt;Read more on the product blog&lt;/a&gt;.&lt;/p&gt;</content>
+    <link type="text/html" rel="alternate" href="http://feeds.feedburner.com/~r/LoudThinking/~3/183938767/18-rackspace-trouble-knocks-37signals-offline-back" />
+  <feedburner:origLink>http://www.loudthinking.com/posts/18-rackspace-trouble-knocks-37signals-offline-back</feedburner:origLink></entry>
+  <entry>
+    <id>tag:www.loudthinking.com,2007:Post17</id>
+    <published>2007-10-17T13:28:00-05:00</published>
+    <updated>2007-10-18T09:20:45-05:00</updated>
+    <title>Swearing at work boosts morale</title>
+    <content type="html">&lt;p&gt;Speaking of fuck, &lt;a href="http://www.breitbart.com/article.php?id=071017125814.w6whem5y&amp;show_article=1"&gt;researchers find it to boost morale at work&lt;/a&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote&gt;Regular swearing at work can help boost team spirit among staff, allowing them to express better their feelings as well as develop social relationships, according to a study by researchers.&lt;br/&gt;&lt;br/&gt;"We hope that this study will serve not only to acknowledge the part that swearing plays in our work and our lives, but also to indicate that leaders sometimes need to 'think differently' and be open to intriguing ideas."&lt;/blockquote&gt;&lt;/p&gt;</content>
+    <link type="text/html" rel="alternate" href="http://feeds.feedburner.com/~r/LoudThinking/~3/171619461/17-swearing-at-work-boosts-morale" />
+  <feedburner:origLink>http://www.loudthinking.com/posts/17-swearing-at-work-boosts-morale</feedburner:origLink></entry>
+  <entry>
+    <id>tag:www.loudthinking.com,2007:Post16</id>
+    <published>2007-10-12T14:16:00-05:00</published>
+    <updated>2007-10-12T14:18:03-05:00</updated>
+    <title>Kathy's zones of emotion</title>
+    <content type="html">&lt;p&gt;&lt;a href="http://headrush.typepad.com/creating_passionate_users/2005/01/be_brave.html"&gt;&lt;img src="http://www.loudthinking.com/lt-files/kathy-zones.jpg" width="461" height="317" style="border: 0px" /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I miss Kathy's blogging. Don't you?&lt;/p&gt;</content>
+    <link type="text/html" rel="alternate" href="http://feeds.feedburner.com/~r/LoudThinking/~3/169067266/16-kathys-zones-of-emotion" />
+  <feedburner:origLink>http://www.loudthinking.com/posts/16-kathys-zones-of-emotion</feedburner:origLink></entry>
+  <entry>
+    <id>tag:www.loudthinking.com,2007:Post15</id>
+    <published>2007-10-11T16:08:00-05:00</published>
+    <updated>2007-10-17T10:57:16-05:00</updated>
+    <title>Potty mouths</title>
+    <content type="html">&lt;p&gt;I'm allergic to people who willingly and without irony use the term "potty mouth" in adult conversation. The notion that a word like &lt;i&gt;fuck&lt;/i&gt; can make your brain curl up and cry like a toddler is so pathetically disturbing that it makes my skin crawl. It has the plastic smell of a barbie playhouse and the repressed insecurities of casual friday khakis.&lt;/p&gt;
+
+&lt;p&gt;I can't fucking stand it. &lt;/p&gt;
+
+&lt;p&gt;But at least the potty mouth reaction is a useful leading indicator for personality fits. It's almost as good as the f-bomb reaction. Both are fake euphemisms that are actually much worse than the honest words they're trying to put a fig leaf to. And if you're serious about using them, I'm serious about thinking you're too fucking lame to bother further debate with. &lt;/p&gt;
+
+&lt;p&gt;Which of course is ironic. Since the whole potty mouth fuzz is about distancing yourself from that foul person on the basis of words. Heh. &lt;/p&gt;
+
+&lt;p&gt;But at least us sailors recognize that the sea flows both ways. That by using wonderfully flexible joker words like fuck, we're sending a signal of distance to the inevitable crowd who takes offense from that. The potty mouth crowd seems shocked &amp;mdash; &lt;i&gt;shocked&lt;/i&gt; &amp;mdash; that their language could have a similar effect in the opposite direction.&lt;/p&gt;
+
+&lt;p&gt;Anyway, fuck it (how great is this word? I seriously considered naming this post "Fuck: The Mother Word" but in the end my despise of the potty mouth term won out just slightly over my affection for the word fuck).&lt;/p&gt;
+
+&lt;p&gt;If you want to dive deeper into the wonderful world of cursing, I highly recommend &lt;a href="http://www.tnr.com/docprint.mhtml?i=20071008&amp;s=pinker100807"&gt;What The Fuck: Why We Curse&lt;/a&gt; by Steven Pinker&lt;/p&gt;
+
+&lt;p&gt;P.S.: See also &lt;a href="http://www.youtube.com/watch?v=AUaWCcDlI5s"&gt;Fuck&lt;/a&gt;, a marvelous tour of the utility of this word.&lt;/p&gt;</content>
+    <link type="text/html" rel="alternate" href="http://feeds.feedburner.com/~r/LoudThinking/~3/168632594/15-potty-mouths" />
+  <feedburner:origLink>http://www.loudthinking.com/posts/15-potty-mouths</feedburner:origLink></entry>
+  <entry>
+    <id>tag:www.loudthinking.com,2007:Post14</id>
+    <published>2007-09-24T11:37:00-05:00</published>
+    <updated>2007-09-24T11:40:41-05:00</updated>
+    <title>The language of bias</title>
+    <content type="html">&lt;p&gt;If you don't like something new that's getting a lot of attention, you call it out as being all &lt;i&gt;hype&lt;/i&gt; propelled by &lt;i&gt;fanboys&lt;/i&gt; enamoured by an &lt;i&gt;immature&lt;/i&gt; solution.&lt;/p&gt;
+
+&lt;p&gt;If you like that something new, you say it has &lt;i&gt;momentum&lt;/i&gt; that's being accelerated by passionate &lt;i&gt;advocates&lt;/i&gt; of a &lt;i&gt;fresh&lt;/i&gt; approach.&lt;/p&gt;</content>
+    <link type="text/html" rel="alternate" href="http://feeds.feedburner.com/~r/LoudThinking/~3/160673485/14-the-language-of-bias" />
+  <feedburner:origLink>http://www.loudthinking.com/posts/14-the-language-of-bias</feedburner:origLink></entry>
+  <entry>
+    <id>tag:www.loudthinking.com,2007:Post13</id>
+    <published>2007-09-23T18:58:00-05:00</published>
+    <updated>2007-09-23T19:00:20-05:00</updated>
+    <title>Thinking about The Big Rewrite?</title>
+    <content type="html">&lt;p&gt;Rewriting existing applications from scratch in a Big Bang-style is rarely a good idea and often ends in failure. Chad Fowler wrote a good post summarizing some of the reasons why a year ago: &lt;a href="http://chadfowler.com/2006/12/27/the-big-rewrite"&gt;The Big Rewrite&lt;/a&gt;.&lt;/p&gt;</content>
+    <link type="text/html" rel="alternate" href="http://feeds.feedburner.com/~r/LoudThinking/~3/160380984/13-thinking-about-the-big-rewrite" />
+  <feedburner:origLink>http://www.loudthinking.com/posts/13-thinking-about-the-big-rewrite</feedburner:origLink></entry>
+</feed>

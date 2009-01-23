@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:thr="http://purl.org/syndication/thread/1.0">
+    <title>Ross Mayfield&#39;s Weblog</title>
+    <link rel="self" type="application/atom+xml" href="http://ross.typepad.com/blog/atom.xml" />
+    <link rel="alternate" type="text/html" href="http://ross.typepad.com/blog/" />
+    <id>tag:typepad.com,2003:weblog-3111</id>
+    <updated>2009-01-20T18:22:18-08:00</updated>
+    <subtitle>Markets, Technology &amp; Musings</subtitle>
+    <generator uri="http://www.typepad.com/">TypePad</generator>
+    <entry>
+        <title>On this day</title>
+        <link rel="alternate" type="text/html" href="http://ross.typepad.com/blog/2009/01/on-this-day.html" />
+        <link rel="replies" type="text/html" href="http://ross.typepad.com/blog/2009/01/on-this-day.html" thr:count="5" thr:updated="2009-01-21T00:49:38-08:00" />
+        <id>tag:typepad.com,2003:post-61679694</id>
+        <published>2009-01-20T18:22:18-08:00</published>
+        <updated>2009-01-21T07:36:07-08:00</updated>
+        <summary>On this day, this most historic day, we celebrate what we all believed in. But we didn&#39;t hold our breath. Now breathless, we exhale, knowing that now it all begins.I do not have words for what I feel about Barack...</summary>
+        <author>
+            <name>Ross Mayfield</name>
+        </author>
+        <category scheme="http://www.sixapart.com/ns/types#category" term="politics" />
+        
+        
+<content type="xhtml" xml:lang="en-US" xml:base="http://ross.typepad.com/blog/">
+<div xmlns="http://www.w3.org/1999/xhtml"><p>On this day, this most historic day, we celebrate what we all believed in. But we didn&#39;t hold our breath. Now breathless, we exhale, knowing that now it all begins.</p><p><a href="http://www.flickr.com/photos/zyrc/2994035684/"><img align="right" border="0" hspace="3" src="http://farm4.static.flickr.com/3275/2994035684_fd0dc33d3f.jpg" /></a>I do not have words for what I feel about Barack Hussein Obama inaugurated today as the 44th President of the United States.&#0160; When Rick Klau started talking to me about the man he did his part for in his local district, in electing him to the Senate, I was captivated and felt hope.&#0160; For a rare moment, I feel that politics has <a href="http://www.kottke.org/09/01/the-countrys-new-robotstxt-file">progressed</a> faster than technology.</p><p>My Firefox spellchecker prompts me to correct Barack Obama, but not Hussein.</p><p>And I feel hope again.&#0160; For my children.&#0160; For our global citizenship.&#0160; For who we want to be.&#0160; And how we could get there.</p><p>Obama cannot be successful for us without us.&#0160; He knows that, and <a href="http://www.whitehouse.gov/blog/change_has_come_to_whitehouse-gov/">the new whitehouse.gov</a> reflects more than a progression from his campaign.&#0160; It now serves us and him towards entirely different goals.&#0160; Beyond engagement with civic life as us, I think it could change policy-making forever.</p><p>Washington used to work through lobbying, or institutional pluralism.&#0160; When that failed, Regan used the Bully Pulpit to get people to fax their congressmen, or individual pluralism.&#0160; These tools still work for advancing change.&#0160; And with the web they are amplified.&#0160; But my hope is we don&#39;t activate mass pressure, but smarter pressure.&#0160; Getting citizens together, to deliberate together, to form constituencies before not heard, to gauge multi-disciplinary approaches, and suggest better courses of action. <a href="http://www.extremedemocracy.com/archives/2004/08/chapter_10_soci.html">Emergent pluralism</a> may have its day.</p><p>Today I heard someone <a href="http://www.npr.org/templates/story/story.php?storyId=99473678">on the radio</a> saying the FDR needed to the depression and Lyndon Johnson needed the civil rights movement and other presidents needed citizens demanding solutions to challenges to make them as great as they were.&#0160; This is but one thing for the coming administration, but how they engage us, beginning today, could be the greatest.</p></div>
+</content>
+
+
+    </entry>
+    <entry>
+        <title>Augmenting your Dunbar Number</title>
+        <link rel="alternate" type="text/html" href="http://ross.typepad.com/blog/2009/01/augmenting-your.html" />
+        <link rel="replies" type="text/html" href="http://ross.typepad.com/blog/2009/01/augmenting-your.html" thr:count="1" thr:updated="2009-01-12T09:45:34-08:00" />
+        <id>tag:typepad.com,2003:post-61229484</id>
+        <published>2009-01-12T09:10:57-08:00</published>
+        <updated>2009-01-12T09:45:34-08:00</updated>
+        <summary>The the latest issue of First Monday has an interesting study by Bernardo Huberman and other researchers at HP&#39;s Social Computing Lab on Social Networks that Matter: Twitter Under the Microscope. Among other things, it reveals a hidden network of...</summary>
+        <author>
+            <name>Ross Mayfield</name>
+        </author>
+        <category scheme="http://www.sixapart.com/ns/types#category" term="socialsoftware" />
+        
+        
+<content type="html" xml:lang="en-US" xml:base="http://ross.typepad.com/blog/">
+&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;p&gt;The the latest issue of &lt;a href=&quot;http://firstmonday.org/issue/current&quot;&gt;First Monday&lt;/a&gt; has an interesting study by Bernardo Huberman and other researchers at HP&#39;s Social Computing Lab on &lt;a href=&quot;http://firstmonday.org/htbin/cgiwrap/bin/ojs/index.php/fm/article/view/2317/2063&quot;&gt;Social Networks that Matter: Twitter Under the Microscope.&lt;/a&gt;&amp;nbsp; Among other things, it reveals a hidden network of relationships underpins those declared in our use of Twitter:&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;In conclusion, even when using a very weak definition of “friend” (&lt;em&gt;i.e.&lt;/em&gt;, anyone who a user has directed a post to at least twice) we find that Twitter users have a very small number of friends compared to the number of followers and followees they declare. This implies the existence of two different networks: a very dense one made up of followers and followees, and a sparser and simpler network of actual friends. The latter proves to be a more influential network in driving Twitter usage since users with many actual friends tend to post more updates than users with few actual friends. On the other hand, users with many followers or followees post updates more infrequently than those with few followers or followees.&lt;/p&gt;&lt;/blockquote&gt;&lt;p&gt;In &lt;a href=&quot;http://confusedofcalcutta.com/2009/01/11/of-followers-and-followees-and-friends/&quot;&gt;JP Rangaswami&#39;s read of the study&lt;/a&gt;, he is holding on to a hunch.&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;I’ve tended to believe that if anything, social software would help raise the Dunbar number. The studies above suggest this is not the case. But I’m still holding on to my hunch.&lt;/p&gt;
+
+&lt;p&gt;Why? Because I think we live in an age where there something wonderful happening, something that just has to affect the Dunbar number, something that is accentuated by social software.&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img align=&quot;right&quot; border=&quot;0&quot; src=&quot;http://confusedofcalcutta.com/wp-content/uploads/2009/01/22556.gif&quot;&gt;Something wonderful is happening, but it is augmentation, not accentuation. The &lt;a href=&quot;http://radio.weblogs.com/0114726/2003/03/28.html#a367&quot;&gt;Dunbar limit of 150&lt;/a&gt; is the number of people and how they are related to each other at a moment in time.&amp;nbsp; It is a cognitive constraint, a ceiling that can&#39;t be broken (perhaps until neurotechnology messes with our wetware).&lt;/p&gt;
+
+&lt;p&gt;What Social Software can do for your Dunbar number is help what goes in and out of the 150.&amp;nbsp; Help you discover people you should add to your network.&amp;nbsp; Stay in touch with old friends so they can be active friends for at least a moment in time.&amp;nbsp; Help others sift out of view.&amp;nbsp; Your Dunbar number is made up of both strong and weak ties that happen to all be related somehow to you for a moment in time.&amp;nbsp; Social Software has even more potential to help refresh your cache of 150 for a moment in time to serve your changing needs.&lt;/p&gt;&lt;/div&gt;
+</content>
+
+
+    </entry>
+ 
+</feed>
+<!-- ph=1 -->
+<!-- nhm:dynamic-ssi -->

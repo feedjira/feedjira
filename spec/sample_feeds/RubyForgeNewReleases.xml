@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<!DOCTYPE rss SYSTEM "http://my.netscape.com/publish/formats/rss-0.9.dtd">
+<rss version="0.9">
+ <channel>
+  <pubDate>Fri, 23 Jan 2009 03:01:30 GMT</pubDate>
+  <description>RubyForge New Releases</description>
+  <link>http://rubyforge.org</link>
+  <title>RubyForge New Releases</title>
+  <webMaster>webmaster@rubyforge.org</webMaster>
+  <language>en-us</language>
+  <item>
+   <title>Ronin</title>
+   <link>http://rubyforge.org/project/showfiles.php?group_id=3798</link>
+   <description>ronin-exploits 0.1.1 Released</description>
+  </item>
+  <item>
+   <title>groff</title>
+   <link>http://rubyforge.org/project/showfiles.php?group_id=7433</link>
+   <description>Groff 0.2.0</description>
+  </item>
+  <item>
+   <title>ruby-smpp</title>
+   <link>http://rubyforge.org/project/showfiles.php?group_id=5975</link>
+   <description>ruby-smpp 0.1.2 Released</description>
+  </item>
+  <item>
+   <title>yamltest - write tests in YAML</title>
+   <link>http://rubyforge.org/project/showfiles.php?group_id=7690</link>
+   <description>yamltest 0.5.0 Released</description>
+  </item>
+  <item>
+   <title>Oupsnow</title>
+   <link>http://rubyforge.org/project/showfiles.php?group_id=7685</link>
+   <description>[ANN] oupsnow 0.1.0 Released</description>
+  </item>
+  <item>
+   <title>Keystroke Dynamics</title>
+   <link>http://rubyforge.org/project/showfiles.php?group_id=7590</link>
+   <description>ksd 0.0.1 Released</description>
+  </item>
+  <item>
+   <title>Seattle.rb Projects</title>
+   <link>http://rubyforge.org/project/showfiles.php?group_id=1513</link>
+   <description>wilson 1.0.0 Released</description>
+  </item>
+  <item>
+   <title>ParseTree - ruby parse tree tools</title>
+   <link>http://rubyforge.org/project/showfiles.php?group_id=439</link>
+   <description>ruby_parser 2.0.2 Released</description>
+  </item>
+  <item>
+   <title>BFTS</title>
+   <link>http://rubyforge.org/project/showfiles.php?group_id=1040</link>
+   <description>minitest 1.3.1 Released</description>
+  </item>
+  <item>
+   <title>Rhodes Framework</title>
+   <link>http://rubyforge.org/project/showfiles.php?group_id=7383</link>
+   <description>rhodes 0.2.1 Released</description>
+  </item>
+ </channel>
+</rss>

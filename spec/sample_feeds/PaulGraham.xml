@@ -1,0 +1,21 @@
+<feed xmlns='http://www.w3.org/2005/Atom'>
+	<title>Paul Graham</title>
+	<id>http://paulgraham.infogami.com/</id>
+	<link rel="self" href="http://paulgraham.infogami.com/blog/atom.xml" />
+	<link rel="alternate" href="http://paulgraham.infogami.com/blog" type="text/html" />
+	<subtitle>Infogami Beta Tester</subtitle>
+    <entry>
+        <title>Bye</title>
+        <id>http://paulgraham.infogami.com/blog/bye</id>
+        <link href="http://paulgraham.infogami.com/blog/bye" />
+        <updated>2007-06-15T09:50:54.337718-08:00</updated>
+        <author><name>paulgraham</name></author>
+        <content type="html">&lt;p&gt;14 June 2007&lt;/p&gt;
+
+&lt;p&gt;Since Infogami generally and this blog in particular have been abandoned, I deleted all the posts.  I may put
+some on paulgraham.com.  If there are any you miss, let me know.&lt;/p&gt;
+
+&lt;p&gt;--pg&lt;/p&gt;</content>
+    </entry>
+</feed>
+

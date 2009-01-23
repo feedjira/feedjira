@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>mbg notes</title>
+    <link>http://dev.massivebraingames.com</link>
+    <language>en</language>
+    <webMaster>contact@massivebraingames.com (Massive Brain Games)</webMaster>
+    <copyright>Copyright 2007-2009</copyright>
+    <ttl>60</ttl>
+    <pubDate>Tue, 09 Dec 2008 18:42:00 GMT</pubDate>
+    <description>Massive Brain Games developers notes</description>
+    <item>
+      <title>A DB admin interface written in Rails</title>
+      <link>http://dev.massivebraingames.com/past/2008/10/21/a_db_admin_interface_written/</link>
+      <pubDate>Tue, 21 Oct 2008 20:44:00 GMT</pubDate>
+      <guid>http://dev.massivebraingames.com/past/2008/10/21/a_db_admin_interface_written/</guid>
+      <author>isc@massivebraingames.com (Ivan Schneider)</author>
+      <description>&lt;p&gt;The Rails Rumble 2008 took place last week end and we took this contest as an opportunity to bootstrap a project we had in mind for some time. I teamed up with Jessy Bernal, with whom I am developing at &lt;a href="http://massivebraingames.com"&gt;Massive Brain Games&lt;/a&gt;, and Sylvain Utard, the creator of &lt;a href="http://liveonbankiz.org"&gt;Live On Bankiz&lt;/a&gt;. The said project is a DB interface written in Rails and meant as a replacement for the classic phpMyAdmin. Not an extremely original idea I must confess but we found nonetheless a few reasons that motivated this project.&lt;/p&gt;
+
+&lt;p&gt;First of all, it's kind of annoying to install a php application on an otherwise ruby only server. We also find that the phpMyAdmin is quite old and gray, not really up to date with the latest javascript tricks we are all now accustomed to. Finally we thought there was some room for innovation by taking advantage of the different conventions Rails has set up for DB schemas.&lt;/p&gt;
+
+&lt;p&gt;With these two days of rush we were able to develop an alpha version of the product. We're fully aware that there are quite a few bugs and that it's far from complete. However it still makes an acceptable proof of concept which demonstrates a bunch of interesting features. You can check out the &lt;a href="http://sociallibrary.r08.railsrumble.com"&gt;Rails Rumble deployment&lt;/a&gt; or watch the screencast.&lt;/p&gt;
+
+&lt;p&gt;&lt;object width="400" height="300"&gt;    &lt;param name="allowfullscreen" value="true" /&gt;    &lt;param name="allowscriptaccess" value="always" /&gt;    &lt;param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=2046491&amp;amp;server=vimeo.com&amp;amp;show_title=1&amp;amp;show_byline=1&amp;amp;show_portrait=0&amp;amp;color=&amp;amp;fullscreen=1" /&gt;    &lt;embed src="http://vimeo.com/moogaloop.swf?clip_id=2046491&amp;amp;server=vimeo.com&amp;amp;show_title=1&amp;amp;show_byline=1&amp;amp;show_portrait=0&amp;amp;color=&amp;amp;fullscreen=1" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="400" height="300"&gt;&lt;/embed&gt;&lt;/object&gt;&lt;br /&gt;&lt;a href="http://vimeo.com/2046491?pg=embed&amp;amp;sec=2046491"&gt;rbDB web-based mysql admin with conventions&lt;/a&gt; from &lt;a href="http://vimeo.com/bernal?pg=embed&amp;amp;sec=2046491"&gt;Jessy Bernal&lt;/a&gt; on &lt;a href="http://vimeo.com?pg=embed&amp;amp;sec=2046491"&gt;Vimeo&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;We named the application rbDB and will soon opensource it. We hope that we'll find people interested in this project and that the first step they will take in supporting us will be to &lt;a href="http://sociallibrary.vote.railsrumble.com/"&gt;vote for our application on Rails Rumble&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;p&gt;UPDATE: &lt;a href="http://github.com/redox/rbdb"&gt;rbDB is on github&lt;/a&gt;&lt;/p&gt;</description>
+      <category domain="http://dev.massivebraingames.com/past/tags/rails">rails</category>
+      <category domain="http://dev.massivebraingames.com/past/tags/rbdb">rbdb</category>
+      <category domain="http://dev.massivebraingames.com/past/tags/rumble">rumble</category>
+    </item>
+    <item>
+      <title>Keyboard navigation for TextMate stacktraces</title>
+      <link>http://dev.massivebraingames.com/past/2008/6/29/keyboard_navigation_for_textmate_stacktraces/</link>
+      <pubDate>Sun, 29 Jun 2008 23:49:00 GMT</pubDate>
+      <guid>http://dev.massivebraingames.com/past/2008/6/29/keyboard_navigation_for_textmate_stacktraces/</guid>
+      <author>isc@massivebraingames.com (Ivan Schneider)</author>
+      <description>&lt;p&gt;I love the fact that in TextMate almost anything has a keyboard shortcut or can be assigned one. However there is still one action that requires me to resort to the mouse; clicking the links in a stacktrace to get to the incriminating file. This led me to write this JavaScript snippet:&lt;/p&gt;
+
+&lt;pre&gt;
+document.addEventListener('keypress', function(e){
+    var key = e.keyCode
+    if (key != 63233 &amp;&amp; key != 63232) return
+    links = document.getElementsByTagName('a')
+    for (var i = 1; i &lt; links.length; i++)
+        if (links[i].title == 'focused') break
+    if (i == links.length) i = 0
+    links[i].title = null
+    if (key == 63233){
+        if (i == (links.length - 1)) i = 1
+        else i += 1
+    }
+    if (key == 63232){
+        if (i &lt;= 1) i = links.length - 1
+        else i -= 1
+    }
+    links[i].title = 'focused'
+    links[i].focus()
+})
+&lt;/pre&gt;
+
+&lt;p&gt;It allows to navigate through the links of the html output with the up and down arrows and then pressing &lt;em&gt;enter&lt;/em&gt; opens the file. I don't need the mouse for that anymore, mission accomplished.&lt;/p&gt;
+
+&lt;p&gt;I put this script at the end of &lt;em&gt;/Applications/TextMate.app/Contents/SharedSupport/Support/script/webpreview.js&lt;/em&gt;. There might be a cleaner place to put this, but I didn't find it right away so I settled for this though I might have to re-paste it at the next TextMate update.&lt;/p&gt;</description>
+      <category domain="http://dev.massivebraingames.com/past/tags/javascript">javascript</category>
+      <category domain="http://dev.massivebraingames.com/past/tags/textmate">textmate</category>
+    </item>
+    <item>
+      <title>A pl_analyze log viewer with Merb</title>
+      <link>http://dev.massivebraingames.com/past/2008/5/12/pl_analyze_log_viewer/</link>
+      <pubDate>Mon, 12 May 2008 01:23:00 GMT</pubDate>
+      <guid>http://dev.massivebraingames.com/past/2008/5/12/pl_analyze_log_viewer/</guid>
+      <author>isc@massivebraingames.com (Ivan Schneider)</author>
+      <description>&lt;p&gt;If you don't know it already, &lt;a href="http://seattlerb.rubyforge.org/production_log_analyzer/"&gt;production_log_analyzer&lt;/a&gt; is a nice gem which provides different tools to analyze log files of a Rails application. &lt;em&gt;pl_analyze&lt;/em&gt; is one of those tools and produces text reports on the time spent in the different actions of your Rails app.&lt;/p&gt;
+
+&lt;p&gt;I find these reports already quite useful as they are but I thought they could be more usable if only I could easily change the order in which the actions are presented. So I wrote a tiny application to present my reports in a sortable table.&lt;/p&gt;
+
+&lt;p&gt;There's nothing really fancy technically speaking, and it really didn't take too much time to get it done, but I thought I could share &lt;a href="/pl_analyze_viewer"&gt;the result&lt;/a&gt; as well as write down a few notes on the steps I took.&lt;/p&gt;
+
+&lt;h4&gt;Some home brewed javascript and sorttable.js&lt;/h4&gt;
+
+&lt;p&gt;I started by writing a bunch of javascript functions to parse  the reports and build three html tables with the data.&lt;/p&gt;
+
+&lt;p&gt;A search for "javascript sort table" led me to &lt;a href="http://www.kryogenix.org/code/browser/sorttable/"&gt;sorttable.js&lt;/a&gt; which is unobtrusive and easy to use. I wanted alternate colors on my rows for better readability of my tables so I had to tweak it a little bit.&lt;/p&gt;
+
+&lt;h4&gt;A taste of Merb&lt;/h4&gt;
+
+&lt;p&gt;Given the fact that almost all of the action happens on the client side, all I really needed from the server side was a single action for the log upload. I thought it could be a good opportunity to take a first shot at &lt;a href="http://merbivore.com"&gt;Merb&lt;/a&gt; and take advantage of the flat app structure. Even though my Merb app was ridiculously small I still learned a few things along the way.&lt;/p&gt;
+
+&lt;p&gt;First I didn't know where to put my static files since creating a public directory didn't work for my flat app. I couldn't get google to help me so I looked through the source and found out quickly enough that I just had to put them in the root dir of my app since the server root was set to an empty string.&lt;/p&gt;
+
+&lt;p&gt;I also learned how to disable the sessions (I didn't need them and they were conflicting with the rails app serving this blog). It turned out to be really easy, just had to remove three lines config/init.rb which were configuring these sessions.&lt;/p&gt;
+
+&lt;p&gt;It's also worth mentioning that I encountered a few errors thus allowing me to see the Merb exception page which I think is quite neat; nice style, folded code for each line in the stacktrace plus links to open the files directly in TextMate.&lt;/p&gt;
+
+&lt;p&gt;I deployed this tiny app on a &lt;a href="http://code.macournoyer.com/thin/"&gt;thin&lt;/a&gt; backend with nginx on the front and it's accessible &lt;a href="/pl_analyze_viewer"&gt;right here&lt;/a&gt;. Maybe some people will find this a bit useful, i know i do. I'm looking forward to reading any comment you may have.&lt;/p&gt;</description>
+      <category domain="http://dev.massivebraingames.com/past/tags/javascript">javascript</category>
+      <category domain="http://dev.massivebraingames.com/past/tags/merb">merb</category>
+      <category domain="http://dev.massivebraingames.com/past/tags/planalyze">planalyze</category>
+    </item>
+  </channel>
+</rss>

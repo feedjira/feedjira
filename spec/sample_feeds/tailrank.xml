@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="http://feeds.feedburner.com/~d/styles/rss1full.xsl" type="text/xsl" media="screen"?><?xml-stylesheet href="http://feeds.feedburner.com/~d/styles/itemcontent.css" type="text/css" media="screen"?><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:admin="http://webns.net/mvcb/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:cc="http://web.resource.org/cc/" xmlns="http://purl.org/rss/1.0/">
+
+<channel rdf:about="http://blog.tailrank.com/">
+<title>tailrank</title>
+<link>http://blog.tailrank.com/</link>
+<description />
+<dc:language>en-US</dc:language>
+<dc:creator />
+<dc:date>2007-10-04T11:19:27-07:00</dc:date>
+<admin:generatorAgent rdf:resource="http://www.typepad.com/" />
+
+
+<items>
+<rdf:Seq><rdf:li rdf:resource="http://blog.tailrank.com/2007/10/tailrank-25-now.html" />
+<rdf:li rdf:resource="http://blog.tailrank.com/2007/07/tailrank-on-lun.html" />
+<rdf:li rdf:resource="http://blog.tailrank.com/2007/03/now_indexing_ov.html" />
+<rdf:li rdf:resource="http://blog.tailrank.com/2007/03/tailrank_is_the.html" />
+<rdf:li rdf:resource="http://blog.tailrank.com/2007/03/tailrank_and_th.html" />
+<rdf:li rdf:resource="http://blog.tailrank.com/2007/01/tailrank_blocks.html" />
+<rdf:li rdf:resource="http://blog.tailrank.com/2006/12/tailrank_21_now.html" />
+<rdf:li rdf:resource="http://blog.tailrank.com/2006/12/tailrank_follow.html" />
+<rdf:li rdf:resource="http://blog.tailrank.com/2006/12/tailrank_on_the.html" />
+<rdf:li rdf:resource="http://blog.tailrank.com/2006/11/tailrank_mobile.html" />
+</rdf:Seq>
+</items>
+
+<atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" href="http://feeds.feedburner.com/Tailrank" type="application/rss+xml" /></channel>
+
+<item rdf:about="http://blog.tailrank.com/2007/10/tailrank-25-now.html">
+<title>Tailrank 2.5 Now Available</title>
+<link>http://blog.tailrank.com/2007/10/tailrank-25-now.html</link>
+<description>Not only are we announcing Spinn3r 2.0 today but we're announcing that a new version of Tailrank is being released as well. If you've been a regular reader of Tailrank over the last few months you might have noticed a...</description>
+<content:encoded>&lt;p&gt;&lt;img src="http://blog.tailrank.com/200710031724.jpg" height="52" width="197" border="1" align="right" hspace="4" vspace="4" alt="200710031724" /&gt;Not only are we &lt;a href="http://blog.spinn3r.com/2007/10/announcing-spin.html"&gt;announcing Spinn3r 2.0 today&lt;/a&gt; but we're announcing that a new version of &lt;a href="http://tailrank.com"&gt;Tailrank&lt;/a&gt; is being released as well.&lt;/p&gt;
+
+&lt;p&gt;If you've been a regular reader of Tailrank over the last few months you might have noticed a number of incremental improvements.  Tailrank 2.5 is far more evolutionary than revolutionary.  &lt;/p&gt;
+
+&lt;p&gt;We've spent a &lt;b&gt;lot&lt;/b&gt; of time focusing accuracy of Tailrank's core internal algorithms.   What works for one blog or even 1M of blogs in our index tends to fail from time to time when working on 12M blogs. &lt;/p&gt;
+
+&lt;p&gt;In this release you'll also see:&lt;/p&gt;
+
+&lt;h2&gt;MUCH Larger index&lt;/h2&gt;
+
+&lt;p&gt;Tailrank uses &lt;a href="http://spinn3r.com"&gt;Spinn3r 2.0&lt;/a&gt; as it's core crawling platform. Spinn3r 2.0 is now indexing 12M weblogs which means that Tailrank has a much larger index as well.&lt;/p&gt;
+
+&lt;p&gt;This makes Tailrank a &lt;b&gt;lot&lt;/b&gt; more democratic (as well as the largest memetracker).  You don't have to be an A-list blogger anymore.  Now you just have to say something insightful and intelligent and you'll be included in the discussion.&lt;/p&gt;
+
+&lt;h2&gt;Improved Document Clustering&lt;/h2&gt;
+
+&lt;p&gt;We've improved upon the design of our clustering algorithms so they can process &lt;strong&gt;much&lt;/strong&gt; more data than before.  In fact, we're now clustering within a sixty day window so that if newly published stories cover a meme which happens in the past it will be published within the correct meme.&lt;/p&gt;
+
+&lt;h2&gt;Spam Prevention&lt;/h2&gt;
+
+&lt;p&gt;As usual we've spent a &lt;b&gt;lot&lt;/b&gt; of time on &lt;a href="http://blog.spinn3r.com/2007/07/post-mortem-of-.html"&gt;spam prevention&lt;/a&gt;.  &lt;/p&gt;
+
+&lt;p&gt;A great deal of this work has been done within Spinn3r but there's another layer on top of Tailrank which handles other types of spam which are fatal for memetrackers but not for regular web crawlers.&lt;/p&gt;
+
+&lt;h2&gt;Improved Accuracy&lt;/h2&gt;
+
+&lt;p&gt;A lot of time and effort has been spent improving our summary extraction, post categorization (tech, politics, etc), and title extraction.&lt;/p&gt;
+
+&lt;p&gt;This seems like a smaller issue but it really helps Tailrank seem professional and seriously improves the readability of the product.&lt;/p&gt;
+
+&lt;h2&gt;What's Next for Tailrank?&lt;/h2&gt;
+
+&lt;p&gt;We're hard at work on Tailrank 3.0.  This will unify technology present in Tailrank with the Spinn3r backend which is now more advanced in a number of areas.&lt;/p&gt;
+
+&lt;p&gt;Tailrank 3.0 will be a &lt;b&gt;big&lt;/b&gt; release for us.  Just as big as Tailrank 2.0 which we launched nearly a year ago.&lt;/p&gt;</content:encoded>
+
+
+<dc:subject>memetrackers</dc:subject>
+<dc:subject>msm</dc:subject>
+<dc:subject>search</dc:subject>
+<dc:subject>tailrank</dc:subject>
+
+<dc:creator>burtonator</dc:creator>
+<dc:date>2007-10-04T11:19:27-07:00</dc:date>
+</item>
+<item rdf:about="http://blog.tailrank.com/2007/07/tailrank-on-lun.html">
+<title>Tailrank on LunchMeet</title>
+<link>http://blog.tailrank.com/2007/07/tailrank-on-lun.html</link>
+<description>Jonathan and I had the opportunity to hang out with Eddie last week for LunchMeet: The blogosphere is a noisy place filled with many interconnected conversations on all sorts of disperate topics. Tailrank, which calls itself a memetracker, is a...</description>
+<content:encoded>&lt;p&gt;&lt;a href="http://www.podtech.net/home/3524/lunchmeet-tracking-memes-with-tailrank"&gt;&lt;img src="http://feedblog.org/files/2007/07/200707090019-tm.jpg" height="133" width="160" border="1" align="right" hspace="4" vspace="4" alt="200707090019" /&gt;&lt;/a&gt;Jonathan and I had the opportunity to &lt;a href="http://www.podtech.net/home/3524/lunchmeet-tracking-memes-with-tailrank"&gt;hang out with Eddie last week for LunchMeet&lt;/a&gt;:&lt;/p&gt;
+
+&lt;blockquote&gt;The blogosphere is a noisy place filled with many interconnected conversations on all sorts of disperate topics. Tailrank, which calls itself a memetracker, is a service that tracks the zeitgeist of conversations in the blogosphere. I sat down with Kevin Burton, Tailrank's CEO and founder, and Jonathan Moore, brilliant engineer and hacker, at their home office to learn a bit about their services. Tailrank is built upon Spinn3r, another service that Burton and Moore built, that spiders and indexes the blogosphere.&lt;/blockquote&gt;</content:encoded>
+
+
+<dc:subject>tailrank</dc:subject>
+
+<dc:creator>burtonator</dc:creator>
+<dc:date>2007-07-09T00:34:03-07:00</dc:date>
+</item>
+<item rdf:about="http://blog.tailrank.com/2007/03/now_indexing_ov.html">
+<title>Tailrank Now Indexing over 1M Weblogs</title>
+<link>http://blog.tailrank.com/2007/03/now_indexing_ov.html</link>
+<description>Today is a big day for Tailrank. We have two announcements. The first is that Tailrank is now indexing over 1M weblogs. This should really help prevent the echo chamber problem which seems all too common with the blogosphere. The...</description>
+<content:encoded>&lt;p&gt;Today is a big day for Tailrank.  &lt;/p&gt;
+
+&lt;p&gt;We have two announcements.  The first is that Tailrank is now indexing over 1M weblogs.&lt;/p&gt;
+
+&lt;p&gt;This should really help prevent the echo chamber problem which seems all too common with the blogosphere.&lt;/p&gt;
+
+&lt;p&gt;The second is that we're launching &lt;a href="http://spinn3r.com"&gt;Spinn3r&lt;/a&gt;.&lt;/p&gt;</content:encoded>
+
+
+
+<dc:creator>burtonator</dc:creator>
+<dc:date>2007-03-28T11:57:42-07:00</dc:date>
+</item>
+<item rdf:about="http://blog.tailrank.com/2007/03/tailrank_is_the.html">
+<title>Tailrank is the 'Cream of the Crop'</title>
+<link>http://blog.tailrank.com/2007/03/tailrank_is_the.html</link>
+<description>Frantic Industries did a review of eight memetrackers. Long story short. Tailrank is the 'Cream of the Crop' (which I won't argue with). When it comes to news aggregation, Tailrank clusters the articles revolving around one main story, but it...</description>
+<content:encoded>&lt;p&gt;&lt;a href="http://franticindustries.com/blog/"&gt;Frantic Industries&lt;/a&gt; did a &lt;a href="http://franticindustries.com/blog/2007/03/14/big-memetracker-roundup-8-news-aggregators-reviewed/"&gt;review of eight memetrackers&lt;/a&gt;.  Long story short.  Tailrank is the 'Cream of the Crop' (which I won't argue with).&lt;/p&gt;
+
+&lt;blockquote&gt;When it comes to news aggregation, Tailrank clusters the articles revolving around one main story, but it doesn’t show as many stories as Techmeme or Megite right on the front page. To some, this will be a disadvantage, while others will appreciate less clutter and more clarity that this approach offers. It also gives Tailrank a very “neat” design, contrasted to sometimes chaotic look of the competitors. Tailrank also shows the top news items for today and yesterday in a handy box on the right side of the page.
+
+&lt;p&gt;Overall, Tailrank is the cream of the crop. Its smooth design, solid number of additional features and tools and timely deliverance of news will make it a favorite choice for many. &lt;/blockquote&gt;&lt;/p&gt;</content:encoded>
+
+
+<dc:subject>memetrackers</dc:subject>
+<dc:subject>tailrank</dc:subject>
+
+<dc:creator>burtonator</dc:creator>
+<dc:date>2007-03-15T17:30:20-07:00</dc:date>
+</item>
+<item rdf:about="http://blog.tailrank.com/2007/03/tailrank_and_th.html">
+<title>Tailrank and the San Francisco Wireless Office in the Chronicle</title>
+<link>http://blog.tailrank.com/2007/03/tailrank_and_th.html</link>
+<description>Dan Fost wrote a great piece in the Chronicle about the San Francisco wireless beduin flashmob: A new breed of worker, fueled by caffeine and using the tools of modern technology, is flourishing in the coffeehouses of San Francisco. Roaming...</description>
+<content:encoded>&lt;p&gt;Dan Fost wrote a &lt;a href="http://www.sfgate.com/cgi-bin/article.cgi?f=/c/a/2007/03/11/BEDOUINS.TMP"&gt;great piece&lt;/a&gt; in the Chronicle about the San Francisco wireless beduin flashmob:&lt;/p&gt;
+
+&lt;blockquote&gt;A new breed of worker, fueled by caffeine and using the tools of modern technology, is flourishing in the coffeehouses of San Francisco. Roaming from cafe to cafe and borrowing a name from the nomadic Arabs who wandered freely in the desert, they've come to be known as "bedouins." 
+
+&lt;p&gt;...&lt;/p&gt;
+
+&lt;p&gt;Burton arrives at 11 a.m., and his lead engineer, &lt;a href="http://0x0000.org/"&gt;Jonathan Moore&lt;/a&gt;, 30, arrives a few minutes later. Burton has a double latte and a cupcake, and starts explaining how his site uses "wisdom of the crowds" algorithms to scrape the hottest news from the blogosphere and upend the mainstream media.&lt;/p&gt;
+
+&lt;p&gt;As he talks, Gallagher joins in, and advises, "Lower your voice. I already know the ins and outs of your business plan from the last time I was here." &lt;/blockquote&gt;&lt;/p&gt;
+
+&lt;p&gt;Check out the &lt;a href="http://www.sfgate.com/cgi-bin/object/article?f=/c/a/2007/03/11/BEDOUINS.TMP&amp;amp;o=0"&gt;flash coverage as well&lt;/a&gt;.  Pretty slick and innovative for mainstream media!&lt;/p&gt;
+
+&lt;p&gt;Jonathan (foreground) joined the company about a month ago.  We've both been really heads down working on some cool stuff (stay tuned).&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://www.feedblog.org/200703102157.jpg" onclick="window.open('http://www.feedblog.org/200703102157.jpg','popup','width=577,height=407,scrollbars=no,resizable=yes,toolbar=no,directories=no,location=no,menubar=no,status=yes,left=0,top=0');return false"&gt;&lt;img src="http://www.feedblog.org/200703102157-tm.jpg" height="282" width="400" border="1" hspace="4" vspace="4" alt="200703102157" /&gt;&lt;/a&gt;&lt;/p&gt;</content:encoded>
+
+
+<dc:subject>tailrank</dc:subject>
+
+<dc:creator>burtonator</dc:creator>
+<dc:date>2007-03-10T23:39:52-08:00</dc:date>
+</item>
+<item rdf:about="http://blog.tailrank.com/2007/01/tailrank_blocks.html">
+<title>Tailrank Blocks PayPerPost Bloggers</title>
+<link>http://blog.tailrank.com/2007/01/tailrank_blocks.html</link>
+<description>Today Tailrank had the unfortunate task of blocking a few weblogs from Tailrank's index due to link spamming. These were PayPerPost bloggers linking to Sproose which purchased a PayPerPost campaign to astroturf their release. We have no problem with bloggers...</description>
+<content:encoded>&lt;p&gt;&lt;a href="http://blog.tailrank.com/200701011442.jpg" onclick="window.open('http://blog.tailrank.com/200701011442.jpg','popup','width=230,height=230,scrollbars=no,resizable=yes,toolbar=no,directories=no,location=no,menubar=no,status=yes,left=0,top=0');return false"&gt;&lt;img src="http://blog.tailrank.com/200701011442-tm.jpg" height="184" width="184" border="0" align="right" hspace="4" vspace="4" alt="200701011442" /&gt;&lt;/a&gt;Today &lt;a href="http://tailrank.com"&gt;Tailrank&lt;/a&gt; had the unfortunate task of blocking a few weblogs from &lt;a href="http://tailrank.com"&gt;Tailrank's&lt;/a&gt; index due to &lt;a href="http://www.notsorelevant.com/2006-12-29/payperpost-affects-tailrank/"&gt;link spamming&lt;/a&gt;. &lt;/p&gt;
+
+&lt;p&gt;These were &lt;a href="http://tailrank.com/posts/find/?q=payperpost"&gt;PayPerPost&lt;/a&gt; bloggers linking to &lt;a rel="nofollow" href="http://www.sproose.com"&gt;Sproose&lt;/a&gt; which purchased a PayPerPost campaign to astroturf their release.&lt;/p&gt;
+
+&lt;p&gt;We have &lt;b&gt;no&lt;/b&gt; problem with bloggers selling ads and trying to make money but this type of linking behavior is essentially spam.&lt;/p&gt;
+
+&lt;p&gt;We're willing to reinstate these blogs if they'll migrate to using rel="nofollow" for future PayPerPost sponsored posts.  For  example, nearly all links in this post use &lt;a href="http://microformats.org/wiki/rel-nofollow"&gt;rel="nofollow"&lt;/a&gt; to avoid confusing memetrackers and search engines.&lt;/p&gt;
+
+&lt;p&gt;Sproose is also blocked and we're willing to reinstate them as well if they'll stop running PayPerPost campaigns without insisting on a nofollow link.  Spam is a top priority for a search engine and for them to resort to link spam to advertise their product is a bit hypocritical.  &lt;/p&gt;
+
+&lt;p&gt;The &lt;a href="http://tailrank.com/1015261/Can-people-build-a-better-search-engine-with-social-search"&gt;spammed post&lt;/a&gt; will remain in our index for historical purposes but the ranking is reset and won't show up on any of our archive pages.&lt;/p&gt;
+
+&lt;p&gt;To date, we've been very trusting when adding weblogs to our index.  This has paid off because we haven't attracted the spam that is problematic with other services.  In fact, this is only one of a handful of spam posts we've had to deal with in the last year since our launch.&lt;/p&gt;
+
+&lt;p&gt;PayPerPost has received a &lt;a href="http://www.techcrunch.com/2006/06/30/payperpostcom-offers-to-buy-your-soul/"&gt;great deal of criticism&lt;/a&gt; in the press for their lack of ethics.  What I find most disturbing is the fact that PayPerPost is willing to hurt the search rankings of bloggers by not communicating the problems (spam) with selling links.  &lt;/p&gt;
+
+&lt;p&gt;Tailrank isn't the only large site with this policy.  &lt;a href="http://www.feedblog.org/2006/11/buy_links_and_g.html"&gt;MSN search has also promised&lt;/a&gt; to block websites that sell links.  They're sending off email messages notifying them that they've been dropped from their index:&lt;/p&gt;
+
+&lt;blockquote&gt;Your site is acquiring links through posting to or exchanging links with sites unrelated to your site content. Techniques which attempt to acquire unrelated spam links in order to increase ranking are considered spam and your site has been excluded from our index as results. Please contact us once you've removed these links and we will reevaluate. &lt;/blockquote&gt;
+
+&lt;p&gt;The only party I find at fault here is PayPerPost.  We'd really love to reinstate these bloggers and add them back to our index and welcome them home with open arms.  I assume they simply weren't aware of the problems with selling this type of link spam.&lt;/p&gt;</content:encoded>
+
+
+<dc:subject>feeds</dc:subject>
+<dc:subject>memetrackers</dc:subject>
+<dc:subject>RSS</dc:subject>
+<dc:subject>search</dc:subject>
+<dc:subject>tailrank</dc:subject>
+
+<dc:creator>burtonator</dc:creator>
+<dc:date>2007-01-01T14:44:35-08:00</dc:date>
+</item>
+<item rdf:about="http://blog.tailrank.com/2006/12/tailrank_21_now.html">
+<title>Tailrank 2.1 - Now with Video Memetracker Support</title>
+<link>http://blog.tailrank.com/2006/12/tailrank_21_now.html</link>
+<description>Over the xmas break we pushed out a new release of Tailrank which includes a super cool and enhanced video memetracker. You can see the new Tailrank video feature in the screenshot below: There are a bunch of additional small...</description>
+<content:encoded>&lt;p&gt;Over the xmas break we pushed out a new release of Tailrank which includes a super cool and enhanced &lt;a href="http://video.tailrank.com/"&gt;video memetracker&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;You can see the new Tailrank video feature in the screenshot below:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://blog.tailrank.com/200612262336.jpg" height="329" width="520" border="1" hspace="4" vspace="4" alt="200612262336" /&gt;&lt;/p&gt;
+
+&lt;p&gt;There are a bunch of additional small changes here including the ability to view river of news and breaking posts per category.  Here's the &lt;a href="http://tech.tailrank.com/river"&gt;tech breaking news&lt;/a&gt; page.  All of these have RSS feeds of course.  &lt;/p&gt;
+
+&lt;p&gt;We're also working on some new super cool features which will be coming out in the following weeks so stay tuned.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Update:&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://newteevee.com/2006/12/26/where-to-find-good-video-megite-and-tailrank/"&gt;More from NewTeeVee&lt;/a&gt;:&lt;/p&gt;
+
+&lt;blockquote&gt;Megite and Tailrank are constantly nipping at each other’s heels, especially as far as press coverage goes. When Matthew Chen of Megite emailed us about their upcoming video tab, we asked Kevin Burton of Tailrank if he had anything in that category up his sleeve. Sure, he replied, video was near release. In fact, he’d push out a version tonight!&lt;/blockquote&gt;
+
+&lt;p&gt;This was all really odd timing.  I might add that &lt;a href="http://video.tailrank.com"&gt;our version of video memetracking&lt;/a&gt; is public while theirs is still in private beta.&lt;br /&gt;
+&lt;/p&gt;</content:encoded>
+
+
+<dc:subject>memetrackers</dc:subject>
+<dc:subject>tailrank</dc:subject>
+
+<dc:creator>burtonator</dc:creator>
+<dc:date>2006-12-26T23:40:33-08:00</dc:date>
+</item>
+<item rdf:about="http://blog.tailrank.com/2006/12/tailrank_follow.html">
+<title>Tailrank Follows that Meme</title>
+<link>http://blog.tailrank.com/2006/12/tailrank_follow.html</link>
+<description>Great post about Tailrank from the perspective of a new user:I'm intriqued by a service called Tailrank - it's a memetracker that spiders more than one hundred thousand blogs (presumably chosen based on Technorati rank, but I don't see any details about this at their site) and publishes well-organized, comprehensive threads that track the spread of the hottest blogosphere topics for any given day....  but I find Tailrank's organizing principles to be really intuitive and, to me, it just looks a whole lot prettier....Just using the basic memetracking tool, I've found it easier to follow widely distributed conversations (taking place across many many blogs) and have discovered some great marketing blogs I hadn't previously known about.</description>
+<content:encoded>&lt;p&gt;Great post about Tailrank &lt;a href="http://gregverdino.typepad.com/greg_verdinos_blog/2006/12/hey_blogger_fol.html"&gt;from the perspective of a new user&lt;/a&gt;:&lt;/p&gt;
+
+&lt;blockquote&gt;I'm intriqued by a service called Tailrank - it's a memetracker that spiders more than one hundred thousand blogs (presumably chosen based on Technorati rank, but I don't see any details about this at their site) and publishes well-organized, comprehensive threads that track the spread of the hottest blogosphere topics for any given day.  There are other, better established memetrackers ... but I find Tailrank's organizing principles to be really intuitive and, to me, it just looks a whole lot prettier.
+
+&lt;p&gt;...&lt;/p&gt;
+
+&lt;p&gt;Just using the basic memetracking tool, I've found it easier to follow widely distributed conversations (taking place across many many blogs) and have discovered some great marketing blogs I hadn't previously known about.&lt;/p&gt;
+
+&lt;/blockquote&gt;</content:encoded>
+
+
+<dc:subject>memetrackers</dc:subject>
+<dc:subject>tailrank</dc:subject>
+
+<dc:creator>burtonator</dc:creator>
+<dc:date>2006-12-14T17:32:08-08:00</dc:date>
+</item>
+<item rdf:about="http://blog.tailrank.com/2006/12/tailrank_on_the.html">
+<title>Tailrank on the Scoble Show</title>
+<link>http://blog.tailrank.com/2006/12/tailrank_on_the.html</link>
+<description>I saw down with Robert Scoble about a week ago to talk about Tailrank for the Scoble Show....  Luckily no one else called during the interview (sorry Robert).Kevin Burton is a talented developer who has worked on a variety of startups already including Rojo, and now TailRank which he started to be able to see what bloggers were talking about.</description>
+<content:encoded>&lt;p&gt;&lt;img src="http://blog.tailrank.com/200612081518.jpg" height="120" width="180" border="1" align="right" hspace="4" vspace="4" alt="200612081518" /&gt;I saw down with Robert Scoble about a week ago to &lt;a href="http://www.podtech.net/scobleshow/technology/1259/tailrank-the-memetracker-that-lets-you-see-what-blogs-are-talking-about"&gt;talk about Tailrank for the Scoble Show&lt;/a&gt;:&lt;/p&gt;
+
+&lt;blockquote&gt;Kevin Burton is a talented developer who has worked on a variety of startups already including Rojo, and now TailRank which he started to be able to see what bloggers were talking about. Here I sit down with him for an interesting conversation in the lobby of San Francisco's Palace Hotel.&lt;/blockquote&gt;
+
+&lt;p&gt;I think the interview turned out pretty well.  The only mistake I made was that I left my cell phone on which is a slight problem.  Luckily no one else called during the interview (sorry Robert).&lt;/p&gt;
+
+&lt;p&gt;I also gave a &lt;a href="http://www.podtech.net/scobleshow/technology/1258/conversation-with-memetracker-developer-kevin-burton"&gt;demo of Tailrank&lt;/a&gt;.  Unfortunately, the realtime IM delivery feature actually worked &lt;em&gt;right&lt;/em&gt; after they shutoff the camera.  It was pretty amazing actually.  Our crawler found a post on that topic &lt;em&gt;right&lt;/em&gt; after I subscribed to the meme.&lt;/p&gt;</content:encoded>
+
+
+<dc:subject>memetrackers</dc:subject>
+<dc:subject>RSS</dc:subject>
+<dc:subject>search</dc:subject>
+<dc:subject>tailrank</dc:subject>
+
+<dc:creator>burtonator</dc:creator>
+<dc:date>2006-12-08T16:40:50-08:00</dc:date>
+</item>
+<item rdf:about="http://blog.tailrank.com/2006/11/tailrank_mobile.html">
+<title>Tailrank Mobile Now Supports Verticals</title>
+<link>http://blog.tailrank.com/2006/11/tailrank_mobile.html</link>
+<description>Tailrank mobile now supports tech, politics, and entertainment.</description>
+<content:encoded>&lt;p&gt;&lt;a href="http://mobile.tailrank.com"&gt;Tailrank mobile&lt;/a&gt; now supports tech, politics, and entertainment.  In the past we only supported the global view of all stories but now you can narrow your focus.&lt;/p&gt;
+
+&lt;p&gt;If you haven't yet used Tailrank mobile and have a modern cell phone with a browser you should definitely check it out.  A lot of people &lt;b&gt;really&lt;/b&gt; like Tailrank mobile and I'm pretty impressed with the feedback we've received so far.&lt;/p&gt;
+
+&lt;p&gt;I bumped into &lt;a href="http://no1s.wordpress.com/"&gt;Eric Lin&lt;/a&gt; of &lt;a href="http://www.phonescoop.com/"&gt;Phonescoop&lt;/a&gt; today and he commented how much he liked our mobile version which reminded me that we've never implemented verticals.&lt;br /&gt;
+&lt;/p&gt;</content:encoded>
+
+
+<dc:subject>memetrackers</dc:subject>
+<dc:subject>RSS</dc:subject>
+<dc:subject>tailrank</dc:subject>
+
+<dc:creator>burtonator</dc:creator>
+<dc:date>2006-11-24T14:26:27-08:00</dc:date>
+</item>
+
+
+</rdf:RDF><!-- ph=1 --><!-- nhm:from_kauri -->

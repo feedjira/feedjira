@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<rdf:RDF
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns="http://purl.org/rss/1.0/"
+	xmlns:taxo="http://purl.org/rss/1.0/modules/taxonomy/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:syn="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:admin="http://webns.net/mvcb/" >
+ <channel rdf:about="http://rubyforge.org/export/rss_sfnews.php">
+  <title>RubyForge Project News</title>
+  <link>http://rubyforge.org</link>
+  <description>RubyForge Project News Highlights</description>
+ <items>
+ <rdf:Seq>
+ <rdf:li rdf:resource="http://rubyforge.org/forum/forum.php?forum_id=29882" />
+ <rdf:li rdf:resource="http://rubyforge.org/forum/forum.php?forum_id=29881" />
+ <rdf:li rdf:resource="http://rubyforge.org/forum/forum.php?forum_id=29880" />
+ <rdf:li rdf:resource="http://rubyforge.org/forum/forum.php?forum_id=29879" />
+ <rdf:li rdf:resource="http://rubyforge.org/forum/forum.php?forum_id=29877" />
+ <rdf:li rdf:resource="http://rubyforge.org/forum/forum.php?forum_id=29876" />
+ <rdf:li rdf:resource="http://rubyforge.org/forum/forum.php?forum_id=29860" />
+ <rdf:li rdf:resource="http://rubyforge.org/forum/forum.php?forum_id=29859" />
+ <rdf:li rdf:resource="http://rubyforge.org/forum/forum.php?forum_id=29846" />
+ <rdf:li rdf:resource="http://rubyforge.org/forum/forum.php?forum_id=29845" />
+ </rdf:Seq>
+ </items>
+ </channel>
+
+ <item rdf:about="http://rubyforge.org/forum/forum.php?forum_id=29882">
+   <title>ronin-exploits 0.1.1 Released</title>
+   <link>http://rubyforge.org/forum/forum.php?forum_id=29882</link>
+   <description>ronin-exploits version 0.1.1 has been released!
+
+Ronin Exploits is a Ruby library for Ronin that provides exploitation and
+payload crafting functionality.
+
+Ronin is a Ruby platform designed for information security and data
+exploration tasks. Ronin allows for the rapid development and distribution
+of code over many of the common Source-Code-Management (SCM) systems.
+
+Changes:
+
+</description>
+   <dc:subject>Ronin</dc:subject>
+   <dc:creator>postmodern </dc:creator>
+  <dc:date>2009-01-23T02:38:24+00:00</dc:date>
+  </item>
+
+ <item rdf:about="http://rubyforge.org/forum/forum.php?forum_id=29881">
+   <title>ronin-web 0.1.0 Released</title>
+   <link>http://rubyforge.org/forum/forum.php?forum_id=29881</link>
+   <description>ronin-web version 0.1.0 has been released!
+
+Ronin Web is a Ruby library for Ronin that provides support for web
+scraping and spidering functionality.
+
+Ronin is a Ruby platform designed for information security and data
+exploration tasks. Ronin allows for the rapid development and distribution
+of code over many of the common Source-Code-Management (SCM) systems.
+
+Changes:
+
+### 0.1.0 / 2009-01-22
+
+* Initial release.
+  * Provides Web.html and Web.xml methods, which use Nokogiri::HTML and
+    Nokogiri::XML respectively, to parse HTML and XML content.
+  * Supports custom Proxy and User-Agent strings, through
+    the Web.proxy and Web.user_agent methods respectively.
+  * Provides Web.agent, Web.get and Weg.post methods which access
+    WWW::Mechanize.
+  * Integrates Spidr::Agent into Web::Spider.
+  * Provides Web::Server, a customizable Rack web server that supports path
+    and host-name routing.
+    * Web::Server will use Mongrel, only if Mongrel is installed, otherwise
+      WEBrick will be used.</description>
+   <dc:subject>Ronin</dc:subject>
+   <dc:creator>postmodern </dc:creator>
+  <dc:date>2009-01-23T02:18:19+00:00</dc:date>
+  </item>
+
+ <item rdf:about="http://rubyforge.org/forum/forum.php?forum_id=29880">
+   <title>ronin 0.1.4 Released</title>
+   <link>http://rubyforge.org/forum/forum.php?forum_id=29880</link>
+   <description>ronin version 0.1.4 has been released!
+
+Ronin is a Ruby platform designed for information security and data
+exploration tasks. Ronin allows for the rapid development and distribution
+of code over many of the common Source-Code-Management (SCM) systems.
+
+Changes:
+
+### 0.1.4 / 2009-01-22
+
+* Moved Ronin::Web and Ronin::Sessions::Web into the ronin-web library.
+* Removed dependencies to hpricot, mechanize, spidr and rack.
+* Moved Hexdump into the Ronin::UI namespace.
+* Require parameters &amp;gt;= 0.1.3:
+  * Parameters 0.1.3 adds support for using lambdas as the default values
+    of parameters.
+* Temporarily added Ronin::Model.first_or_new:
+  * Will be removed once dkubb's version of first_or_new is merged into
+    dm-core.
+* Added the File.write method.
+* Added specs for String#format_http and String#format_html.
+* Fixed a formatting bug in String#format_chars and String#format_bytes.
+* Automatically load 'ronin/ui/hexdump' when starting the
+  Ronin::UI::Console.</description>
+   <dc:subject>Ronin</dc:subject>
+   <dc:creator>postmodern </dc:creator>
+  <dc:date>2009-01-23T02:05:10+00:00</dc:date>
+  </item>
+
+ <item rdf:about="http://rubyforge.org/forum/forum.php?forum_id=29879">
+   <title>Groff 0.2.0</title>
+   <link>http://rubyforge.org/forum/forum.php?forum_id=29879</link>
+   <description>
+Groff has been updated to 0.2.0. Groff is groff Parser and template engine for rails
+
+More information is available at http://github.com/guillermo/groff .
+
+</description>
+   <dc:subject>groff</dc:subject>
+   <dc:creator>Guillermo Álvarez Fernández</dc:creator>
+  <dc:date>2009-01-23T12:54:57+00:00</dc:date>
+  </item>
+
+ <item rdf:about="http://rubyforge.org/forum/forum.php?forum_id=29877">
+   <title>ruby-smpp 0.1.2 Released</title>
+   <link>http://rubyforge.org/forum/forum.php?forum_id=29877</link>
+   <description>ruby-smpp version 0.1.2 has been released!
+
+Ruby-implementation of the SMPP protocol, based on EventMachine. SMPP is a protocol that allows ordinary people outside the mobile network to exchange SMS messages directly with mobile operators.
+
+Changes:
+
+## 0.1.2 2008-12-11
+
+* Contributions:
+  * See NEWS.txt</description>
+   <dc:subject>ruby-smpp</dc:subject>
+   <dc:creator>August Z. Flatby</dc:creator>
+  <dc:date>2009-01-22T08:26:10+00:00</dc:date>
+  </item>
+
+ <item rdf:about="http://rubyforge.org/forum/forum.php?forum_id=29876">
+   <title>yamltest - write tests in YAML:yamltest 0.5.0 Released</title>
+   <link>http://rubyforge.org/forum/forum.php?forum_id=29876</link>
+   <description>yamltest version 0.5.0 has been released!
+
+yamltest lets you configure unit test with yaml documents. Simply define a &amp;quot;yt_parse&amp;quot; method
+that will transform your &amp;quot;src&amp;quot; (source) into a &amp;quot;res&amp;quot; (result).
+
+Changes:
+
+## yamltest 0.5 2009-01-21
+
+* 1 major improvement
+  * First release after extraction from zena (http://zenadmin.org). [gaspard]
+</description>
+   <dc:subject>yamltest - write tests in YAML</dc:subject>
+   <dc:creator>Gaspard Bucher</dc:creator>
+  <dc:date>2009-01-22T08:26:05+00:00</dc:date>
+  </item>
+
+ <item rdf:about="http://rubyforge.org/forum/forum.php?forum_id=29860">
+   <title>[ANN] oupsnow 0.1.0 Released</title>
+   <link>http://rubyforge.org/forum/forum.php?forum_id=29860</link>
+   <description>h1. Oupsnow
+
+A Bug tracker multi project, simply, but completed like bug tracking.
+
+It's written in Merb
+
+h2. Features
+
+ * Manage Several project
+ * Manage ticket project by project
+
+
+== 2009-01-21
+
+ * Initial release
+</description>
+   <dc:subject>Oupsnow</dc:subject>
+   <dc:creator>Cyril Mougel</dc:creator>
+  <dc:date>2009-01-22T08:25:59+00:00</dc:date>
+  </item>
+
+ <item rdf:about="http://rubyforge.org/forum/forum.php?forum_id=29859">
+   <title>Keystroke Dynamics:ksd 0.0.1 Released</title>
+   <link>http://rubyforge.org/forum/forum.php?forum_id=29859</link>
+   <description>ksd version 0.0.1 has been released!
+
+Simple keystroke dynamics analyzer/validator written in Ruby-GTK
+
+Changes:
+
+## 0.0.1 2009-01-05
+
+* 1 major enhancement:
+  * Made my library into a gem.
+* 2 known bugs:
+  * Paths to analysis and password files must be set through constants before use. The default should use the current path of the requiring file.
+  * Needs specs!
+</description>
+   <dc:subject>Keystroke Dynamics</dc:subject>
+   <dc:creator>Aram Verstegen</dc:creator>
+  <dc:date>2009-01-22T08:25:50+00:00</dc:date>
+  </item>
+
+ <item rdf:about="http://rubyforge.org/forum/forum.php?forum_id=29846">
+   <title>Seattle.rb Projects:wilson 1.0.0 Released</title>
+   <link>http://rubyforge.org/forum/forum.php?forum_id=29846</link>
+   <description>wilson version 1.0.0 has been released!
+
+Wilson is a pure ruby x86 assembler. No, really. Worst Idea Evar.
+
+Why &amp;quot;wilson&amp;quot;? I wanted to name it &amp;quot;metal&amp;quot;, but there is an existing
+project with that name... So I'm naming it after Wilson Bilkovich, who
+is about as metal as you can get (and it is easier to spell than
+&amp;quot;bilkovich&amp;quot;, even tho that sounds more metal).
+
+Changes:
+
+### 1.0.0 / 2009-01-20
+
+* 1 major enhancement
+
+  * Birfday!</description>
+   <dc:subject>Seattle.rb Projects</dc:subject>
+   <dc:creator>Ryan Davis</dc:creator>
+  <dc:date>2009-01-22T08:25:42+00:00</dc:date>
+  </item>
+
+ <item rdf:about="http://rubyforge.org/forum/forum.php?forum_id=29845">
+   <title>Seattle.rb Projects:flay 1.1.0 Released</title>
+   <link>http://rubyforge.org/forum/forum.php?forum_id=29845</link>
+   <description>flay version 1.1.0 has been released!
+
+Flay analyzes ruby code for structural similarities. Differences in
+literal values, variable, class, method names, whitespace, programming
+style, braces vs do/end, etc are all ignored. Making this totally rad.
+
+Changes:
+
+### 1.1.0 / 2009-01-20
+
+* 8 minor enhancement:
+
+  * Added -v verbose mode to print out N-way diff of the detected code.
+  * Added identical node scoring and reporting.
+  * Added the start of copy/paste+edit detection, not even close yet
+  * Added more tests.
+  * Added rcov tasks
+  * Added the start of copy/paste+edit detection
+  * Clarified output a bit
+  * Refactored process_sexps to make doing other languages/systems easier.</description>
+   <dc:subject>Seattle.rb Projects</dc:subject>
+   <dc:creator>Ryan Davis</dc:creator>
+  <dc:date>2009-01-22T08:25:38+00:00</dc:date>
+  </item>
+</rdf:RDF>

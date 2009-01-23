@@ -1,0 +1,771 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="http://feeds.feedburner.com/~d/styles/atom10full.xsl" type="text/xsl" media="screen"?><?xml-stylesheet href="http://feeds.feedburner.com/~d/styles/itemcontent.css" type="text/css" media="screen"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-US">
+  <title>nano RAILS: development, testing and hosting tidbits - Home</title>
+  <id>tag:blog.nanorails.com,2009:mephisto/</id>
+  <generator version="0.7.3" uri="http://mephistoblog.com">Mephisto Noh-Varr</generator>
+  
+  <link href="http://blog.nanorails.com/" rel="alternate" type="text/html" />
+  <updated>2008-12-17T05:53:47Z</updated>
+  <link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/2.0/" /><logo>http://creativecommons.org/images/public/somerights20.gif</logo><link rel="self" href="http://feeds.feedburner.com/Nanorails" type="application/atom+xml" /><feedburner:emailServiceId xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0">277577</feedburner:emailServiceId><feedburner:feedburnerHostname xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0">http://www.feedburner.com</feedburner:feedburnerHostname><entry xml:base="http://blog.nanorails.com/">
+    <author>
+      <name>Pascal</name>
+    </author>
+    <id>tag:blog.nanorails.com,2008-12-17:23790</id>
+    <published>2008-12-17T05:34:00Z</published>
+    <updated>2008-12-17T05:53:47Z</updated>
+    <category term="News" />
+    <link href="http://blog.nanorails.com/articles/2008/12/17/closing-comments" rel="alternate" type="text/html" />
+    <title>closing comments</title>
+<content type="html">
+            &lt;p&gt;The spammers won (well not really), after getting tired of deleting spam en masse (by the thousands every other months or so), I decided to close comments on some older posts that happen to have a better page rank than most.  If you really need to get to me, please feel free to use the &lt;a href="/feedback"&gt;Contact me page&lt;/a&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;Even though I’ve been considering this for a while, this was in part prompted by Jesper of &lt;a href="http://justaddwater.dk/2008/12/17/time-to-revise-our-comment-policy/"&gt;Just add water&lt;/a&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;His comment policy is simple:&lt;/p&gt;
+
+
+&lt;blockquote&gt;
+In the future we will probably mark all of the above comment types as spam. Yes, some of the comments actually add value, but most of the comments actually are just made to improve ranking.
+
+	&lt;p&gt;We will continue to manually approve the comments we mean will add value.&lt;/p&gt;
+
+
+We will continue to hold comments for manual moderation. (so if your valid comment does not show up within a few hours, please contact us).
+&lt;/blockquote&gt;
+
+	&lt;p&gt;Actually, mine is even simpler.&lt;/p&gt;
+
+
+&lt;blockquote&gt;
+- you must pass the Akismet test.
+
+- you must pass my own test:  I review anything Akismet approves and will delete anything that looks, sounds or smells like spam.  So even if your comment gets approved initially, I reserve the right to remove it.  If that sounds arbitrary, so be it.  Although I believe I have been quite fair in the past and will continue to be.  Disagree?  Send me your &lt;a href="/feedback"&gt;feedback&lt;/a&gt;
+&lt;/blockquote&gt;
+
+	&lt;p&gt;Unrelated note: Did you check out &lt;a href="http://twitteressentials.com"&gt;Twitter Essentials&lt;/a&gt; ?&lt;/p&gt;
+          &lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/Nanorails?a=9ehUO"&gt;&lt;img src="http://feeds.feedburner.com/~f/Nanorails?i=9ehUO" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/Nanorails?a=1lujO"&gt;&lt;img src="http://feeds.feedburner.com/~f/Nanorails?i=1lujO" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/Nanorails?a=Rm83O"&gt;&lt;img src="http://feeds.feedburner.com/~f/Nanorails?i=Rm83O" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;</content>  </entry>
+  <entry xml:base="http://blog.nanorails.com/">
+    <author>
+      <name>Pascal</name>
+    </author>
+    <id>tag:blog.nanorails.com,2008-11-08:20577</id>
+    <published>2008-11-08T06:11:00Z</published>
+    <updated>2008-11-08T06:17:51Z</updated>
+    <category term="Merb" />
+    <category term="News" />
+    <category term="merb" />
+    <link href="http://blog.nanorails.com/articles/2008/11/8/merb-1-0" rel="alternate" type="text/html" />
+    <title>merb 1.0</title>
+<content type="html">
+            &lt;p&gt;&lt;a href="http://merbivore.com/"&gt;merb&lt;/a&gt; has reached 1.0.  What a tremendous achievement from all all contributors, and &lt;a href="http://brainspl.at/"&gt;Ezra&lt;/a&gt; more specifically and &lt;a href="http://www.yehudakatz.com/"&gt;Wycats&lt;/a&gt;&lt;/p&gt;
+
+
+If you can’t wait, use
+&lt;code&gt;&lt;pre&gt; gem install merb --source http://edge.merbivore.com&lt;/pre&gt;&lt;/code&gt;
+
+	&lt;p&gt;Should be available by tomorrow on your regular gem mirror&lt;/p&gt;
+
+
+&lt;code&gt;&lt;pre&gt;gem install merb&lt;/pre&gt;&lt;/code&gt;
+
+	&lt;p&gt;Cheers!&lt;/p&gt;
+          &lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/Nanorails?a=NxINN"&gt;&lt;img src="http://feeds.feedburner.com/~f/Nanorails?i=NxINN" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/Nanorails?a=Ed12N"&gt;&lt;img src="http://feeds.feedburner.com/~f/Nanorails?i=Ed12N" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/Nanorails?a=Nw3jN"&gt;&lt;img src="http://feeds.feedburner.com/~f/Nanorails?i=Nw3jN" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;</content>  </entry>
+  <entry xml:base="http://blog.nanorails.com/">
+    <author>
+      <name>Pascal</name>
+    </author>
+    <id>tag:blog.nanorails.com,2008-09-24:17026</id>
+    <published>2008-09-24T06:48:00Z</published>
+    <updated>2008-09-24T07:05:11Z</updated>
+    <category term="DataMapper" />
+    <category term="Merb" />
+    <category term="merb" />
+    <category term="search" />
+    <category term="xapian" />
+    <link href="http://blog.nanorails.com/articles/2008/9/24/index-your-datamapper-models-with-xapian" rel="alternate" type="text/html" />
+    <title>Index your DataMapper Models with Xapian</title>
+<content type="html">
+            &lt;p&gt;Still pretty preliminary, but the basics seem to work.  &lt;a href="http://github.com/psq/dm-xapian/tree/master"&gt;dm-xapian&lt;/a&gt; is a Merb plugin to index your &lt;a href="http://datamapper.org"&gt;DataMapper&lt;/a&gt; models with &lt;a href="http://xapian.org/"&gt;Xapian&lt;/a&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;At this point the details are still sketchy, and you first need to install xapian, then the xapian ruby bindings: &lt;a href="http://github.com/psq/dm-xapian/tree/master/SETUP.txt"&gt;Install Xapian and ruby bindings&lt;/a&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;Then it gets easier:&lt;/p&gt;
+
+
+* build the gem with
+&lt;code&gt;rake install&lt;/code&gt;
+* add the dependency
+&lt;code&gt;dependencies "dm-xapian"&lt;/code&gt;
+* create the dm-xapian resource
+&lt;code&gt;rake dm:autoupgrade&lt;/code&gt;
+* tell dm-xapian to index your models (Er, Resources) with something like:
+&lt;code&gt;
+  is_indexed :texts =&amp;gt; [ :name, :region, :country, :varietal ],
+     :values =&amp;gt; [[:price, 0, "price", :float], [:ean, 1, "ean", :string]],
+     :terms =&amp;gt; [ [ :winery, 'W', "winery" ] ]
+&lt;/code&gt;
+* build the index with
+&lt;code&gt;rake xapian:rebuild_index models="Wine Winery"&lt;/code&gt;
+* build the index with
+&lt;code&gt;rake xapian:update_index models="Wine Winery"&lt;/code&gt;
+This will remove from the index any model destroyed or update any model since the last call to xapian:rebuild_index or xapian:update_index
+* Run a query
+&lt;code&gt;rake xapian:query query="edited 6" models="Wine Winery" verbose=true limit=25&lt;/code&gt;
+
+	&lt;p&gt;Of course, running a query via rake is not so useful, but that’s all I tried so far.  But at least this proved that the index was built correctly, and integrated search to an app is next.&lt;/p&gt;
+
+
+	&lt;p&gt;As you may have noticed already, a big thing lacking at this point are specs.&lt;/p&gt;
+
+
+	&lt;p&gt;This is in collaboration with &lt;a href="http://github.com/joshaven"&gt;Joshaven&lt;/a&gt; and based on the awesome work by &lt;a href="http://www.flourish.org/blog"&gt;Francis Irving&lt;/a&gt; on &lt;a href="http://github.com/frabcus/acts_as_xapian/tree/master"&gt;act_as_xapian&lt;/a&gt; who created the Rails+ActiveRecord version.&lt;/p&gt;
+          &lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/Nanorails?a=1NERL"&gt;&lt;img src="http://feeds.feedburner.com/~f/Nanorails?i=1NERL" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/Nanorails?a=l2ijL"&gt;&lt;img src="http://feeds.feedburner.com/~f/Nanorails?i=l2ijL" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/Nanorails?a=jAufL"&gt;&lt;img src="http://feeds.feedburner.com/~f/Nanorails?i=jAufL" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;</content>  </entry>
+  <entry xml:base="http://blog.nanorails.com/">
+    <author>
+      <name>Pascal</name>
+    </author>
+    <id>tag:blog.nanorails.com,2008-02-18:9250</id>
+    <published>2008-02-18T09:03:00Z</published>
+    <updated>2008-02-18T09:13:01Z</updated>
+    <category term="News" />
+    <category term="Rails" />
+    <category term="undo" />
+    <link href="http://blog.nanorails.com/articles/2008/2/18/ann-rails-undo-redo" rel="alternate" type="text/html" />
+    <title>ANN: rails-undo-redo</title>
+<content type="html">
+            &lt;p&gt;To this day, very few web apps provide any undo/redo capabilities.  This is really not such a good thing for &lt;a href="http://justaddwater.dk/2008/02/11/3-simple-usability-tips-for-developers/"&gt;usability&lt;/a&gt;.  There are a few &lt;a href="http://www.37signals.com/svn/archives2/googles_gmail_undo.php"&gt;exceptions&lt;/a&gt; like gmail, but it does not go &lt;a href="http://designinginterfaces.com/Multi-Level_Undo"&gt;far enough&lt;/a&gt; to provide what every one is used on their desktop.&lt;/p&gt;
+
+
+	&lt;p&gt;Ever since I read Assaf’s &lt;a href="http://blog.labnotes.org/2006/05/23/better-web-apps-add-an-undo-button/"&gt;post&lt;/a&gt; on the subject, and left hungry for more, as Assaf only helps you on the UI side and leaves you all the heavy lifting, I have been thinking that there must be a way to make it a lot easier to implement undo/redo in a consistent manner, and in a way that is as easy as rails has gotten us used to.&lt;/p&gt;
+
+
+	&lt;p&gt;After a few failed attempts, and building on the work of &lt;a href="http://www.workingwithrails.com/person/7964-brian-durand"&gt;Brian Durand&lt;/a&gt; and his &lt;a href="http://actsasrevisions.rubyforge.org/"&gt;Acts As Revisionable&lt;/a&gt; and &lt;a href="http://actsasrevisions.rubyforge.org/"&gt;ActsAsTrashable&lt;/a&gt; plugins, that I’ve reused (and probably abused as well), I have come to realize a few (obvious?) things, namely that:&lt;/p&gt;
+
+
+	&lt;p&gt;for Undo/Redo to work, it needs to&lt;/p&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;Work across all models&lt;/li&gt;
+		&lt;li&gt;Capture the list of changed objects (UndoRecords)&lt;/li&gt;
+		&lt;li&gt;Group these UndoRecords per User Action (UndoActions)&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;p&gt;Then undo and redo are just a simple matter of replaying the UndoRecords in the right order.&lt;/p&gt;
+
+
+	&lt;p&gt;All my previous attempts, and most other plugins I got inspiration from focused on one model, and even though you need this as a building block, for any real application, you need to be able to undo changes across multiple models (even beyond belongs_to, has_many type changes).&lt;/p&gt;
+
+
+	&lt;p&gt;When you look at the types of changes to a model in details, you really have 3 types of changes Create, Update and Destroy (these are the C-U-D in &lt;span class="caps"&gt;CRUD&lt;/span&gt;, even if you are not doing &lt;span class="caps"&gt;REST&lt;/span&gt;), and undoing each one requires special handling, so this is also tracked and managed by UndoRecord.&lt;/p&gt;
+
+
+	&lt;p&gt;To make a long story short, I’ve packaged all these ideas into a new Rails plugin: &lt;a href="http://blog.nanorails.com/rails-undo-redo" title="RUR"&gt;Rails Undo Redo&lt;/a&gt; (and very soon a gem as well, because this can &lt;a href="http://blog.jayfields.com/2008/02/shared-ruby-code.html"&gt;help&lt;/a&gt;, and that’s also &lt;a href="http://nubyonrails.com/articles/tutorial-publishing-rubygems-with-hoe"&gt;easy&lt;/a&gt;, or &lt;a href="http://newgem.rubyforge.org/"&gt;very easy&lt;/a&gt;), you can now easily transform any Rails Application using Active Record into a full fledged multi level undo/redo application like most desktop application.&lt;/p&gt;
+
+
+	&lt;p&gt;For a full how-to, read the &lt;a href="http://blog.nanorails.com/rails-undo-redo"&gt;Rails Undo Redo project page&lt;/a&gt;, or try the &lt;a href="http://rur-demo.nanorails.com/"&gt;Rails Undo Redo&lt;/a&gt; demo.&lt;/p&gt;
+          &lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/Nanorails?a=wUjLO"&gt;&lt;img src="http://feeds.feedburner.com/~f/Nanorails?i=wUjLO" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/Nanorails?a=asl6O"&gt;&lt;img src="http://feeds.feedburner.com/~f/Nanorails?i=asl6O" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/Nanorails?a=fKFTO"&gt;&lt;img src="http://feeds.feedburner.com/~f/Nanorails?i=fKFTO" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;</content>  </entry>
+  <entry xml:base="http://blog.nanorails.com/">
+    <author>
+      <name>Pascal</name>
+    </author>
+    <id>tag:blog.nanorails.com,2008-02-18:9243</id>
+    <published>2008-02-18T05:47:00Z</published>
+    <updated>2008-02-18T09:13:35Z</updated>
+    <category term="Rails" />
+    <category term="git" />
+    <category term="rails" />
+    <link href="http://blog.nanorails.com/articles/2008/2/18/git-submodules-and-capistrano" rel="alternate" type="text/html" />
+    <title>git, submodules and Capistrano</title>
+<content type="html">
+            &lt;p&gt;If you use git submodules, as &lt;a href="http://blog.nanorails.com/git-rails"&gt;git-rails&lt;/a&gt; does, and want to use &lt;a href="http://www.capify.org"&gt;Capistano&lt;/a&gt;, you’ll need to patch patch Capistrano (lib/capistano/recipes/deploy/scm/git.rb) to make sure your submodules get included.&lt;/p&gt;
+
+
+&lt;code&gt;&lt;pre&gt;        def checkout(revision, destination)
+          git      = command
+
+          branch   = head
+
+          fail "No branch specified, use for example 'set :branch, \"origin/master\"' in your deploy.rb" unless branch
+
+          if depth = configuration[:git_shallow_clone]
+            execute  = "#{git} clone --depth #{depth} #{configuration[:repository]} #{destination} &amp;&amp; " 
+          else
+            execute  = "#{git} clone #{configuration[:repository]} #{destination} &amp;&amp; " 
+          end
+
+          execute += "cd #{destination} &amp;&amp; #{git} checkout -b deploy #{branch}" 
+
+          if submodules = configuration[:git_enable_submodules]
+            execute += " &amp;&amp; git-submodule init &amp;&amp;" 
+            execute += "git-submodule update" 
+          end
+
+          execute
+        end&lt;/pre&gt;&lt;/code&gt;
+
+then define this in your deploy.rb:
+&lt;code&gt;&lt;pre&gt;set :git_enable_submodules,1&lt;/pre&gt;&lt;/code&gt;
+
+	&lt;p&gt;Or you can use the trunk version (post 2.1), which includes that support already.&lt;/p&gt;
+          &lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/Nanorails?a=StR4O"&gt;&lt;img src="http://feeds.feedburner.com/~f/Nanorails?i=StR4O" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/Nanorails?a=kdKlO"&gt;&lt;img src="http://feeds.feedburner.com/~f/Nanorails?i=kdKlO" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/Nanorails?a=wYfyO"&gt;&lt;img src="http://feeds.feedburner.com/~f/Nanorails?i=wYfyO" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;</content>  </entry>
+  <entry xml:base="http://blog.nanorails.com/">
+    <author>
+      <name>Pascal</name>
+    </author>
+    <id>tag:blog.nanorails.com,2008-02-17:9209</id>
+    <published>2008-02-17T08:11:00Z</published>
+    <updated>2008-02-17T08:17:06Z</updated>
+    <category term="Rails" />
+    <category term="Testing" />
+    <category term="debugging" />
+    <category term="rspec" />
+    <link href="http://blog.nanorails.com/articles/2008/2/17/debugging-specs" rel="alternate" type="text/html" />
+    <title>Debugging Specs</title>
+<content type="html">
+            &lt;p&gt;It is easy enough to debug specs on by one.  For this you just run the ruby file that contains the spec with ruby-debug instead of ruby:&lt;/p&gt;
+
+
+&lt;code&gt;&lt;pre&gt;rdebug spec/rur_spec.rb&lt;/pre&gt;&lt;/code&gt;
+
+	&lt;p&gt;But when running via rake, you can’t do this.  A simple solution is to add these lines in the spec file you want to debug (or in spec_helper.rb):&lt;/p&gt;
+
+
+&lt;code&gt;&lt;pre&gt;require_library_or_gem 'ruby-debug'
+Debugger.start&lt;/pre&gt;&lt;/code&gt;
+
+	&lt;p&gt;And you are in business…&lt;/p&gt;
+          &lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/Nanorails?a=tOuAL"&gt;&lt;img src="http://feeds.feedburner.com/~f/Nanorails?i=tOuAL" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/Nanorails?a=IhjUL"&gt;&lt;img src="http://feeds.feedburner.com/~f/Nanorails?i=IhjUL" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/Nanorails?a=MnH4L"&gt;&lt;img src="http://feeds.feedburner.com/~f/Nanorails?i=MnH4L" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;</content>  </entry>
+  <entry xml:base="http://blog.nanorails.com/">
+    <author>
+      <name>Pascal</name>
+    </author>
+    <id>tag:blog.nanorails.com,2008-02-07:8789</id>
+    <published>2008-02-07T08:21:00Z</published>
+    <updated>2008-02-17T08:17:42Z</updated>
+    <category term="Rails" />
+    <category term="git" />
+    <category term="rails" />
+    <link href="http://blog.nanorails.com/articles/2008/2/7/git-branches-merges-and-remotes" rel="alternate" type="text/html" />
+    <title>git branches, merges and remotes</title>
+<content type="html">
+            &lt;p&gt;After releasing the first version of &lt;a href="http://blog.nanorails.com/git-rails"&gt;git-rails&lt;/a&gt;, &lt;a href="http://ganja.nl/"&gt;Ron Damen&lt;/a&gt; created a &lt;a href="http://gitorious.org/projects/git-rails/repos/rons-mainline-clone"&gt;clone of the repository&lt;/a&gt; and started improving on it.  And I liked what he was doing, so now was the time to figure out how to get some of his changes back in to the master repo.&lt;/p&gt;
+
+
+	&lt;p&gt;Here is the list of steps (and what they mean) to get his changes into the master branch on Gitorious.&lt;/p&gt;
+
+
+First, define a remote branch to track his cloned repository
+&lt;code&gt;&lt;pre&gt;git remote add ron git://gitorious.org/git-rails/rons-mainline-clone.git&lt;/pre&gt;&lt;/code&gt;
+
+This adds this to .git/config:
+&lt;code&gt;&lt;pre&gt;[remote "ron"]
+        url = git://gitorious.org/git-rails/rons-mainline-clone.git
+        fetch = +refs/heads/*:refs/remotes/ron/*&lt;/pre&gt;&lt;/code&gt;
+
+Before doing the actual checkout, make sure you have nothing to commit in the current branch, then checkout a tracking branch:
+&lt;code&gt;&lt;pre&gt;git checkout -b ron/master&lt;/pre&gt;&lt;/code&gt;
+Now get the content from thre remote (remote “ron”, branch “master”)
+&lt;code&gt;&lt;pre&gt;git pull ron master&lt;/pre&gt;&lt;/code&gt;
+
+Once you’ve reached this point, it is easy to switch back and forth between branches
+&lt;code&gt;&lt;pre&gt;git checkout master
+git checkout ron/master&lt;/pre&gt;&lt;/code&gt;
+
+Next, I created a temporary branch to merge what I like from Ron (not needed really)
+&lt;code&gt;&lt;pre&gt;
+git branch merge-ron
+git status # does not switch branch!
+git checkout merge-ron&lt;/pre&gt;&lt;/code&gt;
+
+	&lt;p&gt;This could be used as a shortcut: &lt;em&gt;checkout -b merge-ron&lt;/em&gt;&lt;/p&gt;
+
+
+Merge only specific changes (obtained using git log in ron/master branch)
+&lt;code&gt;&lt;pre&gt;git cherry-pick dc3de57a073e24eeb398e0cacbe52340258e861b
+git cherry-pick 61579f92e1bfc95e582728011fcd21c79f08c3ae&lt;/pre&gt;&lt;/code&gt;
+
+Merge from merge-ron branch into local master
+&lt;code&gt;&lt;pre&gt;git checkout master
+git merge merge-ron&lt;/pre&gt;&lt;/code&gt;
+
+And finally, push to origin
+&lt;code&gt;&lt;pre&gt;git push origin&lt;/pre&gt;&lt;/code&gt;
+
+	&lt;p&gt;From now on, the only thing needed to get more changes from Ron is to pull changes into ron/master, &lt;a href="http://www.kernel.org/pub/software/scm/git/docs/git-cherry-pick.html"&gt;cherry-pick&lt;/a&gt; changes and merge back into master.  Sweet!&lt;/p&gt;
+          &lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/Nanorails?a=EZhgO"&gt;&lt;img src="http://feeds.feedburner.com/~f/Nanorails?i=EZhgO" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/Nanorails?a=XNoDO"&gt;&lt;img src="http://feeds.feedburner.com/~f/Nanorails?i=XNoDO" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/Nanorails?a=cF34O"&gt;&lt;img src="http://feeds.feedburner.com/~f/Nanorails?i=cF34O" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;</content>  </entry>
+  <entry xml:base="http://blog.nanorails.com/">
+    <author>
+      <name>Pascal</name>
+    </author>
+    <id>tag:blog.nanorails.com,2008-02-05:8671</id>
+    <published>2008-02-05T09:12:00Z</published>
+    <updated>2008-02-17T08:17:58Z</updated>
+    <category term="News" />
+    <category term="Rails" />
+    <category term="git" />
+    <category term="rails" />
+    <link href="http://blog.nanorails.com/articles/2008/2/5/ann-git-rails" rel="alternate" type="text/html" />
+    <title>ANN: git-rails</title>
+<content type="html">
+            &lt;p&gt;&lt;a href="http://git.or.cz/"&gt;Git&lt;/a&gt; is quickly becoming one of the best option for using a &lt;span class="caps"&gt;DVCS&lt;/span&gt; (Distributed Version Control System).  Git main goal is to be quick (most everything you do is local), and has already been battle tested by the Linux Kernel dev team.&lt;/p&gt;
+
+
+	&lt;p&gt;Recently, I’ve started &lt;a href="http://blog.nanorails.com/articles/2008/1/31/git-to-svn-read-only"&gt;experimenting&lt;/a&gt; with &lt;a href="http://blog.nanorails.com/articles/2008/1/31/getting-started-with-git"&gt;git&lt;/a&gt; after &lt;a href="http://weblog.techno-weenie.net/"&gt;Rick&lt;/a&gt; &lt;a href="http://weblog.techno-weenie.net/2007/12/25/moving-to-git"&gt;switched Mephisto to git&lt;/a&gt;.&lt;/p&gt;
+
+
+	&lt;p&gt;Even though things are pretty straightforward, some things are easier than others, especially when you have to take it all in in one shot.&lt;/p&gt;
+
+
+	&lt;p&gt;So, over the weekend, I created &lt;a href="http://blog.nanorails.com/git-rails"&gt;git-rails&lt;/a&gt;, completed with a rubyforge &lt;a href="http://rubyforge.org/projects/git-rails/"&gt;project&lt;/a&gt;, an installable gem (&lt;strong&gt;gem install git-rails&lt;/strong&gt;), and a &lt;a href="http://gitorious.org/projects/git-rails"&gt;git repository&lt;/a&gt; hosted by &lt;a href="http://gitorious.org"&gt;Gitorious&lt;/a&gt;&lt;/p&gt;
+
+
+Currently, git-rails provides 3 functions:
+	&lt;ol&gt;
+	&lt;li&gt;init repository (hookup to remote git repository, rails aware .gitignore)&lt;/li&gt;
+		&lt;li&gt;install plugin managed by git (using &lt;a href="http://www.kernel.org/pub/software/scm/git/docs/git-submodule.html"&gt;git submodules&lt;/a&gt;)&lt;/li&gt;
+		&lt;li&gt;update plugin&lt;/li&gt;
+	&lt;/ol&gt;
+
+
+	&lt;p&gt;For now, I’m happy to use giston to manage svn hosted plugins, but I’m considering whether to add that functionality as well.  We’ll see how things go.&lt;/p&gt;
+
+
+	&lt;p&gt;To get started with &lt;strong&gt;git-rails&lt;/strong&gt;, head over to the new &lt;a href="http://blog.nanorails.com/git-rails"&gt;git-rails project page&lt;/a&gt;.&lt;/p&gt;
+
+
+	&lt;p&gt;Inspired by &lt;a href="http://piston.rubyforge.org/"&gt;piston&lt;/a&gt;, and its newest sibling: &lt;a href="http://evil.che.lu/2007/11/27/ann-giston-piston-lookalike-for-git"&gt;giston/braid&lt;/a&gt;&lt;/p&gt;
+          &lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/Nanorails?a=vhtPL"&gt;&lt;img src="http://feeds.feedburner.com/~f/Nanorails?i=vhtPL" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/Nanorails?a=xtTXL"&gt;&lt;img src="http://feeds.feedburner.com/~f/Nanorails?i=xtTXL" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/Nanorails?a=Qb3tL"&gt;&lt;img src="http://feeds.feedburner.com/~f/Nanorails?i=Qb3tL" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;</content>  </entry>
+  <entry xml:base="http://blog.nanorails.com/">
+    <author>
+      <name>Pascal</name>
+    </author>
+    <id>tag:blog.nanorails.com,2008-01-31:8426</id>
+    <published>2008-01-31T08:54:00Z</published>
+    <updated>2008-01-31T10:13:10Z</updated>
+    <category term="git" />
+    <link href="http://blog.nanorails.com/articles/2008/1/31/git-to-svn-read-only" rel="alternate" type="text/html" />
+    <title>Git to svn (read-only)</title>
+<content type="html">
+            &lt;p&gt;As a follow up to last post about &lt;a href="http://blog.nanorails.com/articles/2008/1/31/getting-started-with-git"&gt;setting up git with gitorious&lt;/a&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;Here are the steps to mirror a git branch into svn.&lt;/p&gt;
+
+
+First, I had to install git-svn
+&lt;code&gt;&lt;pre&gt;$ sudo port deactivate git-core
+$ sudo port install git-core +svn&lt;/pre&gt;&lt;/code&gt;
+
+That did not got so well when trying to run git-svn:
+&lt;code&gt;&lt;pre&gt;error about Error.pm:
+Can't locate Error.pm in @INC (@INC contains...&lt;/pre&gt;&lt;/code&gt;
+
+Something did not get copied correctly.  Here’s the solution:
+&lt;code&gt;&lt;pre&gt;$ cp /opt/local/var/macports/software/git-core/1.5.2.4_1+doc/opt/local/lib/perl5/site_perl/5.8.8/Error.pm /opt/local/lib/perl5/site_perl/5.8.8/&lt;/pre&gt;&lt;/code&gt;
+
+Then create a place holder in svn so a location exist (it’s fine if it is empty):
+&lt;code&gt;&lt;pre&gt;$ svn mkdir svn+ssh://svn.nanorails.com/home/psq/svn/plugins/plugins/rur -m "creating rur"&lt;/pre&gt;&lt;/code&gt;
+
+Then add this to .git/config:
+&lt;code&gt;&lt;pre&gt;[svn-remote "nanorails"]
+  url = svn+ssh://svn.nanorails.com/home/psq/svn/plugins/plugins/rur
+  fetch = :refs/remotes/nanorails
+&lt;/code&gt;&lt;/pre&gt;
+nanorails will become the name of the branch
+
+Then fetch the svn (it won’t fetch anything, but this starts the process).
+&lt;code&gt;&lt;pre&gt;$ git svn fetch nanorails
+
+$ git branch -a
+* master
+  nanorails&lt;/pre&gt;&lt;/code&gt;
+And the new branch is here :)
+
+Checkout that svn branch into a local branch:
+&lt;code&gt;&lt;pre&gt;$ git checkout -b local-svn nanorails
+Switched to a new branch "local-svn" 
+
+$ git branch -a
+* local-svn
+  master
+  nanorails&lt;/pre&gt;&lt;/code&gt;
+
+	&lt;p&gt;Now the fun part.&lt;/p&gt;
+
+
+Using rebase will forward the local commits to the updated upstream head
+&lt;code&gt;&lt;pre&gt;$ git-svn rebase
+Current branch local-svn is up to date.&lt;/pre&gt;&lt;/code&gt;
+
+Get all the goodies from the master branch
+&lt;code&gt;&lt;pre&gt;$ git merge master
+Merge made by recursive.
+ .gitignore                            |    1 +
+ MIT-LICENSE                           |   21 ++
+ README                                |   48 +++++
+ Rakefile                              |   20 ++
+ init.rb                               |    3 +
+ lib/undo_action.rb                    |   24 +++
+ lib/undo_manager.rb                   |   89 ++++++++
+ lib/undo_record.rb                    |  224 ++++++++++++++++++++
+ lib/undoable.rb                       |   40 ++++
+ lib/undoable_helper.rb                |   23 ++
+ migrations/001_create_undo_records.rb |   32 +++
+ spec/rur_spec.rb                      |  132 ++++++++++++
+ spec/spec_helper.rb                   |   26 +++
+ spec/undo_action_spec.rb              |   46 ++++
+ spec/undo_manager_spec.rb             |   10 +
+ spec/undo_record_spec.rb              |  368 +++++++++++++++++++++++++++++++++
+ spec/undoable_spec.rb                 |   46 ++++
+ 17 files changed, 1153 insertions(+), 0 deletions(-)
+ create mode 100644 .gitignore
+ create mode 100644 MIT-LICENSE
+ create mode 100644 README
+ create mode 100644 Rakefile
+ create mode 100644 init.rb
+ create mode 100644 lib/undo_action.rb
+ create mode 100644 lib/undo_manager.rb
+ create mode 100644 lib/undo_record.rb
+ create mode 100644 lib/undoable.rb
+ create mode 100644 lib/undoable_helper.rb
+ create mode 100644 migrations/001_create_undo_records.rb
+ create mode 100644 spec/rur_spec.rb
+ create mode 100644 spec/spec_helper.rb
+ create mode 100644 spec/undo_action_spec.rb
+ create mode 100644 spec/undo_manager_spec.rb
+ create mode 100644 spec/undo_record_spec.rb
+ create mode 100644 spec/undoable_spec.rb&lt;/pre&gt;&lt;/code&gt;
+
+And finally, send the changes to svn
+&lt;code&gt;&lt;pre&gt;$ git-svn dcommit
+Committing to svn+ssh://svn.nanorails.com/home/psq/svn/plugins/plugins/rur ...
+    A    .gitignore
+    A    MIT-LICENSE
+    A    README
+    A    Rakefile
+    A    init.rb
+    A    lib/undo_action.rb
+    A    lib/undo_manager.rb
+    A    lib/undo_record.rb
+    A    lib/undoable.rb
+    A    lib/undoable_helper.rb
+    A    migrations/001_create_undo_records.rb
+    A    spec/rur_spec.rb
+    A    spec/spec_helper.rb
+    A    spec/undo_action_spec.rb
+    A    spec/undo_manager_spec.rb
+    A    spec/undo_record_spec.rb
+    A    spec/undoable_spec.rb
+Committed r66
+    A    Rakefile
+    A    .gitignore
+    A    init.rb
+    A    lib/undo_manager.rb
+    A    lib/undo_action.rb
+    A    lib/undo_record.rb
+    A    lib/undoable_helper.rb
+    A    lib/undoable.rb
+    A    MIT-LICENSE
+    A    spec/undo_record_spec.rb
+    A    spec/rur_spec.rb
+    A    spec/undoable_spec.rb
+    A    spec/spec_helper.rb
+    A    spec/undo_manager_spec.rb
+    A    spec/undo_action_spec.rb
+    A    migrations/001_create_undo_records.rb
+    A    README
+r66 = 98602d45907206a281f597f87445397f069cdc1d (nanorails)
+No changes between current HEAD and refs/remotes/nanorails
+Resetting to the latest refs/remotes/nanorails&lt;/pre&gt;&lt;/code&gt;
+
+	&lt;p&gt;And then there was much rejoicing across the land :)&lt;/p&gt;
+
+
+Now, to update svn, the only things to do, assuming master is where the latest is, are:
+&lt;code&gt;&lt;pre&gt;$ git checkout local-svn
+$ git merge master
+$ git-svn dcommit&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;This setup could also bring changes back from svn, which git-svn is capable of doing, but I’ll be quite happy with the read-only part.&lt;/p&gt;
+
+
+Resources:
+	&lt;ol&gt;
+	&lt;li&gt;&lt;a href="http://hassox.blogspot.com/2007/12/using-git-with-svn.html"&gt;using-git-with-svn&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="http://www.kernel.org/pub/software/scm/git/docs/git-svn.html"&gt;git-svn&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="http://www.kernel.org/pub/software/scm/git/docs/tutorial.html"&gt;git tutorial&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="http://gitorious.org"&gt;gitorious&lt;/a&gt;&lt;/li&gt;
+	&lt;/ol&gt;
+
+
+	&lt;p&gt;Update: in fact, it looks like “git-svn dcommit” from the master branch, without merging to the “local-svn” branch first, also commits to svn.&lt;/p&gt;
+          &lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/Nanorails?a=4v1gO"&gt;&lt;img src="http://feeds.feedburner.com/~f/Nanorails?i=4v1gO" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/Nanorails?a=23jTO"&gt;&lt;img src="http://feeds.feedburner.com/~f/Nanorails?i=23jTO" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/Nanorails?a=Iv05O"&gt;&lt;img src="http://feeds.feedburner.com/~f/Nanorails?i=Iv05O" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;</content>  </entry>
+  <entry xml:base="http://blog.nanorails.com/">
+    <author>
+      <name>Pascal</name>
+    </author>
+    <id>tag:blog.nanorails.com,2008-01-31:8421</id>
+    <published>2008-01-31T06:07:00Z</published>
+    <updated>2008-01-31T06:45:32Z</updated>
+    <category term="git" />
+    <link href="http://blog.nanorails.com/articles/2008/1/31/getting-started-with-git" rel="alternate" type="text/html" />
+    <title>Getting started with Git</title>
+<content type="html">
+            &lt;p&gt;I’ve been using git for a bit now since &lt;a href="http://weblog.techno-weenie.net/"&gt;Rick&lt;/a&gt; switched &lt;a href="http://mephistoblog.com/"&gt;Mephisto&lt;/a&gt; to git, but I’ve only been using an existing repository, and not using the full thing just yet.&lt;/p&gt;
+
+
+	&lt;p&gt;So as I’m starting a &lt;a href="http://gitorious.org/projects/rur"&gt;new project&lt;/a&gt;, I have been taking a few notes to get started with a new project (I’m also testing &lt;a href="http://gitorious.org/"&gt;gitorious.org&lt;/a&gt; in the process, a free git repository provided by &lt;a href="http://theexciter.com/"&gt;Johan Sørensen&lt;/a&gt;)&lt;/p&gt;
+
+
+First, I created a &lt;strong&gt;.gitignore&lt;/strong&gt; file to filter out anything unwanted.  On a Mac, for example, it is alway a good idea to add:
+&lt;code&gt;&lt;pre&gt;.DS_Store&lt;/pre&gt;&lt;/code&gt;
+
+Then to create the initial repository and commit locally
+&lt;code&gt;&lt;pre&gt;$ cd vendor/plugin/rur
+$ git init
+Initialized empty Git repository in .git/
+$ git add .
+$ git commit&lt;/pre&gt;&lt;/code&gt;
+
+Now the big push:
+&lt;code&gt;&lt;pre&gt;$ git push git@gitorious.org:rur/mainline.git
+The authenticity of host 'gitorious.org (67.207.146.32)' can't be established.
+RSA key fingerprint is 1d:0f:80:3b:95:c5:a8:08:85:f6:fc:0a:b2:54:52:bb.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'gitorious.org,67.207.146.32' (RSA) to the list of known hosts.
+No refs in common and none specified; doing nothing.
+fatal: The remote end hung up unexpectedly
+&lt;/pre&gt;&lt;/code&gt;
+Whoops!  Not quite what I expected.  Let’s try to pull first then?
+
+&lt;code&gt;&lt;pre&gt;$ git clone git@gitorious.org:rur/mainline.git
+Initialized empty Git repository in /Users/psq/tmp/mainline/.git/
+fatal: no matching remote head
+fetch-pack from 'git@gitorious.org:rur/mainline.git' failed.&lt;/pre&gt;&lt;/code&gt;
+Hmm, not quite either.
+
+Looking at the gitorious “faq”http://gitorious.org/about/faq provides the answer :)  Add the remote and master definitions to .git/config:
+&lt;code&gt;&lt;pre&gt;[core]
+        repositoryformatversion = 0
+        filemode = true
+        bare = false
+        logallrefupdates = true
+[remote "origin"]
+       url = git@gitorious.org:rur/mainline.git
+       fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "master"]
+       remote = origin
+       merge = refs/heads/master
+&lt;/code&gt;&lt;/pre&gt;
+(Change to match your project).
+
+Then, try to push again:
+&lt;code&gt;&lt;pre&gt;$ git push origin master
+updating 'refs/heads/master'
+  from 0000000000000000000000000000000000000000
+  to   74bbfc838d4984ee81d5560daee3511fe044d36e
+Generating pack...
+Done counting 22 objects.
+Deltifying 22 objects...
+ 100% (22/22) done
+Writing 22 objects...
+ 100% (22/22) done
+Total 22 (delta 0), reused 0 (delta 0)
+refs/heads/master: 0000000000000000000000000000000000000000 -&amp;gt; 74bbfc838d4984ee81d5560daee3511fe044d36e
+&lt;/pre&gt;&lt;/code&gt;
+
+	&lt;p&gt;Finally!  And checking the gitorious site, the code has been pushed!&lt;/p&gt;
+
+
+	&lt;p&gt;(You can get your push and pull urls from the &lt;a href="http://gitorious.org/projects/rur/repos/mainline"&gt;mainline&lt;/a&gt; page.&lt;/p&gt;
+
+
+To get started locally with an existing project, just use the pull url
+&lt;code&gt;&lt;pre&gt;git clone git://gitorious.org/rur/mainline.git&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;Now, if I can figure out the best way to get an svn mirror from gitorious, I’ll be in business!&lt;/p&gt;
+
+
+	&lt;p&gt;Source (and a good tutorial): &lt;a href="http://www.kernel.org/pub/software/scm/git/docs/tutorial.html"&gt;A tutorial introduction to git (for version 1.5.1 or newer)&lt;/a&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;A final note: the project referenced here is not quite fully baked, so use at your own risk…&lt;/p&gt;
+          &lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/Nanorails?a=EXn0O"&gt;&lt;img src="http://feeds.feedburner.com/~f/Nanorails?i=EXn0O" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/Nanorails?a=jWDiO"&gt;&lt;img src="http://feeds.feedburner.com/~f/Nanorails?i=jWDiO" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/Nanorails?a=aBLPO"&gt;&lt;img src="http://feeds.feedburner.com/~f/Nanorails?i=aBLPO" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;</content>  </entry>
+  <entry xml:base="http://blog.nanorails.com/">
+    <author>
+      <name>Pascal</name>
+    </author>
+    <id>tag:blog.nanorails.com,2008-01-21:8164</id>
+    <published>2008-01-21T05:52:00Z</published>
+    <updated>2008-01-21T07:02:50Z</updated>
+    <category term="Mac" />
+    <category term="News" />
+    <category term="Mac os" />
+    <link href="http://blog.nanorails.com/articles/2008/1/21/macheist" rel="alternate" type="text/html" />
+    <title>MacHeist</title>
+<content type="html">
+            &lt;p&gt;If you have a Mac, or &lt;a href="http://www.apple.com/macbookair/"&gt;want one&lt;/a&gt;, then you should surely take a look at the $49 bundle &lt;a href="http://www.macheist.com/"&gt;MacHeist&lt;/a&gt; has put together.  An amazing value, with lots of cool apps.  Plus 25% of your purchase goes to charities.
+It’s like getting 1password, CoverSutra (truly cool), and Snapz Pro for half the price, and getting all other 11 Mac Applications for free.  Check it out (via &lt;a href="http://obiefernandez.com/"&gt;Obie Fernandez&lt;/a&gt;)&lt;/p&gt;
+
+
+	&lt;p&gt;Update: I had the link wrong (using https), and you could not see the apps.  Fixed.  Also forgot to mention you also get CSSEdit.  And possibly VectorDesigner if they reach the $300,000 donation level.&lt;/p&gt;
+          &lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/Nanorails?a=9QM6O"&gt;&lt;img src="http://feeds.feedburner.com/~f/Nanorails?i=9QM6O" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/Nanorails?a=1QW3O"&gt;&lt;img src="http://feeds.feedburner.com/~f/Nanorails?i=1QW3O" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/Nanorails?a=4SWJO"&gt;&lt;img src="http://feeds.feedburner.com/~f/Nanorails?i=4SWJO" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;</content>  </entry>
+  <entry xml:base="http://blog.nanorails.com/">
+    <author>
+      <name>Pascal</name>
+    </author>
+    <id>tag:blog.nanorails.com,2008-01-12:7632</id>
+    <published>2008-01-12T08:28:00Z</published>
+    <updated>2008-01-12T09:13:28Z</updated>
+    <category term="Rails" />
+    <category term="debugging" />
+    <link href="http://blog.nanorails.com/articles/2008/1/12/ruby-debug-quick-tips-init-file-and-n-option" rel="alternate" type="text/html" />
+    <title>Ruby-debug quick tips: init file and -n option</title>
+<content type="html">
+            &lt;p&gt;I use &lt;strong&gt;&lt;a href="https://rubyforge.org/projects/ruby-debug/"&gt;ruby-debug&lt;/a&gt;&lt;/strong&gt; quite a bit (too much? perhaps).  And every time I start it, I find myself setting a few options (always the same ones), and it finally got to the point where I thought there had to be a better way.  And there was!  (Thank you, Kent)&lt;/p&gt;
+
+
+	&lt;p&gt;The solution is even documented in some recent release notes:&lt;/p&gt;
+
+
+	&lt;p&gt;Create a &lt;strong&gt;.rdebugrc&lt;/strong&gt; in your home directory (it also looks for one in the current directory first):&lt;/p&gt;
+
+
+&lt;code&gt;&lt;pre&gt;set autolist
+set autoeval
+set autoreload
+set forcestep&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;And voila!  Each time you start &lt;strong&gt;rdebug&lt;/strong&gt;, it executes this script.&lt;/p&gt;
+
+
+	&lt;p&gt;An other good tip: run with &lt;strong&gt;-n&lt;/strong&gt; to avoid stopping on the first instruction, now that you don’t need to run all these commands.&lt;/p&gt;
+
+
+	&lt;p&gt;Update: with version 0.10, &lt;strong&gt;-n&lt;/strong&gt; does not seem to be recognized, but &lt;strong&gt;—no-stop&lt;/strong&gt; still works.&lt;/p&gt;
+          &lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/Nanorails?a=V6JgO"&gt;&lt;img src="http://feeds.feedburner.com/~f/Nanorails?i=V6JgO" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/Nanorails?a=zO9eO"&gt;&lt;img src="http://feeds.feedburner.com/~f/Nanorails?i=zO9eO" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/Nanorails?a=EAyIO"&gt;&lt;img src="http://feeds.feedburner.com/~f/Nanorails?i=EAyIO" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;</content>  </entry>
+  <entry xml:base="http://blog.nanorails.com/">
+    <author>
+      <name>Pascal</name>
+    </author>
+    <id>tag:blog.nanorails.com,2007-12-20:6331</id>
+    <published>2007-12-20T09:42:00Z</published>
+    <updated>2007-12-20T09:47:44Z</updated>
+    <category term="News" />
+    <category term="Quid Pro Quo" />
+    <category term="ruby gems" />
+    <link href="http://blog.nanorails.com/articles/2007/12/20/ruby-gem-1-0-is-out" rel="alternate" type="text/html" />
+    <title>Ruby Gem 1.0 is out</title>
+<content type="html">
+            &lt;p&gt;&lt;a href="http://blog.segment7.net/articles/2007/12/20/rubygems-1-0-0"&gt;RubyGem 1.0&lt;/a&gt; is out.&lt;/p&gt;
+
+
+	&lt;p&gt;Yeah!&lt;/p&gt;
+
+
+	&lt;p&gt;Which means that if you see&lt;/p&gt;
+
+
+&lt;code&gt;&lt;pre&gt;undefined method `require_gem' for main:Object (NoMethodError)&lt;/pre&gt;&lt;/code&gt;
+
+	&lt;p&gt;You’ll need to replace &lt;strong&gt;require_gem&lt;/strong&gt; by just &lt;strong&gt;gem&lt;/strong&gt;.&lt;/p&gt;
+
+
+	&lt;p&gt;For example, unless you have the very latest version of ruby-debug (0.9.3), you’ll see the above error.  In that case, though, updating your gem is simpler.&lt;/p&gt;
+          &lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/Nanorails?a=CwP4O"&gt;&lt;img src="http://feeds.feedburner.com/~f/Nanorails?i=CwP4O" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/Nanorails?a=TocyO"&gt;&lt;img src="http://feeds.feedburner.com/~f/Nanorails?i=TocyO" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/Nanorails?a=H5eXO"&gt;&lt;img src="http://feeds.feedburner.com/~f/Nanorails?i=H5eXO" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;</content>  </entry>
+  <entry xml:base="http://blog.nanorails.com/">
+    <author>
+      <name>Pascal</name>
+    </author>
+    <id>tag:blog.nanorails.com,2007-12-15:6021</id>
+    <published>2007-12-15T08:48:00Z</published>
+    <updated>2007-12-15T08:55:25Z</updated>
+    <category term="News" />
+    <category term="vista" />
+    <link href="http://blog.nanorails.com/articles/2007/12/15/upgrade-to-windows-xp" rel="alternate" type="text/html" />
+    <title>Upgrade to Windows XP?</title>
+<content type="html">
+            &lt;p&gt;This was just too good to pass up!  Vista has been getting a pretty bad rap anywhere you look (well, at least anywhere I look, and from second hand experience helping people with their Vista machine), so here’s your chance to finally &lt;a href="http://dotnet.org.za/codingsanity/archive/2007/12/14/review-windows-xp.aspx"&gt;Upgrade to XP&lt;/a&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;Ok, you can stop laughing now.&lt;/p&gt;
+
+
+	&lt;p&gt;And for a real &lt;a href="http://dotnet.org.za/codingsanity/archive/2007/12/14/review-windows-xp.aspx"&gt;upgrade&lt;/a&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;(via &lt;a href="http://weblog.raganwald.com/"&gt;Reginald&lt;/a&gt;)&lt;/p&gt;
+          &lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/Nanorails?a=LxbuO"&gt;&lt;img src="http://feeds.feedburner.com/~f/Nanorails?i=LxbuO" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/Nanorails?a=M5PcO"&gt;&lt;img src="http://feeds.feedburner.com/~f/Nanorails?i=M5PcO" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/Nanorails?a=iKWYO"&gt;&lt;img src="http://feeds.feedburner.com/~f/Nanorails?i=iKWYO" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;</content>  </entry>
+  <entry xml:base="http://blog.nanorails.com/">
+    <author>
+      <name>Pascal</name>
+    </author>
+    <id>tag:blog.nanorails.com,2007-12-12:5762</id>
+    <published>2007-12-12T06:33:00Z</published>
+    <updated>2007-12-12T06:42:46Z</updated>
+    <category term="Mac" />
+    <category term="Mac os" />
+    <link href="http://blog.nanorails.com/articles/2007/12/12/removing-the-quarantine-attribute-on-your-application" rel="alternate" type="text/html" />
+    <title>Removing the quarantine attribute on your application</title>
+<content type="html">
+            &lt;p&gt;With Apple latest OS, Leopard (Which I recommend highly), comes an interesting new feature (well, at least it is cute for a while, but it can get to you after a while).  For annoying, try &lt;a href="http://movies.apple.com/movies/us/apple/getamac/apple-getamac-security_480x376.mov"&gt;Vista&lt;/a&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;When you try to run an application you downloaded and get this message every time you try to start an application&lt;/p&gt;
+
+
+&lt;code&gt;"..." is an application which was downloaded from the internet...&lt;/code&gt;
+
+	&lt;p&gt;There is an easy solution.&lt;/p&gt;
+
+
+	&lt;p&gt;Check first tha it has the “com.apple.quarantine” Attribute.&lt;/p&gt;
+
+
+&lt;code&gt;&lt;pre&gt;xattr -l BetterZip.app&lt;/pre&gt;&lt;/code&gt;
+
+which may give you something like:
+&lt;code&gt;&lt;pre&gt;com.apple.quarantine: 0000;4726d129;Safari;5FF2A3CB-B74C-405A-BF92-AD14858A6F5A|com.apple.Safari&lt;/pre&gt;&lt;/code&gt;
+
+	&lt;p&gt;If it does, remove it using:&lt;/p&gt;
+
+
+&lt;code&gt;&lt;pre&gt;sudo xattr -d com.apple.quarantine BetterZip.app&lt;/pre&gt;&amp;lt;/sudo&gt;
+          &lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/Nanorails?a=szGjO"&gt;&lt;img src="http://feeds.feedburner.com/~f/Nanorails?i=szGjO" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/Nanorails?a=hRTqO"&gt;&lt;img src="http://feeds.feedburner.com/~f/Nanorails?i=hRTqO" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/Nanorails?a=Ljl9O"&gt;&lt;img src="http://feeds.feedburner.com/~f/Nanorails?i=Ljl9O" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;</content>  </entry>
+</feed>

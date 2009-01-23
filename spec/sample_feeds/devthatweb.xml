@@ -1,0 +1,2357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" xml:lang="en-US">
+  <id>tag:devthatweb.com,2007:posts</id>
+  <link type="application/atom+xml" href="http://devthatweb.com/posts.html" rel="self" />
+  <title type="text">devthatweb</title>
+  <updated>Sun Aug 17 16:51:14 UTC 2008</updated>
+  <subtitle type="html">A weblog about web development.</subtitle><geo:lat>39.983108</geo:lat><geo:long>-75.593329</geo:long><entry>
+    <id>tag:devthatweb.com,2007:Post40</id>
+    <published>2008-05-06T01:26:27Z</published>
+    <updated>2008-05-06T01:45:15Z</updated>
+    <title>Remember the :active styles</title>
+    <content type="html">&lt;p&gt;The hyperlinks of today look way better than they did five years ago. Designers and developers have become better and better at styling links to not only be usable, but beautiful as well. We know how to indicate the basic behavior of a link using only color (for example, red usually indicates a destructive action). And we know how to style links to give them a stronger affordance of click-ability.&lt;/p&gt;
+
+
+	&lt;p&gt;Most web applications make clever use of the &lt;code&gt;:hover&lt;/code&gt; pseudo-class, which allows us to tweak link backgrounds to add an even stronger affordance of click-ability, and draws the eye to the link, which focuses the user on task at hand. All of &lt;a href="http://37signals.com"&gt;37signals&amp;#8217;&lt;/a&gt; apps provide great examples of tasteful rollover link styles.&lt;/p&gt;
+
+
+	&lt;p&gt;&lt;strong class="highlight"&gt;When we begin to think about rollover styles, we&amp;#8217;re no longer thinking about how the app looks. We&amp;#8217;re thinking about how it &lt;em&gt;feels&lt;/em&gt;.&lt;/strong&gt; Different styles for link rollovers make a page feel much more responsive. Everybody these days knows this, and takes advantage of it.&lt;/p&gt;
+
+
+	&lt;p&gt;Unfortunately, few people take advantage of the &lt;code&gt;:active&lt;/code&gt; pseudo-class, which allows you to style the link differently while it&amp;#8217;s being clicked. This is just as important, if not &lt;em&gt;more&lt;/em&gt; important than the rollover state. Changing a link&amp;#8217;s &lt;code&gt;:active&lt;/code&gt; style provides immediate visual feedback that the link is being clicked.&lt;/p&gt;
+
+
+	&lt;p&gt;Try each of the following links. See which feels better.&lt;/p&gt;
+
+
+&lt;div id="active_example"&gt;
+  &lt;p&gt;&lt;a href="#" id="noActive" onclick="return false;"&gt;This link does not have an active state.&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;a href="#" id="yesActive" onclick="return false;"&gt;This link does have an active state.&lt;/a&gt;&lt;/p&gt;
+  &lt;style type="text/css" media="screen"&gt;
+    #active_example a { padding: 0.2em; }  
+    #noActive:active { background: blue; }
+    #yesActive:active { background: #00b; }
+  &lt;/style&gt;
+&lt;/div&gt;
+
+	&lt;p&gt;The chances of a person successfully completing a task increase with the level of feedback that that he/she receives before, while, and after performing that task. (if you&amp;#8217;ve read &lt;a href="http://www.amazon.com/Design-Everyday-Things-Don-Norman/dp/0465067107"&gt;The Design of Everyday Things&lt;/a&gt;, you know what I&amp;#8217;m talking about). With links, the &amp;#8220;before&amp;#8221; feedback can be achieved using &lt;code&gt;:hover&lt;/code&gt; styles, and the &amp;#8220;after&amp;#8221; feedback is usually just the browser doing something, be it going to a different page or just updating something dynamically. &lt;strong class="highlight"&gt;The &amp;#8220;during&amp;#8221; feedback can be achieved by simply using a good &lt;code&gt;:active&lt;/code&gt; style.&lt;/strong&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;Now, just as much thought must be given to a link&amp;#8217;s &lt;code&gt;:active&lt;/code&gt; style as to its &lt;code&gt;:hover&lt;/code&gt; style, if not more. Usually, a click is less than a second, so changing the style too much can be distracting, and actually do more harm than good. I&amp;#8217;ve found that the best &lt;code&gt;:active&lt;/code&gt; styles tend to just make the background a bit darker. I first saw this on &lt;a href="http://flickr.com"&gt;flickr&lt;/a&gt; (which was where I first noticed the &lt;code&gt;:active&lt;/code&gt; state in use and fell in love). You might also think about adding an underline during the click. Experiment and see what works best for you.&lt;/p&gt;
+
+
+	&lt;p&gt;One thing&amp;#8217;s for sure though. Once you feel the difference in your web apps between a good &lt;code&gt;:active&lt;/code&gt; style and a non-existent one, you&amp;#8217;ll wish every site made use of them.&lt;/p&gt;
+</content>
+    <author>
+      <name>Pat Nakajima</name>
+    </author>
+    <link type="text/html" href="http://feeds.feedburner.com/~r/devthatweb/~3/284321825/remember-the-active-styles" rel="alternate" />
+  <feedburner:origLink>http://devthatweb.com/view/remember-the-active-styles</feedburner:origLink></entry>
+  <entry>
+    <id>tag:devthatweb.com,2007:Post39</id>
+    <published>2008-03-25T02:28:47Z</published>
+    <updated>2008-04-01T19:41:11Z</updated>
+    <title>Bells is Back</title>
+    <content type="html">&lt;p&gt;Remember &lt;a href="http://devthatweb.com/view/introducing-capistrano-bells"&gt;Capistrano Bells&lt;/a&gt;? The Rails plugin I created so long ago, then neglected for so long? Well it&amp;#8217;s back. And it has a bunch of new recipes for your deployment pleasure.&lt;/p&gt;
+
+
+	&lt;h3&gt;Nginx Recipes&lt;/h3&gt;
+
+
+	&lt;p&gt;You know about &lt;a href="http://wiki.codemongers.com/Main"&gt;Nginx&lt;/a&gt; right? That hip new web server all the cool kids are clamoring about? Well now Bells has built-in recipes to make configuring new Nginx virtual hosts a snap:&lt;/p&gt;
+
+
+	&lt;pre&gt;&lt;code&gt;cap deploy:nginx:configure&lt;/code&gt;&lt;/pre&gt;
+
+
+How does Bells know where you want your Nginx vhosts stored? Why with the new options added to the Capfile template of course!
+&lt;pre&gt;&lt;code class="ruby"&gt;set :nginx_sites_available, "/usr/local/nginx/sites-available" 
+set :nginx_sites_enabled, "/usr/local/nginx/sites-enabled" 
+&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;Those are just the defaults. You can modify them however you wish.&lt;/p&gt;
+
+
+	&lt;h3&gt;Thin Recipes&lt;/h3&gt;
+
+
+	&lt;p&gt;Almost as trendy as Nginx is &lt;a href="http://code.macournoyer.com/thin/"&gt;Thin&lt;/a&gt;, a new Ruby web server that takes Mongrel&amp;#8217;s parser and mashes it up with &lt;a href="http://rubyeventmachine.com/"&gt;EventMachine&lt;/a&gt; with &lt;a href="http://rack.rubyforge.org/"&gt;Rack&lt;/a&gt;. It&amp;#8217;s quick and simple, especially with Bells&amp;#8217; new Thin recipes.&lt;/p&gt;
+
+
+	&lt;pre&gt;&lt;code&gt;cap thin:configure
+cap thin:start
+cap thin:stop
+cap thin:restart&lt;/code&gt;&lt;/pre&gt;
+
+
+I&amp;#8217;ve been working on making Bells a bit more app server agnostic, which allows you to use Mongrel or Thin almost interchangeably. Just choose which you want to use like so:
+&lt;pre&gt;&lt;code class="ruby"&gt;set :app_server, :mongrel # or :thin if you please
+&lt;/code&gt;&lt;/pre&gt;
+
+Then specify the app server settings:
+&lt;pre&gt;&lt;code class="ruby"&gt;set :app_servers, 1
+set :app_server_port, 7007
+set :app_environment, 'production'
+set :app_server_address, '127.0.0.1'
+set :app_server_conf, "#{shared_path}/config/mongrel_conf.yml" 
+&lt;/code&gt;&lt;/pre&gt;
+I&amp;#8217;ve done away with Mongrel specific settings, since Thin and Mongrel&amp;#8217;s settings are pretty much the same.
+
+	&lt;p&gt;So that&amp;#8217;s about it. The project is on GitHub now. You can check out &lt;a href="http://github.com/nakajima/capistrano-bells"&gt;its page&lt;/a&gt;, or clone a copy yourself like so:&lt;/p&gt;
+
+
+	&lt;pre&gt;&lt;code&gt;git clone git://github.com/nakajima/capistrano-bells.git&lt;/code&gt;&lt;/pre&gt;
+
+
+	&lt;p&gt;If you&amp;#8217;re running edge Rails, you can even install the plugin directly from GitHub:&lt;/p&gt;
+
+
+	&lt;pre&gt;&lt;code&gt;script/plugin install git clone git://github.com/nakajima/capistrano-bells.git&lt;/code&gt;&lt;/pre&gt;
+
+
+	&lt;p&gt;If you have any questions/suggestions, &lt;a href="http://github.com/nakajima/capistrano-bells/wikis"&gt;hit the wiki&lt;/a&gt;.&lt;/p&gt;
+</content>
+    <author>
+      <name>Pat Nakajima</name>
+    </author>
+    <link type="text/html" href="http://feeds.feedburner.com/~r/devthatweb/~3/257389194/bells-is-back" rel="alternate" />
+  <feedburner:origLink>http://devthatweb.com/view/bells-is-back</feedburner:origLink></entry>
+  <entry>
+    <id>tag:devthatweb.com,2007:Post38</id>
+    <published>2008-02-13T07:14:35Z</published>
+    <updated>2008-05-24T18:47:44Z</updated>
+    <title>Basic event delegation in Prototype</title>
+    <content type="html">&lt;style&gt;
+code { color: black }
+pre code { color: white }
+&lt;/style&gt;Event delegation is a technique that I wish I picked up a long time ago. If you&amp;#8217;re unfamiliar with it, check out &lt;a href="http://icant.co.uk/sandbox/eventdelegation"&gt;this post from the &lt;span class="caps"&gt;YUI&lt;/span&gt; blog&lt;/a&gt; for a terrific explanation. Then check out &lt;a href="http://www.danwebb.net/2008/2/8/event-delegation-made-easy-in-jquery"&gt;Dan Webb&amp;#8217;s implementation for jQuery&lt;/a&gt;. Then come on back here to see how we can do the same with Prototype.&lt;br /&gt;&lt;br /&gt;
+Event delegation is made possible by the fact that certain &lt;span class="caps"&gt;DOM&lt;/span&gt; events &amp;#8220;bubble&amp;#8221; up through their ancestors. So if we listen for &lt;code&gt;onclick&lt;/code&gt; events in the body, we&amp;#8217;ll should hear every one that occurs throughout the page. And if we want to assign certain behaviors to certain elements&amp;#8217; &lt;code&gt;onclick&lt;/code&gt; event, we just have to check to see if the target element of the event matches the group of elements to which we want to assign a particular behavior. Make sense? Not so much? Here&amp;#8217;s some code:
+&lt;pre&gt;&lt;code class="javascript"&gt;// Introduces Event delegation (http://icant.co.uk/sandbox/eventdelegation)
+Object.extend(Event, {
+  delegate: function(element, eventName, targetSelector, handler) {
+    var element = $(element);
+
+    function selectorMatch(element) {
+      return element.match(targetSelector);
+    }
+
+    function validateTarget(origin) {
+      if ( origin.match(targetSelector) ) { return origin; }
+      var ancestors = origin.ancestors();
+      return ancestors.find(selectorMatch);
+    }
+
+    function createDelegation(_delegatedEvent) {
+      var rawOrigin = _delegatedEvent.element();
+      var origin = validateTarget(rawOrigin);
+      if ( origin != null &amp;#38;&amp;#38; (typeof handler == 'function') ){ 
+        _delegatedEvent.element = function() { return origin; }
+        return handler(_delegatedEvent);
+      }
+    };
+
+    element.observe(eventName, createDelegation);
+    return element;
+  },
+
+  delegators: function(element, eventName, rules) {
+    var element = $(element);
+    function delegateRule(rule) {
+      element.delegate(eventName, rule.key, rule.value)
+    }
+    $H(rules).each(delegateRule)
+    return element;
+  }
+})
+
+Element.addMethods({
+  delegate: Event.delegate,
+  delegators: Event.delegators
+})
+
+Object.extend(document, {
+  delegate: Event.delegate,
+  delegators: Event.delegators
+})&lt;/code&gt;&lt;/pre&gt;
+
+With that snippet, we have two new methods available to our page elements: &lt;code&gt;delegate&lt;/code&gt; and &lt;code&gt;delegators&lt;/code&gt; (this could definitely be refactored into a cleaner implementation, but for the sake of illustration, it&amp;#8217;s pretty good). So now if we had a &lt;code&gt;div&lt;/code&gt; with some links in it, we could delegate behaviors within that &lt;code&gt;div&lt;/code&gt; like so:
+&lt;pre&gt;&lt;code class="javascript"&gt;ElementBehaviors = {
+  // I create an alert message out of my target element's innerHTML
+  alertify: function(event) {
+    var element = event.element();
+    alert(element.innerHTML);
+    event.stop();
+  },
+
+  // I remove my target element
+  removify: function(event) {
+    var element = event.element();
+    element.remove();
+    event.stop();
+  }
+}
+
+$('div_id').delegators('click', {
+  '.alert': ElementBehaviors.alertify,
+  '.remove': ElementBehaviors.removify
+})&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;Now, links within &lt;code&gt;$('div_id')&lt;/code&gt; with the class name &lt;code&gt;.alert&lt;/code&gt; will have their innerHTML alerted when clicked, and elements with the class name &lt;code&gt;remove&lt;/code&gt; will just be removed when clicked, even if they are added to the page dynamically. No reloading or reassignmening of handlers is necessary.&lt;/p&gt;
+
+
+	&lt;p&gt;So that&amp;#8217;s great. But what if you want to event delegation for events that don&amp;#8217;t bubble, such as form submissions?&lt;/p&gt;
+
+
+	&lt;h3&gt;Simulating event bubbling with Prototype&amp;#8217;s custom events.&lt;/h3&gt;
+
+
+To simulate event bubbling, we have to resort to listening for &lt;em&gt;bubbling events that can cause non-bubbling events&lt;/em&gt;. By checking the circumstances surrounding these &amp;#8220;trigger&amp;#8221; events, we can determine whether or not to fire a custom event. Here&amp;#8217;s some code:
+&lt;pre&gt;&lt;code class="javascript"&gt;var Bubbler = {
+  // Checks to see whether or not this element will submit  
+  // a form if the Enter key is pressed within it.
+  submittableInput: function(element) {
+    var element = $(element);
+    return ( element.match('input[type=text]') || element.match('input[type=password]') )
+  },
+
+  // Checks to see whether or not this element will submit a
+  // form if clicked.
+  submitButton: function(element) {
+    var element = $(element);
+    return ( element.match('input[type=submit]') || element.match('input[type=image]') )
+  },
+
+  Behaviors: {
+    // Fires the 'form:submitted' custom event if the Enter key was 
+    // pressed while the cursor was within a input that would submit
+    // a form.
+    keypress: function(event) {
+      if ( event.keyCode == 13 ) {
+        var element = event.element();
+        if ( Bubbler.submittableInput(element) ){
+          element.form.fire('form:submitted', { 'originalEvent': event });
+        }
+      }
+    },
+
+    // Fires the 'form:submitted' custom event if an element that 
+    // would submit the form was clicked.
+    click: function(event) {
+      var element = event.element();      
+      if ( Bubbler.submitButton(element) ) {
+        element.form.fire('form:submitted', { 'originalEvent': event });
+      }
+    }
+  }
+}
+
+// Always remaining vigilant.
+Event.observe(document, 'keypress', Bubbler.Behaviors.keypress)    
+Event.observe(document, 'click', Bubbler.Behaviors.click)&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;The above code continually listens to all &lt;code&gt;keypress&lt;/code&gt; and &lt;code&gt;onclick&lt;/code&gt; events in the entire document. When one of them matches the conditions required to submit a form, it&amp;#8217;s smart enough to find that particular &lt;code&gt;form&lt;/code&gt; element, and fires the &amp;#8216;form:submitted&amp;#8217; custom event from it. Custom events bubble up through the &lt;span class="caps"&gt;DOM&lt;/span&gt;.&lt;/p&gt;
+
+
+Prototype&amp;#8217;s custom events also have a &amp;#8220;memo&amp;#8221; hash which can be used to store additional information about the event. This code makes use of it by stashing the original trigger element with the key &amp;#8216;originalElement&amp;#8217; where it can be accessed by whatever handler (or delegator) takes the custom event. Let&amp;#8217;s take a look at a delegator here:
+&lt;pre&gt;&lt;code class="javascript"&gt;var FormBehaviors = {
+  // Takes a custom event, submit's the event's target (a form) 
+  // via AJAX and stops the trigger event if it exists.
+  remotify: function(event) {
+    var element = event.element();
+    element.request();
+    if ( event.memo['originalEvent'] != null )
+      event.memo['originalEvent'].stop()
+    event.stop();
+  }
+}
+
+document.delegate('form:submitted', '.remotify', FormBehaviors.remotify)&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;So now, any form with the class name &amp;#8220;remotify&amp;#8221; will be submitted via &lt;span class="caps"&gt;AJAX&lt;/span&gt;, again including those added dynamically. And again, no handler refreshes or reassignments were necessary.&lt;/p&gt;
+
+
+	&lt;p&gt;If you haven&amp;#8217;t played with event delegation yet, give it a try. And if you&amp;#8217;re way better than me at Javascript, and can point out some better ways for what I&amp;#8217;ve described above, please do share in the comments.&lt;/p&gt;
+</content>
+    <author>
+      <name>Pat Nakajima</name>
+    </author>
+    <link type="text/html" href="http://feeds.feedburner.com/~r/devthatweb/~3/234216417/basic-event-delegation-in-prototype" rel="alternate" />
+  <feedburner:origLink>http://devthatweb.com/view/basic-event-delegation-in-prototype</feedburner:origLink></entry>
+  <entry>
+    <id>tag:devthatweb.com,2007:Post37</id>
+    <published>2007-11-20T04:29:44Z</published>
+    <updated>2008-04-11T05:38:25Z</updated>
+    <title>Parsing Parameters with Javascript</title>
+    <content type="html">&lt;style&gt;
+  code { color: rgb(82, 82, 82); }
+  pre code { color: white; } 
+&lt;/style&gt;
+&lt;strong class="highlight"&gt;&lt;strong&gt;Update:&lt;/strong&gt; While this post is nice, a &lt;strong&gt;much&lt;/strong&gt; better way to parse parameters is to use Prototype&amp;#8217;s (if you&amp;#8217;re using Prototype that is) built-in &lt;a href="http://prototypejs.org/api/string/toQueryParams"&gt;String#toQueryParams()&lt;/a&gt; method. To quote the official documentation, this method &amp;#8220;Parses a &lt;span class="caps"&gt;URI&lt;/span&gt;-like query string and returns an object composed of parameter/value pairs.&amp;#8221; Live and learn.&lt;/strong&gt;
+&lt;br /&gt;&lt;br /&gt;
+Wish you had a &lt;code&gt;params&lt;/code&gt; object to use in your Javascript, 
+just like the one you get in your Rails controllers? Well wish no longer.
+Just add the following script to your application code:
+&lt;pre&gt;&lt;code class="javascript"&gt;params = { };
+document.URL.split('?')[1].split('&amp;#38;').each(function(par) {
+  params[par.split('=')[0]] = par.split('=')[1];
+})&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;Then when you&amp;#8217;re on a page with a &lt;span class="caps"&gt;URL&lt;/span&gt; like &amp;#8220;http://your-site.com/users?name=pat&amp;#8221;,
+you can access the value of the name parameter like so: &lt;code&gt;params['name']&lt;/code&gt;.&lt;/p&gt;
+
+
+	&lt;p&gt;The biggest limitation of this script is that it&amp;#8217;s limited to &lt;span class="caps"&gt;GET&lt;/span&gt; params,
+in other words, the ones found in the &lt;span class="caps"&gt;URL&lt;/span&gt;. Still, it&amp;#8217;s a clean and easy
+way to get a Rails-like syntax in your Javascript.&lt;/p&gt;
+</content>
+    <author>
+      <name>Pat Nakajima</name>
+    </author>
+    <link type="text/html" href="http://feeds.feedburner.com/~r/devthatweb/~3/187513231/parsing-parameters-with-javascript" rel="alternate" />
+  <feedburner:origLink>http://devthatweb.com/view/parsing-parameters-with-javascript</feedburner:origLink></entry>
+  <entry>
+    <id>tag:devthatweb.com,2007:Post36</id>
+    <published>2007-11-07T07:46:30Z</published>
+    <updated>2007-11-07T07:59:37Z</updated>
+    <title>How to make an AJAX todo list checkbox</title>
+    <content type="html">&lt;p&gt;One of the most compelling apps when it comes to introducing users to Rails is &lt;a href="http://tadalist.com/"&gt;Ta-da Lists&lt;/a&gt;. Almost every Rails developer has built his/her own todo list app (&lt;a href="http://tinytodo.devthatweb.com"&gt;including me&lt;/a&gt;), and almost every one of these todo list apps contains the requisite &lt;span class="caps"&gt;AJAX&lt;/span&gt; checkboxes.&lt;/p&gt;
+
+
+	&lt;p&gt;&lt;img src="http://s3.amazonaws.com/devthatweb/todo.png" alt="" /&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;I don&amp;#8217;t know about you, but when I first tried to make my checkboxes &amp;#8220;all ajaxy,&amp;#8221; I had a bit of trouble deciding the best way. There&amp;#8217;s no &amp;#8220;checkbox_to_remote&amp;#8221; helper in Rails. After building several todo list apps, I&amp;#8217;m convinced that the best way to create the &lt;span class="caps"&gt;AJAX&lt;/span&gt; checkbox behavior doesn&amp;#8217;t live in Rails at all. It lives in &lt;a href="http://prototypejs.org"&gt;Prototype&lt;/a&gt; and &lt;a href="http://www.danwebb.net/lowpro"&gt;LowPro&lt;/a&gt;, my two favorite Javascript libraries.&lt;/p&gt;
+
+
+	&lt;p&gt;You&amp;#8217;ve probably heard of Prototype before. If not, you&amp;#8217;re probably reading the wrong blog (or you&amp;#8217;re my mom. Hi Mom.) Prototype makes the normally somewhat ugly language Javascript as beautiful as a Ruby. In other words, it takes care of a lot of the browser incompatibilities that usually plague Javascript development, as well as adds a bunch of syntactical sugar to make developing with Javascript a more enjoyable experience.&lt;/p&gt;
+
+
+	&lt;p&gt;Dan Webb&amp;#8217;s LowPro library allows you to do a few cool things with Prototype, but the one we&amp;#8217;ll use is its Behaviors feature. Behaviors allow you to designate different behaviors for the elements on your page based on &lt;span class="caps"&gt;CSS&lt;/span&gt; selectors such as class name, ID, etc. I wrote about this in a bit more detail &lt;a href="http://devthatweb.com/view/a-short-list-of-great-things"&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+
+	&lt;p&gt;Let&amp;#8217;s say you&amp;#8217;ve built your todo list app like so:&lt;/p&gt;
+
+
+&lt;h3&gt;Routes&lt;/h3&gt;
+&lt;pre&gt;&lt;code class="ruby"&gt;map.resources :lists do |list|
+  list.resources :todos
+end&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;Models&lt;/h3&gt;
+&lt;pre&gt;&lt;code class="ruby"&gt;class List &amp;lt; ActiveRecord::Base
+  has_many :todos, :dependent =&amp;gt; :destroy
+  has_many :incomplete_todos, :class_name =&amp;gt; "Todo", :foreign_key =&amp;gt; :list_id, :conditions =&amp;gt; ['todos.complete = ?', false]
+  has_many :complete_todos,   :class_name =&amp;gt; "Todo", :foreign_key =&amp;gt; :list_id, :conditions =&amp;gt; ['todos.complete = ?', true]
+end&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class="ruby"&gt;class Todo &amp;lt; ActiveRecord::Base
+  belongs_to :list
+end&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;Pertinent Actions&lt;/h3&gt;
+&lt;pre&gt;&lt;code class="ruby"&gt;class ListsController &amp;lt; ApplicationController
+  def show
+    @list  = List.find(params[:id], :include =&amp;gt; [:incomplete_todos, :complete_todos])
+    respond_to do |format|
+      format.html # default
+    end
+  end
+end&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class="ruby"&gt;class TodosController &amp;lt; ApplicationController
+  def update
+    @list = List.find(params[:list_id])
+    @todo = @list.todos.find(params[:id])
+    respond_to do |format|
+      if @todo.update_attributes(params[:todo])
+        flash[:notice] = 'Todo was successfully updated.'
+        format.html { redirect_to(@list) }
+        format.js   { render :action =&amp;gt; "updated" } # This is a .rjs template
+      else
+        format.html { render :action =&amp;gt; "edit" }
+      end
+    end
+  end
+end&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;The lists/show view&lt;/h3&gt;
+&lt;pre&gt;&lt;code class="ruby"&gt;&amp;lt;ul id="incomplete_list"&amp;gt;
+  &amp;lt;% @list.incomplete_todos.each do |todo| %&amp;gt;
+  &amp;lt;li id="list_&amp;lt;%= todo.list_id %&amp;gt;_todo_&amp;lt;%= todo.id %&amp;gt;" class="todo"&amp;gt;
+    &amp;lt;%= checkbox :todo, :complete, :class =&amp;gt; "checkbox" %&amp;gt;
+    &amp;lt;%= todo.name %&amp;gt;
+  &amp;lt;/li&amp;gt;
+  &amp;lt;% end %&amp;gt;
+&amp;lt;/ul&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;Some Javascript&lt;/h3&gt;
+&lt;pre&gt;&lt;code class="javascript"&gt;Event.addBehavior({
+  // Defining the checkbox behavior and assigning to the appropriate elements
+  'li.todo input.checkbox:click' : function(event) {
+    Todo.update(this.parentNode.id);
+  }
+})&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class="javascript"&gt;// A module containing the actual function to perform the AJAX request
+var Todo = {
+  update: function(id) {
+    var element  = $(id);
+    var checkbox = element.firstDescendent();
+    var list_id  = id.gsub('list_','').split('_todo_')[0];
+    var todo_id  = id.gsub('list_','').split('_todo_')[1];
+    var url  = '/lists/' + list_id + '/todos/' + todo_id;
+    var pars = $H({
+      todo: { 'complete':$F(checkbox); }
+    })
+    new Ajax.Request(url, { parameters: pars.toQueryString(), method: 'put' })
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;And that should do it. I could have made one or ten typos, since I was just typing this code off the top of my head and haven&amp;#8217;t actually gone about testing it. If all goes to plan though, clicking a checkbox with the class name &amp;#8220;checkbox&amp;#8221; within an li with the class name &amp;#8220;todo&amp;#8221; should submit an &lt;span class="caps"&gt;AJAX&lt;/span&gt; request. The response is up to you and probably merits another post from me at some point. Not now though. Enjoy.&lt;/p&gt;
+</content>
+    <author>
+      <name>Pat Nakajima</name>
+    </author>
+    <link type="text/html" href="http://feeds.feedburner.com/~r/devthatweb/~3/180969421/how-to-make-an-ajax-todo-list-checkbox" rel="alternate" />
+  <feedburner:origLink>http://devthatweb.com/view/how-to-make-an-ajax-todo-list-checkbox</feedburner:origLink></entry>
+  <entry>
+    <id>tag:devthatweb.com,2007:Post35</id>
+    <published>2007-11-02T07:00:04Z</published>
+    <updated>2007-11-02T07:02:13Z</updated>
+    <title>The Trouble with RSpec</title>
+    <content type="html">&lt;p&gt;These days, most developers (thankfully) recognize the value of test driven development. Still, the question, &amp;#8220;To test, or not to test&amp;#8230;&amp;#8221; lives on, with some developers preferring to &amp;#8220;spec&amp;#8221; instead. Spec driven development (or Behavior Driven Development) in Ruby or Ruby on Rails means using the &lt;a href="http://rspec.rubyforge.org/"&gt;RSpec&lt;/a&gt; framework to describe what the code ought to do in a syntax that reads very much like plain English. And that&amp;#8217;s the problem.&lt;/p&gt;
+
+
+	&lt;p&gt;While English is a great language for communicating with other humans, it&amp;#8217;s far too low level to be useful as a language to poke and prod Ruby code. While computer languages were originally designed as a way for humans to communicate with machines, they&amp;#8217;re now (at least the good ones) frameworks upon which we are able to structure our thought processes. We have the problem solving muscle. We just need the programming language hammer.&lt;/p&gt;
+
+
+	&lt;p&gt;And so I believe that Ruby is the best language for testing Ruby code. And in the same way I wouldn&amp;#8217;t write a one-act play in a programming language, I don&amp;#8217;t believe it&amp;#8217;s productive to expect an &lt;strong class="highlight"&gt;interpersonal&lt;/strong&gt; language to assume the responsibilities and abilities of &lt;strong class="highlight"&gt;programmatic&lt;/strong&gt; one.&lt;/p&gt;
+</content>
+    <author>
+      <name>Pat Nakajima</name>
+    </author>
+    <link type="text/html" href="http://feeds.feedburner.com/~r/devthatweb/~3/178605642/the-trouble-with-rspec" rel="alternate" />
+  <feedburner:origLink>http://devthatweb.com/view/the-trouble-with-rspec</feedburner:origLink></entry>
+  <entry>
+    <id>tag:devthatweb.com,2007:Post34</id>
+    <published>2007-11-02T02:49:24Z</published>
+    <updated>2008-08-05T14:25:30Z</updated>
+    <title>Another Calendar Helper for Rails</title>
+    <content type="html">I put together a calendar helper plugin for Rails recently. I think it&amp;#8217;s pretty cool, and it does what I need it to do, so I thought I might write about it and see if it can help any of you too. You can install it using the following:
+&lt;pre class="terminal" style="text-align:left"&gt;./script/plugin install \
+git://github.com/nakajima/calendar-maker.git&lt;/pre&gt;
+
+	&lt;p&gt;If you want to check out the code with pretty &lt;a href="http://github.com"&gt;GitHub&lt;/a&gt; syntax highlighting, you can do so &lt;a href="http://github.com/nakajima/calendar-maker/tree/master"&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+
+Here&amp;#8217;s a little taste of how &amp;#8220;calendar maker&amp;#8221; works. To build a basic calendar with nothing on it, do the following.
+&lt;pre&gt;&lt;code class="ruby"&gt;# In your controller...
+class PartyController &amp;lt; ApplicationController
+  def index
+    @calendar = Calendar.new
+  end
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class="html"&gt;&amp;lt;!-- In your view... --&amp;gt;
+&amp;lt;%= @calendar.generate %&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;Of course that would be pretty boring if that&amp;#8217;s all it could do, right? So let&amp;#8217;s say we have some items we want to add to the calendar. To add objects to the calendar, simply pass the &lt;strong class="highlight"&gt;add&lt;/strong&gt; method an array of objects. We specify the date attribute of those objects to use with the &lt;strong class="highlight"&gt;schedule_for&lt;/strong&gt; option (an option name that I&amp;#8217;m not entirely happy with and could possibly get renamed at some point).&lt;/p&gt;
+
+
+	&lt;p&gt;Calendar Maker denotes an object&amp;#8217;s addition to a day by simply adding a class name to that day. By default, the &lt;span class="caps"&gt;HTML&lt;/span&gt; class name added will just be the name of the attribute that the calendar is looking at, but you can specify a different one using the &lt;strong class="highlight"&gt;html_class&lt;/strong&gt; option. It&amp;#8217;s not a significant addition, but enough that you&amp;#8217;ll be able to style that day different, and even give it its own behavior via unobtrusive Javascript (gotta love unobtrusive Javascript).&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code class="ruby"&gt;# This time, in your controller...
+class PartyController &amp;lt; ApplicationController
+  def index
+    @parties  = Party.find(:all)
+    @calendar = Calendar.new
+    @calendar.add @parties, :schedule_for =&amp;gt; :created_at, :html_class =&amp;gt; "party" 
+  end
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class="html"&gt;&amp;lt;!-- And your view looks pretty much the same... --&amp;gt;
+&amp;lt;%= @calendar.generate %&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;If you have any questions, just leave a comment on this post and I&amp;#8217;ll see if I can&amp;#8217;t help out.&lt;/p&gt;
+</content>
+    <author>
+      <name>Pat Nakajima</name>
+    </author>
+    <link type="text/html" href="http://feeds.feedburner.com/~r/devthatweb/~3/178535777/another-calendar-helper-for-rails" rel="alternate" />
+  <feedburner:origLink>http://devthatweb.com/view/another-calendar-helper-for-rails</feedburner:origLink></entry>
+  <entry>
+    <id>tag:devthatweb.com,2007:Post33</id>
+    <published>2007-10-16T01:41:23Z</published>
+    <updated>2007-10-16T01:44:31Z</updated>
+    <title>Playing with Warehouse 1.1.1</title>
+    <content type="html">&lt;p&gt;I&amp;#8217;ve been a happy &lt;a href="http://warehouseapp.com"&gt;Warehouse&lt;/a&gt; user ever since the app was released and I was able to get it running on my &lt;span class="caps"&gt;SVN&lt;/span&gt; server. I&amp;#8217;ve had almost no complaints. Still, whenever I try to sell the idea to others, one of the first things I&amp;#8217;ll hear is the question &amp;#8220;Is that &lt;em&gt;all&lt;/em&gt; is does?&amp;#8221; I&amp;#8217;ll answer yes, and we&amp;#8217;ll typically move on in the conversation. With the pseudo-release of Warehouse 1.1.1 though, I&amp;#8217;ll have a bit more to talk about.&lt;/p&gt;
+
+
+	&lt;p&gt;Warehouse 1.1.1, recently released to beta participants, introduces two new features which will make the app worthwhile to a lot more people hooks and plugins.&lt;/p&gt;
+
+
+	&lt;h2&gt;Hooks&lt;/h2&gt;
+
+
+	&lt;p&gt;&lt;img src="http://s3.amazonaws.com/devthatweb/hooks.png" alt="" /&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;Hooks have been a part of &lt;span class="caps"&gt;SVN&lt;/span&gt; and sort of a part of Warehouse all along, but now there is a separate tab in the interface for managing them. You can setup separate instances of different hooks with customized options for each. Pretty nifty. What&amp;#8217;s more, Warehouse 1.1.1 ships with three hooks already in place:&lt;/p&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;&lt;strong&gt;Campfire:&lt;/strong&gt; Logs into &lt;a href="http://campfirenow.com"&gt;Campfire&lt;/a&gt; and posts a message for every repository commit.&lt;/li&gt;
+		&lt;li&gt;&lt;strong&gt;Mailer:&lt;/strong&gt; Emails the details of every commit, using mail settings found in Warehouse 1.1.1&amp;#8217;s new and improved Settings area.&lt;/li&gt;
+		&lt;li&gt;&lt;strong&gt;Lighthouse Beacon:&lt;/strong&gt; Posts the latest revision data to your &lt;a href="http://lighthouseapp.com"&gt;Lighthouse&lt;/a&gt; account. It&amp;#8217;s great to see some integration between ActiveReload products.&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;p&gt;Those three hooks pretty much cover 99% of the demands I&amp;#8217;ve heard from people who wanted more from Warehouse. I&amp;#8217;m still excited to see what else users will come up with though.&lt;/p&gt;
+
+
+	&lt;h2&gt;Plugins&lt;/h2&gt;
+
+
+	&lt;p&gt;&lt;img src="http://s3.amazonaws.com/devthatweb/plugins.png" alt="" /&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;Since Warehouse is a Rails app, it&amp;#8217;s had plugin support from the beginning, but implementing them would have required some tinkering with the app itself. The new plugin system automatically loads all Warehouse plugins when the app is started, and provides a new tab in the interface for managing them.&lt;/p&gt;
+
+
+	&lt;p&gt;Warehouse 1.1.1 comes with a simple plugin called &amp;#8220;Photo Gallery&amp;#8221; which provides a quick interface to view any image in your repository. It&amp;#8217;s meant as more of a demo to those of us who might be inclined to create our own plugins. I took the time to develop an ultra-basic &amp;#8220;Hello World&amp;#8221; plugin, which basically just displayed the message &amp;#8220;Hello World&amp;#8221; when I clicked on it.&lt;/p&gt;
+
+
+	&lt;p&gt;Obviously, my plugin didn&amp;#8217;t take much time to develop, but it wasn&amp;#8217;t so much of a stretch to imagine developing something much more useful with not much more effort. I think it&amp;#8217;s safe to say that the plugin system will be a hit.&lt;/p&gt;
+
+
+	&lt;h3&gt;A word to the wise&lt;/h3&gt;
+
+
+	&lt;p&gt;Unless you &lt;strong&gt;really&lt;/strong&gt; know your way around a Rails app, you should wait for a more stable version to be released before you start to play with the new Warehouse. While version 1.1.1 introduces some great new features, it&amp;#8217;s still very much a beta release. You&amp;#8217;ve been warned.&lt;/p&gt;
+
+
+	&lt;p&gt;And feel free to take a look at my warehouse installation here: &lt;a href="http://nakadev.com"&gt;nakadev.com&lt;/a&gt;.&lt;/p&gt;
+</content>
+    <author>
+      <name>Pat Nakajima</name>
+    </author>
+    <link type="text/html" href="http://feeds.feedburner.com/~r/devthatweb/~3/170425684/playing-with-warehouse-1-1-1" rel="alternate" />
+  <feedburner:origLink>http://devthatweb.com/view/playing-with-warehouse-1-1-1</feedburner:origLink></entry>
+  <entry>
+    <id>tag:devthatweb.com,2007:Post32</id>
+    <published>2007-10-10T20:15:53Z</published>
+    <updated>2007-10-10T20:25:21Z</updated>
+    <title>Taking Merb for a spin</title>
+    <content type="html">&lt;p&gt;A few nights ago, I had a hankering to write in a personal &lt;a href="http://blog.patnakajima.com"&gt;blog&lt;/a&gt;. My old one, based on &lt;a href="http://www.wordpress.org"&gt;WordPress&lt;/a&gt;, died unexpectedly, and rather than wrangle with &lt;span class="caps"&gt;PHP&lt;/span&gt;, I decided it&amp;#8217;d be fun to build a new one from scratch. I decided to give &lt;a href="http://merb.rubyforge.org/files/README.html"&gt;Merb&lt;/a&gt; a whirl, since everybody says it&amp;#8217;s so dandy, and my personal blog needs next to nothing when it comes to features. The ability to write posts, view those posts in a list on a front page, edit posts, and add comments are pretty much all I need. I figured Merb could handle it.&lt;/p&gt;
+
+
+	&lt;p&gt;Was I right? Yes and no. Merb can handle the app that I described above. Can it do so elegantly? Not so much. Here&amp;#8217;s why.&lt;/p&gt;
+
+
+	&lt;h3&gt;No nested routes&lt;/h3&gt;
+
+
+	&lt;p&gt;I&amp;#8217;m a &lt;span class="caps"&gt;RES&lt;/span&gt;Tful guy. I like resources. Merb lets you create resources, but you can&amp;#8217;t nest them. What&amp;#8217;s the difference? Nesting basically allows you to reveal your models&amp;#8217; resources through their routes. So while Rails gives me something like this:&lt;pre&gt;&lt;code class="ruby"&gt;map.resources :posts do |post|
+  post.resources :comments
+end
+# Gives me routes like this: /posts/1/comments
+# which imposes a helpful scope for comments based
+# on their parent post&lt;/code&gt;&lt;/pre&gt;
+Merb left me with this at best:&lt;pre&gt;&lt;code class="ruby"&gt;map.resources :posts
+map.resources :comments
+# Gives me routes like this:
+# - /posts/1
+# - /comments/1
+# which group all comments together. The only way
+# to access comments for a particular post would
+# be to include the post_id as a parameter.
+&lt;/code&gt;&lt;/pre&gt;&lt;/p&gt;
+
+
+	&lt;h3&gt;More convention would be nice&lt;/h3&gt;
+
+
+	&lt;p&gt;This one is up for debate, in fact, one of the features that Merb&amp;#8217;s creator, &lt;a href="http://brainspl.at"&gt;Ezra Zygmuntowicz&lt;/a&gt;, advertises is the fact that Merb is a hackers&amp;#8217; framework. That is to say that Merb doesn&amp;#8217;t penalize you for leaving the &amp;#8220;opinionated&amp;#8221; path, as Rails is prone to doing. That makes it great for simple apps (Merb is great for building web service apps). It makes it a bit of a hassle to create a full web app with a front end and everything.&lt;/p&gt;
+
+
+	&lt;h3&gt;It&amp;#8217;s not Rails.&lt;/h3&gt;
+
+
+	&lt;p&gt;I&amp;#8217;ll be honest. I&amp;#8217;m very familiar with Rails development. I&amp;#8217;m not very familiar with Merb development. I&amp;#8217;m always going to favor the devil I know over the devil I don&amp;#8217;t.&lt;/p&gt;
+
+
+&lt;div class="box" style="text-align: left;"&gt;
+  &lt;h3&gt;Conclusion&lt;/h3&gt;
+  &lt;p&gt;Merb is &lt;strong&gt;lightning fast&lt;/strong&gt;. Its speed is not to be underestimated. However, at this point, developing with Merb feels a bit too much like developing with a crippled Rails.&lt;/p&gt;
+
+  &lt;p&gt;While it&amp;#8217;s not ready for prime-time yet, Merb is definitely worth a look, and I eagerly await the day it reaches maturity.&lt;/p&gt;
+&lt;/div&gt;
+
+	&lt;p&gt;&lt;strong class="highlight"&gt;Have you had a better experience with Merb? Am I totally wrong? A little bit wrong? Tell me about it in the comments. Give Merb a fighting chance.&lt;/strong&gt;&lt;/p&gt;
+</content>
+    <author>
+      <name>Pat Nakajima</name>
+    </author>
+    <link type="text/html" href="http://feeds.feedburner.com/~r/devthatweb/~3/168097254/taking-merb-for-a-spin" rel="alternate" />
+  <feedburner:origLink>http://devthatweb.com/view/taking-merb-for-a-spin</feedburner:origLink></entry>
+  <entry>
+    <id>tag:devthatweb.com,2007:Post31</id>
+    <published>2007-09-28T14:59:30Z</published>
+    <updated>2007-10-08T14:17:02Z</updated>
+    <title>Set hash keys to instance variables with ease</title>
+    <content type="html">&lt;p&gt;Like any Rubyist, I tend to pass hashes as arguments (or is it parameters?) when
+creating a new object, and I usually want the keys to said hashes to be instance
+variables for said object. So I usually end up with something like this:&lt;/p&gt;
+
+
+	&lt;p&gt;&lt;em&gt;Forgive the strange spacing, it&amp;#8217;s the only way to keep the syntax highlighting from getting all screwey.&lt;/em&gt;
+&lt;pre&gt;&lt;code class="ruby"&gt;def initialize(options={})
+  @clowns = options[ :clowns ]
+  @output = options[ :output ]
+  @settings = options[ :settings ]
+  @user_id = options[ :user_id ]
+end
+&lt;/code&gt;&lt;/pre&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;Lame right? Wouldn&amp;#8217;t it be nicer to do something like this?&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code class="ruby"&gt;def initialize(options={})
+  keys_to_instance_variables(options)
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+Darn right it would. So I wrote this:
+&lt;pre&gt;&lt;code class="ruby"&gt;module KeysToInstanceVariables
+
+  def keys_to_instance_variables(hash={})
+    hash.keys.each do |key|
+      sym = "@#{key.to_s}".to_sym
+      self.instance_variable_set(sym, hash[key])
+    end
+  end
+
+end
+
+Object.send( :include, KeysToInstanceVariables )
+&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;I plopped that in a file called keys_to_instance_variables.rb, then required
+it from my class, and wham bam, dryer object instantiation.&lt;/p&gt;
+
+
+Don&amp;#8217;t believe me? Let&amp;#8217;s go to the tests:
+&lt;pre&gt;&lt;code class="ruby"&gt;# Meet the Person class.  It's about to be put to the test.
+# People have names, ages and heights.
+require 'keys_to_instance_variables'
+class Person
+
+  def initialize(options={})
+    keys_to_instance_variables(options)
+  end
+
+end
+
+# And now let's put our little method through the motions.
+class KeysToInstanceVariablesTest &amp;lt; Test::Unit::TestCase
+
+  def test_should_have_person_class
+    assert_not_nil Person
+  end
+
+  def test_should_include_keys_to_instance_variables_module
+    Person.include?(KeysToInstanceVariables)
+  end
+
+  def test_should_convert_parameter_keys_to_instance_variables
+    person = Person.new( :name =&amp;gt; "Pat", :age =&amp;gt; 21, :height =&amp;gt; 64 )
+    assert_equal 'Pat', person.instance_variable_get( :@name )
+    assert_equal 21, person.instance_variable_get( :@age )
+    assert_equal 64, person.instance_variable_get( :@height )
+  end
+
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;Fun times right? I&amp;#8217;m not sure if I&amp;#8217;ve committed some faux pas by playing with the object
+class like that, so let me know if I have. It works for me though, so hopefully it&amp;#8217;ll work
+for you too.&lt;/p&gt;
+</content>
+    <author>
+      <name>Pat Nakajima</name>
+    </author>
+    <link type="text/html" href="http://feeds.feedburner.com/~r/devthatweb/~3/162669680/set-hash-keys-to-instance-variables-with-ease" rel="alternate" />
+  <feedburner:origLink>http://devthatweb.com/view/set-hash-keys-to-instance-variables-with-ease</feedburner:origLink></entry>
+  <entry>
+    <id>tag:devthatweb.com,2007:Post30</id>
+    <published>2007-09-28T02:52:01Z</published>
+    <updated>2007-09-28T02:52:44Z</updated>
+    <title>Ruby East Tomorrow</title>
+    <content type="html">&lt;p&gt;I need to pause for a bit and just bask in the goodness that is a Ruby  conference happening on this side of the country. The fact that &lt;a href="http://www.ruby-east.com/rubyeast"&gt;Ruby East&lt;/a&gt; is just 17 minutes away from where I live (according to Google Maps) is almost too much to bear.&lt;/p&gt;
+
+
+	&lt;p&gt;I just thought it might be worth mentioning to anybody who gives a hoot that I&amp;#8217;ll be attending tomorrow. Maybe I&amp;#8217;ll see you there.&lt;/p&gt;
+</content>
+    <author>
+      <name>Pat Nakajima</name>
+    </author>
+    <link type="text/html" href="http://feeds.feedburner.com/~r/devthatweb/~3/162268085/ruby-east-tomorrow" rel="alternate" />
+  <feedburner:origLink>http://devthatweb.com/view/ruby-east-tomorrow</feedburner:origLink></entry>
+  <entry>
+    <id>tag:devthatweb.com,2007:Post29</id>
+    <published>2007-09-18T21:21:31Z</published>
+    <updated>2007-09-18T23:58:43Z</updated>
+    <title>A short list of great things</title>
+    <content type="html">&lt;h3&gt;Unobtrusive Javascript with Dan Webb&amp;#8217;s &lt;a href="http://www.danwebb.net/lowpro"&gt;Low Pro&lt;/a&gt;&lt;/h3&gt;
+
+
+	&lt;p&gt;Unobtrusive Javascript means a lot of things to different people, so to explain Low Pro&amp;#8217;s greatness, I&amp;#8217;ll give you a few &lt;a href="http://fun.patnakajima.net/classy_effects/example"&gt;examples&lt;/a&gt; of what you can do. In the same way you use a &lt;span class="caps"&gt;CSS&lt;/span&gt; file to modify and &lt;span class="caps"&gt;HTML&lt;/span&gt; class&amp;#8217; style, you can now use Unobtrusive Javascript to modify an &lt;span class="caps"&gt;HTML&lt;/span&gt; class&amp;#8217; behavior. So instead of targeting different elements on your page to receive certain behaviors, as was the custom before Unobtrusive Javascript. So let&amp;#8217;s say we have this little script to show a notification on your page:&lt;pre&gt;&lt;code class="javascript"&gt;// Shows notification message for 3 seconds.
+function notify(message) {
+  $('notification_label').update(message);
+  new Effect.SlideDown('notification_bar');
+  new Effect.SlideUp('notification_bar', {
+    delay: 3,
+    queue: 'end'
+  });
+  return false;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;The really old way would look like this:&lt;pre&gt;&lt;code class="html"&gt;&amp;lt;!-- Inline "onclick" attributes are NOT a Good Thing --&amp;gt;
+&amp;lt;a href="#" id="notifier_link" class="notifiers" onclick="notify('This is the message');"&amp;gt;Click here to show the message.&amp;lt;/a&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;But everybody knows that inline &amp;#8220;onclick&amp;#8221; attributes are just as bad as inline style attributes. That&amp;#8217;s why it was so great when prototype brought along Element observers. They let us do this:&lt;pre&gt;&lt;code class="javascript"&gt;// Observers are cool... sort of.
+$('notifier_link').observe('click', function(event){
+  notify('This is the message');
+ });
+&lt;/code&gt;&lt;/pre&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;The trouble was that we were still basically shooting &lt;span class="caps"&gt;HTML&lt;/span&gt; elements with Javascript behavior. If you wrote a Javascript and included it in your &lt;span class="caps"&gt;HTML&lt;/span&gt; document, you couldn&amp;#8217;t just add a class name to your &lt;span class="caps"&gt;HTML&lt;/span&gt; elements to give them behavior the same way you give them style. No, you&amp;#8217;d have to modify the Javascript to give behavior to specific page elements. And that&amp;#8217;s where Low Pro comes in.&lt;pre&gt;&lt;code class="javascript"&gt;// Unobtrusive Javascript to the rescue.
+Event.addBehavior({
+  'a.notifiers:click':function(){
+    notify('This is the message.');
+  }
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;With that code, any page element with the class name &amp;#8220;notifiers&amp;#8221; will automatically pickup the behavior described in that script. Using &lt;span class="caps"&gt;CSS&lt;/span&gt; selectors to designate behaviors is technique I&amp;#8217;m really starting to get into, and I&amp;#8217;m surprised that more people haven&amp;#8217;t picked it up&lt;/p&gt;
+
+
+	&lt;h3&gt;&lt;a href="http://eigenclass.org/hiki.rb?rcov"&gt;rcov&lt;/a&gt;: code coverage for Ruby&lt;/h3&gt;
+
+
+	&lt;p&gt;With Test Driven Development, your code usually has pretty good test coverage by default. Still, sometimes things slip through the cracks. If you&amp;#8217;re wondering what your tests are missing, check out rcov. It runs through your test suite, then generates &lt;span class="caps"&gt;HTML&lt;/span&gt; docs that highlight any parts of your code that your tests aren&amp;#8217;t running.&lt;/p&gt;
+
+
+	&lt;p&gt;I use rcov with my Test::Unit tests, but it also has solid compatibility with the Behavior Driven Development tool &lt;a href="http://rspec.rubyforge.org/"&gt;RSpec&lt;/a&gt;.&lt;/p&gt;
+
+
+	&lt;h3&gt;&lt;a href="http://camping.rubyforge.org"&gt;Camping&lt;/a&gt;: A microframework&lt;/h3&gt;
+
+
+	&lt;p&gt;I used Camping to build &lt;a href="http://patnakajima.com"&gt;patnakajima.com&lt;/a&gt;, as well as &lt;a href="http://fun.patnakajima.net"&gt;fun.patnakajima.net&lt;/a&gt;. It&amp;#8217;s an incredibly simple &lt;span class="caps"&gt;MVC&lt;/span&gt; web framework implemented entirely in Ruby by &lt;a href="http://whytheluckystiff.net"&gt;Why the Lucky Stiff&lt;/a&gt;. Camping integrates with Mongrel, ActiveRecord, and all sorts of Ruby templating languages (&lt;a href="http://code.whytheluckystiff.net/markaby/"&gt;Markaby&lt;/a&gt;, &lt;a href="http://haml.hamptoncatlin.com/"&gt;Haml&lt;/a&gt;). Give it a try. It&amp;#8217;s fun stuff.&lt;/p&gt;
+</content>
+    <author>
+      <name>Pat Nakajima</name>
+    </author>
+    <link type="text/html" href="http://feeds.feedburner.com/~r/devthatweb/~3/158306223/a-short-list-of-great-things" rel="alternate" />
+  <feedburner:origLink>http://devthatweb.com/view/a-short-list-of-great-things</feedburner:origLink></entry>
+  <entry>
+    <id>tag:devthatweb.com,2007:Post28</id>
+    <published>2007-08-26T15:58:23Z</published>
+    <updated>2008-05-29T19:36:13Z</updated>
+    <title>Introducing nakajimaTools</title>
+    <content type="html">&lt;p&gt;&lt;strong class="highlight"&gt;&lt;strong&gt;Update:&lt;/strong&gt; You may have noticed that this domain is no longer active. Sorry about that. It was just sort of a pain to maintain the site, so I just dumped everything on my GitHub profile. See it here: &lt;a href="http://github.com/nakajima"&gt;http://github.com/nakajima&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;It&amp;#8217;s been a little while since I wrote a post for devthatweb. In the time since I last posted, I&amp;#8217;ve been pretty busy with a few different projects. I also put together a quick new site to help showcase my various open source tools. It uses a small &lt;a href="http://redhanded.hobix.com/bits/campingAMicroframework.html"&gt;Camping&lt;/a&gt; server to grab the latest versions of code from the repository.&lt;/p&gt;
+
+
+	&lt;p&gt;You can visit the site at &lt;a href="http://fun.patnakajima.com"&gt;fun.patnakajima.com&lt;/a&gt;. The Capistrano General Deployment Capfile that used to be located at recipe.devthatweb.com is there, as well as a few cool Javascripts I&amp;#8217;ve created that designate element behavior by just adding a class name to the element (I&amp;#8217;ll write more about those later).&lt;/p&gt;
+
+
+	&lt;p&gt;So go ahead and check out the new site. It&amp;#8217;s plain, but hopefully you&amp;#8217;ll fine something interesting. If you have any thoughts, please leave them in the comments of this post. Thanks!&lt;/p&gt;
+</content>
+    <author>
+      <name>Pat Nakajima</name>
+    </author>
+    <link type="text/html" href="http://feeds.feedburner.com/~r/devthatweb/~3/158306034/introducing-nakajimatools" rel="alternate" />
+  <feedburner:origLink>http://devthatweb.com/view/introducing-nakajimatools</feedburner:origLink></entry>
+  <entry>
+    <id>tag:devthatweb.com,2007:Post27</id>
+    <published>2007-07-08T16:04:35Z</published>
+    <updated>2007-07-08T19:46:32Z</updated>
+    <title>The Perils of Test-Driven Development</title>
+    <content type="html">&lt;p&gt;When I first started devin&amp;#8217; that web, it took me a bit of time to really wrap my mind around the concept of modeling data. Once I started to really learn the process, it became somewhat addicting. I got the urge to model everything in my life, from my girlfriend (she was less than enthused) to my drum set. I was finally able to scale it back to times when modeling is actually appropriate, but for a little while, things were a bit absurd.&lt;/p&gt;
+
+
+	&lt;p&gt;Now I&amp;#8217;m discovering similar problems caused by my newfound love for &lt;acronym title="Test-Driven Development"&gt;&lt;span class="caps"&gt;TDD&lt;/span&gt;&lt;/acronym&gt;. For those of you not in the know, &lt;acronym title="Test-Driven Development"&gt;&lt;span class="caps"&gt;TDD&lt;/span&gt;&lt;/acronym&gt; is a practice in which one writes a test for any code he/she wishes to implement before that code is even written. Needless to say, the test fails the first time it&amp;#8217;s run, at which point the developer write the implementation code required to make the test pass. In this way, each facet of the application has test code to back it up, giving the developer some assurance that refactoring something in one module won&amp;#8217;t break something in another. Also, instead of writing a bit of code, then running to the browser to make sure that the code works, the developer can just make sure that the associated test passes. &lt;acronym title="Test-Driven Development"&gt;&lt;span class="caps"&gt;TDD&lt;/span&gt;&lt;/acronym&gt; helps you write more focused code, and cuts down on fixing mysterious bugs later in development by an order of magnitude.&lt;/p&gt;
+
+
+	&lt;p&gt;So what&amp;#8217;s my problem?&lt;/p&gt;
+
+
+I now feel that I need to write tests for everything I do before I take action. Example: I woke up, groggy and in need of a visit to the bathroom. However, I felt that I couldn&amp;#8217;t leave the bed until I wrote an integration test for going to the bathroom. Unaware of a testing framework for such problems, I eventually had to go force myself to go, and fortunately I haven&amp;#8217;t seen any negative repercussions of my decision.  Still, the fact that I had to think about it is pretty darn absurd, and so I thought I might share that with you.
+&lt;pre&gt;&lt;code class="ruby"&gt;def test_should_need_to_go_to_the_bathroom
+  @pat = Pat.new
+  @pat.bladder.full? = true
+  assert @pat.need_to_tinkle?, "Wet pants." 
+end
+
+# From Test::Unit...
+#    _
+#   | |
+#   | |
+#  \   /
+#   \_/
+# 
+# ...to rSpec
+
+it "should need to pee" do
+  @pat = Pat.new
+  @pat.bladder.full? = true
+  @pat.should need_to_tinkle?
+end
+&lt;/code&gt;&lt;/pre&gt;
+Update: I&amp;#8217;m looking into rSpec now. &lt;acronym title="Test-Driven Development"&gt;&lt;span class="caps"&gt;TDD&lt;/span&gt;&lt;/acronym&gt; is so last year. These days it&amp;#8217;s all about &lt;acronym title="Behavior Driven Development"&gt;&lt;span class="caps"&gt;BDD&lt;/span&gt;&lt;/acronym&gt; Hopefully I won&amp;#8217;t feel the need to write a specification for the can, but time will tell. I&amp;#8217;ll pass the word along to you.
+</content>
+    <author>
+      <name>Pat Nakajima</name>
+    </author>
+    <link type="text/html" href="http://feeds.feedburner.com/~r/devthatweb/~3/158306035/the-perils-of-test-driven-development" rel="alternate" />
+  <feedburner:origLink>http://devthatweb.com/view/the-perils-of-test-driven-development</feedburner:origLink></entry>
+  <entry>
+    <id>tag:devthatweb.com,2007:Post26</id>
+    <published>2007-06-28T18:19:06Z</published>
+    <updated>2007-10-10T21:35:52Z</updated>
+    <title>Deploy any project using Capistrano 2</title>
+    <content type="html">&lt;p&gt;Feel left out of the Capistrano party because you don&amp;#8217;t use Rails? Take a trip to &lt;a href="http://fun.patnakajima.com/recipe"&gt;fun.patnakajima.com/recipe&lt;/a&gt; and follow the directions. What you&amp;#8217;ll find there is an almost completely redone recipe for deploying pretty much almost any project you have.&lt;/p&gt;
+
+
+	&lt;h3&gt;Requirements&lt;/h3&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;You use some sort of source code management (Subversion, &lt;span class="caps"&gt;CVS&lt;/span&gt;, Perforce, etc.)&lt;/li&gt;
+		&lt;li&gt;You have &lt;span class="caps"&gt;SSH&lt;/span&gt; access to the remote server, and administrative privileges.&lt;/li&gt;
+		&lt;li&gt;You want to start deploying your project like the cool kids.&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+Here&amp;#8217;s a look at what the recipe looks like:
+&lt;pre&gt;&lt;code class="ruby"&gt;
+load 'deploy' if respond_to?(:namespace) # cap2 differentiator
+
+require 'rubygems'
+require 'bells/recipes/apache' # This one requires the Bells gem
+
+set :application, "your project's name" 
+set :domain, "your.project.domain" 
+role :app, domain
+role :web, domain
+role :db,  domain, :primary =&amp;gt; true
+
+# Set the Unix user and group that will actually perform each task
+# on the remote server. The defaults are set to 'deploy'
+set :user, "deploy" 
+set :group, "deploy" 
+
+# Deployment Settings
+set :repository,  "set your repository path here" 
+set :deploy_to, "/var/www/sites/#{application}" # This is where your project will be deployed.
+
+# Uncomment this if you want to deploy your project by copying
+# the files from your local computer.
+# set :deploy_via, :copy
+
+# =============================================================
+# Apache Settings
+# =============================================================
+set :apache_server_name, nil
+set :apache_conf_path, "/usr/local/apache2/conf/sites" 
+set :apache_conf_file, "#{application}.conf" 
+set :apache_ctl, "/usr/local/apache2/bin/apachectl" 
+set :apache_server_aliases, []
+# set :apache_ssl_enabled, false
+# set :apache_ssl_ip, nil
+# set :apache_ssl_forward_all, false
+# set :apache_ssl_chainfile, false
+
+# In the event you have the urge to develop your own vhost erb template, you can modify
+# this variable. I wouldn't do it unless you're strongly confident in what you're doing.
+set :apache_conf_template, 'http://svn.nakadev.com/tools/recipe/templates/vhost.conf'
+
+# ================================================================================================
+# DON'T MODIFY ANYTHING BELOW THIS POINT UNLESS YOU KNOW WHAT YOU ARE DOING
+# ================================================================================================
+
+# Making sure things will go smoothly.
+depend :remote, :directory, apache_conf_path
+depend :remote, :directory, deploy_to
+depend :local, :gem, 'bells'
+
+namespace :deploy do
+  namespace :apache do
+    desc "Setup vhost conf on Apache web server." 
+    task :setup do
+      sudo "mkdir -p #{apache_conf_path}" 
+      sudo "chown -R #{user}:#{group} #{apache_conf_path} &amp;#38;&amp;#38; chmod -R 775 #{apache_conf_path}" 
+      logger.info "generating .conf file" 
+      conf = Net::HTTP.get URI.parse(apache_conf_template)
+      require 'erb'
+      result = ERB.new(conf).result(binding)
+      logger.info "putting #{application}.conf on #{domain}" 
+      put result, "#{application}.conf" 
+      run "mv #{application}.conf #{apache_conf_path}/#{apache_conf_file}" 
+    end
+  end
+
+  # Overwritten to provide flexibility for people who aren't using Rails.
+  task :setup, :except =&amp;gt; { :no_release =&amp;gt; true } do
+    dirs = [deploy_to, releases_path, shared_path]
+    dirs += %w(system).map { |d| File.join(shared_path, d) }
+    run "umask 02 &amp;#38;&amp;#38; mkdir -p #{dirs.join(' ')}" 
+  end
+
+  # Also overwritten to remove Rails-specific code.
+  task :finalize_update, :except =&amp;gt; { :no_release =&amp;gt; true } do
+    run "chmod -R g+w #{release_path}" if fetch(:group_writable, true)
+  end
+
+  # Each of the following tasks are Rails specific. They're removed.
+  task :migrate do
+  end
+
+  task :migrations do
+  end
+
+  task :cold do
+  end
+
+  task :start do
+  end
+
+  task :stop do
+  end
+
+  # Do nothing (To restart apache, run 'cap deploy:apache:restart')
+  task :restart do
+  end
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;&lt;strong class='highlight'&gt;Note: For the most recent version of this recipe, visit &lt;a href="http://fun.patnakajima.com/recipe"&gt;fun.patnakajima.com/recipe&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;As always, if you have any comments about the recipe, leave them here on this post.&lt;/p&gt;
+</content>
+    <author>
+      <name>Pat Nakajima</name>
+    </author>
+    <link type="text/html" href="http://feeds.feedburner.com/~r/devthatweb/~3/158306036/deploy-any-project-using-capistrano-2" rel="alternate" />
+  <feedburner:origLink>http://devthatweb.com/view/deploy-any-project-using-capistrano-2</feedburner:origLink></entry>
+  <entry>
+    <id>tag:devthatweb.com,2007:Post25</id>
+    <published>2007-06-21T23:15:02Z</published>
+    <updated>2007-06-21T23:16:29Z</updated>
+    <title>Fun with refactoring footodo</title>
+    <content type="html">&lt;p&gt;I just spent some time whipping &lt;a href="http://footodo.devthatweb.com"&gt;footodo&lt;/a&gt; into shape for production. (When you&amp;#8217;re just giving away the code, it&amp;#8217;s a bit easier to forget about some things.) Thankfully, I have you, the ever-brilliant reader, to keep me honest. In that spirit, I&amp;#8217;d like to share a couple of my favorite fixes with you.&lt;/p&gt;
+
+
+	&lt;h3&gt;From hideous to beautiful&lt;/h3&gt;
+
+
+	&lt;p&gt;If you took a look at the &lt;a href="http://svn.nakadev.com/projects/footodo/app/controllers/todos_controller.rb"&gt;TodosController&lt;/a&gt; before today, you probably saw this offensive method, along with its comment of condemnation:&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code class="ruby"&gt;
+  # This code needs to be rewritten or destroyed. Couldn't the update method be used instead?
+  def toggle_complete
+    @todo = Todo.find(params[:id])
+    if params[:complete]
+      @todo.complete = false
+      @todolist = @todo.todolist
+      respond_to do |format|
+        if @todo.save
+          flash[:notice] = 'Todo was successfully updated.'
+          format.js   { render :action =&amp;gt; 'uncompleted' }
+          format.html { redirect_to todo_url(@todo) }
+          format.xml  { head :ok }
+        else
+          format.js   { render :action =&amp;gt; 'error' }
+          format.html { render :action =&amp;gt; "edit" }
+          format.xml  { render :xml =&amp;gt; @todo.errors.to_xml }
+        end
+      end
+    else
+      @todo.complete = true
+      @todolist = @todo.todolist
+      respond_to do |format|
+        if @todo.save
+          flash[:notice] = 'Todo was successfully updated.'
+          format.js   { render :action =&amp;gt; 'completed' }
+          format.html { redirect_to todo_url(@todo) }
+          format.xml  { head :ok }
+        else
+          format.js   { render :action =&amp;gt; 'error' }
+          format.html { render :action =&amp;gt; "edit" }
+          format.xml  { render :xml =&amp;gt; @todo.errors.to_xml }
+        end
+      end
+    end
+  end
+&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;Tsk tsk, the new version is &lt;span class="caps"&gt;DRY&lt;/span&gt;-er, and a heck of a lot more readable. Interestingly enough, it&amp;#8217;s not a dramatic decrease in code. It is, however, a dramatic increase in flexibility. By making the conditional responses their own methods, I&amp;#8217;ve pulled a little bit of strategy pattern action by encapsulating what varies in the method, while leaving the static parts intact.&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code class="ruby"&gt;
+  # Refactored the kilobytes out of this one. The complete attribute passed in
+  # in the params is the former state of the @todo's complete attribute.
+  def toggle_complete
+    @todolist = @todo.todolist
+    params[:complete] ? uncomplete! : complete!
+    respond_to do |format|
+      if @todo.save
+        format.js   { render :action =&amp;gt; @rjs }
+        format.html { redirect_to todolist_url(@todo.todolist) }
+        format.xml  { head :ok }
+      else
+        format.js   { render :action =&amp;gt; 'error' }
+        format.html { redirect_to todolist_url(@todo.todolist) }
+        format.xml  { render :xml =&amp;gt; @todo.errors.to_xml }
+      end
+    end
+  end
+
+  def complete!
+    flash[:notice] = 'Todo was successfully completed.'
+    @todo.complete = true
+    @rjs = 'completed'
+  end
+
+  def uncomplete!
+    flash[:notice] = 'Todo was successfully uncompleted.'
+    @todo.complete = false
+    @rjs = 'uncompleted'
+  end
+&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;h3&gt;Lesson learned: Never trust your users&lt;/h3&gt;
+
+
+	&lt;p&gt;One of my oversights with this app was the fact that any User was able to access the &lt;code&gt;:show&lt;/code&gt; action of the TodosController. An obvious problem in hindsight, but at the time, I thought the fact that I wasn&amp;#8217;t linking to that action was enough to keep them private. (Again, I didn&amp;#8217;t design this application with production in mind.) Once I was made aware of the problem by an eagle-eyed reader, I set to work fixing it.&lt;/p&gt;
+
+
+	&lt;p&gt;Here&amp;#8217;s how I&amp;#8217;m keeping your to-dos private.&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code class="ruby"&gt;
+  # I plopped this before_filter directly after the :login_required filter.
+  before_filter :ensure_ownership, :only =&amp;gt; [:show, :edit, :update, :destroy, :toggle_complete]
+
+  # The before_filter calls this method, which checks for a to-do item that corresponds
+  # to the :id passed in the parameters. If it does, it calls the ensure_ownership method
+  # that makes sure the current_user is authorized to view the item.
+  def ensure_validity
+    !Todo.find(:first, :conditions =&amp;gt; { :id =&amp;gt; params[:id] }).nil? ? ensure_ownership : redirect_to(todolists_path)
+  end
+
+  def ensure_ownership
+    @todo = Todo.find params[:id]
+    unless @todo.todolist.user === current_user
+      flash[:notice] = "That doesn't belong to you!" 
+      redirect_to todolists_path
+    end
+  end
+
+  # And of course, I have tests.
+
+  # This one goes out to Jamie (http://jamie.ideasasylum.com)
+  def test_should_not_show_if_not_owner
+    login_as('aaron')
+    get :show, :id =&amp;gt; 1
+    assert_response :redirect
+    assert_redirected_to todolists_path
+  end
+
+  def test_should_not_get_edit_if_not_owner
+    login_as('aaron')
+    get :edit, :id =&amp;gt; 1
+    assert_response :redirect
+    assert_redirected_to todolists_path
+  end
+
+  def test_should_not_update_if_not_owner
+    login_as('aaron')
+    put :update, :id =&amp;gt; 1
+    assert_response :redirect
+    assert_redirected_to todolists_path
+  end
+
+  def test_should_not_delete_if_not_owner
+    login_as('aaron')
+    delete :destroy, :id =&amp;gt; 1
+    assert_response :redirect
+    assert_redirected_to todolists_path
+  end
+&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;Hopefully this post will give you some insight into the refactoring process. If any of you ever see something else that needs changing, leave a comment. I&amp;#8217;ll all ears.&lt;/p&gt;
+</content>
+    <author>
+      <name>Pat Nakajima</name>
+    </author>
+    <link type="text/html" href="http://feeds.feedburner.com/~r/devthatweb/~3/158306037/fun-with-refactoring-footodo" rel="alternate" />
+  <feedburner:origLink>http://devthatweb.com/view/fun-with-refactoring-footodo</feedburner:origLink></entry>
+  <entry>
+    <id>tag:devthatweb.com,2007:Post24</id>
+    <published>2007-06-21T02:54:35Z</published>
+    <updated>2007-09-07T04:57:37Z</updated>
+    <title>footodo is now live</title>
+    <content type="html">&lt;p&gt;&lt;strong class="highlight"&gt;I took footodo back down because it was eating up a bit too much in the way of system resources. You can still view the code here: &lt;a href="http://open.nakadev.com/browser/projects/footodo"&gt;http://open.nakadev.com/browser/projects/footodo&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;&lt;img src="http://s3.amazonaws.com/devthatweb/pictures/36/footodo_logo.png" class="center" /&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;A little while ago I posted about an open source Rails app I created called &lt;a href="http://devthatweb.com/view/footodo-an-open-source-to-do-list-on-rails"&gt;footodo&lt;/a&gt;. The only way to check it out was to download it using Subversion, then run it yourself. Not too difficult, but not too easy either, especially for people without knowledge of Subversion.&lt;/p&gt;
+
+
+	&lt;p&gt;Then today I realized the fact that I really need a to-do list to stay more on top of things. Then I thought, instead of using somebody else&amp;#8217;s, why not use my own? So I decided to deploy footodo. Now if you want to try footodo, all it takes is a trip to &lt;a href="http://footodo.devthatweb.com"&gt;footodo.devthatweb.com&lt;/a&gt;, where you can easily sign up and be on your way.&lt;/p&gt;
+
+
+	&lt;p&gt;So enjoy. I&amp;#8217;m going to be adding features as I see fit. Now that I&amp;#8217;m actually using the app, that&amp;#8217;ll probably be rather soon.&lt;/p&gt;
+</content>
+    <author>
+      <name>Pat Nakajima</name>
+    </author>
+    <link type="text/html" href="http://feeds.feedburner.com/~r/devthatweb/~3/158306038/footodo-is-now-live" rel="alternate" />
+  <feedburner:origLink>http://devthatweb.com/view/footodo-is-now-live</feedburner:origLink></entry>
+  <entry>
+    <id>tag:devthatweb.com,2007:Post23</id>
+    <published>2007-06-20T04:53:20Z</published>
+    <updated>2007-06-21T03:48:54Z</updated>
+    <title>Comments are disabled for a little bit.</title>
+    <content type="html">&lt;p&gt;After receiving a deluge of comments that I&amp;#8217;d prefer to never see again, I&amp;#8217;ve ratcheted up the filters so that I&amp;#8217;m pretty sure a dozen Our Fathers won&amp;#8217;t even get through. I apologize for the inconvenience, and I&amp;#8217;m working to get things settled as soon as possible.&lt;/p&gt;
+
+
+	&lt;p&gt;&lt;em&gt;&lt;strong&gt;Update:&lt;/strong&gt; I&amp;#8217;ve implemented a moderation system for comments that the system considers spam. That way you can post a comment and even if the server doesn&amp;#8217;t like the look of it, I have the final say. -Pat&lt;/em&gt;&lt;/p&gt;
+</content>
+    <author>
+      <name>Pat Nakajima</name>
+    </author>
+    <link type="text/html" href="http://feeds.feedburner.com/~r/devthatweb/~3/158306039/comments-are-disabled-for-a-little-bit" rel="alternate" />
+  <feedburner:origLink>http://devthatweb.com/view/comments-are-disabled-for-a-little-bit</feedburner:origLink></entry>
+  <entry>
+    <id>tag:devthatweb.com,2007:Post22</id>
+    <published>2007-06-11T22:23:12Z</published>
+    <updated>2007-06-11T23:43:19Z</updated>
+    <title>Are we all iPhone developers now?</title>
+    <content type="html">&lt;p&gt;Today, Apple announced its solution for letting developers get their apps on the iPhone. Looks like iPhone apps will be a mixture of &lt;span class="caps"&gt;HTML &lt;/span&gt;(for the structure), &lt;span class="caps"&gt;CSS &lt;/span&gt;(for the style), and Javascript (for the behavior). Does that sound familiar? If it doesn&amp;#8217;t, you probably shouldn&amp;#8217;t be reading this blog.&lt;/p&gt;
+
+
+	&lt;p&gt;&lt;a href="http://www.apple.com/pr/library/2007/06/11iphone.html"&gt;iPhone apps will be web apps&lt;/a&gt;. They&amp;#8217;ll run on the iPhone&amp;#8217;s version of Safari, Apple&amp;#8217;s web-kit based browser. So as long as your web app runs on Safari, it should run on an iPhone. And for you Windows users out there who aren&amp;#8217;t sure whether or not your web app runs in Safari, there&amp;#8217;s good news: Safari 3 is &lt;a href="http://www.macuser.com/software/wwdc_07_safari_30_on_leopard_i.php"&gt;available on Windows XP&lt;/a&gt; as well as Windows Vista.&lt;/p&gt;
+
+
+	&lt;p&gt;So all of this begs the question: Are all web developers now iPhone developers?&lt;/p&gt;
+
+
+	&lt;p&gt;Answer: Not unless all web developers are also Windows and Mac developers. (Hint: They&amp;#8217;re not.)&lt;/p&gt;
+
+
+	&lt;p&gt;Making the iPhone open to third party developers means making it a platform. Developing for a platform means catering to its strengths, and dealing with its weaknesses. For example, web developers can take advantage of the strengths of the web, such as its wealth of information, capacity for communication, and the ability to access it from many locations. Its weaknesses include being at the mercy of whatever connection the client has available and being &lt;strong class="highlight"&gt;obsolete in an area with no connectivity&lt;/strong&gt;. Don&amp;#8217;t expect your iPhone application to work on a plane, or in a long tunnel.&lt;/p&gt;
+
+
+	&lt;p&gt;Since an iPhone app would suffer from all of the shortcomings of the web, and lacks any unique advantages, you really can&amp;#8217;t call it a platform. And since you really can&amp;#8217;t call the iPhone a platform, you really can&amp;#8217;t call your web app an iPhone app.&lt;/p&gt;
+</content>
+    <author>
+      <name>Pat Nakajima</name>
+    </author>
+    <link type="text/html" href="http://feeds.feedburner.com/~r/devthatweb/~3/158306040/are-we-all-iphone-developers-now" rel="alternate" />
+  <feedburner:origLink>http://devthatweb.com/view/are-we-all-iphone-developers-now</feedburner:origLink></entry>
+  <entry>
+    <id>tag:devthatweb.com,2007:Post21</id>
+    <published>2007-06-08T19:31:15Z</published>
+    <updated>2008-03-25T02:32:12Z</updated>
+    <title>Introducing: Capistrano Bells</title>
+    <content type="html">&lt;p&gt;&lt;b&gt;Update:&lt;/b&gt; &lt;strong class="highlight"&gt;See &lt;a href="http://devthatweb.com/view/bells-is-back"&gt;this post&lt;/a&gt; for an update on Capistrano Bells.&lt;/strong&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;&lt;a href="http://devthatweb.com/view/capistrano-2-preview-2-released"&gt;Capistrano 2&lt;/a&gt; is great. I&amp;#8217;ve been using it since its first preview to deploy all of my projects, including devthatweb. Now, before I started using Capistrano 2, I would use the &lt;a href="http://www.deprec.org/"&gt;deprec gem&lt;/a&gt; to setup my Rails apps, since it had tasks to configure a Mongrel cluster and restart Apache. Unfortunately, the deprec gem isn&amp;#8217;t compatible with Capistrano 2, and Capistrano 2 doesn&amp;#8217;t have these features.&lt;/p&gt;
+
+
+	&lt;p&gt;Rather than going back to doing these tasks on the remote server like a sucker, I decided to write some Capistrano 2 recipes to help myself out. With multiple projects though, copying the recipes and keeping them updated across the board became a nuisance.&lt;/p&gt;
+
+
+	&lt;p&gt;I decided it was time to write a plugin. That way, I could keep everything updated across all my projects, as well as give back to the amazing Ruby and Rails community that have given so much to me.&lt;/p&gt;
+
+
+So I did. I call it &lt;strong class="highlight"&gt;Capistrano Bells&lt;/strong&gt;. I&amp;#8217;ve been working on it for a few weeks now and I think it&amp;#8217;s ready to see the light of day. Bells makes Capistrano 2&amp;#8217;s task set look like this:
+&lt;pre class="terminal" style="height: 100px; overflow:scroll; text-align:left"&gt;
+cap deploy                      # Deploys your project.
+cap deploy:apache:reload_apache # Reload Apache webserver
+cap deploy:apache:restart       # Restarts Apache webserver
+cap deploy:apache:setup         # Setup an apache virtual server on remote se...
+cap deploy:apache:start         # Starts Apache webserver
+cap deploy:apache:stop          # Stops Apache webserver
+cap deploy:check                # Test deployment dependencies.
+cap deploy:cleanup              # Clean up old releases.
+cap deploy:cold                 # Deploys and starts a `cold' application.
+cap deploy:copy_config_files    # Copy config files to live app
+cap deploy:migrate              # Run the migrate rake task.
+cap deploy:migrations           # Deploy and run pending migrations.
+cap deploy:mint                 # Deploy Mint stats tracking.
+cap deploy:mint:copy_db_config  # Copy Mint DB config
+cap deploy:mint:setup           # Configure Mint virtual server on remote app.
+cap deploy:mongrel:configure    # Configure Mongrel processes on the app server.
+cap deploy:mongrel:delete       # Deletes mongrel configuration file.
+cap deploy:mongrel:restart      # Restart the Mongrel processes on the app se...
+cap deploy:mongrel:start        # Start Mongrel processes on the app server.
+cap deploy:mongrel:stop         # Stop the Mongrel processes on the app server.
+cap deploy:pending              # Displays the commits since your last deploy.
+cap deploy:pending:diff         # Displays the `diff' since your last deploy.
+cap deploy:php                  # Deploy a PHP project.
+cap deploy:php:setup            # Configure virtual server on remote app.
+cap deploy:put_config_files     # Puts config files on remote server.
+cap deploy:rollback             # Rolls back to a previous version and restarts.
+cap deploy:rollback_code        # Rolls back to the previously deployed version.
+cap deploy:setup                # Prepares one or more servers for deployment.
+cap deploy:symlink              # Updates the symlink to the deployed version.
+cap deploy:tail                 # Shows tail of production log
+cap deploy:update               # Copies your project and updates the symlink.
+cap deploy:update_code          # Copies your project to the remote servers.
+cap deploy:upload               # Copy files to the currently deployed version.
+cap deploy:web:disable          # Present a maintenance page to visitors.
+cap deploy:web:enable           # Makes the application web-accessible again.
+cap invoke                      # Invoke a single command on the remote servers.
+cap local:apache:restart        # Restart apache on local machine
+cap local:apache:start          # Start apache on local machine
+cap local:apache:stop           # Stop apache on local machine
+cap shell                       # Begin an interactive Capistrano session.
+cap tools:aptitude:install      # Installs a package using the aptitude comma...
+cap tools:aptitude:search       # Search for aptitude packages on remote server
+cap tools:aptitude:update       # Runs aptitude update on remote server
+cap tools:aptitude:upgrade      # Runs aptitude upgrade on remote server
+cap tools:gems:install          # Install a gem on the remote server
+cap tools:gems:list             # List gems on remote server
+cap tools:gems:remove           # Uninstall a gem from the remote server
+cap tools:gems:update           # Update gems on remote server
+cap tools:look_for_commands     # Look for necessary commands for Rails deplo...
+cap tools:ssh:setup             # Copies contents of ssh public keys into aut...
+cap tools:svn:add               # Add new files to subversion
+cap tools:svn:clean             # remove and ignore log files and tmp from su...
+cap tools:svn:commit            # Commits changes to subversion repository
+cap tools:uptime                # Displays server uptime
+&lt;/pre&gt;
+
+	&lt;h3&gt;Installation&lt;/h3&gt;
+
+
+To get Capistrano Bells, run the following command:
+&lt;pre class="terminal"&gt;script/plugin install http://svn.nakadev.com/plugins/bells&lt;/pre&gt;
+
+Then to install it, run the following rake task:
+&lt;pre class="terminal"&gt;rake bells:install&lt;/pre&gt;
+
+	&lt;p&gt;In the Capfile, enter whatever settings you need. You can also comment out recipes that you don&amp;#8217;t need.&lt;/p&gt;
+
+
+&lt;div class="box" style="padding:1em; text-align: left"&gt;
+
+	&lt;h3&gt;Warning:&lt;/h3&gt;
+
+
+	&lt;p&gt;Capistrano Bells is still in its beta stage.&lt;br /&gt;
+I make no guarantees regarding its stability nor suggest that it is fit for anything.&lt;/p&gt;
+
+
+&lt;/div&gt;
+
+	&lt;p&gt;With that being said, I will tell you that I deployed my latest project, called &lt;a href="http://infotation.com"&gt;Infotation&lt;/a&gt;, using nothing but this plugin.&lt;/p&gt;
+
+
+	&lt;h3&gt;Usage&lt;/h3&gt;
+
+
+	&lt;p&gt;While I plan to write much more in depth about the many uses of Capistrano Bells in future posts, the basic uses of the plugin should be self-explanatory to anybody familiar with Capistrano 2. To view available tasks, run: &lt;pre class="terminal"&gt;cap -T&lt;/pre&gt;&lt;/p&gt;
+
+
+I tried to adhere to the principle that the ideal depth for task commands was 3 namespaces, as you can see here:
+&lt;pre class="terminal"&gt;cap deploy:apache:restart&lt;/pre&gt;
+
+	&lt;p&gt;In that example, &amp;#8220;deploy&amp;#8221; is the task family, &amp;#8220;apache&amp;#8221; is the task type, and &amp;#8220;restart&amp;#8221; is the task itself. This system has proven itself to be intuitive enough for me to not have to constantly be running the &lt;code&gt;cap -T&lt;/code&gt; command.&lt;/p&gt;
+
+
+	&lt;h3&gt;Help wanted&lt;/h3&gt;
+
+
+	&lt;p&gt;Feel free to sift through the recipes and code. If you see something that ought to be done differently, please let me know in the comments of this post. Again, I must warn you that &lt;strong class="highlight"&gt;this plugin is still in its beta stage&lt;/strong&gt;. If you&amp;#8217;d like to help me test it, I&amp;#8217;d appreciate it.&lt;/p&gt;
+</content>
+    <author>
+      <name>Pat Nakajima</name>
+    </author>
+    <link type="text/html" href="http://feeds.feedburner.com/~r/devthatweb/~3/158306041/introducing-capistrano-bells" rel="alternate" />
+  <feedburner:origLink>http://devthatweb.com/view/introducing-capistrano-bells</feedburner:origLink></entry>
+  <entry>
+    <id>tag:devthatweb.com,2007:Post20</id>
+    <published>2007-06-06T03:58:37Z</published>
+    <updated>2007-06-06T04:12:18Z</updated>
+    <title>Mac vs. Windows from a web developer's perspective</title>
+    <content type="html">&lt;p&gt;Say what you will about Macs or PCs, one thing&amp;#8217;s for sure. If you plan on doing any sort of web development, your platform of choice ought to be Mac. Why do I say that? Because like pigs in a blanket, &lt;strong class="highlight"&gt;each facet of web development is complemented by a piece of the Mac experience&lt;/strong&gt;. I&amp;#8217;ll make my point by visiting each facet of web development, explaining the Mac&amp;#8217;s strengths, and perhaps mentioning Windows&amp;#8217; attempts, in the process.&lt;/p&gt;
+
+
+	&lt;h3&gt;Writing of code&lt;/h3&gt;
+
+
+	&lt;p&gt;Web development entails an extraordinary amount of time spent staring at a text editor. For serious Mac developers, that text editor is either &lt;a href="http://www.barebones.com/products/bbedit/"&gt;BBEdit&lt;/a&gt; or &lt;a href="http://www.macromates.com"&gt;TextMate&lt;/a&gt;, depending on your predisposition to &amp;#8220;crotchety old man syndrome&amp;#8221;. I kid. Although BBEdit is typically favored by the old school of Mac programmers (probably due to the fact that it&amp;#8217;s been around &lt;em&gt;forever&lt;/em&gt;), TextMate is the new king, especially for web developers, and &lt;strong&gt;especially&lt;/strong&gt; for &lt;a href="http://peepcode.com/products/textmate-basics-for-rails"&gt;Ruby and/or Rails developers&lt;/a&gt;, so it&amp;#8217;s what I&amp;#8217;ll focus on here.&lt;/p&gt;
+
+
+&lt;div class="picture"&gt;
+  &lt;img src="http://s3.amazonaws.com/devthatweb/pictures/14/textmate_textile_before.png" title="TextMate has great support for the Textile formatting language." alt="TextMate has great support for the Textile formatting language." /&gt;
+  &lt;span class="caption"&gt;Using Textile with TextMate&lt;/span&gt;
+&lt;/div&gt;
+
+	&lt;p&gt;Just like programming languages, development tools are often gauged by their ability to &amp;#8220;stay out of the way.&amp;#8221; It&amp;#8217;s a measure of how much (or little) the tool does to obstruct the transfer of a concept from your mind to the page. In this regard, TextMate is truly transparent. It is incredibly flexible, using extensions called &lt;a href="http://macromates.com/svn/Bundles/trunk/Bundles/"&gt;Bundles&lt;/a&gt; to enhance its functionality. You can also customize TextMate by writing scripts in &lt;a href="http://www.ruby-lang.org"&gt;Ruby&lt;/a&gt; (my favorite language).&lt;/p&gt;
+
+
+&lt;div class="picture"&gt;
+  &lt;img src="http://s3.amazonaws.com/devthatweb/pictures/18/textmate_textile_rendered.png" title="Some rendered Textile" alt="Some rendered Textile" /&gt;
+  &lt;span class="caption"&gt;TextMate&amp;#8217;s built-in Textile preview&lt;/span&gt;
+&lt;/div&gt;
+
+	&lt;p&gt;I&amp;#8217;m often frustrated by other text editors because they just don&amp;#8217;t feel as smart as TextMate when it comes to snippet abilities, code completion, or syntax support. It&amp;#8217;s like an &lt;span class="caps"&gt;IDE&lt;/span&gt; for everything at once, and I use it as such.&lt;/p&gt;
+
+
+	&lt;h4&gt;Windows equivalents&lt;/h4&gt;
+
+
+	&lt;p&gt;Attempts are being made with the &lt;a href="http://www.e-texteditor.com/"&gt;E text editor&lt;/a&gt; to try to replicate some of the success of TextMate, and while they clearly have a long road ahead, there is at least some hope that Windows users will have a more versatile text editor in the near future.&lt;/p&gt;
+
+
+	&lt;h3&gt;Macs are built on Unix&lt;/h3&gt;
+
+
+	&lt;p&gt;Ideally, the place where you create your code should be identical to the place where you&amp;#8217;ll deploy it. Most modern web developers are deploying to &lt;acronym title="Linux, Apache, MySQL, PHP"&gt;&lt;span class="caps"&gt;LAMP&lt;/span&gt;&lt;/acronym&gt; servers, or servers running at least some form of Linux. Most developers don&amp;#8217;t want to develop on Linux though, and it&amp;#8217;s here that Macs, or rather the Mac operating system, &lt;span class="caps"&gt;OS X&lt;/span&gt;, comes in handy.&lt;/p&gt;
+
+
+	&lt;p&gt;Since &lt;a href="http://www.apple.com/macosx/features/unix/"&gt;OS X is built on Unix&lt;/a&gt;, the typical Linux &lt;a href="http://www.ss64.com/osx/"&gt;commands&lt;/a&gt; still work (ls, cd, tail, etc.). &lt;span class="caps"&gt;OS X&lt;/span&gt; even comes with the Apache web server built-in (it&amp;#8217;s an older installation and most developers install more recent versions). After you&amp;#8217;ve installed the free compiling tools for &lt;span class="caps"&gt;OS X&lt;/span&gt;, installing open source software such as &lt;span class="caps"&gt;PHP&lt;/span&gt; entails the exact same process as installing it on your production environment.&lt;/p&gt;
+
+
+&lt;div class="picture"&gt;
+  &lt;img src="http://s3.amazonaws.com/devthatweb/pictures/30/osx_unix.png" alt="" /&gt;
+&lt;/div&gt;
+
+	&lt;p&gt;Not only is your development environment easier to build on &lt;span class="caps"&gt;OS X&lt;/span&gt;, it&amp;#8217;s more stable too. There are tons of instances in which Windows users must invoke work-arounds to get things to work locally, only to disable them once the code reaches production. It&amp;#8217;s a waste of time, but the inevitable result being forced to write code for two different environments: Windows during development and Unix during production. It&amp;#8217;s much easier to stick to Unix the entire time.&lt;/p&gt;
+
+
+	&lt;h3&gt;Server administration&lt;/h3&gt;
+
+
+	&lt;p&gt;Tying in with the fact that Macs are built on Linux is the fact that Macs come with a fantastic Unix command line utility built-in called Terminal. You Windows users out there are probably familiar with third party ssh clients like &lt;a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/"&gt;PuTTY&lt;/a&gt; that try to fake certain shell behaviors. With &lt;span class="caps"&gt;OS X&lt;/span&gt;&amp;#8217;s Terminal, it&amp;#8217;s the real thing. You can ssh into remote servers, administer your local computer using just &lt;a href="http://www.apple.com/server/pdfs/Command_Line.pdf"&gt;shell commands&lt;/a&gt; (Warning: &lt;span class="caps"&gt;PDF&lt;/span&gt;), and even use tools like Capistrano to automate remote tasks without leaving your home directory.&lt;/p&gt;
+
+
+&lt;div class="picture"&gt;
+  &lt;img src="http://s3.amazonaws.com/devthatweb/pictures/34/coda.png" title="Coda's menu bar" alt="Coda's menu bar" /&gt;
+  &lt;span class="caption"&gt;Coda&amp;#8217;s menu bar&lt;/span&gt;
+&lt;/div&gt;
+
+	&lt;p&gt;For more advanced users, I recommend &lt;a href="http://www.panic.com/coda/"&gt;Coda&lt;/a&gt;. While it comes with a solid text editor, a &lt;span class="caps"&gt;CSS&lt;/span&gt; editor, a web-kit browser and programming references, my favorite feature is it&amp;#8217;s terminal support, which makes multiple tabbed shell sessions easy. Add in its blazingly fast &lt;span class="caps"&gt;FTP&lt;/span&gt; client, its magnificent site administrator support, and its handsome, slick interface, and it becomes even more of a force to be reckoned with. &lt;a href="http://www.panic.com/coda/"&gt;Coda&lt;/a&gt; is an app that every serious web developer should have in his or her tool chest.&lt;/p&gt;
+
+
+	&lt;h3&gt;Staying in the game&lt;/h3&gt;
+
+
+	&lt;p&gt;To be &amp;#8220;in the know&amp;#8221; when it comes to web development requires you to consume at least double the amount of information you produce. &lt;strong class="highlight"&gt;Blogs are the new textbooks for web developers. Bloggers are the new professors.&lt;/strong&gt; If you want to be educated, you need to go to class.&lt;/p&gt;
+
+
+	&lt;p&gt;Unfortunately, there are so many different blogs out there, it can be tough to digest all of the information that they make available to you. Your only hope is to find a good feed reader. Mac &lt;span class="caps"&gt;OS X&lt;/span&gt; is home to &lt;a href="http://www.newsgator.com/Individuals/NetNewsWire/"&gt;NetNewsWire&lt;/a&gt;, one of the pioneers in the feed reader market, and was just updated to version 3.0 recently. There are many good &lt;span class="caps"&gt;OS X&lt;/span&gt; feed readers, but NetNewsWire is widely accepted as the golden standard in feed readers, against which all others are compared.&lt;/p&gt;
+
+
+	&lt;p&gt;In addition to these excellent desktop feed readers, Mac users also have the wide range of online feed readers available, such as &lt;a href="http://www.newsgator.com"&gt;NewsGator Online&lt;/a&gt;, &lt;a href="http://www.bloglines.com"&gt;Bloglines&lt;/a&gt;, and &lt;a href="http://google.com/reader"&gt;Google Reader&lt;/a&gt;.&lt;/p&gt;
+
+
+	&lt;h3&gt;Other goodies&lt;/h3&gt;
+
+
+	&lt;p&gt;Here are a few other things that keep the grass greener on this side of the fence:&lt;/p&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;&lt;a href="http://www.sshkeychain.org/"&gt;SSHKeychain&lt;/a&gt; &amp;#8211; Seamless integration between &lt;span class="caps"&gt;OS X&lt;/span&gt;&amp;#8217;s Keychain (password manager) and your &lt;span class="caps"&gt;SSH&lt;/span&gt; client for managing &lt;span class="caps"&gt;SSH&lt;/span&gt; keys, tunnels and more.&lt;/li&gt;
+		&lt;li&gt;&lt;a href="http://virtuedesktops.info/"&gt;VirtueDesktops&lt;/a&gt; &amp;#8211; Multiple desktops with ease.&lt;/li&gt;
+		&lt;li&gt;&lt;a href="http://iconfactory.com/software/twitterrific"&gt;Twitterrific&lt;/a&gt; &amp;#8211; The &amp;#8220;don&amp;#8217;t knock it till you&amp;#8217;ve tried it&amp;#8221; part of this piece. With Twitterrific, you can view updates from notable web developers, keep project teammates updated on what you&amp;#8217;re doing, and even &lt;a href="http://www.urbanhonking.com/ideasfordozens/archives/2007/01/subverting_twit.html"&gt;monitor &lt;span class="caps"&gt;SVN&lt;/span&gt; revisions&lt;/a&gt;.&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;h3&gt;Throwing the proverbial bone&lt;/h3&gt;
+
+
+	&lt;p&gt;I&amp;#8217;d be remiss in my duties as a blogger to neglect to mention the fact that Windows has some very capable IDEs, such as &lt;a href="http://www.aptana.com/"&gt;Aptana&lt;/a&gt; (Web &lt;span class="caps"&gt;IDE&lt;/span&gt;), &lt;a href="http://www.zend.com/products/zend_studio"&gt;Zend Studio&lt;/a&gt; (PHP), and &lt;a href="http://www.netbeans.org/"&gt;NetBeans&lt;/a&gt; (Java and Ruby). Still, these are each available on &lt;span class="caps"&gt;OS X&lt;/span&gt; as well, albeit with a bit less elegance as their Windows counterparts. One thing unique to Windows however, is Microsoft&amp;#8217;s new &lt;a href="http://www.microsoft.com/expression/"&gt;Expression&lt;/a&gt; line of development tools.&lt;/p&gt;
+
+
+&lt;div class="picture"&gt;
+  &lt;img src="http://s3.amazonaws.com/devthatweb/pictures/10/silverlight.jpg" title="Microsoft's Silverlight website" alt="Microsoft's Silverlight website" /&gt;
+  &lt;span class="caption"&gt;Microsoft&amp;#8217;s Silverlight website&lt;/span&gt;
+&lt;/div&gt;
+
+	&lt;p&gt;Prettier and with more promises (Standards compliant code anyone?) than previous Microsoft offerings, it&amp;#8217;s still unclear whether or not the Expression platform is merely an attempt to push developers into using Microsoft&amp;#8217;s new web technology, Silverlight, which appears to be a Flash competitor.&lt;/p&gt;
+
+
+&lt;div class="box" style="text-align:left"&gt;
+
+	&lt;h3&gt;In conclusion&lt;/h3&gt;
+
+
+	&lt;p&gt;In the eternal struggle to find the best desktop platform, the choice for web developers seems to be clear. &lt;span class="caps"&gt;OS X&lt;/span&gt;&amp;#8217;s excellent software and Unix foundation give its users unparalleled benefits when it comes to writing code, creating local a local development environment, and administering a remote production server.&lt;/p&gt;
+
+
+	&lt;p&gt;While I understand that not everybody has a say in the matter, due to constraints imposed by work, money, or otherwise, if you&amp;#8217;re a web developer in the market for a new computer, you should definitely give &lt;span class="caps"&gt;OS X&lt;/span&gt; a good hard look.&lt;/p&gt;
+
+
+&lt;/div&gt;
+
+	&lt;p&gt;So there&amp;#8217;s my two cents. &lt;strong class="highlight"&gt;What do you think?&lt;/strong&gt;&lt;/p&gt;
+</content>
+    <author>
+      <name>Pat Nakajima</name>
+    </author>
+    <link type="text/html" href="http://feeds.feedburner.com/~r/devthatweb/~3/158306042/mac-vs-windows-from-a-web-developer-s-perspective" rel="alternate" />
+  <feedburner:origLink>http://devthatweb.com/view/mac-vs-windows-from-a-web-developer-s-perspective</feedburner:origLink></entry>
+  <entry>
+    <id>tag:devthatweb.com,2007:Post19</id>
+    <published>2007-06-05T09:02:22Z</published>
+    <updated>2007-06-05T09:13:51Z</updated>
+    <title>Sorry about the recent downtime. . . </title>
+    <content type="html">&lt;p&gt;I had some mongrel issues recently while testing my new plug-in, Bells, a collection of Capistrano 2 tasks to aid with the deployment/maintenance of web applications. I apologize for any inconvenience I may have caused.&lt;/p&gt;
+
+
+	&lt;p&gt;After grappling with my server for about 3 hours, I was finally able to identify the root of the problem, which was the RedCloth requirement found in the &lt;a href="http://errtheblog.com/post/14"&gt;acts_as_textiled&lt;/a&gt; plug-in. By commenting it out of the init.rb file, I was able to finally deploy the app, and restart mongrel.&lt;/p&gt;
+
+
+	&lt;p&gt;Looks like things are back to normal for now though. Sorry again for the annoyance.&lt;/p&gt;
+</content>
+    <author>
+      <name>Pat Nakajima</name>
+    </author>
+    <link type="text/html" href="http://feeds.feedburner.com/~r/devthatweb/~3/158306043/sorry-about-the-recent-downtime" rel="alternate" />
+  <feedburner:origLink>http://devthatweb.com/view/sorry-about-the-recent-downtime</feedburner:origLink></entry>
+  <entry>
+    <id>tag:devthatweb.com,2007:Post18</id>
+    <published>2007-06-01T02:37:33Z</published>
+    <updated>2007-06-05T18:03:07Z</updated>
+    <title>Three web 2.0 web stats services compared</title>
+    <content type="html">&lt;style&gt;
+    .web_analytics_image {
+        text-align: center;
+        margin-top: 5px;
+        margin-bottom: 15px;
+    }
+
+    .web_analytics_image img {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .web_analytics_image span {
+        margin-top: 5px;
+        font-size: xx-small;
+    }
+
+    #web_analytics_wrapup {
+      text-align: left;
+      padding: 1em;
+    }
+
+    #web_analytics_wrapup dt {
+      font-weight: bold;
+    }
+
+    #web_analytics_wrapup dt a {
+      text-decoration: underline;
+    }
+
+    #entry_for_post_18 li {
+      margin-left: 20px;
+    }
+&lt;/style&gt;
+Like any &lt;a href="http://webworkerdaily.com/2007/04/16/you-might-be-a-web-worker-if/"&gt;real web worker&lt;/a&gt;, I spend a lot of time analyzing project traffic stats. I&amp;#8217;ve been on the lookout for the best web statistic analytics apps since I found &lt;a href="http://www.mrunix.net/webalizer/"&gt;webalizer&lt;/a&gt; (which came with my hosting) to be both ugly and unclear.
+
+	&lt;p&gt;Now, there are &lt;strong&gt;a lot&lt;/strong&gt; of stat programs around on the web, and to figure out which one would best suit my needs, I first needed to figure out what my needs were.&lt;/p&gt;
+
+
+	&lt;p&gt;This is what I&amp;#8217;m looking for in a web stats service (your needs may vary):&lt;/p&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;Choice between free account and a full-option premium account&lt;/li&gt;
+		&lt;li&gt;Web 2.0 style&lt;/li&gt;
+		&lt;li&gt;Hosted on &lt;em&gt;their&lt;/em&gt; servers, ruling out the ever popular &lt;a href="http://haveamint.com"&gt;Mint&lt;/a&gt; application&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;p&gt;I took a look at a lot of services, creating dozens of accounts in the process. Finally, I whittled the list down to three finalists:&lt;/p&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;&lt;a href="http://www.reinvigorate.com"&gt;Reinvigorate&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="http://www.getclicky.com"&gt;Clicky 2.0&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="http://www.google.com/analytics"&gt;Google Analytics&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;p&gt;They all have the basic features, including how many visits do you get in a day, the &lt;acronym title="Shows how deep your users are going into your website. For example when they click on a link in your index, lets say contact, and they click on a link over-there, your email for example, the depth of this visit is 3."&gt;visit depth&lt;/acronym&gt; and the visit duration. Each program can provide information about the browser, the OS and the plugins that your users has installed. They also each have a &amp;#8220;map overlay&amp;#8221; feature that show where your users come from geographically.&lt;/p&gt;
+
+
+	&lt;h3&gt;Reinvigorate&lt;/h3&gt;
+
+
+	&lt;p&gt;&lt;em&gt;Reinvigorate is not openly available to the public yet, but since I&amp;#8217;m a beta tester, I can bring you an inside look at the service before its wide release.&lt;/em&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;Reinvigorate&amp;#8217;s dark interface contains a very nice and usable menu. Its presentation of data is both coherent and stylish. Better yet, it gives you flexibility, such as the ability to choose the type of graph that is used to display your data.&lt;/p&gt;
+
+
+&lt;div class="web_analytics_image"&gt;
+    &lt;img src="http://s3.amazonaws.com/devthatweb/pictures/3/reinvigorate_2.png" alt="" /&gt;
+    &lt;span&gt;Changing graph style buttons&lt;/span&gt;
+&lt;/div&gt;
+
+	&lt;p&gt;Reinvigorate focuses on what the users are doing.
+You can see what &lt;em&gt;paths&lt;/em&gt; your users follow while visiting your site. I love the way it groups &lt;em&gt;user paths&lt;/em&gt;, and you can even see a list of the most &lt;em&gt;popular paths&lt;/em&gt;.&lt;/p&gt;
+
+
+&lt;div class="web_analytics_image"&gt;
+    &lt;img src="http://s3.amazonaws.com/devthatweb/pictures/4/reinvigorate_3.jpg" alt="" /&gt;
+    &lt;span&gt;Popular visitor paths overview&lt;/span&gt;
+&lt;/div&gt;
+
+	&lt;p&gt;On the &lt;em&gt;active users&lt;/em&gt; page you can see a live view what the users are currently doing at your site. Over whole the application, when you click on an IP address or a username (if you use &lt;em&gt;name tags&lt;/em&gt;), you can see what the user did and which pages were visited.&lt;/p&gt;
+
+
+&lt;div class="web_analytics_image"&gt;
+&lt;img src="http://s3.amazonaws.com/devthatweb/pictures/6/reinvigorate_1.jpg" alt="" /&gt;
+    &lt;span&gt;View live user info and paths&lt;/span&gt;
+&lt;/div&gt;
+
+	&lt;p&gt;Reinvigorate also includes the ability to navigate using visits per week/day/month/year, browser version (instead of name) and a great keywords and referrer overview.&lt;/p&gt;
+
+
+	&lt;h3&gt;Clicky 2.0&lt;/h3&gt;
+
+
+	&lt;p&gt;Simplicity rocks. It was clearly on the minds of Clicky 2.0&amp;#8217;s developers. The service has a very clean and simple layout. If offers the user the essential functions, plus the extra touch that is mostly commonly called finesse. Like Reinvigorate it focuses on the user, and shows you &lt;em&gt;user actions&lt;/em&gt;. However, it only shows lists these actions, instead of putting them together to form a sense of &lt;em&gt;flow&lt;/em&gt; as you&amp;#8217;d find in Reinvigorate.&lt;/p&gt;
+
+
+&lt;div class="web_analytics_image"&gt;
+    &lt;img src="http://s3.amazonaws.com/devthatweb/pictures/5/clicks_1.jpg" alt="" /&gt;
+    &lt;span&gt;Users actions list&lt;/span&gt;
+&lt;/div&gt;
+
+	&lt;p&gt;Clicky 2.0&amp;#8217;s list-based approach to showing user actions is a bit unfocused; it could benefit from an afternoon with an interface designer. The biggest thing missing from 2.0 though, is the presence of useful comparative graphs. Currently, your data is graphically represented by some bars. Not so good.&lt;/p&gt;
+
+
+	&lt;p&gt;Clicky 2.0 does offer something that the other two services in the piece don&amp;#8217;t: &lt;em&gt;outgoing links&lt;/em&gt;, which let you see where users are going when they leave your website.&lt;/p&gt;
+
+
+	&lt;h3&gt;Google Analytics&lt;/h3&gt;
+
+
+	&lt;p&gt;I&amp;#8217;m not among the Google techie-boppers (bare interfaces aren&amp;#8217;t for me), but Google Analytics is simply amazing. It has almost everything you could want built-in, like the ability to analyze visitor data for a &lt;em&gt;specific period&lt;/em&gt;, set &lt;em&gt;goals&lt;/em&gt; you&amp;#8217;d like to reach, then later compare those goals with the actual tracking data. You can even create goals for getting your users to follow certain paths, called &amp;#8220;conversion goals.&amp;#8221;&lt;/p&gt;
+
+
+	&lt;p&gt;Navigating through Google Analytics can be difficult at times, and there tends to be a high click-count between you and the data that you want. This can be partially forgiven though, simply due to the fact that Google Analytics contains &lt;em&gt;so much&lt;/em&gt; data. Google Analytics also makes things easier with its exceptional &lt;em&gt;dashboard&lt;/em&gt;. You can easily add, remove, or reorganize graphs and data at will, using an effective drag-and-drop interface.&lt;/p&gt;
+
+
+	&lt;p&gt;Google Analytics also makes &lt;acronym title="Users who need the same information in as many different formats as possible (regardless of that format's usefulness) before making their decision."&gt;enterprise users&lt;/acronym&gt; feel right at home with its ubiquitous &lt;em&gt;export function&lt;/em&gt;. Now you can send your data in &lt;acronym title="Comma Separated Value"&gt;&lt;span class="caps"&gt;CSV&lt;/span&gt;&lt;/acronym&gt;, &lt;acronym title="Extensible Markup Language"&gt;&lt;span class="caps"&gt;XML&lt;/span&gt;&lt;/acronym&gt;, &lt;acronym title="Portable Document Format (or Popular Dinosaur Format)"&gt;&lt;span class="caps"&gt;PDF&lt;/span&gt;&lt;/acronym&gt; and &lt;acronym title="Tab Separated Values"&gt;&lt;span class="caps"&gt;TSV&lt;/span&gt;&lt;/acronym&gt;.&lt;/p&gt;
+
+
+&lt;div class="web_analytics_image"&gt;
+&lt;img src="http://s3.amazonaws.com/devthatweb/pictures/1/google_1.png" alt="" /&gt;
+    &lt;span&gt;Site overlay view&lt;/span&gt;
+&lt;/div&gt;
+
+	&lt;p&gt;Google Analytics even provides some usability tools, in addition to its traffic analytics suite. The &lt;em&gt;site overlay&lt;/em&gt; shows you where your visitors are clicking using an approach similar to that of &lt;a href="http://www.crazyegg.com"&gt;Crazy Egg&lt;/a&gt;. Crazy Egg delivers much more precision, but then again, it&amp;#8217;s a different service intended for a different purpose.&lt;/p&gt;
+
+
+	&lt;h3&gt;In conclusion&lt;/h3&gt;
+
+
+	&lt;p&gt;The service you choose depends on what kind of user you are. With that in mind, here are my recommendations:&lt;/p&gt;
+
+
+&lt;div class="box" id="web_analytics_wrapup"&gt;
+  &lt;dl&gt;
+    &lt;dt&gt;Consumer/Hobbyist &amp;#8211; &lt;a href="http://www.getclicky.com/"&gt;Clicky 2.0&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd&gt;Get the essential data in a simple design&lt;/dd&gt;
+    &lt;dt&gt;Prosumer &amp;#8211; &lt;a href="http://www.reinvigorate.com/"&gt;Reinvigorate&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd&gt;All of your data in a cool and configurable interface&lt;/dd&gt;
+    &lt;dt&gt;Professional &amp;#8211; &lt;a href="http://www.google.com/analytics"&gt;Google Analytics&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd&gt;Extensive tracking and reporting functionality, as well as planning tools and a bevy of export formats.&lt;/dd&gt;
+  &lt;/dl&gt;
+&lt;/div&gt;
+
+	&lt;p&gt;Since these each of these services offer some sort of free account, you have the ability try before you buy, which is always a good thing.&lt;/p&gt;
+
+
+	&lt;p&gt;To be honest, I still can&amp;#8217;t decide which service I like the most, though at this point it&amp;#8217;s really between Reinvigorate and Google Analytics. I&amp;#8217;ve been happily running them next to each other. This way, I not only get the benefits of both, but also get protection in the event of downtime from one or the other.&lt;/p&gt;
+
+
+	&lt;p&gt;What type of stats tracking do you use?&lt;/p&gt;
+</content>
+    <author>
+      <name>Andreas Creten</name>
+    </author>
+    <link type="text/html" href="http://feeds.feedburner.com/~r/devthatweb/~3/158306044/three-web-2-0-web-stats-services-compared" rel="alternate" />
+  <feedburner:origLink>http://devthatweb.com/view/three-web-2-0-web-stats-services-compared</feedburner:origLink></entry>
+  <entry>
+    <id>tag:devthatweb.com,2007:Post17</id>
+    <published>2007-05-30T23:26:00Z</published>
+    <updated>2007-05-30T23:29:53Z</updated>
+    <title>Statistics prove that the readers of this blog are hip</title>
+    <content type="html">&lt;p&gt;Why am I strutting around like a Ruby programmer at a Java convention? Because I just saw the kind of thing that makes any web developer gloat.&lt;/p&gt;
+
+
+	&lt;p&gt;First I&amp;#8217;ll put on my web author hat. The readership of this blog has skyrocketed in the past week. I&amp;#8217;ve been working hard to create good content, and as long as you&amp;#8217;re interested, I have no plans of letting up. Look forward to some really interesting posts from some guest contributors in the coming weeks, as well as more of the type of content that brought you here in the first place.&lt;/p&gt;
+
+
+	&lt;p&gt;The one thing I&amp;#8217;d like to see is some more participation from you. I went through the trouble of creating a comments feature for this blog, so use it! I&amp;#8217;d love to hear some feedback.&lt;/p&gt;
+
+
+	&lt;p&gt;Now let me switch gears and speak as the developer of this blog. &lt;strong class="highlight"&gt;A quick look at my Mint stats shows me that 73% of you are using Firefox and 13% of you use Safari. That means only 6% of you use the bane of my existence&lt;/strong&gt;. You guys are hip enough to use the right browsers, which makes my life infinitely easier. Instead of worrying about &lt;span class="caps"&gt;PNG&lt;/span&gt; compatibility, I can focus on creating the best content possible. Thanks!&lt;/p&gt;
+
+
+	&lt;p&gt;&lt;img src="http://s3.amazonaws.com/devthatweb/user_agents.png" style="text-align: center" /&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;So again, thanks reading the blog, and thanks for using a modern browser to do so. And to my subscribers, I&amp;#8217;m going to have a special treat for you. I just have to figure out what it is. If you have any suggestions, you know where leave them.&lt;/p&gt;
+</content>
+    <author>
+      <name>Pat Nakajima</name>
+    </author>
+    <link type="text/html" href="http://feeds.feedburner.com/~r/devthatweb/~3/158306045/statistics-prove-that-the-readers-of-this-blog-are-hip" rel="alternate" />
+  <feedburner:origLink>http://devthatweb.com/view/statistics-prove-that-the-readers-of-this-blog-are-hip</feedburner:origLink></entry>
+  <entry>
+    <id>tag:devthatweb.com,2007:Post16</id>
+    <published>2007-05-30T11:25:54Z</published>
+    <updated>2007-05-30T12:45:53Z</updated>
+    <title>How to create a web platform: the Facebook approach</title>
+    <content type="html">&lt;p&gt;Recently, Facebook &lt;a href="http://blog.facebook.com/blog.php?post=2415922130"&gt;made the giant leap&lt;/a&gt; from web application to web platform. The term &amp;#8220;web platform&amp;#8221; makes a lot of people feel a bit uneasy, especially those who just grasped the concept of a web application. Knowing this, I&amp;#8217;d like to clarify the term before I continue.&lt;/p&gt;
+
+
+&lt;div class="box"&gt;
+  A &lt;strong&gt;web platform&lt;/strong&gt; is an environment in which web applications can be developed, as well as deployed.
+&lt;/div&gt;
+
+	&lt;p&gt;Obviously, the web applications that would run on a web platform wouldn&amp;#8217;t be as complex as standalone web applications, but what they lack in depth, they make up for in convenience.&lt;/p&gt;
+
+
+	&lt;p&gt;For developers, the Facebook platform offers several huge advantages.&lt;/p&gt;
+
+
+	&lt;h4&gt;Built-in power users&lt;/h4&gt;
+
+
+	&lt;p&gt;For starters, the Facebook user base already knows how to use the Facebook interface. &lt;strong class="highlight"&gt;As long as developers make their applications act as extensions to the existing interface, users won&amp;#8217;t have to trudge through the typical routine of learning a brand new one&lt;sup&gt;&lt;a href="#fn1"&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/strong&gt; This &amp;#8220;application as interface extension&amp;#8221; approach is more or less enforced by the Facebook &lt;span class="caps"&gt;API&lt;/span&gt;, which consists of a pretty cool &lt;span class="caps"&gt;RES&lt;/span&gt;Tful interface that&amp;#8217;s built on top of a slick, cross-language services framework called &lt;a href="http://developers.facebook.com/thrift"&gt;thrift.&lt;/a&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;Also, Facebook has been steadily rolling out new features for quite some time. As a result, Facebook users have gained a sort of adaptiveness that would be very difficult to produce under any other circumstances, and is a huge advantage for developers who would like to develop applications for the Facebook platform. By consistently introducing new features that quickly become indispensable to its users, Facebook made everybody early adopters.&lt;/p&gt;
+
+
+	&lt;h4&gt;A Framework of Freedom&lt;/h4&gt;
+
+
+	&lt;p&gt;I&amp;#8217;ve gone this far and only barely scratched the surface of the biggest draw of the Facebook platform on developers: The Thrift framework that I mentioned above allows developers to program in whatever language they feel most comfortable. &lt;strong class="highlight"&gt;With support for Ruby, &lt;span class="caps"&gt;PHP&lt;/span&gt;, Python, C++ and Java, it&amp;#8217;s hard to imagine anybody being totally left out in the cold&lt;/strong&gt; (some may not be sitting in their favorite chair by the fire, but at least there&amp;#8217;s room for everybody at the inn.)&lt;/p&gt;
+
+
+	&lt;p&gt;Right now, there are official &lt;a href="http://developers.facebook.com/resources.php"&gt;client libraries&lt;/a&gt; for &lt;span class="caps"&gt;PHP5&lt;/span&gt; and Java. Unofficial client libraries can be found for Actionscript, Perl, Ruby, Cocoa, &lt;span class="caps"&gt;PHP4&lt;/span&gt;, VB.NET, ColdFusion and Python. It&amp;#8217;s  not tough to find them either, since they&amp;#8217;re linked directly under the official libraries.&lt;/p&gt;
+
+
+	&lt;h4&gt;Duly Noted&lt;/h4&gt;
+
+
+	&lt;p&gt;You would think Facebook had gone far enough by providing such an outstanding platform to developers. Maybe, but that didn&amp;#8217;t keep them from from packing it to the brim with documentation. &lt;strong class="highlight"&gt;The entire platform is painstakingly documented, especially by open source standards.&lt;/strong&gt; No sifting through mailing list archives, trying to decipher forum posts in Japanese, or wasting time begging for answers in an &lt;span class="caps"&gt;IRC&lt;/span&gt; room. If developers respond with half the enthusiasm that was put into creating the &lt;a href="http://developers.facebook.com"&gt;Facebook Developer&lt;/a&gt; website, I&amp;#8217;d think it&amp;#8217;s safe to label the platform a success.&lt;/p&gt;
+
+
+	&lt;h4&gt;In conclusion&lt;/h4&gt;
+
+
+	&lt;p&gt;I suppose the proof is in the pudding, and for all of my praise, I must admin that I haven&amp;#8217;t yet had the chance to put together a Facebook application yet. Still, one of the biggest advances brought about by the modern web is the ability to judge a book by its cover. It&amp;#8217;s worth noting the explosion of available applications already available for the platform. They must be doing something right.&lt;/p&gt;
+
+
+	&lt;p&gt;Look for more posts about the Facebook Platform in the future. I&amp;#8217;m excited to see where Facebook takes this project, and you can bet your text editor I&amp;#8217;ll be keeping you informed all the while.&lt;/p&gt;
+
+
+&lt;div class="box" style="text-align: left"&gt;
+
+	&lt;h3&gt;To review:&lt;/h3&gt;
+
+
+	&lt;p&gt;Facebook&amp;#8217;s metamorphosis from web application to web platform makes a huge audience of informed users easily attainable.&lt;/p&gt;
+
+
+	&lt;p&gt;The open source Thrift framework allows Facebook developers to program in whatever language they see fit.&lt;/p&gt;
+
+
+	&lt;p&gt;The entire platform is thoroughly documented, making it all the more enticing.&lt;/p&gt;
+
+
+&lt;/div&gt;
+
+	&lt;p id="fn1"&gt;&lt;sup&gt;1&lt;/sup&gt; This is sort of like the practice of creating interface familiarity by adhering to design patterns, but on speed.&lt;/p&gt;
+</content>
+    <author>
+      <name>Pat Nakajima</name>
+    </author>
+    <link type="text/html" href="http://feeds.feedburner.com/~r/devthatweb/~3/158306046/how-to-create-a-web-platform-the-facebook-approach" rel="alternate" />
+  <feedburner:origLink>http://devthatweb.com/view/how-to-create-a-web-platform-the-facebook-approach</feedburner:origLink></entry>
+  <entry>
+    <id>tag:devthatweb.com,2007:Post15</id>
+    <published>2007-05-30T03:42:01Z</published>
+    <updated>2007-06-28T18:32:25Z</updated>
+    <title>Automate the deployment of any PHP project using Capistrano.</title>
+    <content type="html">&lt;p&gt;&lt;strong class="highlight"&gt;This recipe has been completely updated. To view the revised version, check here: &lt;a href="http://devthatweb.com/view/deploy-any-project-using-capistrano-2"&gt;Deploy any project using Capistrano 2&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;A little while back, &lt;a href="http://devthatweb.com/view/deploying-mint-with-capistrano"&gt;I posted a Capistrano recipe&lt;/a&gt; for deploying Mint alongside a Rails application, and it&amp;#8217;s been one of this blog&amp;#8217;s most popular posts to date. The recipe itself could be more flexible, but if you&amp;#8217;re willing to work within its constraints, it does a good job of simplifying the deployment of Mint and its somewhat frequent updates.&lt;/p&gt;
+
+
+	&lt;p&gt;Recently though, I was working on a &lt;span class="caps"&gt;PHP&lt;/span&gt; project, and I decided that the time had come to rewrite my Mint recipe to allow deployment of any &lt;span class="caps"&gt;PHP&lt;/span&gt; project, totally independent of Rails. I set to work, and I&amp;#8217;m happy to share the result.&lt;/p&gt;
+
+
+	&lt;h4&gt;Requirements&lt;/h4&gt;
+
+
+&lt;ul&gt;
+  &lt;li&gt;Capistrano 2 Preview 2 (Again, &lt;a href="http://weblog.jamisbuck.org/2007/5/11/capistrano-2-0-preview-2"&gt;Jamis Buck&amp;#8217;s&lt;/a&gt; blog is an excellent resource)&lt;/li&gt;
+  &lt;li&gt;Knowledge of the command line&lt;/li&gt;
+  &lt;li&gt;The ability to configure your web server (I used Apache)&lt;/li&gt;
+&lt;/ul&gt;
+
+	&lt;h4&gt;Before you get started&lt;/h4&gt;
+
+
+	&lt;p&gt;Make sure you&amp;#8217;ve created the deployment directory on your remote server before you use this recipe. Make sure that this directory&amp;#8217;s permissions allow your deployment user to write to it. For the time being, that will require you to ssh into that server. In the future, I&amp;#8217;ll make the Cap task do it for you.&lt;/p&gt;
+
+
+	&lt;p&gt;Also make sure you&amp;#8217;ve configured your web server to route requests to your application as necessary. (I&amp;#8217;ve pastied a &lt;a href="http://pastie.caboo.se/65945"&gt;sample VirtualHost configuration&lt;/a&gt; for Apache.)&lt;/p&gt;
+
+
+	&lt;h4&gt;The recipe&lt;/h4&gt;
+
+
+&lt;pre&gt;
+  &lt;code class="ruby"&gt;
+    require 'capistrano/recipes/deploy/strategy'
+    # Capistrano PHP Deployment Recipe
+    # Created by Pat Nakajima
+
+    # TODO  Create a setup task that would create apache conf file for the project.
+
+    # Set your project name here, it's probably best to use the domain name.
+    set :application, "your-project-domain" 
+
+    # Roles (You probably won't need to modify these.)
+    role :app, application
+    role :web, application
+    role :db,  application, :primary =&amp;gt; true
+
+    # Set the location of your PHP project in your repository.
+    set :repository,  "your-project-repository-url" 
+
+    # Deployment Settings
+    # Set the location that you'd like as your project's destination.
+    # I created a separate folder from my Rails apps to put things like this.
+    set :deploy_to, "/var/www/sites/#{application}" 
+    set :deploy_via, :checkout
+
+    namespace :deploy do
+      namespace :php do
+
+        # Strips much of Capistrano's default deployment process because
+        # it's tailored for Rails apps, and we don't need most of it.
+        desc "Deploy a PHP project." 
+        task :default do
+          update_code
+          symlink
+        end
+
+        task :update_code, :except =&amp;gt; { :no_release =&amp;gt; true } do
+          on_rollback { run "rm -rf #{release_path}; true" }
+          strategy.deploy!
+          finalize_update
+        end
+
+        # This part is borrowed from Geoffrey Grosenbach.
+        # Overridden since PHP doesn't have some of the Rails directories
+        task :finalize_update, :except =&amp;gt; { :no_release =&amp;gt; true } do
+          # Make directories writeable by the deployment user's group
+          run "chmod -R g+w #{release_path}" if fetch(:group_writable, true)
+        end
+
+        # Symlinks 
+        task :symlink, :except =&amp;gt; { :no_release =&amp;gt; true } do
+          on_rollback { run "rm -f #{current_path}; ln -s #{previous_release} #{current_path}; true" }
+          run "rm -f #{current_path} &amp;#38;&amp;#38; ln -s #{release_path} #{current_path}" 
+        end
+
+        task :restart, :roles =&amp;gt; :app do
+          # Do nothing (I have a different recipe to restart Apache.)
+        end
+
+      end
+    end
+  &lt;/code&gt;
+&lt;/pre&gt;
+
+	&lt;h4&gt;Usage&lt;/h4&gt;
+
+
+	&lt;p&gt;To use this recipe, make sure you&amp;#8217;re in your project&amp;#8217;s root directory, then run the following command:&lt;/p&gt;
+
+
+&lt;pre class="terminal"&gt;cap deploy:php&lt;/pre&gt;
+
+	&lt;p&gt;If you decide to use this recipe, please share your experience in the comments of this post. Your feedback will help me make this recipe better.&lt;/p&gt;
+</content>
+    <author>
+      <name>Pat Nakajima</name>
+    </author>
+    <link type="text/html" href="http://feeds.feedburner.com/~r/devthatweb/~3/158306047/automate-the-deployment-of-any-php-project-using-capistrano" rel="alternate" />
+  <feedburner:origLink>http://devthatweb.com/view/automate-the-deployment-of-any-php-project-using-capistrano</feedburner:origLink></entry>
+  <entry>
+    <id>tag:devthatweb.com,2007:Post14</id>
+    <published>2007-05-29T16:46:53Z</published>
+    <updated>2007-05-29T16:59:41Z</updated>
+    <title>devthatweb roundup #1: the inaugural posts</title>
+    <content type="html">&lt;p&gt;Looks like things are starting off on the right foot for this blog. Since traffic has increased recently, I thought it might be worthwhile to bring a few earlier posts to your attention. Here are a few things you may have missed:&lt;/p&gt;
+
+
+	&lt;h4&gt;FooToDo: an open source to-do list app for Ruby on Rails&lt;/h4&gt;
+
+
+	&lt;p&gt;When I first started developing using Rails, so many things came relatively easily. A few things didn&amp;#8217;t. So now that I feel much more comfortable with the ins and outs of Rails, I thought I&amp;#8217;d give a little bit back to the community. Meet FooToDo.&lt;/p&gt;
+
+
+	&lt;p&gt;As I mentioned in the &lt;a href="http://devthatweb.com/view/footodo-an-open-source-to-do-list-on-rails"&gt;original FooToDo announcement post&lt;/a&gt;, you can grab the source code for FooToDo using Subversion and checking out the following url:&lt;/p&gt;
+
+
+&lt;pre class="terminal"&gt;svn co http://svn.nakadev.com/projects/footodo&lt;/pre&gt;
+
+	&lt;p&gt;I&amp;#8217;m working on creating an actual website for FooToDo (any help would be appreciated, and duly noted), once that&amp;#8217;s done, I&amp;#8217;ll be able to make the source code for FooToDo much more easily obtainable.&lt;/p&gt;
+
+
+	&lt;h4&gt;Deploying Mint using Capistrano&lt;/h4&gt;
+
+
+	&lt;p&gt;Using some helpful code from Geoffrey Grosenbach, I created a Capistrano recipe to deploy Mint alongside a Ruby on Rails app. You can find it &lt;a href="http://devthatweb.com/view/deploying-mint-with-capistrano"&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+
+	&lt;p&gt;In the same vein as that post, soon I&amp;#8217;ll be posting a Capistrano recipe I created to deploy any &lt;span class="caps"&gt;PHP&lt;/span&gt; project. Look for it soon.&lt;/p&gt;
+
+
+	&lt;h4&gt;Modern Web Idioms&lt;/h4&gt;
+
+
+	&lt;p&gt;An ongoing feature of devthatweb is the Modern Web Idioms series, in which I detail some of the new design patterns emerging and becoming popular in the current web environment. So far, I&amp;#8217;ve written about the growing popularity of &lt;a href="http://devthatweb.com/view/modern-web-idioms-image-buttons"&gt;custom made image buttons&lt;/a&gt; and the &lt;a href="http://devthatweb.com/view/the-birth-of-the-modern-internet-a-reenactment"&gt;evolution of the behavior of links&lt;/a&gt;. If you have any topic ideas, please share them in the comments. I&amp;#8217;d love to know what you think.&lt;/p&gt;
+
+
+	&lt;p&gt;So that&amp;#8217;s a taste of what&amp;#8217;s been happening around here recently, and we&amp;#8217;re only getting started. Keep checking back, or &lt;a href="http://feeds.feedburner.com/devthatweb"&gt;subscribe to the feed&lt;/a&gt; to get the freshest content as soon as it hits the front page. I appreciate your interest, and hope to hear from you soon. Keep dev&amp;#8217;ing that web!&lt;/p&gt;
+</content>
+    <author>
+      <name>Pat Nakajima</name>
+    </author>
+    <link type="text/html" href="http://feeds.feedburner.com/~r/devthatweb/~3/158306048/devthatweb-roundup-1-the-inaugural-postsdevthatweb-roundup-1-the-inaugural-posts" rel="alternate" />
+  <feedburner:origLink>http://devthatweb.com/view/devthatweb-roundup-1-the-inaugural-postsdevthatweb-roundup-1-the-inaugural-posts</feedburner:origLink></entry>
+  <entry>
+    <id>tag:devthatweb.com,2007:Post13</id>
+    <published>2007-05-26T03:30:18Z</published>
+    <updated>2007-05-26T03:38:10Z</updated>
+    <title>How to update your Rails plugins' subversion externals URLs</title>
+    <content type="html">&lt;p&gt;11 hours ago, &lt;span class="caps"&gt;DHH&lt;/span&gt; committed a change to the Rails plugin repository that may or may not have wreaked havoc on your deployment setup. I know it did mine. He moved the simply_helpful, resource_feeder, and acts_as_taggable plugins into a new folder named &amp;#8220;legacy.&amp;#8221; When I tried to deploy a few unrelated changed I made to this blog, the externals weren&amp;#8217;t able to be found, and my deployment broke the blog.&lt;/p&gt;
+
+
+	&lt;p&gt;To fix things, I had to change my svn:externals settings, a task not very well explained by the Subversion book which is so frequently recommended for such problems.&lt;/p&gt;
+
+
+To change the way Subversion updates externals in your repository you must run the following command:
+&lt;pre class="terminal"&gt;svn propedit svn:externals vendor/plugins --editor-cmd vim&lt;/pre&gt;
+
+That command will open the externals file for that particular directory, and since I used the &lt;code&gt;--editor-cmd vim&lt;/code&gt; option, it will use the vim editor. Once in the file, you&amp;#8217;ll see something that looks like the following:
+&lt;pre class="terminal"&gt;
+attachment_fu  http://svn.techno-weenie.net/projects/plugins/attachment_fu
+simply_helpful  http://dev.rubyonrails.com/svn/rails/plugins/legacy/simply_helpful
+&lt;/pre&gt;
+The first part is the name of the directory that will be added to the folder whose externals file you&amp;#8217;re editing. The second part is the corresponding repository &lt;span class="caps"&gt;URL&lt;/span&gt;. In other words, an externals file with the above text will create an attachment_fu directory as well as a simply_helpful directory, each of which will be updated with code from their respective repository URLs.
+&lt;br /&gt;&lt;br /&gt;
+To fix the recent update made by &lt;span class="caps"&gt;DHH&lt;/span&gt;, just update the &lt;span class="caps"&gt;URL&lt;/span&gt; for the broken plugins, as you can see I&amp;#8217;ve done for the simply helpful plugin.
+</content>
+    <author>
+      <name>Pat Nakajima</name>
+    </author>
+    <link type="text/html" href="http://feeds.feedburner.com/~r/devthatweb/~3/158306049/rails-plugin-update" rel="alternate" />
+  <feedburner:origLink>http://devthatweb.com/view/rails-plugin-update</feedburner:origLink></entry>
+  <entry>
+    <id>tag:devthatweb.com,2007:Post12</id>
+    <published>2007-05-17T03:47:43Z</published>
+    <updated>2007-05-21T22:49:40Z</updated>
+    <title>Modern Web Idioms: Image buttons</title>
+    <content type="html">&lt;style type="text/css" media="screen"&gt;
+  img{ margin-top: -5px; }
+
+  div#example { text-align: center; }
+
+  #wrapup { text-align: left; padding-top: 0 }
+
+    #wrapup h4{ margin-top: 0; font-size: 1.4em }
+
+&lt;/style&gt;
+&lt;div class="box" id="example"&gt;
+  &lt;button class="left"&gt;Create a new project&lt;/button&gt;
+  &lt;a class="image right" href="#" onclick="; return false;"&gt;&lt;img alt="New project" src="http://nakawire.com/images/new_project.gif" /&gt;&lt;/a&gt;
+  became
+&lt;/div&gt;
+&lt;small&gt;*Image was taken from &lt;a href="http://www.basecamphq.com"&gt;Basecamp&lt;/a&gt;&lt;/small&gt;
+
+	&lt;p&gt;Why the emergence of these pretty widgets that look nothing like what users are used to, yet look good while doing it? This one is simple.&lt;/p&gt;
+
+
+In the same way coders must cope with the quirks of how each browser deals with &lt;span class="caps"&gt;CSS&lt;/span&gt;, designers must cope with the way each browser interprets the following:
+&lt;pre&gt;
+  &lt;code class="html"&gt;
+    &amp;lt;button&amp;gt;This is a button&amp;lt;/button&amp;gt;
+  &lt;/code&gt;
+&lt;/pre&gt;
+
+	&lt;p&gt;Each browser has its own graphical representation of the submit button. Despite their lack of uniformity in the different browsers, they have the benefit of supreme accessibility. However, with the rising ubiquity of Javascript enabled users, developers can have their cake and eat it too, by using the image button, even giving it the up/down effect you get when you press a conventional &lt;span class="caps"&gt;HTML&lt;/span&gt; button.&lt;/p&gt;
+
+
+	&lt;p&gt;If your application needs to work anywhere at any time, stick with the ugly button. But if you know your audience has the Javascript chops, give the alternative image button a try.&lt;/p&gt;
+
+
+&lt;div id="wrapup" class="box"&gt;
+
+	&lt;h4&gt;Warning!&lt;/h4&gt;
+
+
+	&lt;p&gt;If you plan on making any sort of server side changes, make sure you use a &lt;span class="caps"&gt;POST&lt;/span&gt; request for your button. Using a &lt;span class="caps"&gt;GET&lt;/span&gt; request can wreak all sorts of havoc. Maybe I&amp;#8217;ll write about it someday. If not, trust me. It&amp;#8217;s for the best.&lt;/p&gt;
+
+
+&lt;/div&gt;
+</content>
+    <author>
+      <name>Pat Nakajima</name>
+    </author>
+    <link type="text/html" href="http://feeds.feedburner.com/~r/devthatweb/~3/158306050/modern-web-idioms-image-buttons" rel="alternate" />
+  <feedburner:origLink>http://devthatweb.com/view/modern-web-idioms-image-buttons</feedburner:origLink></entry>
+  <entry>
+    <id>tag:devthatweb.com,2007:Post11</id>
+    <published>2007-05-16T21:58:07Z</published>
+    <updated>2007-05-17T13:25:11Z</updated>
+    <title>Modern Web Idioms: The evolution of links</title>
+    <content type="html">&lt;style type="text/css" media="screen"&gt;
+
+  .old {
+    color: blue;
+    text-decoration: underline;
+  }  
+
+  .old:hover{
+    color: blue;
+    background: #E5E5E5;
+  }
+
+  .middle {
+    color: blue;
+    text-decoration: underline;
+  }  
+
+  .middle:hover {
+    background: #E5E5E5;
+    color: blue;
+    text-decoration: none;
+  }
+
+  .awful:hover {
+    font-weight: bold;
+    font-size: 2em;
+    font-style: italic;
+    font-family: Terminal;
+    cursor: crosshair;
+  }
+
+  .underline:hover{
+    text-decoration: underline;
+    background: white;
+    color: blue;
+  }
+
+  .modern {
+    text-decoration: none; 
+  }
+
+  .modern:hover {
+    background: blue;
+    color: white;
+  }
+
+  div { }
+
+  #wrapup { text-align: left; padding-top: 0 }
+
+    #wrapup h4{ margin-top: 0; font-size: 1.4em }
+
+&lt;/style&gt;
+An alternative title for this post could be &amp;#8220;The birth of Web 2.0,&amp;#8221; only I don&amp;#8217;t believe in Web2.0 for reasons which shall be discussed in a forthcoming post. Instead, I refer to the emerging environment we&amp;#8217;re experiencing today as the &amp;#8220;modern Internet.&amp;#8221; But I digress.
+
+	&lt;h4&gt;In the beginning, there was the underlined blue link.&lt;/h4&gt;
+
+
+&lt;div class="box"&gt;
+  &lt;a href="#" class="old" onclick="; return false;"&gt;I&amp;#8217;m the first link ever created.&lt;/a&gt;
+&lt;/div&gt;
+
+	&lt;p&gt;The underlined blue link stood unchallenged for a long time. Long enough that it managed to hardwire itself as a pattern in users&amp;#8217; minds. Anytime users see any underlined blue text, they are going to think that&amp;#8217;s a link.&lt;/p&gt;
+
+
+	&lt;p&gt;The underline and blue color give the text something interaction designers call the &lt;strong class="titled highlight" title="Describes a person's perceived ability to interact with an object."&gt;affordance&lt;/strong&gt; for clickability. Affordance for clickability was important because most links would take the visitor to another place that the visitor was trying to reach. A page with little affordance for clickability would leave a visitor stranded, until he or she reached for the Back button. This wasn&amp;#8217;t a problem though because all links looked the same.&lt;/p&gt;
+
+
+	&lt;p&gt;&lt;strong&gt;In the early days of the web, affordance for clickability was all but guaranteed by the fact that all links looked the same.&lt;/strong&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;This was about to change.&lt;/p&gt;
+
+
+	&lt;h4&gt;Enter the &lt;code class="CSS"&gt;:hover&lt;/code&gt; attribute.&lt;/h4&gt;
+
+
+&lt;div class="box"&gt;
+  &lt;a href="#" class="middle" onclick="; return false;"&gt;I&amp;#8217;m a link from the middle ages.&lt;/a&gt;
+&lt;/div&gt;
+
+	&lt;p&gt;The first users of the &lt;acronym title="Cascading Style Sheets"&gt;&lt;span class="caps"&gt;CSS&lt;/span&gt;&lt;/acronym&gt; attribute &lt;code class="CSS"&gt;:hover&lt;/code&gt; came in two flavors. The &lt;a href="#" class="awful" onclick="; return false;"&gt;first type&lt;/a&gt; horribly mutated the text, wreaking havoc on layouts and generally making things harder for the user. The second type played with the text-decoration attribute &lt;span class="caps"&gt;AKA &lt;/span&gt;&lt;a href="#" class="underline" onclick="; return false;"&gt;underlining&lt;/a&gt; the text. Plain? Yes. Hideous/Annoying/Disruptive? No.&lt;/p&gt;
+
+
+	&lt;p&gt;The trouble with the &lt;code class="CSS"&gt;:hover&lt;/code&gt; attribute was that designers didn&amp;#8217;t feel safe modifying more than the text-decoration attribute for fear of offending the gods of usability. Besides, using &lt;code class="CSS"&gt;:hover&lt;/code&gt;, the change being made to the page was rather plain, and unless you began flirting with inline Javascript, it was going to stay that way.&lt;/p&gt;
+
+
+	&lt;p&gt;&lt;strong&gt;The introduction of &lt;code class="CSS"&gt;:hover&lt;/code&gt; behavior began introducing a new kind of affordance for the web. We&amp;#8217;ll talk about it soon.&lt;/strong&gt;&lt;/p&gt;
+
+
+	&lt;h4&gt;The Emergence of the modern link&lt;/h4&gt;
+
+
+&lt;div class="box"&gt;
+  &lt;a href="#" class="modern" onclick="; return false;"&gt;I&amp;#8217;m a link for the modern web.&lt;/a&gt;
+&lt;/div&gt;
+
+	&lt;p&gt;I don&amp;#8217;t know who first had the idea to invert the background and font colors as &lt;code class="CSS"&gt;:hover&lt;/code&gt; behavior, so I&amp;#8217;ll point you to the 37signals web app &lt;a href="http://www.basecamphq.com"&gt;Basecamp&lt;/a&gt;. Now, it&amp;#8217;s important to note that the &lt;a href="http://www.37signals.com"&gt;37signals.com&lt;/a&gt; has no &lt;code class="CSS"&gt;:hover&lt;/code&gt; behaviors whatsoever. This gives the page the feeling of stability, and when you&amp;#8217;re trying to convince visitors to rely on your software, stability is a good thing. &lt;strong&gt;It&amp;#8217;s good front page design practice to save the higher levels of interactivity for your app itself.&lt;/strong&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;That&amp;#8217;s exactly what Basecamp does. Once inside the app, almost ever single link tag has a &lt;code class="CSS"&gt;:hover&lt;/code&gt; behavior, as well as a bit of padding, which increases the size of the changed background color.&lt;/p&gt;
+
+
+	&lt;p&gt;The question now is this: Why is the background color so much more effective than switching the underline as a &lt;code class="CSS"&gt;:hover&lt;/code&gt; behavior?&lt;/p&gt;
+
+
+	&lt;h3&gt;Overriding user expectations&lt;/h3&gt;
+
+
+	&lt;p&gt;It&amp;#8217;s because when you change the link&amp;#8217;s background, you&amp;#8217;re modifying a much larger portion of the screen than you are with text-decoration. Giving the link a few pixels of padding on all sides increases the area even more. &lt;strong&gt;When the background of a link changes, it creates contrast where there once was none.&lt;/strong&gt; Naturally, the eye is pulled to contrast, so by modifying the link&amp;#8217;s background color as &lt;code class="CSS"&gt;:hover&lt;/code&gt; behavior, you&amp;#8217;re pulling the giving it attention automatically. By directing and redirecting attention frequently, you create a feeling of interactivity. No longer are you working to establish affordance for links. You&amp;#8217;re working to establish affordance for your app.&lt;/p&gt;
+
+
+	&lt;p&gt;And why not? Unlike the days of yore, most of the links in your application don&amp;#8217;t even take the user somewhere. Many probably don&amp;#8217;t even refresh the page. Creating the interactive interface helps a user stay comfortable with the fact that you aren&amp;#8217;t fulfilling their previous expectations of a link taking the browser to a different page.&lt;/p&gt;
+
+
+&lt;div class="box" id="wrapup"&gt;
+
+	&lt;h4&gt;In review:&lt;/h4&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;Making the &lt;code class="CSS"&gt;:hover&lt;/code&gt; behavior of a link change its background color causes an abrupt change of contrast on the page, the size of which is controllable using the &lt;code class="CSS"&gt;padding&lt;/code&gt; attribute.&lt;/li&gt;
+		&lt;li&gt;Abrupt changes in contrast tend to draw the user&amp;#8217;s eye and attention to the area immediately&lt;/li&gt;
+		&lt;li&gt;Directing and redirecting attention frequently keeps a user on his or her toes.&lt;/li&gt;
+		&lt;li&gt;Keeping the user on his/her toes is the best way to avoid confusion.&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+&lt;/div&gt;
+</content>
+    <author>
+      <name>Pat Nakajima</name>
+    </author>
+    <link type="text/html" href="http://feeds.feedburner.com/~r/devthatweb/~3/158306051/the-birth-of-the-modern-internet-a-reenactment" rel="alternate" />
+  <feedburner:origLink>http://devthatweb.com/view/the-birth-of-the-modern-internet-a-reenactment</feedburner:origLink></entry>
+  <entry>
+    <id>tag:devthatweb.com,2007:Post9</id>
+    <published>2007-05-16T08:50:46Z</published>
+    <updated>2007-05-16T09:25:30Z</updated>
+    <title>Deploying Mint with Capistrano</title>
+    <content type="html">I&amp;#8217;ve put together a Capistrano recipe based on a Capfile put together by &lt;a href="http://haveamint.com/forum/after_dinner/666/deploy_mint_with_capistrano#post_4108"&gt;Geoffrey Grosenbach&lt;/a&gt;. Here it is, and any suggestions left in the comments are most appreciated.
+&lt;h4&gt;Requirements&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;A legally obtained Mint license&lt;/li&gt;
+&lt;li&gt;A Ruby on Rails app&lt;/li&gt;
+&lt;li&gt;Capistrano 2 preview 2 (Read more about it on &lt;a href="http://weblog.jamisbuck.org/2007/5/11/capistrano-2-0-preview-2"&gt;Jamis Buck&amp;#8217;s blog&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Knowledge of the command line&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;
+&lt;code class="ruby"&gt;
+# Capistrano recipe for deploying Mint. Based on code from Geoffrey Grosenbach's
+# post on the Mint forums: http://haveamint.com/forum/after_dinner/666/deploy_mint_with_capistrano#post_4108
+# Slight modifications by Pat Nakajima.
+require 'capistrano/recipes/deploy/strategy'
+
+namespace :deploy do
+  namespace :mint do
+
+    # Set your svn user here
+    set :user, "deploy" 
+
+    # This should be the path to your app's shared folder. You need to keep a copy
+    # of Mint's db.php configuration file in the config/ directory. This will be 
+    # copied to your Mint deployment so as to avoid transmitting that material.
+    set :app_shared, "/var/www/apps/#{application}/shared" 
+
+    # Where is Mint? Set the location of Mint in your repository.
+    set :mint_repository,  "http://your_repository/mint" 
+
+    # Where do you want Mint? I put mine in a separate mints folder.
+    # Your mileage may vary.
+    set :mint_deploy_to, "/var/www/mints/#{application}" 
+
+    # This can be commented out after the first deployment if you wish to use another
+    # strategy for deployment.
+    set :mint_deploy_via, :checkout
+
+    before "deploy:mint:update_code", "deploy:mint:set_vars" 
+    # Sets variables to traditional names
+    task :set_vars do
+      set :repository, mint_repository
+      set :deploy_to, mint_deploy_to
+      set :deploy_via, mint_deploy_via
+    end
+
+    # TODO Refactor to not rewrite default deployment task
+    desc "Deploy Mint stats tracking." 
+    task :default do
+      update_code
+      symlink
+    end
+
+    task :update_code, :except =&amp;gt; { :no_release =&amp;gt; true } do
+      on_rollback { run "rm -rf #{release_path}; true" }
+      strategy.deploy!
+      finalize_update
+    end
+
+    # Overridden since PHP doesn't have some of the Rails directories
+    task :finalize_update, :except =&amp;gt; { :no_release =&amp;gt; true } do
+      # Make directories writeable by the deployment user's group
+      run "chmod -R g+w #{release_path}" if fetch(:group_writable, true)
+    end
+
+    # Symlinks 
+    task :symlink, :except =&amp;gt; { :no_release =&amp;gt; true } do
+      on_rollback { run "rm -f #{current_path}; ln -s #{previous_release} #{current_path}; true" }
+      run "rm -f #{current_path} &amp;#38;&amp;#38; ln -s #{release_path} #{current_path}" 
+    end
+
+    task :restart, :roles =&amp;gt; :app do
+      # Do nothing
+    end
+
+    # Copy db files
+    after "deploy:mint:update_code", "deploy:mint:copy_db_config" 
+    task :copy_db_config, :roles =&amp;gt; :app do
+      run "cp #{app_shared}/config/db.php #{release_path}/config/db.php" 
+      run "chmod -R 775 #{release_path}/config/db.php" 
+    end
+
+    # Post-deploy cleanup
+    task :after_default, :roles =&amp;gt; :app do
+      # Keep last 5 releases
+      deploy.cleanup
+    end
+
+  end
+end
+&lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;h4&gt;Usage&lt;/h4&gt;
+Once you add it to your Capfile, you can run the following command to deploy:
+
+&lt;pre class="terminal"&gt;cap deploy:mint&lt;/pre&gt;
+
+&lt;h4&gt;Notes&lt;/h4&gt;
+There are a few &amp;#8220;gotchas&amp;#8221; for this recipe:
+&lt;ul&gt;
+&lt;li&gt;Apache configuration is up to you for the time being. Setting up a virtualhost should be as easy as adding one to your apache cong/apps directory. I&amp;#8217;ll write more on this later.&lt;/li&gt;
+&lt;li&gt;You need to have a copy of Mint&amp;#8217;s db.php file in your Rails app&amp;#8217;s shared/config folder. This is intended to limit the number of times you have to send that kind of info.&lt;/li&gt;
+&lt;li&gt;You might have to finagle the permissions for your deploy folder.&lt;/li&gt;
+&lt;/ul&gt;
+
+	&lt;p&gt;In the Rails development community, you often hear the notion of opinionated software. Well this recipe, for now at least, is probably the most close-minded thing you&amp;#8217;ve seen in a while. Still, I&amp;#8217;ve been using it to deploy Mint for this blog, so I know it works, albeit with above stipulations.&lt;/p&gt;
+</content>
+    <author>
+      <name>Pat Nakajima</name>
+    </author>
+    <link type="text/html" href="http://feeds.feedburner.com/~r/devthatweb/~3/158306052/deploying-mint-with-capistrano" rel="alternate" />
+  <feedburner:origLink>http://devthatweb.com/view/deploying-mint-with-capistrano</feedburner:origLink></entry>
+  <entry>
+    <id>tag:devthatweb.com,2007:Post8</id>
+    <published>2007-05-15T13:49:45Z</published>
+    <updated>2007-05-15T13:50:24Z</updated>
+    <title>And we're back</title>
+    <content type="html">&lt;p&gt;You may have noticed a bit of downtime this morning. That&amp;#8217;s because I was having a devil of a time installing &lt;span class="caps"&gt;PHP&lt;/span&gt;, configuring Apache and getting &lt;a href="http://haveamint.com"&gt;Mint&lt;/a&gt; to be friends with a Rails app. I got it, but not before I accidentally messed up my MySQL administrator password. All&amp;#8217;s well that ends well.&lt;/p&gt;
+
+
+	&lt;p&gt;Coming soon: Capistrano Mint tasks. Look for it.&lt;/p&gt;
+</content>
+    <author>
+      <name>Pat Nakajima</name>
+    </author>
+    <link type="text/html" href="http://feeds.feedburner.com/~r/devthatweb/~3/158306053/and-we-re-back" rel="alternate" />
+  <feedburner:origLink>http://devthatweb.com/view/and-we-re-back</feedburner:origLink></entry>
+  <entry>
+    <id>tag:devthatweb.com,2007:Post7</id>
+    <published>2007-05-14T22:07:18Z</published>
+    <updated>2007-11-02T06:44:17Z</updated>
+    <title>FooTodo: An open source to-do list on Rails</title>
+    <content type="html">&lt;p&gt;Like all Rails&amp;#8217; developers, the first project I tackled with framework was a to-do list. The first 80% of the project was smooth sailing. Then it came time to implement the cool &lt;span class="caps"&gt;AJAX&lt;/span&gt; effects that I have come to expect from any half-decent web app these days. It was surprisingly frustrating.&lt;/p&gt;
+
+
+	&lt;p&gt;There weren&amp;#8217;t any helper tags for the &lt;span class="caps"&gt;AJAX&lt;/span&gt; checkboxes, popularized by apps like Tadalist. I didn&amp;#8217;t understand what this whole &lt;acronym title="Test Driven Development"&gt;&lt;span class="caps"&gt;TDD&lt;/span&gt;&lt;/acronym&gt; thing was about. I defintely couldn&amp;#8217;t wrap my mind around the whole &lt;span class="caps"&gt;RES&lt;/span&gt;Tful development thing. In short, I didn&amp;#8217;t really know what I was doing.&lt;/p&gt;
+
+
+	&lt;p&gt;At this point, I&amp;#8217;ve become more informed about the above topics, to the point where I think I can help others with their struggles. And so I present FooToDo, an open source, bare-bones, to-do list application. You can grab a copy through subversion by running the following command:&lt;/p&gt;
+
+
+&lt;pre class="terminal"&gt;svn co http://footodo.com/open/projects/footodo&lt;/pre&gt;
+
+	&lt;p&gt;In the coming weeks, I&amp;#8217;ll be writing more in depth about the development of this app. Hopefully I can clear up some of cloudier spots of getting into Rails.&lt;/p&gt;
+
+
+	&lt;p&gt;&lt;strong class="highlight"&gt;Be warned, this app hasn&amp;#8217;t been updated recently, so the likelihood of it containing one or ten deprecated practices is high.&lt;/strong&gt;&lt;/p&gt;
+</content>
+    <author>
+      <name>Pat Nakajima</name>
+    </author>
+    <link type="text/html" href="http://feeds.feedburner.com/~r/devthatweb/~3/158306054/footodo-an-open-source-to-do-list-on-rails" rel="alternate" />
+  <feedburner:origLink>http://devthatweb.com/view/footodo-an-open-source-to-do-list-on-rails</feedburner:origLink></entry>
+  <entry>
+    <id>tag:devthatweb.com,2007:Post6</id>
+    <published>2007-05-14T08:49:40Z</published>
+    <updated>2007-05-14T14:25:51Z</updated>
+    <title>Get your RSS here.</title>
+    <content type="html">&lt;p&gt;As promised, I&amp;#8217;ve created an &lt;span class="caps"&gt;RSS&lt;/span&gt; feed for this app. You can add this to your feedreader, then receive all of the latest updates to this site as they occur:&lt;/p&gt;
+
+
+&lt;pre class="terminal"&gt;http://feeds.feedburner.com/devthatweb&lt;/pre&gt;
+
+	&lt;p&gt;I suppose its worth noting that I used &lt;a href="http://www.ryandaigle.com/articles/2006/09/14/whats-new-in-edge-rails-get-your-rss-atom-feeds-for-free"&gt;this post&lt;/a&gt; from Ryan Daigle&amp;#8217;s excellent blog as my guide while implementing this feature. If you know of a better way to do what I&amp;#8217;m doing, please let me know in the comments.&lt;/p&gt;
+</content>
+    <author>
+      <name>Pat Nakajima</name>
+    </author>
+    <link type="text/html" href="http://feeds.feedburner.com/~r/devthatweb/~3/158306055/rss-feed-is-here-to-stay" rel="alternate" />
+  <feedburner:origLink>http://devthatweb.com/view/rss-feed-is-here-to-stay</feedburner:origLink></entry>
+  <entry>
+    <id>tag:devthatweb.com,2007:Post4</id>
+    <published>2007-05-14T01:17:46Z</published>
+    <updated>2007-05-16T11:24:41Z</updated>
+    <title>devthatweb: Just getting started</title>
+    <content type="html">&lt;p&gt;You may have noticed that certain links in the footer of this blog don&amp;#8217;t work, or that the styles of different elements change from time to time. That&amp;#8217;s because this site is a work in progress, and I&amp;#8217;m trying to balance work on posts with work on everything else.&lt;/p&gt;
+
+
+Here&amp;#8217;s  a list of what you can expect in the near future:
+	&lt;ul&gt;
+	&lt;li&gt;&lt;del&gt;An &lt;span class="caps"&gt;RSS&lt;/span&gt; feed&lt;/del&gt; &lt;strong style="color:green;"&gt;Done!&lt;/strong&gt;&lt;/li&gt;
+		&lt;li&gt;More posts from more authors&lt;/li&gt;
+		&lt;li&gt;Tutorials&lt;/li&gt;
+		&lt;li&gt;Other stuff&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;p&gt;So keep checking back, and I promise, the &lt;span class="caps"&gt;RSS&lt;/span&gt; feed will be coming soon.&lt;/p&gt;
+</content>
+    <author>
+      <name>Pat Nakajima</name>
+    </author>
+    <link type="text/html" href="http://feeds.feedburner.com/~r/devthatweb/~3/158306056/devthatweb-just-getting-started" rel="alternate" />
+  <feedburner:origLink>http://devthatweb.com/view/devthatweb-just-getting-started</feedburner:origLink></entry>
+  <entry>
+    <id>tag:devthatweb.com,2007:Post3</id>
+    <published>2007-05-12T05:32:44Z</published>
+    <updated>2007-05-14T00:24:58Z</updated>
+    <title>Peepcode Press: Making the best even better.</title>
+    <content type="html">&lt;p&gt;According to a &lt;a href="http://nubyonrails.com/articles/2007/05/11/peepcode-press-manifesto"&gt;recent post at nubyonrails.com&lt;/a&gt;, &lt;a href="http://www.peepcode.com"&gt;Peepcode&lt;/a&gt; will be expanding its Rails-enlightenment business to include focused, well-designed manuals on particular topics, referred to as minibooks.&lt;/p&gt;
+
+
+	&lt;p&gt;Geoff Grosenbach, who happens to be the brain-trust behind both &lt;a href="http://www.nubyonrails.com"&gt;nuby on rails&lt;/a&gt; and &lt;a href="http://www.peepcode.com"&gt;Peepcode&lt;/a&gt;, has provided the Rails community with a welcome avalanche of resources though plugins, a terrific blog in which he deals with whatever issue is crossing the minds of Rails developers at that moment, and providing his Peepcode screencasts with so many extras, and at such a low cost, that to not watch each and every one is just plain foolish. When I was first learning about Rails, the first name I learned was Geoff Grosenbach.&lt;/p&gt;
+&lt;p&gt;Anybody who frequents the Ruby on Rails blogosphere ought to at least be familiar with the Peepcode logo. It&amp;#8217;s nearly ubiquitous on sites including &lt;a href="http://railscasts.com"&gt;RailsCasts&lt;/a&gt;, &lt;a href="http://www.softiesonrails.com"&gt;Softies on Rails&lt;/a&gt;, &lt;a href="http://blog.hasmanythrough.com"&gt;Josh Susser&amp;#8217;s blog&lt;/a&gt;, and many other sites, the recurring factor being overall quality. Basically, if you want to learn about Rails on the Internet, your learning is being facilitated by Peepcode in some way. And that&amp;#8217;s in no way a bad thing.&lt;/p&gt;
+
+
+	&lt;p&gt;Each of Peepcode&amp;#8217;s offerings are incredibly thorough, yet executed well enough so that most of the information comes across with the first viewing. I say &amp;#8220;first viewing&amp;#8221; because I&amp;#8217;ve found myself referring to the screencasts as if they were a textbook. Not only can I refer to the screencast itself, but also the project source code included with every lesson. I dare say I&amp;#8217;ve learned more about about Rails development from Peepcode&amp;#8217;s screencasts than anywhere else. Don&amp;#8217;t believe me? Plunk down the $9 on the &lt;a href="http://www.peepcode.com/products/restful-rails"&gt;&lt;span class="caps"&gt;RES&lt;/span&gt;Tful Rails&lt;/a&gt; lesson, sit back, and await enlightenment.&lt;/p&gt;
+
+
+	&lt;p&gt;I&amp;#8217;m excited about the prospect of Peepcode Press, and all of the e-book learning that&amp;#8217;s sure to come with it. Perhaps someday, I&amp;#8217;ll feel my Rails expertise begin to spill over the brim, and I&amp;#8217;ll submit a topic proposal, thus crossing the gap between being a variable and being a constructor. I&amp;#8217;ll keep the über-nerdy analogies flowing. It should be a good time.&lt;/p&gt;</content>
+    <author>
+      <name>Pat Nakajima</name>
+    </author>
+    <link type="text/html" href="http://feeds.feedburner.com/~r/devthatweb/~3/158306057/peepcode-press-making-the-best-even-better" rel="alternate" />
+  <feedburner:origLink>http://devthatweb.com/view/peepcode-press-making-the-best-even-better</feedburner:origLink></entry>
+  <entry>
+    <id>tag:devthatweb.com,2007:Post2</id>
+    <published>2007-05-11T07:16:41Z</published>
+    <updated>2007-05-14T14:26:10Z</updated>
+    <title>Capistrano 2: Preview 2 released</title>
+    <content type="html">&lt;p&gt;The best thing since sliced bread, aka &lt;a href="http://www.capify.org"&gt;Capistrano&lt;/a&gt;, is on the cusp of reaching its second version. While Capistrano 1 made complaints of Rails deployment all but nil, it lacked a bit of the polish that adorns the rest of the Rails development process. Capistrano 2 seeks to change that, and by golly, judging from the previews, I think it&amp;#8217;s a success.&lt;/p&gt;
+
+
+	&lt;p&gt;While I was unable to get the first preview working on my local machine, I kept the Capistrano on my development server at the stable version. As a result, I was forced to ssh into my dev server each time I wanted to deploy. With this latest release the help of some excellent tutorials from &lt;a href="http://nubyonrails.com/articles/2007/04/27/tips-for-upgrading-to-capistrano-2"&gt;Geoffrey Grosenbach&lt;/a&gt; (of &lt;a href="http://www.peepcode.com"&gt;Peepcode&lt;/a&gt; fame), as well as a thorough look at  my old deploy.rb file.&lt;/p&gt;
+
+
+	&lt;p&gt;Once I get more time to play, I&amp;#8217;ll post a more comprehensive review. In the meantime, you can install the Capistrano 2 Preview 2 by running the following command:&lt;/p&gt;
+
+
+&lt;pre class="terminal"&gt;sudo gem install -s http://gems.rubyonrails.com capistrano&lt;/pre&gt;
+
+	&lt;p&gt;To read more about Capistrano 2: Preview 2, go right to the source. Jamis Buck, daddy of Capistrano, has a great post about it here: &lt;a href="http://weblog.jamisbuck.org/2007/5/11/capistrano-2-0-preview-2"&gt;http://weblog.jamisbuck.org/2007/5/11/capistrano-2-0-preview-2&lt;/a&gt;.&lt;/p&gt;
+</content>
+    <author>
+      <name>Pat Nakajima</name>
+    </author>
+    <link type="text/html" href="http://feeds.feedburner.com/~r/devthatweb/~3/158306058/capistrano-2-preview-2-released" rel="alternate" />
+  <feedburner:origLink>http://devthatweb.com/view/capistrano-2-preview-2-released</feedburner:origLink></entry>
+  <entry>
+    <id>tag:devthatweb.com,2007:Post1</id>
+    <published>2007-05-10T20:51:08Z</published>
+    <updated>2007-05-14T01:24:30Z</updated>
+    <title>Hello World</title>
+    <content type="html">&lt;p&gt;Hi. You&amp;#8217;ve reached devthatweb.com, a weblog &lt;em&gt;for&lt;/em&gt; web developers, &lt;em&gt;by&lt;/em&gt; web developers. We&amp;#8217;ll have a nice selection of posts revolving around design, &lt;span class="caps"&gt;CSS&lt;/span&gt;, coding, and other stuff that might be of interest to you if you&amp;#8217;re interested in web development.&lt;/p&gt;
+
+
+	&lt;p&gt;So thanks for stopping by, and check back soon. I&amp;#8217;ve got some cool things in store for this site, and I&amp;#8217;d like for you to join me.&lt;/p&gt;
+</content>
+    <author>
+      <name>Pat Nakajima</name>
+    </author>
+    <link type="text/html" href="http://feeds.feedburner.com/~r/devthatweb/~3/158306059/hello-world" rel="alternate" />
+  <feedburner:origLink>http://devthatweb.com/view/hello-world</feedburner:origLink></entry>
+<feedburner:awareness>http://api.feedburner.com/awareness/1.0/GetFeedData?uri=devthatweb</feedburner:awareness></feed>

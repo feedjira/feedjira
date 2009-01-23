@@ -1,0 +1,849 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- generator="wordpress/2.3.3" -->
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	>
+
+<channel>
+	<title>Paul Dowman</title>
+	<link>http://pauldowman.com</link>
+	<description>Software Developer</description>
+	<pubDate>Fri, 16 Jan 2009 16:34:33 +0000</pubDate>
+	<generator>http://wordpress.org/?v=2.3.3</generator>
+	<language>en</language>
+			<item>
+		<title>How to convert from Subversion to Git</title>
+		<link>http://pauldowman.com/2008/07/26/how-to-convert-from-subversion-to-git/</link>
+		<comments>http://pauldowman.com/2008/07/26/how-to-convert-from-subversion-to-git/#comments</comments>
+		<pubDate>Sat, 26 Jul 2008 12:31:59 +0000</pubDate>
+		<dc:creator>Paul Dowman</dc:creator>
+		
+		<category><![CDATA[Git]]></category>
+
+		<category><![CDATA[Software Development]]></category>
+
+		<guid isPermaLink="false">http://pauldowman.com/2008/07/26/how-to-convert-from-subversion-to-git/</guid>
+		<description><![CDATA[When I was moving EC2 on Rails to Git I found several posts that explained how to convert a repo from svn to Git. But none of them included converting your svn tags to Git tags, so here&#8217;s yet another how-to guide. (Git experts please comment if I&#8217;m doing anything dumb.)
+1. Install Git
+First, you&#8217;ll need [...]]]></description>
+			<content:encoded><![CDATA[<p>When I was <a href="/2008/07/26/got-git/">moving EC2 on Rails to Git</a> I found several posts that explained how to convert a repo from svn to Git. But none of them included converting your svn tags to Git tags, so here&#8217;s yet another how-to guide. (Git experts please comment if I&#8217;m doing anything dumb.)</p>
+<h4>1. Install Git</h4>
+<p>First, you&#8217;ll need Git installed with <a href="http://www.kernel.org/pub/software/scm/git/docs/git-svn.html">git-svn</a> included (git-svn will actually allow you to push changes back to the original Subversion repository, but for our purposes we&#8217;re assuming that this is a one-time conversion).</p>
+<p>If you&#8217;re using OS X you should already be using <a href="http://www.macports.org/">MacPorts</a>, so just do:</p>
+<p><code>prompt&gt; sudo port install git-core +svn</code></p>
+<p>Or, on Ubuntu or Debian Linux:</p>
+<p><code>prompt&gt; </code><code>sudo apt-get install <a href="http://packages.ubuntu.com/hardy/git-svn">git-svn</a></code></p>
+<h4>2. Create the authors file</h4>
+<p>Next, create a text file that maps Subversion committers to Git authors so the names and email addresses will be correct in the history. Save it as authors.txt:</p>
+<p><code>pdowman = Paul Dowman &lt;paul@hellospambot.com&gt;<br />
+svnuser2 = Another User &lt;anotheruser@whatever.com&gt;</code></p>
+<h4>3. Clone the repository</h4>
+<p>Now run the command that will import your svn repo into a local Git repo. I&#8217;m assuming your svn repo had the standard layout of /trunk, /tags and /branches.</p>
+<p><code>prompt&gt; git svn clone --no-metadata -A authors.txt -t tags -b branches -T trunk &lt;your_svn_url&gt; </code></p>
+<p>Now running <code>git log</code> should show all your commit history with the correct authors.</p>
+<h4>4. Convert branches to tags</h4>
+<p>There&#8217;s one more thing. All your tags are now remote branches, not tags, in your Git repo. So you&#8217;ll need to convert them manually (or write a script to do it if you have a lot, I&#8217;ll leave that as an exercise for the reader). For each Subversion tag (i.e. Git remote branch) you&#8217;ll add it as a Git tag, then delete the remote branch. List them with:</p>
+<p><code>prompt&gt; git branch -r</code></p>
+<p>Then for each tag listed do:</p>
+<p><code>prompt&gt; git tag tagname tags/tagname<br />
+prompt&gt; git branch -r -d tags/tagname</code></p>
+<p>You now have a local Git repository with all your history and tags. If you don&#8217;t need to share it with anyone else then you&#8217;re done.</p>
+<h4>5. Push to a public repo (optional)</h4>
+<p>If you want to publish to a public repository (for example <a href="http://github.com">Github</a>), you&#8217;ll need to add it as a remote repo and then push to it.</p>
+<p><code>prompt&gt; git remote add origin git@github.com:userid/project.git<br />
+prompt&gt; git push origin master --tags<br />
+</code></p>
+<p>You next stop should probably be the <a href="http://git.or.cz/course/svn.html">Git tutorial for Subversion users</a>. Enjoy!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://pauldowman.com/2008/07/26/how-to-convert-from-subversion-to-git/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Got Git</title>
+		<link>http://pauldowman.com/2008/07/26/got-git/</link>
+		<comments>http://pauldowman.com/2008/07/26/got-git/#comments</comments>
+		<pubDate>Sat, 26 Jul 2008 12:18:59 +0000</pubDate>
+		<dc:creator>Paul Dowman</dc:creator>
+		
+		<category><![CDATA[EC2 on Rails]]></category>
+
+		<category><![CDATA[Git]]></category>
+
+		<category><![CDATA[Software Development]]></category>
+
+		<guid isPermaLink="false">http://pauldowman.com/2008/07/26/got-git/</guid>
+		<description><![CDATA[I&#8217;ve moved EC2 on Rails from Subversion to Git. It&#8217;s hosted on Github at pauldowman/ec2onrails.
+Most Ruby developers are familiar with Git by now. (If you&#8217;re not: it&#8217;s a distributed version control system that was created in 2005 by Linus Torvalds for Linux kernel development). Within the last year almost every Ruby-based open-source project has switched [...]]]></description>
+			<content:encoded><![CDATA[<p>I&#8217;ve moved <a href="http://ec2onrails.rubyforge.org/">EC2 on Rails</a> from Subversion to <a href="http://git.or.cz/">Git</a>. It&#8217;s hosted on Github at <a href="http://github.com/pauldowman/ec2onrails">pauldowman/ec2onrails</a>.</p>
+<p>Most Ruby developers are familiar with Git by now. (If you&#8217;re not: it&#8217;s a <a href="http://betterexplained.com/articles/intro-to-distributed-version-control-illustrated/">distributed version control system</a> that was <a href="http://en.wikipedia.org/wiki/Git_(software)#Early_history">created in 2005 by Linus Torvalds</a> for Linux kernel development). Within the last year almost every Ruby-based open-source project has switched to Git (including <a href="http://weblog.rubyonrails.org/2008/4/11/rails-premieres-on-github">Rails itself</a>). And in fact they&#8217;re almost all hosted on <a href="http://github.com/">Github</a>!</p>
+<p>At first I found it funny that even though they were moving to a distributed version control system, everyone decided to keep their repositories in <em>the exact same place</em>. Being distributed, a Git repository doesn&#8217;t need to be hosted unless you&#8217;re sharing it. You can publish it <a href="http://www.kernel.org/pub/software/scm/git/docs/user-manual.html#setting-up-a-public-repository">easily</a> on any web server, and RubyForge (which has always been the most popular place to host Ruby projects) <a href="http://drnicwilliams.com/2008/04/08/git-for-rubyforge-accounts/">supports git</a>.</p>
+<p>But after playing with it a bit I can see why everyone is choosing Github. For one thing they got the project hosting part right, with a <a href="http://www.pjhyett.com/posts/232-why-github-will-overtake-sourceforge">simple clean UI</a> and cool features like <a href="http://github.com/guides/the-github-api">an API</a> and <a href="http://github.com/blog/105-services-galore">hooks for all kinds of services</a>.</p>
+<p>But the really cool thing about Github is that it provides <a href="http://www.readwriteweb.com/archives/github_a_social_network_for_programmers.php">a social environment</a>. You can watch projects as you&#8217;d expect, but you can also follow people, send them messages, and easily send them pull requests (to integrate changes you&#8217;ve made). It&#8217;s great for discovering interesting and new projects: just follow friends and people whose work you like to see what they&#8217;re watching, creating and forking.</p>
+<p>Now that EC2 on Rails is on Github it&#8217;s more likely that other people will want to build it themselves so I&#8217;ll try to make that easier with a one-step script at the root of the project. Feel free to fork it, implement changes and send me patches or pull requests.</p>
+<p>And <a href="http://github.com/pauldowman">find me on Github</a>!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://pauldowman.com/2008/07/26/got-git/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>EC2 on Rails version 0.9.9 released</title>
+		<link>http://pauldowman.com/2008/07/23/ec2-on-rails-version-099-released/</link>
+		<comments>http://pauldowman.com/2008/07/23/ec2-on-rails-version-099-released/#comments</comments>
+		<pubDate>Wed, 23 Jul 2008 13:17:24 +0000</pubDate>
+		<dc:creator>Paul Dowman</dc:creator>
+		
+		<category><![CDATA[EC2]]></category>
+
+		<category><![CDATA[EC2 on Rails]]></category>
+
+		<category><![CDATA[Ruby]]></category>
+
+		<category><![CDATA[Ruby on Rails]]></category>
+
+		<guid isPermaLink="false">http://pauldowman.com/2008/07/23/ec2-on-rails-version-099-released/</guid>
+		<description><![CDATA[I released version 0.9.9 of EC2 on Rails a few weeks ago and announced it on the mailing list but forgot to mention it here. The main change was switching to version 8.04 (&#8221;Hardy&#8221;) of Ubuntu. See the change log for full details.
+]]></description>
+			<content:encoded><![CDATA[<p>I released version 0.9.9 of <a href="http://ec2onrails.rubyforge.org/">EC2 on Rails</a> a few weeks ago and announced it on the mailing list but forgot to mention it here. The main change was switching to version 8.04 (&#8221;Hardy&#8221;) of Ubuntu. See the <a href="http://ec2onrails.rubyforge.org/svn/tags/REL-0.9.9/gem/History.txt">change log</a> for full details.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://pauldowman.com/2008/07/23/ec2-on-rails-version-099-released/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>EC2 on Rails version 0.9.8 available</title>
+		<link>http://pauldowman.com/2008/05/19/ec2-on-rails-version-098-available/</link>
+		<comments>http://pauldowman.com/2008/05/19/ec2-on-rails-version-098-available/#comments</comments>
+		<pubDate>Mon, 19 May 2008 15:40:19 +0000</pubDate>
+		<dc:creator>Paul Dowman</dc:creator>
+		
+		<category><![CDATA[EC2]]></category>
+
+		<category><![CDATA[EC2 on Rails]]></category>
+
+		<category><![CDATA[Ruby]]></category>
+
+		<category><![CDATA[Ruby on Rails]]></category>
+
+		<guid isPermaLink="false">http://pauldowman.com/2008/05/19/ec2-on-rails-version-098-available/</guid>
+		<description><![CDATA[UPDATE: it&#8217;s 0.9.8.1 now, there was a small update to the RubyGem. The new gem uses the same AMI&#8217;s. 
+EC2 on Rails version 0.9.8 is now available (or will be in a few hours when the RubyForge servers are synced). This is a recommended update for everyone.
+It includes some major new features:
+
+monit monitoring daemon: monitors [...]]]></description>
+			<content:encoded><![CDATA[<p><em>UPDATE: it&#8217;s 0.9.8.1 now, there was a small update to the RubyGem. The new gem uses the same AMI&#8217;s. </em></p>
+<p><a href="http://ec2onrails.rubyforge.org/">EC2 on Rails</a> version 0.9.8 is now available (or will be in a few hours when the RubyForge servers are synced). This is a recommended update for everyone.</p>
+<p>It includes some major new features:</p>
+<ul>
+<li>monit monitoring daemon: monitors mysqld, apache, memcached, mongrels, system load and free drive space</li>
+<li>incremental MySQL backup (important for large databases)</li>
+<li>Apache SSL support</li>
+<li>a local <a href="http://www.postfix.org/">Postfix</a> SMTP server enabled by default</li>
+</ul>
+<p>And most importantly this fixes the <a href="http://rubyforge.org/tracker/index.php?func=detail&amp;aid=20040&amp;group_id=4552&amp;atid=17558">problem with broken Ubuntu package updates</a> which was caused by a missing repository in the list of repositories.</p>
+<p>As I <a href="/2008/05/18/open-source-made-my-life-easier-today/">mentioned yesterday</a>, the base image is now built using <a href="http://alestic.com/">Eric Hammond&#8217;s EC2 Ubuntu</a> script.</p>
+<p>Also, there are major new features such as incremental MySQL backup (important for large databases), Apache SSL support, and a local Postfix SMTP server enabled by default.</p>
+<p>My priorities now are:</p>
+<ol>
+<li>Release an update based on Ubuntu 8.04 Hardy (this version is still using Ubuntu 7.10 Gutsy because I wanted to provide a reliable update as quickly as possible due to bug #20040. But now that the base image is built with Eric Hammond&#8217;s script it should be easy to update to Hardy.)</li>
+<li>Create complete documentation.</li>
+<li>Release a 100% bug-free version 1.0 with the current feature-set. Please help by reporting any bugs you find, either using the <a href="http://rubyforge.org/tracker/index.php?group_id=4552&amp;atid=17558">RubyForge bug tracker</a> or <a href="/contact">by email</a>.</li>
+</ol>
+]]></content:encoded>
+			<wfw:commentRss>http://pauldowman.com/2008/05/19/ec2-on-rails-version-098-available/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Open Source made my life easier today</title>
+		<link>http://pauldowman.com/2008/05/18/open-source-made-my-life-easier-today/</link>
+		<comments>http://pauldowman.com/2008/05/18/open-source-made-my-life-easier-today/#comments</comments>
+		<pubDate>Sun, 18 May 2008 22:02:14 +0000</pubDate>
+		<dc:creator>Paul Dowman</dc:creator>
+		
+		<category><![CDATA[EC2]]></category>
+
+		<category><![CDATA[EC2 on Rails]]></category>
+
+		<guid isPermaLink="false">http://pauldowman.com/2008/05/18/open-source-made-my-life-easier-today/</guid>
+		<description><![CDATA[The point of EC2 on Rails is to save other people from duplicating the effort of building and configuring a Rails server on EC2. When I started it there were no other public Ubuntu server image projects so I had to start from scratch. I had to write a build script to build an Ubuntu [...]]]></description>
+			<content:encoded><![CDATA[<p>The point of <a href="/projects/ruby-on-rails-ec2/">EC2 on Rails</a> is to save other people from duplicating the effort of building and configuring a Rails server on EC2. When I started it there were no other public Ubuntu server image projects so I had to start from scratch. I had to write a build script to build an Ubuntu image, patch the Amazon AMI tools to work on Ubuntu, etc., before I could even begin to create the Rails-specific stuff. And every 6 months there&#8217;s a new version of Ubuntu and I have to do at least some of that over again.</p>
+<p>But in the meantime Eric Hammond has created an excellent <a href="http://alestic.com/">Ubuntu AMI base install project</a>, it has all the necessary features like installing the AMI tools, getting the public keys on first boot so that you can log in with your EC2 account&#8217;s private key, regenerating the ssh host keys on first boot, etc. And it has some cool new features like the ability to <a href="http://groups.google.com/group/ec2ubuntu/browse_thread/thread/c228d509ef31c630">give an instance an arbitrary script on startup</a> using EC2&#8217;s &#8220;<a href="http://docs.amazonwebservices.com/AWSEC2/2008-02-01/DeveloperGuide/AESDG-chapter-instancedata.html#instancedata-user-data-retrieval" id="d0e4468">user-supplied </a><a href="http://docs.amazonwebservices.com/AWSEC2/2008-02-01/DeveloperGuide/AESDG-chapter-instancedata.html#instancedata-user-data-retrieval">instance data</a>&#8220;. And, it has an <a href="http://groups.google.com/group/ec2ubuntu">active community</a>.</p>
+<p>So why would I duplicate that effort?! I&#8217;d rather concentrate on improving the Rails-specific features, so I&#8217;ve adapted my build script to be run from Eric&#8217;s. And by &#8220;adapted&#8221;, I mean &#8220;took out tons of stuff that I no longer need to care about&#8221;! And when I want to make any improvements that aren&#8217;t Rails-specific, I can contribute them to Eric&#8217;s project where they&#8217;ll benefit more people.</p>
+<p>If you&#8217;re building your own custom AMI, I highly recommend using Eric&#8217;s base install script. You&#8217;ll end up with a solid base for your image with way less work, and it has a hook to easily include your own build script to customize the build.</p>
+<p>Version 0.9.8 of EC2 on Rails uses Eric&#8217;s script for the base install, and it will be released in a couple of days (I&#8217;m using it in production already).</p>
+<p>Seriously, why reinvent the wheel? You gotta love open source!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://pauldowman.com/2008/05/18/open-source-made-my-life-easier-today/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>A rock-solid setup for sending SMTP mail from your EC2 web server</title>
+		<link>http://pauldowman.com/2008/02/17/smtp-mail-from-ec2-web-server-setup/</link>
+		<comments>http://pauldowman.com/2008/02/17/smtp-mail-from-ec2-web-server-setup/#comments</comments>
+		<pubDate>Sun, 17 Feb 2008 20:53:48 +0000</pubDate>
+		<dc:creator>Paul Dowman</dc:creator>
+		
+		<category><![CDATA[EC2]]></category>
+
+		<category><![CDATA[Linux]]></category>
+
+		<category><![CDATA[Mail]]></category>
+
+		<category><![CDATA[Software Development]]></category>
+
+		<category><![CDATA[Systems]]></category>
+
+		<guid isPermaLink="false">http://pauldowman.com/2008/02/17/smtp-mail-from-ec2-web-server-setup/</guid>
+		<description><![CDATA[(None of this is EC2-centric, but it&#8217;s particularly needed on EC2.)
+A frequent topic of discussion on the EC2 forums is how to send email reliably, efficiently, and especially without it being marked as spam. I found that even with a valid SPF record most mail sent from an EC2 instance was marked as spam or [...]]]></description>
+			<content:encoded><![CDATA[<p><em>(None of this is EC2-centric, but it&#8217;s particularly needed on EC2.)</em></p>
+<p>A frequent topic of discussion on the EC2 forums is how to send email reliably, efficiently, and especially without it being marked as spam. I found that even with a valid <a href="http://www.openspf.org/Introduction">SPF record</a> most mail sent from an EC2 instance was marked as spam or silently discarded.</p>
+<p>This is probably partly because of the lack of matching <a href="http://www.spamhaus.org/faq/answers.lasso?section=ISP%20Spam%20Issues#131">reverse DNS records</a>. But spam filters can be a bit arbitrary and the easiest way is to relay outgoing mail through a good smtp provider. (I don&#8217;t recommend relaying outbound mail through Google Apps, they supposedly have a 500 messages/day limit according to many people on their forums, although I couldn&#8217;t find that published anywhere. UPDATE: The info is <a href="http://www.google.com/support/a/bin/answer.py?hl=en-ca&amp;answer=59797">here</a>, thanks John Ward.)</p>
+<p>I have tried a couple of SMTP providers, and <strong>I recommend <a href="http://www.authsmtp.com/">AuthSMTP</a></strong>. They are reliable, have good service, and our mail that&#8217;s delivered through them almost never gets marked as spam. Also, they have monthly quotas rather than daily, so you have a chance to increase it before you hit the limit.</p>
+<p>Rather than deliver directly to the AuthSMTP mail server from your web app it&#8217;s a good idea to deliver to a local queueing mail server, which will forward via the AuthSMTP gateway. Your web app will deliver mail to localhost (or perhaps a dedicated instance if you prefer), port 25.</p>
+<p>This has several advantages:</p>
+<ol>
+<li>Your web server can finish the request more quickly.</li>
+<li>There&#8217;s less chance that the mail server will be unavailable. At least the mail will be queued locally until the remote server becomes available again. AuthSMTP has proven to be quite reliable, but it has been unavailable on a couple of occasions.</li>
+<li><a href="http://www.authsmtp.com/faqs/faq-61.html">AuthSMTP limits the number of concurrent connections</a> that you can make. You can easily configure your local mail server to limit the number of outgoing connections to the gateway.</li>
+</ol>
+<h4>Configuration</h4>
+<p>I recommend using <a href="http://www.postfix.org/">Postfix</a>, it&#8217;s fast, reliable and most importantly, easy to configure. Your Linux distribution will definitely have a Postfix <a href="http://packages.ubuntu.com/gutsy/mail/postfix">package</a> available (it comes pre-installed on <a href="http://ec2onrails.rubyforge.org/">EC2 on Rails</a>). On Debian or Ubuntu install with:</p>
+<pre>sudo aptitude install postfix</pre>
+<p>Here&#8217;s the config file, <code>/etc/postfix/main.cf</code>:</p>
+<pre>myhostname = www.YOURDOMAIN.com
+mydomain = YOURDOMAIN.com
+myorigin = $mydomain
+
+smtpd_banner = $myhostname ESMTP $mail_name
+biff = no
+append_dot_mydomain = no
+
+alias_maps = hash:/etc/aliases
+alias_database = hash:/etc/aliases
+mydestination = localdomain, localhost, localhost.localdomain, localhost
+mynetworks = 127.0.0.0/8
+mailbox_size_limit = 0
+recipient_delimiter = +
+
+# SECURITY NOTE: Listening on all interfaces. Make sure your firewall is
+# configured correctly
+inet_interfaces = all
+
+relayhost = [mail.authsmtp.com]
+smtp_connection_cache_destinations = mail.authsmtp.com
+smtp_sasl_auth_enable = yes
+smtp_sasl_password_maps = static:YOUR_AUTHSMPT_USER_ID:YOUR_AUTHSMTP_PW
+smtp_sasl_security_options = noanonymous
+
+default_destination_concurrency_limit = 4
+
+soft_bounce = yes</pre>
+<p>How simple is that?! Have you ever seen a sendmail config file?</p>
+<p><code>soft_bounce</code> is important because it means that postfix will queue the messages if they&#8217;re bounced by the remote gateway for any reason (this is only if it&#8217;s bounced by the gateway, not if it&#8217;s bounced by the destination server). This would usually be caused by some configuration problem like an authentication failure. If the message is bounced by the eventual destination server (e.g. the mailbox doesn&#8217;t exist or is full), or if the destination server can&#8217;t be contacted, your local server won&#8217;t know about it because the message has already been accepted by the gateway. (It&#8217;s probably a good idea to keep track of bounced messages returned by the eventual destination server, see &#8220;Don&#8217;t spoof the From field&#8221; below.)</p>
+<p><code>default_destination_concurrency_limit</code> is so you stay within <a href="http://www.authsmtp.com/faqs/faq-61.html">AuthSMTP&#8217;s concurrent connection limit</a>. If you have Postfix running on multiple instances you&#8217;ll need to adjust this accordingly.</p>
+<p>To see mail that&#8217;s stuck in the queue:</p>
+<pre>mailq</pre>
+<p>Postfix will automatically try to resend it, but you can force it to be sent immediately using:</p>
+<pre>sudo postqueue -f</pre>
+<h4>Monitoring</h4>
+<p>Of course you need to know if anything goes wrong with the mail delivery and it won&#8217;t be in your web app&#8217;s log. I use scripts in /etc/cron.hourly to check logs and mail me the output if there are errors. But when it comes you mail delivery failure you might have a bit of a chicken-and-egg problem: you can&#8217;t use postfix to send the mail if postfix is having problems. Here&#8217;s a simple ruby script to send emergency mail via a different mail server. It&#8217;s configured to use Google Apps (you&#8217;ll need to create a new account to send the mail from), if you don&#8217;t use Google Apps you can easily change this to use a different mail server.</p>
+<p>Save this as <code>/usr/local/bin/emergency_mail_sender</code>:</p>
+<pre>#!/usr/bin/env ruby
+
+# This is a simple script to send mail via an alternate server when there are
+# errors with the normal queueing mail sender
+# The subject is the first command-line arg and the body is received on stdin
+
+#################################
+
+from_address             = "admin_mail_sender@YOURDOMAIN.com"
+to_address               = "admin@YOURDOMAIN.com"
+smtp_server              = "smtp.gmail.com"
+smtp_port                = 587
+smtp_mail_from_domain    = "YOURDOMAIN.com"
+smtp_account_name        = "admin_mail_sender@YOURDOMAIN.com"
+smtp_password            = "YOUR_PASSWORD"
+smtp_authentication_type = :plain
+debug                    = false
+
+#################################
+
+subject = ARGV[0]
+body = $stdin.read
+
+require 'rubygems'
+require 'net/smtp'
+require 'tlsmail'
+
+exit if body.nil? || body == ""
+
+msgstr = &lt;&lt;END_OF_MESSAGE
+Subject: #{subject}
+
+#{body}
+END_OF_MESSAGE
+
+Net::SMTP.enable_tls(OpenSSL::SSL::VERIFY_NONE)
+  smtp = Net::SMTP.new(smtp_server, smtp_port)
+  smtp.set_debug_output $stderr if debug
+  smtp.start(smtp_mail_from_domain, smtp_account_name, smtp_password, smtp_authentication_type) do |s|
+    s.send_message msgstr, from_address, to_address
+end<end_of_message></end_of_message></pre>
+<p>Here&#8217;s a script that can be run by cron every hour to check for mail delivery problems, it uses the <code>emergency_mail_sender</code> script to notify you of the problem. It works on Ubuntu (but it needs the <a href="http://packages.ubuntu.com/gutsy/admin/logtail">logtail</a> package installed), it might not work on other systems. Save this as <code>/etc/cron.hourly/check_mail_logs</code></p>
+<pre>#!/bin/sh
+hostname=`hostname -s`
+mailer = /usr/local/bin/emergency_mail_sender
+/usr/sbin/logtail -f/var/log/mail.warn | $mailer "$hostname: mail warnings"
+/usr/sbin/logtail -f/var/log/mail.err | $mailer "$hostname: mail errors"
+/usr/sbin/logtail -f/var/log/syslog | grep 'status=' | egrep -v 'status=sent' | $mailer "$hostname: undelivered mail"</pre>
+<h4>SPF</h4>
+<p>Here&#8217;s your <a href="http://www.openspf.org/Introduction">SPF</a> record:</p>
+<pre>v=spf1 include:authsmtp.com include:aspmx.googlemail.com ~all</pre>
+<p>If you&#8217;re not using Google Apps to send mail for your domain remove <code>include:aspmx.googlemail.com</code>. If you want to create your own SPF record there&#8217;s a good SPF record generator at <a href="http://spfwizard.com/">spfwizard.com</a>.</p>
+<h4>Don&#8217;t spoof the From field</h4>
+<p>You should only send mail from somebody@yourdomain.com. If you try to send mail from somebody@pauldowman.com, for example, the receiver will see that pauldowman.com has an SPF record, and that it doesn&#8217;t authorize your mail server. Then into the spam folder you go.</p>
+<p>To get around this you can send from something like <em>noreply@yourdomain.com</em>, and set the Reply-To header to <em>somebody@pauldowman.com</em>. You can even set the name in the from field, for example: <em>&#8220;Paul Dowman via yoursite&#8221; &lt;noreply@pauldowman.com&gt;</em>. The Reply-To header will make sure that most people&#8217;s replies go to the correct address, but a few will inevitably end up at noreply@yourdomain.com so it&#8217;s probably a good idea to set up an autoresponder at that address, or at least make sure the message bounces so the user eventually realizes the mistake.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://pauldowman.com/2008/02/17/smtp-mail-from-ec2-web-server-setup/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>RubyFringe, Toronto, July 18-20, 2008</title>
+		<link>http://pauldowman.com/2008/02/17/rubyfringe-toronto-july-18-20-2008/</link>
+		<comments>http://pauldowman.com/2008/02/17/rubyfringe-toronto-july-18-20-2008/#comments</comments>
+		<pubDate>Sun, 17 Feb 2008 20:51:16 +0000</pubDate>
+		<dc:creator>Paul Dowman</dc:creator>
+		
+		<category><![CDATA[Ruby]]></category>
+
+		<category><![CDATA[Ruby on Rails]]></category>
+
+		<category><![CDATA[Toronto]]></category>
+
+		<guid isPermaLink="false">http://pauldowman.com/2008/02/17/rubyfringe-toronto-july-18-20-2008/</guid>
+		<description><![CDATA[There&#8217;s going to be a great Ruby conference in Toronto this summer: RubyFringe. Actually, maybe it&#8217;s not a Ruby conference, it&#8217;s &#8220;an avant-garde conference for developers that are excited             about emerging technologies outside of the Ruby on Rails monoculture&#8221;.
+ RubyFringe is a single-track [...]]]></description>
+			<content:encoded><![CDATA[<p>There&#8217;s going to be a great Ruby conference in Toronto this summer: <a href="http://rubyfringe.com/">RubyFringe</a>. Actually, maybe it&#8217;s not a Ruby conference, it&#8217;s &#8220;an avant-garde conference for developers that are excited             about emerging technologies outside of the Ruby on Rails monoculture&#8221;.</p>
+<blockquote><p> RubyFringe is a single-track indie conference with no paid technical               sponsors and a target attendance of 150.</p>
+<p class="thing_list">               It will run for two days (plus an opening night), with roughly               10 speakers or panels each day.</p>
+</blockquote>
+<p class="thing_list">There&#8217;s a kick-ass list of <a href="http://rubyfringe.com/speakers">speakers</a>, including out-of-towners like <a href="http://brainspl.at/">Ezra Zygmuntowicz</a>, <a href="http://www.zedshaw.com/">Zed Shaw</a> (now&#8217;s your chance to <a href="http://www.zedshaw.com/rants/rails_is_a_ghetto.html">fight him</a>! ;-), <a href="http://blog.obiefernandez.com/">Obie Fernandez</a>, and local Torontonians like <a href="http://weblog.raganwald.com/">Reg Braithwaite</a> and <a href="http://hyperbio.net/">Leila Boujnane</a>.</p>
+<p>Registration opens tomorrow.</p>
+<p>See you there!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://pauldowman.com/2008/02/17/rubyfringe-toronto-july-18-20-2008/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>GigPark is hiring!</title>
+		<link>http://pauldowman.com/2007/11/27/gigpark-is-hiring/</link>
+		<comments>http://pauldowman.com/2007/11/27/gigpark-is-hiring/#comments</comments>
+		<pubDate>Tue, 27 Nov 2007 21:57:49 +0000</pubDate>
+		<dc:creator>Paul Dowman</dc:creator>
+		
+		<category><![CDATA[GigPark]]></category>
+
+		<category><![CDATA[Ruby on Rails]]></category>
+
+		<category><![CDATA[Toronto]]></category>
+
+		<guid isPermaLink="false">http://pauldowman.com/2007/11/27/gigpark-is-hiring/</guid>
+		<description><![CDATA[GigPark is a Toronto-based web startup. We&#8217;re just a couple of weeks out of beta, growing fast and looking for a great developer to join us.
+The site is built with Ruby on Rails and hosted on EC2.
+If this sounds exciting to you, or if you know someone who might be a good fit, please see [...]]]></description>
+			<content:encoded><![CDATA[<p><a href="http://www.gigpark.com/">GigPark</a> is a Toronto-based web startup. We&#8217;re just a couple of weeks out of beta, growing fast and looking for a great developer to join us.</p>
+<p>The site is built with Ruby on Rails and hosted on EC2.</p>
+<p>If this sounds exciting to you, or if you know someone who might be a good fit, please see <a href="http://www.gigpark.com/page/jobs">our jobs page</a> for details.</p>
+<p><em> UPDATE January 2008: </em><a href="http://blog.gigpark.com/2008/01/28/five-heads-are-better-than-three/"><em>we&#8217;ve hired two kick-ass developers!</em></a></p>
+]]></content:encoded>
+			<wfw:commentRss>http://pauldowman.com/2007/11/27/gigpark-is-hiring/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>EC2 on Rails now with multiple instance support, Ubuntu 7.10, 64-bit version, Capistrano tasks</title>
+		<link>http://pauldowman.com/2007/10/28/ec2onrails-0_9_5/</link>
+		<comments>http://pauldowman.com/2007/10/28/ec2onrails-0_9_5/#comments</comments>
+		<pubDate>Sun, 28 Oct 2007 18:49:33 +0000</pubDate>
+		<dc:creator>Paul Dowman</dc:creator>
+		
+		<category><![CDATA[EC2]]></category>
+
+		<category><![CDATA[EC2 on Rails]]></category>
+
+		<category><![CDATA[Linux]]></category>
+
+		<category><![CDATA[Ruby on Rails]]></category>
+
+		<category><![CDATA[Software Development]]></category>
+
+		<category><![CDATA[Systems]]></category>
+
+		<category><![CDATA[Virtualization]]></category>
+
+		<guid isPermaLink="false">http://pauldowman.com/2007/10/28/ec2onrails-0_9_5/</guid>
+		<description><![CDATA[I&#8217;ve been working hard on EC2 on Rails, version 0.9.5 is now available. Since my last post here there have been some major changes:
+Capistrano tasks
+There is now a rubygem available that provides Capistrano tasks to manage the instance. There are tasks to set the server&#8217;s timezone,  install packages and rubygems, backup, restore, create and [...]]]></description>
+			<content:encoded><![CDATA[<p>I&#8217;ve been working hard on <a href="http://ec2onrails.rubyforge.org/">EC2 on Rails</a>, version 0.9.5 is now available. Since my last post here there have been some major changes:</p>
+<h3>Capistrano tasks</h3>
+<p>There is now a rubygem available that provides Capistrano tasks to manage the instance. There are tasks to set the server&#8217;s timezone,  install packages and rubygems, backup, restore, create and delete the database, set the MySQL root password, and more. To use these in your Rails project type:</p>
+<pre>&gt; sudo gem install ec2onrails</pre>
+<p>Put <a href="http://ec2onrails.rubyforge.org/svn/trunk/documentation/examples/Capfile">Capfile</a>  in the root of your rails folder, and put <a href="http://ec2onrails.rubyforge.org/svn/trunk/documentation/examples/deploy.rb">deploy.rb</a> in the config folder.</p>
+<p>Then, from the root of your project type:</p>
+<pre>&gt; cap ec2onrails:setup</pre>
+<p>This automatically sets your server&#8217;s timezone, installs any custom rubygems and Ubuntu packages, and creates your database for you. You can now deploy your rails app as you normally would:</p>
+<pre>&gt; cap deploy:migrations</pre>
+<p>Another useful task for testing is:</p>
+<pre>&gt; cap ec2onrails:restore_db_and_deploy</pre>
+<p>This recreates the database, restores data from an S3 bucket (specified in your deploy.rb), and deploys the app. I use this to prepare a staging server with the current production data and current production version of the app. After running this task I have an exact copy of my production server. I then deploy the latest version to this server before deploying it to production. This is a good way to be really sure your production deployment won&#8217;t fail (especially your migrations).</p>
+<p>To see a list of all available Capistrano tasks:</p>
+<pre>&gt; cap -T</pre>
+<h3>New Ubuntu version</h3>
+<p>It&#8217;s now built with <a href="http://www.ubuntu.com/news/ubuntu-server710">Ubuntu 7.10 &#8220;Gutsy&#8221;</a>.</p>
+<h3>Support for new instance types</h3>
+<p>There are both i386 and x86_64 versions available to support the new EC2 <a href="http://www.amazon.com/gp/browse.html?node=370375011">instance types</a>. So you can now use large and extra-large instances.</p>
+<h3>Multiple instances</h3>
+<p>The earlier versions only worked if your rails app was running on a single server. That was lame! Now you can have multiple instances using any combination of these roles: web server, app server, primary database. I&#8217;m working on adding a MySQL slave role and eventually a <a href="http://www.danga.com/memcached/">Memcache</a> role.</p>
+<p>For full instructions and details see <a href="http://ec2onrails.rubyforge.org/">the project web site</a>.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://pauldowman.com/2007/10/28/ec2onrails-0_9_5/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>FieldHints update</title>
+		<link>http://pauldowman.com/2007/09/05/fieldhints-1_0/</link>
+		<comments>http://pauldowman.com/2007/09/05/fieldhints-1_0/#comments</comments>
+		<pubDate>Thu, 06 Sep 2007 00:05:19 +0000</pubDate>
+		<dc:creator>Paul Dowman</dc:creator>
+		
+		<category><![CDATA[FieldHints]]></category>
+
+		<category><![CDATA[JavaScript]]></category>
+
+		<category><![CDATA[Software Development]]></category>
+
+		<category><![CDATA[Web]]></category>
+
+		<guid isPermaLink="false">http://pauldowman.com/2007/09/05/fieldhints-update/</guid>
+		<description><![CDATA[I have released an update to FieldHints. This version fixes a bug with refreshing a FieldHints-enabled form field using AJAX.
+]]></description>
+			<content:encoded><![CDATA[<p>I have released an update to <a href="/projects/fieldhints/">FieldHints</a>. This version fixes a bug with refreshing a FieldHints-enabled form field using AJAX.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://pauldowman.com/2007/09/05/fieldhints-1_0/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>EC2 server image update</title>
+		<link>http://pauldowman.com/2007/07/30/ec2-server-image-update/</link>
+		<comments>http://pauldowman.com/2007/07/30/ec2-server-image-update/#comments</comments>
+		<pubDate>Tue, 31 Jul 2007 00:28:00 +0000</pubDate>
+		<dc:creator>Paul Dowman</dc:creator>
+		
+		<category><![CDATA[EC2]]></category>
+
+		<category><![CDATA[EC2 on Rails]]></category>
+
+		<category><![CDATA[Ruby on Rails]]></category>
+
+		<category><![CDATA[Software Development]]></category>
+
+		<category><![CDATA[Systems]]></category>
+
+		<category><![CDATA[Virtualization]]></category>
+
+		<guid isPermaLink="false">http://pauldowman.com/2007/07/30/ec2-server-image-update/</guid>
+		<description><![CDATA[Just a couple of announcements about my Ruby on Rails server image for EC2:
+New version
+There is a new server image with some minor changes and bug fixes. For details see the change log. I&#8217;ll keep the old image around for a while.
+Mailing lists
+I have created two Google groups, one for announcements only (new versions, etc.), [...]]]></description>
+			<content:encoded><![CDATA[<p>Just a couple of announcements about my <a href="/projects/ruby-on-rails-ec2/">Ruby on Rails server image for EC2</a>:</p>
+<h3>New version</h3>
+<p>There is a new server image with some minor changes and bug fixes. For details see the <a href="/projects/ruby-on-rails-ec2/#changelog">change log</a>. I&#8217;ll keep the old image around for a while.</p>
+<h3>Mailing lists</h3>
+<p>I have created two Google groups, one for <a href="http://groups.google.com/group/ec2-on-rails-announce">announcements only</a> (new versions, etc.), and one for <a href="http://groups.google.com/group/ec2-on-rails-discuss">general discussion</a>.</p>
+<h3>Ongoing work</h3>
+<p>I&#8217;m  working on a build script so the image can be built from source. Then I will provide access to a subversion repository with the source. Some people have expressed an interest in contributing, which I&#8217;m really happy about! If you want to get involved, please <a href="http://groups.google.com/group/ec2-on-rails-discuss">join the mailing list</a>!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://pauldowman.com/2007/07/30/ec2-server-image-update/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>FieldHints: A simple way to add grey &#8220;hint&#8221; text to HTML form fields</title>
+		<link>http://pauldowman.com/2007/07/16/fieldhints-a-simple-way-to-add-grey-hint-text-to-html-form-fields/</link>
+		<comments>http://pauldowman.com/2007/07/16/fieldhints-a-simple-way-to-add-grey-hint-text-to-html-form-fields/#comments</comments>
+		<pubDate>Tue, 17 Jul 2007 02:42:18 +0000</pubDate>
+		<dc:creator>Paul Dowman</dc:creator>
+		
+		<category><![CDATA[FieldHints]]></category>
+
+		<category><![CDATA[JavaScript]]></category>
+
+		<category><![CDATA[Software Development]]></category>
+
+		<category><![CDATA[Web]]></category>
+
+		<guid isPermaLink="false">http://pauldowman.com/2007/07/16/fieldhints-a-simple-way-to-add-grey-hint-text-to-html-form-fields/</guid>
+		<description><![CDATA[You know those grey &#8220;hints&#8221;, or example entries, that web form fields sometimes have in them? The ones that disappear when you click into the field? I have written a JavaScript library to add those to your forms with just one line of HTML.
+Check it out.
+]]></description>
+			<content:encoded><![CDATA[<p>You know those grey &#8220;hints&#8221;, or example entries, that web form fields sometimes have in them? The ones that disappear when you click into the field? <a href="/projects/fieldhints/">I have written</a> a JavaScript library to add those to your forms with just one line of HTML.</p>
+<p><a href="/projects/fieldhints/">Check it out</a>.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://pauldowman.com/2007/07/16/fieldhints-a-simple-way-to-add-grey-hint-text-to-html-form-fields/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>I&#8217;ll set up your Ruby on Rails server for you. For free.</title>
+		<link>http://pauldowman.com/2007/06/20/ill-set-up-your-ruby-on-rails-server-for-you-for-free/</link>
+		<comments>http://pauldowman.com/2007/06/20/ill-set-up-your-ruby-on-rails-server-for-you-for-free/#comments</comments>
+		<pubDate>Thu, 21 Jun 2007 01:39:48 +0000</pubDate>
+		<dc:creator>Paul Dowman</dc:creator>
+		
+		<category><![CDATA[EC2]]></category>
+
+		<category><![CDATA[EC2 on Rails]]></category>
+
+		<category><![CDATA[Linux]]></category>
+
+		<category><![CDATA[Ruby on Rails]]></category>
+
+		<category><![CDATA[Software Development]]></category>
+
+		<category><![CDATA[Systems]]></category>
+
+		<category><![CDATA[Virtualization]]></category>
+
+		<category><![CDATA[Web]]></category>
+
+		<guid isPermaLink="false">http://pauldowman.com/2007/06/20/ill-set-up-your-ruby-on-rails-server-for-you-for-free/</guid>
+		<description><![CDATA[Need to set up a Ruby on Rails server? So do I, and chances are you need almost the same configuration as me. As of this writing 1845 people have bookmarked Coda Hale&#8217;s excellent guide to setting up Mongrel + Apache on del.icio.us. The article has 187 comments. Why should so many people each have [...]]]></description>
+			<content:encoded><![CDATA[<p>Need to set up a Ruby on Rails server? So do I, and chances are you need almost the same configuration as me. As of this writing <a href="http://del.icio.us/url/345610f9ab36d015c40134eb399230bc">1845 people</a> have bookmarked <a href="http://blog.codahale.com/2006/06/19/time-for-a-grown-up-server-rails-mongrel-apache-capistrano-and-you/">Coda Hale&#8217;s excellent guide to setting up Mongrel + Apache</a> on del.icio.us. The article has 187 comments. Why should so many people each have to do the same thing?</p>
+<p>The answer is a Rails server <a href="http://en.wikipedia.org/wiki/Virtual_appliance">virtual appliance</a>, and <a href="/projects/ruby-on-rails-ec2/">I&#8217;ve made one</a> for Amazon&#8217;s <a href="http://www.amazon.com/b/ref=sc_fe_l_2/102-6342260-7987311?ie=UTF8&amp;node=201590011&amp;no=3435361">EC2</a> hosting service.</p>
+<p>A server is no longer a physical thing, and EC2 takes it one step further: they completely separate the concept of server <em>images</em> and <em>instances</em>. An <em>image</em> is like a snapshot of a server hard drive, stored in an unchangeable state in their S3 data storage service. An <em>instance</em> is a running server that was booted from a copy of this image. But the instance is transient; changes to it&#8217;s own working copy of the image don&#8217;t affect the original image that it was booted from, and because of this multiple server instances can be started from the same image. (Hence the &#8220;elastic&#8221; property, new instances can be created on demand, your server pool can grow and shrink dynamically.)</p>
+<p>Now even the OS can be configured and tested once, and then simply deployed as part of the application. So how is that different from any of the third-party libraries and frameworks that we use as part of our applications? I assemble applications out of many pieces of third-party software. All of it is continually improved by other people, none of it requires painstaking building or configuration, and the OS can be used the same way.</p>
+<p>So I&#8217;m going to continue working on <a href="/projects/ruby-on-rails-ec2/">my Ruby on Rails EC2 server image</a> with the goal that you will be able to simply deploy your Rails app directly to it with Capistrano with little or no configuration.</p>
+<p><a href="/projects/ruby-on-rails-ec2/">Try it out</a>, and tell me what you think!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://pauldowman.com/2007/06/20/ill-set-up-your-ruby-on-rails-server-for-you-for-free/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Public Ubuntu &#038; Ruby on Rails Image for Amazon EC2</title>
+		<link>http://pauldowman.com/2007/06/10/public-ubuntu-ruby-on-rails-ec2-image/</link>
+		<comments>http://pauldowman.com/2007/06/10/public-ubuntu-ruby-on-rails-ec2-image/#comments</comments>
+		<pubDate>Sun, 10 Jun 2007 19:52:19 +0000</pubDate>
+		<dc:creator>Paul Dowman</dc:creator>
+		
+		<category><![CDATA[EC2]]></category>
+
+		<category><![CDATA[EC2 on Rails]]></category>
+
+		<category><![CDATA[Linux]]></category>
+
+		<category><![CDATA[Ruby on Rails]]></category>
+
+		<category><![CDATA[Software Development]]></category>
+
+		<category><![CDATA[Systems]]></category>
+
+		<category><![CDATA[Virtualization]]></category>
+
+		<category><![CDATA[Web]]></category>
+
+		<guid isPermaLink="false">http://pauldowman.com/2007/06/10/public-ubuntu-ruby-on-rails-ec2-image/</guid>
+		<description><![CDATA[UPDATE: I have created a new improved version of this image. The new image uses mongrel_cluster, and is more Capistrano-friendly. Skip this article and check out the new one!
+I have created a ready-to run public Ubuntu and Ruby on Rails image for Amazon EC2. (You can easily remove the Ruby on Rails stuff and use [...]]]></description>
+			<content:encoded><![CDATA[<p><strong>UPDATE: I have created a <a href="/projects/ruby-on-rails-ec2/">new improved version of this image</a>. The new image uses mongrel_cluster, and is more Capistrano-friendly. Skip this article and <a href="/projects/ruby-on-rails-ec2/">check out the new one</a>!</strong></p>
+<p>I have created a ready-to run public Ubuntu and Ruby on Rails image for <a href="http://amazon.com/b/ref=sc_fe_l_2/105-3074875-7658040?ie=UTF8&amp;node=201590011&amp;no=3435361&amp;me=A36L942TSJ2AJA">Amazon EC2</a>. (You can easily remove the Ruby on Rails stuff and use this as a general-purpose Ubuntu image.) My goal was to make it as easy to use as possible, so it includes a script to automate the process of re-bundling it as your own after you make configuration changes.</p>
+<p>This means if you have an Amazon EC2 account you can run this image, log in and customize it as desired, and then with one command save a copy of it as your own.</p>
+<p>Features include:</p>
+<ul>
+<li>Ubuntu 7.04 Feisty with <a href="http://wiki.xensource.com/xenwiki/XenSpecificGlibc">Xen versions of standard libs</a> (<a href="http://packages.ubuntu.com/feisty/libs/libc6-xen">libc6-xen</a> package) for better performance.</li>
+<li>All EC2 command-line tools installed</li>
+<li>Custom script to re-bundle, save and register your own copy of this image in one step</li>
+<li>MySQL 5</li>
+<li>Ruby 1.8.5</li>
+<li>Ruby on Rails 1.2.3</li>
+<li>Mongrel behind Apache 2.2, all pre-configured including /etc/init.d startup script</li>
+<li>MySQL and Apache configured to write logs to /mnt/log so you don&#8217;t fill up the tiny root filesystem</li>
+<li>Hostname set correctly to public hostname</li>
+<li>NTP</li>
+</ul>
+<p>Soon to be added:</p>
+<ul>
+<li>Automatic MySQL backup to S3</li>
+<li>Mongrel Cluster</li>
+<li>Capistrano and <a href="http://elasticrails.com/elasticrails/">elastic_rails</a> support. I&#8217;d like it to be so that you can just start up an instance of this image and deploy to it.</li>
+</ul>
+<p>The AMI id is currently ami-5d967334. <strong>UPDATE: I have created a <a href="/projects/ruby-on-rails-ec2/">new improved version of this image</a>. Please try that one instead, this image will be removed soon.</strong></p>
+<h3>Instructions to use this public AMI:</h3>
+<h4>1. Sign up for an EC2 account</h4>
+<p>There is currently a waiting list, as of this writing in June 2007.</p>
+<h4>2. Install the command-line tools</h4>
+<p>The tools are installed on the image, but you need a way to start an instance of the image. <a href="http://docs.amazonwebservices.com/AmazonEC2/gsg/2007-01-19/setting-up-your-tools.html">See the getting started guide for details</a>. The tools will need your <a href="http://docs.amazonwebservices.com/AmazonEC2/gsg/2007-01-19/account.html">Amazon access key identifiers</a>.</p>
+<h4>3. Run the instance and log in via ssh</h4>
+<p>Again, the getting started guide <a href="http://docs.amazonwebservices.com/AmazonEC2/gsg/2007-01-19/running-an-instance.html">describes this in detail</a>. Obviously you can skip the &#8220;Finding a Suitable AMI&#8221; section.</p>
+<p>NOTE: at boot time it retrieves your private key via HTTP using curl, and occasionally this fails. If you are prompted for a password and you&#8217;re <em>sure</em> that you&#8217;ve started the image with the right keypair and that you are providing the right private key try rebooting the image using &#8220;ec2reboot <em>&lt;image-id&gt;</em>&#8220;. UPDATE: this is fixed in the <a href="/projects/ruby-on-rails-ec2/">new version</a>.</p>
+<h4>4. Get security updates</h4>
+<p>I  recommend using <a href="https://help.ubuntu.com/community/AptitudeSurvivalGuide">aptitude</a> for package management:</p>
+<pre>[server]# aptitude update
+[server]# aptitude upgrade</pre>
+<p><strong>5. <em>(Optional)</em> Remove unwanted packages</strong><br />
+Again, use <a href="https://help.ubuntu.com/community/AptitudeSurvivalGuide">aptitude</a>, this time run it with no arguments on the command-line. To completely remove a package including all it&#8217;s configuration and data select it and then press underscore (&#8217;_'). If you don&#8217;t want rails just remove the package &#8220;rubygems&#8221;. But don&#8217;t remove ruby itself because it&#8217;s needed by the Amazon tools.</p>
+<h4>6. Install your Rails app</h4>
+<p>Edit /etc/mongrel and set APP_DIR to the root of your rails directory. If you want multiple mongrel containers edit /etc/init.d/mongrel and add as many as you like to the start_cmd() and stop_cmd() sections. I assume this part will need some tweaking.</p>
+<p>Be mindful of where your app writes log files and other data, it should go into /mnt because the root partition doesn&#8217;t have much space and you don&#8217;t want to fill it up.</p>
+<h4>7. <em>(Optional) </em>Create a new admin user (with sudo ability) and disable the root user</h4>
+<p>Ubuntu normally installs without a root user, by default you create a user with sudo access. This is standard best practice anyway so I recommend it.</p>
+<p><em>NOTE: This new user will log in the normal way, i.e. with password rather than using the public key.</em></p>
+<p>First, create the new user and add it to the admin group:</p>
+<pre>[server]# adduser <em>myuserid</em>
+[server]# adduser <em>myuserid</em> admin</pre>
+<p>You now have a new user that can run sudo. You might want to add the following line to the end of the new user&#8217;s $HOME/.profile</p>
+<pre>source /usr/local/ec2/config</pre>
+<p>This will set up environment variables needed for the EC2 command-line tools, and add them to the path.</p>
+<p>Now disable root login completely. Edit /etc/ssh/sshd_config and change the line</p>
+<pre>PermitRootLogin without-password</pre>
+<p>to the following:</p>
+<pre>PermitRootLogin no</pre>
+<p>Then edit /etc/passwd and change the first line to:</p>
+<pre>root:x:0:0:root:/root:/bin/false</pre>
+<p>(i.e. change &#8220;/bin/bash&#8221; to &#8220;/bin/false&#8221;). Now you can only log in using your newly created account.</p>
+<h4>8. Rebundle the image</h4>
+<p>I have included a script, <strong>rebundle.sh</strong>, that runs all the commands to bundle the new image, upload it to S3 and register it. It expects a directory, <strong>/mnt/e</strong><strong>c2-config</strong>, that contains a config file and your AWS access identifiers. The contents of the directory are the following three files:</p>
+<p>a) cert-XXXX.pem and pk-XXXX.pem. These are the X.509 certificate and private key files from your <a href="http://docs.amazonwebservices.com/AmazonEC2/gsg/2007-01-19/account.html">Amazon access key identifiers</a>.</p>
+<p>b) A config file named, strangely enough, <strong>config</strong>. It&#8217;s contents should look like the following:</p>
+<pre>AWS_ACCOUNT_ID=1234-1234-1234
+KEY_FILE_NAME=pk-XXXX.pem
+CERT_FILE_NAME=cert-XXXX.pem
+AWS_ACCESS_KEY_ID=ABC0123
+AWS_SECRET_ACCESS_KEY=abc0123abc0123abc0123
+BUCKET_BASE_NAME=a-string-identifier</pre>
+<p>The values for those should be pretty self-explanatory except perhaps BUCKET_BASE_NAME. It&#8217;s value is used when generating a new S3 bucket to save your bundled image. The bucket name will be this string with a time/date stamp appended.</p>
+<p>Once you&#8217;ve created /mnt/ec2-config and it&#8217;s contents one command will rebundle the current instance as a new AMI, save it to a new S3 bucket, and register it:</p>
+<pre>[server]# /usr/local/ec2/rebundle.sh</pre>
+<p>It takes a long time and there are long periods with no output so you might want to hit a key once in a while (or set &#8220;ServerAliveInterval 60&#8243; in your ssh_config file) to avoid being disconnected while it&#8217;s running.</p>
+<p>At the end you should see the id of your new AMI and the name of the S3 bucket that it&#8217;s stored in.</p>
+<p>Phew. You&#8217;re done! :-)</p>
+<h4>A note on security</h4>
+<p>As is <a href="http://docs.amazonwebservices.com/AmazonEC2/dg/2007-01-19/public-ami-guidelines.html">standard for public AMI&#8217;s</a>, password-based logins for root are disabled. This is so that neither I nor anyone else (except you) can log into your running instance. You log in with your own public/private keypair (see step #3), otherwise there would be a window of opportunity between system startup and the moment you change the password. I have taken care to ensure that my rebundle script excludes sensitive data like your AWS access identifiers and root&#8217;s .ssh/authorized_keys file.</p>
+<h4>Acknowledgements</h4>
+<p>I used the instructions on the <a href="http://blog.atlantistech.com/index.php/2006/10/04/amazon-elastic-compute-cloud-walkthrough/">Atlantis Technology blog</a> to get started with a working Ubuntu image and then many helpful posts on the Amazon Web Services developer forum to get the Amazon EC2 tools working.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://pauldowman.com/2007/06/10/public-ubuntu-ruby-on-rails-ec2-image/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Going to RailsConf</title>
+		<link>http://pauldowman.com/2007/05/09/going-to-railsconf/</link>
+		<comments>http://pauldowman.com/2007/05/09/going-to-railsconf/#comments</comments>
+		<pubDate>Thu, 10 May 2007 01:55:37 +0000</pubDate>
+		<dc:creator>Paul Dowman</dc:creator>
+		
+		<category><![CDATA[Ruby on Rails]]></category>
+
+		<category><![CDATA[Software Development]]></category>
+
+		<category><![CDATA[Web]]></category>
+
+		<guid isPermaLink="false">http://pauldowman.com/2007/05/09/going-to-railsconf/</guid>
+		<description><![CDATA[I&#8217;m going to RailsConf next week. If you&#8217;re going, look for me at these sessions. As usual there are a few  that I&#8217;d like to go to but can&#8217;t because of conflicts:
+
+Taking Rails Tests to the Next Level
+Doing REST Right
+JRuby on Rails
+
+I&#8217;m especially looking forward to the scaling-related (including Amazon EC2) sessions, and LetIt::Rest. [...]]]></description>
+			<content:encoded><![CDATA[<p>I&#8217;m going to <a href="http://conferences.oreillynet.com/rails/">RailsConf</a> next week. If you&#8217;re going, look for me at <a href="http://myconfplan.com/users/pdowman/conferences/RailsConf2007">these sessions</a>. As usual there are a few  that I&#8217;d like to go to but can&#8217;t because of conflicts:</p>
+<ul>
+<li><a href="http://myconfplan.com/conference_sessions/911-Taking-Rails-Tests-to-the-Next-Level">Taking Rails Tests to the Next Level</a></li>
+<li><a href="http://myconfplan.com/conference_sessions/9-Doing-REST-Right">Doing REST Right</a></li>
+<li><a href="http://myconfplan.com/conference_sessions/41-JRuby-on-Rails--A-Taste-of-Honey--for-the-Enterp">JRuby on Rails</a></li>
+</ul>
+<p>I&#8217;m especially looking forward to the scaling-related (including Amazon EC2) sessions, and <a href="http://myconfplan.com/conference_sessions/43-Choose-Your-Battles-and-LetIt--REST">LetIt::Rest</a>. I can&#8217;t wait!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://pauldowman.com/2007/05/09/going-to-railsconf/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Mobile data access in Canada</title>
+		<link>http://pauldowman.com/2007/04/13/mobile-data-access-in-canada/</link>
+		<comments>http://pauldowman.com/2007/04/13/mobile-data-access-in-canada/#comments</comments>
+		<pubDate>Fri, 13 Apr 2007 13:18:21 +0000</pubDate>
+		<dc:creator>Paul Dowman</dc:creator>
+		
+		<category><![CDATA[Business]]></category>
+
+		<category><![CDATA[Toronto]]></category>
+
+		<guid isPermaLink="false">http://pauldowman.com/2007/04/13/mobile-data-access-in-canada/</guid>
+		<description><![CDATA[Thomas Purves has written about how badly we&#8217;re being screwed for data access by our three mobile operators in Canada, and many people agree. He&#8217;s completely right, mobile data access is way too expensive to be generally useful. Even SMS is expensive at $0.15 (increased from $0.10 after our five carriers consolidated down to three).
+I [...]]]></description>
+			<content:encoded><![CDATA[<p><a href="http://www.thomaspurves.com/">Thomas Purves</a> has written about <a href="http://www.thomaspurves.com/2007/04/09/canada-worse-than-3rd-world-countries-when-it-comes-to-mobile-data-access/">how badly we&#8217;re being screwed</a> for data access by our three mobile operators in Canada, and <a href="http://www.thomaspurves.com/2007/04/10/reactions-to-my-wireless-data-piece-24-hrs-in/">many people agree</a>. He&#8217;s completely right, mobile data access is way too expensive to be generally useful. Even SMS is expensive at $0.15 (increased from $0.10 after our five carriers consolidated down to three).</p>
+<p>I make do with a wi-fi-enabled mobile phone, but unfortunately wi-fi is not really a viable mobile alternative. Open hot-spots are few and far between (or offered by the <a href="http://www.canadianhotspot.ca/">same three amigos</a> and priced so as not to compete with their mobile data). I&#8217;d happily pay the flat $29/month for Toronto Hydro&#8217;s <a href="http://onezone.ca/">OneZone</a>, but I&#8217;m rarely inside the coverage area and it&#8217;s (<a href="http://groups.google.com/group/torcamp/browse_frm/thread/20bf4d5276dc9bb1/a234fe27102a286b?tvc=1&amp;q=onezone#a234fe27102a286b">by many accounts</a> and in my own personal experience) <a href="http://www.flickr.com/photos/thomaspurves/363982286/">barely usable</a> anyway.</p>
+<p>Canada is a great place to live for many reasons, most of which are more important than wireless data access. But the rest of the world is at the beginning of a mobile internet boom that Canadians are generally not taking part in. Who knows how many more would-be entrepreneurs from our <a href="http://barcamp.org/TorCamp">flourishing local tech scene</a> might be developing innovative mobile apps if they only had the opportunity to be inspired? It&#8217;s no wonder all the innovation in the mobile space comes from <a href="http://www.dailywireless.com/features/most-connected-cities-030607/">elsewhere</a>.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://pauldowman.com/2007/04/13/mobile-data-access-in-canada/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Facebook scales!</title>
+		<link>http://pauldowman.com/2007/04/11/facebook-scales/</link>
+		<comments>http://pauldowman.com/2007/04/11/facebook-scales/#comments</comments>
+		<pubDate>Thu, 12 Apr 2007 01:46:34 +0000</pubDate>
+		<dc:creator>Paul Dowman</dc:creator>
+		
+		<category><![CDATA[Scalability]]></category>
+
+		<category><![CDATA[Software Development]]></category>
+
+		<category><![CDATA[Systems]]></category>
+
+		<category><![CDATA[Web]]></category>
+
+		<guid isPermaLink="false">http://pauldowman.com/2007/04/11/facebook-scales/</guid>
+		<description><![CDATA[I&#8217;m really impressed with Facebook. It&#8217;s fun (totally addictive in fact), and I think it&#8217;s actually a better way to keep in touch with friends than email.
+But what I&#8217;m really impressed with is how well they&#8217;re handling a massive growth in traffic. As of Feb 23 they&#8217;ve gone from zero to almost 18 million users [...]]]></description>
+			<content:encoded><![CDATA[<p>I&#8217;m really impressed with Facebook. It&#8217;s fun (totally addictive in fact), and I think it&#8217;s actually a better way to keep in touch with friends than email.</p>
+<p>But what I&#8217;m really impressed with is how well they&#8217;re handling a massive growth in traffic. As of Feb 23 they&#8217;ve gone from zero to almost <a href="http://blog.facebook.com/blog.php?post=2245132130">18 million users</a> in <a href="http://blog.facebook.com/blog.php?post=2243932130">just over three years</a>, an increase of 240% since last July alone.</p>
+<p>From the <a href="http://blog.facebook.com/blog.php?post=2248252130">Facebook blog five weeks ago</a>:</p>
+<blockquote><p>&#8230;almost ten million different users sign into the site every day, or more than half the user base. During our biggest peaks - Sunday &amp; Monday night around 10EST - more than one million people will be simultaneously logged into the site.</p></blockquote>
+<p>Friendster is famous for missing a huge opportunity <a href="http://www.nytimes.com/2006/10/15/business/yourmoney/15friend.html?ei=5090&amp;en=3e9438ed349f7ce7&amp;ex=1318564800&amp;partner=rssuserland&amp;emc=rss&amp;pagewanted=all">in part because of poor performance (40 second page load times)</a>, and MySpace&#8217;s well-known and frequent reliability problems have continually <a href="http://www.petitiononline.com/myspace/petition.html">frustrated their users</a>.<a href="http://www.alexa.com/data/details/traffic_details?site0=facebook.com&amp;site1=myspace.com&amp;site2=friendster.com&amp;site3=&amp;site4=&amp;y=t&amp;z=1&amp;h=300&amp;w=540&amp;range=1m&amp;size=Medium&amp;url=masters.org"></a></p>
+<p><a href="http://www.alexa.com/data/details/traffic_details?site0=facebook.com&amp;site1=myspace.com&amp;site2=friendster.com&amp;site3=&amp;site4=&amp;y=t&amp;z=1&amp;h=300&amp;w=540&amp;range=1m&amp;size=Medium&amp;url=masters.org">According to Alexa</a> (as of today, April 11) Facebook&#8217;s traffic is only slightly higher than Friendster&#8217;s (who have since <a href="http://www.infoworld.com/article/05/04/04/14FEfriendster_1.html">redesigned their architecture</a>), and still far behind Myspace&#8217;s. (Alexa&#8217;s stats <a href="http://paulgraham.infogami.com/blog/alexadanger">may not be that reliable</a> however.)</p>
+<p>Regardless of the actual numbers, they&#8217;re obviously doing the right things to keep on top of the massive growth so far. Unfortunately though, I haven&#8217;t been able to find out many technical details except that they have <a href="http://blog.facebook.com/blog.php?post=2245132130">two terabytes of RAM used by memcached</a>.</p>
+<p>UPDATE April 16: Apparently their traffic <a href="http://venturebeat.com/2007/03/30/look-at-facebook">increased by another 50%</a> during the month of March! (Link via <a href="http://matthew.burpee.ca/">Matthew Burpee</a> on Facebook).</p>
+<p>UPDATE December 18, 2008: Facebook&#8217;s growth continues; they&#8217;re now adding <a href="http://www.datacenterknowledge.com/archives/2008/12/17/facebook-adding-600000-users-a-day/">600,000 new users a day</a>, and it&#8217;s still fast and highly available. As a <a href="http://www.facebook.com/apps/application.php?id=6060627117">Facebook developer</a> I know they have the occasional glitch but knowing what kind of growth they&#8217;re going through I&#8217;m impressed with the level of service they maintain!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://pauldowman.com/2007/04/11/facebook-scales/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Announcing GigPark</title>
+		<link>http://pauldowman.com/2007/04/01/announcing-gigpark/</link>
+		<comments>http://pauldowman.com/2007/04/01/announcing-gigpark/#comments</comments>
+		<pubDate>Sun, 01 Apr 2007 16:51:04 +0000</pubDate>
+		<dc:creator>Paul Dowman</dc:creator>
+		
+		<category><![CDATA[Software Development]]></category>
+
+		<category><![CDATA[Toronto]]></category>
+
+		<category><![CDATA[Web]]></category>
+
+		<guid isPermaLink="false">http://pauldowman.com/2007/04/01/announcing-gigpark/</guid>
+		<description><![CDATA[I&#8217;m excited to announce that I&#8217;ve joined a new venture, I&#8217;ll be leading the development for GigPark!
+GigPark is a new service that will help you recommend your favorite service providers to friends and family, instantly get service recommendations from people you trust, and build your service business through word-of-mouth.  Excited yet?! Me too!!
+
+Please check [...]]]></description>
+			<content:encoded><![CDATA[<p>I&#8217;m excited to announce that I&#8217;ve joined a new venture, I&#8217;ll be leading the development for <a href="http://www.gigpark.com/">GigPark</a>!</p>
+<p>GigPark is a new service that will help you recommend your favorite service providers to friends and family, instantly get service recommendations from people you trust, and build your service business through word-of-mouth.  Excited yet?! Me too!!</p>
+<p><img src="http://pauldowman.com/wp-content/uploads/2007/03/finalgigpark200.png" alt="GigPark Logo" /></p>
+<p>Please check out the <a href="http://blog.gigpark.com/2007/03/14/welcome-2/">GigPark blog</a> for more information.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://pauldowman.com/2007/04/01/announcing-gigpark/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Process XML in Java more easily by&#8230; not using Java?</title>
+		<link>http://pauldowman.com/2007/01/22/groovy-xml/</link>
+		<comments>http://pauldowman.com/2007/01/22/groovy-xml/#comments</comments>
+		<pubDate>Tue, 23 Jan 2007 03:11:58 +0000</pubDate>
+		<dc:creator>Paul Dowman</dc:creator>
+		
+		<category><![CDATA[Java]]></category>
+
+		<category><![CDATA[Software Development]]></category>
+
+		<guid isPermaLink="false">http://pauldowman.com/2007/01/22/groovy-xml/</guid>
+		<description><![CDATA[Java and XML are like peanut butter and chocolate, right? They just go together, don't they? Jon Bosak of Sun summed it up most famously as "XML gives Java something to do"...]]></description>
+			<content:encoded><![CDATA[<p>Java and XML are like peanut butter and chocolate, right? They just go together, don&#8217;t they? Jon Bosak of Sun summed it up most famously as &#8220;<a href="http://www.ibiblio.org/pub/sun-info/standards/xml/why/xmlapps.htm">XML gives Java something to do</a>&#8220;.</p>
+<p><strong>XML gives Java developers something to do</strong><br />
+I think I see Sun&#8217;s master plan: the more work Java developers must do to solve a given problem, the more of them we&#8217;ll need to have. The more Java developers we have, the more <a href="http://www.dedasys.com/articles/language_popularity.html">popular</a> Java appears. (The only problem left to solve is how to profit from that, but I digress). The key to this plan&#8217;s success is lack of <a href="http://steve-yegge.blogspot.com/2006/09/bloggers-block-4-ruby-and-java-and.html">syntactic support</a> for XML, and the added bonus is that even more developers will occupy their time building endless numbers of libraries!  &#8220;Why make trillions when we can make&#8230; BILLIONS?!&#8221; <a href="http://en.wikipedia.org/wiki/Dr_Evil">:-)<br />
+</a></p>
+<p>There are some decent libraries for handling XML in Java, but most are quite heavyweight, requiring you to create Java classes (in the case of the XML binding variety) or at least a config file (XML-based, naturally!).</p>
+<p><strong>There is another way</strong><br />
+I&#8217;ve <a href="/2006/11/17/javascript-on-the-jvm/">written before</a> about using other languages with Java, and <a href="http://groovy.codehaus.org/">Groovy</a> has some really nice features for handling XML. Groovy compiles to Java bytecode so you can write an XML handling class in Groovy and use it within your Java app. Here&#8217;s an example that uses Groovy&#8217;s <a href="http://groovy.codehaus.org/GPath">GPath</a> to read in <a href="http://java.sun.com/webservices/jaxp/dist/1.1/docs/tutorial/dom/samples/slideSample01-xml.html">an XML file</a> from <a href="http://java.sun.com/webservices/jaxp/dist/1.1/docs/tutorial/dom/1_read.html">Sun&#8217;s XML DOM tutorial</a>, and prints some of the elements. Just for fun, we&#8217;re loading the XML file directly by http:</p>
+<pre>def slideShow = new XmlSlurper().parse("http://java.sun.com/webservices/jaxp/dist/1.1/docs/tutorial/dom/samples/slideSample01.xml")
+println("slideshow author attribute: ${slideShow['@author']}")
+
+def slides = slideShow.slide
+for (slide in slides) {
+    println("slide title element: " + slide.title)
+    for (item in slide.item) {
+        println("  item text: ${item}")
+    }
+}</pre>
+<p>Here&#8217;s the Java version as a comparison. Honestly, nobody really uses the DOM API because it&#8217;s so painful (hence the existence of so many libraries to do the job), but this is the out-of-the-box Java way:</p>
+<pre>DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+URL url = new URL("http://java.sun.com/webservices/jaxp/dist/1.1/docs/tutorial/dom/samples/slideSample01.xml");
+InputStream stream = url.openStream();
+DocumentBuilder builder = factory.newDocumentBuilder();
+Document document = builder.parse(stream);
+
+Element rootElement = document.getDocumentElement();
+String author = rootElement.getAttribute("author");
+System.out.println("slideshow author attribute: " + author);
+
+NodeList slides = rootElement.getChildNodes();
+
+for (int i = 0; i &lt; slides.getLength(); i++) {
+    if (slides.item(i).getNodeType() == Node.ELEMENT_NODE) {
+        Node slide = slides.item(i);
+        NodeList slideChildren = slide.getChildNodes();
+        for (int j = 0; j &lt; slideChildren.getLength(); j++) {
+            Node child = slideChildren.item(j);
+            if (child.getNodeType() == Node.ELEMENT_NODE) {
+                if (child.getNodeName().equals("title")) {
+                    System.out.println("slide title element: "
+                            + child.getTextContent());
+                } else if (child.getNodeName().equals("item")) {
+                    System.out.println("  item text: "
+                            + child.getTextContent());
+                }
+            }
+        }
+    }
+}</pre>
+<p>I have omitted error handling.</p>
+<p>Using XPath in Java can make our job easier when it comes to searching a tree for a node (you wouldn&#8217;t want to see this done with pure DOM manipulation!), but we&#8217;ll still still have to deal with an <a href="http://java.sun.com/j2se/1.5.0/docs/api/org/w3c/dom/Node.html">org.w3c.dom.Node</a> object that is the result:</p>
+<pre>XPath xpath = XPathFactory.newInstance().newXPath();
+String expression = "/slideshow/slide[title = 'Overview']";
+Node overview = (Node) xpath.evaluate(expression, document, XPathConstants.NODE);</pre>
+<p>Here&#8217;s the same thing done in Groovy, a simple one-liner:</p>
+<pre>
+def overview = slideShow.slide.find { it.title == "Overview" }</pre>
+<p>Two interesting things here are the use of a <a href="http://groovy.codehaus.org/Closures">closure</a>, and the use of == which might look wrong to a sharp-eyed Java programmer. Groovy uses == for equality and the method is() to test for identity. This is the opposite of Java but leads to more readable code because typically we compare for equality much more often than identity. And == works with null in Groovy, so your typical Java comparison (x != null &amp;&amp; x.equals(y)) becomes x == y in Groovy, which looks more like what we mean.</p>
+<p>Creating XML is also easy in Groovy using <a href="http://groovy.codehaus.org/Creating+XML+using+Groovy%27s+MarkupBuilder">MarkupBuilder</a>, here is the code to create our <a href="http://java.sun.com/webservices/jaxp/dist/1.1/docs/tutorial/dom/samples/slideSample01-xml.html">sample XML file</a>:</p>
+<pre>def doc = new StreamingMarkupBuilder().bind {
+    slideshow(title:"Sample Slide Show", date:"Date of publication", author:"Yours Truly") {
+        slide(type:"all") {
+            title("Wake up to WonderWidgets!")
+        }
+        slide(type:"all") {
+            title("Overview")
+            item("item") {
+                mkp.yield("Why ")
+                em("WonderWidgets")
+                mkp.yield(" are great")
+            }
+            item()
+            item("item") {
+                mkp.yield("Who ")
+                em("buys")
+                mkp.yield(" WonderWidgets")
+            }
+        }
+
+        mkp.yield("normal text here")
+    }
+}
+
+System.out &lt;&lt; doc</pre>
+<p>It&#8217;s easy to read because it has a visually similar structure to the XML that it&#8217;s creating, and the syntax is quite terse. Groovy has similar builders for other things besides XML, for example to create <a href="http://groovy.codehaus.org/GroovySWT">SWT</a> and <a href="http://www.oreillynet.com/onjava/blog/2004/10/gdgroovy_basic_swingbuilder.html">Swing</a> UI&#8217;s. You can even <a href="http://groovy.codehaus.org/Make+a+builder">create your own</a>. More on how this is implemented coming soon&#8230;</p>
+<p>There are other choices besides Groovy, of course, I haven&#8217;t tried it yet but <a href="http://scala.epfl.ch/">Scala</a> looks like it <a href="http://lamp.epfl.ch/~emir/written/emirlncs4028.pdf">might be a good choice</a>. (For that matter there are <a href="http://www.yaml.org/">other</a> <a href="http://www-128.ibm.com/developerworks/xml/library/x-syntax.html?loc=x">choices</a> besides XML!)</p>
+]]></content:encoded>
+			<wfw:commentRss>http://pauldowman.com/2007/01/22/groovy-xml/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Google TTC Map</title>
+		<link>http://pauldowman.com/2006/12/29/google-ttc-map/</link>
+		<comments>http://pauldowman.com/2006/12/29/google-ttc-map/#comments</comments>
+		<pubDate>Fri, 29 Dec 2006 20:27:49 +0000</pubDate>
+		<dc:creator>Paul Dowman</dc:creator>
+		
+		<category><![CDATA[Toronto]]></category>
+
+		<category><![CDATA[Web]]></category>
+
+		<guid isPermaLink="false">http://pauldowman.com/2006/12/29/google-ttc-map/</guid>
+		<description><![CDATA[Ian Stevens has created a really nice Google Maps-based TTC Map.]]></description>
+			<content:encoded><![CDATA[<p><a href="http://crazedmonkey.com/">Ian Stevens</a> has created a really nice <a href="http://crazedmonkey.com/toronto-transit-map/">Google Maps-based TTC Map</a>. There are a lot of good Toronto-oriented Google Maps mashups, but for me this is one of the most useful. That and <a href="http://www.beerhunter.ca/">beerhunter.ca</a> of course!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://pauldowman.com/2006/12/29/google-ttc-map/feed/</wfw:commentRss>
+		</item>
+	</channel>
+</rss>

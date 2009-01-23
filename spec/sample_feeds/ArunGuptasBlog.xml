@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<rdf:RDF
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+xmlns:admin="http://webns.net/mvcb/"
+xmlns:cc="http://web.resource.org/cc/"
+xmlns="http://purl.org/rss/1.0/">
+
+<channel rdf:about="http://weblogs.java.net/blog/arungupta/">
+<title>Arun Gupta&apos;s Blog</title>
+<link>http://weblogs.java.net/blog/arungupta/</link>
+<description></description>
+<dc:language>en-us</dc:language>
+<dc:creator></dc:creator>
+<dc:date>2009-01-20T14:46:24-08:00</dc:date>
+<admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=3.01D" />
+
+
+<items>
+<rdf:Seq><rdf:li rdf:resource="http://weblogs.java.net/blog/arungupta/archive/2009/01/sun_tech_days_2_3.html" />
+<rdf:li rdf:resource="http://weblogs.java.net/blog/arungupta/archive/2009/01/sun_tech_days_2.html" />
+<rdf:li rdf:resource="http://weblogs.java.net/blog/arungupta/archive/2009/01/ejbs_in_a_war_s.html" />
+<rdf:li rdf:resource="http://weblogs.java.net/blog/arungupta/archive/2009/01/osum_open_sourc.html" />
+<rdf:li rdf:resource="http://weblogs.java.net/blog/arungupta/archive/2009/01/totd_66_glassfi.html" />
+<rdf:li rdf:resource="http://weblogs.java.net/blog/arungupta/archive/2009/01/glassfish_swimm_1.html" />
+<rdf:li rdf:resource="http://weblogs.java.net/blog/arungupta/archive/2009/01/glassfish_spott.html" />
+<rdf:li rdf:resource="http://weblogs.java.net/blog/arungupta/archive/2009/01/glassfish_manip.html" />
+<rdf:li rdf:resource="http://weblogs.java.net/blog/arungupta/archive/2009/01/blog_fan.html" />
+<rdf:li rdf:resource="http://weblogs.java.net/blog/arungupta/archive/2009/01/glassfish_unive.html" />
+<rdf:li rdf:resource="http://weblogs.java.net/blog/arungupta/archive/2009/01/totd_64_opensol.html" />
+<rdf:li rdf:resource="http://weblogs.java.net/blog/arungupta/archive/2009/01/totd_63_jmx4r_g.html" />
+<rdf:li rdf:resource="http://weblogs.java.net/blog/arungupta/archive/2009/01/totd_62_how_to.html" />
+<rdf:li rdf:resource="http://weblogs.java.net/blog/arungupta/archive/2009/01/totd_61_how_to.html" />
+<rdf:li rdf:resource="http://weblogs.java.net/blog/arungupta/archive/2009/01/totd_60_configu.html" />
+</rdf:Seq>
+</items>
+
+</channel>
+
+<item rdf:about="http://weblogs.java.net/blog/arungupta/archive/2009/01/sun_tech_days_2_3.html">
+<title>Sun Tech Days 2009, Singapore - Welcome Reception</title>
+<link>http://weblogs.java.net/blog/arungupta/archive/2009/01/sun_tech_days_2_3.html</link>
+<description>Follow up from Part 1. Attended &quot;What Developers should care about MySQL ?&quot; by Colin and &quot;Groovy and Grails&quot; by Chuk-munn Lee. I enjoyed both the talks for different reasons. Colin&apos;s talk explained the pluggable storage engine architecture that is...</description>
+<dc:subject>Community</dc:subject>
+<dc:creator>arungupta</dc:creator>
+<dc:date>2009-01-20T14:46:24-08:00</dc:date>
+</item>
+<item rdf:about="http://weblogs.java.net/blog/arungupta/archive/2009/01/sun_tech_days_2.html">
+<title>Sun Tech Days 2009, Singapore - Day 1</title>
+<link>http://weblogs.java.net/blog/arungupta/archive/2009/01/sun_tech_days_2.html</link>
+<description>The Sun Tech Days Singapore started earlier this morning - over 1100 developers, an outstanding audience!!! The kick off had a good local flare when the Gods of Longevity, Fortune, and Prosperity (Fu Lu Shou) showed up to start the...</description>
+<dc:subject>Community</dc:subject>
+<dc:creator>arungupta</dc:creator>
+<dc:date>2009-01-20T00:28:58-08:00</dc:date>
+</item>
+<item rdf:about="http://weblogs.java.net/blog/arungupta/archive/2009/01/ejbs_in_a_war_s.html">
+<title>EJBs in a WAR - Simplified packaging defined by EJB 3.1, Available in GlassFish v3</title>
+<link>http://weblogs.java.net/blog/arungupta/archive/2009/01/ejbs_in_a_war_s.html</link>
+<description> The EJB 3.1 specification says: An enterprise bean class with a component-defining annotation defines an enterprise bean component when packaged within the WEB-INF/classes directory or in a .jar file within WEB-INF/lib. In simple English it means, an EJB can...</description>
+<dc:subject>Community: Glassfish</dc:subject>
+<dc:creator>arungupta</dc:creator>
+<dc:date>2009-01-19T16:15:22-08:00</dc:date>
+</item>
+<item rdf:about="http://weblogs.java.net/blog/arungupta/archive/2009/01/osum_open_sourc.html">
+<title>OSUM - Open Source University Meetup - awesome venue for students!</title>
+<link>http://weblogs.java.net/blog/arungupta/archive/2009/01/osum_open_sourc.html</link>
+<description> If your university is not participating in the Sun Campus Ambassador program, you can always create an Open Source University Meetup (OSUM, pronounced &quot;awesome&quot;) community. Sun Microsystems offers you the complete range of Open Source software - OpenSolaris, OpenOffice,...</description>
+<dc:subject>Community</dc:subject>
+<dc:creator>arungupta</dc:creator>
+<dc:date>2009-01-19T16:14:05-08:00</dc:date>
+</item>
+<item rdf:about="http://weblogs.java.net/blog/arungupta/archive/2009/01/totd_66_glassfi.html">
+<title>TOTD #66: GlassFish Eclipse Plugin 1.0.16 - Install v3 Prelude from the IDE</title>
+<link>http://weblogs.java.net/blog/arungupta/archive/2009/01/totd_66_glassfi.html</link>
+<description> GlassFish Plugins team released ver 1.0.16 of Eclipse plugin for GlassFish. The team has maintained pretty good cadence in terms of adding features and fixing bugs in the plugin (16 releases in approx as many months). However this particular...</description>
+<dc:subject>Community: Glassfish</dc:subject>
+<dc:creator>arungupta</dc:creator>
+<dc:date>2009-01-17T05:53:54-08:00</dc:date>
+</item>
+<item rdf:about="http://weblogs.java.net/blog/arungupta/archive/2009/01/glassfish_swimm_1.html">
+<title>GlassFish Swimming to Singapore Tech Days</title>
+<link>http://weblogs.java.net/blog/arungupta/archive/2009/01/glassfish_swimm_1.html</link>
+<description> Sun Tech Days is traveling to Singapore next week and I&apos;ll be there! You&apos;ll find me at the pavilion hall, sessions, hallway, lunch, reception, University Day, and else where. Stop by and say hello! Let us know how you...</description>
+<dc:subject>Community: Glassfish</dc:subject>
+<dc:creator>arungupta</dc:creator>
+<dc:date>2009-01-16T05:51:37-08:00</dc:date>
+</item>
+<item rdf:about="http://weblogs.java.net/blog/arungupta/archive/2009/01/glassfish_spott.html">
+<title>GlassFish spotted on Salvador, Bahia - a Brazilian beach!</title>
+<link>http://weblogs.java.net/blog/arungupta/archive/2009/01/glassfish_spott.html</link>
+<description>Marcelo Souza (a GlassFish team member) spotted GlassFish on Salvador, Bahia beach in Brazil during his personal vacation :) Thanks to Marcelo for taking this picture :) Here are couple of shots of the beach itself: Drop a comment on...</description>
+<dc:subject>Community: Glassfish</dc:subject>
+<dc:creator>arungupta</dc:creator>
+<dc:date>2009-01-16T05:50:11-08:00</dc:date>
+</item>
+<item rdf:about="http://weblogs.java.net/blog/arungupta/archive/2009/01/glassfish_manip.html">
+<title>GlassFish @ Manipal Institute of Technology, India - Go Campus Ambassadors!</title>
+<link>http://weblogs.java.net/blog/arungupta/archive/2009/01/glassfish_manip.html</link>
+<description>Here is yet another (slightly dated) contribution by Vasudha Amrit on GlassFish, Campus Ambassador from Manipal Institue of Technology, India. She arranged a GlassFish talk in her campus and one of the GlassFish team member delivered the talk (while on...</description>
+<dc:subject>Community: Glassfish</dc:subject>
+<dc:creator>arungupta</dc:creator>
+<dc:date>2009-01-15T05:28:41-08:00</dc:date>
+</item>
+<item rdf:about="http://weblogs.java.net/blog/arungupta/archive/2009/01/blog_fan.html">
+<title>Blog Fan</title>
+<link>http://weblogs.java.net/blog/arungupta/archive/2009/01/blog_fan.html</link>
+<description>It is embarrassing to share the post below but certainly very encouraging to know that readers like the posts on my two blogs (weblogs.java.net/weblogs/java.net and blogs.sun.com/arungupta). I&apos;ve thoroughly enjoyed 544 posts on weblogs.java.net and 762 posts on blogs.sun.com so far...</description>
+<dc:subject>Community</dc:subject>
+<dc:creator>arungupta</dc:creator>
+<dc:date>2009-01-14T11:47:51-08:00</dc:date>
+</item>
+<item rdf:about="http://weblogs.java.net/blog/arungupta/archive/2009/01/glassfish_unive.html">
+<title>GlassFish @ University of Essex and Frankfurt - Go Campus Ambassadors!</title>
+<link>http://weblogs.java.net/blog/arungupta/archive/2009/01/glassfish_unive.html</link>
+<description>This blog highlights couple of contributions by Campus Ambassadors (CA) from University of Essex and Frankfurt towards GlassFish. Jenya Kovalchuk (Campus Ambassador in the University of Essex, UK) gave a talk on GlassFish. The pre- and post-conditions of talk are...</description>
+<dc:subject>Community: Glassfish</dc:subject>
+<dc:creator>arungupta</dc:creator>
+<dc:date>2009-01-13T10:57:47-08:00</dc:date>
+</item>
+<item rdf:about="http://weblogs.java.net/blog/arungupta/archive/2009/01/totd_64_opensol.html">
+<title>TOTD #64: OpenSolaris 2008/11 using Virtual Box</title>
+<link>http://weblogs.java.net/blog/arungupta/archive/2009/01/totd_64_opensol.html</link>
+<description>Here is a blog entry that was sitting in my Drafts folder for a long time (just because I didn&apos;t realize :). Anyway, it shows how to install Open Solaris 2008/11 on Virtual Box. The original install was done using...</description>
+<dc:subject>Community: Glassfish</dc:subject>
+<dc:creator>arungupta</dc:creator>
+<dc:date>2009-01-13T10:56:11-08:00</dc:date>
+</item>
+<item rdf:about="http://weblogs.java.net/blog/arungupta/archive/2009/01/totd_63_jmx4r_g.html">
+<title>TOTD #63: jmx4r gem - How to manage/monitor your Rails/Merb applications on JRuby/GlassFish ?</title>
+<link>http://weblogs.java.net/blog/arungupta/archive/2009/01/totd_63_jmx4r_g.html</link>
+<description> TOTD #61 and TOTD #62 shows how to use JMX APIs to locally/remotely manage/monitor your Rails/Merb applications. This Tip Of The Day extends TOTD #62 and shows how remote management can be done using jmx4r gem. This gem provides...</description>
+<dc:subject>Community: Glassfish</dc:subject>
+<dc:creator>arungupta</dc:creator>
+<dc:date>2009-01-13T10:54:40-08:00</dc:date>
+</item>
+<item rdf:about="http://weblogs.java.net/blog/arungupta/archive/2009/01/totd_62_how_to.html">
+<title>TOTD #62: How to remotely manage/monitor your Rails/Merb applications on JRuby/GlassFish using JMX API ?</title>
+<link>http://weblogs.java.net/blog/arungupta/archive/2009/01/totd_62_how_to.html</link>
+<description> TOTD #61 showed how to manage/monitor a Rails/Merb application running using JRuby/GlassFish using standard Java tools. Both the application and the management tools are running on the same machine. But that&apos;s never the case in a production environment. Instead...</description>
+<dc:subject>Community: Glassfish</dc:subject>
+<dc:creator>arungupta</dc:creator>
+<dc:date>2009-01-08T10:21:24-08:00</dc:date>
+</item>
+<item rdf:about="http://weblogs.java.net/blog/arungupta/archive/2009/01/totd_61_how_to.html">
+<title>TOTD #61: How to locally manage/monitor your Rails/Merb applications on JRuby/GlassFish using JMX ?</title>
+<link>http://weblogs.java.net/blog/arungupta/archive/2009/01/totd_61_how_to.html</link>
+<description> GlassFish Gem can easily run both Rails and Merb application. Using JRuby, as opposed to MRI, allows you to use standard Java monitoring framework and tools. Java Management Extensions (JMX) is a standard management and monitoring solution for Java...</description>
+<dc:subject>Community: Glassfish</dc:subject>
+<dc:creator>arungupta</dc:creator>
+<dc:date>2009-01-07T09:17:22-08:00</dc:date>
+</item>
+<item rdf:about="http://weblogs.java.net/blog/arungupta/archive/2009/01/totd_60_configu.html">
+<title>TOTD #60: Configure MySQL 6.0.x-alpha to NetBeans 6.5</title>
+<link>http://weblogs.java.net/blog/arungupta/archive/2009/01/totd_60_configu.html</link>
+<description> This Tip Of The Day answers the following comment on my blog: How to Configure a MySql database to be able to connect Netbeans6.5.? I&apos;ve tried using mysql Server 6 many times, but it fails.Please, let me know how...</description>
+<dc:subject>Community: NetBeans</dc:subject>
+<dc:creator>arungupta</dc:creator>
+<dc:date>2009-01-07T09:16:11-08:00</dc:date>
+</item>
+
+
+</rdf:RDF>

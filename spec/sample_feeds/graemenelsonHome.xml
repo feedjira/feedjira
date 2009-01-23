@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xml:lang="en-US" xmlns="http://www.w3.org/2005/Atom">
+  <title>graeme nelson - Home</title>
+  <id>tag:blog.imperialdune.com,2008:mephisto/</id>
+  <generator uri="http://mephistoblog.com" version="0.7.3">Mephisto Noh-Varr</generator>
+  <link href="http://blog.imperialdune.com/feed/atom.xml" rel="self" type="application/atom+xml"/>
+  <link href="http://blog.imperialdune.com/" rel="alternate" type="text/html"/>
+  <updated>2008-04-20T15:08:38Z</updated>
+  <entry xml:base="http://blog.imperialdune.com/">
+    <author>
+      <name>graemenelson</name>
+    </author>
+    <id>tag:blog.imperialdune.com,2008-04-20:690</id>
+    <published>2008-04-20T15:05:00Z</published>
+    <updated>2008-04-20T15:08:38Z</updated>
+    <category term="portland"/>
+    <category term="startup weekend"/>
+    <link href="http://blog.imperialdune.com/2008/4/20/portland-startup-weekend-may-23-25" rel="alternate" type="text/html"/>
+    <title>Portland Startup Weekend - May 23-25</title>
+<content type="html">
+            &lt;p&gt;I just signed up for the &lt;a href=&quot;http://startupweekend.com/portland-startup-weekend/&quot;&gt;Portland Startup Weekend&lt;/a&gt; for the weekend of May 23-25.  Anyone else going in the Portland Area?&lt;/p&gt;
+
+
+	&lt;p&gt;It should be an exciting and overwhelming couple of days.&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://blog.imperialdune.com/">
+    <author>
+      <name>graemenelson</name>
+    </author>
+    <id>tag:blog.imperialdune.com,2008-04-01:678</id>
+    <published>2008-04-01T16:46:00Z</published>
+    <updated>2008-04-01T16:46:40Z</updated>
+    <link href="http://blog.imperialdune.com/2008/4/1/gone-freelancing" rel="alternate" type="text/html"/>
+    <title>Gone Freelancing</title>
+<content type="html">
+            &lt;p&gt;I&#8217;ve opened a new chapter in my life.  I decided to leave &lt;a href=&quot;http://www.planetargon.com&quot;&gt;&lt;span class=&quot;caps&quot;&gt;PLANET ARGON&lt;/span&gt;&lt;/a&gt; due to some family issues and the need to free up my time to work on freelance projects.  I really enjoyed working with everyone at &lt;a href=&quot;http://www.planetargon.com&quot;&gt;&lt;span class=&quot;caps&quot;&gt;PLANET ARGON&lt;/span&gt;&lt;/a&gt; and I still plan on working with them from time to time.&lt;/p&gt;
+
+
+	&lt;p&gt;If you are looking for an experienced rails developer, then I would be happy to talk with you about your project and needs.  You can contact me through &lt;a href=&quot;http://www.graemenelsonpdx.com&quot;&gt;GraemeNelsonPDX.com&lt;/a&gt; or write me at graeme @ graemenelsonpdx.com.&lt;/p&gt;
+
+
+	&lt;p&gt;Cheers,
+Graeme&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://blog.imperialdune.com/">
+    <author>
+      <name>graemenelson</name>
+    </author>
+    <id>tag:blog.imperialdune.com,2008-01-24:656</id>
+    <published>2008-01-24T16:51:00Z</published>
+    <updated>2008-01-24T16:51:49Z</updated>
+    <category term="Rails"/>
+    <category term="beanstalkd"/>
+    <category term="geokit"/>
+    <category term="god"/>
+    <category term="sphinx"/>
+    <category term="tastymate"/>
+    <link href="http://blog.imperialdune.com/2008/1/24/tastymate" rel="alternate" type="text/html"/>
+    <title>tastymate</title>
+<content type="html">
+            &lt;p&gt;Again, its been a long time since my last post.  A post about not posting.  Its been very difficult to find time to write blog posts when you spend most of your time creating new apps.  I love creating apps.  Most of the applications were for other people, but I did manage to squeeze out an app for myself and friends.  It&#8217;s called &lt;a href=&quot;http://www.tastymate.com&quot;&gt;tastymate&lt;/a&gt;.  Its a place to find and share tasty spots with your friends.&lt;/p&gt;
+
+
+	&lt;p&gt;In the process of building &lt;a href=&quot;http://www.tastymate.com&quot;&gt;tastymate&lt;/a&gt; and the other applications, I was able to play with the following:&lt;/p&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;&lt;a href=&quot;http://www.sphinxsearch.com/&quot;&gt;sphinx&lt;/a&gt; &#8211; I am really impressed with this search engine. &lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;http://xph.us/software/beanstalkd/&quot;&gt;beanstalkd&lt;/a&gt; &#8211; Its nice to defer some background process until later, so your rails process doesn&#8217;t slow down&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;http://god.rubyforge.org/&quot;&gt;god&lt;/a&gt; &#8211; so far its done a really good at keeping all my processes up and running.&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;http://geokit.rubyforge.org/&quot;&gt;geokit&lt;/a&gt; &#8211; A nice little geo location package that works well with ActiveRecord models.&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;http://jquery.com/&quot;&gt;jQuery&lt;/a&gt; &#8211; A very nice javascript library.&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;p&gt;I have several nice topics to write about in the future.  I hope to get on them soon.&lt;/p&gt;
+
+
+	&lt;p&gt;On an unrelated rails note, I took a look at &lt;a href=&quot;http://www.aptana.com/jaxer&quot;&gt;jaxer&lt;/a&gt; and I am impressed.  It will be interesting to see what traction this project gets.  Have I told you that I am loving javascript :)&lt;/p&gt;
+
+
+	&lt;p&gt;Cheers, graeme&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://blog.imperialdune.com/">
+    <author>
+      <name>graemenelson</name>
+    </author>
+    <id>tag:blog.imperialdune.com,2007-10-13:161</id>
+    <published>2007-10-13T16:02:00Z</published>
+    <updated>2007-10-13T16:05:12Z</updated>
+    <link href="http://blog.imperialdune.com/2007/10/13/who-is-this" rel="alternate" type="text/html"/>
+    <title>who is this?</title>
+<content type="html">
+            &lt;p&gt;It&#8217;s been several months since my last blog post.  Things have been pretty busy for me, and my blog has taken the backseat.  What have i&#8217;ve been up to you ask?&lt;/p&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt; Working a lot for &lt;a href=&quot;http://www.planetargon.com&quot;&gt;&lt;span class=&quot;caps&quot;&gt;PLANET ARGON&lt;/span&gt;&lt;/a&gt;.  We have a bunch of projects in the work for some great clients.  A couple of them will be launching soon.&lt;/li&gt;
+		&lt;li&gt; Working a lot for &lt;a href=&quot;http://www.makoollovesyou.com&quot;&gt;Makool Loves You&lt;/a&gt; maintaining and improving the website and going to fashion tradeshows.&lt;/li&gt;
+		&lt;li&gt; Working for a friend to get her photography portfolio site up and running&#8212;should be releasing soon.&lt;/li&gt;
+		&lt;li&gt; And when I have time, working on some personal projects.&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;p&gt;I am going to try harder to keep up on my blog.  I do have some interesting things to say sometimes.&lt;/p&gt;
+
+
+	&lt;p&gt;If you find you need a little break from the programming world, how about participating in the &lt;a href=&quot;http://blog.makoollovesyou.com/?p=155&quot;&gt;Festive Fun &#38; Fancy Free Flying Friend Giveaway!&lt;/a&gt;&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://blog.imperialdune.com/">
+    <author>
+      <name>graemenelson</name>
+    </author>
+    <id>tag:blog.imperialdune.com,2007-05-23:156</id>
+    <published>2007-05-23T22:54:00Z</published>
+    <updated>2007-05-23T22:57:08Z</updated>
+    <category term="General"/>
+    <category term="Rails"/>
+    <category term="rails conf 2007"/>
+    <category term="refactoring"/>
+    <category term="Robert Martin"/>
+    <link href="http://blog.imperialdune.com/2007/5/23/refactoring-your-code" rel="alternate" type="text/html"/>
+    <title>Refactoring Your Code</title>
+<content type="html">
+            &lt;p&gt;A talk I really enjoyed at &lt;a href=&quot;http://conferences.oreillynet.com/rails/&quot;&gt;Rails Conf 2007&lt;/a&gt; was &lt;a href=&quot;http://conferences.oreillynet.com/cs/rails2007/view/e_sess/11608&quot;&gt;Clean Code&lt;/a&gt; by &lt;a href=&quot;http://www.objectmentor.com/omTeam/martin_r.html&quot;&gt;Robert Martin&lt;/a&gt;.  An important idea from that talk was &#8220;Always check in your code a little bit cleaner than when you checked it out&#8221;.  I never looked at refactoring as being that simple, but it is.  Prior to this talk, I looked at refactoring as this big undertaking.  I mean the whole application can use some improvement, right?   I also tended to take on big refactoring endeavors by deleting the current code and starting over.  Robert Martin urges against this, since you might break the current application with the rework code, and that&#8217;s much worse than ugly code.  At least the ugly code is working.   Tackling the smaller refactors, by improving the code a little bit at a time, the refactoring process becomes manageable.&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://blog.imperialdune.com/">
+    <author>
+      <name>graemenelson</name>
+    </author>
+    <id>tag:blog.imperialdune.com,2007-05-10:154</id>
+    <published>2007-05-10T18:05:00Z</published>
+    <updated>2007-05-10T18:06:05Z</updated>
+    <category term="General"/>
+    <category term="Rails"/>
+    <category term="beer"/>
+    <category term="pdx"/>
+    <category term="PLANET ARGON"/>
+    <category term="portland"/>
+    <category term="railsconf"/>
+    <link href="http://blog.imperialdune.com/2007/5/10/railsconf-2007" rel="alternate" type="text/html"/>
+    <title>RailsConf 2007</title>
+<content type="html">
+            &lt;p&gt;If you are attending &lt;a href=&quot;http://conferences.oreillynet.com/rails/&quot;&gt;RailsConf&lt;/a&gt; (or Portland in general) and you love &lt;span class=&quot;caps&quot;&gt;BEER&lt;/span&gt;, be sure to check out &lt;a href=&quot;http://blog.planetargon.com/2007/5/10/portland-revealed-episode-2-beertown&quot;&gt;&lt;span class=&quot;caps&quot;&gt;PLANET ARGON&lt;/span&gt; Portland Revealed&lt;/a&gt; article.&lt;/p&gt;
+
+
+	&lt;p&gt;I am looking forward to meeting others in the &lt;a href=&quot;http://www.rubyonrails.com&quot;&gt;Rails Community&lt;/a&gt;, please &lt;a href=&quot;mailto:graeme.nelson@gmail.com&quot;&gt;hit me up&lt;/a&gt; if you are interested in meeting up.  I am sure I will be at several of the after conference get togethers.&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://blog.imperialdune.com/">
+    <author>
+      <name>graemenelson</name>
+    </author>
+    <id>tag:blog.imperialdune.com,2007-05-08:153</id>
+    <published>2007-05-08T21:13:00Z</published>
+    <updated>2007-05-08T21:13:58Z</updated>
+    <category term="General"/>
+    <category term="Rails"/>
+    <category term="boxcar"/>
+    <category term="PLANET ARGON"/>
+    <category term="rails hosting"/>
+    <link href="http://blog.imperialdune.com/2007/5/8/boxcar-coming-soon" rel="alternate" type="text/html"/>
+    <title>Boxcar coming soon</title>
+<content type="html">
+            &lt;p&gt;In the coming weeks, &lt;a href=&quot;http://www.planetargon.com&quot;&gt;&lt;span class=&quot;caps&quot;&gt;PLANET ARGON&lt;/span&gt;&lt;/a&gt; will be introducing a new hosting service called &lt;a href=&quot;http://www.railsboxcar.com/&quot;&gt;Boxcar&lt;/a&gt;.  Be sure to &lt;a href=&quot;http://www.railsboxcar.com/&quot;&gt;sign up&lt;/a&gt; on the email list or watch the official &lt;a href=&quot;http://blog.planetargon.com/&quot;&gt;&lt;span class=&quot;caps&quot;&gt;PLANET ARGON&lt;/span&gt; Blog&lt;/a&gt; for more updates.&lt;/p&gt;
+
+
+	&lt;p&gt;So, what is &lt;a href=&quot;http://www.railsboxcar.com&quot;&gt;Boxcar&lt;/a&gt;? [from the official &lt;span class=&quot;caps&quot;&gt;PLANET ARGON&lt;/span&gt; blog]:&lt;/p&gt;
+
+
+	&lt;blockquote&gt;
+		&lt;p&gt;&#8221;...a new hosting service, which aims to provide you with even more privacy, more guaranteed resources, and better options for scaling your Rails application as your business grows.&#8221;&lt;/p&gt;
+	&lt;/blockquote&gt;
+          </content>  </entry>
+  <entry xml:base="http://blog.imperialdune.com/">
+    <author>
+      <name>graemenelson</name>
+    </author>
+    <id>tag:blog.imperialdune.com,2007-05-07:152</id>
+    <published>2007-05-07T23:30:00Z</published>
+    <updated>2007-05-07T23:31:37Z</updated>
+    <category term="MercuryNews"/>
+    <category term="robby"/>
+    <category term="Robby"/>
+    <category term="Ruby"/>
+    <category term="Sun"/>
+    <link href="http://blog.imperialdune.com/2007/5/7/robby-interviewed-by-san-jose-mercury-news" rel="alternate" type="text/html"/>
+    <title>Robby interviewed by San Jose Mercury News</title>
+<content type="html">
+            &lt;p&gt;&lt;a href=&quot;http://www.robbyonrails.com&quot;&gt;Robby&lt;/a&gt; was interviewed last week for The San Jose Mercury News.  The &lt;a href=&quot;http://www.mercurynews.com/businessheadlines/ci_5836445?nclick_check=1&quot;&gt;article&lt;/a&gt; focused on &lt;a href=&quot;http://sun.com&quot;&gt;Sun&lt;/a&gt; and its contribution to the open source community.&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://blog.imperialdune.com/">
+    <author>
+      <name>graemenelson</name>
+    </author>
+    <id>tag:blog.imperialdune.com,2007-05-05:151</id>
+    <published>2007-05-05T14:38:00Z</published>
+    <updated>2007-05-05T14:39:00Z</updated>
+    <category term="czech"/>
+    <category term="ostrava"/>
+    <category term="rails conf"/>
+    <category term="robby"/>
+    <link href="http://blog.imperialdune.com/2007/5/5/robby-at-ostrava-on-rails" rel="alternate" type="text/html"/>
+    <title>Robby at Ostrava On Rails</title>
+<content type="html">
+            &lt;p&gt;A quick note, &lt;a href=&quot;http://www.robbyonrails.com&quot;&gt;Robby Russell&lt;/a&gt; will be speaking at &lt;a href=&quot;http://ostrava.rails.cz/en&quot;&gt;Ostrava on Rails.&lt;/a&gt;  I wish I could attend, I would love to go to the &lt;a href=&quot;http://www.lonelyplanet.com/worldguide/destinations/europe/czech-republic/&quot;&gt;Czech Republic&lt;/a&gt;&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://blog.imperialdune.com/">
+    <author>
+      <name>graemenelson</name>
+    </author>
+    <id>tag:blog.imperialdune.com,2007-05-05:150</id>
+    <published>2007-05-05T01:28:00Z</published>
+    <updated>2007-05-05T01:28:55Z</updated>
+    <category term="Rails"/>
+    <category term="Rspec'ing"/>
+    <category term="rails"/>
+    <category term="refactoring"/>
+    <category term="rspec"/>
+    <link href="http://blog.imperialdune.com/2007/5/5/refactoring" rel="alternate" type="text/html"/>
+    <title>Refactoring</title>
+<content type="html">
+            &lt;p&gt;When I first started out developing, I was concern with getting things done and working as quickly as possible. I didn&#8217;t really understand the benefits of &lt;a href=&quot;http://en.wikipedia.org/wiki/Refactoring&quot;&gt;refactoring&lt;/a&gt;.  Later on in my development career, I understood why refactoring was important, but I still couldn&#8217;t find any time to refactor &#8211; unless it was physically added to a project schedule, which wasn&#8217;t too often.&lt;/p&gt;
+
+
+	&lt;p&gt;What I have finally come to understand, is that I just needed to find time to refactor.  The time I spend on refactoring now, will probably save me a lot more time in the future tracking down bugs in a bloated code base.  So today, when I ran into an issue because of a bloated code base I decided to refactor the code.  Sure I spent all day cleaning up the code, but I feel more confident in the code base and I was able to add much more &lt;a href=&quot;http://rspec.rubyforge.org/&quot;&gt;rpecs.&lt;/a&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;So, how often do you refactor?  and when do you find time to refactor?&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://blog.imperialdune.com/">
+    <author>
+      <name>graemenelson</name>
+    </author>
+    <id>tag:blog.imperialdune.com,2007-05-01:148</id>
+    <published>2007-05-01T05:22:00Z</published>
+    <updated>2008-08-14T16:20:51Z</updated>
+    <category term="General"/>
+    <category term="film"/>
+    <category term="Seattle"/>
+    <category term="seattle"/>
+    <category term="talented"/>
+    <link href="http://blog.imperialdune.com/2007/5/1/gustav-braustache" rel="alternate" type="text/html"/>
+    <title>Gustav Braustache</title>
+<content type="html">
+            &lt;p&gt;It was nice to visit with friends in Seattle this past week.  I forgot how many talented friends I have.   Check out &lt;a href=&quot;http://www.dualactionpictures.com/braustache.html&quot;&gt;Gustav Braustache&lt;/a&gt; a film shot and directed by my friends Rob Cunningham and Tony Mullen and staring my other good friend Ken Jarvey, who is also a member of &lt;a href=&quot;http://www.thecantsee.com/&quot;&gt;The Can&#8217;t See&lt;/a&gt;&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://blog.imperialdune.com/">
+    <author>
+      <name>graemenelson</name>
+    </author>
+    <id>tag:blog.imperialdune.com,2007-04-30:146</id>
+    <published>2007-04-30T15:44:00Z</published>
+    <updated>2007-05-01T05:29:06Z</updated>
+    <category term="General"/>
+    <category term="Me"/>
+    <category term="Seattle"/>
+    <category term="seattle"/>
+    <category term="Wii"/>
+    <link href="http://blog.imperialdune.com/2007/4/30/wii" rel="alternate" type="text/html"/>
+    <title>Wii [or graemii]</title>
+<content type="html">
+            &lt;p&gt;Okay, I took a break from ruby on rails development this weekend.  It was Anisa birthday, so we decided to go to Seattle.  We stayed with my brother the first night and played with his new &lt;a href=&quot;http://www.wii.com&quot;&gt;Wii&lt;/a&gt; machine.  I am not a big gamer, but I&#8217;ve been wanting to try out the &lt;a href=&quot;http://www.wii.com/&quot;&gt;Wii&lt;/a&gt; for some time.  I must say &lt;a href=&quot;http://www.nintendo.com/&quot;&gt;Nintendo&lt;/a&gt; did it right.  It was just entertaining.  My mom even loved playing it.  You can&#8217;t say that for the xbox or playstation.  But the one thing I really loved about the Wii, was my Wii character.  I can&#8217;t believe how much it looks like me.  Take a look.&lt;/p&gt;
+
+
+	&lt;p&gt;&lt;img src=&quot;http://blog.imperialdune.com/assets/2007/4/30/478495462_0ae1a56031.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;Just incase you can&#8217;t tell, I am the one on the right.&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://blog.imperialdune.com/">
+    <author>
+      <name>graemenelson</name>
+    </author>
+    <id>tag:blog.imperialdune.com,2007-04-25:141</id>
+    <published>2007-04-25T16:05:00Z</published>
+    <updated>2007-04-25T16:29:03Z</updated>
+    <category term="General"/>
+    <category term="PLANET ARGON"/>
+    <category term="portland"/>
+    <category term="rails"/>
+    <category term="railsconf"/>
+    <link href="http://blog.imperialdune.com/2007/4/25/railsconf-portland" rel="alternate" type="text/html"/>
+    <title>RailsConf Portland</title>
+<content type="html">
+            &lt;p&gt;The team at &lt;a href=&quot;http://www.planetargon.com&quot;&gt;&lt;span class=&quot;caps&quot;&gt;PLANET ARGON&lt;/span&gt;&lt;/a&gt; is excited that &lt;a href=&quot;http://conferences.oreillynet.com/rails/&quot;&gt;RailsConf 2007&lt;/a&gt; in Portland is fast approaching.  We are looking forward to meeting other ruby on rails developers.  We are hoping we can help out our peers and find cool things to do in Portland during the conference.  We have started a &lt;a href=&quot;http://blog.planetargon.com/2007/2/19/portland-revealed-episode-one&quot;&gt;Portland Revealed Series&lt;/a&gt;.  Okay, there&#8217;s only one post, but we hope to add a few more (busy times at &lt;a href=&quot;http://www.planetargon.com&quot;&gt;&lt;span class=&quot;caps&quot;&gt;PLANET ARGON&lt;/span&gt;&lt;/a&gt;).&lt;/p&gt;
+
+
+	&lt;p&gt;We would also like to get recommendation from you on what types of things you would like to know about Portland.&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://blog.imperialdune.com/">
+    <author>
+      <name>graemenelson</name>
+    </author>
+    <id>tag:blog.imperialdune.com,2007-04-19:74</id>
+    <published>2007-04-19T16:11:00Z</published>
+    <updated>2007-04-19T16:17:38Z</updated>
+    <category term="Rails"/>
+    <category term="controller"/>
+    <category term="encapsulation"/>
+    <category term="find"/>
+    <category term="model"/>
+    <link href="http://blog.imperialdune.com/2007/4/19/find-methods-in-controllers" rel="alternate" type="text/html"/>
+    <title>Find methods in controllers</title>
+<content type="html">
+            &lt;p&gt;Recently, I&#8217;ve vowed to remove most of the model.find methods from my controller.  I am not talking about simple find statements like:&lt;/p&gt;
+
+
+&lt;pre&gt;
+
+ model.find(1) 
+ model.find_by_title(&quot;my title&quot;) 
+
+&lt;/pre&gt;
+
+	&lt;p&gt;I am talking about find methods like so:&lt;/p&gt;
+
+
+&lt;pre&gt;
+
+  model.find(:all, :conditions =&amp;gt; [&quot;status = ?&quot;, my_status])
+  model.find(:all, :conditions =&amp;gt; [&quot;title = ?&quot;, my_title])
+
+&lt;/pre&gt;
+
+	&lt;p&gt;I would add methods on the model called, &lt;code&gt;find_all_by_status(status)&lt;/code&gt; and &lt;code&gt;find_all_by_title(title)&lt;/code&gt;.  Now, you may be thinking that these are simple find statements too.  And I would agree with you.  But in my opinion it makes the controller code look dirty.  What would you rather see in your controller?&lt;/p&gt;
+
+
+&lt;pre&gt;
+
+  model.find(:all, :conditions =&amp;gt; [&quot;status = ?&quot;, my_status])
+
+~OR~
+
+  model.find_all_by_status(my_status)
+
+&lt;/pre&gt;
+
+	&lt;p&gt;Which one can you comprehend faster? For me, the first statement takes some time for my brain to process, where as the second statement doesn&#8217;t not.  Ok, if this isn&#8217;t enough to convince you.  What if you introduce a new boolean attribute on your model called &#8216;active&#8217; and the logic is to only show active model instances?  Now you have to change all the places where you have:&lt;/p&gt;
+
+
+&lt;pre&gt;
+
+  model.find(:all, :conditions =&amp;gt; [&quot;status = ?&quot;, my_status])
+
+ ~TO~
+
+  model.find(:all, :conditions =&amp;gt; [&quot;status = ? and active = ?&quot;, my_status, true])
+
+&lt;/pre&gt;
+
+	&lt;p&gt;You say you were thinking ahead and have a private method on your controller to handle this call, so you only have to make the change in one place.  I would say congratulations, but I would point out that I think the controller knows too much about the model and thus breaks encapsulation.&lt;/p&gt;
+
+
+	&lt;p&gt;I would like to hear what other think, and how they handle this situation.&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://blog.imperialdune.com/">
+    <author>
+      <name>graemenelson</name>
+    </author>
+    <id>tag:blog.imperialdune.com,2007-04-16:50</id>
+    <published>2007-04-16T15:38:00Z</published>
+    <updated>2007-04-16T15:40:53Z</updated>
+    <link href="http://blog.imperialdune.com/2007/4/16/makool-loves-you" rel="alternate" type="text/html"/>
+    <title>Makool Loves You</title>
+<content type="html">
+            &lt;p&gt;Hi Everyone -&lt;/p&gt;
+
+
+	&lt;p&gt;Finally released the first version of the &lt;a href=&quot;http://store.makoollovesyou.com&quot;&gt;Makool Loves You store&lt;/a&gt;.  It took a bit longer than expected (does&#8217;t everything), but Anisa and I are really happy with it.&lt;/p&gt;
+
+
+	&lt;p&gt;Hopefully, I will have some time to write more blog posts.&lt;/p&gt;
+          </content>  </entry>
+</feed>

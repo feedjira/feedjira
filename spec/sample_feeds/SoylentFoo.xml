@@ -1,0 +1,937 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/stylesheets/rss.css" type="text/css"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+  <channel>
+    <title>SoylentFoo</title>
+    <link>http://soylentfoo.jnewland.com/</link>
+    <language>en-us</language>
+    <ttl>40</ttl>
+    <description>too many metasyntactic variables</description>
+    <item>
+      <title>Rails Metal: a micro-framework with the power of Rails: \m/</title>
+      <description>&lt;p&gt;&lt;strong&gt;Updates&lt;/strong&gt;:&lt;/p&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;Clarified the distinction between Rails Metal and Rack middleware after more information from @Josh in the comments. Thanks!&lt;/li&gt;
+		&lt;li&gt;Read more about metal from &lt;a href="http://weblog.rubyonrails.org/2008/12/17/introducing-rails-metal"&gt;&lt;span class="caps"&gt;DHH&lt;/span&gt; on the Official Rails Blog&lt;/a&gt;.&lt;/li&gt;
+		&lt;li&gt;Demonstrate Testing Metal end points&lt;/li&gt;
+		&lt;li&gt;Update Poller example to match new style&lt;/li&gt;
+		&lt;li&gt;Cover Sinatra Integration&lt;/li&gt;
+		&lt;li&gt;Correct benchmarks&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;p&gt;&lt;a href="http://github.com/josh"&gt;Josh Peek&lt;/a&gt; committed a new feature to Edge Rails today: &lt;a href="http://github.com/rails/rails/commit/8c3a54366435eebc2c8aa63b63e1349ce74a7b38"&gt;Rails Metal&lt;/a&gt;. After &lt;a href="http://github.com/rails/rails/commit/ed708307137c811d14e5fd2cb4ea550add381a82"&gt;the&lt;/a&gt; &lt;a href="http://github.com/rails/rails/commit/9c9da6c892d715ca22c3cf51f50deb1d80029c66"&gt;recent&lt;/a&gt; &lt;a href="http://github.com/rails/rails/commit/926844e869b747fa1e9474fd95f9b97fa04ae092"&gt;work&lt;/a&gt; to replace Rails&amp;#8217; crufty request processing code with &lt;a href="http://rack.rubyforge.org/"&gt;Rack&lt;/a&gt; and integrate its &lt;a href="http://github.com/rails/rails/commit/06ed8e451198b2296d8b2752741e259b4f995081"&gt;middleware support&lt;/a&gt;, Rails Metal is a logical progression that allows Rails apps to use the power of Rack middleware to create super-fast actions.&lt;/p&gt;
+
+
+	&lt;p&gt;For example, here&amp;#8217;s a sample &amp;#8220;Hello World&amp;#8221; Metal:&lt;/p&gt;
+
+
+&lt;div class="typocode"&gt;&lt;pre&gt;&lt;code class="typocode_ruby "&gt;  &lt;span class="keyword"&gt;class &lt;/span&gt;&lt;span class="class"&gt;Poller&lt;/span&gt; &lt;span class="punct"&gt;&amp;lt;&lt;/span&gt; &lt;span class="constant"&gt;Rails&lt;/span&gt;&lt;span class="punct"&gt;::&lt;/span&gt;&lt;span class="constant"&gt;Rack&lt;/span&gt;&lt;span class="punct"&gt;::&lt;/span&gt;&lt;span class="constant"&gt;Metal&lt;/span&gt;
+    &lt;span class="keyword"&gt;def &lt;/span&gt;&lt;span class="method"&gt;call&lt;/span&gt;&lt;span class="punct"&gt;(&lt;/span&gt;&lt;span class="ident"&gt;env&lt;/span&gt;&lt;span class="punct"&gt;)&lt;/span&gt;
+      &lt;span class="keyword"&gt;if&lt;/span&gt; &lt;span class="ident"&gt;env&lt;/span&gt;&lt;span class="punct"&gt;[&amp;quot;&lt;/span&gt;&lt;span class="string"&gt;PATH_INFO&lt;/span&gt;&lt;span class="punct"&gt;&amp;quot;]&lt;/span&gt; &lt;span class="punct"&gt;=~&lt;/span&gt; &lt;span class="punct"&gt;/&lt;/span&gt;&lt;span class="regex"&gt;^&lt;span class="escape"&gt;\/&lt;/span&gt;poller&lt;/span&gt;&lt;span class="punct"&gt;/&lt;/span&gt;
+        &lt;span class="punct"&gt;[&lt;/span&gt;&lt;span class="number"&gt;200&lt;/span&gt;&lt;span class="punct"&gt;,&lt;/span&gt; &lt;span class="punct"&gt;{&amp;quot;&lt;/span&gt;&lt;span class="string"&gt;Content-Type&lt;/span&gt;&lt;span class="punct"&gt;&amp;quot;&lt;/span&gt; &lt;span class="punct"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="punct"&gt;&amp;quot;&lt;/span&gt;&lt;span class="string"&gt;text/html&lt;/span&gt;&lt;span class="punct"&gt;&amp;quot;},&lt;/span&gt; &lt;span class="punct"&gt;&amp;quot;&lt;/span&gt;&lt;span class="string"&gt;Hello, World!&lt;/span&gt;&lt;span class="punct"&gt;&amp;quot;]&lt;/span&gt;
+      &lt;span class="keyword"&gt;else&lt;/span&gt;
+        &lt;span class="punct"&gt;[&lt;/span&gt;&lt;span class="number"&gt;404&lt;/span&gt;&lt;span class="punct"&gt;,&lt;/span&gt; &lt;span class="punct"&gt;{&amp;quot;&lt;/span&gt;&lt;span class="string"&gt;Content-Type&lt;/span&gt;&lt;span class="punct"&gt;&amp;quot;&lt;/span&gt; &lt;span class="punct"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="punct"&gt;&amp;quot;&lt;/span&gt;&lt;span class="string"&gt;text/html&lt;/span&gt;&lt;span class="punct"&gt;&amp;quot;},&lt;/span&gt; &lt;span class="punct"&gt;&amp;quot;&lt;/span&gt;&lt;span class="string"&gt;Not Found&lt;/span&gt;&lt;span class="punct"&gt;&amp;quot;]&lt;/span&gt;
+      &lt;span class="keyword"&gt;end&lt;/span&gt;
+    &lt;span class="keyword"&gt;end&lt;/span&gt;
+  &lt;span class="keyword"&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+	&lt;p&gt;And for comparison, a &amp;#8220;Hello World&amp;#8221; controller:&lt;/p&gt;
+
+
+&lt;div class="typocode"&gt;&lt;pre&gt;&lt;code class="typocode_ruby "&gt;    &lt;span class="keyword"&gt;class &lt;/span&gt;&lt;span class="class"&gt;OldPollerController&lt;/span&gt; &lt;span class="punct"&gt;&amp;lt;&lt;/span&gt; &lt;span class="constant"&gt;ApplicationController&lt;/span&gt;
+      &lt;span class="keyword"&gt;def &lt;/span&gt;&lt;span class="method"&gt;poller&lt;/span&gt;
+        &lt;span class="ident"&gt;render&lt;/span&gt; &lt;span class="symbol"&gt;:text&lt;/span&gt; &lt;span class="punct"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="punct"&gt;&amp;quot;&lt;/span&gt;&lt;span class="string"&gt;Hello World!&lt;/span&gt;&lt;span class="punct"&gt;&amp;quot;&lt;/span&gt;
+      &lt;span class="keyword"&gt;end&lt;/span&gt;
+    &lt;span class="keyword"&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+	&lt;p&gt;So, let&amp;#8217;s fire up &lt;code&gt;ruby script/server&lt;/code&gt; and see what this gives us:&lt;/p&gt;
+
+
+&lt;div class="typocode"&gt;&lt;pre&gt;&lt;code class="typocode_default "&gt;  # traditional Controller
+  $ curl 127.0.0.1:3000/old_poller/poller
+    Hello World!
+
+  # the new Metal
+  $ curl 127.0.0.1:3000/poller
+    Hello World!&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+	&lt;p&gt;So, the point of all of these other &amp;#8220;micro-frameworks&amp;#8221; is that they&amp;#8217;re faster than Rails, right? Let&amp;#8217;s benchmark this new &amp;#8220;Hello World&amp;#8221; Metal:&lt;/p&gt;
+
+
+&lt;div class="typocode"&gt;&lt;pre&gt;&lt;code class="typocode_default "&gt;  # first, let's benchmark the traditional controller
+  $ ab -n 1000 http://127.0.0.1:3000/old_poller/poller
+  ... snip ...
+  Requests per second:    408.45 [#/sec] (mean)
+  Time per request:       2.448 [ms] (mean)
+
+  # now for the Metal middleware
+  $ ab -n 1000 http://127.0.0.1:3000/poller
+  ... snip ...
+  Requests per second:    1154.66 [#/sec] (mean)
+  Time per request:       0.866 [ms] (mean)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+	&lt;p&gt;For this trivial &amp;#8220;Hello World&amp;#8221; benchmark, Rails Metal is 2.8x faster than a Controller. Awesome. Have a couple actions of your app you need to optimize? Instead of breaking them out into a separate application using a micro-framework, add a Metal inside your existing app. You get the performance benefits of processing requests outside of ActionPack, and it&amp;#8217;s all integrated as a part of your Rails app. Easy!&lt;/p&gt;
+
+
+	&lt;h3&gt;Sinatra Metal&lt;/h3&gt;
+
+
+	&lt;p&gt;You can &lt;a href="http://github.com/rails/rails/commit/61a41154f"&gt;now&lt;/a&gt; also use Sinatra to create Metal end points:&lt;/p&gt;
+
+
+&lt;div class="typocode"&gt;&lt;pre&gt;&lt;code class="typocode_ruby "&gt;  &lt;span class="constant"&gt;Sinatra&lt;/span&gt;&lt;span class="punct"&gt;::&lt;/span&gt;&lt;span class="constant"&gt;Application&lt;/span&gt;&lt;span class="punct"&gt;.&lt;/span&gt;&lt;span class="ident"&gt;default_options&lt;/span&gt;&lt;span class="punct"&gt;.&lt;/span&gt;&lt;span class="ident"&gt;merge!&lt;/span&gt;&lt;span class="punct"&gt;(&lt;/span&gt;&lt;span class="symbol"&gt;:run&lt;/span&gt; &lt;span class="punct"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="constant"&gt;false&lt;/span&gt;&lt;span class="punct"&gt;,&lt;/span&gt; &lt;span class="symbol"&gt;:env&lt;/span&gt; &lt;span class="punct"&gt;=&amp;gt;&lt;/span&gt; 
+  &lt;span class="symbol"&gt;:production&lt;/span&gt;&lt;span class="punct"&gt;)&lt;/span&gt;
+  &lt;span class="constant"&gt;Api&lt;/span&gt; &lt;span class="punct"&gt;=&lt;/span&gt; &lt;span class="constant"&gt;Sinatra&lt;/span&gt;&lt;span class="punct"&gt;.&lt;/span&gt;&lt;span class="ident"&gt;application&lt;/span&gt; &lt;span class="keyword"&gt;unless&lt;/span&gt; &lt;span class="keyword"&gt;defined?&lt;/span&gt; &lt;span class="constant"&gt;Api&lt;/span&gt;
+
+  &lt;span class="ident"&gt;get&lt;/span&gt; &lt;span class="punct"&gt;'&lt;/span&gt;&lt;span class="string"&gt;/interesting/new/ideas&lt;/span&gt;&lt;span class="punct"&gt;'&lt;/span&gt; &lt;span class="keyword"&gt;do&lt;/span&gt;
+    &lt;span class="punct"&gt;'&lt;/span&gt;&lt;span class="string"&gt;Hello Sinatra!&lt;/span&gt;&lt;span class="punct"&gt;'&lt;/span&gt;
+  &lt;span class="keyword"&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+	&lt;p&gt;First person to show the use of a Merb app as a Metal end point wins a prize.&lt;/p&gt;
+
+
+	&lt;h3&gt;Standalone Execution&lt;/h3&gt;
+
+
+	&lt;p&gt;Additionaly, Rails Metal are able to be executed in a separate process from your Rails application using &lt;code&gt;rackup&lt;/code&gt;:&lt;/p&gt;
+
+
+&lt;div class="typocode"&gt;&lt;pre&gt;&lt;code class="typocode_default "&gt;  rackup -s mongrel app/metal/poller.rb&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+	&lt;p&gt;This runs the Poller Metal separeately from Rails, on it&amp;#8217;s own port (&lt;code&gt;rackup&lt;/code&gt; defaults to &lt;code&gt;9292&lt;/code&gt;). This is perfect if you have an action that&amp;#8217;s taking a very long time (for example a file upload) that you&amp;#8217;d like to split out from the normal Rails request processing queue.&lt;/p&gt;
+
+
+	&lt;h3&gt;Testing Metal&lt;/h3&gt;
+
+
+	&lt;p&gt;&lt;strong&gt;Update&lt;/strong&gt;: After several people commented asking how to test metal, &lt;span class="caps"&gt;DHH&lt;/span&gt; chimed in and recommend Integration Testing for Metal end points, as they hit the whole stack, and I submitted a patch cleaning up the Integration Testing behavior of Metal. Testing Metal end points now works just like any other Integration test:&lt;/p&gt;
+
+
+&lt;div class="typocode"&gt;&lt;pre&gt;&lt;code class="typocode_ruby "&gt;      &lt;span class="keyword"&gt;class &lt;/span&gt;&lt;span class="class"&gt;PollerTest&lt;/span&gt; &lt;span class="punct"&gt;&amp;lt;&lt;/span&gt; &lt;span class="constant"&gt;ActionController&lt;/span&gt;&lt;span class="punct"&gt;::&lt;/span&gt;&lt;span class="constant"&gt;IntegrationTest&lt;/span&gt;
+        &lt;span class="ident"&gt;test&lt;/span&gt; &lt;span class="punct"&gt;&amp;quot;&lt;/span&gt;&lt;span class="string"&gt;poller returns hello world&lt;/span&gt;&lt;span class="punct"&gt;&amp;quot;&lt;/span&gt; &lt;span class="keyword"&gt;do&lt;/span&gt;
+          &lt;span class="ident"&gt;get&lt;/span&gt; &lt;span class="punct"&gt;&amp;quot;&lt;/span&gt;&lt;span class="string"&gt;/poller&lt;/span&gt;&lt;span class="punct"&gt;&amp;quot;&lt;/span&gt;
+          &lt;span class="ident"&gt;assert_response&lt;/span&gt; &lt;span class="number"&gt;200&lt;/span&gt;
+          &lt;span class="ident"&gt;assert_response&lt;/span&gt; &lt;span class="symbol"&gt;:success&lt;/span&gt;
+          &lt;span class="ident"&gt;assert_response&lt;/span&gt; &lt;span class="symbol"&gt;:ok&lt;/span&gt;
+          &lt;span class="ident"&gt;assert_equal&lt;/span&gt; &lt;span class="punct"&gt;&amp;quot;&lt;/span&gt;&lt;span class="string"&gt;Hello World!&lt;/span&gt;&lt;span class="punct"&gt;&amp;quot;,&lt;/span&gt; &lt;span class="ident"&gt;response&lt;/span&gt;&lt;span class="punct"&gt;.&lt;/span&gt;&lt;span class="ident"&gt;body&lt;/span&gt;
+        &lt;span class="keyword"&gt;end&lt;/span&gt;
+      &lt;span class="keyword"&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+	&lt;h3&gt;Fun With Middleware&lt;/h3&gt;
+
+
+	&lt;p&gt;So, essentially, Rails Metal is a thin wrapper around Rails&amp;#8217; new Rack middleware support. Rack middleware is pretty powerful stuff: framework-independent components that process requests independently or in concert with other middleware. For example, here&amp;#8217;s a simple piece of Rack middleware that runs a regex on responses:&lt;/p&gt;
+
+
+&lt;div class="typocode"&gt;&lt;pre&gt;&lt;code class="typocode_ruby "&gt;&lt;span class="keyword"&gt;class &lt;/span&gt;&lt;span class="class"&gt;RegexMiddleware&lt;/span&gt;
+  &lt;span class="keyword"&gt;def &lt;/span&gt;&lt;span class="method"&gt;initialize&lt;/span&gt;&lt;span class="punct"&gt;(&lt;/span&gt;&lt;span class="ident"&gt;app&lt;/span&gt;&lt;span class="punct"&gt;)&lt;/span&gt;
+    &lt;span class="attribute"&gt;@app&lt;/span&gt; &lt;span class="punct"&gt;=&lt;/span&gt; &lt;span class="ident"&gt;app&lt;/span&gt;
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+
+  &lt;span class="keyword"&gt;def &lt;/span&gt;&lt;span class="method"&gt;call&lt;/span&gt;&lt;span class="punct"&gt;(&lt;/span&gt;&lt;span class="ident"&gt;env&lt;/span&gt;&lt;span class="punct"&gt;)&lt;/span&gt;
+    &lt;span class="ident"&gt;status&lt;/span&gt;&lt;span class="punct"&gt;,&lt;/span&gt; &lt;span class="ident"&gt;headers&lt;/span&gt;&lt;span class="punct"&gt;,&lt;/span&gt; &lt;span class="ident"&gt;response&lt;/span&gt; &lt;span class="punct"&gt;=&lt;/span&gt; &lt;span class="attribute"&gt;@app&lt;/span&gt;&lt;span class="punct"&gt;.&lt;/span&gt;&lt;span class="ident"&gt;call&lt;/span&gt;&lt;span class="punct"&gt;(&lt;/span&gt;&lt;span class="ident"&gt;env&lt;/span&gt;&lt;span class="punct"&gt;)&lt;/span&gt;
+    &lt;span class="ident"&gt;new_response&lt;/span&gt; &lt;span class="punct"&gt;=&lt;/span&gt; &lt;span class="punct"&gt;[]&lt;/span&gt;
+    &lt;span class="ident"&gt;response&lt;/span&gt;&lt;span class="punct"&gt;.&lt;/span&gt;&lt;span class="ident"&gt;each&lt;/span&gt; &lt;span class="keyword"&gt;do&lt;/span&gt; &lt;span class="punct"&gt;|&lt;/span&gt;&lt;span class="ident"&gt;part&lt;/span&gt;&lt;span class="punct"&gt;|&lt;/span&gt;
+      &lt;span class="ident"&gt;new_response&lt;/span&gt; &lt;span class="punct"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="ident"&gt;part&lt;/span&gt;&lt;span class="punct"&gt;.&lt;/span&gt;&lt;span class="ident"&gt;gsub&lt;/span&gt;&lt;span class="punct"&gt;(/&lt;/span&gt;&lt;span class="regex"&gt;World&lt;/span&gt;&lt;span class="punct"&gt;/,&lt;/span&gt; &lt;span class="punct"&gt;'&lt;/span&gt;&lt;span class="string"&gt;Middleware&lt;/span&gt;&lt;span class="punct"&gt;')&lt;/span&gt;
+    &lt;span class="keyword"&gt;end&lt;/span&gt;
+    &lt;span class="punct"&gt;[&lt;/span&gt;&lt;span class="ident"&gt;status&lt;/span&gt;&lt;span class="punct"&gt;,&lt;/span&gt; &lt;span class="ident"&gt;headers&lt;/span&gt;&lt;span class="punct"&gt;,&lt;/span&gt; &lt;span class="ident"&gt;new_response&lt;/span&gt;&lt;span class="punct"&gt;]&lt;/span&gt;
+  &lt;span class="keyword"&gt;end&lt;/span&gt;
+&lt;span class="keyword"&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+	&lt;p&gt;To use this rack middleware in Rails, add this line to your &lt;code&gt;environment.rb&lt;/code&gt;&lt;/p&gt;
+
+
+&lt;div class="typocode"&gt;&lt;pre&gt;&lt;code class="typocode_ruby "&gt;&lt;span class="constant"&gt;Rails&lt;/span&gt;&lt;span class="punct"&gt;::&lt;/span&gt;&lt;span class="constant"&gt;Initializer&lt;/span&gt;&lt;span class="punct"&gt;.&lt;/span&gt;&lt;span class="ident"&gt;run&lt;/span&gt; &lt;span class="keyword"&gt;do&lt;/span&gt; &lt;span class="punct"&gt;|&lt;/span&gt;&lt;span class="ident"&gt;config&lt;/span&gt;&lt;span class="punct"&gt;|&lt;/span&gt;
+  &lt;span class="punct"&gt;...&lt;/span&gt;
+  &lt;span class="ident"&gt;config&lt;/span&gt;&lt;span class="punct"&gt;.&lt;/span&gt;&lt;span class="ident"&gt;middleware&lt;/span&gt;&lt;span class="punct"&gt;.&lt;/span&gt;&lt;span class="ident"&gt;use&lt;/span&gt; &lt;span class="constant"&gt;RegexMiddleware&lt;/span&gt;
+&lt;span class="keyword"&gt;end&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+	&lt;p&gt;Restart your server, and check out what happens:&lt;/p&gt;
+
+
+&lt;div class="typocode"&gt;&lt;pre&gt;&lt;code class="typocode_default "&gt;  $ curl 127.0.0.1:3000/poller
+    Hello Middleware!&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+	&lt;p&gt;The Rack middleware filtered the output of the Metal we created before. This works with output generated by normal controllers and everything too. The possible uses of this pattern are endless:&lt;/p&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;Single Sign On&lt;/li&gt;
+		&lt;li&gt;Request/Response Signing (think &lt;a href="http://oauth.net"&gt;OAuth&lt;/a&gt;)&lt;/li&gt;
+		&lt;li&gt;Asset Compression&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;p&gt;&lt;a href="http://github.com/rtomayko/rack-contrib/tree/master"&gt;rack-contrib&lt;/a&gt; is a nice collection of Rack middleware if you&amp;#8217;re interested in more examples.&lt;/p&gt;
+
+
+	&lt;p&gt;Rails Metal is a simple wrapper around the existing (yet undocumented) Rack middleware support in Edge Rails that attempts to &lt;span class="caps"&gt;DRY&lt;/span&gt; the process of using middleware to create endpoints (like a poller) as opposed to filters (which are better implemented as traditional middleware, like the examples above). For example, Rails Metal might be used:&lt;/p&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;To speed up a &amp;#8216;poller&amp;#8217; action called by all active users of a popular web-based chat application every 3 seconds (hint: Campfire).&lt;/li&gt;
+		&lt;li&gt;To improve the performance of any &lt;span class="caps"&gt;API&lt;/span&gt; endpoint&lt;/li&gt;
+		&lt;li&gt;To process file uploads outside of the Rails request queue&lt;/li&gt;
+		&lt;li&gt;To authorize delivery of cached content&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;h3&gt;We don&amp;#8217;t need no stinking micro-frameworks&lt;/h3&gt;
+
+
+	&lt;p&gt;With the additional of Metal and Rack middleware support, Rails effectively includes a micro-framework of its own; one that either tighly integrates with Rails or is executed separately &amp;#8211; whichever the need dictates.&lt;/p&gt;
+
+
+	&lt;p&gt;This is a great response by the Rails team to all of the buzz surrouding micro-frameworks: a micro-framework with the power of Rails. I&amp;#8217;m definitely going to try this approach to squeeze a couple extra requests per second out of a heavily trafficked &lt;span class="caps"&gt;API&lt;/span&gt; call &amp;#8211; let me know in the comments if you find a use for it.&lt;/p&gt;
+
+
+	&lt;p&gt;Read up a bit more on &lt;a href="http://rack.rubyforge.org/"&gt;Rack&lt;/a&gt; and then take a look at Josh&amp;#8217;s commit &lt;a href="http://github.com/rails/rails/commit/8c3a54366435eebc2c8aa63b63e1349ce74a7b38"&gt;Introducing Rails Metal&lt;/a&gt; (and the ensuing comments) if you&amp;#8217;re interested for more information.&lt;/p&gt;</description>
+      <pubDate>Tue, 16 Dec 2008 17:31:00 -0500</pubDate>
+      <guid isPermaLink="false">urn:uuid:71af4e14-8719-4791-ae1c-9e3c6cd155f2</guid>
+      <author>jnewland@gmail.com (Jesse Newland)</author>
+      <link>http://soylentfoo.jnewland.com/articles/2008/12/16/rails-metal-a-micro-framework-with-the-power-of-rails-m</link>
+      <category>microframework</category>
+      <category>metal</category>
+      <category>middleware</category>
+      <category>rack</category>
+      <category>rubyonrails</category>
+      <category>rails</category>
+      <category>ruby</category>
+    </item>
+    <item>
+      <title>Automatic FireEagle updates via iPhone Google Maps 'Locate Me'</title>
+      <description>&lt;p&gt;The following instructions will setup your Jailbroken iPhone to update your &lt;a href="http://fireeagle.yahoo.net/"&gt;FireEagle&lt;/a&gt;
+location every 5 minutes. While &lt;a href="http://theregoesdave.com/2008/03/21/navizon-enables-fire-eagle-location-updates/"&gt;Navizon provides this same feature&lt;/a&gt;, I&amp;#8217;ve been &lt;a href="http://twitter.com/jnewland/statuses/774922587"&gt;less than impressed with it&amp;#8217;s accuracy&lt;/a&gt; . This method uses both &lt;a href="http://www.skyhookwireless.com/"&gt;Skyhook&lt;/a&gt; and the Google Maps &amp;#8216;Locate Me&amp;#8217; cell-tower-triangulation method, which are much more accurate than Navizon in my recent tests.&lt;/p&gt;
+
+
+	&lt;h3&gt;Prerequisites&lt;/h3&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;Jailbroken 1.1.x iPhone&lt;/li&gt;
+		&lt;li&gt;OpenSSH installed on iPhone&lt;/li&gt;
+		&lt;li&gt;A computer on the same subnet as your iPhone&lt;/li&gt;
+		&lt;li&gt;&lt;a href="http://fireeagle.yahoo.net/"&gt;FireEagle&lt;/a&gt; invite
+	&lt;ul&gt;
+	&lt;li&gt;If you don&amp;#8217;t have one, ask &lt;a href="http://twitter.com/firebot"&gt;@firebot&lt;/a&gt; nicely.&lt;/li&gt;
+	&lt;/ul&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;h3&gt;Step 1: Disable Sleep&lt;/h3&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;Settings -&amp;gt; General -&amp;gt; Set Auto-Lock to &amp;#8216;Never&amp;#8217;
+	&lt;ul&gt;
+	&lt;li&gt;This is to ensure the &lt;span class="caps"&gt;SSH&lt;/span&gt; connection we&amp;#8217;ll establish in Step 3 isn&amp;#8217;t
+  terminate. You may revert this setting after following these instructions.&lt;/li&gt;
+	&lt;/ul&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;h3&gt;Step 2: Determine your iPhone&amp;#8217;s IP Address&lt;/h3&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;Settings -&amp;gt; Wi-Fi
+	&lt;ul&gt;
+	&lt;li&gt;Tap the blue arrow to the right of the wireless network with the check by it&lt;/li&gt;
+	&lt;/ul&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;h3&gt;Step 3: &lt;span class="caps"&gt;SSH&lt;/span&gt; into your iPhone&lt;/h3&gt;
+
+
+	&lt;p&gt;Open Terminal (/Applications/Utilities/Terminal.app) and run the following:&lt;/p&gt;
+
+
+&lt;div class="typocode"&gt;&lt;pre&gt;&lt;code class="typocode_default "&gt;ssh root@YOUR_IPHONE_IP&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+	&lt;p&gt;Your password is &amp;#8216;alpine&amp;#8217; unless you&amp;#8217;ve changed it&lt;/p&gt;
+
+
+	&lt;h3&gt;Step 4: Download needed files&lt;/h3&gt;
+
+
+&lt;div class="typocode"&gt;&lt;pre&gt;&lt;code class="typocode_default "&gt;mkdir -p bin/fireeagle
+cd bin/fireeagle
+curl -O http://ericasadun.com/ftp/TUAW/findme/authcheck
+curl -O http://ericasadun.com/ftp/TUAW/findme/authtoken
+curl -O http://ericasadun.com/ftp/TUAW/findme/firefindme
+curl -O http://ericasadun.com/ftp/TUAW/findme/pingwifi&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+	&lt;h3&gt;Step 5: Create wrapper script&lt;/h3&gt;
+
+
+&lt;div class="typocode"&gt;&lt;pre&gt;&lt;code class="typocode_default "&gt;cat &amp;gt; /var/root/bin/fireeagle/firewrapper &amp;lt;&amp;lt; EOF
+date &amp;gt; /var/log/fire.log
+/var/root/bin/fireeagle/pingwifi
+/bin/sleep 7 
+/var/root/bin/fireeagle/firefindme -g -d -F &amp;gt;&amp;gt; /var/log/fire.log
+/var/root/bin/fireeagle/firefindme -k -d -F &amp;gt;&amp;gt; /var/log/fire.log
+exit 0
+EOF&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+	&lt;h3&gt;Step 6: Set executable bit on all files&lt;/h3&gt;
+
+
+&lt;div class="typocode"&gt;&lt;pre&gt;&lt;code class="typocode_default "&gt;chmod a+x /var/root/bin/fireeagle/*&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+	&lt;h3&gt;Step 7: Authenticate with FireEagle&lt;/h3&gt;
+
+
+&lt;div class="typocode"&gt;&lt;pre&gt;&lt;code class="typocode_default "&gt;/var/root/bin/fireeagle/authtoken&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+	&lt;p&gt;This will open a MobileSafari window. Login to your FireEagle account and allow TrackMe to update your location. Then run:&lt;/p&gt;
+
+
+&lt;div class="typocode"&gt;&lt;pre&gt;&lt;code class="typocode_default "&gt;/var/root/bin/fireeagle/authcheck&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+	&lt;h3&gt;Step 8: Test!&lt;/h3&gt;
+
+
+&lt;div class="typocode"&gt;&lt;pre&gt;&lt;code class="typocode_default "&gt;/var/root/bin/fireeagle/firewrapper&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+	&lt;p&gt;After several seconds, you should be returned to a shell prompt. Now visit &lt;a href="http://fireeagle.yahoo.net/my/location"&gt;FireEagle&amp;#8217;s My Location&lt;/a&gt; page and login. You should see:&lt;/p&gt;
+
+
+	&lt;blockquote&gt;
+		&lt;p&gt;Fire Eagle last spotted you less than a minute ago at &lt;span class="caps"&gt;LOCATION&lt;/span&gt; using TrackMe.&lt;/p&gt;
+	&lt;/blockquote&gt;
+
+
+	&lt;p&gt;If not, please start over at Step 4. Something&amp;#8217;s gone wrong.&lt;/p&gt;
+
+
+	&lt;h3&gt;Step 9: Steup LaunchDaemon to ping FireEagle every 5 minutes&lt;/h3&gt;
+
+
+&lt;div class="typocode"&gt;&lt;pre&gt;&lt;code class="typocode_default "&gt;cat &amp;gt; /Library/LaunchDaemons/com.fireeagle.ping.plist &amp;lt;&amp;lt; EOF
+&amp;lt;!DOCTYPE plist PUBLIC &amp;quot;-//Apple//DTD PLIST 1.0//EN&amp;quot; &amp;quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&amp;quot;&amp;gt;
+&amp;lt;plist version=&amp;quot;1.0&amp;quot;&amp;gt;
+  &amp;lt;dict&amp;gt;
+    &amp;lt;key&amp;gt;Label&amp;lt;/key&amp;gt;
+    &amp;lt;string&amp;gt;com.fireeagle.ping&amp;lt;/string&amp;gt;
+    &amp;lt;key&amp;gt;ProgramArguments&amp;lt;/key&amp;gt;
+    &amp;lt;array&amp;gt;
+      &amp;lt;string&amp;gt;/var/root/bin/fireeagle/firewrapper&amp;lt;/string&amp;gt;
+    &amp;lt;/array&amp;gt;
+    &amp;lt;key&amp;gt;RunAtLoad&amp;lt;/key&amp;gt;
+    &amp;lt;false/&amp;gt;
+    &amp;lt;key&amp;gt;StartInterval&amp;lt;/key&amp;gt;
+    &amp;lt;integer&amp;gt;300&amp;lt;/integer&amp;gt;
+  &amp;lt;/dict&amp;gt;
+&amp;lt;/plist&amp;gt;
+EOF
+launchctl load /Library/LaunchDaemons/com.fireeagle.ping.plist&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+	&lt;h3&gt;You&amp;#8217;re Finished!&lt;/h3&gt;
+
+
+	&lt;p&gt;That should do it! Please let me know via twitter 
+(&lt;a href="http://twitter.com/jnewland"&gt;@jnewland&lt;/a&gt;) or in the comments if you have any problems / suggestions! Big thanks to &lt;a href="http://ericasadun.com/"&gt;Erica Sadun&lt;/a&gt; for writing the iPhone tools used to make this happen!&lt;/p&gt;</description>
+      <pubDate>Fri, 02 May 2008 17:36:00 -0400</pubDate>
+      <guid isPermaLink="false">urn:uuid:be03aedc-2a12-458f-9c58-6a9aa9f8185f</guid>
+      <author>jnewland@gmail.com (Jesse Newland)</author>
+      <link>http://soylentfoo.jnewland.com/articles/2008/05/02/automatic-fireeagle-updates-via-iphone-google-maps-locate-me</link>
+      <category>maps</category>
+      <category>geolocation</category>
+      <category>geo</category>
+      <category>iphone</category>
+      <category>fireeagle</category>
+    </item>
+    <item>
+      <title>Fire Eagle: Location-Aware Applications Without the Hassle</title>
+      <description>&lt;p&gt;&lt;a href="http://www.plasticbag.org/"&gt;Tom Coates&lt;/a&gt; said it best &lt;a href="http://next.yahoo.net/archives/100/lo-fire-eagle-take-flight"&gt;yesterday morning at ETech&lt;/a&gt;: people have been touting &amp;#8216;location-aware services&amp;#8217; as the next big thing for years. However, they&amp;#8217;ve never taken off.&lt;/p&gt;
+
+
+	&lt;p&gt;What&amp;#8217;s been holding them back: acquiring reliable location data about users is a hard problem for developers to solve.&lt;/p&gt;
+
+
+	&lt;p&gt;With yesterday&amp;#8217;s release of &lt;a href="http://fireagle.com/"&gt;Fire Eagle&lt;/a&gt;, that problem is now a whole lot easier to solve.&lt;/p&gt;
+
+
+	&lt;h3&gt;Ride the Fire Eagle Danger Day!&lt;/h3&gt;
+
+
+	&lt;p&gt;So what is Fire Eagle? It&amp;#8217;s not &lt;a href="http://www.techcrunch.com/2008/03/05/yahoos-twitter-for-location-goes-into-private-beta-with-near-zero-functionality/"&gt;Twitter for location&lt;/a&gt;, that&amp;#8217;s for damn sure. Here&amp;#8217;s how the Yahoo! copywriting wizards describe it:&lt;/p&gt;
+
+
+	&lt;blockquote&gt;
+		&lt;p&gt;The secure and stylish way to share your location with sites and services online while giving you unprecedented control over your data and privacy. We’re here to make the whole web respond to your location and help you to discover more about the world around you.&lt;/p&gt;
+	&lt;/blockquote&gt;
+
+
+	&lt;p&gt;&lt;img src="http://files.jnewland.com/fe-20080305-231647.png" style="float:left;margin:10px;" alt="" /&gt; At the diagram to the left shows, the Fire Eagle platform acts as an broker for your location data. One or many applications can set your location, and, provided you give them access, any other service can access this data.&lt;/p&gt;
+
+
+	&lt;p&gt;This is one giant piece in the puzzle for location-based services. Users set their location in one place, and any number of other services are able to then act on this data however they please.&lt;/p&gt;
+
+
+	&lt;p&gt;The other piece in the puzzle: a Fire Eagle updater that requires absolutely NO user interaction. If I&amp;#8217;m carrying around my iPhone in my pocket all day, why can&amp;#8217;t it tell Fire Eagle where I am?&lt;/p&gt;
+
+
+	&lt;p&gt;Of course, &lt;a href="http://ericasadun.com/"&gt;Erica Sadun&lt;/a&gt; has already whipped up an unofficial iPhone app to ping Fire Eagle called &lt;a href="http://ericasadun.com/?p=188"&gt;firefindme&lt;/a&gt;. Installation isn&amp;#8217;t the easiest thing in the world &amp;#8211; it assumes some launchd skillz to setup automatic updates. However, I&amp;#8217;m sure a user friendly iPhone updater is &lt;a href="http://developer.apple.com/"&gt;coming very shortly&lt;/a&gt; ;).&lt;/p&gt;
+
+
+	&lt;h3&gt;Developing Location-Aware Applications, Sites and Services with Fire Eagle&lt;/h3&gt;
+
+
+	&lt;p&gt;I&amp;#8217;ve got a full-on tutorial coming detailing how to make your Rails app talk to Fire Eagle, but in the meantime, check out my &lt;a href="http://fireeagle.rubyforge.org/"&gt;Fire Eagle Ruby Gem&lt;/a&gt;:&lt;/p&gt;
+
+
+	&lt;p&gt;&lt;code&gt;sudo gem install fireeagle&lt;/code&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;If Ruby&amp;#8217;s not your bag, don&amp;#8217;t worry &amp;#8211; there are libraries for working with Fire Eagle in &lt;a href="http://fireeagle.yahoo.net/developer/code/javascript"&gt;javascript&lt;/a&gt;, &lt;a href="http://fireeagle.yahoo.net/developer/code/php"&gt;php&lt;/a&gt;, &lt;a href="http://fireeagle.yahoo.net/developer/code/perl"&gt;perl&lt;/a&gt; and &lt;a href="http://fireeagle.yahoo.net/developer/code/python"&gt;python&lt;/a&gt;.&lt;/p&gt;
+
+
+	&lt;h3&gt;Proof-of-Concept Twitter Bot &lt;a name="instructions"&gt;&lt;/a&gt;&lt;a name="firebot"&gt;&lt;/a&gt;&lt;/h3&gt;
+
+
+	&lt;p&gt;Just like &lt;a href="http://soylentfoo.jnewland.com/articles/2007/06/24/fire-eagle-meet-danger-day"&gt;last time&lt;/a&gt;, I&amp;#8217;ve created a proof-of-concept twitter bot for testing out Fire Eagle: &lt;a href="http://twitter.com/firebot"&gt;firebot&lt;/a&gt;.&lt;/p&gt;
+
+
+	&lt;p&gt;First off: you need an invite to talk to Fire Eagle right now. Luckily, firebot is handing out a few. follow &lt;a href="http://twitter.com/firebot"&gt;firebot&lt;/a&gt; on Twitter, and then direct message it with &amp;#8216;invite&amp;#8217;&lt;/p&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;d firebot invite&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;p&gt;Once you have an invite, direct message firebot with &amp;#8216;auth&amp;#8217;:&lt;/p&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;d firebot auth&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;p&gt;firebot will then reply with a link. You&amp;#8217;ll need to visit that link, authenticate with your Yahoo! account, and then authorize firebot with Fire Eagle.&lt;/p&gt;
+
+
+	&lt;p&gt;Once that&amp;#8217;s done, you can update your location with a direct message to firebot like so:&lt;/p&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;d firebot u Atlanta, GA&lt;/li&gt;
+		&lt;li&gt;d firebot u Belize&lt;/li&gt;
+		&lt;li&gt;d firebot u 30022&lt;/li&gt;
+		&lt;li&gt;d firebot u 123 Anytown &lt;span class="caps"&gt;USA&lt;/span&gt;&lt;/li&gt;
+		&lt;li&gt;etc&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;p&gt;To look up the location of someone else using firebot:&lt;/p&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;d firebot q jnewland&lt;/li&gt;
+		&lt;li&gt;d firebot q cjmartin&lt;/li&gt;
+		&lt;li&gt;d firebot q plasticbagUK&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;h3&gt;Disclaimer &lt;a name="disclaimer"&gt;&lt;/a&gt;&lt;/h3&gt;
+
+
+	&lt;p&gt;By telling firebot your location, you agree to share your location information with all other users of firebot. All direct messages you send to firebot are stored permanently at Twitter. If at any point you&amp;#8217;d like all of your information deleted from firebot, please contact &lt;a href="http://twitter.com/jnewland"&gt;@jnewland&lt;/a&gt;.&lt;/p&gt;
+
+
+	&lt;h3&gt;What&amp;#8217;s next?&lt;/h3&gt;
+
+
+	&lt;p&gt;Get hackin&amp;#8217; on your awesome location-based web app! Extra bonus points if you use the &lt;a href="http://fireeagle.rubyforge.org/"&gt;Fire Eagle Rubygem&lt;/a&gt;. If you&amp;#8217;ve got a great idea for a Fire Eagle app and don&amp;#8217;t have an invite, just ask &lt;a href="http://twitter.com/firebot"&gt;firebot&lt;/a&gt; for one!&lt;/p&gt;
+
+
+	&lt;p&gt;&lt;strong&gt;PS&lt;/strong&gt;: If you hack up a Fire Eagle javascript sidebar widget that works on pages served as application/xml (preferably using the brilliant &lt;a href="http://www.mikeindustries.com/blog/archive/2007/06/widget-deployment-with-wedje"&gt;wedje&lt;/a&gt; technique) &lt;span class="caps"&gt;AND&lt;/span&gt; embraces the draft &lt;a href="http://microformats.org/wiki/geo"&gt;geo&lt;/a&gt; microformat, I&amp;#8217;ll buy you a pony. Seriously.&lt;/p&gt;</description>
+      <pubDate>Thu, 06 Mar 2008 13:37:00 -0500</pubDate>
+      <guid isPermaLink="false">urn:uuid:33b45850-d07f-409b-9182-41a1241f1802</guid>
+      <author>jnewland@gmail.com (Jesse Newland)</author>
+      <link>http://soylentfoo.jnewland.com/articles/2008/03/06/fire-eagle-location-aware-applications-without-the-hassle</link>
+      <category>yahoo</category>
+      <category>twitter</category>
+      <category>ruby</category>
+      <category>location</category>
+      <category>gps</category>
+      <category>geotagging</category>
+      <category>geocoding</category>
+      <category>fireeagle</category>
+      <category>dangerday</category>
+    </item>
+    <item>
+      <title>Spaces 'Application Assignments' and Applescript</title>
+      <description>&lt;div style="float:left;margin:10px;"&gt;
+&lt;script type="text/javascript"&gt;&lt;!--
+google_ad_client = "pub-5165033129816339";
+//250x250, created 11/22/07
+google_ad_slot = "4463239324";
+google_ad_width = 250;
+google_ad_height = 250;
+//--&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"&gt;
+&lt;/script&gt;
+&lt;/div&gt;
+
+
+	&lt;p&gt;Let&amp;#8217;s face it &amp;#8211; &lt;a href="http://www.apple.com/macosx/features/spaces.html"&gt;Spaces&lt;/a&gt;, &lt;a href="http://www.amazon.com/gp/redirect.html?ie=UTF8&amp;#38;location=http%3A%2F%2Fwww.amazon.com%2FApple-Mac-Version-10-5-Leopard%2Fdp%2FB000FK88JK&amp;#38;tag=jnewlandcom0a-20&amp;#38;linkCode=ur2&amp;#38;camp=1789&amp;#38;creative=9325"&gt;Leopard&amp;#8217;s&lt;/a&gt;&lt;img src="http://www.assoc-amazon.com/e/ir?t=jnewlandcom0a-20&amp;amp;l=ur2&amp;amp;o=1" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /&gt; new &lt;a href="http://en.wikipedia.org/wiki/Virtual_desktop"&gt;virtual desktop&lt;/a&gt; implementation, isn&amp;#8217;t as polished as many of us would like it to be. It has more than it&amp;#8217;s share of &lt;a href="http://twitter.com/jacksonfox/statuses/418554032"&gt;undocumented&lt;/a&gt; &lt;a href="http://twitter.com/dydimustk/statuses/368923792"&gt;features&lt;/a&gt;, &lt;a href="http://twitter.com/jnewland/statuses/393275612"&gt;bugs&lt;/a&gt;, and &lt;a href="http://www.pascal.com/diary/?p=183"&gt;annoyances&lt;/a&gt;.&lt;/p&gt;
+
+
+	&lt;p&gt;One of my personal gripes with spaces it&amp;#8217;s lack of keyboard shortcuts for managing what Spaces calls &amp;#8220;Application Assignments&amp;#8221;. I&amp;#8217;d like to be able to quickly assign an application to all Spaces with a quick keypress. Also &amp;#8211; I often find myself hunting through my Spaces for 3 or 4 Safari windows I&amp;#8217;ve left in various places &amp;#8211; it&amp;#8217;d be nice if there was an easy way to collect all windows of a given app on the current Space.&lt;/p&gt;
+
+
+	&lt;p&gt;So, this morning, I sat down and started hacking at some Applescripts to do just that. After wading through the &lt;a href="http://bbs.applescript.net/viewtopic.php?id=23070&amp;#38;action=new"&gt;bizarre way&lt;/a&gt; that Application Assignments are stored, I ended up with 4 Applescripts:&lt;/p&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;&lt;strong&gt;Assign to All Spaces&lt;/strong&gt; &amp;#8211; assigns the frontmost window to all spaces.&lt;/li&gt;
+		&lt;li&gt;&lt;strong&gt;Assign to Space X&lt;/strong&gt; &amp;#8211; opens an input dialog asking you which space to assign the frontmost window to.&lt;/li&gt;
+		&lt;li&gt;&lt;strong&gt;Collect on Current Space&lt;/strong&gt; &amp;#8211; brings all windows from the frontmost appliation to the current space.&lt;/li&gt;
+		&lt;li&gt;&lt;strong&gt;Remove Assignments&lt;/strong&gt; &amp;#8211; remove any appliaction assignments the frontmost window may have.&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;p&gt;Here&amp;#8217;s a zip file of all 4:&lt;/p&gt;
+
+
+	&lt;blockquote&gt;
+		&lt;p&gt;&lt;a href="http://files.jnewland.com/Spaces.zip"&gt;Spaces Applescripts&lt;/a&gt;&lt;/p&gt;
+	&lt;/blockquote&gt;
+
+
+	&lt;p&gt;These scripts are designed to be invoked via a keyboard shortcut via &lt;a href="http://blacktree.com/?quicksilver"&gt;Quicksilver&lt;/a&gt; or &lt;a href="http://www.red-sweater.com/fastscripts/"&gt;FastScripts&lt;/a&gt;.&lt;/p&gt;
+
+
+	&lt;p&gt;If you have any corrects / additions / suggestions as to how to improve these scripts, drop &amp;#8216;em in the comments!&lt;/p&gt;</description>
+      <pubDate>Thu, 22 Nov 2007 10:07:00 -0500</pubDate>
+      <guid isPermaLink="false">urn:uuid:175efee1-6831-4a07-b914-6aeb239598c9</guid>
+      <author>jnewland@gmail.com (Jesse Newland)</author>
+      <link>http://soylentfoo.jnewland.com/articles/2007/11/22/spaces-application-assignments-and-applescript</link>
+      <category>applescript</category>
+      <category>spaces</category>
+      <category>osx</category>
+      <category>leopard</category>
+      <category>apple</category>
+    </item>
+    <item>
+      <title>resource_this - DRY Rails Resource Controllers</title>
+      <description>&lt;div style="float:left;margin:10px;"&gt;
+&lt;script type="text/javascript"&gt;&lt;!--
+google_ad_client = "pub-5165033129816339";
+//250x250, created 11/22/07
+google_ad_slot = "4463239324";
+google_ad_width = 250;
+google_ad_height = 250;
+//--&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"&gt;
+&lt;/script&gt;
+&lt;/div&gt;
+
+
+	&lt;p&gt;I&amp;#8217;ve always been annoyed at the lack of maintainability that comes with using multiple resource controllers in my Rails apps. Each generated resource controller clocks in at 85 lines, and most of mine only differ from each other by a line or two &amp;#8211; an added &lt;code&gt;before_filter&lt;/code&gt; or a change in the url that the users is redirected to after the creation of a new Widget. Not very &lt;a href="http://en.wikipedia.org/wiki/Don%27t_repeat_yourself"&gt;&lt;span class="caps"&gt;DRY&lt;/span&gt;&lt;/a&gt;. When coming back to each one of these controllers to add or adjust features, it takes me entirely too much time to sift through the stock 85 lines and find my application-specific behavior.&lt;/p&gt;
+
+
+	&lt;h3&gt;Enter resource_this&lt;/h3&gt;
+
+
+&lt;div class="typocode"&gt;&lt;pre&gt;&lt;code class="typocode_default "&gt;git clone git://github.com/jnewland/resource_this.git&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+	&lt;p&gt;&lt;a href="http://github.com/jnewland/resource_this/tree/master"&gt;&lt;strong&gt;resource_this&lt;/strong&gt;&lt;/a&gt; aims to solve this maintainability problem by making your stock resource controllers look like this:&lt;/p&gt;
+
+
+&lt;div class="typocode"&gt;&lt;pre&gt;&lt;code class="typocode_ruby "&gt;  &lt;span class="keyword"&gt;class &lt;/span&gt;&lt;span class="class"&gt;PostsController&lt;/span&gt; &lt;span class="punct"&gt;&amp;lt;&lt;/span&gt; &lt;span class="constant"&gt;ActionController&lt;/span&gt;&lt;span class="punct"&gt;::&lt;/span&gt;&lt;span class="constant"&gt;Base&lt;/span&gt;
+   &lt;span class="ident"&gt;resource_this&lt;/span&gt;
+  &lt;span class="keyword"&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+	&lt;p&gt;Behind the scenes, this code is generated:&lt;/p&gt;
+
+
+&lt;div class="typocode"&gt;&lt;pre&gt;&lt;code class="typocode_ruby "&gt;  &lt;span class="keyword"&gt;class &lt;/span&gt;&lt;span class="class"&gt;PostsController&lt;/span&gt; &lt;span class="punct"&gt;&amp;lt;&lt;/span&gt; &lt;span class="constant"&gt;ActionController&lt;/span&gt;&lt;span class="punct"&gt;::&lt;/span&gt;&lt;span class="constant"&gt;Base&lt;/span&gt;
+    &lt;span class="ident"&gt;before_filter&lt;/span&gt; &lt;span class="symbol"&gt;:load_post&lt;/span&gt;&lt;span class="punct"&gt;,&lt;/span&gt; &lt;span class="symbol"&gt;:only&lt;/span&gt; &lt;span class="punct"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="punct"&gt;[&lt;/span&gt; &lt;span class="symbol"&gt;:show&lt;/span&gt;&lt;span class="punct"&gt;,&lt;/span&gt; &lt;span class="symbol"&gt;:edit&lt;/span&gt;&lt;span class="punct"&gt;,&lt;/span&gt; &lt;span class="symbol"&gt;:update&lt;/span&gt;&lt;span class="punct"&gt;,&lt;/span&gt; &lt;span class="symbol"&gt;:destroy&lt;/span&gt; &lt;span class="punct"&gt;]&lt;/span&gt;
+    &lt;span class="ident"&gt;before_filter&lt;/span&gt; &lt;span class="symbol"&gt;:load_posts&lt;/span&gt;&lt;span class="punct"&gt;,&lt;/span&gt; &lt;span class="symbol"&gt;:only&lt;/span&gt; &lt;span class="punct"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="punct"&gt;[&lt;/span&gt; &lt;span class="symbol"&gt;:index&lt;/span&gt; &lt;span class="punct"&gt;]&lt;/span&gt;
+    &lt;span class="ident"&gt;before_filter&lt;/span&gt; &lt;span class="symbol"&gt;:new_post&lt;/span&gt;&lt;span class="punct"&gt;,&lt;/span&gt; &lt;span class="symbol"&gt;:only&lt;/span&gt; &lt;span class="punct"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="punct"&gt;[&lt;/span&gt; &lt;span class="symbol"&gt;:new&lt;/span&gt; &lt;span class="punct"&gt;]&lt;/span&gt;
+    &lt;span class="ident"&gt;before_filter&lt;/span&gt; &lt;span class="symbol"&gt;:create_post&lt;/span&gt;&lt;span class="punct"&gt;,&lt;/span&gt; &lt;span class="symbol"&gt;:only&lt;/span&gt; &lt;span class="punct"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="punct"&gt;[&lt;/span&gt; &lt;span class="symbol"&gt;:create&lt;/span&gt; &lt;span class="punct"&gt;]&lt;/span&gt;
+    &lt;span class="ident"&gt;before_filter&lt;/span&gt; &lt;span class="symbol"&gt;:update_post&lt;/span&gt;&lt;span class="punct"&gt;,&lt;/span&gt; &lt;span class="symbol"&gt;:only&lt;/span&gt; &lt;span class="punct"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="punct"&gt;[&lt;/span&gt; &lt;span class="symbol"&gt;:update&lt;/span&gt; &lt;span class="punct"&gt;]&lt;/span&gt;
+    &lt;span class="ident"&gt;before_filter&lt;/span&gt; &lt;span class="symbol"&gt;:destroy_post&lt;/span&gt;&lt;span class="punct"&gt;,&lt;/span&gt; &lt;span class="symbol"&gt;:only&lt;/span&gt; &lt;span class="punct"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="punct"&gt;[&lt;/span&gt; &lt;span class="symbol"&gt;:destroy&lt;/span&gt; &lt;span class="punct"&gt;]&lt;/span&gt;
+
+  &lt;span class="ident"&gt;protected&lt;/span&gt;
+    &lt;span class="keyword"&gt;def &lt;/span&gt;&lt;span class="method"&gt;load_post&lt;/span&gt;
+      &lt;span class="attribute"&gt;@post&lt;/span&gt; &lt;span class="punct"&gt;=&lt;/span&gt; &lt;span class="constant"&gt;Post&lt;/span&gt;&lt;span class="punct"&gt;.&lt;/span&gt;&lt;span class="ident"&gt;find&lt;/span&gt;&lt;span class="punct"&gt;(&lt;/span&gt;&lt;span class="ident"&gt;params&lt;/span&gt;&lt;span class="punct"&gt;[&lt;/span&gt;&lt;span class="symbol"&gt;:id&lt;/span&gt;&lt;span class="punct"&gt;])&lt;/span&gt;
+    &lt;span class="keyword"&gt;end&lt;/span&gt;
+
+    &lt;span class="keyword"&gt;def &lt;/span&gt;&lt;span class="method"&gt;new_post&lt;/span&gt;
+      &lt;span class="attribute"&gt;@post&lt;/span&gt; &lt;span class="punct"&gt;=&lt;/span&gt; &lt;span class="constant"&gt;Post&lt;/span&gt;&lt;span class="punct"&gt;.&lt;/span&gt;&lt;span class="ident"&gt;new&lt;/span&gt;
+    &lt;span class="keyword"&gt;end&lt;/span&gt;
+
+    &lt;span class="keyword"&gt;def &lt;/span&gt;&lt;span class="method"&gt;create_post&lt;/span&gt;
+      &lt;span class="attribute"&gt;@post&lt;/span&gt; &lt;span class="punct"&gt;=&lt;/span&gt; &lt;span class="constant"&gt;Post&lt;/span&gt;&lt;span class="punct"&gt;.&lt;/span&gt;&lt;span class="ident"&gt;new&lt;/span&gt;&lt;span class="punct"&gt;(&lt;/span&gt;&lt;span class="ident"&gt;params&lt;/span&gt;&lt;span class="punct"&gt;[&lt;/span&gt;&lt;span class="symbol"&gt;:post&lt;/span&gt;&lt;span class="punct"&gt;])&lt;/span&gt;
+      &lt;span class="attribute"&gt;@created&lt;/span&gt; &lt;span class="punct"&gt;=&lt;/span&gt; &lt;span class="attribute"&gt;@post&lt;/span&gt;&lt;span class="punct"&gt;.&lt;/span&gt;&lt;span class="ident"&gt;save&lt;/span&gt;
+    &lt;span class="keyword"&gt;end&lt;/span&gt;
+
+    &lt;span class="keyword"&gt;def &lt;/span&gt;&lt;span class="method"&gt;update_post&lt;/span&gt;
+      &lt;span class="attribute"&gt;@updated&lt;/span&gt; &lt;span class="punct"&gt;=&lt;/span&gt; &lt;span class="attribute"&gt;@post&lt;/span&gt;&lt;span class="punct"&gt;.&lt;/span&gt;&lt;span class="ident"&gt;update_attributes&lt;/span&gt;&lt;span class="punct"&gt;(&lt;/span&gt;&lt;span class="ident"&gt;params&lt;/span&gt;&lt;span class="punct"&gt;[&lt;/span&gt;&lt;span class="symbol"&gt;:post&lt;/span&gt;&lt;span class="punct"&gt;])&lt;/span&gt;
+    &lt;span class="keyword"&gt;end&lt;/span&gt;
+
+    &lt;span class="keyword"&gt;def &lt;/span&gt;&lt;span class="method"&gt;destroy_post&lt;/span&gt;
+      &lt;span class="attribute"&gt;@post&lt;/span&gt; &lt;span class="punct"&gt;=&lt;/span&gt; &lt;span class="attribute"&gt;@post&lt;/span&gt;&lt;span class="punct"&gt;.&lt;/span&gt;&lt;span class="ident"&gt;destroy&lt;/span&gt;
+    &lt;span class="keyword"&gt;end&lt;/span&gt;
+
+    &lt;span class="keyword"&gt;def &lt;/span&gt;&lt;span class="method"&gt;load_posts&lt;/span&gt;
+      &lt;span class="attribute"&gt;@posts&lt;/span&gt; &lt;span class="punct"&gt;=&lt;/span&gt; &lt;span class="constant"&gt;Post&lt;/span&gt;&lt;span class="punct"&gt;.&lt;/span&gt;&lt;span class="ident"&gt;find&lt;/span&gt;&lt;span class="punct"&gt;(&lt;/span&gt;&lt;span class="symbol"&gt;:all&lt;/span&gt;&lt;span class="punct"&gt;)&lt;/span&gt;
+    &lt;span class="keyword"&gt;end&lt;/span&gt;
+
+  &lt;span class="ident"&gt;public&lt;/span&gt;
+    &lt;span class="keyword"&gt;def &lt;/span&gt;&lt;span class="method"&gt;index&lt;/span&gt;
+      &lt;span class="ident"&gt;respond_to&lt;/span&gt; &lt;span class="keyword"&gt;do&lt;/span&gt; &lt;span class="punct"&gt;|&lt;/span&gt;&lt;span class="ident"&gt;format&lt;/span&gt;&lt;span class="punct"&gt;|&lt;/span&gt;
+        &lt;span class="ident"&gt;format&lt;/span&gt;&lt;span class="punct"&gt;.&lt;/span&gt;&lt;span class="ident"&gt;html&lt;/span&gt;
+        &lt;span class="ident"&gt;format&lt;/span&gt;&lt;span class="punct"&gt;.&lt;/span&gt;&lt;span class="ident"&gt;xml&lt;/span&gt;  &lt;span class="punct"&gt;{&lt;/span&gt; &lt;span class="ident"&gt;render&lt;/span&gt; &lt;span class="symbol"&gt;:xml&lt;/span&gt; &lt;span class="punct"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="attribute"&gt;@posts&lt;/span&gt; &lt;span class="punct"&gt;}&lt;/span&gt;
+        &lt;span class="ident"&gt;format&lt;/span&gt;&lt;span class="punct"&gt;.&lt;/span&gt;&lt;span class="ident"&gt;js&lt;/span&gt;
+      &lt;span class="keyword"&gt;end&lt;/span&gt;
+    &lt;span class="keyword"&gt;end&lt;/span&gt;
+
+    &lt;span class="keyword"&gt;def &lt;/span&gt;&lt;span class="method"&gt;show&lt;/span&gt;          
+      &lt;span class="ident"&gt;respond_to&lt;/span&gt; &lt;span class="keyword"&gt;do&lt;/span&gt; &lt;span class="punct"&gt;|&lt;/span&gt;&lt;span class="ident"&gt;format&lt;/span&gt;&lt;span class="punct"&gt;|&lt;/span&gt;
+        &lt;span class="ident"&gt;format&lt;/span&gt;&lt;span class="punct"&gt;.&lt;/span&gt;&lt;span class="ident"&gt;html&lt;/span&gt;
+        &lt;span class="ident"&gt;format&lt;/span&gt;&lt;span class="punct"&gt;.&lt;/span&gt;&lt;span class="ident"&gt;xml&lt;/span&gt;  &lt;span class="punct"&gt;{&lt;/span&gt; &lt;span class="ident"&gt;render&lt;/span&gt; &lt;span class="symbol"&gt;:xml&lt;/span&gt; &lt;span class="punct"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="attribute"&gt;@post&lt;/span&gt; &lt;span class="punct"&gt;}&lt;/span&gt;
+        &lt;span class="ident"&gt;format&lt;/span&gt;&lt;span class="punct"&gt;.&lt;/span&gt;&lt;span class="ident"&gt;js&lt;/span&gt;
+      &lt;span class="keyword"&gt;end&lt;/span&gt;
+    &lt;span class="keyword"&gt;end&lt;/span&gt;
+
+    &lt;span class="keyword"&gt;def &lt;/span&gt;&lt;span class="method"&gt;new&lt;/span&gt;          
+      &lt;span class="ident"&gt;respond_to&lt;/span&gt; &lt;span class="keyword"&gt;do&lt;/span&gt; &lt;span class="punct"&gt;|&lt;/span&gt;&lt;span class="ident"&gt;format&lt;/span&gt;&lt;span class="punct"&gt;|&lt;/span&gt;
+        &lt;span class="ident"&gt;format&lt;/span&gt;&lt;span class="punct"&gt;.&lt;/span&gt;&lt;span class="ident"&gt;html&lt;/span&gt; &lt;span class="punct"&gt;{&lt;/span&gt; &lt;span class="ident"&gt;render&lt;/span&gt; &lt;span class="symbol"&gt;:action&lt;/span&gt; &lt;span class="punct"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="symbol"&gt;:edit&lt;/span&gt; &lt;span class="punct"&gt;}&lt;/span&gt;
+        &lt;span class="ident"&gt;format&lt;/span&gt;&lt;span class="punct"&gt;.&lt;/span&gt;&lt;span class="ident"&gt;xml&lt;/span&gt;  &lt;span class="punct"&gt;{&lt;/span&gt; &lt;span class="ident"&gt;render&lt;/span&gt; &lt;span class="symbol"&gt;:xml&lt;/span&gt; &lt;span class="punct"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="attribute"&gt;@post&lt;/span&gt; &lt;span class="punct"&gt;}&lt;/span&gt;
+        &lt;span class="ident"&gt;format&lt;/span&gt;&lt;span class="punct"&gt;.&lt;/span&gt;&lt;span class="ident"&gt;js&lt;/span&gt;
+      &lt;span class="keyword"&gt;end&lt;/span&gt;
+    &lt;span class="keyword"&gt;end&lt;/span&gt;
+
+    &lt;span class="keyword"&gt;def &lt;/span&gt;&lt;span class="method"&gt;create&lt;/span&gt;
+      &lt;span class="ident"&gt;respond_to&lt;/span&gt; &lt;span class="keyword"&gt;do&lt;/span&gt; &lt;span class="punct"&gt;|&lt;/span&gt;&lt;span class="ident"&gt;format&lt;/span&gt;&lt;span class="punct"&gt;|&lt;/span&gt;
+        &lt;span class="keyword"&gt;if&lt;/span&gt; &lt;span class="attribute"&gt;@created&lt;/span&gt;
+          &lt;span class="ident"&gt;flash&lt;/span&gt;&lt;span class="punct"&gt;[&lt;/span&gt;&lt;span class="symbol"&gt;:notice&lt;/span&gt;&lt;span class="punct"&gt;]&lt;/span&gt; &lt;span class="punct"&gt;=&lt;/span&gt; &lt;span class="punct"&gt;'&lt;/span&gt;&lt;span class="string"&gt;Post was successfully created.&lt;/span&gt;&lt;span class="punct"&gt;'&lt;/span&gt;
+          &lt;span class="ident"&gt;format&lt;/span&gt;&lt;span class="punct"&gt;.&lt;/span&gt;&lt;span class="ident"&gt;html&lt;/span&gt; &lt;span class="punct"&gt;{&lt;/span&gt; &lt;span class="ident"&gt;redirect_to&lt;/span&gt; &lt;span class="attribute"&gt;@post&lt;/span&gt; &lt;span class="punct"&gt;}&lt;/span&gt;
+          &lt;span class="ident"&gt;format&lt;/span&gt;&lt;span class="punct"&gt;.&lt;/span&gt;&lt;span class="ident"&gt;xml&lt;/span&gt;  &lt;span class="punct"&gt;{&lt;/span&gt; &lt;span class="ident"&gt;render&lt;/span&gt; &lt;span class="symbol"&gt;:xml&lt;/span&gt; &lt;span class="punct"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="attribute"&gt;@post&lt;/span&gt;&lt;span class="punct"&gt;,&lt;/span&gt; &lt;span class="symbol"&gt;:status&lt;/span&gt; &lt;span class="punct"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="symbol"&gt;:created&lt;/span&gt;&lt;span class="punct"&gt;,&lt;/span&gt; &lt;span class="symbol"&gt;:location&lt;/span&gt; &lt;span class="punct"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="attribute"&gt;@post&lt;/span&gt; &lt;span class="punct"&gt;}&lt;/span&gt;
+          &lt;span class="ident"&gt;format&lt;/span&gt;&lt;span class="punct"&gt;.&lt;/span&gt;&lt;span class="ident"&gt;js&lt;/span&gt;
+        &lt;span class="keyword"&gt;else&lt;/span&gt;
+          &lt;span class="ident"&gt;format&lt;/span&gt;&lt;span class="punct"&gt;.&lt;/span&gt;&lt;span class="ident"&gt;html&lt;/span&gt; &lt;span class="punct"&gt;{&lt;/span&gt; &lt;span class="ident"&gt;render&lt;/span&gt; &lt;span class="symbol"&gt;:action&lt;/span&gt; &lt;span class="punct"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="symbol"&gt;:new&lt;/span&gt; &lt;span class="punct"&gt;}&lt;/span&gt;
+          &lt;span class="ident"&gt;format&lt;/span&gt;&lt;span class="punct"&gt;.&lt;/span&gt;&lt;span class="ident"&gt;xml&lt;/span&gt;  &lt;span class="punct"&gt;{&lt;/span&gt; &lt;span class="ident"&gt;render&lt;/span&gt; &lt;span class="symbol"&gt;:xml&lt;/span&gt; &lt;span class="punct"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="attribute"&gt;@post&lt;/span&gt;&lt;span class="punct"&gt;.&lt;/span&gt;&lt;span class="ident"&gt;errors&lt;/span&gt;&lt;span class="punct"&gt;,&lt;/span&gt; &lt;span class="symbol"&gt;:status&lt;/span&gt; &lt;span class="punct"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="symbol"&gt;:unprocessable_entity&lt;/span&gt; &lt;span class="punct"&gt;}&lt;/span&gt;
+          &lt;span class="ident"&gt;format&lt;/span&gt;&lt;span class="punct"&gt;.&lt;/span&gt;&lt;span class="ident"&gt;js&lt;/span&gt;
+        &lt;span class="keyword"&gt;end&lt;/span&gt;
+      &lt;span class="keyword"&gt;end&lt;/span&gt;
+    &lt;span class="keyword"&gt;end&lt;/span&gt; 
+
+    &lt;span class="keyword"&gt;def &lt;/span&gt;&lt;span class="method"&gt;edit&lt;/span&gt;
+      &lt;span class="ident"&gt;respond_to&lt;/span&gt; &lt;span class="keyword"&gt;do&lt;/span&gt; &lt;span class="punct"&gt;|&lt;/span&gt;&lt;span class="ident"&gt;format&lt;/span&gt;&lt;span class="punct"&gt;|&lt;/span&gt;
+        &lt;span class="ident"&gt;format&lt;/span&gt;&lt;span class="punct"&gt;.&lt;/span&gt;&lt;span class="ident"&gt;html&lt;/span&gt;
+        &lt;span class="ident"&gt;format&lt;/span&gt;&lt;span class="punct"&gt;.&lt;/span&gt;&lt;span class="ident"&gt;js&lt;/span&gt;
+      &lt;span class="keyword"&gt;end&lt;/span&gt;
+    &lt;span class="keyword"&gt;end&lt;/span&gt;
+
+    &lt;span class="keyword"&gt;def &lt;/span&gt;&lt;span class="method"&gt;update&lt;/span&gt;
+      &lt;span class="ident"&gt;respond_to&lt;/span&gt; &lt;span class="keyword"&gt;do&lt;/span&gt; &lt;span class="punct"&gt;|&lt;/span&gt;&lt;span class="ident"&gt;format&lt;/span&gt;&lt;span class="punct"&gt;|&lt;/span&gt;
+        &lt;span class="keyword"&gt;if&lt;/span&gt; &lt;span class="attribute"&gt;@updated&lt;/span&gt;
+          &lt;span class="ident"&gt;flash&lt;/span&gt;&lt;span class="punct"&gt;[&lt;/span&gt;&lt;span class="symbol"&gt;:notice&lt;/span&gt;&lt;span class="punct"&gt;]&lt;/span&gt; &lt;span class="punct"&gt;=&lt;/span&gt; &lt;span class="punct"&gt;'&lt;/span&gt;&lt;span class="string"&gt;Post was successfully updated.&lt;/span&gt;&lt;span class="punct"&gt;'&lt;/span&gt;
+          &lt;span class="ident"&gt;format&lt;/span&gt;&lt;span class="punct"&gt;.&lt;/span&gt;&lt;span class="ident"&gt;html&lt;/span&gt; &lt;span class="punct"&gt;{&lt;/span&gt; &lt;span class="ident"&gt;redirect_to&lt;/span&gt; &lt;span class="attribute"&gt;@post&lt;/span&gt; &lt;span class="punct"&gt;}&lt;/span&gt;
+          &lt;span class="ident"&gt;format&lt;/span&gt;&lt;span class="punct"&gt;.&lt;/span&gt;&lt;span class="ident"&gt;xml&lt;/span&gt;  &lt;span class="punct"&gt;{&lt;/span&gt; &lt;span class="ident"&gt;head&lt;/span&gt; &lt;span class="symbol"&gt;:ok&lt;/span&gt; &lt;span class="punct"&gt;}&lt;/span&gt;
+          &lt;span class="ident"&gt;format&lt;/span&gt;&lt;span class="punct"&gt;.&lt;/span&gt;&lt;span class="ident"&gt;js&lt;/span&gt;
+        &lt;span class="keyword"&gt;else&lt;/span&gt;
+          &lt;span class="ident"&gt;format&lt;/span&gt;&lt;span class="punct"&gt;.&lt;/span&gt;&lt;span class="ident"&gt;html&lt;/span&gt; &lt;span class="punct"&gt;{&lt;/span&gt; &lt;span class="ident"&gt;render&lt;/span&gt; &lt;span class="symbol"&gt;:action&lt;/span&gt; &lt;span class="punct"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="symbol"&gt;:edit&lt;/span&gt; &lt;span class="punct"&gt;}&lt;/span&gt;
+          &lt;span class="ident"&gt;format&lt;/span&gt;&lt;span class="punct"&gt;.&lt;/span&gt;&lt;span class="ident"&gt;xml&lt;/span&gt;  &lt;span class="punct"&gt;{&lt;/span&gt; &lt;span class="ident"&gt;render&lt;/span&gt; &lt;span class="symbol"&gt;:xml&lt;/span&gt; &lt;span class="punct"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="attribute"&gt;@post&lt;/span&gt;&lt;span class="punct"&gt;.&lt;/span&gt;&lt;span class="ident"&gt;errors&lt;/span&gt;&lt;span class="punct"&gt;,&lt;/span&gt; &lt;span class="symbol"&gt;:status&lt;/span&gt; &lt;span class="punct"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="symbol"&gt;:unprocessable_entity&lt;/span&gt; &lt;span class="punct"&gt;}&lt;/span&gt;
+          &lt;span class="ident"&gt;format&lt;/span&gt;&lt;span class="punct"&gt;.&lt;/span&gt;&lt;span class="ident"&gt;js&lt;/span&gt;
+        &lt;span class="keyword"&gt;end&lt;/span&gt;
+      &lt;span class="keyword"&gt;end&lt;/span&gt;
+    &lt;span class="keyword"&gt;end&lt;/span&gt;
+
+    &lt;span class="keyword"&gt;def &lt;/span&gt;&lt;span class="method"&gt;destroy&lt;/span&gt;          
+      &lt;span class="ident"&gt;respond_to&lt;/span&gt; &lt;span class="keyword"&gt;do&lt;/span&gt; &lt;span class="punct"&gt;|&lt;/span&gt;&lt;span class="ident"&gt;format&lt;/span&gt;&lt;span class="punct"&gt;|&lt;/span&gt;
+        &lt;span class="ident"&gt;format&lt;/span&gt;&lt;span class="punct"&gt;.&lt;/span&gt;&lt;span class="ident"&gt;html&lt;/span&gt; &lt;span class="punct"&gt;{&lt;/span&gt; &lt;span class="ident"&gt;redirect_to&lt;/span&gt; &lt;span class="symbol"&gt;:action&lt;/span&gt; &lt;span class="punct"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="ident"&gt;posts_url&lt;/span&gt; &lt;span class="punct"&gt;}&lt;/span&gt;
+        &lt;span class="ident"&gt;format&lt;/span&gt;&lt;span class="punct"&gt;.&lt;/span&gt;&lt;span class="ident"&gt;xml&lt;/span&gt;  &lt;span class="punct"&gt;{&lt;/span&gt; &lt;span class="ident"&gt;head&lt;/span&gt; &lt;span class="symbol"&gt;:ok&lt;/span&gt; &lt;span class="punct"&gt;}&lt;/span&gt;
+        &lt;span class="ident"&gt;format&lt;/span&gt;&lt;span class="punct"&gt;.&lt;/span&gt;&lt;span class="ident"&gt;js&lt;/span&gt;
+      &lt;span class="keyword"&gt;end&lt;/span&gt;
+    &lt;span class="keyword"&gt;end&lt;/span&gt;
+  &lt;span class="keyword"&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+	&lt;p&gt;Nested resources like so:&lt;/p&gt;
+
+
+&lt;div class="typocode"&gt;&lt;pre&gt;&lt;code class="typocode_ruby "&gt;  &lt;span class="keyword"&gt;class &lt;/span&gt;&lt;span class="class"&gt;CommentsController&lt;/span&gt; &lt;span class="punct"&gt;&amp;lt;&lt;/span&gt; &lt;span class="constant"&gt;ActionController&lt;/span&gt;&lt;span class="punct"&gt;::&lt;/span&gt;&lt;span class="constant"&gt;Base&lt;/span&gt;
+    &lt;span class="ident"&gt;resource_this&lt;/span&gt; &lt;span class="symbol"&gt;:nested&lt;/span&gt; &lt;span class="punct"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="punct"&gt;[&lt;/span&gt;&lt;span class="symbol"&gt;:posts&lt;/span&gt;&lt;span class="punct"&gt;]&lt;/span&gt;
+  &lt;span class="keyword"&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+	&lt;p&gt;This generates a very similar controller to the one above with adjusted redirects and one additional before_filter / loader method pair to grab the parent resource. In this case:&lt;/p&gt;
+
+
+&lt;div class="typocode"&gt;&lt;pre&gt;&lt;code class="typocode_ruby "&gt;  &lt;span class="ident"&gt;before_filter&lt;/span&gt; &lt;span class="symbol"&gt;:load_post&lt;/span&gt;
+
+  &lt;span class="keyword"&gt;def &lt;/span&gt;&lt;span class="method"&gt;load_post&lt;/span&gt;
+    &lt;span class="attribute"&gt;@post&lt;/span&gt; &lt;span class="punct"&gt;=&lt;/span&gt; &lt;span class="constant"&gt;Post&lt;/span&gt;&lt;span class="punct"&gt;.&lt;/span&gt;&lt;span class="ident"&gt;find&lt;/span&gt;&lt;span class="punct"&gt;(&lt;/span&gt;&lt;span class="ident"&gt;params&lt;/span&gt;&lt;span class="punct"&gt;[&lt;/span&gt;&lt;span class="symbol"&gt;:post_id&lt;/span&gt;&lt;span class="punct"&gt;])&lt;/span&gt;
+  &lt;span class="keyword"&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+	&lt;p&gt;The separation of logic &amp;#8211; DB operations in before_filters, rendering in the standard resource controller methods &amp;#8211; makes this approach ridiculously easy to customize. Need to load an additional object for the &lt;code&gt;:show&lt;/code&gt; action? Slap another before_filter on it. Need to change the path that the &lt;code&gt;:update&lt;/code&gt; action redirects to? Override the &lt;code&gt;:update&lt;/code&gt; action with your new rendering behavior. And this customized behavior sticks out like a sore thumb &amp;#8211; making it infinitely easier to maintain.&lt;/p&gt;
+
+
+	&lt;p&gt;Oh, there&amp;#8217;s also a generator:&lt;/p&gt;
+
+
+&lt;div class="typocode"&gt;&lt;pre&gt;&lt;code class="typocode_default "&gt;./script/generate resource_this FooKlass [title:string body:text]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+	&lt;p&gt;This works just like the &lt;code&gt;resource&lt;/code&gt; generator, with the addition of the &lt;code&gt;resource_this&lt;/code&gt; line to your controller and a functional test. No views are generated, so the test focuses on the &lt;span class="caps"&gt;XML&lt;/span&gt; behavior of this controller.&lt;/p&gt;
+
+
+	&lt;h3&gt;Contributing&lt;/h3&gt;
+
+
+	&lt;p&gt;&lt;a href="http://github.com/jnewland/resource_this/tree/master"&gt;resource_this&lt;/a&gt; is hosted on &lt;a href="http://github.com"&gt;GitHub&lt;/a&gt;, so feel free to fork it and send a &lt;a href="http://github.com/guides/pull-requests"&gt;pull request&lt;/a&gt; with your changes.&lt;/p&gt;</description>
+      <pubDate>Mon, 17 Sep 2007 08:09:00 -0400</pubDate>
+      <guid isPermaLink="false">urn:uuid:5ed1b369-3fa1-4372-bdb8-cb3e51341bca</guid>
+      <author>jnewland@gmail.com (Jesse Newland)</author>
+      <link>http://soylentfoo.jnewland.com/articles/2007/09/17/resource_this-dry-rails-resource-controllers</link>
+      <category>resources</category>
+      <category>REST</category>
+      <category>resource_this</category>
+      <category>plugin</category>
+      <category>rubyonrails</category>
+      <category>ruby</category>
+      <category>rails</category>
+    </item>
+    <item>
+      <title>FeedBurner for the Paranoid</title>
+      <description>&lt;p&gt;After all of the &lt;a href="http://www.techmeme.com/070721/p21#a070721p21"&gt;hubub&lt;/a&gt; this weekend about how &lt;a href="http://www.feedburner.com/"&gt;FeedBurner&lt;/a&gt; is &lt;a href="http://www.scripting.com/stories/2007/07/21/whyFeedburnerIsTrouble.html"&gt;&amp;#8216;trouble&amp;#8217;&lt;/a&gt; and &lt;a href="http://scobleizer.com/2007/07/22/feedburner-bad-for-us"&gt;&amp;#8216;bad for us&amp;#8217;&lt;/a&gt;, I wanted to make a quick note of a couple of ways to serve your feeds through FeedBurner in a way that makes it possible to easily and seamlessly bring your feeds back under your control at any time.&lt;/p&gt;
+
+
+	&lt;ol&gt;
+	&lt;li&gt;Use FeedBurner&amp;#8217;s &lt;a href="http://www.feedburner.com/fb/a/publishers/mybrand;jsessionid=90DFA112C8BFE3762618061519CF877F.fb1"&gt;MyBrand&lt;/a&gt; service (which is now &lt;a href="http://blogs.feedburner.com/feedburner/archives/2007/07/freeburner_for_everyone.php"&gt;free&lt;/a&gt;) to serve your feeds using a domain you own. This lets you serve your feeds with a &lt;span class="caps"&gt;URI&lt;/span&gt; of http://feeds.mysillyblog.com/mysillyfeed or the like. In the event &lt;a href="http://www.centernetworks.com/google-prefers-google"&gt;Google &amp;#8216;preferring&amp;#8217; Google Reader for feeds burned by FeedBurner&lt;/a&gt; (something I&amp;#8217;m confident Google will never do), you&amp;#8217;d just point feeds.mysillyblog.com back to a server you control, and in the blink of a &lt;a href="http://en.wikipedia.org/wiki/Time_to_live"&gt;&lt;span class="caps"&gt;TTL&lt;/span&gt;&lt;/a&gt;, your feeds are yours again. For details on implementing MyBrand, check out Danny Sullivan&amp;#8217;s great guide: &lt;a href="http://searchengineland.com/070110-111256.php"&gt;Stay Master of Your Feed Domain&lt;/a&gt;.&lt;/li&gt;
+		&lt;li&gt;Advertise your feed at a &lt;span class="caps"&gt;URL&lt;/span&gt; on your blog (http://mysillyblog.com/index.xml), then redirect users to FeedBurner with a &lt;a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.3"&gt;302 Found&lt;/a&gt; redirect. Straight from the &lt;span class="caps"&gt;HTTP&lt;/span&gt; specifications, this tells your browser or &lt;span class="caps"&gt;RSS&lt;/span&gt; reader: &lt;blockquote&gt;Since the redirection might be altered on occasion, the client &lt;span class="caps"&gt;SHOULD&lt;/span&gt; continue to use the Request-URI for future requests.&lt;/blockquote&gt;
+Here&amp;#8217;s a nice guide detailing how to properly &lt;a href="http://www.456bereastreet.com/archive/200608/redirecting_feeds_to_feedburner/"&gt;redirect your feed to FeedBurner&lt;/a&gt; using a &lt;em&gt;302 Found&lt;/em&gt; response code. In this case, if Google / FeedBurner ever sins against you or your mother, your feeds can be instantly and seamlessly moved away from FeedBurner by removing this redirect.&lt;/li&gt;
+		&lt;li&gt;For the extra paranoid, combine methods 1 and 2!&lt;/li&gt;
+	&lt;/ol&gt;
+
+
+	&lt;p&gt;I&amp;#8217;m a huge fan of FeedBurner, and like &lt;a href="http://avc.blogs.com/a_vc/2007/07/feedburner-and-.html"&gt;Fred Wilson&lt;/a&gt;, don&amp;#8217;t share the concerns of Dave Winer about FeedBurner&amp;#8217;s future. At last count, I manage around 225 feeds in several FeedBurner accounts, and don&amp;#8217;t ever plan on going back. But, if the need arises, I take comfort in knowing &lt;a href="http://blogs.feedburner.com/feedburner/archives/2005/06/ciao_feedburner.php"&gt;how easy is is to leave&lt;/a&gt;. To quote &lt;a href="http://avc.blogs.com/a_vc/2007/07/feedburner-and-.html"&gt;Fred&amp;#8217;s post&lt;/a&gt;:&lt;/p&gt;
+
+
+	&lt;blockquote&gt;
+		&lt;p&gt;That gives me all the comfort in the world. I love it when services make it easy to leave. When they do that, I tend to stay.&lt;/p&gt;
+	&lt;/blockquote&gt;</description>
+      <pubDate>Sun, 22 Jul 2007 23:21:00 -0400</pubDate>
+      <guid isPermaLink="false">urn:uuid:e65f385a-2afa-4dfd-83eb-de136b47da1c</guid>
+      <author>jnewland@gmail.com (Jesse Newland)</author>
+      <link>http://soylentfoo.jnewland.com/articles/2007/07/22/feedburner-for-the-paranoid</link>
+      <category>web</category>
+      <category>xml</category>
+      <category>atom</category>
+      <category>rss</category>
+    </item>
+    <item>
+      <title>Fire Eagle, meet Danger Day</title>
+      <description>&lt;p&gt;&lt;a name="instructions"&gt;&lt;/a&gt; &lt;span style="color:red"&gt;&lt;strong&gt;&lt;span class="caps"&gt;UPDATE&lt;/span&gt;&lt;/strong&gt;: These instructions are out of date. See &lt;a href="http://soylentfoo.jnewland.com/articles/2008/03/06/fire-eagle-location-aware-applications-without-the-hassle"&gt;here&lt;/a&gt; for instructions that work with the new &lt;a href="http://fireeagle.com"&gt;Fire Eagle&lt;/a&gt;!&lt;/span&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;A couple days ago, a &lt;a href="http://cjmart.in/"&gt;friend of mine&lt;/a&gt; sent me an invite for &lt;a href="http://fireeagle.research.yahoo.com/"&gt;Fire Eagle&lt;/a&gt;, &lt;a href="http://yahooresearchberkeley.com/"&gt;Yahoo! Research Berkley&amp;#8217;s&lt;/a&gt; nifty closed-Alpha location storage and query engine, and I&amp;#8217;ve been hooked ever since. For the rest of you without access, here&amp;#8217;s a brief overview of what FireEagle does, straight from the &lt;a href="http://fireeagle.research.yahoo.com/faq.php"&gt;&lt;span class="caps"&gt;FAQ&lt;/span&gt;&lt;/a&gt; page:&lt;/p&gt;
+
+
+	&lt;blockquote&gt;
+		&lt;p&gt;Fire Eagle is a site that keeps track of your current location and helps you share it with other sites and services safely. There are hundreds of potential applications.&lt;/p&gt;
+	&lt;/blockquote&gt;
+
+
+	&lt;blockquote&gt;
+		&lt;p&gt;Fire Eagle allows you to share your locations with other sites and services safely, through a secure server &amp;#8211; you are always in control. You can decide to share your location with any application that can use it, and even choose how much detail to give that application (exact point, neighborhood, city, state, country).&lt;/p&gt;
+	&lt;/blockquote&gt;
+
+
+	&lt;p&gt;So, I whipped up a &lt;a href="http://fireeagle.rubyforge.org/"&gt;quick Fire Eagle Rubygem&lt;/a&gt; to make it easier to deal with Fire Eagle&amp;#8217;s &lt;span class="caps"&gt;API&lt;/span&gt;. The next logical step? A &lt;a href="http://twitter.com/dangerday"&gt;twitter bot&lt;/a&gt;.&lt;/p&gt;
+
+
+	&lt;h3&gt;Fire Eagle, meet Danger Day&lt;/h3&gt;
+
+
+	&lt;p&gt;If you&amp;#8217;re lucky enough to have an invite to Fire Eagle, here&amp;#8217;s how you can use it on Twitter:&lt;/p&gt;
+
+
+	&lt;ol&gt;
+	&lt;li&gt;Follow &lt;a href="http://twitter.com/dangerday"&gt;Danger Day&lt;/a&gt; on Twitter&lt;/li&gt;
+		&lt;li&gt;Sign in to &lt;a href="http://fireeagle.research.yahoo.com/"&gt;Fire Eagle&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="http://fireeagle.research.yahoo.com/authorize.php?appid=FpXV3T9XL3K1orRwoTZ6DKkC7w4-&amp;#38;callback=http://twitter.com/dangerday/statuses/116323112"&gt;Authorize Danger Day with your FireEagle account&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;Get a &lt;a href="http://fireeagle.research.yahoo.com/displayToken.php?appid=FpXV3T9XL3K1orRwoTZ6DKkC7w4- "&gt;mobile token&lt;/a&gt; to confirm your authentication with Danger Day&lt;/li&gt;
+		&lt;li&gt;Send a direct message to Danger Day with your token.&lt;/li&gt;
+	&lt;/ol&gt;
+
+
+	&lt;p&gt;Once that&amp;#8217;s done, you can update your location with a direct message to Danger Day like so:&lt;/p&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;u Atlanta, GA&lt;/li&gt;
+		&lt;li&gt;u Belize&lt;/li&gt;
+		&lt;li&gt;u 30022&lt;/li&gt;
+		&lt;li&gt;u 123 Anytown &lt;span class="caps"&gt;USA&lt;/span&gt;&lt;/li&gt;
+		&lt;li&gt;etc&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;p&gt;If you&amp;#8217;d like to do this via your mobile phone, make sure your mobile is &lt;a href="http://twitter.com/devices"&gt;setup with Twitter&lt;/a&gt;, then send the following text massage to &lt;strong&gt;40404&lt;/strong&gt;, Twitter&amp;#8217;s short code:&lt;/p&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;d dangerday u Atlanta, GA&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;p&gt;To look up the location of someone else using Danger Day:&lt;/p&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;q jnewland&lt;/li&gt;
+		&lt;li&gt;q cjmartin&lt;/li&gt;
+		&lt;li&gt;q plasticbagUK&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;p&gt;or from your mobile:&lt;/p&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;d dangerday q jnewland&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;h3&gt;What&amp;#8217;s next?&lt;/h3&gt;
+
+
+	&lt;p&gt;I&amp;#8217;m getting married in a week, so I leave the creation of cooler Fire Eagle apps as an exercise to the reader. Extra bonus points if you use the &lt;a href="http://fireeagle.rubyforge.org/"&gt;Fire Eagle Rubygem&lt;/a&gt;. If you&amp;#8217;ve got a great idea for a Fire Eagle app and don&amp;#8217;t have an invite, get in touch with me &amp;#8211; I might be able to make that happen.&lt;/p&gt;
+
+
+	&lt;p&gt;&lt;strong&gt;PS&lt;/strong&gt;: If you hack up a Fire Eagle javascript sidebar widget that works on pages served as application/xml (preferably using the brilliant &lt;a href="http://www.mikeindustries.com/blog/archive/2007/06/widget-deployment-with-wedje"&gt;wedje&lt;/a&gt; technique) &lt;span class="caps"&gt;AND&lt;/span&gt; embraces the draft &lt;a href="http://microformats.org/wiki/geo"&gt;geo&lt;/a&gt; microformat, I&amp;#8217;ll buy you a pony. Seriously. Here&amp;#8217;s my location in &lt;a href="http://fireeagle.research.yahoo.com/api/queryLoc.php?public=pmCqoI4HI3pIks9n80EN0uXo2GE- "&gt;&lt;span class="caps"&gt;XML&lt;/span&gt;&lt;/a&gt; &amp;#8211; go to town.&lt;/p&gt;</description>
+      <pubDate>Sun, 24 Jun 2007 12:20:00 -0400</pubDate>
+      <guid isPermaLink="false">urn:uuid:ad9acd38-7b75-4d8e-b3ef-d4dc86929ce1</guid>
+      <author>jnewland@gmail.com (Jesse Newland)</author>
+      <link>http://soylentfoo.jnewland.com/articles/2007/06/24/fire-eagle-meet-danger-day</link>
+      <category>ruby</category>
+      <category>yahoo</category>
+      <category>gps</category>
+      <category>location</category>
+      <category>geotagging</category>
+      <category>geocoding</category>
+      <category>twitter</category>
+      <category>dangerday</category>
+      <category>fireeagle</category>
+    </item>
+    <item>
+      <title>RailsConf '07 Roundup</title>
+      <description>&lt;p&gt;&lt;a style="float:left;margin:0 10px 5px 0"href="http://flickr.com/photos/x180/503535890/" title="David Heinemeier Hansson"&gt;&lt;img src="http://farm1.static.flickr.com/191/503535890_b929f73b2e_m.jpg" /&gt;&lt;/a&gt;
+&lt;p style="float:left;clear:left;margin:0 10px 5px 0;width:160px;"&gt;&lt;em&gt;David Heinemeier Hansson&lt;/em&gt;, by &lt;a href="http://flickr.com/photos/x180/"&gt;James Duncan Davidson&lt;/a&gt;. &lt;a href="http://creativecommons.org/licenses/by-nc-nd/2.0/" rel="license"&gt;Creative Commons BY-NC-ND&lt;/a&gt;&lt;/p&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;I spent the past several days in Portland, OR, for &lt;a href="http://conferences.oreillynet.com/rails/"&gt;RailsConf&lt;/a&gt;, the yearly gathering of the vibrant &lt;a href="http://www.rubyonrails.org/"&gt;Ruby on Rails&lt;/a&gt; community. &lt;a href="http://www.oreilly.com/"&gt;O&amp;#8217;Reilly Media&lt;/a&gt; and &lt;a href="http://www.rubycentral.com/"&gt;Ruby Central&lt;/a&gt; put on an incredible conference. My only disappointment was that I couldn&amp;#8217;t attend &lt;em&gt;all&lt;/em&gt; of the presentations. Luckily, most of the presentation slides are online (some with accompanying code!!):&lt;/p&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;&lt;a href="http://conferences.oreillynet.com/pub/w/51/presentations.html"&gt;RailsConf 2007 Presentations &amp;#8211; Official O&amp;#8217;Reilly Page&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="http://wiki.oreillynet.com/wiki/railsconf2007/index.cgi?PresentationSlides"&gt;RailsConf 2007 Presentations RailsConf Wiki&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;p&gt;But by far, the most valuable part of the whole event was the time I spent in the hallways and around Portland with other Rails developers. In the two years I&amp;#8217;ve been working with Rails, I&amp;#8217;ve networked and collaborated with dozens if not hundreds of Rails developers online. It was great to finally be able to associate faces and voices with their respective names, blogs, and chat handles.&lt;/p&gt;
+
+
+	&lt;p&gt;I also wrangled &lt;a href="http://www.metaatem.net"&gt;Erik Kastner&lt;/a&gt; and &lt;a href="http://www.seebq.com/"&gt;Charles Brian Quinn&lt;/a&gt; into the &lt;a href="http://capazon.rubyforge.org/"&gt;Capazon&lt;/a&gt; project while in Portland &amp;#8211; look for some updates on that front in the near future.&lt;/p&gt;
+
+
+	&lt;p&gt;A special thanks to the following folks for making my RailsConf an especially great time:&lt;/p&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;&lt;a href="http://slash7.com/"&gt;Amy Hoy&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="http://www.seebq.com/"&gt;Charles Brian Quinn&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="http://www.metaatem.net"&gt;Erik Kastner&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="http://jerryr.com/"&gt;Jerry Richardson&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="http://addictedtonew.com/"&gt;John Nunemaker&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="http://operation0.org/"&gt;Manfred Stienstra&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="http://www.drnicwilliams.com/"&gt;Nic Williams&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="http://blog.richcollins.net/"&gt;Rich Collins&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;</description>
+      <pubDate>Tue, 22 May 2007 09:17:00 -0400</pubDate>
+      <guid isPermaLink="false">urn:uuid:38b292b5-198f-4a47-b5e9-d6e4f7a0ccca</guid>
+      <author>jnewland@gmail.com (Jesse Newland)</author>
+      <link>http://soylentfoo.jnewland.com/articles/2007/05/22/railsconf-07-roundup</link>
+      <category>caboose</category>
+      <category>oregon</category>
+      <category>portland</category>
+      <category>ruby</category>
+      <category>railscon07</category>
+      <category>railsconf</category>
+      <category>rails</category>
+    </item>
+    <item>
+      <title>Joyent Slingshot Demo Notes</title>
+      <description>&lt;p&gt;&lt;a href="http://www.ericwagoner.com/weblog/"&gt;Eric Wagoner&lt;/a&gt; gave a demo of the &lt;a href="http://joyent.com/newly"&gt;Joyent&amp;#8217;s&lt;/a&gt; newly released offline Rails application toolkit, &lt;a href="http://developers.joyent.com/"&gt;Slinghot&lt;/a&gt;. He&amp;#8217;s had access to Slingshot for a couple weeks ahead of the public release, and shared his early impressions with us tonight. These are rough notes from his presentation.&lt;/p&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;A local Slingshot app is distributed as a &lt;span class="caps"&gt;DMG&lt;/span&gt; on &lt;span class="caps"&gt;OS X&lt;/span&gt;, which is a full-stack Ruby VM plus your Rails apps. Lots of files. I mean, lots.: &lt;code&gt;$ find Radiant.app | wc -l -&amp;gt; 8087&lt;/code&gt;&lt;/li&gt;
+		&lt;li&gt;Server side, Slingshot uses a plugin that generates a &amp;#8216;sync&amp;#8217; controller. This controller has several actions:
+	&lt;ul&gt;
+	&lt;li&gt;sync.up&lt;/li&gt;
+		&lt;li&gt;sync.down&lt;/li&gt;
+		&lt;li&gt;sync.log&lt;/li&gt;
+	&lt;/ul&gt;
+	&lt;/li&gt;
+		&lt;li&gt;These toss &lt;span class="caps"&gt;XML&lt;/span&gt; back and forth between the server and client app, containing the changed Models and some metadata.&lt;/li&gt;
+		&lt;li&gt;&lt;strong&gt;Synchronization conflicts are handled in your application&amp;#8217;s domain.&lt;/strong&gt; This is important to note &amp;#8211; Slingshot is not a silver bullet for the age old offline/online synchronization problem. However, it lets you solve this problem however your application needs.&lt;/li&gt;
+	&lt;/ul&gt;</description>
+      <pubDate>Tue, 01 May 2007 23:59:00 -0400</pubDate>
+      <guid isPermaLink="false">urn:uuid:1507856a-1514-4959-b03e-c16f19d48acd</guid>
+      <author>jnewland@gmail.com (Jesse Newland)</author>
+      <link>http://soylentfoo.jnewland.com/articles/2007/05/01/joyent-slingshot-demo-notes</link>
+      <category>joyent</category>
+      <category>slingshot</category>
+      <category>atlrug</category>
+      <category>ruby</category>
+      <category>rails</category>
+      <category>rubyonrails</category>
+    </item>
+    <item>
+      <title>MyConfPlan Javascript Widget</title>
+      <description>&lt;p&gt;I&amp;#8217;ve hacked up a simple Javascript widget for everyone out there using &lt;a href="http://myconfplan.com"&gt;myconfplan&lt;/a&gt;, &lt;a href="http://drnicwilliams.com/"&gt;Dr Nic Williams&amp;#8217;&lt;/a&gt; wonderful conference session planning tool. Nic &lt;a href="http://blog.myconfplan.com/2007/04/30/xml-and-json-exports-of-session-plans/"&gt;recently added &lt;span class="caps"&gt;JSON&lt;/span&gt; and &lt;span class="caps"&gt;XML&lt;/span&gt; feeds&lt;/a&gt; to myconfplan, so this is a natural progression.&lt;/p&gt;
+
+
+	&lt;p&gt;The &lt;span class="caps"&gt;XHTML&lt;/span&gt; generated by this widget is in  &lt;a href="http://microformats.org/wiki/hcalendar"&gt;hCalendar&lt;/a&gt; format, with separate events for each session. If you&amp;#8217;re using a &lt;a href="http://microformats.org/"&gt;Microformats&lt;/a&gt; aware browser (or the wonderful &lt;a href="javascript:if%20(!document.getElementById('MF_jq'))%20{var%20q=document.createElement('script');q.setAttribute('id',%20'MF_jq');q.setAttribute('src',%20'http://leftlogic.com/js/jquery.js');document.getElementsByTagName('body')[0].appendChild(q);}%20var%20s=document.createElement('script');s.setAttribute('id','MF_loader');%20s.setAttribute('src',%20'http://leftlogic.com/js/microformats.js');document.getElementsByTagName('head')[0].appendChild(s);void(s);"&gt;microformats bookmarklet&lt;/a&gt;), you&amp;#8217;ll be able to add my RailsConf sessions to your local calendaring app.&lt;/p&gt;
+
+
+	&lt;p&gt;To display your conference session selections on your blog or website, insert these two lines of code:&lt;/p&gt;
+
+
+&lt;div class="typocode"&gt;&lt;pre&gt;&lt;code class="typocode_xml "&gt;&lt;span class="punct"&gt;&amp;lt;&lt;/span&gt;&lt;span class="tag"&gt;script&lt;/span&gt; &lt;span class="attribute"&gt;src&lt;/span&gt;&lt;span class="punct"&gt;=&amp;quot;&lt;/span&gt;&lt;span class="string"&gt;http://files.jnewland.com/display_myconfplan.js&lt;/span&gt;&lt;span class="punct"&gt;&amp;quot;&lt;/span&gt; &lt;span class="attribute"&gt;type&lt;/span&gt;&lt;span class="punct"&gt;=&amp;quot;&lt;/span&gt;&lt;span class="string"&gt;text/javascript&lt;/span&gt;&lt;span class="punct"&gt;&amp;quot;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="tag"&gt;script&lt;/span&gt;&lt;span class="punct"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="punct"&gt;&amp;lt;&lt;/span&gt;&lt;span class="tag"&gt;script&lt;/span&gt; &lt;span class="attribute"&gt;src&lt;/span&gt;&lt;span class="punct"&gt;=&amp;quot;&lt;/span&gt;&lt;span class="string"&gt;JSON_URL?callback=display_myconfplan&lt;/span&gt;&lt;span class="punct"&gt;&amp;quot;&lt;/span&gt; &lt;span class="attribute"&gt;type&lt;/span&gt;&lt;span class="punct"&gt;=&amp;quot;&lt;/span&gt;&lt;span class="string"&gt;text/javascript&lt;/span&gt;&lt;span class="punct"&gt;&amp;quot;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="tag"&gt;script&lt;/span&gt;&lt;span class="punct"&gt;&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+	&lt;p&gt;Replace &lt;code&gt;JSON_URL&lt;/code&gt; with the &lt;span class="caps"&gt;URL&lt;/span&gt; to the &lt;span class="caps"&gt;JSON&lt;/span&gt; feed for one of your conferences. For example, to display my &lt;a href="http://conferences.oreillynet.com/rails/"&gt;RailsConf 2007&lt;/a&gt; sessions in my sidebar, I used this:&lt;/p&gt;
+
+
+&lt;div class="typocode"&gt;&lt;pre&gt;&lt;code class="typocode_xml "&gt;&lt;span class="punct"&gt;&amp;lt;&lt;/span&gt;&lt;span class="tag"&gt;script&lt;/span&gt; &lt;span class="attribute"&gt;src&lt;/span&gt;&lt;span class="punct"&gt;=&amp;quot;&lt;/span&gt;&lt;span class="string"&gt;http://files.jnewland.com/display_myconfplan.js&lt;/span&gt;&lt;span class="punct"&gt;&amp;quot;&lt;/span&gt; &lt;span class="attribute"&gt;type&lt;/span&gt;&lt;span class="punct"&gt;=&amp;quot;&lt;/span&gt;&lt;span class="string"&gt;text/javascript&lt;/span&gt;&lt;span class="punct"&gt;&amp;quot;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="tag"&gt;script&lt;/span&gt;&lt;span class="punct"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="punct"&gt;&amp;lt;&lt;/span&gt;&lt;span class="tag"&gt;script&lt;/span&gt; &lt;span class="attribute"&gt;src&lt;/span&gt;&lt;span class="punct"&gt;=&amp;quot;&lt;/span&gt;&lt;span class="string"&gt;http://myconfplan.com/users/jnewland/conferences/RailsConf2007.js?callback=display_myconfplan&lt;/span&gt;&lt;span class="punct"&gt;&amp;quot;&lt;/span&gt; &lt;span class="attribute"&gt;type&lt;/span&gt;&lt;span class="punct"&gt;=&amp;quot;&lt;/span&gt;&lt;span class="string"&gt;text/javascript&lt;/span&gt;&lt;span class="punct"&gt;&amp;quot;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="tag"&gt;script&lt;/span&gt;&lt;span class="punct"&gt;&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+	&lt;p&gt;Now seems like a good time to mention that I&amp;#8217;ll be at &lt;a href="http://conferences.oreillynet.com/rails/"&gt;RailsConf 2007&lt;/a&gt; later this month in Portland, OR, and I couldn&amp;#8217;t be more excited about it. You can view my session selections in the sidebar, on on &lt;a href="http://myconfplan.com/conferences/RailsConf2007/users/jnewland"&gt;myconfplan&lt;/a&gt;. Also, I&amp;#8217;m staying at the &lt;a href="http://www.jupiterhotel.com/"&gt;Jupiter Hotel&lt;/a&gt;, which looks like a blast. Let me know if you&amp;#8217;ll be there too!&lt;/p&gt;</description>
+      <pubDate>Tue, 01 May 2007 20:56:00 -0400</pubDate>
+      <guid isPermaLink="false">urn:uuid:5ad2b7a2-aac0-414f-9b57-4de5e2ce418a</guid>
+      <author>jnewland@gmail.com (Jesse Newland)</author>
+      <link>http://soylentfoo.jnewland.com/articles/2007/05/01/myconfplan-javascript-widget</link>
+      <category>railsconf2007</category>
+      <category>railsconf</category>
+      <category>json</category>
+      <category>javascript</category>
+      <category>myconfplan</category>
+      <category>rubyonrails</category>
+      <category>ruby</category>
+      <category>rails</category>
+      <category>microformats</category>
+      <category>hcalendar</category>
+    </item>
+  </channel>
+</rss>

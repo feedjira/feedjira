@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xml:lang="en-US" xmlns="http://www.w3.org/2005/Atom">
+  <title>Joe Martinez - Home</title>
+  <id>tag:www.jrmiii.com,2009:mephisto/</id>
+  <generator uri="http://mephistoblog.com" version="0.8.0">Mephisto Drax</generator>
+  <link href="http://www.jrmiii.com/feed/atom.xml" rel="self" type="application/atom+xml"/>
+  <link href="http://www.jrmiii.com/" rel="alternate" type="text/html"/>
+  <updated>2008-06-03T18:09:49Z</updated>
+  <entry xml:base="http://www.jrmiii.com/">
+    <author>
+      <name>joe</name>
+    </author>
+    <id>tag:www.jrmiii.com,2008-06-03:52</id>
+    <published>2008-06-03T18:03:00Z</published>
+    <updated>2008-06-03T18:09:49Z</updated>
+    <category term="Work"/>
+    <category term="rails db time_zones"/>
+    <link href="http://www.jrmiii.com/2008/6/3/quick-migration-to-set-user-time-zones-for-rails-2-1" rel="alternate" type="text/html"/>
+    <title>Quick Migration To Set User Time Zones for Rails 2.1</title>
+<content type="html">
+            &lt;p&gt;The following migration will allow you to quickly migrate standard US state codes to the proper time zone. 
+Notes:
+- This migration uses the time zone with the largest population in each state that spans multiple zones.
+- It also sets Eastern time as the default if a state code wasn&#8217;t matched.
+- It assumes a users table with a state column.&lt;/p&gt;
+
+
+	&lt;p&gt;Instructions: Just copy and paste this into a new migration named SetDefaultUserTimeZone.&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code&gt;
+class User &amp;lt; ActiveRecord::Base; end
+class SetDefaultUserTimeZone &amp;lt; ActiveRecord::Migration
+  def self.up
+    zones = {
+      &quot;Hawaii&quot;                     =&amp;gt; %w(HI),
+      &quot;Alaska&quot;                     =&amp;gt; %w(AK),
+      &quot;Pacific Time (US &#38; Canada)&quot; =&amp;gt; %w(WA OR NV CA),
+      &quot;Arizona&quot;                   =&amp;gt; %w(AZ),
+      &quot;Mountain Time (US &#38; Canada)&quot; =&amp;gt; %w(NM WY UT CO MT ID),
+      &quot;Central Time (US &#38; Canada)&quot;  =&amp;gt; %w(AL AR IL IN IA KS LA MN MS MO ND NE OK SD TN TX WI),
+      &quot;Eastern Time (US &#38; Canada)&quot; =&amp;gt; %w(CT DE DC GA FL KY ME MI MD MA NH NJ NY NC OH PA RI SC VT VA WV)
+    }
+    zones.each do |zone, states|
+      User.update_all &quot;time_zone = '#{zone}'&quot;, (&quot;state IN (%s)&quot; % states.join(',').gsub(/([A-Z]{2})/, %q('\1')))
+    end
+    User.update_all &quot;time_zone = 'Eastern Time (US &#38; Canada)'&quot;, &quot;time_zone IS NULL&quot; 
+  end
+
+  def self.down
+  end
+end
+&lt;/code&gt;&lt;/pre&gt;
+          </content>  </entry>
+  <entry xml:base="http://www.jrmiii.com/">
+    <author>
+      <name>joe</name>
+    </author>
+    <id>tag:www.jrmiii.com,2008-04-07:41</id>
+    <published>2008-04-07T15:41:00Z</published>
+    <updated>2008-06-03T20:32:34Z</updated>
+    <category term="rails textmate plugin"/>
+    <link href="http://www.jrmiii.com/2008/4/7/textmate-footnotes-plugin-fixed" rel="alternate" type="text/html"/>
+    <title>TextMate Footnotes Plugin Fixed!</title>
+<content type="html">
+            &lt;p&gt;&lt;strong&gt;&lt;span class=&quot;caps&quot;&gt;UPDATE&lt;/span&gt;&lt;/strong&gt;: this will not work in Rails 2.1&lt;/p&gt;
+
+
+	&lt;p&gt;I updated the TextMate Footnotes Plugin to work with Rails 2.0.2.&lt;/p&gt;
+
+
+	&lt;p&gt;What I did not do is make it backwards compatible &#8211; but just install the old version if you&#8217;re on an older version of rails.&lt;/p&gt;
+
+
+	&lt;p&gt;Get the updated version at GitHub &lt;a href=&quot;http://github.com/capitalist/textmate-footnotes/tree/master&quot;&gt;here!&lt;/a&gt;&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://www.jrmiii.com/">
+    <author>
+      <name>joe</name>
+    </author>
+    <id>tag:www.jrmiii.com,2007-12-13:40</id>
+    <published>2007-12-13T21:18:00Z</published>
+    <updated>2007-12-13T21:26:59Z</updated>
+    <category term="ruby rails 2.0"/>
+    <link href="http://www.jrmiii.com/2007/12/13/making-the-move-to-rails-2-the-easy-way" rel="alternate" type="text/html"/>
+    <title>Making the Move to Rails 2: The easy way</title>
+<content type="html">
+            &lt;p&gt;If you&#8217;re upgrading an app to Rails 2 &#8211; I&#8217;d highly recommend &lt;a href=&quot;http://ryandaigle.com/&quot;&gt;Ryan Daigle&#8217;s&lt;/a&gt; book on the new features, available from &lt;a href=&quot;http://peepcode.com/products/rails2-pdf&quot;&gt;PeepCode&lt;/a&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;Once you&#8217;ve reviewed what&#8217;s new. Here are a couple of scripts to get you started:&lt;/p&gt;
+
+
+	&lt;p&gt;The first, r2check is courtesy of Mislav Marohni?. It checks for non-compliant code and can be run from pastie:&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code&gt;
+wget http://pastie.caboo.se/99900.txt?key=krcevozww61drdeza13e3a -q -O- | ruby -
+or
+curl http://pastie.caboo.se/99900.txt?key=krcevozww61drdeza13e3a -s | ruby -
+&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;The second, a rake task, renames your views according to the new name.format.builder style. 
+I can&#8217;t remember where I spotted this for proper attribution. Here is the task &#8211; just run it from your rails root.&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code&gt;
+namespace 'views' do
+  desc 'Renames all your rhtml views to erb'
+  task 'rename' do
+    Dir.glob('app/views/**/*.rhtml').each do |file|
+      puts `svn mv #{file} #{file.gsub(/\.rhtml$/, '.html.erb')}`
+    end
+    Dir.glob('app/views/**/*.haml').each do |file|
+      puts `svn mv #{file} #{file.gsub(/\.haml$/, '.html.haml')}`
+    end
+  end
+end
+&lt;/code&gt;&lt;/pre&gt;
+          </content>  </entry>
+  <entry xml:base="http://www.jrmiii.com/">
+    <author>
+      <name>joe</name>
+    </author>
+    <id>tag:www.jrmiii.com,2007-09-14:38</id>
+    <published>2007-09-14T17:22:00Z</published>
+    <updated>2007-09-14T17:32:18Z</updated>
+    <category term="Work"/>
+    <category term="ruby,drb,backgroundrb"/>
+    <link href="http://www.jrmiii.com/2007/9/14/backgroundrb-gotcha" rel="alternate" type="text/html"/>
+    <title>BackgrounDRb Gotcha</title>
+<content type="html">
+            &lt;p&gt;Here&#8217;s a tip for you if you try &lt;a href=&quot;http://backgroundrb.devjavu.com/&quot;&gt;BackgrounDRb&lt;/a&gt; on &lt;span class=&quot;caps&quot;&gt;OS X&lt;/span&gt;.&lt;/p&gt;
+
+
+	&lt;p&gt;I just spent a couple hours trying to track down why in the world my worker&#8217;s weren&#8217;t coming to life.&lt;/p&gt;
+
+
+No matter what I did I got the error:
+&lt;pre&gt;&lt;code&gt;
+  failed to find slave socket - (RuntimeError)
+&lt;/code&gt;&lt;/pre&gt;
+
+Well, as it turns out &#8211; it was because the socket name (derived in part from the name of your worker class) was simply too long.
+After hacking into middleman to set :debug =&amp;gt; true on slave creation I get the error:
+&lt;pre&gt;&lt;code&gt;
+  too long unix socket path (max: 103bytes) (ArgumentError)
+&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;I don&#8217;t know what platforms this applies to &#8211; I&#8217;m on &lt;span class=&quot;caps&quot;&gt;OS X&lt;/span&gt;, but I just wanted to create an internet record so the next poor schmo finds this article.&lt;/p&gt;
+
+
+	&lt;p&gt;Happy hacking!&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://www.jrmiii.com/">
+    <author>
+      <name>joe</name>
+    </author>
+    <id>tag:www.jrmiii.com,2007-06-25:30</id>
+    <published>2007-06-25T19:17:00Z</published>
+    <updated>2007-06-25T19:26:40Z</updated>
+    <category term="Life"/>
+    <category term="refresh"/>
+    <link href="http://www.jrmiii.com/2007/6/25/notes-from-refresh" rel="alternate" type="text/html"/>
+    <title>Notes from Refresh</title>
+<content type="html">
+            &lt;p&gt;We met last week and discussed updating the &lt;a href=&quot;http://www.refreshtallahassee.org/&quot;&gt;Refresh site&lt;/a&gt; perhaps with a community blog or forum.&lt;/p&gt;
+
+
+Also, we looked at some front end development tools including:
+	&lt;ul&gt;
+	&lt;li&gt;Firebug &#8211; &lt;a href=&quot;http://www.getfirebug.com&quot;&gt;http://www.getfirebug.com&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;Selenium &lt;acronym title=&quot;also look at Selenium itself&quot;&gt;IDE&lt;/acronym&gt; &#8211; &lt;a href=&quot;http://www.openqa.org/selenium-ide/&quot;&gt;http://www.openqa.org/selenium-ide/&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+Also, we discussed javascript libraries:
+	&lt;ul&gt;
+	&lt;li&gt;Prototype &#8211; &lt;a href=&quot;http://prototypejs.org/&quot;&gt;http://prototypejs.org/&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;Scriptaculous &#8211; &lt;a href=&quot;http://script.aculo.us&quot;&gt;http://script.aculo.us&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;JQuery &#8211; &lt;a href=&quot;http://jquery.com/&quot;&gt;http://jquery.com/&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;p&gt;Lastly, we heard a really good presentation on the business of &lt;a href=&quot;http://www.regardingid.com/&quot;&gt;http://www.regardingid.com/&lt;/a&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;I enjoyed seeing you all &#8211; let me know if anyone is going to &lt;a href=&quot;http://www.rubyhoedown.com/&quot;&gt;Ruby Hoedown&lt;/a&gt; in early Aug.&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://www.jrmiii.com/">
+    <author>
+      <name>joe</name>
+    </author>
+    <id>tag:www.jrmiii.com,2007-06-15:29</id>
+    <published>2007-06-15T19:07:00Z</published>
+    <updated>2007-06-15T19:08:57Z</updated>
+    <category term="Work"/>
+    <category term="rails"/>
+    <category term="ruby"/>
+    <link href="http://www.jrmiii.com/2007/6/15/using-form_for-fields_for-without-an-object" rel="alternate" type="text/html"/>
+    <title>Using form_for, fields_for without an object</title>
+<content type="html">
+            &lt;p&gt;&lt;strong&gt;Scenario:&lt;/strong&gt; Suppose you&#8217;d like to use your form builder to generate an input element for either a field that doesn&#8217;t exist &#8211; or an entire object that doesn&#8217;t really exist. I had to do this when I wanted to use my custom form builder to generate some fields and I didn&#8217;t write helpers ending in _tag.&lt;/p&gt;
+
+
+	&lt;p&gt;&lt;strong&gt;Solution:&lt;/strong&gt; So I started my form like this&lt;/p&gt;
+
+
+&lt;code class=&quot;ruby&quot;&gt;
+    - uniform_for('user', def (Object.new).method_missing(*args); nil; end, :url =&amp;gt; {:action =&amp;gt; 'change_password'}) do |f|
+&lt;/code&gt;
+
+&lt;br /&gt;
+&lt;br /&gt;
+	&lt;p&gt;The key to this is&lt;/p&gt;
+
+
+&lt;code class=&quot;ruby&quot;&gt;
+    def (Object.new).method_missing(*args); nil; end
+&lt;/code&gt;
+
+	&lt;p&gt;&lt;br /&gt;
+This code creates a new object and endows it with a method_missing that takes any number of args(usually 1 or 0 for a attr accessor) and returns nil for anything.
+This will let you use your form builder without an object defined in the controller.&lt;/p&gt;
+
+
+	&lt;p&gt;Ok, so technically you are using an object &#8211; but it&#8217;s a quick hack to let you generate those inputs.&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://www.jrmiii.com/">
+    <author>
+      <name>joe</name>
+    </author>
+    <id>tag:www.jrmiii.com,2007-05-21:27</id>
+    <published>2007-05-21T02:30:00Z</published>
+    <updated>2007-05-21T02:31:20Z</updated>
+    <category term="Life"/>
+    <category term="Work"/>
+    <category term="railsconf railsconf2007 rest"/>
+    <link href="http://www.jrmiii.com/2007/5/21/rails-conf-takeaways-and-rails-philanthropy" rel="alternate" type="text/html"/>
+    <title>Rails Conf Takeaways and Rails Philanthropy</title>
+<content type="html">
+            &lt;p&gt;There are several takeaways from RailsConf that are interesting.&lt;/p&gt;
+
+
+	&lt;p&gt;First, in regard to core rails, there&#8217;s not a whole lot of massive new development but instead a polishing of whats there &#8211; especially the RESTful stuff. Widespread adoption of the RESTful paradigm coupled with the use of things like ActiveResource will really usher in the next&#174;evolution of the web.&lt;/p&gt;
+
+
+	&lt;p&gt;Sites, will be integrated with many other sites to really make the web more web-ish. Open-ID is a good example of this.&lt;/p&gt;
+
+
+	&lt;p&gt;Further, I saw several people pushing the envelope with response formats &#8211; in addition to the pretty standard html, xml, js &#8211; I saw atom, mxml (flex), csv, tsv, and several others.&lt;/p&gt;
+
+
+	&lt;p&gt;However, this stuff was secondary to a different theme: &lt;strong&gt;Rails Philanthropy&lt;/strong&gt;.&lt;/p&gt;
+
+
+	&lt;p&gt;At mountain west ruby conference, &lt;a href=&quot;http://chadfowler.com&quot;&gt;Chad Fowler&lt;/a&gt; referenced the quote:&lt;/p&gt;
+
+
+	&lt;blockquote&gt;
+		&lt;p&gt;First they laugh at you, then they fight you, then: you win. &#8211; Mahatma Gandhi&lt;/p&gt;
+	&lt;/blockquote&gt;
+
+
+	&lt;p&gt;Along with the question &#8220;Then What?&#8221; and challenged the crowd to answer in regards to ruby and rails.&lt;/p&gt;
+
+
+	&lt;p&gt;In his intro address at RailsConf he answered the question in his own way: encouraging the crowd, and by proxy, the rails community as a whole to demonstrate charity and benevolence, to send a message that this is who we are.&lt;/p&gt;
+
+
+	&lt;p&gt;In his closing address &lt;a href=&quot;http://pragdave.pragprog.com/&quot;&gt;Dave Thomas&lt;/a&gt; bookended that challenge and raised the bar &#8211; encouraging the tech community as whole to make this the standard. And just think about it &#8211; with the thousands who attend these conferences, a little bit goes quite a long way.&lt;/p&gt;
+
+
+	&lt;p&gt;The Pragmatic Studio has organized the philanthropy effort, making it easy to donate by visiting &lt;a href=&quot;http://pragmaticstudio.com/donate/&quot;&gt;http://pragmaticstudio.com/donate/&lt;/a&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;As of this writing, the Rails community has raised $26,000! &#8211; Much of this was due to the efforts of Mike Clark and others at the tutorials for charity.&lt;/p&gt;
+
+
+The charities listed on the donate page are currently:
+	&lt;ul&gt;
+	&lt;li&gt;&lt;a href=&quot;http://www.charitynavigator.org/index.cfm?bay=search.summary&amp;amp;#38;orgid=3635&quot;&gt;Earth Day Network&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;http://www.charitynavigator.org/index.cfm?bay=search.summary&amp;amp;#38;orgid=5271&quot;&gt;America&#8217;s Second Harvest&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;http://www.charitynavigator.org/index.cfm?bay=search.summary&amp;amp;#38;orgid=3789&quot;&gt;Habitat for Humanity&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;http://www.charitynavigator.org/index.cfm?bay=search.summary&amp;amp;#38;orgid=6570&quot;&gt;Lance Armstrong Foundation&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;http://www.charitynavigator.org/index.cfm?bay=search.summary&amp;amp;#38;orgid=4165&quot;&gt;National Center for Missing and Exploited Children&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;http://www.charitynavigator.org/index.cfm?bay=search.summary&amp;amp;#38;orgid=4423&quot;&gt;Samaritans Purse&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;p&gt;When I first joined the Rails community I was fresh out of business school and only thought in terms of monetization. Rails has this really strong culture of sharing and I&#8217;m really proud to be part of a group of people organized around a development tool that helps me grow as a person.&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://www.jrmiii.com/">
+    <author>
+      <name>joe</name>
+    </author>
+    <id>tag:www.jrmiii.com,2007-05-17:23</id>
+    <published>2007-05-17T01:22:00Z</published>
+    <updated>2007-05-17T01:28:24Z</updated>
+    <category term="Life"/>
+    <category term="Work"/>
+    <category term="RailsConf07"/>
+    <link href="http://www.jrmiii.com/2007/5/17/railsconf-preview" rel="alternate" type="text/html"/>
+    <title>RailsConf Preview</title>
+<content type="html">
+            &lt;p&gt;So I got to the DoubleTree in Portland this afternoon, (this evening east coast time) and I see &lt;a href=&quot;http://blog.davidchelimsky.net/&quot;&gt;David Chelimsky&lt;/a&gt; , the rspec guy getting off the train. We chatted for a short bit &#8211; then I see &lt;a href=&quot;http://pragdave.pragprog.com/&quot;&gt;Dave Thomas&lt;/a&gt; hanging out in the lobby on the way up to my room. I bet the gang&#8217;s all here and it&#8217;ll be an exciting 4 days. I&#8217;ll blog any interesting bits I pick up.&lt;/p&gt;
+
+
+	&lt;p&gt;For now, here&#8217;s me writing this article:
+&lt;img src=&quot;http://www.jrmiii.com/assets/2007/5/17/Photo_7.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://www.jrmiii.com/">
+    <author>
+      <name>joe</name>
+    </author>
+    <id>tag:www.jrmiii.com,2007-04-24:12</id>
+    <published>2007-04-24T16:31:00Z</published>
+    <updated>2007-04-24T17:29:47Z</updated>
+    <category term="Work"/>
+    <category term="gotchas"/>
+    <category term="mac"/>
+    <category term="switch"/>
+    <link href="http://www.jrmiii.com/2007/4/24/mac-guide-for-the-windows-guy-part-1-gotchas" rel="alternate" type="text/html"/>
+    <title>Mac Guide for the Windows Guy: Part 1 - Gotchas</title>
+<content type="html">
+            &lt;p&gt;Let me first say that switching is fun! It&#8217;s great to be able to 
+truly have a &#8216;beginners mind&#8217; because you really do.&lt;/p&gt;
+
+
+	&lt;p&gt;Roughly every five minutes I find some delightful convenience for working on the Mac. Further, in my research, I find some likely lesser known tricks that even Mac veterans may not know. These tricks will find themselves in a new series &#8216;Silly Mac Tricks&#8217;.&lt;/p&gt;
+
+
+	&lt;p&gt;Moving on, I&#8217;ve read &lt;a href=&quot;http://utilware.com/switching.html&quot;&gt;a&lt;/a&gt; &lt;a href=&quot;http://teenagefanboy.blogspot.com/2007/01/ten-things-i-wish-i-knew-before-i.html&quot;&gt;lot&lt;/a&gt; &lt;a href=&quot;http://www.lifehacker.com/software/mac/hack-attack-a-guide-for-switching-to-a-mac-224674.php&quot;&gt;of&lt;/a&gt; &lt;a href=&quot;http://the.taoofmac.com/space/HOWTO/Switch%20To%20The%20Mac&quot;&gt;articles&lt;/a&gt; &lt;a href=&quot;http://www.apple.com/getamac/&quot;&gt;about&lt;/a&gt; &lt;a href=&quot;http://www.switchingtomac.com/&quot;&gt;switching&lt;/a&gt;. There&#8217;s lots of little things that are slightly different but be mindful of these few &#8216;gotchas&#8217; and it will save you a bit of trouble.&lt;/p&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;First, if you&#8217;re a shortcut junkie &#8211; keep in mind that 80% of those &lt;span class=&quot;caps&quot;&gt;CTRL&lt;/span&gt; key shortcuts are not under &lt;span class=&quot;caps&quot;&gt;CTRL&lt;/span&gt; on the Mac, but instead under the &lt;span class=&quot;caps&quot;&gt;COMMAND&lt;/span&gt; key. (The key with the apple and squiggly thing). Additionally, and quite pleasantly once you&#8217;re used to it, some shortcuts are universal &lt;span class=&quot;caps&quot;&gt;CMD&lt;/span&gt;-W closes windows, &lt;span class=&quot;caps&quot;&gt;CMD&lt;/span&gt;-A selects lots of stuff, &lt;span class=&quot;caps&quot;&gt;CMD&lt;/span&gt;-Q quits apps, etc.&lt;/li&gt;
+		&lt;li&gt;Which brings me to my next point &#8211; closing all the windows of an app &lt;em&gt;&lt;span class=&quot;caps&quot;&gt;DOES NOT&lt;/span&gt;&lt;/em&gt; cause the app to terminate as it does on Windows. You can suck down your memory really quickly by not being mindful of this. You have to get used to &lt;span class=&quot;caps&quot;&gt;CMD&lt;/span&gt;-Q to exit applications.&lt;/li&gt;
+		&lt;li&gt;If you get into trouble &lt;span class=&quot;caps&quot;&gt;CTRL&lt;/span&gt;-ALT-DEL is not there, but there is &lt;span class=&quot;caps&quot;&gt;ALT&lt;/span&gt;-CMD-ESC which will allow you to &#8216;force quit&#8217; an application.&lt;/li&gt;
+		&lt;li&gt;Lastly, and quite the annoyance since I never had this problem on Windows, if you use &lt;span class=&quot;caps&quot;&gt;DVORAK&lt;/span&gt; &#8211; don&#8217;t expect the keyboard to stay in &lt;span class=&quot;caps&quot;&gt;DVORAK&lt;/span&gt; for everything &#8211; even if you remove qwerty from the inputs. This most frequently occurs when you&#8217;re prompted for an admin password during software installation or keychain access.&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;p&gt;&lt;strong&gt;&lt;span class=&quot;caps&quot;&gt;UPDATE&lt;/span&gt;&lt;/strong&gt;: I almost forgot one &#8211; If you&#8217;re used to tabbing around to dialog controls on Windows, you&#8217;ll want to &#8216;Turn on Full Keyboard Access&#8217; for &#8216;All Controls&#8217; under System Preferences &amp;gt; Keyboard &amp;amp; Mouse &amp;gt; Keyboard Shortcuts&lt;/p&gt;
+
+
+	&lt;p&gt;Stay tuned for Part 2: Getting Around.&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://www.jrmiii.com/">
+    <author>
+      <name>joe</name>
+    </author>
+    <id>tag:www.jrmiii.com,2007-04-20:9</id>
+    <published>2007-04-20T19:22:00Z</published>
+    <updated>2007-04-20T20:35:09Z</updated>
+    <category term="Blog"/>
+    <category term="Work"/>
+    <category term="mephisto"/>
+    <category term="ping"/>
+    <link href="http://www.jrmiii.com/2007/4/20/modify-mephisto-post-pinger-to-only-post-certain-sections" rel="alternate" type="text/html"/>
+    <title>Modify Mephisto Post Pinger to only Post Certain Sections</title>
+<content type="html">
+            &lt;p&gt;I like domain specific blog aggregators, like &lt;a href=&quot;http://www.rubycorner.com/&quot;&gt;Ruby Corner&lt;/a&gt; or &lt;a href=&quot;http://www.rssowl.org/&quot;&gt;RSSOwl&lt;/a&gt;.  but some times it gets exhausting reading through posts about the funny shaped hairball x&#8217;s cat left this morning or how many cheerios y&#8217;s kid got up his nose &#8211; just to get my daily dose of ruby.&lt;/p&gt;
+
+
+	&lt;p&gt;Now, I&#8217;m not saying I hate these all together, they bring a certain level of humanity and familiarity that makes you feel like you know the bloggers whose sites you frequent. However, around the holidays it can often be difficult to find the signal for the noise.&lt;/p&gt;
+
+
+	&lt;p&gt;So if I only ping for articles to my &#8216;Work&#8217; section &#8211; I shouldn&#8217;t update to the aggregators unless I have a meaningful article. I might also have to explore multiple feeds &#8211; one with just the good stuff for the aggregators.&lt;/p&gt;
+
+
+	&lt;p&gt;I&#8217;m using the &lt;a href=&quot;http://hasno.info/2006/11/11/mephisto-plugins&quot;&gt;mephisto_post_ping plugin&lt;/a&gt; to send the pings and with the following modification, hopefully only pinging on articles in &#8216;Work&#8217;.&lt;/p&gt;
+
+
+	&lt;p&gt;lib/post_pinger.rb&lt;/p&gt;
+
+
+&lt;code class=&quot;ruby&quot;&gt;
+    return unless article.published? &#38;&#38; article.has_section?(Section.find_by_name('Work'))
+&lt;/code&gt;
+          </content>  </entry>
+  <entry xml:base="http://www.jrmiii.com/">
+    <author>
+      <name>joe</name>
+    </author>
+    <id>tag:www.jrmiii.com,2007-04-19:3</id>
+    <published>2007-04-19T04:50:00Z</published>
+    <updated>2007-04-24T17:34:33Z</updated>
+    <category term="Work"/>
+    <category term="elayaway"/>
+    <category term="laptop"/>
+    <category term="mac"/>
+    <category term="tools"/>
+    <category term="windows"/>
+    <link href="http://www.jrmiii.com/2007/4/19/mac-guide-for-the-windows-guy-intro" rel="alternate" type="text/html"/>
+    <title>Mac Guide For the Windows Guy: Intro</title>
+<content type="html">
+            &lt;p&gt;I finally climbed aboard the Apple bandwagon and got one of their unix boxes, specifically the MacBook Pro, courtesy of my new employer &#8211; &lt;a href=&quot;http://www.elayaway.com&quot;&gt;eLayaway&lt;/a&gt;.&lt;/p&gt;
+
+
+	&lt;p&gt;They were even nice enough to get me the branded version.&lt;/p&gt;
+
+
+	&lt;p&gt;&lt;img title=&quot;elayaway laptop&quot; src=&quot;/assets/2007/4/19/a.jpeg&quot; alt=&quot;elayaway laptop&quot; /&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;So I&#8217;ll be starting a new series here for people making the switch on the tools I use on the Mac to replace my Windows tools. I&#8217;d suggest you subscribe to the feed.&lt;/p&gt;
+
+
+	&lt;p&gt;And if anyone has any suggestions &#8211; please let me know!&lt;/p&gt;
+
+
+	&lt;p&gt;*Update: *&lt;/p&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;&lt;a href=&quot;http://www.jrmiii.com/2007/4/24/mac-guide-for-the-windows-guy-part-1-gotchas&quot;&gt;Part 1 &#8211; Gotchas&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+          </content>  </entry>
+  <entry xml:base="http://www.jrmiii.com/">
+    <author>
+      <name>joe</name>
+    </author>
+    <id>tag:www.jrmiii.com,2007-04-18:2</id>
+    <published>2007-04-18T07:00:00Z</published>
+    <updated>2007-04-18T19:09:07Z</updated>
+    <category term="Work"/>
+    <category term="mysql"/>
+    <category term="putty"/>
+    <category term="ssh"/>
+    <category term="tunnel"/>
+    <link href="http://www.jrmiii.com/2007/4/18/connecting-to-mysql-with-a-tunnel" rel="alternate" type="text/html"/>
+    <title>Connecting To MySQL</title>
+<summary type="html">&lt;p&gt;I&#8217;ve been asked several times recently by co-workers and friends how I connect to MySQL on a remote host that only accepts connections from localhost.&lt;/p&gt;
+
+
+	&lt;p&gt;Only accepting local connections is a good security practice so I don&#8217;t advocate user@% accounts.&lt;/p&gt;
+
+
+	&lt;p&gt;Instead, for my windows based coworkers, I suggest a ssh tunnel to the machine, assuming its running ssh ( &lt;a href=&quot;http://www.google.com/search?hl=en&amp;amp;#38;q=setting+up+SSH+on+a+windows+server&amp;amp;#38;btnG=Google+Search&quot;&gt;setting up &lt;span class=&quot;caps&quot;&gt;SSH&lt;/span&gt; on a windows server&lt;/a&gt; is outside the scope of this article but there&#8217;s plenty of info out there on it).&lt;/p&gt;
+
+
+	&lt;p&gt;See how I do it after the jump.&lt;/p&gt;</summary><content type="html">
+            &lt;p&gt;I&#8217;ve been asked several times recently by co-workers and friends how I connect to MySQL on a remote host that only accepts connections from localhost.&lt;/p&gt;
+
+
+	&lt;p&gt;Only accepting local connections is a good security practice so I don&#8217;t advocate user@% accounts.&lt;/p&gt;
+
+
+	&lt;p&gt;Instead, for my windows based coworkers, I suggest a ssh tunnel to the machine, assuming its running ssh ( &lt;a href=&quot;http://www.google.com/search?hl=en&amp;amp;#38;q=setting+up+SSH+on+a+windows+server&amp;amp;#38;btnG=Google+Search&quot;&gt;setting up &lt;span class=&quot;caps&quot;&gt;SSH&lt;/span&gt; on a windows server&lt;/a&gt; is outside the scope of this article but there&#8217;s plenty of info out there on it).&lt;/p&gt;
+
+
+	&lt;p&gt;See how I do it after the jump.&lt;/p&gt;
+&lt;p&gt;I&#8217;ve been asked several times recently by co-workers and friends how I connect to MySQL on a remote host that only accepts connections from localhost.&lt;/p&gt;
+
+
+	&lt;p&gt;Only accepting local connections is a good security practice so I don&#8217;t advocate user@% accounts.&lt;/p&gt;
+
+
+	&lt;p&gt;Instead, for my windows based coworkers, I suggest a ssh tunnel to the machine, assuming its running ssh ( &lt;a href=&quot;http://www.google.com/search?hl=en&amp;amp;#38;q=setting+up+SSH+on+a+windows+server&amp;amp;#38;btnG=Google+Search&quot;&gt;setting up &lt;span class=&quot;caps&quot;&gt;SSH&lt;/span&gt; on a windows server&lt;/a&gt; is outside the scope of this article but there&#8217;s plenty of info out there on it).&lt;/p&gt;
+
+
+	&lt;ol&gt;
+	&lt;li&gt;Launch Putty and configure it to ssh to your mysql server.&lt;/li&gt;
+		&lt;li&gt;Under the settings go to Connection &amp;gt; &lt;span class=&quot;caps&quot;&gt;SSH&lt;/span&gt; &amp;gt; Tunnels&lt;/li&gt;
+		&lt;li&gt;The source port will be the port you want to use in your MySQL client of choice to connect to your MySQL instance. (Don&#8217;t use 3306 if you&#8217;re already running a local instance of MySQL)&lt;/li&gt;
+		&lt;li&gt;The destination is the address of the MySQL instance as if you were already on the server with the MySQL instance you&#8217;re connecting to. This is almost always 127.0.0.1:3306 with default installations.&lt;/li&gt;
+		&lt;li&gt;Leave the defaults and click add.&lt;/li&gt;
+	&lt;/ol&gt;
+
+
+	&lt;p&gt;Here&#8217;s a picture of an added tunnel.&lt;/p&gt;
+
+
+	&lt;p&gt;&lt;img title=&quot;Putty Tunnels Settings&quot; src=&quot;/assets/2007/4/18/tunnel.jpg&quot; alt=&quot;Putty Tunnels Settings&quot; /&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;In this case, just point your client to 127.0.0.1:3310&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://www.jrmiii.com/">
+    <author>
+      <name>joe</name>
+    </author>
+    <id>tag:www.jrmiii.com,2007-04-16:1</id>
+    <published>2007-04-16T18:44:00Z</published>
+    <updated>2007-04-16T19:59:54Z</updated>
+    <category term="Blog"/>
+    <category term="blog"/>
+    <link href="http://www.jrmiii.com/2007/4/16/jrmiii-accelerated" rel="alternate" type="text/html"/>
+    <title>JRMIII Accelerated</title>
+<content type="html">
+            &lt;p&gt;I&#8217;ve moved my site, databases, repos, etc. to a &lt;a href=&quot;http://www.joyent.com/accelerator&quot;&gt;Joyent Accelerator&lt;/a&gt;.&lt;/p&gt;
+
+
+	&lt;p&gt;I&#8217;ll post on any gotchas or tricks I pickup for anyone else making a similar move.&lt;/p&gt;
+
+
+	&lt;p&gt;Also, in the interest of simplicity I&#8217;m not moving over articles. All the useful ones were reblogged by others better than my originals anyway. A quick googling should turn those up.&lt;/p&gt;
+          </content>  </entry>
+</feed>

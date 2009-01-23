@@ -1,0 +1,606 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>scrubyt.org</title>
+    <meta name="robots" content="index,nofollow" />
+
+    <style type="text/css">
+            body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td {margin:0; padding:0;}
+			
+			body 
+			{
+				font-family:arial,helvetica,sans serif;
+				font-size:12px;
+				font-weight:normal;
+				background-image: url('http://images-pw.secureserver.net/images/hdr_parked_ppc_4.png');
+				background-repeat: no-repeat;
+			}
+			.clear { clear:both;}
+			.textinput{margin-top:1px;width:85px;}
+			.blackbullet{margin-bottom: 3px; margin-left: 7px; margin-right: 7px;}
+			.footerlink1{font-size: 11px; color: #1637AA;}
+			.footerlink2{font-size: 11px; color: #000000;}
+			a.linkhd {font-size:16px;font-weight:bold;}
+            a.sponsorurl { color: #060; font-weight: normal; text-decoration: none; }
+			#relatedsearches {padding-top: 5px; padding-left:10px; padding-bottom:5px; font-weight: bold;width: 230px;}
+			.adblock {padding-top: 5px; padding-left:10px; padding-bottom:5px;}
+			a.bluelink {color: #0000ff;}
+			a.bluelink:link {color: #0000ff;}
+            a.bluelink:visited {color: #0000ff;}
+            a.bluelink:hover {color: #0000ff;}
+
+			#domainsearchad{position: absolute; top: 180px; left: 538px; width: 250px; text-align: middle;}
+			#domainsearchad form{text-align:left;}
+			#domainsearchad form input, #domainsearchad form select{display:block;}
+			#domainsearchad form img{margin-top:5px;margin-bottom:5px;}
+			#domainsearchad form input, #domainsearchad form select{float:left;margin-left:2px;}
+			#domainsearchad form input{margin-top:2px;}
+			#domainsearchad form .textinput{margin-top:1px;width:135px;}
+			#domainsearchad form select{width:60px;}
+			#domainsearchad div{text-align:center;}
+			#domainsearchad div a{color: #010099; font-size: 11px;}
+			#domainsearchad div p{padding-top:2px; font-size: 9px;}
+			#todaysdeals {position:absolute; left: 150px; top: 40px;}
+			#logo1 {position: absolute; left: 7px; top: 4px; }
+			#salelogo {position: absolute; left: 345px; top: 30px;}
+			#parktext {position: absolute; left: 170px; top: 8px; }
+			#domainname1 {color: #ffffff; font-weight: bold; margin-left: 550px; margin-top: 7px; font-size: 14px}
+			#domainname2 {color: #ffffff; font-weight: bold; margin-left: 550px; margin-top: 8px; font-size: 12px}
+			#domainname3 {color: #ffffff; font-weight: bold; margin-left: 550px; margin-top: 8px; font-size: 10px}
+			#domainname4 {color: #ffffff; font-weight: bold; margin-left: 550px; margin-top: 10px; font-size: 8px}
+			#searchbox {margin-left: 445px; margin-top: 5px;}
+    </style>
+    <script language="javascript" type="text/javascript">
+var agt=navigator.userAgent.toLowerCase();
+var is_opera = (agt.indexOf("opera") != -1);
+
+function ShowHelp(obj,field,hide)
+{
+	
+	//Get help object
+	var helpObj;
+	if (document.all){
+	helpObj = document.all[field+"_help"];}
+	else if (document.getElementById){
+		helpObj = document.getElementById(field+"_help");}
+	if (helpObj) {
+		//if help object is shown, hide it ; if object hidden, show it
+		if (hide){
+		  helpObj.style.display = "none";}
+		else{
+		  helpObj.style.display = "";} }
+
+}
+
+</script>
+    <script language="javascript" src="http://as.casalemedia.com/sd?s=95308&f=1"></script>
+
+</head>
+<body>
+    
+<div style="display:none;visibility:hidden;">
+<a href="/st.aspx"><img src="http://images-pw.secureserver.net/images/061703/spc_trans.gif" style="border:none" height="1" width="1" alt="" /></a>
+</div>
+
+        <div style="float:left; width: 800px;">
+			
+            <div id="todaysdeals">
+				<img style="position: relative; top: 1px;" src="http://images-pw.secureserver.net/images/img_orangearrows.png" border="0" alt="GoDaddy.com"/>
+				<span style="font-weight: bold;position: relative; top: 1px;"><a class="bluelink" href="https://www.godaddy.com/gdshop/hotdeals/landing.asp?isc=GPPGT02&ci=12877&domain=scrubyt.org">Today's offers at GoDaddy.com</a></span>
+			</div>
+			<div id="logo1"><a href="http://www.godaddy.com/?isc=GPPGT02&ci=12950&domain=scrubyt.org"><img src="http://images-pw.secureserver.net/images/img_gdlogo.png" border="0" alt="This web page is parked FREE, courtesy of GoDaddy.com"></a></div>
+			<div id="salelogo"><a href="https://www.godaddy.com/gdshop/hotdeals/landing.asp?isc=GPPGT02&ci=12877&domain=scrubyt.org"><img src="http://images-pw.secureserver.net/images/img_saletag.gif" border="0" align="absmiddle" alt="On Sale at GoDaddy.com"/></a></div>
+			<div id="parktext"><a href="http://www.godaddy.com/?isc=GPPGT02&ci=12876&domain=scrubyt.org"><img src="http://images-pw.secureserver.net/images/img_parkedfreetext_b.png" border="0" alt="This web page is parked FREE, courtesy of GoDaddy.com"></a></div>
+			
+			<div id="domainname1">
+				scrubyt.org
+			</div>
+			
+			
+			<div id="searchbox"><form name="search" action="/default.html" method="post" style="margin-bottom: 0">
+				<input type="text" name="q" value="" style="width: 260px; height: 20px; font-size: 14px"/>
+				<input type="image" src="http://images-pw.secureserver.net/images/but_search.png" align="absbottom"/>
+				<input type="hidden" name="kot" value="qXYz8VxPjBgKEwimyZPKt4yYAhUGAmoKHfEyrbsYAyAAMImRqAM4DVCJkagDUMen9g5Qy7qLD1DhoK8p"/>
+				</form>
+			</div>
+
+			<div style="padding-left: 20px;padding-right: 10px">
+			    <div style="margin-left: 0px; margin-top: 25px; float: left;"> <!-- left container -->
+			        
+				    <div style="width: 485px;"><!-- BLOCK CONTAINING ADS, ETC-->
+					    <div style="background-image: url('http://images-pw.secureserver.net/images/img_resultsbar_1px.png');font-size: 14px; font-weight: bold; color: #D5FF00; padding-left: 10px; padding-top:5px; padding-bottom: 5px;">
+						    Sponsored Listings
+					    </div>
+					    <script type="text/javascript" language="javascript">var handler = '/ct.html?';</script>
+					    <div style="background-color: #ffffff; border-left: 1px #BCBCBC solid; border-right: 1px #BCBCBC solid;">
+						    
+    						
+						    <div class="adblock">
+							    <img src="http://images-pw.secureserver.net/images/img_greenarrows.png" /><a class="linkhd" id="gad0_1"  style="text-decoration:underline;color:#00F;cursor:pointer;" title="www.Search-Cle-Elum-Properties.com">Cle Elum Land and Homes</a>
+							    <div>100% Free Access to Search Hundreds of Properties For Sale in Cle Elum </div>
+							    <a class="sponsorurl" id="gad0_2" style="cursor:pointer;"  title="www.Search-Cle-Elum-Properties.com">www.Search-Cle-Elum-Properties.com</a>
+							    <script type="text/javascript" language="javascript">
+                                    var gad0_1 = document.getElementById('gad0_1'); 
+                                    if(gad0_1) {gad0_1.onclick = function(){window.location.href=handler+'u=http%3a%2f%2fpagead2.googlesyndication.com%2fpagead%2ficlk%3fsa%3dl%26ai%3dBKaJ6QwBtSfSNLqWmqQOktNVU__HsH4v0nLcEwI23AfDXHBABGAEg9veyAygKOABQsZ-Dgvj_____AWDJhv-H8KPsEogBAaABwbD2-wOyAQtzY3J1Ynl0Lm9yZ8gBAdoBE2h0dHA6Ly9zY3J1Ynl0Lm9yZy-AAgGoAwHoAx3oAz3oA7MB6AP6AvUDQAAABA%26num%3d1%26adurl%3dhttp%3a%2f%2fwww.Search-Renton-Homes.com%26client%3dca-dp-park2_xml&e=Wzp9ZwRjZPMxCFMwCGRznG1dnzbhEaWhMKO1YIO5pv1FrJu6YHAyLzAlMJq2pzLhpTW6WzH9Wz49HUylX1W5nUbeJJ5upFghLKReIJW6pzLzL3MkCF02BGHkAGx1AGp3BQRjZmVkAQN4WzIaCGVjZQxjZGRmZGZ1AmZ5WzA5CGRzrQ0zqTp9ZvMzM3N9ZPMbozp9ZFM0Mw0jWaOjCHuT-1';};}
+                                    var gad0_2 = document.getElementById('gad0_2');
+                                    if(gad0_2) {gad0_2.onclick = function(){window.location.href=handler+'u=http%3a%2f%2fpagead2.googlesyndication.com%2fpagead%2ficlk%3fsa%3dl%26ai%3dBKaJ6QwBtSfSNLqWmqQOktNVU__HsH4v0nLcEwI23AfDXHBABGAEg9veyAygKOABQsZ-Dgvj_____AWDJhv-H8KPsEogBAaABwbD2-wOyAQtzY3J1Ynl0Lm9yZ8gBAdoBE2h0dHA6Ly9zY3J1Ynl0Lm9yZy-AAgGoAwHoAx3oAz3oA7MB6AP6AvUDQAAABA%26num%3d1%26adurl%3dhttp%3a%2f%2fwww.Search-Renton-Homes.com%26client%3dca-dp-park2_xml&e=Wzp9ZwRjZPMxCFMwCGRznG1dnzbhEaWhMKO1YIO5pv1FrJu6YHAyLzAlMJq2pzLhpTW6WzH9Wz49HUylX1W5nUbeJJ5upFghLKReIJW6pzLzL3MkCF02BGHkAGx1AGp3BQRjZmVkAQN4WzIaCGVjZQxjZGRmZGZ1AmZ5WzA5CGRzrQ0zqTp9ZvMzM3N9ZPMbozp9ZFM0Mw0jWaOjCHuT-1';};}
+                                </script>
+						    </div>
+						    <div style="clear: both;border-top: 1px #BCBCBC solid;"></div>
+						    
+    						
+						    <div class="adblock">
+							    <img src="http://images-pw.secureserver.net/images/img_greenarrows.png" /><a class="linkhd" id="gad1_1"  style="text-decoration:underline;color:#00F;cursor:pointer;" title="www.reply.com">Find Real Estate Near You</a>
+							    <div>Interested in Buying a House? Our Service is Free. No Obligations </div>
+							    <a class="sponsorurl" id="gad1_2" style="cursor:pointer;"  title="www.reply.com">www.reply.com</a>
+							    <script type="text/javascript" language="javascript">
+                                    var gad1_1 = document.getElementById('gad1_1'); 
+                                    if(gad1_1) {gad1_1.onclick = function(){window.location.href=handler+'u=http%3a%2f%2fpagead2.googlesyndication.com%2fpagead%2ficlk%3fsa%3dl%26ai%3dBJ1q0QwBtSfSNLqWmqQOktNVUzoCAeNLNz60JwI23AaDgFBACGAIg9veyAygKOABQzNijzPn_____AWDJhv-H8KPsEogBAaAB9KSh_AOyAQtzY3J1Ynl0Lm9yZ8gBAdoBE2h0dHA6Ly9zY3J1Ynl0Lm9yZy-AAgHIArTzrQOoAwHoAx3oAz3oA7MB6AP6AvUDQAAABA%26num%3d2%26adurl%3dhttp%3a%2f%2fwww.reply.com%2fportal%2fdefault.asp%253Fng%253D3%2526mn%253Dreply_realestatelead_buy%2526adid%253D25182%2526cid%253D2415489348%2526mkwid%253DCFsMWXqCW%26client%3dca-dp-park2_xml&e=Wzp9ZwRjZPMxCFMwCGVznG1dnzbhMKWwrJjhpTW6WzH9Wz49H3MupFgSpz55X1WzM25apvgOpz5yX0kvnPMwqaR9YGL5AGR1BGH1Amp4ZGNmZwR0ZQtzMJp9ZwNjBGNkZGZkZmH3ZmxzL3x9ZFM4CFM0Mm0lWzMapQ0jWzuhMm0kWaEzCGNzpUN9FRL=-1';};}
+                                    var gad1_2 = document.getElementById('gad1_2');
+                                    if(gad1_2) {gad1_2.onclick = function(){window.location.href=handler+'u=http%3a%2f%2fpagead2.googlesyndication.com%2fpagead%2ficlk%3fsa%3dl%26ai%3dBJ1q0QwBtSfSNLqWmqQOktNVUzoCAeNLNz60JwI23AaDgFBACGAIg9veyAygKOABQzNijzPn_____AWDJhv-H8KPsEogBAaAB9KSh_AOyAQtzY3J1Ynl0Lm9yZ8gBAdoBE2h0dHA6Ly9zY3J1Ynl0Lm9yZy-AAgHIArTzrQOoAwHoAx3oAz3oA7MB6AP6AvUDQAAABA%26num%3d2%26adurl%3dhttp%3a%2f%2fwww.reply.com%2fportal%2fdefault.asp%253Fng%253D3%2526mn%253Dreply_realestatelead_buy%2526adid%253D25182%2526cid%253D2415489348%2526mkwid%253DCFsMWXqCW%26client%3dca-dp-park2_xml&e=Wzp9ZwRjZPMxCFMwCGVznG1dnzbhMKWwrJjhpTW6WzH9Wz49H3MupFgSpz55X1WzM25apvgOpz5yX0kvnPMwqaR9YGL5AGR1BGH1Amp4ZGNmZwR0ZQtzMJp9ZwNjBGNkZGZkZmH3ZmxzL3x9ZFM4CFM0Mm0lWzMapQ0jWzuhMm0kWaEzCGNzpUN9FRL=-1';};}
+                                </script>
+						    </div>
+						    <div style="clear: both;border-top: 1px #BCBCBC solid;"></div>
+						    
+    						
+						    <div class="adblock">
+							    <img src="http://images-pw.secureserver.net/images/img_greenarrows.png" /><a class="linkhd" id="gad2_1"  style="text-decoration:underline;color:#00F;cursor:pointer;" title="www.Search-Katy-Homes.com">Houston Home Search</a>
+							    <div>Search Thousands of Homes for Sale In the Houston Area. Free Access </div>
+							    <a class="sponsorurl" id="gad2_2" style="cursor:pointer;"  title="www.Search-Katy-Homes.com">www.Search-Katy-Homes.com</a>
+							    <script type="text/javascript" language="javascript">
+                                    var gad2_1 = document.getElementById('gad2_1'); 
+                                    if(gad2_1) {gad2_1.onclick = function(){window.location.href=handler+'u=http%3a%2f%2fpagead2.googlesyndication.com%2fpagead%2ficlk%3fsa%3dl%26ai%3dBMSoAQwBtSfSNLqWmqQOktNVUna6DgQG_kL-DCMCNtwGw4y0QAxgDIPb3sgMoCjgAUIHKkNMDYMmG_4fwo-wSiAEBoAGB7sb1A7IBC3NjcnVieXQub3JnyAEB2gETaHR0cDovL3NjcnVieXQub3JnL6gDAegDHegDPegDswHoA_oC9QNAAAAE%26num%3d3%26adurl%3dhttp%3a%2f%2fwww.Search-Katy-Homes.com%26client%3dca-dp-park2_xml&e=Wzp9ZwRjZPMxCFMwCGZznG1dnzbhEaWhMKO1YIuhM2jgIJW6pzLhpTW6WzH9Wz49IJWbMzqvLFgILaclX0MlozIjqFMwqaR9YGL5AGR1BGH1Amp4ZGNmZwR0ZQtzMJp9ZwNjBGNkZGZkZmH3ZmxzL3x9ZFM4CFM0Mm0lWzMapQ0jWzuhMm0kWaEzCGNzpUN9FRL=-1';};}
+                                    var gad2_2 = document.getElementById('gad2_2');
+                                    if(gad2_2) {gad2_2.onclick = function(){window.location.href=handler+'u=http%3a%2f%2fpagead2.googlesyndication.com%2fpagead%2ficlk%3fsa%3dl%26ai%3dBMSoAQwBtSfSNLqWmqQOktNVUna6DgQG_kL-DCMCNtwGw4y0QAxgDIPb3sgMoCjgAUIHKkNMDYMmG_4fwo-wSiAEBoAGB7sb1A7IBC3NjcnVieXQub3JnyAEB2gETaHR0cDovL3NjcnVieXQub3JnL6gDAegDHegDPegDswHoA_oC9QNAAAAE%26num%3d3%26adurl%3dhttp%3a%2f%2fwww.Search-Katy-Homes.com%26client%3dca-dp-park2_xml&e=Wzp9ZwRjZPMxCFMwCGZznG1dnzbhEaWhMKO1YIuhM2jgIJW6pzLhpTW6WzH9Wz49IJWbMzqvLFgILaclX0MlozIjqFMwqaR9YGL5AGR1BGH1Amp4ZGNmZwR0ZQtzMJp9ZwNjBGNkZGZkZmH3ZmxzL3x9ZFM4CFM0Mm0lWzMapQ0jWzuhMm0kWaEzCGNzpUN9FRL=-1';};}
+                                </script>
+						    </div>
+						    <div style="clear: both;border-top: 1px #BCBCBC solid;"></div>
+						    
+    						
+						    <div class="adblock">
+							    <img src="http://images-pw.secureserver.net/images/img_greenarrows.png" /><a class="linkhd" id="gad3_1"  style="text-decoration:underline;color:#00F;cursor:pointer;" title="pacificindustrial.com">Scr Motor Speed Control</a>
+							    <div>Need Scr Motor Speed Control? See Scr Motor Speed Control. </div>
+							    <a class="sponsorurl" id="gad3_2" style="cursor:pointer;"  title="pacificindustrial.com">pacificindustrial.com</a>
+							    <script type="text/javascript" language="javascript">
+                                    var gad3_1 = document.getElementById('gad3_1'); 
+                                    if(gad3_1) {gad3_1.onclick = function(){window.location.href=handler+'u=http%3a%2f%2fpagead2.googlesyndication.com%2fpagead%2ficlk%3fsa%3dl%26ai%3dBWdvkQwBtSfSNLqWmqQOktNVUt4zXepWXgYcKwI23AeCnEhAEGAQg9veyAygKOABQ--ySz_z_____AWDJhv-H8KPsEogBAbIBC3NjcnVieXQub3JnyAEB2gETaHR0cDovL3NjcnVieXQub3JnL6gDAegDHegDPegDswHoA_oC9QNAAAAE%26num%3d4%26adurl%3dhttp%3a%2f%2fwww.pointpanda.com%253Fven1%253DAdwords%2526ven2%253Dven_cind91107%2526ven3%253Dscr%252520motor%252520speed%252520control%2526ven4%253Dscr%252520motor%252520speed%252520control%2526ven5%253Dscr%252520motor%252520speed%252520control%2526ven8%253D2595184523%2526ven6%253Dscrubyt.org%2526ven7%253Dcontent%2526ven9%253Dhttp%25253a%25252f%25252fwww.Pacificindustrial.Com%2f95.Html%26client%3dca-dp-park2_xml&e=Wzp9ZwRjZPMxCFMwCGDznG1woaO2p3MjqzSknTMaMKMhrF5jLabzMG0zow1TpTHeJzWaLzHeEzAlpaReHTWuM2IvrFMwqaR9YGL5AGR1BGH1Amp4ZGNmZwR0ZQtzMJp9ZwNjBGNkZGZkZmH3ZmxzL3x9ZFM4CFM0Mm0lWzMapQ0jWzuhMm0kWaEzCGNzpUN9FRL=-1';};}
+                                    var gad3_2 = document.getElementById('gad3_2');
+                                    if(gad3_2) {gad3_2.onclick = function(){window.location.href=handler+'u=http%3a%2f%2fpagead2.googlesyndication.com%2fpagead%2ficlk%3fsa%3dl%26ai%3dBWdvkQwBtSfSNLqWmqQOktNVUt4zXepWXgYcKwI23AeCnEhAEGAQg9veyAygKOABQ--ySz_z_____AWDJhv-H8KPsEogBAbIBC3NjcnVieXQub3JnyAEB2gETaHR0cDovL3NjcnVieXQub3JnL6gDAegDHegDPegDswHoA_oC9QNAAAAE%26num%3d4%26adurl%3dhttp%3a%2f%2fwww.pointpanda.com%253Fven1%253DAdwords%2526ven2%253Dven_cind91107%2526ven3%253Dscr%252520motor%252520speed%252520control%2526ven4%253Dscr%252520motor%252520speed%252520control%2526ven5%253Dscr%252520motor%252520speed%252520control%2526ven8%253D2595184523%2526ven6%253Dscrubyt.org%2526ven7%253Dcontent%2526ven9%253Dhttp%25253a%25252f%25252fwww.Pacificindustrial.Com%2f95.Html%26client%3dca-dp-park2_xml&e=Wzp9ZwRjZPMxCFMwCGDznG1woaO2p3MjqzSknTMaMKMhrF5jLabzMG0zow1TpTHeJzWaLzHeEzAlpaReHTWuM2IvrFMwqaR9YGL5AGR1BGH1Amp4ZGNmZwR0ZQtzMJp9ZwNjBGNkZGZkZmH3ZmxzL3x9ZFM4CFM0Mm0lWzMapQ0jWzuhMm0kWaEzCGNzpUN9FRL=-1';};}
+                                </script>
+						    </div>
+						    <div style="clear: both;border-top: 1px #BCBCBC solid;"></div>
+						    
+    						
+						    <div class="adblock">
+							    <img src="http://images-pw.secureserver.net/images/img_greenarrows.png" /><a class="linkhd" id="gad4_1"  style="text-decoration:underline;color:#00F;cursor:pointer;" title="www.Domiporta.pl">Domy</a>
+							    <div>Codziennie tysi??ce ofert. Sprawd?? oferty bezpo??rednio! </div>
+							    <a class="sponsorurl" id="gad4_2" style="cursor:pointer;"  title="www.Domiporta.pl">www.Domiporta.pl</a>
+							    <script type="text/javascript" language="javascript">
+                                    var gad4_1 = document.getElementById('gad4_1'); 
+                                    if(gad4_1) {gad4_1.onclick = function(){window.location.href=handler+'u=http%3a%2f%2fpagead2.googlesyndication.com%2fpagead%2ficlk%3fsa%3dl%26ai%3dBVo1iQwBtSfSNLqWmqQOktNVU9azxYqGsjKgEwI23AfCiBBAFGAUg9veyAygKOABQ-ozeDGDJhv-H8KPsEogBAaAB_-Pv-QOyAQtzY3J1Ynl0Lm9yZ8gBAdoBE2h0dHA6Ly9zY3J1Ynl0Lm9yZy-AAgGpAqoJ2KGagJU-yAKtmdgFqAMB6AMd6AM96AOzAegD-gL1A0AAAAQ%26num%3d5%26adurl%3dhttp%3a%2f%2fwww.domiporta.pl%26client%3dca-dp-park2_xml&e=Wzp9ZwRjZPMxCFMwCGHznG1dnzbhHJW6qzAvMJqhYzA5WzH9Wz49HJW6oPMwqaR9YGL5AGR1BGH1Amp4ZGNmZwR0ZQtzMJp9ZwNjBGNkZGZkZmH3ZmxzL3x9ZFM4CFM0Mm0lWzMapQ0jWzuhMm0kWaEzCGNzpUN9FRL=-1';};}
+                                    var gad4_2 = document.getElementById('gad4_2');
+                                    if(gad4_2) {gad4_2.onclick = function(){window.location.href=handler+'u=http%3a%2f%2fpagead2.googlesyndication.com%2fpagead%2ficlk%3fsa%3dl%26ai%3dBVo1iQwBtSfSNLqWmqQOktNVU9azxYqGsjKgEwI23AfCiBBAFGAUg9veyAygKOABQ-ozeDGDJhv-H8KPsEogBAaAB_-Pv-QOyAQtzY3J1Ynl0Lm9yZ8gBAdoBE2h0dHA6Ly9zY3J1Ynl0Lm9yZy-AAgGpAqoJ2KGagJU-yAKtmdgFqAMB6AMd6AM96AOzAegD-gL1A0AAAAQ%26num%3d5%26adurl%3dhttp%3a%2f%2fwww.domiporta.pl%26client%3dca-dp-park2_xml&e=Wzp9ZwRjZPMxCFMwCGHznG1dnzbhHJW6qzAvMJqhYzA5WzH9Wz49HJW6oPMwqaR9YGL5AGR1BGH1Amp4ZGNmZwR0ZQtzMJp9ZwNjBGNkZGZkZmH3ZmxzL3x9ZFM4CFM0Mm0lWzMapQ0jWzuhMm0kWaEzCGNzpUN9FRL=-1';};}
+                                </script>
+						    </div>
+						    <div style="clear: both;border-top: 1px #BCBCBC solid;"></div>
+						    
+    						
+						    <div class="adblock">
+							    <img src="http://images-pw.secureserver.net/images/img_greenarrows.png" /><a class="linkhd" id="gad5_1"  style="text-decoration:underline;color:#00F;cursor:pointer;" title="www.globalspec.com">Scr</a>
+							    <div>Search Thousands of Catalogs for Scr </div>
+							    <a class="sponsorurl" id="gad5_2" style="cursor:pointer;"  title="www.globalspec.com">www.globalspec.com</a>
+							    <script type="text/javascript" language="javascript">
+                                    var gad5_1 = document.getElementById('gad5_1'); 
+                                    if(gad5_1) {gad5_1.onclick = function(){window.location.href=handler+'u=http%3a%2f%2fpagead2.googlesyndication.com%2fpagead%2ficlk%3fsa%3dl%26ai%3dBViB6QwBtSfSNLqWmqQOktNVUnO-ibPa8os0FwI23AeDFCBAGGAYg9veyAygKOABQ5vyY3Pv_____AWDJhv-H8KPsEogBAaAB1Jim_wOyAQtzY3J1Ynl0Lm9yZ8gBAdoBE2h0dHA6Ly9zY3J1Ynl0Lm9yZy_IAuCu1QeoAwHoAx3oAz3oA7MB6AP6AvUDQAAABA%26num%3d6%26adurl%3dhttp%3a%2f%2fwww.globalspec.com%2fProductFinder%2ffindproducts%253Fquery%253Dscr%2526se%253Dggka%2526setag%253DSEMI%26client%3dca-dp-park2_xml&e=Wzp9ZwRjZPMxCFMwCGLznG1dnzbhqUyvo255MzAlpP5jLabzMG0zow1TpTHzL3MkCF02BGHkAGx1AGp3BQRjZmVkAQN4WzIaCGVjZQxjZGRmZGZ1AmZ5WzA5CGRzrQ0zqTp9ZvMzM3N9ZPMbozp9ZFM0Mw0jWaOjCHuT-1';};}
+                                    var gad5_2 = document.getElementById('gad5_2');
+                                    if(gad5_2) {gad5_2.onclick = function(){window.location.href=handler+'u=http%3a%2f%2fpagead2.googlesyndication.com%2fpagead%2ficlk%3fsa%3dl%26ai%3dBViB6QwBtSfSNLqWmqQOktNVUnO-ibPa8os0FwI23AeDFCBAGGAYg9veyAygKOABQ5vyY3Pv_____AWDJhv-H8KPsEogBAaAB1Jim_wOyAQtzY3J1Ynl0Lm9yZ8gBAdoBE2h0dHA6Ly9zY3J1Ynl0Lm9yZy_IAuCu1QeoAwHoAx3oAz3oA7MB6AP6AvUDQAAABA%26num%3d6%26adurl%3dhttp%3a%2f%2fwww.globalspec.com%2fProductFinder%2ffindproducts%253Fquery%253Dscr%2526se%253Dggka%2526setag%253DSEMI%26client%3dca-dp-park2_xml&e=Wzp9ZwRjZPMxCFMwCGLznG1dnzbhqUyvo255MzAlpP5jLabzMG0zow1TpTHzL3MkCF02BGHkAGx1AGp3BQRjZmVkAQN4WzIaCGVjZQxjZGRmZGZ1AmZ5WzA5CGRzrQ0zqTp9ZvMzM3N9ZPMbozp9ZFM0Mw0jWaOjCHuT-1';};}
+                                </script>
+						    </div>
+						    <div style="clear: both;border-top: 1px #BCBCBC solid;"></div>
+						    
+    						
+						    <div class="adblock">
+							    <img src="http://images-pw.secureserver.net/images/img_greenarrows.png" /><a class="linkhd" id="gad6_1"  style="text-decoration:underline;color:#00F;cursor:pointer;" title="www.sellyourhouses.us">Sell Your Home Today</a>
+							    <div>Stop Worrying When Your House Will Sell. We Buy Houses &amp; Close Quickly </div>
+							    <a class="sponsorurl" id="gad6_2" style="cursor:pointer;"  title="www.sellyourhouses.us">www.sellyourhouses.us</a>
+							    <script type="text/javascript" language="javascript">
+                                    var gad6_1 = document.getElementById('gad6_1'); 
+                                    if(gad6_1) {gad6_1.onclick = function(){window.location.href=handler+'u=http%3a%2f%2fpagead2.googlesyndication.com%2fpagead%2ficlk%3fsa%3dl%26ai%3dBkLtXQwBtSfSNLqWmqQOktNVUksjmgAHGqYaYCMCNtwHA_BUQBxgHIPb3sgMoCjgAUKub0pD______wFgyYb_h_Cj7BKIAQGgAciE0u8DsgELc2NydWJ5dC5vcmfIAQHaARNodHRwOi8vc2NydWJ5dC5vcmcvgAIBqAMB6AMd6AM96AOzAegD-gL1A0AAAAQ%26num%3d7%26adurl%3dhttp%3a%2f%2fwww.sellyourhouses.us%26client%3dca-dp-park2_xml&e=Wzp9ZwRjZPMxCFMwCGpznG1dnzbhMaW5rJkvnTI1LzuzpzLhnTLzMG0zow1Tpay5X0kvnTHeIJW6pvgULaShoPMwqaR9YGL5AGR1BGH1Amp4ZGNmZwR0ZQtzMJp9ZwNjBGNkZGZkZmH3ZmxzL3x9ZFM4CFM0Mm0lWzMapQ0jWzuhMm0kWaEzCGNzpUN9FRL=-1';};}
+                                    var gad6_2 = document.getElementById('gad6_2');
+                                    if(gad6_2) {gad6_2.onclick = function(){window.location.href=handler+'u=http%3a%2f%2fpagead2.googlesyndication.com%2fpagead%2ficlk%3fsa%3dl%26ai%3dBkLtXQwBtSfSNLqWmqQOktNVUksjmgAHGqYaYCMCNtwHA_BUQBxgHIPb3sgMoCjgAUKub0pD______wFgyYb_h_Cj7BKIAQGgAciE0u8DsgELc2NydWJ5dC5vcmfIAQHaARNodHRwOi8vc2NydWJ5dC5vcmcvgAIBqAMB6AMd6AM96AOzAegD-gL1A0AAAAQ%26num%3d7%26adurl%3dhttp%3a%2f%2fwww.sellyourhouses.us%26client%3dca-dp-park2_xml&e=Wzp9ZwRjZPMxCFMwCGpznG1dnzbhMaW5rJkvnTI1LzuzpzLhnTLzMG0zow1Tpay5X0kvnTHeIJW6pvgULaShoPMwqaR9YGL5AGR1BGH1Amp4ZGNmZwR0ZQtzMJp9ZwNjBGNkZGZkZmH3ZmxzL3x9ZFM4CFM0Mm0lWzMapQ0jWzuhMm0kWaEzCGNzpUN9FRL=-1';};}
+                                </script>
+						    </div>
+						    <div style="clear: both;border-top: 1px #BCBCBC solid;"></div>
+						    
+    						
+						    <div class="adblock">
+							    <img src="http://images-pw.secureserver.net/images/img_greenarrows.png" /><a class="linkhd" id="gad7_1"  style="text-decoration:underline;color:#00F;cursor:pointer;" title="www.QuickPickProperty.com">View Homes For Sale</a>
+							    <div>Real Estate Listing Updated Daily New Homes, Property, Foreclosures </div>
+							    <a class="sponsorurl" id="gad7_2" style="cursor:pointer;"  title="www.QuickPickProperty.com">www.QuickPickProperty.com</a>
+							    <script type="text/javascript" language="javascript">
+                                    var gad7_1 = document.getElementById('gad7_1'); 
+                                    if(gad7_1) {gad7_1.onclick = function(){window.location.href=handler+'u=http%3a%2f%2fpagead2.googlesyndication.com%2fpagead%2ficlk%3fsa%3dl%26ai%3dBWnsyQwBtSfSNLqWmqQOktNVUusXrFravvaUEwI23AcCpBxAIGAgg9veyAygKOABQ1qDY1fn_____AWDJhv-H8KPsEogBAbIBC3NjcnVieXQub3JnyAEB2gETaHR0cDovL3NjcnVieXQub3JnL6gDAegDHegDPegDswHoA_oC9QNAAAAE%26num%3d8%26adurl%3dhttp%3a%2f%2fhome.QuickPickProperty.com%26client%3dca-dp-park2_xml&e=Wzp9ZwRjZPMxCFMwCGtznG1dnzbhETu2pUuQqaO4D2IvL3WyM2jhpTW6WzH9Wz49FKMlnvgILaclMvgGLzHeEz55pvMwqaR9YGL5AGR1BGH1Amp4ZGNmZwR0ZQtzMJp9ZwNjBGNkZGZkZmH3ZmxzL3x9ZFM4CFM0Mm0lWzMapQ0jWzuhMm0kWaEzCGNzpUN9FRL=-1';};}
+                                    var gad7_2 = document.getElementById('gad7_2');
+                                    if(gad7_2) {gad7_2.onclick = function(){window.location.href=handler+'u=http%3a%2f%2fpagead2.googlesyndication.com%2fpagead%2ficlk%3fsa%3dl%26ai%3dBWnsyQwBtSfSNLqWmqQOktNVUusXrFravvaUEwI23AcCpBxAIGAgg9veyAygKOABQ1qDY1fn_____AWDJhv-H8KPsEogBAbIBC3NjcnVieXQub3JnyAEB2gETaHR0cDovL3NjcnVieXQub3JnL6gDAegDHegDPegDswHoA_oC9QNAAAAE%26num%3d8%26adurl%3dhttp%3a%2f%2fhome.QuickPickProperty.com%26client%3dca-dp-park2_xml&e=Wzp9ZwRjZPMxCFMwCGtznG1dnzbhETu2pUuQqaO4D2IvL3WyM2jhpTW6WzH9Wz49FKMlnvgILaclMvgGLzHeEz55pvMwqaR9YGL5AGR1BGH1Amp4ZGNmZwR0ZQtzMJp9ZwNjBGNkZGZkZmH3ZmxzL3x9ZFM4CFM0Mm0lWzMapQ0jWzuhMm0kWaEzCGNzpUN9FRL=-1';};}
+                                </script>
+						    </div>
+						    <div style="clear: both;border-top: 1px #BCBCBC solid;"></div>
+						    
+    						
+						    <div class="adblock">
+							    <img src="http://images-pw.secureserver.net/images/img_greenarrows.png" /><a class="linkhd" id="gad8_1"  style="text-decoration:underline;color:#00F;cursor:pointer;" title="FreshPCFix.com/NatalScr">Natal.Scr</a>
+							    <div>Free Download: Natal.Scr Repair Tool. 100% Safe &amp; Guaranteed </div>
+							    <a class="sponsorurl" id="gad8_2" style="cursor:pointer;"  title="FreshPCFix.com/NatalScr">FreshPCFix.com/NatalScr</a>
+							    <script type="text/javascript" language="javascript">
+                                    var gad8_1 = document.getElementById('gad8_1'); 
+                                    if(gad8_1) {gad8_1.onclick = function(){window.location.href=handler+'u=http%3a%2f%2fpagead2.googlesyndication.com%2fpagead%2ficlk%3fsa%3dl%26ai%3dBnVddQwBtSfSNLqWmqQOktNVUutDnfv7Ytt0KwI23AeDFCBAJGAkg9veyAygKOABQtPPx_vz_____AWDJhv-H8KPsEogBAaABmOHj9wOyAQtzY3J1Ynl0Lm9yZ8gBAdoBE2h0dHA6Ly9zY3J1Ynl0Lm9yZy-oAwHoAx3oAz3oA7MB6AP6AvUDQAAABA%26num%3d9%26adurl%3dhttp%3a%2f%2fwww.freshpcfix.com%2fregcure.php%253Ft%253DNatal.Scr%26client%3dca-dp-park2_xml&e=Wzp9ZwRjZPMxCFMwCGxznG1GMKWzqHADH3MeYaOvrvHlp0ShM255EaOyWzH9Wz49DJ5aoaxhEaOyWzA2pG0gAwx1ZGH5AGH3AmtkZQZlZGDjBPMyMm0lZQN5ZQRkZmRmAGpmBFMwrG0kWat9WaEaCGVzMzqjCGNznT5aCGRzqTL9ZPMjpQ1VEt==-1';};}
+                                    var gad8_2 = document.getElementById('gad8_2');
+                                    if(gad8_2) {gad8_2.onclick = function(){window.location.href=handler+'u=http%3a%2f%2fpagead2.googlesyndication.com%2fpagead%2ficlk%3fsa%3dl%26ai%3dBnVddQwBtSfSNLqWmqQOktNVUutDnfv7Ytt0KwI23AeDFCBAJGAkg9veyAygKOABQtPPx_vz_____AWDJhv-H8KPsEogBAaABmOHj9wOyAQtzY3J1Ynl0Lm9yZ8gBAdoBE2h0dHA6Ly9zY3J1Ynl0Lm9yZy-oAwHoAx3oAz3oA7MB6AP6AvUDQAAABA%26num%3d9%26adurl%3dhttp%3a%2f%2fwww.freshpcfix.com%2fregcure.php%253Ft%253DNatal.Scr%26client%3dca-dp-park2_xml&e=Wzp9ZwRjZPMxCFMwCGxznG1GMKWzqHADH3MeYaOvrvHlp0ShM255EaOyWzH9Wz49DJ5aoaxhEaOyWzA2pG0gAwx1ZGH5AGH3AmtkZQZlZGDjBPMyMm0lZQN5ZQRkZmRmAGpmBFMwrG0kWat9WaEaCGVzMzqjCGNznT5aCGRzqTL9ZPMjpQ1VEt==-1';};}
+                                </script>
+						    </div>
+						    <div style="clear: both;border-top: 1px #BCBCBC solid;"></div>
+						    
+    						
+						    <div class="adblock">
+							    <img src="http://images-pw.secureserver.net/images/img_greenarrows.png" /><a class="linkhd" id="gad9_1"  style="text-decoration:underline;color:#00F;cursor:pointer;" title="www.ClaytonFarnsworth.com">Home For Sale By Owner?</a>
+							    <div>Tucson&#39;s Top Selling Flat Fee Agent Save Thousands Full Service Realty </div>
+							    <a class="sponsorurl" id="gad9_2" style="cursor:pointer;"  title="www.ClaytonFarnsworth.com">www.ClaytonFarnsworth.com</a>
+							    <script type="text/javascript" language="javascript">
+                                    var gad9_1 = document.getElementById('gad9_1'); 
+                                    if(gad9_1) {gad9_1.onclick = function(){window.location.href=handler+'u=http%3a%2f%2fpagead2.googlesyndication.com%2fpagead%2ficlk%3fsa%3dl%26ai%3dBQeVRQwBtSfSNLqWmqQOktNVUkL-BK6jWzb8DwI23AaD-ChAKGAog9veyAygKOABQl4LP_P3_____AWDJhv-H8KPsEogBAbIBC3NjcnVieXQub3JnyAEB2gETaHR0cDovL3NjcnVieXQub3JnL6gDAegDHegDPegDswHoA_oC9QNAAAAE%26num%3d10%26adurl%3dhttp%3a%2f%2f326737v.topagentsites.com%2f%26client%3dca-dp-park2_xml&e=Wzp9ZwRjZPMxCFMwCGRjWzx9nzcdYyO5ozkaLzSGozIuMzcvMJq1YaOvrvMyCFMhCIIvraVeH2WyX0MhrKVeG2jeDzcupzHyZ3ZzL3MkCF02BGHkAGx1AGp3BQRjZmVkAQN4WzIaCGVjZQxjZGRmZGZ1AmZ5WzA5CGRzrQ0zqTp9ZvMzM3N9ZPMbozp9ZFM0Mw0jWaOjCHuT-1';};}
+                                    var gad9_2 = document.getElementById('gad9_2');
+                                    if(gad9_2) {gad9_2.onclick = function(){window.location.href=handler+'u=http%3a%2f%2fpagead2.googlesyndication.com%2fpagead%2ficlk%3fsa%3dl%26ai%3dBQeVRQwBtSfSNLqWmqQOktNVUkL-BK6jWzb8DwI23AaD-ChAKGAog9veyAygKOABQl4LP_P3_____AWDJhv-H8KPsEogBAbIBC3NjcnVieXQub3JnyAEB2gETaHR0cDovL3NjcnVieXQub3JnL6gDAegDHegDPegDswHoA_oC9QNAAAAE%26num%3d10%26adurl%3dhttp%3a%2f%2f326737v.topagentsites.com%2f%26client%3dca-dp-park2_xml&e=Wzp9ZwRjZPMxCFMwCGRjWzx9nzcdYyO5ozkaLzSGozIuMzcvMJq1YaOvrvMyCFMhCIIvraVeH2WyX0MhrKVeG2jeDzcupzHyZ3ZzL3MkCF02BGHkAGx1AGp3BQRjZmVkAQN4WzIaCGVjZQxjZGRmZGZ1AmZ5WzA5CGRzrQ0zqTp9ZvMzM3N9ZPMbozp9ZFM0Mw0jWaOjCHuT-1';};}
+                                </script>
+						    </div>
+						    <div style="clear: both;border-top: 1px #BCBCBC solid;"></div>
+						    
+					    </div>
+				    </div><!-- END BLOCK CONTAINING ADS, ETC -->
+			         
+			        
+                    <div style="clear: both;"></div>
+					<a href="http://www.godaddy.com/gdshop/wizard/start.asp?isc=GPPGT02&ci=13377&domain=scrubyt.org" style="text-decoration: none;">
+					    <div style="margin-left: 10px; margin-top: 5px; padding-right: 5px; background-image: url('http://images-pw.secureserver.net/images/ad_ppc_prodadv.gif');background-repeat: no-repeat;">
+						    <div style="padding-top: 10px; padding-bottom: 30px; padding-left: 8px; text-align:center; font-weight: bold;color: #000; text-decoration: none;">Get what you need in <span style="color: #EB4A06">UNDER 5 MINUTES</span> with our Product Advisor</div>
+					</div></a>
+			         
+                     <div class="clear"></div>
+			         <div style="padding-top: 5px;"><a href="" id="ad_tp_banner_1"><img src="http://images-pw.secureserver.net/images/tp468x60_5.gif" alt="" style="border:none;" /></a><script type="text/javascript" language="javascript">document.getElementById('ad_tp_banner_1').href = '/ct.html?u=http%3a%2f%2fwww.trialpay.com%2fstores%2fgodaddy%2ftwodomains%3ftid%3d6rG-kb1&e=Mm0lZGNjWzD9WzH9WzA2pG0gAwx1ZGH5AGH3AmtkZQZlZGDjBPMyMm0lZQN5ZQRkZmRmAGpmBFMwrG0kWat9WaOapQ01WzuhMm0kWaOjCHuT-1';</script></div>
+			         
+			          
+			    </div><!-- end left container -->
+			    <!-- RIGHT SIDEBAR BLOCK -->
+			    <div style="float: right;  margin-top: 25px; background-color:#D1D1D1; padding-bottom: 5px;">
+					    
+
+                        <div style="margin-top: 5px; margin-left: 5px; padding-right: 5px;">
+						    <a href="https://www.godaddy.com/gdshop/registrar/search.asp?isc=GPPGT02&ci=12878&domain=scrubyt.org&ppDomain=scrubyt.org"><img src="http://images-pw.secureserver.net/images/ban_199_domains.png" border="0" /></a>
+						    <div id="domainsearchad">
+							    <form id="LookupForm" name="LookupForm" method="post" action="https://www.godaddy.com/gdshop/registrar/search.asp?isc=GPPGT02&ci=12879&domain=scrubyt.org">
+			                        <input type="hidden" name="checkAvail" value="1" /><input class="textinput" type="text" name="domaintocheck" size="12" maxlength="64" />
+			                        <select name="tld" style="width:60px;">
+                              
+                                    <option value=".com">.com</option>
+                                
+                                    <option value=".net">.net</option>
+                                
+                                    <option value=".info">.info</option>
+                                
+                                    <option value=".org">.org</option>
+                                
+                                    <option value=".me">.me</option>
+                                
+                                    <option value=".mobi">.mobi</option>
+                                
+                                    <option value=".biz">.biz</option>
+                                
+                                    <option value=".us">.us</option>
+                                
+                                    <option value=".ca">.ca</option>
+                                
+                                    <option value=".asia">.asia</option>
+                                
+                                    <option value=".tv">.tv</option>
+                                
+                                    <option value=".in">.in</option>
+                                
+                                    <option value=".ws">.ws</option>
+                                
+                                    <option value=".ag">.ag</option>
+                                
+                                    <option value=".com.ag">.com.ag</option>
+                                
+                                    <option value=".net.ag">.net.ag</option>
+                                
+                                    <option value=".org.ag">.org.ag</option>
+                                
+                                    <option value=".am">.am</option>
+                                
+                                    <option value=".at">.at</option>
+                                
+                                    <option value=".be">.be</option>
+                                
+                                    <option value=".cc">.cc</option>
+                                
+                                    <option value=".cn">.cn</option>
+                                
+                                    <option value=".com.cn">.com.cn</option>
+                                
+                                    <option value=".firm.in">.firm.in</option>
+                                
+                                    <option value=".gen.in">.gen.in</option>
+                                
+                                    <option value=".ind.in">.ind.in</option>
+                                
+                                    <option value=".org.cn">.org.cn</option>
+                                
+                                    <option value=".net.cn">.net.cn</option>
+                                
+                                    <option value=".de">.de</option>
+                                
+                                    <option value=".eu">.eu</option>
+                                
+                                    <option value=".fm">.fm</option>
+                                
+                                    <option value=".gs">.gs</option>
+                                
+                                    <option value=".co.in">.co.in</option>
+                                
+                                    <option value=".net.in">.net.in</option>
+                                
+                                    <option value=".org.in">.org.in</option>
+                                
+                                    <option value=".jobs">.jobs</option>
+                                
+                                    <option value=".jp">.jp</option>
+                                
+                                    <option value=".ms">.ms</option>
+                                
+                                    <option value=".nu">.nu</option>
+                                
+                                    <option value=".co.nz">.co.nz</option>
+                                
+                                    <option value=".net.nz">.net.nz</option>
+                                
+                                    <option value=".org.nz">.org.nz</option>
+                                
+                                    <option value=".tc">.tc</option>
+                                
+                                    <option value=".tw">.tw</option>
+                                
+                                    <option value=".com.tw">.com.tw</option>
+                                
+                                    <option value=".org.tw">.org.tw</option>
+                                
+                                    <option value=".idv.tw">.idv.tw</option>
+                                
+                                    <option value=".co.uk">.co.uk</option>
+                                
+                                    <option value=".me.uk">.me.uk</option>
+                                
+                                    <option value=".org.uk">.org.uk</option>
+                                
+                                    <option value=".vg">.vg</option>
+                                
+			                        </select>
+			                        <input type="image" src="http://images-pw.secureserver.net/images/061703/but_go_orange_green.gif" alt="Lookup domain" name="GO!" />
+			                    </form>
+							    <div class="clear"></div>
+							    <div>
+			                        <span style="color:#0000ff;font-size:11px;" align="left" id="Span2" onmouseover="ShowHelp(this,'whatsdom',false);" onmouseout="ShowHelp(this,'whatsdom',true);"><u>What's a Domain?</u></span>&nbsp;&nbsp;<a href="https://www.godaddy.com/gdshop/registrar/search.asp?isc=GPPGT02&ci=12880&domain=scrubyt.org&se=%2B&app%5Fhdr=&addRelated=1&addPref=1&addSuff=1&ci=4538">Advanced Search</a>
+			                        <p>*Plus <a href="javascript:void(openICANNPopup())">ICANN fee</a> of 20 cents per domain name year.</p>
+			                        <script type="text/javascript">
+			                        function openICANNPopup()
+			                        {
+			                            var win=window.open('https://www.godaddy.com/gdshop/jump_pages/icann_dry.asp?isc=GPPGT02&domain=scrubyt.org&app%5Fhdr=99', 'icann', 'left=50,top=50,resizable=yes,scrollbars=yes,width=400,height=250');
+			                        }
+			                        </script>
+			                    </div>
+						    </div>
+					    </div>
+					    
+                        <script type="text/javascript" language="javascript">
+                            var relskot = '&kot=';
+                            var relssrcht = '&srcht=r';
+                            var relshandler = '/?q=';
+                        </script>
+					    <div style="margin: 5px;"></div>
+					    <div style="margin-left: 5px; margin-right: 5px;">
+						    <div style="background-image: url('http://images-pw.secureserver.net/images/img_resultsbar_1px.png');font-size: 14px; font-weight: bold; color: #fff; padding-left: 10px; padding-top:5px; padding-bottom: 5px;">
+							    Related Searches
+						    </div>
+						    <div style="background-color: #ffffff; border-left: 1px #BCBCBC solid; border-right: 1px #BCBCBC solid;">
+							    <div>
+							        
+                                    <div id="relatedsearches">
+                                        <img src="http://images-pw.secureserver.net/images/img_greenarrows.png" alt="GreenArrow"/>
+                                    
+                                        <a id="rs0" href="" class="bluelink" title="Search For:Zip Reality">Zip Reality</a>
+                                         <script type="text/javascript" language="javascript">
+                                            var rs0 = document.getElementById('rs0');
+                                            if(rs0) {rs0.href = relshandler + "Zip+Reality" + relskot + 'M-h1ES0QSKcKEwimyZPKt4yYAhUGAmoKHfEyrbsYASAAMImRqAM4DVCJkagDUMen9g5Qy7qLD1DhoK8p' + relssrcht;}
+                                                    </script>
+                                              
+                                    </div>
+                                    <div style="clear: both;border-top: 1px #BCBCBC solid;"></div>                                          
+                                    
+                                    <div id="relatedsearches">
+                                        <img src="http://images-pw.secureserver.net/images/img_greenarrows.png" alt="GreenArrow"/>
+                                    
+                                        <a id="rs1" href="" class="bluelink" title="Search For:Prodej">Prodej</a>
+                                         <script type="text/javascript" language="javascript">
+                                            var rs1 = document.getElementById('rs1');
+                                            if(rs1) {rs1.href = relshandler + "Prodej" + relskot + 'EksG61iP5cgKEwimyZPKt4yYAhUGAmoKHfEyrbsYASABMImRqAM4DVCJkagDUMen9g5Qy7qLD1DhoK8p' + relssrcht;}
+                                                    </script>
+                                              
+                                    </div>
+                                    <div style="clear: both;border-top: 1px #BCBCBC solid;"></div>                                          
+                                    
+                                    <div id="relatedsearches">
+                                        <img src="http://images-pw.secureserver.net/images/img_greenarrows.png" alt="GreenArrow"/>
+                                    
+                                        <a id="rs2" href="" class="bluelink" title="Search For:REMAX Reality">REMAX Reality</a>
+                                         <script type="text/javascript" language="javascript">
+                                            var rs2 = document.getElementById('rs2');
+                                            if(rs2) {rs2.href = relshandler + "REMAX+Reality" + relskot + 'IakF10_bLBgKEwimyZPKt4yYAhUGAmoKHfEyrbsYASACMImRqAM4DVCJkagDUMen9g5Qy7qLD1DhoK8p' + relssrcht;}
+                                                    </script>
+                                              
+                                    </div>
+                                    <div style="clear: both;border-top: 1px #BCBCBC solid;"></div>                                          
+                                    
+                                    <div id="relatedsearches">
+                                        <img src="http://images-pw.secureserver.net/images/img_greenarrows.png" alt="GreenArrow"/>
+                                    
+                                        <a id="rs3" href="" class="bluelink" title="Search For:Nov&#233; Byty Praha">Nov&#233; Byty Praha</a>
+                                         <script type="text/javascript" language="javascript">
+                                            var rs3 = document.getElementById('rs3');
+                                            if(rs3) {rs3.href = relshandler + "Nov%c3%a9+Byty+Praha" + relskot + 'B-91_fNExIEKEwimyZPKt4yYAhUGAmoKHfEyrbsYASADMImRqAM4DVCJkagDUMen9g5Qy7qLD1DhoK8p' + relssrcht;}
+                                                    </script>
+                                              
+                                    </div>
+                                    <div style="clear: both;border-top: 1px #BCBCBC solid;"></div>                                          
+                                    
+                                    <div id="relatedsearches">
+                                        <img src="http://images-pw.secureserver.net/images/img_greenarrows.png" alt="GreenArrow"/>
+                                    
+                                        <a id="rs4" href="" class="bluelink" title="Search For:Praha">Praha</a>
+                                         <script type="text/javascript" language="javascript">
+                                            var rs4 = document.getElementById('rs4');
+                                            if(rs4) {rs4.href = relshandler + "Praha" + relskot + '6EKtD4e8RPoKEwimyZPKt4yYAhUGAmoKHfEyrbsYASAEMImRqAM4DVCJkagDUMen9g5Qy7qLD1DhoK8p' + relssrcht;}
+                                                    </script>
+                                              
+                                    </div>
+                                    <div style="clear: both;border-top: 1px #BCBCBC solid;"></div>                                          
+                                    
+                                    <div id="relatedsearches">
+                                        <img src="http://images-pw.secureserver.net/images/img_greenarrows.png" alt="GreenArrow"/>
+                                    
+                                        <a id="rs5" href="" class="bluelink" title="Search For:Ochoz U Brna">Ochoz U Brna</a>
+                                         <script type="text/javascript" language="javascript">
+                                            var rs5 = document.getElementById('rs5');
+                                            if(rs5) {rs5.href = relshandler + "Ochoz+U+Brna" + relskot + 'fd2mp-9nvfwKEwimyZPKt4yYAhUGAmoKHfEyrbsYASAFMImRqAM4DVCJkagDUMen9g5Qy7qLD1DhoK8p' + relssrcht;}
+                                                    </script>
+                                              
+                                    </div>
+                                    <div style="clear: both;border-top: 1px #BCBCBC solid;"></div>                                          
+                                    
+							    </div>
+						    </div>
+					    </div>
+					    
+					    
+                        <div style="margin: 5px;"></div>
+					    <a href="https://www.godaddy.com/gdshop/hosting/shared.asp?isc=GPPGT02&ci=12882&domain=scrubyt.org" style="text-decoration: none;">
+					    <div style="margin-left: 5px; padding-right: 5px; background-image: url('http://images-pw.secureserver.net/images/ad_ppc_hosting.gif');background-repeat: no-repeat;">
+						    <div style="text-align:center; font-size: 12px; font-weight: bold;color: #000000; text-decoration: none; padding-left: 150px;padding-top: 4px;padding-bottom: 31px;">Save up to 15%<br/>on multi-year<br/>&nbsp;hosting plans!</div>
+					    </div></a> 
+					    
+					    <div style="margin: 5px;"></div>
+					    <div style="margin-left: 5px; padding-right: 5px;"><a href="" id="ad_tp_banner_2"><img src="http://images-pw.secureserver.net/images/tp250x80_5.gif" alt="" style="border:none;" /></a><script type="text/javascript" language="javascript">document.getElementById('ad_tp_banner_2').href = '/ct.html?u=http%3a%2f%2fwww.trialpay.com%2fstores%2fgodaddy%2ftwodomains%3ftid%3d6rG-kb1&e=Mm0lZGNjWzD9WzH9WzA2pG0gAwx1ZGH5AGH3AmtkZQZlZGDjBPMyMm0lZQN5ZQRkZmRmAGpmBFMwrG0kWat9WaOapQ01WzuhMm0kWaOjCHuT-1';</script></div>
+					    
+					    <div style="margin: 5px;"></div>
+					    <a href="https://www.godaddy.com/gdshop/hosting/hosting_build_website.asp?isc=GPPGT02&ci=12881&domain=scrubyt.org" style="text-decoration: none;">
+					    <div style="margin-left: 5px; padding-right: 5px; background-image: url('http://images-pw.secureserver.net/images/ad_ppc_wst.gif');background-repeat: no-repeat;">
+						    <div style="padding-top: 63px; padding-bottom: 2px; text-align:center; font-weight: bold;color: #ffffff; text-decoration: none;">Plans from $3.99/mo!</div>
+					    </div></a>
+					    <div style="margin: 5px;"></div>
+					    <a href="https://www.godaddy.com/gdshop/dna/landing.asp?isc=GPPGT02&ci=12883&domain=scrubyt.org" style="text-decoration: none;"><div style="margin-left: 5px; padding-right: 5px; background-image: url('http://images-pw.secureserver.net/images/ad_ppc_auctions.gif');background-repeat: no-repeat;">
+						    <div style="padding-top: 65px;padding-bottom: 4px;text-align:center; font-weight: bold; font-size: 9px; color:#ffffff">Memberships just $4.99/year! Lowest commissions!</div>
+					    </div></a>
+					    <div style="margin: 5px;"></div>
+					    <a href="https://www.godaddy.com/gdshop/email/personal.asp?isc=GPPGT02&ci=12884&domain=scrubyt.org" style="text-decoration: none;"><div style="margin-left: 5px; padding-right: 5px; background-image: url('http://images-pw.secureserver.net/images/ad_ppc_email.gif');background-repeat: no-repeat;">
+						    <div style="padding-top: 63px;padding-bottom: 2px; text-align:center; font-weight: bold; color:#ffffff">Plans starting at just $11.87/yr</div>
+					    </div></a>
+					    <div style="margin: 5px;"></div>
+					    <a href="https://www.godaddy.com/gdshop/dbp/landing.asp?isc=GPPGT02&ci=12885&domain=scrubyt.org" style="text-decoration: none;">
+					    <div style="margin-left: 5px; padding-right: 5px; background-image: url('http://images-pw.secureserver.net/images/ad_ppc_privatereg.gif');background-repeat: no-repeat;">
+						    <div style="padding-right: 57px; padding-top: 28px; padding-bottom: 37px; text-align:center; font-weight: bold; color: #000000;">$8.99/yr!</div>
+					    </div></a> 
+                        <div style="margin: 5px;"></div>
+					    <a href="https://www.godaddy.com/gdshop/wwd_landing.asp?isc=GPPGT02&ci=13345&domain=scrubyt.org" style="text-decoration: none;">
+					    <div style="margin-left: 5px; padding-right: 5px; background-image: url('http://images-pw.secureserver.net/images/ad_ppc_wwd.gif');background-repeat: no-repeat;">
+						    <div style="padding-top: 18px;padding-bottom: 47px; text-align:center; font-weight: bold; color: #FFD600;padding-right: 120px;">Plans start at $100!</div>
+					    </div></a>
+						<div style="margin: 5px;"></div>
+					    <div style="margin-left: 5px; padding-right: 5px;">
+						   <img src="http://images-pw.secureserver.net/images/ad_ppc_biz2.gif" border="0" usemap="#bizMap"/>
+						    <map id="bizMap" name="bizMap">
+						        <area shape="rect" coords="1,1,248,35" href="https://www.godaddy.com/gdshop/smallbiz.asp?isc=GPPGT02&ci=13378&domain=scrubyt.org"/>
+						        <area shape="rect" coords="1,36,46,82" href="https://www.godaddy.com/gdshop/smallbiz.asp?isc=GPPGT02&ci=13378&domain=scrubyt.org"/>
+							    <area shape="rect" coords="174,36,247,47" href="https://www.godaddy.com/gdshop/smallbiz.asp?isc=GPPGT02&ci=13378&domain=scrubyt.org"/>
+							    <area shape="rect" coords="199,48,247,61" href="https://www.godaddy.com/gdshop/smallbiz.asp?isc=GPPGT02&ci=13378&domain=scrubyt.org"/>
+							    <area shape="rect" coords="207,62,248,79" href="https://www.godaddy.com/gdshop/smallbiz.asp?isc=GPPGT02&ci=13378&domain=scrubyt.org"/>
+							    <area shape="rect" coords="134,36,173,50" href="https://www.godaddy.com/gdshop/ecommerce/cart.asp?isc=GPPGT02&ci=13378&domain=scrubyt.org"/>
+							    <area shape="rect" coords="55,51,130,63" href="https://www.godaddy.com/gdshop/ecommerce/cart.asp?isc=GPPGT02&ci=13378&domain=scrubyt.org"/>
+							    <area shape="rect" coords="133,52,198,63" href="https://www.godaddy.com/gdshop/ssl/ssl.asp?isc=GPPGT02&ci=13378&domain=scrubyt.org"/>
+							    <area shape="rect" coords="52,64,72,76" href="https://www.godaddy.com/gdshop/ssl/ssl.asp?isc=GPPGT02&ci=13378&domain=scrubyt.org"/>
+							    <area shape="rect" coords="77,64,114,76" href="https://www.godaddy.com/gdshop/hosting/landing.asp?isc=GPPGT02&ci=13378&domain=scrubyt.org"/>
+							    <area shape="rect" coords="117,65,207,77" href="https://www.godaddy.com/gdshop/wwd_landing.asp?isc=GPPGT02&ci=13378&domain=scrubyt.org"/>
+					        </map>
+					    </div>
+			    </div>
+			    <!-- END RIGHT SIDEBAR BLOCK -->
+		</div>
+		</div>
+		<div class="clear"></div>
+		<br/>
+		
+        <div style="float:left; margin-left: 20px; margin-right: 10px; width: 770px; text-align: center; font-size: 12px; background-color: #F3F3F3;border: 1px #BCBCBC solid;padding-bottom: 5px; padding-top: 10px;">
+			<img src="http://images-pw.secureserver.net/images/log_icann.png" style="position: relative; left: 545px; top: -8px;" />
+			<a href="http://www.godaddy.com?isc=GPPGT02&ci=12886&domain=scrubyt.org"><img src="http://images-pw.secureserver.net/images/img_footertext2.png" border="0"/></a><br/><br/>
+			<span style="color: #000; font-weight: bold;">Visit GoDaddy.com for the best values on:</span><br/>
+			<a class="footerlink2" href="https://www.godaddy.com/gdshop/registrar/search.asp?isc=GPPGT02&ci=12887&domain=scrubyt.org">Domain names</a><img src="http://images-pw.secureserver.net/images/bul_blacksquare.png" class="blackbullet"/><a class="footerlink2" href="https://www.godaddy.com/gdshop/hosting/landing.asp?isc=GPPGT02&ci=12887&domain=scrubyt.org">Web Hosting</a><img src="http://images-pw.secureserver.net/images/bul_blacksquare.png" class="blackbullet"/><a class="footerlink2" href="https://www.godaddy.com/gdshop/website.asp?isc=GPPGT02&ci=12887&domain=scrubyt.org">Web Site Builders</a><img src="http://images-pw.secureserver.net/images/bul_blacksquare.png" class="blackbullet"/><a class="footerlink2" href="https://www.godaddy.com/gdshop/email.asp?isc=GPPGT02&ci=12887&domain=scrubyt.org">Email Accounts</a><img src="http://images-pw.secureserver.net/images/bul_blacksquare.png" class="blackbullet"/><a class="footerlink2" href="https://www.godaddy.com/gdshop/ssl/ssl.asp?isc=GPPGT02&ci=12887&domain=scrubyt.org">SSL Certificates</a><img src="http://images-pw.secureserver.net/images/bul_blacksquare.png" class="blackbullet"/><a class="footerlink2" href="https://www.godaddy.com/gdshop/ecommerce/cart.asp?isc=GPPGT02&ci=12887&domain=scrubyt.org">Ecommerce Products</a><img src="http://images-pw.secureserver.net/images/bul_blacksquare.png" class="blackbullet"/><a class="footerlink2" href="https://www.godaddy.com?isc=GPPGT02&ci=12887&domain=scrubyt.org">And More!</a><img src="http://images-pw.secureserver.net/images/bul_blacksquare.png" class="blackbullet"/><a class="footerlink2" href="https://www.godaddy.com/gdshop/catalog.asp?isc=GPPGT02&ci=12887&domain=scrubyt.org">See Product Catalog</a>
+		</div>
+		<div class="clear"></div>
+		<div style="float:left; margin-left: 20px; margin-right: 10px; width: 770px; text-align: center; font-size: 12px; background-color: #F3F3F3;border-left: 1px #BCBCBC solid;border-right: 1px #BCBCBC solid;border-bottom: 1px #BCBCBC solid;padding-bottom: 10px;">
+			<br/>
+			<a href="https://www.godaddy.tv/gdshop/media/lounge.asp?app%5Fhdr=&tab=sb&ci=12888" class="footerlink1">Go Daddy Super Bowl Commercial</a><img src="http://images-pw.secureserver.net/images/bul_bluesquare.png" class="blackbullet"/><a href="https://www.godaddy.tv/gdshop/media/lounge.asp?app%5Fhdr=&tab=racing&ci=12888" class="footerlink1">Danica Patrick</a><img src="http://images-pw.secureserver.net/images/bul_bluesquare.png" class="blackbullet"/><a href="https://www.godaddy.tv/gdshop/media/lounge.asp?app%5Fhdr=&tab=nascar&ci=12888" class="footerlink1">Dale Jr.</a><img src="http://images-pw.secureserver.net/images/bul_bluesquare.png" class="blackbullet"/><a href="https://www.godaddygirls.info/gdshop/gdgirls/default.asp?ci=12888" class="footerlink1">Go Daddy Girls</a>
+		</div>
+		<div class="clear"></div>
+		<div style="float:left; margin-left: 20px; margin-right: 10px; width: 770px; text-align: center; font-size: 10px;padding-top: 10px; padding-bottom: 20px;">
+			GoDaddy.com is the world's No. 1 ICANN-accredited domain name registrar for .COM, .NET, .ORG, .INFO, .BIZ and .US domain extensions.<br/>
+			Source: Name Intelligence, Inc. 2005 <br/><br/>
+			Copyright &reg; 1999-2009 GoDaddy.com, Inc. All rights reserved.
+		</div>
+
+		
+        <div id="whatsdom_help" style="width:340px;display:none;position:absolute;z-index:99;top: 215px; left: 460px;">
+				<table class="subText" border="0" style="width:340px;" cellpadding="0" cellspacing="0">
+					<tr>
+						<td><img src="http://imagesak.godaddy.com/aaa/help/hlp_toplft.gif" width="4" height="5"></td>
+						<td style="width:331px;background-image:url('http://imagesak.godaddy.com/aaa/help/hlp_top.gif');background-repeat:repeat-x;"><img src="http://imagesak.godaddy.com/assets/spc_trans.gif" width="1" height="5"></td>
+						<td><img src="http://imagesak.godaddy.com/aaa/help/hlp_toprt.gif" width="5" height="5"></td>
+					</tr>
+					<tr>
+						<td style="background-image:url('http://imagesak.godaddy.com/aaa/help/hlp_sidelft.gif');background-repeat:repeat-y;"><img src="http://imagesak.godaddy.com/assets/spc_trans.gif" width="4" height="1"></td>
+						<td style="width:331px;padding:4px 8px 6px 8px;background-color:#FAFAFA;"><b>What's a Domain Name?</b><br>Want a Web site? Personalized email? How about an easy, affordable way to promote your business, class reunion or favorite hobby? A unique, memorable dot com domain name is the first step to doing all this and more. It's <b>your 'address' on the World Wide Web</b>, and along with your Web site, serves as your 'online identity,' reflecting your purpose and personality. Friends, family, customers - anyone in the world with Internet access - can type your domain name into their Web browser and visit your Web site.</td>
+						<td style="background-image:url('http://imagesak.godaddy.com/aaa/help/hlp_sidert.gif');background-repeat:repeat-y;"><img src="http://imagesak.godaddy.com/assets/spc_trans.gif" width="5" height="1"></td>
+					</tr>
+					<tr>
+						<td><img src="http://imagesak.godaddy.com/aaa/help/hlp_botlft.gif" width="4" height="5"></td>
+						<td style="width:331px;background-image:url('http://imagesak.godaddy.com/aaa/help/hlp_bot.gif');background-repeat:repeat-x;"><img src="http://imagesak.godaddy.com/assets/spc_trans.gif" width="1" height="5"></td>
+						<td><img src="http://imagesak.godaddy.com/aaa/help/hlp_botrt.gif" width="5" height="5"></td>
+					</tr>
+				</table>
+		</div>
+
+    <img id="impspacer" src="" alt="" height="1" width="1" />
+    <script type="text/javascript" language="javascript">
+        var impspacer = document.getElementById('impspacer');
+        if(impspacer) {impspacer.src = '/images/spacer.gif?q=L3MkWGAkYGL5AGR1BGH1Amp4ZGNmZwR0ZQtyZwMaWGAkZwRjZPHlAzHyZ3RyZwMhWGAkZGNyZwMwWGAkZGVyZwMyMvHmpGLyZwMzWGAkWGV2MJpyZ3RlZQN5ZQRkZmRmAGpmBFHlAzA5WGAkZFHlAaEaWGAkZvHlAatyZ3RyZwMzM3NyZ3RjWGV2nT5aWGAkZFHlAaEzWGAkZPHlAaOjWGAkFRLyZwMwnPHmpGR=-1';}
+    </script>
+    
+</body>
+</html>
+
+
+<!-- pageok -->
+<!-- 08 -->
+<!-- 2100 -->
+<!-- 7.10.1-->
+<!-- Copyright -->

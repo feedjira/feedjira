@@ -1,0 +1,576 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="http://feeds.feedburner.com/~d/styles/atom10full.xsl" type="text/xsl" media="screen"?><?xml-stylesheet href="http://feeds.feedburner.com/~d/styles/itemcontent.css" type="text/css" media="screen"?><feed xmlns="http://www.w3.org/2005/Atom" xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" xml:lang="en-US">
+  <title>entp hoth blog - Everything ENTP</title>
+  <id>tag:hoth.entp.com,2009:mephisto/</id>
+  <generator version="0.8.0" uri="http://mephistoblog.com">Mephisto Drax</generator>
+  
+  <link href="http://hoth.entp.com/" rel="alternate" type="text/html" />
+  <updated>2009-01-22T18:05:47Z</updated>
+  <link rel="self" href="http://feeds.feedburner.com/activereload" type="application/atom+xml" /><entry xml:base="http://hoth.entp.com/">
+    <author>
+      <name>jeremy</name>
+    </author>
+    <id>tag:hoth.entp.com,2009-01-22:14268</id>
+    <published>2009-01-22T17:57:00Z</published>
+    <updated>2009-01-22T18:05:47Z</updated>
+    <link href="http://feeds.feedburner.com/~r/activereload/~3/520362293/another-approach-to-fixture-replacement-in-which-we-abuse-named_scope" rel="alternate" type="text/html" />
+    <title>Another approach to fixture replacement (in which we abuse named_scope)</title>
+<summary type="html">&lt;p&gt;All the members of Los Lonely Geeks were hanging out in the Portland Campfire last night, contributing to the constant stream of YouTube videos, LOLCATS, LOST spoilers, and Ruby code.  But in the middle of an intense academic colloquy regarding whether it is “I CAN HAS” or “I CAN HAZ,” I had a stroke of genius about something I’d been using for months: named_scope.&lt;/p&gt;</summary><content type="html">
+            &lt;p&gt;All the members of Los Lonely Geeks were hanging out in the Portland Campfire last night, contributing to the constant stream of YouTube videos, LOLCATS, LOST spoilers, and Ruby code.  But in the middle of an intense academic colloquy regarding whether it is “I CAN HAS” or “I CAN HAZ,” I had a stroke of genius about something I’d been using for months: named_scope.&lt;/p&gt;
+&lt;p&gt;All the members of Los Lonely Geeks were hanging out in the Portland Campfire last night, contributing to the constant stream of YouTube videos, LOLCATS, LOST spoilers, and Ruby code.  But in the middle of an intense academic colloquy regarding whether it is “I CAN HAS” or “I CAN HAZ,” I had a stroke of genius about something I’d been using for months.  You’re probably familiar with Rails’ &lt;code&gt;named_scope&lt;/code&gt; feature.  It allows you create stackable “scopes” for your ActiveRecord queries (for example, &lt;code&gt;User.active&lt;/code&gt; might find all those users whose &lt;code&gt;account_expires&lt;/code&gt; date is after today or something).  I’d always used it basically for that: scoping queries for finding records.  But as I was creating a couple of new ones, I had a thought: I wonder if you can use them to &lt;em&gt;create&lt;/em&gt; records with attributes, too.&lt;/p&gt;
+
+&lt;p&gt;Of course I had to find out.&lt;/p&gt;
+
+&lt;p&gt;Immediately, I opened script/console on an app and type a few things in:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt;&amp;gt; Page.named_scope :awesome, {:conditions =&amp;gt; {:title =&amp;gt; "This is awesome."}}
+=&amp;gt; (stuff)
+&amp;gt;&amp;gt; Page.awesome.new
+=&amp;gt; #&amp;lt;Page id: nil, title: "This is awesome.", created_at: nil, updated_at: nil&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Whoa.&lt;/strong&gt;  I always really like finding a new feature of something that I make a lot of use of.  It’s like getting a whole new feature altogether.&lt;/p&gt;
+
+&lt;p&gt;So, of course, I shared this, which, of course, led to hacking.  I tossed out the idea and &lt;a href="http://twitter.com/godfoca"&gt;Nicolas Sanguinetti&lt;/a&gt; (a.k.a., &lt;a href="http://github.com/foca/"&gt;foca&lt;/a&gt;) tossed out a quick implementation within like 20 seconds (which now lives on as &lt;a href="http://github.com/foca/kaleidoscope"&gt;Kaleidoscope at his Github&lt;/a&gt;).  We tinkered a bit after that, but in general the implementation didn’t change at all.  When he put his implementation in Campfire, I’d just opened Textmate, so I jacked his implementation and within 30 minutes had built what I’m now calling &lt;a href="http://github.com/jeremymcanally/foundry"&gt;foundry&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Foundry is another fixture replacement plugin (just like model&lt;em&gt;stubbing, fixture&lt;/em&gt;replacement, factory_girl, machinist, and the trillions of others), but unlike most of these, it stays clear of ActiveRecord’s internals.  It simply creates these scopes for you and lets you build objects off of them.  For example, here’s a basic &lt;code&gt;User&lt;/code&gt; factory:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;model User do
+  factory :valid_user, :name =&amp;gt; "Jeremy", :login =&amp;gt; "jeremy"
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;…which allows you to do this in a test:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;User.valid_user.create
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can also provide blocks and some other crazy stuff, and you can check out the &lt;a href="http://github.com/jeremymcanally/foundry/blob/bc8840227fbd92e9ff90914fd50d4e862925ef3f/README.rdoc"&gt;README&lt;/a&gt; for more information.  But its implementation is powerful in its simplicity, and as evidence of that, you can do really flexible stuff like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;require 'faker'
+
+module Unique
+  def unique(attr)
+    if [:name, :first_name, :last_name].include?(attr)
+      return Faker::Name.send(attr)
+    elsif [:company_name, :company_bs, :company_catch_phrase].include?(attr)
+      return Faker::Company.send(attr.to_s.gsub(/company_/, '')) # name is in user and company
+    elsif [:email, :free_email, :user_name, :domain_name].include?(attr)
+      return Faker::Internet.send(attr)
+    else
+      raise ArgumentError, "I'm not sure what random data you want by specifying #{attr}!"
+    end
+  end
+end
+
+module Foundry
+  class Runner
+    include Unique
+  end
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;That will provide a &lt;code&gt;unique&lt;/code&gt; method to your factories which you can use to generate names and such from &lt;a href="http://faker.rubyforge.org/"&gt;Faker&lt;/a&gt;.  Now, in your factories you can do:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# In your foundries.rb or whatever
+model User do
+  factory :unique do
+   {:conditions =&amp;gt; {:name =&amp;gt; unique(:name), :login =&amp;gt; unique(:user_name), :password =&amp;gt; "1234"}}
+  end
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;…and every time you generate a record, you’ll get unique data:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;User.unique.create
+# =&amp;gt; #&amp;lt;User id: 12, name: "Wanda Sharp", login: "delia", :password =&amp;gt; "1234", created_at: ..., updated_at: ...&amp;gt;
+User.unique.create
+# =&amp;gt; #&amp;lt;User id: 13, name: "Alec Eichmann", login: "adam", :password =&amp;gt; "1234", created_at: ..., updated_at: ...&amp;gt;
+User.unique.create
+# =&amp;gt; #&amp;lt;User id: 14, name: "Derek Gleichner", login: "jared", :password =&amp;gt; "1234", created_at: ..., updated_at: ...&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Awesome, eh?  You can even chain these up just like you would normally do with &lt;code&gt;named_scope's&lt;/code&gt;.  So, you could have &lt;code&gt;User.valid_user.with_role("admin").with_permissions(permissions)&lt;/code&gt; or something like that.&lt;/p&gt;
+
+&lt;p&gt;You can check out foundry at &lt;a href="http://github.com/jeremymcanally"&gt;my Github&lt;/a&gt;, and if you dig it, follow it or fork it from &lt;a href="http://github.com/jeremymcanally/foundry"&gt;its page&lt;/a&gt;.&lt;/p&gt;
+          </content>  <feedburner:origLink>http://hoth.entp.com/2009/1/22/another-approach-to-fixture-replacement-in-which-we-abuse-named_scope</feedburner:origLink></entry>
+  <entry xml:base="http://hoth.entp.com/">
+    <author>
+      <name>justin</name>
+    </author>
+    <id>tag:hoth.entp.com,2009-01-21:14250</id>
+    <published>2009-01-21T22:54:00Z</published>
+    <updated>2009-01-22T00:39:39Z</updated>
+    <link href="http://feeds.feedburner.com/~r/activereload/~3/519238416/git-track-is-where-its-at" rel="alternate" type="text/html" />
+    <title>git track is where it's at</title>
+<summary type="html">&lt;p&gt;Remembering &lt;code&gt;git branch --track local origin/remote &amp;amp;&amp;amp; git checkout local&lt;/code&gt; is proving to be as difficult as a Chief Justice remembering the presidential oath.  On that note, here is a a quick rundown on git alias and a few simple examples to get you started.&lt;/p&gt;</summary><content type="html">
+            &lt;p&gt;Remembering &lt;code&gt;git branch --track local origin/remote &amp;amp;&amp;amp; git checkout local&lt;/code&gt; is proving to be as difficult as a Chief Justice remembering the presidential oath.  On that note, here is a a quick rundown on git alias and a few simple examples to get you started.&lt;/p&gt;
+&lt;p&gt;Remembering &lt;code&gt;git branch --track local origin/remote &amp;amp;&amp;amp; git checkout local&lt;/code&gt; is proving to be as difficult as a Chief Justice remembering the presidential oath.  On that note, here is a a quick rundown on git alias and a few simple examples to get you started.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;git track foo origin/foo&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="ruby"&gt;[alias]
+  track = !sh -c 'git branch --track &amp;quot;$0&amp;quot; &amp;quot;$1&amp;quot; &amp;amp;&amp;amp; git checkout &amp;quot;$0&amp;quot;'&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Here is a shorter version that assumes your local branch will be named the same as your remote branch and you'll always be pulling from origin/*.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;git track foo&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="ruby"&gt;[alias]
+  track = !sh -c 'git branch --track &amp;quot;$0&amp;quot; &amp;quot;origin/$0&amp;quot; &amp;amp;&amp;amp; git checkout &amp;quot;$0&amp;quot;'&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;update: &lt;a href="http://hoth.entp.com/2009/1/21/git-track-is-where-its-at#comment-14253"&gt;Tim points out&lt;/a&gt; &lt;code&gt;git checkout -b foo origin/foo&lt;/code&gt; will track  if you have &lt;code&gt;branch.autosetupmerge=true&lt;/code&gt;.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h4&gt;Roll Your Own Git Alias&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href="http://git.or.cz/gitwiki/Aliases"&gt;Git Aliases&lt;/a&gt; are a nice way to simplify your common tasks into simple commands.  Not only can you chain together git commands like we did above, you can run entire scripts, whether it be bash, ruby, python, etc.&lt;/p&gt;
+
+&lt;p&gt;The formatting can sometimes be tricky, but one important thing to keep in mind is that unless you're simply aliasing git's built in commands, you'll need to prefix your commands with the &lt;strong&gt;&lt;em&gt;!&lt;/em&gt;&lt;/strong&gt; sign.  If your entire line is in quotes you'll want to put the &lt;strong&gt;&lt;em&gt;!&lt;/em&gt;&lt;/strong&gt; inside the quotes, directly before your starting command only.  One final note, you can accept arguments in your aliases using $&lt;em&gt;n&lt;/em&gt;.  Here are a couple more commands to give you some ideas.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;git lh&lt;/code&gt; - find all commits affecting a &lt;a href="http://lighthouseapp.com"&gt;Lighthouse&lt;/a&gt; ticket&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="ruby"&gt;lh = &amp;quot;!git log --pretty='format:%h [%ar | %aD] [%an] -- %s' | grep -i '\\[#[0-9]*'&amp;quot;
+# == Output:
+# 658f5c9 [2 months ago | Mon, 10 Nov 2008 13:46:16 -0200] [Nicolas Sanguinetti] -- Ensure managers can see a blog's profile even if it's still pending [#24 state:resolved]
+# 48afbb9 [2 months ago | Mon, 10 Nov 2008 13:17:08 -0200] [Daniel Cadenas] -- Fixed. Can only change a user role if user!=current_user [#25 state:resolved]&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;git ignored&lt;/code&gt; - list all files that are ignored&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="ruby"&gt;ignored = &amp;quot;!git ls-files --others --exclude-standard&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;So that's it!  Do you have any useful aliases you want to share?&lt;/p&gt;
+          </content>  <feedburner:origLink>http://hoth.entp.com/2009/1/21/git-track-is-where-its-at</feedburner:origLink></entry>
+  <entry xml:base="http://hoth.entp.com/">
+    <author>
+      <name>kyle</name>
+    </author>
+    <id>tag:hoth.entp.com,2009-01-21:14243</id>
+    <published>2009-01-21T06:25:00Z</published>
+    <updated>2009-01-21T06:26:41Z</updated>
+    <category term="Tumbles" />
+    <category term="image" />
+    <link href="http://feeds.feedburner.com/~r/activereload/~3/518396179/hoth" rel="alternate" type="text/html" />
+    <title>Hoth</title>
+<content type="html">
+            &lt;p&gt;&lt;img src="http://upload.wikimedia.org/wikipedia/en/d/d2/Hothplanetsurface.jpg" alt="Hoth" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Hoth is the sixth planet of the system of the same name.  It’s also the name for this blog – which has a new skin.&lt;/p&gt;
+          </content>  <feedburner:origLink>http://hoth.entp.com/2009/1/21/hoth</feedburner:origLink></entry>
+  <entry xml:base="http://hoth.entp.com/">
+    <author>
+      <name>kyle</name>
+    </author>
+    <id>tag:hoth.entp.com,2009-01-18:14245</id>
+    <published>2009-01-18T07:22:00Z</published>
+    <updated>2009-01-21T07:23:32Z</updated>
+    <category term="Tumbles" />
+    <category term="link" />
+    <link href="http://feeds.feedburner.com/~r/activereload/~3/518426315/what-s-hot-on-github-turkey" rel="alternate" type="text/html" />
+    <title>What's Hot On GitHub: Turkey!</title>
+<content type="html">
+            &lt;p&gt;For three months in a row, ENTP projects and projects by ENTP programmers have shown up on Ruby Inside’s monthly &lt;a href="http://www.rubyinside.com/whats-hot-on-github-january-2009-1450.html"&gt;“What’s Hot On GitHub” feature&lt;/a&gt;&lt;/p&gt;
+          </content>  <feedburner:origLink>http://hoth.entp.com/2009/1/18/what-s-hot-on-github-turkey</feedburner:origLink></entry>
+  <entry xml:base="http://hoth.entp.com/">
+    <author>
+      <name>kyle</name>
+    </author>
+    <id>tag:hoth.entp.com,2009-01-17:14220</id>
+    <published>2009-01-17T03:39:00Z</published>
+    <updated>2009-01-21T06:07:25Z</updated>
+    <link href="http://feeds.feedburner.com/~r/activereload/~3/514636413/keeping-tabs-on-our-congress" rel="alternate" type="text/html" />
+    <title>Keeping tabs on our congress</title>
+<summary type="html">&lt;p&gt;In a few days from now, our &lt;a href="http://change.gov"&gt;President Elect&lt;/a&gt; is going to take office and become the 44th president of the United States of America.  The ENTP crew is pretty stoked – our Campfire chat is usually about half politics and half real-work.  For quite a few months now, we’ve (Justin in particular) been playing with various APIs that feed into how our government works such as &lt;a href="http://govtrack.us"&gt;GovTrack&lt;/a&gt; and &lt;a href="http://sunlightlabs.com"&gt;Sunlight Labs&lt;/a&gt;.  Obie &lt;a href="http://blog.obiefernandez.com/content/2009/01/getting-our-national-service-groove-on-with-apps-for-america.html"&gt;threw down the gauntlet&lt;/a&gt; today, but I guess we’ve been hammering down that road for quite some time now.&lt;/p&gt;</summary><content type="html">
+            &lt;p&gt;In a few days from now, our &lt;a href="http://change.gov"&gt;President Elect&lt;/a&gt; is going to take office and become the 44th president of the United States of America.  The ENTP crew is pretty stoked – our Campfire chat is usually about half politics and half real-work.  For quite a few months now, we’ve (Justin in particular) been playing with various APIs that feed into how our government works such as &lt;a href="http://govtrack.us"&gt;GovTrack&lt;/a&gt; and &lt;a href="http://sunlightlabs.com"&gt;Sunlight Labs&lt;/a&gt;.  Obie &lt;a href="http://blog.obiefernandez.com/content/2009/01/getting-our-national-service-groove-on-with-apps-for-america.html"&gt;threw down the gauntlet&lt;/a&gt; today, but I guess we’ve been hammering down that road for quite some time now.&lt;/p&gt;
+&lt;p&gt;In a few days from now, our &lt;a href="http://change.gov"&gt;President Elect&lt;/a&gt; is going to take office and become the 44th president of the United States of America.  The ENTP crew is pretty stoked – our Campfire chat is usually about half politics and half real-work.  For quite a few months now, we’ve (Justin in particular) been playing with various APIs that feed into how our government works such as &lt;a href="http://govtrack.us"&gt;GovTrack&lt;/a&gt; and &lt;a href="http://sunlightlabs.com"&gt;Sunlight Labs&lt;/a&gt;.  Obie &lt;a href="http://blog.obiefernandez.com/content/2009/01/getting-our-national-service-groove-on-with-apps-for-america.html"&gt;threw down the gauntlet&lt;/a&gt; today, but I guess we’ve been hammering down that road for quite some time now.&lt;/p&gt;
+
+&lt;p&gt;There’s a few other treats that Justin and Towski have been hacking on, but in the meantime I’d like to introduce you to a cool little tool Justin hacked up one weekend: &lt;a href="http://twitter.com/legislate"&gt;@legislate&lt;/a&gt;.&lt;/p&gt;
+
+&lt;div class="figure"&gt;&lt;img src="http://img.skitch.com/20090117-bqr9mfx8yfhng295kjpk9utbp4.jpg" /&gt;&lt;/div&gt;
+
+&lt;p&gt;@legislate tracks roll calls in the Senate &amp;amp; House.  It’s a simple way to keep track of our congress and see what they do with their time.  We love twitter, we love transparency in the government — so we love &lt;a href="http://twitter.com/legislate"&gt;@legislate&lt;/a&gt;.&lt;/p&gt;
+          </content>  <feedburner:origLink>http://hoth.entp.com/2009/1/17/keeping-tabs-on-our-congress</feedburner:origLink></entry>
+  <entry xml:base="http://hoth.entp.com/">
+    <author>
+      <name>kyle</name>
+    </author>
+    <id>tag:hoth.entp.com,2009-01-15:14244</id>
+    <published>2009-01-15T06:32:00Z</published>
+    <updated>2009-01-21T06:34:00Z</updated>
+    <category term="Tumbles" />
+    <category term="link" />
+    <link href="http://feeds.feedburner.com/~r/activereload/~3/518417791/jeremy-on-the-rails-podcast" rel="alternate" type="text/html" />
+    <title>Jeremy on the Rails Podcast</title>
+<content type="html">
+            &lt;p&gt;Our very own Jeremy McAnally took some time with Geoffrey Grosenbach on the &lt;a href="http://podcast.rubyonrails.org/programs/1/episodes/jeremy-mcanally"&gt;Rails Podcast&lt;/a&gt;.  Talk of testing libraries, routers and racial slurs abound!&lt;/p&gt;
+          </content>  <feedburner:origLink>http://hoth.entp.com/2009/1/15/jeremy-on-the-rails-podcast</feedburner:origLink></entry>
+  <entry xml:base="http://hoth.entp.com/">
+    <author>
+      <name>kyle</name>
+    </author>
+    <id>tag:hoth.entp.com,2009-01-14:14205</id>
+    <published>2009-01-14T09:24:00Z</published>
+    <updated>2009-01-21T06:09:44Z</updated>
+    <category term="Tender Support" />
+    <link href="http://feeds.feedburner.com/~r/activereload/~3/512605045/tender-support-launches" rel="alternate" type="text/html" />
+    <title>Tender Support Launches</title>
+<summary type="html">&lt;p&gt;Today we cut the reins on our newest products &lt;a href="http://tenderapp.com"&gt;Tender Support&lt;/a&gt; (hosted by our wonderful friends over at &lt;a href="http://engineyard.com"&gt;Engine Yard&lt;/a&gt;).  So what exactly is Tender? Tender is the next evolution in customer support.  We built Tender to solve a real need we had: dealing with customer support for &lt;a href="http://lighthouseapp.com"&gt;Lighthouse&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;There’s no shortage of help desk / support applications out there, so why would we possibly build our own?  Well, we think that we’ve got a few core ideas that differ from others.&lt;/p&gt;</summary><content type="html">
+            &lt;p&gt;Today we cut the reins on our newest products &lt;a href="http://tenderapp.com"&gt;Tender Support&lt;/a&gt; (hosted by our wonderful friends over at &lt;a href="http://engineyard.com"&gt;Engine Yard&lt;/a&gt;).  So what exactly is Tender? Tender is the next evolution in customer support.  We built Tender to solve a real need we had: dealing with customer support for &lt;a href="http://lighthouseapp.com"&gt;Lighthouse&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;There’s no shortage of help desk / support applications out there, so why would we possibly build our own?  Well, we think that we’ve got a few core ideas that differ from others.&lt;/p&gt;
+&lt;p&gt;Today we cut the reins on our newest products &lt;a href="http://tenderapp.com"&gt;Tender Support&lt;/a&gt; (hosted by our wonderful friends over at &lt;a href="http://engineyard.com"&gt;Engine Yard&lt;/a&gt;).  So what exactly is Tender? Tender is the next evolution in customer support.  We built Tender to solve a real need we had: dealing with customer support for &lt;a href="http://lighthouseapp.com"&gt;Lighthouse&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;There’s no shortage of help desk / support applications out there, so why would we possibly build our own?  Well, we think that we’ve got a few core ideas that differ from others.&lt;/p&gt;
+
+&lt;div class="figure"&gt;&lt;img src="http://img.skitch.com/20090114-byj5j4fg5ehkmmhxds75rq2w7u.jpg" /&gt;&lt;/div&gt;
+
+&lt;h4&gt;Support applications shouldn’t be harder than email&lt;/h4&gt;
+
+&lt;p&gt;It’s easy to get lost in the rabbit hole of buidling applications for the sake of building more software.  That’s why email is at the core of Tender.  Issues can be created and managed entirely through email.  You can also create public &lt;em&gt;and&lt;/em&gt; private issues without creating an account. We think this is a very important focus: who wants to create more accounts when reporting a problem?&lt;/p&gt;
+
+&lt;div class="figure"&gt;&lt;img src="http://img.skitch.com/20090114-tkqb7p4mrd4yjyfxpx7jq7uxsh.jpg" /&gt;&lt;/div&gt;
+
+&lt;h4&gt;Support staff should be held responsible&lt;/h4&gt;
+
+&lt;p&gt;It’s all too easy to see an email come through your inbox, mark it as read and move along.  In Tender, we try very hard to hold support staff responsible for communicating with customers.  We give you statistics on how long it takes you to respond to issues and highlight the issues which you haven’t responded to yet.&lt;/p&gt;
+
+&lt;h4&gt;Support applications should integrate with your application&lt;/h4&gt;
+
+&lt;p&gt;Tender is highly customizable.  You can implement your own CSS, your own email addresses, serve it from your own domain, and change the text in many parts of the site.  Make your support site look and feel like your own site.  Furthermore, we’ve added an automatic-login feature to Tender — with a little bit of configuration on your application, users will automatically be logged into your Tender install.&lt;/p&gt;
+
+&lt;div class="figure"&gt;&lt;img src="http://img.skitch.com/20090114-gkm6gqd77t9shbatuxxbtf2ppm.jpg" /&gt;&lt;/div&gt;
+
+&lt;h4&gt;Work with your bug tracker&lt;/h4&gt;
+
+&lt;p&gt;Tender integrates seamlessly with &lt;a href="http://lighthouseapp.com"&gt;Lighthouse&lt;/a&gt;.  It allows for developers to keep their bug tracker clean and uncluttered, while allowing customers &lt;em&gt;some&lt;/em&gt; visibility into the development process.&lt;/p&gt;
+
+&lt;div class="figure"&gt;&lt;img src="http://img.skitch.com/20090114-bje2b3tudwatwymmjs1d4nimuj.jpg" /&gt;&lt;/div&gt;
+
+&lt;h3&gt;Just the beginning&lt;/h3&gt;
+
+&lt;p&gt;Tender is still a relatively young product.  We made the first commits to the repository at the end of August and opened up to beta testers in December.  In that time, we’ve crushed hundreds of bugs and refined the product over and over.  But this is just the begining.  We’ve already got some major feature enhancments under development that should be hitting in the next month or two.  Your best bet for keeping up with features is to keep your eyes on &lt;a href="http://hoth.entp.com"&gt;Hoth&lt;/a&gt; and &lt;a href="http://twitter.com/tenderapp"&gt;@tenderapp&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;We’re stoked with the level of enthusiasm people have been showing after trying Tender out.  We can’t wait to keep working on Tender and making it the best support application out there!&lt;/p&gt;
+
+&lt;p&gt;What are you waiting for? &lt;a href="http://tenderapp.com/plans/"&gt;Sign up for a new installation&lt;/a&gt;.  There’s no restriction or credit card required for the first 30-days — what’s there to lose?&lt;/p&gt;
+          </content>  <feedburner:origLink>http://hoth.entp.com/2009/1/14/tender-support-launches</feedburner:origLink></entry>
+  <entry xml:base="http://hoth.entp.com/">
+    <author>
+      <name>will</name>
+    </author>
+    <id>tag:hoth.entp.com,2009-01-12:14188</id>
+    <published>2009-01-12T22:58:00Z</published>
+    <updated>2009-01-21T06:08:15Z</updated>
+    <link href="http://feeds.feedburner.com/~r/activereload/~3/510697770/wait-it-s-2009" rel="alternate" type="text/html" />
+    <title>Wait! is it 2009?</title>
+<summary type="html">&lt;p&gt;Wow,  &lt;a href="http://hoth.entp.com" title="Hoth"&gt;Hoth&lt;/a&gt; has been entirely too quiet.  We don't even have a New Year post! I'll take the blame for that if it will get us off the hook. Now, on to business...&lt;/p&gt;
+
+&lt;p&gt;2008 was busy year.  We grew from a handful of employees into a full-time web application shipping yard, starting satellite offices in Huntsville, Alabama and Montevideo, Uruguay. We have continued the development of our flagship application, &lt;a href="http://lighthouseapp.com"&gt;Lighthouse&lt;/a&gt;, lined up a steady base of client work, and started development on our new product, &lt;a href="http://tenderapp.com"&gt;Tender&lt;/a&gt;. During this time we managed to maintain our &lt;em&gt;other&lt;/em&gt; passion, developing &lt;strong&gt;open source&lt;/strong&gt; software.&lt;/p&gt;</summary><content type="html">
+            &lt;p&gt;Wow,  &lt;a href="http://hoth.entp.com" title="Hoth"&gt;Hoth&lt;/a&gt; has been entirely too quiet.  We don't even have a New Year post! I'll take the blame for that if it will get us off the hook. Now, on to business...&lt;/p&gt;
+
+&lt;p&gt;2008 was busy year.  We grew from a handful of employees into a full-time web application shipping yard, starting satellite offices in Huntsville, Alabama and Montevideo, Uruguay. We have continued the development of our flagship application, &lt;a href="http://lighthouseapp.com"&gt;Lighthouse&lt;/a&gt;, lined up a steady base of client work, and started development on our new product, &lt;a href="http://tenderapp.com"&gt;Tender&lt;/a&gt;. During this time we managed to maintain our &lt;em&gt;other&lt;/em&gt; passion, developing &lt;strong&gt;open source&lt;/strong&gt; software.&lt;/p&gt;
+&lt;p&gt;Wow,  &lt;a href="http://hoth.entp.com" title="Hoth"&gt;Hoth&lt;/a&gt; has been entirely too quiet.  We don't even have a New Year post! I'll take the blame for that if it will get us off the hook. Now, on to business...&lt;/p&gt;
+
+&lt;p&gt;2008 was busy year.  We grew from a handful of employees into a full-time web application shipping yard, starting satellite offices in Huntsville, Alabama and Montevideo, Uruguay. We have continued the development of our flagship application, &lt;a href="http://lighthouseapp.com"&gt;Lighthouse&lt;/a&gt;, lined up a steady base of client work, and started development on our new product, &lt;a href="http://tenderapp.com"&gt;Tender&lt;/a&gt;. During this time we managed to maintain our &lt;em&gt;other&lt;/em&gt; passion, developing &lt;strong&gt;open source&lt;/strong&gt; software.&lt;/p&gt;
+
+&lt;h3&gt;Recently on ENTP...&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;We're inching closer to the official launch of our latest product, &lt;a href="http://tenderapp.com" title="Tender"&gt;Tender&lt;/a&gt;. &lt;em&gt;*coughVERYSOONcough*&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://twitter.com/protocool/"&gt;Trevor Squires&lt;/a&gt; publicly released &lt;a href="http://propaneapp.com" title="Propane"&gt;Propane&lt;/a&gt; an OSX chat client for &lt;a href="http://campfirenow.com" title="Campfire"&gt;Campfire&lt;/a&gt; users (&lt;em&gt;which rocks some serious socks off&lt;/em&gt;). Congrats Trevor!&lt;/li&gt;
+&lt;li&gt;We have a Rails training event coming up in Atlanta. &lt;em&gt;details coming soon&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://twitter.com/jeremymcanally/"&gt;Jeremy McAnally&lt;/a&gt; was awarded as "&lt;a href="http://www.rubyinside.com/rubys-top-hitter-in-2008-jeremy-mcanally-1404.html"&gt;Ruby’s Top Hitter in 2008&lt;/a&gt;" by &lt;a href="http://www.rubyinside.com"&gt;Ruby Inside&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://twitter.com/gilesgoatboy/"&gt;Giles Bowkett&lt;/a&gt; was awarded the "&lt;a href="http://www.rubyinside.com/top-ruby-presenter-of-2008-giles-bowkett-1425.html"&gt;Top Ruby Presenter of 2008&lt;/a&gt;" by &lt;a href="http://www.rubyinside.com"&gt;Ruby Inside&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Season 1 summed up&lt;/h3&gt;
+
+&lt;p&gt;&lt;em&gt;A quick recap of 2008's open source work&lt;/em&gt;&lt;/p&gt;
+
+&lt;h4&gt;March 2008&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://twitter.com/Caged/"&gt;Justin Palmer&lt;/a&gt; releases &lt;a href="http://github.com/Caged/gitnub/tree/master"&gt;GitNub&lt;/a&gt;, a Gitk-like application written in RubyCocoa that looks like it belongs on a Mac.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;April 2008&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://twitter.com/entp/"&gt;ENTP&lt;/a&gt; and &lt;a href="http://engineyard.com"&gt;Engine Yard&lt;/a&gt; take &lt;a href="http://lighthouseapp.com"&gt;Lighthouse&lt;/a&gt; to a new level, adding free Open Source projects to developers.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;June 2008&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://techno-weenie.net/"&gt;Rick Olson&lt;/a&gt; and &lt;a href="http://twitter.com/Caged/"&gt;Justin Palmer&lt;/a&gt; release their &lt;a href="http://warehouseapp.com"&gt;Warehouse&lt;/a&gt; code on &lt;a href="http://github.com/entp/warehouse/tree/master"&gt;GitHub&lt;/a&gt;, a Git/Subversion browser and changeset viewer, under an Open Source license.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://twitter.com/protocool/"&gt;Trevor Squires&lt;/a&gt; releases &lt;a href="http://github.com/protocool/ack-tmbundle/tree/master"&gt;ack-tmbundle&lt;/a&gt;, the "Ack in Project" TextMate bundle.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;July 2008&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://techno-weenie.net/"&gt;Rick Olson&lt;/a&gt; and &lt;a href="http://twitter.com/kneath/"&gt;Kyle Neath&lt;/a&gt; begin working on &lt;a href="http://github.com/entp/seinfeld/tree/master"&gt;Calendar About Nothing&lt;/a&gt;. Check it out at &lt;a href="http://calendaraboutnothing.com/"&gt;http://calendaraboutnothing.com&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://twitter.com/godfoca"&gt;Nicolás Sanguinetti&lt;/a&gt; releases &lt;a href="http://github.com/foca/integrity/tree/master"&gt;integrity&lt;/a&gt;, the &lt;em&gt;easy and fun&lt;/em&gt; Continuous Integration server.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://twitter.com/rabble"&gt;Evan Henshaw-Plath&lt;/a&gt; releases &lt;a href="http://github.com/rabble/icalico/tree/master"&gt;icalico&lt;/a&gt;, a social calendaring web app for conferences.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;September 2008&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://twitter.com/court3nay"&gt;Courtenay Gasking&lt;/a&gt; releases &lt;a href="http://github.com/courtenay/splam/tree/master"&gt;splam&lt;/a&gt;, a plugin which attempts to detect spam in comments and posts.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://twitter.com/kneath/"&gt;Kyle Neath&lt;/a&gt; releases &lt;a href="http://github.com/kneath/select-autocompleter/tree/master"&gt;select-autocompleter&lt;/a&gt;, a &lt;a href="http://mootools.net"&gt;MooTools&lt;/a&gt; plugin to create editable select tags.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://twitter.com/gilesgoatboy/"&gt;Giles Bowkett&lt;/a&gt; releases &lt;a href="http://github.com/gilesbowkett/towelie/tree/master"&gt;Towlie&lt;/a&gt; to keep your code DRY. Read about it &lt;a href="http://gilesbowkett.blogspot.com/2008/09/towelie-keeps-your-code-dry.html"&gt;HERE&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;October 2008&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://techno-weenie.net/"&gt;Rick Olson&lt;/a&gt; releases &lt;a href="http://github.com/entp/astrotrain/tree/master"&gt;astrotrain&lt;/a&gt;, a Merb app that forwards email from maildirs or postfix to HTTP posts.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://twitter.com/jeremymcanally/"&gt;Jeremy McAnally&lt;/a&gt; releases &lt;a href="http://github.com/jeremymcanally/context/tree/master"&gt;context&lt;/a&gt;, a super tight library to add contexts to tests.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://twitter.com/jeremymcanally/"&gt;Jeremy McAnally&lt;/a&gt; releases &lt;a href="http://github.com/jeremymcanally/matchy/tree/master"&gt;matchy&lt;/a&gt;, RSpec-esque matchers for Test::Unit.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://twitter.com/mattly"&gt;Matt Lyon&lt;/a&gt; releases &lt;a href="http://github.com/mattly/datagrammer/tree/master"&gt;datagrammer&lt;/a&gt;, which manages sending and receiving UDP packets.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://twitter.com/kneath/"&gt;Kyle Neath&lt;/a&gt; releases &lt;a href="http://github.com/kneath/timeframe-mootools/tree/master"&gt;timeframe-mootools&lt;/a&gt;, a click-draggable/range-makeable, better calendar in &lt;a href="http://mootools.net"&gt;MooTools&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://twitter.com/court3nay"&gt;Courtenay Gasking&lt;/a&gt; releases &lt;a href="http://github.com/courtenay/acts_like_git/tree/master"&gt;acts_like_git&lt;/a&gt;, a Rails plugin that uses git to version ActiveRecord fields, like acts_as_versioned, but a git.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;November 2008&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://twitter.com/court3nay"&gt;Courtenay Gasking&lt;/a&gt; releases &lt;a href="http://github.com/courtenay/css_file_sanitize/tree/master"&gt;css_file_sanitize&lt;/a&gt;, which allows your Ruby web app to take custom CSS and reject anything that smells bad.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://twitter.com/entp"&gt;ENTP&lt;/a&gt; releases &lt;a href="http://github.com/entp/xtt/tree/master"&gt;XTT&lt;/a&gt;, a time tracker application. &lt;em&gt;Think private 'twitter' that counts the duration of status messages.&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://twitter.com/dcadenas"&gt;Daniel Cadenas&lt;/a&gt; releases &lt;a href="http://github.com/dcadenas/rspec2rr/tree/master"&gt;rspec2rr&lt;/a&gt;, a Ruby script that helps you ease the migration process from rspec dobules ro rr trying to reduce your manual work&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://twitter.com/imagetic"&gt;Will Duncan&lt;/a&gt;, our user support guru, turns 25.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;December 2008&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://twitter.com/entp"&gt;ENTP&lt;/a&gt; releases &lt;a href="http://github.com/entp/tender_multipass/tree/master"&gt;tender_multipass&lt;/a&gt;, a rails plugin for creating special cookies to setup automatic logins with &lt;a href="http://tenderapp.com"&gt;Tender&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://twitter.com/godfoca"&gt;Nicolás Sanguinetti&lt;/a&gt; releases &lt;a href="http://github.com/foca/storyteller/tree/master"&gt;storyteller&lt;/a&gt;, minimalist user stories for test/unit.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://twitter.com/jeremymcanally/"&gt;Jeremy McAnally&lt;/a&gt; gets super famous when &lt;a href="http://github.com/jeremymcanally/rg/tree/master"&gt;rg&lt;/a&gt; is added into Rails core. Read about it on his &lt;a href="http://omgbloglol.com/rejoice-rg-is-now-part-of-rail"&gt;BLOG&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://twitter.com/gilesgoatboy/"&gt;Giles Bowkett&lt;/a&gt; launches &lt;a href="http://boing-boing-minus-disneyland.heroku.com/"&gt;Boing Boing Minus Disneyland&lt;/a&gt;, a profanity filter where "Disneyland" is the only curse word.  Read about it &lt;a href="http://gilesbowkett.blogspot.com/2008/12/work-in-progress-boingboing-minus.html"&gt;HERE&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Hot off the press for 2009!&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://twitter.com/jeremymcanally/"&gt;Jeremy McAnally&lt;/a&gt; releases &lt;a href="http://github.com/jeremymcanally/krauter/tree/master"&gt;krauter&lt;/a&gt;, a new router for Rails. &lt;em&gt;Tiny (200 lines fool!), quick (adding routes so fast it hurts and competes...&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://twitter.com/jeremymcanally/"&gt;Jeremy McAnally&lt;/a&gt; releases &lt;a href="http://github.com/jeremymcanally/perwikity/tree/master"&gt;perwikity&lt;/a&gt;, an elegant wiki system for anyone who respects their grandmother.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://techno-weenie.net/"&gt;Rick Olson&lt;/a&gt; releases &lt;a href="http://islostonyet.com/"&gt;Is LOST on yet&lt;/a&gt; because he REALLY needs to know.  Code on &lt;a href="http://github.com/technoweenie/islostonyet.com/tree/master"&gt;GitHub&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+          </content>  <feedburner:origLink>http://hoth.entp.com/2009/1/12/wait-it-s-2009</feedburner:origLink></entry>
+  <entry xml:base="http://hoth.entp.com/">
+    <author>
+      <name>will</name>
+    </author>
+    <id>tag:hoth.entp.com,2009-01-11:14191</id>
+    <published>2009-01-11T00:04:00Z</published>
+    <updated>2009-01-21T06:10:29Z</updated>
+    <category term="Lighthouse" />
+    <category term="Tender Support" />
+    <link href="http://feeds.feedburner.com/~r/activereload/~3/508471769/eeek-downtime" rel="alternate" type="text/html" />
+    <title>Eeek! Downtime...</title>
+<summary type="html">&lt;p&gt;We're currently experiencing an unexpected outage on the cluster which houses both &lt;a href="http://lighthouseapp.com"&gt;Lighthouse&lt;/a&gt; and &lt;a href="http://tenderapp.com"&gt;Tender&lt;/a&gt;. Please bare with us until we know more about what is going on.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Lighthouse users&lt;/strong&gt; -- You can follow &lt;a href="http://lhstatus.com"&gt;http://lhstatus.com&lt;/a&gt; or &lt;a href="http://twitter.com/lighthouseapp/"&gt;@lighthouseapp&lt;/a&gt; for status updates and announcements.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Tender beta users&lt;/strong&gt; -- You can follow &lt;a href="http://twitter.com/tenderapp/"&gt;@tenderapp&lt;/a&gt; for status updates and announcements&lt;/p&gt;</summary><content type="html">
+            &lt;p&gt;We're currently experiencing an unexpected outage on the cluster which houses both &lt;a href="http://lighthouseapp.com"&gt;Lighthouse&lt;/a&gt; and &lt;a href="http://tenderapp.com"&gt;Tender&lt;/a&gt;. Please bare with us until we know more about what is going on.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Lighthouse users&lt;/strong&gt; -- You can follow &lt;a href="http://lhstatus.com"&gt;http://lhstatus.com&lt;/a&gt; or &lt;a href="http://twitter.com/lighthouseapp/"&gt;@lighthouseapp&lt;/a&gt; for status updates and announcements.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Tender beta users&lt;/strong&gt; -- You can follow &lt;a href="http://twitter.com/tenderapp/"&gt;@tenderapp&lt;/a&gt; for status updates and announcements&lt;/p&gt;
+&lt;p&gt;We're currently experiencing an unexpected outage on the cluster which houses both &lt;a href="http://lighthouseapp.com"&gt;Lighthouse&lt;/a&gt; and &lt;a href="http://tenderapp.com"&gt;Tender&lt;/a&gt;. Please bare with us until we know more about what is going on.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Lighthouse users&lt;/strong&gt; -- You can follow &lt;a href="http://lhstatus.com"&gt;http://lhstatus.com&lt;/a&gt; or &lt;a href="http://twitter.com/lighthouseapp/"&gt;@lighthouseapp&lt;/a&gt; for status updates and announcements.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Tender beta users&lt;/strong&gt; -- You can follow &lt;a href="http://twitter.com/tenderapp/"&gt;@tenderapp&lt;/a&gt; for status updates and announcements&lt;/p&gt;
+
+&lt;h3&gt;Update:&lt;/h3&gt;
+
+&lt;p&gt;&lt;em&gt;4:55 p.m. PST&lt;/em&gt; -- Reboot is in progress and we should be coming back online shortly.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;4:59 p.m. PST&lt;/em&gt; -- and we're back online.&lt;/p&gt;
+
+&lt;p&gt;&amp;lt;embed src="http://media.mtvnservices.com/mgid:cms:item:southparkstudios.com:166192:" height="405" width="540"&gt;&amp;lt;/embed&gt;&lt;br /&gt;via &lt;a href="http://www.videosift.com/video/South-Park-How-to-Fix-the-Internet" title="South Park - How to Fix the Internet"&gt;videosift.com&lt;/a&gt;&lt;/p&gt;
+          </content>  <feedburner:origLink>http://hoth.entp.com/2009/1/11/eeek-downtime</feedburner:origLink></entry>
+  <entry xml:base="http://hoth.entp.com/">
+    <author>
+      <name>giles</name>
+    </author>
+    <id>tag:hoth.entp.com,2008-12-03:3168</id>
+    <published>2008-12-03T05:30:00Z</published>
+    <updated>2009-01-21T07:04:05Z</updated>
+    <link href="http://feeds.feedburner.com/~r/activereload/~3/473265828/what-s-hot-on-github-entp-again" rel="alternate" type="text/html" />
+    <title>What's Hot On GitHub: ENTP (again!)</title>
+<content type="html">
+            &lt;p&gt;As with &lt;a href="http://hoth.entp.com/2008/10/31/what-s-hot-on-github-entp"&gt;last month&lt;/a&gt;, an ENTP project shows up on &lt;a href="http://www.rubyinside.com/whats-hot-on-github-november-2008-1367.html"&gt;Ruby Inside's monthly list of interesting activity on GitHub&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;This time it's head kahuna Courtenay's &lt;code&gt;&lt;a href="http://github.com/courtenay/acts_like_git/tree/master"&gt;acts_as_git&lt;/a&gt;&lt;/code&gt; Rails plugin, &lt;a href="http://www.caboo.se/articles/2008/11/15/new-plugin-acts_as_git"&gt;written with Jamie van Dyke and Scott Chacon&lt;/a&gt;. &lt;code&gt;acts_as_git&lt;/code&gt; stores and versions text fields in a git repository.&lt;/p&gt;
+          </content>  <feedburner:origLink>http://hoth.entp.com/2008/12/3/what-s-hot-on-github-entp-again</feedburner:origLink></entry>
+  <entry xml:base="http://hoth.entp.com/">
+    <author>
+      <name>kyle</name>
+    </author>
+    <id>tag:hoth.entp.com,2008-12-02:3166</id>
+    <published>2008-12-02T22:49:00Z</published>
+    <updated>2009-01-21T06:12:49Z</updated>
+    <category term="Tender Support" />
+    <category term="tender" />
+    <link href="http://feeds.feedburner.com/~r/activereload/~3/472979281/tender-s-almost-here" rel="alternate" type="text/html" />
+    <title>Tender's almost here</title>
+<summary type="html">&lt;p&gt;We’re throwing the final polish into &lt;a href="http://tenderapp.com"&gt;Tender&lt;/a&gt; and getting ready to release it into the wild.  I thought I’d take a moment to highlight some of the features that makes Tender so special to us.&lt;/p&gt;</summary><content type="html">
+            &lt;p&gt;We’re throwing the final polish into &lt;a href="http://tenderapp.com"&gt;Tender&lt;/a&gt; and getting ready to release it into the wild.  I thought I’d take a moment to highlight some of the features that makes Tender so special to us.&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://tenderapp.com/images/logo.gif" alt="Tender Logo" /&gt;&lt;/p&gt;
+
+&lt;p&gt;We’re throwing the final polish into &lt;a href="http://tenderapp.com"&gt;Tender&lt;/a&gt; and getting ready to release it into the wild.  I thought I’d take a moment to highlight some of the features that makes Tender so special to us.&lt;/p&gt;
+
+&lt;h3&gt;Automatic Logins&lt;/h3&gt;
+
+&lt;p&gt;Probably &lt;em&gt;the&lt;/em&gt; primary goal for Tender was to reduce the barrier to entry for creating support requests.  We all have enough logins everywhere, so why should we create another one just to file a support request?  Tender allows you to post issues anonymously – but that wasn’t enough for us.  We took it one step further:  Tender will share authentication with your application.&lt;/p&gt;
+
+&lt;p&gt;What does this mean?  It means that if you setup some &lt;a href="http://help.tenderapp.com/faqs/setup-installation/login-from-cookies"&gt;special cookies&lt;/a&gt; in your application, users can post issues from their accounts on &lt;em&gt;your&lt;/em&gt; application.  From the user’s perspective, it’ll seem as if &lt;code&gt;help.yourapp.com&lt;/code&gt; is just a part of &lt;code&gt;yourapp.com&lt;/code&gt;  They won’t login, the app will just know who they are.&lt;/p&gt;
+
+&lt;h3&gt;Response Time&lt;/h3&gt;
+
+&lt;p&gt;Another high priority goal for Tender was to make companies responsible for support.  We want you to &lt;em&gt;want&lt;/em&gt; to help your customers.  That’s why when you log in, you’re immediately shown how many outstanding issues, and your average response time.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://hoth.entp.com/assets/2008/12/2/Dashboard___Admin_-_Lighthouse_Support-1.jpg" alt="Dashboard" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Your average response time is a measure of how long it takes you to respond to your customers.  It’s a good, concrete number you can assign to how well you’re helping customers out.&lt;/p&gt;
+
+&lt;h3&gt;Want to give Tender a try?&lt;/h3&gt;
+
+&lt;p&gt;We’re rounding the final bases for getting Tender out the door right now and as such we’d like to get some more people using it so they can give us feedback.  If you’d like to try out Tender, &lt;a href="http://help.tenderapp.com/discussions/new"&gt;file a support request&lt;/a&gt; with the subdomain you’d like to use, and we’ll see if we can’t get you an account setup.&lt;/p&gt;
+
+&lt;p&gt;We’re hoping to open up Tender fully to the public by the end of the week, so stay tuned!&lt;/p&gt;
+          </content>  <feedburner:origLink>http://hoth.entp.com/2008/12/2/tender-s-almost-here</feedburner:origLink></entry>
+  <entry xml:base="http://hoth.entp.com/">
+    <author>
+      <name>courtenay</name>
+    </author>
+    <id>tag:hoth.entp.com,2008-11-24:3150</id>
+    <published>2008-11-24T10:31:00Z</published>
+    <updated>2009-01-21T06:13:10Z</updated>
+    <category term="Tender Support" />
+    <link href="http://feeds.feedburner.com/~r/activereload/~3/463761463/fun-tender-stats" rel="alternate" type="text/html" />
+    <title>Fun Tender stats</title>
+<content type="html">
+            &lt;p&gt;I’m writing some hacks to get a neat new feature for Tender out the door before we launch into a more public phase.&lt;/p&gt;
+
+
+	&lt;p&gt;Here are the most common words used in tickets for Lighthouse:&lt;/p&gt;
+
+
+	&lt;pre&gt;&lt;code&gt;["not", 258], ["we", 258], ["would", 260], ["if", 264], ["are", 276], ["can", 280], ["as", 291], 
+["account", 301"], ["ticket", 304], ["my", 339], ["with", 347], ["but", 360], ["lighthouse", 380], 
+["have", 432], ["be", 452], ["this", 498], ["that", 573], ["of", 599], ["in", 656], ["is", 665], 
+["for", 710], ["it", 752], ["and", 803], ["a", 1277], ["i", 1295], ["to", 1748],&lt;/code&gt;&lt;/pre&gt;
+
+
+	&lt;p&gt;Awesome.&lt;/p&gt;
+          </content>  <feedburner:origLink>http://hoth.entp.com/2008/11/24/fun-tender-stats</feedburner:origLink></entry>
+  <entry xml:base="http://hoth.entp.com/">
+    <author>
+      <name>giles</name>
+    </author>
+    <id>tag:hoth.entp.com,2008-11-20:3117</id>
+    <published>2008-11-20T22:47:00Z</published>
+    <updated>2009-01-21T06:15:06Z</updated>
+    <category term="Tender Support" />
+    <category term="Tumbles" />
+    <category term="link" />
+    <link href="http://feeds.feedburner.com/~r/activereload/~3/460118592/github-uses-tender" rel="alternate" type="text/html" />
+    <title>GitHub Uses Tender</title>
+<content type="html">
+            &lt;p&gt;If you read Ruby blogs, you probably know that GitHub is run and built by some of the best programmers Ruby has. So we're pretty stoked to get &lt;a href="http://github.com/blog/236-support-no-longer-a-pain-in-our-ass"&gt;an endorsement like this&lt;/a&gt;.&lt;/p&gt;
+          </content>  <feedburner:origLink>http://hoth.entp.com/2008/11/20/github-uses-tender</feedburner:origLink></entry>
+  <entry xml:base="http://hoth.entp.com/">
+    <author>
+      <name>kyle</name>
+    </author>
+    <id>tag:hoth.entp.com,2008-11-18:3094</id>
+    <published>2008-11-18T00:09:00Z</published>
+    <updated>2009-01-21T06:14:00Z</updated>
+    <category term="Lighthouse" />
+    <category term="lighthouse" />
+    <link href="http://feeds.feedburner.com/~r/activereload/~3/456648949/custom-fields-we-don-t-need-no-stinking-custom-fields" rel="alternate" type="text/html" />
+    <title>Custom fields? We don't need no stinking custom fields</title>
+<summary type="html">&lt;p&gt;One of the most discussed feature requests for &lt;a href="http://lighthouseapp.com"&gt;Lighthouse&lt;/a&gt; is the addition of custom fields.  But given the goals of Lighthouse, it’s extremely unlikely that will ever happen.  Why is that you say? Well – custom fields just don’t work, and here’s my argument for why that’s the case.&lt;/p&gt;</summary><content type="html">
+            &lt;p&gt;One of the most discussed feature requests for &lt;a href="http://lighthouseapp.com"&gt;Lighthouse&lt;/a&gt; is the addition of custom fields.  But given the goals of Lighthouse, it’s extremely unlikely that will ever happen.  Why is that you say? Well – custom fields just don’t work, and here’s my argument for why that’s the case.&lt;/p&gt;
+&lt;p&gt;One of the most discussed feature requests for &lt;a href="http://lighthouseapp.com"&gt;Lighthouse&lt;/a&gt; is the addition of custom fields.  But given the goals of Lighthouse, it’s extremely unlikely that will ever happen.  Why is that you say? Well – custom fields just don’t work, and here’s my argument for why that’s the case.&lt;/p&gt;
+
+&lt;h3&gt;A little background&lt;/h3&gt;
+
+&lt;p&gt;Before my work with ENTP, I worked at one of those big-bad-agencies for almost four years as a web developer.  My job was not to write backend code. My job was not to make pretty designs. My job was to make it all work. Write the HTML, CSS, Javascript given designs from the design team and integrate it into Java/.NET/PHP backend systems.  I was marrying the ideals from design and programming into the real world of a front-end user experience.  Ideals don’t transform too well into the real world, so I ended up dealing with a lot of bugs.&lt;/p&gt;
+
+&lt;p&gt;A &lt;em&gt;lot&lt;/em&gt; of bugs.  During one of my projects, I estimate I was spending between 2-4 hours a &lt;em&gt;day&lt;/em&gt; dealing completely with organizing bugs in our bug-tracking system, JIRA.  JIRA had everything — access control, customizable workflows, priorities, rankings, modules, milestones and yes — custom fields.  But at the end of the day, none of those features amounted to anything. It was just overhead that mandates more man-hours to organizing the bug tracker.&lt;/p&gt;
+
+&lt;h3&gt;Organizing bugs is a myth&lt;/h3&gt;
+
+&lt;p&gt;The basic idea behind custom fields is that you will be able to better organize your bugs and create complicated prioritized lists of work to be done.  You’d be able to add a priority field, severity field, or a homeland security threat level color.  The old prioritization system in JIRA I worked with prioritized bugs with two custom fields – priority &amp;amp; severity.  We had three methods of making prioritization lists:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Priority - This was the priority of the bug, supposedly set by the client&lt;/li&gt;
+&lt;li&gt;Severity - This was the severity of the bug – whether it stopped all functionality, or was just a nitpick in the interface, for example&lt;/li&gt;
+&lt;li&gt;Project Manager coming over, slamming their laptop on my desk and telling me to fix issue X.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Guess which method worked best?  If you guessed #3 – you’re a winner.  For all the prioritizing and severitizing (which costs a &lt;em&gt;lot&lt;/em&gt; of time during bug input) the best method of bug sorting was human communication (WHAT?!).&lt;/p&gt;
+
+&lt;h3&gt;Bugs really only have three levels of prioritization&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src="http://warpspire.com/misc/dilbert_priorities.gif" alt="Dilbert explains bugs" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Just because custom fields don’t work doesn’t mean you need to give up on prioritization completely.  Simple prioritization can be a huge win for developers in allotting their time.  But you have to realize that there are really three levels of priority for a software bug.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;FIX IT NOW — these are showstopper bugs.  The server is crashed, the code you just deployed is eating up $1500 in sales per minute.  These are solved by phone calls, in-person sit-downs, raving emails and caffeine.  No bug tracker prioritization will help you. Enter the issue into a bug tracker for reference, but the priority is &lt;em&gt;right now&lt;/em&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Needs to get done very soon. These are bugs that break some non-vital functionality or produce a bad user experience and need to get fixed as soon as possible. We deal with these issues by tagging them ‘@high’ in Lighthouse.  You should have absolutely no more than a dozen of these bugs at any given point.  Any more than that will degrade to noise and developers will ignore.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Other bugs.  Any other bugs should be prioritized via milestones and assignees.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Any other prioritization should be considered a &lt;em&gt;recommendation&lt;/em&gt; and therefore as little time as possible should be spent creating the prioritized list.&lt;/p&gt;
+
+&lt;h3&gt;The human brain is more boolean than you might think&lt;/h3&gt;
+
+&lt;p&gt;Project managers seem to have a myth that the human brain works like a computer – where it can align priorities in a list and work on the issues in that order.  Adding more developers to the project should work like parallel processors – they all respect the priority list and work on issues in parallel in order of importance.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://hoth.entp.com/assets/2008/11/17/Things.jpg" /&gt;&lt;/p&gt;
+
+&lt;p&gt;The problem is that the human brain does not work that way.  It decides what it wants to work on, makes it’s own judgement of it’s value, and makes it’s own decision.  Realistically – this falls into one of two categories: needs to be done, can wait.  This is why Getting Things Done (GTD) systems have a concept of things that need to be done today, and things that need to be done next.&lt;/p&gt;
+
+&lt;p&gt;If there is nothing that needs to be done, then people may reference a priority list as a recommendation – but they will ultimately decide for themselves.  They may chose to clear out 50 easy browser bugs (low in priority) versus the one hard bug (high in priority) if nothing is urgent.  Think about bugs like chores – do you take the trash out when it’s almost full, or the day before trash day?&lt;/p&gt;
+
+&lt;h3&gt;Complicated prioritization lists are just false security&lt;/h3&gt;
+
+&lt;p&gt;For all my arguments against custom fields, there will be plenty of people arguing the opposite.  As a client-facing project manager, it’s very easy to think that you need to have complicated prioritization.  You can produce lists of prioritized bugs for clients to look at and gush over.  They are a wonderful source of false security — everyone not doing the work thinks everything is on track. “Look, we only have 5 high priority, showstopper tickets impacting the services layer for next month’s release left!”  But the people on the ground working on the code know that’s not the case. Developers see the project as a whole.&lt;/p&gt;
+
+&lt;p&gt;Just because you &lt;em&gt;can&lt;/em&gt; create a complicated hierarchical, phased priority list does not mean your developers will work on them in that fashion.  I think most people underestimate the impact of personal communication and overestimate the value of technology.  Bug trackers are a good thing, but only if they function &lt;em&gt;with&lt;/em&gt; your team.  &lt;/p&gt;
+
+&lt;p&gt;At Lighthouse we’re determined to make the best possible product – and we think the absence of a feature can be a feature in itself.  Try working without custom fields for a little while and you’ll soon see how the glove fits.&lt;/p&gt;
+
+&lt;p&gt;Next up: How we work with Lighthouse - an eye into how ENTP uses it’s own bug tracker.&lt;/p&gt;
+          </content>  <feedburner:origLink>http://hoth.entp.com/2008/11/18/custom-fields-we-don-t-need-no-stinking-custom-fields</feedburner:origLink></entry>
+  <entry xml:base="http://hoth.entp.com/">
+    <author>
+      <name>giles</name>
+    </author>
+    <id>tag:hoth.entp.com,2008-11-13:3069</id>
+    <published>2008-11-13T20:15:00Z</published>
+    <updated>2009-01-21T06:16:47Z</updated>
+    <category term="Tender Support" />
+    <link href="http://feeds.feedburner.com/~r/activereload/~3/452203159/sinatra-hack-lib-models-file" rel="alternate" type="text/html" />
+    <title>Sinatra: ActiveRecord lib/models File</title>
+<summary type="html">&lt;p&gt;I've got a Sinatra app using the same Active Record DB as a much larger Rails app. I need code to handle that, and I also want to keep my Sinatra app clean.&lt;/p&gt;</summary><content type="html">
+            &lt;p&gt;I've got a Sinatra app using the same Active Record DB as a much larger Rails app. I need code to handle that, and I also want to keep my Sinatra app clean.&lt;/p&gt;
+&lt;p&gt;I've got a Sinatra app using the same Active Record DB as a much larger Rails app. I need code to handle that, and I also want to keep my Sinatra app clean.&lt;/p&gt;
+
+&lt;div class="figure"&gt;&lt;img src="http://s3.amazonaws.com/giles/sinatra_11308/sinatra.gif"&gt;&lt;/div&gt;
+
+&lt;div class="figure"&gt;&lt;img src="http://s3.amazonaws.com/giles/sinatra_11308/models.gif"&gt;&lt;/div&gt;
+
+&lt;p&gt;It's kind of a cheat, and for some reason &lt;code&gt;lib/controllers&lt;/code&gt; doesn't work, but it's a tidy way to sneak a little naughty complexity into Sinatra's one-file simplicty.&lt;/p&gt;
+          </content>  <feedburner:origLink>http://hoth.entp.com/2008/11/13/sinatra-hack-lib-models-file</feedburner:origLink></entry>
+<feedburner:awareness>http://api.feedburner.com/awareness/1.0/GetFeedData?uri=entp-hoth</feedburner:awareness></feed>

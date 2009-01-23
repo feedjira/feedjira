@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<title>sfruby.org  </title>
+
+<link rel="stylesheet" href="http://sfruby.org/wp-content/themes/default/style.css" type="text/css" media="screen" />
+<link rel="alternate" type="application/rss+xml" title="sfruby.org RSS Feed" href="http://sfruby.org/?feed=rss2" />
+<link rel="pingback" href="http://sfruby.org/xmlrpc.php" />
+
+<style type="text/css" media="screen">
+
+	#page { background: url("http://sfruby.org/wp-content/themes/default/images/kubrickbgwide.jpg") repeat-y top; border: none; }
+
+</style>
+
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://sfruby.org/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://sfruby.org/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 2.6" />
+
+</head>
+<body>
+<div id="page">
+
+
+<div id="header">
+	<div id="headerimg">
+		<h1><a href="http://sfruby.org/">sfruby.org</a></h1>
+		<div class="description"></div>
+	</div>
+</div>
+<hr />
+
+	<div id="content" class="narrowcolumn">
+
+	
+		
+			<div class="post" id="post-1">
+				<h2><a href="http://sfruby.org/?p=1" rel="bookmark" title="Permanent Link to Hello world!">Hello world!</a></h2>
+				<small>August 15th, 2008 <!-- by admin --></small>
+
+				<div class="entry">
+					<p>Welcome to WordPress. This is your first post. Edit or delete it, then start blogging!</p>
+				</div>
+
+				<p class="postmetadata"> Posted in <a href="http://sfruby.org/?cat=1" title="View all posts in Uncategorized" rel="category">Uncategorized</a> |   <a href="http://sfruby.org/?p=1#comments" title="Comment on Hello world!">1 Comment &#187;</a></p>
+			</div>
+
+		
+		<div class="navigation">
+			<div class="alignleft"></div>
+			<div class="alignright"></div>
+		</div>
+
+	
+	</div>
+
+	<div id="sidebar">
+		<ul>
+						<li>
+				<form method="get" id="searchform" action="http://sfruby.org/">
+<label class="hidden" for="s">Search for:</label>
+<div><input type="text" value="" name="s" id="s" />
+<input type="submit" id="searchsubmit" value="Search" />
+</div>
+</form>
+			</li>
+
+			<!-- Author information is disabled per default. Uncomment and fill in your details if you want to use it.
+			<li><h2>Author</h2>
+			<p>A little something about you, the author. Nothing lengthy, just an overview.</p>
+			</li>
+			-->
+
+			
+			<li class="pagenav"><h2>Pages</h2><ul><li class="page_item page-item-2"><a href="http://sfruby.org/?page_id=2" title="About">About</a></li>
+</ul></li>
+			<li><h2>Archives</h2>
+				<ul>
+					<li><a href='http://sfruby.org/?m=200808' title='August 2008'>August 2008</a></li>
+				</ul>
+			</li>
+
+			<li class="categories"><h2>Categories</h2><ul>	<li class="cat-item cat-item-1"><a href="http://sfruby.org/?cat=1" title="View all posts filed under Uncategorized">Uncategorized</a> (1)
+</li>
+</ul></li>
+							<li id="linkcat-2" class="linkcat"><h2>Blogroll</h2>
+	<ul class='xoxo blogroll'>
+<li><a href="http://wordpress.org/development/">Development Blog</a></li>
+<li><a href="http://codex.wordpress.org/">Documentation</a></li>
+<li><a href="http://wordpress.org/extend/plugins/">Plugins</a></li>
+<li><a href="http://wordpress.org/extend/ideas/">Suggest Ideas</a></li>
+<li><a href="http://wordpress.org/support/">Support Forum</a></li>
+<li><a href="http://wordpress.org/extend/themes/">Themes</a></li>
+<li><a href="http://planet.wordpress.org/">WordPress Planet</a></li>
+
+	</ul>
+</li>
+
+				<li><h2>Meta</h2>
+				<ul>
+										<li><a href="http://sfruby.org/wp-login.php">Log in</a></li>
+					<li><a href="http://validator.w3.org/check/referer" title="This page validates as XHTML 1.0 Transitional">Valid <abbr title="eXtensible HyperText Markup Language">XHTML</abbr></a></li>
+					<li><a href="http://gmpg.org/xfn/"><abbr title="XHTML Friends Network">XFN</abbr></a></li>
+					<li><a href="http://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress</a></li>
+									</ul>
+				</li>
+			
+					</ul>
+	</div>
+
+
+
+<hr />
+<div id="footer">
+<!-- If you'd like to support WordPress, having the "powered by" link somewhere on your blog is the best way; it's our only promotion or advertising. -->
+	<p>
+		sfruby.org is proudly powered by
+		<a href="http://wordpress.org/">WordPress</a>
+		<br /><a href="http://sfruby.org/?feed=rss2">Entries (RSS)</a>
+		and <a href="http://sfruby.org/?feed=comments-rss2">Comments (RSS)</a>.
+		<!-- 23 queries. 0.134 seconds. -->
+	</p>
+</div>
+</div>
+
+<!-- Gorgeous design by Michael Heilemann - http://binarybonsai.com/kubrick/ -->
+
+		</body>
+</html>

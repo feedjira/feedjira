@@ -1,0 +1,900 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xml:lang="en-US" xmlns="http://www.w3.org/2005/Atom">
+  <title>danwebb.net - Home</title>
+  <id>tag:www.danwebb.net,2009:mephisto/</id>
+  <generator version="0.7.3" uri="http://mephistoblog.com">Mephisto Noh-Varr</generator>
+  <link href="http://www.danwebb.net/feed/atom.xml" rel="self" type="application/atom+xml"/>
+  <link href="http://www.danwebb.net/" rel="alternate" type="text/html"/>
+  <updated>2008-06-24T00:24:12Z</updated>
+  <entry xml:base="http://www.danwebb.net">
+    <author>
+      <name>dan</name>
+    </author>
+    <id>tag:www.danwebb.net,2008-06-23:3342</id>
+    <published>2008-06-23T22:56:00Z</published>
+    <updated>2008-06-24T00:24:12Z</updated>
+    <category term="Events"/>
+    <category term="JavaScript"/>
+    <category term="Low Pro"/>
+    <category term="Misc"/>
+    <category term="Rails"/>
+    <category term="boring"/>
+    <category term="bullshit"/>
+    <category term="chitchat"/>
+    <category term="donotread"/>
+    <category term="events"/>
+    <category term="general"/>
+    <category term="lowpro"/>
+    <category term="prattle"/>
+    <category term="rack"/>
+    <category term="rails"/>
+    <category term="reproduction"/>
+    <category term="speaking"/>
+    <category term="work"/>
+    <link href="http://www.danwebb.net/2008/6/23/it-s-been-a-long-time" rel="alternate" type="text/html"/>
+    <title>It's Been A Long Time...</title>
+<content type="html">
+            &lt;p&gt;But I&#8217;ve not just been sitting on my arse playing &lt;span class=&quot;caps&quot;&gt;GTA IV&lt;/span&gt;, oh no.  Well, not all the time anyway.  The reason I&#8217;ve not posted anything (or been particularly active on the web in general) is that I&#8217;ve been damn busy.  Most importantly, Catherine kindly gave birth to our first son, &lt;a href=&quot;http://flickr.com/photos/danwebb/2361976989/&quot;&gt;Max&lt;/a&gt;, back in March which has been quite a change and sapped a lot of my hacking time.  I have to say though, despite the horror stories that many veteran parents like to feed you, our experience has only been good.  In fact, not good, great.  I recommend this reproducing lark.&lt;/p&gt;
+
+
+	&lt;p&gt;Secondly, I&#8217;ve been hacking away nearly full time on one of my favourite projects to date, &lt;a href=&quot;http://peoplesmusicstore.com&quot;&gt;Peoples Music Store&lt;/a&gt; with &lt;span class=&quot;caps&quot;&gt;LRUG&lt;/span&gt; stalwart and renowned anarchist, &lt;a href=&quot;http://abscond.org&quot;&gt;James &#8216;Bringing London To Its Very Knees&#8217; Darling&lt;/a&gt; which is maturing nicely under private beta as we speak.  Peoples Music Store is a great idea from some of the guys behind &lt;a href=&quot;http://bleep.com&quot;&gt;bleep.com&lt;/a&gt; whereby users can construct and customise their very own download store from the music they love then get free music themselves if people buy from their store.  It&#8217;s a great way to both promote and show off you&#8217;re own music taste or in depth genre knowledge and find new music from stores you trust while getting some free digital swag along the way.  I&#8217;m probably not explaining it well so just drop me a line if you want and invite and the site will explain itself.  Public launch is coming in a month or so.&lt;/p&gt;
+
+
+	&lt;p&gt;Building Peoples Music Store has been a great learning experience.  We run the site on a cloud computing platform and from content ingestion to audio preview delivery to application servers to download packaging and delivery everything has been designed to scale horizontally &#8211; and I&#8217;m pretty proud of it.  Thin, Rack, Sphinx, God, Starling and a whole load more cool open source gear is all running in there. I really need to get to blogging some of what I&#8217;ve discovered about working with &lt;a href=&quot;http://rack.rubyforge.org/&quot;&gt;Rack&lt;/a&gt;.  It simply is the dog&#8217;s bollocks.&lt;/p&gt;
+
+
+	&lt;p&gt;So, enough of the excuses.  What&#8217;s on the horizon?&lt;/p&gt;
+
+
+	&lt;h3&gt;Speaking and Conferences&lt;/h3&gt;
+
+
+	&lt;p&gt;I&#8217;ve taken some time of speaking and conferencing in general so as to spend lots of time with Catherine and Max but come September I&#8217;m restarting the conference trail.  Firstly, I&#8217;m doing a presentation and a tutorial (with &lt;a href=&quot;http://jlaine.net&quot;&gt;Jarkko Laine&lt;/a&gt;) at RailsConf Europe all about JavaScript related Rails stuff and I&#8217;m likely to have a slot at &lt;a href=&quot;http://vivabit.com/atmediaajax&quot;&gt;@media Ajax&lt;/a&gt; as well.  Also, I&#8217;ll be heading to &lt;a href=&quot;http://2008.dconstruct.org&quot;&gt;dConstruct&lt;/a&gt; as is the tradition.&lt;/p&gt;
+
+
+	&lt;h3&gt;Hacking and Open Source Business&lt;/h3&gt;
+
+
+	&lt;p&gt;Although I&#8217;ve not commited to Low Pro or Low Pro JQ for a good while now they are both very much alive.  I&#8217;ve simply not come across anything that I&#8217;ve felt the need to add for a while.  If you have any suggestions or patches do let me know.  I&#8217;ve actually got time to commit them at the moment.  Another little project that I&#8217;m hoping to get off the ground is called &lt;strong&gt;Evil&lt;/strong&gt; which is going to contain lots of Merb/Rack goodness.  The first by-product of which is the &lt;a href=&quot;http://github.com/danwrong/merb_openid&quot;&gt;merb_openid&lt;/a&gt; gem for consuming OpenID in Merb apps (it&#8217;s still not quite production ready though so don&#8217;t go using it just yet).  I&#8217;ll let you know what Evil actually does when (or if) I actually get something working.&lt;/p&gt;
+
+
+	&lt;p&gt;So, that&#8217;s all for now.  Just a bit of a status report.  I promise I&#8217;ll get some useful content written that you actually care about very soon.&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://www.danwebb.net">
+    <author>
+      <name>dan</name>
+    </author>
+    <id>tag:www.danwebb.net,2008-02-08:3047</id>
+    <published>2008-02-08T13:10:00Z</published>
+    <updated>2008-03-07T21:06:20Z</updated>
+    <category term="Low Pro"/>
+    <category term="javascript"/>
+    <category term="jquery"/>
+    <category term="lowpro"/>
+    <link href="http://www.danwebb.net/2008/2/8/event-delegation-made-easy-in-jquery" rel="alternate" type="text/html"/>
+    <title>Event Delegation Made Easy</title>
+<content type="html">
+            &lt;p&gt;I&#8217;m having a lot of fun poking around jQuery at the moment and came up with a cool little thing that&#8217;s going into Low Pro for jQuery but is a nice stand-alone little snippet for implementing event delegation.  Since the &lt;a href=&quot;http://icant.co.uk/sandbox/eventdelegation/&quot;&gt;Christian and the guys at &lt;span class=&quot;caps&quot;&gt;YUI&lt;/span&gt; started talking about it&lt;/a&gt; event delegation has gone from being something that I&#8217;d use occasionally to the way I do nearly all my event handling.  If you aren&#8217;t familiar with the technique go and click that previous link and read Christian&#8217;s article now &#8211; it&#8217;s important.&lt;/p&gt;
+
+
+	&lt;p&gt;In most instances I end up writing a lot of event handlers that look like this:&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;$('#thing').click(function(e) {
+  var target = $(e.target);
+
+  if (target.hasClass('quit') return doQuitStuff();
+  if (target.hasClass('edit') return doEditStuff();
+  // and so on...
+});&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;Obviously, writing a lot of the same kind of code is a warning sign that something needs refactoring but I&#8217;ve never come up with a nice way to abstract this.  But with a little bit of functional magic I&#8217;ve just found with something I really like.  Here&#8217;s what I came up with:&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;jQuery.delegate = function(rules) {
+  return function(e) {
+    var target = $(e.target);
+    for (var selector in rules)
+      if (target.is(selector)) return rules[selector].apply(this, $.makeArray(arguments));
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;Using it is simple:&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;$('#thing').click($.delegate({
+  '.quit': function() { /* do quit stuff */ },
+  '.edit': function() { /* do edit stuff */ }
+}));&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;The function simple runs through the rules checking if the element that fired the event belongs to that selector then calls the corresponding handler passing the original event object through.  The great thing about it is that you can use it in Low Pro behavior classes:&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;DateSelector = $.klass({
+  onclick: $.delegate({
+    '.close': function() { this.close() },
+   '.day': function(e) { this.selectDate(e.target) }
+  }),
+  selectDate: function(dayElement) {
+    // code ...
+  },
+  close: function() {
+    // code ...
+  }
+});&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;I&#8217;m not sure of the performance implications of using is() so heavily but some form of caching could be added if it was a problem.  Still, it&#8217;s a really nice little bit of syntactic sugar that&#8217;s going into Low Pro for jQuery and I&#8217;ll be using it a lot.&lt;/p&gt;
+
+
+	&lt;p&gt;&lt;strong&gt;&lt;span class=&quot;caps&quot;&gt;UPDATE&lt;/span&gt;&lt;/strong&gt;: I should have added that there&#8217;s a version of this in Low Pro for Prototype. In case you want to use it on its own:&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;Event.delegate = function(rules) {
+  return function(e) {
+      var element = $(e.element());
+      for (var selector in rules)
+        if (element.match(selector)) return rules[selector].apply(this, $A(arguments));
+    }
+}&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;Meanwhile, you might want to take a look at &lt;a href=&quot;http://peter.michaux.ca/article/3752&quot;&gt;the patch&lt;/a&gt; by &lt;a href=&quot;http://peter.michaux.ca/&quot;&gt;Peter Michaux&lt;/a&gt;.&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://www.danwebb.net">
+    <author>
+      <name>dan</name>
+    </author>
+    <id>tag:www.danwebb.net,2008-02-03:3002</id>
+    <published>2008-02-03T16:00:00Z</published>
+    <updated>2008-02-04T00:28:00Z</updated>
+    <category term="JavaScript"/>
+    <category term="Low Pro"/>
+    <category term="javascript"/>
+    <category term="jquery"/>
+    <category term="lowpro"/>
+    <link href="http://www.danwebb.net/2008/2/3/how-to-use-low-pro-for-jquery" rel="alternate" type="text/html"/>
+    <title>How To Use Low Pro For jQuery</title>
+<summary type="html">&lt;p&gt;It seems that my initial version of &lt;a href=&quot;http://github.com/danwrong/low-pro-for-jquery/tree/master/src/lowpro.jquery.js?raw=true&quot;&gt;Low Pro for jQuery&lt;/a&gt; has gotten enough interest to continue
+with it but, as always, my previous post was extremely lacking in actual detail about how to use
+the damn thing.  So without further ado here we go.  It&#8217;s pretty simple really and, as its a port
+of a subset of Low Pro for Prototype, anything that goes for that also goes for jLow.&lt;/p&gt;
+
+
+	&lt;p&gt;Heh, let&#8217;s not call it that again.  Bad.&lt;/p&gt;
+
+
+	&lt;p&gt;Anyway, on with the show&#8230;&lt;/p&gt;</summary><content type="html">
+            &lt;p&gt;It seems that my initial version of &lt;a href=&quot;http://github.com/danwrong/low-pro-for-jquery/tree/master/src/lowpro.jquery.js?raw=true&quot;&gt;Low Pro for jQuery&lt;/a&gt; has gotten enough interest to continue
+with it but, as always, my previous post was extremely lacking in actual detail about how to use
+the damn thing.  So without further ado here we go.  It&#8217;s pretty simple really and, as its a port
+of a subset of Low Pro for Prototype, anything that goes for that also goes for jLow.&lt;/p&gt;
+
+
+	&lt;p&gt;Heh, let&#8217;s not call it that again.  Bad.&lt;/p&gt;
+
+
+	&lt;p&gt;Anyway, on with the show&#8230;&lt;/p&gt;
+&lt;h3&gt;Class-based OO&lt;/h3&gt;
+
+
+	&lt;p&gt;In order for Low Pro behavior classes to work with jQuery we need a class implementation.  The
+one I&#8217;ve based this on is the version from Prototype originally based on Alex Arnell&#8217;s work. This
+is detailed in &lt;a href=&quot;http://prototypejs.org/learn/class-inheritance&quot;&gt;this article on the prototype site&lt;/a&gt;. The
+only difference is that instead of using Class.create you use $.klass:&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;Draggable = $.klass({
+  initialize: function(options) { },
+  onmousedown: function() {}
+});
+
+GhostedDraggable = $.klass(Draggable, {
+  onmousedown: function($super) {
+    // do extra stuff here then call original method...
+    $super();
+  }
+});&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;h3&gt;Attaching the behavior class to elements&lt;/h3&gt;
+
+
+	&lt;p&gt;To attach the behavior class to some 
+elements you can use the attach method:&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;$('div.product').attach(GhostedDraggable, { anOption: thing });&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;attach&lt;/code&gt; creates a new instance of the given behavior class for each element in the collection and
+attaches them to these elements.  Any subsequent arguments are passed to the class&#8217;s &lt;code&gt;initialize&lt;/code&gt; function.  
+A few magic things happen here.  First, &lt;code&gt;this.element&lt;/code&gt; in the 
+behavior instance is set to a dollared version of the element it&#8217;s attached to.  Secondly, every 
+method beginning with on (eg. onclick, onsubmit etc) gets bound as an event handler on the attached
+element.  However, in the event handler functions themselves, &lt;code&gt;this&lt;/code&gt; points to the behavior instance
+rather than the element so you can call it&#8217;s other methods.  You can obviously get to the element
+by using &lt;code&gt;this.element&lt;/code&gt; if you need to though.&lt;/p&gt;
+
+	&lt;h3&gt; And for the bonus round&#8230;&lt;/h3&gt;
+
+
+	&lt;p&gt;So, that&#8217;s about all there is to it.  One added bonus is that if you are using &lt;a href=&quot;http://brandonaaron.net/docs/livequery/&quot;&gt;livequery&lt;/a&gt; then Low
+Pro will automatically use it to attach any new behaviors after the &lt;span class=&quot;caps&quot;&gt;DOM&lt;/span&gt; is changed without you needing to worry about it.&lt;/p&gt;
+
+
+	&lt;p&gt;Here&#8217;s a super simple example behavior that simply adds and removes a &lt;span class=&quot;caps&quot;&gt;CSS&lt;/span&gt; class name when it is
+hovered over.  It&#8217;s about as bare bones as you can get while showing off most of the features:&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;Hover = $.klass({
+  initialize: function(hoverClass) {
+    this.hoverClass = hoverClass;
+  },
+  onmouseover: function() {
+    this.element.addClass(this.hoverClass);
+  },
+  onmouseout: function() {
+    this.element.removeClass(this.hoverClass);
+  }
+});
+
+jQuery(function($) {
+  $('span.name').attach(Hover, 'myClassName');
+});&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;For more information about how you might use behavior classes take a look at &lt;a href=&quot;/2007/7/18/low-pro-behaviours-101-part-2&quot;&gt;this article.&lt;/a&gt; ANother good point of reference is the built-in Remote.Link and Remote.Form
+behaviors that are built in to Low Pro.  Take a look at the &lt;a href=&quot;http://github.com/danwrong/low-pro-for-jquery/tree/master/src/lowpro.jquery.js?raw=true&quot;&gt;source&lt;/a&gt;
+Also a Low Pro site is on its way shortly. As I use it more myself I&#8217;ll post more real examples but you can post any questions to the &lt;a href=&quot;http://groups.google.co.uk/group/low-pro&quot;&gt;Low Pro list&lt;/a&gt;.&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://www.danwebb.net">
+    <author>
+      <name>dan</name>
+    </author>
+    <id>tag:www.danwebb.net,2008-01-31:2971</id>
+    <published>2008-01-31T00:56:00Z</published>
+    <updated>2008-01-31T14:43:25Z</updated>
+    <category term="JavaScript"/>
+    <category term="Low Pro"/>
+    <category term="experiments"/>
+    <category term="javascript"/>
+    <category term="jquery"/>
+    <category term="lowpro"/>
+    <link href="http://www.danwebb.net/2008/1/31/low-pro-for-jquery" rel="alternate" type="text/html"/>
+    <title>Low Pro For jQuery?</title>
+<summary type="html">&lt;p&gt;A few days ago &lt;a href=&quot;http://groups.google.co.uk/group/low-pro/browse_thread/thread/29b96e32fb68f45e&quot;&gt;a discussion started about porting Low Pro over to jQuery&lt;/a&gt;.  It&#8217;s been on my mind 
+for a while (especially since &lt;a href=&quot;http://meme-rocket.com/2007/09/07/agnostic-unobtrusive-javascript/&quot;&gt;Bill blogged about agnostic &lt;span class=&quot;caps&quot;&gt;UJS&lt;/span&gt;&lt;/a&gt;) but I&#8217;d hesitated in doing this for a few
+reasons.  Firstly, of course, jQuery is the mortal enemy of Prototype and only one library shall
+remain come The Quickening. Aside from this completely rational reason, I wondered whether jQuery
+really needed anything like Low Pro at all.  After all, jQuery has always been designed with
+&#8216;unobtrusiveness&#8217; in mind and was written with most of what Low Pro originally intended to fix 
+in Prototype implemented from the start.  There was no need for something like Event.addBehavior 
+because essentially that&#8217;s what jQuery is:&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;Event.addBehavior({
+  'a.external:click': function() { //...code...// },
+  'div.product:mouseover': function() { //...code...// }
+});&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;Can be achieved in jQuery like this:&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;jQuery(function($) {
+  $('a.external').click(function() { //...code...// });
+  $('div.product').mouseover(function() { //...code...// });
+});&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;And rather than ever going near inline event handlers this unobtrusive style was the de-facto
+method of working for the jQuery crowd.  The angel on your scripting shoulder.  However, as you
+can probably tell from reading this blog, I&#8217;ve never really adopted jQuery as my main library
+and this was due to one big reason (and a bundle of small ones but I&#8217;ll leave them out)...&lt;/p&gt;</summary><content type="html">
+            &lt;p&gt;A few days ago &lt;a href=&quot;http://groups.google.co.uk/group/low-pro/browse_thread/thread/29b96e32fb68f45e&quot;&gt;a discussion started about porting Low Pro over to jQuery&lt;/a&gt;.  It&#8217;s been on my mind 
+for a while (especially since &lt;a href=&quot;http://meme-rocket.com/2007/09/07/agnostic-unobtrusive-javascript/&quot;&gt;Bill blogged about agnostic &lt;span class=&quot;caps&quot;&gt;UJS&lt;/span&gt;&lt;/a&gt;) but I&#8217;d hesitated in doing this for a few
+reasons.  Firstly, of course, jQuery is the mortal enemy of Prototype and only one library shall
+remain come The Quickening. Aside from this completely rational reason, I wondered whether jQuery
+really needed anything like Low Pro at all.  After all, jQuery has always been designed with
+&#8216;unobtrusiveness&#8217; in mind and was written with most of what Low Pro originally intended to fix 
+in Prototype implemented from the start.  There was no need for something like Event.addBehavior 
+because essentially that&#8217;s what jQuery is:&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;Event.addBehavior({
+  'a.external:click': function() { //...code...// },
+  'div.product:mouseover': function() { //...code...// }
+});&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;Can be achieved in jQuery like this:&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;jQuery(function($) {
+  $('a.external').click(function() { //...code...// });
+  $('div.product').mouseover(function() { //...code...// });
+});&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;And rather than ever going near inline event handlers this unobtrusive style was the de-facto
+method of working for the jQuery crowd.  The angel on your scripting shoulder.  However, as you
+can probably tell from reading this blog, I&#8217;ve never really adopted jQuery as my main library
+and this was due to one big reason (and a bundle of small ones but I&#8217;ll leave them out)...&lt;/p&gt;
+&lt;p&gt;The one big reason was that, while jQuery was super simple and concise when working on smaller
+projects, it offered no help in structuring larger applications.  All you get in jQuery, aside from
+Ajax methods and a handful of utilities, is the ability to select nodes then doing something 
+with them. On the other hand Prototype is much rounder in scope.  It generally plumps out JavaScript 
+as a language adding lots of useful methods to built-ins, a host of functional programming tools 
+and recently a full Class-based OO system with inheritance and the whole shebang which has formed
+the back bone of Low Pro&#8217;s behavior classes.&lt;/p&gt;
+
+
+	&lt;p&gt;Low Pro&#8217;s behavior classes have become my favourite solution to the problem of structuring complex
+Ajax applications in a simple and maintainable way. Even hugely complex applications can be separated
+up into a number of groups of elements with attached behaviors.  These behaviors maintain their
+own state, respond to events and can also expose there own public methods.  They are linked to an
+element but the element doesn&#8217;t know about them which eliminates the need for expandos on elements and
+also most of the reasons for having element references in closures which is good for keeping memory usage
+at bay.  For instance, a click on
+a TabBar instance can call the loadContent method of a ContentPanel.  The result is more than a
+set of widgets, its a way of splitting up huge complicated interfaces into a collection of small,
+loosely joined parts each simple in its own right and totally responsible for its part of the interface.
+This approach becomes incredibly useful when you introduce server-side requests and responses into
+the mix but that&#8217;s a whole other article.&lt;/p&gt;
+
+
+	&lt;p&gt;In jQuery land this kind of effect can be achieved via plugins.  You&#8217;ll find a ton of widgets
+in the repository that have this kind of UI:&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;$('#example4').draggable({ helper: 'clone', revert: true });&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;The plugin architecture is one of jQuery&#8217;s many strong points but this kind of approach has a couple
+of disadvantages.  Firstly, the plugin is created within a closure which means usually if you want to
+change the behavior of the plugin you literally need to pop open the source and change it.  The second
+and related disadvantage is that because of the difficulty in changing plugins they tend to have
+a whole raft of options to allow you to configure how it works.  The problem with this is that
+individual widgets can end up pretty monolithic.  Wouldn&#8217;t it be be better if you could just take
+the basic draggable behavior and just augment it to your liking?&lt;/p&gt;
+
+
+	&lt;p&gt;Well, in Low Pro behaviors are classes so we can do this by simply subclassing another behavior
+and overriding or adding what we need.  For example, we can create GhostedDraggable as a subclass
+of Draggable.  No need to hack any existing code at all.  As well as having the power and convenience
+of jQuery&#8217;s &lt;span class=&quot;caps&quot;&gt;DOM&lt;/span&gt; manipulation we can have a simple and powerful way to structure larger, more
+complex applications.  I can have my jQuery cake and eat it.&lt;/p&gt;
+
+
+	&lt;p&gt;So, I&#8217;ve started experimenting with &lt;a href=&quot;http://github.com/danwrong/low-pro-for-jquery/tree/master/src/lowpro.jquery.js?raw=true&quot;&gt;Low Pro for jQuery.&lt;/a&gt;
+Here&#8217;s a preview:&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;Hover = $.klass({
+  initialize: function(hoverClass) {
+    this.hoverClass = hoverClass;
+  },
+  onmouseover: function() {
+    this.element.addClass(this.hoverClass);
+  },
+  onmouseout: function() {
+    this.element.removeClass(this.hoverClass);
+  }
+});
+
+$('div.products').attach(Hover);&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;If you want to leave feeedback or abuse &lt;a href=&quot;http://groups.google.co.uk/group/low-pro&quot;&gt;jump on the Low Pro list.&lt;/a&gt;
+Do you think it has a place in the jQuery landscape?  How do you currently structure complex applications
+in jQuery?&lt;/p&gt;
+
+
+	&lt;p&gt;&lt;strong&gt;&lt;span class=&quot;caps&quot;&gt;UPDATE&lt;/span&gt;&lt;/strong&gt;: Thanks to Chris of &lt;a href=&quot;http://errtheblog.com&quot;&gt;Err The Blog&lt;/a&gt; Low Pro JQ is &lt;a href=&quot;http://github.com/danwrong/low-pro-for-jquery/tree/master/&quot;&gt;rocking on GitHub&lt;/a&gt;.  Fork away.&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://www.danwebb.net">
+    <author>
+      <name>dan</name>
+    </author>
+    <id>tag:www.danwebb.net,2008-01-02:2869</id>
+    <published>2008-01-02T12:35:00Z</published>
+    <updated>2008-01-02T14:07:11Z</updated>
+    <category term="Rails"/>
+    <category term="argh"/>
+    <category term="ruby"/>
+    <category term="stupid"/>
+    <link href="http://www.danwebb.net/2008/1/2/how-good-is-this" rel="alternate" type="text/html"/>
+    <title>How Good Is This?</title>
+<content type="html">
+            &lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;&amp;gt;&amp;gt; a = 79.99 * 100
+=&amp;gt; 7999.0
+&amp;gt;&amp;gt; a.floor
+=&amp;gt; 7998
+&amp;gt;&amp;gt; b = 7999.0
+=&amp;gt; 7999.0
+&amp;gt;&amp;gt; b.floor
+=&amp;gt; 7999&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;I&#8217;ll tell you.  &lt;strong&gt;It&#8217;s not good.&lt;/strong&gt;  I hate floating point calculations.  Happy new year!&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://www.danwebb.net">
+    <author>
+      <name>dan</name>
+    </author>
+    <id>tag:www.danwebb.net,2007-12-25:2771</id>
+    <published>2007-12-25T16:36:00Z</published>
+    <updated>2007-12-25T16:50:26Z</updated>
+    <category term="Misc"/>
+    <category term="sneakers"/>
+    <category term="trainers"/>
+    <category term="xmas"/>
+    <link href="http://www.danwebb.net/2007/12/25/danwebb-net-dunk-low" rel="alternate" type="text/html"/>
+    <title>danwebb.net Dunk Low</title>
+<content type="html">
+            &lt;p&gt;&lt;img title=&quot;danwebb.net Dunks&quot; src=&quot;/assets/2007/12/25/-1.png&quot; alt=&quot;danwebb.net Dunks&quot; /&gt;&lt;/p&gt;
+
+
+&lt;p class=&quot;caption&quot;&gt;Thanks Catherine!  The real things are on there way in a couple of weeks.  Happy Christmas, Peeps.&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://www.danwebb.net">
+    <author>
+      <name>dan</name>
+    </author>
+    <id>tag:www.danwebb.net,2007-12-12:2558</id>
+    <published>2007-12-12T00:23:00Z</published>
+    <updated>2007-12-13T17:49:59Z</updated>
+    <category term="JavaScript"/>
+    <category term="Low Pro"/>
+    <category term="javascript"/>
+    <category term="lowpro"/>
+    <category term="release"/>
+    <link href="http://www.danwebb.net/2007/12/12/low-pro-0-5-now-compatible-with-prototype-1-6" rel="alternate" type="text/html"/>
+    <title>Low Pro 0.5: Now Compatible With Prototype 1.6</title>
+<content type="html">
+            &lt;p&gt;Today I &lt;a href=&quot;http://svn.danwebb.net/external/lowpro/tags/rel_0.5/&quot;&gt;tagged Low Pro 0.5&lt;/a&gt; for release which now works with Prototype 1.6.  There are a number of things about this release that are worth mentioning aside from the compatibility.  Firstly, it&#8217;s gotten a little smaller as Prototype core now includes most of the functionality Low Pro used to add (DOM Ready support, inserting using &lt;span class=&quot;caps&quot;&gt;DOM&lt;/span&gt; nodes and a lot more).  It&#8217;s also got a couple of new features so here&#8217;s a rundown:&lt;/p&gt;
+
+
+	&lt;ol&gt;
+	&lt;li&gt;&lt;strong&gt;Event.onReady delegates to the new dom:loaded event&lt;/strong&gt;: Except that as before if functions are added after the &lt;span class=&quot;caps&quot;&gt;DOM&lt;/span&gt; is loaded they fire immediately.&lt;/li&gt;
+		&lt;li&gt;&lt;strong&gt;DOMBuilder now delegates to Prototype&#8217;s new Element&lt;/strong&gt;: Now difference in usage here though, just less code.&lt;/li&gt;
+		&lt;li&gt;&lt;strong&gt;Low Pro&#8217;s &lt;span class=&quot;caps&quot;&gt;DOM&lt;/span&gt; methods are now gone&lt;/strong&gt;: Prototype core does everything you should need now.&lt;/li&gt;
+		&lt;li&gt;&lt;strong&gt;Behavior.create() works just like the new Class.create()&lt;/strong&gt;: Yes, you can now create behavior classes that inherit from other behaviors (or indeed any other class).  &lt;a href=&quot;http://prototypejs.org/learn/class-inheritance&quot;&gt;See the Prototype&#8217;s site for more information.&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;strong&gt;New core behaviors&lt;/strong&gt;: The Remote and Observed behaviors are now included in the core so you can now turn normal links and forms into Ajaxy links and forms even more easily.&lt;/li&gt;
+		&lt;li&gt;&lt;strong&gt;Event.addBehavior.reassignAfterAjax is now false by default&lt;/strong&gt;:  Normally, if you are relying on this behavior it&#8217;s much more efficient to move to a solution using event delegation.  However, if you do want your behaviors reassigned to new content after Ajax calls then go ahead and set it back to true again.  Another solution is to manually call Event.addBehavior.reload();&lt;/li&gt;
+	&lt;/ol&gt;
+
+
+	&lt;p&gt;So that&#8217;s about it.  As you can see, it&#8217;s getting smaller as Prototype fills the gaps and graduating into more of a pure behavior framework.  I&#8217;d be interested in adding more core behaviors for other common tasks as well as possibly getting together some kind of behavior library.  I know I&#8217;m building up a fair few and I&#8217;d love to see what everyone else is doing (in fact I&#8217;ve already seen some great stuff) so suggestions are more than welcome&#8230;as are bug reports and patches.  For both of these and general assistance try &lt;a href=&quot;http://groups.google.co.uk/group/low-pro&quot;&gt;the Google Group&lt;/a&gt;.&lt;/p&gt;
+
+
+	&lt;p&gt;&lt;a href=&quot;http://svn.danwebb.net/external/lowpro/tags/rel_0.5/dist/lowpro.js&quot;&gt;Grab the new version&lt;/a&gt; and have a play.&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://www.danwebb.net">
+    <author>
+      <name>dan</name>
+    </author>
+    <id>tag:www.danwebb.net,2007-11-22:2502</id>
+    <published>2007-11-22T10:09:00Z</published>
+    <updated>2007-11-22T10:23:05Z</updated>
+    <category term="Events"/>
+    <category term="JavaScript"/>
+    <category term="atmedia"/>
+    <category term="atmediaajax"/>
+    <category term="event"/>
+    <category term="javascript"/>
+    <category term="lowpro"/>
+    <category term="metaprogramming"/>
+    <category term="presentation"/>
+    <link href="http://www.danwebb.net/2007/11/22/media-ajax" rel="alternate" type="text/html"/>
+    <title>@media Ajax</title>
+<content type="html">
+            &lt;p&gt;Well, that turned out rather nicely I must say.  Really high quality presentations and great attendees &#8211; I really hope that Patrick makes it happen again.  Here are the slides from my presentation:  Metaprogramming JavaScript.&lt;/p&gt;
+
+
+&lt;div&gt;&amp;lt;object height=&quot;355&quot; width=&quot;425&quot;&gt;&amp;lt;param /&gt;&amp;lt;param /&gt;&amp;lt;param /&gt;&amp;lt;embed src=&quot;http://static.slideshare.net/swf/ssplayer2.swf?doc=metaprogramming-javascript-1195638729182448-3&quot; height=&quot;355&quot; width=&quot;425&quot;&gt;&amp;lt;/embed&gt;&amp;lt;/object&gt;&lt;div&gt;&lt;a href=&quot;http://www.slideshare.net/?src=embed&quot;&gt;&lt;img src=&quot;http://static.slideshare.net/swf/logo_embd.png&quot; alt=&quot;SlideShare&quot; /&gt;&lt;/a&gt; | &lt;a href=&quot;http://www.slideshare.net/danwrong/metaprogramming-javascript&quot; title=&quot;View 'Metaprogramming  JavaScript' on SlideShare&quot;&gt;View&lt;/a&gt; | &lt;a href=&quot;http://www.slideshare.net/upload&quot;&gt;Upload your own&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+	&lt;p&gt;In other news, Low Pro 0.5 is nearly ready to rock.  The new version is quite a lot smaller as Prototype 1.6 has solved so many of the things I used to fix with Low Pro.  It does however have a few nice new features.  Watch this space.&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://www.danwebb.net">
+    <author>
+      <name>dan</name>
+    </author>
+    <id>tag:www.danwebb.net,2007-10-07:2436</id>
+    <published>2007-10-07T23:38:00Z</published>
+    <updated>2007-12-21T23:41:28Z</updated>
+    <category term="JavaScript"/>
+    <category term="Low Pro"/>
+    <category term="customattributes"/>
+    <category term="dojo"/>
+    <category term="javascript"/>
+    <category term="lowpro"/>
+    <link href="http://www.danwebb.net/2007/10/7/custom-attributes-and-class-names" rel="alternate" type="text/html"/>
+    <title>Custom Attributes And Class Names</title>
+<summary type="html">&lt;p&gt;At the Rich Web Experience, Alex Russell did a presentation entitled &lt;a href=&quot;http://alex.dojotoolkit.org/?p=622&quot;&gt;Standards Heresy&lt;/a&gt;, In the presentation, which I didn&#8217;t attend so forgive me if I&#8217;ve gotten the wrong end of the stick, he spoke about how Dojo has been forced to abandon web standards in some cases in order to get the job done.  The conversation was furthered by &lt;a href=&quot;http://www.easy-reader.net/archives/2007/09/10/alex-russell-is-not-a-heretic/&quot;&gt;Aaron Gustafson&#8217;s response&lt;/a&gt; and is a really interesting discussion.  However, I&#8217;m not going to comment on the politics of the &lt;span class=&quot;caps&quot;&gt;W3C&lt;/span&gt; further as I know nothing about that at all.  One example in the presentation reminded me of something I&#8217;ve wanted to comment on for a while now.  Here&#8217;s that example:&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;&amp;lt;div dojoType=&amp;quot;dijit.form.HorizontalSlider&amp;quot;
+     name=&amp;quot;horizontal1&amp;quot;
+     onChange=&amp;quot;dojo.byId('slider1input').value=arguments[0];&amp;quot;
+     value=&amp;quot;10&amp;quot;
+     maximum=&amp;quot;100&amp;quot;
+     minimum=&amp;quot;0&amp;quot;
+     showButtons=&amp;quot;false&amp;quot;
+     intermediateChanges=&amp;quot;true&amp;quot;
+     style=&amp;quot;width:50%; height: 20px;&amp;quot;
+     id=&amp;quot;slider1&amp;quot;&amp;gt;
+  ...
+&amp;lt;/div&amp;gt;&lt;/code&gt;&lt;/pre&gt;</summary><content type="html">
+            &lt;p&gt;At the Rich Web Experience, Alex Russell did a presentation entitled &lt;a href=&quot;http://alex.dojotoolkit.org/?p=622&quot;&gt;Standards Heresy&lt;/a&gt;, In the presentation, which I didn&#8217;t attend so forgive me if I&#8217;ve gotten the wrong end of the stick, he spoke about how Dojo has been forced to abandon web standards in some cases in order to get the job done.  The conversation was furthered by &lt;a href=&quot;http://www.easy-reader.net/archives/2007/09/10/alex-russell-is-not-a-heretic/&quot;&gt;Aaron Gustafson&#8217;s response&lt;/a&gt; and is a really interesting discussion.  However, I&#8217;m not going to comment on the politics of the &lt;span class=&quot;caps&quot;&gt;W3C&lt;/span&gt; further as I know nothing about that at all.  One example in the presentation reminded me of something I&#8217;ve wanted to comment on for a while now.  Here&#8217;s that example:&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;&amp;lt;div dojoType=&amp;quot;dijit.form.HorizontalSlider&amp;quot;
+     name=&amp;quot;horizontal1&amp;quot;
+     onChange=&amp;quot;dojo.byId('slider1input').value=arguments[0];&amp;quot;
+     value=&amp;quot;10&amp;quot;
+     maximum=&amp;quot;100&amp;quot;
+     minimum=&amp;quot;0&amp;quot;
+     showButtons=&amp;quot;false&amp;quot;
+     intermediateChanges=&amp;quot;true&amp;quot;
+     style=&amp;quot;width:50%; height: 20px;&amp;quot;
+     id=&amp;quot;slider1&amp;quot;&amp;gt;
+  ...
+&amp;lt;/div&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This is a snippet of code showing how Dojo is going off the standards rails by adding custom attributes that are &#8216;needed&#8217; to configure a slider widget.  This is a really good example of a case where you definitely shouldn&#8217;t add custom attributes to &lt;span class=&quot;caps&quot;&gt;HTML&lt;/span&gt;.  While the &lt;span class=&quot;caps&quot;&gt;W3C&lt;/span&gt;/browser vendors/whipping boy of choice might be letting us down what the web standards movement taught us (most importantly in my mind) is that semantic &lt;span class=&quot;caps&quot;&gt;HTML&lt;/span&gt; is critically important.  Having a &amp;lt;div&amp;gt; with custom attributes that tell Dojo it&#8217;s a slider widget is of no use to anything apart from as a crutch to Dojo.  It has no semantic value at all.  Outside of the context of Dojo it&#8217;s just an useless lump of markup.&lt;/p&gt;
+
+
+	&lt;p&gt;Although &lt;span class=&quot;caps&quot;&gt;HTML&lt;/span&gt; is a pretty limited vocabulary which is very document centric we can still go much further than this in attempting to describe what this is semantically. It&#8217;s an input so use an input or a select box as the base element.  How browsers and assistive technologies deal with these elements is a lot closer to what we want than a meaningless &amp;lt;div&amp;gt;.  Secondly, there&#8217;s custom attributes &#8211; having attributes containing behavioural information like showButtons and intermediateChanges are equally as semantically useless as the old presentational attributes like bgcolor and border and we&#8217;ve all learnt the disadvantages of mixing content and presentation and discarded those&#8230;hopefully.  There&#8217;s got to be a better way.&lt;/p&gt;
+
+
+	&lt;p&gt;So we want our semantic &lt;span class=&quot;caps&quot;&gt;HTML&lt;/span&gt; and to keep our behaviour data out of our document.  Take a leaf out of &lt;span class=&quot;caps&quot;&gt;CSS&lt;/span&gt;&#8217;s book.  We can name and classify objects and use these as our hooks to attach our JavaScript powered behaviour.  Eureka! Not quite:&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;&amp;lt;!-- Created with http://cow.neondragon.net/stuff/reflection/reflectomatic.html  --&amp;gt;
+&amp;lt;img src=&amp;quot;/reflection/photos/giraffe.jpg&amp;quot; width=&amp;quot;132&amp;quot; alt=&amp;quot;&amp;quot; class=&amp;quot;reflect ropacity71&amp;quot; /&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;The above code is from a nice little JavaScript effects library called &lt;a href=&quot;http://cow.neondragon.net/stuff/reflection/&quot;&gt;reflection.js&lt;/a&gt; which uses
+class names to hook in it&#8217;s behaviour unobtrusively.  However, take a closer look at the class names.  They aren&#8217;t classifying things as such, they are embedding configuration into directly into the class names.  In a similar way it&#8217;s not a generally thought of as a good idea to give elements class names like &#8216;bigred&#8217; or &#8216;width40&#8217; although, depressingly, I&#8217;ve seen it done!  This is definitely an abuse of class names &#8211; its not a &#8216;bigred&#8217; its a &#8216;price&#8217; and so on.  This is seen not just in reflection.js but a large amount of &#8216;unobtrusive&#8217; libraries.&lt;/p&gt;
+
+
+	&lt;p&gt;So how can we improve on this? We need to provide configuration information to our JavaScript but neither custom attributes or embedding info are looking good.  The answer is pretty simple &#8211; add another link to the chain and this is were (plug imminent :) projects like &lt;a href=&quot;http://www.bennolan.com/behaviour/&quot;&gt;behaviour.js&lt;/a&gt; and &lt;a href=&quot;/lowpro&quot;&gt;Low Pro&lt;/a&gt; come in.  They add that other link to the chain.  We can say that all inputs with the class &#8216;date&#8217; should have a date selector attached to them or that selects with the class &#8216;rating&#8217; should be replaced with a slider that&#8217;s range is 0-10 and so on.  Here&#8217;s a snippet using Low Pro to illustrate this:&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;Event.addBehavior({
+  'select.rating': Slider({ min: 0, max: 10, intermediateValues: true }),
+  'input.date': DateSelector
+});&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;In this way we are able to maintain semantic &lt;span class=&quot;caps&quot;&gt;HTML&lt;/span&gt;, avoid adding custom attributes and maintain a very loose coupling between our document and it&#8217;s behaviour.  This, we&#8217;ve seen from &lt;span class=&quot;caps&quot;&gt;CSS&lt;/span&gt;, is vitally important to maintainability and a real advantage.  Via this method you can apply configuration to single items or as a group.  If you decided that &#8216;rating&#8217; selects should in fact all be vertical sliders instead of horizontal then that&#8217;s no problem either.  It gives you ultimate flexibility.&lt;/p&gt;
+
+
+	&lt;p&gt;This methodology is right at the core of Low Pro and I&#8217;ve been getting incredible results from it.  It&#8217;s made what could be really complex JavaScript implementations a breeze.  Instead of a huge, fearsome application everything becomes a &lt;span class=&quot;caps&quot;&gt;HTML&lt;/span&gt; document with many loosely, coupled smaller components attached to it.  If you don&#8217;t use Prototype/Low Pro don&#8217;t let that stop you from working this way.  &lt;a href=&quot;http://www.meme-rocket.com/2007/09/07/agnostic-unobtrusive-javascript/&quot;&gt;Bill Burcham wonders whether this can be library agnostic&lt;/a&gt;.  Well, as an idea, in a sense it already is. All you need is the ability to select by &lt;span class=&quot;caps&quot;&gt;CSS&lt;/span&gt; selectors.  Dojo and dijit are in fact very well suited.&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://www.danwebb.net">
+    <author>
+      <name>dan</name>
+    </author>
+    <id>tag:www.danwebb.net,2007-08-21:2395</id>
+    <published>2007-08-21T10:50:00Z</published>
+    <updated>2007-08-21T11:14:20Z</updated>
+    <category term="Events"/>
+    <category term="JavaScript"/>
+    <category term="dojo"/>
+    <category term="events"/>
+    <category term="javascript"/>
+    <category term="jquery"/>
+    <category term="prototype"/>
+    <category term="yui"/>
+    <link href="http://www.danwebb.net/2007/8/21/media-ajax-is-scarily-good" rel="alternate" type="text/html"/>
+    <title>@media Ajax Is Scarily Good</title>
+<content type="html">
+            &lt;p&gt;&lt;img title=&quot;@media Ajax&quot; src=&quot;/assets/2007/6/10/amx_button.gif&quot; alt=&quot;@media Ajax&quot; /&gt; It seems that the &lt;a href=&quot;http://www.vivabit.com/atmediaAjax/&quot;&gt;@media Ajax site&lt;/a&gt; has just been updated.  I was looking forward to it before but more speakers have been added including Brendan Eich who, according the &lt;a href=&quot;http://www.vivabit.com/atmediaAjax/sessions/#javascript&quot;&gt;abstract,&lt;/a&gt; will be demonstrating a working version of Tamarin in Firefox!&lt;/p&gt;
+
+
+	&lt;p&gt;Also, Dojo&#8217;s Alex Russell, jQuery&#8217;s John Resig, &lt;span class=&quot;caps&quot;&gt;YUI&lt;/span&gt;&#8217;s Douglas Crockford and Prototype&#8217;s erm, me will be representing the major libraries and then there&#8217;s the Ajaxians, Ben and Dion stepping up for a keynote.  Finally, Mr Jeremy Keith will be hosting the hot topics panel in the traditional @media style &#8211; Hot Topics panel + JavaScript people should be quite explosive.  As it was put in the Prototype Core Campfire the other day, &#8220;The JavaScript community is not so much of a community, more of a debating society&#8221;  It&#8217;s going to be excellent.  Of course, as it&#8217;s in London town you know we&#8217;ll be sinking a good few pints after.  It will be a rare chance to get together with fellow scriptie types this side of the pond and the only pub conversation you&#8217;ll ever be allowed to mention closures in&#8230;.surely that&#8217;s a good thing?&lt;/p&gt;
+
+
+	&lt;p&gt;There are still early bird tickets left until the end of august so &lt;a href=&quot;http://www.vivabit.com/atmediaAjax/register/&quot;&gt;get your arse down to the site and sign up.&lt;/a&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;My presentation, &lt;a href=&quot;http://www.vivabit.com/atmediaAjax/sessions/#metaprogramming&quot;&gt;Metaprogramming JavaScript,&lt;/a&gt; is for all those people who moan that they never learn things at conferences.  It&#8217;s journey into the deep innards of JavaScript and I&#8217;ll be explaining the some of the metaprogramming techniques used in &lt;span class=&quot;caps&quot;&gt;YUI&lt;/span&gt;, Prototype and Low Pro along with really getting into advanced JavaScript concepts like prototype inheritance, functional programming and closures.  I defy you to turn up and not learn something new.&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://www.danwebb.net">
+    <author>
+      <name>dan</name>
+    </author>
+    <id>tag:www.danwebb.net,2007-07-18:2328</id>
+    <published>2007-07-18T14:30:00Z</published>
+    <updated>2007-07-18T14:32:45Z</updated>
+    <category term="JavaScript"/>
+    <category term="Low Pro"/>
+    <category term="javascript"/>
+    <category term="lowpro"/>
+    <category term="prototype"/>
+    <category term="tutorial"/>
+    <link href="http://www.danwebb.net/2007/7/18/low-pro-behaviours-101-part-2" rel="alternate" type="text/html"/>
+    <title>Low Pro Behaviours 101: Part 2</title>
+<summary type="html">&lt;p&gt;In the first post I briefly explained how to use pre-made Low Pro behaviours but, although I&#8217;m in the process of &lt;a href=&quot;http://svn.danwebb.net/external/lowpro/trunk/behaviours/&quot;&gt;writing a few myself&lt;/a&gt;, Low Pro is not going to be a widget library &#8211; what it is is a great framework to write your own components with.  So, in this post, I&#8217;m going to go into a little detail about how to  write your own behaviours.  If the idea of that doesn&#8217;t bore your rigid then read on&#8230;&lt;/p&gt;</summary><content type="html">
+            &lt;p&gt;In the first post I briefly explained how to use pre-made Low Pro behaviours but, although I&#8217;m in the process of &lt;a href=&quot;http://svn.danwebb.net/external/lowpro/trunk/behaviours/&quot;&gt;writing a few myself&lt;/a&gt;, Low Pro is not going to be a widget library &#8211; what it is is a great framework to write your own components with.  So, in this post, I&#8217;m going to go into a little detail about how to  write your own behaviours.  If the idea of that doesn&#8217;t bore your rigid then read on&#8230;&lt;/p&gt;
+&lt;h3&gt;Creating a behaviour&lt;/h3&gt;
+
+
+	&lt;p&gt;As discussed in the last post behaviours are actually just specialised constructor functions.  So, to create our behaviour we use Behavior.create in a very similar way to Class.create:&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;var Hover = Behavior.create();&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;h3&gt;Adding methods and properties&lt;/h3&gt;
+
+
+	&lt;p&gt;This creates an empty behaviour much the same as Class.create gives us an empty class. Now we add our methods on to the prototype of the constructor that we&#8217;ve created.  This example is a super simple behaviour, Hover, that will add/remove a class name (which you can specify) on mouse over/out:&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;Object.extend(Hover.prototype, {
+  initialize: function(className) {
+    this.className = className || 'over';
+  },
+  onmouseover: function() {
+    this.element.addClassName(this.className);
+  },
+  onmouseout: function() {
+    this.element.removeClassName(this.className);
+  }
+});&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;Any on* methods are bound as event handlers to the element when the behavior is attached to the element.  The scope of these methods is &#8216;corrected&#8217; automatically so that this will always refer to the behaviour instance.  The behaviour instance also has a magic property, this.element, which points to the element it is attached to.  The final thing you need to know is that the initialize method is called as soon as the &lt;span class=&quot;caps&quot;&gt;DOM&lt;/span&gt; is ready (as soon as the element is available).  We can now use this behaviour in the manner discussed in the last post:&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;Event.addBehavior({
+  '.dongle': Hover('hover')
+});&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;Aside from these special cases behaviour constructors are identical to any regular JavaScript &#8216;class&#8217;.  You can add methods and properties as you see fit.  Note that each element that has the behaviour attached to it gets its own instance of the behaviour so you can maintain the state of each behaviour independently without having to resort to setting expandos on the element, using closures or any other method which is messy and prone to causing those nasty circular references that cause memory leaks.  As an alternative you can just pass your methods straight into the Behavior.create call so the following is equivilent to the above code:&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;var Hover = Behavior.create({
+  initialize: function(className) {
+    this.className = className || 'over';
+  },
+  onmouseover: function() {
+    this.element.addClassName(this.className);
+  },
+  onmouseout: function() {
+    this.element.removeClassName(this.className);
+  }
+});&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;h3&gt;Working with multiple elements&lt;/h3&gt;
+
+
+	&lt;p&gt;Now this is all good for dealing with behaviours that work on a single element but in many cases we want a behaviour to operate on a number of elements.  For example, you would want to be able to attach a Sortable behaviour to a list element but the behaviour itself would also need to deal with all the list element inside it.  There are a number of ways to approach writing these kind of behaviours, all of which are demonstrated in the various test behaviours I&#8217;ve written.&lt;/p&gt;
+
+
+	&lt;h4&gt;Event delegation with behaviours&lt;/h4&gt;
+
+
+	&lt;p&gt;The first technique, and normally the best is using event delegation to capture all the events on elements inside the attached element with your behaviour and process them.  The process is pretty simple&#8230;here&#8217;s part of the &lt;a href=&quot;http://svn.danwebb.net/external/lowpro/trunk/behaviours/date_selector.js&quot;&gt;Calendar&lt;/a&gt; behaviour:&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;var Calendar = Behavior.create({
+  // other methods hidden for clarity
+  onclick : function(e) {
+    var source = Event.element(e);
+    Event.stop(e);
+
+    if ($(source.parentNode).hasClassName('day')) return this._setDate(source);
+    if ($(source.parentNode).hasClassName('back')) return this._backMonth();
+    if ($(source.parentNode).hasClassName('forward')) return this._forwardMonth();
+  }
+});&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;Here, we define a single onclick method which will capture clicks on all the elements inside the calendar &#8211; Forward and back arrows, and the dates themselves.  Firstly, we use Event.element to grab the source element, the element that was actually clicked, then we can just examine this element to work out what needs to happen to the calendar and call the relevent method.  In this case, and in most cases, the most convenient way is to look at what class names the element has.  In the calendar, each day has the class &#8216;day&#8217; and the forward/back arrows have the classes &#8216;forward&#8217; and &#8216;back&#8217;.  This method is really nice for a number of reasons, firstly, we avoid attaching lots of event handlers for each sub element and secondly we have this central point where we can handle and dispatch events &#8211; a really pleasant way to work with complex interactions. Of course, event delegation isn&#8217;t always a good fit so&#8230;&lt;/p&gt;
+
+
+	&lt;h4&gt;Linking behaviours&lt;/h4&gt;
+
+
+	&lt;p&gt;In more complex cases when the sub elements of your behaviour need to maintain their own state or handle events in a more complex way you can have your main behaviour attach sub-behaviours to inner elements during initialisation and maintain a link between the two.  An example of this can be seen in the &lt;a href=&quot;http://svn.danwebb.net/external/lowpro/trunk/behaviours/draggable.js&quot;&gt;Draggable&lt;/a&gt; behaviour:&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;Draggable = Behavior.create({
+  initialize : function(options) {
+    // code hidden for clarity
+    this.handle = this.options.handle || this.element;
+    new Draggable.Handle(this.handle, this);
+  }
+  // code hidden for clarity
+});
+
+Draggable.Handle = Behavior.create({
+  initialize : function(draggable) {
+    this.draggable = draggable;
+  },
+  onmousedown : function(e) {
+        // code hidden for clarity
+  }
+});&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;Here, the initialize method of Draggable finds the element that it wants to be the &#8216;drag handle&#8217; and attaches another behaviour, Draggable.Handle, to it.  At this point we pass a reference to the Draggable instance to the Draggable.Handle instance so the drag handle can refer back to and control the main draggable behaviour.  You can of course, if necessary, build up a complex component by building a number of linked behaviours that all comunicate back to the main behaviour.&lt;/p&gt;
+
+
+	&lt;h3&gt;Get it? Got it? Good&lt;/h3&gt;
+
+
+	&lt;p&gt;So that&#8217;s all for now.  Any questions just drop me a comment and I&#8217;ll get back to you &lt;span class=&quot;caps&quot;&gt;ASAP&lt;/span&gt;.  At this point, if you are interested in writing your own behaviours then it would be worth referring to the &lt;a href=&quot;http://svn.danwebb.net/external/lowpro/trunk/behaviours/&quot;&gt;behaviours in &lt;span class=&quot;caps&quot;&gt;SVN&lt;/span&gt;&lt;/a&gt;.  However, I&#8217;m just feeling this out for myself and I&#8217;m sure I&#8217;ve not explored any near all of the possibilities of working with behaviours so if you have any brain waves be sure to post a comment also.  If there&#8217;s enough interest I might include a behaviours repository on the upcoming Low Pro site.&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://www.danwebb.net">
+    <author>
+      <name>dan</name>
+    </author>
+    <id>tag:www.danwebb.net,2007-07-17:2318</id>
+    <published>2007-07-17T01:02:00Z</published>
+    <updated>2007-07-17T02:18:59Z</updated>
+    <category term="JavaScript"/>
+    <category term="Low Pro"/>
+    <category term="javascript"/>
+    <category term="lowpro"/>
+    <category term="prototype"/>
+    <category term="tutorial"/>
+    <link href="http://www.danwebb.net/2007/7/17/low-pro-behaviours-101" rel="alternate" type="text/html"/>
+    <title>Low Pro Behaviours 101</title>
+<content type="html">
+            &lt;p&gt;Okay, I&#8217;ve gone on about this for long enough and made lots of promises.  So now&#8217;s time to make a start on explaining all this business with Low Pro and &#8216;behaviours&#8217;.&lt;/p&gt;
+
+
+	&lt;p&gt;Behaviours are part of Low Pro and are object orientated mechanism by which you can handle events and maintain the state of an element (or indeed a set of elements) and as I&#8217;ve found out recently are an incredibly nice way of writing and deploying UI widgets.  Before I dive in to how to write your own behaviours, let&#8217;s get a flavour for how to use them.  If you want to play along you&#8217;ll need the latest versions of Prototype and Low Pro as well as the remote behaviours which you can &lt;a href=&quot;http://svn.danwebb.net/external/lowpro/trunk/behaviours/remote.js&quot;&gt;grab from my &lt;span class=&quot;caps&quot;&gt;SVN&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
+
+
+	&lt;p&gt;The first thing to note about a behaviour is that they are simply specialised constructor functions so you can use them with the new keyword to create an instance:&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;var aLink = $('edit_5');
+var ajaxLink = new Remote.Link(aLink, { method: 'post' });&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;Behaviours, when used with the new keyword, always take an element reference as the first argument.  Any subsequent arguments are passed to the behaviours constructor.  In the case above, Remote.Link is a behavior which when attached to a link will make the link trigger an Ajax request rather than a tradtional page refresh. With this behaviour the second argument is an options hash that is passed through to the Ajax request.  Now we&#8217;ve created an instance of the behaviour that instance of the behaviour is bound to that element for it&#8217;s life time on the page handling click events on the link and sending Ajax requests.&lt;/p&gt;
+
+
+	&lt;p&gt;If you need to attach a behaviour to multiple elements on then using new could get a little tedious.  To this end behaviours work very nicely with Event.addBehavior:&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;Event.addBehavior({
+  'a.edit': Remote.Link
+});&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;Using a behaviour with Event.addBehavior in this way will attach a seperate instance of the behavior to every element that matches the &lt;span class=&quot;caps&quot;&gt;CSS&lt;/span&gt; selector.  Notice we don&#8217;t pass in an event in the selector as you might be used to.  The behaviour knows what events it wants to listen for.  Now all the links in the page with the class name &#8216;edit&#8217; will invoke Ajax request.  You may need to pass in extra information to the behaviour as we did above with the options hash.  Thanks to a bit of metaprogramming hackery we can do this too:&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;Event.addBehavior({
+  'a.edit': Remote.Link({ onComplete: triggerEdit })
+});&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;As you can see, it&#8217;s almost like &lt;span class=&quot;caps&quot;&gt;CSS&lt;/span&gt; for interactivity where you&#8217;re defining how elements behave in an declaritive, almost code-less fashion. In my own projects I&#8217;ve gained massive advances in maintainability by separating everything out into behaviours then using Event.addBehavior as the glue to my &lt;span class=&quot;caps&quot;&gt;HTML&lt;/span&gt;.  You don&#8217;t need to use custom &lt;span class=&quot;caps&quot;&gt;HTML&lt;/span&gt; attributes or weird classnames &#8211; you just bind behaviours to elements as you would style rules in &lt;span class=&quot;caps&quot;&gt;CSS&lt;/span&gt;.&lt;/p&gt;
+
+
+	&lt;p&gt;Of course, using this method you don&#8217;t get references to the behaviour instances you&#8217;ve created.  In fact, you&#8217;ll hardly ever need to get references to these behaviour instances as most behaviors don&#8217;t need public methods at all but in case you need to get at them there&#8217;s a property of each behavior that contains an array of all its instances on the page:&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;Remote.Link.instances //=&amp;gt; an array of all the instances of Remote.Link&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;So that&#8217;s basically how to use behaviours.  In a day or two I&#8217;ll post part two of Behaviours 101 which will show you how to make your own but in the meantime try out some of the behaviours I&#8217;ve already created.  So far there&#8217;s a Draggable, Droppable, A date picker, Remote link and Remote form.  Check out the &lt;a href=&quot;/behavior_demo/&quot;&gt;demo page&lt;/a&gt;.&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://www.danwebb.net">
+    <author>
+      <name>dan</name>
+    </author>
+    <id>tag:www.danwebb.net,2007-06-16:2064</id>
+    <published>2007-06-16T15:19:00Z</published>
+    <updated>2007-06-17T03:29:15Z</updated>
+    <category term="JavaScript"/>
+    <category term="Low Pro"/>
+    <category term="Projects"/>
+    <category term="Rails"/>
+    <category term="javascript"/>
+    <category term="lengthy"/>
+    <category term="lowpro"/>
+    <category term="plugins"/>
+    <category term="ujs4rails"/>
+    <link href="http://www.danwebb.net/2007/6/16/the-state-and-future-of-the-ujs-plugin" rel="alternate" type="text/html"/>
+    <title>The State (And Future) Of The UJS Plugin</title>
+<summary type="html">&lt;p&gt;Over the past few weeks loads of people have been asking me about what&#8217;s going on the &lt;span class=&quot;caps&quot;&gt;UJS&lt;/span&gt; plugin.  It&#8217;s obviously fallen in to disrepair so people, understandably, have been concerned.  There has been a reason for this aside from the fact that I am a lazy barsteward (which of course I am, but that&#8217;s beside the point).  Here is a letter I&#8217;ve just written to the &lt;span class=&quot;caps&quot;&gt;UJS&lt;/span&gt; mailing list that I&#8217;d thought I&#8217;d post here to try to get a little more feedback.  It&#8217;s a little bit long but bear with me&#8230;&lt;/p&gt;</summary><content type="html">
+            &lt;p&gt;Over the past few weeks loads of people have been asking me about what&#8217;s going on the &lt;span class=&quot;caps&quot;&gt;UJS&lt;/span&gt; plugin.  It&#8217;s obviously fallen in to disrepair so people, understandably, have been concerned.  There has been a reason for this aside from the fact that I am a lazy barsteward (which of course I am, but that&#8217;s beside the point).  Here is a letter I&#8217;ve just written to the &lt;span class=&quot;caps&quot;&gt;UJS&lt;/span&gt; mailing list that I&#8217;d thought I&#8217;d post here to try to get a little more feedback.  It&#8217;s a little bit long but bear with me&#8230;&lt;/p&gt;
+&lt;p&gt;I&#8217;ve been chatting to Luke and users of &lt;span class=&quot;caps&quot;&gt;UJS&lt;/span&gt; about what to do with it and still haven&#8217;t quiet decided hence the lack of news but below is a rundown of where we are at on the whole thing.  However, this is definitely personal opinion and doesn&#8217;t necessarily represent Luke&#8217;s opinion on the matter.&lt;/p&gt;
+
+
+	&lt;p&gt;Essentially, the status is that, of late, I personally have not used &lt;span class=&quot;caps&quot;&gt;UJS&lt;/span&gt; at all and have found a much better process by using Low Pro on its own without all the Ruby scaffolding of the &lt;span class=&quot;caps&quot;&gt;UJS&lt;/span&gt; plugin.  Secondarily, after talking to lots of developers at RailsConf it seems that the &lt;span class=&quot;caps&quot;&gt;UJS&lt;/span&gt; plugin has failed to truly achieve it&#8217;s main goal which is to get Rails developers to write JavaScript using progressive enhancement.  Many people seem to mainly use the plugin to get their JavaScript in to a separate file which is actually not even essential to progressive enhancement and I think this is a failing in the design of &lt;span class=&quot;caps&quot;&gt;UJS&lt;/span&gt; itself.  To achieve progressive enhancement you really need to think of JavaScript as a separate layer on top of a working &lt;span class=&quot;caps&quot;&gt;HTML&lt;/span&gt; application but &lt;span class=&quot;caps&quot;&gt;UJS&lt;/span&gt; lets you get away with keeping behavior in your views and hence leads many developers to think in the same way as they did before but think they are unobtrusive because they don&#8217;t see any JavaScript in their &lt;span class=&quot;caps&quot;&gt;HTML&lt;/span&gt; &#8211; which is obviously not what we wanted to achieve.  While many people can and do successfully use &lt;span class=&quot;caps&quot;&gt;UJS&lt;/span&gt; for progressive enhancement even more seem not to &#8211; &lt;span class=&quot;caps&quot;&gt;UJS&lt;/span&gt; has not been the &#8216;angel on your shoulder&#8217; that I originally wanted it to be.&lt;/p&gt;
+
+
+	&lt;p&gt;On top of this, the method by which the generated JavaScript is kept in the session has many limitations which myself and Luke have been aware of from the start.  It&#8217;s not generally a good idea to keep this much information in the session (in fact, normally I never store more than a user ID if I can help it) and while acceptable for light to medium use it does have an upper limit depending on the type of session storage you are using.  Rails edge now uses cookies to store session info by default which have a very very low limit which will cripple &lt;span class=&quot;caps&quot;&gt;UJS&lt;/span&gt; completely.  We have considered other alternatives such as some kind of file based storage but every time it just strikes me as too much scaffolding just to allow developers to put behavior in their view files which, as a said above, I&#8217;ve come to believe is a really bad idea anyway.&lt;/p&gt;
+
+
+	&lt;p&gt;One of the things that I do personally like and something that has received the most positive feedback are the behavior helpers (the make_*) stuff which essentially encapsulate common tasks with sensible defaults in a very Rails like way.  It&#8217;s a real time saver and the conventions provided mean that the best path (such as using this.href for the Ajax url) is the easiest.  Recently, I&#8217;ve come to do this in my own projects via Low Pro and it&#8217;s behavior &#8216;classes&#8217; (although they need a better name!).  Now via Low Pro I can write stuff like:&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;Event.addBehavior({
+  '.product a.description' : Remote.Link({ update : 'product_description' }),
+  '.product' : Draggable({ revert : true }),
+  '#basket' : Droppable
+});&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;I really like this and am slowly building up a library (which you can see if you look at the &lt;a href=&quot;http://svn.danwebb.net/external/lowpro/trunk/behaviors/&quot;&gt;Low Pro trunk&lt;/a&gt;) of common behaviors.  There&#8217;s a date picker, a drag/drop implementation and the remote stuff I&#8217;ve illustrated above.  I&#8217;m planning on writing autocompleters and in-place editors as behaviors as well.  But behaviors have proven really easy to write and I love them as a tool for building site specific components.  In fact, as I&#8217;ve worked with Low Pro it&#8217;s become apparent to me that behaviors are by far the killer feature which is interesting as they were just an experiment I hacked together one day without much thought.&lt;/p&gt;
+
+
+	&lt;p&gt;So what to do?  Well, there&#8217;s two ways to go as far as I can see.  The first is to shut down development on &lt;span class=&quot;caps&quot;&gt;UJS&lt;/span&gt; completely (or hand it over to another party if anyone is interested) and go on to promote the techniques of implementing progressive enhancement using Low Pro that I&#8217;ve found to be so successful recently.  This could possibly be via the UJS4Rails site or through my own site &#8211; I&#8217;m not sure which would be a better platform right now.&lt;/p&gt;
+
+
+	&lt;p&gt;The other would be to re-think the &lt;span class=&quot;caps&quot;&gt;UJS&lt;/span&gt; plugin totally and go for some kind of 2.0 release that would take a completely different tack.  However, all of the ideas for this I&#8217;ve thought of or heard so far don&#8217;t really compel me to write them.  I think to work on this myself I&#8217;d need to be sure that I&#8217;d want to use it and so far this is not the case but any ideas and feedback are very welcome so please do drop me a mail or feedback on this list.&lt;/p&gt;
+
+
+	&lt;p&gt;Either way, we need to make fixes to the current plugin to make it work with Rails 1.2.3 which I&#8217;ve been working on recently but I&#8217;d love patches if you&#8217;ve already solved these issues yourself (which it appears many of you have).&lt;/p&gt;
+
+
+	&lt;p&gt;So yes, that&#8217;s it. Let me know what you think, I&#8217;d appreciate any feedback you have.&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://www.danwebb.net">
+    <author>
+      <name>dan</name>
+    </author>
+    <id>tag:www.danwebb.net,2007-06-10:2001</id>
+    <published>2007-06-10T08:13:00Z</published>
+    <updated>2007-06-10T08:36:42Z</updated>
+    <category term="Events"/>
+    <category term="JavaScript"/>
+    <category term="atmedia2007"/>
+    <category term="events"/>
+    <category term="javascript"/>
+    <category term="javascriptfu"/>
+    <category term="kungfu"/>
+    <link href="http://www.danwebb.net/2007/6/10/media-2007-europe-over-media-ajax-announced" rel="alternate" type="text/html"/>
+    <title>@media 2007 Europe Over, @media Ajax Announced</title>
+<content type="html">
+            &lt;p&gt;&lt;img title=&quot;Dan Webb presenting at @media&quot; src=&quot;http://www.danwebb.net/assets/2007/6/10/537454327_892108e23a_m.jpg&quot; alt=&quot;Dan Webb presenting at @media&quot; /&gt; Yep, well that was that.  @media Europe went off in the usual excellent fashion and it was an excellent few days.  This years highlight was definitely the quality of the presentations&#8230;I learnt really quite a lot of new stuff and usually I learn next to nothing at conferences.  Did you know that having more than two asset hosts can have a detrimental effect on download speed?  Freaky.  &lt;a href=&quot;http://people.opera.com/howcome/&quot;&gt;Håkon Wium Lie&lt;/a&gt; did a hugely informational presentation about &lt;span class=&quot;caps&quot;&gt;CSS3&lt;/span&gt; as well.&lt;/p&gt;
+
+
+	&lt;p&gt;My presentation seemed to go down reasonably considering I was up against Andy Clarke&#8217;s traditional end of conference slot and that myself and Mark Boulton had an unfortunate clash of presentation analogies (his presentation likened typography to martial arts).  The slides are &lt;a href=&quot;http://www.slideshare.net/danwrong/java-script-fu-media-london&quot;&gt;on slideshare&lt;/a&gt; so feel free to check them out.&lt;/p&gt;
+
+
+	&lt;p&gt;Finally, Patrick announced &lt;a href=&quot;http://www.vivabit.com/atmediaajax/&quot;&gt;@media Ajax&lt;/a&gt; which I&#8217;ve been really excited about for a while.  It&#8217;s a whole conference in London dedicated to &lt;span class=&quot;caps&quot;&gt;DOM&lt;/span&gt; Scripting and Ajax which I&#8217;m really happy to be speaking at.  I&#8217;m going to be presenting on a much more hardcore topic there: Metaprogramming in JavaScript.&lt;/p&gt;
+
+
+	&lt;p&gt;And with that the conference season is over and I&#8217;ll be blogging about proper stuff again.  In fact, this week I&#8217;ve got some fairly important stuff to talk about.  Keep your &lt;span class=&quot;caps&quot;&gt;RSS&lt;/span&gt; readers peeled.&lt;/p&gt;
+
+
+	&lt;p&gt;&lt;a href=&quot;http://flickr.com/photos/drewm/537454327/&quot;&gt;Photo&lt;/a&gt; by Drew McLellan.&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://www.danwebb.net">
+    <author>
+      <name>dan</name>
+    </author>
+    <id>tag:www.danwebb.net,2007-05-21:1911</id>
+    <published>2007-05-21T18:14:00Z</published>
+    <updated>2007-05-23T15:20:00Z</updated>
+    <category term="Events"/>
+    <category term="JavaScript"/>
+    <category term="Rails"/>
+    <category term="events"/>
+    <category term="presentation"/>
+    <category term="rails"/>
+    <category term="railsconf"/>
+    <link href="http://www.danwebb.net/2007/5/21/railsconf-is-over-one-down-one-to-go" rel="alternate" type="text/html"/>
+    <title>RailsConf Is Over: One Down, One To Go</title>
+<summary type="html">&lt;p&gt;&lt;strong&gt;&lt;span class=&quot;caps&quot;&gt;UPDATE&lt;/span&gt;&lt;/strong&gt;: The RailsConf version of the slides are &lt;a href=&quot;http://www.slideshare.net/danwrong/the-mysteries-of-javascriptfu-railsconf-ediition/2&quot;&gt;over at SlideShare&lt;/a&gt;.  The versions of the presentation I&#8217;ll be doing at @media San Fancisco and @media London will be considerably different but the kung-fu foolishness will remain intact.&lt;/p&gt;
+
+
+	&lt;p&gt;RailsConf 2007 is over and I have to say it was considerably better than the previous year.  Rather than last year&#8217;s overwhelmingly self-congratulatory tone (&#8220;Aren&#8217;t we clever! We use Rails!&#8221; Accompanied by much clapping, standing ovations and general whooping) it was a much more down to business affair and although it was really big (1600 people) it was friendly.&lt;/p&gt;
+
+
+	&lt;p&gt;So what was the big news this year?  Firstly, I got the feeling that everyone was bracing themselves for &#8220;the enterprise&#8221; with JRuby going strong and Sun looming over the proceedings.  It seems that everyone&#8217;s got a new Rails &lt;span class=&quot;caps&quot;&gt;IDE&lt;/span&gt; on the way out and the exhibition hall was full of people hawking their wares and pretty much everyone I met was a full time Rails professional.  I suppose the up side of this injection of big money into Rails is the free beer but aside from that I think the transition is going to be uneasy.  Java and &lt;span class=&quot;caps&quot;&gt;J2EE&lt;/span&gt; are great for getting huge amounts of programmers to write huge things because inevitably some of those programmers are going to be shit and Java and &lt;span class=&quot;caps&quot;&gt;J2EE&lt;/span&gt; provide a strict framework by which you can&#8217;t go too wrong.  However, Ruby on Rails is great for getting small amounts of really good programmers to churn out software quickly but doesn&#8217;t provide a rigid safety net which means a bad (or even not really good programmer) can basically bring an application to it&#8217;s knees.  In fact, I&#8217;ve seen some terrible code in Rails apps recently&#8230;stuff that would make &lt;a href=&quot;http://therailsway.com&quot;&gt;Koz and Jamis&lt;/a&gt; turn white.  Rails dev shops really need to watch for this.  Quality control, people!&lt;/p&gt;</summary><content type="html">
+            &lt;p&gt;&lt;strong&gt;&lt;span class=&quot;caps&quot;&gt;UPDATE&lt;/span&gt;&lt;/strong&gt;: The RailsConf version of the slides are &lt;a href=&quot;http://www.slideshare.net/danwrong/the-mysteries-of-javascriptfu-railsconf-ediition/2&quot;&gt;over at SlideShare&lt;/a&gt;.  The versions of the presentation I&#8217;ll be doing at @media San Fancisco and @media London will be considerably different but the kung-fu foolishness will remain intact.&lt;/p&gt;
+
+
+	&lt;p&gt;RailsConf 2007 is over and I have to say it was considerably better than the previous year.  Rather than last year&#8217;s overwhelmingly self-congratulatory tone (&#8220;Aren&#8217;t we clever! We use Rails!&#8221; Accompanied by much clapping, standing ovations and general whooping) it was a much more down to business affair and although it was really big (1600 people) it was friendly.&lt;/p&gt;
+
+
+	&lt;p&gt;So what was the big news this year?  Firstly, I got the feeling that everyone was bracing themselves for &#8220;the enterprise&#8221; with JRuby going strong and Sun looming over the proceedings.  It seems that everyone&#8217;s got a new Rails &lt;span class=&quot;caps&quot;&gt;IDE&lt;/span&gt; on the way out and the exhibition hall was full of people hawking their wares and pretty much everyone I met was a full time Rails professional.  I suppose the up side of this injection of big money into Rails is the free beer but aside from that I think the transition is going to be uneasy.  Java and &lt;span class=&quot;caps&quot;&gt;J2EE&lt;/span&gt; are great for getting huge amounts of programmers to write huge things because inevitably some of those programmers are going to be shit and Java and &lt;span class=&quot;caps&quot;&gt;J2EE&lt;/span&gt; provide a strict framework by which you can&#8217;t go too wrong.  However, Ruby on Rails is great for getting small amounts of really good programmers to churn out software quickly but doesn&#8217;t provide a rigid safety net which means a bad (or even not really good programmer) can basically bring an application to it&#8217;s knees.  In fact, I&#8217;ve seen some terrible code in Rails apps recently&#8230;stuff that would make &lt;a href=&quot;http://therailsway.com&quot;&gt;Koz and Jamis&lt;/a&gt; turn white.  Rails dev shops really need to watch for this.  Quality control, people!&lt;/p&gt;
+&lt;p&gt;Secondly, there was lots of buzz about &lt;a href=&quot;http://merb.rubyforge.org&quot;&gt;Merb&lt;/a&gt; which is really promising and in my opinion is starting to feel more like Rails 2.0 that Rails 2.0 is shaping up to be.  It&#8217;s got all the really useful stuff that I use day to day in Rails and none of the stuff I don&#8217;t use.  Better still all of the core features are really well implemented and feel really cruft-free (I read and understood the Merb source in about 2 hours).  This makes it fast as well.  &lt;a href=&quot;http://brainspl.at&quot;&gt;Ezra&lt;/a&gt; seems committed to keeping the core pretty lean and providing most extra functionality as gems rather than plugins which seems extremely sensible.  Plugins are simple are now suffering from a lot of the problems that gems have already solved (load order, dependencies, version control etc).&lt;/p&gt;
+
+
+	&lt;p&gt;Finally, I was impressed with &lt;span class=&quot;caps&quot;&gt;DHH&lt;/span&gt;&#8217;s keynote. He must be under large amounts of pressure to deliver the next new big feature but regardless his keynote was low-key and considered.  There&#8217;s no big stuff on the way but what is coming is consolidating the core ideas of Rails, providing more sensible defaults, more support for &lt;span class=&quot;caps&quot;&gt;REST&lt;/span&gt; and it sounds like some of the JavaScript helpers are being pulled to plugins (or at least some of them)....nice one!&lt;/p&gt;
+
+
+	&lt;p&gt;On the social side it was great.  Portland is a cool place and of course we had &lt;a href=&quot;http://robbyonrails.com&quot;&gt;Robby&lt;/a&gt; and the &lt;a href=&quot;http://planetargon.com&quot;&gt;Planet Argon&lt;/a&gt; crew to show us around and they did a great job.  I think I managed to meet up with nearly everyone I wanted to, the highlight being lunch with &lt;a href=&quot;http://sam.conio.net&quot;&gt;Sam&lt;/a&gt;, &lt;a href=&quot;http://mir.aculo.us/&quot;&gt;Thomas&lt;/a&gt; and Seth and some chat about Prototype which has got me pretty enthused about contributing again.  I even met the &lt;a href=&quot;http://railsenvy.com&quot;&gt;Rails Envy&lt;/a&gt; guy who is Ruby On Rails&#8230;rock on.  There was a &lt;a href=&quot;http://extra-action.com&quot;&gt;mad burlesque breakbeat marching band&lt;/a&gt; in the conference center at one point as well&#8230;.got to like that.  It was quite a Ruby moment when a guy in hot pants with a huge flag tried to dry hump Rich Kilmer.  Poor dude.&lt;/p&gt;
+
+
+	&lt;p&gt;My presentation, The Mysteries Of JavaScript-Fu, went down reasonably well from what I could tell (apparently, I was not slagged off on &lt;span class=&quot;caps&quot;&gt;IRC&lt;/span&gt;&#8230;miracle!) and I&#8217;ll be putting the slides up as soon as I get a vaguely working wireless connection (I&#8217;ll update this post with the link).  But Dr James&#8217; presentation on plugins was a work of art.  While my presentation involved me talking in a fake kung-fu voice, &lt;a href=&quot;http://interblah.net&quot;&gt;James&lt;/a&gt; had a gothic horror thing going on.  Stupid voices from the Brits!&lt;/p&gt;
+
+
+	&lt;p&gt;My only regret is that Zed Shaw won the &lt;a href=&quot;http://flickr.com/photos/johnnunemaker/507220981/&quot;&gt;Rails Pimp Cup&lt;/a&gt; ....that was main to be in my possession, damn it!&lt;/p&gt;
+
+
+	&lt;p&gt;Now to get on a plane to San Francisco for @media America and a lot of footwear purchases.&lt;/p&gt;
+          </content>  </entry>
+</feed>

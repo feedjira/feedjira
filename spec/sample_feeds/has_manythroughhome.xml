@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="http://feeds.feedburner.com/~d/styles/atom10full.xsl" type="text/xsl" media="screen"?><?xml-stylesheet href="http://feeds.feedburner.com/~d/styles/itemcontent.css" type="text/css" media="screen"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-US">
+  <id>tag:blog.hasmanythrough.com,2006-02-27:/feed</id>
+  <link href="http://blog.hasmanythrough.com" type="text/html" rel="alternate" />
+  
+  <title>has_many :through</title>
+  <updated>2009-01-22T18:47:02-08:00</updated>
+  <link rel="self" href="http://feeds.feedburner.com/hasmanythrough" type="application/atom+xml" /><entry>
+    <id>tag:blog.hasmanythrough.com,2006-02-27:Article/120</id>
+    <published>2009-01-22T18:47:02-08:00</published>
+    <updated>2009-01-22T18:47:02-08:00</updated>
+    <link href="http://blog.hasmanythrough.com/2009/1/22/announcing-golden-gate-ruby-conference" type="text/html" rel="alternate" />
+    <title>Announcing Golden Gate Ruby Conference</title>
+    <author>
+      <name>Josh Susser</name>
+    </author>
+    <category term="conference" />
+    <category term="events" />
+    <category term="ruby" />
+    <summary type="html">&lt;p&gt;This has been a long time coming, and I'm very happy to finally be able to announce the first ever &lt;a href="http://gogaruco.com/"&gt;Golden Gate Ruby Conference&lt;/a&gt;, here in San Francisco on April 17 and 18.  There's so much interest in Ruby here in SF, and tons of Ruby mojo too, so it's about time we had our own conference!  We'll be bringing in some great speakers from all over so locals who don't get to travel to conferences can get exposed to stuff they can't usually see.  And we'll also have some of our high-powered local talent showing off their stuff too.&lt;/p&gt;
+
+&lt;p&gt;While this has been in the works for a while, there are still a few details to work out before we can talk about things like registration, price, our speaker lineup, etc.  But we wanted to get the word out as soon as we had firm dates so people could get it on their calendars.  And there's still a lot we can talk about...&lt;/p&gt;
+
+&lt;p&gt;The organizers of the conference are yours truly, Josh Susser ("the has_many :through guy"), and Leah Silber, conference addict and the woman Yehuda Katz was lucky enough to marry.  Yehuda is going to be helping me with the technical program too.  Our employers, Pivotal Labs and Engine Yard are already committed to sponsor the conference, so we know we have plenty of support to make it happen.  There are still a lot of opportunities to get involved as a volunteer or a sponsor, and we're actively looking for both.&lt;/p&gt;
+
+&lt;p&gt;Our approach to this conference is not to take anything as a given.  We're rebels, we're bucking the system, we're using instance_eval to leave out explicit receivers!  For starters, &lt;strong&gt;there will be no call for proposals&lt;/strong&gt; for talks.  The program will consist of invited talks, and talks selected by attendee voting.  We'll be setting up a site soon where talks can be proposed and voted on.&lt;/p&gt;
+
+&lt;p&gt;We've also got a &lt;a href="http://github.com/gogaruco"&gt;GitHub account&lt;/a&gt; set up as a one-stop place where you can find all the code talked about at the conference, and a place to put stuff we may be hacking on over the weekend.  Of course you can &lt;a href="http://twitter.com/gogaruco"&gt;follow the conference on twitter&lt;/a&gt;, and we'll have a blog set up soon enough.&lt;/p&gt;
+
+&lt;p&gt;We're shooting for 150-200 people, single track, about a dozen talks, plenty of "hallway track" time, and a few surprises.&lt;/p&gt;
+
+&lt;p&gt;If you want to get involved, volunteer or sponsor, the email addresses on &lt;a href="http://gogaruco.com/"&gt;gogaruco.com&lt;/a&gt; are the best way to contact us.&lt;/p&gt;
+
+&lt;p&gt;Looking forward to this.  You have no idea...&lt;/p&gt;</summary>
+    <content type="html">&lt;p&gt;This has been a long time coming, and I'm very happy to finally be able to announce the first ever &lt;a href="http://gogaruco.com/"&gt;Golden Gate Ruby Conference&lt;/a&gt;, here in San Francisco on April 17 and 18.  There's so much interest in Ruby here in SF, and tons of Ruby mojo too, so it's about time we had our own conference!  We'll be bringing in some great speakers from all over so locals who don't get to travel to conferences can get exposed to stuff they can't usually see.  And we'll also have some of our high-powered local talent showing off their stuff too.&lt;/p&gt;
+
+&lt;p&gt;While this has been in the works for a while, there are still a few details to work out before we can talk about things like registration, price, our speaker lineup, etc.  But we wanted to get the word out as soon as we had firm dates so people could get it on their calendars.  And there's still a lot we can talk about...&lt;/p&gt;
+
+&lt;p&gt;The organizers of the conference are yours truly, Josh Susser ("the has_many :through guy"), and Leah Silber, conference addict and the woman Yehuda Katz was lucky enough to marry.  Yehuda is going to be helping me with the technical program too.  Our employers, Pivotal Labs and Engine Yard are already committed to sponsor the conference, so we know we have plenty of support to make it happen.  There are still a lot of opportunities to get involved as a volunteer or a sponsor, and we're actively looking for both.&lt;/p&gt;
+
+&lt;p&gt;Our approach to this conference is not to take anything as a given.  We're rebels, we're bucking the system, we're using instance_eval to leave out explicit receivers!  For starters, &lt;strong&gt;there will be no call for proposals&lt;/strong&gt; for talks.  The program will consist of invited talks, and talks selected by attendee voting.  We'll be setting up a site soon where talks can be proposed and voted on.&lt;/p&gt;
+
+&lt;p&gt;We've also got a &lt;a href="http://github.com/gogaruco"&gt;GitHub account&lt;/a&gt; set up as a one-stop place where you can find all the code talked about at the conference, and a place to put stuff we may be hacking on over the weekend.  Of course you can &lt;a href="http://twitter.com/gogaruco"&gt;follow the conference on twitter&lt;/a&gt;, and we'll have a blog set up soon enough.&lt;/p&gt;
+
+&lt;p&gt;We're shooting for 150-200 people, single track, about a dozen talks, plenty of "hallway track" time, and a few surprises.&lt;/p&gt;
+
+&lt;p&gt;If you want to get involved, volunteer or sponsor, the email addresses on &lt;a href="http://gogaruco.com/"&gt;gogaruco.com&lt;/a&gt; are the best way to contact us.&lt;/p&gt;
+
+&lt;p&gt;Looking forward to this.  You have no idea...&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>tag:blog.hasmanythrough.com,2006-02-27:Article/119</id>
+    <published>2008-12-18T23:39:47-08:00</published>
+    <updated>2008-12-18T23:40:54-08:00</updated>
+    <link href="http://blog.hasmanythrough.com/2008/12/18/agile-git-and-the-story-branch-pattern" type="text/html" rel="alternate" />
+    <title>Agile git and the story branch pattern</title>
+    <author>
+      <name>Josh Susser</name>
+    </author>
+    <category term="agile" />
+    <category term="git" />
+    <summary type="html">&lt;p&gt;I've been using git for source code management for over a year now and I'm totally hooked.  I won't rave about all the usual reasons &lt;a href="http://whygitisbetterthanx.com/"&gt;WhyGitIsBetterThanX&lt;/a&gt; since it's been done already.  Instead, I'm going to share how I use git for easy agile development.&lt;/p&gt;
+
+&lt;p&gt;The basic idea is to never do anything in the master branch except use it to move changes between the remote repo and local branches.  Keeping master clean takes very little effort and will save your bacon when you get into trouble.  The example I'll use here is working on a story to render title text in a bold style on a page.&lt;/p&gt;</summary>
+    <content type="html">&lt;p&gt;I've been using git for source code management for over a year now and I'm totally hooked.  I won't rave about all the usual reasons &lt;a href="http://whygitisbetterthanx.com/"&gt;WhyGitIsBetterThanX&lt;/a&gt; since it's been done already.  Instead, I'm going to share how I use git for easy agile development.&lt;/p&gt;
+
+&lt;p&gt;The basic idea is to never do anything in the master branch except use it to move changes between the remote repo and local branches.  Keeping master clean takes very little effort and will save your bacon when you get into trouble.  The example I'll use here is working on a story to render title text in a bold style on a page.&lt;/p&gt;
+
+&lt;h3&gt;1. Locate story "titles are in bold text" in Pivotal Tracker and click &lt;strong&gt;Start&lt;/strong&gt;.&lt;/h3&gt;
+
+&lt;p&gt;What do you mean you're not using &lt;a href="http://www.pivotaltracker.com/"&gt;Pivotal Tracker&lt;/a&gt;?&lt;/p&gt;
+
+&lt;h3&gt;2. Get going with a clean start.&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;$ git checkout master
+$ git pull
+$ rake db:migrate   # if there are new migrations
+$ rake              # if you don't have a CI server
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;3. Make a branch to work in.&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;$ git checkout -b bold_titles
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;4. Test-drive the story.&lt;/h3&gt;
+
+&lt;p&gt;Since you are committing locally, you can commit often.  Sometimes I like to commit every time I get a test to pass, or after crucial steps in a refactoring.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ git commit -am "Don't bold empty titles"
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We should all know the advantages of frequent commits: when an experiment fails, it's easy to get back to a previous state where things worked; or when refactoring, you can see how things were before you started changing things around.  With git you can also do things like cherry-pick commits, so if you want to grab a single test and its implementation and extract it as a patch or whatever, you can do that.&lt;/p&gt;
+
+&lt;p&gt;When you are done...&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ rake
+$ git commit -am "Render titles with bold style"
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;5. Merge with master&lt;/h3&gt;
+
+&lt;p&gt;When you're done with the story, you need to integrate your changes with the master branch.  You'll have to fetch and merge the changes from origin/master into your branch.&lt;/p&gt;
+
+&lt;h4&gt;a. Review changes&lt;/h4&gt;
+
+&lt;p&gt;I like to review changes to make sure I didn't leave any debugging cruft in, and as a final check on code quality.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ git diff master
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4&gt;b. Merge changes&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;$ git checkout master
+$ git pull
+$ git checkout bold_titles
+$ git rebase master
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The four commands above may seem a bit convoluted, but all you're really doing is merging updates from the remote repo to your story branch by way of the master branch.  Now, if you have any merge conflicts, they are all in the story branch where you can work on resolving them in your normal work environment without disturbing the master branch.&lt;/p&gt;
+
+&lt;p&gt;If you took enough time resolving merge conflicts that someone else checked in changes to the remote repo, repeat this step until you're fully merged locally.&lt;/p&gt;
+
+&lt;p&gt;Also, notice I used &lt;code&gt;rebase&lt;/code&gt; instead of &lt;code&gt;merge&lt;/code&gt; to integrate the master branch changes, but that choice is up to you.  Whether you use rebase or merge is a matter of convention for your project.  Doing a rebase will replay your changes on top of the changes you just merged with.  That should have a net effect of zero on the final product but has the advantage of keeping all your changes contiguous in the history, and won't generate a separate merge commit when you merge back to the master branch since the changes come in as a fast-forward.&lt;/p&gt;
+
+&lt;p&gt;You can also rebase with the -i (or --interactive) option to squash several (or all) of your commits into a single commit, or to organize your changes as a reduced number of commits.  Frequent commits are great to manage your own work and give many checkpoints to roll back to if needed.  But adding dozens of commits to the project for a simple feature can be overwhelming for others on your team, and can make it difficult to navigate or understand the project history.  For example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ git rebase -i master
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;That will show you an $EDITOR session like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# Rebasing 1234abc..3333ccc onto 1234abc
+#
+# Commands:
+#  pick = use commit
+#  edit = use commit, but stop for amending
+#  squash = use commit, but meld into previous commit
+#
+# If you remove a line here THAT COMMIT WILL BE LOST.
+#
+pick 1111aaa Use &amp;lt;strong&amp;gt; tag to bold titles
+pick 2222bbb Don't render empty titles as bold
+pick 3333ccc Use font-weight property on h1.title instead of &amp;lt;strong&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The commits are listed in chronological order, oldest on top.  If you want to combine several commits into one, edit the word &lt;code&gt;pick&lt;/code&gt; at the start of the line to say &lt;code&gt;squash&lt;/code&gt;, and that commit will be merged with the one above it.  Since you are seeing all your commits and their messages, you can probably say something useful about the whole set as you package it for pushing to the shared repo.  Sometimes you'll want to squash down to just one commit, others you may want to structure the package as a small number of related commits, say one commit for your feature addition, and another for a refactoring your feature relies on.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Important:&lt;/strong&gt; Rebasing rewrites history and should never be done to reorder changes you have previously pushed to another repo or shared publicly.&lt;/p&gt;
+
+&lt;h4&gt;c. Be green&lt;/h4&gt;
+
+&lt;p&gt;Once done merging, make sure you're still green.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ rake
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4&gt;d. Merge early, merge often&lt;/h4&gt;
+
+&lt;p&gt;If the work on your branch takes long enough, you might want to perform a merge several times.  As other people push to origin/master, you can pull those changes and integrate them into your branch incrementally, rather than waiting until the end when you're done.  Whether to do this is a judgement call, and would depend on factors like the nature of the work you're doing the the kind of changes you'd be integrating.  But one of the more valuable practices of agile development is continuous integration, and spending too much time accumulating change on a branch that is cut off from the rest of the development stream can eventually make for a difficult merge at the end of your story.&lt;/p&gt;
+
+&lt;h3&gt;6. Push&lt;/h3&gt;
+
+&lt;p&gt;Once you have integrated your changes with those from master, you can merge them back to the master branch and from there to the remote repo.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ git checkout master
+$ git merge bold_titles
+$ git push
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;7. Cleanup&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;$ git branch -d bold_titles
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Delete the story branch, click &lt;strong&gt;Finish&lt;/strong&gt; on the story in Pivotal Tracker, then get up and stretch and get some water.&lt;/p&gt;
+
+&lt;h2&gt;Caution&lt;/h2&gt;
+
+&lt;p&gt;Probably the biggest gotcha particular to Rails development on more than one branch is dealing with database migrations.  It's easy to get confused between the state of the database and which migrations are in what branch.  I'll take one of two approaches, depending on how complicated things are.  One is to rollback the migration on the current branch before switching to another branch that doesn't have that migration yet, then run pending migrations on the new branch after switching.  But if you're going to be switching around branches with different migrations a lot, the best thing is to integrate the migration changes so they exist on both branches and it ceases to be an issue.&lt;/p&gt;
+
+&lt;h2&gt;Discussion&lt;/h2&gt;
+
+&lt;p&gt;Okay that's a lot of stuff going on.  What's the point?  Well, the point is dealing with the unintended.  (I was going to say "unexpected", but if you're developing software or working on a team, you should expect crazy things to occur occasionally.)  There is obviously overhead in managing multiple branches, and you may wonder what you're getting for the cost of that overhead.  There are a couple things that come to mind that I'll mention here, but I'd like to hear more in the comments from people about what situations they deal with this way (or other ways).&lt;/p&gt;
+
+&lt;p&gt;The first thing this approach helps with is being able to make frequent commits without breaking the build or disrupting the work of teammates.  Working with a centralized SCM system like Subversion can force you to choose between checkpointing your work and keeping the state of the project consistent.  I know agile developers who swear that making frequent commits to the shared repo is the way to go, and just deal with having to keep the build green and functional on every commit.  But I find that approach too constraining, and it can impose an uncomfortable style on how I do my work.  I find being able to do frequent commits without worrying about disrupting my teammates' work with half-finished features lets me concentrate on getting things done, instead of thinking about how big a change I can make without messing up someone else's work.  And I also don't have to worry about the converse either.  Don't you hate pulling down changes that include a migration and wondering if the relevant model changes to let that migration do the right thing have been made yet?&lt;/p&gt;
+
+&lt;p&gt;But why the separate story branches?  Isn't it just as convenient to do all your work in your local master branch and do your local commits there?  Up to a point, sure.  But keeping a separate branch for work means that you always have a good baseline around for reference, it lets you rebase to manage your changesets easily, and it makes dealing with merge conflicts a bit more sane.&lt;/p&gt;
+
+&lt;p&gt;And if you have to share or backup the state of your work in progress, it's very easy to push your local branch to a branch in the remote repo without disrupting anything.&lt;/p&gt;
+
+&lt;p&gt;There's also the advantage that it's easier to deal with being interrupted.  Say you're working on a story that's going to take you all day and someone finds a nasty bug in production.  Time to drop everything and get it fixed right away!  If you have your work in progress on a branch, it's simple to do a checkpoint commit, switch back to master, create a new branch for the bugfix, fix the bug, push the fix, then get right back to where you were before.&lt;/p&gt;
+
+&lt;h2&gt;Push&lt;/h2&gt;
+
+&lt;p&gt;I've been using the story branch pattern for development for most of the last year, and have found it useful, convenient and a lifesaver when things get weird.  I've also watched teammates that do their work in the master branch, and it is more work for them to deal with issues and avoid making unintended messes.  Like all useful practices it takes a little bit of effort up front, but it saves a lot more effort when it really matters.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>tag:blog.hasmanythrough.com,2006-02-27:Article/118</id>
+    <published>2008-12-08T20:41:10-08:00</published>
+    <updated>2008-12-08T20:41:10-08:00</updated>
+    <link href="http://blog.hasmanythrough.com/2008/12/8/saying-goodbye-to-new-york" type="text/html" rel="alternate" />
+    <title>Saying Goodbye to New York, Speaking at nyc.rb</title>
+    <author>
+      <name>Josh Susser</name>
+    </author>
+    <category term="events" />
+    <category term="new york" />
+    <summary type="html">&lt;p&gt;As my extended silence here has probably indicated, New York has been keeping me busy.  It's been a crazy, hectic, and wonderful couple of months.  I learned a lot, met some great people, and ate way too much pizza.  I've also achieved that particular New York state of mind where I'm no longer phased by anything.  However, this is my last week in New York before I return home to my beautiful city of San Francisco.  I'm going to miss a lot about New York, but not the winter weather.  Seriously, 25 degrees is not a reasonable temperature, and whoever thought so should be fired.&lt;/p&gt;
+
+&lt;p&gt;I didn't manage to post a note about it here, but last month I delivered a keynote talk at &lt;a href="http://voicesthatmatter.com/ruby2008/"&gt;Voices that Matter: Professional Ruby Conference&lt;/a&gt; (which I affectionately christened &lt;em&gt;ObieConf&lt;/em&gt;).  My talk was &lt;em&gt;Ruby: Fragile or Agile?&lt;/em&gt;  I guess by the time I got them my talk info they were too busy to update the site so there's no description on the site, but the talk was about Ruby's destiny, and how lessons learned from when C++ ate Smalltalk's lunch could be instructive in guiding Ruby's future.  I'll be reprising the talk tomorrow night (perhaps tonight by the time you read this (or yesterday if you're a feed slacker)) at the &lt;a href="http://tech.groups.yahoo.com/group/ruby-nyc/message/2202"&gt;nyc.rb meeting&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The Pivotal office here in NY is coming along nicely.  We've hired a few locals and moved into a bigger space, so we're ready to rock.  And our first NY office production launched recently - &lt;a href="http://www.cookstr.com/"&gt;Cookstr.com&lt;/a&gt;.  Oh by the way, I'm starting to do more blogging on the Pivotal Labs technical blog, Pivotal Blabs.  My most recent post is about using ActiveRecord internals to &lt;a href="http://pivotallabs.com/users/jsusser/blog/articles/567-hacking-a-subselect-in-activerecord"&gt;easily generate subselects&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I've got a few topics queued up to blog about on here too, so I'm hoping I'll be able to catch up some shortly.  Stay tuned.&lt;/p&gt;
+
+&lt;p&gt;Oh yeah, I got to try a lot of the pizza suggestions.  I really liked Grimaldi's, Lombardi's, and Two Boots.  But man, &lt;a href="http://www.caracasarepabar.com/"&gt;Caracas Arepa Bar&lt;/a&gt; beats pizza nearly any day.&lt;/p&gt;</summary>
+    <content type="html">&lt;p&gt;As my extended silence here has probably indicated, New York has been keeping me busy.  It's been a crazy, hectic, and wonderful couple of months.  I learned a lot, met some great people, and ate way too much pizza.  I've also achieved that particular New York state of mind where I'm no longer phased by anything.  However, this is my last week in New York before I return home to my beautiful city of San Francisco.  I'm going to miss a lot about New York, but not the winter weather.  Seriously, 25 degrees is not a reasonable temperature, and whoever thought so should be fired.&lt;/p&gt;
+
+&lt;p&gt;I didn't manage to post a note about it here, but last month I delivered a keynote talk at &lt;a href="http://voicesthatmatter.com/ruby2008/"&gt;Voices that Matter: Professional Ruby Conference&lt;/a&gt; (which I affectionately christened &lt;em&gt;ObieConf&lt;/em&gt;).  My talk was &lt;em&gt;Ruby: Fragile or Agile?&lt;/em&gt;  I guess by the time I got them my talk info they were too busy to update the site so there's no description on the site, but the talk was about Ruby's destiny, and how lessons learned from when C++ ate Smalltalk's lunch could be instructive in guiding Ruby's future.  I'll be reprising the talk tomorrow night (perhaps tonight by the time you read this (or yesterday if you're a feed slacker)) at the &lt;a href="http://tech.groups.yahoo.com/group/ruby-nyc/message/2202"&gt;nyc.rb meeting&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The Pivotal office here in NY is coming along nicely.  We've hired a few locals and moved into a bigger space, so we're ready to rock.  And our first NY office production launched recently - &lt;a href="http://www.cookstr.com/"&gt;Cookstr.com&lt;/a&gt;.  Oh by the way, I'm starting to do more blogging on the Pivotal Labs technical blog, Pivotal Blabs.  My most recent post is about using ActiveRecord internals to &lt;a href="http://pivotallabs.com/users/jsusser/blog/articles/567-hacking-a-subselect-in-activerecord"&gt;easily generate subselects&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I've got a few topics queued up to blog about on here too, so I'm hoping I'll be able to catch up some shortly.  Stay tuned.&lt;/p&gt;
+
+&lt;p&gt;Oh yeah, I got to try a lot of the pizza suggestions.  I really liked Grimaldi's, Lombardi's, and Two Boots.  But man, &lt;a href="http://www.caracasarepabar.com/"&gt;Caracas Arepa Bar&lt;/a&gt; beats pizza nearly any day.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>tag:blog.hasmanythrough.com,2006-02-27:Article/117</id>
+    <published>2008-09-22T19:38:03-07:00</published>
+    <updated>2008-09-22T19:38:03-07:00</updated>
+    <link href="http://blog.hasmanythrough.com/2008/9/22/hello-new-york" type="text/html" rel="alternate" />
+    <title>Hello, New York</title>
+    <author>
+      <name>Josh Susser</name>
+    </author>
+    <category term="conference" />
+    <category term="new york" />
+    <summary type="html">&lt;p&gt;By way of the obligatory sorry-I-haven't-blogged-much-lately apologette, I should say that life has been busy this summer.  The second biggest deal for me was, get this, moving to New York City.  Yes, I know I just moved to a new place in San Francisco, and no, I haven't given up on my favorite city.  It's a temporary move and I should be back in SF by the end of the year.  What happened is that Pivotal Labs has opened an office in Manhattan, and I've come out to work on client projects and help get the office going.  The takeaway on that is that Pivotal Labs is available for projects in New York, and we're also looking to hire top-notch Rails developers to work with us here.&lt;/p&gt;
+
+&lt;p&gt;The word I have to pick to describe New York is &lt;em&gt;vital&lt;/em&gt;.  That's true of the city in general, but from what I've heard it's also true of the Ruby development community.  I am looking forward to getting to hang with folks here and see what I can learn from the other coast.  There's a lot of Ruby developer events around here.  I'm going to start with the nyc.rb hackfest tomorrow.&lt;/p&gt;
+
+&lt;p&gt;While I'm out here on the East Coast, I'm going to hit up some conferences.  In November I'll be attending &lt;a href="http://rubyconf.org/"&gt;RubyConf 2008&lt;/a&gt; in Orlando. Then later that month I'll be at the &lt;a href="http://www.voicesthatmatter.com/ruby2008/"&gt;Voices That Matter: Professional Ruby Conference&lt;/a&gt;, giving a talk entitled "Ruby: Fragile or Agile?"&lt;/p&gt;
+
+&lt;p&gt;In the mean time, where's the best pizza in New York?&lt;/p&gt;</summary>
+    <content type="html">&lt;p&gt;By way of the obligatory sorry-I-haven't-blogged-much-lately apologette, I should say that life has been busy this summer.  The second biggest deal for me was, get this, moving to New York City.  Yes, I know I just moved to a new place in San Francisco, and no, I haven't given up on my favorite city.  It's a temporary move and I should be back in SF by the end of the year.  What happened is that Pivotal Labs has opened an office in Manhattan, and I've come out to work on client projects and help get the office going.  The takeaway on that is that Pivotal Labs is available for projects in New York, and we're also looking to hire top-notch Rails developers to work with us here.&lt;/p&gt;
+
+&lt;p&gt;The word I have to pick to describe New York is &lt;em&gt;vital&lt;/em&gt;.  That's true of the city in general, but from what I've heard it's also true of the Ruby development community.  I am looking forward to getting to hang with folks here and see what I can learn from the other coast.  There's a lot of Ruby developer events around here.  I'm going to start with the nyc.rb hackfest tomorrow.&lt;/p&gt;
+
+&lt;p&gt;While I'm out here on the East Coast, I'm going to hit up some conferences.  In November I'll be attending &lt;a href="http://rubyconf.org/"&gt;RubyConf 2008&lt;/a&gt; in Orlando. Then later that month I'll be at the &lt;a href="http://www.voicesthatmatter.com/ruby2008/"&gt;Voices That Matter: Professional Ruby Conference&lt;/a&gt;, giving a talk entitled "Ruby: Fragile or Agile?"&lt;/p&gt;
+
+&lt;p&gt;In the mean time, where's the best pizza in New York?&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>tag:blog.hasmanythrough.com,2006-02-27:Article/116</id>
+    <published>2008-08-17T10:49:28-07:00</published>
+    <updated>2008-08-17T10:49:28-07:00</updated>
+    <link href="http://blog.hasmanythrough.com/2008/8/17/sorting-things-out" type="text/html" rel="alternate" />
+    <title>Sorting things out</title>
+    <author>
+      <name>Josh Susser</name>
+    </author>
+    <category term="ruby" />
+    <category term="sorting" />
+    <summary type="html">&lt;p&gt;I recently packed up everything I own and moved.  I'd lived in my old place for about nine years and I have the packrat gene on both sides of the family tree, so I had a lot of crap to sort through to figure out what to move and what to trash, as well as which box what should go in.  Now that I'm here in the new place, I've had to sort through the remaining stuff to figure out where it all goes.  So you might appreciate that sorting has been on my mind a lot lately.  (See?  It's a topical tie-in.  I don't do those often, so I hope it wasn't too awkward.)&lt;/p&gt;
+
+&lt;p&gt;I've also been working on an application that does a lot of sorting to prioritize tasks in a workflow.  These items often need to be sorted based on multiple criteria, such as how long an application has been waiting for approval, how many times a customer has been called recently, etc.  We also have to sort names that have anywhere from two to four components (Hispanic names can have both paternal and maternal names instead of just a surname).&lt;/p&gt;</summary>
+    <content type="html">&lt;p&gt;I recently packed up everything I own and moved.  I'd lived in my old place for about nine years and I have the packrat gene on both sides of the family tree, so I had a lot of crap to sort through to figure out what to move and what to trash, as well as which box what should go in.  Now that I'm here in the new place, I've had to sort through the remaining stuff to figure out where it all goes.  So you might appreciate that sorting has been on my mind a lot lately.  (See?  It's a topical tie-in.  I don't do those often, so I hope it wasn't too awkward.)&lt;/p&gt;
+
+&lt;p&gt;I've also been working on an application that does a lot of sorting to prioritize tasks in a workflow.  These items often need to be sorted based on multiple criteria, such as how long an application has been waiting for approval, how many times a customer has been called recently, etc.  We also have to sort names that have anywhere from two to four components (Hispanic names can have both paternal and maternal names instead of just a surname).&lt;/p&gt;
+
+&lt;p&gt;Ruby enumerables can be sorted using the &lt;code&gt;#sort&lt;/code&gt; method, which orders contents using the &lt;code&gt;&amp;lt;=&amp;gt;&lt;/code&gt; trinary comparison operator.  It's pretty simple to override &lt;code&gt;&amp;lt;=&amp;gt;&lt;/code&gt; if instances of a class are only ever sorted one way, but when you get to a situation where you need to sort things in different ways depending on the context, you need a more flexible solution&lt;/p&gt;
+
+&lt;p&gt;The next obvious thing to try is passing a block to the #sort method.  This works great, but it has two drawbacks.  One, if the sort criteria are complex, you can end up with some ugly looking code.  And B, it's not very DRY for re-using sort criteria.&lt;/p&gt;
+
+&lt;p&gt;The approach I came up with for my application makes use of the sorting properties of Ruby arrays.  Ruby arrays sort quite nicely using the &lt;code&gt;&amp;lt;=&amp;gt;&lt;/code&gt; operator.  &lt;code&gt;&amp;lt;=&amp;gt;&lt;/code&gt; compares two arrays by comparing all their values until a non-equal result is found for any pairings of values in the two arrays.  Here are some example comparisons:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt;&amp;gt; [1, 2, 3] &amp;lt;=&amp;gt; [1, 2, 3]
+=&amp;gt; 0
+&amp;gt;&amp;gt; [0, 2, 3] &amp;lt;=&amp;gt; [1, 2, 3]
+=&amp;gt; -1
+&amp;gt;&amp;gt; [1, 2, 3] &amp;lt;=&amp;gt; [0, 2, 3]
+=&amp;gt; 1
+&amp;gt;&amp;gt; [1, 2, [4, 5]] &amp;lt;=&amp;gt; [1, 2, [6, 7]]
+=&amp;gt; -1
+&amp;gt;&amp;gt; [1, 2, [4, 5]] &amp;lt;=&amp;gt; [1, 2, [2, 3]]
+=&amp;gt; 1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;There are some things to watch out for, like don't have nil anywhere in the array contents, and shorter arrays sort less than longer arrays where all else is equal.  But this is a great feature to build upon.&lt;/p&gt;
+
+&lt;p&gt;Based on the array sorting functionality, I defined a concept I call a &lt;em&gt;sorter&lt;/em&gt;.  A sorter is an array that holds multiple values to use to sort the collection by in order of precedence.  For example, if you want to sort people by name using the precedence &lt;em&gt;paternal, maternal, first, middle&lt;/em&gt;, you can construct an array of those values and sort the list using that.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;class Person &amp;lt; ActiveRecord::Base
+  def name_sorter
+    [(paternal_name || ""), (maternal_name || ""), (first_name || ""), (middle_name || "")]
+  end
+end
+
+@people = Person.find(:all).sort_by { |p| p.name_sorter }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Notice I'm making sure that I never have a nil as a value in the sorter, cause that will make things blow up like the ending of a Die Hard movie.  If you want to avoid that verbiage, set up the model so that the names default to empty strings.  Also notice that I'm using the &lt;code&gt;#sort_by&lt;/code&gt; method, instead of the &lt;code&gt;#sort&lt;/code&gt; method with a 2-arg block.  Actually, let's look at all our options.  The following three forms will give equivalent results:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;@people = Person.find(:all).sort_by { |p| p.name_sorter }
+@people = Person.find(:all).sort_by(&amp;amp;:name_sorter)
+@people = Person.find(:all).sort { |a,b| a.name_sorter &amp;lt;=&amp;gt; b.name_sorter }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The first line is the one I'd use in most situations.  The second line is slightly more compact, but the symbol-to-proc coercion should be avoided in any code where you care about performance (at least until Ruby 1.9 is ready for prime time).  The third line is usually going to be a bad choice, because a sorter array would be created for every time its person was compared, which will be roughly ln(n) times if you are willing to believe my naive assumptions about Ruby's sorting algorithm.  If you don't want to trust naiveté, check out the simple performance comparison I ran.  This benchmark sorts an array of 60 items using a sorter on 4 values.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;                user     system      total        real
+sort        6.430000   0.000000   6.430000 (  6.466645)
+sort_by     1.510000   0.000000   1.510000 (  1.509017)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;That kind of difference is pretty significant to me.  Of course, if your sorter can be cached so you can reuse it for multiple comparisons, a #sort might be better.  As always, measure it if you care and you're not sure.&lt;/p&gt;
+
+&lt;p&gt;One last thing. What if we just rolled the sort by hand using a block?  (The code below assumes names will default to an empty string.)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;@people = Person.find(:all).sort do |a,b|
+  if    0 != (comp = a.last_name &amp;lt;=&amp;gt; b.last_name)
+    comp
+  elsif 0 != (comp = a.maternal_name &amp;lt;=&amp;gt; b.maternal_name)
+    comp
+  elsif 0 != (comp = a.first_name &amp;lt;=&amp;gt; b.first_name)
+    comp
+  else
+    a.middle_name &amp;lt;=&amp;gt; b.middle_name
+  end
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;That's fairly ugly and it's actually slower than the &lt;code&gt;#sort_by&lt;/code&gt; approach too.  &lt;/p&gt;
+
+&lt;p&gt;And because I don't believe in secret benchmarks, here is a gist of &lt;a href="http://gist.github.com/5812"&gt;the benchmark code&lt;/a&gt; I used.&lt;/p&gt;
+
+&lt;p&gt;Now if you'll excuse me, I have a lot of empty cardboard boxes to toss in the recycling.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>tag:blog.hasmanythrough.com,2006-02-27:Article/115</id>
+    <published>2008-06-20T11:06:10-07:00</published>
+    <updated>2008-06-20T11:06:10-07:00</updated>
+    <link href="http://blog.hasmanythrough.com/2008/6/20/recursive-lambda" type="text/html" rel="alternate" />
+    <title>Extra geeky: the recursive lambda</title>
+    <author>
+      <name>Josh Susser</name>
+    </author>
+    <category term="arcana" />
+    <category term="rails" />
+    <category term="ruby" />
+    <summary type="html">&lt;p&gt;I'm not sure where I first heard that you could do a recursive lamdba in Ruby, but it's been simmering on the back burner of my brain for a while. I've just never had a reason to use one, until now...&lt;/p&gt;
+
+&lt;p&gt;I wanted to process the Rails request params, which is a hash of strings and hashes of strings and hashes of strings and hashes... you get the idea.  The need was to strip all the accent marks from user input throughout the application.  Here's what I came up with:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;class ApplicationController &amp;lt; ActionController::Base
+  before_filter :strip_accents
+
+  protected
+  def strip_accents
+    thunk = lambda do |key,value|
+      case value
+        when String then value.remove_accents!
+        when Hash   then value.each(&amp;amp;thunk)
+      end
+    end
+    params.each(&amp;amp;thunk)
+  end
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;That's all completely clear, right?  The filter enumerates the top-level hash using the &amp;amp;/to_proc operator to coerce the lambda to a block for the &lt;code&gt;#each&lt;/code&gt; method. &lt;code&gt;#each&lt;/code&gt; passes the key and value to the lambda, which either removes the accents from a string, or recursively enumerates the contents of a nested hash.&lt;/p&gt;
+
+&lt;p&gt;I think it's totally cool that you can do this in Ruby.  Everyone thinks that Ruby is just an object-oriented language, but I like to think of it as the love-child of Smalltalk and LISP (with Miss Perl as the nanny).&lt;/p&gt;</summary>
+    <content type="html">&lt;p&gt;I'm not sure where I first heard that you could do a recursive lamdba in Ruby, but it's been simmering on the back burner of my brain for a while. I've just never had a reason to use one, until now...&lt;/p&gt;
+
+&lt;p&gt;I wanted to process the Rails request params, which is a hash of strings and hashes of strings and hashes of strings and hashes... you get the idea.  The need was to strip all the accent marks from user input throughout the application.  Here's what I came up with:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;class ApplicationController &amp;lt; ActionController::Base
+  before_filter :strip_accents
+
+  protected
+  def strip_accents
+    thunk = lambda do |key,value|
+      case value
+        when String then value.remove_accents!
+        when Hash   then value.each(&amp;amp;thunk)
+      end
+    end
+    params.each(&amp;amp;thunk)
+  end
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;That's all completely clear, right?  The filter enumerates the top-level hash using the &amp;amp;/to_proc operator to coerce the lambda to a block for the &lt;code&gt;#each&lt;/code&gt; method. &lt;code&gt;#each&lt;/code&gt; passes the key and value to the lambda, which either removes the accents from a string, or recursively enumerates the contents of a nested hash.&lt;/p&gt;
+
+&lt;p&gt;I think it's totally cool that you can do this in Ruby.  Everyone thinks that Ruby is just an object-oriented language, but I like to think of it as the love-child of Smalltalk and LISP (with Miss Perl as the nanny).&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>tag:blog.hasmanythrough.com,2006-02-27:Article/114</id>
+    <published>2008-06-15T10:31:11-07:00</published>
+    <updated>2008-06-15T10:31:11-07:00</updated>
+    <link href="http://blog.hasmanythrough.com/2008/6/15/an-extra-special-case" type="text/html" rel="alternate" />
+    <title>An extra special case</title>
+    <author>
+      <name>Josh Susser</name>
+    </author>
+    <category term="activerecord" />
+    <category term="rails" />
+    <summary type="html">&lt;p&gt;A couple of months ago I ran into a weird issue in my current Rails project that made no sense at all.  All we did was add a &lt;code&gt;lock_version&lt;/code&gt; field to a model to enable optimistic locking and suddenly things started breaking in a big way.  After a bit of digging we found it was because ActiveRecord wasn't properly quoting a table name when updating a record with optimistic locking.  I submitted a patch for that issue (so it's fixed in Rails 2.1), but lately I've seen a few similar bugs having to do with table name quoting in various circumstances.  The amusing thing to me is that all of these bugs have one thing in common: they were uncovered by creating a model named &lt;em&gt;Reference&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;At first I thought this was a pretty big coincidence, but after just a moment's thought it seemed pretty obvious.  ActiveRecord pluralizes model names to form conventional table names, and &lt;em&gt;references&lt;/em&gt; is a &lt;a href="http://dev.mysql.com/doc/mysqld-version-reference/en/mysqld-version-reference-reservedwords-5-1.html"&gt;reserved keyword in MYSQL&lt;/a&gt;.  I guess Reference is a word that makes a good model name, especially if you're building a big data graph and can't think of a more specific relationship name, and it's about the only noun that pluralizes into a reserved keyword that anyone would ever use.  In our case, we could have done a rename refactoring to change the model class name to CharacterReference.  Instead we used an override and changed the table name to &lt;code&gt;t_references&lt;/code&gt;, since that seemed like the least effort for a temporary workaround until the fix got released with Rails 2.1.&lt;/p&gt;
+
+&lt;p&gt;All these various issues with table name quoting are indeed bugs in ActiveRecord and should be reported and fixed.  (There's also a major reworking of the internals of ActiveRecord in progress that should deal with virtually all of these issues in one fell swoop.)  But in the mean time, you might want to avoid using model names that generate SQL reserved words, or just override the table name to something else.&lt;/p&gt;</summary>
+    <content type="html">&lt;p&gt;A couple of months ago I ran into a weird issue in my current Rails project that made no sense at all.  All we did was add a &lt;code&gt;lock_version&lt;/code&gt; field to a model to enable optimistic locking and suddenly things started breaking in a big way.  After a bit of digging we found it was because ActiveRecord wasn't properly quoting a table name when updating a record with optimistic locking.  I submitted a patch for that issue (so it's fixed in Rails 2.1), but lately I've seen a few similar bugs having to do with table name quoting in various circumstances.  The amusing thing to me is that all of these bugs have one thing in common: they were uncovered by creating a model named &lt;em&gt;Reference&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;At first I thought this was a pretty big coincidence, but after just a moment's thought it seemed pretty obvious.  ActiveRecord pluralizes model names to form conventional table names, and &lt;em&gt;references&lt;/em&gt; is a &lt;a href="http://dev.mysql.com/doc/mysqld-version-reference/en/mysqld-version-reference-reservedwords-5-1.html"&gt;reserved keyword in MYSQL&lt;/a&gt;.  I guess Reference is a word that makes a good model name, especially if you're building a big data graph and can't think of a more specific relationship name, and it's about the only noun that pluralizes into a reserved keyword that anyone would ever use.  In our case, we could have done a rename refactoring to change the model class name to CharacterReference.  Instead we used an override and changed the table name to &lt;code&gt;t_references&lt;/code&gt;, since that seemed like the least effort for a temporary workaround until the fix got released with Rails 2.1.&lt;/p&gt;
+
+&lt;p&gt;All these various issues with table name quoting are indeed bugs in ActiveRecord and should be reported and fixed.  (There's also a major reworking of the internals of ActiveRecord in progress that should deal with virtually all of these issues in one fell swoop.)  But in the mean time, you might want to avoid using model names that generate SQL reserved words, or just override the table name to something else.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>tag:blog.hasmanythrough.com,2006-02-27:Article/113</id>
+    <published>2008-06-06T09:57:02-07:00</published>
+    <updated>2008-06-06T09:57:02-07:00</updated>
+    <link href="http://blog.hasmanythrough.com/2008/6/6/me-me-me" type="text/html" rel="alternate" />
+    <title>me me me!</title>
+    <author>
+      <name>Josh Susser</name>
+    </author>
+    <category term="railsconf" />
+    <category term="railsconf2008" />
+    <category term="sightings" />
+    <summary type="html">&lt;p&gt;I'm finally recovered from RailsConf.  Wish I could say the same thing for my car, which seems to have gone into a major funk from being ignored so much.  Anyway, it's been cool reading all the aftermath posts and seeing people's thoughts and analysis of the conf.  MagLev seems to be getting a lot of the attention, and I'm eager to see how things develop with it.&lt;/p&gt;
+
+&lt;p&gt;If you missed me at the conf, or saw me but just can't get enough of me, here's some links to a couple interviews people did with me there.&lt;/p&gt;
+
+&lt;p&gt;Gregg Pollack did some very nice video spots with many of the conf speakers.  His &lt;a href="http://railsenvy.com/2008/6/2/Railsconf-videos"&gt;RailsConf in 36 Minutes&lt;/a&gt; video is great.  If you don't want to watch the whole thing (but why wouldn't you?), he posted the &lt;a href="http://www.vimeo.com/1104776"&gt;interview with me&lt;/a&gt; separately too.&lt;/p&gt;
+
+&lt;p&gt;Fabio Akita did some great &lt;a href="http://www.akitaonrails.com/2008/6/5/railsconf-2008-brazil-rails-podcast-special-edition"&gt;podcast interviews at RailsConf&lt;/a&gt;.  You can &lt;a href="http://download.podcast.rubyonrails.pro.br/RailsPodcastBrasil_019_08_JoshSusser.mp3"&gt;grab mine directly&lt;/a&gt; too.&lt;/p&gt;
+
+&lt;p&gt;As I said in my chat with Fabio, the next thing I'm going to do is release the Teldra code on GitHub.  Stay tuned, it shouldn't be too long now.&lt;/p&gt;
+
+&lt;p&gt;Happy Friday!&lt;/p&gt;</summary>
+    <content type="html">&lt;p&gt;I'm finally recovered from RailsConf.  Wish I could say the same thing for my car, which seems to have gone into a major funk from being ignored so much.  Anyway, it's been cool reading all the aftermath posts and seeing people's thoughts and analysis of the conf.  MagLev seems to be getting a lot of the attention, and I'm eager to see how things develop with it.&lt;/p&gt;
+
+&lt;p&gt;If you missed me at the conf, or saw me but just can't get enough of me, here's some links to a couple interviews people did with me there.&lt;/p&gt;
+
+&lt;p&gt;Gregg Pollack did some very nice video spots with many of the conf speakers.  His &lt;a href="http://railsenvy.com/2008/6/2/Railsconf-videos"&gt;RailsConf in 36 Minutes&lt;/a&gt; video is great.  If you don't want to watch the whole thing (but why wouldn't you?), he posted the &lt;a href="http://www.vimeo.com/1104776"&gt;interview with me&lt;/a&gt; separately too.&lt;/p&gt;
+
+&lt;p&gt;Fabio Akita did some great &lt;a href="http://www.akitaonrails.com/2008/6/5/railsconf-2008-brazil-rails-podcast-special-edition"&gt;podcast interviews at RailsConf&lt;/a&gt;.  You can &lt;a href="http://download.podcast.rubyonrails.pro.br/RailsPodcastBrasil_019_08_JoshSusser.mp3"&gt;grab mine directly&lt;/a&gt; too.&lt;/p&gt;
+
+&lt;p&gt;As I said in my chat with Fabio, the next thing I'm going to do is release the Teldra code on GitHub.  Stay tuned, it shouldn't be too long now.&lt;/p&gt;
+
+&lt;p&gt;Happy Friday!&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>tag:blog.hasmanythrough.com,2006-02-27:Article/112</id>
+    <published>2008-06-01T15:19:55-07:00</published>
+    <updated>2008-06-01T18:05:26-07:00</updated>
+    <link href="http://blog.hasmanythrough.com/2008/6/1/the-great-test-framework-dance-off" type="text/html" rel="alternate" />
+    <title>The Great Test Framework Dance-off</title>
+    <author>
+      <name>Josh Susser</name>
+    </author>
+    <category term="presentation" />
+    <category term="railsconf" />
+    <category term="railsconf2008" />
+    <category term="sightings" />
+    <category term="testing" />
+    <summary type="html">&lt;p&gt;Got my RailsConf talk done yesterday.  Seems to have gone over well, though my slides didn't show color well in the brightly lit room so they turned the lights down all the way to see them better and I ended up doing the talk as a ghost story for half of it.  Guess I have to revise my rules for slide creation to account for ambient light.&lt;/p&gt;
+
+&lt;p&gt;Anyway, I have a PDF of the slides posted: &lt;a href="http://hasmanythrough.com/gtfdo/"&gt;The Great Test Framework Dance-off&lt;/a&gt;.  I've also opened up the example code and tests on github as the &lt;a href="http://github.com/joshsusser/teldra_prime"&gt;teldra_prime&lt;/a&gt; project.  That project is based on the application that runs this blog, but you should probably avoid deploying it to run your own blog.  I'll be releasing the Teldra blog software as its own project very soon, and that will be the project where I continue development and people can contribute changes.&lt;/p&gt;
+
+&lt;p&gt;Also, it turns out I have a craaaaazy fan.  Here's &lt;a href="http://blog.almostaspacegame.com/2008/06/01/susser-rox-fanboy-silliness.html"&gt;a picture of us&lt;/a&gt; at the end of the talk, me posing with his ballpoint tattoo of me on his bicep.  Yes, somebody drew picture of me on his body!  That so beats people introducing themselves at the urinal!&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;UPDATE:&lt;/strong&gt; Alright, it turns out there is a way to significantly simplify the &lt;code&gt;be_sorted&lt;/code&gt; custom matcher I showed as an example for extending RSpec. &lt;a href="http://blog.davidchelimsky.net/"&gt;David Chelimsky&lt;/a&gt; sent me this alternate implementation that uses the &lt;code&gt;simple_matcher&lt;/code&gt; helper:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;def be_sorted
+ return simple_matcher("a sorted list") do |actual|
+   actual.sort == actual
+ end
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;That doesn't have all the power of the example I gave, but it is pretty much equivalent in operation to the test/unit example I gave and said was so much easier to write than one in RSpec.  Nice one, David.&lt;/p&gt;</summary>
+    <content type="html">&lt;p&gt;Got my RailsConf talk done yesterday.  Seems to have gone over well, though my slides didn't show color well in the brightly lit room so they turned the lights down all the way to see them better and I ended up doing the talk as a ghost story for half of it.  Guess I have to revise my rules for slide creation to account for ambient light.&lt;/p&gt;
+
+&lt;p&gt;Anyway, I have a PDF of the slides posted: &lt;a href="http://hasmanythrough.com/gtfdo/"&gt;The Great Test Framework Dance-off&lt;/a&gt;.  I've also opened up the example code and tests on github as the &lt;a href="http://github.com/joshsusser/teldra_prime"&gt;teldra_prime&lt;/a&gt; project.  That project is based on the application that runs this blog, but you should probably avoid deploying it to run your own blog.  I'll be releasing the Teldra blog software as its own project very soon, and that will be the project where I continue development and people can contribute changes.&lt;/p&gt;
+
+&lt;p&gt;Also, it turns out I have a craaaaazy fan.  Here's &lt;a href="http://blog.almostaspacegame.com/2008/06/01/susser-rox-fanboy-silliness.html"&gt;a picture of us&lt;/a&gt; at the end of the talk, me posing with his ballpoint tattoo of me on his bicep.  Yes, somebody drew picture of me on his body!  That so beats people introducing themselves at the urinal!&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;UPDATE:&lt;/strong&gt; Alright, it turns out there is a way to significantly simplify the &lt;code&gt;be_sorted&lt;/code&gt; custom matcher I showed as an example for extending RSpec. &lt;a href="http://blog.davidchelimsky.net/"&gt;David Chelimsky&lt;/a&gt; sent me this alternate implementation that uses the &lt;code&gt;simple_matcher&lt;/code&gt; helper:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;def be_sorted
+ return simple_matcher("a sorted list") do |actual|
+   actual.sort == actual
+ end
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;That doesn't have all the power of the example I gave, but it is pretty much equivalent in operation to the test/unit example I gave and said was so much easier to write than one in RSpec.  Nice one, David.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>tag:blog.hasmanythrough.com,2006-02-27:Article/111</id>
+    <published>2008-05-31T08:02:41-07:00</published>
+    <updated>2008-06-06T09:57:26-07:00</updated>
+    <link href="http://blog.hasmanythrough.com/2008/5/31/quick-railsconf-update" type="text/html" rel="alternate" />
+    <title>Quick RailsConf Update</title>
+    <author>
+      <name>Josh Susser</name>
+    </author>
+    <category term="railsconf" />
+    <category term="railsconf2008" />
+    <summary type="html">&lt;p&gt;&lt;a href="http://drnicwilliams.com/"&gt;DrNic&lt;/a&gt; &lt;a href="http://twitter.com/drnic/statuses/823963034"&gt;complained&lt;/a&gt; about the lack of blogging from RailsConf, so here's a quick little update with some highlights.  It's still early here and I have to get to breakfast soon, so I have to be brief.&lt;/p&gt;
+
+&lt;p&gt;First impression: lots of people.  Second impression: "they want us all to fit in there?"&lt;/p&gt;
+
+&lt;p&gt;I called it exactly right.  Joel Spolsky tried to pull a Ze Frank and did some random crazy presentation in his keynote, but it fell pretty flat.  It was really polished and fairly amusing, but I was often insulted by either his blatantly sexist attempts at humor or his estimation of the audience's intelligence.  It was nearly entirely content-free, and while he tried to develop a theme about the importance of esthetics, he never went anywhere with it.  If you missed it, count yourself lucky.&lt;/p&gt;
+
+&lt;p&gt;On the other hand, &lt;a href="http://loudthinking.com/"&gt;David Heinemeier Hanson&lt;/a&gt; did a keynote where he transformed himself from a technologist into a life coach.  His talk on &lt;em&gt;The Great Surplus&lt;/em&gt; was interesting, if only to get a glimpse of the world from his perspective.  I think most of what he said was right on, especially the bit about how everyone should code less and sleep more.&lt;/p&gt;
+
+&lt;p&gt;One of his points was his expectation about how Rails might lose its productivity advantage.  He said there were three options: 1) Mainstream tech copies Rails' good points, 2) A radically new tech outdoes Rails, and 3) Rails becomes mainstream so there is no longer an advantage.  But I think there is a 4th option.  It's what happened to Smalltalk.  I'm talking about C++.  We Smalltalkers used to think the advantages of our language were so significant that it would take over the world.  We had a huge productivity advantage over C coders.  Then C++ came along and gave C coders just enough to let them improve their productivity and their ability to write larger more complex systems.  It still wasn't as good as Smalltalk, but it was &lt;em&gt;better&lt;/em&gt; than C, and much more accessible to most programmers than Smalltalk.  C++ eventually sucked up all the oxygen and Smalltalk is now only a language for hobbyists and the occasional programming god.  I think this is the most likely threat to the Rails surplus, that C# or Scala or something can do a good enough job that people can double their productivity with far less of a change in mindset or tools, and eventually no one will care about the ten times (or whatever) productivity of Rails.  "Good enough is good enough."&lt;/p&gt;
+
+&lt;p&gt;Last bit before I gotta run.  I've heard rumors about &lt;a href="http://ruby.gemstone.com/"&gt;MagLev&lt;/a&gt; for a while, and the early &lt;a href="http://www.infoq.com/news/2008/04/maglev-gemstone-builds-ruby"&gt;announcement&lt;/a&gt; last month got me really excited.  The demo and discussion yesterday by Avi Bryant and Bob Walker was one of those jaw-droppers that had everyone in the room freaking out.  What they showed was pretty spectacular, though I always like to keep in mind Lansford's Corollary to Clarke's Third Law: "Any sufficiently advanced technology is indistinguishable from a rigged demo."  The staggering performance boost together with the scalability and seamless integration of persistence could be a serious game-changer.  I think the GemStone OODB technology beats the pants off of the ORM approach for most web applications, and if they can pull this off it's going to have a huge impact on how I write my software.&lt;/p&gt;
+
+&lt;p&gt;I'm giving my talk today at 4:25pm.  Yes, I still freak out about giving talks.  As critical as I can be of others, I'm hardest on myself.  I hope I don't give myself too lousy a review when I'm done, heh.&lt;/p&gt;</summary>
+    <content type="html">&lt;p&gt;&lt;a href="http://drnicwilliams.com/"&gt;DrNic&lt;/a&gt; &lt;a href="http://twitter.com/drnic/statuses/823963034"&gt;complained&lt;/a&gt; about the lack of blogging from RailsConf, so here's a quick little update with some highlights.  It's still early here and I have to get to breakfast soon, so I have to be brief.&lt;/p&gt;
+
+&lt;p&gt;First impression: lots of people.  Second impression: "they want us all to fit in there?"&lt;/p&gt;
+
+&lt;p&gt;I called it exactly right.  Joel Spolsky tried to pull a Ze Frank and did some random crazy presentation in his keynote, but it fell pretty flat.  It was really polished and fairly amusing, but I was often insulted by either his blatantly sexist attempts at humor or his estimation of the audience's intelligence.  It was nearly entirely content-free, and while he tried to develop a theme about the importance of esthetics, he never went anywhere with it.  If you missed it, count yourself lucky.&lt;/p&gt;
+
+&lt;p&gt;On the other hand, &lt;a href="http://loudthinking.com/"&gt;David Heinemeier Hanson&lt;/a&gt; did a keynote where he transformed himself from a technologist into a life coach.  His talk on &lt;em&gt;The Great Surplus&lt;/em&gt; was interesting, if only to get a glimpse of the world from his perspective.  I think most of what he said was right on, especially the bit about how everyone should code less and sleep more.&lt;/p&gt;
+
+&lt;p&gt;One of his points was his expectation about how Rails might lose its productivity advantage.  He said there were three options: 1) Mainstream tech copies Rails' good points, 2) A radically new tech outdoes Rails, and 3) Rails becomes mainstream so there is no longer an advantage.  But I think there is a 4th option.  It's what happened to Smalltalk.  I'm talking about C++.  We Smalltalkers used to think the advantages of our language were so significant that it would take over the world.  We had a huge productivity advantage over C coders.  Then C++ came along and gave C coders just enough to let them improve their productivity and their ability to write larger more complex systems.  It still wasn't as good as Smalltalk, but it was &lt;em&gt;better&lt;/em&gt; than C, and much more accessible to most programmers than Smalltalk.  C++ eventually sucked up all the oxygen and Smalltalk is now only a language for hobbyists and the occasional programming god.  I think this is the most likely threat to the Rails surplus, that C# or Scala or something can do a good enough job that people can double their productivity with far less of a change in mindset or tools, and eventually no one will care about the ten times (or whatever) productivity of Rails.  "Good enough is good enough."&lt;/p&gt;
+
+&lt;p&gt;Last bit before I gotta run.  I've heard rumors about &lt;a href="http://ruby.gemstone.com/"&gt;MagLev&lt;/a&gt; for a while, and the early &lt;a href="http://www.infoq.com/news/2008/04/maglev-gemstone-builds-ruby"&gt;announcement&lt;/a&gt; last month got me really excited.  The demo and discussion yesterday by Avi Bryant and Bob Walker was one of those jaw-droppers that had everyone in the room freaking out.  What they showed was pretty spectacular, though I always like to keep in mind Lansford's Corollary to Clarke's Third Law: "Any sufficiently advanced technology is indistinguishable from a rigged demo."  The staggering performance boost together with the scalability and seamless integration of persistence could be a serious game-changer.  I think the GemStone OODB technology beats the pants off of the ORM approach for most web applications, and if they can pull this off it's going to have a huge impact on how I write my software.&lt;/p&gt;
+
+&lt;p&gt;I'm giving my talk today at 4:25pm.  Yes, I still freak out about giving talks.  As critical as I can be of others, I'm hardest on myself.  I hope I don't give myself too lousy a review when I'm done, heh.&lt;/p&gt;</content>
+  </entry>
+</feed>

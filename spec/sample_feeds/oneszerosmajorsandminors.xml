@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="http://feeds.feedburner.com/~d/styles/rss2full.xsl" type="text/xsl" media="screen"?><?xml-stylesheet href="http://feeds.feedburner.com/~d/styles/itemcontent.css" type="text/css" media="screen"?><rss xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/" version="2.0">
+  <channel>
+    <title>ones zeros majors and minors</title>
+    <link>http://ozmm.org/</link>
+    <description>ozmm.org rss feed</description>
+    <atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" href="http://feeds.feedburner.com/ozmmorg" type="application/rss+xml" /><item>
+      <title>Forking, Continued</title>
+      <link>http://ozmm.org/posts/forking_continued.html</link>
+      <description>&lt;p&gt;David Welton has posted &lt;a href="http://journal.dedasys.com/2009/01/21/more-github"&gt;a thoughtful reply&lt;/a&gt; to &lt;a href="http://ozmm.org/posts/linux_vs_classic_dev_style.html"&gt;my comment&lt;/a&gt;. Unfortunately, he missed my point. I can only assume this is due to a lack of clarity on my part. (My comment was very brief.)&lt;/p&gt;
+
+
+	&lt;p&gt;I mentioned the Network Graph and Fork Queue but David mentioned neither. I think he doesn&amp;#8217;t know what they are, probably because I didn&amp;#8217;t explain what they are :)&lt;/p&gt;
+
+
+	&lt;p&gt;So, in an effort to be more clear, let me propose an alternate workflow to David&amp;#8217;s. He says, &amp;#8220;Here&amp;#8217;s a concrete example of how things might go wrong.&amp;#8221; I see his example and think, &amp;#8220;That&amp;#8217;s a concrete example of how things have gone right.&amp;#8221;&lt;/p&gt;
+
+
+	&lt;p&gt;(I&amp;#8217;m going to make this visual so you don&amp;#8217;t have to take my word for it or keep jumping between here and GitHub to try it out.)&lt;/p&gt;
+
+
+	&lt;h3&gt;The Network Graph&lt;/h3&gt;
+
+
+&lt;pre&gt;
+root@fortrock:~# gem1.8 search -r actionwebservice
+
+*** REMOTE GEMS ***
+
+actionwebservice (1.2.6)
+datanoise-actionwebservice (2.2.2)
+dougbarth-actionwebservice (2.1.1)
+nmeans-actionwebservice (2.1.1)
+&lt;/pre&gt;
+
+	&lt;p&gt;The problem is obvious: which &lt;code&gt;actionwebservice&lt;/code&gt; should we use?&lt;/p&gt;
+
+
+	&lt;p&gt;Well, we know three of those gems are on GitHub. And all three of the GitHub gems have higher versions than the Rubyforge gem. So let&amp;#8217;s check GitHub first.&lt;/p&gt;
+
+
+	&lt;p&gt;I go to &lt;a href="http://github.com/search"&gt;http://github.com/search&lt;/a&gt; and search for &lt;code&gt;actionwebservice&lt;/code&gt;. (Actually I do this from my &lt;a href="http://www.obdev.at/launchbar/"&gt;LaunchBar&lt;/a&gt; template, but you get the idea.)&lt;/p&gt;
+
+
+	&lt;p&gt;In the &lt;a href="http://github.com/search?type=Everything&amp;#38;language=&amp;#38;q=actionwebservice&amp;#38;repo=&amp;#38;langOverride=&amp;#38;x=0&amp;#38;y=0&amp;#38;start_value=1"&gt;results&lt;/a&gt;, I see that the first &lt;code&gt;actionwebservice&lt;/code&gt; appearing has the most forks and watchers, and was the most recently active.&lt;/p&gt;
+
+
+&lt;div class="photo"&gt;
+  &lt;a href="http://github.com/search?type=Everything&amp;#38;language=&amp;#38;q=actionwebservice&amp;#38;repo=&amp;#38;langOverride=&amp;#38;x=0&amp;#38;y=0&amp;#38;start_value=1"&gt;
+  &lt;img src="http://img.skitch.com/20090121-k9e1webim3i7ejyuhgmkq8tws6.png" alt="" /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+	&lt;p&gt;We could stop right here and choose &lt;code&gt;datanoise&lt;/code&gt;&amp;#8217;s fork. But let&amp;#8217;s be sure.&lt;/p&gt;
+
+
+	&lt;p&gt;I click on the repo and arrive at &lt;a href="http://github.com/datanoise/actionwebservice"&gt;http://github.com/datanoise/actionwebservice&lt;/a&gt;. I click on the &lt;code&gt;Network&lt;/code&gt; tab.&lt;/p&gt;
+
+
+&lt;div class="photo"&gt;
+&lt;a href="http://github.com/datanoise/actionwebservice/network"&gt;
+  &lt;img src="http://img.skitch.com/20090121-rhe2ygfkeu9msf5ew45q3h5u9y.png" alt="" /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+	&lt;p&gt;I arrive at &lt;a href="http://github.com/datanoise/actionwebservice/network"&gt;http://github.com/datanoise/actionwebservice/network&lt;/a&gt; and glance at the graph.&lt;/p&gt;
+
+
+&lt;div class="photo"&gt;
+  &lt;a href="http://github.com/datanoise/actionwebservice/network"&gt;
+    &lt;img src="http://img.skitch.com/20090121-tg4xmqdm1ut8s78gxrd2t3dahr.png" alt="" /&gt;
+  &lt;/a&gt;
+&lt;/div&gt;
+
+	&lt;p&gt;There are commits unique to certain forks, but &lt;code&gt;datanoise&lt;/code&gt; has the most activity and the most recent commits.&lt;/p&gt;
+
+
+	&lt;p&gt;At this point, there&amp;#8217;s no doubt: &lt;code&gt;datanoise&lt;/code&gt; is the most recent, most active version of &lt;code&gt;actionwebservice&lt;/code&gt;. Will it always be? Who knows. But for now, this is the best choice.&lt;/p&gt;
+
+
+	&lt;h3&gt;The Fork Queue&lt;/h3&gt;
+
+
+	&lt;p&gt;We can take it a step further, too. We see there are unmerged commits &amp;#8211; changes people have made which have not been pulled into &lt;code&gt;datanoise&lt;/code&gt;. We can examine them straight from the Network Graph, or we can attempt to merge them into &lt;code&gt;actionwebservice&lt;/code&gt;.&lt;/p&gt;
+
+
+	&lt;p&gt;I fork &lt;code&gt;datanoise&lt;/code&gt;&amp;#8217;s &lt;code&gt;actionwebservice&lt;/code&gt; using the &amp;#8216;fork&amp;#8217; button, still on the Network Graph&amp;#8217;s page:&lt;/p&gt;
+
+
+&lt;div class="photo"&gt;
+  &lt;a href="http://github.com/datanoise/actionwebservice/network"&gt;
+    &lt;img src="http://img.skitch.com/20090121-pqgx4www5irpyr6jp762723729.png" alt="" /&gt;
+  &lt;/a&gt;
+&lt;/div&gt;
+
+	&lt;p&gt;Now I have my own version of &lt;code&gt;actionwebservice&lt;/code&gt;.&lt;/p&gt;
+
+
+&lt;div class="photo"&gt;
+  &lt;a href="http://github.com/defunkt/actionwebservice"&gt;
+    &lt;img src="http://img.skitch.com/20090121-fhupjq4bikpix8ft6ftdugiht4.png" alt="" /&gt;
+  &lt;/a&gt;
+&lt;/div&gt;
+
+	&lt;p&gt;Time to visit the Fork Queue. (Only people with write access to the repository see this tab.)&lt;/p&gt;
+
+
+&lt;div class="photo"&gt;
+  &lt;img src="http://img.skitch.com/20090121-dxkih4t9xqnthj8wqiexn19hhm.png" alt="" /&gt;
+&lt;/div&gt;
+
+	&lt;p&gt;Okay, so it looks like a lot of the changes made will not apply cleanly.&lt;/p&gt;
+
+
+&lt;div class="photo"&gt;
+  &lt;img src="http://img.skitch.com/20090121-empcj2mfx91w1by7irinwg1s7w.png" alt="" /&gt;
+&lt;/div&gt;
+
+	&lt;p&gt;If any of these commits had a green background, we&amp;#8217;d be able to apply them right there on the site (as explained by the legend). But we can&amp;#8217;t.&lt;/p&gt;
+
+
+	&lt;h3&gt;Pull Requests&lt;/h3&gt;
+
+
+	&lt;p&gt;Since we can&amp;#8217;t apply the commits, we could send &lt;code&gt;datanoise&lt;/code&gt; a message asking him to check over his Fork Queue and merge in the changes that look promising. We could do it ourselves, too, by resolving the conflicts. All we&amp;#8217;d need is to clone our repository, add one of the others as a remote, then merge and fix the conflicts before pushing back to our version. After that we could even send &lt;code&gt;datanoise&lt;/code&gt; a pull request, since we&amp;#8217;ve done the work for him. Or just wait for him to check his Fork Queue and see that our changes are green.&lt;/p&gt;
+
+
+	&lt;p&gt;I&amp;#8217;m just going to delete my fork, though.&lt;/p&gt;
+
+
+&lt;div class="photo"&gt;
+  &lt;img src="http://img.skitch.com/20090121-q8m79g686d6q7fwbc7eiarwss1.png" alt="" /&gt;
+&lt;/div&gt;
+
+	&lt;h3&gt;Keeping Current&lt;/h3&gt;
+
+
+	&lt;p&gt;Even ignoring the forking and the Fork Queue, the point is this: it&amp;#8217;s not hard to see which project is the most active. Yes, we (GitHub) need to make it more clear. We want to say &amp;#8220;this is the fork you&amp;#8217;re looking for&amp;#8221; on the first page you see. And we want that to change as the most active, latest fork changes. But, for the time being, you can figure that all out with a single click.&lt;/p&gt;
+
+
+	&lt;p&gt;What happens when it does change, though? Perhaps &lt;code&gt;datanoise&lt;/code&gt; will lose interest and someone else will take up development. That&amp;#8217;s the beautiful part, and that&amp;#8217;s why you just can&amp;#8217;t do GitHub without Git (or any equally powerful &lt;span class="caps"&gt;DVCS&lt;/span&gt;): switching the remote and pulling in changes from the new repository is trivial. Git doesn&amp;#8217;t care where you pull from. It is not married to a remote &lt;span class="caps"&gt;URL&lt;/span&gt; in the same way a centralized &lt;span class="caps"&gt;VCS&lt;/span&gt; like Subversion is.&lt;/p&gt;
+
+
+	&lt;p&gt;Imagine hitting the &lt;code&gt;datanoise&lt;/code&gt; repository and being informed &amp;#8220;this may not be the most active repository in the network. Check Person X&amp;#8217;s.&amp;#8221; Switch your remote to the new one, pull, and you&amp;#8217;re up to date. This is the type of information the Network Graph makes available, we just need to make it more visible and plain. (Heck, maybe that message could be printed out when you &lt;code&gt;git pull&lt;/code&gt; from an inactive remote.)&lt;/p&gt;
+
+
+	&lt;p&gt;For instance, hitting &lt;code&gt;dougbarth&lt;/code&gt;&amp;#8217;s &lt;code&gt;actionwebservice&lt;/code&gt; fork and checking the Network Graph makes it obvious that &lt;code&gt;datanoise&lt;/code&gt; is the repo we want:&lt;/p&gt;
+
+
+&lt;div class="photo"&gt;
+  &lt;a href="http://github.com/dougbarth/actionwebservice/network"&gt;
+    &lt;img src="http://img.skitch.com/20090121-xhman6nekg64icyer9i5cr7xkg.png" alt="" /&gt;
+  &lt;/a&gt;
+&lt;/div&gt;
+
+	&lt;p&gt;If we were previously using &lt;code&gt;dougbarth&lt;/code&gt;&amp;#8217;s fork it would be clear that &lt;code&gt;datanoise&lt;/code&gt;&amp;#8217;s is the one to watch in the future.&lt;/p&gt;
+
+
+	&lt;h3&gt;Moving Forward&lt;/h3&gt;
+
+
+	&lt;p&gt;It may seem strange, and perhaps even like a lot of work. &amp;#8220;Why should I have to check to see which is the most current? In the old model, there&amp;#8217;s always a canonical repository.&amp;#8221;&lt;/p&gt;
+
+
+	&lt;p&gt;In the old model, &lt;code&gt;actionwebservice&lt;/code&gt; wouldn&amp;#8217;t have made it past 1.2.6. Welcome to distributed version control.&lt;/p&gt;</description>
+      <pubDate>Wed, 21 Jan 2009 11:58:03 -0800</pubDate>
+    </item>
+    <item>
+      <title>Linux vs Classic Dev Style</title>
+      <link>http://ozmm.org/posts/linux_vs_classic_dev_style.html</link>
+      <description>&lt;p&gt;I tried to leave this as a comment on &lt;a href="http://journal.dedasys.com/2009/01/10/developer-project-or-project-developer-s"&gt;Developer &amp;gt; Project, or Project &amp;gt; Developer(s)?&lt;/a&gt; but the form errored and I couldn&amp;#8217;t find a contact email address.  Here it is:&lt;/p&gt;
+
+
+	&lt;p&gt;GitHub lets you do Linux-style fork development, or classic SourceForge style development. The difference is you have the choice.&lt;/p&gt;
+
+
+	&lt;p&gt;Using the Network graph you can easily see which fork in a Linux-style network has the most recent activity. It&amp;#8217;s one click away from any repository&amp;#8217;s home page, but we&amp;#8217;re working on better surfacing and summarizing the information.&lt;/p&gt;
+
+
+	&lt;p&gt;As for lazy developers not requesting you pull in changes, the Fork Queue lets you see unmerged changes in forks and even lets you merge them in from the web interface.&lt;/p&gt;
+
+
+	&lt;p&gt;We&amp;#8217;re constantly working to improve our tools and the ways you can manage your projects, as well.&lt;/p&gt;</description>
+      <pubDate>Tue, 20 Jan 2009 18:08:06 -0800</pubDate>
+    </item>
+    <item>
+      <title>TextMate Minor Mode</title>
+      <link>http://ozmm.org/posts/textmate_minor_mode.html</link>
+      <description>&lt;p&gt;&lt;a href="http://github.com/defunkt/textmate.el"&gt;TextMate Minor Mode&lt;/a&gt; is an
+Emacs minor mode that emulates some awesome TextMate features.&lt;/p&gt;
+
+
+	&lt;p&gt;Like ⌘T (find file in project).&lt;/p&gt;
+
+
+&lt;div align="center"&gt;
+&lt;img src="http://img.skitch.com/20081202-ftygk17r4eepyst2be45daxars.png" alt="" /&gt;
+&lt;/div&gt;
+
+	&lt;p&gt;And ⇧⌘T (go to symbol in file).&lt;/p&gt;
+
+
+&lt;div align="center"&gt;
+&lt;img src="http://img.skitch.com/20081202-kf5965ruf94muuee6ip1y53ype.png" alt="" /&gt;
+&lt;/div&gt;
+
+	&lt;p&gt;And more! Really, the
+&lt;a href="http://github.com/defunkt/textmate.el/tree/master/README.markdown"&gt;&lt;span class="caps"&gt;README&lt;/span&gt;&lt;/a&gt;
+says it all.&lt;/p&gt;
+
+
+	&lt;p&gt;Installation:&lt;/p&gt;
+
+
+&lt;pre&gt;
+$ cd ~/.emacs.d/vendor
+$ git clone git://github.com/defunkt/textmate.el.git
+&lt;/pre&gt;
+
+	&lt;p&gt;In your emacs config:&lt;/p&gt;
+
+
+&lt;pre&gt;
+(add-to-list 'load-path "~/.emacs.d/vendor/textmate.el")
+(require 'textmate)
+(textmate-mode)
+&lt;/pre&gt;
+
+	&lt;p&gt;Or just grab the elisp: &lt;a href="http://github.com/defunkt/textmate.el/raw/master/textmate.el"&gt;textmate.el&lt;/a&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;TextMate Minor Mode was written for &lt;a href="http://aquamacs.org/"&gt;Aquamacs&lt;/a&gt;
+but works great on console Emacs, &lt;span class="caps"&gt;CVS&lt;/span&gt; Emacs.app and Carbon Emacs.  Try
+it today!&lt;/p&gt;</description>
+      <pubDate>Tue, 02 Dec 2008 02:31:36 -0800</pubDate>
+    </item>
+    <item>
+      <title>Why Lisp Failed</title>
+      <link>http://ozmm.org/posts/why_lisp_failed.html</link>
+      <description>&lt;p&gt;Emacs.&lt;/p&gt;
+
+
+	&lt;p&gt;Writing Lisp without Emacs is just too painful. If your language
+depends on specific features of a specific editor, you better be a big
+company like Sun or Microsoft with the mad moneys. Otherwise forget it.&lt;/p&gt;</description>
+      <pubDate>Mon, 01 Dec 2008 02:38:31 -0800</pubDate>
+    </item>
+    <item>
+      <title>Learning Your Editor</title>
+      <link>http://ozmm.org/posts/learning_your_editor.html</link>
+      <description>&lt;p&gt;Text editors should take a lesson from video games. In many games, you have access to subset of total weapons, powers, whatever. As you advance and master the basic weapons, more weapons become available to you. By the end of the game you have direct experience with all or most of the weapons &amp;#8211; from basic to advanced.&lt;/p&gt;
+
+
+	&lt;p&gt;How many times have you done something cool or strange in Vim only to think, &amp;#8220;How did I do that?&amp;#8221; &lt;code&gt;video-game-mode&lt;/code&gt; would be a fun way to learn an editor: start with the basic commands and unlock more as you progress.&lt;/p&gt;</description>
+      <pubDate>Wed, 19 Nov 2008 12:49:43 -0800</pubDate>
+    </item>
+    <item>
+      <title>Singin' Singletons</title>
+      <link>http://ozmm.org/posts/singin_singletons.html</link>
+      <description>&lt;p&gt;There&amp;#8217;s stuff I just don&amp;#8217;t understand. David Bowie, for instance. Or the Southern Hemisphere. But nothing quite boggles my mind like Ruby&amp;#8217;s &lt;code&gt;Singleton&lt;/code&gt;. Because really, it&amp;#8217;s totally unnecessary.&lt;/p&gt;
+
+
+	&lt;p&gt;Here&amp;#8217;s what &lt;em&gt;they&lt;/em&gt; want you to do with your code:&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code class="ruby"&gt;
+require 'net/http'
+
+# first you setup your singleton
+class Cheat
+  include Singleton
+
+  def initialize
+    @host = 'http://cheat.errtheblog.com/'
+    @http = Net::HTTP.start(URI.parse(@host).host)
+  end
+
+  def sheet(name)
+    @http.get("/s/#{name}").body
+  end
+end
+
+# then you use it
+Cheat.instance.sheet 'migrations'
+Cheat.instance.sheet 'yahoo_ceo'
+&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;But that&amp;#8217;s crazy. Fight the power.&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code class="ruby"&gt;
+require 'net/http'
+
+# here's how we roll
+module Cheat
+  extend self
+
+  def host
+    @host ||= 'http://cheat.errtheblog.com/'
+  end
+
+  def http
+    @http ||= Net::HTTP.start(URI.parse(host).host)
+  end
+
+  def sheet(name)
+    http.get("/s/#{name}").body
+  end
+end
+
+# then you use it
+Cheat.sheet 'migrations'
+Cheat.sheet 'singletons'
+&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;Any why not? The &lt;span class="caps"&gt;API&lt;/span&gt; is more concise, the code is easier to test, mock, and stub, and it&amp;#8217;s still dead simple to convert into a proper class should the need arise.&lt;/p&gt;</description>
+      <pubDate>Tue, 18 Nov 2008 18:48:16 -0800</pubDate>
+    </item>
+    <item>
+      <title>Pretty Fixtures</title>
+      <link>http://ozmm.org/posts/pretty_fixtures.html</link>
+      <description>&lt;pre&gt;&lt;code class="ruby"&gt;
+# in whatever test helper you use
+class Test::Unit::TestCase
+  def defunkt
+    users(:defunkt)
+  end
+
+  def github
+    repositories(:github)
+  end
+end
+
+# in your tests
+context "A user" do
+  test "belongs to a repository" do
+    assert_equal defunkt, github.user
+  end
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;Somethin&amp;#8217; like that.&lt;/p&gt;</description>
+      <pubDate>Tue, 18 Nov 2008 18:22:10 -0800</pubDate>
+    </item>
+    <item>
+      <title>Sugar</title>
+      <link>http://ozmm.org/posts/sugar.html</link>
+      <description>&lt;p&gt;The console is part of your app. Treat yourself right.&lt;/p&gt;
+
+
+&lt;script src="http://gist.github.com/21160.js"&gt;&lt;/script&gt;
+&lt;noscript&gt;&lt;pre&gt;
+$ ./console 
+Loading production environment (Rails 2.0.2)
+&amp;gt;&amp;gt; me = User / :defunkt
+=&amp;gt; #&amp;lt;User id: 2, ... &amp;gt;
+&amp;gt;&amp;gt; repo = User / :defunkt / :gist
+=&amp;gt; #&amp;lt;Repository id: 61713, ... &amp;gt;
+&lt;/pre&gt;&lt;/noscript&gt;
+
+&lt;script src="http://gist.github.com/21162.js"&gt;&lt;/script&gt;
+&lt;noscript&gt;&lt;pre&gt;
+User.instance_eval do
+  def /(name)
+    find_by_login(name.to_s)
+  end
+end
+
+Repository.instance_eval do
+  def /(name)
+    find_by_name(name.to_s)
+  end
+end
+&lt;/pre&gt;&lt;/noscript&gt;</description>
+      <pubDate>Thu, 30 Oct 2008 15:38:06 -0700</pubDate>
+    </item>
+    <item>
+      <title>Good Homes Found</title>
+      <link>http://ozmm.org/posts/good_homes_found.html</link>
+      <description>&lt;p&gt;After &lt;a href="http://ozmm.org/posts/good_homes_wanted.html"&gt;putting out the call&lt;/a&gt;, a few developers interested in taking up sad, abandoned projects of mine stepped forward.&lt;/p&gt;
+
+
+	&lt;p&gt;Thanks to the following for giving these projects good homes:&lt;/p&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;&lt;a href="http://github.com/dustin"&gt;dustin&lt;/a&gt; for taking over mofo&lt;/li&gt;
+		&lt;li&gt;&lt;a href="http://github.com/gaustin"&gt;gaustin&lt;/a&gt; for taking over Choice&lt;/li&gt;
+		&lt;li&gt;&lt;a href="http://github.com/postmodern"&gt;postmodern&lt;/a&gt; for taking over Sake&lt;/li&gt;
+		&lt;li&gt;&lt;a href="http://github.com/bpauly"&gt;bpauly&lt;/a&gt; for taking over cache_fu&lt;/li&gt;
+	&lt;/ul&gt;</description>
+      <pubDate>Wed, 29 Oct 2008 12:37:03 -0700</pubDate>
+    </item>
+    <item>
+      <title>Good Homes Wanted</title>
+      <link>http://ozmm.org/posts/good_homes_wanted.html</link>
+      <description>&lt;p&gt;The following projects need a good home. Interested in taking over?
+Let me know.&lt;/p&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;&lt;a href="http://github.com/defunkt/acts_as_textiled"&gt;acts_as_textiled&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="http://github.com/defunkt/cache_fu"&gt;cache_fu&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="http://github.com/defunkt/choice"&gt;choice&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="http://github.com/defunkt/facebox"&gt;facebox&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="http://github.com/defunkt/fixture_scenarios_builder"&gt;fixture_scenarios_builder&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="http://github.com/defunkt/mofo"&gt;mofo&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="http://github.com/defunkt/sake"&gt;sake&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;</description>
+      <pubDate>Wed, 22 Oct 2008 23:29:03 -0700</pubDate>
+    </item>
+  </channel>
+</rss>

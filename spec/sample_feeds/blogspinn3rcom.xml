@@ -1,0 +1,1218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="http://feeds.feedburner.com/~d/styles/rss1full.xsl" type="text/xsl" media="screen"?><?xml-stylesheet href="http://feeds.feedburner.com/~d/styles/itemcontent.css" type="text/css" media="screen"?><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:admin="http://webns.net/mvcb/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:cc="http://web.resource.org/cc/" xmlns="http://purl.org/rss/1.0/">
+
+<channel rdf:about="http://blog.spinn3r.com/">
+<title>blog.spinn3r.com</title>
+<link>http://blog.spinn3r.com/</link>
+<description />
+<dc:language>en-US</dc:language>
+<dc:creator />
+<dc:date>2009-01-20T15:38:30-08:00</dc:date>
+<admin:generatorAgent rdf:resource="http://www.typepad.com/" />
+
+
+<items>
+<rdf:Seq><rdf:li rdf:resource="http://blog.spinn3r.com/2009/01/a-change-in-robotstxt.html" />
+<rdf:li rdf:resource="http://blog.spinn3r.com/2008/12/ignoring-blogroll-and-sidebar-content-in-search.html" />
+<rdf:li rdf:resource="http://blog.spinn3r.com/2008/10/cornell-and-sta.html" />
+<rdf:li rdf:resource="http://blog.spinn3r.com/2008/10/spinn3r-sponsor.html" />
+<rdf:li rdf:resource="http://blog.spinn3r.com/2008/09/spinn3r-231.html" />
+<rdf:li rdf:resource="http://blog.spinn3r.com/2008/09/spinn3r-hiring.html" />
+<rdf:li rdf:resource="http://blog.spinn3r.com/2008/08/feed-update-pro.html" />
+<rdf:li rdf:resource="http://blog.spinn3r.com/2008/07/spinn3r-225.html" />
+<rdf:li rdf:resource="http://blog.spinn3r.com/2008/06/spinn3r-223.html" />
+<rdf:li rdf:resource="http://blog.spinn3r.com/2008/06/spinn3r-222-esc.html" />
+<rdf:li rdf:resource="http://blog.spinn3r.com/2008/05/spinn3r-hiring.html" />
+<rdf:li rdf:resource="http://blog.spinn3r.com/2008/05/spinn3r-221-rel.html" />
+<rdf:li rdf:resource="http://blog.spinn3r.com/2008/04/slides-from-spi.html" />
+<rdf:li rdf:resource="http://blog.spinn3r.com/2008/04/new-spinn3r-ope.html" />
+<rdf:li rdf:resource="http://blog.spinn3r.com/2008/04/more-on-the-wor.html" />
+<rdf:li rdf:resource="http://blog.spinn3r.com/2008/04/spinn3r-22-rele.html" />
+<rdf:li rdf:resource="http://blog.spinn3r.com/2008/04/massive-blog--1.html" />
+<rdf:li rdf:resource="http://blog.spinn3r.com/2008/03/spinn3r-at-icws.html" />
+<rdf:li rdf:resource="http://blog.spinn3r.com/2008/03/features-in-the.html" />
+<rdf:li rdf:resource="http://blog.spinn3r.com/2008/03/spinn3r-client.html" />
+<rdf:li rdf:resource="http://blog.spinn3r.com/2008/03/yahoo-extends-s.html" />
+<rdf:li rdf:resource="http://blog.spinn3r.com/2008/03/new-spinn3r-ref.html" />
+<rdf:li rdf:resource="http://blog.spinn3r.com/2008/03/thirty-percent.html" />
+<rdf:li rdf:resource="http://blog.spinn3r.com/2008/02/spinn3r-213-now.html" />
+<rdf:li rdf:resource="http://blog.spinn3r.com/2008/01/spinn3r-212.html" />
+<rdf:li rdf:resource="http://blog.spinn3r.com/2008/01/blog-ping-and-s.html" />
+<rdf:li rdf:resource="http://blog.spinn3r.com/2008/01/spinn3r-and-soc.html" />
+<rdf:li rdf:resource="http://blog.spinn3r.com/2008/01/announcing-spin.html" />
+<rdf:li rdf:resource="http://blog.spinn3r.com/2008/01/storing-the-ful.html" />
+<rdf:li rdf:resource="http://blog.spinn3r.com/2007/12/thoughts-on-eff.html" />
+</rdf:Seq>
+</items>
+
+<atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" href="http://feeds.feedburner.com/spinn3r" type="application/rss+xml" /></channel>
+
+<item rdf:about="http://blog.spinn3r.com/2009/01/a-change-in-robotstxt.html">
+<title>A Change in Robots.txt</title>
+<link>http://blog.spinn3r.com/2009/01/a-change-in-robotstxt.html</link>
+<description>Change is in the air. Including the robots.txt at whitehouse.gov: User-agent: * Disallow: /includes/ I wonder if Eric Schmidt had something to do with this... he was slated for a cabinet position but turned it down at the last minute....</description>
+<content:encoded>&lt;p&gt;Change is in the air.  Including the &lt;a href="http://www.kottke.org/09/01/the-countrys-new-robotstxt-file"&gt;robots.txt&lt;/a&gt; &lt;a href="http://codeulate.com/?p=24"&gt;at whitehouse.gov&lt;/a&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;User-agent: *&lt;br /&gt;
+Disallow: /includes/&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;I wonder if &lt;a href="http://en.wikipedia.org/wiki/Eric_E._Schmidt"&gt;Eric Schmidt&lt;/a&gt; had something to do with this... he was slated for a cabinet position but turned it down at the last minute. &lt;/p&gt;
+
+&lt;p&gt;It's no secret that Google employees have given a LOT of money to Obama.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://spinn3r.com"&gt;Spinn3r&lt;/a&gt; is going to love this data!&lt;/p&gt;</content:encoded>
+
+
+
+<dc:creator>burtonator</dc:creator>
+<dc:date>2009-01-20T15:38:30-08:00</dc:date>
+</item>
+<item rdf:about="http://blog.spinn3r.com/2008/12/ignoring-blogroll-and-sidebar-content-in-search.html">
+<title>Ignoring Blogroll and Sidebar Content in Search</title>
+<link>http://blog.spinn3r.com/2008/12/ignoring-blogroll-and-sidebar-content-in-search.html</link>
+<description>Google Blog Search shipped with an update a few months back to index the full HTML of each new blog post. The only problem is that they indexed the full HTML and not the article content: I wanted to give...</description>
+<content:encoded>&lt;p&gt;&lt;img src="http://burtonator.files.wordpress.com/2008/12/200812191035.jpg" height="578" width="206" border="1" align="right" hspace="4" vspace="4" alt="200812191035" /&gt;Google Blog Search shipped with an update a few months back to index the full HTML of each new blog post.&lt;/p&gt;
+
+&lt;p&gt;The only problem is that they &lt;a href="http://groups.google.com/group/google-blog-search/browse_thread/thread/75267bf8c4766b0c?hl=en"&gt;indexed the full HTML and not the article content&lt;/a&gt;:&lt;/p&gt;
+
+&lt;blockquote&gt;I wanted to give everyone a brief end-of-the-year update on the blogroll problem.  When we switched blogsearch to indexing the full text of posts, we started seeing a lot more results where the only matches for a query where from the blogroll or other parts of the page that frame the actual post.  (There's been a lot of discussion of the problem.  You can search for [google blogsearch] using Google Blogsearch.)
+
+&lt;p&gt;We're in the midst of deploying a solution for this problem.  The basic approach is to analyze each blog to look for text and markup that is common to all of the posts.  Usually, these comment elements include the blogroll, any navigational elements, and other parts of&lt;br /&gt;
+the page that aren't part of the post.  This approach works well for a lot of blogs, but we're continuing to improve the algorithm.  The&lt;br /&gt;
+search results should ignore matches that only come from these common elements.  The indexing change to implement it is deployed almost everywhere now.&lt;br /&gt;
+&lt;/blockquote&gt;&lt;/p&gt;
+
+&lt;p&gt;Spinn3r customers have had a solution for this problem for nearly a year now.  &lt;/p&gt;
+
+&lt;blockquote&gt;The quality of mainstream media RSS feeds is notoriously lacking. For example, CNN has RSS feeds but they only have a one line description instead of the full content of the post.
+
+&lt;p&gt;This has always been a problem with RSS search engines such as Feedster or Google Blog Search - what's the point of using a search engine that's not indexing 80% of potential content?&lt;/p&gt;
+
+&lt;p&gt;We're also seeing the same thing with a number of the A-list blogs. RSS feeds turn into a liability when bandwidth increases significantly every month with each new user. The more traffic a blog gets the greater the probability that they'll enable partial RSS feeds in order to reduce their bandwidth costs and increase click through rates.&lt;/p&gt;
+
+&lt;p&gt;Spinn3r 2.1 adds a new feature which can extract the 'content' of a post and eliminate sidebar chrome and other navigational items.&lt;/p&gt;
+
+&lt;p&gt;It does this by using an internal content probability model and scanning the HTML to determine what is potentially content and what's potentially a navigation item. &lt;/blockquote&gt;&lt;/p&gt;
+
+&lt;p&gt;See the yellow text in the image on the right?  That was identified algorithmically and isolated form the body of the post.&lt;/p&gt;
+
+&lt;p&gt;To be fair it's a difficult problem but I've had a few years to think about it.&lt;/p&gt;</content:encoded>
+
+
+<dc:subject>RSS</dc:subject>
+<dc:subject>spinn3r</dc:subject>
+
+<dc:creator>burtonator</dc:creator>
+<dc:date>2008-12-19T10:37:33-08:00</dc:date>
+</item>
+<item rdf:about="http://blog.spinn3r.com/2008/10/cornell-and-sta.html">
+<title>Cornell Researchers Launch Memetracker Powered by Spinn3r</title>
+<link>http://blog.spinn3r.com/2008/10/cornell-and-sta.html</link>
+<description>We have a number of other pending announcements of researchers building cool applications with Spinn3r but this one was just too awesome to hold back. Researchers at Cornell have developed a new memetracker (cleverly named MemeTracker) powered by Spinn3r. Jure...</description>
+<content:encoded>&lt;p&gt;&lt;a href="http://burtonator.files.wordpress.com/2008/10/200810231630.jpg"&gt;&lt;img src="http://burtonator.files.wordpress.com/2008/10/200810231630-tm.jpg" height="100" width="100" border="1" align="right" hspace="4" vspace="4" alt="200810231630" /&gt;&lt;/a&gt;We have a number of other pending announcements of researchers building cool applications with Spinn3r but this one was just too awesome to hold back.  &lt;/p&gt;
+
+&lt;p&gt;Researchers at &lt;a href="http://www.cornell.edu/"&gt;Cornell&lt;/a&gt; have developed a new &lt;a href="http://memetracker.org/"&gt;memetracker&lt;/a&gt; (cleverly named MemeTracker) powered by &lt;a href="http://spinn3r.com"&gt;Spinn3r&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://www.cs.cmu.edu/%7Ejure"&gt;Jure Leskovec&lt;/a&gt;, &lt;a href="http://www.cs.cornell.edu/%7Elars"&gt;Lars Backstrom&lt;/a&gt; and &lt;a href="http://www.cs.cornell.edu/home/kleinber"&gt;Jon Kleinberg&lt;/a&gt; (author of the &lt;a href="http://en.wikipedia.org/wiki/HITS_algorithm"&gt;HITS algorithm&lt;/a&gt;, among other things) built MemeTracker by tracking the hottest quotes from throughout the blogosphere and rending a graph by the grouping quotes and then tracking the number of quote references.&lt;/p&gt;
+
+&lt;blockquote&gt;MemeTracker builds maps of the daily news cycle by analyzing around 900,000 news stories per day from 1 million online sources, ranging from mass media to personal blogs.
+
+&lt;p&gt;We track the quotes and phrases that appear most frequently over time across this entire spectrum. This makes it possible to see how different stories compete for news coverage each day, and how certain stories persist while others fade quickly.&lt;/p&gt;
+
+&lt;p&gt;The plot above shows the frequency of the top 100 quotes in the news over time, for roughly the past two months.&lt;/blockquote&gt;&lt;/p&gt;
+
+&lt;p&gt;Here's a screenshot but you should definitely play with &lt;a href="http://memetracker.org"&gt;MemeTracker&lt;/a&gt; to see how it works: &lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://burtonator.files.wordpress.com/2008/10/200810231629.jpg"&gt;&lt;img src="http://burtonator.files.wordpress.com/2008/10/200810231629-tm.jpg" height="222" width="400" border="1" hspace="4" vspace="4" alt="200810231629" /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;We've been thinking of shipping a new API for tracking quotes across the blogosphere.  Our new change tracking algorithm for finding duplicate content also does an excellent of finding quotes.  &lt;/p&gt;
+
+&lt;p&gt;Tracking duplicate content turns out to be very important in spam prevention and ranking.  It just so happens that there's a number of overlapping features and technologies that these things can provide.&lt;/p&gt;
+
+&lt;p&gt;We're not ready to ship it just yet because the backend requires about 2TB of random access data.  This isn't exactly cheap so we've been experimenting with some new algorithms and hardware to bring down the pricing.  I think we'll be able to ship something along these lines once we get our next big release out the door.&lt;/p&gt;</content:encoded>
+
+
+<dc:subject>spider</dc:subject>
+<dc:subject>spinn3r</dc:subject>
+
+<dc:creator>burtonator</dc:creator>
+<dc:date>2008-10-23T16:48:10-07:00</dc:date>
+</item>
+<item rdf:about="http://blog.spinn3r.com/2008/10/spinn3r-sponsor.html">
+<title>Spinn3r Sponsors 2009 International Conference for Weblogs and Social Data Challenge</title>
+<link>http://blog.spinn3r.com/2008/10/spinn3r-sponsor.html</link>
+<description>Spinn3r is sponsoring the International Conference for Weblogs and Social Media this year with a snapshot of our index. The data set was designed for use by researchers to build cool and interesting applications with the data. Good research topics...</description>
+<content:encoded>&lt;p&gt;&lt;img src="http://burtonator.files.wordpress.com/2008/10/200810211134.jpg" height="145" width="174" border="1" align="right" hspace="4" vspace="4" alt="200810211134" /&gt;Spinn3r is sponsoring the &lt;a href="http://www.icwsm.org/2009"&gt;International Conference for Weblogs and Social Media&lt;/a&gt; this year with a snapshot of our index.&lt;/p&gt;
+
+&lt;p&gt;The data set was designed for use by researchers to build cool and interesting applications with the data.&lt;/p&gt;
+
+&lt;blockquote&gt;Good research topics might include...
+
+&lt;ul&gt;&lt;li&gt; link analysis
+&lt;/li&gt;&lt;li&gt; social network extraction
+&lt;/li&gt;&lt;li&gt; tracing the evolution of news
+&lt;/li&gt;&lt;li&gt; blog search and filtering
+&lt;/li&gt;&lt;li&gt; psychological, socialogical, ethnographic, or personality-based studies
+&lt;/li&gt;&lt;li&gt; analysis of influence among bloggers
+&lt;/li&gt;&lt;li&gt; blog summarization and discource analysis&lt;/li&gt;&lt;/ul&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;We're already used by a number of researchers in top universities.  &lt;a href="http://textmap.org/"&gt;Textmap&lt;/a&gt; (which presented at ICWSM last year) just migrated to using Spinn3r and &lt;a href="http://www.cs.cmu.edu/~jure/blogs/"&gt;Blogs Cascades&lt;/a&gt; has been using us for a while now.&lt;/p&gt;
+
+&lt;p&gt;The data set is pretty large.  142GB compressed (27GB uncompressed) but you need a solid chunk of data to perform interesting research.&lt;/p&gt;
+
+&lt;blockquote&gt;The dataset, provided by &lt;a href="http://spinn3r.com"&gt;Spinn3r.com&lt;/a&gt;, is a set of 44 million blog posts made between August 1st and October 1st, &lt;s&gt;2009&lt;/s&gt;2008.  The post includes the text as syndicated, as well as metadata such as the blog's homepage, timestamps, etc.  The data is formatted in XML and is further arranged into tiers approximating to some degree search engine ranking.  The total size of the dataset is 142 GB uncompressed, (27 GB compressed).
+
+&lt;p&gt;This dataset spans a number of big news events (the Olympics; both US presidential nominating conventions; the beginnings of the financial&lt;br /&gt;
+crisis; ...) as well as everything else you might expect to find posted to blogs.  &lt;/p&gt;
+
+&lt;p&gt;To get access to the Spinn3r dataset, please download and sign the &lt;a href="http://www.icwsm.org/2009/data/icwsm-spinn3r.pdf"&gt; usage agreement &lt;/a&gt;, and email it to dataset-request (at) icwsm.org.  Once your form has been processed, you will be sent a URL and password where you can download the collection.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://www.icwsm.org/2009/data/spinn3r-sample.xml.gz"&gt;Here&lt;/a&gt; is a sample of blog posts from the collection.  The XML format is described &lt;a href="http://spinn3r.com/documentation"&gt;on the Spinn3r website&lt;/a&gt;.&lt;/blockquote&gt;&lt;/p&gt;</content:encoded>
+
+
+<dc:subject>crawler</dc:subject>
+<dc:subject>spinn3r</dc:subject>
+
+<dc:creator>burtonator</dc:creator>
+<dc:date>2008-10-21T11:37:23-07:00</dc:date>
+</item>
+<item rdf:about="http://blog.spinn3r.com/2008/09/spinn3r-231.html">
+<title>Spinn3r 2.3.1</title>
+<link>http://blog.spinn3r.com/2008/09/spinn3r-231.html</link>
+<description>We just pushed Spinn3r 2.3.1. If you depend on changes in this release you should grab the new reference client. A number of small fit and finish fixes went into this release. More important fixes include: - New post:title element...</description>
+<content:encoded>&lt;p&gt;We just pushed Spinn3r 2.3.1.  If you depend on changes in this release you should grab the new &lt;a href="http://code.google.com/p/spinn3r-client/"&gt;reference client&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;A number of small fit and finish fixes went into this release.  More important fixes include:&lt;/p&gt;
+
+&lt;p&gt; - New post:title element in the permalink API.  When non-null this is the authoritative title element from the RSS feed for crawled content.  This gets us bit further towards a grand unified API for indexing the blogosphere.&lt;/p&gt;
+
+&lt;p&gt; - New post:body element which will include authoritative feed content in the next push of our crawler (we're just testing it now).&lt;/p&gt;
+
+&lt;p&gt; - The internal hashcodes for sources and feeds are included in the API and &lt;a href="http://code.google.com/p/spinn3r-client/"&gt;reference client&lt;/a&gt; for advanced API usage and debugging.&lt;/p&gt;
+
+&lt;p&gt; - The source.register mechanism now allows clients to specify publisher_type for &lt;em&gt;new&lt;/em&gt; sources.  We're going to work on a new API to allow customers to flag sources for existing sources as well.&lt;/p&gt;
+
+&lt;p&gt; - A number of extension are now present in the spinn3r admin console for debugging including:&lt;/p&gt;
+
+&lt;p&gt;  - the ability to view raw HTML source for a given permalink or feed&lt;/p&gt;
+
+&lt;p&gt;  - the ability to view the cached HTML rendered in your local browser.&lt;/p&gt;
+
+&lt;p&gt; - The spinn3r admin console now graphs publisher types (mainstream weblogs, news feeds, etc).&lt;/p&gt;
+
+&lt;p&gt; - All Spinn3r robots can now be identified by reverse DNS.  This is documented in our &lt;a href="http://spinn3r.com/robot"&gt;robot FAQ&lt;/a&gt;:&lt;/p&gt;
+
+&lt;blockquote&gt;
+
+&lt;p&gt;&lt;b&gt;How do I verify that the robot visiting my website is Spinn3r?&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;                  First, it will have a User-Agent of:&lt;/p&gt;
+
+&lt;p&gt;                  &lt;code&gt;Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.2.1; aggregator:Tailrank (Spinn3r 2.3); http://spinn3r.com/robot) Gecko/20021130&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;                  Second, we support &lt;a href="http://googlewebmastercentral.blogspot.com/2006/09/how-to-verify-googlebot.html"&gt;robot DNS verification.&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;                  When you have a HTTP log entry which has our user agent, just perform a reverse DNS on the raw IP address.  &lt;/p&gt;
+
+&lt;p&gt;                  For example:&lt;/p&gt;
+
+&lt;p&gt;                    &lt;code&gt;&lt;br /&gt;
+                    %shell% nslookup &lt;b&gt;64.34.195.138&lt;/b&gt;&lt;br /&gt;
+                    Non-authoritative answer:&lt;br /&gt;
+                    138.195.34.64.in-addr.arpa      name = &lt;b&gt;robot32.spinn3r.com&lt;/b&gt;.&lt;/p&gt;
+
+&lt;p&gt;                    &lt;code&gt;&lt;br /&gt;
+                    %shell% nslookup robot32.spinn3r.com&lt;br /&gt;
+                    Non-authoritative answer:&lt;br /&gt;
+                    Name:   robot32.spinn3r.com&lt;br /&gt;
+                    Address: &lt;b&gt;64.34.195.138&lt;/b&gt;&lt;/code&gt;&lt;/blockquote&gt;&lt;/p&gt;
+
+&lt;p&gt;.... and &lt;a href="http://blog.spinn3r.com/jobs/"&gt;did I mention we're hiring&lt;/a&gt;?&lt;/p&gt;</content:encoded>
+
+
+
+<dc:creator>burtonator</dc:creator>
+<dc:date>2008-09-15T22:39:09-07:00</dc:date>
+</item>
+<item rdf:about="http://blog.spinn3r.com/2008/09/spinn3r-hiring.html">
+<title>Spinn3r Hiring Director of Sales</title>
+<link>http://blog.spinn3r.com/2008/09/spinn3r-hiring.html</link>
+<description>We're hiring a Director of Sales to interface with new clients. This is actually somewhat of an open role in that you'll also be helping us out with bizdev and marketing. Basically, we're growing fast and need someone to help...</description>
+<content:encoded>&lt;p&gt;We're hiring a Director of Sales to interface with new clients.  This is actually somewhat of an open role in that you'll also be helping us out with bizdev and marketing.  &lt;/p&gt;
+
+&lt;p&gt;Basically, we're growing fast and need someone to help us out on multiple business fronts.&lt;/p&gt;
+
+&lt;p&gt;If you're the right guy feel free to &lt;a href="http://spinn3r.com/contact"&gt;get in contact&lt;/a&gt; with us and we'll take it from there.&lt;/p&gt;
+
+&lt;p&gt;Position:&lt;/p&gt;
+
+&lt;p&gt;As Director of Sales you'll be responsible for early stage economic growth of Spinn3r including leads follow through, closing new customers, handling our marketing efforts, and interfacing with existing customers when new products are released.  Generally doing whatever it takes to pull in more revenue and take Spinn3r to the next level.&lt;/p&gt;
+
+&lt;p&gt;You'll also help us out with Marketing and Business Development and fall into a more specific role as the company grows.&lt;/p&gt;
+
+&lt;p&gt;We're a fast growing startup so you should be familiar with this type of environment.&lt;/p&gt;
+
+&lt;p&gt;This is an excellent opportunity for the right candidate as we're growing fast and plan on releasing some new products in the coming months which should make things VERY interesting.&lt;/p&gt;
+
+&lt;p&gt;Responsibilities:&lt;/p&gt;
+
+&lt;ul&gt;&lt;li&gt;Follow through with pending customers as they experiment with the Spinn3r platform.&lt;/li&gt;
+&lt;li&gt;Help with marketing efforts to push Spinn3r forward into the marketplace.&lt;/li&gt;
+&lt;li&gt;Qualify new leads.&lt;/li&gt;
+&lt;li&gt;Introduce customers to Spinn3r including frequently asked questions.&lt;/li&gt;
+&lt;li&gt;Follow up and upsell existing customers with new product releases.&lt;/li&gt;&lt;/ul&gt;
+
+&lt;p&gt;Requirements:&lt;/p&gt;
+
+&lt;ul&gt;&lt;li&gt;Proven track record of success.&lt;/li&gt;
+&lt;li&gt;Personable and polished face to face interaction.&lt;/li&gt;
+&lt;li&gt;3-5 experience in enterprise software sales or long sales cycles.&lt;/li&gt;
+&lt;li&gt;2-4 years of sales experience.&lt;/li&gt;
+&lt;li&gt;Excellent oral and written communications skills and comfortable presenting written proposals a must.&lt;/li&gt;
+&lt;li&gt;Proven ability to thrive in a startup environment is critical.&lt;/li&gt;
+&lt;li&gt;Bachelors degree or higher.&lt;/li&gt;&lt;/ul&gt;
+
+&lt;p&gt;Desired: &lt;/p&gt;
+
+&lt;ul&gt;&lt;li&gt;Significant understanding of the search space.&lt;/li&gt;
+&lt;li&gt;Experience and understanding of weblog technologies.&lt;/li&gt;&lt;/ul&gt;
+    
+Location: 
+
+&lt;p&gt;Located in the SOMA district of San Francisco.  One block away from MUNI (N/KT), 4 blocks from Caltrain, 5 blocks from BART.&lt;/p&gt;</content:encoded>
+
+
+<dc:subject>jobs</dc:subject>
+
+<dc:creator>burtonator</dc:creator>
+<dc:date>2008-09-08T17:33:01-07:00</dc:date>
+</item>
+<item rdf:about="http://blog.spinn3r.com/2008/08/feed-update-pro.html">
+<title>Feed Update Protocols and SUP</title>
+<link>http://blog.spinn3r.com/2008/08/feed-update-pro.html</link>
+<description>It looks like Friend Feed is proposing a new update protocol for RSS which avoids the thundering herd problem present with RSS polling. When you add a web site like Flickr or Google Reader to FriendFeed, FriendFeed's servers constantly download...</description>
+<content:encoded>&lt;p&gt;It looks like Friend Feed is &lt;a href="http://friendfeed.com/rooms/simple-update-protocol"&gt;proposing&lt;/a&gt; a &lt;a href="http://blog.friendfeed.com/2008/08/simple-update-protocol-fetch-updates.html"&gt;new update protocol for RSS&lt;/a&gt; which avoids the thundering herd problem present with RSS polling.&lt;/p&gt;
+
+&lt;blockquote&gt;When you add a web site like Flickr or Google Reader to FriendFeed, FriendFeed's servers constantly download your feed from the service to get your updates as quickly as possible. FriendFeed's user base has grown quite a bit since launch, and our servers now download millions of feeds from over 43 services every hour.&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href="http://venturebeat.com/2008/08/27/friendfeed-working-on-a-new-rss-supplement-to-speed-up-data-retrieval/"&gt;Venture Beat has more on the subject:&lt;/a&gt; (&lt;a href="http://www.thedeal.com/techconfidential/behind-the-money/blog/angel-investor/were-working-on-more-realtime.php"&gt;as does Tech Confidential&lt;/a&gt;)&lt;/p&gt;
+
+&lt;blockquote&gt;It looks like the rapid fire site updates are about to start again for the social content conversation site FriendFeed. Just a few days after the launch of its new “beta” area, FriendFeed is finalizing a new technology that could help pull content into the site at a much faster rate.
+
+&lt;p&gt;The technology, called Simple Update Protocol (SUP) will process updates from the various services that FriendFeed imports faster than it currently does using traditional Really Simple Syndication (RSS) feeds, FriendFeed co-founder Paul Buchheit told Tech Confidential.&lt;/blockquote&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://spinn3r.com"&gt;Spinn3r&lt;/a&gt; has a similar problem of course but we have 17.5M sources to consider.&lt;/p&gt;
+
+&lt;p&gt;The requirements are straight forward:&lt;/p&gt;
+
+&lt;blockquote&gt;    *  Simple to implement. Most sites can add support with only few lines of code if their database already stores timestamps.
+    * Works over HTTP, so it's very easy to publish and consume.
+    * Cacheable. A SUP feed can be generated by a cron job and served from a static text file or from memcached.
+    * Compact. Updates can be about 21 bytes each. (8 bytes with gzip encoding)
+    * Does not expose usernames or secret feed urls (such as Google Reader Shared Items feeds)
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;Sites wishing to produce a SUP feed must do two things:
+
+&lt;p&gt;    * Add a special  tag to their SUP enabled Atom or RSS feeds. This  tag includes the feed's SUP-ID and the URL of the appropriate SUP feed.&lt;/blockquote&gt;&lt;/p&gt;
+
+&lt;p&gt;Interesting that this is seeing attention again because &lt;a href="http://scripting.com"&gt;Dave&lt;/a&gt; proposed this in RSS 2.0:&lt;/p&gt;
+
+&lt;blockquote&gt; is an optional sub-element of .
+
+&lt;p&gt;It specifies a web service that supports the rssCloud interface which can be implemented in HTTP-POST, XML-RPC or SOAP 1.1.&lt;/p&gt;
+
+&lt;p&gt;Its purpose is to allow processes to register with a cloud to be notified of updates to the channel, implementing a lightweight publish-subscribe protocol for RSS feeds.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;In this example, to request notification on the channel it appears in, you would send an XML-RPC message to radio.xmlstoragesystem.com on port 80, with a path of /RPC2. The procedure to call is xmlStorageSystem.rssPleaseNotify.&lt;/blockquote&gt;&lt;/p&gt;
+
+&lt;p&gt;However SUP is not XMLRPC (which is probably good since I'm a REST fan)&lt;/p&gt;
+
+&lt;blockquote&gt;By using SUP-IDs instead of feed urls, we avoid having to expose the feed url, avoid URL canonicalization issues, and produce a more compact update feed (because SUP-IDs can be a database id or some other short token assigned by the service).&lt;/blockquote&gt;
+
+&lt;p&gt;This can be avoided by just using the unique source URL.  The feed is irrelevant.  Just map the source to feed URL on your end.&lt;/p&gt;
+
+&lt;blockquote&gt;Because it is still possible to miss updates due to server errors or other malfunctions, SUP does not completely eliminate the need for polling. However, when using SUP, feed consumers can reduce polling frequency while simultaneously reducing update latency. For example, if a site such as FriendFeed switched from polling feeds every 30 minutes to polling every 300 minutes (5 hours), and also monitored the appropriate SUP feed every 3 minutes, the total amount of feed polling would be reduced by about 90%, and new updates would typically appear 10 times as fast.&lt;/blockquote&gt;
+
+&lt;p&gt;Spinn3r performs a hybrid.  We index pinged sources once per week but also index right when they ping us.  Best of both worlds basically.&lt;/p&gt;
+
+&lt;p&gt;The current ping space is across the board though.  &lt;/p&gt;
+
+&lt;p&gt;There's XMLRPC, XML, the &lt;a href="http://updates.sixapart.com/"&gt;Six Apart update stream&lt;/a&gt; and now JSON:&lt;/p&gt;
+
+&lt;p&gt;This doesn't seem too different from Changes.xml...&lt;/p&gt;
+
+&lt;p&gt;Witness &lt;a href="http://blogsearch.google.com/changes.xml"&gt;http://blogsearch.google.com/changes.xml&lt;/a&gt; vs &lt;a href="http://friendfeed.com/api/sup.json"&gt;http://friendfeed.com/api/sup.json&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I'm not sure what the solution is here but it's clear we need some standardization in this area.&lt;/p&gt;
+
+&lt;p&gt;One suggestion for SUP is to not use a JSON-only protocol.  Having an alternative REST/XML version seems to be advantageous for people who don't want to put a second parser framework in production.&lt;/p&gt;</content:encoded>
+
+
+<dc:subject>RSS</dc:subject>
+
+<dc:creator>burtonator</dc:creator>
+<dc:date>2008-08-27T18:04:54-07:00</dc:date>
+</item>
+<item rdf:about="http://blog.spinn3r.com/2008/07/spinn3r-225.html">
+<title>Spinn3r 2.2.5</title>
+<link>http://blog.spinn3r.com/2008/07/spinn3r-225.html</link>
+<description>We just pushed Spinn3r 2.2.5 which fixes a number of small issues including: - fixed bug with permalink.history which would potentially select incorrect content during pagination. - new feed.status API. - fixed small issue with RSS feeds that were (incorrectly)...</description>
+<content:encoded>&lt;p&gt;We just pushed Spinn3r 2.2.5 which fixes a number of small issues including:&lt;/p&gt;
+
+&lt;p&gt;- fixed bug with permalink.history which would potentially select incorrect&lt;br /&gt;
+  content during pagination.&lt;/p&gt;
+
+&lt;p&gt;- &lt;a href="http://code.google.com/p/spinn3r-client/wiki/FeedStatusAPI"&gt;new feed.status API&lt;/a&gt;. &lt;/p&gt;
+
+&lt;p&gt;- fixed small issue with RSS feeds that were (incorrectly) using session IDs.&lt;/p&gt;
+
+&lt;p&gt;- Fixed bug with potentially incudling  HTML content in content_extract results.  &lt;/p&gt;
+
+&lt;p&gt;- Both api.spinn3r.com and our reference client now support HTTP keep alives.  In certain situations this can improve performance over highly latent Internet connections.&lt;/p&gt;</content:encoded>
+
+
+<dc:subject>spinn3r</dc:subject>
+
+<dc:creator>burtonator</dc:creator>
+<dc:date>2008-07-03T16:50:15-07:00</dc:date>
+</item>
+<item rdf:about="http://blog.spinn3r.com/2008/06/spinn3r-223.html">
+<title>Spinn3r 2.2.3</title>
+<link>http://blog.spinn3r.com/2008/06/spinn3r-223.html</link>
+<description>Spinn3r 2.2.3 just made it out the door. This is a small release that mostly tightens up our source.list and source.status support. We've also improved the documentation for source.list including adding a full command line client in the example section....</description>
+<content:encoded>&lt;p&gt;Spinn3r 2.2.3 just made it out the door.  This is a small release that mostly tightens up our &lt;a href="http://code.google.com/p/spinn3r-client/wiki/SourceListAPI"&gt;source.list&lt;/a&gt; and &lt;a href="http://&lt;br /&gt;
+code.google.com/p/spinn3r-client/wiki/SourceStatusAPI"&gt;source.status&lt;/a&gt; support.&lt;/p&gt;
+
+&lt;p&gt;We've also improved the documentation for source.list including adding a full command line client in the example section.&lt;/p&gt;
+
+&lt;p&gt;The Spinn3r reference client will now print a custom error message when generated from the server.  This has been added to ease debugging when calling &lt;a href="http://code.google.com/p/spinn3r-client/wiki/SourceRegisterAPI"&gt;source.register&lt;/a&gt; with a source that Spinn3r might not like.  &lt;/p&gt;</content:encoded>
+
+
+<dc:subject>spinn3r</dc:subject>
+
+<dc:creator>burtonator</dc:creator>
+<dc:date>2008-06-07T15:13:06-07:00</dc:date>
+</item>
+<item rdf:about="http://blog.spinn3r.com/2008/06/spinn3r-222-esc.html">
+<title>Spinn3r 2.2.2 Escapes From the Laboratory</title>
+<link>http://blog.spinn3r.com/2008/06/spinn3r-222-esc.html</link>
+<description>Spinn3r 2.2.2 escaped from the hatch and is now free to wreak havoc upon the blogosphere. This is mostly a point release. There has been a lot of backend work done including new hardware and database changes but most of...</description>
+<content:encoded>&lt;p&gt;&lt;a href="http://blog.spinn3r.com/200806041758.jpg" onclick="window.open('http://blog.spinn3r.com/200806041758.jpg','popup','width=450,height=300,scrollbars=no,resizable=yes,toolbar=no,directories=no,location=no,menubar=no,status=yes,left=0,top=0');return false"&gt;&lt;img src="http://blog.spinn3r.com/200806041758-tm.jpg" height="133" width="200" border="1" align="right" hspace="4" vspace="4" alt="200806041758" /&gt;&lt;/a&gt;Spinn3r 2.2.2 escaped &lt;a href="http://en.wikipedia.org/wiki/Lost_(TV_series)"&gt;from the hatch&lt;/a&gt; and is now free to wreak havoc upon the blogosphere.&lt;/p&gt;
+
+&lt;p&gt;This is mostly a point release.  There has been a lot of backend work done including new hardware and database changes but most of these updates aren't visible to our user base.&lt;/p&gt;
+
+&lt;p&gt;New changes include:&lt;/p&gt;
+
+&lt;ul&gt;&lt;li&gt;New &lt;code&gt;force&lt;/code&gt; option when registering new weblogs.  We had a number of our users attempt to register weblogs with peculiar URL structure.  We now allow them to register the URLs anyway with this new force option.&lt;/li&gt;  
+
+&lt;p&gt;&lt;li&gt;New &lt;a href="http://code.google.com/p/spinn3r-client/"&gt;Spinn3r reference client&lt;/a&gt; which implements changes necessary to &lt;code&gt;force&lt;/code&gt; a &lt;code&gt;source.register&lt;/code&gt;.&lt;/li&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;li&gt;Fixed a bug with Feedburner URL handling where content would be ignored for feeds that had too many URL redirections.&lt;/li&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;li&gt;We're now indexing content at 30 minute intervals.   Spinn3r was previously indexing cyclical and non-pinged feeds once per hour but we've been able to tighten this up a bit with our new hardware.&lt;/li&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;li&gt;Reduced some of our content buffering variables to allow ping handling to be a bit more realtime.  Pinged content is now indexed within 2 minutes from the time we've received a ping rather than the 5 minutes we were using before.&lt;/li&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;li&gt;We've pushed some new weblog discovery code which is humming along nicely.  We've discovered approximately 1M new weblogs since last week and about 25k new mainstream media news sources.  These were only made visible to our indexer after a number of ranking and content classification tweaks.&lt;/li&gt;&lt;/ul&gt;&lt;/p&gt;</content:encoded>
+
+
+<dc:subject>spinn3r</dc:subject>
+
+<dc:creator>burtonator</dc:creator>
+<dc:date>2008-06-04T23:02:52-07:00</dc:date>
+</item>
+<item rdf:about="http://blog.spinn3r.com/2008/05/spinn3r-hiring.html">
+<title>Spinn3r Hiring Senior Systems Administrator</title>
+<link>http://blog.spinn3r.com/2008/05/spinn3r-hiring.html</link>
+<description>Spinn3r is hiring for an experienced Senior Systems Administrator with solid Linux and MySQL skills and a passion for building scalable and high performance infrastructure. About Spinn3r: Spinn3r is a licensed weblog crawler used by search engines, weblog analytic companies,...</description>
+<content:encoded>&lt;p&gt;&lt;a href="http://burtonator.files.wordpress.com/2008/05/200805271727.jpg"&gt;&lt;img src="http://burtonator.files.wordpress.com/2008/05/200805271727-tm.jpg" height="78" width="218" border="0" align="right" hspace="4" vspace="4" alt="200805271727" /&gt;&lt;/a&gt;Spinn3r is hiring for an experienced Senior Systems Administrator with solid Linux and MySQL skills and a passion for building scalable and high performance infrastructure.&lt;/p&gt;
+
+&lt;h2&gt;About Spinn3r:&lt;/h2&gt;
+
+&lt;p&gt;Spinn3r is a licensed weblog crawler used by search engines, weblog analytic companies, and generally anyone who needs access to high quality weblog data.  &lt;/p&gt;
+
+&lt;p&gt;We crawl the entire blogosphere in realtime, remove spam, rank, and classifying blogs, and provide this information to our customers.&lt;/p&gt;
+
+&lt;p&gt;Spinn3r is rare in the startup world in that we're actually profitable.  We've proven our business model which gives us a significant advantage in future product design and expanding our current customer base and feature set.&lt;/p&gt;
+
+&lt;p&gt;We've also been smart and haven't raised a dime of external VC funding which gives us a lot more flexibility in terms how how we want to grow the company moving forward.&lt;/p&gt;
+
+&lt;h2&gt;Overview:&lt;/h2&gt;
+ 
+In this role you'll be responsible for maintaining performance and availability of our cluster as well as future architecture design.
+
+&lt;p&gt;You're going to need to have a high level overview of our architecture but shouldn't be shy about diving into MySQL and/or Linux internals.&lt;/p&gt;
+
+&lt;p&gt;This is a great opportunity for the right candidate.  You're going to be working in a very &lt;a href="http://blog.spinn3r.com/2008/04/slides-from-spi.html"&gt;challenging environment&lt;/a&gt; with a lot of fun toys.&lt;/p&gt;
+
+&lt;p&gt;You're also going to be a core member of the team and will be given a great deal of responsibility.&lt;/p&gt;
+
+&lt;p&gt;We have a number of unique scalability challenges including high write throughput and massive backend database requirements.&lt;/p&gt;
+
+&lt;p&gt;We're also testing some cutting edge technology including &lt;a href="http://feedblog.org/category/ssd/"&gt;SSD storage&lt;/a&gt;, &lt;a href="http://code.tailrank.com/lbpool"&gt;distributed database technology&lt;/a&gt; and distributed crawler design.&lt;/p&gt;
+
+&lt;h2&gt;Responsibilities: &lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Maintaining 24 x 7 x 365 operation of our cluster&lt;/li&gt;
+&lt;li&gt;Tuning our MySQL/InnoDB database environment&lt;/li&gt;
+&lt;li&gt;Maintaining our current crawler operations&lt;/li&gt;
+&lt;li&gt;Monitoring application availability and historical performance tracking&lt;/li&gt;
+&lt;li&gt;Maintaining our hardware and linux environment&lt;/li&gt;
+&lt;li&gt;Maintaining backups, testing failure scenarios, suggesting database changes&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Requirements: &lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Experience in managing servers in large scale environments&lt;/li&gt;
+&lt;li&gt;Advanced understandling of Linux (preferably Debian).  You need to grok the kernel, filesystem layout, memory model, swap, tuning, etc.&lt;/li&gt;
+&lt;li&gt;Advanced understanding of MySQL including replication and the InnoDB storage engine&lt;/li&gt;
+&lt;li&gt;Knowledge of scripting languages (Bash and PHP are desirable)&lt;/li&gt;
+&lt;li&gt;Maintaining software configuration within a large cluster of servers.&lt;/li&gt;
+&lt;li&gt;Network protocols including HTTP, SSH, and DNS&lt;/li&gt;
+&lt;li&gt;BS in Computer Science (or comparable experience)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Further Reading:&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://spinn3r.com"&gt;Spinn3r&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://feedblog.org/2008/04/17/slides-from-spinn3r-architecture-talk-at-2008-mysql-users-conference/"&gt;Spinn3r Architecture Talk from 2008 MySQL Users Conference&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://blog.spinn3r.com"&gt;Spinn3r Corporate Blog&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://feedblog.org"&gt;Kevin Burton's Feedblog (CEO of Spinn3r)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded>
+
+
+<dc:subject>jobs</dc:subject>
+<dc:subject>RSS</dc:subject>
+<dc:subject>spider</dc:subject>
+<dc:subject>spinn3r</dc:subject>
+
+<dc:creator>burtonator</dc:creator>
+<dc:date>2008-05-28T15:50:34-07:00</dc:date>
+</item>
+<item rdf:about="http://blog.spinn3r.com/2008/05/spinn3r-221-rel.html">
+<title>Spinn3r 2.2.1 Released</title>
+<link>http://blog.spinn3r.com/2008/05/spinn3r-221-rel.html</link>
+<description>Spinn3r 2.2.1 is out the door. This is evolution on over Spinn3r 2.2 which has a number of features and fixes suggested by our user base. New API Methods: As a result of our recent infrastructure changes, we're now able...</description>
+<content:encoded>&lt;p&gt;&lt;a href="http://blog.spinn3r.com/200805151505-1.jpg" onclick="window.open('http://blog.spinn3r.com/200805151505-1.jpg','popup','width=1024,height=1024,scrollbars=no,resizable=yes,toolbar=no,directories=no,location=no,menubar=no,status=yes,left=0,top=0');return false"&gt;&lt;img src="http://blog.spinn3r.com/200805151505-1-tm.jpg" height="150" width="150" border="1" align="right" hspace="4" vspace="4" alt="200805151505-1" /&gt;&lt;/a&gt;Spinn3r 2.2.1 is out the door.&lt;/p&gt;
+
+&lt;p&gt;This is evolution on over &lt;a href="http://blog.spinn3r.com/2008/04/spinn3r-22-rele.html"&gt;Spinn3r 2.2&lt;/a&gt; which has a number of features and fixes suggested by our user base. &lt;/p&gt;
+
+&lt;h2&gt;New API Methods:&lt;/h2&gt;
+
+&lt;p&gt;As a result of our recent infrastructure changes, we're now able to provide a more robust feature set to our customers.&lt;/p&gt;
+
+&lt;p&gt;Ninety percent of our users are served by our raw crawler API but occasionally there are questions regarding support for a specific weblog, access to archive posts, etc.&lt;/p&gt;
+
+&lt;p&gt;These new methods should help improve this situation by making it easier to interact with Spinn3r.&lt;/p&gt;
+
+&lt;p&gt;At the moment this functionality is only supported with our permalink interface.  We're working on back porting this functionality to our feed API as well.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;source.list&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Our new &lt;a href="http://code.google.com/p/spinn3r-client/wiki/SourceListAPI"&gt;source.list&lt;/a&gt; API is designed for customers with existing crawlers that want to tie into our spam prevention and ping infrastructure.&lt;/p&gt;
+
+&lt;blockquote&gt;The source.list API was designed to help 3rd party crawlers tie into Spinn3r's ping stream and realtime polling and prioritization backend.
+
+&lt;p&gt;Returns an RSS feed with lists of weblogs that have either been found or discovered by Spinn3r or published after a given timestamp.&lt;/blockquote&gt;&lt;/p&gt;
+
+&lt;p&gt;You can see the &lt;a href="http://code.google.com/p/spinn3r-client/wiki/SourceListAPI"&gt;source.list&lt;/a&gt; documentation for further information.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://blog.spinn3r.com/200805151742.jpg" onclick="window.open('http://blog.spinn3r.com/200805151742.jpg','popup','width=602,height=844,scrollbars=no,resizable=yes,toolbar=no,directories=no,location=no,menubar=no,status=yes,left=0,top=0');return false"&gt;&lt;img src="http://blog.spinn3r.com/200805151742-tm.jpg" height="210" width="150" border="1" align="right" hspace="4" vspace="4" alt="200805151742" /&gt;&lt;/a&gt;&lt;b&gt;permalink.history&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;A number of Spinn3r customers have requested the ability to fetch historical content for specific blogs.  This is now possible with our new &lt;a href="http://code.google.com/p/spinn3r-client/wiki/PermalinkHistoryAPI"&gt;permalink.history&lt;/a&gt; method.&lt;/p&gt;
+
+&lt;blockquote&gt;Given a weblog URL, return recently published articles. This can be used to find the most recent results from techcrunch.com, gigaom.com, etc.
+
+&lt;p&gt;Results in recent posts sorted by reverse chronological order.&lt;/blockquote&gt; &lt;/p&gt;
+
+&lt;p&gt;This is made possible due to the backend database improvements we've been steadily working on over the last year.  We're going to port these changes to the feed API shortly.  We're waiting to bring more hardware online for this which should take 2-3 weeks.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;permalink.status&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;This provides the ability to obtain the &lt;a href="http://code.google.com/p/spinn3r-client/wiki/PermalinkStatusAPI"&gt;status&lt;/a&gt; for a specific post (permalink) within Spinn3r.&lt;/p&gt;
+
+&lt;h2&gt;General Crawler Improvements&lt;/h2&gt;
+
+&lt;p&gt;This release also includes the following crawler improvements:&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Faster Polling Interval&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;We've migrated to 45 minute (vs 60 minute) polling intervals for all cyclical feeds and sources.  Everything else in Spinn3r is updated in real time when we receive a ping.&lt;/p&gt;
+
+&lt;p&gt;We're going to be reducing this to a 30 minute polling interval in the next week or so.  We're going to pause at 45 minutes to see if any sites complain and make sure there aren't any performance issues which we have to deal with.&lt;/p&gt;
+
+&lt;p&gt;This should be fine as &lt;a href="http://bloglines.com"&gt;Bloglines&lt;/a&gt; has been using 30 minute polling intervals for a few years now and it hasn't caused any problems.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://blog.spinn3r.com/200805151745.jpg" onclick="window.open('http://blog.spinn3r.com/200805151745.jpg','popup','width=640,height=476,scrollbars=no,resizable=yes,toolbar=no,directories=no,location=no,menubar=no,status=yes,left=0,top=0');return false"&gt;&lt;img src="http://blog.spinn3r.com/200805151745-tm.jpg" height="111" width="150" border="1" align="right" hspace="4" vspace="4" alt="200805151745" /&gt;&lt;/a&gt;&lt;b&gt;Weekly Indexing of Pinged Weblogs&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;We've also moved to a mechanism of re-indexing pinged weblogs on a weekly basis.  While 99% of blogs in our index send pings correctly there's the possibility of dropped ping due to misconfigured blog host.  This could be do either to an error on their part or a temporary network outage.&lt;/p&gt;
+
+&lt;p&gt;To correct this behavior we've migrated to a weekly re-index mechanism where we send out our crawlers if we haven't heard from a blog in at least a week.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;feed.getDelta supports publisher_type&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;This was an omission from Spinn3r 2.2 that one of our customers pointed out.  &lt;/p&gt;
+
+&lt;p&gt;The permalink.getDelta method supported a publisher_type but the feed.getDelta method did not. &lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Advanced Mainstream Media Feed Detection&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Mainstream media support for RSS has always been mediocre at best.  Our permalink API was designed to help improve this situation by indexing all recent posts on a given website.&lt;/p&gt;
+
+&lt;p&gt;The problem is we would still be missing additional metadata such as the original publication date, author, and title.&lt;/p&gt;
+
+&lt;p&gt;It's impossible to discover these feeds because they may be buried deep within the website and many of these sites don't have RSS autodiscovery setup correctly.  &lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://kiplinger.com/"&gt;Kiplinger.com&lt;/a&gt; is a good example.  This website has a number of RSS feeds but the only way to find them is to click on an 'rss' link at the bottom of the page, which is a link to another HTML page which contains a set of RSS feeds.&lt;/p&gt;
+
+&lt;p&gt;Some sites are even worse.  &lt;a href="http://news.aol.com"&gt;AOL News&lt;/a&gt; has a page which lists the RSS feeds but they don't actually &lt;em&gt;link&lt;/em&gt; to them - they link to myAOL.  They have an RSS feed link when you view the page in a browser but this is actually generated via javascript which (obviously) crawlers can't see.&lt;/p&gt;
+
+&lt;p&gt;The solution has been to release a focused crawler for these sites to recursively index pages and attempt to find links to RSS feeds.  These RSS feeds are then indexed and used to fetch additional metadata.&lt;/p&gt;
+
+&lt;p&gt;We've pushed the first pass of this functionality and are going to be releasing another version of our crawler that allows us to discover even more mainstream media feeds.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Documentation Updates&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;There have been a number of documentation updates available over on our wiki.  &lt;/p&gt;
+
+&lt;p&gt;Specifically, the changes around the &lt;a href="http://code.google.com/p/spinn3r-client/wiki/SourceAPI"&gt;source&lt;/a&gt; and &lt;a href="http://code.google.com/p/spinn3r-client/wiki/PermalinkAPI"&gt;permalink&lt;/a&gt; APIs.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;More to come...&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;We're also going to be releasing Spinn3r 2.2.2 which will have more updates in our crawler including additional support for forums and mainstream media feeds and enhancements to our core weblog discovery algorithms.  &lt;/p&gt;
+
+&lt;p&gt;I suspect that this will be about two weeks before all the backend infrastructure work is complete.&lt;/p&gt;
+
+&lt;p&gt;Thanks to Flickr users &lt;a href="http://flickr.com/photos/josefstuefer/"&gt;josef.stuefer&lt;/a&gt;, &lt;a href="http://www.flickr.com/photos/buntalshoot/2137384535/"&gt;buntalshoot&lt;/a&gt;, and &lt;a href="http://www.flickr.com/photos/bobo1522/2432972738/"&gt;Mr Usaji&lt;/a&gt; for the amazing &lt;a href="http://flickr.com/photos/josefstuefer/9500503/"&gt;photos of the above spiders&lt;/a&gt;.&lt;/p&gt;</content:encoded>
+
+
+<dc:subject>crawler</dc:subject>
+<dc:subject>feeds</dc:subject>
+<dc:subject>RSS</dc:subject>
+<dc:subject>spider</dc:subject>
+<dc:subject>spinn3r</dc:subject>
+
+<dc:creator>burtonator</dc:creator>
+<dc:date>2008-05-15T17:47:26-07:00</dc:date>
+</item>
+<item rdf:about="http://blog.spinn3r.com/2008/04/slides-from-spi.html">
+<title>Slides from Spinn3r Architecture Talk at 2008 MySQL Users Conference</title>
+<link>http://blog.spinn3r.com/2008/04/slides-from-spi.html</link>
+<description>Here's a copy of the slides from the talk I just gave about the architecture of Spinn3r at the 2008 MySQL Users Conference: We present the backend architecture behind Spinn3r – our scalable web and blog crawler. Most existing work...</description>
+<content:encoded>&lt;p&gt;Here's a copy of the slides from the talk I just gave about the architecture of Spinn3r at the 2008 MySQL Users Conference:&lt;/p&gt;
+
+&lt;blockquote&gt;We present the backend architecture behind Spinn3r – our scalable web and blog crawler.
+
+&lt;p&gt;Most existing work in scaling MySQL has been around high read throughput environments similar to web applications. In contrast, at Spinn3r we needed to complete thousands of write transactions per second in order to index the blogosphere at full speed.&lt;/p&gt;
+
+&lt;p&gt;We have achieved this through our ground up development of a fault tolerant distributed database and compute infrastructure all built on top of cheap commodity hardware.&lt;/blockquote&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://burtonator.files.wordpress.com/2008/04/spinn3r-architecture-talk-2008-mysql-users-conference.pdf"&gt;&lt;img src="http://burtonator.files.wordpress.com/2008/04/spinn3r-architecture-talk-2008-mysql-users-conference-tm.jpg" height="100" width="128" border="1" hspace="4" vspace="4" alt="Spinn3R Architecture Talk - 2008 Mysql Users Conference" /&gt;&lt;/a&gt;&lt;/p&gt;</content:encoded>
+
+
+<dc:subject>spinn3r</dc:subject>
+
+<dc:creator>burtonator</dc:creator>
+<dc:date>2008-04-17T16:14:38-07:00</dc:date>
+</item>
+<item rdf:about="http://blog.spinn3r.com/2008/04/new-spinn3r-ope.html">
+<title>New Spinn3r Open Ping Server</title>
+<link>http://blog.spinn3r.com/2008/04/new-spinn3r-ope.html</link>
+<description>As part of Spinn3r 2.2 we've released an open ping server. What's a ping server you ask? In blogging, ping is an XML-RPC-based push mechanism by which a weblog notifies a server that its content has been updated. An XML-RPC...</description>
+<content:encoded>&lt;p&gt;As part of Spinn3r 2.2 we've released an &lt;a href="http://en.wikipedia.org/wiki/Ping_blog"&gt;open ping server&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;What's a ping server you ask?&lt;/p&gt;
+
+&lt;blockquote&gt;In blogging, ping is an XML-RPC-based push mechanism by which a weblog notifies a server that its content has been updated. An XML-RPC signal is sent to one or more "ping servers," which can then generate a list of blogs that have new material. Many blog authoring tools automatically ping one or more servers each time the blogger creates a new post or updates an old one.&lt;/blockquote&gt;
+
+&lt;p&gt;The goal here is to be somewhat independent from the other ping servers out there. This way we can avoid any downtime or problems that would occur if they vanish entirely.&lt;/p&gt;
+
+&lt;p&gt;We already receive pings from a number of major blog hosting providers. If you're a blog host and would like to send us your ping stream &lt;a href="http://spinn3r.com/contact"&gt;please let us know&lt;/a&gt;. We'd prefer that you not use the open ping server as we can audit your ping stream a bit better when it's using a custom URL.&lt;/p&gt;
+
+&lt;p&gt;Why would you want to send us pings?  Because we crawl for a number of major search startups and analytics companies (as well as PhDs and Universities) and your users will get a solid impact from their blog post when it hits Spinn3r.&lt;/p&gt;
+
+&lt;p&gt;Just use the URL:&lt;/p&gt;
+
+&lt;p&gt;http://rpc.spinn3r.com/open/RPC2&lt;/p&gt;
+
+&lt;p&gt;... for your RPC router and you're set.&lt;/p&gt;
+
+&lt;p&gt;Also, a note to spammers - don't even bother spending spam our way.  We can handle the throughput just fine. Further, unless our discovery engine has approved the blog as being ham we're just going to drop the ping and send it to /dev/null.&lt;/p&gt;
+
+&lt;p&gt;... however, I pretty much assume you're going to send us spam anyway.  So have at it.&lt;/p&gt;</content:encoded>
+
+
+
+<dc:creator>burtonator</dc:creator>
+<dc:date>2008-04-09T10:19:26-07:00</dc:date>
+</item>
+<item rdf:about="http://blog.spinn3r.com/2008/04/more-on-the-wor.html">
+<title>More on the Wordpress Blog Spam Cancer</title>
+<link>http://blog.spinn3r.com/2008/04/more-on-the-wor.html</link>
+<description>Technorati published more information on the wordpress blog spam cancer that's spreading around the Internet. If you're running a version of Wordpress less than 2.5 you need to stop what you're doing NOW and upgrade! Don't wait until your blog...</description>
+<content:encoded>&lt;p&gt;&lt;img src="http://burtonator.files.wordpress.com/2008/04/200804081439.jpg" height="65" width="244" border="1" align="right" hspace="4" vspace="4" alt="200804081439" /&gt;Technorati published more information on the &lt;a href="http://www.arachna.com/roller/page/spidaman/20080407#the_wordpress_security_cancer"&gt;wordpress blog spam cancer&lt;/a&gt; that's spreading around the Internet.&lt;/p&gt;
+
+&lt;p&gt;If you're running a version of Wordpress less than 2.5 you need to stop what you're doing NOW and upgrade!  Don't wait until your blog is compromised. &lt;/p&gt;
+
+&lt;blockquote&gt;The blogosphere has had its share of maladies before. Comment spam, trackback spam, splogs and link trading schemes are the colds and flus that we've come to know and groan about. But lately, a cancer has afflicted the ecosystem that has led us at Technorati to take some drastic measures. Thousands of WordPress installations out in the wilds of the web are vulnerable to security compromises, they are being actively exploited and we're not going to index them until they're fixed.
+
+&lt;p&gt;We know about them at Technorati because part of what we do is count links. Compromised blogs have been coming to our attention because they have unusually high outbound links to spam destinations. The blog authors are usually unaware that they've been p0wned because the links are hidden with style attributes to obscure their visibility. Some bloggers only find out when they've been dropped by Google, this WordPress user wrote &lt;/blockquote&gt;&lt;/p&gt;
+
+&lt;p&gt;I've reached out to Ian Kallen to offer collaboration on fixing this issue.  &lt;/p&gt;
+
+&lt;p&gt;We're going to push out a point release of Spinn3r to block blogs that exhibit this spam problem.&lt;/p&gt;
+
+&lt;p&gt;It's such a rare event to have hundreds of thousands of weblogs compromised in a systematic manner.&lt;/p&gt;</content:encoded>
+
+
+<dc:subject>RSS</dc:subject>
+<dc:subject>spider</dc:subject>
+<dc:subject>spinn3r</dc:subject>
+
+<dc:creator>burtonator</dc:creator>
+<dc:date>2008-04-08T14:42:02-07:00</dc:date>
+</item>
+<item rdf:about="http://blog.spinn3r.com/2008/04/spinn3r-22-rele.html">
+<title>Spinn3r 2.2 Released</title>
+<link>http://blog.spinn3r.com/2008/04/spinn3r-22-rele.html</link>
+<description>Spinn3r 2.2 rolled out the door today. We've been working on a much larger release which is still pending but wanted to release new functionality out the door for some of our more recent clients. So what's new? We've added...</description>
+<content:encoded>&lt;p&gt;&lt;a href="http://blog.spinn3r.com/200804062309.jpg" onclick="window.open('http://blog.spinn3r.com/200804062309.jpg','popup','width=500,height=500,scrollbars=no,resizable=yes,toolbar=no,directories=no,location=no,menubar=no,status=yes,left=0,top=0');return false"&gt;&lt;img src="http://blog.spinn3r.com/200804062309-tm.jpg" height="150" width="150" border="1" align="right" hspace="4" vspace="4" alt="200804062309" /&gt;&lt;/a&gt;Spinn3r 2.2 rolled out the door today.&lt;/p&gt;
+
+&lt;p&gt;We've been working on a much larger release which is still pending but wanted to release new functionality out the door for some of our more recent clients.&lt;/p&gt;
+
+&lt;p&gt;So what's new?&lt;/p&gt;
+
+&lt;p&gt;We've added the ability to &lt;a href="http://code.google.com/p/spinn3r-client/wiki/SourceAPI"&gt;register weblogs directly within Spinn3r&lt;/a&gt;.  All that's necessary is to call a new &lt;code&gt;source.register&lt;/code&gt; method with a link to a weblog or any URL that has an RSS feed and publishes dynamic content.  Spinn3r will then do the rest.  We'll fetch the HTML feed, perform RSS autodiscovery, and then add it to our source list and start crawling in real time.&lt;/p&gt;
+
+&lt;p&gt;What's interesting is that this allows our clients to collaborate on weblog discovery.  Spinn3r does a great job at discovering weblogs but there are some niche sources where we'd love to have a few more signals to help out in our spam detection.  &lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://blog.spinn3r.com/200804062320-1.jpg" onclick="window.open('http://blog.spinn3r.com/200804062320-1.jpg','popup','width=768,height=1024,scrollbars=no,resizable=yes,toolbar=no,directories=no,location=no,menubar=no,status=yes,left=0,top=0');return false"&gt;&lt;img src="http://blog.spinn3r.com/200804062320-1-tm.jpg" height="200" width="150" border="1" align="right" hspace="4" vspace="4" alt="200804062320-1" /&gt;&lt;/a&gt;This also fixes a number of bugs including:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Our permalink crawler API now adds the ability to filter by API tier.  
+&lt;li&gt;We've added better mainstream media site detection.
+&lt;li&gt;A new post:resource_guid field is available within Spinn3r results to identify a unique post
+&lt;li&gt;New publisher types including FORUM, CLASSIFIED, and REVIEW.
+&lt;/ul&gt;
+
+&lt;p&gt;It sounds crazy but we've also started a sub-project to allow Spinn3r to also license spam content.  We've had a few malware and anti-virus companies approach us looking for a solid stream of real time spam posts.  Unfortunately, Spinn3r wasn't setup to provide this as 99% of our customers are only interested in ham.  &lt;/p&gt;
+
+&lt;p&gt;This adds a new spam_probability backend variable which isn't exposed just yet.  We'll allow our customers to add &amp;spam_probability=x.x in their API call to control how much spam they want to receive.&lt;/p&gt;
+
+&lt;p&gt;Believe it or not, some customers would like to boost up their signal a bit and add a bit and add more spam as a tradeoff to get a bit more recall.  &lt;/p&gt;
+
+&lt;p&gt;By default, this content will only be available to the client who registered the source.  This prevents clients with niche requirements to index special feeds (search feeds being a good example) without hurting any of our other customers.&lt;/p&gt;
+
+&lt;p&gt;Spinn3r 2.5 is also right around the corner.  It's taken us a bit longer than we had hoped to bring our new hardware online.  You can read about our progress &lt;a href="http://feedblog.org/category/ssd/"&gt;here on my personal blog&lt;/a&gt;.&lt;/p&gt;</content:encoded>
+
+
+<dc:subject>crawler</dc:subject>
+<dc:subject>RSS</dc:subject>
+<dc:subject>spinn3r</dc:subject>
+
+<dc:creator>burtonator</dc:creator>
+<dc:date>2008-04-08T10:55:44-07:00</dc:date>
+</item>
+<item rdf:about="http://blog.spinn3r.com/2008/04/massive-blog--1.html">
+<title>Massive Blog Spam Epidemic Gets More Attention</title>
+<link>http://blog.spinn3r.com/2008/04/massive-blog--1.html</link>
+<description>We've been covering a massive blog spam epidemic thanks to a nasty/evil spammer who's exploiting a XMLRPC bug in Wordpress 2.2. This issue is FINALLY getting the attention it deserves: I had a closer look at many of the blogs...</description>
+<content:encoded>&lt;p&gt;&lt;a href="http://burtonator.files.wordpress.com/2008/04/200804071213.jpg" onclick="window.open('http://burtonator.files.wordpress.com/2008/04/200804071213.jpg','popup','width=351,height=433,scrollbars=no,resizable=yes,toolbar=no,directories=no,location=no,menubar=no,status=yes,left=0,top=0');return false"&gt;&lt;img src="http://blog.spinn3r.com/200804071213-tm.jpg" height="148" width="120" border="1" align="right" hspace="4" vspace="4" alt="200804071213" /&gt;&lt;/a&gt;We've been covering a massive blog spam epidemic thanks to a nasty/evil spammer who's exploiting a XMLRPC bug in Wordpress 2.2.&lt;/p&gt;
+
+&lt;p&gt;This issue is &lt;a href="http://www.deepjiveinterests.com/2008/04/07/breaking-tailrank-exposes-massive-number-of-blogs-hacked/"&gt;FINALLY getting the attention it deserves&lt;/a&gt;:&lt;/p&gt;
+
+&lt;blockquote&gt;I had a closer look at many of the blogs concerned that had spammy content — pages promoting credit cards, pharmaceuticals and the like, and I realized that if you go to the root domain they are all legitimate blogs. Not scraper blogs that were being auto-generated with adsense / affiliate links, which was extremely curious, and actually reminiscient of something that hit home a few months ago.
+
+&lt;p&gt;A few months ago, this blog got hacked — but in a sneaky way. Not only did the hackers insert “invisible” code into my template, so that I was getting listed in Google for all manner of sneaky (and NSFW terms), so that people could click on those links with the hacker getting the affiliate cash — but *actually*, said hackers also inserted fake tempates into my wordpress theme.&lt;/blockquote&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://www.techaddress.com/2008/04/07/the-good-doctor-exposes-blog-hacking-and-tailrank-spam/"&gt;Techaddress is also covering this issue...&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Oddly enough Tailrank picks up on this spam because of our clustering algorithm.  We cluster common links and terms via our blog index and promote these stories to our front page.&lt;/p&gt;
+
+&lt;p&gt;Since we 'trust' stories with past behavior when major A-list &lt;a href="http://blogs.zdnet.com/Gillmor/"&gt;blogs like ZDNet&lt;/a&gt; get owned we believe they are legitimate links.&lt;/p&gt;
+
+&lt;p&gt;If we had a smaller index this might be a big easier to handle but we're indexing 12M blogs within Tailrank and on &lt;a href="http://spinn3r.com"&gt;Spinn3r&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Another way around this of course would be to blacklist every blog running Wordpress 2.2 or earlier but we're talking millions of blogs here and we don't want to unfairly harm anyone.&lt;/p&gt;
+
+&lt;p&gt;To date our approach has been to wait until Tailrank has identified the spam, and then blacklist any blogs that have been compromised.&lt;/p&gt;
+
+&lt;p&gt;Unfortunately this is a war of attrition with the spammer just spending a few more days and hacking another dozen or so sites.&lt;/p&gt;
+
+&lt;p&gt;The only positive aspect of this is that it's encouraging people to upgrade to Wordpress 2.5.&lt;/p&gt;
+
+&lt;p&gt;We're also working on some secondary algorithms to catch this a bit sooner and we'll probably ship these in Spinn3r 2.5 which is due shortly.&lt;/p&gt;</content:encoded>
+
+
+<dc:subject>spinn3r</dc:subject>
+
+<dc:creator>burtonator</dc:creator>
+<dc:date>2008-04-07T12:15:44-07:00</dc:date>
+</item>
+<item rdf:about="http://blog.spinn3r.com/2008/03/spinn3r-at-icws.html">
+<title>Spinn3r At ICWSM Next Week </title>
+<link>http://blog.spinn3r.com/2008/03/spinn3r-at-icws.html</link>
+<description>Spinn3r be at the International Conference on Weblogs and Social Media ICWSM this week. The conference looks great: The rapid creation and consumption of social media content continues to drive the evolution of the Internet and the Web. Social media...</description>
+<content:encoded>&lt;p&gt;&lt;a href="http://blog.spinn3r.com/200803281639.jpg" onclick="window.open('http://blog.spinn3r.com/200803281639.jpg','popup','width=173,height=174,scrollbars=no,resizable=yes,toolbar=no,directories=no,location=no,menubar=no,status=yes,left=0,top=0');return false"&gt;&lt;img src="http://blog.spinn3r.com/200803281639-tm.jpg" height="100" width="100" border="1" align="right" hspace="4" vspace="4" alt="200803281639" /&gt;&lt;/a&gt;&lt;a href="http://spinn3r.com"&gt;Spinn3r&lt;/a&gt; be at the International Conference on Weblogs and Social Media &lt;a href="http://www.icwsm.org/2008/index.shtml"&gt;ICWSM&lt;/a&gt; this week.  &lt;/p&gt;
+
+&lt;p&gt;The conference looks great:&lt;/p&gt;
+
+&lt;blockquote&gt;The rapid creation and consumption of social media content continues to drive the evolution of the Internet and the Web. Social media content now accounts for the majority of content published daily on the web.
+
+&lt;p&gt;As the space evolves, researcher and industrial practitioners find themselves at a key point for collaborating on research, implementation and deployment of a wide range of analyses and applications. The International Conference on Weblogs and Social Media invites researchers in the broad field of social media analysis to submit papers for its second meeting. &lt;/blockquote&gt;&lt;/p&gt;
+
+&lt;p&gt;If you're not planning on attending and are in the Seattle area you should &lt;a href="http://www.icwsm.org/2008/program.shtml"&gt;look at the program&lt;/a&gt; and reconsider.&lt;/p&gt;
+
+&lt;p&gt;If anyone wants to meet up and grab coffee please let me know.  &lt;/p&gt;</content:encoded>
+
+
+<dc:subject>spinn3r</dc:subject>
+
+<dc:creator>burtonator</dc:creator>
+<dc:date>2008-03-28T16:39:45-07:00</dc:date>
+</item>
+<item rdf:about="http://blog.spinn3r.com/2008/03/features-in-the.html">
+<title>Features in the Next Release of Spinn3r</title>
+<link>http://blog.spinn3r.com/2008/03/features-in-the.html</link>
+<description>A new release of Spinn3r is around the corner and I wanted to publish a link to documentation of a new feature we're shipping. We're going to be releasing a new source API which allows our users to obtain the...</description>
+<content:encoded>&lt;p&gt;A new release of Spinn3r is around the corner and I wanted to publish a link to documentation of a new feature we're shipping.  &lt;/p&gt;
+
+&lt;p&gt;We're going to be releasing a new &lt;a href="http://code.google.com/p/spinn3r-client/wiki/SourceAPI"&gt;source&lt;/a&gt; API which allows our users to obtain the status of a weblog or register a new weblog (or feed) as a source within Spinn3r.&lt;/p&gt;
+
+&lt;p&gt;By default, these sources won't be made available to our other users.  If more than one of our users registers the same URL we'll then make it a publish source.&lt;/p&gt;
+
+&lt;p&gt;This has been a frequent request over the last few months.  It should also give us another signal for our spam detection algorithms.&lt;/p&gt;</content:encoded>
+
+
+
+<dc:creator>burtonator</dc:creator>
+<dc:date>2008-03-28T14:27:21-07:00</dc:date>
+</item>
+<item rdf:about="http://blog.spinn3r.com/2008/03/spinn3r-client.html">
+<title>Spinn3r Client Driver for Perl</title>
+<link>http://blog.spinn3r.com/2008/03/spinn3r-client.html</link>
+<description>The guys over at Slaant were nice enough to write an Open Source driver for Spinn3r written in Perl. They did all the work here and we're immensely grateful that they decided to release it as Open Source. This is...</description>
+<content:encoded>&lt;p&gt;&lt;a href="http://blog.spinn3r.com/200803141449.jpg" onclick="window.open('http://blog.spinn3r.com/200803141449.jpg','popup','width=250,height=77,scrollbars=no,resizable=yes,toolbar=no,directories=no,location=no,menubar=no,status=yes,left=0,top=0');return false"&gt;&lt;img src="http://blog.spinn3r.com/200803141449-tm.jpg" height="61" width="200" border="1" align="right" hspace="4" vspace="4" alt="200803141449" /&gt;&lt;/a&gt;The guys over at &lt;a href="http://www.slaant.com"&gt;Slaant&lt;/a&gt; were nice enough to write an &lt;a href="http://search.cpan.org/~vipul/WWW-Spinn3r-2.00100302/"&gt;Open Source driver for Spinn3r written in Perl&lt;/a&gt;.  &lt;/p&gt;
+
+&lt;p&gt;They did all the work here and we're immensely grateful that they decided to release it as Open Source.&lt;/p&gt;
+
+&lt;p&gt;This is 100% native and uses Expat for XML parsing.  &lt;/p&gt;
+
+&lt;p&gt;As part of this release I also wrote some notes on &lt;a href="http://code.google.com/p/spinn3r-client/wiki/ClientDesignGuidelines"&gt;client design guidelines&lt;/a&gt;.  It turns out that 80% of the problems are produced by common implementation issues.  Things like using read and connect timeouts, correct DNS caching, UTF-8 encoding, etc.&lt;/p&gt;
+
+&lt;blockquote&gt;WWW::Spinn3r is an iterative interface to the Spinn3r API. The Spinn3r API is implemented over REST and XML and documented throughly at `http://spinn3r.com/documentation'. This document makes many reference to the online doc and the reader is advised to study Spinn3r documentation before proceeding further.
+...
+
+&lt;p&gt;This module gives your a perl hash interface to the API. You'll need just two functions from this module: `new()' and `next()'. `new()' creates a new instance of the API and `next()' returns the next item from the Spinn3r feed. &lt;/blockquote&gt;&lt;/p&gt;</content:encoded>
+
+
+<dc:subject>crawler</dc:subject>
+<dc:subject>feeds</dc:subject>
+<dc:subject>spinn3r</dc:subject>
+
+<dc:creator>burtonator</dc:creator>
+<dc:date>2008-03-14T14:53:07-07:00</dc:date>
+</item>
+<item rdf:about="http://blog.spinn3r.com/2008/03/yahoo-extends-s.html">
+<title>Yahoo Extends Semantic Web Support?</title>
+<link>http://blog.spinn3r.com/2008/03/yahoo-extends-s.html</link>
+<description>Looks like Yahoo is releasing more details about web standards, RDF, and microformat support in their search platform: While there has been remarkable progress made toward understanding the semantics of web content, the benefits of a data web have not...</description>
+<content:encoded>&lt;p&gt;&lt;img src="http://blog.spinn3r.com/200803131640.jpg" height="98" width="189" border="1" align="right" hspace="4" vspace="4" alt="200803131640" /&gt;Looks like &lt;a href="http://www.ysearchblog.com/archives/000527.html"&gt;Yahoo is releasing more details&lt;/a&gt; about web standards, RDF, and microformat support in their search platform:&lt;/p&gt;
+
+&lt;blockquote&gt;While there has been remarkable progress made toward understanding the semantics of web content, the benefits of a data web have not reached the mainstream consumer. Without a killer semantic web app for consumers, site owners have been reluctant to support standards like RDF, or even microformats. We believe that app can be web search.
+
+&lt;p&gt;By supporting semantic web standards, Yahoo! Search and site owners can bring a far richer and more useful search experience to consumers. For example, by marking up its profile pages with microformats, LinkedIn can allow Yahoo! Search and others to understand the semantic content and the relationships of the many components of its site. With a richer understanding of LinkedIn's structured data included in our index, we will be able to present users with more compelling and useful search results for their site. The benefit to LinkedIn is, of course, increased traffic quality and quantity from sites like Yahoo! Search that utilize its structured data.&lt;/blockquote&gt;&lt;/p&gt;
+
+&lt;p&gt;... and of course a rising tide lifts all boats.  I expect this will help out &lt;a href="http://spinn3r.com"&gt;Spinn3r&lt;/a&gt; as this just means more structured content for us to index. &lt;/p&gt;
+
+&lt;p&gt;They're using the right vocabulary though:&lt;/p&gt;
+
+&lt;blockquote&gt;In the coming weeks, we'll be releasing more detailed specifications that will describe our support of semantic web standards. Initially, we plan to support a number of &lt;a href="http://microformats.org/"&gt;microformats&lt;/a&gt;, including &lt;a href="http://microformats.org/wiki/hcard"&gt;hCard&lt;/a&gt;, &lt;a href="http://microformats.org/wiki/hcalendar"&gt;hCalendar&lt;/a&gt;, &lt;a href="http://microformats.org/wiki/hreview"&gt;hReview&lt;/a&gt;, &lt;a href="http://microformats.org/wiki/hatom"&gt;hAtom&lt;/a&gt;, and &lt;a href="http://microformats.org/wiki/xfn"&gt;XFN&lt;/a&gt;. Yahoo! Search will work with the web community to evolve the vocabulary framework for embedding structured data. For starters, we plan to support vocabulary components from &lt;a href="http://en.wikipedia.org/wiki/Dublin_Core"&gt;Dublin Core&lt;/a&gt;, &lt;a href="http://creativecommons.org/"&gt;Creative Commons&lt;/a&gt;, &lt;a href="http://www.foaf-project.org/"&gt;FOAF&lt;/a&gt;, &lt;a href="http://www.georss.org/"&gt;GeoRSS&lt;/a&gt;, &lt;a href="http://search.yahoo.com/mrss"&gt;MediaRSS&lt;/a&gt;, and others based on feedback. And, we will support &lt;a href="http://en.wikipedia.org/wiki/RDFa"&gt;RDFa&lt;/a&gt; and &lt;a href="http://en.wikipedia.org/wiki/Embedded_RDF"&gt;eRDF&lt;/a&gt; markup to embed these into existing HTML pages. Finally, we are announcing support for the &lt;a href="http://opensearch.org/"&gt;OpenSearch&lt;/a&gt; specification, with extensions for structured queries to deep web data sources.&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href="http://www.techcrunch.com/2008/03/13/yahoo-embraces-the-semantic-web-expect-the-web-to-organize-itself-in-a-hurry/"&gt;Techcrunch has more on the subject&lt;/a&gt; and generally likes the direction Yahoo is taking.&lt;/p&gt;</content:encoded>
+
+
+<dc:subject>crawler</dc:subject>
+<dc:subject>feeds</dc:subject>
+<dc:subject>linux</dc:subject>
+<dc:subject>memetracker</dc:subject>
+<dc:subject>RSS</dc:subject>
+<dc:subject>spinn3r</dc:subject>
+
+<dc:creator>burtonator</dc:creator>
+<dc:date>2008-03-13T16:41:27-07:00</dc:date>
+</item>
+<item rdf:about="http://blog.spinn3r.com/2008/03/new-spinn3r-ref.html">
+<title>New Spinn3r Reference Client Release</title>
+<link>http://blog.spinn3r.com/2008/03/new-spinn3r-ref.html</link>
+<description>We just pushed a new release of our Spinn3r reference client (2.1.3.1-beta). This is a small bug fix only release. Normally it wouldn't be a very big deal but this includes a performance optimization which can increase API throughput by...</description>
+<content:encoded>&lt;p&gt;We just pushed a new release of our &lt;a href="http://code.google.com/p/spinn3r-client/"&gt;Spinn3r reference client&lt;/a&gt; (&lt;a href="http://spinn3r-client.googlecode.com/files/spinn3r-client-2.1.3.1-beta.tar.gz"&gt;2.1.3.1-beta&lt;/a&gt;).  &lt;/p&gt;
+
+&lt;p&gt;This is a small bug fix only release.  Normally it wouldn't be a very big deal but this includes a performance optimization which can increase API throughput by about 2x in most situations.  &lt;/p&gt;
+
+&lt;p&gt;We now fetch items 100 at a time.  We couldn't do this before because of a memory issue with our HTTP implementation.  If we encounter a HTTP 500 while performing a request of 100 items we temporarily fall back to 10 items.&lt;/p&gt;
+
+&lt;p&gt;This will probably increase the HTTP 500 errors on our servers by 1-2% but the performance advantage for our customer base is clearly advantageous.&lt;/p&gt;</content:encoded>
+
+
+<dc:subject>spinn3r</dc:subject>
+
+<dc:creator>burtonator</dc:creator>
+<dc:date>2008-03-06T15:29:26-08:00</dc:date>
+</item>
+<item rdf:about="http://blog.spinn3r.com/2008/03/thirty-percent.html">
+<title>Thirty Percent of Blogs are Spam?</title>
+<link>http://blog.spinn3r.com/2008/03/thirty-percent.html</link>
+<description>Matt Mullenweg posted a February round up of Wordpress growth recently: 245,329 blogs were created. 432,478 new users joined. 1,920,593 file uploads. 2,814,893 posts and 996 thousand new pages. 4,961,330 comments. 3,813,432 logins. 540,799,534 pageviews on WordPress.com, and another 304,499,648...</description>
+<content:encoded>&lt;p&gt;Matt Mullenweg posted a &lt;a href="http://wordpress.com/blog/2008/03/03/february-wrap-up/"&gt;February round up of Wordpress growth&lt;/a&gt; recently:&lt;/p&gt;
+
+&lt;blockquote&gt;245,329 blogs were created.
+432,478 new users joined.
+1,920,593 file uploads.
+2,814,893 posts and 996 thousand new pages.
+4,961,330 comments.
+3,813,432 logins.
+540,799,534 pageviews on WordPress.com, and another 304,499,648 on self-hosted blogs. (845,299,182 pageviews total across blogs we know about.)
+726,789 active blogs in February, where “active” means they got a human visitor.&lt;/blockquote&gt;
+
+&lt;p&gt;A few bloggers went through and analyzed the stats to &lt;a href="http://www.webpronews.com/topnews/2008/03/03/mullenweg-indicates-over-30-percent-of-blogs-are-spam"&gt;determine&lt;/a&gt; the &lt;a href="http://www.alleyinsider.com/2008/2/wordpress_founder_25_percent_of_blogs_are_spam"&gt;percentage&lt;/a&gt; of live spam &lt;a href="http://mashable.com/2008/03/03/matt-mullenweg-splogs/"&gt;blogs&lt;/a&gt;.&lt;/p&gt;
+
+&lt;blockquote&gt;If you're willing to trust Matt Mullenweg, and believe WordPress is fairly representative of blog platforms everywhere, then have we got a statistic for you: it seems that at least 30 percent of all blogs may be spam.
+
+&lt;p&gt;...&lt;/p&gt;
+
+&lt;p&gt;Divide the second number by the first, multiply by 100, and you get 31.7 percent.  Almost one-third, if you round up, or three out of ten, if you'd prefer to round down.  That's high, and that's ignoring McCarthy's "more than" and the possibility that WordPress missed some splogs.&lt;/blockquote&gt;&lt;/p&gt;
+
+&lt;p&gt;The major question is churn and how long they've been live and in production.&lt;/p&gt;
+
+&lt;p&gt;Wordpress is obviously Open Source and anyone can download the code and start spamming on their own servers if they want.&lt;/p&gt;
+
+&lt;p&gt;The official hosted service (Wordpress.com) has done a great job at crushing blogs that make it onto the site.  &lt;/p&gt;
+
+&lt;p&gt;Blogger seriously needs to improve their spam killing accuracy.  There's much more spam that both makes it to Blogger and stays hosted there for months at a time.&lt;/p&gt;
+
+&lt;p&gt;The Pingosphere is another story though.  We see about 90% spam coming through the ping network.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://blog.spinn3r.com/2008/01/blog-ping-and-s.html"&gt;I blogged about this a few weeks ago.&lt;/a&gt;&lt;/p&gt;</content:encoded>
+
+
+
+<dc:creator>burtonator</dc:creator>
+<dc:date>2008-03-03T19:56:19-08:00</dc:date>
+</item>
+<item rdf:about="http://blog.spinn3r.com/2008/02/spinn3r-213-now.html">
+<title>Spinn3r 2.1.3 Now Available</title>
+<link>http://blog.spinn3r.com/2008/02/spinn3r-213-now.html</link>
+<description>Spinn3r 2.1.3 is live and out the door. The biggest feature in this release is that we've bought our entire feed archive online. You can now get access to nearly 400GB of content from the last 8 months. We also...</description>
+<content:encoded>&lt;p&gt;Spinn3r 2.1.3 is live and out the door.&lt;/p&gt;
+
+&lt;p&gt;The biggest feature in this release is that we've bought our entire feed archive online.  You can now get access to nearly 400GB of content from the last 8 months.&lt;/p&gt;
+
+&lt;p&gt;We also updated the response XML and included a new feed:url element for each published item.  This references the URL to the source RSS feed.&lt;/p&gt;
+
+&lt;p&gt;This was primarily added to aid companies using a 3rd party crawler with their migration to Spinn3r.&lt;/p&gt;
+
+&lt;p&gt;Not every post will have a feed URL.  Posts from the &lt;a href="http://updates.sixapart.com/"&gt;Six Apart update stream&lt;/a&gt; (specifically, LiveJournal) will not have feed:url.  &lt;/p&gt;
+
+&lt;p&gt;As usual we've pushed a new update to the &lt;a href="http://code.google.com/p/spinn3r-client/"&gt;Spinn3r reference client&lt;/a&gt;.  &lt;/p&gt;
+
+&lt;p&gt;This implements a new getFeedURL method which is needed to use the new result format.  Existing clients shouldn't need to upgrade unless they need this specific feature.&lt;/p&gt;</content:encoded>
+
+
+<dc:subject>feeds</dc:subject>
+<dc:subject>RSS</dc:subject>
+<dc:subject>spider</dc:subject>
+<dc:subject>spinn3r</dc:subject>
+
+<dc:creator>burtonator</dc:creator>
+<dc:date>2008-02-08T19:14:04-08:00</dc:date>
+</item>
+<item rdf:about="http://blog.spinn3r.com/2008/01/spinn3r-212.html">
+<title>Spinn3r 2.1.2</title>
+<link>http://blog.spinn3r.com/2008/01/spinn3r-212.html</link>
+<description>We just pushed Spinn3r 2.1.2. This is mostly a stabilization release without any major new features. There are a few extensions provided which have been requested by a number of customers including: Support for API tiers in the permalink.getDelta interface....</description>
+<content:encoded>&lt;p&gt;We just pushed Spinn3r 2.1.2.  This is mostly a stabilization release without any major new features. &lt;/p&gt;
+
+&lt;p&gt;There are a few extensions provided which have been requested by a number of customers including:&lt;/p&gt;
+
+&lt;ul&gt;&lt;li&gt;Support for API tiers in the &lt;code&gt;permalink.getDelta&lt;/code&gt; interface.  This is available in the API response but net yet available as a query parameter.&lt;/li&gt;&lt;li&gt;Support for the original creation date of items found in the original RSS or Atom feed.  This is now provided with &lt;code&gt;atom:published&lt;/code&gt;. The original crawl data is also preserved and included as &lt;code&gt;post:date_found&lt;/code&gt;.  Both of these values are ISO 8601 timestamps.  This is only available via the &lt;code&gt;feed.getDelta&lt;/code&gt; method.&lt;/li&gt;&lt;li&gt;Extended support for the title and description of a weblog in API responses.  This is now supported by more weblogs and included in the response of both the &lt;code&gt;feed.getDelta&lt;/code&gt; and &lt;code&gt;permalink.getDelta&lt;/code&gt; methods.&lt;/li&gt;&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href="http://code.google.com/p/spinn3r-client/"&gt;The Spinn3r reference client has been upgraded&lt;/a&gt; to 2.1.2 to support additional values including the original post publication time.&lt;/p&gt;
+
+&lt;p&gt;We also performed some hardware upgrades during this release to handle additional load including new web servers dedicated to serving API callers.&lt;/p&gt;</content:encoded>
+
+
+<dc:subject>spinn3r</dc:subject>
+
+<dc:creator>burtonator</dc:creator>
+<dc:date>2008-01-21T16:02:01-08:00</dc:date>
+</item>
+<item rdf:about="http://blog.spinn3r.com/2008/01/blog-ping-and-s.html">
+<title>Blog Ping and Spam Statistics </title>
+<link>http://blog.spinn3r.com/2008/01/blog-ping-and-s.html</link>
+<description>One of the great features of Spinn3r is that it has native spam prevention which prevents a good deal of worthless content form being indexed by our customers. What we haven't done a good job of doing (until now) is...</description>
+<content:encoded>&lt;p&gt;One of the great features of Spinn3r is that it has native spam prevention which prevents a good deal of worthless content form being indexed by our customers.  &lt;/p&gt;
+
+&lt;p&gt;What we haven't done a good job of doing (until now) is exposing the sheer volume of ping spam that hits our servers.&lt;/p&gt;
+
+&lt;p&gt;Every hour we see nearly 720k pings.  Of these pings nearly 93% of them are from spam blogs!&lt;/p&gt;
+
+&lt;p&gt;Due to the sheer volume we've had to rework a number of our algorithms to function extremely efficiently. &lt;/p&gt;
+
+&lt;p&gt;Here's a copy of our ping traffic for the last 24 hours.  Note that the dips in the graphs are due to monitoring issues and not representative of the underlying data.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://blog.spinn3r.com/200801210154.jpg" onclick="window.open('http://blog.spinn3r.com/200801210154.jpg','popup','width=495,height=288,scrollbars=no,resizable=yes,toolbar=no,directories=no,location=no,menubar=no,status=yes,left=0,top=0');return false"&gt;&lt;img src="http://blog.spinn3r.com/200801210154-tm.jpg" height="203" width="350" border="1" hspace="4" vspace="4" alt="200801210154" /&gt;&lt;/a&gt;&lt;br /&gt;
+&lt;/p&gt;</content:encoded>
+
+
+
+<dc:creator>burtonator</dc:creator>
+<dc:date>2008-01-21T02:00:51-08:00</dc:date>
+</item>
+<item rdf:about="http://blog.spinn3r.com/2008/01/spinn3r-and-soc.html">
+<title>Spinn3r and Social Network Data Portability</title>
+<link>http://blog.spinn3r.com/2008/01/spinn3r-and-soc.html</link>
+<description>There's been a lot of talk recently about social network data portability with Plaxo, Facebook, and Google now having employees as members of the group. From Spinn3r's perspective, it's not just about data portability, it's about a fully open social...</description>
+<content:encoded>&lt;p&gt;&lt;img src="http://blog.spinn3r.com/200801101243.jpg" height="88" width="111" border="1" align="right" hspace="4" vspace="4" alt="200801101243" /&gt;There's been a &lt;a href="http://www.techcrunch.com/2008/01/08/this-day-will-be-remembered-facebook-google-and-plaxo-join-the-dataportability-workgroup/"&gt;lot of talk&lt;/a&gt; recently about social network data portability with Plaxo, Facebook, and Google now &lt;a href="http://www.particls.com/blog/2008/01/individuals-from-plaxo-google-and.html"&gt;having employees as members of the group&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;From &lt;a href="http://spinn3r.com"&gt;Spinn3r's&lt;/a&gt; perspective, it's not just about data portability, it's about a fully open social graph.&lt;/p&gt;
+
+&lt;p&gt;By open, I mean no restrictions other than copyright and plenty of fair use for public data (private data is another issue altogether which quickly becomes a lot more complicated).&lt;/p&gt;
+
+&lt;p&gt;The blogosphere has really paved the way for this with its history of open data thanks to RSS and Atom.&lt;/p&gt;
+
+&lt;p&gt;MySpace should be commended for their participation in the blogosphere with their blogging system.  They send pings, have RSS feeds, and don't mind that we crawl and build applications on top of their data.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+There are certain hosted blogging systems (who shall remain nameless) which, while fully open, have additional restrictions for crawlers.  They only allow a finite number of requests to their system. The number is so low that it's mathematically impossible to crawl all their content.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+Now, it's their system, they have the right to do what they want and provide access under whatever restrictions they deem fit.  However, it's the user's data - not theirs.  We don't have any obligation to use their system and customers are going to flock to systems which are more open and have more compelling applications.&lt;/p&gt;
+
+&lt;p&gt;Don't believe me?  It's not altruism - it's the free market.  Users are going to flock to systems with vibrant and compelling applications.&lt;/p&gt;
+
+&lt;p&gt;The open content thanks to the blogosphere has brought us companies like &lt;a href="http://bloglines.com"&gt;Bloglines&lt;/a&gt;, &lt;a href="http://tailrank.com"&gt;Tailrank&lt;/a&gt;, &lt;a href="http://google.com/reader"&gt;Google Reader&lt;/a&gt;, &lt;a href="http://kosmix.com"&gt;Kosmix&lt;/a&gt;, &lt;a href="http://www.zvents.com/"&gt;Zvents&lt;/a&gt;, &lt;a href="http://powerset.com"&gt;Powerset&lt;/a&gt; - I could go on.&lt;/p&gt;
+
+&lt;p&gt;I remember this the other day when I was reading &lt;a href="http://venturebeat.com/2008/01/09/analysis-plaxo-and-friendfeed-pushing-the-feed"&gt;VentureBeat's coverage of Friendfeed&lt;/a&gt; and the &lt;a href="http://feedblog.org/2007/12/05/the-irony-of-facebook-news-feeds/"&gt;irony of the fact that Facebook Feeds aren't actually RSS feeds&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;This open data is becoming more and more valuable - not just to the company writing the applications that create the open data but to the &lt;strong&gt;entire&lt;/strong&gt; ecosystem.   So valuable in fact that &lt;a href="http://www.rassoc.com/gregr/weblog/2008/01/09/newsgators-rss-clients-are-now-free/"&gt;NewsGator decided to release all of their applications available for free&lt;/a&gt; because they can sell backend appliances that index the data and build compelling applications.&lt;/p&gt;
+
+&lt;p&gt;This needs to be solved not from the perspective of user portability but from that of an open content network where all players have equal access to the data.&lt;/p&gt;</content:encoded>
+
+
+<dc:subject>aggregation</dc:subject>
+<dc:subject>atom</dc:subject>
+<dc:subject>google</dc:subject>
+<dc:subject>memetracker</dc:subject>
+<dc:subject>RSS</dc:subject>
+<dc:subject>spider</dc:subject>
+<dc:subject>spinn3r</dc:subject>
+
+<dc:creator>burtonator</dc:creator>
+<dc:date>2008-01-10T12:46:27-08:00</dc:date>
+</item>
+<item rdf:about="http://blog.spinn3r.com/2008/01/announcing-spin.html">
+<title>Announcing Spinn3r 2.1</title>
+<link>http://blog.spinn3r.com/2008/01/announcing-spin.html</link>
+<description>I'm very excited to announce that Spinn3r 2.1 is now available. A number of major new features have been implemented in this release which has taken us more than three months of hard work to get out the door. We've...</description>
+<content:encoded>&lt;p&gt;I'm very excited to announce that Spinn3r 2.1 is now available.&lt;img src="http://blog.spinn3r.com/200712311502.jpg" height="44" width="120" border="1" align="right" hspace="4" vspace="4" alt="200712311502" /&gt;&lt;/p&gt;
+
+&lt;p&gt;A number of major new features have been implemented in this release which has taken us more than three months of hard work to get out the door. &lt;/p&gt;
+
+&lt;p&gt;We've also finished up another stage of our backend and are planning on buying a &lt;a href="http://feedblog.org/2007/12/13/ssd-vs-memory-the-end-is-nigh/"&gt;few more toys in 2008&lt;/a&gt; which should make things interesting moving forward.&lt;/p&gt;
+
+&lt;p&gt;Let's dive into the details. &lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://blog.spinn3r.com/200712311414.jpg" height="578" width="206" border="1" align="right" hspace="4" vspace="4" alt="200712311414" /&gt;&lt;h2&gt;Full Crawler Support&lt;/h2&gt;&lt;br /&gt;
+Our new crawler functionality fetches the full HTML of every post we discover, extracts the body of the post, excluding sidebar and chrome and provides this content under a new API.&lt;/p&gt;
+
+&lt;p&gt;Our reference client implements the new API and existing clients should be able to easily port their code to support this new functionality.&lt;/p&gt;
+
+&lt;p&gt;This is a major new architecture for us and we plan on expanding support for this moving forward.  &lt;/p&gt;
+
+&lt;h2&gt;Content Extraction&lt;/h2&gt;
+
+&lt;p&gt;The quality of mainstream media RSS feeds is notoriously lacking.  For example, &lt;a href="http://www.cnn.com/services/rss/"&gt;CNN has RSS feeds&lt;/a&gt; but they only have a one line description instead of the full content of the post.&lt;/p&gt;
+
+&lt;p&gt;This has always been a problem with RSS search engines such as &lt;a href="http://feedster.com"&gt;Feedster&lt;/a&gt; or &lt;a href="http://blogsearch.google.com/"&gt;Google Blog Search&lt;/a&gt; - what's the point of using a search engine that's not indexing 80% of potential content?&lt;/p&gt;
+
+&lt;p&gt;We're also seeing the same thing with a number of the A-list blogs.  RSS feeds turn into a liability when bandwidth increases significantly every month with each new user.  The more traffic a blog gets the greater the probability that they'll enable partial RSS feeds in order to reduce their bandwidth costs and increase click through rates.&lt;/p&gt;
+
+&lt;p&gt;Spinn3r 2.1 adds a new feature which can extract the 'content' of a post and eliminate sidebar chrome and other navigational items.&lt;/p&gt;
+
+&lt;p&gt;It does this by using an internal content probability model and scanning the HTML to determine what is potentially content and what's potentially a navigation item. &lt;/p&gt;
+
+&lt;p&gt;For a visual example, you can see the attached screenshot of a page with content highlighted in yellow.  This screenshot was generated by passing our content extraction algorithm &lt;a href="http://www.nysun.com/article/63232"&gt;over this article on The New York Sun&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;This method isn't always 100% accurate.  It has a small probability of false negatives for the first few words of a post.  As such, it's meant for consumption by algorithms and not by humans.&lt;/p&gt;
+
+&lt;p&gt;To increase accuracy we also implement &lt;a href="https://www.google.com/adsense/support/bin/answer.py?hl=en&amp;amp;answer=23168"&gt;Google ad section targeting&lt;/a&gt; and &lt;a href="http://microformats.org/wiki/hatom"&gt;hAtom entry-content&lt;/a&gt; which help us focus on the body of the post.  &lt;/p&gt;
+
+&lt;p&gt;We also support Yahoo's &lt;a href="http://www.ysearchblog.com/archives/000444.html"&gt;robots-nocontent&lt;/a&gt; to help with HTML chrome/sidebar elimination.&lt;/p&gt;
+
+&lt;p&gt;About 15% of our content is indexed with these additional methods.&lt;/p&gt;
+
+&lt;h2&gt;Better Mainstream Media Support&lt;/h2&gt;
+
+&lt;p&gt;Since &lt;a href="http://blog.spinn3r.com/2007/10/announcing-spin.html"&gt;Spinn3r 2.0&lt;/a&gt;, we've been indexing mainstream news sites such as CNN, the NY Times, etc.&lt;/p&gt;
+
+&lt;p&gt;We've improved this support in 2.1 by tuning and performing extensive QA for these mainstream media sites.  We've implemented parsers for individual sites such as the &lt;a href="http://nytimes.com"&gt;NY Times&lt;/a&gt; and performed manual audits on more than 600 sites to make sure our crawlers were indexing them at optimal levels.&lt;/p&gt;
+
+&lt;h2&gt;Expanded Online Archives&lt;/h2&gt;
+
+&lt;p&gt;In previous versions of Spinn3r we only kept about seven days of content online at any given time.  Since most of our customers are only interested in the most recent content this wasn't a problem.  As we grow, we're starting to have more and more requests for access to older content.&lt;/p&gt;
+
+&lt;p&gt;That's easier said than done though.  Spinn3r is currently indexing over 500GB of data.  Providing all of our customers with real time access while maintaining adequate performance is a difficult task.&lt;/p&gt;
+
+&lt;p&gt;Thanks to the recent architecture updates we've performed we're now able to keep all of our content online.  Right now Spinn3r has about 2.5 months of data (around 200GB) online.  We're going to be expanding this in future versions to keep all of our legacy content online and available to our customers.&lt;/p&gt;
+
+&lt;h2&gt;Spinn3r Reference Client&lt;/h2&gt;
+
+&lt;p&gt;In November, we &lt;a href="http://blog.spinn3r.com/2007/11/spinn3r-referen.html"&gt;announced the availability&lt;/a&gt; of our &lt;a href="http://code.google.com/p/spinn3r-client/"&gt;Spinn3r reference client&lt;/a&gt; for Java.&lt;/p&gt;
+
+&lt;p&gt;This has significantly reduced our initial client implementation time.  One of our recent clients was able to get up and running under two hours!&lt;/p&gt;
+
+&lt;p&gt;Spinn3r 2.1 has an updated reference client which supports all new protocol updates for this release and additional command line options as well.&lt;/p&gt;
+
+&lt;h2&gt;What's Next?&lt;/h2&gt;
+
+&lt;p&gt;Spinn3r is growing.  November and December were big months for us.  We closed 5 new clients and are now used by companies which have raised more than $50M in VC funding.&lt;/p&gt;
+
+&lt;p&gt;We're also now being used in production by a number of researchers from top universities including the University of Maryland Baltimore County (my alma matter), University of Washington, and the University of Southern California.&lt;/p&gt;
+
+&lt;p&gt;Having so much feedback from multiple parties makes it clear where we need to move Spinn3r in the future.&lt;/p&gt;
+
+&lt;p&gt;Having public stats about our crawler is a common request. Spinn3r 2.2 will introduce a lot more statistics about our crawler including the ability to view individual weblogs, total bandwidth usage, total posts per hour, etc.&lt;/p&gt;
+
+&lt;p&gt;Comment extraction is also a popular request.  We're going to extend Spinn3r to index each individual post and extract each comment as a unique entity with individual title, link, and body for each comment.&lt;/p&gt;
+
+&lt;p&gt;Stay tuned.  We still have a few more tricks up our sleeves.&lt;/p&gt;</content:encoded>
+
+
+<dc:subject>aggregation</dc:subject>
+<dc:subject>crawler</dc:subject>
+<dc:subject>memetracker</dc:subject>
+<dc:subject>RSS</dc:subject>
+<dc:subject>spider</dc:subject>
+<dc:subject>spinn3r</dc:subject>
+
+<dc:creator>burtonator</dc:creator>
+<dc:date>2008-01-08T13:42:13-08:00</dc:date>
+</item>
+<item rdf:about="http://blog.spinn3r.com/2008/01/storing-the-ful.html">
+<title>Storing the Full Internet</title>
+<link>http://blog.spinn3r.com/2008/01/storing-the-ful.html</link>
+<description>The other day I blogged about Blekko and what it would take to in terms of hardware index the full Internet. High Scalability responded with some interesting thoughts. Kevin Burton calculates that Blekko, one of the barbarian hoard storming Google's...</description>
+<content:encoded>&lt;p&gt;The other day I &lt;a href="http://feedblog.org/2008/01/03/blekko/"&gt;blogged about Blekko&lt;/a&gt; and what it would take to in terms of hardware index the full Internet. &lt;/p&gt;
+
+&lt;p&gt;High Scalability responded with some interesting thoughts.  &lt;/p&gt;
+
+&lt;blockquote&gt;Kevin Burton calculates that Blekko, one of the barbarian hoard storming Google's search fortress, would need to spend $5 million just to buy enough weapons, er storage.
+
+&lt;p&gt;Kevin estimates storing a deep crawl of the internet would take about 5 petabytes. At a projected $1 million per petabyte that's a paltry $5 million. Less than expected. Imagine in days of old an ambitious noble itching to raise an army to conquer a land and become its new prince. For a fine land, and the search market is one of the richest, that would be a smart investment for a VC to make. &lt;/blockquote&gt;&lt;/p&gt;
+
+&lt;p&gt;The comments are interesting.  &lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://distributedsearch.blogspot.com/"&gt;Borislav Agapiev&lt;/a&gt; made some interesting comments.&lt;/p&gt;
+
+&lt;blockquote&gt;"(far) less than 5 PB - a world class index would be 20B pages times 10KB per page = 200TB. This is for page storage, there would be more for storing the index i.e. posting lists. It would depend on size of individual postings and lengths of posting lists but few PB would cover it."&lt;/blockquote&gt;
+
+&lt;p&gt;It's more than just the raw page HTML.&lt;/p&gt;
+
+&lt;p&gt;You need metadata, previous archived pages, diffs, ngram distribution for text clustering algorithms and duplicate detection and &lt;/p&gt;
+
+&lt;p&gt;Also, avg page size in Google's full 'net crawl is 15k.  We see similar numbers in Spinn3r.&lt;/p&gt;
+
+&lt;blockquote&gt;The bottom line is the storage required is very cheap. BTW, $1M/PB = $1/GB seems too high, nowadays cheap SATA 500GB disks can be had for $100.&lt;/blockquote&gt;
+
+&lt;p&gt;Yes.... This is a standard SATA disk or $.2 / GB.  However, this is JUST disk not CPU, a redundant copy of that disk, and additional disks for high IO transfer rates.&lt;/p&gt;
+
+&lt;p&gt;You need a LOT more spindles to be able to access this 5P.  Storing the data is one thing.  Making sure it's highly available, fault tolerant, and high performance is a totally separate issue and ends up seriously increasing your costs.&lt;/p&gt;
+
+&lt;blockquote&gt;For instance, one can crawl with a good crawler 1M pages/day on 1Mbps bandwidth i.e. 1B pages/day with 1GBps. So with 20Gbps one can crawl entire Internet daily. 20Gbps of crawling bandwidth goes for $100K/mo in the Valley, you can saturate it with , say, thousand cheap crawlers ($1-$1.5K each). I would think that Google spends way more in their cafeteria than that :)&lt;/blockquote&gt;
+
+&lt;p&gt;This doesn't include the political aspects.  You can't build a full web crawl in one day.  You'd be blocked instantly.  Crawlers have to be polite.&lt;/p&gt;
+
+&lt;p&gt;We spend a TON of time working with blog hosting companies to make sure our crawlers yield to their policies.  For example, LiveJournal won't allow us to crawl with more than 10 threads.&lt;/p&gt;
+
+&lt;p&gt;Borislav rephrased this by saying that "crawling does not scale" since you don't HAVE to scale it as much as you'd think because you can only build the crawl at a slow pace.&lt;/p&gt;
+
+&lt;p&gt;There are other factors here though.  Building a web graph, recomputing your ranking algorithm so you can re-prioritize your crawl, serving the content to clients, finding duplicates, all this stuff requires more resources than you initially think.&lt;/p&gt;
+
+&lt;p&gt;Of course maybe these aren't actual problems.  Building this stuff is fun!&lt;/p&gt;</content:encoded>
+
+
+<dc:subject>crawler</dc:subject>
+<dc:subject>spider</dc:subject>
+<dc:subject>spinn3r</dc:subject>
+
+<dc:creator>burtonator</dc:creator>
+<dc:date>2008-01-04T17:29:18-08:00</dc:date>
+</item>
+<item rdf:about="http://blog.spinn3r.com/2007/12/thoughts-on-eff.html">
+<title>Thoughts on Efficient Crawling through URL Ordering</title>
+<link>http://blog.spinn3r.com/2007/12/thoughts-on-eff.html</link>
+<description>I'm re-reading "Efficient Crawling through URL Ordering" and a few other papers I've read a few years ago. Now that I have Skim I can take notes in the PDF directly which is turning out to be amazingly productive. It...</description>
+<content:encoded>&lt;p&gt;I'm re-reading "&lt;a href="http://infolab.stanford.edu/pub/papers/efficient-crawling.ps"&gt;Efficient Crawling through URL Ordering&lt;/a&gt;" and a few other papers I've read a few years ago.  &lt;/p&gt;
+
+&lt;p&gt;Now that I have &lt;a href="http://skim-app.sourceforge.net/"&gt;Skim&lt;/a&gt; I can take notes in the PDF directly which is turning out to be amazingly productive.&lt;/p&gt;
+
+&lt;p&gt;It dawned on me that I should also blog these notes as well. &lt;/p&gt;
+
+&lt;p&gt;First, some background:&lt;/p&gt;
+
+&lt;blockquote&gt;A crawler is a program that retrieves Web pages, commonly for use by a search engine [Pinkerton 1994]  or a Web cache. Roughly, a crawler starts off with the URL for an initial page P0. It retrieves P0,  extracts any URLs in it, and adds them to a queue of URLs to be scanned. Then the crawler gets URLs from the queue (in some order), and repeats the process. Every page that is scanned is given to a client 
+that saves the pages, creates an index for the pages, or summarizes or analyzes the content of the pages.&lt;/blockquote&gt;
+
+&lt;p&gt;The authors discuss a number of priority metrics including query driven crawling, pagerank and backlink based crawling.  &lt;/p&gt;
+
+&lt;p&gt;This paper is a bit dated with the authors noting that the web is about 1.5T in size.  The web has grown a bit since then.&lt;/p&gt;
+
+&lt;blockquote&gt;Crawl &amp; Stop. Under this model, the crawler C starts at its initial page P0 and stops after visiting K pages. At this point a perfect crawler would have visited pages R1, ..., RK, where R1 is the page with the highest importance value, R2 is the next highest, and so on. We call pages R1 through RK the hot pages.  The K pages visited by our real crawler will contain only M pages with rank higher than or equal to 
+I(RK). We define the performance of the crawler C to be PCS(C) = (M•100)/K. The performance of the  ideal crawler is of course 100%. A crawler that somehow manages to visit pages entirely at random, and may revisit pages, would have a performance of (K•100)/T, where T is the total number of pages in the Web. (Each page visited is a hot page with probability K/T. Thus, the expected number of desired pages 
+when the crawler stops is K2/T.)&lt;/blockquote&gt;
+
+&lt;p&gt;This a useful model for estimating the accuracy of a crawler.  Our discovery engine approaches 100% of the connected graph.  We then promote these URLs into &lt;a href="http://spinn3r.com"&gt;Spinn3r&lt;/a&gt; which are then indexed by our crawler.  &lt;/p&gt;
+
+&lt;p&gt;Spinn3r by definition is designed to approach 100% accuracy of the crawl with 100% realtime indexing.  When a blog is posted we have to index it within 5 minutes for our clients.  &lt;/p&gt;
+
+&lt;p&gt;For larger crawls, estimations of the efficiency become more important. &lt;/p&gt;
+
+&lt;p&gt;... &lt;/p&gt;
+
+&lt;p&gt;Query driven crawling also offers additional benefits.  Back in the day, URLs weren't generated from mainstream content management systems so it wasn't really possible to extract metadata from them directly:&lt;/p&gt;
+
+&lt;blockquote&gt;As we will see, for similarity, we may  be able to use the text that anchors the URL u as a predictor of the text that P might contain. Thus, one possible ordering metric O(u) is IS(A, Q), where A is the anchor text of the URL u, and Q is the driving 
+query.&lt;/blockquote&gt;
+
+&lt;p&gt;Now, URLs have additional metadata that we can extract.  For example, from:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://feedblog.org/2007/12/25/what-is-wrong-with-icerocket/"&gt;http://feedblog.org/2007/12/25/what-is-wrong-with-icerocket/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;We know that the article as published on 12-25-2007.  We also know that the title might be "what is wrong with icerocket".  &lt;/p&gt;
+
+&lt;p&gt;If we were performing a targeted crawl for articles created in 2007 about icerocket this would be an additional way to hint your queue to prioritize this URL for indexing.&lt;/p&gt;
+
+&lt;p&gt;...&lt;/p&gt;
+
+&lt;p&gt;Their trust metric based crawling (pagerank) is obviously superior to anyone who's researched trust metrics.  Their observation that backlink counting metrics behave like a depth-first crawl is accurate and the exact same behavior I've seen with our crawlers.&lt;br /&gt;
+&lt;/p&gt;</content:encoded>
+
+
+<dc:subject>aggregation</dc:subject>
+<dc:subject>crawler</dc:subject>
+<dc:subject>google</dc:subject>
+<dc:subject>memetracker</dc:subject>
+
+<dc:creator>burtonator</dc:creator>
+<dc:date>2007-12-30T14:30:22-08:00</dc:date>
+</item>
+
+
+</rdf:RDF><!-- ph=1 --><!-- nhm:from_kauri -->

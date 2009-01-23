@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" media="screen" href="http://feeds.feedburner.com/~d/styles/rss2full.xsl"?><?xml-stylesheet type="text/css" media="screen" href="http://feeds.feedburner.com/~d/styles/itemcontent.css"?><rss xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" version="2.0">
+
+<channel>
+	<title>redemption in a blog</title>
+	
+	<link>http://blog.codefront.net</link>
+	<description>ramblings of a hikikomori - Rails, Firefox, Anime, Mac</description>
+	<pubDate>Sun, 21 Dec 2008 06:57:38 +0000</pubDate>
+	<generator>http://wordpress.org/?v=2.7</generator>
+	<language>en</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+			<atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" href="http://feeds.feedburner.com/riab" type="application/rss+xml" /><feedburner:feedFlare xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" href="http://add.my.yahoo.com/rss?url=http%3A%2F%2Ffeeds.feedburner.com%2Friab" src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif">Subscribe with My Yahoo!</feedburner:feedFlare><feedburner:feedFlare xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" href="http://www.newsgator.com/ngs/subscriber/subext.aspx?url=http%3A%2F%2Ffeeds.feedburner.com%2Friab" src="http://www.newsgator.com/images/ngsub1.gif">Subscribe with NewsGator</feedburner:feedFlare><feedburner:feedFlare xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" href="http://feeds.my.aol.com/add.jsp?url=http%3A%2F%2Ffeeds.feedburner.com%2Friab" src="http://o.aolcdn.com/favorites.my.aol.com/webmaster/ffclient/webroot/locale/en-US/images/myAOLButtonSmall.gif">Subscribe with My AOL</feedburner:feedFlare><feedburner:feedFlare xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" href="http://www.rojo.com/add-subscription?resource=http%3A%2F%2Ffeeds.feedburner.com%2Friab" src="http://blog.rojo.com/RojoWideRed.gif">Subscribe with Rojo</feedburner:feedFlare><feedburner:feedFlare xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" href="http://www.bloglines.com/sub/http://feeds.feedburner.com/riab" src="http://www.bloglines.com/images/sub_modern11.gif">Subscribe with Bloglines</feedburner:feedFlare><feedburner:feedFlare xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" href="http://www.netvibes.com/subscribe.php?url=http%3A%2F%2Ffeeds.feedburner.com%2Friab" src="http://www.netvibes.com/img/add2netvibes.gif">Subscribe with Netvibes</feedburner:feedFlare><feedburner:feedFlare xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" href="http://fusion.google.com/add?feedurl=http%3A%2F%2Ffeeds.feedburner.com%2Friab" src="http://buttons.googlesyndication.com/fusion/add.gif">Subscribe with Google</feedburner:feedFlare><feedburner:feedFlare xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" href="http://www.pageflakes.com/subscribe.aspx?url=http%3A%2F%2Ffeeds.feedburner.com%2Friab" src="http://www.pageflakes.com/ImageFile.ashx?instanceId=Static_4&amp;fileName=ATP_blu_91x17.gif">Subscribe with Pageflakes</feedburner:feedFlare><item>
+		<title>Dragging tab to a new window coming to Firefox</title>
+		<link>http://blog.codefront.net/2008/11/16/dragging-tab-to-a-new-window-coming-to-firefox/</link>
+		<comments>http://blog.codefront.net/2008/11/16/dragging-tab-to-a-new-window-coming-to-firefox/#comments</comments>
+		<pubDate>Sun, 16 Nov 2008 14:15:05 +0000</pubDate>
+		<dc:creator>Chu Yeow</dc:creator>
+		
+		<category><![CDATA[General]]></category>
+
+		<guid isPermaLink="false">http://blog.codefront.net/?p=1132</guid>
+		<description><![CDATA[Completely by accident, I discovered that you can now drag a tab out from its current window to a new window in a recent Firefox nightly. A short video 24-second better explains what I&#8217;m talking about:
+
+This tab tearing capability is a pretty neat feature - I know you can already do this in Safari, Opera [...]]]></description>
+			<content:encoded><![CDATA[<p>Completely by accident, I discovered that you can now drag a tab out from its current window to a new window in a recent Firefox nightly. A short video 24-second better explains what I&#8217;m talking about:</p>
+<p><object width="425" height="344"><param name="movie" value="http://www.youtube.com/v/yecyFamSh6c&#038;hl=en&#038;fs=1"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/yecyFamSh6c&#038;hl=en&#038;fs=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="344"></embed></object></p>
+<p>This tab tearing capability is a pretty neat feature - I know you can already do this in Safari, Opera and Galeon. It&#8217;s really well done in Safari, which I think is what Firefox is emulating. Nice to see Firefox follow suit!</p>
+<p>If you can&#8217;t wait for Firefox 3.1, try it out in a recent <a href="http://ftp.mozilla.org/pub/mozilla.org/firefox/nightly/latest-trunk/">Firefox nighty build</a> (remember to <a href="http://support.mozilla.com/en-US/kb/Managing+profiles">use a new profile</a> unless you are willing to risk corrupting your daily profile).</p>
+]]></content:encoded>
+			<wfw:commentRss>http://blog.codefront.net/2008/11/16/dragging-tab-to-a-new-window-coming-to-firefox/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Optimize Firefox’s memory usage by tweaking session preferences</title>
+		<link>http://blog.codefront.net/2008/09/10/optimize-firefoxs-memory-usage-by-tweaking-session-preferences/</link>
+		<comments>http://blog.codefront.net/2008/09/10/optimize-firefoxs-memory-usage-by-tweaking-session-preferences/#comments</comments>
+		<pubDate>Wed, 10 Sep 2008 12:57:24 +0000</pubDate>
+		<dc:creator>Chu Yeow</dc:creator>
+		
+		<category><![CDATA[General]]></category>
+
+		<guid isPermaLink="false">http://blog.codefront.net/?p=1130</guid>
+		<description><![CDATA[I&#8217;m a heavy tabbed browsing user - I have around 30 tabs open in my day-to-day Firefox profile all the time. Since the day Firefox 3 was released, I&#8217;ve noticed Firefox progressively getting slower with this particular Firefox profile (I use a different profile for web development). When it got to the point where changing [...]]]></description>
+			<content:encoded><![CDATA[<p>I&#8217;m a heavy tabbed browsing user - I have around 30 tabs open in my day-to-day Firefox profile all the time. Since the day Firefox 3 was released, I&#8217;ve noticed Firefox progressively getting slower with this particular Firefox profile (I use a different profile for web development). When it got to the point where changing tabs took a noticeable pause of 1-2 seconds, I tweaked some of Firefox&#8217;s session store and history preferences and now things are blazing fast again.</p>
+<p>Here&#8217;s what you can do:</p>
+<ol>
+<li>Go to <a href="about:config">about:config</a> in Firefox.</li>
+<li>Type in &#8220;session&#8221; in the &#8220;Filter&#8221; box.</li>
+<li>Edit <strong>browser.sessionhistory.max_entries</strong> - this is the number of pages stored in the history of your browsing session. Basically these are pages that can be reached using your Back and Forward buttons. The default is 50 - I reduced it to 20.</li>
+<li>Edit <strong>browser.sessionhistory.max_total_viewers</strong> - this is the number of pages that are stored in RAM so that they aren&#8217;t re-processed by Firefox&#8217;s rendering engine. This is what allows you to go Back to a page in Firefox and have it load almost instantaneously. The number of pages stored actually depends on the amount of RAM on your machine (<a href="http://kb.mozillazine.org/Browser.sessionhistory.max_total_viewers">see this</a>). I reduced this to 4 (I have 2GB RAM).</li>
+<li>Edit <strong><a href="http://kb.mozillazine.org/Browser.sessionstore.max_tabs_undo">browser.sessionstore.max_tabs_undo</a></strong> - the number of tabs you can restore after closing them (you can do this with Ctrl/Cmd-Shift-T). The default of 10 is more than I really need, so I reduced it to 3 tabs.</li>
+<li>Edit <strong><a href="http://kb.mozillazine.org/Browser.sessionstore.interval">browser.sessionstore.interval</a></strong> - Firefox saves your session after every 10 seconds by default. I changed this to a more conservative 30000 milliseconds.</li>
+</ol>
+<p>You can <a href="http://kb.mozillazine.org/About:config_entries">read more about these preferences and more at the MozillaZine Knowledge Base</a>. If you&#8217;ve any tips on how to improve Firefox&#8217;s performance, be sure to share!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://blog.codefront.net/2008/09/10/optimize-firefoxs-memory-usage-by-tweaking-session-preferences/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Sass with Rails - avoiding disappearing stylesheets in production</title>
+		<link>http://blog.codefront.net/2008/08/07/sass-with-rails-avoiding-disappearing-stylesheets-in-production/</link>
+		<comments>http://blog.codefront.net/2008/08/07/sass-with-rails-avoiding-disappearing-stylesheets-in-production/#comments</comments>
+		<pubDate>Thu, 07 Aug 2008 13:57:33 +0000</pubDate>
+		<dc:creator>Chu Yeow</dc:creator>
+		
+		<category><![CDATA[General]]></category>
+
+		<guid isPermaLink="false">http://blog.codefront.net/?p=1128</guid>
+		<description><![CDATA[A few days ago I noticed that some of the pages on the Hotels app on wego.com were completely unstyled. They turned out looking rather Jakob Nielsen-istic:
+
+
+But we were attached to our ugly shade of green to leave those pages in their naked glory. Preliminary CSI work told me that some cached stylesheets generated by [...]]]></description>
+			<content:encoded><![CDATA[<p>A few days ago I noticed that some of the pages on the <a href="http://wego.com/hotels/">Hotels app on wego.com</a> were completely unstyled. They turned out looking rather <a href="http://www.useit.com/">Jakob Nielsen-istic</a>:</p>
+<div class="img"><img src="http://blog.codefront.net/wp-content/uploads/2008/08/wegocom-hotels-no-css.png" alt="Wego.com Hotels - no CSS" /></div>
+<p><br style="clear: both;" /></p>
+<p>But we were attached to our ugly shade of green to leave those pages in their naked glory. Preliminary CSI work told me that <em>some</em> cached stylesheets generated by Rails were empty files. Why is this is happening?</p>
+<h3>stylesheet_link_tag and the :cache option</h3>
+<p>Was I overriding the stylesheets generated by Rails in different pages? Because we have a lot of cobranded sites and country sites on wego.com, I use the <code>:cache</code> option when using <code>stylesheet_link_tag</code> very often.</p>
+<p>For example, the main wego.com site&#8217;s layout template has a <code>stylesheet_link_tag</code> like this (in reality there are a whole lot more stylesheets):</p>
+<pre><code class="ruby">&lt;%= stylesheet_link_tag 'yui/reset-fonts', 'search',  :cache =&gt; 'cache/search/listings' %&gt;</code></pre>
+<p>When I need to make a new page for a cobranded site, I&#8217;ll create a new layout template with this:</p>
+<pre><code class="ruby">&lt;%= stylesheet_link_tag 'yui/reset-fonts', 'search', "sites/#{current_site}/cobrand", :cache => "cache/#{current_site}/search/listings" %&gt;</code></pre>
+<p>Oftentimes I&#8217;d copy and paste (boo and hiss all you want!) the <code>stylesheet_link_tag</code> from one layout template to another and forget to update the cache path (the <code>:cache => '/path/to/stylesheet'</code> part). Two different stylesheet sets being cached to the same path is naturally a very stupid thing to do. So this wasn&#8217;t it, but it&#8217;s good to point this out because I have made this mistake at least 2 times!</p>
+<h3>Don&#8217;t check in generated CSS files by accident</h3>
+<p>Next, since I was using <a href="http://haml.hamptoncatlin.com/docs/rdoc/classes/Sass.html">Sass</a>, I was by now pretty sure that was it. First things first: did I check in a generated CSS file into source control (we use Git)? It&#8217;s another amateur mistake, but unsurprisingly, I&#8217;ve done this a couple of times. I think I&#8217;d wasted about an hour hunting down the reason for a style change that just wouldn&#8217;t show up. Yeah, I could have just added <code>*.css</code> to <code>.gitignore</code>, but I&#8217;m still using a mix of pure CSS and Sass templates.</p>
+<h3>The problem</h3>
+<p>In the end, I found this <a href="http://blog.citrusbyte.com/2008/3/20/sass-production-woes-rails/">blog post</a> by Ari Lerner on the <a href="http://blog.citrusbyte.com/">CitrusByte blog</a> about similar woes with Sass in production that set me on the path to a solution. It seems that when Rails encounters <code>stylesheet_link_tag</code> calls, it starts to pull together all the stylesheets and sometimes Sass is unable to generate the CSS files fast enough. Rails then throws an exception about not being able to find the CSS files and outputs an <strong>empty</strong> CSS file to the cache path.</p>
+<h3>The solution</h3>
+<p>The solution? Generate all the CSS files from Sass templates prior to restarting Rails when deploying. I added a rake task for updating all the Sass stylesheets:</p>
+<pre><code class="ruby">namespace :sass do
+  desc 'Updates stylesheets if necessary from their Sass templates.'
+  task :update =&gt; :environment do
+    Sass::Plugin.update_stylesheets
+  end
+end</code></pre>
+<p>Then, I created a mirror of this as a Capistrano task:</p>
+<pre><code class="ruby">namespace :sass do
+  desc 'Updates the stylesheets generated by Sass'
+  task :update, :roles =&gt; :app do
+    invoke_command "cd #{latest_release}; RAILS_ENV=#{rails_env} rake sass:update"
+  end
+
+  # Generate all the stylesheets manually (from their Sass templates) before each restart.
+  before 'deploy:restart', 'sass:update'
+end</code></pre>
+<p>Now, whenever I do a <code>cap deploy</code>, the stylesheets are generated before the Rails processes are restarted, ensuring that Rails&#8217; <code>stylesheet_link_tag</code> helper is always able to find the pure CSS files when trying to merge them together and caching them to a single file.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://blog.codefront.net/2008/08/07/sass-with-rails-avoiding-disappearing-stylesheets-in-production/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Reveal currently open files in Mac OS X</title>
+		<link>http://blog.codefront.net/2008/06/28/reveal-currently-open-files-in-mac-os-x/</link>
+		<comments>http://blog.codefront.net/2008/06/28/reveal-currently-open-files-in-mac-os-x/#comments</comments>
+		<pubDate>Sat, 28 Jun 2008 06:10:05 +0000</pubDate>
+		<dc:creator>Chu Yeow</dc:creator>
+		
+		<category><![CDATA[Mac]]></category>
+
+		<guid isPermaLink="false">http://blog.codefront.net/?p=1124</guid>
+		<description><![CDATA[Something I noticed completely by accident today when I clicked on the titlebar of QuickTime Player today with the Cmd key held down. The &#8220;titlebar&#8221; is this thing here - I&#8217;m not sure that&#8217;s the right name for it:
+
+
+Anyway, if you hold down the Cmd key (aka the Apple key), a menu pops up that [...]]]></description>
+			<content:encoded><![CDATA[<p>Something I noticed completely by accident today when I clicked on the titlebar of QuickTime Player today with the Cmd key held down. The &#8220;titlebar&#8221; is this thing here - I&#8217;m not sure that&#8217;s the right name for it:</p>
+<div class="img"><a href="http://blog.codefront.net/wp-content/uploads/2008/06/qt-titlebar.png"><img src="http://blog.codefront.net/wp-content/uploads/2008/06/qt-titlebar.png" alt="" title="QuickTime titlebar" /></a></div>
+<p><br style="clear: both;" /></p>
+<p>Anyway, if you hold down the Cmd key (aka the Apple key), a menu pops up that shows the folder hierarchy of where the currently opened QuickTime movie is in your filesystem:</p>
+<div class="img"><a href="http://blog.codefront.net/wp-content/uploads/2008/06/qt-title-bar-expanded.png"><img src="http://blog.codefront.net/wp-content/uploads/2008/06/qt-title-bar-expanded.png" alt="" title="QuickTime Player with \&quot;Reveal file\&quot; menu" /></a></div>
+<p><br style="clear: both;" /></p>
+<p>This works in all Mac apps that display the filename of the currently open/focused file in the titlebar.</p>
+<p>It&#8217;s useful for me since my <acronym title="Nerd ADD">NADD</acronym> means I try to close as many unused windows as possible to adhere to my Cmd-Tab diet - now I can close Finder windows after opening files and be sure that I can get back to them quickly. What about <a href="http://www.blacktree.com/">QuickSilver</a>? Yup, I do use (and love) QuickSilver but I don&#8217;t let it catalog every single file!</p>
+<p>Another nice thing about this is that I can easily reveal files in Finder in my favorite text editor (TextMate) without needing to use the project drawer:</p>
+<div class="img"><a href="http://blog.codefront.net/wp-content/uploads/2008/06/textmate-expanded.png"><img src="http://blog.codefront.net/wp-content/uploads/2008/06/textmate-expanded.png" alt="" title="TextMate with \&quot;Reveal file\&quot; menu" width="300" height="214" /></a></div>
+<p><br style="clear: both;" /></p>
+]]></content:encoded>
+			<wfw:commentRss>http://blog.codefront.net/2008/06/28/reveal-currently-open-files-in-mac-os-x/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Living on the Edge (of Rails) has a new home at the Official Ruby on Rails weblog</title>
+		<link>http://blog.codefront.net/2008/06/22/living-on-the-edge-of-rails-has-a-new-home-at-the-official-ruby-on-rails-weblog/</link>
+		<comments>http://blog.codefront.net/2008/06/22/living-on-the-edge-of-rails-has-a-new-home-at-the-official-ruby-on-rails-weblog/#comments</comments>
+		<pubDate>Sun, 22 Jun 2008 09:55:39 +0000</pubDate>
+		<dc:creator>Chu Yeow</dc:creator>
+		
+		<category><![CDATA[Open Source]]></category>
+
+		<category><![CDATA[Ruby]]></category>
+
+		<category><![CDATA[Ruby on Rails]]></category>
+
+		<guid isPermaLink="false">http://blog.codefront.net/?p=1123</guid>
+		<description><![CDATA[You may have heard of it, but just in case, Living on the Edge is now going to be published on the official Ruby on Rails weblog. Big thanks to Gregg Pollack for getting me the new &#8220;gig&#8221;, and more importantly, for reviving and freshening up the content on the official Rails blog.
+Catch the new [...]]]></description>
+			<content:encoded><![CDATA[<p>You may have <a href="http://weblog.rubyonrails.org/2008/6/10/two-new-weekly-columns">heard of it</a>, but just in case, <a href="http://blog.codefront.net/category/edge-rails/">Living on the Edge</a> is now going to be published on the <a href="http://weblog.rubyonrails.org/">official Ruby on Rails weblog</a>. Big thanks to <a href="http://railsenvy.com/">Gregg Pollack</a> for getting me the new &#8220;gig&#8221;, and more importantly, for reviving and freshening up the content on the official Rails blog.</p>
+<p>Catch the new first edition - this one&#8217;s about the <a href="http://weblog.rubyonrails.org/2008/6/20/living-on-the-edge-or-what-s-new-in-edge-rails-1-api-changes-and-performancetests">API changes since Rails 2.1</a>.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://blog.codefront.net/2008/06/22/living-on-the-edge-of-rails-has-a-new-home-at-the-official-ruby-on-rails-weblog/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>RailsConf 2008 Day 1 - pics and a summary</title>
+		<link>http://blog.codefront.net/2008/05/30/railsconf-2008-day-1-pics-and-a-summary/</link>
+		<comments>http://blog.codefront.net/2008/05/30/railsconf-2008-day-1-pics-and-a-summary/#comments</comments>
+		<pubDate>Fri, 30 May 2008 05:32:11 +0000</pubDate>
+		<dc:creator>Chu Yeow</dc:creator>
+		
+		<category><![CDATA[Personal]]></category>
+
+		<category><![CDATA[Ruby on Rails]]></category>
+
+		<guid isPermaLink="false">http://blog.codefront.net/?p=1111</guid>
+		<description><![CDATA[Day 1 of RailsConf 2008 was basically tutorial day (schedule) and started with my colleague here with me, Arun, missing out on Yoga on Rails and me sleeping until the first tutorial session. Anyway, I snapped some photos while trying to remain the unobtrusive tourist.
+Here&#8217;s a shot of Portland Convention Center where it&#8217;s all happening:
+
+
+There&#8217;re [...]]]></description>
+			<content:encoded><![CDATA[<p>Day 1 of <a href="http://en.oreilly.com/rails2008/public/content/home">RailsConf 2008</a> was basically tutorial day (<a href="http://en.oreilly.com/rails2008/public/schedule/grid?date=2008-05-29">schedule</a>) and started with my colleague here with me, <a href="http://arunthampi.wordpress.com/">Arun</a>, missing out on <a href="http://en.oreilly.com/rails2008/public/schedule/detail/4417">Yoga on Rails</a> and me sleeping until the first tutorial session. Anyway, I snapped some photos while trying to remain the unobtrusive tourist.</p>
+<p>Here&#8217;s a shot of Portland Convention Center where it&#8217;s all happening:</p>
+<div class="img"><img src="http://blog.codefront.net/wp-content/uploads/2008/05/portland-convention-center-twin-peaks.jpg" alt="Portland Convention Center - twin peaks outside" /></div>
+<p><br style="clear: both;" /></p>
+<p>There&#8217;re queues for collection of badges after registering your attendance:</p>
+<div class="img"><img src="http://blog.codefront.net/wp-content/uploads/2008/05/railsconf-day-1-registration-3.jpg" alt="RailsConf Day 1 - registration queue" /></div>
+<p><br style="clear: both;" /></p>
+<p>Patience in the queue rewarded me with a RailsConf badge/name tag:</p>
+<div class="img"><img src="http://blog.codefront.net/wp-content/uploads/2008/05/railsconf-badge.jpg" alt="RailsConf badge" /></div>
+<p><br style="clear: both;" /></p>
+<p>I was at the <a href="http://en.oreilly.com/rails2008/public/schedule/detail/1862">Meta-programming Ruby for Fun &amp; Profit</a> tutorial in the morning. I think when I selected the tutorial it was before I&#8217;d seen Neal Ford and Patrick Farley&#8217;s (the speakers) presentation videos from elsewhere - I know <a href="http://mtnwestrubyconf2008.confreaks.com/11farley.html">Patrick presented at MWRC</a> and enjoyed that video.</p>
+<div class="img"><img src="http://blog.codefront.net/wp-content/uploads/2008/05/railsconf-day-1-metaprogramming-tutorial-1.jpg" alt="RailsConf day 1 - metaprogramming tutorial" /></div>
+<p><br style="clear: both;" /></p>
+<p>So anyway, after the break I went over to the <a href="http://en.oreilly.com/rails2008/public/schedule/detail/1962">Refactoring Your Rails Application</a> tutorial. Was pretty good, but I didn&#8217;t learn much I didn&#8217;t already know.</p>
+<p>Lunch came in the form of a pretty box:</p>
+<div class="img"><img src="http://blog.codefront.net/wp-content/uploads/2008/05/railsconf-day-1-lunch.jpg" alt="RailsConf day 1 - lunch" /></div>
+<p><br style="clear: both;" /></p>
+<p>After lunch was the 2nd tutorial session and I went to both <a href="http://en.oreilly.com/rails2008/public/schedule/detail/2072">CI for the Rails Guy (or Gal)</a> (by Chad Woolley) and <a href="http://en.oreilly.com/rails2008/public/schedule/detail/1993">Developer Testing Tricks</a> (by Brian Takita). There were some scathing comments about how the tutorials were rather underwhelming so far in <a href="irc://irc.freenode.net/railsconf">#railsconf</a> on IRC. While I agree that the tutorials were rather underwhelming, I think I should have expected it. Oh well, I&#8217;ll know to skip them next time.</p>
+<p>Later that night, at the Birds of a Feather session, after stealing a <a href="http://www.pivotalabs.com/">Pivotal Labs t-shirt</a> (they&#8217;re launching a bug tracker, project management type app called <a href="http://www.pivotaltracker.com/">Pivotal Tracker</a> at RailsConf), Yehuda Katz (Merb and jQuery ninja) gave a presentation on Merb (geared towards Rails folks). It was a pretty interesting talk though there wasn&#8217;t much above what Ezra had <a href="http://goruco2008.confreaks.com/06_zygmuntowicz.html">presented previously at GoRuCo 2008</a> and <a href="http://mwrc2008.confreaks.com/02zygmuntowicz.html">at MWRC 2008</a> (I think Yehuda did one too but I can&#8217;t remember where now). Yehuda pointed out a <a href="http://groups.google.com/group/merb/browse_thread/thread/2536bff7d9195b83">(heated) discussion that happened recently</a> on keeping Merb syntax as Rails-friendly as possible. I have no objection against a different syntax really, especially since Merb looks pretty well-documented in the source itself - would be nice if someone could point out an up-to-date Merb tutorial though.</p>
+<p>Anyway, that&#8217;s it from me - as always, if anyone who reads my blog <a href="http://www.facebook.com/profile.php?id=500115784">recognizes me</a> at RailsConf, do say hi (<a href="irc://irc.freenode.net/railsconf">#railsconf</a> works too).</p>
+]]></content:encoded>
+			<wfw:commentRss>http://blog.codefront.net/2008/05/30/railsconf-2008-day-1-pics-and-a-summary/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Living on the edge (of Rails) #22 - pre-Railsconf 2008 edition</title>
+		<link>http://blog.codefront.net/2008/05/25/living-on-the-edge-of-rails-22-pre-railsconf-2008-edition/</link>
+		<comments>http://blog.codefront.net/2008/05/25/living-on-the-edge-of-rails-22-pre-railsconf-2008-edition/#comments</comments>
+		<pubDate>Sun, 25 May 2008 11:06:36 +0000</pubDate>
+		<dc:creator>Chu Yeow</dc:creator>
+		
+		<category><![CDATA[Edge Rails]]></category>
+
+		<category><![CDATA[Open Source]]></category>
+
+		<category><![CDATA[Ruby]]></category>
+
+		<category><![CDATA[Ruby on Rails]]></category>
+
+		<guid isPermaLink="false">http://blog.codefront.net/?p=1110</guid>
+		<description><![CDATA[No mind-blowing changes in Rails this week prior to RailsConf - as Gregg mentioned last week in the Rails Envy podcast, it&#8217;s pre-2.1 days (Rails 2.1 will probably be released at RailsConf) so it&#8217;s pretty easy to see why. Oh and all Rails tests now pass in Ruby 1.9 after a long-standing #module_eval bug got [...]]]></description>
+			<content:encoded><![CDATA[<p>No mind-blowing changes in Rails this week prior to RailsConf - as Gregg mentioned last week in the <a href="http://railsenvy.com/2008/5/21/rails-envy-podcast-episode-032">Rails Envy podcast</a>, it&#8217;s pre-2.1 days (Rails 2.1 will <em>probably</em> be released at RailsConf) so it&#8217;s pretty easy to see why. Oh and all Rails tests now pass in Ruby 1.9 after a long-standing <code>#module_eval</code> bug got fixed in Ruby 1.9&#8217;s trunk (see <a href="http://groups.google.com/group/ruby-core-google/browse_thread/thread/6d08e11363bf49b4">thread</a> for more details).</p>
+<p>I&#8217;ll be at (my first) Railsconf 2008 in Portland, Oregon this Thursday onwards - if anyone sees me and recognizes me from my <a href="http://www.facebook.com/people/Chu_Yeow/500115784">Facebook picture</a> please come and say hi (no head butting though).</p>
+<p>This week’s report covers changes from 19th May 2008 to 25th May 2008 (the day the corresponding <a href="http://railsenvy.com/podcast/">Rails Envy podcast</a> was recorded).</p>
+<h3>first and last methods now work with associations and named_scope</h3>
+<p>Remember how the <a href="http://blog.codefront.net/2008/04/05/living-on-the-edge-of-rails-14-the-extreme-edition-extremely-late/">merging of the has_finder gem into Rails</a> allowed you to do things like <code>Post.first</code> and <code>Post.last</code>?</p>
+<p>Now you can go one step further and use the same methods on your ActiveRecord associations. For example:</p>
+<pre><code class="ruby">post = Post.find(1)
+first_comment = post.comments.first</code></pre>
+<p>If you have a <a href="http://ryandaigle.com/articles/2008/3/24/what-s-new-in-edge-rails-has-finder-functionality">named_scope</a> named <code>recent</code> defined, you can even do this:</p>
+<pre><code class="ruby">post.comments.recent.last</code></pre>
+<p>This neat little enhancement is courtesy of <a href="http://railscasts.com/">Ryan Bates</a> (yes, that <em>Ryan Bates</em> of <a href="http://railscasts.com/">Railscasts</a> fame).</p>
+<p>Related changeset: <a href="http://github.com/rails/rails/commit/73c59638549686fccc749ffd3ac53cb533c5fd61">http://github.com/rails/rails/commit/73c59638549686fccc749ffd3ac53cb533c5fd61</a></p>
+<h3>Cache stores now have an exist? method and controllers get fragment_exist?</h3>
+<p>The cache stores in Rails (Memcache, file stores, etc.) now have an <code>exist?</code> method that checks whether a cached value exists given a cache key. This allows Rails controllers to expose a <code>fragment_exist?<br />
+</code> method that allows you to check for existence of a cache fragment:</p>
+<pre><code class="ruby">fragment_exist?('example.com/foo/bar')</code></pre>
+<p>This little enhancement is courtesy of <a href="http://josevalim.blogspot.com/">José Valim</a>.</p>
+<p>Related changeset: <a href="http://github.com/rails/rails/commit/99860b72aebe0348f41e82d4710343498d89a84b#diff-2">http://github.com/rails/rails/commit/99860b72aebe0348f41e82d4710343498d89a84b#diff-2</a></p>
+<h3>Create association records with block argument</h3>
+<p>You can now create records for associations like so:</p>
+<pre><code class="ruby">post.coments.create!(:title => 'Techcrunch') do |c|
+  c.body = "Rails can't scale"
+end</code></pre>
+<p>This is in keeping with the <a href="http://blog.codefront.net/2008/05/04/living-on-the-edge-of-rails-19-change_table-for-migrations-and-more/">ActiveRecord::Base.create change previously mentioned</a>.</p>
+<p>Credit for this patch goes (once again) to <a href="http://railscasts.com/">Ryan Bates</a>.</p>
+<p>Related changeset: <a href="http://github.com/rails/rails/commit/6cba97d2a449faf21aec9fe9d4434067e414226f">http://github.com/rails/rails/commit/6cba97d2a449faf21aec9fe9d4434067e414226f</a></p>
+<p>As always, let me know of any suggestions or how I can improve the Living on the Edge (of Rails) series.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://blog.codefront.net/2008/05/25/living-on-the-edge-of-rails-22-pre-railsconf-2008-edition/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Living on the Edge (of Rails) in Spanish</title>
+		<link>http://blog.codefront.net/2008/05/18/living-on-the-edge-of-rails-in-spanish/</link>
+		<comments>http://blog.codefront.net/2008/05/18/living-on-the-edge-of-rails-in-spanish/#comments</comments>
+		<pubDate>Sun, 18 May 2008 12:16:18 +0000</pubDate>
+		<dc:creator>Chu Yeow</dc:creator>
+		
+		<category><![CDATA[Asides]]></category>
+
+		<category><![CDATA[Edge Rails]]></category>
+
+		<category><![CDATA[Ruby]]></category>
+
+		<category><![CDATA[Ruby on Rails]]></category>
+
+		<guid isPermaLink="false">http://blog.codefront.net/?p=1109</guid>
+		<description><![CDATA[Juan Lupión wrote in to inform me that he&#8217;s also translating my Living on the Edge (of Rails) series of blog posts to Español. Thanks Juan!
+]]></description>
+			<content:encoded><![CDATA[<p><a href="http://sobrerailes.com/">Juan Lupión</a> wrote in to inform me that he&#8217;s also translating my Living on the Edge (of Rails) series of blog posts to Español. Thanks Juan!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://blog.codefront.net/2008/05/18/living-on-the-edge-of-rails-in-spanish/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Living on the edge (of Rails) #21</title>
+		<link>http://blog.codefront.net/2008/05/18/living-on-the-edge-of-rails-21/</link>
+		<comments>http://blog.codefront.net/2008/05/18/living-on-the-edge-of-rails-21/#comments</comments>
+		<pubDate>Sun, 18 May 2008 11:54:42 +0000</pubDate>
+		<dc:creator>Chu Yeow</dc:creator>
+		
+		<category><![CDATA[Edge Rails]]></category>
+
+		<category><![CDATA[Open Source]]></category>
+
+		<category><![CDATA[Ruby]]></category>
+
+		<category><![CDATA[Ruby on Rails]]></category>
+
+		<guid isPermaLink="false">http://blog.codefront.net/?p=1108</guid>
+		<description><![CDATA[It&#8217;s another slow week (just 2 changes of note imho) after the release of the 1st Release Candidate (RC1) of Rails 2.1. Follow that link for installation instructions - though if you&#8217;re reading this blog post you probably don&#8217;t care! (because you&#8217;re, you know, &#8220;living on the edge&#8221;). Cheesiness aside, be sure to report any [...]]]></description>
+			<content:encoded><![CDATA[<p>It&#8217;s another slow week (just 2 changes of note <acronym title="in my humble opinion">imho</acronym>) after the <a href="http://www.rubyinside.com/rails-21-released-891.html">release of the 1st Release Candidate (RC1) of Rails 2.1</a>. Follow that link for installation instructions - though if you&#8217;re reading this blog post you probably don&#8217;t care! (because you&#8217;re, you know, &#8220;living on the edge&#8221;). Cheesiness aside, be sure to report any bugs you may encounter when upgrading to 2.1 RC1 or edge at the <a href="http://rails.lighthouseapp.com/projects/8994-ruby-on-rails/overview">Rails bug tracker</a> - it is an RC so any bug reports would be very welcome and useful!</p>
+<p>This week’s report covers changes from 12th May 2008 to 18th May 2008 (the day the corresponding <a href="http://railsenvy.com/podcast/">Rails Envy podcast</a> was recorded).</p>
+<h3>caches_action can has conditionals</h3>
+<p><code>caches_action</code> now takes an <code>:if</code> option (just like <a href="http://blog.codefront.net/2008/04/20/living-on-the-edge-of-rails-17/">caches_page does</a>). For example:</p>
+<pre><code class="ruby">caches_action :index, :if =&gt; Proc.new { |c| !c.request.format.json? }</code></pre>
+<p>This little enhancement is courtesy of José Valim.</p>
+<p>Related changeset: <a href="http://github.com/rails/rails/commit/7708650f73ddb4db300ea2059c60c1d907a4384e">http://github.com/rails/rails/commit/7708650f73ddb4db300ea2059c60c1d907a4384e</a></p>
+<h3>Bugfix: :select option is now scanned in ActiveRecord finders to ensure needed tables are included in generated SQL</h3>
+<pre><code class="ruby">Post.find(:all, :include =&gt; :author, :select =&gt; 'posts.*, authors.id as "author_id"', :limit =&gt; 2)</code></pre>
+<p>Would generate an SQL statement like this:</p>
+<pre><code class="sql">SELECT posts.*, authors.id as "author_id" FROM "posts" LIMIT 2</code></pre>
+<p>Notice how the <code>authors</code> table is not joined. This oversight is now fixed.</p>
+<p>Thanks go to John Devine for this bugfix.</p>
+<p>Related changeset: <a href="http://github.com/rails/rails/commit/b28b54cab090bed8f099ef375b419a8f92390dd4">http://github.com/rails/rails/commit/b28b54cab090bed8f099ef375b419a8f92390dd4</a></p>
+<p>As always, let me know of any suggestions or how I can improve the Living on the Edge (of Rails) series. Also, if anyone has any recommendations of (non-ruby-related) things to do in Portland, do let me know!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://blog.codefront.net/2008/05/18/living-on-the-edge-of-rails-21/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Deploying with Capistrano via a gateway - some notes</title>
+		<link>http://blog.codefront.net/2008/05/15/deploying-with-capistrano-via-a-gateway/</link>
+		<comments>http://blog.codefront.net/2008/05/15/deploying-with-capistrano-via-a-gateway/#comments</comments>
+		<pubDate>Thu, 15 May 2008 09:03:48 +0000</pubDate>
+		<dc:creator>Chu Yeow</dc:creator>
+		
+		<category><![CDATA[Ruby]]></category>
+
+		<category><![CDATA[Ruby on Rails]]></category>
+
+		<guid isPermaLink="false">http://blog.codefront.net/?p=1107</guid>
+		<description><![CDATA[Some notes on setting up a gateway server for deploying via Capistrano that I couldn&#8217;t find at the source.
+
+You can specify the user you want to use to login to your gateway server like so: set :gateway, 'deploy@deploy.example.com'. This logs in to your gateway server as the &#8220;deploy&#8221; user.
+You can specify an alternate SSH port [...]]]></description>
+			<content:encoded><![CDATA[<p>Some notes on setting up a <a href="http://weblog.jamisbuck.org/2006/9/26/inside-capistrano-the-gateway-implementation">gateway server for deploying via Capistrano</a> that I couldn&#8217;t find at <a href="http://capify.org/getting-started/basics">the source</a>.</p>
+<ul>
+<li>You can specify the user you want to use to login to your gateway server like so: <code>set :gateway, 'deploy@deploy.example.com'</code>. This logs in to your gateway server as the &#8220;deploy&#8221; user.</li>
+<li>You can specify an alternate SSH port for both your gateway <em>and</em> your deployment servers. E.g. setting <code>ssh_options[:port] = 11111</code> will make Capistrano SSH to your gateway server with on port 11111. For your actual application (and web and database) servers, you can specify the SSH port like so:
+<pre><code class="ruby">set :gateway, 'deploy@deploy.example.com'
+role :app, '192.168.1.113:22222'
+role :web, '192.168.1.113:22222'
+role :db,  '192.168.1.113:22222', :primary => true</code></pre>
+</li>
+<li>If you&#8217;re using public key authentication, you should put the public keys of your users (those who be deploying your app) on the gateway server <em>and</em> on the actual servers. I thought Capistrano would use the key of the &#8220;deploy&#8221; user but nope.</li>
+</ul>
+]]></content:encoded>
+			<wfw:commentRss>http://blog.codefront.net/2008/05/15/deploying-with-capistrano-via-a-gateway/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Living on the edge (of Rails) #20 - script/dbconsole and flash.now now test-able</title>
+		<link>http://blog.codefront.net/2008/05/11/living-on-the-edge-of-rails-20-scriptdbconsole-and-flashnow-now-test-able/</link>
+		<comments>http://blog.codefront.net/2008/05/11/living-on-the-edge-of-rails-20-scriptdbconsole-and-flashnow-now-test-able/#comments</comments>
+		<pubDate>Sun, 11 May 2008 06:54:32 +0000</pubDate>
+		<dc:creator>Chu Yeow</dc:creator>
+		
+		<category><![CDATA[Edge Rails]]></category>
+
+		<category><![CDATA[General]]></category>
+
+		<guid isPermaLink="false">http://blog.codefront.net/?p=1106</guid>
+		<description><![CDATA[This week’s report covers changes from 5th May 2008 to 11th May 2008 (the day the corresponding Rails Envy podcast was recorded).
+script/dbconsole
+A script/dbconsole script has been added that allows you to connect to your database using its console client.
+If you needed to connect to your production MySQL database (you better know what you are doing!), [...]]]></description>
+			<content:encoded><![CDATA[<p>This week’s report covers changes from 5th May 2008 to 11th May 2008 (the day the corresponding <a href="http://railsenvy.com/podcast/">Rails Envy podcast</a> was recorded).</p>
+<h3>script/dbconsole</h3>
+<p>A <code>script/dbconsole</code> script has been added that allows you to connect to your database using its console client.</p>
+<p>If you needed to connect to your production MySQL database (you better know what you are doing!), for example, you can run <code>RAILS_ENV=production script/dbconsole</code> or simply <code>script/dbconsole production</code> (thanks to <a href="http://railscasts.com/">Ryan Bates</a> for pointing this out!) and it will login to your database server using the command line MySQL client. This also works with the PostgreSQL and SQLite databases.</p>
+<p>To use this script in your Rails app, remember to run <code>rake rails:update:scripts</code> after updating to edge Rails.</p>
+<p>This nice little enhancement courtesy of <a href="http://www.sanityinc.com/">Steve Purcell</a>, who originally had a similar <a href="http://www.sanityinc.com/articles/rails-db-console">database console plugin</a>.</p>
+<p>Related changeset: <a href="http://github.com/rails/rails/commit/4a07103687084496b773e18a03b1f2f5e686f7ad">http://github.com/rails/rails/commit/4a07103687084496b773e18a03b1f2f5e686f7ad</a></p>
+<h3>flash.now is now accessible in tests</h3>
+<p>This is something that <a href="http://www.pluitsolutions.com/2008/01/22/testing-flashnow-in-rails/">many</a> <a href="http://rhnh.net/2008/04/19/testing-flash-now-with-rspec">of us</a> Rails developers have probably come across when writing tests for flash messages being set with <code>flash.now</code>, <a href="http://blog.codefront.net/2006/09/03/some-functional-testing-gotchas-in-ruby-on-rails/">myself included</a>. Basically, you couldn&#8217;t test the contents of your <code>flash.now</code> because they were always being emptied before your test could get to them.</p>
+<pre><code class="ruby"># In your controller:
+flash.now[:notice] = 'You gotta be kidding me!'
+
+# In your test:
+assert_equal 'You gotta be kidding me!', flash.now[:notice]
+# FAILS because flash.now[:notice] is nil</code></pre>
+<p><a href="http://zargony.com/">Andreas Neuhaus</a> took a good look at how it works and figured out how to make testing <code>flash.now</code> work without resorting to <code>assert_select</code>s.</p>
+<p>Related changeset: <code>http://github.com/rails/rails/commit/74eed6290e63111d1aad2b181692a84f4f040aea</code></p>
+<p>There isn&#8217;t much else of note so far but if you&#8217;d like to know every gritty detail, you&#8217;d probably want to peruse the <a href="http://github.com/rails/rails/commits/master">Rails commit logs</a>. As always, let me know of any suggestions or how I can improve the Living on the Edge (of Rails) series.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://blog.codefront.net/2008/05/11/living-on-the-edge-of-rails-20-scriptdbconsole-and-flashnow-now-test-able/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Living on the edge (of Rails) #19 - change_table for migrations and more</title>
+		<link>http://blog.codefront.net/2008/05/04/living-on-the-edge-of-rails-19-change_table-for-migrations-and-more/</link>
+		<comments>http://blog.codefront.net/2008/05/04/living-on-the-edge-of-rails-19-change_table-for-migrations-and-more/#comments</comments>
+		<pubDate>Sun, 04 May 2008 12:18:54 +0000</pubDate>
+		<dc:creator>Chu Yeow</dc:creator>
+		
+		<category><![CDATA[Edge Rails]]></category>
+
+		<category><![CDATA[Open Source]]></category>
+
+		<category><![CDATA[Ruby]]></category>
+
+		<category><![CDATA[Ruby on Rails]]></category>
+
+		<guid isPermaLink="false">http://blog.codefront.net/?p=1105</guid>
+		<description><![CDATA[This week’s report covers changes from 29 April 2008 to 4th May 2008 (the day the corresponding Rails Envy podcast was recorded).
+change_table for ActiveRecord migrations
+Thanks to Jeff Dean, who also blogged about the new change_table feature in ActiveRecord migrations, you can now change a table with a block like so:
+change_table :videos do &#124;t&#124;
+  t.add_timestamps
+ [...]]]></description>
+			<content:encoded><![CDATA[<p>This week’s report covers changes from 29 April 2008 to 4th May 2008 (the day the corresponding <a href="http://railsenvy.com/podcast/">Rails Envy podcast</a> was recorded).</p>
+<h3>change_table for ActiveRecord migrations</h3>
+<p>Thanks to <a href="http://zilkey.com/">Jeff Dean</a>, who also <a href="http://zilkey.com/2008/4/29/new-rails-core-feature-proposal-super-sexy-migrations">blogged about the new change_table feature in ActiveRecord migrations</a>, you can now change a table with a block like so:</p>
+<pre><code class="ruby">change_table :videos do |t|
+  t.add_timestamps
+  t.add_belongs_to :goat
+  t.add_string :name, :email, :limit =&gt; 20
+  t.remove_column :name, :email # takes multiple arguments
+  t.rename :new_name
+  t.string :new_string_column # executes against the renamed table name
+end</code></pre>
+<p>Some key things to note:</p>
+<ul>
+<li><code>add_XXX</code> would add a new column for you, e.g. <code>add_string</code> would add a new string field.</li>
+<li>Of course, add_timestamps would add the magic <code>created_at</code> and <code>updated_at</code> datetime fields.</li>
+<li><code>remove_column</code> now takes multiple arguments.</li>
+<li><code>rename</code> would rename the table.</li>
+</ul>
+<p>Very nice, DRY enhancement, props to <a href="http://zilkey.com/">Jeff Dean</a> once again.</p>
+<p>Related changeset: <a href="http://github.com/rails/rails/commit/96980bd561d79824b6cb6efbcbecdcbf8785d452">http://github.com/rails/rails/commit/96980bd561d79824b6cb6efbcbecdcbf8785d452</a></p>
+<h3>ActiveRecord::Base.create takes a block like ActiveRecord::Base.new</h3>
+<p>Yup now you can also <code>create</code> ActiveRecord objects with a block argument just like you could for <code>ActiveRecord::Base.new</code>:</p>
+<pre><code class="ruby">@person = Person.create(params[:person]) do |p|
+  p.name = 'Konata Izumi'
+  p.age = 17
+end</code></pre>
+<p>Credit goes to <a href="http://www.workingwithrails.com/person/11022-adam-meehan">Adam Meehan</a> for this patch.</p>
+<p>Related changeset: <a href="http://github.com/rails/rails/commit/dd120ede53eaf71dee76894998a81626b7a689fc">http://github.com/rails/rails/commit/dd120ede53eaf71dee76894998a81626b7a689fc</a></p>
+<h3>Bugfix: change_column should be able to use :null => true on a field that<br />
+formerly had false</h3>
+<p>You can now use <code>change_column</code> in your migrations to alter a column as nullable if it was previously <code>NOT NULL</code>.</p>
+<p>This bugfix is courtesy of Nate Wiger.</p>
+<p>Related changeset: <a href="http://github.com/rails/rails/commit/10ef65a3b054270ed3d458ec8eb7c2b9a3e638f7">http://github.com/rails/rails/commit/10ef65a3b054270ed3d458ec8eb7c2b9a3e638f7</a></p>
+<p>As always, let me know of any suggestions or how I can improve the Living on the Edge (of Rails) series.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://blog.codefront.net/2008/05/04/living-on-the-edge-of-rails-19-change_table-for-migrations-and-more/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Announcing Wego.com - our travel meta-search engine in beta (Ruby included)</title>
+		<link>http://blog.codefront.net/2008/05/01/announcing-wegocom-our-travel-meta-search-engine-in-beta-ruby-included/</link>
+		<comments>http://blog.codefront.net/2008/05/01/announcing-wegocom-our-travel-meta-search-engine-in-beta-ruby-included/#comments</comments>
+		<pubDate>Thu, 01 May 2008 05:33:26 +0000</pubDate>
+		<dc:creator>Chu Yeow</dc:creator>
+		
+		<category><![CDATA[General]]></category>
+
+		<guid isPermaLink="false">http://blog.codefront.net/?p=1104</guid>
+		<description><![CDATA[So we&#8217;ve been terribly busy at Bezurk these last 2 months or so working on our new re-branded site with a bunch of new features. We were lucky enough to secure a 4-letter domain name - wego.com (and it came at a price too!) so it was all worth it. Trust me, with a name [...]]]></description>
+			<content:encoded><![CDATA[<p>So we&#8217;ve been terribly busy at <a href="http://bezurk.com/">Bezurk</a> these last 2 months or so working on our new re-branded site with a bunch of new features. We were lucky enough to secure a 4-letter domain name - <a href="http://www.wego.com/">wego.com</a> (and it came at a price too!) so it was all worth it. Trust me, with a name like Bezurk you&#8217;re going to be terribly hard to remember and to brand. We&#8217;ve had partners and friends who spell Bezurk in a variety of ways: berserk, bezerk, buzerk. Don&#8217;t even ask us about our encounters with non-native English speakers. Don&#8217;t.</p>
+<p>So yes, the new site: <a href="http://www.wego.com/">http://www.wego.com/</a>.</p>
+<div class="img"><img src="http://www.wego.com/hotels/images/wego/home/wg_logo_beta.gif" alt="Wego.com logo" /></div>
+<p><br style="clear: both;" /></p>
+<p>We&#8217;ve decided to push it &#8220;live&#8221; as a beta product (and we know it is very much in beta, we&#8217;re not kidding or trying to be Web 2.0-ish) prior to our launch party next week. Give it a few hits or so and let me know of any feedback (leaving a comment here is good), <em>especially</em> what <em>annoys</em> you. You might even want to use it to search for <a href="http://www.wego.com/flights/">airline tickets</a> or to <a href="http://www.wego.com/hotels/">book hotel rooms</a> for your next trip and <a href="http://www.wego.com/feedback/">let us know</a> if we managed to somehow <em>epic fail</em> at the task. If you liked it or booked a trip somewhere, we&#8217;re glad to have helped you on your way.</p>
+<p>I&#8217;d write more about wego.com but what I really wanted to focus on, being a Rubyist and all, is what is really cool to <em>me</em> about wego.com - we&#8217;ve rebuilt our <a href="http://www.wego.com/hotels/">Hotels product</a> from the ground up (it was a mostly Java before, and it is still live on <a href="http://bezurk.com/hotels/">http://bezurk.com/hotels/</a>) in 85% Ruby, 8% JavaScript, 5% Erlang, and 2% Java. Well, those are rough figures anyway. We also made a strong effort to keep our mostly AJAX application as usable as possible <em>without</em> JavaScript but I&#8217;ll admit, we had to cut some corners due to deadlines.</p>
+<p>I&#8217;d love to be more specific about the design and architecture of our Hotels application and on the cool stuff (CouchDB, Rack, Solr, jQuery, libmemcached, and of course, Ruby) we&#8217;ve used that have made our lives as developers <em>much easier</em> than when we were in Javaland - but I&#8217;d leave that for a later post. I&#8217;m sure my friend <a href="http://arunthampi.wordpress.com/">Arun Thampi</a> also has a war story to tell so we&#8217;ll come up with something entertaining. Stay tuned!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://blog.codefront.net/2008/05/01/announcing-wegocom-our-travel-meta-search-engine-in-beta-ruby-included/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Living on the Edge (of Rails) in French</title>
+		<link>http://blog.codefront.net/2008/05/01/living-on-the-edge-of-rails-in-french/</link>
+		<comments>http://blog.codefront.net/2008/05/01/living-on-the-edge-of-rails-in-french/#comments</comments>
+		<pubDate>Wed, 30 Apr 2008 16:07:34 +0000</pubDate>
+		<dc:creator>Chu Yeow</dc:creator>
+		
+		<category><![CDATA[Edge Rails]]></category>
+
+		<category><![CDATA[Ruby]]></category>
+
+		<category><![CDATA[Ruby on Rails]]></category>
+
+		<guid isPermaLink="false">http://blog.codefront.net/?p=1103</guid>
+		<description><![CDATA[It looks like Cyril Mougel has translated my 2 latest posts to French: LotE #17 and #18. Thanks Cyril!
+]]></description>
+			<content:encoded><![CDATA[<p>It looks like <a href="http://blog.shingara.fr/">Cyril Mougel</a> has translated my 2 latest posts to French: <a href="http://blog.shingara.fr/articles/2008/04/24/vivre-avec-rails-edge-17">LotE #17</a> and <a href="http://blog.shingara.fr/articles/2008/04/29/vivre-avec-rails-edge-18">#18</a>. Thanks Cyril!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://blog.codefront.net/2008/05/01/living-on-the-edge-of-rails-in-french/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Living on the edge (of Rails) #18</title>
+		<link>http://blog.codefront.net/2008/04/27/living-on-the-edge-of-rails-18/</link>
+		<comments>http://blog.codefront.net/2008/04/27/living-on-the-edge-of-rails-18/#comments</comments>
+		<pubDate>Sun, 27 Apr 2008 11:18:36 +0000</pubDate>
+		<dc:creator>Chu Yeow</dc:creator>
+		
+		<category><![CDATA[Edge Rails]]></category>
+
+		<category><![CDATA[Open Source]]></category>
+
+		<category><![CDATA[Ruby]]></category>
+
+		<category><![CDATA[Ruby on Rails]]></category>
+
+		<guid isPermaLink="false">http://blog.codefront.net/?p=1102</guid>
+		<description><![CDATA[This week’s report covers changes from 21 Apr 2008 to 27 Apr 2008 (the day the corresponding Rails Envy podcast was recorded).
+Not much interesting to report this week - there were mostly a bunch of bugfixes and Ruby 1.8.7-compatibility commits.
+Introduce ActiveResource::Base.timeout and rescuing from Timeout::Error in ActiveResource::Connection
+These are 2 changes that I&#8217;d talked about earlier [...]]]></description>
+			<content:encoded><![CDATA[<p>This week’s report covers changes from 21 Apr 2008 to 27 Apr 2008 (the day the corresponding <a href="http://railsenvy.com/podcast/">Rails Envy podcast</a> was recorded).</p>
+<p>Not much interesting to report this week - there were mostly a bunch of bugfixes and Ruby 1.8.7-compatibility <a href="http://github.com/rails/rails/commits/master">commits</a>.</p>
+<h3>Introduce ActiveResource::Base.timeout and rescuing from Timeout::Error in ActiveResource::Connection</h3>
+<p>These are <a href="http://github.com/rails/rails/commit/105910429d5873dce677ef32eef5f705e0625d86">2</a> <a href="http://github.com/rails/rails/commit/cf32baf915442ffe153ec0e4d8148f147776c30a">changes</a> that I&#8217;d <a href="http://blog.codefront.net/2008/04/22/new-in-rails-activeresource-timeouts-and-why-it-matters/">talked about</a> earlier this week so I won&#8217;t repeat myself - take a read through <a href="http://blog.codefront.net/2008/04/22/new-in-rails-activeresource-timeouts-and-why-it-matters/">ActiveResource timeouts and why it matters</a>.</p>
+<h3>Smart integer datatype for the MySQL adapter in migrations</h3>
+<p>The MySQL adapter in Rails now maps the <code>integer</code> column type in your migrations to either smallint, int, or bigint depending on the :limit option.</p>
+<p>This means that a migration like this:</p>
+<pre><code class="ruby">def self.up
+  create_table :searches do |t|
+    t.integer :foo, :limit => 2
+  end</code></pre>
+<p>will create your <code>foo</code> column as a <code>smallint(2)</code> MySQL datatype (instead of <code>int(2)</code> before). (More information <a href="http://dev.mysql.com/doc/refman/5.0/en/numeric-types.html">MySQL numeric datatypes</a>.)</p>
+<p>Credit goes to DHH for this patch.</p>
+<p>Related changeset: <a href="http://github.com/rails/rails/commit/a37546517dad9f6d9a7de6e1dba4d960909d71e8">http://github.com/rails/rails/commit/a37546517dad9f6d9a7de6e1dba4d960909d71e8</a></p>
+<p>As always, let me know of any suggestions or how I can improve the Living on the Edge (of Rails) series.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://blog.codefront.net/2008/04/27/living-on-the-edge-of-rails-18/feed/</wfw:commentRss>
+		</item>
+	</channel>
+</rss><!-- Dynamic Page Served (once) in 0.392 seconds --><!-- Cached page served by WP-Cache -->

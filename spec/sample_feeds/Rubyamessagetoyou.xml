@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	>
+
+<channel>
+	<title>Ruby, a message to you</title>
+	<atom:link href="http://ruby.tie-rack.org/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ruby.tie-rack.org</link>
+	<description>Ruby.send(:stop, 'messing around')</description>
+	<pubDate>Sat, 16 Aug 2008 17:15:53 +0000</pubDate>
+	<generator>http://wordpress.org/?v=2.6</generator>
+	<language>en</language>
+			<item>
+		<title>inherited, ObjectSpace, and Test::Unit</title>
+		<link>http://ruby.tie-rack.org/81/inherited-objectspace-test-unit/</link>
+		<comments>http://ruby.tie-rack.org/81/inherited-objectspace-test-unit/#comments</comments>
+		<pubDate>Tue, 12 Aug 2008 03:13:52 +0000</pubDate>
+		<dc:creator>Chris Shea</dc:creator>
+		
+		<category><![CDATA[Metaprogramming]]></category>
+
+		<category><![CDATA[Ruby]]></category>
+
+		<category><![CDATA[Testing]]></category>
+
+		<guid isPermaLink="false">http://ruby.tie-rack.org/?p=81</guid>
+		<description><![CDATA[As a part of working on a submission for the homework assignment for Ruby magazine The Rubyist, I wrote a game server so my co-workers and I could test our bots against each other.
+Part of what&#8217;s needed for a good server is the ability to automatically load classes and instantiate them. If you&#8217;re familiar with [...]]]></description>
+			<content:encoded><![CDATA[<p>As a part of working on a submission for the <a href="http://therubyist.com/homework/wig-wug/">homework assignment</a> for Ruby magazine <a href="http://therubyist.com/">The Rubyist</a>, I wrote a game server so my co-workers and I could test our bots against each other.</p>
+<p>Part of what&#8217;s needed for a good server is the ability to automatically load classes and instantiate them. If you&#8217;re familiar with <code>ObjectSpace</code> and you have a way to identify the bot classes, it&#8217;s not too hard. The only thing that identifies a bot class is a <code>move!</code> instance method, but that should be enough:</p>
+<pre><span class="ident">player_classes</span> <span class="punct">=</span> <span class="punct">[]</span>
+<span class="constant">ObjectSpace</span><span class="punct">.</span><span class="ident">each_object</span><span class="punct">(</span><span class="constant">Class</span><span class="punct">)</span> <span class="keyword">do</span> <span class="punct">|</span><span class="ident">klass</span><span class="punct">|</span>
+  <span class="ident">player_classes</span> <span class="punct">&lt;&lt;</span> <span class="ident">klass</span> <span class="keyword">if</span> <span class="ident">klass</span><span class="punct">.</span><span class="ident">instance_methods</span><span class="punct">.</span><span class="ident">include?</span><span class="punct">('</span><span class="string">move!</span><span class="punct">')</span>
+<span class="keyword">end</span>
+<span class="ident">player_classes</span></pre>
+<p>It&#8217;s a little nicer in Ruby 1.9, because if you don&#8217;t pass a block to <code>ObjectSpace.each_object</code>, you get an <code>Enumerable::Enumerator</code>, so you can do something like this:</p>
+<pre><span class="constant">ObjectSpace</span><span class="punct">.</span><span class="ident">each_object</span><span class="punct">(</span><span class="constant">Class</span><span class="punct">).</span><span class="ident">select</span> <span class="keyword">do</span> <span class="punct">|</span><span class="ident">klass</span><span class="punct">|</span>
+  <span class="ident">klass</span><span class="punct">.</span><span class="ident">instance_methods</span><span class="punct">.</span><span class="ident">include?</span><span class="punct">(</span><span class="symbol">:move!</span><span class="punct">)</span>
+<span class="keyword">end</span>
+</pre>
+<p>(Ruby 1.9 uses symbols for method names here instead of strings.)</p>
+<p>Of course, if you knew that all the player classes would be subclasses of, say, <code>TreasuredRuby::Bot</code>, you could forgo using <code>ObjectSpace</code> altogether and use <code>Class#inherited</code> instead:</p>
+<pre><span class="keyword">class </span><span class="class">TreasuredRuby::Bot</span>
+  <span class="constant">PLAYER_CLASSES</span> <span class="punct">=</span> <span class="punct">[]</span>
+  <span class="keyword">def </span><span class="method">inherited</span><span class="punct">(</span><span class="ident">klass</span><span class="punct">)</span>
+    <span class="constant">PLAYER_CLASSES</span> <span class="punct">&lt;&lt;</span> <span class="ident">klass</span>
+  <span class="keyword">end</span>
+<span class="keyword">end</span></pre>
+<p>Where else are descendant classes treated specially? <code>Test::Unit</code>, specifically <code>Test::Unit::TestCase</code> subclasses. However, <code>Test::Unit</code> uses <code>ObjectSpace</code> to collect its descendant classes. There have <a href="http://groups.google.com/group/comp.lang.ruby/browse_thread/thread/de9d21e0f7fc4b39/">been</a> <a href="http://ola-bini.blogspot.com/2007/07/objectspace-to-have-or-not-to-have.html">discussions</a> about the problems it creates for JRuby, although JRuby handles <code>ObjectSpace.each_object(Class)</code> because of <code>Test::Unit</code>.</p>
+<p>There was recently <a href="http://groups.google.com/group/ruby-core-google/browse_thread/thread/a2d542567fab7f3e/">a patch suggested</a> on the Ruby Core mailing list to replace using <code>ObjectSpace</code> with <code>Class#inherited</code> (and perhaps not the first), but it&#8217;s still unapplied. There are arguments against using <code>Class#inherited</code>: if you want to use <code>Class#inherited</code> in your <code>TestCase</code> classes, for example, you had better call <code>super</code>.</p>
+<p>We&#8217;ll see if <code>Test::Unit</code> changes.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ruby.tie-rack.org/81/inherited-objectspace-test-unit/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Adventures in downloading Stuffit Expander</title>
+		<link>http://ruby.tie-rack.org/79/adventures-in-downloading-stuffit-expander/</link>
+		<comments>http://ruby.tie-rack.org/79/adventures-in-downloading-stuffit-expander/#comments</comments>
+		<pubDate>Fri, 08 Aug 2008 03:35:27 +0000</pubDate>
+		<dc:creator>Chris Shea</dc:creator>
+		
+		<category><![CDATA[Complaining]]></category>
+
+		<guid isPermaLink="false">http://ruby.tie-rack.org/?p=79</guid>
+		<description><![CDATA[I accidentally found myself in posession of a .sit file and needed to download Stuffit Expander. So, like any normal person, I do a quick search on the old world wide web and get myself to the Smith Micro Stuffit landing page. I think it&#8217;s being served on a shared host with someone using RMagick [...]]]></description>
+			<content:encoded><![CDATA[<p>I accidentally found myself in posession of a .sit file and needed to download Stuffit Expander. So, like any normal person, I do a quick search on the old world wide web and get myself to the <a href="http://my.smithmicro.com/mac/stuffit.html">Smith Micro Stuffit landing page</a>. I think it&#8217;s being served on a shared host with someone using RMagick and seeding Tropic Thunder torrents, because it takes forever to load.</p>
+<p>A super quick scan of the page and I don&#8217;t see a &#8220;Download Stuffit Expander&#8221; link before I just click on &#8220;Which Stuffit is right for me?&#8221; I should have looked closer, because this page also takes another forever. But it loads, and I see &#8220;Stuffit Expander&#8221;, &#8220;Free&#8221;, &#8220;Macintosh&#8221; and click that&#8230; and eons pass&#8230; and I&#8217;m taken to a page about Stuffit Deluxe which is <em>only</em> $79.99.</p>
+<p>Affirming my resolve, I click on &#8220;Stuffit Expander&#8221;, and cross my fingers. Sometime after the sun has swelled to engulf the Earth I find myself looking at the Stuffit Expander page. I finally get to click on something that says &#8220;Download&#8221; and &#8220;Free&#8221;&#8230; but wait&#8230;</p>
+<p>After yet another slow page load, I&#8217;m asked if I&#8217;m sure I don&#8217;t want to really get Stuffit Standard (normal retail price of $49.99) for free&#8230; if only I complete &#8220;Just One Offer&#8221; from some other company (like Blockbuster or Real Networks, ugh). But no, seriously, I just want to uncompress this one file, so I fill out my name and email address and click &#8220;Submit&#8221;.</p>
+<p>Then I&#8217;m told I&#8217;ve been sent an email. Great.</p>
+<p>The email tells me that by clicking on the download link I&#8217;m agreeing to get spam from Smith Micro. Awesome. Whatever. That&#8217;s what email filtering&#8217;s for. I click the link. I&#8217;m taken to a page which says will redirect me shortly, but with the way their server behaves, I know I have a couple of minutes.</p>
+<p>But the redirect comes, and I click on what I hope is the last link I need to&#8230; and the download begins.</p>
+<p>Agreeing to the license twice, I unarchive the file, and promptly delete Stuffit Epander and the .dmg it came in.</p>
+<p>Thanks Smith Micro. It only took 7 interactions with their website, and two license agreements before I got to uncompress an archive with a free utility that used to be a shining light in the Mac world. Not anymore. Next time someone sends me a .sit file, I&#8217;ll just ask them to recompress with something else.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ruby.tie-rack.org/79/adventures-in-downloading-stuffit-expander/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>DevFi Podcast #3 &#8211; Promoting your project, encouraging development</title>
+		<link>http://ruby.tie-rack.org/77/devfi-podcast-3-promoting-your-project-encouraging-development/</link>
+		<comments>http://ruby.tie-rack.org/77/devfi-podcast-3-promoting-your-project-encouraging-development/#comments</comments>
+		<pubDate>Thu, 07 Aug 2008 02:46:53 +0000</pubDate>
+		<dc:creator>Chris Shea</dc:creator>
+		
+		<category><![CDATA[DevFi]]></category>
+
+		<guid isPermaLink="false">http://ruby.tie-rack.org/?p=77</guid>
+		<description><![CDATA[Peter Jones and I finally got around to recording another DevFi podcast, this time on getting people informed and involved in your software projects. If you haven&#8217;t listened to our show yet, I&#8217;d suggest it if only for the theme song.
+Go head and grab episode 3.
+]]></description>
+			<content:encoded><![CDATA[<p><a title="Peter Jones: pmade" href="http://pmade.com/">Peter Jones</a> and I finally got around to recording another <a title="DevFi" href="http://devfi.com">DevFi</a> podcast, this time on getting people informed and involved in your software projects. If you haven&#8217;t listened to our show yet, I&#8217;d suggest it if only for the theme song.</p>
+<p>Go head and grab <a title="DevFi episode 3" href="http://devfi.com/articles/2008/08/06/devfi-podcast-3-ndash-promoting-the-project-and-encouraging-participation">episode 3</a>.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ruby.tie-rack.org/77/devfi-podcast-3-promoting-your-project-encouraging-development/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Buy the book!</title>
+		<link>http://ruby.tie-rack.org/72/buy-the-book/</link>
+		<comments>http://ruby.tie-rack.org/72/buy-the-book/#comments</comments>
+		<pubDate>Wed, 06 Aug 2008 03:43:51 +0000</pubDate>
+		<dc:creator>Chris Shea</dc:creator>
+		
+		<category><![CDATA[Ruby]]></category>
+
+		<guid isPermaLink="false">http://ruby.tie-rack.org/?p=72</guid>
+		<description><![CDATA[Even though it might not always be obvious, I&#8217;ve been using Ruby since 2002. I got lucky and stumbled upon it early (really early for someone who wasn&#8217;t in the software development business, insanely early for someone who was just a graduate student at an art school). When I see comments (like the first comment [...]]]></description>
+			<content:encoded><![CDATA[<p>Even though it might not always be obvious, I&#8217;ve been using Ruby since 2002. I got lucky and stumbled upon it early (really early for someone who wasn&#8217;t in the software development business, insanely early for someone who was just a graduate student at an art school). When I see comments (like the first comment of <a title="Using Rails generators" href="http://www.softiesonrails.com/2008/8/5/using-rails-generators">this post</a>) that say &#8220;I won&#8217;t buy a book to learn this&#8221;, I cringe. I wasn&#8217;t any good with Ruby for three years because I didn&#8217;t buy the book. I want to tell Josh, &#8220;Buy the book!&#8221;</p>
+<p>I&#8217;ve been poor. I had practically no money throughout graduate school. My rent was $225/month in Chicago, which meant I was in a bad apartment in a bad neighborhood. I got mugged half a block from my building. The mugger got all of 75 cents from me. Not a lot of money, right? But because he got that 75 cents, I didn&#8217;t have bus fare the next day. In those days I ate mayonaise sandwiches. My (old) computer&#8217;s power supply&#8217;s fan wouldn&#8217;t start without me spinning it with my finger first. They were desperate times. And you know what? If I could go back in time and say one thing (career-related), I&#8217;d say &#8220;Buy the book!&#8221; It would have been an investment that paid off earlier, rather than later. I would have been able to afford balogna sooner.</p>
+<p>I also would have been happier! It&#8217;s incredible how much happier you can be when you know what you&#8217;re doing. Once you take the mystery out of why things you do don&#8217;t work, you fix them faster, you get results faster, you say to yourself &#8220;Hey, I could do this for a living&#8221; faster. I still buy books. Because every time I read a book, I know more about what I&#8217;m doing, and it makes me like what I&#8217;m doing more. (It incidentally helps me make more money, if you&#8217;re in to that kind of thing.)</p>
+<p>I recieved an MFA in Writing from the <a title="School of the Art Institute of Chicago" href="http://www.saic.edu/">School of the Art Institute of Chicago</a> (not to be confused with the <a title="Art Institutes" href="http://www.artinstitutes.edu/">Art Institutes</a> chain schools). After I left, some people got their novels picked up, some people (like my wife) went on to PhD programs, and most people started teaching literature and writing. I got yet another job doing tech support and tried for something better (and part of that was buying the book). The English professors at the University of Denver know, because of my wife, that I got a graduate degree in writing, and occasionally they&#8217;ll ask if I&#8217;m &#8220;getting any writing done&#8221;. And I&#8217;m not. And it doesn&#8217;t bother me. It probably wouldn&#8217;t be any good. I&#8217;ve stopped doing the things that real writers do, like read new writing. I used to read fiction all the time. It helped me when I was writing fiction. Now I read programming books for the same reason. It helps me program better. And all I have to do is buy the book.</p>
+<p>This isn&#8217;t even really about programming. It&#8217;s about what you&#8217;re interested in. I read a lot about programming (and the languages I use). I have a cousin who reads a lot of scripts (she writes for a television show). I have a sister who reads a lot of cookbooks (she manages a restaurant). My wife reads poetry <em>all the time</em>. Everyone I know that really wants to be great (or even merely good) at what they do reads about it. They buy the books.</p>
+<p>When I see someone write &#8220;[I'm] too cheap to buy a book&#8221; all I see is &#8220;I don&#8217;t care&#8221;, and that&#8217;s a really uninteresting followup comment to a blog post.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ruby.tie-rack.org/72/buy-the-book/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Sinatra, Passenger, HTTParty: Small, Fast, Now</title>
+		<link>http://ruby.tie-rack.org/70/sinatra-passenger-httparty-small-fast-now/</link>
+		<comments>http://ruby.tie-rack.org/70/sinatra-passenger-httparty-small-fast-now/#comments</comments>
+		<pubDate>Wed, 30 Jul 2008 04:55:39 +0000</pubDate>
+		<dc:creator>Chris Shea</dc:creator>
+		
+		<category><![CDATA[Passenger]]></category>
+
+		<category><![CDATA[Ruby]]></category>
+
+		<category><![CDATA[Sinatra]]></category>
+
+		<guid isPermaLink="false">http://ruby.tie-rack.org/70/sinatra-passenger-httparty-small-fast-now/</guid>
+		<description><![CDATA[Last week at work I gave a little lunchtime presentation on Sinatra (the coolest microwebframework on the block) to some co-workers. It went over well.
+Over the last couple of weekends, I played around with Passenger (the artist formerly known as mod_rails) and set up a whole bunch of little sites. It went over well.
+Then today [...]]]></description>
+			<content:encoded><![CDATA[<p>Last week at work I gave a little lunchtime presentation on <a href="http://sinatrarb.com/Home" title="Sinatra">Sinatra</a> (the coolest microwebframework on the block) to some co-workers. It went over well.</p>
+<p>Over the last couple of weekends, I played around with <a href="http://modrails.com/">Passenger</a> (the artist formerly known as mod_rails) and set up a whole bunch of little sites. It went over well.</p>
+<p>Then today I read about <a href="http://railstips.org/2008/7/29/it-s-an-httparty-and-everyone-is-invited">HTTParty</a> (like a DSL for creating REST clients) and that went over well, too.</p>
+<p>We can all be making tiny, simple REST applications (with Sinatra), putting them on the internet with, like, no configuration and in no time (with Passenger), and then consuming them after doing next to no work (with HTTParty).</p>
+<p>The barriers to putting up and pulling down easy-to-use resources is practically non-existent. I&#8217;d like to find out what happens when we start taking advantage of that. Maybe it won&#8217;t change the world, but I bet it&#8217;ll be like the day you figured out how to effectively use pipes on the command line: totally awesome for <em>you</em>.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ruby.tie-rack.org/70/sinatra-passenger-httparty-small-fast-now/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Deploying Sinatra on DreamHost - Internal Server Error with views (RESOLVED!)</title>
+		<link>http://ruby.tie-rack.org/68/deploying-sinatra-on-dreamhost-internal-server-error-with-views/</link>
+		<comments>http://ruby.tie-rack.org/68/deploying-sinatra-on-dreamhost-internal-server-error-with-views/#comments</comments>
+		<pubDate>Fri, 04 Jul 2008 18:13:07 +0000</pubDate>
+		<dc:creator>Chris Shea</dc:creator>
+		
+		<category><![CDATA[Ruby]]></category>
+
+		<category><![CDATA[Sinatra]]></category>
+
+		<guid isPermaLink="false">http://ruby.tie-rack.org/68/deploying-sinatra-on-dreamhost-internal-server-error-with-views/</guid>
+		<description><![CDATA[I&#8217;ve been playing around with Sinatra (it&#8217;s awesome!) and thought I&#8217;d deploy something to my mess-around DreamHost account. I followed these instructions which totally worked and was so easy. But when it came time to actually deploy my real app with real views, I got nothing but &#8220;Internal Server Error&#8221;.
+Internal Server Error is not very [...]]]></description>
+			<content:encoded><![CDATA[<p>I&#8217;ve been playing around with <a href="http://sinatrarb.com/Home" title="Sinatra!">Sinatra</a> (it&#8217;s awesome!) and thought I&#8217;d deploy something to my mess-around DreamHost account. I followed <a href="http://www.gittr.com/index.php/archive/deploying-rack-apps-on-dreamhost-via-passenger-including-sinatra/" title="Deploying Rack Apps on Dreamhost">these instructions</a> which totally worked and was so easy. But when it came time to actually deploy my <em>real</em> app with <em>real</em> views, I got nothing but &#8220;Internal Server Error&#8221;.</p>
+<p>Internal Server Error is not very informative, but if you&#8217;re seeing it when you&#8217;re calling views (like <code>erb(:page)</code>), you might need to change that to:</p>
+<pre><span class="ident">erb</span><span class="punct">(</span><span class="constant">File</span><span class="punct">.</span><span class="ident">read</span><span class="punct">('</span><span class="string">views/page.erb</span><span class="punct">'))</span></pre>
+<p>That stopped the errors and let my app work. Locally, there was no problem, and a cursory glance through Sinatra didn&#8217;t tell me why it worked here and not there. I guess I&#8217;m programming by accident this morning.</p>
+<p><strong>Update</strong>: I was able to get <code>erb(:page)</code> working by fixing the view path in my config.ru. In the options merged into Sinatra::Application.default_options, I added <code>:views =&gt; '/path/to/app/views'</code>. Before it was getting set to something like &#8216;path/to/app/Rack: /path/to/app/views&#8217;. tusho in #sinatra suggested that &#8220;Passenger is odd.&#8221;</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ruby.tie-rack.org/68/deploying-sinatra-on-dreamhost-internal-server-error-with-views/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Ruby vulnerabilities? Segfaults with Rails? &#8220;Try JRuby!&#8221;</title>
+		<link>http://ruby.tie-rack.org/67/ruby-vulnerabilities-segfaults-with-rails-try-jruby/</link>
+		<comments>http://ruby.tie-rack.org/67/ruby-vulnerabilities-segfaults-with-rails-try-jruby/#comments</comments>
+		<pubDate>Wed, 02 Jul 2008 01:28:14 +0000</pubDate>
+		<dc:creator>Chris Shea</dc:creator>
+		
+		<category><![CDATA[Ruby]]></category>
+
+		<guid isPermaLink="false">http://ruby.tie-rack.org/67/ruby-vulnerabilities-segfaults-with-rails-try-jruby/</guid>
+		<description><![CDATA[I love this message Charles Oliver Nutter posted to the Ruby Mailing List. It&#8217;s so pragmatic and just a little snarky.
+(Edit: Link was pointing to the wrong message. Whoops.)
+]]></description>
+			<content:encoded><![CDATA[<p>I love <a href="http://groups.google.com/group/comp.lang.ruby/browse_thread/thread/309a579d6d990f74#f8b9b8c2b4b193e1" title="Charles Oliver Nutter promotes JRuby in these dark days.">this message</a> Charles Oliver Nutter posted to the Ruby Mailing List. It&#8217;s so pragmatic and just a little snarky.</p>
+<p>(Edit: Link was pointing to the wrong message. Whoops.)</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ruby.tie-rack.org/67/ruby-vulnerabilities-segfaults-with-rails-try-jruby/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>DevFi podcast #1!</title>
+		<link>http://ruby.tie-rack.org/66/devfi-podcast-1/</link>
+		<comments>http://ruby.tie-rack.org/66/devfi-podcast-1/#comments</comments>
+		<pubDate>Mon, 05 May 2008 20:41:03 +0000</pubDate>
+		<dc:creator>Chris Shea</dc:creator>
+		
+		<category><![CDATA[DevFi]]></category>
+
+		<guid isPermaLink="false">http://ruby.tie-rack.org/66/devfi-podcast-1/</guid>
+		<description><![CDATA[Peter Jones (good friend, awesome developer) and I started a podcast, DevFi, and we released our first episode just moments ago. We do a little high level talk about buying vs. building vs. forking, and then jump into an interview with Dan Berger, the guy who forked the Ruby interpreter to create the Sapphire programming [...]]]></description>
+			<content:encoded><![CDATA[<p>Peter Jones (good friend, awesome developer) and I started a podcast, <a href="http://devfi.com/">DevFi</a>, and we released our <a href="http://devfi.com/articles/2008/05/05/devfi-podcast-1-buy-build-fork">first episode</a> just moments ago. We do a little high level talk about buying vs. building vs. forking, and then jump into an interview with Dan Berger, the guy who forked the Ruby interpreter to create the <a href="http://sapphire-lang.org/">Sapphire programming language</a>.</p>
+<p>The podcast isn&#8217;t Ruby-centric (like this blog), but it should still be worthwhile. Hope you enjoy it. (We&#8217;re also taking comments and suggestions if you don&#8217;t enjoy it enough.)</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ruby.tie-rack.org/66/devfi-podcast-1/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Will Rubinius have fewer dark corners?</title>
+		<link>http://ruby.tie-rack.org/65/will-rubinius-have-fewer-dark-corners/</link>
+		<comments>http://ruby.tie-rack.org/65/will-rubinius-have-fewer-dark-corners/#comments</comments>
+		<pubDate>Wed, 23 Apr 2008 04:01:34 +0000</pubDate>
+		<dc:creator>Chris Shea</dc:creator>
+		
+		<category><![CDATA[Rubinius]]></category>
+
+		<category><![CDATA[Ruby]]></category>
+
+		<guid isPermaLink="false">http://ruby.tie-rack.org/65/will-rubinius-have-fewer-dark-corners/</guid>
+		<description><![CDATA[Section 3.4.2 of The Ruby Programming Language talks about defining (or overriding) the hash and eql? methods of a class in order to control how objects are treated as keys in a hash&#8230; except for strings. Strings are handled specially because they&#8217;re &#8220;mutable but commonly used as hash keys.&#8221;
+So when someone asked today on comp.lang.ruby [...]]]></description>
+			<content:encoded><![CDATA[<p>Section 3.4.2 of <a href="http://www.amazon.com/Ruby-Programming-Language-David-Flanagan/dp/0596516177/" title="by David Flanagan and Matz">The Ruby Programming Language</a> talks about defining (or overriding) the <code>hash</code> and <code>eql?</code> methods of a class in order to control how objects are treated as keys in a hash&#8230; except for strings. Strings are handled specially because they&#8217;re &#8220;mutable but commonly used as hash keys.&#8221;</p>
+<p>So when someone asked today on comp.lang.ruby about <a href="http://groups.google.com/group/comp.lang.ruby/browse_thread/thread/3733fe04f22130e1">case-insensitive hash access</a>, the answer, sadly, could not be as simple (and possibly dangerous) as &#8220;Just override <code>hash</code> and <code>eql?</code> in <code>String</code>.&#8221; Or could it?</p>
+<p>Well, I whipped up something quickly:</p>
+<pre><span class="keyword">class </span><span class="class">String</span>
+  <span class="keyword">alias</span> <span class="ident">old_hash</span> <span class="ident">hash</span>
+  <span class="keyword">def </span><span class="method">hash</span>
+    <span class="constant">self</span><span class="punct">.</span><span class="ident">downcase</span><span class="punct">.</span><span class="ident">old_hash</span>
+  <span class="keyword">end</span>
+
+  <span class="keyword">def </span><span class="method">eql?</span><span class="punct">(</span><span class="ident">other</span><span class="punct">)</span>
+    <span class="constant">self</span><span class="punct">.</span><span class="ident">hash</span> <span class="punct">==</span> <span class="ident">other</span><span class="punct">.</span><span class="ident">hash</span>
+  <span class="keyword">end</span>
+<span class="keyword">end</span>
+
+<span class="ident">require</span> <span class="punct">'</span><span class="string">test/unit</span><span class="punct">'</span>
+
+<span class="keyword">class </span><span class="class">TestCaseInsensitiveHashAccess</span> <span class="punct">&lt;</span> <span class="constant">Test</span><span class="punct">::</span><span class="constant">Unit</span><span class="punct">::</span><span class="constant">TestCase</span>
+  <span class="keyword">def </span><span class="method">test_case_insensitivity</span>
+    <span class="ident">h</span> <span class="punct">=</span> <span class="punct">{'</span><span class="string">a</span><span class="punct">'</span> <span class="punct">=&gt;</span> <span class="number">1</span><span class="punct">,</span> <span class="punct">'</span><span class="string">B</span><span class="punct">'</span> <span class="punct">=&gt;</span> <span class="punct">'</span><span class="string">buzz</span><span class="punct">'}</span>
+    <span class="ident">assert_equal</span><span class="punct">(</span><span class="number">1</span><span class="punct">,</span> <span class="ident">h</span><span class="punct">['</span><span class="string">A</span><span class="punct">'])</span>
+    <span class="ident">assert_equal</span><span class="punct">('</span><span class="string">buzz</span><span class="punct">',</span> <span class="ident">h</span><span class="punct">['</span><span class="string">b</span><span class="punct">'])</span>
+  <span class="keyword">end</span>
+<span class="keyword">end</span></pre>
+<p>I ran it a few times. Ruby failed. Ruby 1.9 failed. JRuby failed. But Rubinius passed.</p>
+<p>And why shouldn&#8217;t it pass? For every other class, this sort of monkeying with <code>hash</code> and <code>eql?</code> will get you what you want: hash key access mayhem. Why not <code>String</code>?</p>
+<p>Well, there might be something sinister hiding in the &#8220;mutable but commonly used as hash keys&#8221; description. Something subtle. Maybe it&#8217;s not subtle and I just haven&#8217;t been thinking very clearly.  I don&#8217;t know.</p>
+<p>It looks to me, in the short amount of time I&#8217;ve been thinking about this, that Rubinius is more consistently Ruby-ish than Ruby is (at least in this case). Are there more ways in which that&#8217;s true?</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ruby.tie-rack.org/65/will-rubinius-have-fewer-dark-corners/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Evil: knowing when a method got passed the default value</title>
+		<link>http://ruby.tie-rack.org/64/evil-knowing-when-a-method-got-passed-the-default-value/</link>
+		<comments>http://ruby.tie-rack.org/64/evil-knowing-when-a-method-got-passed-the-default-value/#comments</comments>
+		<pubDate>Sat, 12 Apr 2008 19:33:23 +0000</pubDate>
+		<dc:creator>Chris Shea</dc:creator>
+		
+		<category><![CDATA[Metaprogramming]]></category>
+
+		<category><![CDATA[Ruby]]></category>
+
+		<guid isPermaLink="false">http://ruby.tie-rack.org/64/evil-knowing-when-a-method-got-passed-the-default-value/</guid>
+		<description><![CDATA[Let&#8217;s say you&#8217;re crazy. Now, as a crazy person, you might have a method like this:
+def greet_world(salutation="Hello")
+  "#{salutation} World!"
+end
+You&#8217;re not so crazy that you can&#8217;t write working Ruby code. Anyway, it&#8217;s totally useful:
+greet_world          # =&#62; "Hello World!"
+greet_world('Hi')    # =&#62; "Hi World!"
+greet_world('Yo')  [...]]]></description>
+			<content:encoded><![CDATA[<p>Let&#8217;s say you&#8217;re crazy. Now, as a crazy person, you might have a method like this:</p>
+<pre><span class="keyword">def </span><span class="method">greet_world</span><span class="punct">(</span><span class="ident">salutation</span><span class="punct">="</span><span class="string">Hello</span><span class="punct">")</span>
+  <span class="punct">"</span><span class="string"><span class="expr">#{salutation}</span> World!</span><span class="punct">"</span>
+<span class="keyword">end</span></pre>
+<p>You&#8217;re not so crazy that you can&#8217;t write working Ruby code. Anyway, it&#8217;s totally useful:</p>
+<pre><span class="ident">greet_world</span>          <span class="comment"># =&gt; "Hello World!"</span>
+<span class="ident">greet_world</span><span class="punct">('</span><span class="string">Hi</span><span class="punct">')</span>    <span class="comment"># =&gt; "Hi World!"</span>
+<span class="ident">greet_world</span><span class="punct">('</span><span class="string">Yo</span><span class="punct">')</span>    <span class="comment"># =&gt; "Yo World!"</span>
+<span class="ident">greet_world</span><span class="punct">('</span><span class="string">Hola</span><span class="punct">')</span>  <span class="comment"># =&gt; "Hola World!"</span></pre>
+<p>But then you see someone do this:</p>
+<pre><span class="ident">greet_world</span><span class="punct">('</span><span class="string">Hello</span><span class="punct">')</span>  <span class="comment"># =&gt; "Hello World!"</span></pre>
+<p>And it drives you even crazier. Being totally crazy, you feel a compulsion to make fun of people who pass the default value for an argument of a method. But how in the world can you tell?</p>
+<p>Well, it turns out (and you probably know this already) that the argument list of a method is a proper venue for executing code. You know this because you&#8217;ve seen this a thousand times: <code>def something(time=Time.now)</code>. That <code>Time.now</code> happens when you call the method without that optional argument. It doesn&#8217;t happen when Ruby first parses the method and adds it to the method table for the class. That wouldn&#8217;t be too helpful.</p>
+<p>So&#8230; you can execute arbitrary code in the method argument list. But what kind? What&#8217;s the scope? Well, anything you can do in a method body is fair game (and anything you can&#8217;t is not). You can&#8217;t define a class, for instance. And the scope? The method body itself.</p>
+<p>You&#8217;re crazy, remember? But not so crazy that you don&#8217;t remember that every statement has a return value. Like assignment. Assignment returns a value. And you&#8217;ve got a place in the argument list that&#8217;s scoped with the method body. And you&#8217;ve got a deep desire to mock people who pass default values.</p>
+<p>BOOM!</p>
+<pre><span class="keyword">def </span><span class="method">greet_world</span><span class="punct">(</span><span class="ident">salutation</span><span class="punct">=(</span><span class="ident">salutation_not_given</span><span class="punct">='</span><span class="string">Hello</span><span class="punct">'))</span>
+  <span class="keyword">if</span> <span class="ident">salutation</span> <span class="punct">==</span> <span class="punct">'</span><span class="string">Hello</span><span class="punct">'</span> <span class="keyword">and</span> <span class="keyword">not</span> <span class="ident">salutation_not_given</span>
+    <span class="punct">"</span><span class="string">YOU HAVE NO IMAGINATION!</span><span class="punct">"</span>
+  <span class="keyword">else</span>
+    <span class="punct">"</span><span class="string"><span class="expr">#{salutation}</span> World!</span><span class="punct">"</span>
+  <span class="keyword">end</span>
+<span class="keyword">end</span>
+
+<span class="ident">greet_world</span><span class="punct">('</span><span class="string">Hello</span><span class="punct">')</span>  <span class="comment"># =&gt; "YOU HAVE NO IMAGINATION!"</span>
+<span class="ident">greet_world</span>           <span class="comment"># =&gt; "Hello World!"</span>
+<span class="ident">greet_world</span><span class="punct">('</span><span class="string">Hi</span><span class="punct">')</span>     <span class="comment"># =&gt; "Hi World!"</span></pre>
+<p><code>salutation_not_given</code> is nil if you&#8217;ve given a value. It&#8217;s one of those things.</p>
+<p>ANYWAY. Use that at your own peril.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ruby.tie-rack.org/64/evil-knowing-when-a-method-got-passed-the-default-value/feed/</wfw:commentRss>
+		</item>
+	</channel>
+</rss>

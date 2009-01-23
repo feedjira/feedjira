@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"><channel><title>Martin Fowler's Bliki</title><link>http://martinfowler.com/bliki</link><description>A cross between a blog and wiki of my partly-formed ideas on software development</description><language>en</language><managingEditor>fowler@acm.org (Martin Fowler)</managingEditor><lastBuildDate>Wed, 07 Jan 2009 14:59:00 -0600</lastBuildDate><item><title>RulesEngine</title><link>http://martinfowler.com/bliki/RulesEngine.html</link><category>design</category><pubDate>Wed, 07 Jan 2009 14:59:00 -0600</pubDate><guid isPermaLink="true">http://martinfowler.com/bliki/RulesEngine.html</guid><description>
+&lt;p&gt;&lt;b&gt;Should I use a Rules Engine?&lt;/b&gt;&lt;/p&gt;
+&lt;p&gt;A rules engine is all about providing an alternative computational
+model. Instead of the usual imperative model, commands in sequence
+with conditionals and loops, it provides a list of production
+rules. Each rule has a condition and an action - simplistically you
+can think of it as a bunch of if-then statements.&lt;/p&gt;&lt;p&gt;The subtlety is that rules can be written in any order and the
+system can choose to evaluate them in whatever order makes sense for
+it. A good way of thinking of it is that the system runs through all
+the rules, picks the ones for which the condition is true, and then
+evaluates the corresponding actions. The nice thing about this is that
+many problems naturally fit this model:&lt;/p&gt;&lt;pre&gt;
+  if car.owner.hasCellPhone then premium += 100;
+  if car.model.theftRating &gt; 4 then premium += 200;
+  if car.owner.livesInDodgyArea &amp;amp;&amp;amp; car.model.theftRating &gt; 2 
+     then premium += 300;
+&lt;/pre&gt;&lt;p&gt;A rules engine is a tool that makes it easier to program using this
+computational model. It may be a complete development environment, or
+a framework that can work with a traditional platform. Most of what
+I've seen in recent years are tools that are designed to fit in with
+an existing platform. At one time there was the notion of building an
+entire system using a tool like this, but now people (wisely) tend to
+use rule engines just for the sections of a system. The production
+rule computational model is best suited for only a subset of
+computational problems, so rules engines are better embedded into larger
+systems.&lt;/p&gt;&lt;p&gt;You can build a simple rules engine yourself. All you need is to
+create a bunch of objects with conditions and actions, store them in a
+collection, and run through them to evaluate the conditions and
+execute the actions. General rules engines offer ways to describe the
+rules, and more efficient execution. Techniques to specify rules can
+vary from an API for people to describe rules as Java objects, a DSL
+to express rules, or a GUI that allows people enter rules. More
+efficient execution engines help to quickly evaluate conditions on
+hundreds of rules using specialized algorithms (such as the Rete algorithm).&lt;/p&gt;&lt;p&gt;I've run into a few cases where people have made use of rule
+engines, and each time things don't seem to have worked out well
+(disclaimer: I'm not a statistically valid sample). Often the central
+pitch for a rules engine is that it will allow the business people to
+specify the rules themselves, so they can build the rules without
+involving programmers. As so often, this can sound plausible but
+rarely works out in practice.&lt;/p&gt;&lt;p&gt;Even so, there's still value in a &lt;a href = 'http://martinfowler.com/bliki/BusinessReadableDSL.html'&gt;BusinessReadableDSL&lt;/a&gt;,
+and indeed this is an area where I do see value in this computational
+model. But here too lie dragons. The biggest one is that while it can
+make sense to cast your eyes down a list of rules and see that each
+one makes sense, the interaction of rules can often be quite complex -
+particularly with chaining - where the actions of rules changes the
+state on which other rules' conditions are based. So I often hear that it was
+easy to set up a rules system, but very hard to maintain it because
+nobody can understand this implicit program flow. This is the dark side of
+leaving the imperative computational model. For all the faults of
+imperative code, it's relatively easy to understand how it works. With
+a production rule system, it seems easy to get to a point where a
+simple change in one place causes lots unintended consequences, which
+rarely work out well.&lt;/p&gt;&lt;p&gt;I haven't spent enough time with these systems to get a sense of
+what heuristics we should follow to keep this implicit behavior under
+control.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;It does seem that it's important to limit the number of rules,
+  indeed any system with enough rules to need sophisticated algorithms
+  to get good performance probably has too many rules to be
+  understood.&lt;/li&gt;&lt;li&gt;Similarly I'm inclined to think one should be wary of
+  rules that do a lot of chaining.&lt;/li&gt;&lt;li&gt;As in many places, testing is often
+  undervalued here, but implicit behavior makes testing more important -
+  and it needs to be done with production data.&lt;/li&gt;&lt;li&gt;While building a rules system, I'd look to do things that would
+  cause &lt;a href = 'http://martinfowler.com/bliki/EarlyPain.html'&gt;EarlyPain&lt;/a&gt; with modifications of the rule base.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Both of these lead me to think that there's a lot to be said for
+avoiding more general rules systems. The basic idea of production
+rules is very simple. In order to keep the implicit behavior under
+control you also need to limit the number of rules by keeping the
+rules within a narrow context. This would argue for a more domain
+specific approach to rules, where a team builds a limited rules engine
+that's only designed to work within that narrow context. Certainly if
+you're thinking of using a rules engine I'd suggest prototyping with
+both a general rules engine and a hand-rolled domain specific approach
+so you can get a good feel for how they would compare.&lt;/p&gt;</description></item><item><title>DslExceptionalism</title><link>http://martinfowler.com/bliki/DslExceptionalism.html</link><category>dsl</category><pubDate>Mon, 22 Dec 2008 15:52:00 -0600</pubDate><guid isPermaLink="true">http://martinfowler.com/bliki/DslExceptionalism.html</guid><description>&lt;p&gt;One of the tricky things about writing about external
+  &lt;a href = 'http://martinfowler.com/bliki/DomainSpecificLanguage.html'&gt;DomainSpecificLanguages&lt;/a&gt; is that I'm walking through
+  territory already heavily tracked by the programming languages
+  community. Programming language research has always been a popular
+  area of academic activity, and I'm the first to admit that I don't
+  have anywhere near the depth in this topic as many people who've
+  been studying in this space for years. So inevitably the question
+  comes up as to why such a noob as me thinks he can write a book in
+  this well trodden ground?&lt;/p&gt;&lt;p&gt;The primary reason is that nobody else has written a
+  practitioner-oriented book on DSLs. I like topics like this that are
+  well-trodden but not well written about. However as I've spent time
+  walking these pathways I think there's another factor in the
+  works.&lt;/p&gt;&lt;p&gt;There's a lot of work on programming languages out there, but
+  almost all of it has concentrated on general purpose programming
+  languages. DSLs are seen as a small and simple subset of general
+  purpose programming thinking. As a result people think that what's
+  true for general purpose languages is also true for DSLs (with the
+  implication that DSLs are too small to be worth thinking much about).&lt;/p&gt;&lt;p&gt;I'm increasingly of the opposite conclusion. The rules for DSLs
+  are different to the rules for general purpose languages - and this
+  applies on multiple dimensions.&lt;/p&gt;&lt;p&gt;The first is in language design. I was talking with a language
+  designer who I have a lot of respect for, and he stressed that a key
+  feature of languages was the ability to define new
+  abstractions. With DSLs I don't think this is the case. In most DSLs
+  the DSL chooses the abstraction you work with, if you want different
+  abstractions you use a different DSL (or maybe extend the DSL you're
+  using). Sometimes there's a role for new abstractions, but those
+  cases are the minority and when they do happen the abstractions are
+  limited. Indeed I think the lack of ability to define new
+  abstractions is one of the things that distinguishes DSLs from
+  general purpose languages.&lt;/p&gt;&lt;p&gt;Differences also occur in the approach that you use for
+   implementing the tools that go with languages. A constant issue for
+   general purpose languages is dealing with large inputs, since
+   realistic programs will have thousands or millions of lines of
+   code. As a result many tools and techniques for using them involve
+   aspects that make parsing harder to follow but support these large
+   inputs. DSL scripts tend to be much smaller, so these trade-offs
+   work differently.&lt;/p&gt;&lt;p&gt;In my work I've put a lot of emphasis on using a DSL to populate
+   a &lt;a href = 'http://martinfowler.com/dslwip/SemanticModel.html'&gt;Semantic
+   Model&lt;/a&gt;, using that model as the basis for any further
+   processing: interpretation, visualization, or code generation. Lots
+   of language writing I've seen tend to emphasize code generation,
+   often generating code directly from the grammar file. Intermediate
+   representations are not talked about much, and when they do appear
+   they more in the form of an Abstract Syntax Tree rather than a
+   semantic model. Serious compilers do use intermediate
+   representations, such as program dependence graphs, but these are
+   seen (rightly) as advanced topics. I think Semantic Models are a
+   really valuable tool in simplifying the use of a DSL, allowing you
+   to separate the parsing from the semantics.&lt;/p&gt;&lt;p&gt;Since DSLs are less expressive, you can
+  design a simpler language for them.  Much of the language community's writing
+  talks about how to handle the difficulties of a complex general
+  purpose language, while the challenge of DSLS is to write a language
+  that is readable to the intended audience (which may well include
+  non-programmers) and also should be easy to parse (to simplify the
+  maintenance of the parser). Not just does this lead to different
+  decisions on the design of a language, it also means that you only
+  really need a subset of the features of parser generators.&lt;/p&gt;&lt;p&gt;A consequence of this is DSLs are written with the expectation
+  that each individual DSL won't solve the whole problem at hand and
+  often you need to combine DSLs. Traditional language thinking hasn't
+  explored the idea of composable languages that much, but I think
+  this topic is very important as DSLs develop. Thinking about
+  composable languages should have significant effects on both language
+  design and language tools.&lt;/p&gt;&lt;p&gt;So I'm increasingly coming around to the thinking that DSLs
+  inspire some seriously different ways of thinking about programming
+  languages. It may also lead to developing different kinds of parsing
+  tools that are more suited for DSL work - usually tools that are
+  simpler. I hope the increased attention that DSLs are getting these
+  days will lead to more people treating DSLs as first class subjects
+  of study rather than a simplistic form of general purpose languages. &lt;/p&gt;</description></item><item><title>AcademicRotation</title><link>http://martinfowler.com/bliki/AcademicRotation.html</link><category>design</category><pubDate>Wed, 17 Dec 2008 13:28:00 -0600</pubDate><guid isPermaLink="true">http://martinfowler.com/bliki/AcademicRotation.html</guid><description>&lt;p&gt;A while ago I was chatting with a post-doc on his way to an
+  academic career. He was asking me about research topics wanting my
+  input as he felt I could inform him on what would be research of
+  practical use. I wasn't very helpful, but I did mention that the
+  best way to do this would be to spend some time in industry to get a
+  feel of how software development works in the wild and what problems
+  could do with some research effort.&lt;/p&gt;&lt;p&gt;His answer to this thought was very troubling. He said he'd be up
+  to do that, but if he spent time in industry that would ruin his
+  chances of getting a job in academia. Competition for academic jobs
+  is high, and what they look it is your publication history. A year
+  or two in industry would create a gap in your publication history
+  that would be lethal to your job prospects.&lt;/p&gt;&lt;p&gt;The divide between academia and industry has always been an
+  awkward one for software (as indeed for other professions). My
+  contacts with academia have been stilted at best. The academics I
+  respect are, I'm told, not highly regarded within academia because
+  the things that I count as useful are usually dismissed by the
+  academic community.&lt;/p&gt;&lt;p&gt;A good example of where this came to a head is the patterns
+  community. Those involved in the patterns world were keen to look
+  at practice to discover, package, and document techniques that had
+  been proved through experience. But this is in direct opposition to
+  academic standards which consider value to lie in novel things. My
+  work, for example, is generally dismissed because all I do is write
+  about stuff that is old hat (at least to some).&lt;/p&gt;&lt;p&gt;I think this is a terrible shame, not because I'm looking for an
+  academic post, but because I think there is huge value in mining
+  effective techniques from the experience of software development. To
+  me it seems that trying to draw lessons from our experience is a very
+  worthwhile academic activity. By devaluing it the academic world is
+  ignoring a fruitful avenue to improve the capabilities of our profession.&lt;/p&gt;&lt;p&gt;If my opinion counted, I'd argue that any academic department
+  worthy of note should include a group of faculty with a long
+  experience of the day-to-day of industrial software
+  development. They would be valued on how they had reflected on this
+  experience and drew from the lessons to inform their teaching and
+  research. I'd like to see a regular rotation of people from the
+  academic to the industrial world, where it's common to see people
+  spend several years in industry, then academia, then industry again,
+  and so on.&lt;/p&gt;&lt;p&gt;This problem isn't only in software. A friend of mine had the
+  chief engineer role in one of the most challenging engineering
+  projects in the world. He fancied a stint in academia, but was only
+  able to get a second-class position reserved for people who weren't
+  considered to be real academics, certainly not something that was
+  tenured or would lead to tenure. I find it hard to believe that
+  students wouldn't gain an enormous amount from being taught by
+  people with a long and thoughtful experience in the profession they
+  are entering.&lt;/p&gt;&lt;p&gt;It's always frustrating to see communication gaps between
+  different groups within the same profession. I've become a big fan
+  using &lt;a href = 'http://martinfowler.com/bliki/Rotation.html'&gt;Rotation&lt;/a&gt; to help open up communication channels, as
+  people are the key to good knowledge transfer. Being tolerant of academic
+  rotation, indeed encouraging it, could do a great deal to make
+  academia more aware of where industry needs help and industry more
+  aware of where academics can improve practice.&lt;/p&gt;</description></item><item><title>UpcomingTalks</title><link>http://martinfowler.com/bliki/UpcomingTalks.html</link><category>writing</category><pubDate>Mon, 15 Dec 2008 16:53:00 -0600</pubDate><guid isPermaLink="true">http://martinfowler.com/bliki/UpcomingTalks.html</guid><description>
+&lt;div class = 'photo' style = 'width: 249px'&gt;&lt;img src = 'pramod.jpg' height = '250px' width = '249px'&gt;&lt;/img&gt;
+&lt;p&gt;Pramod Sadalage is
+  one of the leading innovators of evolutionary database
+  design.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Our profession seems to be constantly hampered by the
+  communication barriers we
+  erect for ourselves. For enterprise systems one of the most annoying
+  barriers is the one between application developers and database
+  people. Although much of my early years involved 
+  databases and data modeling, my involvement with
+  object-orientation cast me firmly into the application
+  development side. As a consequence I haven't spent much time talking
+  to people from the database community.&lt;/p&gt;&lt;p&gt;On January 9 I get a rare opportunity to fix that as I'll be
+  &lt;a href = 'http://www.geocities.com/BostonDama/jan092009.html'&gt;speaking at my local chapter of DAMA&lt;/a&gt; with my colleague Pramod
+  Sadalage. Pramod played a central role in the development of
+  evolutionary database design techniques in ThoughtWorks as a DBA who
+  closely works with development teams. His also written valuable
+  books on &lt;a href = 'http://martinfowler.com/books.html#refactoringDatabases'&gt;Refactoring
+  Databases&lt;/a&gt; and &lt;a href = 'http://my.safaribooksonline.com/9780321502063?portal=oreilly'&gt;Continuous
+  Database Integration&lt;/a&gt;. So, as you might have gathered, he knows
+  all the material backwards and I'm glad to be invited along for the
+  ride.&lt;/p&gt;&lt;p&gt;We'll be talking about database refactoring and techniques for
+  evolutionary database design. It will be interesting to see how this
+  talk is received. I'm told that these topics are still seen as highly
+  controversial in many parts of the data community, yet these are
+  techniques that are so usual for ThoughtWorks that they are just
+  part of the furniture of our development projects. &lt;/p&gt;&lt;p&gt;Looking further out - I'll be appearing in London again for &lt;a href = 'http://jaoo.dk/london-2009/conference/'&gt;QCon&lt;/a&gt;. I'll
+  update this page later with more details about what I'll be doing
+  there.&lt;/p&gt;</description></item><item><title>BusinessReadableDSL</title><link>http://martinfowler.com/bliki/BusinessReadableDSL.html</link><category>dsl</category><pubDate>Mon, 15 Dec 2008 15:17:00 -0600</pubDate><guid isPermaLink="true">http://martinfowler.com/bliki/BusinessReadableDSL.html</guid><description>
+&lt;p&gt;&lt;b&gt;Will DSLs allow business people to write software rules
+  without involving programmers?&lt;/b&gt;&lt;/p&gt;
+&lt;p&gt;When people talk about DSLs it's common to raise the question of
+  business people writing code for themselves. I like to apply the
+  COBOL inference to this line of thought. That is that one of the
+  original aims of COBOL was to allow people to write software without
+  programmers, and we know how that worked out. So when any scheme is
+  hatched to write code without programmers, I have to ask what's
+  special this time that would make it succeed where COBOL (and so
+  many other things) have failed.&lt;/p&gt;&lt;p&gt;I do think that programming involves a particular mind-set, an
+  ability to both give precise instructions to a machine and the
+  ability to structure a large amount of such instructions to make a
+  comprehensible program. That talent, and the time involved to
+  understand and build a program, is why programming has resisted
+  being disintermediated for so long. It's also why many
+  "non-programming" environments end up breeding their own class of
+  programmers-in-fact.&lt;/p&gt;&lt;p&gt;That said, I do think that the greatest potential benefit of DSLs
+  comes when business people participate directly in the writing of
+  the DSL code. The sweet spot, however is in making DSLs
+  business-&lt;i&gt;readable&lt;/i&gt; rather than business-&lt;i&gt;writeable&lt;/i&gt;. If
+  business people are able to look at the DSL code and understand it,
+  then we can build a deep and rich communication channel between
+  software development and the underlying domain. Since this is the &lt;a href = 'http://www.infoq.com/news/2008/08/Fowler-North-Crevasse-of-Doom'&gt;Yawning
+  Crevasse of Doom&lt;/a&gt; in software, DSLs have great value if they can
+  help address it. &lt;/p&gt;&lt;p&gt;With a business-readable DSL, programmers write the code but they
+  show that code frequently to business people who can understand what
+  it means. These customers can then make changes, maybe draft some
+  code, but it's the programmers who make it solid and do the
+  debugging and testing.&lt;/p&gt;&lt;p&gt;This isn't to say that there's no benefit in a business-writable
+  DSL. Indeed a couple of years ago some colleagues of mine built a
+  system that included just that, and it was much
+  appreciated by the business. It's just that the effort in creating a
+  decent editing environment, meaningful error messages, debugging and
+  testing tools raises the cost significantly.&lt;/p&gt;&lt;p&gt;While I'm quick to use the COBOL inference to diss many tools
+  that seek to avoid programmers, I also have to acknowledge the big
+  exception: spreadsheets. All over the world suprisingly big business
+  functions are run off the back of Excel. Serious programmers tend to
+  look down their noses at these, but we need to take them more
+  seriously and try to understand why they have been as successful as
+  they are. It's certainly part of the reason that drives many
+  &lt;a href = 'http://martinfowler.com/bliki/LanguageWorkbench.html'&gt;LanguageWorkbench&lt;/a&gt; developers to provide a different
+  vision of software development. &lt;/p&gt;</description></item><item><title>EstimatedInterest</title><link>http://martinfowler.com/bliki/EstimatedInterest.html</link><category>agile</category><pubDate>Wed, 10 Dec 2008 17:08:00 -0600</pubDate><guid isPermaLink="true">http://martinfowler.com/bliki/EstimatedInterest.html</guid><description>&lt;p&gt;&lt;b&gt;Update at End&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;a href = 'http://martinfowler.com/bliki/TechnicalDebt.html'&gt;TechnicalDebt&lt;/a&gt; is a very useful concept, but it raises
+  the question of how do you measure it? Sadly technical debt isn't
+  like financial debt, so it's not easy to tell how far you are in
+  hock (although we seem to have had some trouble with measuring the
+  financial kind recently).&lt;/p&gt;&lt;p&gt;Here's one idea to consider. When a team completes a feature ask
+  them to tell you how long it took them (the actual effort) and how
+  long they think it would have taken if the system were properly
+  clean. The difference between the two is the interest of the
+  technical debt. (So if it actually took them 5 days but they think
+  it would have taken them 3 days with a clean system, then you paid 2
+  days of effort as interest on your technical debt.)&lt;/p&gt;&lt;p&gt;There are certainly some serious flaws with this technique. The
+  statement of how long it would have taken on a clean system is an
+  estimate based on an imaginary state - so is difficult to make
+  objective. There's the effort in capturing this information, which
+  is easy to get out of hand. But the result may help project a
+  picture of the state of the code-base in a way that's visible to
+  non-technical staff.&lt;/p&gt;&lt;p&gt;Furthermore it may also help with decisions about whether to pay
+  the principal. Some teams like to add technical debt stories to
+  their product backlog - with estimates on how long it would take to
+  remove them. Such technical debt stories are also estimates, but
+  also provide a picture of how much debt has built up. You could get
+  a bit more clever with the estimated interest payments by
+  apportioning them to these debt stories (I spent an extra day on
+  this feature because of the bad state of the flipper
+  module). Comparing interest payments with the principal may help
+  inform a decision about whether to pay off the principal.&lt;/p&gt;&lt;p&gt;I ran into someone recently who tried something a little like
+  this and found it handy, but it's not something I've run into a
+  lot. Certainly there are flaws with doing it - but it may be worth a
+  try for a few iterations.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Update: &lt;/b&gt;A recent discussion surfaced another way to
+  capture the estimated interest.  During a retrospective (which wise
+  teams do at the end of each iteration) capture an estimate of
+  interest paid against each of the problem areas of the system. Doing
+  this estimate against recent completed work may be easier than
+  forward estimates against future stories.&lt;/p&gt;</description></item><item><title>HumaneRegistry</title><link>http://martinfowler.com/bliki/HumaneRegistry.html</link><category>design</category><pubDate>Mon, 01 Dec 2008 16:18:00 -0600</pubDate><guid isPermaLink="true">http://martinfowler.com/bliki/HumaneRegistry.html</guid><description>&lt;p&gt;One of the features of the new world of services that SOA-gushers
+  promoted was the notion of registries. Often this was described in
+  terms of automated systems that would allow systems to automatically
+  look up useful services in a registry and bind and consume those
+  services all by themselves.&lt;/p&gt;&lt;p&gt;Well computers may look clever occasionally, but I didn't
+  particularly buy that idea. While there might the be odd edge case
+  for automated service lookup, I reckon twenty-two times out of
+  twenty it'll be a human programmer who is doing the looking up.&lt;/p&gt;&lt;p&gt;I was chatting recently to my colleague Erik Dörnenburg about a
+  project he did with Halvard Skogsrud to build a service registry
+  that was designed for humans to use and maintain. The organization
+  was already using &lt;a href = 'http://martinfowler.com/bliki/ServiceCustodian.html'&gt;ServiceCustodians&lt;/a&gt; to manage the
+  development on the project, so the registry needed to work in that
+  context. This led to the following principles:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;People develop and use services, so orient it around people
+    (sorry UDDI, thank you for playing).&lt;/li&gt;&lt;li&gt;Don't expect people to enter stuff to keep it up to date,
+    people are busy enough as it is.&lt;/li&gt;&lt;li&gt;Make it easy for people to read and contribute.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;The heart of the registry is a wiki that allows people to easily
+  enter information on a particular service. Not just the builders of
+  the service, but also people who've used it. After all users'
+  opinions are often more useful than providers (I'm guessing product
+  review sites get more traffic than the vendors' sites).&lt;/p&gt;&lt;p&gt;A wiki makes it easy for people to describe the service, but that
+  relies on people having time to contribute. A wiki helps make that
+  easy as you can just click and go, but there's still time
+  involved. So they backed up the human entry with some useful
+  information gathered automatically.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;A tool that interrogates the source code control systems and
+  displays who has committed to a service, when, and how much. This
+  helps human readers find out who are the other humans who they
+  should talk to. Someone who did most of the commits, even if a while
+  ago, probably knows a lot about the core design and purpose of the
+  service. People who made a few recent commits might know more about
+  the recent usage and quirks.&lt;/li&gt;&lt;li&gt;RSS feeds from CI servers and source code control systems.&lt;/li&gt;&lt;li&gt;Task and bug information from issue tracking systems.&lt;/li&gt;&lt;li&gt;Traffic data from the message bus indicating how much the
+   service is used, and when. Also the message bus gives some clues
+   about the consumers of the service.&lt;/li&gt;&lt;li&gt;Interceptors in the EJB container that captured consumer
+   application names - again to get a sense of who is consuming the
+   service. These were on the consumer side to capture consumer
+   application names, and on the service to get a sense of the usage
+   patterns.&lt;/li&gt;&lt;li&gt;Information from the Ivy dependencies.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Much of this functionality was inspired by ohloh.net, in
+  particular &lt;a href = 'http://www.ohloh.net/projects/selenium/contributors'&gt;this view&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;The point of a registry like this is that it does a lot of
+  automated work to get information, but presents it in a way that
+  expects a human reader. Furthermore it understands that the
+  most important questions the human reader has are about the humans
+  who have worked on the project: who are they, when did they work on
+  this, who should I email, and where do I go for a really good
+  caipirinha?&lt;/p&gt;</description></item><item><title>DatabaseThaw</title><link>http://martinfowler.com/bliki/DatabaseThaw.html</link><category>design</category><pubDate>Mon, 24 Nov 2008 15:39:00 -0600</pubDate><guid isPermaLink="true">http://martinfowler.com/bliki/DatabaseThaw.html</guid><description>&lt;p&gt;A few years ago I heard programming language people talk about
+  the "Nuclear Winter" in languages caused by Java. The feeling was
+  that everyone had so converged on Java's computational model (C# at
+  that point seen as little more than a rip-off) that creativity in
+  programming languages had disappeared. That feeling is now abating,
+  but perhaps a more important thaw that might be beginning - the
+  longer and deeper freeze in thinking about databases.&lt;/p&gt;
+&lt;div class = 'photo' style = 'width: 221px'&gt;&lt;img src = 'timBray.jpg' height = '250px' width = '221px'&gt;&lt;/img&gt;
+&lt;p&gt;Tim Bray's
+  thought-provoking keynote talked about storage; including
+  highlighting several alternatives to the conventional database
+  world&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;When I started in the software development profession, I worked
+  with several people who had evangelized relational databases. I came
+  across them in the object-oriented world. Many people at that time
+  expected OO databases to be the next evolutionary step for
+  databases. As we now know, that didn't happen. These days
+  relational databases are so deeply embedded that most projects
+  assume an RDBMS right out of the gate.&lt;/p&gt;&lt;p&gt;At &lt;a href = 'http://qconsf.com/sf2008/conference/'&gt;QCon&lt;/a&gt; last
+  week, there was a strong thread of talks that questioned this
+  assumption. Certainly one that struck me was &lt;a href = 'http://www.tbray.org/ongoing/'&gt;Tim Bray's&lt;/a&gt; keynote, which took a
+  &lt;a href = 'http://qconsf.com/sf2008/presentation/Application+Design+in+the+context+of+the+shifting+storage+spectrum'&gt;journey&lt;/a&gt; through several aspects of data management. In doing so he
+  highlighted a number of interesting projects.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href = 'http://en.wikipedia.org/wiki/Drizzle_(database_server)'&gt;Drizzle&lt;/a&gt; is a form of relational database, but one that eschews
+    much of the machinery of modern relational products. I think
+    of it as a RISC RDBMS - supporting only the bare bones of the
+    relational feature set.&lt;/li&gt;&lt;li&gt;&lt;a href = 'http://incubator.apache.org/couchdb/'&gt;Couch DB&lt;/a&gt;
+    is one of many forays into a distributed key-value pair
+    model. Although a sharply simple data-model (nothing more than a
+    hashmap really) this kind of approach has become quite popular in
+    high-volume websites.&lt;/li&gt;&lt;li&gt;&lt;a href = 'http://www.gemstone.com/products/smalltalk/'&gt;Gemstone&lt;/a&gt; was one
+    of the object database crowd, and I found the Gemstone-Smalltalk
+    combination a very powerful development environment (superior to
+    most of its successors). Gemstone is still around as a niche
+    player, but may gain more traction through &lt;a href = 'http://www.infoq.com/news/2008/05/MagLevAtRailsConf'&gt;Maglev&lt;/a&gt; - a project to
+    bring its approach (essentially a fusion of database and virtual
+    machine) to the Ruby world.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;As well as this talk, there was a whole &lt;a href = 'http://qconsf.com/sf2008/tracks/show_track.jsp?trackOID=170'&gt;track&lt;/a&gt; on alternative
+   databases hosted by Kresten Krab Thorup. One of the additional
+   tools mentioned there was &lt;a href = 'http://neo4j.org/'&gt;Neo4J&lt;/a&gt; -
+   a graph (network) database tool that earned some rare praise from
+   Jim Webber.&lt;/p&gt;&lt;p&gt;The natural question to ask about these products is why they
+   should prevail when the ODBMSs failed. What's changed in the
+   environment that could thaw the relational grip? There are many
+   hypotheses about why relational has been so dominant - my opinion
+   is that their dominance is due less to their role in data
+   management than their role in integration.&lt;/p&gt;
+&lt;div class = 'photo' style = 'width: 166px'&gt;&lt;img src = 'krestenThorup.jpg' height = '250px' width = '166px'&gt;&lt;/img&gt;
+&lt;p&gt;Kresten
+   Krab Thorup does a great job as a leader of the technical content of the JAOO and QCon conferences.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;For many organizations today, the primary pattern for integration
+   is &lt;a href = 'http://www.eaipatterns.com/SharedDataBaseIntegration.html'&gt;Shared Database Integration&lt;/a&gt; - where multiple applications are
+   integrated by all using a common database. When you have these
+   &lt;a href = 'http://martinfowler.com/bliki/IntegrationDatabase.html'&gt;IntegrationDatabases&lt;/a&gt;, it's important that all these applications
+   can easily get at this shared data - hence the all important role
+   of SQL. The role of SQL as mostly-standard query language has been
+   central to the dominance of databases.&lt;/p&gt;&lt;p&gt;The heating of the database space comes from the presence of
+   alternatives to integration - in particular the rise of web
+   services. Under various banners there's a growing movement for
+   applications to talk to each other by passing text (mostly XML)
+   documents over HTTP. The web, both in internet and intranet forms,
+   has made this integration mode even more prevalent than SQL. This
+   is a good thing, I've never liked the approach of multiple
+   applications tightly coupled through a common database - you can't
+   get bigger breach of encapsulation than that.&lt;/p&gt;&lt;p&gt;If you switch your integration protocol from SQL to HTTP, it now
+   means you can change databases from being &lt;a href = 'http://martinfowler.com/bliki/IntegrationDatabase.html'&gt;IntegrationDatabases&lt;/a&gt; to
+   &lt;a href = 'http://martinfowler.com/bliki/ApplicationDatabase.html'&gt;ApplicationDatabases&lt;/a&gt;. This change is profound. In the first step it
+   supports a much simpler approach to object-relational mapping -
+   such as the approach taken by Ruby on Rails. But furthermore it
+   breaks the vice-like grip of the relational data model. If you
+   integrate through HTTP it no longer matters how an application
+   stores its own data, which in turn means an application can choose
+   a data model that makes sense for its own needs.&lt;/p&gt;&lt;p&gt;I don't think this means that relational databases will disappear
+   - after all they are the right choice for many situations. But it
+   does mean that now application developers should think about what
+   the right option is for their needs. As non-relational projects
+   grow in popularity and maturity, more and more will go for other
+   options.&lt;/p&gt;</description></item><item><title>ServiceCustodian</title><link>http://martinfowler.com/bliki/ServiceCustodian.html</link><category>design</category><pubDate>Fri, 14 Nov 2008 16:07:00 -0600</pubDate><guid isPermaLink="true">http://martinfowler.com/bliki/ServiceCustodian.html</guid><description>&lt;p&gt;Let's imagine a pretty world of SOA-happiness where the computing
+  needs of an enterprise are split into many small applications that
+  provide services to each other to allow effective collaboration. One
+  fine morning a consumer service needs some information from a supplier
+  service. The twist is that although the supplier service has the
+  necessary data and processing logic to get this information, it
+  doesn't yet expose that information through a service interface. The
+  supplier has a potential service, but it isn't actually there yet.&lt;/p&gt;&lt;p&gt;In an ideal world the developers of the consumer service just asks
+  the supplier service to develop the potential service and all is
+  dandy. But life is not ideal - the sticking point here is that the
+  developers of the supplier service have other things to do, usually
+  things that are more important to their customer and management than
+  helping out the consumer service team. &lt;/p&gt;&lt;p&gt;Recently I was chatting with my colleague Erik Dörnenburg and he
+  told me about an approach he saw a client use to deal with
+  this problem. They took a leaf out of the open source play-book and
+  made all their services into internal open source systems. This
+  allows consumer service developers write the service themselves.&lt;/p&gt;&lt;p&gt;I'm sure many readers are rolling their eyes at the visions of
+  chaos this would cause, but just as open source projects don't allow
+  just anyone to edit anything; this client uses open-source-style control
+  mechanisms. In particular each service has a couple of custodians -
+  people whose responsibility it is to keep the service in a healthy
+  state. In the normal course of events the consumer developer wouldn't
+  actually commit changes to the supplier source tree directly,
+  instead they send a patch to the custodian. Just like an open-source
+  maintainer, the custodian receives the patch and reviews it to see
+  if it's good enough to commit. If not there's a dialog with the
+  consumer developer.&lt;/p&gt;&lt;p&gt;As Erik knows well from &lt;a href = 'http://erik.doernenburg.com/open-source-projects/'&gt;his own open
+  source work&lt;/a&gt;, reviewing a patch is much less effort than making
+  a change yourself. So although the custodian approach doesn't
+  entirely eliminate the problem of consumer developers needing to wait
+  on supplier developers, it does a lot to reduce the difficulty. And
+  again following the open-source model, a consumer developer can be
+  made a committer once the custodians are comfortable. This
+  still means that commits can get reviewed by the custodians, but avoids
+  the custodians becoming a bottleneck.&lt;/p&gt;&lt;p&gt;Related to this was their approach to a service registry. We've
+  seen a lot of fancy products being sold to provide service registry
+  capabilities so that people can lookup services and see how to use
+  them. This client discarded them and used a &lt;a href = 'http://martinfowler.com/bliki/HumaneRegistry.html'&gt;HumaneRegistry&lt;/a&gt; instead.&lt;/p&gt;</description></item><item><title>EarlyPain</title><link>http://martinfowler.com/bliki/EarlyPain.html</link><category>agile</category><pubDate>Tue, 04 Nov 2008 16:26:00 -0600</pubDate><guid isPermaLink="true">http://martinfowler.com/bliki/EarlyPain.html</guid><description>&lt;p&gt;A few years ago I was talking with a client who told me something
+	he didn't like about the agile approach we were using: "it's
+	doesn't feel right to have these difficulties this early in the
+	project". Contrary to his reaction, in my mind this early pain is
+	one of the great &lt;i&gt;benefits&lt;/i&gt; of an agile or indeed any iterative
+	development process.&lt;/p&gt;&lt;p&gt;I have many complaints about the waterfall process, but probably
+	my greatest problem with it is how it tends to defer discovery of
+	problems till late in the project, at which point there's little
+	time or energy to deal with them effectively. Iterative cycles try
+	to flush out as many problems as possible as early as possible. This
+	gives you more time to cope, or at least raises the problems early
+	enough to cancel before investing too much money and effort in a
+	problematic project. &lt;/p&gt;&lt;p&gt;A useful exercise is to reflect on past projects and think about
+	where problems cropped up late. Now ask yourself how you could make
+	those problems crop up earlier. The more pain you get earlier, the
+	better.&lt;/p&gt;</description></item></channel></rss>

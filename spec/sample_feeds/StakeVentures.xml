@@ -1,0 +1,999 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="http://feeds.feedburner.com/~d/styles/atomfull.xsl" type="text/xsl" media="screen"?><?xml-stylesheet href="http://feeds.feedburner.com/~d/styles/itemcontent.css" type="text/css" media="screen"?><feed xmlns="http://purl.org/atom/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:creativeCommons="http://backend.userland.com/creativeCommonsRssModule" xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" version="0.3" xml:lang="en-US">
+  <title>Stake Ventures</title>
+  <tagline mode="escaped" type="text/html" />
+  <id>tag:stakeventures.com,2005:Typo</id>
+  <generator url="http://stakeventures.com">StakeVentures</generator>
+  <link href="http://stakeventures.com/" rel="alternate" type="text/html" />
+  <modified>2008-12-04T23:57:02+00:00</modified>
+  <creativeCommons:license>http://creativecommons.org/licenses/by-nc-sa/2.0/</creativeCommons:license><link rel="start" href="http://feeds.feedburner.com/StakeVentures" type="application/atom+xml" /><feedburner:browserFriendly>This is an XML content feed. It is intended to be viewed in a newsreader or syndicated to another site.</feedburner:browserFriendly><entry>
+    <author>
+      <name>pelle</name>
+    </author>
+    <id>tag:stakeventures.com,2005:Typo-304</id>
+    <issued>2008-12-04T19:47:06+00:00</issued>
+    <modified>2008-12-04T23:57:02+00:00</modified>
+    <title>RubyGem is from Mars, AptGet is from Venus</title>
+    <link href="http://feeds.feedburner.com/~r/StakeVentures/~3/474981423/rubygem-is-from-mars-aptget-is-from-venus" rel="alternate" type="text/html" />
+    <dc:subject>Programming</dc:subject>
+    <dc:subject>Hosting</dc:subject>
+    <content mode="escaped" type="text/html">&lt;p&gt;The &lt;a href="http://www.debian.org/"&gt;Debian&lt;/a&gt; world seems to be on a rant on why the &lt;a href="http://www.rubygems.org/"&gt;RubyGem&amp;#8217;s&lt;/a&gt; are bad and why we should all be using &lt;a href="http://www.debian.org/doc/manuals/apt-howto/"&gt;aptget&lt;/a&gt; instead.&lt;/p&gt;
+&lt;p&gt;For rants see: &lt;a href="http://www.grep.be/blog/en/computer/cluebat/rails_stay_away"&gt;Wouter &amp;#8211; Rails? Stay the f* away from my system&lt;/a&gt;, &lt;a href="http://gwolf.org/node/1740"&gt;Gunnar Wolf &amp;#8211; Ruby has a distribution problem&lt;/a&gt; as well as the official &lt;a href="http://pkg-ruby-extras.alioth.debian.org/rubygems.html"&gt;Debian take on RubyGems&lt;/a&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;However, the Debian/Ruby Extras team fear that Rubygems will make it much more difficult to package and distribute Ruby software in Debian (similar concerns have been raised by other individuals and &lt;span class="caps"&gt;GNU&lt;/span&gt;/Linux distributions)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Updated:&lt;/strong&gt; Just discovered that Gunnar actually wrote this really good post &lt;a href="http://gwolf.org/node/1869"&gt;It&amp;#8217;s just a different mindset. Not necessarily a &lt;em&gt;sane&lt;/em&gt; one, though&lt;/a&gt;, which I think is a way better explanation of his concerns. I still don&amp;#8217;t see why Gems is &amp;#8220;the most obnoxious of them all&amp;#8221;. Gem&amp;#8217;s can and should improve. But at its current state I actually do like it.&lt;/p&gt;
+&lt;p&gt;I always wondered why their rubygem package was intentionally broken. But never took the time to worry too much about it, when it&amp;#8217;s easy to uninstall it and install it from source.&lt;/p&gt;
+&lt;p&gt;RubyGems like &lt;span class="caps"&gt;CPAN&lt;/span&gt; are about being OS agnostic when writing and deploying our apps. At the application level, I really do not care nor want to care about what server os I&amp;#8217;m running.&lt;/p&gt;
+&lt;p&gt;I develop on Mac and deploy to Ubuntu, Gentoo, Redhat and OpenBSD. Using aptget, rpm, portage and pkgadd is fine for initial server setup and on going maintenance, but for day to day deployment of applications nothing but a &lt;span class="caps"&gt;PITA&lt;/span&gt;.&lt;/p&gt;
+&lt;h3&gt;Different worlds, different points of view&lt;/h3&gt;
+&lt;p&gt;The fact is that we are talking about 2 completely different worlds here. The whole thing is something very much akin to the old Men are are from Mars, Women are from Venus meme from a few years back.&lt;/p&gt;
+&lt;p&gt;For me my focus is the application. Most Ruby developers write applications for a living. For sysadmins their focus is on keeping servers running. Most Debian maintainers probably come from that world. Regardless if my assumption is right or wrong on that, their focus is definitely on Debian and not on Ruby.&lt;/p&gt;
+&lt;p&gt;So you now have the situation where an American is laughing at the stupid Limies calling a cigarette a &amp;#8220;fag&amp;#8221; and an Brit laughing at the stupid yanks calling a bum a fanny.&lt;/p&gt;
+&lt;p&gt;Get over it. We come from different worlds and have to live together. If your job is maintaining a bunch of sysadmin type services such as mail, dns etc you know what you need to do your job. Application developers also know what we need to do our job. It might even be that these things are different.&lt;/p&gt;
+&lt;p&gt;However if your job as a sysadmin is to support several web applications server, then I&amp;#8217;m afraid when it comes to the applications you are no longer king. You need to support the developers and not hinder them.&lt;/p&gt;
+&lt;p&gt;But as Gunnar says:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;By using Ruby Gems, you dramatically increase entropy and harm your systems&amp;#8217; security.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This is what we politely call &lt;a href="http://en.wikipedia.org/wiki/Fear,_uncertainty_and_doubt"&gt;&lt;span class="caps"&gt;FUD&lt;/span&gt;&lt;/a&gt; in the tech industry.&lt;/p&gt;
+&lt;p&gt;On the server it is the sysadmin&amp;#8217;s job to understand the benefits of postfix vs. sendmail. tinydns vs bind etc. It&amp;#8217;s the DBA&amp;#8217;s job to decide on when MySQL 5.1 feels stable enough to use in production.&lt;/p&gt;
+&lt;p&gt;It is our job as application developers to understand the finer points between RedCloth 3 and 4.1. RubyGems allows us to test our applications with specific dependencies and make sure that this is exactly how they are deployed.&lt;/p&gt;
+&lt;p&gt;This enables us to have the confidence to deploy without having to do full regression testing when moving from a Gentoo to a Ubuntu server. Or to deploy minor updates from our Mac&amp;#8217;s onto a server.&lt;/p&gt;
+&lt;p&gt;After having spent years of managing servers manually, the simplicity and beauty of deploying with capistrano is amazing. Besides initial server setup (which I can soon wave goodbye to thanks to &lt;a href="http://poolpartyrb.com/"&gt;PoolParty&lt;/a&gt;) I want to focus on the application.&lt;/p&gt;
+&lt;p&gt;RubyGem&amp;#8217;s give me the freedom to develop on a Mac/PC and deploy onto just about anything. I deploy onto Ubuntu, OpenBSD, Redhat and Gentoo.&lt;/p&gt;
+&lt;p&gt;aptget is fantastic at what it does, installing base software on my server. Maintaining my application dependencies is just not its job. The Debian community is right to be conservative. However the ruby world works at tremendous speed, change is part of our core &lt;span class="caps"&gt;DNA&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;I don&amp;#8217;t want to necessarily be installing a new MySQL or &lt;span class="caps"&gt;GCC&lt;/span&gt; version on a daily basis, but I am willing to use the often daily updates of ruby gems. As I have the tests that prove they work and fantastic transparency about what was changed via &lt;a href="http://github.com"&gt;GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The Debian maintainers should stop breaking software out of some misguided principal. For gods sake Debian is an Open Source OS not &lt;a href="http://stakeventures.com/articles/2008/09/11/dont-be-yet-another-kim-jong-il-of-the-business-world"&gt;North Korea&lt;/a&gt;. You broke your RubyGem package, now fix it.&lt;/p&gt;
+&lt;p&gt;There must be some way of creating virtual packages that just install the gem. This method could be reusable for Perl&amp;#8217;s &lt;span class="caps"&gt;CPAN&lt;/span&gt; packages and any other application level packaging system.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; Violent platform wars going on over this post on &lt;a href="http://news.ycombinator.com/item?id=386036"&gt;Hacker News&lt;/a&gt;&lt;/p&gt;
+
+
+
+&lt;p class="agree2_ad"&gt;&lt;a href="http://agree2.com?referrer=0"&gt;Create, negotiate and accept legally binding contracts for free with our Agree2 service.&lt;/a&gt;&lt;/p&gt;&lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=jjjyO"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=jjjyO" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=fgj3O"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=fgj3O" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=4uhLO"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=4uhLO" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=SVXVo"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=SVXVo" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=Wqkjo"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=Wqkjo" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/StakeVentures/~4/474981423" height="1" width="1"/&gt;</content>
+  <feedburner:origLink>http://stakeventures.com/articles/2008/12/04/rubygem-is-from-mars-aptget-is-from-venus</feedburner:origLink></entry>
+  <entry>
+    <author>
+      <name>pelle</name>
+    </author>
+    <id>tag:stakeventures.com,2005:Typo-303</id>
+    <issued>2008-11-26T20:04:36+00:00</issued>
+    <modified>2008-11-26T20:04:37+00:00</modified>
+    <title>3 ideas for innovating Securities Law</title>
+    <link href="http://feeds.feedburner.com/~r/StakeVentures/~3/466559182/3-ideas-for-innovating-securities-law" rel="alternate" type="text/html" />
+    <dc:subject>Financial Innovation</dc:subject>
+    <content mode="escaped" type="text/html">&lt;p&gt;&lt;a href="http://skitch.com/pelle/h313/prosper-with-warning-label"&gt;&lt;img src="http://img.skitch.com/20081126-xqqg9ndifh4a7r9q81wu9kq2w9.preview.jpg" alt="" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Due to the &lt;a href="http://stakeventures.com/articles/2008/11/26/sec-to-startups-dont-you-dare-innovate"&gt;SEC&amp;#8217;s closing of Prosper&lt;/a&gt; I do think that it is time to address the &lt;span class="caps"&gt;SEC&lt;/span&gt; rules, which were created by &lt;span class="caps"&gt;FDR&lt;/span&gt; during the New Deal. It was a very different world then. Not that I think they did a lot of good at that time either.&lt;/p&gt;
+&lt;p&gt;We need the ability to innovate, even in the world of securities and investments. We need to lower the barriers to entry as the larger players who can cross them do not have real incentive to innovate.&lt;/p&gt;
+&lt;p&gt;The cost of creating a startup is lower now than ever. Often the cost of following existing security regulation is more than the amount sought.&lt;/p&gt;
+&lt;p&gt;Personal loans on an exchange are even less likely to ever pass existing securities law unless you happen to be &lt;a href="http://en.wikipedia.org/wiki/Bowie_Bonds"&gt;David Bowie&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Here are my 3 basic ideas for innovation in securities and investments.&lt;/p&gt;
+&lt;h3&gt;1. Warning labels&lt;/h3&gt;
+&lt;p&gt;I know, I know. I hate warning labels as well. But I&amp;#8217;d rather have warning labels and allow anyone to invest than the obnoxious innovation killing rule about &lt;a href="http://en.wikipedia.org/wiki/Accredited_investor"&gt;Accredited Investors&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;2. Special registration rules for micro securities&lt;/h3&gt;
+&lt;p&gt;A $1000 loan should not have to follow the same rules as a $500,000 angel funding round. Why not just require them to be offered through a regulated exchange service instead. I think special rules should be in place for sub $100k securities. I&amp;#8217;d be willing to accept sub $25k if it would allow it to be passed.&lt;/p&gt;
+&lt;p&gt;While I don&amp;#8217;t think any kind of registration with the &lt;span class="caps"&gt;SEC&lt;/span&gt; really is needed, I could be persuaded to accept the idea of a very simple free &lt;span class="caps"&gt;REST&lt;/span&gt; based web service for registration of the security with the &lt;span class="caps"&gt;SEC&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Think tax id, amount, offer date, description and a url to more information on the exchanges web site. The &lt;span class="caps"&gt;SEC&lt;/span&gt; could publicize this information and allow queries of the data. Of course I really think this service should be offered to be run by a private industry organization and not the &lt;span class="caps"&gt;SEC&lt;/span&gt; or we would likely have to wait for 5-10 years for it to be implemented.&lt;/p&gt;
+&lt;h3&gt;3. Regulate the exchanges and not the securities&lt;/h3&gt;
+&lt;p&gt;While I personally don&amp;#8217;t think we need any form of regulation. The realities of the day are not really about less regulation. An innovative approach would be for the &lt;span class="caps"&gt;SEC&lt;/span&gt; or congress to regulate a new form of exchange. This exchange would be regulated and have to follow certain rules, but would allow smaller micro securities to be exchanged.&lt;/p&gt;
+&lt;p&gt;I was working on a project with a couple of really smart people nearly 8 years ago for creating an equities market for micro financing in the 3rd world. The project never came out of prototype stage, but one idea that fascinated me was to tax and regulate the exchange rather than the startups offered within. This would allow developing world governments to achieve revenue and regulation, while keeping a low enough barrier of entry that even very small micro businesses (&lt;a href="http://econotrix.com/archives/cat_people_like_me.html"&gt;like these ones in Panama&lt;/a&gt; ) could utilize the exchange.&lt;/p&gt;
+&lt;p&gt;This was our solution to the problems that &lt;a href="http://en.wikipedia.org/wiki/Hernando_de_Soto_(economist"&gt;Hernando de Soto&lt;/a&gt;) the brilliant Peruvian economist believes for the basis for most of the economic troubles in the developing world. I have written before in &lt;a href="http://blog.extraeagle.com/2007/01/17/a-global-virtual-shanty-town-or-what/"&gt;A global virtual shanty town&lt;/a&gt; about how similar issues stop innovation and growth even outside the developing world. The &lt;span class="caps"&gt;SEC&lt;/span&gt;/Prosper debacle is evidence of as much.&lt;/p&gt;
+
+
+
+&lt;p class="agree2_ad"&gt;&lt;a href="https://agree2.com/masters/38f8f05d70c7d84f28e349e3a16f8444bdaf4ea8"&gt;Create a simple NDA with zero legalese in no time at all and for free at our service Agree2.&lt;/a&gt;&lt;/p&gt;&lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=SNA4N"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=SNA4N" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=rHPWN"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=rHPWN" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=ceoON"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=ceoON" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=fDgqn"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=fDgqn" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=aFEVn"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=aFEVn" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/StakeVentures/~4/466559182" height="1" width="1"/&gt;</content>
+  <feedburner:origLink>http://stakeventures.com/articles/2008/11/26/3-ideas-for-innovating-securities-law</feedburner:origLink></entry>
+  <entry>
+    <author>
+      <name>pelle</name>
+    </author>
+    <id>tag:stakeventures.com,2005:Typo-302</id>
+    <issued>2008-11-26T19:35:18+00:00</issued>
+    <modified>2008-11-26T20:33:52+00:00</modified>
+    <title>SEC to startups, don't you dare innovate</title>
+    <link href="http://feeds.feedburner.com/~r/StakeVentures/~3/466533503/sec-to-startups-dont-you-dare-innovate" rel="alternate" type="text/html" />
+    <dc:subject>Financial Innovation</dc:subject>
+    <content mode="escaped" type="text/html">&lt;p&gt;&lt;a href="http://skitch.com/pelle/h31r/prosper-closed"&gt;&lt;img src="http://img.skitch.com/20081126-ij28bgf3rfbcqxy56exiq5dsg.preview.jpg" alt="" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.prosper.com"&gt;Prosper&lt;/a&gt; were just &lt;a href="http://www.sec.gov/litigation/admin/2008/33-8984.pdf"&gt;sent a cease and decist by the &lt;span class="caps"&gt;SEC&lt;/span&gt;&lt;/a&gt; for offering investments without registration. Prosper is/was one of a small handful of P2P lending markets offering an innovative approach to lending, allowing normal people to lend money to each other.&lt;/p&gt;
+&lt;p&gt;Not that I am a lawyer, but from reading the ruling, it appears that for Prosper to be allowed they would need to register each and every loan with the &lt;span class="caps"&gt;SEC&lt;/span&gt; as well as every investor would need to be an &lt;a href="http://en.wikipedia.org/wiki/Accredited_investor"&gt;Accredited Investor&lt;/a&gt;. Either of these 2 would be impossible to do for them or anyone else trying to offer a similar service.&lt;/p&gt;
+&lt;p&gt;Using existing rules, I think the &lt;span class="caps"&gt;SEC&lt;/span&gt; were following clear rules. That does not stop them from being evil of course. Personally I can&amp;#8217;t see either how the constitution even permits them to shut down Prosper without a trial. They are somehow allowed to both make the rules, execute them and judge them.&lt;/p&gt;
+&lt;h3&gt;Reves ruling&lt;/h3&gt;
+&lt;p&gt;The &lt;span class="caps"&gt;SEC&lt;/span&gt; metions the &lt;a href="http://www.law.cornell.edu/supct/html/91-886.ZO.html"&gt;Reves ruling&lt;/a&gt; and lists the following rules from it:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;(i) the motivations of the buyer and seller; (ii) the plan of distribution; (iii) the reasonable expectations of the investing public; and (iv) the existence of an alternate regulatory regime.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;They argue that (i) is breached as:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;#8230; Prosper lenders are motivated by the desire to obtain a better return on their money than they otherwise could in another venue. While some Prosper lenders may be motivated, in part, by altruism, altruistic and profit motives are not mutually exclusive.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Oh, horror that someone would like better returns than in the bank.&lt;/p&gt;
+&lt;p&gt;(ii) is breached because as they say:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;With respect to the plan of distribution, the Prosper notes are offered and sold on the internet to the public at large.  There is no special level of financial sophistication or expertise that Prosper lenders must have.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Those are the rules, I know but just look at the current financial mess and read anything by &lt;a href="http://stakeventures.com/articles/2008/07/09/the-black-swan-and-you"&gt;Nassim Taleb&lt;/a&gt; to see what happens when &amp;#8220;sophisticated&amp;#8221; investors are let loose.&lt;/p&gt;
+&lt;p&gt;(iii) is breached because:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;bla. bla. bla. &amp;#8230; Prosper lenders reasonably expect a valuable return on loaned funds and would reasonably believe that the Prosper loans are investments.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Again they are right according to the rules. Obviously lenders believed they were making an investment.&lt;/p&gt;
+&lt;p&gt;(iv) is breached because there is no alternative regulatory scheme:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Finally, with regard to whether an alternate regulatory scheme exists to reduce risk to potential investors, there are currently no appropriate regulatory safeguards for Prosper lenders, such as those against misleading statements by a borrower about the purpose of a loan, the borrower&amp;rsquo;s employment and income, or even the borrower&amp;rsquo;s identity, or against misleading statements by Prosper.   &lt;br /&gt;
+ &lt;br /&gt;
+This is where I believe they are wrong. Granted there is office anywhere in Washington DC called the &amp;#8220;Person 2 Person Lending Exchange Regulatory Commision&amp;#8221;. However in the US we do have these 3 great regulatory schemes called the free press, &lt;a href="http://en.wikipedia.org/wiki/Uniform_Commercial_Code"&gt;contract law&lt;/a&gt; and the judicial system.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href="http://www.prospers.org"&gt;Prospers.org&lt;/a&gt; and apparently a whole host of blogs are busy auditing and criticizing Prosper all the time. There is plenty of information available to anyone, which should make you think twice about investing in Prosper if they are risk averse.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.e-gold.com"&gt;E-Gold&lt;/a&gt; were under similar constant crowd sourced regulation via their &lt;a href="http://www.kobly.com/pipermail/e-gold-list/"&gt;mailing lists&lt;/a&gt; and online tools. &lt;a href="http://stakeventures.com/articles/2008/07/22/the-man-finally-brought-e-gold-down"&gt;Read more about E-Gold&amp;#8217;s innovations&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;While Prosper may claim they weren&amp;#8217;t a bank or under the &lt;span class="caps"&gt;SEC&lt;/span&gt;, they were always under contract law (Both Common Law and UCC). The same can be said for their borrowers and lenders. They have apparently been &lt;a href="http://www.prospers.org/wiki/Lawsuits"&gt;pursuing law suits in the courts&lt;/a&gt; for some time. I have no idea if they have done enough here, but then it is the job of a crafty lawyer to come up with a class action lawsuit to keep them on the right path.&lt;/p&gt;
+&lt;p&gt;Innovation is needed, new rules are needed. The &lt;span class="caps"&gt;SEC&lt;/span&gt; followed their rules and protected the existing financial industry who have done such a bang up job in recent years protecting our wealth.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Updated:&lt;/strong&gt; Just posted &lt;a href="http://stakeventures.com/articles/2008/11/26/3-ideas-for-innovating-securities-law"&gt;3 ideas for innovating securities law&lt;/a&gt; where I talk about how the &lt;span class="caps"&gt;SEC&lt;/span&gt; could allow innovation.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Updated:&lt;/strong&gt; Thanks to David for pointing out that they aren&amp;#8217;t actually closed, but just not able to post new loans until they get registered&lt;/p&gt;
+
+
+
+&lt;p class="agree2_ad"&gt;&lt;a href="https://agree2.com/masters/b4f9a904efaab5ad71f695824c997c332b955876"&gt;Share your confidential code safely with a Source Code Confidentiality Agreement on our free web service Agree2&lt;/a&gt;&lt;/p&gt;&lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=wio0N"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=wio0N" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=dLIGN"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=dLIGN" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=3jjrN"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=3jjrN" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=wJVPn"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=wJVPn" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=gZVcn"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=gZVcn" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/StakeVentures/~4/466533503" height="1" width="1"/&gt;</content>
+  <feedburner:origLink>http://stakeventures.com/articles/2008/11/26/sec-to-startups-dont-you-dare-innovate</feedburner:origLink></entry>
+  <entry>
+    <author>
+      <name>pelle</name>
+    </author>
+    <id>tag:stakeventures.com,2005:Typo-301</id>
+    <issued>2008-11-25T18:12:55+00:00</issued>
+    <modified>2008-11-26T18:00:28+00:00</modified>
+    <title>e-gold founders avoid jail</title>
+    <link href="http://feeds.feedburner.com/~r/StakeVentures/~3/465296169/e-gold-founders-avoid-jail" rel="alternate" type="text/html" />
+    <dc:subject>Financial Innovation</dc:subject>
+    <dc:subject>Payment systems</dc:subject>
+    <content mode="escaped" type="text/html">&lt;p&gt;I am glad to hear that &lt;a href="http://news.cnet.com/8301-13578_3-10104677-38.html"&gt;Douglas Jackson and associates manage to avoid jail&lt;/a&gt; and get probation, community service and a fine instead.&lt;/p&gt;
+&lt;p&gt;I still think it&amp;#8217;s extremely unfair that a service as innovative as &lt;a href="http://www.e-gold.com"&gt;e-gold&lt;/a&gt; were punished like this. Apparently so does the US District Judge Rosemary Collyer:&lt;/p&gt;
+&lt;p&gt;According to cnet:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;U.S. District Judge Rosemary Collyer said the men deserved lenient sentences because they did not intend to engage in illegal activity. Even though, Collyer said, the U.S. Justice Department wanted to use the cases to show &amp;#8220;this new day of Internet crime is going to be&amp;#8230;vigorously prosecuted,&amp;#8221; that alone was not enough reason to incarcerate the defendants.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;While the courts don&amp;#8217;t always do the right thing in this country, I am glad to see that they still serve their function as a safety valve against over zealous government.&lt;/p&gt;
+&lt;p&gt;Look at the situation the financial system is in right now. It is based on ancient technology and an ancient operating system. The government is throwing trillions of dollars against an unsound system and sending the Patriot Act against innovators.&lt;/p&gt;
+&lt;p&gt;E-Gold were one of the players, who truly attempted innovation in the financial space. Douglas Jackson&amp;#8217;s genius and insight in his quest for sound money is seen in that even after all of this has happened to them, they core value of e-gold still hasn&amp;#8217;t changed much.&lt;/p&gt;
+&lt;p&gt;For more read this article I wrote earlier &lt;a href="http://stakeventures.com/articles/2008/07/22/the-man-finally-brought-e-gold-down"&gt;e-gold innovated and were finally brought down&lt;/a&gt;. Also read the &lt;a href="http://www.dgcmagazine.com/index.php?q=node/242"&gt;&lt;span class="caps"&gt;DGC&lt;/span&gt; Magazine interview with Douglass Jackson here&lt;/a&gt;.&lt;/p&gt;
+
+
+
+&lt;p class="agree2_ad"&gt;&lt;a href="https://agree2.com/masters/37a9d0507479e9d5fa48f24c47126bb73bfef40d"&gt;Create a Software Development Agreement with our free web service Agree2&lt;/a&gt;&lt;/p&gt;&lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=HE0ZN"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=HE0ZN" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=cuiSN"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=cuiSN" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=sS4oN"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=sS4oN" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=Y8Ssn"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=Y8Ssn" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=mvjon"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=mvjon" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/StakeVentures/~4/465296169" height="1" width="1"/&gt;</content>
+  <feedburner:origLink>http://stakeventures.com/articles/2008/11/25/e-gold-founders-avoid-jail</feedburner:origLink></entry>
+  <entry>
+    <author>
+      <name>pelle</name>
+    </author>
+    <id>tag:stakeventures.com,2005:Typo-300</id>
+    <issued>2008-11-19T20:29:16+00:00</issued>
+    <modified>2008-11-19T20:29:18+00:00</modified>
+    <title>Agree2 is now officially launched</title>
+    <link href="http://feeds.feedburner.com/~r/StakeVentures/~3/458789097/agree2-is-now-officially-launched" rel="alternate" type="text/html" />
+    <dc:subject>Agree2</dc:subject>
+    <content mode="escaped" type="text/html">&lt;p&gt;Goodbye Fax, Goodbye Fedex, Goodbye Mont Blanc pens&amp;#8230; Hello &lt;a href="http://agree2.com"&gt;Agree2&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;object width="400" height="300" style="margin-right:1em"&gt;&lt;param name="allowfullscreen" value="true" /&gt;&lt;param name="allowscriptaccess" value="always" /&gt;&lt;param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=2275224&amp;amp;server=vimeo.com&amp;amp;show_title=1&amp;amp;show_byline=1&amp;amp;show_portrait=0&amp;amp;color=&amp;amp;fullscreen=1" /&gt;&lt;embed src="http://vimeo.com/moogaloop.swf?clip_id=2275224&amp;amp;server=vimeo.com&amp;amp;show_title=1&amp;amp;show_byline=1&amp;amp;show_portrait=0&amp;amp;color=&amp;amp;fullscreen=1" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="400" height="300"&gt;&lt;/embed&gt;&lt;/object&gt;&lt;/p&gt;
+&lt;p&gt;What started as a proof of concept prototype in creating agreements roughly 2 years ago is now officially launched. We have been in beta for a long time, but now we feel the time is right to lift the beta tag and introduce our commercial plans.&lt;/p&gt;
+&lt;p&gt;But first let me explain what Agree2 is all about. Plain and simple we are all about helping you reach agreement.&lt;/p&gt;
+&lt;p&gt;See the &lt;a href="http://blog.extraeagle.com/2008/11/19/agree2-is-launched/"&gt;Agree2 launch Post&lt;/a&gt; for more information or go straight to &lt;a href="http://agree2.com"&gt;Agree2&lt;/a&gt; to sign up.&lt;/p&gt;
+
+
+
+&lt;p class="agree2_ad"&gt;&lt;a href="http://agree2.com?referrer=0"&gt;Create, negotiate and accept legally binding contracts for free with our Agree2 service.&lt;/a&gt;&lt;/p&gt;&lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=j6OlN"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=j6OlN" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=KRB3N"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=KRB3N" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=fNhfN"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=fNhfN" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=I0u3n"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=I0u3n" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=Klajn"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=Klajn" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/StakeVentures/~4/458789097" height="1" width="1"/&gt;</content>
+  <feedburner:origLink>http://stakeventures.com/articles/2008/11/19/agree2-is-now-officially-launched</feedburner:origLink></entry>
+  <entry>
+    <author>
+      <name>pelle</name>
+    </author>
+    <id>tag:stakeventures.com,2005:Typo-299</id>
+    <issued>2008-11-12T19:01:06+00:00</issued>
+    <modified>2008-11-12T19:08:31+00:00</modified>
+    <title>What Lawyers could Learn from Programmers</title>
+    <link href="http://feeds.feedburner.com/~r/StakeVentures/~3/450994825/is-the-time-right-for-agile-lawyers" rel="alternate" type="text/html" />
+    <dc:subject>Legal</dc:subject>
+    <content mode="escaped" type="text/html">&lt;p&gt;&lt;a href="http://amlawdaily.typepad.com"&gt;AmLaw Daily&lt;/a&gt; has a great &lt;a href="http://amlawdaily.typepad.com/amlawdaily/2008/11/welcome-to-th-1.html"&gt;interview with Richard Susskind&lt;/a&gt; about his new book &lt;a href="http://www.amazon.com/gp/product/0199541728?ie=UTF8&amp;tag=talkorg-20&amp;linkCode=as2&amp;camp=1789&amp;creative=390957&amp;creativeASIN=0199541728"&gt;The End of Lawyers?: Rethinking the Nature of Legal Services&lt;/a&gt;&lt;img src="http://www.assoc-amazon.com/e/ir?t=talkorg-20&amp;l=as2&amp;o=1&amp;a=0199541728" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /&gt;. It is essentially about the fundamental changes that are coming in the business models of lawyers due to changes in technology in general and the economy as a whole.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The book points to a future in which conventional legal advisers will be much less prominent in society than today and, in some walks of life, will indeed have no visibility at all. This, I believe, is where we will be taken by two forces: by a market pull towards commoditization and by pervasive development and uptake of information technology. At the same time, I identify a whole new set of jobs for lawyers who are prepared to spread their wings.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The fact of the matter is that almost everything that is not highly specialized has come down in price due to technology and commoditization. Richard argues that lawyers have fought against this for too long and need to start changing the way they do business or they will loose for good.&lt;/p&gt;
+&lt;p&gt;The cost for entrepreneurs of almost all repetitive non specialized things is trending towards zero. We all know that having our own server farm is now pretty much a silly thing to do, unless you are in the server farm business.&lt;/p&gt;
+&lt;p&gt;Ruby on Rails and Agile methodologies also introduced us to the innovative concept that our smartest most creative people shouldn&amp;#8217;t spend 90% of their time on boring repetitive things like configuration and requirements documents.&lt;/p&gt;
+&lt;p&gt;Why should we still pay top dollars to lawyers for them to fill out word templates or advice us on simple things that google could solve just as easy for us? Why use a law firm to pay a premium on incorporation when 100s of companies who do this well are competing for your business via Google Ads?&lt;/p&gt;
+&lt;h3&gt;Fear, Uncertainty and Doubt&lt;/h3&gt;
+&lt;p&gt;&lt;a href="http://dilbert.com/strips/comic/2008-08-28/" title="Dilbert.com"&gt;&lt;img src="http://dilbert.com/dyn/str_strip/000000000/00000000/0000000/000000/20000/2000/300/22373/22373.strip.gif" border="0" alt="Dilbert.com" height="150px" width="480px" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The simple fact is that we pay big bucks to lawyers for silly tasks because of the centuries old campaign of &lt;a href="http://en.wikipedia.org/wiki/Fear,_uncertainty_and_doubt"&gt;&lt;span class="caps"&gt;FUD&lt;/span&gt;&lt;/a&gt; spread by the law industry about people doing things for themselves.&lt;/p&gt;
+&lt;p&gt;Like &lt;a href="https://www.reason.com/news/show/129981.html"&gt;Interior Designers&lt;/a&gt; lawyers have essentially managed to run an outdated protection racket in the US. Each state has a private association known as a &lt;a href="http://en.wikipedia.org/wiki/Bar_association"&gt;Bar Association&lt;/a&gt; which has a state granted monopoly on deciding who can practice law and also pretty much in deciding what &amp;#8220;practice of law&amp;#8221; means.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.nolo.com"&gt;Nolo Press&lt;/a&gt; and &lt;a href="http://agree2.com"&gt;Agree2&lt;/a&gt; are forced by these rules to put silly disclaimers like this on our sites and books:&lt;/p&gt;
+&lt;div class="thumbnail"&gt;&lt;a href="http://skitch.com/pelle/5k8m/agree2-disclaimer"&gt;&lt;img src="http://img.skitch.com/20081111-pr55mx9d3cia2pkce4d51c9ysa.preview.jpg" alt="agree2 disclaimer" /&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;p&gt;These also try as much as they possibly can to retain the lawyers monopoly on filling out word templates.&lt;/p&gt;
+&lt;p&gt;Legalese is another weapon for creating &lt;span class="caps"&gt;FUD&lt;/span&gt; in entrepreneurs. If you look at a contract and can&amp;#8217;t understand it, the theory goes you should call a lawyer and have him revise it. Most don&amp;#8217;t and hope everything is fine.&lt;/p&gt;
+&lt;p&gt;Law scholar Adam Freedman who wrote the brilliant &lt;a href="http://www.partyofthefirstpart.com/"&gt;Party of the First Part&lt;/a&gt; argues that legalese as a concept was pretty much invented and has been preserved by the law profession as a method of job protection over 500 ago.&lt;/p&gt;
+&lt;p&gt;The current argument I most hear from people who should know better is that each silly little piece of legalese is there because it has a specific legal meaning within the court.&lt;/p&gt;
+&lt;p&gt;I call total BS on this. If engineers believed in this we would still be riding our cotton to market on a horse drawn carriage. Judges are people. The vast majority of them very intelligent and perfectly able to understand plain English. If some new precedents have to be created so be it.&lt;/p&gt;
+&lt;p&gt;I know many programmers who live by these same principles. Talking technical BS where it isn&amp;#8217;t necessary and overcomplicating architectures and code to preserve their jobs. It&amp;#8217;s BS when we do it, it is BS when lawyers do it.&lt;/p&gt;
+&lt;p&gt;The good news is that the programmers who broke with this BS of the secret brotherhood of programmers now have more work than they can handle and bill at much higher rates, due to previously unheard levels of trust between the client and the programmer. I&amp;#8217;m certain the same will be true for the lawyers who break the ranks of secret hand shakes, double talk and word templates.&lt;/p&gt;
+&lt;p&gt;the lawyers who break with tradition and build new traditions will probably end up with more work than they can handle. The ones who don&amp;#8217;t will loose out to Agile US Lawyers, Online services and offshoreing, just like what happened in the US IT industry.&lt;/p&gt;
+&lt;h3&gt;We need more simple on-line legal services&lt;/h3&gt;
+&lt;p&gt;In the comments to the above interview Patrick McKenna says:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Online subscription services typically require a significant initial investment in non-billable time to establish and then take about three years to break-even. Those on-line services that were launched by many UK law firms five or more years ago are proving to be extremely profitable today. Meanwhile, too many US firms are obsessively intent on short-term billable hour requirements to consider making longer-term investments of this nature.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Just imagine the cool and profitable services a smart innovative (Agile) lawyer could come up with working with one or two good programmers.&lt;/p&gt;
+&lt;p&gt;Online company registration systems are a great example. They can and should be a lot more innovative.  In the UK there are several law firms and Accountancies that offer legal/accounting services as complete package deals. Almost all US services are stuck in the Web 1.0/&lt;span class="caps"&gt;AOL&lt;/span&gt; era.&lt;/p&gt;
+&lt;p&gt;A corporate structure can easily be standardized with an online service to handle meetings, share registers and all standard form documents people use now. Innovate and make a lot more than you would billing people for dum repetitive work. Then focus on being their on standby for more traditional creative work for your now much larger client roster.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Shameless self promotion alert:&lt;/strong&gt; We at &lt;a href="http://agree2.com"&gt;Agree2&lt;/a&gt; are trying to create a system for both lawyers and non-lawyers to manage agreements and legal templates. Our &lt;span class="caps"&gt;API&lt;/span&gt; would allow you to easily create and manage such services. If you have any ideas or would like to talk to us about it please email me personally at &lt;a href="mailto:pelle@stakeventures.com"&gt;pelle@stakeventures.com&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;Be the next Lawrence Lessig&lt;/h3&gt;
+&lt;p&gt;The &lt;a href="http://www.gnu.org/licenses/"&gt;&lt;span class="caps"&gt;GPL&lt;/span&gt;&lt;/a&gt; revolutionized software. Several years later Lawrence Lessig helped revolutionize the world of publishing with the &lt;a href="http://creativecommons.org/"&gt;Creative Commons License&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;There are lots of other things that need revolutionizing. I&amp;#8217;m in the Legal Committee of the &lt;a href="http://openwebfoundation.org/"&gt;Open Web Foundation&lt;/a&gt; where we are trying to create an open standard &lt;span class="caps"&gt;IPR&lt;/span&gt; license to allow employees of companies to be able to work on web specs without fear of IP attacks. This is important work, but there are lot more interesting things that should be commoditized.&lt;/p&gt;
+&lt;p&gt;Imagine when talking to prospective employees or investors that you could say we are incorporated under the &lt;span class="caps"&gt;CCA&lt;/span&gt; (Common Corporate Agreement). This imaginary package would be a standard Articles of Incorporation, Memoranda of Incorporation etc. It would be written in as plain English as possible and be sufficiently good to protect both founders and investors. The idea is like the &lt;span class="caps"&gt;GPL&lt;/span&gt; it is a common non negotiated concept that everyone understands.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.ycombinator.com"&gt;Y Combinator&lt;/a&gt; have graciously published their &lt;a href="http://www.ycombinator.com/seriesaa.html"&gt;package of Series AA Equity Financing Documents&lt;/a&gt; which offers some of this. Y Combinator have managed to standardize a lot of these things as part of their own business model, which is great. However they are not a well analyzed immutable generic object like the &lt;span class="caps"&gt;GPL&lt;/span&gt;. For more on these documents checkout &lt;a href="http://www.thestartuplawyer.com/tag/y-combinator"&gt;The Startup Lawyers Analysis&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This is where someone like Lawrence Lessig comes in. A sharp charismatic lawyer who is willing to take on the existing traditions. We the entrepreneurs are willing to follow you. If you are such a lawyer read &lt;a href="http://www.amazon.com/gp/product/1591842336?ie=UTF8&amp;tag=talkorg-20&amp;linkCode=as2&amp;camp=1789&amp;creative=390957&amp;creativeASIN=1591842336"&gt;Seth Godin&amp;#8217;s Tribes&lt;/a&gt;&lt;img src="http://www.assoc-amazon.com/e/ir?t=talkorg-20&amp;l=as2&amp;o=1&amp;a=1591842336" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /&gt; which should provide great inspiration.&lt;/p&gt;
+
+
+
+&lt;p class="agree2_ad"&gt;&lt;a href="https://agree2.com/masters/38f8f05d70c7d84f28e349e3a16f8444bdaf4ea8"&gt;Create a simple NDA with zero legalese in no time at all and for free at our service Agree2.&lt;/a&gt;&lt;/p&gt;&lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=jpnXN"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=jpnXN" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=dw3aN"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=dw3aN" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=DmP6N"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=DmP6N" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=D9grn"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=D9grn" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=PAcjn"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=PAcjn" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/StakeVentures/~4/450994825" height="1" width="1"/&gt;</content>
+  <feedburner:origLink>http://stakeventures.com/articles/2008/11/12/is-the-time-right-for-agile-lawyers</feedburner:origLink></entry>
+  <entry>
+    <author>
+      <name>pelle</name>
+    </author>
+    <id>tag:stakeventures.com,2005:Typo-298</id>
+    <issued>2008-10-30T16:54:48+00:00</issued>
+    <modified>2008-11-09T03:02:59+00:00</modified>
+    <title>Great Business idea #2: Managed MySQL or PostgreSQL on SliceHost and EC2</title>
+    <link href="http://feeds.feedburner.com/~r/StakeVentures/~3/437097648/great-business-idea-2-managed-mysql-or-postgresql-on-slicehost-and-ec2" rel="alternate" type="text/html" />
+    <dc:subject>Business Ideas</dc:subject>
+    <content mode="escaped" type="text/html">&lt;p&gt;Are you a MySQL or Postgresql scalability expert? Here&amp;#8217;s an idea for you. Create and manage a MySQL and/or Postgresql cluster on &lt;a href="http://slicehost.com"&gt;SliceHost&lt;/a&gt; and one on &lt;a href="http://aws.amazon.com/ec2/"&gt;Amazon&amp;#8217;s Ec2&lt;/a&gt; cloud. The customers would be people hosting their services in these clouds.&lt;/p&gt;
+&lt;p&gt;Your job would be to manage scaling, security, monitoring, backups and all of those things. We your customers would sign up and you would give us our connection details, provide monitoring services and links to backups on s3. As a matter of fact the gui would probably benefit if it was as nice and simple as the SliceHost gui.&lt;/p&gt;
+&lt;p&gt;EngineYard already does something similar as part of their hosting plan. More than the individual slices I feel this is their real value add.&lt;/p&gt;
+&lt;p&gt;The business model? You could either do tiered plans ala slicehost. Hook it up with Amazon&amp;#8217;s &lt;a href="http://aws.amazon.com/fps/"&gt;Flexible Payment System&lt;/a&gt; and you could offer nice metered plans ala EC2.&lt;/p&gt;
+&lt;p&gt;Future services? How about remote mirroring between slicehost and ec2? Your customers could switch at will.&lt;/p&gt;
+&lt;p&gt;A simple version of this could be launched into beta by a single dba and a half decent rails programmer. If you&amp;#8217;re both, what are you waiting for?&lt;/p&gt;
+&lt;p&gt;Starting costs? The cost of two slices at slicehost or two on EC2. You could make serious money doing this quickly. You would probably only need 10 or so paying customers to break even. This you could almost certainly get within a month. This is good steady monthly cashflow I&amp;#8217;m telling ya.&lt;/p&gt;
+&lt;p&gt;Customers? Well me for one. I know it&amp;#8217;s not that hard to setup MySQL clusters. I&amp;#8217;d just rather not have to. I&amp;#8217;d happily pay $10-20 for a low volume plan and considerably more for high volume. I&amp;#8217;d be perfectly happy with a metered plan as well. With that I wouldn&amp;#8217;t hesitate in moving all my rails projects onto it.&lt;/p&gt;
+&lt;p&gt;Go on do it, and let me know when I can sign up.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; See the comments below &lt;a href="http://www.scatterhost.com/"&gt;ScatterHost&lt;/a&gt; is being launched offering exactly this service for MySQL on EC2. Great news.&lt;/p&gt;
+
+
+
+&lt;p class="agree2_ad"&gt;&lt;a href="https://agree2.com/masters/b4f9a904efaab5ad71f695824c997c332b955876"&gt;Share your confidential code safely with a Source Code Confidentiality Agreement on our free web service Agree2&lt;/a&gt;&lt;/p&gt;&lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=4CP5BC.P"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=4CP5BC.P" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=THvWfH.P"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=THvWfH.P" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=4jrHBv.P"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=4jrHBv.P" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=85eGld.p"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=85eGld.p" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=KHbMkJ.p"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=KHbMkJ.p" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/StakeVentures/~4/437097648" height="1" width="1"/&gt;</content>
+  <feedburner:origLink>http://stakeventures.com/articles/2008/10/30/great-business-idea-2-managed-mysql-or-postgresql-on-slicehost-and-ec2</feedburner:origLink></entry>
+  <entry>
+    <author>
+      <name>pelle</name>
+    </author>
+    <id>tag:stakeventures.com,2005:Typo-297</id>
+    <issued>2008-10-26T01:26:18+00:00</issued>
+    <modified>2008-10-26T01:26:19+00:00</modified>
+    <title>Why taxes are damaging</title>
+    <link href="http://feeds.feedburner.com/~r/StakeVentures/~3/432188165/why-taxes-are-damaging" rel="alternate" type="text/html" />
+    <dc:subject>Global</dc:subject>
+    <content mode="escaped" type="text/html">&lt;p&gt;There have been two related blog posts in the last couple of days :&lt;a href="http://blogmaverick.com/2008/10/23/the-cure-to-our-economic-problems/"&gt;The Cure to Our Economic Problems&lt;/a&gt; by Mark Cuban and &lt;a href="http://mattmaroon.com/?p=574"&gt;Amen Brother Cuban&lt;/a&gt; by Matt Maroon that I can absolutely sympathise with. True entrepreneurs are so focused on their idea that they will find a way.&lt;/p&gt;
+&lt;p&gt;Mark says:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The impact of tax rates on productivity and development is something economists masterbate about,  enterpreneurs don&amp;rsquo;t waste their time thinking about it. We have business to do.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Matt replies:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Exactly. When I started my first company I&amp;rsquo;d never even heard of capital gains taxes, and had no clue what I&amp;rsquo;d be paying even at the personal rate. All I knew was that I had an idea for a web site that I thought would be pretty successful (and it was) and I wanted the corporate veil for protection.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The current tax rates in the US aren&amp;#8217;t so bad that they necessarily stop entrepreneurs. In particular entrepreneurs who aren&amp;#8217;t focused yet on profits or business models are not particular worried. However before we start voting in more taxes, please listen to this cautionary example of Denmark.&lt;/p&gt;
+&lt;p&gt;It is possible to kill entrepreneurship through taxes. In my country Denmark taxes are pretty much double than what they are here in the US. When it reaches those levels it plays mind tricks on even the most devout entrepreneur. It colors your strategy and makes you do things you wouldn&amp;#8217;t normally do if you were living in a more forgiving tax world. In the US Matt doesn&amp;#8217;t have to know about Capital Gains Tax in Denmark he does.&lt;/p&gt;
+&lt;p&gt;Many Danish entrepreneurs that I know leave the country and go to more forgiving tax climates before they start their business. Just think of all the potential great business ideas that get left on the floor because potentially great people end up fearful to start their business in their own country.&lt;/p&gt;
+&lt;p&gt;If you start your business and then move to England or Spain you are forced to sell your business to yourself and pay at least %33 capital gains on it. Just imagine if you had to do that moving from say California to Oregon. Rather than face this many Danes never end up pursuing their dreams.&lt;/p&gt;
+&lt;p&gt;There are all sorts of loopholes and tricks that people who really want to pursue their dream in Denmark have to learn and go through. Isn&amp;#8217;t it better to focus on your business than whether or not the computer you are buying to run your business is tax deductible or not.&lt;/p&gt;
+&lt;p&gt;You can read more about the &lt;a href="http://stakeventures.com/articles/2007/07/01/silicon-vikings-talk-on-danish-entrepreneurship"&gt;problems facing startups in Denmark&lt;/a&gt; or my &lt;a href="http://stakeventures.com/articles/2006/02/02/bootstrappers-guide-for-denmark"&gt;bootstrappers guide for Denmark&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;One thing that Denmark has that the US doesn&amp;#8217;t is a fairly reasonable corporate tax rate. Most European countries now have fairly low corporate taxes yet get you on their sky high personal income taxes and sales taxes.&lt;/p&gt;
+&lt;p&gt;The US could definitely do with a lower corporate income tax. We have the second highest in the &lt;span class="caps"&gt;OECD&lt;/span&gt;. As a startup the workaround for this is S Corps or LLC&amp;#8217;s, where you are taxed at individual rates.&lt;/p&gt;
+&lt;p&gt;More important though than plain lower taxes would be a simplification of the tax structure. The US tax code is extremely complex. Intuit and various accounting firms have been lobbying to keep it as it is for years as it is obviously beneficial for them. We the individuals as well as startups suffer the consequences of this. It needs to be made simpler. Like what &lt;a href="http://stakeventures.com/articles/2005/09/14/meet-mart-laar-the-jeff-bezos-of-taxation"&gt;Mart Laar did in Estonia&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;While I do think Taxation borders on the immoral, I think that an even worse side effect of taxation than taking your money is that it changes the way you think and manage your business and daily life. Lower it, but more important simplify it.&lt;/p&gt;
+
+
+
+&lt;p class="agree2_ad"&gt;&lt;a href="https://agree2.com/masters/37a9d0507479e9d5fa48f24c47126bb73bfef40d"&gt;Create a Software Development Agreement with our free web service Agree2&lt;/a&gt;&lt;/p&gt;&lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=0j4hUx.P"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=0j4hUx.P" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=W9X9zU.P"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=W9X9zU.P" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=rvssIt.P"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=rvssIt.P" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=DT3Zhz.p"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=DT3Zhz.p" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=7jSRXQ.p"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=7jSRXQ.p" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/StakeVentures/~4/432188165" height="1" width="1"/&gt;</content>
+  <feedburner:origLink>http://stakeventures.com/articles/2008/10/26/why-taxes-are-damaging</feedburner:origLink></entry>
+  <entry>
+    <author>
+      <name>pelle</name>
+    </author>
+    <id>tag:stakeventures.com,2005:Typo-296</id>
+    <issued>2008-09-24T18:53:29+00:00</issued>
+    <modified>2008-11-09T03:01:27+00:00</modified>
+    <title>Great business idea #1 - Umbrella Companies</title>
+    <link href="http://feeds.feedburner.com/~r/StakeVentures/~3/402048826/great-business-idea-1-umbrella-companies" rel="alternate" type="text/html" />
+    <dc:subject>Business Ideas</dc:subject>
+    <content mode="escaped" type="text/html">&lt;p&gt;&lt;a href="http://flickr.com/photos/kagey_b/12757535/"&gt;&lt;img src="http://farm1.static.flickr.com/10/12757535_d7f22d6c47.jpg" alt="" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Are you contracting or freelancing? Would you like to but don&amp;#8217;t want to deal with the hassle of all the paperwork? Hire an &lt;a href="http://en.wikipedia.org/wiki/Umbrella_company"&gt;Umbrella Company&lt;/a&gt; to handle all that for you. The only problem if you are outside the UK is that there aren&amp;#8217;t any. It&amp;#8217;s an obvious business opportunity with a real need and real income, ready for the taking with plenty of space for competition.&lt;/p&gt;
+&lt;p&gt;Umbrella Companies are hired by their employees to handle invoicing, accounting and payroll for them. They provide a similar service to &lt;a href="http://en.wikipedia.org/wiki/Professional_employer_organization"&gt;Professional Employer Organization&amp;#8217;s&lt;/a&gt; with the exception that the customer is the contractor who becomes an employee and not the employer.&lt;/p&gt;
+&lt;p&gt;If you are a contractor or freelancer you become an employee of the umbrella company. Most companies in the UK provide a system where you enter your hours or invoice details via a web application. The umbrella company in turn invoices your client on your behalf. They then deduct whatever payroll tax they need to deduct and pay you your salary. In the UK most charge a fixed monthly fee, but I&amp;#8217;m sure there are all sorts of other supplementary business models.&lt;/p&gt;
+&lt;p&gt;Where umbrella companies compete are on the benefits they offer, tax deductions you can take etc. You could imagine an umbrella company offering you the latest top model MacBook Pro. Behind the scenes they would lease it and deduct it from your invoices pretax. I seem to remember hearing about Companies in the UK offering car leasing and all manners of other kinds of deductions, all without the red tape you would normally deal with as a freelancer.&lt;/p&gt;
+&lt;p&gt;Really there are lots of ways you could do this. All you really need to do this is one or two good programmers and someone with payroll and/or accounting experience. You could probably even outsource the payroll part of it to one of the many Payroll companies out there like &lt;a href="https://www.paycycle.com"&gt;PayCycle&lt;/a&gt; or &lt;a href="http://www.paychex.com"&gt;PayChex&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;As an employer there are risks involved, but with proper advise from an account none greater than any other employer faces.&lt;/p&gt;
+&lt;p&gt;Umbrella companies became very popular for IT contractors in the UK a few years ago because of new tax legislation making it difficult to work through your own company (or corp 2 corp as they say here in the US). The great site &lt;a href="http://www.contractoruk.com"&gt;Contractor UK&lt;/a&gt; has a &lt;a href="http://www.contractoruk.com/directory/umbrella_companies.html"&gt;List of Umbrella Companies&lt;/a&gt; but you can also google the term to see what you find.&lt;/p&gt;
+&lt;p&gt;With the face of business changing in the US, there are more and more reasons why people would hire an umbrella company.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; &lt;a href="http://www.mbopartners.com/individuals.html"&gt;&lt;span class="caps"&gt;MBO&lt;/span&gt; Partners&lt;/a&gt; seem to offer an umbrella company option, which seems to support most of everything I talk about above. Anyone have experience with them?&lt;/p&gt;
+
+
+
+&lt;p class="agree2_ad"&gt;&lt;a href="http://agree2.com?referrer=0"&gt;Create, negotiate and accept legally binding contracts for free with our Agree2 service.&lt;/a&gt;&lt;/p&gt;&lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=DWP9L"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=DWP9L" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=V7vDL"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=V7vDL" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=tc7PL"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=tc7PL" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=t24bl"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=t24bl" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=8WYgl"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=8WYgl" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/StakeVentures/~4/402048826" height="1" width="1"/&gt;</content>
+  <feedburner:origLink>http://stakeventures.com/articles/2008/09/24/great-business-idea-1-umbrella-companies</feedburner:origLink></entry>
+  <entry>
+    <author>
+      <name>pelle</name>
+    </author>
+    <id>tag:stakeventures.com,2005:Typo-295</id>
+    <issued>2008-09-23T16:23:52+00:00</issued>
+    <modified>2008-09-23T16:27:52+00:00</modified>
+    <title>Who is supposed to draft your agreements? You are!!!</title>
+    <link href="http://feeds.feedburner.com/~r/StakeVentures/~3/400933773/who-is-supposed-to-draft-your-agreements-you-are" rel="alternate" type="text/html" />
+    <dc:subject>Legal</dc:subject>
+    <content mode="escaped" type="text/html">&lt;p&gt;We&amp;#8217;ve already seen &lt;a href="http://stakeventures.com/articles/2008/09/03/how-the-google-eula-controversy-shows-the-problems-with-lawyer-written-agreements"&gt;what happens&lt;/a&gt; when you leave drafting your agreements entirely to an uninterested legal team.&lt;/p&gt;
+&lt;p&gt;Yet people still have their lawyers draft up an agreement, which more than likely for most contracts really is a paralegal filling out a word template. There are lots of myths surrounding agreements that I wrote about earlier in &lt;a href="http://stakeventures.com/articles/2008/03/26/it-wont-hold-up-in-court"&gt;It wont hold up in Court&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://dilbert.com/strips/comic/2008-08-28/" title="Dilbert.com"&gt;&lt;img src="http://dilbert.com/dyn/str_strip/000000000/00000000/0000000/000000/20000/2000/200/22373/22373.strip.gif" border="0" alt="Dilbert.com" width="500" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I can&amp;#8217;t stress enough that an agreement is not between lawyers, it&amp;#8217;s between it&amp;#8217;s parties. You as the entrepreneur and the other party, whether it is your users in a &lt;a href="http://blog.extraeagle.com/2008/05/20/public-review-of-agree2-user-agreement/"&gt;User Agreement&lt;/a&gt;, your client in a consulting agreement or an investor in a term sheet.&lt;/p&gt;
+&lt;p&gt;Yes for many of these you need to bring lawyers in. In particular high value risky agreements such as Term Sheets you need lawyers to help you out. That does not remove your responsibility however to understand the core of the agreement.&lt;/p&gt;
+&lt;p&gt;The mysterious &lt;a href="http://www.infochachkie.com/?page_id=2"&gt;Uncle Saul&lt;/a&gt; who is now one of my favorite bloggers says in his great post &lt;a href="http://www.infochachkie.com/?p=223"&gt;Roping in the Legal Eagles&lt;/a&gt; :&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;As the businessperson with the most intimate knowledge of a particular deal, you should draft as much of the &amp;ldquo;business-oriented text&amp;rdquo; of your contracts as possible. At the very least, you or the appropriate member of your team should document the primary deal points in bullet-point form. The more specifically you document the business terms, the fewer iterations will be required to finalize the agreement. Even a highly attentive, business-oriented lawyer cannot put himself in your shoes. They do not work at your company, so there is no way they will have your insights. Thus, the more work you do upfront to document the business issues, the less you will ultimately be charged and the more closely the agreement will reflect the spirit of your verbal negotiations.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Your Lawyers do &lt;span class="caps"&gt;NOT&lt;/span&gt; and can &lt;span class="caps"&gt;NOT&lt;/span&gt; understand every aspect of your business. Only you and your team have that knowledge. Uncle Saul continues:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;There is no magic language which makes an agreement legally binding; in fact, in most cases, the simpler the text, the better. Many a binding contract has been written on the equivalent of the back of a napkin. Once you draft the straightforward text, sans the legal mumbo-jumbo, ask your lawyer to review the text to ensure your layman descriptions do not result in an unintended interpretation. As noted in &lt;a href="http://www.infochachkie.com/?p=80"&gt;Tom and Huck&lt;/a&gt;, plans and agreements written in plain language reduce confusion and benefit all parties. If you select the right lawyer, he will not load up your text with gratuitous legal jargon (leave that job to the &lt;span class="caps"&gt;BDC&lt;/span&gt;&amp;rsquo;s legal squad).&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Go read the rest of &lt;a href="http://www.infochachkie.com/?p=223"&gt;Roping in the Legal Eagles&lt;/a&gt; for more tips on how to create and deal with a good legal team.&lt;/p&gt;
+&lt;p&gt;I guess my best advise here is to remember that it is your job as an entrepreneur to take risks. It is the lawyers job to avoid risk. Don&amp;#8217;t let the lawyer talk you out of risks worth taking, have him educate you so you can make the decision if the risk is worth taking.&lt;/p&gt;
+
+
+
+&lt;p class="agree2_ad"&gt;&lt;a href="https://agree2.com/masters/38f8f05d70c7d84f28e349e3a16f8444bdaf4ea8"&gt;Create a simple NDA with zero legalese in no time at all and for free at our service Agree2.&lt;/a&gt;&lt;/p&gt;&lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=kzg3UJ.P"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=kzg3UJ.P" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=lqTJ7D.P"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=lqTJ7D.P" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=Fl88Ob.P"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=Fl88Ob.P" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=Lu5eUc.p"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=Lu5eUc.p" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=OQhwCm.p"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=OQhwCm.p" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/StakeVentures/~4/400933773" height="1" width="1"/&gt;</content>
+  <feedburner:origLink>http://stakeventures.com/articles/2008/09/23/who-is-supposed-to-draft-your-agreements-you-are</feedburner:origLink></entry>
+  <entry>
+    <author>
+      <name>pelle</name>
+    </author>
+    <id>tag:stakeventures.com,2005:Typo-294</id>
+    <issued>2008-09-20T22:24:16+00:00</issued>
+    <modified>2008-09-20T22:24:17+00:00</modified>
+    <title>Negotiating contracts with Big Companies</title>
+    <link href="http://feeds.feedburner.com/~r/StakeVentures/~3/398435112/negotiating-contracts-with-big-companies" rel="alternate" type="text/html" />
+    <dc:subject>Legal</dc:subject>
+    <content mode="escaped" type="text/html">&lt;p&gt;Just discovered a great article &lt;a href="http://www.infochachkie.com/?p=225"&gt;Kiss of Death &amp;#8211; Contract Provisions Entrepreneurs Should Avoid at All Costs&lt;/a&gt; about dealing with Big Companies from &lt;a href="http://www.infoChachkie.com/"&gt;InfoChackie&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The mysterious &lt;a href="http://www.infochachkie.com/?page_id=2"&gt;Uncle Saul&lt;/a&gt; as he calls himself has a wealth of tips about dealing with what he calls BDC&amp;#8217;s (Big Dumb Companies) or as I like to call them &lt;a href="http://stakeventures.com/articles/2008/09/11/dont-be-yet-another-kim-jong-il-of-the-business-world"&gt;Kim Jong-Il&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Big companies can be extremely tempting to deal with. They&amp;#8217;ve got lots of money, they validate your business idea and you know it sounds great to brag about signing a deal with company X.&lt;/p&gt;
+&lt;p&gt;However as Uncle Saul says beware. Big companies are often run by all kinds of internal politics and have bureaucracy&amp;#8217;s you couldn&amp;#8217;t imagine. I have personally seen many small companies die because they either were desperate to sign a deal with a Big company or actually did and then got screwed.&lt;/p&gt;
+&lt;p&gt;That said, if you manage it right. Keep the control on your side and know when to cut your losses there are lots of opportunities for the smart entrepreneur. Uncle Saul describes in detail the contract negotiation part, which really is the single most critical part of dealing with these kinds of companies.&lt;/p&gt;
+
+
+
+&lt;p class="agree2_ad"&gt;&lt;a href="https://agree2.com/masters/b4f9a904efaab5ad71f695824c997c332b955876"&gt;Share your confidential code safely with a Source Code Confidentiality Agreement on our free web service Agree2&lt;/a&gt;&lt;/p&gt;&lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=XYxjL"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=XYxjL" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=aX4yL"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=aX4yL" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=CQpyL"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=CQpyL" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=qhk0l"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=qhk0l" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=jUOhl"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=jUOhl" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/StakeVentures/~4/398435112" height="1" width="1"/&gt;</content>
+  <feedburner:origLink>http://stakeventures.com/articles/2008/09/20/negotiating-contracts-with-big-companies</feedburner:origLink></entry>
+  <entry>
+    <author>
+      <name>pelle</name>
+    </author>
+    <id>tag:stakeventures.com,2005:Typo-293</id>
+    <issued>2008-09-11T18:45:15+00:00</issued>
+    <modified>2008-09-11T18:45:16+00:00</modified>
+    <title>Don't be yet another Kim Jong-Il of the business world</title>
+    <link href="http://feeds.feedburner.com/~r/StakeVentures/~3/389901758/dont-be-yet-another-kim-jong-il-of-the-business-world" rel="alternate" type="text/html" />
+    <dc:subject>Think outside the rounded box</dc:subject>
+    <content mode="escaped" type="text/html">&lt;p&gt;&lt;a href="http://en.wikipedia.org/wiki/Kim_Jong-il"&gt;Kim Jong-Il&lt;/a&gt; the glorious leader of North Korea has long been the laughing stock of most of the world except of course the poor millions of North Koreans who happen to be stuck under his rule.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://en.wikipedia.org/wiki/Kim_Jong-il"&gt;&lt;img src="http://img.skitch.com/20080911-qmfku2dkwp3469netp9rh3h6ft.png" alt="" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;So why is it that most medium to large companies blindly follow his doctrine? Why are so many startups sliding down the path of becoming North Korea.&lt;/p&gt;
+&lt;p&gt;You may be thinking now that Pelle has finally lost it. Well bear with me to the end of this, I hope it will make sense.&lt;/p&gt;
+&lt;h3&gt;The visionary leader&lt;/h3&gt;
+&lt;p&gt;A traditional large company has a fearless visionary leader in control of everything. A large company typically has many different product and service lines often in a whole range of different industries. Yet the fearless leader has the majestic vision and good heart that he can see and make correct decisions about all.&lt;/p&gt;
+
+&lt;h3&gt;The Bureaucracy&lt;/h3&gt;
+&lt;p&gt;Obviously a strong fearless leader has a strong hierarchy of civil servants to make sure his vision and wise thoughts are carried out. In a dictatorship this is the bureaucracy. In a large company these are the layers of middle management and non core infrastructure such as HR, accounting, fancy staff restaurants and security.&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://www.vincrosbie.com/blog/northKoreaImage1.jpg" alt="" /&gt;&lt;/p&gt;
+&lt;p&gt;Any good dictator has a strong defence. Traditionally companies have handled defence through corporate counsel and security staff.&lt;/p&gt;
+&lt;p&gt;Nowadays IT is an important part of this. Ensuring that outsiders can&amp;#8217;t breach the electronic borders known as the firewall.&lt;/p&gt;
+&lt;p&gt;Unfortunately it is also very common that these same staff are spending lots of resource making sure people inside the firewall aren&amp;#8217;t accessing things out side the network that don&amp;#8217;t follow the vision of the visionary leader. After all he does know best and doesn&amp;#8217;t want you to harm yourself by that dangerous foreign land called facebook.&lt;/p&gt;
+&lt;p&gt;North Korea has very strict limits on the amount of visitors (and what kind of visitors can enter the country). God help the poor soul who actually might want to move there. Visionary leaders normally have parts of their bureaucracy known as Department of Immigration/Homeland Security/Control of Foreigners enforce strict limits on this.&lt;/p&gt;
+&lt;p&gt;The visionary leaders in large companies normally have similar departments although they are known as Human Resources. These often have strict application procedures and the power to deport citizen&amp;#8217;s who erroneously aren&amp;#8217;t following the vision of the leader.&lt;/p&gt;
+&lt;h3&gt;Planned economies don&amp;#8217;t scale&lt;/h3&gt;
+&lt;p&gt;I&amp;#8217;m sure we can find and laugh at many such similarities. However where the real and worst similarity is is the fact that no planned economy has ever worked outside of various small communities with a limited scope.&lt;/p&gt;
+&lt;p&gt;Tribal societies can work quite well with a chief. Most tribal societies are pretty small and everyone know each other, you aren&amp;#8217;t going to fuck over the other people in the village as you&amp;#8217;ve known them all your life.&lt;/p&gt;
+&lt;p&gt;Furthermore there tend to be very little diversity of activities within the community. As a leader you can probably grasp when it&amp;#8217;s time to plant the rice or go hunting. No need to understand thousands of different separate industries and activities.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://flickr.com/photos/8206854@N02/515752396/"&gt;&lt;img src="http://farm1.static.flickr.com/210/515752396_1c2e053f47.jpg?v=0" alt="" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;When you start introducing more than a small group of economic activities it is pretty much impossible for a leader or even a council such as a Polit Bureau or a Board of Directors to have sufficient insight and wide enough vision to manage it successfully.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.flickr.com/photos/jeremyhubert/1349807970/"&gt;&lt;img src="http://farm2.static.flickr.com/1378/1349807970_5886c1fe95.jpg" alt="" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The solution utilized by Kim Jong Il and most large corporations it to delegate the planning through the hierarchy. The only problem here is that the business model of people within the bureaucracy is never what ever the business model of the country/company is. Rather it is to move up the hierarchy. It should be noted that I define the bureaucracy as the layers between the visionary leader and the productive citizens/employees.&lt;/p&gt;
+&lt;p&gt;As a rule of thumb you could say that if there is corporate politics in your country/company you are screwed. Politics happen when unproductive layers (battling middle managers) or slices of the company (like IT, HR, Legal) need to prove their worth and protect their job.&lt;/p&gt;
+&lt;h3&gt;Hack&amp;#8217;s for scaling without Kim Jong-Il&lt;/h3&gt;
+&lt;p&gt;For a company to be able to smart and agile you need to have it small enough that either the visionary leader quite literally can keep track of and understand all issues (such as which javascript library to use or pros/cons between say Engineyard and Amazon EC2) or have direct constant access to and respect for those who do.&lt;/p&gt;
+&lt;p&gt;Now you may be under pressure to grow from investors, this is fine and to be understood. Growth is great and should definitely be encouraged, however growth should be managed and controlled. This is the real job of the visionary leader. For example I can&amp;#8217;t stress enough how important it is to keep focus on your business and not spreading into unrelated areas. Can you say Yahoo?&lt;/p&gt;
+&lt;p&gt;Other important thing for managing growth. Outsource every god damn thing that isn&amp;#8217;t directly focused on your core business. Even if it is cheaper to have your inhouse HR, &lt;span class="caps"&gt;CFO&lt;/span&gt;, IT department and wacky staff restaurant outsource it.&lt;/p&gt;
+&lt;p&gt;Having these non productive departments lead to politics. It is difficult to avoid though as these become team members. While it may be fun being visionary about the wonders of token ring network layouts and the productivity enhancing features of tapas day, the vision should be on the business and the productive team members.&lt;/p&gt;
+&lt;h3&gt;So wait a minute, how do you explain China/Google?&lt;/h3&gt;
+&lt;p&gt;While both are definitely large plan economies they have been successful at creating a creative free enterprise culture within. China by copying Hong Kong into a growing number of enterprise zones, Google by using 20% time.&lt;/p&gt;
+&lt;p&gt;I think 20% time is probably by far the most important innovation keeping Google afloat with new product development. It&amp;#8217;s kind of like telling all your employees that for one day a week they are their own visionary leader.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://flickr.com/photos/gblock/2498179185/"&gt;&lt;img src="http://farm3.static.flickr.com/2177/2498179185_93358e878f.jpg?v=0" alt="" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This way Google have avoided the trap of most large plan economies. &amp;#8220;We need to be in the portal/mail/social networking/video space&amp;#8221; or Mao&amp;#8217;s catastrophic &lt;a href="http://en.wikipedia.org/wiki/Great_Leap_Forward"&gt;Great leap forward&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Of course Google still has to centrally plan which of the maybe 100 internal social network projects they want to push, but they are able pick one that is already under development and under the leadership of a visionary guy/gal. But picking a well designed visionary project is a lot less risky than designing one by central committee.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://flickr.com/photos/reportage/347543340/"&gt;&lt;img src="http://farm1.static.flickr.com/136/347543340_ec93699d03.jpg?v=0" alt="" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Another important thing is openness. China was one of the most closed societies in the world and in some areas they still are. However China learnt that to utilize their number one resource (their vast population) they needed to focus on the globalizing world. As the world globalizes and the world wide economies grow China is their to sell them clothes, shoes and computers.&lt;/p&gt;
+&lt;p&gt;China&amp;#8217;s manufacturing infrastructure has become the base for the unprecedented global economic growth in the past 20 years and the foundation for startups in just about every country in the world (except maybe North Korea).&lt;/p&gt;
+&lt;p&gt;Google have followed essentially the same approach as China. They realized that their strength was in their vast server capacity they developed for their core search business. It is therefore in Google&amp;#8217;s best interest to push the open web and create infrastructure that others can build on. AdSense, OpenSocial and AppEngine are all examples of this.&lt;/p&gt;
+&lt;p&gt;Of course some countries/companies set up &lt;a href="http://en.wikipedia.org/wiki/Free_economic_zone"&gt;Economic Free Zones&lt;/a&gt; in an attempt to copy the more successful countries/companies. An example was Digital&amp;#8217;s &lt;a href="http://en.wikipedia.org/wiki/AltaVista"&gt;AltaVista division&lt;/a&gt; (where I used to work) and Yahoo&amp;#8217;s Brickhouse. However if they aren&amp;#8217;t respected by the mother ship and corporate politics cause them to be ignored, they can&amp;#8217;t work in the long run.&lt;/p&gt;
+&lt;p&gt;I should also say that rumors are from googlers that Google may be heading down the path of Yahoo into corporate political hell. It definitely would take a mighty visionary leader to avoid this happening in such a large company, thankfully they have 2. But then so did Yahoo.&lt;/p&gt;
+&lt;h3&gt;Don&amp;#8217;t get pushed down the slippery slope&lt;/h3&gt;
+&lt;p&gt;As a startup today you are hopefully on top of your innovative product/service. If you don&amp;#8217;t run a tight whip with regards to this focus it is very easy fall into the traps that will send you straight to North Korea.&lt;/p&gt;
+&lt;p&gt;Many entrepreneurs for example are very young and have no experience in the day to day running of businesses. They therefore often take advise from people older than themselves. You probably wouldn&amp;#8217;t take programming advise from a Cobol programmer in building your hot Rails app, but people follow dated advise from the 60s about their business.&lt;/p&gt;
+&lt;p&gt;The slippery slope goes something like:&lt;/p&gt;
+&lt;ol&gt;
+	&lt;li&gt;Get an office&lt;/li&gt;
+	&lt;li&gt;Buy and configure your own servers&lt;/li&gt;
+	&lt;li&gt;Hire an office manager&lt;/li&gt;
+	&lt;li&gt;Hire an HR person&lt;/li&gt;
+	&lt;li&gt;Hire a finance person&lt;/li&gt;
+	&lt;li&gt;Hire an IT person as the HR and finance person can&amp;#8217;t install Office and the programmers are too busy&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;By now whether you believe me or not have 5 different fiefdoms to require vision and resources. As the company grows these fiefdoms become empires to be protected at all cost.&lt;/p&gt;
+&lt;p&gt;The server guy has all the reasons in the world why you can&amp;#8217;t move to EC2 or AppEngine. So you won&amp;#8217;t get that flexibility. The developer&amp;#8217;s can&amp;#8217;t pick a new language or database as these don&amp;#8217;t follow our standards.&lt;/p&gt;
+&lt;p&gt;The HR department starts implementing policies that she brought with her from her old job.&lt;/p&gt;
+&lt;p&gt;In general once you have these fiefdoms installed it is very hard for an inexperienced visionary leader to control and manage them.&lt;/p&gt;
+&lt;p&gt;The fact is that most startups go through this process, because that&amp;#8217;s what all the other startups do, without really questioning the need for it.&lt;/p&gt;
+&lt;p&gt;All of the above points can and should be outsourced relatively cheaply. Let the HR people innovate and be visionary themselves in their own HR startup (the movie industry uses these almost exclusively eg &lt;a href="http://www.indiepayroll.com/how_it_works.html"&gt;IndiePayroll&lt;/a&gt; ).&lt;/p&gt;
+&lt;p&gt;EngineYard or Amazon provide very good and very different outsourced hosting.&lt;/p&gt;
+&lt;p&gt;While you can outsource IT. I think that everyone who works in a tech startup should be able to manage their own computer (or at least a MacBook).&lt;/p&gt;
+&lt;p&gt;I know people have strong opinions about offices. However there are other options besides the obvious such as working out of the visionary leaders &lt;span class="caps"&gt;SOMA&lt;/span&gt; loft or everyone working from home. Most cities now have great &lt;a href="http://coworking.pbwiki.com/"&gt;CoWorking&lt;/a&gt; spaces, coffee shops and even &lt;a href="http://www.regus.com/"&gt;Regus&lt;/a&gt; is a good yet expensive alternative.&lt;/p&gt;
+&lt;h3&gt;VC&amp;#8217;s and other Grown ups&lt;/h3&gt;
+&lt;p&gt;VC&amp;#8217;s and other advisors (such as Mom and Dad) can also be particularly bad at pushing you down the way it&amp;#8217;s always been done. They will often push you down the above steps, because thats what you need to scale. Sometimes they will be very insistent on this and you won&amp;#8217;t really have a choice. You might end up thinking, they know better than me or this isn&amp;#8217;t a battle I&amp;#8217;m willing to fight.&lt;/p&gt;
+&lt;p&gt;There are many risks involved in taking funding, but one of the worst is loosing control. Most people imagine this loss of control as being booted from the &lt;span class="caps"&gt;CEO&lt;/span&gt; spot, but you are way more likely to loose control to a VC financed bureaucracy.&lt;/p&gt;
+&lt;p&gt;It is important if you have a philosophy on this that you make sure the VC&amp;#8217;s understand that being lean and agile is an important part of your strategy and that this isn&amp;#8217;t negotiable.&lt;/p&gt;
+&lt;h3&gt;Finding the right size&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Popular perception holds that companies must always be growing or they&amp;rsquo;re dying. There&amp;rsquo;s either up or down, win or lose, success or failure. I think that&amp;rsquo;s a harmful dichotomy that leads to the death of perfectly viable companies in their quest for constant growth. &lt;a href="http://www.37signals.com/svn/posts/1068-finding-the-natural-size-for-your-company"&gt;&lt;span class="caps"&gt;DHH&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Startups are all about growth. However there may come a time, when you are so successful at what you do that the only way to grow is sideways into other areas. No matter how tempting this is and how good it appears that Google are at it, I think it is a mistake.&lt;/p&gt;
+&lt;p&gt;Better yet would be to grow by investing in other startups or even encouraging your best employees to go on &amp;#8220;80% time&amp;#8221; in return for a 20% stake of his dream. This would let you essentially scale into new areas without removing the focus from your business.&lt;/p&gt;
+&lt;h3&gt;Find out more&lt;/h3&gt;
+&lt;p&gt;&lt;a href="http://37signals.com"&gt;37Signals&lt;/a&gt; seems to follow this philosophy. &lt;a href="http://www.justin.tv/hackertv/97862/DHH_Talk__Startup_School_2008"&gt;David gave a talk at Startup Camp&lt;/a&gt; where he talked about several strategies that they have taken in not becoming North Korea.&lt;/p&gt;
+&lt;p&gt;A great slightly academic discussion about the problems with central planning within companies can be found at the &lt;a href="http://www.econtalk.org/archives/2008/01/munger_on_the_n.html"&gt;EconTalk Podcast: Munger on the Nature of the Firm&lt;/a&gt;&lt;/p&gt;
+
+&lt;p class="agree2_ad"&gt;&lt;a href="https://agree2.com/masters/37a9d0507479e9d5fa48f24c47126bb73bfef40d"&gt;Create a Software Development Agreement with our free web service Agree2&lt;/a&gt;&lt;/p&gt;&lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=IhHOIB.P"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=IhHOIB.P" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=UXTeS5.P"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=UXTeS5.P" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=XKWg5H.P"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=XKWg5H.P" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=CspxHj.p"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=CspxHj.p" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=vlga13.p"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=vlga13.p" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/StakeVentures/~4/389901758" height="1" width="1"/&gt;</content>
+  <feedburner:origLink>http://stakeventures.com/articles/2008/09/11/dont-be-yet-another-kim-jong-il-of-the-business-world</feedburner:origLink></entry>
+  <entry>
+    <author>
+      <name>pelle</name>
+    </author>
+    <id>tag:stakeventures.com,2005:Typo-292</id>
+    <issued>2008-09-03T23:44:25+00:00</issued>
+    <modified>2008-09-03T23:44:26+00:00</modified>
+    <title>How the Google EULA controversy shows the problems with lawyer written agreements</title>
+    <link href="http://feeds.feedburner.com/~r/StakeVentures/~3/382757982/how-the-google-eula-controversy-shows-the-problems-with-lawyer-written-agreements" rel="alternate" type="text/html" />
+    <dc:subject>Legal</dc:subject>
+    <content mode="escaped" type="text/html">&lt;p&gt;By now you have no doubt heard about the issue with &lt;a href="http://www.google.com/chrome/eula.html"&gt;Google&amp;#8217;s Chrome End User License Agreement&lt;/a&gt; (or EULA).&lt;/p&gt;
+&lt;p&gt;The original clause of concern was:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;1.1 You retain copyright and any other rights that you already hold in Content that you submit, post or display on or through the Services. By submitting, posting or displaying the content, you give Google a perpetual, irrevocable, worldwide, royalty-free and non-exclusive licence to reproduce, adapt, modify, translate, publish, publicly perform, publicly display and distribute any Content that you submit, post or display on or through the Services. This licence is for the sole purpose of enabling Google to display, distribute and promote the Services and may be revoked for certain Services as defined in the Additional Terms of those Services.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;In theory this pretty much gave Google rights to anything you do through your browser. In practice as it is a non negotiated &lt;a href="http://en.wikipedia.org/wiki/Standard_form_contract"&gt;contract of adhesion&lt;/a&gt; this clause probably wouldn&amp;#8217;t hold up in court anyway.  (If they used &lt;a href="http://agree2.com"&gt;Agree2&lt;/a&gt; it would though)&lt;/p&gt;
+&lt;p&gt;Anyway Google changed it to:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;11.1 You retain copyright and any other rights you already hold in Content which you submit, post or display on or through, the Services.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href="http://arstechnica.com/news.ars/post/20080903-google-on-chrome-eula-controversy-our-bad-well-change-it.html"&gt;Ars Technica has the full story on the change&lt;/a&gt; with this choice quote from Google&amp;#8217;s Senior Product Counsel (read lawyer) for google Chrome:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Google&amp;#8217;s Rebecca Ward, Senior Product Counsel for Google Chrome, now tells Ars Technica that the company tries to reuse these licenses as much as possible, &amp;#8220;in order to keep things simple for our users.&amp;#8221; Ward admits that sometimes &amp;#8220;this means that the legal terms for a specific product may include terms that don&amp;#8217;t apply well to the use of that product&amp;#8221; and says that Google is &amp;#8220;working quickly to remove language from Section 11 of the current Google Chrome terms of service. This change will apply retroactively to all users who have downloaded Google Chrome.&amp;#8221;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This to me is why you really should not leave these to lawyers. Lawyers will almost always copy and paste rather than look at the real needs of your service, situation or offering. This is as she says exactly what She did. Without at any point thinking that this does not in any way make sense for a browser.&lt;/p&gt;
+&lt;p&gt;Too many people (such as &lt;a href="http://stakeventures.com/articles/2008/03/26/it-wont-hold-up-in-court"&gt;Rafe&lt;/a&gt;) hold lawyers up on such a pedestal that they forget that it is them the owners, product managers or what have you that really understand the product. I am not saying don&amp;#8217;t use lawyers, just check it over and refuse anything that doesn&amp;#8217;t make sense. Also tell them your concerns and needs with the agreement before hand.&lt;/p&gt;
+
+
+
+&lt;p class="agree2_ad"&gt;&lt;a href="http://agree2.com?referrer=0"&gt;Create, negotiate and accept legally binding contracts for free with our Agree2 service.&lt;/a&gt;&lt;/p&gt;&lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=79NgeB.P"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=79NgeB.P" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=fmDkkg.P"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=fmDkkg.P" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=uljCwe.P"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=uljCwe.P" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=EvD16Z.p"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=EvD16Z.p" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=FY77Gx.p"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=FY77Gx.p" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/StakeVentures/~4/382757982" height="1" width="1"/&gt;</content>
+  <feedburner:origLink>http://stakeventures.com/articles/2008/09/03/how-the-google-eula-controversy-shows-the-problems-with-lawyer-written-agreements</feedburner:origLink></entry>
+  <entry>
+    <author>
+      <name>pelle</name>
+    </author>
+    <id>tag:stakeventures.com,2005:Typo-291</id>
+    <issued>2008-07-22T15:48:02+00:00</issued>
+    <modified>2008-11-26T18:00:51+00:00</modified>
+    <title>How the Man finally brought e-gold down</title>
+    <link href="http://feeds.feedburner.com/~r/StakeVentures/~3/342847271/the-man-finally-brought-e-gold-down" rel="alternate" type="text/html" />
+    <dc:subject>Financial Innovation</dc:subject>
+    <dc:subject>Payment systems</dc:subject>
+    <content mode="escaped" type="text/html">&lt;p&gt;&lt;strong&gt;update&lt;/strong&gt; Several people have mistakenly &lt;a href="http://news.ycombinator.com/item?id=253763"&gt;thought&lt;/a&gt; my slightly tongue in cheek title to mean that I&amp;#8217;m one of the part of the fringe paranoia groups here. While the &lt;span class="caps"&gt;USDOJ&lt;/span&gt; did bring down e-gold. The term &amp;#8220;The Man&amp;#8221; as well as the use of references to Black Helicopters were an attempt to caricaturize those paranoia groups. Now where did I put my tin foil hat.&lt;br /&gt;
+ &lt;br /&gt;
+e-gold is an 100% gold backed electronic currency. It revolutionized the electronic currency world using pretty simple double entry book keeping technology backed by currently 2.54 metric tons of gold and innovative legal structures to keep it safe. They are in the news today and there are lots of things startups can learn from their story about trust, innovation, legal structures, transparency and how not to deal with regulators.&lt;/p&gt;
+&lt;div class="thumbnail"&gt;&lt;a href="http://skitch.com/pelle/txfp/e-gold-examiner"&gt;&lt;img src="http://img.skitch.com/20080722-ekhtfu9hthx694gbw8dea86u4h.preview.jpg" alt="e-gold Examiner" /&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;p&gt;It is with sadness I today read &lt;a href="http://blog.e-gold.com/2008/07/a-new-beginning.html"&gt;Douglas Jackson&amp;#8217;s&lt;/a&gt; blog post outlining the final blow to &lt;a href="http://www.e-gold.com"&gt;e-gold&lt;/a&gt; by the US government. It felt like this wasn&amp;#8217;t written by Doug, but by Doug with the NSA&amp;#8217;s secret alien mind control device implanted. In reality the mind control device used was &lt;a href="http://news.yahoo.com/s/pcworld/20080721/tc_pcworld/148720"&gt;the threat of 20 years of jail and a half million dollar fine&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Also as I write in the &lt;a href="https://agree2.com/masters/public-review-of-agree2-user-agreement"&gt;Agree2 User Agreement&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;We are men of principles, but stronger men than us have changed principles with 3 hovering black helicopters over them. If you know what I mean.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This is a case where probably a bit more than 3 hovering black helicopters were hovering over them. So I guess we can only feel sad and hope the best for Doug and his family.&lt;/p&gt;
+
+&lt;h2&gt;The Charge&lt;/h2&gt;
+&lt;p&gt;The government had been after them for a while and where they finally got them to plea bargain admitting &amp;#8220;Conspiracy to Commit Money Laundering&amp;#8221; and &amp;#8220;Operation of an unlicensed Money Transmitting Business&amp;#8221;. The real important of the two was the Conspiracy to Commit Money Laundering charge, which has nothing to do with Douglas Jackson carrying suit cases filled with $100 bills into banks in the Cayman Islands. It is failure to do &amp;#8220;Know Your Customer&amp;#8221; or &lt;span class="caps"&gt;KYC&lt;/span&gt; as it&amp;#8217;s known in the financial industry.&lt;/p&gt;
+&lt;h3&gt;Know Your Customer&lt;/h3&gt;
+&lt;p&gt;&lt;span class="caps"&gt;KYC&lt;/span&gt; requires financial institutions including money transmitters to know who their customers are. This can involve simply showing your id when you open an account in the US. Other jurisdictions such as Panama are way more conservative requiring bank references, lawyers references, information about your assets etc. In the US PayPal innovated by inventing that tiny authenticating payment to your bank account, which seems to be enough &lt;span class="caps"&gt;KYC&lt;/span&gt; for single purpose financial institutions such as payments and savings.&lt;/p&gt;
+&lt;p&gt;&lt;span class="caps"&gt;KYC&lt;/span&gt; since it was introduced in the late 90s as a requirement has been the single most destructive concept for innovation and startups in the financial space. e-gold was the last proud hold out against it as it went so against the principles of their operations. You could pretty much open any amount of accounts that you wanted to without any real documentation.&lt;/p&gt;
+&lt;h2&gt;E-Golds innovation in Governance&lt;/h2&gt;
+&lt;p&gt;Where e-gold truly innovated was their governance model. This is also what makes it so difficult to add a PayPal like &lt;span class="caps"&gt;KYC&lt;/span&gt; step to their technology. e-gold is built up of several different legal structures who are independent.&lt;/p&gt;
+&lt;p&gt;Gold and Silver Reserve Inc (G&amp;amp;SR) is the parent company of it all and run by Douglas Jackson. In 1999 they did a major restructuring, which is outlined in their &lt;a href="http://www.e-gold.com/unsecure/e-g-agree.htm"&gt;e-gold Account User Agreement&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The e-gold Ltd a company registered in Nevis in the Caribbean operated the book entry system. The book entry system is basically the servers containing the accounts and transactions. This is what you see when you go to the &lt;a href="http://www.e-gold.com"&gt;e-gold&lt;/a&gt; site. This site also has an innovative examiner tool as seen in the screen shots above and below:&lt;/p&gt;
+&lt;div class="thumbnail"&gt;&lt;a href="http://skitch.com/pelle/tx8j/e-gold-examiner"&gt;&lt;img src="http://img.skitch.com/20080722-jacidwqu49en9k235ey4g9jbhk.preview.jpg" alt="e-gold Examiner" /&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;p&gt;The e-gold Bullion Reserve Special Purpose Trust is a little understood but very important part as they actually hold the title to the gold on behalf of account holders.&lt;/p&gt;
+&lt;p&gt;After that there are the 3 different gold repositories &lt;a href="http://www.e-gold.com/examiner_blowup.asp?id=400&amp;amp;metal=1"&gt;Brinks&lt;/a&gt;, &lt;a href="http://www.e-gold.com/examiner_blowup.asp?id=200&amp;amp;metal=1"&gt;Transguard&lt;/a&gt; and &lt;a href="http://www.e-gold.com/examiner_blowup.asp?id=300&amp;amp;metal=1"&gt;&lt;span class="caps"&gt;MAT&lt;/span&gt; Securitas Express AG&lt;/a&gt; who hold physical bars of gold in London, Zurich and Dubai.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.omnipay.com"&gt;OmniPay&lt;/a&gt; is the primary &amp;#8220;exchange provider&amp;#8221; or interface between the e-gold system and the outside world. This was/is operated directly by G&amp;amp;SR out of their offices in Melbourne, FL. If you wanted to buy or sell large amounts of e-gold you essentially wire them the funds and they provided you with gold in your e-gold account. From what I understand OmniPay was pretty thorough doing &lt;span class="caps"&gt;KYC&lt;/span&gt;.&lt;/p&gt;
+&lt;h3&gt;Transparency and real time auditing by users&lt;/h3&gt;
+&lt;p&gt;Since very early days. Probably earlier than 1998 e-gold has offered several levels of transparency that are still unheard of. When I was working in the payment space myself I liked to look at these as &amp;#8220;live audit&amp;#8221; tools as normal users can keep an eye on the system.&lt;/p&gt;
+&lt;p&gt;The most important tool is the &lt;a href="http://www.e-gold.com/examiner.html"&gt;e-gold Examiner&lt;/a&gt; which presents a live view of the accounts of the entire e-gold system. Many of the screenshots in this article come from the examiner. You can see how much Gold, Silver, Platinum and Palladium is held (the assets) and how much is in circulation or held by users (the liabilities).&lt;/p&gt;
+&lt;p&gt;Scrolling further down you can see how much is held at each repository. You can further drill down on these to see information about the exact bars held at each repository. This info includes the Brand, serial number, purity and exact weight of each. All of this information is verified annually by the &lt;a href="http://www.e-gold.com/docs/Examination%20Report.pdf"&gt;auditors report&lt;/a&gt;.&lt;/p&gt;
+&lt;div class="thumbnail"&gt;&lt;a href="http://skitch.com/pelle/txe2/e-gold-statistics"&gt;&lt;img src="http://img.skitch.com/20080722-tnbkxgn842aak1stsxhndge6gj.preview.jpg" alt="e-gold Statistics" /&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;p&gt;Another interesting audit feature is the &lt;a href="http://www.e-gold.com/stats.html"&gt;e-gold system statistics&lt;/a&gt; page. This contains interesting live statistics of the accounts and transactions held. As you can see there is still quite a lot of activity going on, however the amount of spends (transactions in e-gold speak) has gone down.&lt;/p&gt;
+&lt;h2&gt;Account Holders&lt;/h2&gt;
+&lt;p&gt;There are finally two other parties to the whole structure, the individual account holders and the independent exchange agents.&lt;/p&gt;
+&lt;p&gt;A key difference between e-gold and a bank is that as an account holder you actually own the gold in your account. When you deposit money in a bank account you strictly speaking don&amp;#8217;t own it anymore. You lend it the bank. For this the bank pays you interest. This leads to the risks that we&amp;#8217;re seeing again now when banks go bust depositors lose money. There are various band-aids such as &lt;span class="caps"&gt;FDIC&lt;/span&gt; to insure against this, however it is not perfect. Douglas Jackson could never touch your gold, reinvest it, sell it or otherwise.&lt;/p&gt;
+&lt;p&gt;In e-gold all transfers are final, which is one reason it became popular originally as an alternative to PayPal. The only way this can be done is by being at more than arms length distance from the banking system. The US banking system allow charge backs of just about any payment. So lets say you receive a wire of $100,000 from an investor. &lt;span class="caps"&gt;AFAIK&lt;/span&gt; theoretically speaking he could cancel that wire within a year. Foreign banks are normally the ones who are hurt most by this, but they grin and bear it. In e-gold one such chargeback could undermine the stability of the system.&lt;/p&gt;
+&lt;h2&gt;Independent Exchange Agents&lt;/h2&gt;
+&lt;p&gt;The Independent Exchange Agents was a very innovative idea that e-gold thought up as part of their reorg in 1999 to achieve this seperation of concerns. OmniPay would focus on large exchanges with established known players, but small independent local exchange providers would exchange between local currency and e-gold. Jackson and co decided from the beginning not to certify or regulate this, but rather let the market work it all out. This was extremely innovative, but might in the end have been one of the downfalls of the system. Theoretically this pushes legal compliance in each jurisdiction out to these exchange agents, but many of these were not following their local rules.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.icegold.com/"&gt;IceGold&lt;/a&gt; was an example of a really well run Exchange Agent run by Paul Vahur out of Estonia. Paul and his team would let you &lt;a href="http://www.icegold.com/rates.php"&gt;buy and sell e-gold at 2% below or above&lt;/a&gt; respectively of the official &lt;a href="http://www.e-gold.com/currentexchange.html"&gt;e-gold spot rate&lt;/a&gt;. Unfortunately a notice on his site says that they have been hit by the dreaded &lt;span class="caps"&gt;KYC&lt;/span&gt; as well:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Due to the adoption of Estonia&amp;#8217;s new Anti Money-laundering Law on Jan 28th 2008 we have decided to stop providing exchange services. The new law requires exchangers of alternative payment systems &amp;#8211; such as IceGold &amp;#8211; to identify all customers face to face.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Besides good guys like Paul, there were lots of instances with fraudulent exchangers. Several industry associations such as &lt;a href="http://www.gdcaonline.org"&gt;&lt;span class="caps"&gt;GDCA&lt;/span&gt;&lt;/a&gt; were set up to certify exchangers, but a quick google search shows me that there are still many around that don&amp;#8217;t exactly ooze trust. That said the &lt;a href="http://gold-pages.net/Exchange_Providers__Agents/index.html"&gt;Gold Pages Electronic Currency Directory still has 154 exchangers listed&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;It also led to the development of a whole series of &amp;#8220;Autoexchangers&amp;#8221; which let you exchange e-gold automatically for other electronic currencies such as &lt;a href="http://www.wmtransfer.com/"&gt;WebMoney&lt;/a&gt;. In his blog post Doug knowing well that he can&amp;#8217;t force them to stop yet pleads:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;We are requesting that autoexchangers &amp;#8211; even though the technical beauty of the autoexchanger concept is sublime &amp;#8211; cease supporting exchanges to or from e-gold for the time being. The problem with the autoexchanger concept is that although the autoexchangers themselves may be perfectly compliant with requirements [promulgated by Webmoney and e-gold] to automatically put tracking data in their memo fields, and despite the fact that Webmoney is also committed to aiding in the suppression of cybercrime, the fact is that a substantial proportion of the cybercriminals that abuse e-gold have evolved into a modus operandi that involves autoexchanging possible proceeds of crime into Webmoney, sometimes within minutes of receiving the value, thus making interdiction a matter of catch-up or closing the barn door after the horse is gone.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;Good Innovation&lt;/h2&gt;
+&lt;p&gt;In the end the freedom that the lack of &lt;span class="caps"&gt;KYC&lt;/span&gt; and knowing that all transfers are final encouraged lots of innovation. People built special purpose currencies on top of e-gold. An online Casino created a series of bonds as an experiment that paid back depending on how many hands were plaid during the lifetime of the series of bond. Lots of small merchants  as well as sites like &lt;a href="http://www.getafreelancer.com/"&gt;Get a Freelancer&lt;/a&gt; accept e-gold due to both perceived and real pain accepting PayPal or Credit Cards.&lt;/p&gt;
+&lt;h3&gt;Bad Innovation&lt;/h3&gt;
+&lt;p&gt;All of this freedom also fit great with a less nice but highly profitable set of scams known as &lt;a href="http://en.wikipedia.org/wiki/High-yield_investment_program"&gt;High Yield Investment Programs&lt;/a&gt; or HYIP&amp;#8217;s as well as other Ponzi like scams. These programs often claim to pay %100 interest over a period of a few weeks. There are 1000&amp;#8217;s of them out there and many of the use e-gold. E-gold was perfect. The two aspects that encouraged innovation lack of &lt;span class="caps"&gt;KYC&lt;/span&gt; and lack of charge backs made it easy for scammers to rob money from financially uneducated people.&lt;/p&gt;
+&lt;p&gt;The e-gold mailing lists were filled with people analyzing the &lt;a href="http://www.e-gold.com/stats.html"&gt;E-Gold Stats page&lt;/a&gt; for any variations. Often they noticed large increases in a certain transaction size and you could guess that another popular &lt;span class="caps"&gt;HYIP&lt;/span&gt; was making the rounds.&lt;/p&gt;
+&lt;p&gt;All though &lt;a href="http://blog.e-gold.com/2008/03/e-gold-assists.html"&gt;e-gold claims that they have helped law enforcement bring hundreds of criminals to justice&lt;/a&gt; there are thousands more small and large crooks that have slipped through the cracks and this is likely why the US Justice Department started this case.&lt;/p&gt;
+&lt;p&gt;However following that do you need to charge the Federal Reserve Chairman for conspiracy to money laundering just because US currency notes are one of the most common instruments of payment used in criminal acts. Or if you look at e-gold as a merely a web service intermediary should Sergey and Larry also face personal criminal charges because lots of Ads for scams and illegal products are placed using Adwords?&lt;/p&gt;
+&lt;p&gt;Personally I am against the case but I find it was pretty much inevitable. To create such as system even partially on US territory is pretty much impossible. While the key aspects such as the trust and gold holdings being held outside the US as long as you have one toe in the US you are an easy target.&lt;/p&gt;
+&lt;p&gt;I was personally involved in creating an alternative currency system in Panama and I really wouldn&amp;#8217;t even recommend doing anything like e-gold in most of the traditional offshore jurisdictions such as Panama or Cayman Islands as they have way more difficult &lt;span class="caps"&gt;KYC&lt;/span&gt; requirements now than US and EU jurisdictions. The best bet is for you to do it within a major jurisdiction and follow the regulatory pain.&lt;/p&gt;
+&lt;h2&gt;Alternatives&lt;/h2&gt;
+&lt;p&gt;Several alternatives exist to e-gold:&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.wmtransfer.com/"&gt;Webmoney&lt;/a&gt; is probably one of the safest bets right now outside the US as they being in Russia are unlikely to bow to pressure from the US and EU. The downside of this of course is the image of anything todo with money and Russia. I don&amp;#8217;t known anything about them really except they&amp;#8217;ve been around for a long time and seem stable. They also seem to have figured out a way to create trust in a very low trust society such as Russia.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://goldmoney.com/"&gt;GoldMoney&lt;/a&gt; is another good alternative to e-gold. They are gold based and have the same no charge back policy. There are many, many similarities between them and e-gold. However being pragmatic they instituted strong &lt;span class="caps"&gt;KYC&lt;/span&gt; practices early on and &lt;span class="caps"&gt;AFAIK&lt;/span&gt; don&amp;#8217;t allow independent exchange providers. You have to go through certain certified exchange agents.&lt;/p&gt;
+&lt;p&gt;They are regulated by the &lt;a href="http://goldmoney.com/en/images/about-images/jfsc-license.pdf"&gt;Jersey Financial Services Commision&lt;/a&gt; which probably means they are safe in EU.  Their principals are in the US, so they could theoretically be hit by the &amp;#8220;Operation of an unlicensed Money Transmitting Business&amp;#8221; charge. However PayPal was hit by this and are still in business. I think as long as they are strict with &lt;span class="caps"&gt;KYC&lt;/span&gt; they will remain in businesses. This strictness though has meant that not quite as much innovation has been going on with GoldMoney as with e-gold. Granted far fewer scams have been perpetrated with GoldMoney as well.&lt;/p&gt;
+&lt;p&gt;PayPal is still around and is still the number one player in p2p and small business electronic payments (I think). Several interesting applications have been built on PayPal. That said lots of small businesses have had their businesses destroyed due to over reliance on them. Just google PayPal sucks for examples.&lt;/p&gt;
+&lt;p&gt;The interesting new player for startups wishing to innovate in e-commerce applications is &lt;a href="http://www.amazon.com/gp/browse.html?node=342430011"&gt;Amazon&amp;#8217;s Flexible Payment System&lt;/a&gt; which opens up all kinds of interesting applications. It is very similar to the payment system I was working on in Panama. I am personally very interested in trying it out and will report back in the future on this.&lt;/p&gt;
+&lt;p&gt;Amazon has built up solid knowledge of seemingly half the world so &lt;span class="caps"&gt;KYC&lt;/span&gt; is way easier for them than for just about anyone else. This doubled with their operational experience in handling their own internal payments can only bode well for them in the future. Due to the interlinking with the traditional financial system charge backs are almost certainly still a problem, but they do have various interesting features for managing this risk.&lt;/p&gt;
+&lt;p&gt;An even more interesting new trend is that many FaceBook Applications are now financing themselves with their own virtual currencies. They sell currency units and/or allow people to earn them. Then they sell virtual products such as virtual flowers to their users. It will be interesting to see how this moves on and if some of them eventually will get hit by overzealous regulators.&lt;/p&gt;
+&lt;h2&gt;The Legacy of e-gold&lt;/h2&gt;
+&lt;p&gt;The innovations in governance that e-gold spear headed made e-gold a trusted system. It is still operational today, except that you can&amp;#8217;t create new accounts. Doug has done all kinds of bad moves in the past such as when &lt;a href="http://www.systemics.com/legal/digigold/"&gt;he sued my old pal Ian Grigg&lt;/a&gt; and another friend of mine &lt;a href="http://www.systemics.com/legal/digigold/#evans"&gt;Charlie Evans&lt;/a&gt; in 2001. I was present at the &lt;span class="caps"&gt;EFCE&lt;/span&gt; conference in Edinburgh when they were both served. Doug and G&amp;amp;SR lost the case.&lt;/p&gt;
+&lt;p&gt;It is pretty interesting thought that even after this and other stupid moves by Douglas Jackson, people still had trust in the system. It will be interesting to see what happens in the e-gold economy in the coming months while they build &lt;span class="caps"&gt;KYC&lt;/span&gt; into the system.&lt;/p&gt;
+&lt;h2&gt;Lessons  for startups in 2008&lt;/h2&gt;
+&lt;p&gt;Lessons that web startups can learn from this are i think in particular about governance and transparency. If people are relying on your service you need a user agreement that protects your users against you. Real time public statistics can also go a long way in providing transparency and trust in your system. It might even make it easier for you to get investors.&lt;/p&gt;
+&lt;p&gt;I wrote about e-gold earlier in &lt;a href="http://blog.extraeagle.com/2007/01/13/how-a-doug-took-on-the-us-dollar/"&gt;How Doug took on the US Dollar&lt;/a&gt;. I should probably disclose that I have met Doug and several other people from the team during a visit to their offices in Melbourne, FL in 1999. I currently have probably less than a grams worth of e-gold in my account with a very low account number. I haven&amp;#8217;t logged in to it in years.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;update&lt;/strong&gt; Ian Grig whom I mentioned earlier &lt;a href="https://financialcryptography.com/mt/archives/001081.html"&gt;comments on the case&lt;/a&gt;&lt;/p&gt;
+
+&lt;p class="agree2_ad"&gt;&lt;a href="https://agree2.com/masters/38f8f05d70c7d84f28e349e3a16f8444bdaf4ea8"&gt;Create a simple NDA with zero legalese in no time at all and for free at our service Agree2.&lt;/a&gt;&lt;/p&gt;&lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=zOyvO"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=zOyvO" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=K9r3O"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=K9r3O" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=1f8RO"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=1f8RO" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=7t0Go"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=7t0Go" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=Yhj4o"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=Yhj4o" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/StakeVentures/~4/342847271" height="1" width="1"/&gt;</content>
+  <feedburner:origLink>http://stakeventures.com/articles/2008/07/22/the-man-finally-brought-e-gold-down</feedburner:origLink></entry>
+  <entry>
+    <author>
+      <name>pelle</name>
+    </author>
+    <id>tag:stakeventures.com,2005:Typo-290</id>
+    <issued>2008-07-17T15:58:32+00:00</issued>
+    <modified>2008-07-17T15:58:35+00:00</modified>
+    <title>Relaunching TimeCert a trusted third party time stamping service</title>
+    <link href="http://feeds.feedburner.com/~r/StakeVentures/~3/338342191/relaunching-timecert-a-trusted-third-party-time-stamping-service" rel="alternate" type="text/html" />
+    <dc:subject>TimeCert</dc:subject>
+    <content mode="escaped" type="text/html">&lt;p&gt;I launched &lt;a href="http://timecert.org"&gt;TimeCert&lt;/a&gt; a &lt;a href="http://neubia.com/archives/000483.html"&gt;few years ago&lt;/a&gt; and haven&amp;#8217;t given it much love since. Now I&amp;#8217;m pleased to announce the official relaunch of it.&lt;/p&gt;
+
+
+&lt;div class="thumbnail"&gt;&lt;a href="http://skitch.com/pelle/td6x/timecert"&gt;&lt;img src="http://img.skitch.com/20080717-j5155hmbtcjhd7nde3r45w764w.preview.jpg" alt="TimeCert" /&gt;&lt;/a&gt;&lt;/div&gt;
+
+	&lt;p&gt;&lt;a href="http://timecert.org"&gt;TimeCert&lt;/a&gt; is a really tiny and light web application that does one thing and does it well. It records and presents the time it first saw something. If you look at the bottom of this post you can see a small TimeCert iframe which tells you the first time timecert saw this article.&lt;/p&gt;
+
+
+	&lt;p&gt;The main application of this is really for intellectual property protection. But there are also various other applications. Lets say you&amp;#8217;ve been blogging about an idea for a while and all of a sudden someone hits you with a &lt;a href="http://www.techcrunch.com/2008/07/17/channel-intelligence-sues-just-about-everyone-who-offers-wishlists/"&gt;Patent Infringement Suit&lt;/a&gt;. You know it could happen. Well TimeCert provides evidence as a trusted third party that you actually wrote your blog posts when you did.&lt;/p&gt;
+
+
+	&lt;p&gt;One thing to remember though is that TimeCert can&amp;#8217;t back date any existing content. It only knows the first time it was presented with the data.&lt;/p&gt;
+
+
+	&lt;h3&gt;&lt;span class="caps"&gt;API&lt;/span&gt;&lt;/h3&gt;
+
+
+	&lt;p&gt;The &lt;span class="caps"&gt;API&lt;/span&gt; is so simple that it&amp;#8217;s not even funny. First of all you need to create a &lt;span class="caps"&gt;SHA1&lt;/span&gt; hex digest of the data you want timestamped. This is easy in most languages. In Ruby it&amp;#8217;s:&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code&gt;require 'digest/sha1'
+@digest=Digest::SHA1.hexdigest @your_data&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;Just perform a &lt;span class="caps"&gt;HTTP GET&lt;/span&gt; to TimeCert to one of the urls below changing &lt;span class="caps"&gt;DIGEST&lt;/span&gt; to the digest you created above:&lt;/p&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;http://timecert.org/DIGEST for end user link&lt;/li&gt;
+		&lt;li&gt;http://timecert.org/DIGEST for use in an iframe&lt;/li&gt;
+		&lt;li&gt;http://timecert.org/DIGEST.time for a plain text file with ini style parameters&lt;/li&gt;
+		&lt;li&gt;http://timecert.org/DIGEST.ini for a plain text file with ini style parameters&lt;/li&gt;
+		&lt;li&gt;http://timecert.org/DIGEST.xml for xml&lt;/li&gt;
+		&lt;li&gt;http://timecert.org/DIGEST.yml for yaml&lt;/li&gt;
+		&lt;li&gt;http://timecert.org/DIGEST.yml for json&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;p&gt;The easiest way to use it in a web application is to embed an iframe in your page like I&amp;#8217;ve done here:&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;iframe src="http://timecert.org/a94a8fe5ccb19ba61c4c0873d391e987982fbbd3.iframe" width="450px" height="30px"&amp;gt;&amp;lt;/iframe&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;This saves you from manually doing a TimeCert request as the timestamp is created on the &lt;a href="http://timecert.org"&gt;TimeCert&lt;/a&gt; server when the page is displayed the first time.&lt;/p&gt;
+
+
+	&lt;h3&gt;Best practices in Rails&lt;/h3&gt;
+
+
+	&lt;p&gt;To do this from Rails first create a digest method on your model:&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code&gt;  def digest
+    Digest::SHA1.hexdigest("#{title}\n#{body}\n#{extended}")
+  end
+&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;Note this is from my blog, I&amp;#8217;ve decided that the important content in a blog article is title, body and extended. I&amp;#8217;m also using the raw textile data to create this. This is the safest as an update to a textile library could change the digest completely and thus create a newer timestamp.&lt;/p&gt;
+
+
+	&lt;p&gt;You could also create a separate digest column and updated it an before_save. I&amp;#8217;ll leave that task as an exercise to the reader.&lt;/p&gt;
+
+
+	&lt;p&gt;Next create a helper method:&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code&gt;  def timecert_link(article)
+    "&amp;lt;div class=\"timecert\"&amp;gt;&amp;lt;iframe src=\"http://timecert.org/#{article.digest}.iframe\" width=\"450px\" height=\"30px\"&amp;gt;&amp;lt;/iframe&amp;gt;&amp;lt;/div&amp;gt;" 
+  end
+&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;Now you can just include it in your views like this:&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;%=timecert_link(article)%&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;It would be great if someone with &lt;span class="caps"&gt;PHP&lt;/span&gt;/Python experience could create a similar example. I would expect it to be extremely simple to create a WordPress plugin to do this automatically, if someone is up to the challenge.&lt;/p&gt;
+
+
+	&lt;h3&gt;Open Source&lt;/h3&gt;
+
+
+	&lt;p&gt;This is not really a money making operation, it&amp;#8217;s just a service that I feel is important to have. Therefore I&amp;#8217;ve open sourced it and you can find it on &lt;a href="http://github.com/pelle/timecert/tree/master"&gt;GitHub&lt;/a&gt;. I think this is an important part of being trusted. This allows anyone with ruby knowledge to verify that I&amp;#8217;m not doing anything strange. It also opens it up to potential competitors, which I&amp;#8217;m absolutely cool about.&lt;/p&gt;
+
+
+	&lt;p&gt;&lt;a href="http://timecert.org"&gt;TimeCert&lt;/a&gt; is written in Ruby using &lt;a href="http://merbivore.com"&gt;Merb&lt;/a&gt; and &lt;a href="http://datamapper.org"&gt;DataMapper&lt;/a&gt;.&lt;/p&gt;
+
+
+
+&lt;p class="agree2_ad"&gt;&lt;a href="https://agree2.com/masters/b4f9a904efaab5ad71f695824c997c332b955876"&gt;Share your confidential code safely with a Source Code Confidentiality Agreement on our free web service Agree2&lt;/a&gt;&lt;/p&gt;&lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=PD8DO"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=PD8DO" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=QfLWO"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=QfLWO" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=Ue7VO"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=Ue7VO" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=Hf2Oo"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=Hf2Oo" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=o2wbo"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=o2wbo" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/StakeVentures/~4/338342191" height="1" width="1"/&gt;</content>
+  <feedburner:origLink>http://stakeventures.com/articles/2008/07/17/relaunching-timecert-a-trusted-third-party-time-stamping-service</feedburner:origLink></entry>
+  <entry>
+    <author>
+      <name>pelle</name>
+    </author>
+    <id>tag:stakeventures.com,2005:Typo-289</id>
+    <issued>2008-07-09T11:07:08+00:00</issued>
+    <modified>2008-07-09T16:04:55+00:00</modified>
+    <title>The Black Swan and You</title>
+    <link href="http://feeds.feedburner.com/~r/StakeVentures/~3/330852282/the-black-swan-and-you" rel="alternate" type="text/html" />
+    <dc:subject>Black Swan</dc:subject>
+    <content mode="escaped" type="text/html">&lt;p&gt;&lt;img src="http://img.skitch.com/20080708-f8jhsdcw9abwpyw6g1sc49h4au.jpg" alt="" /&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;By now many people have heard of Nassim Taleb&amp;#8217;s amazing book &lt;a href="http://www.amazon.com/gp/redirect.html?ie=UTF8&amp;#38;location=http%3A%2F%2Fwww.amazon.com%2FBlack-Swan-Impact-Highly-Improbable%2Fdp%2F1400063515&amp;#38;tag=talkorg-20&amp;#38;linkCode=ur2&amp;#38;camp=1789&amp;#38;creative=9325"&gt;Black Swan&lt;/a&gt;&lt;img src="http://www.assoc-amazon.com/e/ir?t=talkorg-20&amp;amp;l=ur2&amp;amp;o=1" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /&gt;. This book has completely changed the way I think about the world as a whole and startups in particular.&lt;/p&gt;
+
+
+	&lt;p&gt;I really recommend you read the book as I can&amp;#8217;t possibly do it justice myself. However I will give a brief overview here. Hopefully in later posts I will go on about how this all applies to startups and technology.&lt;/p&gt;
+
+
+	&lt;p&gt;The Black Swan itself signifies the highly improbable. Until one was discovered in Australia, Europe thought the idea of a black swan as being impossible. See &lt;a href="http://www.youtube.com/watch?v=BDbuJtAiABA"&gt;Nassim&amp;#8217;s own video explanation here&lt;/a&gt;. Anyway Nassim uses the term Black Swan as meaning a highly improbable event.&lt;/p&gt;
+
+
+	&lt;p&gt;The importance of these highly improbable events are that it is very hard to properly analyze and plan anything as just about any major change (both good and bad) come through Black Swans.&lt;/p&gt;
+
+&lt;h3&gt;Analysis or just telling stories?&lt;/h3&gt;
+
+
+	&lt;p&gt;No one in 1999 would have thought Google would rule the world. The tech world is filled with examples. But we are also very good at following what Nassim calls the narrative fallacy. It is very easy when we look back at previous Black Swan&amp;#8217;s and over analyze them, building up stories on why this company succeeded or this company failed.&lt;/p&gt;
+
+
+	&lt;p&gt;The tech startup blogosphere is particularly guilty of this. So many bits have been filled by bloggers (including me) writing &amp;#8220;how to guides&amp;#8221; filled with expert hindsight advice.&lt;/p&gt;
+
+
+	&lt;h3&gt;We never have enough data so we make up what&amp;#8217;s missing&lt;/h3&gt;
+
+
+	&lt;p&gt;The whole key to this is understanding that there is really very little you can do to analyze your way to the truth. All important events a pretty much improbable and so unlikely that the only way you could use traditional forecasting models would be if you had all the data about everything at a pretty much infinite level of precision. This is because even small errors in data cause huge swings in the outcome of results.&lt;/p&gt;
+
+
+	&lt;p&gt;He believes that intuition and blind belief can sometimes lead to less risky results than putting all your faith in scientific analysis and modelling. A great example he gives is that even a few hundred years ago, you would probably have a higher survival rate going to church to pray than going to one of the doctors at the time. The doctor&amp;#8217;s while highly intelligent people just plainly didn&amp;#8217;t know enough yet to safely perform their operations.&lt;/p&gt;
+
+
+	&lt;h3&gt;You living in Extremistan or Mediocristan?&lt;/h3&gt;
+
+
+	&lt;p&gt;There are areas where there is enough data to analyze things and succeed. The only problem is that it&amp;#8217;s not normally possible to succeed in the world changing way this way. Nassim calls this kind of world Mediocristan.&lt;/p&gt;
+
+
+	&lt;p&gt;Mediocristan is the world that most of us have been brought up to live in. It&amp;#8217;s the safe place without much risk. Get good grades, go to a good university and work your way up through a series of permanent jobs. This way you can theoretically be pretty sure that you will end up comfortably well off.&lt;/p&gt;
+
+
+	&lt;p&gt;Most of us entrepreneurs are bored of that world and aim for bigger things in life. So do actors, writers, ball players and many other types of careers. This is where you really work your ass of with very little chance of winning. All of us entrepreneurs are pretty much here in Extremistan.&lt;/p&gt;
+
+
+	&lt;p&gt;Now it is cool that there is a Mediocristan and all and it can provide us with a pretty good living and not too much stress. The only thing about it is that Mediocristan while not really exposed to too much in the way of Positive Black Swans, it is still pretty highly exposed to a boat load of Negative Black Swans.&lt;/p&gt;
+
+
+	&lt;p&gt;Most people living in Mediocristan don&amp;#8217;t like thinking about the bad things that could happen, but really if there is something history (including very recent history) has shown us that the safe cushy jobs are unfortunately not safe. The whole cushy world built up in the industrialized west in the post world war 2 world is really extremely fragile and cracking big time.&lt;/p&gt;
+
+
+	&lt;h3&gt;Surviving in Extremistan&lt;/h3&gt;
+
+
+	&lt;p&gt;At first reading of Nassim, it&amp;#8217;s very easy to think shit, is there nothing we can do to intelligently attack the world of Extremistan?&lt;/p&gt;
+
+
+	&lt;p&gt;There are various things you can do. The first is to realize that if you succeed, it&amp;#8217;s probably not exclusively due to your brilliant mind. More than anything else it is luck. You still need a brilliant mind of course to help guide you at every step, just don&amp;#8217;t pretend that it alone will get you where you want to be.&lt;/p&gt;
+
+
+	&lt;p&gt;Managing your risk is vital. This means exposing your self to as many possible good black swan&amp;#8217;s as possible while protecting yourself against bad swans. That may seem like simple advice and it is, but the reality is probably harder than you think.&lt;/p&gt;
+
+
+	&lt;h3&gt;Extremistan Valley&lt;/h3&gt;
+
+
+	&lt;p&gt;VC&amp;#8217;s expose themselves to many risky investments, where each of them have a defined cost to them if they fail. On the other side there is a pretty much limitless upside if one of these investments take off.&lt;/p&gt;
+
+
+	&lt;p&gt;&lt;a href="http://paulgraham.com/"&gt;Paul Graham&lt;/a&gt; is a master of this from the investment side with his &lt;a href="http://ycombinator.com/"&gt;YCombinator&lt;/a&gt;. He is making a large amount of very small investments each with an extremely risky yet potentially huge return. YCombinator as an organization is spent trying to push the success of the group as a whole. Genius.&lt;/p&gt;
+
+
+	&lt;p&gt;Yahoo followed the late 90s common sense approach of wanting to be the portal for everyone. This means there was a definite potential of success, however as all aspects of their business were/are so tightly knit together that every aspect of their business was really tied to every other aspect being successful. When Google hit them in the head as a Black Swan, they really have been stumbling due probably to this. Their properties that stray most from the mold (as they were created outside) such as &lt;a href="http://flickr.com"&gt;Flickr&lt;/a&gt; are probably some of the ones that are most likely to succeed in the Google era.&lt;/p&gt;
+
+
+	&lt;p&gt;What about Google? Google was itself a huge Black Swan. They were extremely successful and managed to use their smarts (See it is still useful) to monetize it. What about the rest of their businesses. I&amp;#8217;m not really sure which other parts are successful and which ones aren&amp;#8217;t. They could probably continue as a successful business just doing search and advertising until a new Black Swan hits them. However their strategy of 20% time is probably a way more important way of exposing them selves to near unlimited upside while only risking the 20% of their employees salary in this.&lt;/p&gt;
+
+
+	&lt;h3&gt;Extremistan and You&lt;/h3&gt;
+
+
+	&lt;p&gt;What about small startups, independent coders etc. The same raw advice about creating lots of positive exposure while limiting negative risk holds true. It is however very different if you aren&amp;#8217;t already independently wealthy.&lt;/p&gt;
+
+
+	&lt;p&gt;&lt;a href="http://www.flickr.com/photos/pelle/15794906/" title="Swan eggs by pelleb, on Flickr"&gt;&lt;img src="http://farm1.static.flickr.com/11/15794906_6523703a5e.jpg" width="500" height="375" alt="Swan eggs" /&gt;&lt;/a&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;One way you could do it is to focus on building a portfolio of small apps, essentially creating a sweat venture portfolio yourself. (Thats also why I my personal holding company is called Stake Ventures).&lt;/p&gt;
+
+
+	&lt;p&gt;Rails and similar frameworks have lowered the downside risk (or upfront costs) while new platforms such as FaceBook is improving the upside risk for small micro applications. The combination of this doesn&amp;#8217;t necessarily mean you&amp;#8217;re going to win, but at least you are hatching more than one egg at a time.&lt;/p&gt;
+
+
+	&lt;p&gt;Bootstrapping is definitely a bonus as it gives you flexibility. The minute you bring investors into it you may be forced to keep going down one track. &lt;a href="http://venturehacks.com/articles/get-vested-for-time-served"&gt;Founder vesting&lt;/a&gt; is there to lower the downside risk of investors but heightens your own downside risk.&lt;/p&gt;
+
+
+	&lt;p&gt;That said, the money that venture or angel capital can give you may be what you need to keep experimenting. Remember there isn&amp;#8217;t a magic formula. Just always keep thinking about maximizing positive risk and lowering negative risk.&lt;/p&gt;
+
+
+	&lt;p&gt;Getting your app out there exposes it to upside risk. Spending way too much time on features etc means you are increasing downside risk while not adding much in the way of upside risk. I&amp;#8217;ve have been guilty of this myself on many occasions.&lt;/p&gt;
+
+
+	&lt;p&gt;Once you see that one of your apps is starting to take off, you could start going down the path of finding funding to build on that momentum.&lt;/p&gt;
+
+
+	&lt;h3&gt;Conclusion&lt;/h3&gt;
+
+
+	&lt;p&gt;The Black Swan has forced me to rethink lots of things I have helt sacred for years. There is honestly a bit of a dilema in Nassim&amp;#8217;s premise, which I&amp;#8217;m sure he already knows about. If we aren&amp;#8217;t to listen to experts, why should we listen to him. But I guess it comes down to faith in the end.&lt;/p&gt;
+
+
+	&lt;p&gt;I know Nassim has been pretty good at answering critiques and highlighting misunderstandings around the web, so I&amp;#8217;d love for him to comment himself if I&amp;#8217;ve misunderstood things.&lt;/p&gt;
+
+
+&lt;iframe src="http://rcm.amazon.com/e/cm?t=talkorg-20&amp;#38;o=1&amp;#38;p=8&amp;#38;l=as1&amp;#38;asins=1400063515&amp;#38;fc1=000000&amp;#38;IS2=1&amp;#38;lt1=_blank&amp;#38;lc1=0000FF&amp;#38;bc1=000000&amp;#38;bg1=FFFFFF&amp;#38;f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"&gt;&lt;/iframe&gt;
+
+&lt;p class="agree2_ad"&gt;&lt;a href="https://agree2.com/masters/37a9d0507479e9d5fa48f24c47126bb73bfef40d"&gt;Create a Software Development Agreement with our free web service Agree2&lt;/a&gt;&lt;/p&gt;&lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=vzzlO"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=vzzlO" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=an5kO"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=an5kO" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=L9S6O"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=L9S6O" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=TRMko"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=TRMko" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=tCTOo"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=tCTOo" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/StakeVentures/~4/330852282" height="1" width="1"/&gt;</content>
+  <feedburner:origLink>http://stakeventures.com/articles/2008/07/09/the-black-swan-and-you</feedburner:origLink></entry>
+  <entry>
+    <author>
+      <name>pelle</name>
+    </author>
+    <id>tag:stakeventures.com,2005:Typo-288</id>
+    <issued>2008-06-26T19:04:07+00:00</issued>
+    <modified>2008-07-02T21:16:53+00:00</modified>
+    <title>Openness and the OAuth Legal Dance</title>
+    <link href="http://feeds.feedburner.com/~r/StakeVentures/~3/320873882/openness-and-the-oauth-legal-dance" rel="alternate" type="text/html" />
+    <dc:subject>Legal</dc:subject>
+    <dc:subject>Data Portability</dc:subject>
+    <content mode="escaped" type="text/html">&lt;p&gt;I&amp;#8217;m sitting at the &lt;a href="http://wiki.oauth.net/OAuthSummit2008"&gt;OAuth Summit&lt;/a&gt; held at Yahoo in Santa Clara. We&amp;#8217;ve had a brief discussion about the &lt;span class="caps"&gt;IPR&lt;/span&gt; policy negotiation process that has been going on in the background between a few core &lt;a href="http://oauth.net"&gt;OAuth&lt;/a&gt; people and legal departments in various large companies (most notably Yahoo, Google and Microsoft).&lt;/p&gt;
+
+
+	&lt;p&gt;Briefly the &lt;span class="caps"&gt;IPR&lt;/span&gt; policy allows employees at large companies to collaborate on the standard while promising to not sue anyone who uses their companies Intellectual Property through use of the standard. So basically Yahoo can&amp;#8217;t come sue anyone using OAuth for using some patented algorithm they submitted to OAuth.&lt;/p&gt;
+
+
+	&lt;p&gt;The &lt;span class="caps"&gt;IPR&lt;/span&gt; policy is important and good work. That said the current second revision of this is essentially a secret document that will be presented signed, sealed and delivered to us b-list members of the community in a week or twos time.&lt;/p&gt;
+
+
+	&lt;p&gt;The community created the &lt;a href="https://agree2.com/declarations/oauth-non-assertion-covenant"&gt;OAuth Non-Assertion Covenant and Author&amp;#8217;s Contribution License&lt;/a&gt; which all the original OAuth spec signers have signed with the exception of Yahoo.&lt;/p&gt;
+
+
+	&lt;p&gt;&lt;a href="http://www.hueniverse.com/"&gt;Eran&lt;/a&gt; told us today that apparently Yahoo stalled the process in their legal department as they needed a more detailed agreement. This is fine and great feedback, however these comments should somehow be made public so we the community also can follow it and make comments.&lt;/p&gt;
+
+
+	&lt;p&gt;I realize that most developers don&amp;#8217;t want to follow this, however it is important that it is transparent and googlable. I suggest a OAuth-legal group, the same way OpenID does or a continuation of the existing &lt;a href="https://agree2.com/declarations/oauth-non-assertion-covenant"&gt;&lt;span class="caps"&gt;IPR&lt;/span&gt; License&lt;/a&gt; on &lt;a href="https://agree2.com"&gt;Agree2&lt;/a&gt; which does offer comments, versioning and a full transparent audit trail.&lt;/p&gt;
+
+
+	&lt;p&gt;One comment I was given was that we should let lawyers talk with lawyers. I have to call bullshit on that. These kinds of things are way too important to be left in the hand of lawyers without any kind of external oversight.&lt;/p&gt;
+
+
+	&lt;p&gt;&lt;a href="http://blog.wachob.com/"&gt;Gabe&lt;/a&gt; has been doing a great job representing us (the OAuth community), however there are lots of people with opinion on this who would like to follow it and voice occasional opinions. Those of us who are building businesses around OAuth based services need to feel comfortable that we aren&amp;#8217;t going to be screwed by some indecipherable legalese in the future. More important if there are disputes in the future the negotiation trail is key for solving them.&lt;/p&gt;
+
+
+	&lt;p&gt;The final comment I heard is that large companies like Yahoo and Microsoft don&amp;#8217;t want to make it public that they are negotiating this. I&amp;#8217;m sorry that is even greater bullshit, thats pre-cluetrain, pre internet thought.&lt;/p&gt;
+
+
+	&lt;p&gt;Get with the program. Yahoo has more to loose by not using OAuth than us in the OAuth community have to loose by them not joining us. I&amp;#8217;m sorry if thats the way it&amp;#8217;s done, I don&amp;#8217;t care. This is not the world of industrial age negotiation in smoke filled private lounges. You guys are all internet companies for god sake.&lt;/p&gt;
+
+
+	&lt;p&gt;&lt;a href="http://oauth.net"&gt;OAuth&lt;/a&gt; is about open transparent simple standards for creating a infrastructure thats open to all of us and not just Google, Yahoo and Microsoft. Any negotiations behind it should be too.&lt;/p&gt;
+
+
+	&lt;p&gt;&lt;strong&gt;Update July 2nd, 2008&lt;/strong&gt; Here is the latest version of the &lt;a href="https://agree2.com/declarations/oauth-non-assertion-covenant-and-authors-contribution-license"&gt;OAuth Non-Assertion Covenant and Author&amp;rsquo;s Contribution License For OAuth Specification 1.0&lt;/a&gt;&lt;/p&gt;
+
+
+
+&lt;p class="agree2_ad"&gt;&lt;a href="http://agree2.com?referrer=0"&gt;Create, negotiate and accept legally binding contracts for free with our Agree2 service.&lt;/a&gt;&lt;/p&gt;&lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=MbvvO"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=MbvvO" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=4XoOO"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=4XoOO" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=zWuKO"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=zWuKO" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=qrS8o"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=qrS8o" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=hNqSo"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=hNqSo" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/StakeVentures/~4/320873882" height="1" width="1"/&gt;</content>
+  <feedburner:origLink>http://stakeventures.com/articles/2008/06/26/openness-and-the-oauth-legal-dance</feedburner:origLink></entry>
+  <entry>
+    <author>
+      <name>pelle</name>
+    </author>
+    <id>tag:stakeventures.com,2005:Typo-287</id>
+    <issued>2008-06-24T13:08:19+00:00</issued>
+    <modified>2008-06-24T13:08:21+00:00</modified>
+    <title>RSpactor compatibility with newish RSpec versions</title>
+    <link href="http://feeds.feedburner.com/~r/StakeVentures/~3/319025276/rspactor-compatibility-with-newish-rspec-versions" rel="alternate" type="text/html" />
+    <dc:subject>Programming</dc:subject>
+    <content mode="escaped" type="text/html">&lt;p&gt;&lt;a href="http://rubyphunk.com/tags/rspactor"&gt;RSpactor&lt;/a&gt; is one of the greatest tools out there for developing Rails apps on the Mac (Yes it&amp;#8217;s Mac only) using &lt;a href="http://rspec.info"&gt;RSpec&lt;/a&gt;. It works just like autotest, just with out any configuration and without using more resources than absolutely necessary.&lt;/p&gt;
+
+
+	&lt;p&gt;&lt;a href="http://rubyphunk.com"&gt;Andreas&lt;/a&gt; is working on a next generation Cocoa based tool, which looks great. I know many of us are using the original command line version of it still, which unfortunately broke, when the RSpec team introduced some &lt;span class="caps"&gt;API&lt;/span&gt; changes. No worries though, I&amp;#8217;ve &lt;a href="http://github.com/pelle/rspactor/tree/master"&gt;forked the older command line version on Git&lt;/a&gt; which you can also install as a gem:&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code&gt;sudo gem install pelle-rspactor --source http://gems.github.com&lt;/code&gt;&lt;/pre&gt;
+
+
+
+&lt;p class="agree2_ad"&gt;&lt;a href="https://agree2.com/masters/38f8f05d70c7d84f28e349e3a16f8444bdaf4ea8"&gt;Create a simple NDA with zero legalese in no time at all and for free at our service Agree2.&lt;/a&gt;&lt;/p&gt;&lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=jgTCO"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=jgTCO" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=gIYsO"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=gIYsO" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=fxH5O"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=fxH5O" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=jn5Yo"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=jn5Yo" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=5GFOo"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=5GFOo" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/StakeVentures/~4/319025276" height="1" width="1"/&gt;</content>
+  <feedburner:origLink>http://stakeventures.com/articles/2008/06/24/rspactor-compatibility-with-newish-rspec-versions</feedburner:origLink></entry>
+  <entry>
+    <author>
+      <name>pelle</name>
+    </author>
+    <id>tag:stakeventures.com,2005:Typo-286</id>
+    <issued>2008-06-17T13:31:43+00:00</issued>
+    <modified>2008-06-17T13:31:45+00:00</modified>
+    <title>Lessons learnt as a Ruby Programmer playing with Google AppEngine</title>
+    <link href="http://feeds.feedburner.com/~r/StakeVentures/~3/313964510/lessons-learnt-as-a-ruby-programmer-playing-with-google-appengine" rel="alternate" type="text/html" />
+    <dc:subject>Programming</dc:subject>
+    <content mode="escaped" type="text/html">&lt;p&gt;I suppose I should write a detailed post at some point about this. But here are a couple of notes from working intermittently on &lt;a href="http://talk.org"&gt;Talk.org&lt;/a&gt; in the last couple of weeks.&lt;/p&gt;
+
+
+	&lt;p&gt;First of all Python is definitely not Ruby. It is very different in many ways. So just accept that and get on with it. Ruby still puts a much larger smile on my face than Python does, but that might be inexperience.&lt;/p&gt;
+
+
+	&lt;p&gt;Secondly &lt;a href="http://www.djangoproject.com"&gt;Django&lt;/a&gt; is not at all like rails, even though most python guys seem to claim it is. &lt;a href="http://pylonshq.com/"&gt;Pylons&lt;/a&gt; seemed much more rails like. However I decided to stick with Django as it&amp;#8217;s always good to learn something new.&lt;/p&gt;
+
+
+	&lt;p&gt;The best resource I found for getting started was this example project &lt;a href="http://code.google.com/p/wuzhere/"&gt;Wuzhere&lt;/a&gt; that was demonstrated at Google IO. It is really a great guide to get your head around structuring your project. In particularly coming from Rails, I learnt way more just reading through this code than reading various tutorials on the web. A key piece of code to simplify your life as a rails guy coming over to Django is their view.py class, which acts kind of like a rails render method.&lt;/p&gt;
+
+
+	&lt;p&gt;You should use the &lt;a href="http://code.google.com/p/google-app-engine-django/"&gt;Django Google App Engine Helper&lt;/a&gt; if you are doing Django which is described in this little &lt;a href="http://code.google.com/appengine/articles/appengine_helper_for_django.html"&gt;tutorial&lt;/a&gt;. However the approach to laying out your application taken by the Wuzhere developers seemed more logical to me than the approach suggested by the Google App Engine helpers.&lt;/p&gt;
+
+
+	&lt;p&gt;Generally speaking I like the AppEngine design. The models are great even if they require you to think a bit differently about the design of your data model.  I don&amp;#8217;t see a clever way of doing callbacks on the models like with activerecord, but I suspect that something similar would be possible with clever use of &lt;a href="http://wiki.python.org/moin/PythonDecorators"&gt;Decorators&lt;/a&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;I would like to say though that while I am still a novice at Django/Python it does seem to me that there are design decisions in both that I&amp;#8217;m not quite happy about. Once I&amp;#8217;ve worked more with it I&amp;#8217;ll see if I still feel that way and can formulate it a bit better.&lt;/p&gt;
+
+
+
+&lt;p class="agree2_ad"&gt;&lt;a href="https://agree2.com/masters/b4f9a904efaab5ad71f695824c997c332b955876"&gt;Share your confidential code safely with a Source Code Confidentiality Agreement on our free web service Agree2&lt;/a&gt;&lt;/p&gt;&lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=YVSlO"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=YVSlO" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=XwV7O"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=XwV7O" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=OZ1vO"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=OZ1vO" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=Fhwho"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=Fhwho" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=D4E7o"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=D4E7o" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/StakeVentures/~4/313964510" height="1" width="1"/&gt;</content>
+  <feedburner:origLink>http://stakeventures.com/articles/2008/06/17/lessons-learnt-as-a-ruby-programmer-playing-with-google-appengine</feedburner:origLink></entry>
+  <entry>
+    <author>
+      <name>pelle</name>
+    </author>
+    <id>tag:stakeventures.com,2005:Typo-285</id>
+    <issued>2008-06-09T16:18:53+00:00</issued>
+    <modified>2008-06-09T16:18:57+00:00</modified>
+    <title>Talk.org OpenSourced and stats from Keynote</title>
+    <link href="http://feeds.feedburner.com/~r/StakeVentures/~3/308274027/talk-org-opensourced-and-stats-from-keynote" rel="alternate" type="text/html" />
+    <dc:subject>Programming</dc:subject>
+    <dc:subject>Talk.org</dc:subject>
+    <content mode="escaped" type="text/html">&lt;p&gt;To make &lt;a href="http://talk.org"&gt;Talk.org&lt;/a&gt; a playground for more than just me, I&amp;#8217;ve decided to open source it. You can find it on &lt;a href="http://github.com/pelle/talk.org/tree/master"&gt;GitHub&lt;/a&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;I have released it as &lt;span class="caps"&gt;GPL3&lt;/span&gt; as I think it makes sense for an app like Talk.org that we all get to learn from our experiences.&lt;/p&gt;
+
+
+	&lt;p&gt;I will do my best to bring as many new features people create into the live application as possible. However be aware that at some point I may want to put some unobtrusive ads or something on it to make to pay future AppEngine bills. You have been warned. But then again you could do so yourself if you so please.&lt;/p&gt;
+
+
+	&lt;p&gt;Anyway, it is a fairly simple app at the moment and is not seing large amount of use, however a fair amount of people came to try it out during the Stevenote.&lt;/p&gt;
+
+
+	&lt;p&gt;These are the performance graphs from the Google AppEngine Dashboard:&lt;/p&gt;
+
+
+&lt;div class="thumbnail"&gt;&lt;a href="http://skitch.com/pelle/pj8m/dashboard-for-talk.org"&gt;&lt;img src="http://img.skitch.com/20080609-m3hiqdyk2xhe5stu7wh7jw2ita.preview.jpg" alt="Dashboard for Talk.org" /&gt;&lt;/a&gt;&lt;/div&gt;
+
+	&lt;p&gt;The requests seem to take about 500ms each, which should improve once memcache is working properly again:&lt;/p&gt;
+
+
+&lt;div class="thumbnail"&gt;&lt;a href="http://skitch.com/pelle/pj8x/dashboard-for-talk.org"&gt;&lt;img src="http://img.skitch.com/20080609-tckmu4spysw68hp567y4b9b7ig.preview.jpg" alt="Dashboard for Talk.org" /&gt;&lt;/a&gt;&lt;/div&gt;
+
+	&lt;p&gt;So far we have 58 users who have posted in total 166 posts. Not bad really for a tiny app, originally written last Friday over breakfast.&lt;/p&gt;
+
+
+	&lt;p&gt;So far the todo list is:&lt;/p&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;Allow users to pick their own nickname when signing up (right now it relies on what Google gives me, which is wrong)&lt;/li&gt;
+		&lt;li&gt;Atom/RSS/JSON support&lt;/li&gt;
+		&lt;li&gt;OAuth&lt;/li&gt;
+		&lt;li&gt;Followers&lt;/li&gt;
+		&lt;li&gt;Tracking&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;p&gt;Concensus seems to be that the best way to do IM/SMS support is for a 3rd party server todo it via OAuth/HTTP as AppEngine doesn&amp;#8217;t yet support &lt;span class="caps"&gt;XMPP&lt;/span&gt;. This is obvious as a great separate project for some Erlang geek out there.&lt;/p&gt;
+
+
+
+&lt;p class="agree2_ad"&gt;&lt;a href="https://agree2.com/masters/37a9d0507479e9d5fa48f24c47126bb73bfef40d"&gt;Create a Software Development Agreement with our free web service Agree2&lt;/a&gt;&lt;/p&gt;&lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=llbMO"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=llbMO" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=whEcO"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=whEcO" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=DyYeO"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=DyYeO" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=3vt1o"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=3vt1o" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/StakeVentures?a=J4gTo"&gt;&lt;img src="http://feeds.feedburner.com/~f/StakeVentures?i=J4gTo" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/StakeVentures/~4/308274027" height="1" width="1"/&gt;</content>
+  <feedburner:origLink>http://stakeventures.com/articles/2008/06/09/talk-org-opensourced-and-stats-from-keynote</feedburner:origLink></entry>
+</feed>

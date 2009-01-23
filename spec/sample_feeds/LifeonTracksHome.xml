@@ -1,0 +1,858 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xml:lang="en-US" xmlns="http://www.w3.org/2005/Atom">
+  <title>Life on Track(s) - Home</title>
+  <id>tag:sam.aaron.name,2008:mephisto/</id>
+  <generator uri="http://mephistoblog.com" version="0.7.3">Mephisto Noh-Varr</generator>
+  <link href="http://sam.aaron.name/feed/atom.xml" rel="self" type="application/atom+xml"/>
+  <link href="http://sam.aaron.name/" rel="alternate" type="text/html"/>
+  <updated>2007-12-10T16:23:28Z</updated>
+  <entry xml:base="http://sam.aaron.name/">
+    <author>
+      <name>sam</name>
+    </author>
+    <id>tag:sam.aaron.name,2007-12-10:187</id>
+    <published>2007-12-10T16:23:00Z</published>
+    <updated>2007-12-10T16:23:28Z</updated>
+    <link href="http://sam.aaron.name/2007/12/10/i-passed" rel="alternate" type="text/html"/>
+    <title>I passed!</title>
+<content type="html">
+            &lt;p&gt;I took my Ph.D. viva at 9.30 am on Friday the 7th of December. It was a severe grilling (as I&#8217;m sure most vivas are) but I survived it and passed with minor corrections. Wooh!&lt;/p&gt;
+
+
+	&lt;p&gt;Here&#8217;s a picture of me sitting post viva and champagne with Susanna, John and Chris. Happy times :-)&lt;/p&gt;
+
+
+	&lt;p&gt;&lt;a href='http://sam.aaron.name/assets/2007/12/10/success.jpg/'&gt;&lt;img src='http://sam.aaron.name/assets/2007/12/10/success_thumbnail.png' alt='' /&gt;&lt;/a&gt;&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://sam.aaron.name/">
+    <author>
+      <name>sam</name>
+    </author>
+    <id>tag:sam.aaron.name,2007-10-18:185</id>
+    <published>2007-10-18T12:40:00Z</published>
+    <updated>2007-10-18T12:42:41Z</updated>
+    <link href="http://sam.aaron.name/2007/10/18/ph-d-viva" rel="alternate" type="text/html"/>
+    <title>Ph.D. Viva</title>
+<content type="html">
+            &lt;p&gt;So, a date has been set for my viva: 9.30am on Friday the 7th of December. My fate will be sealed upon that morning. The thought is exciting yet scary.  Wish me luck!&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://sam.aaron.name/">
+    <author>
+      <name>sam</name>
+    </author>
+    <id>tag:sam.aaron.name,2007-09-28:181</id>
+    <published>2007-09-28T21:23:00Z</published>
+    <updated>2007-09-29T20:35:18Z</updated>
+    <link href="http://sam.aaron.name/2007/9/28/exploring-rubinius" rel="alternate" type="text/html"/>
+    <title>Exploring Rubinius</title>
+<content type="html">
+            &lt;p&gt;Wowsers, so you went ahead and got Rubinius working on your machine. You played about with sirb, and sighed at the beauty of the coloured error reports. What more in life could you want? Well, you&#8217;re reading this, so you &lt;em&gt;must&lt;/em&gt; want more. So, before we can go anywhere, we need to have a look round and explore the structure of the project.&lt;/p&gt;
+
+
+	&lt;p&gt;&lt;em&gt;(This article is currently a general dumping ground for my current knowledge of the Rubinius codebase gleaned from reading the code, chatting to people in #Rubinius, and &lt;a href='http://rubini.us/pages/filelayout'&gt;this wiki page.&lt;/a&gt;  I&#8217;ll keep it up to date as both the directory structure changes, and my understanding of the codebase increases.)&lt;/em&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;If we look inside a fresh clone of Rubinius, we can see the following text files:&lt;/p&gt;
+
+
+	&lt;pre&gt;&lt;code&gt;AUTHORS    LICENSE    README     Rakefile    configure  
+INSTALL    Makefile   ROADMAP    THANKS&lt;/code&gt;&lt;/pre&gt;
+
+
+	&lt;p&gt;&lt;code&gt;Rakefile&lt;/code&gt;, &lt;code&gt;Makefile&lt;/code&gt; and &lt;code&gt;configure&lt;/code&gt; were used to build Rubinius. The other files should be fairly self-explanatory. Go ahead, and read them. There are also a whole bunch of directories:&lt;/p&gt;
+
+
+	&lt;pre&gt;&lt;code&gt;bin        configure  examples   hashi      lib        shotgun    stdlib
+compiler   doc        extensions kernel     runtime    spec       test&lt;/code&gt;&lt;/pre&gt;
+
+
+	&lt;p&gt;Let&#8217;s go through these in turn:&lt;/p&gt;
+
+
+	&lt;h3&gt;bin&lt;/h3&gt;
+
+
+	&lt;p&gt;This directory contains a number of scripts mainly used to test Rubinius. For example, a mini version of RSpec (&lt;code&gt;mspec&lt;/code&gt;) is included in this directory. There are also scripts to determine code coverage (&lt;code&gt;completeness&lt;/code&gt;), support continuous integration (&lt;code&gt;ci&lt;/code&gt;), and autotest amongst others. Ignore &lt;code&gt;bin/rcc&lt;/code&gt;, &lt;code&gt;bin/rasm&lt;/code&gt;, and &lt;code&gt;bin/bm&lt;/code&gt; as they are now deprecated.&lt;/p&gt;
+
+
+	&lt;h3&gt;compiler&lt;/h3&gt;
+
+
+	&lt;p&gt;The compiler directory includes the translator, compiler and the assembler. The compiler turns a sexp to rubinius assembly. See kernel/core/compile.rb if you are looking for the entry point into this code&lt;/p&gt;
+
+
+	&lt;h3&gt;doc&lt;/h3&gt;
+
+
+	&lt;p&gt;The doc directory is currently an out of date dump of a bunch of documentation files. The stuff in here is due to be cleaned up and added to as more project documentation is written.&lt;/p&gt;
+
+
+	&lt;h3&gt;examples&lt;/h3&gt;
+
+
+	&lt;p&gt;Code samples. Likely to be deleted&lt;/p&gt;
+
+
+	&lt;h3&gt;extensions&lt;/h3&gt;
+
+
+	&lt;p&gt;Theoretically, a place to put Subtend extensions. Likely to be deleted.&lt;/p&gt;
+
+
+	&lt;h3&gt;hashi&lt;/h3&gt;
+
+
+	&lt;p&gt;This is an experimental directory containing files that implement essential features of the Rubinius bootstrap library. The goal is to enable the Rubinius core libraries to be run on other implementations like &lt;span class='caps'&gt;MRI&lt;/span&gt; and JRuby.&lt;/p&gt;
+
+
+	&lt;h3&gt;kernel&lt;/h3&gt;
+
+
+	&lt;p&gt;kernel/core – Ruby code to implement the &lt;span class='caps'&gt;MRI&lt;/span&gt; &#8216;core&#8217; libraries
+kernel/bootstrap – Minimal implementations of various classes that are needed to load the rest of the system. Usually overriden when kernel/core loads
+kernel/platform – Platform-specific code and support. See platform/ffi.rb for details&lt;/p&gt;
+
+
+	&lt;h3&gt;lib&lt;/h3&gt;
+
+
+	&lt;p&gt;&lt;span class='caps'&gt;MRI C&lt;/span&gt; standard library code, rewritten in Ruby. StringIO and Socket are two current examples&lt;/p&gt;
+
+
+	&lt;h3&gt;runtime&lt;/h3&gt;
+
+
+	&lt;p&gt;Compiled output from the kernel/ and compiler/ directories&lt;/p&gt;
+
+
+	&lt;h3&gt;shotgun&lt;/h3&gt;
+
+
+	&lt;p&gt;The parts of Rubinius that are written in C, or generate C code. Fore example, there is a local copy of parsetree in shotgun/lib/grammar_runtime.c which converts the c struct from grammar.y into a sexp. This directory also contains the &lt;span class='caps'&gt;MRI&lt;/span&gt; parser (&lt;code&gt;shotgun/lib/grammar.y&lt;/code&gt;) which reads in ruby and spits out sexps.&lt;/p&gt;
+
+
+	&lt;h3&gt;spec&lt;/h3&gt;
+
+
+	&lt;p&gt;Specs for Rubinius and also Ruby. This is an ambitious branch of the Rubinious project aimed at speccing out &lt;span class='caps'&gt;MRI&lt;/span&gt;&#8217;s behaviour.&lt;/p&gt;
+
+
+	&lt;h3&gt;stdlib&lt;/h3&gt;
+
+
+	&lt;p&gt;An imported copy of the Ruby 1.8.6 standard library. Note that there are only Ruby files in here.&lt;/p&gt;
+
+
+	&lt;h3&gt;test&lt;/h3&gt;
+
+
+	&lt;p&gt;Pre-spec test code, and tests borrowed from other Ruby implementations&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://sam.aaron.name/">
+    <author>
+      <name>sam</name>
+    </author>
+    <id>tag:sam.aaron.name,2007-09-25:180</id>
+    <published>2007-09-25T09:57:00Z</published>
+    <updated>2007-09-25T09:58:18Z</updated>
+    <link href="http://sam.aaron.name/2007/9/25/updating-rubinius" rel="alternate" type="text/html"/>
+    <title>Updating Rubinius</title>
+<content type="html">
+            &lt;p&gt;So, you cloned and compiled Rubinius, had a tinker about, chatted to people in #rubinius and found out that they just added a cool new feature that you&#8217;re just dying to check out. Problem is, you&#8217;ve probably not got much experience with git, and you&#8217;re wondering &#8220;how do I update to the latest version?&#8221;. Wonder no more. Head to your Rubinius directory and utter forth the following:&lt;/p&gt;
+
+
+	&lt;pre&gt;&lt;code&gt;git pull ; rake build&lt;/code&gt;&lt;/pre&gt;
+
+
+	&lt;p&gt;And you&#8217;re done. Simple really.&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://sam.aaron.name/">
+    <author>
+      <name>sam</name>
+    </author>
+    <id>tag:sam.aaron.name,2007-09-22:177</id>
+    <published>2007-09-22T11:34:00Z</published>
+    <updated>2007-09-25T07:52:31Z</updated>
+    <link href="http://sam.aaron.name/2007/9/22/rubinius-on-os-x" rel="alternate" type="text/html"/>
+    <title>Rubinius on OS X</title>
+<content type="html">
+            &lt;p&gt;OK, so you saw &lt;a href='http://blog.fallingsnow.net/'&gt;Evan Phoenix&#8217;s&lt;/a&gt; talk at RailsConf in Berlin on &lt;a href='http://rubini.us/'&gt;Rubinius&lt;/a&gt;, and you just had to get a piece of that action. After all, there&#8217;s Ruby everywhichway, the error reporting is both beautiful and useful, it&#8217;s already &lt;a href='http://blog.fallingsnow.net/2007/08/24/performance-benchmarks/'&gt;mostly faster&lt;/a&gt; than mri&lt;sup&gt;&lt;a href='#fn1'&gt;1&lt;/a&gt;&lt;/sup&gt;, and the optimisation process has hardly started. Oh, let&#8217;s also not forget that mri is at the end of its life-cycle; there&#8217;s very little optimisation to be squeezed out of it now. It&#8217;s time to move on.&lt;/p&gt;
+
+
+	&lt;p&gt;So let&#8217;s get installing already. Like pretty much every Ruby/Rails hacker out there I&#8217;m guessing you&#8217;re using a mac. If you&#8217;re not, there are some &lt;a href='http://rubini.us/pages/installation-guide'&gt;generic instructions on the Rubinius wiki&lt;/a&gt; for your compiling pleasure.&lt;/p&gt;
+
+
+	&lt;p&gt;If you are a Ruby or Rails hacker, you&#8217;ll already have most of the prerequisites installed. That&#8217;s nice; you might be able to skip some of these steps. I use &lt;a href='http://www.macports.org/'&gt;macports&lt;/a&gt; to make installing this stuff a lot less of a headache. I&#8217;m assuming you do too. If you don&#8217;t, you need to grab the latest copy of the &lt;a href='http://developer.apple.com/tools/xcode/'&gt;Xcode developer tools&lt;/a&gt;, and then install macports. I&#8217;ll stick around and be here whilst you go do that. Once you&#8217;ve grabbed it, make sure it&#8217;s in tip-top condition:&lt;/p&gt;
+
+
+	&lt;pre&gt;&lt;code&gt;sudo port selfupdate&lt;/code&gt;&lt;/pre&gt;
+
+
+	&lt;p&gt;Rightio, let&#8217;s get started. First up, you need to grab a copy of &lt;a href='http://git.or.cz/'&gt;Git&lt;/a&gt;. Rubinius is one of the first Ruby community projects to pioneer the use of Git. Let this be a life-changing golden opportunity for you to check it out. Ah, get the pun: &#8216;check it out&#8217;, nevermind.&lt;/p&gt;
+
+
+	&lt;pre&gt;&lt;code&gt;sudo port install git-core&lt;/code&gt;&lt;/pre&gt;
+
+
+	&lt;p&gt;Now is a good opportunity to introduce yourself to git:&lt;/p&gt;
+
+
+	&lt;pre&gt;&lt;code&gt;git config  --global user.name &quot;Your Name&quot; 
+git config  --global user.email &quot;you@email.address&quot;&lt;/code&gt;&lt;/pre&gt;
+
+
+	&lt;p&gt;Smashing. Now you can grab the latest version of the Rubinius source. Head to your developer directory, and utter the following mantra:&lt;/p&gt;
+
+
+	&lt;pre&gt;&lt;code&gt;git clone http://git.rubini.us/code rubinius&lt;/code&gt;&lt;/pre&gt;
+
+
+	&lt;p&gt;Whilst git performs its getting and walking magic, you might want to take a break and have a cup of tea. I recommend a mix of assam and darjeeling leaves brewed with just-boiled-freshly-drawn water. Oh, and don&#8217;t forget the milk!&lt;/p&gt;
+
+
+	&lt;p&gt;Ok, now you should install Ruby, RubyGems, and Rake. You probably have these already. &lt;/p&gt;
+
+
+	&lt;pre&gt;&lt;code&gt;sudo port install ruby rb-rubygems
+sudo gem install rake&lt;/code&gt;&lt;/pre&gt;
+
+
+	&lt;p&gt;Next, grab a few things that Rubinius needs to help it compile:&lt;/p&gt;
+
+
+	&lt;pre&gt;&lt;code&gt;sudo port install bison glib2 libtool&lt;/code&gt;&lt;/pre&gt;
+
+
+	&lt;p&gt;Things are going swimmingly, don&#8217;t you think, and we&#8217;re only one command away from a working Rubinius executable:&lt;/p&gt;
+
+
+	&lt;pre&gt;&lt;code&gt;cd rubinius ; rake build&lt;/code&gt;&lt;/pre&gt;
+
+
+	&lt;p&gt;Ok, that was cheating &#8211; it was two commands. Don&#8217;t complain however, Rubinius has arrived. Witness:&lt;/p&gt;
+
+
+	&lt;pre&gt;&lt;code&gt;shotgun/rubinius -e &quot;puts 'Rubinius Rocks\!'&quot;&lt;/code&gt;&lt;/pre&gt;
+
+
+	&lt;p&gt;Rubinius also ships with an irb clone&lt;sup&gt;&lt;a href='#fn2'&gt;2&lt;/a&gt;&lt;/sup&gt;. Simply fire up:&lt;/p&gt;
+
+
+	&lt;pre&gt;&lt;code&gt;shotgun/rubinius&lt;/code&gt;&lt;/pre&gt;
+
+
+	&lt;p&gt;and you&#8217;re away. Remember I said that the error reporting was nice. See for yourself:&lt;/p&gt;
+
+
+	&lt;p&gt;&lt;img src='http://sam.aaron.name/assets/2007/9/22/rubinius_error.png' alt='' /&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;Have fun :-) Oh, and pop by #rubinius on freenode for a guaranteed top time.&lt;/p&gt;
+
+
+	&lt;p&gt;&lt;sup&gt;1&lt;/sup&gt; MRI is an abbreviation for Matz&#8217;s Ruby Interpreter. Which is pretty much guaranteed to be the Ruby implementation you&#8217;re using now.&lt;/p&gt;
+
+
+	&lt;p&gt;&lt;sup&gt;2&lt;/sup&gt; Eventually Rubinius will ship with irb proper.&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://sam.aaron.name/">
+    <author>
+      <name>sam</name>
+    </author>
+    <id>tag:sam.aaron.name,2007-09-21:176</id>
+    <published>2007-09-21T18:10:00Z</published>
+    <updated>2007-09-21T18:12:34Z</updated>
+    <link href="http://sam.aaron.name/2007/9/21/presenting-at-railsconf-europe" rel="alternate" type="text/html"/>
+    <title>Presenting at RailsConf Europe</title>
+<content type="html">
+            &lt;p&gt;Ok, so I know things have been a little quiet around here lately. Hopefully you can forgive me. I did manage to finish off and submit my thesis, and I can&#8217;t begin to tell you how relieved I feel about that. Aaaah&#8230; (sigh of relief)&lt;/p&gt;
+
+
+	&lt;p&gt;So, I was in Berlin for the last few days hot on the heels of PhD submission looking for some fun. Damn was it a good time. Last year in London kicked ass, but Berlin kicked harder. I met so many interesting and interested people (not usually a combination you find), and just wish it didn&#8217;t have to end. Hey ho.&lt;/p&gt;
+
+
+	&lt;p&gt;One thing I did manage to do was present my PhD work to a great crowd. Well, I say PhD work, but I ignored all the boring sciency bits and concentrated on the big colourful shapes, and crazy transitions. I managed to use two of the most gratuitous transitions available in Keynote much to everyone&#8217;s amusement. I even did some live coding backed with a live personal dialogue.&lt;/p&gt;
+
+
+	&lt;p&gt;The talk seemed to go down well, and I got some positive feedback at the end which really made me feel warm and fuzzy inside. If people knew the depression and pain I went through with this PhD, then they&#8217;d totally understand how good it feels to turn it into a fun presentation to such a great set of people.&lt;/p&gt;
+
+
+	&lt;p&gt;If anyone is interested in the code for Wish (the &lt;span class='caps'&gt;DSL I&lt;/span&gt; demoed at the end) then hassle me until I release it. It&#8217;s just a matter of finding time to extract it from the app, so pestering will certainly give me more motivation to do that. Also, if anyone, for whatever reason, wants to see the slides again, they&#8217;re available in the presentations section of this blog.&lt;/p&gt;
+
+
+	&lt;p&gt;And once again, thanks so much to the Ruby and Rails communities for saving my career.&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://sam.aaron.name/">
+    <author>
+      <name>sam</name>
+    </author>
+    <id>tag:sam.aaron.name,2007-06-05:168</id>
+    <published>2007-06-05T05:30:00Z</published>
+    <updated>2007-06-05T05:33:19Z</updated>
+    <link href="http://sam.aaron.name/2007/6/5/see-you-in-berlin" rel="alternate" type="text/html"/>
+    <title>See you in Berlin!</title>
+<content type="html">
+            &lt;p&gt;Today I received some wonderful news:&lt;/p&gt;
+
+
+	&lt;blockquote&gt;
+		&lt;p&gt;Congratulations! You have been accepted as a presenter for the RailsConf Europe 2007 at the Maritim proArte, September 17, 2007 &#8211; September 19, 2007.&lt;/p&gt;
+	&lt;/blockquote&gt;
+
+
+	&lt;p&gt;Actually it&#8217;s both wonderful and scary. Last time I was at &lt;a href='http://www.railsconfeurope.com/'&gt;RailsConf Europe&lt;/a&gt;, I was in the audience being wowed by the presenters:&lt;/p&gt;
+
+
+	&lt;p&gt;&lt;a href='http://sam.aaron.name/assets/2007/6/5/me_at_london_rails_conf.png'&gt;&lt;img src='http://sam.aaron.name/assets/2007/6/5/me_at_london_rails_conf_thumb_thumbnail.png' alt='' /&gt;&lt;/a&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;Hopefully this year I can wow more than &lt;a href='http://showusyourwow.msn.com/'&gt;vista&lt;/a&gt; has! Hehe. If you&#8217;re going and you fancy meeting up for a beer or three just give me a shout. I&#8217;m also looking for a floor to kip on, or a garden to camp in if anyone has anything to offer :-)&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://sam.aaron.name/">
+    <author>
+      <name>sam</name>
+    </author>
+    <id>tag:sam.aaron.name,2007-06-03:166</id>
+    <published>2007-06-03T13:09:00Z</published>
+    <updated>2007-06-03T18:55:58Z</updated>
+    <link href="http://sam.aaron.name/2007/6/3/wish-upon-a-dsl" rel="alternate" type="text/html"/>
+    <title>Wish upon a DSL</title>
+<content type="html">
+            &lt;p&gt;For those in the know (oh, you lucky select few) my PhD has focussed around the concept of interest. I hope you&#8217;ll forgive the accidental &#8216;interest&#8217; puns, but I &lt;em&gt;am&lt;/em&gt; interested in interest: it&#8217;s interesting!&lt;/p&gt;
+
+
+	&lt;p&gt;I have looked at the concept of interest as used within virtual environments. Interestingly (ahem), interest management seems to be used solely as a data distribution management technique: to increase the scaleability of these systems. Naive virtual environments propagate all events to all users, but clearly this isn&#8217;t scaleable. As more users enter the system, the number of events that are created (assuming that each user generates the same number of events per unit of time) goes up quadratically. Not good news for those with limited connectivity, or the server&#8217;s bandwidth bill. So, what happens? It&#8217;s simple really: don&#8217;t send all events to all users. Just send a subset: the set of &#8216;interesting&#8217; events. The question then becomes &#8216;how do you define the set of interesting events?&#8217;. That&#8217;s the toughy.&lt;/p&gt;
+
+
+	&lt;p&gt;Actually, I&#8217;m not so worried about that question. It&#8217;s been the subject of rather a lot of research. There are three general techniques for defining the set of interesting artefacts. Let&#8217;s quickly define some terms first though: an the artefact is an entity within a virtual world &#8211; i.e. a person, chair or cup. It is represented by a collection of attributes, and an event is a change in one or more of those attributes. In a nutshell, if we can define which artefacts we&#8217;re interested in, we&#8217;re therefore only interested in the events that affect interesting artefacts. Let me also introduce the concept of a relative artefact which is a virtual artefact that has some meta-purpose &#8211; i.e. to describe an area. So, onto the three general techniques:&lt;/p&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;Category of artefact (e.g. all people)&lt;/li&gt;
+		&lt;li&gt;Relationship with relative artefacts (e.g. within a room)&lt;/li&gt;
+		&lt;li&gt;Interaction between relative artefacts (e.g. the relative artefact which describes an artefacts range of smell overlaps the relative artefact which represents how smelly another artefact is)&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;p&gt;I could go into more detail if people are interested, or you could wait until I&#8217;ve finished my thesis and read that ;-) However, my concern is that all these techniques have so far been mutually exclusive, and defined by the environment&#8217;s implementation. Not only do I want to free the interest, I also want to mix and match interest type. I want to be able to say things like &#8216;I&#8217;m interested in all people that are within a particular room that I can smell&#8217;, although I&#8217;m not sure &lt;em&gt;why&lt;/em&gt; I&#8217;d be interested in those people&#8230;.&lt;/p&gt;
+
+
+	&lt;p&gt;How would we go about implementing and describing such interest statements? So, enough theory, let&#8217;s get a bit technical. Let&#8217;s assume that an artefact is an ActiveRecord object, and the attributes are columns of a database table. Ah, it&#8217;s getting into familiar territory :-) With that context, our interests can be written with a simple &lt;span class='caps'&gt;SQL&lt;/span&gt; query:&lt;/p&gt;
+
+
+	&lt;pre&gt;&lt;code&gt;Artefact.find(:all, :conditions =&amp;gt; interesting)&lt;/code&gt;&lt;/pre&gt;
+
+
+	&lt;p&gt;So, now the first general technique (categorisation) is suddenly trivial:&lt;/p&gt;
+
+
+	&lt;pre&gt;&lt;code&gt;Artefact.find(:all, :conditions =&amp;gt; &quot;type = 'person'&quot;)&lt;/code&gt;&lt;/pre&gt;
+
+
+	&lt;p&gt;Now, my problem with this statement is that there is a lot of cruft. I want to be talking about interests, not ActiveRecord statements. I &lt;strong&gt;wish&lt;/strong&gt; I could just write:&lt;/p&gt;
+
+
+	&lt;pre&gt;&lt;code&gt;type = 'person'&lt;/code&gt;&lt;/pre&gt;
+
+
+	&lt;p&gt;Wish Granted! Thanks to the wonders of modern &lt;span class='caps'&gt;DSL&lt;/span&gt; technology, this is a fully complete interest statement written in a &lt;span class='caps'&gt;DSL&lt;/span&gt; fondly called wish. Get the party poppers out! Actually, I can sense your lack of wonder. In your head, in fully syntax-highlighted glory, you&#8217;re seeing the following implementation:&lt;/p&gt;
+
+
+	&lt;pre&gt;&lt;code&gt;Artefact.find(:all, :conditions =&amp;gt; first_line_of_dsl)&lt;/code&gt;&lt;/pre&gt;
+
+
+	&lt;p&gt;Hardly rocket science, I know. Ok, let&#8217;s get a little tricksy on you. Wouldn&#8217;t it be nice to remove those quotes? I mean they&#8217;re not doing much, just getting in the way:&lt;/p&gt;
+
+
+	&lt;pre&gt;&lt;code&gt;type = person&lt;/code&gt;&lt;/pre&gt;
+
+
+	&lt;p&gt;Ahh, that&#8217;s better. It&#8217;s also a valid wish statement. It compiles down to exactly the same code. Lovely. Now, what about the logical operators, what if I&#8217;m interested in both people and shoes? Yeah, that&#8217;s right, even the shoes that aren&#8217;t currently being worn by a person. You shout out rudely:&lt;/p&gt;
+
+
+	&lt;pre&gt;&lt;code&gt;Artefact.find(:all, :conditions =&amp;gt; &quot;type = 'person' or type = 'shoe'&quot;)&lt;/code&gt;&lt;/pre&gt;
+
+
+	&lt;p&gt;I reply smugly:&lt;/p&gt;
+
+
+	&lt;pre&gt;&lt;code&gt;type = person
+type = shoe&lt;/code&gt;&lt;/pre&gt;
+
+
+	&lt;p&gt;Hmm, unconvinced, you try and outwit me. What about red shoes you say&#8230; yeah, &lt;strong&gt;red shoes!&lt;/strong&gt;&lt;/p&gt;
+
+
+	&lt;pre&gt;&lt;code&gt;Artefact.find(:all, :conditions =&amp;gt; &quot;type = 'person' or (type = 'shoe' and colour = 'red')&quot;)&lt;/code&gt;&lt;/pre&gt;
+
+
+	&lt;p&gt;Grinning I usher the power of significant whitespace and retort:&lt;/p&gt;
+
+
+	&lt;pre&gt;&lt;code&gt;type = person
+type = shoe
+  colour = red&lt;/code&gt;&lt;/pre&gt;
+
+
+	&lt;p&gt;Haha! I sense your agony. You didn&#8217;t expect this kind of twist. Significant whitespace is awful you shout, yet you secretly admit to yourself how visibly obvious that the colour = red belongs to type = shoe. They are of the same utterance: type is shoe, colour is red&#8230; red shoes! You sense the need to up the ante, to complexify the situation somewhat. Gritting your teeth, you concentrate for a while, and then chant out the following:&lt;/p&gt;
+
+
+	&lt;pre&gt;&lt;code&gt;Artefact.find(:all, :conditions =&amp;gt; &quot;(type = 'person' and not (age &amp;gt; '40' or name = 'Rupert')) or (type = 'shoe' and colour = 'red')&quot;)&lt;/code&gt;&lt;/pre&gt;
+
+
+	&lt;p&gt;To which I nonchalantly counter:&lt;/p&gt;
+
+
+	&lt;pre&gt;&lt;code&gt;type = person
+  not
+    age &amp;gt; 40
+    name = Rupert
+type = shoe
+  colour = red&lt;/code&gt;&lt;/pre&gt;
+
+
+	&lt;p&gt;You are defeated. You had not imagined logical constructs with no &lt;strong&gt;and&lt;/strong&gt; or &lt;strong&gt;or&lt;/strong&gt; statements, and no parenthesis. This is the first power of wish. I will leave the second and third powers (the power of relative artefacts, and the power of abstraction) for another time. For now, be content that we have extracted category-based interests into a succinct, readable &lt;span class='caps'&gt;DSL&lt;/span&gt;.&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://sam.aaron.name/">
+    <author>
+      <name>sam</name>
+    </author>
+    <id>tag:sam.aaron.name,2007-04-13:164</id>
+    <published>2007-04-13T18:17:00Z</published>
+    <updated>2007-04-13T18:33:56Z</updated>
+    <link href="http://sam.aaron.name/2007/4/13/to-scribble-smudge-and-smear" rel="alternate" type="text/html"/>
+    <title>To scribble, smudge and smear</title>
+<content type="html">
+            &lt;p&gt;I&#8217;ve started reading Paul Graham&#8217;s &lt;a href='http://www.paulgraham.com/hackpaint.html'&gt;Hackers &#38; Painters&lt;/a&gt; book. It&#8217;s been so engaging that after I took a peek at the first page, I couldn&#8217;t stop reading until hunger got the better of me. There have been many wonderful quotes to pull out from what I have read so far, but this particular one amused me a lot:&lt;/p&gt;
+
+
+	&lt;blockquote&gt;
+		&lt;p&gt;A programming language is for thinking of programs, not for expressing programs you&#8217;ve already thought of. It should be a pencil, not a pen. Static typing would be a fine idea if people did write programs the way they taught me to in college. But that&#8217;s not how any of the hackers I know write programs. We need a language that lets us scribble and smudge and smear, not a language where you have to sit with a teacup of types balanced on your knee and make polite conversation with a strict old aunt of a compiler.&lt;/p&gt;
+	&lt;/blockquote&gt;
+
+
+	&lt;p&gt;If you haven&#8217;t read Hackers &#38; Painters yet, you&#8217;re missing out on a real treat :-)&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://sam.aaron.name/">
+    <author>
+      <name>sam</name>
+    </author>
+    <id>tag:sam.aaron.name,2007-04-01:162</id>
+    <published>2007-04-01T22:30:00Z</published>
+    <updated>2007-04-01T22:30:48Z</updated>
+    <link href="http://sam.aaron.name/2007/4/1/euro-railsconf-proposal" rel="alternate" type="text/html"/>
+    <title>Euro RailsConf Proposal</title>
+<content type="html">
+            &lt;p&gt;After having such a wonderful time at the Euro RailsConf last September in London, I am absolutely set on attending again. I met the single most intelligent, interesting, and active group of people I&#8217;ve ever met in my life. This year, I&#8217;m hoping to get the privilege of presenting to them. I&#8217;d like to talk about my PhD, and what wonders moving from Java to Rails has had on it. My proposal is as follows:&lt;/p&gt;
+
+
+	&lt;h3&gt;Biography (100 words):&lt;/h3&gt;
+
+
+	&lt;p&gt;Sam Aaron is a Ruby and Rails fanatic. He is currently using Ruby and Rails to implement his PhD ideas on interest management in virtual environments. He formed ncl.rb his local Ruby and Rails user group, has been working as a tech reviewer for Apress Rails books, and was recently acknowledged in the Rails Cookbook by O&#8217;Reilly. He loves the Rails community, and Ruby makes him smile daily. Say hello at http://sam.aaron.name&lt;/p&gt;
+
+
+	&lt;h3&gt;Abstract/Full Description (250 words):&lt;/h3&gt;
+
+
+	&lt;h4&gt;A Brief Introduction to Interest Management&lt;/h4&gt;
+
+
+	&lt;p&gt;Interest management is emerging as an important field in computing. Given the potentially huge sets of material contemporary information and communications technologies make available to us, how do we create smaller, more easily consumed, sets of things we are interested in? This problem is brought into focus when we consider that there are currently more blog posts available than you could read in a lifetime.&lt;/p&gt;
+
+
+	&lt;p&gt;The presentation will introduce the results of my PhD research into creating a meta-data cascade system &#8211; a filter-based approach to managing interest. The primary focus of the research was on applying this system within virtual environments, but the underlying principles make the ideas equally applicable to the filtering of &lt;span class='caps'&gt;RSS&lt;/span&gt; feeds, emails, spatial information, etc.&lt;/p&gt;
+
+
+	&lt;h4&gt;From Java to Rails&lt;/h4&gt;
+
+
+	&lt;p&gt;As part of the research, I migrated from a Java/VRML implementation of the meta-data cascade to a hybrid consisting of a &lt;span class='caps'&gt;VRML&lt;/span&gt; browser, a Java &lt;span class='caps'&gt;CLI&lt;/span&gt;, and a set of Ruby libraries, all controlled via a Rails application. The presentation will cover the motivations for this change, the process of migration, and the benefits gained. The research gives examples of the real-world application of a variety of Ruby/Rails tools and libraries, including Rspec, ActiveRecord, open3, database migrations and the use of DSLs (domain specific languages).&lt;/p&gt;
+
+
+	&lt;h3&gt;Brief Description (50 words):&lt;/h3&gt;
+
+
+	&lt;p&gt;Rails is perfectly suited for implementing interest management techniques. The beauty and simplicity of Ruby combined with the power and flexibility of Rails libraries such as ActiveRecord and database migrations provide a perfect implementation environment. This talk describes the motivations, and process from moving from a Java implementation to Rails, and the benefits received. It covers real world usage of the following Ruby/Rails tools: RSpec, ActiveRecord, open3, database migrations, and DSLs.&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://sam.aaron.name/">
+    <author>
+      <name>sam</name>
+    </author>
+    <id>tag:sam.aaron.name,2007-04-01:161</id>
+    <published>2007-04-01T22:15:00Z</published>
+    <updated>2007-04-01T22:22:33Z</updated>
+    <link href="http://sam.aaron.name/2007/4/1/i-m-officially-a-technical-reviewer" rel="alternate" type="text/html"/>
+    <title>I'm officially a Technical Reviewer!</title>
+<content type="html">
+            &lt;p&gt;&lt;img src='http://sam.aaron.name/assets/2007/4/1/tech_reviewer.png' alt='' /&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;I&#8217;ve been meaning to post this for a while, but the other day I got a copy of &#8216;Beginning Google Maps Applications with Rails and Ajax&#8217; from Apress. And guess what? It&#8217;s got a picture of me in it! Haha! Along with a picture of me pulling a (actually, rather usual) silly face, there&#8217;s this bit of prose:&lt;/p&gt;
+
+
+	&lt;blockquote&gt;
+		&lt;p&gt;Sam Aaron is a Ph.D. student at the School of Computing Science at Newcastle University in the U.K. He is currently finishing off his thesis on the subject of interest management. He is both a Ruby and a Rails fanatic, and as such is actively involved in using and raising awareness of these wonderful technologies. He founded and organises the local Ruby and Rails User Group &#8211; ncl.rb, which attracts more than 20 people every month. He is using Rails to build a web-based decision support tool for Newcastle University&#8217;s transport department and is constantly looking for excuses to include as many of the exciting new Rails advances into his projects as possible.&lt;/p&gt;
+	&lt;/blockquote&gt;
+
+
+	&lt;blockquote&gt;
+		&lt;p&gt;Sam lives with his beautiful girlfriend, Susanna, on the quayside in Newcastle-upon-Tyne, England. He loves watching the birds fly over the river from his window. He spends his working days hacking away on his PowerBook listening to strange electronic music. When not working, he likes to get out of the city and relax. He loves camping, climbing mountains and power kiting. When at home he&#8217;s often found either playing the piano or table football. He doesn&#8217;t own a car and can&#8217;t even drive, preferring instead to cycle everywhere &#8211; especially long-distance expeditions with good friends.&lt;/p&gt;
+	&lt;/blockquote&gt;
+
+
+	&lt;blockquote&gt;
+		&lt;p&gt;When Sam finishes his Ph.D., he plans to start a web development, training and consultancy company focussing on Ruby and Rails. He is currently in talks with Newcastle College with respect to it including Ruby and Rails content within its taught courses. If you&#8217;re interested in finding out what Sam&#8217;s up to today, just head along to his blog: http://sam.aaron.name&lt;/p&gt;
+	&lt;/blockquote&gt;
+          </content>  </entry>
+  <entry xml:base="http://sam.aaron.name/">
+    <author>
+      <name>sam</name>
+    </author>
+    <id>tag:sam.aaron.name,2007-03-31:158</id>
+    <published>2007-03-31T21:35:00Z</published>
+    <updated>2007-03-31T21:43:10Z</updated>
+    <link href="http://sam.aaron.name/2007/3/31/phd-on-rails" rel="alternate" type="text/html"/>
+    <title>PhD on Rails</title>
+<content type="html">
+            &lt;p&gt;So, a while ago I said I wouldn&#8217;t touch the implementation of my PhD ideas, and focus on the task of writing up. Well, the other day I tried to get it working, and it wouldn&#8217;t start. I last played around with the internals of it a good long time ago &#8211; perhaps an entire year ago. I&#8217;m not really a great programmer at the moment (it&#8217;s still a dream though), but back then I was &lt;strong&gt;far&lt;/strong&gt; worse. Particularly because me and Java have never really managed to get on well together. Java didn&#8217;t help me to master it. For example, it had no equivalent of &lt;a href='http://tryruby.hobix.com/'&gt;irb&lt;/a&gt; (oh, how I love irb). The only collection class I used was the LinkedList (I understood how it worked, and it was useful in many situations), and suffice to say my implementation was a ramshackle of a piece of code. A house of cards constantly waiting to fall over. Well, it fell over for the last time. I&#8217;ve retired it.&lt;/p&gt;
+
+
+	&lt;blockquote&gt;
+		&lt;p&gt;What? But you haven&#8217;t even finished your PhD yet, what on earth are you doing?&lt;/p&gt;
+	&lt;/blockquote&gt;
+
+
+	&lt;p&gt;Yeah, I know it&#8217;s a drastic manoeuvre, I should just probably just find some way of patching it, and keeping it alive. However, I just couldn&#8217;t face trying to pick my way though the code. I&#8217;d spent the last year learning and using Ruby, and well, I just couldn&#8217;t face the hideous Java code any more. Not just because Java is hideous, but also because my Java programming was hideous. It was time to move on. I knew about &lt;span class='caps'&gt;TDD&lt;/span&gt; now. &lt;a href='http://www.amazon.co.uk/Test-Driven-Development-Addison-Wesley-Signature/dp/0321146530/ref=sr_1_1/203-2508224-3865535?ie=UTF8&#38;s=books&#38;qid=1175376464&#38;sr=8-1'&gt;Beck&#8217;s book&lt;/a&gt; really shone a bright light in that area. The house of cards didn&#8217;t have to be. With &lt;a href='http://rspec.rubyforge.org/'&gt;RSpec&lt;/a&gt;, I had a wonderful way of representing my &lt;del&gt;tests&lt;/del&gt;, ahem specs. Luckily for me, I was already using a hand-rolled version of &lt;a href='http://www.martinfowler.com/'&gt;Fowler&#8217;s&lt;/a&gt; &lt;a href='http://en.wikipedia.org/wiki/Active_record_pattern'&gt;active record pattern&lt;/a&gt; before I&#8217;d even heard about &lt;a href='http://www.martinfowler.com/'&gt;Martin Fowler&lt;/a&gt; (or his &lt;a href='http://www.martinfowler.com/mf.jpg'&gt;beard&lt;/a&gt;) and &lt;a href='http://www.rubyonrails.org/'&gt;Rails&lt;/a&gt;. &lt;a href='http://ar.rubyonrails.org/'&gt;ActiveRecord&lt;/a&gt; would therefore be a straight drop in replacement of my hand-hacked &lt;span class='caps'&gt;JDBC&lt;/span&gt; mess. I would even have code to organise the structure of my database. Again, something I was doing by hand with Java code, but my solution was nowhere near as flexible or elegant as the database migrations provided with Rails.&lt;/p&gt;
+
+
+	&lt;p&gt;So, my PhD is now a Rails app. How amusing! I kept the Java code I used to draw stuff on a &lt;span class='caps'&gt;VRML&lt;/span&gt; browser (&lt;a href='http://freewrl.sourceforge.net/'&gt;FreeWRL&lt;/a&gt; in this case). Interestingly, the developers of FreeWRL are interested in this code, and are considering bundling it in with the browser. Nice :-) So, how am I getting Rails to talk to Java? JRuby? Nope. I wrote a little &lt;span class='caps'&gt;CLI&lt;/span&gt; client in Java, and Rails is just using Ruby&#8217;s handy &lt;a href='http://www.ruby-doc.org/stdlib/libdoc/open3/rdoc/index.html'&gt;open3&lt;/a&gt; library to communicate. Smashing.&lt;/p&gt;
+
+
+	&lt;p&gt;So, in little under a week, I&#8217;ve got myself in a position where I have fully tested and working Ruby wrappers to my Java &lt;span class='caps'&gt;VRML&lt;/span&gt; browser library. I have some simple objects stored in a &lt;a href='http://www.sqlite.org/'&gt;sqlite3&lt;/a&gt; database, and ActiveRecord is pulling them out, and with one line of beautiful Ruby code I can draw them to the screen:&lt;/p&gt;
+
+
+	&lt;p&gt;&lt;code&gt;Artefact.find(:all).each {|artefact| viewer.add artefact.attributes}&lt;/code&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;produces&lt;/p&gt;
+
+
+	&lt;p&gt;&lt;img title='wow, lovely shapes!' src='/assets/2007/3/31/test_world.png' alt='wow, lovely shapes!' /&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;Suddenly, for the first time, implementing my PhD is fun. Let&#8217;s see what I can achieve next week&#8230;&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://sam.aaron.name/">
+    <author>
+      <name>sam</name>
+    </author>
+    <id>tag:sam.aaron.name,2007-03-31:157</id>
+    <published>2007-03-31T11:15:00Z</published>
+    <updated>2007-03-31T11:20:06Z</updated>
+    <link href="http://sam.aaron.name/2007/3/31/common-threads" rel="alternate" type="text/html"/>
+    <title>Common Threads</title>
+<content type="html">
+            &lt;p&gt;I like it when you see common threads from a variety of areas. Today I was reading &lt;a href='http://www.37signals.com/svn/posts/346-people-have-no-idea-why-theyre-doing-what-theyre-doing'&gt;signal vs noise&lt;/a&gt; and they had an interesting article about how marketing products should appeal to the subconscious (or the reptilian in us as Clotaire Rapaille would say). Rapaille says the following about the airline industry:&lt;/p&gt;
+
+
+	&lt;blockquote&gt;
+		&lt;p&gt;Right now you have a whole industry — the airline industry — that doesn’t understand at all their customers. They’re making big, big mistake. They still don’t understand. Why? Because they have marketing research that goes to the people and says: “What do you want? Do you want cheaper or more expensive?” And of course people say cheaper. So they say, “You see, they want cheaper, so we’re going to give them cheaper airlines, cheaper, cheaper.” Now this is how, in terms of reptilian, [cheaper is interpreted]: “I can’t breathe; I can’t move; they don’t feed me.” This is awful, right? So I’m not flying anymore. I drive my car. Why? Because they’ve not taken care of my reptilian. And then emotionally they treat me like, you know, [I’m] checking [into] a high-security prison.&lt;/p&gt;
+	&lt;/blockquote&gt;
+
+
+	&lt;p&gt;I also read &lt;a href='http://www.tbray.org/ongoing/When/200x/2007/03/30/Wrath-of-Heaven'&gt;this post&lt;/a&gt; by Tim Bray on his &lt;a href='http://www.tbray.org/ongoing/'&gt;ongoing&lt;/a&gt; blog. He was saying things along the same theme:&lt;/p&gt;
+
+
+	&lt;blockquote&gt;
+		&lt;p&gt;Why does the airline business hate people?&lt;/p&gt;
+	&lt;/blockquote&gt;
+
+
+	&lt;p&gt;I guess though, that, in addition to the potential miss-understanding of its customers, Tim was also alluding to the security craziness that&#8217;s been enforced since 911. &lt;a href='http://pragdave.pragprog.com/pragdave/'&gt;PragDave&lt;/a&gt; had &lt;a href='http://video.google.com/videoplay?docid=-7327520943909344563&#38;q=dave+thomas+rails&#38;pr=goog-sl'&gt;something interesting to say about that too&lt;/a&gt;.&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://sam.aaron.name/">
+    <author>
+      <name>sam</name>
+    </author>
+    <id>tag:sam.aaron.name,2007-01-13:29</id>
+    <published>2007-01-13T17:25:00Z</published>
+    <updated>2007-02-26T10:43:32Z</updated>
+    <link href="http://sam.aaron.name/2007/1/13/glass-walls-in-rails-habtm-join-tables" rel="alternate" type="text/html"/>
+    <title>Glass Walls in Rails: habtm join tables</title>
+<summary type="html">&lt;p&gt;Rails is great, really great. However it&#8217;s really tough to master. The problem lies within one of its great strengths: &lt;em&gt;convention over configuration&lt;/em&gt;. The problem with that motto is that you have to know the conventions, or at least train your nose to sniff them out. Unknown conventions act like glass walls: transparent obstacles that block your way. This article is the first of an ongoing series of articles documenting the glass walls that I find, in the vague hope that they will stop others from making the same mistakes. Today we are going to have a look at ActiveRecord &lt;code&gt;has_and_belongs_to_many&lt;/code&gt; join tables.&lt;/p&gt;
+
+&lt;p&gt;For those of you looking for quick answers, here are the glass walls I&#8217;m going to discuss. Avoid, avoid:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Make sure that the models used to name your join table are in alphabetical order. So &lt;code&gt;people_projects&lt;/code&gt; not &lt;code&gt;projects_people&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Make sure that your join table doesn&#8217;t contain an &lt;code&gt;id&lt;/code&gt; column.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For those that want a bit more explanation, consider the following sample rails project:&lt;/p&gt;</summary><content type="html">
+            &lt;p&gt;Rails is great, really great. However it&#8217;s really tough to master. The problem lies within one of its great strengths: &lt;em&gt;convention over configuration&lt;/em&gt;. The problem with that motto is that you have to know the conventions, or at least train your nose to sniff them out. Unknown conventions act like glass walls: transparent obstacles that block your way. This article is the first of an ongoing series of articles documenting the glass walls that I find, in the vague hope that they will stop others from making the same mistakes. Today we are going to have a look at ActiveRecord &lt;code&gt;has_and_belongs_to_many&lt;/code&gt; join tables.&lt;/p&gt;
+
+&lt;p&gt;For those of you looking for quick answers, here are the glass walls I&#8217;m going to discuss. Avoid, avoid:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Make sure that the models used to name your join table are in alphabetical order. So &lt;code&gt;people_projects&lt;/code&gt; not &lt;code&gt;projects_people&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Make sure that your join table doesn&#8217;t contain an &lt;code&gt;id&lt;/code&gt; column.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For those that want a bit more explanation, consider the following sample rails project:&lt;/p&gt;
+&lt;p&gt;Quickly whip up a new rails project:    &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sam$ rails join_test
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Let&#8217;s generate two models. Firstly a person model:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sam$ script/generate model person
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;for which the up method of the corresponding migration is:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;create_table :people do |t|
+  t.column :name, :string
+  t.column :age, :integer
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;secondly, a project model:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sam$ script/generate model project
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;for which the up method of the corresponding migration is:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; create_table :projects do |t|
+    t.column :title, :string
+    t.column :date_started, :datetime
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now, let&#8217;s create a join table to connect these two models:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;script/generate migration create_projects_people
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;for which the up method of the corresponding migration is:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;create_table :projects_people do |t|
+  t.column :project_id, :integer
+  t.column :person_id, :integer
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Finally, let&#8217;s generate the database tables:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;rake db:migrate
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now for the Rails magic. In our Person and Project models files, we need to specify the &lt;code&gt;has_and_belongs_to_many&lt;/code&gt; relationship so our projects can have many people, and our people many projects. Henceforth valiant code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;class Project &amp;lt; ActiveRecord::Base
+  has_and_belongs_to_many :people
+end
+
+class Person &amp;lt; ActiveRecord::Base
+  has_and_belongs_to_many :projects
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;OK, great, we're almost good to go. All we need to do now is add some data. I wacked the following in some fixtures:&lt;/p&gt;
+
+&lt;p&gt;people.yml:        &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;barry:
+  id: 1
+  name: Barry
+  age: 32
+burt:
+  id: 2
+  name: Burt
+  age: 38
+ben: 
+  id: 3
+  name: Benedict
+  age: 27
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;projects.yml:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;xmas:
+  id: 1
+  title: The Christmas Portfolio
+  date_started: &amp;lt;%= &quot;2006-12-25&quot;.to_date %&amp;gt;
+cheese:
+  id: 2
+  title: Cheeses of England
+  date_started: &amp;lt;%= &quot;2006-11-17&quot;.to_date %&amp;gt;
+ncl:
+  id: 3
+  title: Culture in Newcastle
+  date_started: &amp;lt;%= &quot;2006-9-01&quot;.to_date %&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;It&#8217;s funny how difficult I find it to write dates in that order. It&#8217;s not that I&#8217;m too old to learn new tricks, but I seem to fight back against ones I don&#8217;t agree with. It should be day-month-year dammit! Smallest-bigger-biggest. See, makes sense the English way.&lt;/p&gt;
+
+&lt;p&gt;Anyway, carrying on. projects_people.yml:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;barry_works_on_the_christmas_project:
+  project_id: 1
+  person_id: 1
+burt_works_on_the_christmas_project:
+  project_id: 1
+  person_id: 2
+benedict_works_on_the_christmas_project:
+  project_id: 1
+  person_id: 3
+burt_works_on_the_cheeses_project:
+  project_id: 2
+  person_id: 2
+benedict_works_on_the_newcastle_culture_project:
+  project_id: 3
+  person_id: 3
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;and then load the fixtures with the following rake command:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sam$ rake db:fixtures:load
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Phew, that&#8217;s that done with. Or is it? Let&#8217;s fire up the wonderful, mighty &lt;code&gt;script/console&lt;/code&gt; and have our play with our models.  &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt;&amp;gt; xmas = Project.find(1)         
+=&amp;gt; #&amp;lt;Project:0x33a5388 @attributes={&quot;title&quot;=&amp;gt;&amp;amp;#8220;The Christmas Portfolio&amp;amp;#8221;, &amp;amp;#8220;id&amp;amp;#8221;=&amp;gt;&amp;amp;#8221;1&amp;amp;#8221;, &amp;amp;#8220;date_started&amp;amp;#8221;=&amp;gt;&amp;amp;#8221;2006-12-25&amp;amp;#8221;}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;OK, so we now have a variable called &lt;code&gt;xmas&lt;/code&gt; that&#8217;s holding a &lt;code&gt;Project&lt;/code&gt; object representing the project entitled &lt;code&gt;The Christmas Portfolio&lt;/code&gt;. Let&#8217;s see if we can find the names of the people working on this project:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt;&amp;gt; xmas.people.map{|person| person.name}
+ActiveRecord::StatementInvalid: ActiveRecord::StatementInvalid
+        from /opt/local/lib/ruby/gems/1.8/gems/activerecord-1.14.4.5618/lib/active_record/connection_adapters/sqlite_adapter.rb:269:in `table_structure&amp;amp;#8217;
+        from /opt/local/lib/ruby/gems/1.8/gems/activesupport-1.3.1.5618/lib/active_support/core_ext/object/misc.rb:23:in `returning&amp;amp;#8217;
+        from /opt/local/lib/ruby/gems/1.8/gems/activerecord-1.14.4.5618/lib/active_record/connection_adapters/sqlite_adapter.rb:268:in `table_structure&amp;amp;#8217;
+        from /opt/local/lib/ruby/gems/1.8/gems/activerecord-1.14.4.5618/lib/active_record/connection_adapters/sqlite_adapter.rb:206:in `columns&amp;amp;#8217;
+        from /opt/local/lib/ruby/gems/1.8/gems/activerecord-1.14.4.5618/lib/active_record/associations/has_and_belongs_to_many_association.rb:165:in `finding_with_ambigious_select?&amp;amp;#8217;
+        from /opt/local/lib/ruby/gems/1.8/gems/activerecord-1.14.4.5618/lib/active_record/associations/has_and_belongs_to_many_association.rb:55:in `find&amp;amp;#8217;
+        from /opt/local/lib/ruby/gems/1.8/gems/activerecord-1.14.4.5618/lib/active_record/associations/association_collection.rb:159:in `find_target&amp;amp;#8217;
+        from /opt/local/lib/ruby/gems/1.8/gems/activerecord-1.14.4.5618/lib/active_record/associations/association_proxy.rb:131:in `load_target&amp;amp;#8217;
+        from /opt/local/lib/ruby/gems/1.8/gems/activerecord-1.14.4.5618/lib/active_record/associations/association_proxy.rb:122:in `method_missing&amp;amp;#8217;
+        from /opt/local/lib/ruby/gems/1.8/gems/activerecord-1.14.4.5618/lib/active_record/associations/has_and_belongs_to_many_association.rb:91:in `method_missing&amp;amp;#8217;
+        from (irb):2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Eeek. That&#8217;s no good. And unfortunately it&#8217;s not immediately helpful either. Let me just tell you that upgrading Rails (to 1.2 RC1 at the time of writing), upgrading sqlite3, and also the sqlite ruby adapter don&#8217;t make any difference, although they did slightly change the error given. Nope, the real problem is in the naming of the join table.&lt;/p&gt;
+
+&lt;p&gt;So, here lies our first glass wall. The above error isn&#8217;t an indication that Rails, or in fact our code is borked, it&#8217;s just because we made an incorrect assumption, and in this case it was just a slight misinterpretation of the assumption. In this case, we&#8217;re talking about the assumption that Rails makes about the name of your join table. Unless you specifically tell it so, and why would you unless you were working with legacy data, Rails assumes that your join table is the concatenation of the plural forms of the models you&#8217;re joining, connected with an underscore. So in this case, our models are &lt;code&gt;Project&lt;/code&gt; and &lt;code&gt;Person&lt;/code&gt;, and using this rule you might assume that the join table is &lt;code&gt;projects_people&lt;/code&gt;. However, there&#8217;s one more assumption: that the models are listed in alphabetical order. This means that we need a table called &lt;code&gt;people_projects&lt;/code&gt; not &lt;code&gt;projects_people&lt;/code&gt;. If you don&#8217;t, then, as we have already seen, Rails laughs in your face, and doesn&#8217;t tell you why. You&#8217;ll get strange errors that vary in vagueness depending on the version of Rails that you&#8217;re running.&lt;/p&gt;
+
+&lt;p&gt;Let&#8217;s fix this. Change your join table migration to the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;create_table :people_projects do |t|
+    t.column :project_id, :integer
+    t.column :person_id, :integer
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now unmigrate (&lt;code&gt;rake db:migrate VERSION=0&lt;/code&gt;), remigrate (&lt;code&gt;rake db:migrate&lt;/code&gt;) and then rename the join table fixture from &lt;code&gt;projects_people.yml&lt;/code&gt; to &lt;code&gt;people_projects.yml&lt;/code&gt;. Finally, reload your fixtures (&lt;code&gt;rake db:fixtures:load&lt;/code&gt;). Back in &lt;code&gt;script/console&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt;&amp;gt; xmas = Project.find(1)         
+=&amp;gt; #&amp;lt;Project:0x33a5388 @attributes={&quot;title&quot;=&amp;gt;&amp;amp;#8220;The Christmas Portfolio&amp;amp;#8221;, &amp;amp;#8220;id&amp;amp;#8221;=&amp;gt;&amp;amp;#8221;1&amp;amp;#8221;, &amp;amp;#8220;date_started&amp;amp;#8221;=&amp;gt;&amp;amp;#8221;2006-12-25&amp;amp;#8221;}
+
+&amp;gt;&amp;gt; xmas.people.map{|person| person.name}
+=&amp;gt; [&amp;amp;#8220;Benedict&amp;amp;#8221;, &amp;amp;#8220;Barry&amp;amp;#8221;, &amp;amp;#8220;Burt&amp;amp;#8221;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Looks so good so far, we&#8217;ve now conquered our first glass wall. This is a time to remember. Now, for kicks, let&#8217;s take a step back in time, and imagine we&#8217;re sitting in the lecture theatre of our undergrad database module. Our goodly lecturer, Dr Rossiter, wants to see if we can find the names of all people that have worked on a project with Burt. (Actually, this isn&#8217;t as contrived as it sounds, this is exactly the form of one of the questions I was attempting to answer in my current project). First up, let&#8217;s grab Burt:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt;&amp;gt; burt = Person.find(2)
+=&amp;gt; #&amp;lt;Person:0x348d8e0 @attributes={&quot;name&quot;=&amp;gt;&amp;amp;#8220;Burt&amp;amp;#8221;, &amp;amp;#8220;id&amp;amp;#8221;=&amp;gt;&amp;amp;#8221;2&amp;amp;#8221;, &amp;amp;#8220;age&amp;amp;#8221;=&amp;gt;&amp;amp;#8221;38&amp;amp;#8221;}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;That was pretty harmless. Now, get ready for the uber-expression: &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt;&amp;gt; burt.projects.map{|project| project.people.map{|person| person.name unless person == burt}}.flatten.compact.uniq
+=&amp;gt; []
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Let&#8217;s just quickly walk through this. First up, I&#8217;m grabbing an array of all of the projects associated with Burt. Then I&#8217;m grabbing each of the projects in turn, and fetching a list of the names of the people working on them (as long as they&#8217;re not Burt himself). Finally, I flatten the list, get rid of any nils, and then remove duplicates. I agree, it does look slightly tricksy, but it&#8217;s hellishly nicer than the equivalent SQL.&lt;/p&gt;
+
+&lt;p&gt;But hey, Burt worked with no-one? That can&#8217;t be right&#8230; we know he worked with other people on The Christmas Porfolio. Something&#8217;s up here. Let&#8217;s dig a little deeper:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#note that the next line is identical (in Rails)
+#to burt.projects.map{|project| project.id}
+#
+&amp;gt;&amp;gt; burt.projects.map{&amp;amp;:id}                                           
+=&amp;gt; [4, 5]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Interesting&#8230; there aren&#8217;t any projects that have an &lt;code&gt;id&lt;/code&gt; of 4 or 5. However, there are 5 different people project associations:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sqlite&amp;gt; select * from people_projects;
+1|3|3
+2|1|3
+3|1|1
+4|2|2
+5|1|2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If we are to highlight one of the projects related to Burt, and cross-reference the foreign keys (&lt;code&gt;project_id&lt;/code&gt; and &lt;code&gt;person_id&lt;/code&gt;), we start to see the root of the problem:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt;&amp;gt; burt.projects.first.attributes
+=&amp;gt; {&amp;amp;#8220;project_id&amp;amp;#8221;=&amp;gt;&amp;amp;#8221;2&amp;amp;#8221;, &amp;amp;#8220;title&amp;amp;#8221;=&amp;gt;&amp;amp;#8221;Cheeses of England&amp;amp;#8221;, &amp;amp;#8220;id&amp;amp;#8221;=&amp;gt;4, &amp;amp;#8220;date_started&amp;amp;#8221;=&amp;gt;#&amp;lt;Date: 4908113/2,0,2299161&amp;gt;, &amp;amp;#8220;person_id&amp;amp;#8221;=&amp;gt;&amp;amp;#8221;2&amp;amp;#8221;}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Notice that the 4th row of &lt;code&gt;people_projects&lt;/code&gt; maps onto this particular project. We can now see that the bogus &lt;code&gt;id&lt;/code&gt; of 4 comes from the id column of &lt;code&gt;people_projects&lt;/code&gt;. Now, I&#8217;m not sure why Rails doesn&#8217;t ignore this column for this join&#8230; if it&#8217;s expected behaviour, I&#8217;d be interested if someone can explain why. However, the solution is to never have an id column in your join table - they&#8217;re not needed anyway. So, our original &lt;code&gt;people_projects&lt;/code&gt; migration should have looked like this (although you might be wise to also add some indexes):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;create_table :people_projects, :id =&amp;gt; false do |t|
+  t.column :project_id, :integer, :null =&amp;gt; false
+  t.column :person_id, :integer, :null =&amp;gt; false
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now, after we reset the database, and reload our fixtures, if we have a sneaky peek at the join table we see the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sqlite&amp;gt; select * from people_projects;
+3|3
+1|3
+1|1
+2|2
+1|2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;So, if we have a look at those project attributes again:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt;&amp;gt; burt.projects.first.attributes
+=&amp;gt; {&amp;amp;#8220;project_id&amp;amp;#8221;=&amp;gt;&amp;amp;#8221;2&amp;amp;#8221;, &amp;amp;#8220;title&amp;amp;#8221;=&amp;gt;&amp;amp;#8221;Cheeses of England&amp;amp;#8221;, &amp;amp;#8220;id&amp;amp;#8221;=&amp;gt;2, &amp;amp;#8220;date_started&amp;amp;#8221;=&amp;gt;#&amp;lt;Date: 4908113/2,0,2299161&amp;gt;, &amp;amp;#8220;person_id&amp;amp;#8221;=&amp;gt;&amp;amp;#8221;2&amp;amp;#8221;}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We see that the &lt;code&gt;id&lt;/code&gt; is set appropriately. OK, now for the moment of truth. I know you&#8217;re dying to know the answer&#8230; who did in fact work with Burt?&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt;&amp;gt; burt.projects.map{|project| project.people.map{|person| person.name unless person == burt}}.flatten.compact.uniq
+=&amp;gt; [&amp;amp;#8220;Benedict&amp;amp;#8221;, &amp;amp;#8220;Barry&amp;amp;#8221;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Benedict and Barry. Lovely. Another glass wall smashed.&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://sam.aaron.name/">
+    <author>
+      <name>sam</name>
+    </author>
+    <id>tag:sam.aaron.name,2006-12-17:28</id>
+    <published>2006-12-17T22:33:33Z</published>
+    <updated>2007-02-26T10:43:31Z</updated>
+    <link href="http://sam.aaron.name/2006/12/17/off-for-christmas" rel="alternate" type="text/html"/>
+    <title>Off for Christmas</title>
+<content type="html">
+            &lt;p&gt;It&#8217;s that time of the year again. This time last year I was pondering over what I&#8217;d be doing with the PhD out of the way in the coming Christmas. Hmmm, it&#8217;s that Christmas now, and I&#8217;m still writing up&#8230; but hey, I&#8217;m &lt;em&gt;really&lt;/em&gt; not that far off now.&lt;/p&gt;
+
+&lt;p&gt;So what am I up to? Well, this weekend I&#8217;ve been at Susanna&#8217;s parents having a sort of pre-Christmas warm up. Nice long walks, lots of food, and a bit of time to hack away on my Rails project. Lovely. Unfortunately, tomorrow isn&#8217;t as cheery - a funeral. The real unfortunate part is that even though I&#8217;ve packed my suit, tie, cuff-links, shirt&#8230; I &lt;em&gt;didn&#8217;t&lt;/em&gt; pack my smart shoes. Eek, so I&#8217;m having to go in my big walking boots! Ooops! David wondered if Fred&#8217;s shoes might fit me, but the thought of wearing a dead man&#8217;s shoes to his own funeral&#8230;. luckily my feet were too big.&lt;/p&gt;
+
+&lt;p&gt;On Tuesday I fly to France, whereupon I shall spend a lovely week with my family. (We&#8217;re not French, my parents just emigrated there a while back). We&#8217;ll be drinking in the morning, sumo-wrestling on the rug, wearing bras on our heads&#8230; the usual family stuff. I&#8217;m sure the time will fly by, and before we know it, me and Susanna will be landing in Berlin for our new year celebrations. We did the same last year, and absolutely loved it. So, we&#8217;re doing it again. If any Ruby/Rails people from Berlin that are reading this blog, and would like to meet up for a drink, please drop me a line.&lt;/p&gt;
+
+&lt;p&gt;So, whilst I&#8217;m away, I&#8217;ll not be able to look after this blog. Unfortunately it still needs looking after, as TextDrive keeps wanting to kill the Typo process. So, I&#8217;m sure this blog will go down for a bit. Hopefully I&#8217;ll find the time to move it to my VPS in the new year. I&#8217;m currently holding off doing it because I haven&#8217;t sorted out a back-up solution yet. So, if you get the dreaded 500 error message, bare with me&#8230; I&#8217;ll prop it up as soon as I can.&lt;/p&gt;
+
+&lt;p&gt;Anyway, let me wish you all a wonderful Christmas, and have lots of crazy new year&#8217;s eve parties. If it&#8217;s in Berlin invite me!&lt;/p&gt;
+          </content>  </entry>
+</feed>

@@ -1,0 +1,678 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+
+<channel>
+	<title>Planet Ruby</title>
+	<link>http://planetruby.0x42.net/</link>
+	<language>en</language>
+	<description>Planet Ruby - http://planetruby.0x42.net/</description>
+
+<item>
+	<title>Pat Eyler: Pragmatic Thinking &amp; Learning</title>
+	<guid isPermaLink="false">tag:blogger.com,1999:blog-24599054.post-8307208542654788451</guid>
+	<link>http://on-ruby.blogspot.com/2009/01/pragmatic-thinking-learning.html</link>
+	<description>I've been reading Pragmatic Thinking and Learning and I really love it.  It's one of those books that's really hard to put down, but really hard to read straight through.  I find myself constantly going back to sections, making notes, and thinking about how to apply ideas.
+
+I'm working at applying two of the ideas right now.  I'm building a personal wiki (using emacs wiki mode) to better manage</description>
+	<pubDate>Thu, 22 Jan 2009 14:34:21 +0000</pubDate>
+	<author>noreply@blogger.com (pate)</author>
+</item>
+<item>
+	<title>Pat Eyler: Looking for serious Ruby Hacktitude?</title>
+	<guid isPermaLink="false">tag:blogger.com,1999:blog-24599054.post-6097686733731752416</guid>
+	<link>http://on-ruby.blogspot.com/2009/01/looking-for-serious-ruby-hacktitude.html</link>
+	<description>I just noticed that zenspider and some of my other buddies up in Seattle.rb have hung their shingle out again.  If you need some big Ruby guns, these guys are the deal — hire them now before someone else does. 
+
+Besides, if they're not working on your project, they're liable to extend Wilson to produce PPC output or something equally dangerous.  For the sake of humanity, don't let them sit too</description>
+	<pubDate>Thu, 22 Jan 2009 14:16:07 +0000</pubDate>
+	<author>noreply@blogger.com (pate)</author>
+</item>
+<item>
+	<title>Mauricio Fernandez: The problems with Ruby's serialization (Marshal), and how extprot addresses them</title>
+	<guid isPermaLink="false">http://eigenclass.org/R2/writings/extprot-vs-ruby-marshal</guid>
+	<link>http://eigenclass.org/R2/writings/extprot-vs-ruby-marshal</link>
+	<description>&lt;p&gt;&lt;a href=&quot;http://eigenclass.org/R2/writings/protocol-extension-with-extprot#comment-1ca8186ed0b42d656496c1d9d7474824&quot;&gt;Chuck Vose's comment&lt;/a&gt; made me realize that the universal &lt;a href=&quot;http://eigenclass.org/R2/writings/extprot-extensible-protocols-intro&quot;&gt;extprot&lt;/a&gt; message decoder can be simplified considerably if I simply deserialize the data and let Ruby do the pretty-printing for me (#inspect). I now have a 120 LoC universal decoder that can deserialize any message (without the original protocol definition), and can exchange data between OCaml and Ruby, the first extprot targets. But before I come to that, some clarifications on Ruby's &lt;code&gt;Marshal&lt;/code&gt; vs. extprot are in order.&lt;/p&gt;&lt;h2&gt; What's the point? Why use extprot instead of &lt;code&gt;Marshal.dump&lt;/code&gt;?&lt;/h2&gt;&lt;p&gt;Marshal has been a core Ruby class forever. It is written in C, fairly fast (it's the fastest way to (de)serialize Ruby data, at any rate), and convenient to use: you just give it an object (nearly any object), and you get a string. Give it a string, and your object's back. Why would anybody want to use anything else?  In fact, there are a few reasons &lt;em&gt;not&lt;/em&gt; to use Marshal:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;p&gt;the format used by Marshal has changed a few times in the past. (The minor version has changed 8 times since the first release.)&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;it's Ruby-only. AFAIK nothing else can read data serialized with Marshal.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;serializing objects with Marshal exposes implementation details.&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;While (2) means you cannot use it if you care about interoperability, (3) applies also when you're staying in Ruby. A &lt;a href=&quot;http://www.reddit.com/r/programming/comments/7pwok/introducing_extprot_extensible_binary_protocols/c072gfr&quot;&gt;redditor puts it in few words&lt;/a&gt;:&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;It's really infuriating when you (for example) can't send serialized ruby objects over the network because of a 0.0.1 version difference between the 2.&lt;/p&gt;&lt;/blockquote&gt;&lt;p&gt;The basic problem with Marshal is that it serializes an object by saving the name of its class and all its instance variables (you can spot them in the generated string):&lt;/p&gt;&lt;pre&gt;&amp;gt;&amp;gt; A = Struct.new(:name, :id, :email, :phones)
+=&amp;gt; A
+&amp;gt;&amp;gt; s = Marshal.dump(A.new(&amp;quot;John Doe&amp;quot;, 1234, &amp;quot;jdoe@example.com&amp;quot;, [&amp;quot;555-4321&amp;quot;, 1]))
+=&amp;gt; &amp;quot;\004\bS:\006A\t:\tname\&amp;quot;\rJohn Doe:\aidi\002\322\004:\n
+    email\&amp;quot;\025jdoe@example.com:\vphones[\a\&amp;quot;\r555-4321i\006&amp;quot;
+&amp;gt;&amp;gt; s.size
+=&amp;gt; 78
+&lt;/pre&gt;&lt;p&gt;The first, obvious consequence is that you cannot change the name of the class, since &lt;code&gt;Marshal.load&lt;/code&gt; needs the class declared in the byte stream to exist. The second, no less apparent, is that you cannot rename the instance variables either. But it gets worse than that: this all means that you're exposing many implementation details (how the data is represented in which instance variables) in the serialized form, details that you will hardly be able to modify, if you want to read old data (worse: ... that you won't be able to change at all if you want old clients to read new data). This can be addressed in an ad-hoc manner by using &lt;code&gt;#marshal_dump&lt;/code&gt; and &lt;code&gt;#marshal_load&lt;/code&gt;, but this requires extra code and implies that you are no longer able to decode the data if you don't have &lt;code&gt;#marshal_load&lt;/code&gt;: effectively, &lt;code&gt;#marshal_dump&lt;/code&gt; and &lt;code&gt;#marshal_load&lt;/code&gt; define a protocol.&lt;/p&gt;&lt;p&gt;Now that the magic word, &lt;em&gt;protocol&lt;/em&gt;, has been uttered, it's time to see if Marshal does anything for us as far a protocol extensibility is concerned. As said above, if anything, Marshal makes interoperability  &lt;em&gt;harder&lt;/em&gt;, as the encoding is not guaranteed not to change (in practice, it's not expected to change often, but we can't know) and implementation details are leaked by default.&lt;/p&gt;&lt;p&gt;As it turns out, Marshal doesn't help with &lt;a href=&quot;http://eigenclass.org/R2/writings/protocol-extension-with-extprot&quot;&gt;the sort of backward/forward compatible protocol extensions extprot allows&lt;/a&gt; either.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;http://eigenclass.org/R2/writings/extprot-vs-ruby-marshal&quot;&gt;Read more...&lt;/a&gt;&lt;/p&gt;&lt;div class=&quot;feedflare&quot;&gt;
+&lt;a href=&quot;http://feeds.feedburner.com/~f/eigenclass?a=kjLEnZ.P&quot;&gt;&lt;img src=&quot;http://feeds.feedburner.com/~f/eigenclass?i=kjLEnZ.P&quot; border=&quot;0&quot; /&gt;&lt;/a&gt;
+&lt;/div&gt;</description>
+	<pubDate>Wed, 21 Jan 2009 12:06:38 +0000</pubDate>
+</item>
+<item>
+	<title>Dave Thomas: So I need a symetric coroutine example</title>
+	<guid isPermaLink="false">http://pragdave.blogs.pragprog.com/pragdave/2009/01/so-i-need-a-symetric-coroutine-example.html</guid>
+	<link>http://pragdave.blogs.pragprog.com/pragdave/2009/01/so-i-need-a-symetric-coroutine-example.html</link>
+	<description>I'm getting close to wrapping up the new PickAxe. One of the last things I need is an example of symetric coroutines for the standard library section on the Fiber class.&lt;br /&gt;&lt;br /&gt;I have lots of asymetric examples, but I'm struggling to come up with something decent for symetric coroutines (which use transfer to pass control between themselves.) I've coded up Conway's line squeezer, but it works better using asymetric coroutines. I've tried to come up with puzzles that are best solved with symetric coroutines, but without luck.&amp;nbsp; I've coded up a simple blackjack game, but again it works better with asymetric coroutines. Although, for fun, here's the dealer, which shows some of the new Ruby 1.9 array methods:&lt;br /&gt;&lt;br /&gt;
+
+&lt;br /&gt;But, I'm still stuck. So... can any of you clever folk come up with something compelling that uses less that 35 lines of code?&lt;br /&gt;&lt;br /&gt;</description>
+	<pubDate>Wed, 21 Jan 2009 00:28:41 +0000</pubDate>
+</item>
+<item>
+	<title>Tom Copeland: RubyForge now on PostgreSQL 8.3</title>
+	<guid isPermaLink="false">http://tomcopeland.blogs.com/juniordeveloper/2009/01/rubyforge-now-on-postgresql-83.html</guid>
+	<link>http://tomcopeland.blogs.com/juniordeveloper/2009/01/rubyforge-now-on-postgresql-83.html</link>
+	<description>&lt;p&gt;PostgreSQL 8.3 has been out for a while and has all sorts of &lt;a href=&quot;http://www.postgresql.org/docs/8.3/static/release-8-3.html&quot;&gt;nifty improvements&lt;/a&gt;... and I've finally gotten around to upgrading &lt;a href=&quot;http://rubyforge.org/&quot;&gt;RubyForge&lt;/a&gt; to use it, huzzah!  I did the upgrade last night and all seems well so far, but if anyone notices anything awry please let me know.&lt;/p&gt;
+
+&lt;p&gt;Also, if there are any PostgreSQL gurus reading this, if you have a moment please take a look at the RubyForge &lt;a href=&quot;http://support.rubyforge.org/svn/trunk/support/postgresql.conf&quot;&gt;postgresql.conf&lt;/a&gt; and let me know if you see anything crazy there.  The RubyForge server has around 8 GB of RAM and I figure that 3 GB or so can be safely dedicated to PostgreSQL.  I've made a couple changes - bumping up &lt;code&gt;shared_buffers&lt;/code&gt; and &lt;code&gt;maintenance_work_mem&lt;/code&gt; and whatnot - but tuning suggestions would be welcome.&lt;/p&gt;
+
+&lt;p&gt;When I did this upgrade I did the usual major version dump/load... this took quite a while since the DB has around 70M records in it.  Maybe next time I can do the upgrade with Slony; that would reduce the downtime window.  On the other hand, it still only took 10 minutes to dump and 30 minutes to load, so, meh.&lt;/p&gt;
+
+&lt;p&gt;More &lt;a href=&quot;http://militaryprofessionalreadinglists.com/&quot;&gt;military reading list&lt;/a&gt; trivia: &lt;a href=&quot;http://militaryprofessionalreadinglists.com/search?keywords=keegan&quot;&gt;John Keegan&lt;/a&gt; has three books on the various lists: &lt;b&gt;Face of Battle&lt;/b&gt;, &lt;b&gt;The Mask of Command&lt;/b&gt;, and &lt;b&gt;Fields of Battle: The Wars for North America&lt;/b&gt;.  I've only read the first of those; it's a great book.  Ugly times at Agincourt... fighting hand to hand in a plowed field, yikes.&lt;/p&gt;</description>
+	<pubDate>Tue, 20 Jan 2009 14:22:38 +0000</pubDate>
+</item>
+<item>
+	<title>Mauricio Fernandez: Backward and forward compatible protocol evolution with extprot: the case of Grafffer</title>
+	<guid isPermaLink="false">http://eigenclass.org/R2/writings/protocol-extension-with-extprot</guid>
+	<link>http://eigenclass.org/R2/writings/protocol-extension-with-extprot</link>
+	<description>&lt;p&gt;This is the year 2011, and the latest &lt;del&gt;fad&lt;/del&gt; successful Web 2.0 platform is Grafffer, a free social networking and messaging service that allows its users to send and view each other's short &lt;em&gt;pictorial messages&lt;/em&gt; (known as &lt;em&gt;grafffs&lt;/em&gt;). The story of Grafffer is one of exponential growth and rapid technological evolution, with the &lt;a href=&quot;http://eigenclass.org/R2/writings/extprot-extensible-protocols-intro&quot;&gt;extprot&lt;/a&gt;-based Grafff protocol at its core.&lt;/p&gt;&lt;p&gt;The Grafffer service is based on the exchange of &lt;em&gt;grafffs&lt;/em&gt;, short &lt;em&gt;pictorial messages&lt;/em&gt; whose length was limited to 140 bytes at service launch (this limit was raised posteriorly, but remains low to this day). Grafffs can be sent and received via the Grafffer website, RSS, email, SMS, using one of the many 3rd party Grafffer applications, or through specific devices like the iGrafff.&lt;/p&gt;&lt;p&gt;Mirroring the evolution in the applications and devices used to create and represent Grafffs, the Grafff protocol underwent a number of changes. The ability to extend the protocol cleanly while retaining compatibility with existing data proved to be a key technological enabler that made Grafffer's growth possible.&lt;/p&gt;&lt;h2&gt; Original protocol&lt;/h2&gt;&lt;p&gt;The Grafffer developers realized early on that Grafff messages were to remain as short as possible if the service was to scale, so they engineered a binary Grafff protocol using &lt;a href=&quot;http://eigenclass.org/R2/writings/extprot-extensible-protocols-intro&quot;&gt;extprot&lt;/a&gt;. Grafff messages were originally defined as follows:&lt;/p&gt;&lt;pre&gt;(* Grafff protocol 0.0.1 *)
+
+type point = (int * int)   (* a pair of pixel coordinates *)
+
+message shape =
+  Polygon { vertices : [ point ] }   (* list of points *)
+| Circle { center : point; radius : int }
+
+message grafff = { objects : [ (shape * byte) ] }
+(* list of tuples with shape and grayscale value *)
+&lt;/pre&gt;&lt;p&gt;A Grafff is essentially a list of objects, each one being either a polygon or a circle.&lt;/p&gt;&lt;p&gt;Given this protocol definition, a Grafff like&lt;/p&gt;&lt;pre&gt;{ objects =
+   [
+     (Polygon { vertices = [ (0, 0); (0, 1); (1, 0) ] }, 100);
+     (Circle { center = (2, 2); radius = 1 }, 0)
+   ]
+}
+&lt;/pre&gt;&lt;p&gt;is serialized as this compact 55-byte message:&lt;/p&gt;&lt;pre&gt;00000000  01 35 01 05 32 02 01 1e  02 01 19 01 05 16 03 01  |.5..2...........|
+00000010  05 02 00 00 00 00 01 05  02 00 00 00 02 01 05 02  |................|
+00000020  00 02 00 00 02 64 01 0f  02 11 0a 02 01 05 02 00  |.....d..........|
+00000030  04 00 04 00 02 02 00                              |.......|
+00000037
+&lt;/pre&gt;&lt;p&gt;The extprot compiler (&lt;code&gt;extprotc&lt;/code&gt;) uses the above definition to create the functions to serialize, deserialize and pretty-print messages, but a human-readable dump of a binary message can be generated even in the absence of the original protocol definition because messages are self-describing. This is the output of a &lt;a href=&quot;http://github.com/mfp/extprot/blob/43e9222d84a535a511a1392f6b834b1b4c36d537/test/inspect_msg.rb&quot;&gt;generic extprot decoder written in Ruby&lt;/a&gt; when given the above binary message:&lt;/p&gt;&lt;pre&gt;{
+  [
+    { { [ { 0; 0 }; { 0; 1 }; { 1; 0 } ] }; 0x64 };
+    { T1 { { 2; 2 }; 1 }; 0x0 }
+  ]
+}
+&lt;/pre&gt;&lt;p&gt;Here, &lt;code&gt;T1&lt;/code&gt; is &lt;em&gt;tag&lt;/em&gt; 1 and corresponds to a &lt;code&gt;Circle&lt;/code&gt;. The first shape has got tag &lt;code&gt;T0&lt;/code&gt; (&lt;code&gt;Polygon&lt;/code&gt;), which isn't printed by &lt;code&gt;inspect_msg.rb&lt;/code&gt;, for the sake of concision.&lt;/p&gt;&lt;h2&gt; Early extensions&lt;/h2&gt;&lt;p&gt;The Grafff protocol underwent its first extensions when it was launched in Japan in association with NTT (Grafff was first made available through NTT DoCoMo's i-mode). This launch triggered changes in the Grafff protocol to cater to the needs of the Japanese consumer.&lt;/p&gt;&lt;p&gt;Being exposed to calligraphy from an early age, Japanese subscribers soon expressed the need to support different brushes. Moreover, arbitrary polygons were required.&lt;/p&gt;&lt;p&gt;It was critical that existent Grafffs keep working with the newer devices. Fortunately, &lt;a href=&quot;http://github.com/mfp/extprot/blob/43e9222d84a535a511a1392f6b834b1b4c36d537/doc/extensions.md&quot;&gt;extprot allowed to extend the protocol trivially&lt;/a&gt; by changing this definition:&lt;/p&gt;&lt;pre&gt;(* Grafff 1.0 *)
+(* other types identical to Grafff v0.0.1 *)
+
+type brush =
+    Default
+  | Calligraphic int  (* size in pixels *)
+  | Hello_Kitty int   (* size of head in pixels *)
+
+message grafff = { objects : [ (shape * byte * brush) ] }
+&lt;/pre&gt;&lt;p&gt;A Grafff is no longer a list of shapes, but a list of shapes along with associated brushes. Existent Grafff messages lack the &lt;code&gt;brush&lt;/code&gt; element, so the &lt;code&gt;Default&lt;/code&gt; brush is used by default by the systems supporting the new protocol. Older clients simply ignore the brush element.  This allows clients using both protocol versions to coexist and interoperate safely.&lt;/p&gt;&lt;p&gt;The extension that has been applied here is the addition of an element to a tuple. Since the new element has got a default value (&lt;code&gt;Default&lt;/code&gt;), this extension is both backward and forward compatible.&lt;/p&gt;&lt;h2&gt; PokéGrafff! and the arrival of colors&lt;/h2&gt;&lt;p&gt;The Grafff service became immensely popular among Japanese youngsters with the arrival of the PokéGrafff! media merchandise, which included trading cards (Grafffs grafffed by celebrities and original material), video games, a manga series and an anime adaptation. (The PokéGrafff! anime follows the adventures of young PokéGrafff!  Masters in their quest to obtain 150 mythical Grafffs.) Shortly after the launch of PokéGrafff!, the iGrafff was marketed to the adults that had been exposed indirectly to the Grafff service via their children. (It is rumoured that the adult industry played a large role in the success of Grafffer over its competitors, because adult contents in extended Grafffer formats soon became popular.)&lt;/p&gt;&lt;p&gt;The needs of the public PokéGrafff! was addressed to required two major modifications to the Grafff service:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;p&gt;bright, colorful Grafffs&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;polygon filling&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Again, it was essential that the existent catalog of Grafffs keep working with the new devices. Moreover, new Grafffs were to work in older clients, with graceful degradation.&lt;/p&gt;&lt;p&gt;The Grafff protocol was modified this way:&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;http://eigenclass.org/R2/writings/protocol-extension-with-extprot&quot;&gt;Read more...&lt;/a&gt;&lt;/p&gt;&lt;div class=&quot;feedflare&quot;&gt;
+&lt;a href=&quot;http://feeds.feedburner.com/~f/eigenclass?a=UGrccJ.P&quot;&gt;&lt;img src=&quot;http://feeds.feedburner.com/~f/eigenclass?i=UGrccJ.P&quot; border=&quot;0&quot; /&gt;&lt;/a&gt;
+&lt;/div&gt;</description>
+	<pubDate>Mon, 19 Jan 2009 11:23:12 +0000</pubDate>
+</item>
+<item>
+	<title>Ruby on Rails: This Week in Edge Rails</title>
+	<guid isPermaLink="false">tag:weblog.rubyonrails.com,2009-01-16:24463</guid>
+	<link>http://feeds.feedburner.com/~r/RidingRails/~3/513992920/this-week-in-edge-rails</link>
+	<description>&lt;h3&gt;January 10, 2009 -January 16, 2009&lt;/h3&gt;
+
+
+	&lt;p&gt;24 commits for edge Rails this week (with one patch ported over to the 2.2 branch as well). If you want a pre-release look at Rails 2.3, this is a fine time to install a copy of edge, if you’re not already there. It’s plenty stable enough for test sites, though there are a few rough patches yet.&lt;/p&gt;
+
+
+	&lt;h2&gt;Nested Transactions in Active Record&lt;/h2&gt;
+
+
+	&lt;p&gt;Several people contributed to a big patch that gives us nested transactions in Active Record, a much-requested feature. Now you can write code like this:&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code&gt;
+User.transaction do
+    User.create(:username =&amp;gt; 'Admin')
+    User.transaction(:requires_new =&amp;gt; true) do
+      User.create(:username =&amp;gt; 'Regular')
+      raise ActiveRecord::Rollback
+    end
+  end
+
+  User.find(:all)  # =&amp;gt; Returns only Admin
+&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;Nested transactions let you rollback an inner transaction without affecting the state of the outer transaction. If you want a transaction to be nested, you must explicitly add the &lt;code&gt;:requires_new&lt;/code&gt; option; otherwise, a nested transaction simply becomes part of the parent transaction (as it does currently on Rails 2.2). Under the covers, nested transactions are &lt;a href=&quot;http://rails.lighthouseapp.com/projects/8994/tickets/383&quot;&gt;using savepoints&lt;/a&gt;, so they’re supported even on databases that don’t have true nested transactions. There is also a bit of magic going on to make these transactions play well with transactional fixtures during testing. &lt;a href=&quot;http://github.com/rails/rails/commit/ab0ce052ba23a4cce7a84ecade0d00d9cc518ebd&quot;&gt;commit&lt;/a&gt;&lt;/p&gt;
+
+
+	&lt;h2&gt;MemCacheStore Enhancements&lt;/h2&gt;
+
+
+	&lt;p&gt;Nahum Wild contributed some work that (inspired by his &lt;a href=&quot;http://github.com/terrcin/spandex_mem_cache_store/tree/master&quot;&gt;spandex_mem_cache_store&lt;/a&gt; plugin) that enhances the performance of Rails when using &lt;code&gt;MemCacheStore&lt;/code&gt;. The basic idea is to keep a per-request local cache of requests sent to &lt;code&gt;MemCacheStore&lt;/code&gt;, cutting down on unnecessary reads and leading to better site performance. &lt;a href=&quot;http://github.com/rails/rails/commit/a53ad5bba37199047ba20194933e122bf6b0252f&quot;&gt;commit&lt;/a&gt;&lt;/p&gt;
+
+
+	&lt;h2&gt;Making Active Record Callbacks behave&lt;/h2&gt;
+
+
+	&lt;p&gt;You may recall the spot in the &lt;a href=&quot;http://apidock.com/rails/ActiveRecord/Callbacks&quot;&gt;Active Record documentation&lt;/a&gt; that says “If a &lt;code&gt;before_*&lt;/code&gt; callback returns false, all the later callbacks and the associated action are cancelled.” What you may not know is that this is actually &lt;a href=&quot;http://rails.lighthouseapp.com/projects/8994/tickets/1735&quot;&gt;broken&lt;/a&gt; in the current version of Rails: if you cancel a &lt;code&gt;before_update&lt;/code&gt; or &lt;code&gt;before_create&lt;/code&gt; callback, the &lt;code&gt;after_save&lt;/code&gt; callbacks still run. In Rails 2.3, this will behave the way that the documentation says it does. &lt;a href=&quot;http://github.com/rails/rails/commit/7a0e7c7270548138a333bc39aab5aec80580174b&quot;&gt;commit&lt;/a&gt;&lt;/p&gt;
+
+
+	&lt;h2&gt;Fractional seconds for TimeWithZone&lt;/h2&gt;
+
+
+	&lt;p&gt;The &lt;code&gt;Time&lt;/code&gt; and &lt;code&gt;TimeWithZone&lt;/code&gt; classes include an &lt;code&gt;xmlschema&lt;/code&gt; method to return the time in an &lt;span class=&quot;caps&quot;&gt;XML&lt;/span&gt;-friendly string. As of this week, &lt;code&gt;TimeWithZone&lt;/code&gt; supports the same argument for specifying the number of digits in the fractional second part of the returned string that &lt;code&gt;Time&lt;/code&gt; does:&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code&gt;
+&amp;gt;&amp;gt; Time.zone.now.xmlschema(6)
+=&amp;gt; &quot;2009-01-16T13:00:06.13653Z&quot; 
+&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;&lt;a href=&quot;http://github.com/rails/rails/commit/296ca4da1700eb27a7043112d22027444ea0e548&quot;&gt;commit&lt;/a&gt;&lt;/p&gt;
+
+
+	&lt;h2&gt;&lt;span class=&quot;caps&quot;&gt;JSON&lt;/span&gt; Key Quoting&lt;/h2&gt;
+
+
+	&lt;p&gt;If you look up the spec on the “json.org” site, you’ll discover that all keys in a &lt;span class=&quot;caps&quot;&gt;JSON&lt;/span&gt; structure must be strings, and they must be quoted with double quotes. As of this week, Rails does the right thing here, even with numeric keys. &lt;a href=&quot;http://github.com/rails/rails/commit/0bed5bdb213ea68e2f167ac4f61f698f37cf2d69&quot;&gt;commit&lt;/a&gt;&lt;/p&gt;
+
+
+	&lt;h2&gt;Test Refactoring&lt;/h2&gt;
+
+
+	&lt;p&gt;Josh Peek spent some time refactoring various tests inside of Action Pack, including those for &lt;a href=&quot;http://github.com/rails/rails/commit/282c1d6159a06dce4dd52c1849daad9e73480808&quot;&gt;query string parsing&lt;/a&gt;, &lt;a href=&quot;http://github.com/rails/rails/commit/38a723e6ea770eb8a902ee85ef40f6a22e7cd1b8&quot;&gt;&lt;span class=&quot;caps&quot;&gt;JSON&lt;/span&gt; parameter parsing&lt;/a&gt;, &lt;a href=&quot;http://github.com/rails/rails/commit/40a75a509187b6759099a3644b7ae8db9fc14045&quot;&gt;&lt;span class=&quot;caps&quot;&gt;XML&lt;/span&gt; parameter parsing&lt;/a&gt;, &lt;a href=&quot;http://github.com/rails/rails/commit/92dbf5ba832c2c4d8f6fda8b151090069cd701f3&quot;&gt;multipart parameter parsing&lt;/a&gt;, and &lt;a href=&quot;http://github.com/rails/rails/commit/18cb0493d1ec1990a45000b1f3e6d9714a849690&quot;&gt;&lt;span class=&quot;caps&quot;&gt;URL&lt;/span&gt;-encoded parameter parsing&lt;/a&gt;. While you won’t see any new functionality as a result of this work, it’s worth shining a spotlight on the often-thankless cleanup that keeps the Rails code in good shape.&lt;/p&gt;
+
+
+	&lt;h2&gt;Changes to Object#try&lt;/h2&gt;
+
+
+	&lt;p&gt;After &lt;a href=&quot;http://blog.lawrencepit.com/2009/01/11/try-as-you-might/&quot;&gt;some discussion&lt;/a&gt;, the semantics of &lt;code&gt;Object#try&lt;/code&gt; have changed slightly: it now raises &lt;code&gt;NoMethodError&lt;/code&gt; on private methods and always returns &lt;code&gt;nil&lt;/code&gt; if the object is nil. &lt;a href=&quot;http://github.com/rails/rails/commit/5339f813be99012aba01586743d8b24f065e7034&quot;&gt;commit&lt;/a&gt;&lt;/p&gt;</description>
+	<pubDate>Fri, 16 Jan 2009 13:30:52 +0000</pubDate>
+</item>
+<item>
+	<title>Ruby on Rails: Rails Documentation Projects</title>
+	<guid isPermaLink="false">tag:weblog.rubyonrails.com,2009-01-15:24449</guid>
+	<link>http://feeds.feedburner.com/~r/RidingRails/~3/513029410/rails-documentation-projects</link>
+	<description>&lt;p&gt;&lt;img src=&quot;http://weblog.rubyonrails.com/assets/2009/1/15/book.png&quot; /&gt; With the recent revitalization of the &lt;a href=&quot;http://groups.google.com/group/rubyonrails-wiki&quot;&gt;Rails Wiki&lt;/a&gt; project, we’re seeing people ask how the various pieces of Rails documentation fit together. I thought it might be useful to lay out how the Rails Activists see everything fitting together as we move forward.&lt;/p&gt;
+
+
+	&lt;p&gt;Rails is a large and mature framework, with a lot of functionality – and with the Merb merger, there will be even more to learn in the future. As such, it presents challenges for developers at all levels trying to understand how to use Rails effectively. There are many resources to help with the learning process, including commercial books and magazines, screencasts and podcasts, tutorials, blog entries, and training courses. But there is also a series of official written documentation projects.&lt;/p&gt;
+
+
+	&lt;p&gt;There’s no such thing as one-size-fits-all documentation. Different developers bring different skill sets, backgrounds, and levels of professional maturity to learning Rails. There are at least four levels of official documentation, overlapping but serving different needs:&lt;/p&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;Inline documentation, with comments within the code itself (that you can see by running &lt;code&gt;rake doc:rails&lt;/code&gt; within any Rails project).&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;http://guides.rubyonrails.org/&quot;&gt;Rails Guides&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;Rails Book (a new project for Rails 3.0)&lt;/li&gt;
+		&lt;li&gt;Rails wiki&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;p&gt;Although at first glance there appears to be substantial overlap, our feeling is that the each of these projects occupies a distinct (and valuable) niche.&lt;/p&gt;
+
+
+	&lt;h2&gt;RDoc&lt;/h2&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;Provides immediate help for syntax questions&lt;/li&gt;
+		&lt;li&gt;Maintained by the actual core developers and generally up-to-date&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;h2&gt;Rails Guides:&lt;/h2&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;Provides focused “how to” help for particular problem domains&lt;/li&gt;
+		&lt;li&gt;Target the mid-level developer, possibly with Rails experience&lt;/li&gt;
+		&lt;li&gt;Have a large amount of existing high-quality material&lt;/li&gt;
+		&lt;li&gt;Are already being continuously revised to track changes in edge Rails&lt;/li&gt;
+		&lt;li&gt;Can include version-specific tutorial code samples&lt;/li&gt;
+		&lt;li&gt;Can be delivered as a part of core Rails to provide “guidance at your fingertips” for new developers&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;h2&gt;Rails Book:&lt;/h2&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;Provides high-level architectural guidance and overview of how the pieces fit together&lt;/li&gt;
+		&lt;li&gt;Digs into the philosophy of the “Rails Ways”, so readers can understand why the framework works the way it does&lt;/li&gt;
+		&lt;li&gt;Targets the developer new to Rails or those wanting to go from the “trees” to the “forest” view&lt;/li&gt;
+		&lt;li&gt;Offers help in conceptualizing Rails and choosing between alternative modules (ORMs, routing DSLs, etc.) in the Rails 3 timeframe&lt;/li&gt;
+		&lt;li&gt;Can draw on the Merb experience in simultaneous translation and pulling in contributions from many writers&lt;/li&gt;
+		&lt;li&gt;Largely version independent&lt;/li&gt;
+		&lt;li&gt;Gives a structured path through end-to-end documentation in a way that standalone Guides do not&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;h2&gt;Rails Wiki&lt;/h2&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;Community-driven documentation that can respond rapidly to new software and new questions&lt;/li&gt;
+		&lt;li&gt;A good repository to links to external information&lt;/li&gt;
+		&lt;li&gt;Potentially a showcase for Rails itself in the underlying software&lt;/li&gt;
+		&lt;li&gt;A place to put the accumulated community knowledge, even the pieces that are not often needed&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;p&gt;It’s important to note that we don’t see these four projects as entirely separate efforts that have no interaction with one another. In particular, it seems likely that the Book will link to the Guides for those seeking additional detail, while the Guides will link to the Book for those seeking additional high-level guidance. We also anticipate that the wiki will point readers to both Guides and Book (as well as to other sources of information).&lt;/p&gt;
+
+
+	&lt;p&gt;So, what can &lt;em&gt;you&lt;/em&gt; do to get involved? If you’re a writer, translator, or editor, any of these documentation projects would love to have your help:&lt;/p&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;To contribute to the RDoc, write a Rails patch with good comments or check out the &lt;a href=&quot;http://weblog.rubyonrails.org/2008/5/2/help-improve-rails-documentation-on-git-branch&quot;&gt;docrails&lt;/a&gt; project.&lt;/li&gt;
+		&lt;li&gt;To help the Rails Guides, get in touch with &lt;a href=&quot;mailto:pratiknaik@gmail.com&quot;&gt;Pratik Naik&lt;/a&gt; or &lt;a href=&quot;mailto:mikeg1@larkfarm.com&quot;&gt;Mike Gunderloy&lt;/a&gt;, or drop by the #docrails channel on &lt;span class=&quot;caps&quot;&gt;IRC&lt;/span&gt; freenode.&lt;/li&gt;
+		&lt;li&gt;To get involved with the Rails Book, contact &lt;a href=&quot;mailto:mattaimonetti@gmail.com&quot;&gt;Matt Aimonetti&lt;/a&gt;.&lt;/li&gt;
+		&lt;li&gt;To add to the Rails Wiki, join the &lt;a href=&quot;http://groups.google.com/group/rubyonrails-wiki&quot;&gt;rubyonrails-wiki&lt;/a&gt; group.&lt;/li&gt;
+	&lt;/ul&gt;</description>
+	<pubDate>Fri, 16 Jan 2009 10:46:02 +0000</pubDate>
+</item>
+<item>
+	<title>Tom Copeland: Sphinx, Riddle, and escaping special characters</title>
+	<guid isPermaLink="false">http://tomcopeland.blogs.com/juniordeveloper/2009/01/sphinx-riddle-and-escaping-special-characters.html</guid>
+	<link>http://tomcopeland.blogs.com/juniordeveloper/2009/01/sphinx-riddle-and-escaping-special-characters.html</link>
+	<description>&lt;p&gt;If you're using &lt;a href=&quot;http://www.sphinxsearch.com/&quot;&gt;Sphinx&lt;/a&gt; and &lt;a href=&quot;http://riddle.freelancing-gods.com/&quot;&gt;Riddle&lt;/a&gt;, you'll notice that special characters don't get escaped.  This means that if you do a extended mode search for &lt;code&gt;apples -oranges&lt;/code&gt;, the dash in &lt;code&gt;-oranges&lt;/code&gt; will be treated as a NOT operator. If you're accepting search terms from your users, this will lead to suprises unless you escape that and other special characters.&lt;/p&gt;
+
+&lt;p&gt;This functionality is built in to the &lt;a href=&quot;http://www.sphinxsearch.com/docs/current.html#api-func-escapestring&quot;&gt;Sphinx PHP API&lt;/a&gt;, but I didn't find it in Riddle.  But here it is thanks to backreferences and the block form of &lt;code&gt;gsub&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;
+def self.escape_string(s)
+  (s || &quot;&quot;).gsub(/(@|-|!|~|&amp;amp;|&quot;|\(|\\|\|)/) { &quot;\\#{$1}&quot; }
+end
+&lt;/pre&gt;
+
+&lt;p&gt;I think that covers all the cases, but if you notice anything missing here please let me know, thanks!&lt;/p&gt;
+
+&lt;p&gt;More &lt;a href=&quot;http://militaryprofessionalreadinglists.com/&quot;&gt;military reading list&lt;/a&gt; trivia:  the &lt;a href=&quot;http://militaryprofessionalreadinglists.com/revisions/2&quot;&gt;2009 Air Force reading list&lt;/a&gt; has been released!  Note that it now includes David Galula's &quot;Counterinsurgency Warfare: Theory and Practice&quot; which is also on the  &lt;a href=&quot;http://militaryprofessionalreadinglists.com/marines#2nd-lieutenant-warrant-officer&quot;&gt;Marine Corp reading list&lt;/a&gt;.&lt;/p&gt;</description>
+	<pubDate>Thu, 15 Jan 2009 14:24:45 +0000</pubDate>
+</item>
+<item>
+	<title>Mauricio Fernandez: Introducing extprot: extensible binary protocols for cross-language communication and long-term serialization</title>
+	<guid isPermaLink="false">http://eigenclass.org/R2/writings/extprot-extensible-protocols-intro</guid>
+	<link>http://eigenclass.org/R2/writings/extprot-extensible-protocols-intro</link>
+	<description>&lt;p&gt;I have been working for a while on &lt;a href=&quot;http://github.com/mfp/extprot/tree/master&quot;&gt;extprot&lt;/a&gt;, a tool that allows you to create compact, efficient and extensible binary protocols that can be used for cross-language communication and long-term data serialization. extprot supports protocols with rich, composable types, whose definition can evolve while keeping both forward and backward compatibility.&lt;/p&gt;&lt;p&gt;The protocols created using extprot are:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;extensible: types can be extended in several ways without breaking compatibility with existent producers/consumers&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;self-delimited: each message indicates its own length. This allows you to send sequences of messages (streaming) without having to add message delimiters.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;self-describing: a message can be decoded even without the protocol definition. What you get is roughly equivalent to XML without the DTD.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;compact: 2 to &amp;gt;6 times less space than XML, typically 2 to 4 times less space than individual, compressed XML messages.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;fast: can be deserialized one to two orders of magnitude faster than XML, and faster than it’d take to merely uncompress XML data.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;The extprot compiler (&lt;code&gt;extprotc&lt;/code&gt;) takes a protocol description and generates code in any of the supported languages to serialize and deserialize the associated data structures. It is accompanied by a runtime library for each target language which is used to read and write the structures defined by the protocol.&lt;/p&gt;&lt;p&gt;At this point, you'll be thinking, &amp;quot;what, yet another Protocol Buffers/Thrift/ASN.1 DER/XDR/IIOP/IFF?&amp;quot;... Not quite: extprot differentiates itself in that it allows for more extensions and supports richer types (mainly tuples and disjoint union types aka. sum types) than Protocol Buffers or Thrift without approaching the complexity of ASN.1 DER. (Note that &lt;a href=&quot;http://www.rfc-editor.org/rfc/rfc4506.txt&quot;&gt;XDR&lt;/a&gt; does not define self-describing protocols, making protocol changes hard at best.)&lt;/p&gt;&lt;p&gt;There are three parts to extprot&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;p&gt;the &lt;a href=&quot;http://github.com/mfp/extprot/blob/38ef5d4d9c6d206943ef96abf1e36a01f5578176/doc/encoding.md&quot;&gt;low-level encoding&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;the &lt;a href=&quot;http://github.com/mfp/extprot/blob/38ef5d4d9c6d206943ef96abf1e36a01f5578176/doc/protocol-definition.md&quot;&gt;abstract syntax to define the protocol&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;the &lt;a href=&quot;http://github.com/mfp/extprot/blob/38ef5d4d9c6d206943ef96abf1e36a01f5578176/doc/language-mapping.md&quot;&gt;mapping to the target language&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;The improved modifiability and richer data types show in (2) and (3). (1) is similar to Protocol Buffer's, but differs in significant ways.&lt;/p&gt;&lt;h2&gt; Example&lt;/h2&gt;&lt;p&gt;Here's a trivial protocol definition:&lt;/p&gt;&lt;pre&gt;(* this is a comment (* and this a nested comment *) *)
+message user = {
+  id : int;
+  name : string;
+}
+&lt;/pre&gt;&lt;p&gt;The value&lt;/p&gt;&lt;pre&gt;{ id = 1; name = &amp;quot;J.R.R. Tolkien&amp;quot; }
+&lt;/pre&gt;&lt;p&gt;is serialized as (bytes in decimal notation plus ASCII characters between quotes) this 21-byte message:&lt;/p&gt;&lt;pre&gt;001 019 002 000 002 003 014 &amp;quot;J.R.R Tolkien&amp;quot;
+&lt;/pre&gt;&lt;p&gt;The code generated by &lt;code&gt;extprotc&lt;/code&gt; allows you to manipulate such messages as any normal value. For instance, in the Ruby target (in progress as of 2009-01-14), you'd do:&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;http://eigenclass.org/R2/writings/extprot-extensible-protocols-intro&quot;&gt;Read more...&lt;/a&gt;&lt;/p&gt;&lt;div class=&quot;feedflare&quot;&gt;
+&lt;a href=&quot;http://feeds.feedburner.com/~f/eigenclass?a=dAyimg.P&quot;&gt;&lt;img src=&quot;http://feeds.feedburner.com/~f/eigenclass?i=dAyimg.P&quot; border=&quot;0&quot; /&gt;&lt;/a&gt;
+&lt;/div&gt;</description>
+	<pubDate>Thu, 15 Jan 2009 11:22:51 +0000</pubDate>
+</item>
+<item>
+	<title>O'Reilly Ruby: Rubyist Pat Eyler Interviews Ruby Best Practises Author Gregory Brown</title>
+	<guid isPermaLink="false">http://fyi.oreilly.com/2009/01/rubyist-pat-eyler-interviews-r.html</guid>
+	<link>http://feeds.oreilly.com/~r/oreilly/ruby/~3/512357527/rubyist-pat-eyler-interviews-r.html</link>
+	<description>Ruby aficionado Pat Eyler is conducting a series of wonderful interviews with Gregory Brown, the author of O'Reilly's upcoming Ruby Best Practices (currently in Rough Cuts).
+	&lt;img src=&quot;http://feeds.oreilly.com/~r/oreilly/ruby/~4/512357527&quot; height=&quot;1&quot; width=&quot;1&quot; /&gt;</description>
+	<pubDate>Thu, 15 Jan 2009 00:00:59 +0000</pubDate>
+</item>
+<item>
+	<title>Pat Eyler: Ruby Best Practices:  mini-Interview 2</title>
+	<guid isPermaLink="false">tag:blogger.com,1999:blog-24599054.post-4464408093492007763</guid>
+	<link>http://on-ruby.blogspot.com/2009/01/ruby-best-practices-mini-interview-2.html</link>
+	<description>As Gregory Brown (@seacreature) and I discussed the Ruby Best Practices Contest, we also talked about the current state of Ruby Best Practices (or get the Rough Cut).  You can read the resulting interview below.
+Before we get to that though, we should announce the tow winners of the contest:  Jamis Buck (actually entered by Daniel Berger) and Eric Hodel.  Eric and Jamis both get free Rough Cut</description>
+	<pubDate>Wed, 14 Jan 2009 08:33:13 +0000</pubDate>
+	<author>noreply@blogger.com (pate)</author>
+</item>
+<item>
+	<title>Ruby on Rails: Activist Status &amp; Wiki Project</title>
+	<guid isPermaLink="false">tag:weblog.rubyonrails.com,2009-01-13:24444</guid>
+	<link>http://feeds.feedburner.com/~r/RidingRails/~3/511022132/activist-status-wiki-project</link>
+	<description>&lt;p&gt;So last week we were announced as activists, but what have we been doing?  I’m sure there are some wondering, so here is our first report. Read on for news of our first big project, what each of us is working on, and how you can help today.&lt;/p&gt;
+
+
+	&lt;p&gt;Firstly, we’ve been very pleased by the number of people who are actively interested in helping us improve the Rails ecosystem. Your input through &lt;a href=&quot;http://rails.uservoice.com/&quot;&gt;UserVoice&lt;/a&gt;, the &lt;a href=&quot;http://groups.google.com/group/rails-activism&quot;&gt;Activism Mailing List&lt;/a&gt;, Twitter, e-mail, and instant messages has been inspiring (and a bit overwhelming!). We listened, and one of the most popular requests revolved around the Wiki.&lt;/p&gt;
+
+
+	&lt;p&gt;&lt;img src=&quot;http://weblog.rubyonrails.com/assets/2009/1/13/Engine_Start.png&quot; /&gt;&lt;/p&gt;
+
+
+	&lt;h1&gt;The Rails Wiki Reform&lt;/h1&gt;
+
+
+	&lt;p&gt;The Rails Wiki is in poor shape, for many reasons and it’s not one person’s fault.  The good news is that our first major project is going to be revitalizing the wiki.  To get our engines started, we’re forming a dedicated team to shape it into something the Rails community can be proud of.&lt;/p&gt;
+
+
+	&lt;p&gt;If you’re interested in helping, simply join the &lt;a href=&quot;http://groups.google.com/group/rubyonrails-wiki&quot;&gt;Ruby on Rails Wiki&lt;/a&gt; Google Group. After you join, you’ll find a note on the group from Matt Aimonetti with more details.&lt;/p&gt;
+
+
+	&lt;p&gt;&lt;img src=&quot;http://weblog.rubyonrails.com/assets/2009/1/13/Shadows.png&quot; /&gt;&lt;/p&gt;
+
+
+	&lt;h1&gt;What we’re doing&lt;/h1&gt;
+
+
+	&lt;p&gt;All of the Activists are busy with projects that fall under the general heading of “helping Rails.” Here’s a sampling of what we’re up to:&lt;/p&gt;
+
+
+&lt;strong&gt;Gregg Pollack&lt;/strong&gt;
+	&lt;ul&gt;
+	&lt;li&gt;Producing the &lt;a href=&quot;http://www.railsenvy.com/podcast&quot;&gt;Rails Envy Podcast&lt;/a&gt;. &lt;/li&gt;
+		&lt;li&gt;Working on a free “Scaling Rails” screencast series.  Hoping to release close to the end of the month.&lt;/li&gt;
+		&lt;li&gt;Launching year 2 of the Ruby Hero Awards shortly.&lt;/li&gt;
+		&lt;li&gt;Promoting Ruby/Rails at &lt;span class=&quot;caps&quot;&gt;OOP 2009&lt;/span&gt; in Germany, then &lt;a href=&quot;http://www.actsasconference.com&quot;&gt;Acts As Conference&lt;/a&gt; in Orlando, FL.&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+&lt;strong&gt;Matt Aimonetti&lt;/strong&gt;
+	&lt;ul&gt;
+	&lt;li&gt;Putting together Case Studies.&lt;/li&gt;
+		&lt;li&gt;Investigating the current state of the Rails wiki and possibilities.&lt;/li&gt;
+		&lt;li&gt;Working on the &lt;a href=&quot;http://github.com/mattetti/merb-book&quot;&gt;Merb book&lt;/a&gt; (yes, Merb projects help Rails too).&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+&lt;strong&gt;Ryan Bates&lt;/strong&gt;
+	&lt;ul&gt;
+	&lt;li&gt;Doing &lt;a href=&quot;http://railscasts.com/&quot;&gt;Railscasts.com&lt;/a&gt;.&lt;/li&gt;
+		&lt;li&gt;Creating a Screencast application for aggregating Rails screencasts all into one feed on the RubyOnRails.org website.&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+&lt;strong&gt;Mike Gunderloy&lt;/strong&gt;
+	&lt;ul&gt;
+	&lt;li&gt;Covering This Week in Edge Rails on the official Rails blog.&lt;/li&gt;
+		&lt;li&gt;Working with Chad Woolley to improve the Rails CI server, including builds across multiple versions of Ruby and JRuby.&lt;/li&gt;
+		&lt;li&gt;Providing user support via #rubyonrails and #rails-activism on &lt;span class=&quot;caps&quot;&gt;IRC&lt;/span&gt; freenode.&lt;/li&gt;
+		&lt;li&gt;Posting daily &lt;a href=&quot;http://afreshcup.com/&quot;&gt;link roundups&lt;/a&gt; pointing to things of interest to Rails developers.&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;p&gt;&lt;img src=&quot;http://weblog.rubyonrails.com/assets/2009/1/13/Marbles.png&quot; /&gt;&lt;/p&gt;
+
+
+	&lt;h1&gt;Other Stuff You Can Do&lt;/h1&gt;
+
+
+	&lt;p&gt;If you’re asking “What can I do today to help Ruby on Rails?”, aside from joining one of our mailing lists and collaborating with us, here are a few items that come to mind:&lt;/p&gt;
+
+
+	&lt;ol&gt;
+	&lt;li&gt;Contact &lt;a href=&quot;mailto://mattaimonetti@gmail.com&quot;&gt;Matt Aimonetti&lt;/a&gt; if you think you have a good Case Study on Rails.&lt;/li&gt;
+		&lt;li&gt;Go to &lt;a href=&quot;http://www.ruby-forum.com/forum/3&quot;&gt;RubyForum&lt;/a&gt; or &lt;span class=&quot;caps&quot;&gt;IRC&lt;/span&gt; and help new Rails developers.&lt;/li&gt;
+		&lt;li&gt;Go to your local Ruby Users Group, or start one.&lt;/li&gt;
+		&lt;li&gt;Go to a &lt;a href=&quot;http://www.railsinside.com/events/195-3-upcoming-rails-events-in-early-2009.html&quot;&gt;Rails related conference&lt;/a&gt;.&lt;/li&gt;
+		&lt;li&gt;The next time you tackle a hard problem in your rails app, write a blog entry.  &lt;/li&gt;
+		&lt;li&gt;Take one of your Rails Libraries/Modules, and turn it into a Gem or Plugin.&lt;/li&gt;
+		&lt;li&gt;If you’re surfing Rails blog articles and you find one that is outdated leave a comment or let the author know the content should be updated or marked as obsolete.&lt;/li&gt;
+	&lt;/ol&gt;
+
+
+	&lt;p&gt;&lt;small&gt;Flickr Credits: &lt;a href=&quot;http://www.flickr.com/photos/shanafin/575853040/&quot;&gt;Big Red Button&lt;/a&gt; &lt;a href=&quot;http://www.flickr.com/photos/carolsawada/177677493/&quot;&gt;Okinawa-Churaumi Aquarium&lt;/a&gt; &lt;a href=&quot;http://www.flickr.com/photos/photos-martha/527179606/&quot;&gt;marbles&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;</description>
+	<pubDate>Tue, 13 Jan 2009 17:38:15 +0000</pubDate>
+</item>
+<item>
+	<title>Pat Eyler: Sequel Interview with Jeremy Evans</title>
+	<guid isPermaLink="false">tag:blogger.com,1999:blog-24599054.post-5632428414232853473</guid>
+	<link>http://on-ruby.blogspot.com/2009/01/sequel-interview-with-jeremy-evans.html</link>
+	<description>With the recent release of Sequel 2.9.0, I've finally taken the time to interview Jeremy Evans, the project's maintainer.  Back in Jan 2008, I interview Sharon Rosner (the former maintainer).  Sequel has come a long way since then, so it's about time I revisited the project.
+
+
+
+You took over Sequel from Sharon Rosner almost a year ago. How and why did you end up holding the reins on this project?</description>
+	<pubDate>Tue, 13 Jan 2009 09:40:37 +0000</pubDate>
+	<author>noreply@blogger.com (pate)</author>
+</item>
+<item>
+	<title>Nick Sieger: JRuby 1.1.6: Gems-in-a-jar</title>
+	<guid isPermaLink="false">urn:uuid:924637a6-a799-47c7-be6c-986b51b86402</guid>
+	<link>http://blog.nicksieger.com/articles/2009/01/10/jruby-1-1-6-gems-in-a-jar</link>
+	<description>&lt;p&gt;As a result of some fruitful hacking at RubyConf 2008, I was able to modify JRuby so that gems can be loaded and used without having to unpack them&amp;#46; The feature became generally available with the &lt;a href=&quot;http://docs.codehaus.org/display/JRUBY/2008/12/17/JRuby+1.1.6+Released&quot;&gt;1&amp;#46;1&amp;#46;6 release last month&lt;/a&gt;&amp;#46; Gems in a jar!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://flickr.com/photos/splorp/36991739/&quot; title=&quot;Gem Jar&quot;&gt;
+&lt;img src=&quot;http://farm1.static.flickr.com/26/36991739_48ab6e8fb7.jpg&quot; alt=&quot;gemjar&quot; /&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;span&gt;by &lt;a href=&quot;http://flickr.com/photos/splorp&quot;&gt;splorp on flickr&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;This opens up a couple new possibilities for running, packaging and deploying JRuby&amp;#45;based applications&amp;#46; Here are some ideas:&lt;/p&gt;
+
+&lt;h2&gt;Run Gem&amp;#45;based applications with &lt;code&gt;jruby-complete.jar&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;JRuby has &lt;a href=&quot;http://jira.codehaus.org/browse/JRUBY-969&quot;&gt;bundled Rake and RSpec since version 1&amp;#46;0&lt;/a&gt;&amp;#46; As of JRuby 1&amp;#46;1&amp;#46;6 the versions we bundle are Rake 0&amp;#46;8&amp;#46;3 and RSpec 1&amp;#46;1&amp;#46;11&amp;#46; With &lt;a href=&quot;http://repository.codehaus.org/org/jruby/jruby-complete/1.1.6/jruby-complete-1.1.6.jar&quot;&gt;&lt;code&gt;jruby-complete-1.1.6.jar&lt;/code&gt;&lt;/a&gt; you can easily run these with &lt;code&gt;java -jar&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;typocode&quot;&gt;&lt;pre&gt;&lt;code class=&quot;typocode_default &quot;&gt;$ java -jar jruby-complete-1.1.6.jar -S rake --help
+rake [-f rakefile] {options} targets...
+
+Options are ...
+
+$ java -jar jruby-complete-1.1.6.jar -S spec --help
+Usage: spec (FILE|DIRECTORY|GLOB)+ [options]
+
+    -p, --pattern [PATTERN] ...&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2&gt;Package gem collections into reusable jar files&lt;/h2&gt;
+
+&lt;p&gt;One of the features I added was to enhance RubyGems to search for directories named &lt;code&gt;specifications&lt;/code&gt; on the classpath and add them to the &lt;code&gt;Gem.path&lt;/code&gt; automatically&amp;#46; This means you can package up a whole gem repository into a jar file for easy reuse and sharing of commonly used gems&amp;#46; There isn&amp;#8217;t a tool for this yet, but the process is pretty straightforward&amp;#46; (If someone plays with this and can come up with a patch to build this into JRuby, we&amp;#8217;ll gladly accept one&amp;#46;)&lt;/p&gt;
+
+&lt;p&gt;First, create a gem repository by installing the gems you want into it&amp;#46; Let&amp;#8217;s say you want to package the natural language date/time parser &lt;code&gt;chronic&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;typocode&quot;&gt;&lt;pre&gt;&lt;code class=&quot;typocode_default &quot;&gt;$ java -jar jruby-complete-1.1.6.jar -S gem install -i ./chronic chronic --no-rdoc --no-ri
+Successfully installed rubyforge-1.0.2
+Successfully installed rake-0.8.3
+Successfully installed hoe-1.8.2
+Successfully installed chronic-0.2.3
+4 gems installed&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;With this command, RubyGems created &lt;code&gt;chronic/bin&lt;/code&gt;, &lt;code&gt;chronic/cache&lt;/code&gt;, &lt;code&gt;chronic/gems&lt;/code&gt;, and &lt;code&gt;chronic/specifications&lt;/code&gt; directories and installed &lt;code&gt;chronic&lt;/code&gt; and its dependencies into it&amp;#46; Now, simply package those directories into a jar file:&lt;/p&gt;
+
+&lt;div class=&quot;typocode&quot;&gt;&lt;pre&gt;&lt;code class=&quot;typocode_default &quot;&gt;$ jar cf chronic.jar -C chronic .&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;When you inspect the contents of the jar, you&amp;#8217;ll see the gem repository structure in the root of the jar file:&lt;/p&gt;
+
+&lt;div class=&quot;typocode&quot;&gt;&lt;pre&gt;&lt;code class=&quot;typocode_default &quot;&gt;$ jar tf chronic.jar | head
+META-INF/
+META-INF/MANIFEST.MF
+bin/
+bin/rake
+bin/rubyforge
+bin/sow
+cache/
+cache/chronic-0.2.3.gem
+cache/hoe-1.8.2.gem
+cache/rake-0.8.3.gem&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Chronic is now a re&amp;#45;useable jar library that can be easily loaded, either by requiring the jar in ruby code or adding to the classpath:&lt;/p&gt;
+
+&lt;div class=&quot;typocode&quot;&gt;&lt;pre&gt;&lt;code class=&quot;typocode_default &quot;&gt;$ # Without chronic.jar
+$ java -jar jruby-complete-1.1.6.jar -S gem list
+
+*** LOCAL GEMS ***
+
+rake (0.8.3)
+rspec (1.1.11)
+sources (0.0.1)
+
+$ # With chronic.jar
+$ java -jar jruby-complete-1.1.6.jar -rchronic.jar -S gem list
+
+*** LOCAL GEMS ***
+
+chronic (0.2.3)
+hoe (1.8.2)
+rake (0.8.3)
+rspec (1.1.11)
+rubyforge (1.0.2)
+sources (0.0.1)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: Unfortunately this technique does not yet work with gems that include Java code in embedded jar files (e&amp;#46;g&amp;#46;, hpricot, mongrel, jruby&amp;#45;openssl)&amp;#46; See &lt;a href=&quot;http://jira.codehaus.org/browse/JRUBY-3299&quot;&gt;JRUBY&amp;#45;3299&lt;/a&gt;&amp;#46; (We&amp;#8217;d like to get this fixed for 1&amp;#46;1&amp;#46;7, but could use your help&amp;#46;)&lt;/p&gt;
+
+&lt;h2&gt;Bundle pure&amp;#45;Ruby gem applications into an uber&amp;#45;jar&lt;/h2&gt;
+
+&lt;p&gt;Taking a cue from the previous techniques, we can stuff the gem directories into a copy of &lt;code&gt;jruby-complete-1.1.6.jar&lt;/code&gt; rather than creating a new jar, and distribute an entire gem&amp;#45;based application in a single file&amp;#46; Imagine something like:&lt;/p&gt;
+
+&lt;div class=&quot;typocode&quot;&gt;&lt;pre&gt;&lt;code class=&quot;typocode_default &quot;&gt;$ java -jar jruby-complete-1.1.6.jar -S gem install -i ./mycoolapp mycoolapp
+$ jar uf jruby-complete-1.1.6.jar -C mycoolapp .
+$ mv jruby-complete-1.1.6.jar mycoolapp.jar
+$ java -jar mycoolapp.jar -S mycoolapp&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Bonus points to the enterprising individual who provides a patch to make this a one&amp;#45;step process, including creating a mechanism to provide a default &lt;code&gt;-S&lt;/code&gt; script so that &lt;code&gt;java -jar mycoolapp&lt;/code&gt; is all that&amp;#8217;s needed to run the application&amp;#46;&lt;/p&gt;
+
+&lt;p&gt;I hope you find interesting uses for this new feature&amp;#46; Let us know what you make with it!&lt;/p&gt;</description>
+	<pubDate>Sat, 10 Jan 2009 20:09:01 +0000</pubDate>
+</item>
+<item>
+	<title>Ruby on Rails: This Week in Edge Rails</title>
+	<guid isPermaLink="false">tag:weblog.rubyonrails.com,2009-01-09:24429</guid>
+	<link>http://feeds.feedburner.com/~r/RidingRails/~3/507189729/this-week-in-edge-rails</link>
+	<description>&lt;h3&gt;January 3, 2009 -January 9, 2009&lt;/h3&gt;
+
+
+	&lt;p&gt;It was a pretty light week for the edge Rails tree: about 20 commits. We’re starting to see things coalesce for a 2.3 release, though there’s no official release date yet. Here’s some of the highlights of what’s been going on.&lt;/p&gt;
+
+
+	&lt;h2&gt;AssetTag Timestamp Caching&lt;/h2&gt;
+
+
+	&lt;p&gt;You’re likely familiar with Rails’ practice of adding timestamps to static asset paths as a “cache buster.” This helps ensure that stale copies of things like images and stylesheets don’t get served out of the user’s browser cache when you change them on the server. You can now modify this behavior with the &lt;code&gt;cache_asset_timestamps&lt;/code&gt; configuration option for Action View. If you enable the cache, then Rails will calculate the timestamp once when it first serves an asset, and save that value. This means fewer (expensive) file system calls to serve static assets – but it also means that you can’t modify any of the assets while the server is running and expect the changes to get picked up by clients. &lt;a href=&quot;http://github.com/rails/rails/commit/ce706b4b9be03a3f2e7d11438e6550d64c5f4461&quot;&gt;commit&lt;/a&gt;&lt;/p&gt;
+
+
+	&lt;h2&gt;Object#tap Backport&lt;/h2&gt;
+
+
+&lt;code&gt;Object#tap&lt;/code&gt; is an addition to &lt;a href=&quot;http://www.ruby-doc.org/core-1.9/classes/Object.html#M000309&quot;&gt;Ruby 1.9&lt;/a&gt; and 1.8.7 that is similar to the &lt;code&gt;returning&lt;/code&gt; method that Rails has had for a while: it yields to a block, and then returns the object that was yielded. Rails now includes code to make this available to older versions of Ruby as well. &lt;a href=&quot;http://github.com/rails/rails/commit/0f9e65b71f9af30dac17689e81f4353e9fcac5b6&quot;&gt;commit&lt;/a&gt;
+
+	&lt;h2&gt;Rack Version Bump&lt;/h2&gt;
+
+
+	&lt;p&gt;During the week, the Rack project &lt;a href=&quot;http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-talk/324073&quot;&gt;released version 0.9&lt;/a&gt; and Rails was quick to respond – the required version of Rack for Rails is now 0.9. So, if you’re running on edge, it’s time to update your gems. &lt;a href=&quot;http://github.com/rails/rails/commit/b7ea4add86231ef628d479516c8a09ca55e610bc&quot;&gt;commit&lt;/a&gt;&lt;/p&gt;
+
+
+	&lt;h2&gt;Continuous Integration Setup&lt;/h2&gt;
+
+
+	&lt;p&gt;If you’re interested in setting up your own continuous integration server to build the Rails source, the embedded instructions have been updated with the latest requirements and clarifications. Even if you want a CI server for something else, they’re worth looking at, as they’ll get you from zero to a running cc.rb instance very quickly. &lt;a href=&quot;http://github.com/rails/rails/commit/19818eb0ea72cb99e98bd097d03ac8a69f204b6a&quot;&gt;commit&lt;/a&gt;&lt;/p&gt;</description>
+	<pubDate>Fri, 09 Jan 2009 14:15:11 +0000</pubDate>
+</item>
+<item>
+	<title>Pat Eyler: Editor Interview:  Talking about Open Content with O'Reilly's Mike Loukides</title>
+	<guid isPermaLink="false">tag:blogger.com,1999:blog-24599054.post-4022613780537899424</guid>
+	<link>http://on-ruby.blogspot.com/2009/01/editor-interview-talking-about-open.html</link>
+	<description>With a recent string of interviews with authors working on (open) books for O'Reilly, I wanted to see what the folks inside O'Reilly had to say about this trend.  Mike Loukides (@mikeloukides) was good enough to answer my questions in a short interview.  There's some great stuff in here whether you're an aspiring author, interested in open content, or how thinking conversations (in the web 2.0</description>
+	<pubDate>Thu, 08 Jan 2009 10:07:03 +0000</pubDate>
+	<author>noreply@blogger.com (pate)</author>
+</item>
+<item>
+	<title>Mauricio Fernandez: Standalone web applications using OCaml + Ocsigen, benchmarked against Rails</title>
+	<guid isPermaLink="false">http://eigenclass.org/R2/writings/standalone-ocaml-webapps</guid>
+	<link>http://eigenclass.org/R2/writings/standalone-ocaml-webapps</link>
+	<description>&lt;p&gt;I finally bit the bullet and rewrote eigenclass using the &lt;a href=&quot;http://ocsigen.org&quot;&gt;Ocsigen&lt;/a&gt; web server + framework for OCaml. It is simpler, faster, more reliable, and easier to extend than the customized wiki implementation in Ruby (Hiki) I'd been using. It is also easier to deploy because it's self-contained: a single (native code) executable contains both the Ocsigen web server and the application code, so I don't have to use any special Apache modules, FastCGI or any sort of adapter. (The ability to create standalone, native-code executables &lt;a href=&quot;http://ocsigen.org/staticlink&quot;&gt;was added recently to Ocsigen&lt;/a&gt; and is thus available on the devel branch, soon to be released as Ocsigen 1.2.)&lt;/p&gt;&lt;p&gt;I'd read somewhere that the Ocsigen server hadn't received much (any?) optimization work, so I benchmarked it against Lighttpd, Apache and mongrel, both at static file serving and dynamic contents (a minimal &amp;quot;hello world&amp;quot; service), to see if that could represent a problem. It turns out it isn't: the OCaml+Ocsigen combo is &lt;em&gt;very fast&lt;/em&gt;. It serves minimal dynamic requests an order of magnitude faster than Rails with a pack of mongrels behind nginx, and uses 40 times less memory. More surprisingly, it handles more requests per core than lighttpd with a minimal FastCGI server written in C! (lighttpd wasn't able to handle ab's load with &lt;code&gt;max_procs = 1&lt;/code&gt;, and generated way too many 5xx errors, so I had to use several FastCGI processes). It also serves static files at rates exceeding Apache's (per core).&lt;/p&gt;&lt;p&gt;The following figures were obtained using ApacheBench (ab) locally, on a 3GHz, dual core Athlon64 64 X2.&lt;/p&gt;&lt;h2&gt; Dynamic contents&lt;/h2&gt;&lt;table&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;Reqs/sec&lt;/th&gt;
+&lt;th&gt;Mem usage (resident memory, RSS)&lt;/th&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Rails with mongrel, 1 process&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;260&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;49MB&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Rails with mongrel via nginx (rev proxy), 1 proc&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;220&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;~51MB&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Rails with mongrel, 4 processes via nginx&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;430&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;~200MB&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Ocsigen (1 process)&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;5800&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;4.5MB&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;lighttpd with FastCGI app in C, 20 procs&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;9300&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;4.5MB&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Obviously, these figures represent only upper bounds, since the &amp;quot;dynamic&amp;quot; content was but &amp;quot;hello world&amp;quot;, and few sites (certainly not eigenclass.org) need to handle thousands of requests per second. The interesting thing is that, if anything, the difference is going to become even more favorable for Ocsigen+OCaml if the page involves any significant amount of computation, as OCaml is typically 100 times faster than interpreted languages like Ruby. For instance, the OCaml code that processes the markdown-like markup used for this very page is fast enough to sustain over 2000 requests per second without caching the generated HTML. A quick test shows that Ruby's &lt;code&gt;bluecloth&lt;/code&gt; library is around 200 times slower, so I would be getting maybe 20 reqs/sec (using both cores) on the AMD64 box (much faster than the one running eigenclass.org) with Rails + Mongrel + nginx. Of course, caching would solve this; it is not a panacea, though, as it introduces other problems (expiration, invalidation, resource limitation, etc.) and is not always applicable.&lt;/p&gt;&lt;p&gt;At the end of the day, this means that OCaml + Ocsigen allow me to write code that can be deployed trivially (I can even link the executable statically so that it doesn't depend on libs like SQLite or libssl), and is more than fast enough with a single process (no load balancing needed) and no caching (no memcached or whatever).&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;http://eigenclass.org/R2/writings/standalone-ocaml-webapps&quot;&gt;Read more...&lt;/a&gt;&lt;/p&gt;&lt;div class=&quot;feedflare&quot;&gt;
+&lt;a href=&quot;http://feeds.feedburner.com/~f/eigenclass?a=hXmlSL.P&quot;&gt;&lt;img src=&quot;http://feeds.feedburner.com/~f/eigenclass?i=hXmlSL.P&quot; border=&quot;0&quot; /&gt;&lt;/a&gt;
+&lt;/div&gt;</description>
+	<pubDate>Wed, 07 Jan 2009 17:17:45 +0000</pubDate>
+</item>
+<item>
+	<title>Ruby on Rails: Announcing the Rails activists</title>
+	<guid isPermaLink="false">tag:weblog.rubyonrails.com,2009-01-05:24395</guid>
+	<link>http://feeds.feedburner.com/~r/RidingRails/~3/503589793/announcing-the-rails-activists</link>
+	<description>&lt;p&gt;&lt;img src=&quot;http://weblog.rubyonrails.com/assets/2009/1/5/crowd.png&quot; alt=&quot;Railway station crowd&quot; /&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;Bringing Rails and Merb together is about more than just merging the respective code. We’re also picking up the best ideas from both communities beyond the code. Following on Merb’s success in offering a strong evangelism effort, we’re pleased to announce the creation of the &lt;a href=&quot;http://rubyonrails.org/activists&quot;&gt;&lt;strong&gt;Rails activists&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt;
+
+
+&lt;blockquote&gt;
+The mission of the Rails activists is to empower and support the worldwide network of Ruby on Rails users. We do this by publicizing Rails, making adoption easier, and enhancing developer support.
+&lt;/blockquote&gt;
+
+	&lt;p&gt;At launch, we’ve identified seven areas where the Rails activists can contribute to the Rails ecosystem:&lt;/p&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;Public Relations with media of all sizes&lt;/li&gt;
+		&lt;li&gt;Ombudsman work to ensure good user-to-user support&lt;/li&gt;
+		&lt;li&gt;Community Leadership at events and conferences&lt;/li&gt;
+		&lt;li&gt;Media Organization to help create good promotional opportunities&lt;/li&gt;
+		&lt;li&gt;Website maintenance&lt;/li&gt;
+		&lt;li&gt;Documentation efforts&lt;/li&gt;
+		&lt;li&gt;Developer support&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;p&gt;The initial members of the Rails activists are &lt;a href=&quot;http://twitter.com/greggpollack&quot;&gt;Gregg Pollack&lt;/a&gt;, &lt;a href=&quot;http://twitter.com/merbist&quot;&gt;Matt Aimonetti&lt;/a&gt;, &lt;a href=&quot;http://twitter.com/rbates&quot;&gt;Ryan Bates&lt;/a&gt;, and &lt;a href=&quot;http://twitter.com/mikeg1&quot;&gt;Mike Gunderloy&lt;/a&gt;. But we can’t do all this alone, nor do we want to! Our vision includes a large and vibrant Rails network composed of other activists, bloggers, event hosts, authors, and developers. Our intent is to provide connections, resources, and support to help the entire ecosystem to grow. To start things off, we’re bringing in a lot of our &lt;a href=&quot;http://rubyonrails.org/activists&quot;&gt;own projects&lt;/a&gt;, including videos, screencasts, case studies, Rails documentation, and more – we’re a working group, and we hope you’ll work with us.&lt;/p&gt;
+
+
+	&lt;p&gt;If you have ideas about improving the Rails community, projects you want to participate in, or are just looking for ways to get involved, get in touch with us! There are a lot of ways to do that:&lt;/p&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;Through the new &lt;a href=&quot;http://groups.google.com/group/rails-activism&quot;&gt;Rails activism&lt;/a&gt; Google group. &lt;/li&gt;
+		&lt;li&gt;Through the &lt;a href=&quot;http://rails.uservoice.com/&quot;&gt;Rails feedback site&lt;/a&gt;, where you can vote on which projects you’d like to see us devote resources to in the Rails 3 timeframe and beyond.&lt;/li&gt;
+		&lt;li&gt;Through our Twitter accounts (linked above)&lt;/li&gt;
+		&lt;li&gt;Through &lt;span class=&quot;caps&quot;&gt;IRC&lt;/span&gt; to Matt (mattetti) or Mike (mikeg1a)&lt;/li&gt;
+		&lt;li&gt;Through email to &lt;a href=&quot;mailto:mikeg1@larkfarm.com&quot;&gt;Mike Gunderloy&lt;/a&gt;, &lt;a href=&quot;mailto:mattaimonetti@gmail.com&quot;&gt;Matt Aimonetti&lt;/a&gt;, &lt;a href=&quot;mailto:Gregg@railsenvy.com&quot;&gt;Gregg Pollack&lt;/a&gt;, or &lt;a href=&quot;mailto:ryan@railscasts.com&quot;&gt;Ryan Bates&lt;/a&gt;.&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;p&gt;We look forward to hearing from you!&lt;/p&gt;
+
+
+	&lt;p&gt;For additional perspectives from the activists, see the posts by &lt;a href=&quot;http://www.railsenvy.com/2009/1/5/the-rails-activist-team&quot;&gt;Gregg Pollack&lt;/a&gt;, &lt;a href=&quot;http://merbist.com/2009/01/05/presenting-the-rails-activists/&quot;&gt;Matt Aimonetti&lt;/a&gt;, and &lt;a href=&quot;http://afreshcup.com/2009/01/05/announcing-the-rails-activists/&quot;&gt;Mike Gunderloy&lt;/a&gt;.&lt;/p&gt;
+
+
+&lt;p&gt;Photo by Flickr user caravinagre&lt;/p&gt;</description>
+	<pubDate>Mon, 05 Jan 2009 18:20:52 +0000</pubDate>
+</item>
+<item>
+	<title>Pat Eyler: New Year's Road Trip</title>
+	<guid isPermaLink="false">tag:blogger.com,1999:blog-24599054.post-5741894089784860609</guid>
+	<link>http://on-ruby.blogspot.com/2009/01/new-years-road-trip.html</link>
+	<description>In December, we heard that the Sahpeech chapter was going to hold a Fellowship with a Brotherhood ceremony in Gunnison on January 2-3.  Since we had an Ordeal candidate and a Brotherhood candidate just waiting for the opportunity, we decided to take a road trip.
+
+On Friday afternoon, we packed up our gear (and lots of warm clothes) and dinner to eat on the road, and we headed off.  The youth</description>
+	<pubDate>Sun, 04 Jan 2009 16:25:56 +0000</pubDate>
+	<author>noreply@blogger.com (pate)</author>
+</item>
+
+</channel>
+</rss>

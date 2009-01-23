@@ -1,0 +1,706 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="http://feeds.feedburner.com/~d/styles/atom10full.xsl" type="text/xsl" media="screen"?><?xml-stylesheet href="http://feeds.feedburner.com/~d/styles/itemcontent.css" type="text/css" media="screen"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-US">
+  <title>my not-so-barbaric yawlp - Home</title>
+  <id>tag:objo.com,2009:mephisto/</id>
+  <generator version="0.7.0" uri="http://mephistoblog.com">Mephisto Noh-Varr</generator>
+  
+  <link href="http://objo.com/" rel="alternate" type="text/html" />
+  <updated>2008-06-07T23:55:16Z</updated>
+  <link rel="self" href="http://feeds.feedburner.com/objo" type="application/atom+xml" /><entry xml:base="http://objo.com/">
+    <author>
+      <name>joe</name>
+    </author>
+    <id>tag:objo.com,2008-06-07:195</id>
+    <published>2008-06-07T21:06:00Z</published>
+    <updated>2008-06-07T23:55:16Z</updated>
+    <link href="http://objo.com/2008/6/7/how-did-you-get-started-in-programming" rel="alternate" type="text/html" />
+    <title>How did you get started in programming?</title>
+<content type="html">
+            &lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt;  Sorry this turned out to be a pretty long one.  Apologies in advance.&lt;/p&gt;
+
+
+	&lt;p&gt;So there is an interesting meme going around the blogsphere, and I’ve been officially called out by &lt;a href='//joshholmes.com'&gt;Josh Holmes&lt;/a&gt; so I thought I would go ahead and jump in.  There are some other fun entries by &lt;a href='//joshholmes.com'&gt;Josh,&lt;/a&gt; and &lt;a href='//www.jeffblankenburg.com'&gt;Jeff Blankenburg.&lt;/a&gt; I believe the meme officially started with &lt;a href='//michaeleatonconsulting.com/blog/'&gt;Michael Eaton&lt;/a&gt; and &lt;a href='//www.codinggeekette.com/'&gt;Sarah Dutkiewicz&lt;/a&gt;.&lt;/p&gt;
+
+
+	&lt;h2&gt;How old were you when you started programming?&lt;/h2&gt;
+
+
+	&lt;p&gt;Answered more in depth below, but I was in elementary school (can’t remeber exactly).&lt;/p&gt;
+
+
+	&lt;h2&gt;How did you get started in programming?&lt;/h2&gt;
+
+
+	&lt;h3&gt;Apple II&lt;/h3&gt;
+
+
+	&lt;p&gt;Well it’s interesting I actually started three times.  The first time was in elementary school when my mom brought home our first computer, the Apple II+. It was quickly upgraded to the &lt;span class='caps'&gt;IIE&lt;/span&gt; model. She had found a job at a place called Computerland selling computers. The industry was just starting and she was learning as fast as she could to keep up. She made friends with a bunch of local hackers who kept bringing her disks of new material they either created or downloaded.  She would in turn bring them home and give them to me to figure out. We never knew if I was going to have a spreadsheet or a computer game.&lt;/p&gt;
+
+
+	&lt;p&gt;I eventually learned how to start the basic interpreter. And by starting I mean I learned that if you ejected the system disk during startup it would go nuts and jump out to the interpreter. I then learned all the fun basic stuff like killing our computer with an infinite loop, jumping over code that never executed, etc..  Unfortunately we ended up moving overseas and my resources for learning were limited and I gave up.&lt;/p&gt;
+
+
+	&lt;h3&gt;&lt;span class='caps'&gt;HTML&lt;/span&gt;&lt;/h3&gt;
+
+
+	&lt;p&gt;Before getting kicked out of college (and after figuring out that my major was going to send me to remote places of the world I had no desire to be) I became friends with a guy who taught me the ins and outs of web programming. Netscape had just come out about year or two before that so everyone I knew was trying to figure out this &lt;span class='caps'&gt;HTML&lt;/span&gt; thing.  I got a job with a small company in Cincinnati that payed me to make them an ecommerce site (that unfortunately is still largely in tact and floating around out there).  I realized that I suck at visual design and display and became very frustrated.  I was also doing office management for him and discovered I was really good at sales and loved talking to people. So I ended up giving up on that ‘computer stuff’. Well timed I might say, this was right before the .com boom when everyone else started making money.&lt;/p&gt;
+
+
+	&lt;h3&gt;Finding my way back&lt;/h3&gt;
+
+
+	&lt;p&gt;Eventually after a career in sales and sales management, I decided I needed to get back to school to finish what I started.  Finances dictated I go to a community college to finish off all those pesky intro courses I managed to skip during my first attempt. The only degree that interested me was computer programming, but it was purely meant to be something I did until I could get into a larger university.&lt;/p&gt;
+
+
+	&lt;p&gt;I fell in love. I was fascinated by what we were doing. Even though they still found it necessary to teach us Assembler (2 quarters) and &lt;span class='caps'&gt;COBOL&lt;/span&gt; (3 quarters including Web &lt;span class='caps'&gt;COBOL&lt;/span&gt;) I was loving what I was doing. I played around with C++ and Java during my time there as well. Exposure to all the different language, and some less-than-adequate teachers, gave me a great foundation for learning new languages on my own. That was probably the best lesson of all they could have taught me.&lt;/p&gt;
+
+
+	&lt;p&gt;I found an internship with a company that was doing FoxPro 2.6. It was an interesting language, but I’ll be damned if you will find it on my resume.&lt;/p&gt;
+
+
+	&lt;h2&gt;What was your first language?&lt;/h2&gt;
+
+
+	&lt;p&gt;Answered above, but &lt;span class='caps'&gt;BASIC&lt;/span&gt; was the first language I ever used. My first &lt;em&gt;real&lt;/em&gt; language to be paid for (not counting the &lt;span class='caps'&gt;HTML&lt;/span&gt; and cgi stuff I did early on) was FoxPro.&lt;/p&gt;
+
+
+	&lt;h2&gt;What was the first real program you wrote?&lt;/h2&gt;
+
+
+	&lt;p&gt;A bowling game in &lt;span class='caps'&gt;BASIC&lt;/span&gt;. It was based on one I had seen in a magazine (was it Apple World?).  I used .’s to represent pins and it was pretty simple.  I was realy proud of that one.&lt;/p&gt;
+
+
+	&lt;h2&gt;What languages have you used since you started programming?&lt;/h2&gt;
+
+
+	&lt;p&gt;Oh man when you ask it as ‘used’ it opens up the door so much.  I love playing with new languages, and just like a &lt;a href='//nealford.com'&gt;good friend of mine&lt;/a&gt; have become addicted to learning and trying new languages. So I’ll limit this list to anything I’ve written an original program in (e.g., something I did not just follow along in a book).  
+	&lt;ol&gt;
+	&lt;li&gt;&lt;span class='caps'&gt;BASIC&lt;/span&gt;&lt;/li&gt;
+		&lt;li&gt;Assembler (IBM &lt;span class='caps'&gt;VAX&lt;/span&gt;, can’t remember the version)&lt;/li&gt;
+		&lt;li&gt;&lt;span class='caps'&gt;COBOL&lt;/span&gt;&lt;/li&gt;
+		&lt;li&gt;C++&lt;/li&gt;
+		&lt;li&gt;C#&lt;/li&gt;
+		&lt;li&gt;Visual Basic&lt;/li&gt;
+		&lt;li&gt;Perl&lt;/li&gt;
+		&lt;li&gt;Java (and all the &lt;span class='caps'&gt;J2EE&lt;/span&gt;/JEE stack) – spent most of my career here&lt;/li&gt;
+		&lt;li&gt;Python&lt;/li&gt;
+		&lt;li&gt;Ruby – my love&lt;/li&gt;
+		&lt;li&gt;Erlang&lt;/li&gt;
+	&lt;/ol&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;I’m sure I’m forgetting some.&lt;/p&gt;
+
+
+	&lt;h2&gt;What was your first professional programming gig?&lt;/h2&gt;
+
+
+	&lt;p&gt;Answered above, but it was my job as office manager / web developer for a small company in Cincinnati.&lt;/p&gt;
+
+
+	&lt;h2&gt;If you knew then what you know now, would you have started programming?&lt;/h2&gt;
+
+
+	&lt;p&gt;I would have started &lt;span class='caps'&gt;MUCH&lt;/span&gt; earlier. This has nothing to do with finances. I find what we do fascinating for a few reasons:
+	&lt;ol&gt;
+	&lt;li&gt;We get to build something from nothing&lt;/li&gt;
+		&lt;li&gt;We help people make their lives and jobs easier and more enjoyable&lt;/li&gt;
+		&lt;li&gt;We are constantly learning and adapting (I’m never bored)&lt;/li&gt;
+		&lt;li&gt;We get to see the insides of lots of different businesses and domains&lt;/li&gt;
+	&lt;/ol&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;The last point, more than any, is why I’m still developing and why I especially love consulting. I’m fascinated by business and how companies work on the inside. We get paid to figure out how that is done. We get paid to turn dreams into business realities.&lt;/p&gt;
+
+
+	&lt;h2&gt;If there is one thing you learned along the way that you would tell new developers, what would it be?&lt;/h2&gt;
+
+
+	&lt;p&gt;First off, it’s been said in all the other entries but I’ll say it again. Focus on your soft skills. If you can communicate your life will be much easier. Read books like Chad Fowler’s &lt;a href='//pragprog.com/titles/mjwti/my-job-went-to-india'&gt;52 Ways to Save Your Job&lt;/a&gt; because he does a much more eloquent job of describing what I’m talking about. Learn how to deal with people.&lt;/p&gt;
+
+
+	&lt;p&gt;Second, find a mentor. I’ve been extremely lucky to have had &lt;a href='//memeagora.blogspot.com'&gt;Neal Ford&lt;/a&gt; as a mentor since I began my technical career. You benefit from having someone who can point you in the right direction and tell you the things you should learn. I have since also been able to meet many others such as &lt;a href='//onestepback.org'&gt;Jim Weirich&lt;/a&gt; who have helped me in so many more ways. At times it feels like cheating becuse you benefit from their hard-earned knowledge. In reality you can’t do everything on your own. Listen to them, trust them and most of all appreciate them (ironically I blew off both of them when they first told me about Ruby).&lt;/p&gt;
+
+
+	&lt;h2&gt;What’s the most fun you’ve ever had … programming?&lt;/h2&gt;
+
+
+	&lt;p&gt;This is so hard because there are so many times I have enjoyed. Forced to choose I would have to say there are two events. The first one was at OnStar. I worked with one of the most amazing technical teams I have ever met. It didn’t matter who I was paired with, watching that system evolve, and watching each member of the team contribute was just a great experience. It was a cool &lt;span class='caps'&gt;SOA&lt;/span&gt; implementation and I will never forget the people I was working with.&lt;/p&gt;
+
+
+	&lt;p&gt;My second would be a recent project I worked on where I got to pair with &lt;a href='//onestepback.org'&gt;Jim.&lt;/a&gt; We paired remotely while implementing what I’ve come to see as a really awesome display of what Ruby can do. We had our share of roadblocks and crappy management decisions to deal with, but in the end, Jim and I discovered just how much we think alike. Jim understands object modeling on such a deep level that you can’t help but enjoy working with him.&lt;/p&gt;
+
+
+	&lt;p&gt;Ironic that the reason both of those events are among my favorite is because of the people, not the technology.&lt;/p&gt;
+
+
+	&lt;h2&gt;Who am I calling out?&lt;/h2&gt;
+
+
+	&lt;p&gt;Your mission, if you choose to accept it, is to answer the questions above. I’m cheating a little because I know most of their stories, and they aren’t all your typical entrances into CS.&lt;/p&gt;
+
+
+	&lt;ol&gt;
+	&lt;li&gt;&lt;a href='//onestepback.org'&gt;Jim Weirich&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href='//memeagora.blogspot.com'&gt;Neal Ford&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href='//codefluency.com/'&gt;Bruce Williams&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href='//jakescruggs.blogspot.com/'&gt;Jake Scruggs&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href='//redsquirrel.com/dave/'&gt;Dave Hoover&lt;/a&gt;&lt;/li&gt;
+	&lt;/ol&gt;
+          </content>  </entry>
+  <entry xml:base="http://objo.com/">
+    <author>
+      <name>joe</name>
+    </author>
+    <id>tag:objo.com,2008-05-15:76</id>
+    <published>2008-05-15T02:50:00Z</published>
+    <updated>2008-05-15T02:57:06Z</updated>
+    <link href="http://objo.com/2008/5/15/teaching-with-jim-again" rel="alternate" type="text/html" />
+    <title>Teaching with Jim Again</title>
+<content type="html">
+            &lt;p&gt;&lt;img src='http://objo.com/assets/2007/9/5/studio-samall.jpg' alt='' /&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;I’m getting to teach the &lt;a href='//pragmaticstudio.com/testing-rails/'&gt;Test Driven Development with Rails&lt;/a&gt; studio with &lt;a href='//onestepback.org'&gt;JIm&lt;/a&gt; again this month and next.  We are doing two, one private studio in Los Angeles and then another public studio in Denver June.  We still have seats left for the June studio, so come on out and join us.&lt;/p&gt;
+
+
+	&lt;p&gt;Teaching with Jim is awesome.  I’ve never had someone infect me with positive energy as much as he has.  We’ve tweaked some of the material recently (as I reluctantly switch over to git) and are very excited about it.  One of the best parts of this studio when we did it in Columbus was the discussion.  I’ve never had more interaction with an audience as I did in Denver and I’m hoping it gets repeated.  I love nothing more than getting on a soap box about testing and Ruby :-).&lt;/p&gt;
+
+
+	&lt;p&gt;Come on out and join us, it’s going to be a good time.&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://objo.com/">
+    <author>
+      <name>joe</name>
+    </author>
+    <id>tag:objo.com,2008-04-19:73</id>
+    <published>2008-04-19T15:03:00Z</published>
+    <updated>2008-04-19T15:04:35Z</updated>
+    <link href="http://objo.com/2008/4/19/history-blog-meme" rel="alternate" type="text/html" />
+    <title>History Blog Meme</title>
+<content type="html">
+            &lt;p&gt;Oh why not, I’ll jump on the bandwagon as well.&lt;/p&gt;
+
+
+&lt;pre&gt;
+[objo-laptop | ~ ] $ history 1000 | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head
+94 cd
+70 svn
+49 ll
+40 clear
+26 irb
+24 rake
+20 rm
+15 ruby
+14 cat
+12 open
+[objo-laptop | ~ ] $ 
+&lt;/pre&gt;
+          </content>  </entry>
+  <entry xml:base="http://objo.com/">
+    <author>
+      <name>joe</name>
+    </author>
+    <id>tag:objo.com,2008-04-08:71</id>
+    <published>2008-04-08T12:59:00Z</published>
+    <updated>2008-04-08T13:20:26Z</updated>
+    <link href="http://objo.com/2008/4/8/talk-slides" rel="alternate" type="text/html" />
+    <title>Talk Slides</title>
+<content type="html">
+            &lt;p&gt;I just got back from a whirl-wind tour of conference speaking.  It was a real pleasure getting to speak at these events.&lt;/p&gt;
+
+
+	&lt;p&gt;If you are considering your conference budget for next year or thinking about where to spend your money, look very hard at the regional events.  Having attended and spoken at many of the major and regional events, I have to say the content at the regionals has been exponentially better.  &lt;a href='//on-ruby.blogspot.com'&gt;Pat Eyler&lt;/a&gt; and &lt;a href='//blowmage.com/'&gt;Mike Moore&lt;/a&gt; did an amazing job with &lt;a href='//mtnwestrubyconf.com'&gt;Mount West Ruby Conf&lt;/a&gt;.  &lt;a href='//scotlandonrails.com'&gt;Scotland on Rails&lt;/a&gt; was organized incredibly well, and had some of the best content I’ve seen in a long time.  &lt;a href='//www.alancfrancis.com/'&gt;Alan Francis,&lt;/a&gt; &lt;a href='//woss.name/'&gt;Graeme Mathieson,&lt;/a&gt; Abdel Saleh and &lt;a href='//merecomplexities.com/'&gt;Paul Wilson&lt;/a&gt; pulled off their first conference in fine fashion.  Between the location, the people, and the pub across the street, the tracks at this conference were a must see.&lt;/p&gt;
+
+
+	&lt;p&gt;My slides for two of the three talks can be found here:
+	&lt;ul&gt;
+	&lt;li&gt;&lt;a href='//objo.com/assets/2008/4/8/DomainSpecificLanguagesInRuby.pdf'&gt;Domain Specific Languages: Molding Ruby&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href='//objo.com/assets/2008/4/8/BeCarefulYourJavaIsShowing.pdf'&gt;Be Careful Your Java Is Showing&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;If you want to see my talk from &lt;a href='//mtnwestrubyconf.com'&gt;Mountain West Ruby Conf&lt;/a&gt; it was recorded by &lt;a href='//confreaks.com/'&gt;Confreaks.&lt;/a&gt; and posted &lt;a href='//mwrc2008.confreaks.com/08obrien.html'&gt;here&lt;/a&gt;&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://objo.com/">
+    <author>
+      <name>joe</name>
+    </author>
+    <id>tag:objo.com,2008-03-02:67</id>
+    <published>2008-03-02T20:49:00Z</published>
+    <updated>2008-03-02T20:53:09Z</updated>
+    <link href="http://objo.com/2008/3/2/communication-means-so-many-bad-choices" rel="alternate" type="text/html" />
+    <title>Communication Means: So Many Choices</title>
+<content type="html">
+            &lt;blockquote&gt;
+		&lt;p&gt; I’ve decided I dislike using Twitter as a replacement for Chat. Chat’s &lt;span class='caps'&gt;TCP&lt;/span&gt;. I liked Twitter for being &lt;span class='caps'&gt;UDP&lt;/span&gt;. – &lt;a href='//twitter.com/duncan/statuses/765004226'&gt;James Duncan Davidson&lt;/a&gt;&lt;/p&gt;
+	&lt;/blockquote&gt;
+
+
+	&lt;p&gt;I spend the majority of my day communicating with people.  Whether it’s email, &lt;span class='caps'&gt;SMS&lt;/span&gt;, &lt;a href='//twitter.com/objo'&gt;Twitter,&lt;/a&gt; face-to-face, IM, or telephone, I’m constantly communicating with people.  I’ve made a career out of getting to know people. Very few of my jobs have ever been away from people (and let me tell you, I’ve had a lot of jobs in my life).&lt;/p&gt;
+
+
+	&lt;p&gt;Living in Germany and having moved quite a bit, I began to rely on good ol’ pen-and-paper mail (snail mail) during my school years.  When we moved overseas the military let us send mail for free within the military system. We would meet new friends on retreats, and events we attended and begin mailing back and forth.  The big lesson I remember learning centered around the idea that what you write cannot be deleted. Say the things you want to say clearly and think about them first because they cannot be erased (and you didn’t want a bunch of scratch-out marks on your letter).&lt;/p&gt;
+
+
+	&lt;p&gt;I was introduced to email very early.  Thanks to attending a &lt;a href='//www.eu.dodea.edu/'&gt;well-funded high school&lt;/a&gt; we were able to install a local network and give everyone in school an email address (just about the time the 486 came out … we were cutting edge at the time).  Once I learned to type I learned another important lesson.  The idea of ‘thinking before you send’ became more important.  The better I became at typing, the closer an email was to a &lt;a href='//en.wikipedia.org/wiki/Stream_of_consciousness_writing'&gt;stream of consciousness.&lt;/a&gt; This got me into more than one argument.&lt;/p&gt;
+
+
+	&lt;p&gt;I remember when I got my first job that was phone-based and thinking about how much the dynamics of my conversations had changed, because I now did not have body language and hand signals to rely on in order to help me communicate.  I had to rely completely on my voice, playing with pitch, inflection and speed in order to help me make some of my points.  Eventually I was able to master it, and excel at it, but not without hitting some rough spots along the way.&lt;/p&gt;
+
+
+Now I have a hundred options in front of me when it comes to communicating.  Recently things like &lt;a href='//twitter.com/objo'&gt;twitter&lt;/a&gt;, &lt;span class='caps'&gt;SMS&lt;/span&gt;, email on my phone and IM have me thinking.  There are so many new dynamics that have been introduced into conversations.  So far I have more questions than answers, but in asking the questions at least you can begin working on them.  Things like:
+	&lt;ul&gt;
+	&lt;li&gt;How do you know when an &lt;span class='caps'&gt;SMS&lt;/span&gt; conversation is finished?&lt;/li&gt;
+		&lt;li&gt;When do you assume there is a technical problem and something wasn’t received&lt;/li&gt;
+		&lt;li&gt;When is each medium more appropriate than the other?&lt;/li&gt;
+		&lt;li&gt;What if a conversation was started in one medium, is it rude to switch to another?&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+&lt;a href='//twitter.com/objo'&gt;Twitter&lt;/a&gt; has brought another level of questions to this as we begin to explore what “Duncan” above noted is essentially a &lt;span class='caps'&gt;UDP&lt;/span&gt; broadcast message.  
+	&lt;ul&gt;
+	&lt;li&gt;When is it appropriate to continue a thread that seems like it should be a conversation between a limited number of people.  &lt;/li&gt;
+		&lt;li&gt;Is it rude to take it offline?  &lt;/li&gt;
+		&lt;li&gt;Is it rude to announce something intended for a limited number of people if you know they are listening?&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;p&gt;Just some of the many questions I’ve been thinking about lately in the question of communication, the medium, and the rules, idioms, and conventions used in them.&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://objo.com/">
+    <author>
+      <name>joe</name>
+    </author>
+    <id>tag:objo.com,2008-02-08:65</id>
+    <published>2008-02-08T03:00:00Z</published>
+    <updated>2008-02-08T03:32:36Z</updated>
+    <link href="http://objo.com/2008/2/8/speaking-schedule" rel="alternate" type="text/html" />
+    <title>Speaking schedule</title>
+<content type="html">
+            &lt;p&gt;While I should be finishing up some of the dozen half-baked entries, I elected instead to just post my upcoming speaking schedule.  I was putting this off in hopes that RailsConf would let me in, but it looks like this will be the first year for me to sit it out (unless of course they &lt;em&gt;are&lt;/em&gt; still in fact deciding).&lt;/p&gt;
+
+
+	&lt;h2&gt;&lt;a href='//www.phillyemergingtech.com/'&gt;Emerging Technologies for the Enterprise&lt;/a&gt; March 26-27&lt;/h2&gt;
+
+
+	&lt;p&gt;I’ll be in Phillidelphia on March 26-27 giving my talk, “Be Careful Your Java is Showing” a walk through the idiomatic and architectural traps that developers fall into when they first approach Ruby and the Ruby on Rails framework.&lt;/p&gt;
+
+
+	&lt;h2&gt;&lt;a href='//mtnwestrubyconf.org/'&gt;Mountain West Ruby Conf&lt;/a&gt; March 28-29&lt;/h2&gt;
+
+
+	&lt;p&gt;I’m off from Philly straight to Salt Lake City for Mountain West Ruby Conf.  I’m very excited about this one. The local ruby conferences always have a ton of energy.  With friends like &lt;a href='//blowmage.com/'&gt;Mike&lt;/a&gt; and &lt;a href='//on-ruby.blogspot.com'&gt;Pat&lt;/a&gt; running the show, you know it’s going to be fun.&lt;/p&gt;
+
+
+	&lt;p&gt;I’m giving my “Domain Specific Languages: Molding Ruby” talk.  This is one of the two talks I’m the most passionate about and should be a a lot of fun.  This is also the talk I was supposed to give in Ann Arbor last night, but I had to cancel on account of snow.&lt;/p&gt;
+
+
+	&lt;h2&gt;&lt;a href='//scotlandonrails.com'&gt;Scotland on Rails&lt;/a&gt; April 4-5&lt;/h2&gt;
+
+
+	&lt;p&gt;In April I’ll be traveling to the land where they make scotch.  Oh man is this going to be fun.  While I’m there, I think I’m supposed to give a talk or something :-)&lt;/p&gt;
+
+
+	&lt;p&gt;Seriously, this is going to be another fun one.  &lt;a href='//onestepback.org'&gt;Jim&lt;/a&gt; and I are working on something lively for that conferences that should be a lot of fun.  I can’t wait.&lt;/p&gt;
+
+
+	&lt;h2&gt;&lt;a href='//erubycon.com'&gt;erubycon&lt;/a&gt; August&lt;/h2&gt;
+
+
+	&lt;p&gt;Yes, we will be putting on &lt;a href='//erubycon.com'&gt;erubycon&lt;/a&gt; again.  We will be giving the conference to show ruby’s readiness for the enterprise.  Look for another announcement within the next couple weeks.&lt;/p&gt;
+
+
+	&lt;p&gt;I’ll add more talks as they come up.  God knows I’ve papered enough places with proposals.&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://objo.com/">
+    <author>
+      <name>joe</name>
+    </author>
+    <id>tag:objo.com,2007-11-14:62</id>
+    <published>2007-11-14T16:14:00Z</published>
+    <updated>2007-11-14T16:14:47Z</updated>
+    <link href="http://objo.com/2007/11/14/it-s-not-about-testing-private-methods" rel="alternate" type="text/html" />
+    <title>It's Not About Testing Private Methods</title>
+<content type="html">
+            &lt;p&gt;I was able to attend &lt;a href='//rubyconf.org'&gt;RubyConf&lt;/a&gt; and truely enjoyed it. One of the best moments was a discussion that took place during &lt;a href='//thinkrelevance.com'&gt;Stuart Halloway’s&lt;/a&gt; Refactorum discussion. On the screen he displayed a piece of Rake that he wanted to refactor. With the blessing of &lt;a href='//onestepback.org'&gt;Jim,&lt;/a&gt; who was sitting in the front row, Stu began the journey. He then showed the unit test that he used to test the private method he wanted to refactor. Unfortunately this is where the discussion got carried. I’ve seen posts by both &lt;a href='//jayfields.com'&gt;Jay Fields&lt;/a&gt; and &lt;a href='//jasonrudolph.com'&gt;Jason Rudolph&lt;/a&gt; that talk about the &lt;em&gt;how&lt;/em&gt; in testing private methods, and a lot of discussion around the blogsphere about how wrong this is.&lt;/p&gt;
+
+
+	&lt;p&gt;Whether you agree with testing private methods or not, people are missing the subtlety of what Stu really did.  Taken out of context I feel that the real message was missed.&lt;/p&gt;
+
+
+	&lt;h2&gt;Tightening the Feedback Loop&lt;/h2&gt;
+
+
+	&lt;p&gt;The first thing he did was identify a piece of code he wanted to refactor. The piece he found happend to be a private method. This method was fully tested (100% coverage), but it was tested through it’s public interface. If something in the private method was changed, it would have been picked up, but the unit tests were testing a level higher than the method that was being refactored. What Stu did (before performing any of the refactoring) was to tighten the feedback loop. He gave himself a safety net that was closer to the problem being tackled instead of relying on the one that was there. That way, if he broke something in the method he was refactoring, he would know right away instead of identifiying what was broken through a side effect.&lt;/p&gt;
+
+
+	&lt;h2&gt;Are Integration Tests Enough?&lt;/h2&gt;
+
+
+	&lt;p&gt;I also saw a suprising post from a highly regarded individual who said they don’t really unit test much.  They rely on the integration and functional level tests to make sure that things are working. Yes this made the hair on the back of my neck standup. It goes against everything I believe in as a religious &lt;span class='caps'&gt;TDD&lt;/span&gt;’er. But after thinking it over for some time I realized that it’s all about the feedback level you are comfortable with. If something breaks I want to know about it at the most granular level possible. If you choose to only create functional level tests, and you are using a tool to check your covereage levels (such as rcov) you are still building that safety net, just further away from the actual code.&lt;/p&gt;
+
+
+	&lt;p&gt;I know here at &lt;a href='//theedgecase.com'&gt;EdgeCase&lt;/a&gt; we rely on extremely tight feedback loops. We typically deliver projects in terms of weeks, not months, we work in weekly iterations and we test at the most granular of levels.  We still rely on integration testing to ensure things work together, but when it comes to the code, the closer to the source, the better.&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://objo.com/">
+    <author>
+      <name>joe</name>
+    </author>
+    <id>tag:objo.com,2007-10-31:52</id>
+    <published>2007-10-31T03:00:00Z</published>
+    <updated>2007-11-06T14:50:11Z</updated>
+    <link href="http://objo.com/2007/10/31/remote-pair-programming" rel="alternate" type="text/html" />
+    <title>Remote Pair Programming</title>
+<content type="html">
+            &lt;p&gt;A key ingredient in the success of &lt;a href='//theedgecase.com'&gt;EdgeCase&lt;/a&gt; is collaboration. We decided early on that the most effective way to develop with each other was by pair-programming.  It has been fantastic.&lt;/p&gt;
+
+
+	&lt;p&gt;An irritation I had before founding &lt;a href='//theedgecase.com'&gt;EdgeCase&lt;/a&gt; was that more companies did not try and work hard enough to figure out how to overcome the barriers of having people offsite. With the plethora of technology available, I was convinced that we could be a very effective organization without either requiring our developers to commute using a 747, or to pass up on great team members just because they didn’t live in Columbus.&lt;/p&gt;
+
+
+	&lt;p&gt;The first real test came when we hired &lt;a href='//onestepback.org'&gt;Jim Weirich.&lt;/a&gt; Jim lives in Cincinnati, two hours south. We had already become accustomed to working with each other in a 100% pairing environment. We made it clear that we had no intention of making him drive up to Columbus every day, nor did we expect him to move. We also had no intention of leaving him alone in his basement and throw work his way. So we decided to figure out exactly how we were going to pair with him in Cincinnati.&lt;/p&gt;
+
+
+	&lt;p&gt;Our requirements were pretty straight forward.  We needed:
+	&lt;ul&gt;
+	&lt;li&gt;ability for us to work with multiple files (When in Rails, you are never in a file for very long, especially when bouncing back and forth between tests and regular files)&lt;/li&gt;
+		&lt;li&gt;a way to communicate effectively&lt;/li&gt;
+		&lt;li&gt;little or no perceived latency&lt;/li&gt;
+	&lt;/ul&gt;&lt;/p&gt;
+
+
+	&lt;h2&gt;Secret Sauce&lt;/h2&gt;
+
+
+	&lt;p&gt;After a lot of trail and error (mainly researched by &lt;a href='//onestepback.org'&gt;Jim&lt;/a&gt; and &lt;a href='//spicycode.com'&gt;Chad)&lt;/a&gt; here is what we came up with:
+	&lt;ul&gt;
+	&lt;li&gt;ssh to a server that both parties can access&lt;/li&gt;
+		&lt;li&gt;screen so that both parties can share a session&lt;/li&gt;
+		&lt;li&gt;Emacs (or any headless editor that does not require a &lt;span class='caps'&gt;GUI&lt;/span&gt; environment)&lt;/li&gt;
+		&lt;li&gt;Video &lt;a href='//skype.com'&gt;Skype&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;&lt;/p&gt;
+
+
+	&lt;h3&gt;ssh and screen&lt;/h3&gt;
+
+
+	&lt;p&gt;ssh and screen allowed us to create an environment that uses up very little bandwidth.  This was awesome for two reasons.  One, there is very little latency (especially if you ssh in with the -C option). Two, it gives us extra bandwidth for &lt;a href='//skype.com'&gt;skype&lt;/a&gt;.&lt;/p&gt;
+
+
+	&lt;p&gt;If you have not tried it yet, you really should check out &lt;a href='//www.gnu.org/software/screen/'&gt;screen&lt;/a&gt;.  It’s a really cool command line tool that most *nix environments come with now days.  It allows us to look at the same shell session. So we both ssh into the box, and then join the screen session (in our case one called pairing). Then we can see what the other person is looking at. When the cursor moves, we both see it.&lt;/p&gt;
+
+
+	&lt;p&gt;Some of the gotcha’s that we have encountered:
+	&lt;ul&gt;
+	&lt;li&gt;Try and ssh in as the same person. This will keep down the amount of headaches you encounter with file permissions, etc…&lt;/li&gt;
+		&lt;li&gt;create a separate subversion user for the ‘pairing’ server (again, it helps with file permissions)&lt;/li&gt;
+		&lt;li&gt;Tweak your timeout settings.  There will be lots of times where you are watching your pair type, and not actually interacting with the keyboard. ssh likes to think that you have timed out and kick you out.  This is something that can be configured (I believe in /etc/sshd_config)&lt;/li&gt;
+	&lt;/ul&gt;&lt;/p&gt;
+
+
+	&lt;h3&gt;Video Skype&lt;/h3&gt;
+
+
+	&lt;p&gt;While this sounds like a luxury, it’s actually become a fantastic tool for pairing. Nothing beats seeing the facial expressions of your pair.  You can pick up some great cues and it feels as if he/she is sitting right next to you. We both are using macs and have a two monitor system.  Inevitably you will find yourself looking at the video image of your pair. Therefore we have elected to drag the skype window right below our camera on our laptop lids. This way, when you look at the picture, you are in essence looking into the camera, further helping the feeling of ‘being there’.&lt;/p&gt;
+
+
+	&lt;h3&gt;Emacs&lt;/h3&gt;
+
+
+	&lt;p&gt;Unfortunately some people in the company are not advanced enough to use use &lt;a href='//gnu.org/software/emacs'&gt;Emacs&lt;/a&gt;, and have chosen to use a &lt;a href='//vim.org'&gt;remedial editor.&lt;/a&gt; Either way, spending time learning one of the main editors is not wasted effort. While it seems like at first you are trying to run through mud, you will be amazed at how, after a month or two, you are working faster than you ever thought possible. Years of effort have been poured into tweaking these editors and making them unbelievably extensible.&lt;/p&gt;
+
+
+	&lt;p&gt;All in all, the important thing is that we do not have to launch an entire X instance simply to run our editor. &lt;a href='//macromates.com/'&gt;TextMate&lt;/a&gt; is a good editor, but it’s not worth moving to something like &lt;span class='caps'&gt;VNC&lt;/span&gt; simply so we can use it (although, a subject for another post, we have actually found that TextMate is fun, and shiny, but just does not give us the support we need anyway).&lt;/p&gt;
+
+
+	&lt;p&gt;Another benefit to using one of these editors is the excellent buffer support. Being able to seamlessly move from one buffer to the next, moving text around, and executing files leads to some excellent increases in productivity.&lt;/p&gt;
+
+
+	&lt;h3&gt;Extra Communication&lt;/h3&gt;
+
+
+	&lt;p&gt;Not being there does have other challenges. When you are pairing together in person, who gets the keyboard is usually pretty easy to figure out. When you are remote, you simply need to ensure you communicate more. We use phrases like &lt;strong&gt;tag&lt;/strong&gt; when we are about to take over the keyboard, or &lt;strong&gt;yield&lt;/strong&gt; to say you giving control to the other person.&lt;/p&gt;
+
+
+	&lt;p&gt;We also do not have the luxury of a white board. So communicating ideas is a bit more difficult. This is the only place where I would say “I wish we were in person.” During our time pairing, we have become better at communicating our ideas. More times than not, we end up thinking in code. Again, it’s not great, but it does help.&lt;/p&gt;
+
+
+	&lt;h2&gt;Is This For Me?&lt;/h2&gt;
+
+
+	&lt;p&gt;This is by no means our way of saying, this is the only thing that works. What I am tyring to do is give you some more insight into how we operate, and what things we have found to be successful.  While we are encouraged by tools such as &lt;a href='//www.panic.com/coda/'&gt;Coda&lt;/a&gt; and &lt;a href='//www.codingmonkeys.de/subethaedit/'&gt;SubEthaEdit&lt;/a&gt; they are still a little ways off. Stay tuned, as we continue to &lt;a href='//objo.com/2007/9/10/scott-barron-joins-edgecase'&gt;bring on more talented developers&lt;/a&gt; and put our recipe through it’s paces.&lt;/p&gt;
+
+
+	&lt;p&gt;What has worked for you?&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://objo.com/">
+    <author>
+      <name>joe</name>
+    </author>
+    <id>tag:objo.com,2007-09-10:51</id>
+    <published>2007-09-10T17:24:00Z</published>
+    <updated>2007-09-10T17:29:00Z</updated>
+    <link href="http://objo.com/2007/9/10/scott-barron-joins-edgecase" rel="alternate" type="text/html" />
+    <title>Scott Barron joins EdgeCase</title>
+<content type="html">
+            &lt;p&gt;One of the great things about starting a company is the ability to team up with some of the best talent you can find. It’s a nice feeling to be extremely excited when you hire someone. Every time we have brought someone on, I’ve wanted to tell the world. It’s a fantastic feeling.&lt;/p&gt;
+
+
+	&lt;p&gt;We are extremely excited to welcome &lt;a href='//rubyi.st'&gt;Scott Barron&lt;/a&gt; to &lt;a href='//theedgecase.com'&gt;EdgeCase&lt;/a&gt;.&lt;/p&gt;
+
+
+	&lt;p&gt;&lt;img src='http://objo.com/assets/2007/9/10/simpson-scott.png' alt='' /&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;Scott is a member of the &lt;a href='//www.rubyonrails.org/core'&gt;Ruby on Rails Core Team&lt;/a&gt;, avid &lt;a href='//twitter.com/JoyentScott'&gt;twitter monkey&lt;/a&gt; (although we will have to work on his nic), and incredible developer.  We are looking forward to not only working with him, but helping him with his incredible contributions to the open source community.&lt;/p&gt;
+
+
+	&lt;p&gt;Scott lives (and will remain) in Cincinnati.  We have worked hard on creating an environment that allows us to pair-program even if the person is remote.  It works really well for &lt;a href='//onestepback.org'&gt;Jim&lt;/a&gt; and I.  With video skype, we are able to feel as if the person is right there, combine it with ssh + screen + emacs and it’s no different than sitting in the same room.&lt;/p&gt;
+
+
+	&lt;p&gt;Welcome Scott!&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://objo.com/">
+    <author>
+      <name>joe</name>
+    </author>
+    <id>tag:objo.com,2007-09-05:50</id>
+    <published>2007-09-05T20:47:00Z</published>
+    <updated>2007-11-06T14:50:59Z</updated>
+    <link href="http://objo.com/2007/9/5/pragmatic-studio-testing-rails" rel="alternate" type="text/html" />
+    <title>Pragmatic Studio: Testing Rails</title>
+<content type="html">
+            &lt;p&gt;I realized that I completely forgot to post this up to my blog.&lt;/p&gt;
+
+
+	&lt;p&gt;&lt;img src='http://objo.com/assets/2007/9/5/studio-medium.gif' alt='' /&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;&lt;a href='//onestepback.org'&gt;Jim Weirich&lt;/a&gt; and I will be teaching a &lt;a href='//pragmaticstudio.com'&gt;Pragmatic Studio&lt;/a&gt; on &lt;a href='//pragmaticstudio.com/testing-rails/index.html'&gt;Testing Rails&lt;/a&gt; in Columbus Ohio, October 17-19.&lt;/p&gt;
+
+
+	&lt;p&gt;We are preparing some fantastic content to help show attendees what &lt;span class='caps'&gt;TDD&lt;/span&gt; is all about, as well as how to get the most out of your testing.  This is as much how to test correctly as it is about how to test Rails specifically.  We are taking our years of testing experience in and out of Ruby and showing you how we apply it to Ruby and Rails.  We will show you how to test as individuals and in your teams.&lt;/p&gt;
+
+
+	&lt;p&gt;We have learned a lot at EdgeCase over the past year about specifics of testing Rails applications, and especially about the fantastic &lt;a href='//rspec.rubyforge.org'&gt;RSpec&lt;/a&gt; framework.  You get the benefit of having all of the things we have learned the hard way wrapped up in a nice, neat package.&lt;/p&gt;
+
+
+	&lt;p&gt;Nicole and Mike have put together a fantastic program with the “Pragmatic Studio” brand and we are honored to be a part of it.&lt;/p&gt;
+
+
+	&lt;p&gt;What are you waiting for, &lt;a href='//pragmaticstudio.com/testing-rails/register.html'&gt;register now!&lt;/a&gt;&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://objo.com/">
+    <author>
+      <name>joe</name>
+    </author>
+    <id>tag:objo.com,2007-08-25:49</id>
+    <published>2007-08-25T01:03:00Z</published>
+    <updated>2007-08-25T01:50:06Z</updated>
+    <link href="http://objo.com/2007/8/25/quality-in-your-craft" rel="alternate" type="text/html" />
+    <title>Quality in Your Craft</title>
+<content type="html">
+            &lt;p&gt;I delivered an application today.  I was very proud of this app.  It took a bit longer than I wanted to deploy, but that had more to do with an unexpected server and me forgetting &lt;span class='caps'&gt;RHEL&lt;/span&gt;.  What struck me though was how confident I was in it.&lt;/p&gt;
+
+
+	&lt;p&gt;We have delivered a bunch of applications at &lt;a href='//theedgecase.com'&gt;EdgeCase&lt;/a&gt;, but this was the first one where I was back in a cubicle navigating the enterprise hallways and firewalls.  Back in the land of overhearing conversations on what people are doing for lunch, and how early they hope to leave on Friday (although in all fairness, it’s the only IT organization in a 100M company I’ve seen who really ‘get it’ – more on that later).&lt;/p&gt;
+
+
+	&lt;p&gt;Anyway, so it got me thinking about all the other deployments I’ve done before in large IT enterprises. I’ve never been more confident in an application.  Once deployed, I had a plethora of tests that hit the application from every different angle possible.  Unit spec suite, integration spec suite, and an entire harness to beat on the app from a performance standpoint.  This was a fixed priced gig.  Most of the things in here were not required ‘by contract’.  They were done because the developers care about their craft.&lt;/p&gt;
+
+
+	&lt;p&gt;I also knew that the code I was turning over was top notch.  Understanding it’s the first Rails application for this company, it was nice that this is going to be a reference application for future Rails projects. The guys at &lt;a href='//theedgecase.com'&gt;EdgeCase&lt;/a&gt; turn over code that’s the best they can do.  Not so in the IT departments of most companies.&lt;/p&gt;
+
+
+	&lt;p&gt;&lt;img src='http://objo.com/assets/2007/8/25/ror-podcasts.png' alt='' /&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;On my way home I was catching up on some podcasts and the idea of caring for your craft struck me again.  Take &lt;a href='//topfunky.com'&gt;Geoffrey Grosenbach&lt;/a&gt; and the &lt;a href='//podcast.rubyonrails.org/'&gt;Ruby on Rails podcasts&lt;/a&gt;.  Most of us in the Rails community take for granted the time and effort he puts into making sure the sound on them is nearly perfect.  He spends countless hours and lots of money making sure our listening experience is the best it can be.  And he is &lt;span class='caps'&gt;ONE&lt;/span&gt; person.&lt;/p&gt;
+
+
+	&lt;p&gt;I then flip over to a podcast I was trying out from Business Week on selling – something I spend way more time doing than I care to admit.  Here is a large company (I have not idea what the circulation is, but I know it’s huge).  It sounded like it was recorded in a train station on a cell phone.  &lt;span class='caps'&gt;WTF&lt;/span&gt;?&lt;/p&gt;
+
+
+	&lt;p&gt;Big media keeps complaining about all the blogs, podcasts, and vlogs saying that there is no quality filter.  When I see things like that from big media, and then listen to the Geoffrey I can’t help but think, that I hope  by lowering the financial barrier of entry into media delivery, we end up with more &lt;a href='//topfunky.com'&gt;craftsmen&lt;/a&gt; and less mediocrity.&lt;/p&gt;
+
+
+	&lt;p&gt;Cheers Geoff, and thank you for caring.&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://objo.com/">
+    <author>
+      <name>joe</name>
+    </author>
+    <id>tag:objo.com,2007-07-14:45</id>
+    <published>2007-07-14T02:38:00Z</published>
+    <updated>2007-07-14T02:39:06Z</updated>
+    <link href="http://objo.com/2007/7/14/beautiful-code-a-great-read" rel="alternate" type="text/html" />
+    <title>Beautiful Code - a great read</title>
+<content type="html">
+            &lt;p&gt;One of the two books I’ve ordered this year that I really just could not wait to get O’Reilly’s &lt;a href='//rubyurl.com/dQw'&gt;Beautiful Code&lt;/a&gt;.  It’s just as good as I thought it would be.  Very interesting article on Subversion’s delta editor, &lt;a href='//www.tbray.org/ongoing/'&gt;Tim Bray&lt;/a&gt; has a great look at search and a very pragmatic approach (as well as a realistic discussion on using Ruby).&lt;/p&gt;
+
+
+	&lt;p&gt;&lt;img src='http://objo.com/assets/2007/7/14/b-code_1.jpg' alt='' /&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;But of course, the part I loved the most, Matz’s look at how code should be written.&lt;/p&gt;
+
+
+	&lt;blockquote&gt;
+		&lt;p&gt;Humans are more valuable than any tools or languages.  Computers should serve programmers to maximize their productivity and happiness, but in reality, they often increase the burden instead of lightening it.&lt;/p&gt;
+	&lt;/blockquote&gt;
+          </content>  </entry>
+  <entry xml:base="http://objo.com/">
+    <author>
+      <name>joe</name>
+    </author>
+    <id>tag:objo.com,2007-06-28:37</id>
+    <published>2007-06-28T01:59:00Z</published>
+    <updated>2007-11-06T14:50:37Z</updated>
+    <link href="http://objo.com/2007/6/28/ruby-style-ruby-do-end-versus" rel="alternate" type="text/html" />
+    <title>Ruby Style: Ruby do ... end versus {}</title>
+<content type="html">
+            &lt;p&gt;I’m lucky enough to be pairing with &lt;a href='//onestepback.org'&gt;Jim Weirich&lt;/a&gt; and I’m learning a ton. Of course I’m learning things like how to get the most out of the &lt;a href='//www.gnu.org/software/emacs/'&gt;one true editor&lt;/a&gt; and the really hard to understand ins and outs of Ruby.&lt;/p&gt;
+
+
+	&lt;p&gt;What I’m enjoying the most is the different perspective on developing in Ruby.  We’ve had quite a few discussions about style.  The most recent I thought I would put up here.&lt;/p&gt;
+
+
+	&lt;h3&gt;One or more lines&lt;/h3&gt;
+
+
+	&lt;p&gt;When you come to Ruby people inevitably ask the question of when to use do … end and when to use the {} syntax for blocks.  The normal answer, and the one I’ve subscribed to, is that you use {} if you are on one line, and do … end if you span more than one line.&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code&gt;
+  Items.find(:all).each { |item| puts item.description }
+
+  Items.find(:all).each do |item|
+    # do something
+    # do something else
+    item.save
+  end
+&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;h3&gt;Problems with this approach&lt;/h3&gt;
+
+
+	&lt;p&gt;First, when you decide to add more functionality into your block, you have to change the surrounding syntax.  If you are following &lt;a href='//en.wikipedia.org/wiki/Test_driven_development'&gt;Red, Green Refactor&lt;/a&gt;, this could happen quite frequently.&lt;/p&gt;
+
+
+	&lt;p&gt;The most interesting issue we discussed was that this style tells you nothing of value when you are &lt;em&gt;reading&lt;/em&gt; the code. We can tell visually that it’s one or two lines.&lt;/p&gt;
+
+
+	&lt;h3&gt;Use {} when returning a value, do … end when performing actions&lt;/h3&gt;
+
+
+	&lt;p&gt;The alternative is to use these two syntaxes to communicate what you are doing.  Jim’s style of development, which I’m quickly growing more fond of, is to use {} when you are returning a value from a block.&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code&gt;
+  [1,3,4,5,6].find { |i| i == 4 }
+
+  [1,3,4,5,6].collect { |i| i.to_s }
+&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;On the flip side use the do … end syntax when performing actions, but not returning any values.&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code&gt;
+  %w{ one two three four five }.each do |i| i.capitalize! end
+
+  %w{ one two three four five }.each do |i| 
+    i.capitalize!
+    i.reverse!
+  end
+&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;So now when you are glancing through some code and you see a block that looks like this:&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code&gt;
+  array.method_accepting_block { |item| 
+    some_action
+    more_actions
+  }
+&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;you will know that they are returning a value at a glance.&lt;/p&gt;
+
+
+	&lt;p&gt;Interesting idea.  Thoughts?&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://objo.com/">
+    <author>
+      <name>joe</name>
+    </author>
+    <id>tag:objo.com,2007-06-12:36</id>
+    <published>2007-06-12T18:11:00Z</published>
+    <updated>2007-06-12T18:38:28Z</updated>
+    <link href="http://objo.com/2007/6/12/raise-money-get-training" rel="alternate" type="text/html" />
+    <title>Raise money, get training</title>
+<content type="html">
+            &lt;p&gt;&lt;a href='//pragdave.pragprog.com/pragdave/2007/05/paying_back.html'&gt;Dave Thomas put out the challenge&lt;/a&gt; and we responded.&lt;/p&gt;
+
+
+	&lt;p&gt;Last year Dave and Mike in conjunction with the &lt;a href='//pragmaticstudio.com'&gt;Pragmatic Studios&lt;/a&gt; came up with a stellar idea, hold a one day guide book training session.  The only caveat was that in order to attend you had to donate money to a charity.  They raise over $12,000.  This year, they did the same thing.  When they combined it with the conference at large, they were able to bring the total up to $33,000.&lt;/p&gt;
+
+
+	&lt;p&gt;The beauty of this idea was two fold.  First, was the obvious idea of raising money for a good cause.  In our case, we are supporting an &lt;a href='//www.changingthepresent.org/gifts/show/475'&gt;individual charity&lt;/a&gt; that is responsible for helping fight hunger in children.  Each $50 donation supplies enough to feed on child for a month in one of their theraputic food centers.&lt;/p&gt;
+
+
+	&lt;p&gt;The other reason I love this idea is because it has identified a need that every conference has, to get people on the same level. Especially with new technologies, we have a problem of brining on new developers.  The ‘guide book’ name was coined by Dave and Mike to represent a day of training that acted as a travel guide.  When you visit Moscow, you take a guide book, not to give you the entire history of Moscow, but one that will give you enough to make your trip more enjoyable.&lt;/p&gt;
+
+
+&amp;lt;center&gt;
+&amp;lt;object id='fadein540' height='60' codebase='http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0' classid='clsid:d27cdb6e-ae6d-11cf-96b8-444553540000' width='468'&gt;
+        &amp;lt;param name='movie' value='http://www.changingthepresent.org/flash/banners/drives/horizontal_banner.swf?env=production&amp;amp;drive_id=191' /&gt;
+        &amp;lt;param name='quality' value='high' /&gt;
+        &amp;lt;param name='wmode' value='transparent' /&gt;
+        &amp;lt;param name='bgcolor' value='#fff' /&gt;
+        &amp;lt;embed bgcolor='#fff' pluginspage='http://www.macromedia.com/go/getflashplayer' type='application/x-shockwave-flash' src='http://www.changingthepresent.org/flash/banners/drives/horizontal_banner.swf?env=production&amp;amp;drive_id=191' allowscriptaccess='sameDomain' height='60' wmode='transparent' quality='high' width='468' /&gt;
+      &amp;lt;/object&gt;
+&amp;lt;/center&gt;
+
+	&lt;p&gt;We have followed suit. We have added another ticket to &lt;a href='//erubycon.com'&gt;erubycon&lt;/a&gt; called &lt;a href='//erubycon.eventbrite.com'&gt;charity training&lt;/a&gt;.  This gives you full access to the conference, in addition to a one day training course offered the day before the conference begins. &lt;a href='//erubycon.com'&gt;erubycon&lt;/a&gt; will donate $50 from your ticket to the &lt;a href='//www.changingthepresent.org/nonprofits/show/22'&gt;Action Against Hunger&lt;/a&gt;. We have are running a &lt;a href='//www.changingthepresent.org/drives/edit_comment/191?donate=true'&gt;charity drive&lt;/a&gt; through &lt;a href='//www.changingthepresent.org/drives/edit_comment/191?donate=true'&gt;ChangingThePresent.org&lt;/a&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;So take the opportunity to help us raise money, and make sure you get the most out of &lt;a href='//erubycon.com'&gt;erubycon&lt;/a&gt;.  &lt;a href='//erubycon.eventbrite.com'&gt;Register&lt;/a&gt; today, seating is limited to the first 50 people.&lt;/p&gt;
+
+
+	&lt;p&gt;The training session is an introduction to Ruby and Rails. It will give you enough of a background to allow you to get the most out of the conference and see for yourself what all the fuss is about.  After the training, you can join us for three days of packed content showing you what you can do tomorrow to have an impact in your organization.&lt;/p&gt;
+
+
+	&lt;p&gt;If you cannot make the dates, please consider donating to the cause anyway. RailsConf raised over &lt;a href='//pragdave.pragprog.com/pragdave/2007/05/paying_back.html'&gt;$33,000&lt;/a&gt;, let’s see how close we can come.&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://objo.com/">
+    <author>
+      <name>joe</name>
+    </author>
+    <id>tag:objo.com,2007-06-02:34</id>
+    <published>2007-06-02T20:36:00Z</published>
+    <updated>2007-06-02T20:43:13Z</updated>
+    <link href="http://objo.com/2007/6/2/erubycon-sessions-announced" rel="alternate" type="text/html" />
+    <title>erubycon Sessions Announced</title>
+<content type="html">
+            &lt;p&gt;We have finally posted the session list for &lt;a href='//erubycon.com'&gt;erubycon&lt;/a&gt;.&lt;/p&gt;
+
+
+	&lt;p&gt;We will be having two tracks and have some incredible talks to choose from. Stay tuned for the exact schedule. Some of the topics we are covering:&lt;/p&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;Data Warehousing&lt;/li&gt;
+		&lt;li&gt;Large Teams and Rails&lt;/li&gt;
+		&lt;li&gt;JRuby, the &lt;span class='caps'&gt;DLR&lt;/span&gt; and other alternative platforms&lt;/li&gt;
+		&lt;li&gt;Security&lt;/li&gt;
+		&lt;li&gt;Domain Specific Languages&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;p&gt;What are you waiting for? Register soon while we still have space.&lt;/p&gt;
+
+
+	&lt;p&gt;Come be a part of the first Enterprise Ruby Conference.  It’s being held n Columbus Ohio July 16, 17 &amp; 18.  Come get all the ammunition you need to convince your boss to take a good, hard look at Ruby.  Maybe you too could be coding in Ruby this year!&lt;/p&gt;
+          </content>  </entry>
+</feed>

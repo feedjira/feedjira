@@ -1,0 +1,764 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:media="http://search.yahoo.com/mrss/"
+	>
+
+<channel>
+	<title>evan.musing &#60;&#60; current</title>
+	<atom:link href="http://blog.fallingsnow.net/feed/" rel="self" type="application/rss+xml" />
+	<link>http://blog.fallingsnow.net</link>
+	<description>life and tech stuff by Evan Phoenix</description>
+	<pubDate>Tue, 09 Dec 2008 21:48:20 +0000</pubDate>
+	<generator>http://wordpress.org/?v=MU</generator>
+	<language>en</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<image>
+		<url>http://www.gravatar.com/blavatar/5a9b0b6f691c857857dd1bf6d5bf9dc4?s=96&#038;d=http://s.wordpress.com/i/buttonw-com.png</url>
+		<title>evan.musing &#60;&#60; current</title>
+		<link>http://blog.fallingsnow.net</link>
+	</image>
+			<item>
+		<title>The Ruby Community Rocks</title>
+		<link>http://blog.fallingsnow.net/2008/12/09/the-ruby-community-rocks/</link>
+		<comments>http://blog.fallingsnow.net/2008/12/09/the-ruby-community-rocks/#comments</comments>
+		<pubDate>Tue, 09 Dec 2008 20:16:03 +0000</pubDate>
+		<dc:creator>evanphx</dc:creator>
+		
+		<category><![CDATA[community]]></category>
+
+		<category><![CDATA[rubinius]]></category>
+
+		<category><![CDATA[ruby]]></category>
+
+		<guid isPermaLink="false">http://evanphx.wordpress.com/?p=70</guid>
+		<description><![CDATA[
+The last time we checked in, I was delivering the bad news about having to let a bunch of my team go. I received a lot of kind words of encouragement during the hard time, which I want to thank everyone for.
+
+
+In addition to kind words, a number of people stepped up and indicated they [...]<img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=blog.fallingsnow.net&blog=1516804&post=70&subd=evanphx&ref=&feed=1" />]]></description>
+			<content:encoded><![CDATA[<div class='snap_preview'><br /><p>
+The last time we checked in, I was delivering the bad news about having to let a bunch of my team go. I received a lot of kind words of encouragement during the hard time, which I want to thank everyone for.
+</p>
+<p>
+In addition to kind words, a number of people stepped up and indicated they had positions available that my newly unemployed friends would be great fits for.
+</p>
+<p>
+One such offer was from Daniel Yoder and Charles Hornberger at AT&amp;T Interactive in the R&amp;D department, the makers of the <a href="http://www.yellowpages.com">yellowpages.com</a>. I&#8217;m extremely happy to announce that Eero Saynatkari (rue on IRC) has recently been hired by them and even given time to continue work on Rubinius!
+</p>
+<p>
+This development makes me so happy. To see the community pull together in a tough time and even continue to make an external investment in Rubinius.
+</p>
+<p>
+Thanks again guys! You&#8217;re what make me love being a Rubyist.</p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a rel="nofollow" href="http://feeds.wordpress.com/1.0/gocomments/evanphx.wordpress.com/70/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/evanphx.wordpress.com/70/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godelicious/evanphx.wordpress.com/70/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/delicious/evanphx.wordpress.com/70/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gostumble/evanphx.wordpress.com/70/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/stumble/evanphx.wordpress.com/70/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godigg/evanphx.wordpress.com/70/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/digg/evanphx.wordpress.com/70/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/goreddit/evanphx.wordpress.com/70/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/reddit/evanphx.wordpress.com/70/" /></a> <img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=blog.fallingsnow.net&blog=1516804&post=70&subd=evanphx&ref=&feed=1" /></div>]]></content:encoded>
+			<wfw:commentRss>http://blog.fallingsnow.net/2008/12/09/the-ruby-community-rocks/feed/</wfw:commentRss>
+	
+		<media:content url="http://www.gravatar.com/avatar/540cb3b3712ffe045113cb03bab616a2?s=96&#38;d=http%3A%2F%2Fa.wordpress.com%2Favatar%2Funknown-96.jpg" medium="image">
+			<media:title type="html">evanphx</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>A Sad Day</title>
+		<link>http://blog.fallingsnow.net/2008/11/18/a-sad-day/</link>
+		<comments>http://blog.fallingsnow.net/2008/11/18/a-sad-day/#comments</comments>
+		<pubDate>Tue, 18 Nov 2008 07:25:13 +0000</pubDate>
+		<dc:creator>evanphx</dc:creator>
+		
+		<category><![CDATA[rubinius]]></category>
+
+		<category><![CDATA[ruby]]></category>
+
+		<guid isPermaLink="false">http://evanphx.wordpress.com/?p=66</guid>
+		<description><![CDATA[
+There have been some sad developments within the Engine Yard Rubinius team that I&#8217;d like to address head on.
+
+
+Earlier today, I had the unfortunate task of reducing the team size to 2 people, which meant laying off the rest of the team.
+
+
+I&#8217;m sure this comes as a shock to many, as it did to my [...]<img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=blog.fallingsnow.net&blog=1516804&post=66&subd=evanphx&ref=&feed=1" />]]></description>
+			<content:encoded><![CDATA[<div class='snap_preview'><br /><p>
+There have been some sad developments within the Engine Yard Rubinius team that I&#8217;d like to address head on.
+</p>
+<p>
+Earlier today, I had the unfortunate task of reducing the team size to 2 people, which meant laying off the rest of the team.
+</p>
+<p>
+I&#8217;m sure this comes as a shock to many, as it did to my friends to whom I had to give walking papers. This was certainly never a scenario that I had ever hoped to find myself in when Engine Yard offered me this dream job early in 2007.
+</p>
+<p>
+The reason for the layoffs is not Engine Yard divesting interest in Rubinius,<br />
+but rather a necessary reorganization of budget priorities. That&#8217;s a fancy way of saying that EY could no longer afford to sustain the large team we had.
+</p>
+<p>
+This is a sad day for me, one that I&#8217;ve been dreading. It stings not only<br />
+because of what it means to Rubinius but also because of what it means to my friends with whom I will no longer be working. They&#8217;ve put blood, sweat, and tears into Rubinius and their everyday presence will be sorely missed. I hope that they do not think badly of me or Engine Yard.
+</p>
+<p>
+When Engine Yard gave me the go ahead to hire a team, they did it with the best<br />
+intention: to help Rubinius grow. And we have definitely done that. In the<br />
+last year, we&#8217;ve achieved amazing goals within the project:</p>
+<ul>
+<li>We went from running very little ruby code to running rails.</li>
+<li>We got rubygems up and running well.</li>
+<li>We got a parser entirely in ruby integrated.</li>
+<li>We wrote a whole new VM to build on.</li>
+</ul>
+<p>
+ We&#8217;ve had our fair share of setbacks, but the team has always rallied.
+</p>
+<p>
+Rubinius will continue to move forward, continually bolstered by the awesome group of people who give up their free time to help on the project.
+</p>
+<p>
+Tom Mornini has <a href="http://blog.engineyard.com/">posted on the EY blog</a> as well; you should read his take.</p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a rel="nofollow" href="http://feeds.wordpress.com/1.0/gocomments/evanphx.wordpress.com/66/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/evanphx.wordpress.com/66/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godelicious/evanphx.wordpress.com/66/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/delicious/evanphx.wordpress.com/66/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gostumble/evanphx.wordpress.com/66/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/stumble/evanphx.wordpress.com/66/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godigg/evanphx.wordpress.com/66/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/digg/evanphx.wordpress.com/66/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/goreddit/evanphx.wordpress.com/66/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/reddit/evanphx.wordpress.com/66/" /></a> <img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=blog.fallingsnow.net&blog=1516804&post=66&subd=evanphx&ref=&feed=1" /></div>]]></content:encoded>
+			<wfw:commentRss>http://blog.fallingsnow.net/2008/11/18/a-sad-day/feed/</wfw:commentRss>
+	
+		<media:content url="http://www.gravatar.com/avatar/540cb3b3712ffe045113cb03bab616a2?s=96&#38;d=http%3A%2F%2Fa.wordpress.com%2Favatar%2Funknown-96.jpg" medium="image">
+			<media:title type="html">evanphx</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>CPP work branch change</title>
+		<link>http://blog.fallingsnow.net/2008/10/28/cpp-work-branch-change/</link>
+		<comments>http://blog.fallingsnow.net/2008/10/28/cpp-work-branch-change/#comments</comments>
+		<pubDate>Tue, 28 Oct 2008 08:04:13 +0000</pubDate>
+		<dc:creator>evanphx</dc:creator>
+		
+		<category><![CDATA[rubinius]]></category>
+
+		<guid isPermaLink="false">http://evanphx.wordpress.com/?p=57</guid>
+		<description><![CDATA[
+Hi everyone. I&#8217;m super happy to announce that we&#8217;ve gotten the C++ branch stable enough that we&#8217;re making in the default branch. This means that those of you with existing clones are going to likely do a little work to get them sane though.
+
+Here is what was done:
+
+The old master branch was rename shotgun.
+The cpp [...]<img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=blog.fallingsnow.net&blog=1516804&post=57&subd=evanphx&ref=&feed=1" />]]></description>
+			<content:encoded><![CDATA[<div class='snap_preview'><br /><p>
+Hi everyone. I&#8217;m super happy to announce that we&#8217;ve gotten the C++ branch stable enough that we&#8217;re making in the default branch. This means that those of you with existing clones are going to likely do a little work to get them sane though.</p>
+<p>
+Here is what was done:</p>
+<ul>
+<li>The old master branch was rename shotgun.</li>
+<li>The cpp branch was copy to the name master.</li>
+<li>The cpp branch was then deleted.</li>
+</ul>
+<p>
+Anyone that has up to now been working on the cpp branch has a couple of options.</p>
+<ol>
+<li>Delete your clone and re-clone. This is the easiest. The default checkout will be code in the cpp branch and you&#8217;re off and going.</li>
+<li>Fix up your current repo. I did this by doing the following commands:
+<ol>
+<li><code>git checkout master</code></li>
+<li><code>git reset --hard origin/master</code></li>
+<li><code>git branch -D cpp</code></li>
+</ol>
+<p>This will get your local master branch repointed and properly checked out. In addition, the old cpp local branch can be deleted.
+</li>
+</ol>
+<p>
+Hopefully no one experiences much pain due to this change. It&#8217;s been a long time coming and I&#8217;m really excited.<br />
+If you do run into problems, post a comment or stop on by IRC and we&#8217;ll work it out for ya.
+</p>
+<p>
+<b>Thanks!</b></p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a rel="nofollow" href="http://feeds.wordpress.com/1.0/gocomments/evanphx.wordpress.com/57/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/evanphx.wordpress.com/57/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godelicious/evanphx.wordpress.com/57/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/delicious/evanphx.wordpress.com/57/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gostumble/evanphx.wordpress.com/57/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/stumble/evanphx.wordpress.com/57/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godigg/evanphx.wordpress.com/57/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/digg/evanphx.wordpress.com/57/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/goreddit/evanphx.wordpress.com/57/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/reddit/evanphx.wordpress.com/57/" /></a> <img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=blog.fallingsnow.net&blog=1516804&post=57&subd=evanphx&ref=&feed=1" /></div>]]></content:encoded>
+			<wfw:commentRss>http://blog.fallingsnow.net/2008/10/28/cpp-work-branch-change/feed/</wfw:commentRss>
+	
+		<media:content url="http://www.gravatar.com/avatar/540cb3b3712ffe045113cb03bab616a2?s=96&#38;d=http%3A%2F%2Fa.wordpress.com%2Favatar%2Funknown-96.jpg" medium="image">
+			<media:title type="html">evanphx</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>Rubinius Status</title>
+		<link>http://blog.fallingsnow.net/2008/09/05/rubinius-status/</link>
+		<comments>http://blog.fallingsnow.net/2008/09/05/rubinius-status/#comments</comments>
+		<pubDate>Fri, 05 Sep 2008 21:48:12 +0000</pubDate>
+		<dc:creator>evanphx</dc:creator>
+		
+		<category><![CDATA[rubinius]]></category>
+
+		<guid isPermaLink="false">http://evanphx.wordpress.com/?p=55</guid>
+		<description><![CDATA[
+Hey folks, sorry for the quietness here. Thought I&#8217;d fill everyone in on the current status of Rubinius.
+
+
+We (the Rubinius team) have been hard at work on a couple of fronts:
+
+a new C++ VM: the team has been hard at work getting a new VM up and running back to the level we had the [...]<img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=blog.fallingsnow.net&blog=1516804&post=55&subd=evanphx&ref=&feed=1" />]]></description>
+			<content:encoded><![CDATA[<div class='snap_preview'><br /><p>
+Hey folks, sorry for the quietness here. Thought I&#8217;d fill everyone in on the current status of Rubinius.
+</p>
+<p>
+We (the Rubinius team) have been hard at work on a couple of fronts:</p>
+<ul>
+<li><b>a new C++ VM</b>: the team has been hard at work getting a new VM up and running back to the level we had the old system at. Our output has slowed to a little bit as the rest of the team has gotten up to speed on this new code base. Now, I&#8217;m sure you&#8217;re wondering why we&#8217;ve begun working on a new VM. Well, there are a few reasons:<br />
+</p>
+<ul>
+<li>
+Better organized. We&#8217;ve learned a lot in the building of the last VM about how to structure things. For instance, using C++ lets us model Ruby classes as C++ classes, providing the VM with the same familiar structure and execution as their Ruby counterparts. This lowers the barrier for understanding and using the code base.
+</li>
+<li>Better tested. The old VM, I&#8217;m ashamed to say, had no unit tests. From day one of the new VM, we&#8217;ve been writing unit and integration tests. This has helped us a lot to keep the code base under control, as everyone who writes unit tests knows.</li>
+<li>More potential. One of the big changes is keep a lot of parts of the system open. For example, we&#8217;re actively experimenting with using LLVM to speed up method execution a lot. The old code base, with no tests, was quite tangled and sadly didn&#8217;t provide any easy way forward for a lot of experiments we wanted to do</li>
+</ul>
+</li>
+<li>We&#8217;ve been working a lot of Ryan Davis&#8217;s ruby_parser project lately. We&#8217;re actively looking to use that code base as Rubinius&#8217; internal parser. This is towards our goal of more Ruby code, but as anyone who&#8217;s written a parser will tell ya, it can be a real pain.<br />
+Ryan has made great progress getting it working and integrating it with Rubinius&#8217; Compiler.
+</li>
+<li><b>Conferences</b>: Wilson Bilkovich was just in Berlin, talking technical about Rubinius at RailsConf Europe. I&#8217;m here in Austin, at Lone Star Ruby Conf, finishing up my keynote that I&#8217;ll be giving later today.<br />
+The whole team will be at RubyConf in November as well, and a few are likely going to OOPSLA as well.
+</li>
+</ul>
+<p>
+I know that a lot of people are eagerly anticipating Rubinius, and I want to thank you all for your patience with me and the rest of the team.
+</p>
+<p>
+This is a dream project, and turns out to be pretty darn hard and a lot of work. I&#8217;ve made the mistake in the past about talking about when I think that we&#8217;ll release 1.0. Something I don&#8217;t think I properly understood a year ago was the level that people are looking for a 1.0 to operate at. If we released a 1.0 that was 10x slower than MRI, we&#8217;d probably be in pretty tough shape.</p>
+<p>
+At the some time, I know people want to play with Rubinius. We fell off doing monthly releases a while back, and we&#8217;re going to start getting back on that soon. Hopefully that will give people insight into the project&#8217;s progress more.
+</p>
+<p>
+Again, thanks to Engine Yard and everyone else for wonderful support.</p>
+<img alt="" border="0" src="http://feeds.wordpress.com/1.0/categories/evanphx.wordpress.com/55/" /> <img alt="" border="0" src="http://feeds.wordpress.com/1.0/tags/evanphx.wordpress.com/55/" /> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gocomments/evanphx.wordpress.com/55/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/evanphx.wordpress.com/55/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godelicious/evanphx.wordpress.com/55/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/delicious/evanphx.wordpress.com/55/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gostumble/evanphx.wordpress.com/55/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/stumble/evanphx.wordpress.com/55/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godigg/evanphx.wordpress.com/55/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/digg/evanphx.wordpress.com/55/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/goreddit/evanphx.wordpress.com/55/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/reddit/evanphx.wordpress.com/55/" /></a> <img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=blog.fallingsnow.net&blog=1516804&post=55&subd=evanphx&ref=&feed=1" /></div>]]></content:encoded>
+			<wfw:commentRss>http://blog.fallingsnow.net/2008/09/05/rubinius-status/feed/</wfw:commentRss>
+	
+		<media:content url="http://www.gravatar.com/avatar/540cb3b3712ffe045113cb03bab616a2?s=96&#38;d=http%3A%2F%2Fa.wordpress.com%2Favatar%2Funknown-96.jpg" medium="image">
+			<media:title type="html">evanphx</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>The Rubinius Summer</title>
+		<link>http://blog.fallingsnow.net/2008/07/28/the-rubinius-summer/</link>
+		<comments>http://blog.fallingsnow.net/2008/07/28/the-rubinius-summer/#comments</comments>
+		<pubDate>Mon, 28 Jul 2008 23:24:17 +0000</pubDate>
+		<dc:creator>evanphx</dc:creator>
+		
+		<category><![CDATA[life]]></category>
+
+		<category><![CDATA[rubinius]]></category>
+
+		<guid isPermaLink="false">http://evanphx.wordpress.com/?p=51</guid>
+		<description><![CDATA[
+Hi everyone. Been too long since the last update, so wanted to get everyone up to speed.
+
+Rubinius
+
+Things have been a little quiet on the Rubinius front, as I&#8217;m sure a lot of you have noticed. We&#8217;re still hard at work, currently getting the new C++ VM into shape.
+This new C++ VM fixes a lot of [...]<img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=blog.fallingsnow.net&blog=1516804&post=51&subd=evanphx&ref=&feed=1" />]]></description>
+			<content:encoded><![CDATA[<div class='snap_preview'><br /><p>
+Hi everyone. Been too long since the last update, so wanted to get everyone up to speed.
+</p>
+<h3>Rubinius</h3>
+<p>
+Things have been a little quiet on the Rubinius front, as I&#8217;m sure a lot of you have noticed. We&#8217;re still hard at work, currently getting the new C++ VM into shape.<br />
+This new C++ VM fixes a lot of fundamental problems the shotgun VM had (type safety, expression ordering, etc), which is a major reason we&#8217;re migrating our work to it.<br />
+<br />
+Things have been a little quieter, commit wise, as the rest of the team gets up to speed on the new VM that I&#8217;ve been working on. Shotgun has been put into maintenance mode, with updates to the current main coming mainly in the form of bug fixes to the kernel.<br />
+<br />
+I know that the advances we&#8217;re making in the new VM everyone will love, from more performance to less crashes to better code organization.
+</p>
+<p><h3>Comic-Con</h3>
+<p>I&#8217;ve just returned from Comic-Con, having spend 4 days in the sun down in San Diego with the rest of nerdom.<br />
+It was quite a fun con though quite tiring. We managed to get into some good panels, but didn&#8217;t make it into the Hero&#8217;s and Lost panels. Seems you had to arrive at 6am to even attempt to get a seat. The line to get in was literally a mile long (no really, I&#8217;m not kidding.)<br />
+
+</p>
+<p><h3>Conferences</h3>
+<p>Since we&#8217;ve been hard at work trying to get Rubinius to 1.0, I haven&#8217;t done too many conferences this summer. The next one I&#8217;ll be at is <a href="http://lonestarrubyconf.com">Lone Star Ruby Conf</a> down in Austin. Should be fun, I&#8217;ve never been to Austin before and people seem to like the city.<br />
+</p>
+<img alt="" border="0" src="http://feeds.wordpress.com/1.0/categories/evanphx.wordpress.com/51/" /> <img alt="" border="0" src="http://feeds.wordpress.com/1.0/tags/evanphx.wordpress.com/51/" /> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gocomments/evanphx.wordpress.com/51/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/evanphx.wordpress.com/51/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godelicious/evanphx.wordpress.com/51/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/delicious/evanphx.wordpress.com/51/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gostumble/evanphx.wordpress.com/51/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/stumble/evanphx.wordpress.com/51/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godigg/evanphx.wordpress.com/51/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/digg/evanphx.wordpress.com/51/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/goreddit/evanphx.wordpress.com/51/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/reddit/evanphx.wordpress.com/51/" /></a> <img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=blog.fallingsnow.net&blog=1516804&post=51&subd=evanphx&ref=&feed=1" /></div>]]></content:encoded>
+			<wfw:commentRss>http://blog.fallingsnow.net/2008/07/28/the-rubinius-summer/feed/</wfw:commentRss>
+	
+		<media:content url="http://www.gravatar.com/avatar/540cb3b3712ffe045113cb03bab616a2?s=96&#38;d=http%3A%2F%2Fa.wordpress.com%2Favatar%2Funknown-96.jpg" medium="image">
+			<media:title type="html">evanphx</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>Rubinius version 0.9.0 released!</title>
+		<link>http://blog.fallingsnow.net/2008/06/20/rubinius-version-090-released/</link>
+		<comments>http://blog.fallingsnow.net/2008/06/20/rubinius-version-090-released/#comments</comments>
+		<pubDate>Fri, 20 Jun 2008 09:02:55 +0000</pubDate>
+		<dc:creator>evanphx</dc:creator>
+		
+		<category><![CDATA[rubinius]]></category>
+
+		<guid isPermaLink="false">http://evanphx.wordpress.com/?p=49</guid>
+		<description><![CDATA[
+I&#8217;m super proud to say that we&#8217;ve release version 0.9.0. It&#8217;s a snapshot of the work we&#8217;ve already been doing, but we&#8217;re trying to formalize our releases a bit more.
+
+
+We&#8217;re going to be doing another release, 0.10, next month, as well. We&#8217;re working to do more releases, more often.
+
+
+Download it now!
+     [...]<img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=blog.fallingsnow.net&blog=1516804&post=49&subd=evanphx&ref=&feed=1" />]]></description>
+			<content:encoded><![CDATA[<div class='snap_preview'><br /><p>
+I&#8217;m super proud to say that we&#8217;ve release version 0.9.0. It&#8217;s a snapshot of the work we&#8217;ve already been doing, but we&#8217;re trying to formalize our releases a bit more.
+</p>
+<p>
+We&#8217;re going to be doing another release, 0.10, next month, as well. We&#8217;re working to do more releases, more often.
+</p>
+<p>
+<a href="http://rubini.us/download">Download it now!</a></p>
+<img alt="" border="0" src="http://feeds.wordpress.com/1.0/categories/evanphx.wordpress.com/49/" /> <img alt="" border="0" src="http://feeds.wordpress.com/1.0/tags/evanphx.wordpress.com/49/" /> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gocomments/evanphx.wordpress.com/49/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/evanphx.wordpress.com/49/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godelicious/evanphx.wordpress.com/49/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/delicious/evanphx.wordpress.com/49/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gostumble/evanphx.wordpress.com/49/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/stumble/evanphx.wordpress.com/49/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godigg/evanphx.wordpress.com/49/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/digg/evanphx.wordpress.com/49/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/goreddit/evanphx.wordpress.com/49/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/reddit/evanphx.wordpress.com/49/" /></a> <img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=blog.fallingsnow.net&blog=1516804&post=49&subd=evanphx&ref=&feed=1" /></div>]]></content:encoded>
+			<wfw:commentRss>http://blog.fallingsnow.net/2008/06/20/rubinius-version-090-released/feed/</wfw:commentRss>
+	
+		<media:content url="http://www.gravatar.com/avatar/540cb3b3712ffe045113cb03bab616a2?s=96&#38;d=http%3A%2F%2Fa.wordpress.com%2Favatar%2Funknown-96.jpg" medium="image">
+			<media:title type="html">evanphx</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>CS Nerds Anonymous</title>
+		<link>http://blog.fallingsnow.net/2008/05/26/cs-nerds-anonymous/</link>
+		<comments>http://blog.fallingsnow.net/2008/05/26/cs-nerds-anonymous/#comments</comments>
+		<pubDate>Tue, 27 May 2008 00:19:07 +0000</pubDate>
+		<dc:creator>evanphx</dc:creator>
+		
+		<category><![CDATA[speaking]]></category>
+
+		<guid isPermaLink="false">http://evanphx.wordpress.com/?p=48</guid>
+		<description><![CDATA[
+I&#8217;m also holding a last minute addition to the RailsConf schedule, CS Nerds Anonymous.
+
+I&#8217;ll be chairing, getting the conversation started, basically being the ring leader. My hope is that people show up with fun topics to discuss, and we&#8217;ll take it from there. There is a good chance that we&#8217;ll have some lightning talks too. [...]<img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=blog.fallingsnow.net&blog=1516804&post=48&subd=evanphx&ref=&feed=1" />]]></description>
+			<content:encoded><![CDATA[<div class='snap_preview'><br /><p>
+I&#8217;m also holding a last minute addition to the RailsConf schedule, <a href="http://en.oreilly.com/rails2008/public/schedule/detail/4533">CS Nerds Anonymous</a>.</p>
+<p>
+I&#8217;ll be chairing, getting the conversation started, basically being the ring leader. My hope is that people show up with fun topics to discuss, and we&#8217;ll take it from there. There is a good chance that we&#8217;ll have some lightning talks too. Again, doesn&#8217;t have to be Rails or even Ruby specific. Just fun topics that you think your fellow CS nerds would enjoy!</p>
+<p>
+So wake up early on Sunday and come hang out! Bring your opinions on everything from optional type annotations in Ruby to Erlang monads!</p>
+<img alt="" border="0" src="http://feeds.wordpress.com/1.0/categories/evanphx.wordpress.com/48/" /> <img alt="" border="0" src="http://feeds.wordpress.com/1.0/tags/evanphx.wordpress.com/48/" /> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gocomments/evanphx.wordpress.com/48/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/evanphx.wordpress.com/48/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godelicious/evanphx.wordpress.com/48/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/delicious/evanphx.wordpress.com/48/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gostumble/evanphx.wordpress.com/48/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/stumble/evanphx.wordpress.com/48/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godigg/evanphx.wordpress.com/48/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/digg/evanphx.wordpress.com/48/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/goreddit/evanphx.wordpress.com/48/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/reddit/evanphx.wordpress.com/48/" /></a> <img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=blog.fallingsnow.net&blog=1516804&post=48&subd=evanphx&ref=&feed=1" /></div>]]></content:encoded>
+			<wfw:commentRss>http://blog.fallingsnow.net/2008/05/26/cs-nerds-anonymous/feed/</wfw:commentRss>
+	
+		<media:content url="http://www.gravatar.com/avatar/540cb3b3712ffe045113cb03bab616a2?s=96&#38;d=http%3A%2F%2Fa.wordpress.com%2Favatar%2Funknown-96.jpg" medium="image">
+			<media:title type="html">evanphx</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>Code Drive at RailsConf</title>
+		<link>http://blog.fallingsnow.net/2008/05/26/code-drive-at-railsconf/</link>
+		<comments>http://blog.fallingsnow.net/2008/05/26/code-drive-at-railsconf/#comments</comments>
+		<pubDate>Tue, 27 May 2008 00:06:00 +0000</pubDate>
+		<dc:creator>evanphx</dc:creator>
+		
+		<category><![CDATA[rubinius]]></category>
+
+		<category><![CDATA[speaking]]></category>
+
+		<guid isPermaLink="false">http://evanphx.wordpress.com/?p=47</guid>
+		<description><![CDATA[
+A heads up that I&#8217;ll be participating in the RailsConf Community CodeDrive, hacking on Rubinius
+
+Come hang out with me and other project hackers and share the love!
+
+
+Bring your questions, quandaries, criticisms, and code!
+
+
+See you Thursday morning at 10am!
+       <img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=blog.fallingsnow.net&blog=1516804&post=47&subd=evanphx&ref=&feed=1" />]]></description>
+			<content:encoded><![CDATA[<div class='snap_preview'><br /><p>
+A heads up that I&#8217;ll be participating in the <a href="http://en.oreilly.com/rails2008/public/schedule/detail/2562">RailsConf Community CodeDrive</a>, hacking on <a href="http://rubini.us">Rubinius</a></p>
+<p>
+Come hang out with me and other project hackers and share the love!
+</p>
+<p>
+Bring your questions, quandaries, criticisms, and code!
+</p>
+<p>
+See you Thursday morning at 10am!</p>
+<img alt="" border="0" src="http://feeds.wordpress.com/1.0/categories/evanphx.wordpress.com/47/" /> <img alt="" border="0" src="http://feeds.wordpress.com/1.0/tags/evanphx.wordpress.com/47/" /> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gocomments/evanphx.wordpress.com/47/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/evanphx.wordpress.com/47/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godelicious/evanphx.wordpress.com/47/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/delicious/evanphx.wordpress.com/47/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gostumble/evanphx.wordpress.com/47/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/stumble/evanphx.wordpress.com/47/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godigg/evanphx.wordpress.com/47/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/digg/evanphx.wordpress.com/47/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/goreddit/evanphx.wordpress.com/47/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/reddit/evanphx.wordpress.com/47/" /></a> <img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=blog.fallingsnow.net&blog=1516804&post=47&subd=evanphx&ref=&feed=1" /></div>]]></content:encoded>
+			<wfw:commentRss>http://blog.fallingsnow.net/2008/05/26/code-drive-at-railsconf/feed/</wfw:commentRss>
+	
+		<media:content url="http://www.gravatar.com/avatar/540cb3b3712ffe045113cb03bab616a2?s=96&#38;d=http%3A%2F%2Fa.wordpress.com%2Favatar%2Funknown-96.jpg" medium="image">
+			<media:title type="html">evanphx</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>Simple VM JIT with LLVM</title>
+		<link>http://blog.fallingsnow.net/2008/05/23/simple-vm-jit-with-llvm/</link>
+		<comments>http://blog.fallingsnow.net/2008/05/23/simple-vm-jit-with-llvm/#comments</comments>
+		<pubDate>Sat, 24 May 2008 01:03:54 +0000</pubDate>
+		<dc:creator>evanphx</dc:creator>
+		
+		<category><![CDATA[CS]]></category>
+
+		<category><![CDATA[LLVM]]></category>
+
+		<guid isPermaLink="false">http://evanphx.wordpress.com/?p=46</guid>
+		<description><![CDATA[
+I&#8217;ve been investigating using LLVM for Rubinius, so I&#8217;ve been doing some very small scale experiments. I typically do this on most projects, to get a mental handle on the problem.
+
+
+In doing this, I&#8217;ve written a very tiny VM to play with how LLVM handles it. Here is the breakdown of the entire VM:
+
+Only operates [...]<img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=blog.fallingsnow.net&blog=1516804&post=46&subd=evanphx&ref=&feed=1" />]]></description>
+			<content:encoded><![CDATA[<div class='snap_preview'><br /><p>
+I&#8217;ve been investigating using <a href="http://llvm.org">LLVM</a> for <a href="http://rubini.us">Rubinius</a>, so I&#8217;ve been doing some very small scale experiments. I typically do this on most projects, to get a mental handle on the problem.
+</p>
+<p>
+In doing this, I&#8217;ve written a very tiny VM to play with how LLVM handles it. Here is the breakdown of the entire VM:</p>
+<ul>
+<li>Only operates on <em>int</em>s.
+<li>Uses numbered registers for operations.
+<li>3 Instructions:
+<ol start="0">
+<li><b>set(reg, val)</b> Set register number <em>reg</em> to integer value <em>val</em></li>
+<li><b>add(result, reg, val)</b> Add register <em>reg</em> to <em>val</em> and put the result in </em>result</em></li>
+<li><b>show(reg)</b> Print out the contents of register <em>reg</em></li>
+</ol>
+</li>
+</ul>
+<p>
+Pretty trivial. Not turing complete because there is no branching. But it&#8217;s simple enough to explore how to handle bytecode in LLVM.
+</p>
+<p><h3>Sample Program</h3>
+<p>So, I&#8217;ve written a sample program, encoded directly as bytecode:</p>
+<pre>
+  [ 0, 0, 3,
+    1, 0, 0, 4,
+    2, 0 ]
+</pre>
+<p>
+This is:</p>
+<ul>
+<li>Set register <em>0</em> to <em>3</em></li>
+<li>Add register <em>0</em> to <em>4</em> and put the result in register <em>0</em></li>
+<li>Show register <em>0</em></li>
+</ul>
+<p>
+Again, totally trivial. Should just output 7.
+</p>
+<p><h3>C Switch</h3>
+<p>So, the VM Design 101 way is to build a C switch statement to interpret each bytecode and perform it&#8217;s operations. It would look like this, given that <em>int ops[]</em> contains the above integer sequence for the program:<br />
+
+<pre>
+void add(int* ops, int* registers) {
+  registers[ops[1]] = registers[ops[2]] + ops[3];
+}
+
+void set(int* ops, int* registers) {
+  registers[ops[1]] = ops[2];
+}
+
+void show(int* ops, int* registers) {
+  printf("=&gt; %d\n", registers[ops[1]]);
+}
+
+void run(int* ops, int* registers) {
+  switch(*ops) {
+  case 0:
+	set(ops, registers);
+	ops += 3;
+    break;
+  case 1:
+	add(ops, registers);
+	ops += 4;
+    break;
+  case 2:
+	show(ops, registers);
+    return;
+  }
+}
+</pre>
+<p>
+Very easy. We increments ops to move forward, using ops as a pointer to the current instruction. This is how every VM starts. But this code is very slow when compared to machine code because it obscures the execution flow from the CPU. And besides, this doesn&#8217;t use LLVM, the whole point of this post.
+</p>
+<h3>A static result&#8230;</h3>
+<p>As we look at the code that was run, we see that the program is set, add, then show. Lets pretend for a sec that given the above functions, we want to perform the same operation, we&#8217;d write:</p>
+<pre>
+void my_program() {
+  int registers[2] = {0, 0};
+  int program[10] = [ 0, 0, 3,
+                      1, 0, 0, 4,
+                      2, 0 ]
+
+  int* ops = (int*)program;
+
+  set(ops, registers);
+  ops += 3;
+  add(ops, registers);
+  ops += 4;
+  show(ops, registers);
+  ops += 2;
+}
+</pre>
+<p>
+So, <em>my_program</em> would perform the same operations as your bytecode above, and considerable faster because we avoid all the overhead the switch statement.
+</p>
+<p><h3>Combining the 2</h3>
+<p>If you look at the bytecode, than the at the hand written C, we can see that there there is a programmatic way to go from our array of numbers to the C code.</p>
+<p>
+A common approach that people have taken in the past to actually write a C code emitter, that would parse the integers once, spit out a .c file, which you&#8217;d compile, then run. This works ok for some situations, but it doesn&#8217;t allow for any kind of dynamic abilities to run code. And besides, it doesn&#8217;t use LLVM.
+</p>
+<p>
+The idea is to write a function thats takes as input the array of numbers and dynamically builds the equivalent of the above C function. And thats where LLVM comes in.
+</p>
+<p><h4>Part 1: importing the functions</h4>
+<p>A key part to this scheme is to have the add/set/show functions we defined above available to LLVM. Doing so lets us use our normal tools to write the each instruction as a small operation that can easily be tested. So, given that we have put those 3 functions into ops.c, we run:<br />
+<code>llvm-gcc -emit-llvm -O3 -c ops.c</code>, which generates <em>ops.o</em> as a LLVM bitcode file. Using <code>llvm-dis &lt; ops.o</code> we see it contains:</p>
+<pre>
+@.str = internal constant [7 x i8] c"=&gt; %dA0"		;  [#uses=1]
+
+define void @add(i32* %ops, i32* %registers) nounwind  {
+entry:
+	%tmp1 = getelementptr i32* %ops, i32 1		;  [#uses=1]
+	%tmp2 = load i32* %tmp1, align 4		;  [#uses=1]
+	%tmp4 = getelementptr i32* %ops, i32 2		;  [#uses=1]
+	%tmp5 = load i32* %tmp4, align 4		;  [#uses=1]
+	%tmp7 = getelementptr i32* %registers, i32 %tmp5		;  [#uses=1]
+	%tmp8 = load i32* %tmp7, align 4		;  [#uses=1]
+	%tmp10 = getelementptr i32* %ops, i32 3		;  [#uses=1]
+	%tmp11 = load i32* %tmp10, align 4		;  [#uses=1]
+	%tmp12 = add i32 %tmp11, %tmp8		;  [#uses=1]
+	%tmp14 = getelementptr i32* %registers, i32 %tmp2		;  [#uses=1]
+	store i32 %tmp12, i32* %tmp14, align 4
+	ret void
+}
+
+define void @set(i32* %ops, i32* %registers) nounwind  {
+entry:
+	%tmp1 = getelementptr i32* %ops, i32 1		;  [#uses=1]
+	%tmp2 = load i32* %tmp1, align 4		;  [#uses=1]
+	%tmp4 = getelementptr i32* %ops, i32 2		;  [#uses=1]
+	%tmp5 = load i32* %tmp4, align 4		;  [#uses=1]
+	%tmp7 = getelementptr i32* %registers, i32 %tmp2		;  [#uses=1]
+	store i32 %tmp5, i32* %tmp7, align 4
+	ret void
+}
+
+declare i32 @printf(i8*, ...) nounwind 
+
+define void @show(i32* %ops, i32* %registers) nounwind  {
+entry:
+	%tmp1 = getelementptr i32* %ops, i32 1		;  [#uses=1]
+	%tmp2 = load i32* %tmp1, align 4		;  [#uses=1]
+	%tmp4 = getelementptr i32* %registers, i32 %tmp2		;  [#uses=1]
+	%tmp5 = load i32* %tmp4, align 4		;  [#uses=1]
+	%tmp7 = tail call i32 (i8*, ...)* @printf( i8* getelementptr ([7 x i8]* @.str, i32 0, i32 0), i32 %tmp5 ) nounwind 		;  [#uses=0]
+	ret void
+}
+</pre>
+<p>
+Now we have our functions ready for easy importing.
+</p>
+<p><h4>Phase 2: LLVM C++ API</h4>
+<p>When I did this experiment, I decided that the function that, given an array of ints, would drive the LLVM, wasn&#8217;t necessary. After all, all I was concerned was if the output of that process would actually work. So instead, I hand wrote a function that uses the LLVM C++ api the same way it would be if this were dynamic:</p>
+<pre>
+Function* create(Module** out) {
+  std::string error;
+  Module* jit;
+
+  // Load in the bitcode file containing the functions for each
+  // bytecode operation.
+  if(MemoryBuffer* buffer = MemoryBuffer::getFile("ops.o", &amp;error)) {
+    jit = ParseBitcodeFile(buffer, &amp;error);
+    delete buffer;
+  }
+
+  // Pull out references to them.
+  Function* set =  jit-&gt;getFunction(std::string("set"));
+  Function* add =  jit-&gt;getFunction(std::string("add"));
+  Function* show = jit-&gt;getFunction(std::string("show"));
+
+  // Now, begin building our new function, which calls the
+  // above functions.
+  Function* body = cast&lt;Function&gt;(jit-&gt;getOrInsertFunction("body",
+        Type::VoidTy,
+        PointerType::getUnqual(Type::Int32Ty),
+        PointerType::getUnqual(Type::Int32Ty), (Type*)0));
+
+  // Our function will be passed the ops pointer and the
+  // registers pointer, just like before.
+  Function::arg_iterator args = body-&gt;arg_begin();
+  Value* ops = args++;
+  ops-&gt;setName("ops");
+  Value* registers = args++;
+  registers-&gt;setName("registers");
+
+  BasicBlock *bb = BasicBlock::Create("entry", body);
+
+  // Set up our arguments to be passed to set.
+  std::vector&lt;Value*&gt; params;
+  params.push_back(ops);
+  params.push_back(registers);
+
+  // Call out to set, passing ops and registers down
+  CallInst* call = CallInst::Create(set, params.begin(), params.end(), "", bb);
+  ConstantInt* const_3 = ConstantInt::get(APInt(32,  "3", 10));
+  ConstantInt* const_4 = ConstantInt::get(APInt(32,  "4", 10));
+
+  // add 3 to the ops pointer.
+  GetElementPtrInst* ptr1 = GetElementPtrInst::Create(ops, const_3, "tmp3", bb);
+
+  // Setup and call add, notice we pass down the updated ops pointer
+  // rather than the original, so that we've moved down.
+  std::vector&lt;Value*&gt; params2;
+  params2.push_back(ptr1);
+  params2.push_back(registers);
+  CallInst* call2 = CallInst::Create(add, params2.begin(), params2.end(), "", bb);
+
+  // Push the ops pointer down another 4.
+  GetElementPtrInst* ptr2 = GetElementPtrInst::Create(ops, const_4, "tmp3", bb);
+
+  // Setup and call show.
+  std::vector&lt;Value*&gt; params3;
+  params3.push_back(ptr2);
+  params3.push_back(registers);
+  CallInst* call3 = CallInst::Create(show, params3.begin(), params3.end(), "", bb);
+
+  // And we're done!
+  ReturnInst::Create(bb);
+
+  *out = jit;
+  return body;
+}
+</pre>
+<p>
+Now, lets write a function that calls <code>create()</code> and executes the result:</p>
+<pre>
+int main() {
+  // The registers.
+  int registers[2] = {0, 0};
+
+  // Our program.
+  int program[20] = {0, 0, 3,
+                     1, 0, 0, 4,
+                     2, 0};
+
+  int* ops = (int*)program;
+
+  // Create our function and give us the Module and Function back.
+  Module* jit;
+  Function* func = create(&amp;jit);
+
+  // Add in optimizations. These were taken from a list that 'opt', LLVMs optimization tool, uses.
+  PassManager p;
+
+  /* Comment out optimize
+  p.add(new TargetData(jit));
+  p.add(createVerifierPass());
+  p.add(createLowerSetJmpPass());
+  p.add(createRaiseAllocationsPass());
+  p.add(createCFGSimplificationPass());
+  p.add(createPromoteMemoryToRegisterPass());
+  p.add(createGlobalOptimizerPass());
+  p.add(createGlobalDCEPass());
+  p.add(createFunctionInliningPass());
+  */
+
+  // Run these optimizations on our Module
+  p.run(*jit);
+
+  // Setup for JIT
+  ExistingModuleProvider* mp = new ExistingModuleProvider(jit);
+  ExecutionEngine* engine = ExecutionEngine::create(mp);
+
+  // Show us what we've created!
+  std::cout &lt;&lt; "Created\n" &lt;&lt; *jit;
+
+  // Have our function JIT'd into machine code and return. We cast it to a particular C function pointer signature so we can call in nicely.
+  void (*fp)(int*, int*) = (void (*)(int*, int*))engine-&gt;getPointerToFunction(func);
+
+  // Call what we've created!
+  fp(ops, registers);
+}
+</pre>
+<p>We drive our create() function and then execute the result. As you can see, we&#8217;ve commented out all optimizations as a first try. The output from running this is:</p>
+<pre>
+&lt;snip same LLVM as before&gt;
+
+define void @body(i32* %ops, i32* %registers) {
+entry:
+	call void @set( i32* %ops, i32* %registers )
+	%tmp3 = getelementptr i32* %ops, i32 3		;  [#uses=1]
+	call void @add( i32* %tmp3, i32* %registers )
+	%tmp31 = getelementptr i32* %ops, i32 4		;  [#uses=1]
+	call void @show( i32* %tmp31, i32* %registers )
+	ret void
+}
+=&gt; 7
+</pre>
+<p>Hey! Look at that! It runs! And we can see what it ran. We see it perform the calls to our functions that implement each opcode. Going back, it would be easily to write a function that dynamically drivers the LLVM C++ API to generate this code, it&#8217;s simply one call per bytecode, mapped directly.<br />
+Even if that were all that LLVM let us do, it would be worth it, but&#8230;
+</p>
+<p><h3>Wait, there&#8217;s more!</h3>
+<p>Before, we ran without optimizations to keep the output simple, lets see what happens we turn them on:</p>
+<pre>
+define void @body(i32* %ops, i32* %registers) {
+entry:
+	%tmp1.i = getelementptr i32* %ops, i32 1		;  [#uses=1]
+	%tmp2.i = load i32* %tmp1.i, align 4		;  [#uses=1]
+	%tmp4.i = getelementptr i32* %ops, i32 2		;  [#uses=1]
+	%tmp5.i = load i32* %tmp4.i, align 4		;  [#uses=1]
+	%tmp7.i = getelementptr i32* %registers, i32 %tmp2.i		;  [#uses=1]
+	store i32 %tmp5.i, i32* %tmp7.i, align 4
+	%tmp3 = getelementptr i32* %ops, i32 3		;  [#uses=3]
+	%tmp1.i7 = getelementptr i32* %tmp3, i32 1		;  [#uses=1]
+	%tmp2.i8 = load i32* %tmp1.i7, align 4		;  [#uses=1]
+	%tmp4.i9 = getelementptr i32* %tmp3, i32 2		;  [#uses=1]
+	%tmp5.i10 = load i32* %tmp4.i9, align 4		;  [#uses=1]
+	%tmp7.i11 = getelementptr i32* %registers, i32 %tmp5.i10		;  [#uses=1]
+	%tmp8.i = load i32* %tmp7.i11, align 4		;  [#uses=1]
+	%tmp10.i = getelementptr i32* %tmp3, i32 3		;  [#uses=1]
+	%tmp11.i = load i32* %tmp10.i, align 4		;  [#uses=1]
+	%tmp12.i = add i32 %tmp11.i, %tmp8.i		;  [#uses=1]
+	%tmp14.i = getelementptr i32* %registers, i32 %tmp2.i8		;  [#uses=1]
+	store i32 %tmp12.i, i32* %tmp14.i, align 4
+	%tmp31 = getelementptr i32* %ops, i32 4		;  [#uses=1]
+	%tmp1.i2 = getelementptr i32* %tmp31, i32 1		;  [#uses=1]
+	%tmp2.i3 = load i32* %tmp1.i2, align 4		;  [#uses=1]
+	%tmp4.i4 = getelementptr i32* %registers, i32 %tmp2.i3		;  [#uses=1]
+	%tmp5.i5 = load i32* %tmp4.i4, align 4		;  [#uses=1]
+	%tmp7.i6 = call i32 (i8*, ...)* @printf( i8* getelementptr ([7 x i8]* @.str, i32 0, i32 0), i32 %tmp5.i5 ) nounwind 		;  [#uses=0]
+	ret void
+}
+=&gt; 7
+</pre>
+<p><b>WOW!</b> Now we&#8217;re cooking with hot flaming nuclear power! LLVM has the extra mile and rather than just calling our functions that implement each instruction, it&#8217;s inlined all that code directly into our dynamically generated function! This means A LOT of additional overhead is discarded because, since our functions themselves did simple operations like store into memory or add 2 numbers, that code is now run a lot more quickly.</p>
+<p>
+It&#8217;s commonly known that inlining can dramatically improve performance because it eliminates the over head of function calls (spilling and reload registers, stack frames, etc). And LLVM has just given us a powerful form of that for free.<br />
+This doesn&#8217;t allow for inlining across things like the kind of method call that Ruby does, but it puts us on the track to being able to feed LLVM enough information to do just that.
+</p>
+<p>
+LLVM is an amazing piece of software. I can&#8217;t wait to start using it more.</p>
+<img alt="" border="0" src="http://feeds.wordpress.com/1.0/categories/evanphx.wordpress.com/46/" /> <img alt="" border="0" src="http://feeds.wordpress.com/1.0/tags/evanphx.wordpress.com/46/" /> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gocomments/evanphx.wordpress.com/46/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/evanphx.wordpress.com/46/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godelicious/evanphx.wordpress.com/46/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/delicious/evanphx.wordpress.com/46/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gostumble/evanphx.wordpress.com/46/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/stumble/evanphx.wordpress.com/46/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godigg/evanphx.wordpress.com/46/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/digg/evanphx.wordpress.com/46/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/goreddit/evanphx.wordpress.com/46/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/reddit/evanphx.wordpress.com/46/" /></a> <img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=blog.fallingsnow.net&blog=1516804&post=46&subd=evanphx&ref=&feed=1" /></div>]]></content:encoded>
+			<wfw:commentRss>http://blog.fallingsnow.net/2008/05/23/simple-vm-jit-with-llvm/feed/</wfw:commentRss>
+	
+		<media:content url="http://www.gravatar.com/avatar/540cb3b3712ffe045113cb03bab616a2?s=96&#38;d=http%3A%2F%2Fa.wordpress.com%2Favatar%2Funknown-96.jpg" medium="image">
+			<media:title type="html">evanphx</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>Rails on Rubinius</title>
+		<link>http://blog.fallingsnow.net/2008/05/17/rails-on-rubinius/</link>
+		<comments>http://blog.fallingsnow.net/2008/05/17/rails-on-rubinius/#comments</comments>
+		<pubDate>Sat, 17 May 2008 08:22:43 +0000</pubDate>
+		<dc:creator>evanphx</dc:creator>
+		
+		<category><![CDATA[rubinius]]></category>
+
+		<guid isPermaLink="false">http://evanphx.wordpress.com/?p=45</guid>
+		<description><![CDATA[We hit a major milestone tonight. As most people know, we&#8217;ve been working to run Rails on Rubinius by RailsConf to have something to show off, even if it&#8217;s pretty slow.
+Well, I&#8217;m super proud to say that tonight, rails served up both static and dynamic pages under Rubinius. Previous to tonight, we&#8217;d been blocked just [...]<img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=blog.fallingsnow.net&blog=1516804&post=45&subd=evanphx&ref=&feed=1" />]]></description>
+			<content:encoded><![CDATA[<div class='snap_preview'><br /><p>We hit a major milestone tonight. As most people know, we&#8217;ve been working to run Rails on Rubinius by RailsConf to have something to show off, even if it&#8217;s pretty slow.</p>
+<p>Well, I&#8217;m super proud to say that tonight, rails served up both static and dynamic pages under Rubinius. Previous to tonight, we&#8217;d been blocked just trying to get Rails to even load. I decided to just try loading it up and bang on it enough to get it up and going.</p>
+<p>In a scary way, it didn&#8217;t take very much code. Which meant we were very close already.</p>
+<p>It&#8217;s pretty late, so I&#8217;m going to keep this short. Big thanks to everyone who&#8217;s contributed to Rubinius and had faith in us. Enormous thanks to Engine Yard, without whom I don&#8217;t know if we&#8217;d been able to reach this amazing height.</p>
+<p>More updates to come&#8230;<br />
+<img alt="" border="0" src="http://feeds.wordpress.com/1.0/categories/evanphx.wordpress.com/45/" /> <img alt="" border="0" src="http://feeds.wordpress.com/1.0/tags/evanphx.wordpress.com/45/" /> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gocomments/evanphx.wordpress.com/45/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/evanphx.wordpress.com/45/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godelicious/evanphx.wordpress.com/45/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/delicious/evanphx.wordpress.com/45/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gostumble/evanphx.wordpress.com/45/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/stumble/evanphx.wordpress.com/45/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godigg/evanphx.wordpress.com/45/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/digg/evanphx.wordpress.com/45/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/goreddit/evanphx.wordpress.com/45/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/reddit/evanphx.wordpress.com/45/" /></a> <img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=blog.fallingsnow.net&blog=1516804&post=45&subd=evanphx&ref=&feed=1" /></div>]]></content:encoded>
+			<wfw:commentRss>http://blog.fallingsnow.net/2008/05/17/rails-on-rubinius/feed/</wfw:commentRss>
+	
+		<media:content url="http://www.gravatar.com/avatar/540cb3b3712ffe045113cb03bab616a2?s=96&#38;d=http%3A%2F%2Fa.wordpress.com%2Favatar%2Funknown-96.jpg" medium="image">
+			<media:title type="html">evanphx</media:title>
+		</media:content>
+	</item>
+	</channel>
+</rss>

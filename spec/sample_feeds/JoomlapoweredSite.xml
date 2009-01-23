@@ -1,0 +1,664 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>General Studies Lounge | Your College at Columbia University</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://gslounge.com/blogapi/rsd" />
+
+<link rel="alternate" type="application/rss+xml" title="General Studies Lounge RSS" href="http://gslounge.com/rss.xml" />
+
+<link rel="shortcut icon" href="/misc/favicon.ico" type="image/x-icon" />
+    <style type="text/css" media="all">@import "/files/css/c76e2a47b787244edce789d1e5156990.css";</style>
+        <style type="text/css" media="print">@import "/themes/garland/print.css";</style>
+    <!--[if lt IE 7]>
+    <style type="text/css" media="all">@import "/themes/garland/fix-ie.css";</style>
+    <![endif]-->
+  </head>
+  <body class="sidebars">
+
+<!-- Layout -->
+  <div id="header-region" class="clear-block"><div id="block-user-0" class="clear-block block block-user">
+
+  <h2>Login</h2>
+
+  <div class="content"><form action="/node?destination=node%3Foption%3Dcom_rss%26amp%253Bfeed%3DRSS2.0%26amp%253Bno_html%3D1"  method="post" id="user-login-form">
+<div><div class="form-item">
+ <label for="edit-name">Username: <span class="form-required" title="This field is required.">*</span></label>
+ <input type="text" maxlength="60" name="name" id="edit-name"  size="15" value="" class="form-text required" />
+</div>
+<div class="form-item">
+ <label for="edit-pass">Password: <span class="form-required" title="This field is required.">*</span></label>
+ <input type="password" name="pass" id="edit-pass"  maxlength="60"  size="15"  class="form-text required" />
+</div>
+<input type="submit" name="op" id="edit-submit" value="Log in"  class="form-submit" />
+<div class="item-list"><ul><li><a href="/user/register" title="Create a new user account.">Create new account</a></li><li><a href="/user/password" title="Request new password via e-mail.">Request new password</a></li></ul></div><input type="hidden" name="form_id" id="edit-user-login-block" value="user_login_block"  />
+
+</div></form>
+</div>
+</div>
+</div>
+
+    <div id="wrapper">
+    <div id="container" class="clear-block">
+
+      <div id="header">
+        <div id="logo-floater">
+        <h1><a href="/" title="General Studies Lounge"><img src="/files/garland_logo.jpg" alt="General Studies Lounge" id="logo" /><span>General Studies Lounge</span></a></h1>        </div>
+
+                  <ul class="links primary-links"><li class="first menu-1-1-2"><a href="http://gslounge.com/credits" title="Creators of gslounge.com" class="menu-1-1-2">Credits</a></li>
+<li class="menu-1-2-2"><a href="/faq" title="Frequently Asked Questions" class="menu-1-2-2">F.A.Q.</a></li>
+<li class="menu-1-3-2"><a href="http://gslounge.com/forum" class="menu-1-3-2">Forums</a></li>
+<li class="menu-1-4-2"><a href="/blog" title="Student Blogs" class="menu-1-4-2">Blogs</a></li>
+<li class="last menu-1-5-2"><a href="http://gslounge.com/calendar" title="Events Calendar" class="menu-1-5-2">Calendar</a></li>
+</ul>                
+      </div> <!-- /header -->
+
+              <div id="sidebar-left" class="sidebar">
+          <div class="block block-theme"><form action="/search/node"  method="post" id="search-theme-form">
+<div><div id="search" class="container-inline"><div class="form-item">
+ <input type="text" maxlength="128" name="search_theme_form_keys" id="edit-search-theme-form-keys"  size="15" value="" title="Enter the terms you wish to search for." class="form-text" />
+</div>
+<input type="submit" name="op" id="edit-submit" value="Search"  class="form-submit" />
+<input type="hidden" name="form_id" id="edit-search-theme-form" value="search_theme_form"  />
+</div>
+</div></form>
+</div>          <div id="block-block-4" class="clear-block block block-block">
+
+
+  <div class="content"><ul>
+<li><a href="http://gslounge.com/calendar"><b>University-wide Calendar</b></a>
+</ul>
+</div>
+</div>
+<div id="block-block-1" class="clear-block block block-block">
+
+  <h2>Resources</h2>
+
+  <div class="content"><ul>
+<li><a href="http://gslounge.com/gssc/handoff">Handoff Documents</a></li>
+<li><a href="http://gslounge.com/elections">Elections</a></span></li>
+<li><a href="http://gslounge.com/gssc/meeting">Council Meeting</a></li>
+<li><a href="http://gslounge.com/gssc">Student Council</a></li>
+<li><a href="http://gslounge.com/constitution">Constitution</a></li>
+<li><a href="http://gslounge.com/gssc/agendas">Meeting Agendas</a></li>
+<li><a href="http://gslounge.com/gssc/minutes">Meeting Minutes</a></li>
+<li><a href="http://gslounge.com/gssc/attendance">Attendance</a></li>
+<li><a href="http://gslounge.com/gssc/updates">Weekly Email Updates</a></li>
+<li><a href="http://gslounge.com/faq/terms">Columbia Terms and Acronyms</a></li>
+</ul>
+</div>
+</div>
+<div id="block-block-3" class="clear-block block block-block">
+
+  <h2>Committees</h2>
+
+  <div class="content"><ul>
+<li><a href="http://gslounge.com/coi">Academics</a></li>
+<li>
+<a href="http://gslounge.com/careers">Careers</a></li>
+<li><a href="http://gslounge.com/communication">Communication</a></li>
+<li><a href="http://gslounge.com/community/">Community @ Large</a></li>
+<li><a href="http://gslounge.com/policy/diversity">Diversity</a></li>
+<li><a href="http://gslounge.com/international">International Students</a></li>
+<li><a href="http://gslounge.com/firstyear">First Year Class</a></li>
+<li><a href="http://gslounge.com/finance">Finance</a></li>
+<li><a href="http://gslounge.com/seniors">Seniors</a></li>
+<li><a href="http://gslounge.com/juniors">Junior Class</a></li>
+<li><a href="http://gslounge.com/sophomores">Sophomore Class</a></li>
+<li><a href="http://gslounge.com/policy/">Policy</a></li>
+<li><a href="http://gslounge.com/president/">President</a></li>
+<li><a href="http://gslounge.com/senator">GS Senator</a></li>
+<li><a href="http://gslounge.com/health">Health</a></li>
+<li><a href="http://gslounge.com/studentlife/">Student Life</a></li>
+<li><a href="http://gslounge.com/workers/">Student Workers</a></li>
+</ul>
+</div>
+</div>
+<div id="block-user-1" class="clear-block block block-user">
+
+  <h2>Navigation</h2>
+
+  <div class="content">
+<ul class="menu">
+<li class="leaf"><a href="/tracker">Recent posts</a></li>
+
+</ul>
+</div>
+</div>
+        </div>
+      
+      <div id="center"><div id="squeeze"><div class="right-corner"><div class="left-corner">
+                    
+                              
+          
+                              
+<div id="node-14" class="node sticky">
+
+
+  <h2><a href="/welcome" title="Welcome">Welcome</a></h2>
+
+  
+  <div class="content">
+    <p>Welcome to the General Studies Lounge, a student-run website for the students of the School of General Studies at Columbia University. The content of this website is produced entirely by students in the <a href="/gssc">Student Council</a> and in the student body. The goal of this website is to provide the building blocks for solid communication between current students, the administration, prospective students (and their families) as well as alumni.<br />
+Thanks, <a href="mailto:bcb2115@columbia.edu">Brody Berg</a> VP Communications 2007-2008 General Studies Student Council<br />
+<iframe src="http://www.google.com/calendar/embed?showTitle=0&amp;showCalendars=0&amp;mode=AGENDA&amp;height=300&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=3rb4tld83gl5dvapgi89jduuik%40group.calendar.google.com&amp;color=%230D7813&amp;src=sc9gdgn2mi7dvf9ku81eg48h9c%40group.calendar.google.com&amp;color=%2329527A&amp;src=tqgab7uo2up6bdbbjh8abi6g5s%40group.calendar.google.com&amp;color=%23B1365F&amp;src=egpqeu3hoo10odl1pm2jhgrd84%40group.calendar.google.com&amp;color=%232952A3&amp;src=8kq2ko6j5nnd14lv5chhvin8bs%40group.calendar.google.com&amp;color=%23A32929&amp;src=3vsnr78hui96440fa0h40r24gk%40group.calendar.google.com&amp;color=%23BE6D00&amp;src=kfcsclns9fj5g2qhal61pcu81c%40group.calendar.google.com&amp;color=%235229A3" style=" border-width:0 " width="100%" height="300" frameborder="0" scrolling="no"></iframe><br />
+Want to see more events? Try our <a href="http://gslounge.com/calendar">University-wide calendar.</a> </p>
+  </div>
+
+  <div class="clear-block clear">
+    <div class="meta">
+        </div>
+
+          <div class="links"><ul class="links inline"><li class="first forward_links"><a href="/forward/14" title="Forward this page to a friend" class="forward-page forward_links">Email this page</a></li>
+<li class="node_read_more"><a href="/welcome" title="Read the rest of this posting." class="node_read_more">Read more</a></li>
+<li class="last statistics_counter"><span class="statistics_counter">1093 reads</span></li>
+</ul></div>
+      </div>
+
+</div>
+<div id="node-692" class="node">
+
+
+  <h2><a href="/FindaJob" title="How to Find a Job at Columbia">How to Find a Job at Columbia</a></h2>
+
+      <span class="submitted">Thu, 01/15/2009 - 09:57 — Rain</span>
+  
+  <div class="content">
+    <p>
+&nbsp;
+</p>
+<p>
+As an undergraduate, I’ve worked at Columbia in several capacities. I’ve had both work-study and casual positions at the <a href="http://www.sipa.columbia.edu/">School of International and Public Affairs (SIPA)</a>, <a href="http://www4.gsb.columbia.edu/">Columbia Business School (CBS)</a>, <a href="http://www.cvn.columbia.edu/">Columbia Video Network (CVN)</a>, <a href="http://www.columbia.edu/cu/lernerhall/">Lerner Hall</a>, <a href="http://www.ce.columbia.edu/hs/">The School of Continuing Education-High School Summer Program</a> and a few more.</p>
+<p>You should approach finding employment here not just as a way to earn money, but take it as an opportunity to learn or refine skills that will be beneficial to you in the future.</p>
+<p>If you are interested in working on campus, here are a few options you should try.</p>
+<p><b>Websites</b>
+</p>
+<p>
+<b></b><img src="/files/u185/Cuweb.jpg" width="196" height="124" />
+</p>
+<p>
+<b><i>Federal Work-Study Jobs</i></b></p>
+<p>If you are eligible to receive federal work study, there are a plethora of jobs available to you. Remember, just because work-study may not have been added to your financial aid package doesn’t mean you are not qualified to receive it. It’s in your best interest to check with <a href="http://www.columbia.edu/cu/sfs/">Student Financial Services (SFS)</a> to verify your eligibility.</p>
+<p>On the <a href="https://columbia.studentemployment.ngwebsolutions.com/JobX_FindAJob.aspx">SFS Federal Work Study</a> site you can search for positions based on various characteristics (Summer, Temporary, Fewest Hours, Most Hours, etc.). </p>
+<p><i><b>Casual Work</b></i>
+</p>
+<p>
+<img src="/files/u185/cu_home_lerner.jpg" width="332" height="120" />
+</p>
+  </div>
+
+  <div class="clear-block clear">
+    <div class="meta">
+        </div>
+
+          <div class="links"><ul class="links inline"><li class="first blog_usernames_blog"><a href="/blog/185" title="Read Rain&#039;s latest blog entries." class="blog_usernames_blog">Rain&#039;s blog</a></li>
+<li class="comment_forbidden"><span class="comment_forbidden"><a href="/user/login?destination=comment/reply/692%2523comment-form">Login</a> or <a href="/user/register?destination=comment/reply/692%2523comment-form">register</a> to post comments</span></li>
+<li class="forward_links"><a href="/forward/692" title="Forward this page to a friend" class="forward-page forward_links">Email this page</a></li>
+<li class="node_read_more"><a href="/FindaJob" title="Read the rest of this posting." class="node_read_more">Read more</a></li>
+<li class="last statistics_counter"><span class="statistics_counter">108 reads</span></li>
+</ul></div>
+      </div>
+
+</div>
+<div id="node-690" class="node">
+
+
+  <h2><a href="/node/690" title="Wind Down Wednesdays at Wien Hall">Wind Down Wednesdays at Wien Hall</a></h2>
+
+      <span class="submitted">Tue, 12/09/2008 - 10:41 — DaviB</span>
+  
+  <div class="content">
+    <p>
+<strong><em>Are you stressed? Feeling overwhelmed? Your muscles and body tense? </em></strong>
+</p>
+<p>
+Rhetorical questions I know.
+</p>
+<p>
+Alice! and Health Services host <strong>Wind Down Wednesdays</strong> every Wednesday at Wien Hall from 4:00- 5:00 pm. Go there where Stressbusters will give you a 'nice, de- stressing' back rub FREE. Just a few minutes will ease days, even weeks of stress!
+</p>
+<p>
+Go and Enjoy!!!
+</p>
+<p>
+&nbsp;
+</p>
+<p>
+(Message from your Students Services Representative)
+</p>
+  </div>
+
+  <div class="clear-block clear">
+    <div class="meta">
+          <div class="terms"><ul class="links inline"><li class="first taxonomy_term_563"><a href="/taxonomy/term/563" rel="tag" title="" class="taxonomy_term_563">backrubs</a></li>
+<li class="taxonomy_term_562"><a href="/taxonomy/term/562" rel="tag" title="" class="taxonomy_term_562">de-stressing</a></li>
+<li class="taxonomy_term_241"><a href="/taxonomy/term/241" rel="tag" title="" class="taxonomy_term_241">free</a></li>
+<li class="last taxonomy_term_561"><a href="/taxonomy/term/561" rel="tag" title="" class="taxonomy_term_561">nice</a></li>
+</ul></div>
+        </div>
+
+          <div class="links"><ul class="links inline"><li class="first blog_usernames_blog"><a href="/blog/196" title="Read DaviB&#039;s latest blog entries." class="blog_usernames_blog">DaviB&#039;s blog</a></li>
+<li class="comment_forbidden"><span class="comment_forbidden"><a href="/user/login?destination=comment/reply/690%2523comment-form">Login</a> or <a href="/user/register?destination=comment/reply/690%2523comment-form">register</a> to post comments</span></li>
+<li class="forward_links"><a href="/forward/690" title="Forward this page to a friend" class="forward-page forward_links">Email this page</a></li>
+<li class="last statistics_counter"><span class="statistics_counter">256 reads</span></li>
+</ul></div>
+      </div>
+
+</div>
+<div id="node-689" class="node">
+
+
+  <h2><a href="/node/689" title="The &quot;GSSC NROTC Update&quot; Email">The &quot;GSSC NROTC Update&quot; Email</a></h2>
+
+      <span class="submitted">Tue, 12/02/2008 - 16:30 — Brody Berg</span>
+  
+  <div class="content">
+    <p><i>This is the email that I sent to the General Studies student body today about the results of the NROTC poll</i></p>
+<p>---------- Forwarded message ----------<br />
+From: Brody Berg <bcb2115@columbia.edu><br />
+Date: Tue, Dec 2, 2008 at 9:01 AM<br />
+Subject: GSSC NROTC Update<br />
+To: <a href="mailto:gsba@cuvmc.ais.columbia.edu">gsba@cuvmc.ais.columbia.edu</a></p>
+<p>Dear Ladies and Gentlemen of General Studies,</p>
+<p>The results of the NROTC Survey given to General Studies, Columbia College and the School of Engineering are in:</p>
+<p>    * 6913 email invitations<br />
+    * 2971 valid votes (43% of the population)<br />
+    * 1463 Yes ("Bring NROTC to campus)<br />
+    * 1502 No ("Don't bring NROTC to campus)<br />
+    * 6 abstain</p>
+<p>But here is where it gets interesting:</p>
+<p>    * <b>4905</b> votes were recorded<br />
+    * <b>One person voted 276 times</b><br />
+    * And <b>"after eliminating the duplicates and matching the unique IDs with our records, 2971 unduplicated votes are determined as "valid."</b></p>
+<p>(All this information is from Columbia College SDA Advisor David Cheng)</p>
+<p>What this means is that <b>there were nearly 2000 votes thrown out of a race decided by only 39 total votes</b>. More votes were thrown out than the individual size of three out of the four colleges in the survey. Furthermore, the votes thrown out were done with no supervision and with a fraud detection strategy only as good as "eliminating duplicates and matching unique IDs."</p>
+<p><b>Now, let me be clear, even though I personally voted No, I believe that this poll result is meaningless due to the huge number of apparently fraudulent votes.</b> I say this out of common sense and because, as a software industry veteran of 10 years and senior in the Computer Science department. My professional gut feeling tells me that a significant number of fraudulent votes may not have been removed.</p>
+  </div>
+
+  <div class="clear-block clear">
+    <div class="meta">
+        </div>
+
+          <div class="links"><ul class="links inline"><li class="first blog_usernames_blog"><a href="/blog/1" title="Read Brody Berg&#039;s latest blog entries." class="blog_usernames_blog">Brody Berg&#039;s blog</a></li>
+<li class="comment_forbidden"><span class="comment_forbidden"><a href="/user/login?destination=comment/reply/689%2523comment-form">Login</a> or <a href="/user/register?destination=comment/reply/689%2523comment-form">register</a> to post comments</span></li>
+<li class="forward_links"><a href="/forward/689" title="Forward this page to a friend" class="forward-page forward_links">Email this page</a></li>
+<li class="node_read_more"><a href="/node/689" title="Read the rest of this posting." class="node_read_more">Read more</a></li>
+<li class="last statistics_counter"><span class="statistics_counter">353 reads</span></li>
+</ul></div>
+      </div>
+
+</div>
+<div id="node-684" class="node">
+
+
+  <h2><a href="/node/684" title="530 West 112th Street">530 West 112th Street</a></h2>
+
+      <span class="submitted">Sun, 11/30/2008 - 23:32 — Brody Berg</span>
+  
+  <div class="content">
+    <p>
+Multi-room apartment.
+</p>
+<p>
+<img src="/files/u1/novhousing/IMG_0407small.JPG" />
+</p>
+<p>
+<img src="/files/u1/novhousing/IMG_0408small.JPG" />
+</p>
+<p>
+<img src="/files/u1/novhousing/IMG_0409small.JPG" />
+</p>
+<p>
+Out of date/repair bathroom.
+</p>
+<p>
+<img src="/files/u1/novhousing/IMG_0410small.JPG" />
+</p>
+<p>
+Ceiling rot.
+</p>
+<p>
+<img src="/files/u1/novhousing/IMG_0411small.JPG" />
+</p>
+<p>
+Rot in bathroom.
+</p>
+<p>
+<img src="/files/u1/novhousing/IMG_0412small.JPG" />
+</p>
+<p>
+That's right, one set of controls works for the shower, and the other works for the bathtub.
+</p>
+<p>
+<img src="/files/u1/novhousing/IMG_0413small.JPG" />
+</p>
+<p>
+This tile has seen better days.
+</p>
+<p>
+<img src="/files/u1/novhousing/IMG_0414small.JPG" />
+</p>
+<p>
+<img src="/files/u1/novhousing/IMG_0415small.JPG" />
+</p>
+<p>
+<img src="/files/u1/novhousing/IMG_0416small.JPG" />
+</p>
+<p>
+<img src="/files/u1/novhousing/IMG_0417small.JPG" />
+</p>
+<p>
+<img src="/files/u1/novhousing/IMG_0418small.JPG" />
+</p>
+<p>
+Wood floors are in good shape.
+</p>
+<p>
+<img src="/files/u1/novhousing/IMG_0419small.JPG" />
+</p>
+<p>
+<img src="/files/u1/novhousing/IMG_0420small.JPG" />
+</p>
+<p>
+Kitchen is out of date.
+</p>
+<p>
+<img src="/files/u1/novhousing/IMG_0421small.JPG" />
+</p>
+<p>
+<img src="/files/u1/novhousing/IMG_0422small.JPG" />
+</p>
+<p>
+No idea what this caulking was meant to do for these cupboards.
+</p>
+<p>
+<img src="/files/u1/novhousing/IMG_0423small.JPG" />
+</p>
+<p>
+Out of date cupboards are sticky and dusty.
+</p>
+<p>
+<img src="/files/u1/novhousing/IMG_0424small.JPG" />
+</p>
+<p>
+<img src="/files/u1/novhousing/IMG_0425small.JPG" />
+</p>
+<p>
+<img src="/files/u1/novhousing/IMG_0426small.JPG" />
+</p>
+<p>
+<img src="/files/u1/novhousing/IMG_0427small.JPG" />
+</p>
+<p>
+<img src="/files/u1/novhousing/IMG_0428small.JPG" />
+</p>
+<p>
+A facilities problem description form.
+</p>
+  </div>
+
+  <div class="clear-block clear">
+    <div class="meta">
+          <div class="terms"><ul class="links inline"><li class="first taxonomy_term_560"><a href="/taxonomy/term/560" rel="tag" title="" class="taxonomy_term_560">530 West 112th Street</a></li>
+<li class="last taxonomy_term_554"><a href="/taxonomy/term/554" rel="tag" title="" class="taxonomy_term_554">housing walkthrough</a></li>
+</ul></div>
+        </div>
+
+          <div class="links"><ul class="links inline"><li class="first blog_usernames_blog"><a href="/blog/1" title="Read Brody Berg&#039;s latest blog entries." class="blog_usernames_blog">Brody Berg&#039;s blog</a></li>
+<li class="comment_comments"><a href="/node/684#comments" title="Jump to the first comment of this posting." class="comment_comments">1 comment</a></li>
+<li class="forward_links"><a href="/forward/684" title="Forward this page to a friend" class="forward-page forward_links">Email this page</a></li>
+<li class="node_read_more"><a href="/node/684" title="Read the rest of this posting." class="node_read_more">Read more</a></li>
+<li class="last statistics_counter"><span class="statistics_counter">412 reads</span></li>
+</ul></div>
+      </div>
+
+</div>
+<div id="node-683" class="node">
+
+
+  <h2><a href="/node/683" title="604 West 115th Street">604 West 115th Street</a></h2>
+
+      <span class="submitted">Sun, 11/30/2008 - 23:20 — Brody Berg</span>
+  
+  <div class="content">
+    <p>
+This apartment is couples housing and I believe it is a one bedroom.
+</p>
+<p>
+<img src="/files/u1/novhousing/IMG_0386small.JPG" />
+</p>
+<p>
+The first box such as this that I've seen on a housing walkthrough.
+</p>
+<p>
+<img src="/files/u1/novhousing/IMG_0388small.JPG" />
+</p>
+<p>
+Excellent, old-school elevator.
+</p>
+<p>
+<img src="/files/u1/novhousing/IMG_0389small.JPG" />
+</p>
+<p>
+<img src="/files/u1/novhousing/IMG_0390small.JPG" />
+</p>
+<p>
+<img src="/files/u1/novhousing/IMG_0391small.JPG" />
+</p>
+<p>
+Gleaming wood floors.
+</p>
+<p>
+<img src="/files/u1/novhousing/IMG_0392small.JPG" />
+</p>
+<p>
+Another indoor meter.
+</p>
+<p>
+<img src="/files/u1/novhousing/IMG_0393small.JPG" />
+</p>
+<p>
+<img src="/files/u1/novhousing/IMG_0394small.JPG" />
+</p>
+<p>
+Nice, new kitchen appliances and cabinets.
+</p>
+<p>
+<img src="/files/u1/novhousing/IMG_0395small.JPG" />
+</p>
+<p>
+Wine refrigerator supplied by the student. This, the chandeliers, bathroom fixtures and blue paint are good examples of the type of customizations students can make on their residences.
+</p>
+<p>
+<img src="/files/u1/novhousing/IMG_0396small.JPG" />
+</p>
+<p>
+<img src="/files/u1/novhousing/IMG_0397small.JPG" />
+</p>
+<p>
+<img src="/files/u1/novhousing/IMG_0398small.JPG" />
+</p>
+<p>
+<img src="/files/u1/novhousing/IMG_0399small.JPG" />
+</p>
+<p>
+<img src="/files/u1/novhousing/IMG_0400small.JPG" />
+</p>
+<p>
+<img src="/files/u1/novhousing/IMG_0401small.JPG" />
+</p>
+<p>
+<img src="/files/u1/novhousing/IMG_0402small.JPG" />
+</p>
+<p>
+<img src="/files/u1/novhousing/IMG_0403small.JPG" />
+</p>
+<p>
+<img src="/files/u1/novhousing/IMG_0404small.JPG" />
+</p>
+<p>
+<img src="/files/u1/novhousing/IMG_0405small.JPG" />
+</p>
+  </div>
+
+  <div class="clear-block clear">
+    <div class="meta">
+          <div class="terms"><ul class="links inline"><li class="first taxonomy_term_559"><a href="/taxonomy/term/559" rel="tag" title="" class="taxonomy_term_559">604 West 115th Street</a></li>
+<li class="last taxonomy_term_554"><a href="/taxonomy/term/554" rel="tag" title="" class="taxonomy_term_554">housing walkthrough</a></li>
+</ul></div>
+        </div>
+
+          <div class="links"><ul class="links inline"><li class="first blog_usernames_blog"><a href="/blog/1" title="Read Brody Berg&#039;s latest blog entries." class="blog_usernames_blog">Brody Berg&#039;s blog</a></li>
+<li class="comment_forbidden"><span class="comment_forbidden"><a href="/user/login?destination=comment/reply/683%2523comment-form">Login</a> or <a href="/user/register?destination=comment/reply/683%2523comment-form">register</a> to post comments</span></li>
+<li class="forward_links"><a href="/forward/683" title="Forward this page to a friend" class="forward-page forward_links">Email this page</a></li>
+<li class="last statistics_counter"><span class="statistics_counter">343 reads</span></li>
+</ul></div>
+      </div>
+
+</div>
+<div id="node-682" class="node">
+
+
+  <h2><a href="/node/682" title="530 Riverside">530 Riverside</a></h2>
+
+      <span class="submitted">Sun, 11/30/2008 - 23:06 — Brody Berg</span>
+  
+  <div class="content">
+    <p>
+Couples housing unit at 530 Riverside Drive.
+</p>
+<p>
+<img src="/files/u1/novhousing/IMG_0361small.JPG" />
+</p>
+<p>
+<img src="/files/u1/novhousing/IMG_0362small.JPG" />
+</p>
+<p>
+Grim courtyard and outdoor bike storage.
+</p>
+<p>
+<img src="/files/u1/novhousing/IMG_0363small.JPG" />
+</p>
+<p>
+Wood floor in good condition.
+</p>
+<p>
+<img src="/files/u1/novhousing/IMG_0364small.JPG" />
+</p>
+<p>
+The single bedroom converted into a nursery. The couple now lives in the living room.
+</p>
+<p>
+<img src="/files/u1/novhousing/IMG_0365small.JPG" />
+</p>
+<p>
+<img src="/files/u1/novhousing/IMG_0366small.JPG" />
+</p>
+<p>
+Wall/window cracks deemed insufficiently bad to repair by the building super.
+</p>
+<p>
+<img src="/files/u1/novhousing/IMG_0367small.JPG" />
+</p>
+<p>
+<img src="/files/u1/novhousing/IMG_0368small.JPG" />
+</p>
+<p>
+Poor finish in the bathroom.
+</p>
+<p>
+<img src="/files/u1/novhousing/IMG_0369small.JPG" />
+</p>
+<p>
+<img src="/files/u1/novhousing/IMG_0370small.JPG" />
+</p>
+<p>
+<img src="/files/u1/novhousing/IMG_0371small.JPG" />
+</p>
+<p>
+<img src="/files/u1/novhousing/IMG_0372small.JPG" />
+</p>
+<p>
+<img src="/files/u1/novhousing/IMG_0373small.JPG" />
+</p>
+<p>
+<img src="/files/u1/novhousing/IMG_0374small.JPG" />
+</p>
+<p>
+It is tough to tell, but the next two photos show how warped the wood floor is. You can tell by comparing the planes of the book case with the wall molding or the plane of the kitchen table with that of the nightstand.
+</p>
+<p>
+<img src="/files/u1/novhousing/IMG_0375small.JPG" />
+</p>
+<p>
+<img src="/files/u1/novhousing/IMG_0377small.JPG" />
+</p>
+<p>
+<img src="/files/u1/novhousing/IMG_0378small.JPG" />
+</p>
+<p>
+Who has time for waffles in GS???
+</p>
+<p>
+<img src="/files/u1/novhousing/IMG_0379small.JPG" />
+</p>
+<p>
+<img src="/files/u1/novhousing/IMG_0380small.JPG" />
+</p>
+<p>
+<img src="/files/u1/novhousing/IMG_0381small.JPG" />
+</p>
+  </div>
+
+  <div class="clear-block clear">
+    <div class="meta">
+          <div class="terms"><ul class="links inline"><li class="first taxonomy_term_557"><a href="/taxonomy/term/557" rel="tag" title="" class="taxonomy_term_557">530 Riverside Drive</a></li>
+<li class="last taxonomy_term_554"><a href="/taxonomy/term/554" rel="tag" title="" class="taxonomy_term_554">housing walkthrough</a></li>
+</ul></div>
+        </div>
+
+          <div class="links"><ul class="links inline"><li class="first blog_usernames_blog"><a href="/blog/1" title="Read Brody Berg&#039;s latest blog entries." class="blog_usernames_blog">Brody Berg&#039;s blog</a></li>
+<li class="comment_forbidden"><span class="comment_forbidden"><a href="/user/login?destination=comment/reply/682%2523comment-form">Login</a> or <a href="/user/register?destination=comment/reply/682%2523comment-form">register</a> to post comments</span></li>
+<li class="forward_links"><a href="/forward/682" title="Forward this page to a friend" class="forward-page forward_links">Email this page</a></li>
+<li class="node_read_more"><a href="/node/682" title="Read the rest of this posting." class="node_read_more">Read more</a></li>
+<li class="last statistics_counter"><span class="statistics_counter">348 reads</span></li>
+</ul></div>
+      </div>
+
+</div><div class="pager"><span class="pager-list"><strong class="pager-current">1</strong><a href="/node?page=1&amp;option=com_rss&amp;amp%3Bfeed=RSS2.0&amp;amp%3Bno_html=1" class="pager-next active" title="Go to page 2">2</a><a href="/node?page=2&amp;option=com_rss&amp;amp%3Bfeed=RSS2.0&amp;amp%3Bno_html=1" class="pager-next active" title="Go to page 3">3</a><a href="/node?page=3&amp;option=com_rss&amp;amp%3Bfeed=RSS2.0&amp;amp%3Bno_html=1" class="pager-next active" title="Go to page 4">4</a><a href="/node?page=4&amp;option=com_rss&amp;amp%3Bfeed=RSS2.0&amp;amp%3Bno_html=1" class="pager-next active" title="Go to page 5">5</a><a href="/node?page=5&amp;option=com_rss&amp;amp%3Bfeed=RSS2.0&amp;amp%3Bno_html=1" class="pager-next active" title="Go to page 6">6</a><a href="/node?page=6&amp;option=com_rss&amp;amp%3Bfeed=RSS2.0&amp;amp%3Bno_html=1" class="pager-next active" title="Go to page 7">7</a><a href="/node?page=7&amp;option=com_rss&amp;amp%3Bfeed=RSS2.0&amp;amp%3Bno_html=1" class="pager-next active" title="Go to page 8">8</a><a href="/node?page=8&amp;option=com_rss&amp;amp%3Bfeed=RSS2.0&amp;amp%3Bno_html=1" class="pager-next active" title="Go to page 9">9</a><span class="pager-ellipsis">…</span></span><a href="/node?page=1&amp;option=com_rss&amp;amp%3Bfeed=RSS2.0&amp;amp%3Bno_html=1" class="pager-next active" title="Go to next page">next ›</a><a href="/node?page=49&amp;option=com_rss&amp;amp%3Bfeed=RSS2.0&amp;amp%3Bno_html=1" class="pager-last active" title="Go to last page">last »</a></div>          <span class="clear"></span>
+          <a href="http://gslounge.com/rss.xml" class="feed-icon"><img src="/misc/feed.png" alt="Syndicate content" title="Syndicate content" width="16" height="16" /></a>          <div id="footer">Created by <a href="mailto:bcb2115@columbia.edu">Brody Berg</a> for the General Studies Student Body and Council.
+</div>
+      </div></div></div></div> <!-- /.left-corner, /.right-corner, /#squeeze, /#center -->
+
+              <div id="sidebar-right" class="sidebar">
+                    <div id="block-blog-0" class="clear-block block block-blog">
+
+  <h2>Recent Posts</h2>
+
+  <div class="content"><div class="item-list"><ul><li><a href="/FindaJob">How to Find a Job at Columbia</a></li><li><a href="/node/690">Wind Down Wednesdays at Wien Hall</a></li><li><a href="/node/689">The &quot;GSSC NROTC Update&quot; Email</a></li><li><a href="/node/685">November Housing Walkthrough Photos</a></li><li><a href="/node/684">530 West 112th Street</a></li><li><a href="/node/683">604 West 115th Street</a></li><li><a href="/node/682">530 Riverside</a></li><li><a href="/node/681">526 West 122nd Street</a></li><li><a href="/node/680">130 Morningside</a></li><li><a href="/node/679">The GSLounge.com Forums</a></li></ul></div><div class="more-link"><a href="/blog" title="Read the latest blog entries.">more</a></div></div>
+</div>
+<div id="block-statistics-0" class="clear-block block block-statistics">
+
+  <h2>Popular</h2>
+
+  <div class="content"><div class="item-list"><h3>Today's:</h3><ul><li><a href="/node/112">can you figure skate and go to columbia?</a></li><li><a href="/node/458">Cartoon of the Week: Made in China</a></li><li><a href="/communication/howto/cubmail">How To: Check CubMail on GMail</a></li><li><a href="/calendar">University-wide Calendar</a></li><li><a href="/bowling">Bowling Invite for Harlem Lanes</a></li></ul></div><br /><div class="item-list"><h3>All time:</h3><ul><li><a href="/node/112">can you figure skate and go to columbia?</a></li><li><a href="/gssc/spring_2008">The General Studies Student Council</a></li><li><a href="/communication/howto/cubmail">How To: Check CubMail on GMail</a></li></ul></div><br /><div class="item-list"><h3>Last viewed:</h3><ul><li><a href="/node/67">The Columbia Ballet Collaborative (Photos)</a></li><li><a href="/goldennuggets">The Best from Across the World Wide Interwebs</a></li><li><a href="/senator">General Studies Representative to Columbia University Senate</a></li></ul></div></div>
+</div>
+<div id="block-comment-0" class="clear-block block block-comment">
+
+  <h2>Recent comments</h2>
+
+  <div class="content"><div class="item-list"><ul><li><a href="/node/675#comment-165">Latin Diploma - TR&#039;s got one!</a><br />6 weeks 2 days ago</li><li><a href="/node/679#comment-164">Course Evaluations</a><br />6 weeks 2 days ago</li><li><a href="/node/684#comment-163">I know this apartment!</a><br />7 weeks 1 day ago</li><li><a href="/ColumbiaDiplomas#comment-162">Ditto.</a><br />9 weeks 2 days ago</li><li><a href="/node/662#comment-161">Wallpaper?!?! by J.Robledo (written in haste)</a><br />9 weeks 2 days ago</li><li><a href="/node/662#comment-160">Latin</a><br />9 weeks 3 days ago</li><li><a href="/node/662#comment-159">Re: Collecting Signatures</a><br />9 weeks 6 days ago</li><li><a href="/node/662#comment-158">Collecting Signatures</a><br />10 weeks 9 hours ago</li><li><a href="/node/662#comment-154">Do Latin Diplomas for GS Make Sense? (version 2.0)</a><br />10 weeks 12 hours ago</li><li><a href="/node/662#comment-157">Swahili</a><br />10 weeks 19 hours ago</li></ul></div></div>
+</div>
+        </div>
+      
+    </div> <!-- /container -->
+  </div>
+<!-- /layout -->
+
+  <script type="text/javascript" src="http://www.google-analytics.com/urchin.js"></script>
+<script type="text/javascript"><!--
+_uacct = "UA-2319816-1";urchinTracker();
+// --></script><noscript></noscript>
+  </body>
+</html>

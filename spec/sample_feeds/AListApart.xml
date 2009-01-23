@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>A List Apart</title>
+    <link>http://www.alistapart.com/</link>
+    <language>en-us</language>
+    <description>A List Apart Issue 276</description>
+    <item>
+      <title>Elevate Web Design at the University Level</title>
+      <description>Web education is out of date and fragmented. There are good people working hard to change this, but because of the structure of higher education, it will take time. As part of a year-long journey to discover where we are in web education and where we need to go, Leslie Jensen-Inman interviewed 32 web design and development leaders. The consensus: technology moves too fast for college and university curricula to keep up. How, then, can educators create a sustainable foundation for the future?</description>
+      <pubDate>Sun, 18 Jan 2009 18:24:37 GMT</pubDate>
+      <author>nospam@example.com (Leslie Jensen-Inman)</author>
+      <guid isPermaLink="true">http://www.alistapart.com/articles/elevatewebdesignattheuniversitylevel</guid>
+      <link>http://www.alistapart.com/articles/elevatewebdesignattheuniversitylevel</link>
+      <category>State of the Web</category>
+    </item>
+    <item>
+      <title>Brighter Horizons for Web Education</title>
+      <description>No industry can sustain itself if it doesn’t master the art of cultivating new talent—an art that requires close ties between practitioners and educators. Yet web design education consists mainly of introductory Flash classes and the occasional 90s-style HTML table layout tutorial. How drastic is the web design education gap, and what can be done to close it? Designer, developer, and web design educator Aarron Walter of The Web Standards Project surveys the state of the curricula.</description>
+      <pubDate>Sun, 18 Jan 2009 18:05:38 GMT</pubDate>
+      <author>nospam@example.com (Aarron Walter)</author>
+      <guid isPermaLink="true">http://www.alistapart.com/articles/brighterhorizonsforwebeducation</guid>
+      <link>http://www.alistapart.com/articles/brighterhorizonsforwebeducation</link>
+      <category>State of the Web</category>
+    </item>
+  </channel>
+</rss>

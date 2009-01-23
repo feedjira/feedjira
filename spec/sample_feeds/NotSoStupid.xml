@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- generator="wordpress/2.1" -->
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	>
+
+<channel>
+	<title>Not So Stupid</title>
+	<link>http://www.notsostupid.com</link>
+	<description>we don't believe in slogans</description>
+	<pubDate>Sun, 13 Jan 2008 23:53:20 +0000</pubDate>
+	<generator>http://wordpress.org/?v=2.1</generator>
+	<language>en</language>
+			<item>
+		<title>ActiveDocument is off the ground</title>
+		<link>http://www.notsostupid.com/blog/2008/01/13/activedocument-is-off-the-ground/</link>
+		<comments>http://www.notsostupid.com/blog/2008/01/13/activedocument-is-off-the-ground/#comments</comments>
+		<pubDate>Sun, 13 Jan 2008 23:53:20 +0000</pubDate>
+		<dc:creator>sd</dc:creator>
+		
+		<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://www.notsostupid.com/blog/2008/01/13/activedocument-is-off-the-ground/</guid>
+		<description><![CDATA[I&#8217;ve created a Google Group for ActiveDocument, since it seems there are 4 or 5 different projects going on and we should try to coordinate them into a single one, or in the worst case, we can at least exchange ideas and concerns.
+I&#8217;ll probably merge my efforts into Rick&#8217;s code base, just because he has [...]]]></description>
+			<content:encoded><![CDATA[<p>I&#8217;ve created a <a href="http://groups.google.com/group/activedocument/">Google Group for ActiveDocument</a>, since it seems there are 4 or 5 different projects going on and we should try to coordinate them into a single one, or in the worst case, we can at least exchange ideas and concerns.</p>
+<p>I&#8217;ll probably merge my efforts into <a href='http://weblog.techno-weenie.net/2008/1/12/activedocument'>Rick&#8217;s code base</a>, just because he has a better public GIT server setup than mine, and his code already has specs.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.notsostupid.com/blog/2008/01/13/activedocument-is-off-the-ground/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>ThruDB for Rails? ActiveDocument</title>
+		<link>http://www.notsostupid.com/blog/2008/01/10/thrudb-for-rails-activedocument/</link>
+		<comments>http://www.notsostupid.com/blog/2008/01/10/thrudb-for-rails-activedocument/#comments</comments>
+		<pubDate>Fri, 11 Jan 2008 03:17:42 +0000</pubDate>
+		<dc:creator>sd</dc:creator>
+		
+		<category><![CDATA[rails]]></category>
+
+		<category><![CDATA[ruby]]></category>
+
+		<category><![CDATA[software development]]></category>
+
+		<guid isPermaLink="false">http://www.notsostupid.com/blog/2008/01/10/thrudb-for-rails-activedocument/</guid>
+		<description><![CDATA[Since Matt Knox talked about ThruDB on last tuesday&#8217;s meeting of NYC.rb, my brain has been thinking about document-oriented databases, about how tired I am of SQL, about how tired I am of trying to scale database servers, about how tempting is to have more flexible models and data structures, and about how tempting it [...]]]></description>
+			<content:encoded><![CDATA[<p>Since <a href="http://www.mattknox.com/">Matt Knox</a> talked about <a href="http://code.google.com/p/thrudb/">ThruDB</a> on last tuesday&#8217;s meeting of <a href="http://nycruby.org/wiki/">NYC.rb</a>, my brain has been thinking about document-oriented databases, about how tired I am of SQL, about how tired I am of trying to scale database servers, about how tempting is to have more flexible models and data structures, and about how tempting it is to have a clear and simple scalability path.</p>
+<p>The samples included in the ThruDB tutorial are, to be honest, ugly. But they are designed to show how thrift provides language-agnostic data types and how ThruDB can be accessed from different languages.</p>
+<p>However, I have several ideas in my head about how to implement something I&#8217;m calling, for the time being, ActiveDocument. It won&#8217;t be a direct replacement for ActiveRecord, but it will have similar features (i.e. validations and callback hooks) and it will allow for very simple usage of ThruDB. I might later add support for CouchDB, SimpleDB and other similar technologies, but just like Rails doesn&#8217;t try to be a full database server abstraction, your ActiveDocument code will not work on different servers unless it&#8217;s limited to very simple operations. The world of document-oriented databases is even less standardized than relational database servers.</p>
+<p>Here&#8217;s a little look at how it might look:</p>
+<pre>
+class User < ActiveDocument::Model
+  attribute :login, :string, :indexed, :sortable
+  attribute :email, :string, :indexed
+  attribute :created_on, :datetime
+  attribute :password, :string
+  has_many :bookmarks
+end
+
+class Bookmark < ActiveDocument::Model
+  attribute :title, :string, :indexed
+  attribute :url, :string, :indexed
+  belongs_to :user
+end
+
+User.find_by_login("sd")
+User.find(:all, :conditions => &#8220;login:&#8217;s*&#8217; AND created_at :[20071201 TO 20080115]&#8221;)
+</pre>
+<p>As you can see, the two biggest differences from plain old ActiveRecord is that the model will have to define it&#8217;s own schema, and that queries will use the <a href="http://lucene.apache.org/java/docs/queryparsersyntax.html">Lucene Syntax</a></p>
+<p>Relationships would be defined using fields with lists of IDs, and queried using Lucene&#8217;s fast indexes. This might make models too big when they have a large number of related objects, but that&#8217;s a problem to be solved later.</p>
+<p>Since document-oriented databases have no concept of joins, some queries will be definitely slower than their SQL counterparts, having to make multiple calls to the server to retrieve individual objects. However, each one of those calls would be simpler and easier to cache, which I hope will reduce the performance impact. And as long as it&#8217;s not 100 times slower, I&#8217;m willing to trade off some performance for the promise of infinite scalability.</p>
+<p>And since the models will be more flexible, you can probably skip a lot of traditional SQL tables and store the data directly into the model itself. For example, users can have preference arrays or hashes, which would have been separate tables in SQL but that are just additional attributes in ThruDB.</p>
+<p>Speaking of attributes. ThruDB uses thrift for its own API, and the tutorials suggest using it to encode the documents themselves, but the API doesn&#8217;t require that. I&#8217;ve been trying to figure out how to encode a thrift object along with it&#8217;s own class name, to make it easier to decode afterwards, specially when performing polymorfic queries. Perhaps I&#8217;ll have to use double encoding, with an envelope thrift object containing the class name and the encoded string. Or perhaps I&#8217;ll use YAML to encode an attribute hash. YAML is tempting because it will allow for more complex objects and for dynamic schemas (i.e. an attribute that&#8217;s a hash of hashes containing values of different types).</p>
+<p>Anyway, I&#8217;m starting to write the code, and it looks like it might be possible to have some working prototype a lot sooner than I though possible at first.</p>
+<p>If you&#8217;re interested, just drop me a note, leave a comment, send me an email or look for me as &#8217;sd&#8217; on Freenode&#8217;s #nyc.rb.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.notsostupid.com/blog/2008/01/10/thrudb-for-rails-activedocument/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Embedded Actions 1.1</title>
+		<link>http://www.notsostupid.com/blog/2007/12/04/embedded-actions-11/</link>
+		<comments>http://www.notsostupid.com/blog/2007/12/04/embedded-actions-11/#comments</comments>
+		<pubDate>Tue, 04 Dec 2007 15:10:15 +0000</pubDate>
+		<dc:creator>sd</dc:creator>
+		
+		<category><![CDATA[rails]]></category>
+
+		<guid isPermaLink="false">http://www.notsostupid.com/blog/2007/12/04/embedded-actions-11/</guid>
+		<description><![CDATA[I&#8217;ve just released an update to my Embedded Actions plugin for Rails.
+With significant contributions from Jerret Taylor and Ryan Barber, we&#8217;ve removed a bunch of little bugs and added support for caching actions in namespaced controllers, and for passing options to the fragment caching mechanism, such as ttl settings.
+Install it with
+script/plugin install http://dev.notso.net/svn/rails/plugins/embedded_actions/current
+
+]]></description>
+			<content:encoded><![CDATA[<p>I&#8217;ve just released an update to my <a href="http://www.notsostupid.com/blog/2007/10/23/the-embedded-actions-plugin-for-rails/">Embedded Actions plugin</a> for Rails.</p>
+<p>With significant contributions from Jerret Taylor and Ryan Barber, we&#8217;ve removed a bunch of little bugs and added support for caching actions in namespaced controllers, and for passing options to the fragment caching mechanism, such as ttl settings.</p>
+<p>Install it with</p>
+<pre>script/plugin install http://dev.notso.net/svn/rails/plugins/embedded_actions/current
+</pre>
+]]></content:encoded>
+			<wfw:commentRss>http://www.notsostupid.com/blog/2007/12/04/embedded-actions-11/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Ruby, Leopard and gems</title>
+		<link>http://www.notsostupid.com/blog/2007/10/25/ruby-leopard-and-gems/</link>
+		<comments>http://www.notsostupid.com/blog/2007/10/25/ruby-leopard-and-gems/#comments</comments>
+		<pubDate>Thu, 25 Oct 2007 20:39:38 +0000</pubDate>
+		<dc:creator>sd</dc:creator>
+		
+		<category><![CDATA[ruby]]></category>
+
+		<guid isPermaLink="false">http://www.notsostupid.com/blog/2007/10/25/ruby-leopard-and-gems/</guid>
+		<description><![CDATA[In case you have been sleeping in the same cave as Osama Bin Laden, Apple&#8217;s new OS X Leopard includes Ruby as a first-class language.
+But Apple&#8217;s effort to make the language and all it&#8217;s extensions universal binaries can cause you some trouble when installing gems that require compilation.
+If you&#8217;re installing on an Intel machine and [...]]]></description>
+			<content:encoded><![CDATA[<p>In case you have been sleeping in the same cave as Osama Bin Laden, Apple&#8217;s new OS X Leopard <a href="http://trac.macosforge.org/projects/ruby/wiki/WhatsNewInLeopard">includes Ruby as a first-class language</a>.</p>
+<p>But Apple&#8217;s effort to make the language and all it&#8217;s extensions universal binaries can cause you some trouble when installing gems that require compilation.</p>
+<p>If you&#8217;re installing on an Intel machine and see an error like &#8220;ld: symbol(s) not found for architecture ppc&#8221;, you probably are installing a gem that requires an external library, for which you only have the i386 version. This is a typical situation when installing mysql (as noted in the <a href="http://trac.macosforge.org/projects/ruby/wiki/Troubleshooting">troubleshooting page</a> of the MacOSForge wiki for Ruby).</p>
+<p>After trying several variations, I came out with this solution:</p>
+<p>If your installation command was</p>
+<pre>sudo gem install mysql</pre>
+<p>you need to run it as</p>
+<p><strikethrough>
+<pre>sudo bash -c "ARCHFLAGS='-arch i386' gem install mysql"</pre>
+<p></strikethrough></p>
+<p><strikethrough>
+<pre>sudo env ARCHFLAGS="-arch i386" gem install mysql</pre>
+<p></strikethrough></p>
+<p>There you go&#8230; that should be all you need to install the mysql gem on Leopard against MySQL&#8217;s prepackaged binaries.</p>
+<p>UPDATE: The troubleshooting page has been updated to include an alternative: using &#8220;sudo -s&#8221; to start a root shell. I still like my one-liner better :-)</p>
+<p>UPDATE 2: Using env instead of bash is slightly cleaner.</p>
+<p>UPDATE 3: MySQL still has some problems, because the library is pointing to the wrong direction. The quick solution is to create a link to the right place:</p>
+<pre>sudo ln -s /usr/local/bin/mysql/lib /usr/local/bin/mysql/lib/mysql</pre>
+]]></content:encoded>
+			<wfw:commentRss>http://www.notsostupid.com/blog/2007/10/25/ruby-leopard-and-gems/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>The Embedded Actions plugin for Rails</title>
+		<link>http://www.notsostupid.com/blog/2007/10/23/the-embedded-actions-plugin-for-rails/</link>
+		<comments>http://www.notsostupid.com/blog/2007/10/23/the-embedded-actions-plugin-for-rails/#comments</comments>
+		<pubDate>Tue, 23 Oct 2007 23:59:13 +0000</pubDate>
+		<dc:creator>sd</dc:creator>
+		
+		<category><![CDATA[rails]]></category>
+
+		<guid isPermaLink="false">http://www.notsostupid.com/blog/2007/10/23/the-embedded-actions-plugin-for-rails/</guid>
+		<description><![CDATA[This is an extraction of some things we&#8217;ve been using at StreetEasy for about two years now. Here&#8217;s the README:
+Just like the traditional render :partial, embedded actions allow you to
+refactor your views and extract presentation logic and templates into separate
+files.
+Unlike partials, embedded actions also let you define business logic to be
+performed before the partial is [...]]]></description>
+			<content:encoded><![CDATA[<p>This is an extraction of some things we&#8217;ve been using at <a href="http://www.streeteasy.com/">StreetEasy</a> for about two years now. Here&#8217;s the README:</p>
+<blockquote><p>Just like the traditional render :partial, embedded actions allow you to<br />
+refactor your views and extract presentation logic and templates into separate<br />
+files.</p>
+<p>Unlike partials, embedded actions also let you define business logic to be<br />
+performed before the partial is included. That logic is encapsulated in the<br />
+already well understood metaphor of an action inside a controller.</p>
+<p>So a simple call like</p>
+<p><%= embed_action :controller => &#8220;songs&#8221;, :action => &#8220;top10&#8243; %></p>
+<p>lets you include an html fragment containing the top 10 songs into any of your<br />
+pages, regardless of which controller, action or view wants to do the including.</p>
+<p>Additionally, embedded actions can provide caching of their results (allowing<br />
+for different parameters) just like page caching, but at the level of html<br />
+fragments. So your dynamic pages can still be rendered dynamically, but some of<br />
+the embedded actions can be cached (and expired) independently.</p>
+<p>Just declare an action as &#8216;cacheable&#8217; in a way similar to page caching,<br />
+by invoking &#8220;caches_embedded&#8221; with the name of the action to cache.</p>
+<p>class TestController < ApplicationController<br />
+  caches_embedded :user_list</p>
+<p>  def user_list<br />
+    ...<br />
+  end<br />
+end</p>
+<p>Cached fragments can be invalidated with calls to expires_embedded, but you must<br />
+remember to use the same set of parameters used to embed the cached action in<br />
+the first place.
+</p></blockquote>
+<p>The code is available at </p>
+<p>http://dev.notso.net/svn/rails/plugins/embedded_actions/</p>
+<p>and can be easily installed by running </p>
+<pre>script/plugin install http://dev.notso.net/svn/rails/plugins/embedded_actions/current</pre>
+<p>.</p>
+<p>Enjoy, and please comment.</p>
+<p>UPDATE: <a href="http://www.notsostupid.com/blog/2007/12/04/embedded-actions-11/">Version 1.1 has been released.</a></p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.notsostupid.com/blog/2007/10/23/the-embedded-actions-plugin-for-rails/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Ruby and Lisp, sitting in a tree&#8230;</title>
+		<link>http://www.notsostupid.com/blog/2007/01/13/ruby-and-lisp-sitting-in-a-tree/</link>
+		<comments>http://www.notsostupid.com/blog/2007/01/13/ruby-and-lisp-sitting-in-a-tree/#comments</comments>
+		<pubDate>Sat, 13 Jan 2007 15:28:17 +0000</pubDate>
+		<dc:creator>sd</dc:creator>
+		
+		<category><![CDATA[ruby]]></category>
+
+		<guid isPermaLink="false">http://www.notsostupid.com/blog/2007/01/13/ruby-and-lisp-sitting-in-a-tree/</guid>
+		<description><![CDATA[(I just submitted this story to Slashdot, but I didn&#8217;t want to see this masterpiece get lost in the bowels of their submission queue, so I&#8217;m also posting it here. Update: it got accepted)
+The developers of Rubinius, an experimental Ruby interpreter inspired by SmallTalk, have been discussing the possibility of adding a Lisp dialect to [...]]]></description>
+			<content:encoded><![CDATA[<p>(I just submitted this story to <a href='http://www.slashdot.org/'>Slashdot</a>, but I didn&#8217;t want to see this masterpiece get lost in the bowels of their submission queue, so I&#8217;m also posting it here. Update: <a href=http://it.slashdot.org/article.pl?sid=07/01/14/0336213'>it got accepted</a>)</p>
+<p>The developers of <a href='http://blog.fallingsnow.net/rubinius/'>Rubinius</a>, an experimental Ruby interpreter inspired by SmallTalk, have been discussing the possibility of adding a Lisp dialect to their VM. Pat Eyler <a href='http://on-ruby.blogspot.com/2007/01/will-rubinius-be-acceptable-lisp.html'>collected some ideas and opinions</a> from the people involved and it makes for some interesting reading.</p>
+<p>For many, <a href='http://www.randomhacks.net/articles/2005/12/03/why-ruby-is-an-acceptable-lisp'>Ruby already is an acceptable Lisp</a>, and the language itself started as a <i>perlification</i> of Lisp (even <a href='http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-talk/179642'>Matz says so</a>) so it is perhaps fitting and might help explain why the whole idea feels right.</p>
+<p>Now, if someone added support for VB and gave it the respect it deserves, the world would be a better place.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.notsostupid.com/blog/2007/01/13/ruby-and-lisp-sitting-in-a-tree/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>pm: Print Methods</title>
+		<link>http://www.notsostupid.com/blog/2006/11/09/pm-print-methods/</link>
+		<comments>http://www.notsostupid.com/blog/2006/11/09/pm-print-methods/#comments</comments>
+		<pubDate>Thu, 09 Nov 2006 16:20:01 +0000</pubDate>
+		<dc:creator>sd</dc:creator>
+		
+		<category><![CDATA[ruby]]></category>
+
+		<guid isPermaLink="false">http://www.notsostupid.com/blog/2006/11/09/pm-print-methods/</guid>
+		<description><![CDATA[Ruby has a very convenient method to inspect objects: &#8220;p&#8221;. It just prints the result of &#8220;inspect&#8221;. And it&#8217;s exactly what irb uses to show the result of each expression.
+Anyway, the cool guys at projectionist just posted a little method of theirs called &#8220;m&#8221;, which provides easy access to an object&#8217;s methods.
+That made me remember [...]]]></description>
+			<content:encoded><![CDATA[<p>Ruby has a very convenient method to inspect objects: &#8220;p&#8221;. It just prints the result of &#8220;inspect&#8221;. And it&#8217;s exactly what <tt>irb</tt> uses to show the result of each expression.</p>
+<p>Anyway, the cool guys at projectionist <a href='http://project.ioni.st/post/963#post-963'>just posted a little method of theirs</a> called &#8220;m&#8221;, which provides easy access to an object&#8217;s methods.</p>
+<p>That made me remember my old (well, not that old) &#8220;pm&#8221; method for irb, which even if I haven&#8217;t talked about here, I&#8217;ve made public at dotfiles as part of <a href='http://dotfiles.org/~sd/.irbrc'>my irbirc</a> (it&#8217;s the last method).</p>
+<p>Anyway, looking at their implementation, I decided to polish mine and release it here:</p>
+<pre>ANSI_RESET        = " 33[0m"
+ANSI_BOLD         = " 33[1m"
+ANSI_GRAY         = " 33[1;30m"
+ANSI_LGRAY        = " 33[0;37m"
+
+def pm(obj, *options) # Print methods
+  methods = obj.methods - (options.include?(:more) ? [] : Object.methods)
+  filter = options.select {|opt| opt.kind_of? Regexp}.first
+  methods = methods.select {|name| name =~ filter} if filter
+
+  data = methods.sort.collect do |name|
+    method = obj.method(name)
+    args = "(" + case method.arity <=> 0
+    when 1
+      (&#8221;a&#8221;..(?a + method.arity - 1).chr).to_a.join(&#8221;, &#8220;)
+    when -1
+      (&#8221;a&#8221;..(?a - method.arity - 1).chr).to_a.join(&#8221;, &#8220;)
+    else
+      &#8220;&#8221;
+    end + &#8220;)&#8221;
+    klass = $1 if method.inspect =~ /Method: (.*?)#/
+    klass = $1 if klass =~ /((.*?))/
+    [name, args, klass]
+  end
+  max_name_length = data.collect {|item| item[0].size}.max
+  max_args_length = data.collect {|item| item[1].size}.max
+  data.each do |item|
+    print &#8221; #{ANSI_BOLD}#{item[0].rjust(max_name_length)}#{ANSI_RESET}&#8221;
+    print &#8220;#{ANSI_GRAY}#{item[1].ljust(max_args_length)}#{ANSI_RESET}&#8221;
+    print &#8221;   #{ANSI_LGRAY}#{item[2]}#{ANSI_RESET} n&#8221;
+  end
+  data.size
+end
+</pre>
+<p>Don&#8217;t try to understand it unless you can understand it :-)&#8230; just copy it to your .irbrc (you do have an irbrc file, don&#8217;t you?). And use it like this:</p>
+<p><img id="image17" src="http://www.notsostupid.com/files/2006/11/pm-a.png" alt="pm &quot;a&quot;" /></p>
+<p><img id="image18" src="http://www.notsostupid.com/files/2006/11/pm-more.png" alt="pm &quot;a&quot;, :more" /></p>
+<p><img id="image19" src="http://www.notsostupid.com/files/2006/11/pm-grep.png" alt="pm &quot;a&quot;, /regexp/" /></p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.notsostupid.com/blog/2006/11/09/pm-print-methods/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Rails script/server and terminal windows</title>
+		<link>http://www.notsostupid.com/blog/2006/11/01/rails-scriptserver-and-terminal-windows/</link>
+		<comments>http://www.notsostupid.com/blog/2006/11/01/rails-scriptserver-and-terminal-windows/#comments</comments>
+		<pubDate>Wed, 01 Nov 2006 15:31:26 +0000</pubDate>
+		<dc:creator>sd</dc:creator>
+		
+		<category><![CDATA[rails]]></category>
+
+		<category><![CDATA[ruby]]></category>
+
+		<guid isPermaLink="false">http://www.notsostupid.com/blog/2006/11/01/rails-scriptserver-and-terminal-windows/</guid>
+		<description><![CDATA[Here&#8217;s a little hack for those of you that run Rails&#8217; script/server on its own window or tab.
+By inserting a couple of lines into the server script, you can have it change the title of the window or tab it&#8217;s running on, making it a lot easier to look for it when you have lots [...]]]></description>
+			<content:encoded><![CDATA[<p>Here&#8217;s a little hack for those of you that run Rails&#8217; script/server on its own window or tab.</p>
+<p>By inserting a couple of lines into the server script, you can have it change the title of the window or tab it&#8217;s running on, making it a lot easier to look for it when you have lots of windows open.</p>
+<p><img id="image15" src="http://www.notsostupid.com/files/2006/11/server_tab.jpg" alt="Server Tab" /></p>
+<p>All you need is to change &#8220;script/server&#8221; so it looks like this:</p>
+<pre class="textmate-source twilight"><span class="source source_ruby"><span class="comment comment_line comment_line_number-sign comment_line_number-sign_ruby"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_ruby">#</span>!/usr/bin/ruby
+</span>print <span class="string string_quoted string_quoted_double string_quoted_double_ruby"><span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">&#8220;</span><span class="constant constant_character constant_character_escape constant_character_escape_ruby"> 33</span>]2;Rails Server<span class="constant constant_character constant_character_escape constant_character_escape_ruby"> 07</span><span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_end punctuation_definition_string_end_ruby">&#8220;</span></span> <span class="comment comment_line comment_line_number-sign comment_line_number-sign_ruby"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_ruby">#</span> xterm window title
+</span>print <span class="string string_quoted string_quoted_double string_quoted_double_ruby"><span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">&#8220;</span><span class="constant constant_character constant_character_escape constant_character_escape_ruby"> 33</span>]1;Rails Server<span class="constant constant_character constant_character_escape constant_character_escape_ruby"> 07</span><span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_end punctuation_definition_string_end_ruby">&#8220;</span></span> <span class="comment comment_line comment_line_number-sign comment_line_number-sign_ruby"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_ruby">#</span> screen/iterm tab title
+</span>
+<span class="meta meta_require meta_require_ruby"><span class="keyword keyword_other keyword_other_special-method keyword_other_special-method_ruby">require</span> <span class="support support_class support_class_ruby">File</span>.dirname(<span class="variable variable_language variable_language_ruby">__FILE__</span>) + <span class="string string_quoted string_quoted_single string_quoted_single_ruby"><span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">&#8216;</span>/../config/boot<span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_end punctuation_definition_string_end_ruby">&#8216;</span></span></span>
+<span class="meta meta_require meta_require_ruby"><span class="keyword keyword_other keyword_other_special-method keyword_other_special-method_ruby">require</span> <span class="string string_quoted string_quoted_single string_quoted_single_ruby"><span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">&#8216;</span>commands/server<span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_end punctuation_definition_string_end_ruby">&#8216;</span></span></span>
+
+print <span class="string string_quoted string_quoted_double string_quoted_double_ruby"><span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">&#8220;</span><span class="constant constant_character constant_character_escape constant_character_escape_ruby"> 33</span>]1; <span class="constant constant_character constant_character_escape constant_character_escape_ruby"> 07</span><span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_end punctuation_definition_string_end_ruby">&#8220;</span></span> <span class="comment comment_line comment_line_number-sign comment_line_number-sign_ruby"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_ruby">#</span> screen/iterm tab title
+</span>print <span class="string string_quoted string_quoted_double string_quoted_double_ruby"><span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">&#8220;</span><span class="constant constant_character constant_character_escape constant_character_escape_ruby"> 33</span>]2; <span class="constant constant_character constant_character_escape constant_character_escape_ruby"> 07</span><span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_end punctuation_definition_string_end_ruby">&#8220;</span></span> <span class="comment comment_line comment_line_number-sign comment_line_number-sign_ruby"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_ruby">#</span> xterm window title
+</span></span></pre>
+<p>The second set of prints will clear the title after the server terminates. You might want to adjust it to suit your needs.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.notsostupid.com/blog/2006/11/01/rails-scriptserver-and-terminal-windows/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Erlang, The Ringtone</title>
+		<link>http://www.notsostupid.com/blog/2006/10/24/erlang-the-ringtone/</link>
+		<comments>http://www.notsostupid.com/blog/2006/10/24/erlang-the-ringtone/#comments</comments>
+		<pubDate>Tue, 24 Oct 2006 20:58:39 +0000</pubDate>
+		<dc:creator>sd</dc:creator>
+		
+		<category><![CDATA[software development]]></category>
+
+		<guid isPermaLink="false">http://www.notsostupid.com/blog/2006/10/24/erlang-the-ringtone/</guid>
+		<description><![CDATA[If you did not attend RubyConf 2006, then please see this movie first.
+If you did attend the conference, or you have seen &#8220;Erlang, The Movie&#8221; before, then this needs no other explanation:
+Erlang, The Ringtone.mp3
+]]></description>
+			<content:encoded><![CDATA[<p>If you did not attend RubyConf 2006, then please <a href='http://video.google.com/videoplay?docid=-5830318882717959520&#038;q=erlang'>see this movie first</a>.</p>
+<p>If you did attend the conference, or you have seen &#8220;Erlang, The Movie&#8221; before, then this needs no other explanation:</p>
+<p><a href='http://www.notsostupid.com/files/erlang_the_ringtone.mp3'>Erlang, The Ringtone.mp3</a></p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.notsostupid.com/blog/2006/10/24/erlang-the-ringtone/feed/</wfw:commentRss>
+<enclosure url='http://www.notsostupid.com/files/erlang_the_ringtone.mp3' length='97708' type='audio/mpeg'/>
+		</item>
+		<item>
+		<title>Joel is wrong</title>
+		<link>http://www.notsostupid.com/blog/2006/09/02/joel-is-wrong/</link>
+		<comments>http://www.notsostupid.com/blog/2006/09/02/joel-is-wrong/#comments</comments>
+		<pubDate>Sat, 02 Sep 2006 14:04:49 +0000</pubDate>
+		<dc:creator>sd</dc:creator>
+		
+		<category><![CDATA[ruby]]></category>
+
+		<category><![CDATA[software development]]></category>
+
+		<guid isPermaLink="false">http://www.notsostupid.com/blog/2006/09/02/joel-is-wrong/</guid>
+		<description><![CDATA[Joel is wrong when he says that you should pick a safe language (Java, C#, PHP or maybe python) if &#8220;someone is going to get fired&#8221;.
+He almost got it right: You should go with a safe language if you&#8217;re afraid of being fired for picking the wrong language.
+And in fact, in that case, I can&#8217;t [...]]]></description>
+			<content:encoded><![CDATA[<p><a href='http://www.joelonsoftware.com/items/2006/09/01.html'>Joel</a> is wrong when he says that you should pick a safe language (Java, C#, PHP or maybe python) if &#8220;someone is going to get fired&#8221;.</p>
+<p>He almost got it right: You should go with a safe language if you&#8217;re afraid of being fired for picking the wrong language.</p>
+<p>And in fact, in that case, I can&#8217;t understand why would you pick PHP or python. VisualBasic, sure, but using any other scripting language is probably a career-killing.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.notsostupid.com/blog/2006/09/02/joel-is-wrong/feed/</wfw:commentRss>
+		</item>
+	</channel>
+</rss>

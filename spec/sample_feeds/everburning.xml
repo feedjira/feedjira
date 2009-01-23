@@ -1,0 +1,1029 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	>
+
+<channel>
+	<title>everburning</title>
+	<atom:link href="http://everburning.com/feed/" rel="self" type="application/rss+xml" />
+	<link>http://everburning.com</link>
+	<description>picking at the fringes of reality</description>
+	<pubDate>Fri, 16 Jan 2009 03:11:24 +0000</pubDate>
+	<generator>http://wordpress.org/?v=2.7</generator>
+	<language>en</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+			<item>
+		<title>Playing with EventMachine</title>
+		<link>http://everburning.com/news/playing-with-eventmachine/</link>
+		<comments>http://everburning.com/news/playing-with-eventmachine/#comments</comments>
+		<pubDate>Fri, 16 Jan 2009 03:11:24 +0000</pubDate>
+		<dc:creator>dj2</dc:creator>
+		
+		<category><![CDATA[Computers]]></category>
+
+		<category><![CDATA[Programming]]></category>
+
+		<category><![CDATA[EventMachine]]></category>
+
+		<category><![CDATA[Ruby]]></category>
+
+		<guid isPermaLink="false">http://everburning.com/?p=392</guid>
+		<description><![CDATA[<p><img src="http://everburning.com/wp-content/uploads/2009/01/img_5305-300x282.jpg" alt="img_5305" title="img_5305" width="300" height="282" class="alignleft size-medium wp-image-393" />I&#8217;ve had a bit of opportunity to play with <a href="http://rubyeventmachine.com" onclick="javascript:pageTracker._trackPageview ('/outbound/rubyeventmachine.com');">Ruby EventMachine</a> over the last few weeks at work. While the <a href="http://eventmachine.rubyforge.org/" onclick="javascript:pageTracker._trackPageview ('/outbound/eventmachine.rubyforge.org');">RDoc</a> is very helpful it&#8217;s still a bit of work to figure things out. To that end, I figured I might try to write some stuff down.</p>
+<p>The first question is typically, what is this EventMachine thing and how come when I use it the rest of my application doesn&#8217;t execute. Well, simply put, EM (EventMachine) is an event loop. Once you kick off  EventMachine it takes over the execution of your main Ruby thread and does its own thing. EM will listen on sockets, on file descriptors, set timers and various other procedures. When activity happens on the things EM is listening too it will trigger event callbacks to your code. You handle the event then return control to EventMachine.</p>
+<p>It&#8217;s also possible to have EventMachine execute a block of long running code on another thread so you don&#8217;t hold up the entire run loop with your work. When the process is done a callback can be executed on the main thread to handle any responses to the original connection.</p>
+<p>Hopefully this will all become more clear as we look at some code.</p>
+<h2>Timer Example</h2>
+<pre><code>
+#!/usr/bin/ruby
+
+require 'rubygems'
+require 'eventmachine'
+
+EventMachine.run do
+    EM.add_periodic_timer(1) { puts "Tick ..." }
+
+    EM.add_timer(3) do
+        puts "I waited 3 seconds"
+        EM.stop_event_loop
+    end
+end
+
+puts "All done."
+</code></pre>
+<p>Nothing too complicated here. Let&#8217;s, as they say, start at the start. I&#8217;ve installed Eventmachine through rubygems (<code>gem install eventmachine</code>) so I need the proper requires to get everything available.  You&#8217;ll notice I&#8217;m using both <code>EventMachine</code> and <code>EM</code>, they&#8217;re interchangeable. I prefer <code>EM</code> as it&#8217;s shorter but sometimes use  <code>EventMachine</code> anyway. The call to <code>EventMachine#run</code> is what kicks off the main event loop. Before the event loop is started the block provided to <code>EM#run</code> will be executed. This is where you can setup your various servers, timers and other handlers as needed.</p>
+<p>In this example I creating two timers. Using <code>EM#add_timer</code> I&#8217;ve created a timer that will execute <em>once</em> in at least three seconds. The <code>EM#add_periodic_timer</code> creates a timer that will execute every one second. In both cases when the event is fired it will execute the block attached to the timer creation call.</p>
+<p>For the timer which fires each second we do a simple <code>puts</code> call. In the single shot timer we have a call to <code>EM#stop_event_loop</code>. <code>EM#stop_event_loop</code> will cause the EventMachine event loop to stop executing. Once the event loop is terminated the control flow of the application will pickup again after the <code>EM#run</code> block and execute the final <code>puts</code> statement.</p>
+<p>So, as you can see, any code we have after the call to <code>EM#run</code> will not get executed until the event loop is shutdown. Typically when your application is terminating.</p>
+<h2>Server Example</h2>
+<pre><code>
+#!/usr/bin/ruby
+
+require 'rubygems'
+require 'eventmachine'
+
+module Server
+    def receive_data(data)
+        puts data
+        send_data("helo\n")
+    end
+end
+
+EM.run { EM.start_server 'localhost', 8080, Server }
+</code></pre>
+<p>Here we&#8217;re calling <code>EM#start_server</code> in our run block. <code>EM#start_server</code> will tell EventMachine to start listening on IP address defined by <code>localhost</code>, port <code>8080</code> and will will create an anonymous class and include the module <code>Server</code> for each connection. You could also define <code>Server</code> as a class which inherits from <code>EventMachine::Connection</code>.</p>
+<p>It&#8217;s worth pointing out, the instantiated class will only exist for a single connection. You won&#8217;t be able to store information between requests in the object.</p>
+<p>What you can do is pass data into the object when it&#8217;s created. </p>
+<h2>Server Example 2</h2>
+<pre><code>
+#!/usr/bin/ruby
+
+require 'rubygems'
+require 'eventmachine'
+
+class Server < EventMachine::Connection
+    attr_accessor :options, :status
+
+    def receive_data(data)
+        puts "#{@status} -- #{data}"
+        send_data("helo\n")
+    end
+end
+
+EM.run do
+    EM.start_server 'localhost', 8080, Server do |conn|
+        conn.options = {:my => 'options'}
+        conn.status = :OK
+    end
+end
+</code></pre>
+<p>The <code>EM#start_server</code> method will yield to a block passing in the object that will handle the connection. You can then assign any values into that object that you wish.</p>
+<p>That&#8217;s it for now, my very quick introduction to EventMachine. Hopefully it was useful. </p>
+]]></description>
+			<content:encoded><![CDATA[<p><img src="http://everburning.com/wp-content/uploads/2009/01/img_5305-300x282.jpg" alt="img_5305" title="img_5305" width="300" height="282" class="alignleft size-medium wp-image-393" />I&#8217;ve had a bit of opportunity to play with <a href="http://rubyeventmachine.com" onclick="javascript:pageTracker._trackPageview ('/outbound/rubyeventmachine.com');">Ruby EventMachine</a> over the last few weeks at work. While the <a href="http://eventmachine.rubyforge.org/" onclick="javascript:pageTracker._trackPageview ('/outbound/eventmachine.rubyforge.org');">RDoc</a> is very helpful it&#8217;s still a bit of work to figure things out. To that end, I figured I might try to write some stuff down.</p>
+<p>The first question is typically, what is this EventMachine thing and how come when I use it the rest of my application doesn&#8217;t execute. Well, simply put, EM (EventMachine) is an event loop. Once you kick off  EventMachine it takes over the execution of your main Ruby thread and does its own thing. EM will listen on sockets, on file descriptors, set timers and various other procedures. When activity happens on the things EM is listening too it will trigger event callbacks to your code. You handle the event then return control to EventMachine.</p>
+<p>It&#8217;s also possible to have EventMachine execute a block of long running code on another thread so you don&#8217;t hold up the entire run loop with your work. When the process is done a callback can be executed on the main thread to handle any responses to the original connection.</p>
+<p>Hopefully this will all become more clear as we look at some code.</p>
+<h2>Timer Example</h2>
+<pre><code>
+#!/usr/bin/ruby
+
+require 'rubygems'
+require 'eventmachine'
+
+EventMachine.run do
+    EM.add_periodic_timer(1) { puts "Tick ..." }
+
+    EM.add_timer(3) do
+        puts "I waited 3 seconds"
+        EM.stop_event_loop
+    end
+end
+
+puts "All done."
+</code></pre>
+<p>Nothing too complicated here. Let&#8217;s, as they say, start at the start. I&#8217;ve installed Eventmachine through rubygems (<code>gem install eventmachine</code>) so I need the proper requires to get everything available.  You&#8217;ll notice I&#8217;m using both <code>EventMachine</code> and <code>EM</code>, they&#8217;re interchangeable. I prefer <code>EM</code> as it&#8217;s shorter but sometimes use  <code>EventMachine</code> anyway. The call to <code>EventMachine#run</code> is what kicks off the main event loop. Before the event loop is started the block provided to <code>EM#run</code> will be executed. This is where you can setup your various servers, timers and other handlers as needed.</p>
+<p>In this example I creating two timers. Using <code>EM#add_timer</code> I&#8217;ve created a timer that will execute <em>once</em> in at least three seconds. The <code>EM#add_periodic_timer</code> creates a timer that will execute every one second. In both cases when the event is fired it will execute the block attached to the timer creation call.</p>
+<p>For the timer which fires each second we do a simple <code>puts</code> call. In the single shot timer we have a call to <code>EM#stop_event_loop</code>. <code>EM#stop_event_loop</code> will cause the EventMachine event loop to stop executing. Once the event loop is terminated the control flow of the application will pickup again after the <code>EM#run</code> block and execute the final <code>puts</code> statement.</p>
+<p>So, as you can see, any code we have after the call to <code>EM#run</code> will not get executed until the event loop is shutdown. Typically when your application is terminating.</p>
+<h2>Server Example</h2>
+<pre><code>
+#!/usr/bin/ruby
+
+require 'rubygems'
+require 'eventmachine'
+
+module Server
+    def receive_data(data)
+        puts data
+        send_data("helo\n")
+    end
+end
+
+EM.run { EM.start_server 'localhost', 8080, Server }
+</code></pre>
+<p>Here we&#8217;re calling <code>EM#start_server</code> in our run block. <code>EM#start_server</code> will tell EventMachine to start listening on IP address defined by <code>localhost</code>, port <code>8080</code> and will will create an anonymous class and include the module <code>Server</code> for each connection. You could also define <code>Server</code> as a class which inherits from <code>EventMachine::Connection</code>.</p>
+<p>It&#8217;s worth pointing out, the instantiated class will only exist for a single connection. You won&#8217;t be able to store information between requests in the object.</p>
+<p>What you can do is pass data into the object when it&#8217;s created. </p>
+<h2>Server Example 2</h2>
+<pre><code>
+#!/usr/bin/ruby
+
+require 'rubygems'
+require 'eventmachine'
+
+class Server < EventMachine::Connection
+    attr_accessor :options, :status
+
+    def receive_data(data)
+        puts "#{@status} -- #{data}"
+        send_data("helo\n")
+    end
+end
+
+EM.run do
+    EM.start_server 'localhost', 8080, Server do |conn|
+        conn.options = {:my => 'options'}
+        conn.status = :OK
+    end
+end
+</code></pre>
+<p>The <code>EM#start_server</code> method will yield to a block passing in the object that will handle the connection. You can then assign any values into that object that you wish.</p>
+<p>That&#8217;s it for now, my very quick introduction to EventMachine. Hopefully it was useful. </p>
+]]></content:encoded>
+			<wfw:commentRss>http://everburning.com/news/playing-with-eventmachine/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Fighting Review Board</title>
+		<link>http://everburning.com/news/fighting-review-board/</link>
+		<comments>http://everburning.com/news/fighting-review-board/#comments</comments>
+		<pubDate>Sat, 03 Jan 2009 02:42:03 +0000</pubDate>
+		<dc:creator>dj2</dc:creator>
+		
+		<category><![CDATA[Computers]]></category>
+
+		<category><![CDATA[Work]]></category>
+
+		<category><![CDATA[reviewboard]]></category>
+
+		<guid isPermaLink="false">http://everburning.com/?p=375</guid>
+		<description><![CDATA[<p><img src="http://everburning.com/wp-content/uploads/2009/01/img_5528-150x150.jpg" alt="img_5528" title="img_5528" width="150" height="150" class="alignleft size-thumbnail wp-image-383" />We&#8217;ve been talking a bit about code reviews at work, I do a bit of this now by reading commit emails, and have been wondering if there was an easier solution. To that end, I started looking around for software that could help us out.</p>
+<p>I ended up beating on <a href="http://review-board.org" onclick="javascript:pageTracker._trackPageview ('/outbound/review-board.org');">Review Board</a> for about six hours before getting it installed. Now that it&#8217;s running it looks pretty nice. I think we&#8217;ll end up doing more post-commits then pre-commits but hopefully it&#8217;ll fit into our workflow.</p>
+<p>Anyway, I though I&#8217;d put up a quick post on what I needed to do it get it running. The <a href="http://code.google.com/docreader/#p=reviewboard&#038;s=reviewboard&#038;t=AdministratorDocumentation" onclick="javascript:pageTracker._trackPageview ('/outbound/code.google.com');">docs</a> do a good job of getting the base install done.  So give that a gander but come back here before you start running <code>rb-site install</code>.</p>
+<p>We need to setup our MySQL database before running the <code>rb-site</code>.  I did this by initializing a <code>reviewboard</code> MySQL database with a <code>reviewboard</code> user. I then granted all priviledges by executing:</p>
+<pre><code>
+GRANT ALL PRIVILEGES ON reviewboard.* TO 'reviewboard'@'localhost'
+            IDENTIFIED BY 'some_pass' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON reviewboard.* TO 'reviewboard'@'% '
+            IDENTIFIED BY 'some_pass' WITH GRANT OPTION;
+</code></pre>
+<p>Once <code>rb-site install</code> is run you&#8217;ll need to configure your webserver. In my case I ended up using Apache with FastCGI. When I tried to use the mod_python option the webserver would get a Segmentation Violation and terminate. Not so good.</p>
+<p>The provided Apache FastCGI configuration script didn&#8217;t work for me and I ended up using the following.</p>
+<pre><code>
+AddHandler fastcgi-script fcgi
+
+FastCGIExternalServer "/var/www/reviews/htdocs/reviewboard.fcgi" -host 127.0.0.1:3033 -idle-timeout 60
+
+&lt;VirtualHost *:8888&gt;
+    ServerName reviews.local
+    DocumentRoot /var/www/reviews/htdocs
+
+    # Alias static media requests to filesystem
+    Alias /media /var/www/reviews/htdocs/media
+    Alias /errordocs /var/www/reviews/htdocs/errordocs
+
+    # Error handlers
+    ErrorDocument 500 /errordocs/500.html
+
+    # Direct all other requests to the fastcgi server
+    RewriteEngine on
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^/(.*)$ /reviewboard.fcgi/$1 [QSA,L]
+&lt;/VirtualHost&gt;
+</code></pre>
+<p>The first parameter to <code>FastCGIExternalServer</code> needs to be the full path to <code>reviewboard.fcgi</code> as if it existed in your <code>DocumentRoot</code>. Nothing else seemed to work for me.</p>
+<p>Note, if you&#8217;re using VirtualHosts you&#8217;ll also need to make sure the <code>NamedVirtualHost</code> option is enabled in your <code>httpd.conf</code> file (or whatever your main Apache config file is named).</p>
+<p>Now, this will run, but it won&#8217;t work. The reason it won&#8217;t work is that it needs an external server to send the FastCGI requests too. You can run this server by executing: <code>rb-site manage /var/www/reviews/ runfcgi method=threaded port=3033 host=127.0.0.1 protocol=fcgi</code>. You&#8217;ll notice the host and port match up to those specified in the Apache config file.</p>
+<p>I ended up creating a simple shell script to handle starting and stopping the <code>rb-site</code> server.</p>
+<pre>
+#! /bin/sh
+
+# chkconfig: 2345 90 90
+
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+DESC="reviewboard daemon"
+NAME=reviewboard
+
+case "$1" in
+  start)
+    echo -n "Starting $DESC: $NAME"
+    /usr/bin/rb-site manage /var/www/reviews/ runfcgi method=threaded port=3033 host=127.0.0.1 protocol=fcgi
+    echo "."
+    ;;
+  stop)
+    echo -n "Stopping $DESC: $NAME"
+    pkill rb-site
+    echo "."
+    ;;
+  *)
+    echo "Usage: NAME {start|stop}" >&#038;2
+    exit 3
+    ;;
+esac
+
+exit 0
+</pre>
+<p>With that I was able to login and start playing with Review Board. I ended up doing a bit of extra work to disable registration (which is kind of nasty as I had to edit the base HTML templates and urls.py) but everything seems to be working well now.</p>
+]]></description>
+			<content:encoded><![CDATA[<p><img src="http://everburning.com/wp-content/uploads/2009/01/img_5528-150x150.jpg" alt="img_5528" title="img_5528" width="150" height="150" class="alignleft size-thumbnail wp-image-383" />We&#8217;ve been talking a bit about code reviews at work, I do a bit of this now by reading commit emails, and have been wondering if there was an easier solution. To that end, I started looking around for software that could help us out.</p>
+<p>I ended up beating on <a href="http://review-board.org" onclick="javascript:pageTracker._trackPageview ('/outbound/review-board.org');">Review Board</a> for about six hours before getting it installed. Now that it&#8217;s running it looks pretty nice. I think we&#8217;ll end up doing more post-commits then pre-commits but hopefully it&#8217;ll fit into our workflow.</p>
+<p>Anyway, I though I&#8217;d put up a quick post on what I needed to do it get it running. The <a href="http://code.google.com/docreader/#p=reviewboard&#038;s=reviewboard&#038;t=AdministratorDocumentation" onclick="javascript:pageTracker._trackPageview ('/outbound/code.google.com');">docs</a> do a good job of getting the base install done.  So give that a gander but come back here before you start running <code>rb-site install</code>.</p>
+<p>We need to setup our MySQL database before running the <code>rb-site</code>.  I did this by initializing a <code>reviewboard</code> MySQL database with a <code>reviewboard</code> user. I then granted all priviledges by executing:</p>
+<pre><code>
+GRANT ALL PRIVILEGES ON reviewboard.* TO 'reviewboard'@'localhost'
+            IDENTIFIED BY 'some_pass' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON reviewboard.* TO 'reviewboard'@'% '
+            IDENTIFIED BY 'some_pass' WITH GRANT OPTION;
+</code></pre>
+<p>Once <code>rb-site install</code> is run you&#8217;ll need to configure your webserver. In my case I ended up using Apache with FastCGI. When I tried to use the mod_python option the webserver would get a Segmentation Violation and terminate. Not so good.</p>
+<p>The provided Apache FastCGI configuration script didn&#8217;t work for me and I ended up using the following.</p>
+<pre><code>
+AddHandler fastcgi-script fcgi
+
+FastCGIExternalServer "/var/www/reviews/htdocs/reviewboard.fcgi" -host 127.0.0.1:3033 -idle-timeout 60
+
+&lt;VirtualHost *:8888&gt;
+    ServerName reviews.local
+    DocumentRoot /var/www/reviews/htdocs
+
+    # Alias static media requests to filesystem
+    Alias /media /var/www/reviews/htdocs/media
+    Alias /errordocs /var/www/reviews/htdocs/errordocs
+
+    # Error handlers
+    ErrorDocument 500 /errordocs/500.html
+
+    # Direct all other requests to the fastcgi server
+    RewriteEngine on
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^/(.*)$ /reviewboard.fcgi/$1 [QSA,L]
+&lt;/VirtualHost&gt;
+</code></pre>
+<p>The first parameter to <code>FastCGIExternalServer</code> needs to be the full path to <code>reviewboard.fcgi</code> as if it existed in your <code>DocumentRoot</code>. Nothing else seemed to work for me.</p>
+<p>Note, if you&#8217;re using VirtualHosts you&#8217;ll also need to make sure the <code>NamedVirtualHost</code> option is enabled in your <code>httpd.conf</code> file (or whatever your main Apache config file is named).</p>
+<p>Now, this will run, but it won&#8217;t work. The reason it won&#8217;t work is that it needs an external server to send the FastCGI requests too. You can run this server by executing: <code>rb-site manage /var/www/reviews/ runfcgi method=threaded port=3033 host=127.0.0.1 protocol=fcgi</code>. You&#8217;ll notice the host and port match up to those specified in the Apache config file.</p>
+<p>I ended up creating a simple shell script to handle starting and stopping the <code>rb-site</code> server.</p>
+<pre>
+#! /bin/sh
+
+# chkconfig: 2345 90 90
+
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+DESC="reviewboard daemon"
+NAME=reviewboard
+
+case "$1" in
+  start)
+    echo -n "Starting $DESC: $NAME"
+    /usr/bin/rb-site manage /var/www/reviews/ runfcgi method=threaded port=3033 host=127.0.0.1 protocol=fcgi
+    echo "."
+    ;;
+  stop)
+    echo -n "Stopping $DESC: $NAME"
+    pkill rb-site
+    echo "."
+    ;;
+  *)
+    echo "Usage: NAME {start|stop}" >&#038;2
+    exit 3
+    ;;
+esac
+
+exit 0
+</pre>
+<p>With that I was able to login and start playing with Review Board. I ended up doing a bit of extra work to disable registration (which is kind of nasty as I had to edit the base HTML templates and urls.py) but everything seems to be working well now.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://everburning.com/news/fighting-review-board/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Dapple is coming</title>
+		<link>http://everburning.com/news/dapple-is-coming/</link>
+		<comments>http://everburning.com/news/dapple-is-coming/#comments</comments>
+		<pubDate>Tue, 16 Dec 2008 04:03:47 +0000</pubDate>
+		<dc:creator>dj2</dc:creator>
+		
+		<category><![CDATA[Computers]]></category>
+
+		<category><![CDATA[Video Games]]></category>
+
+		<category><![CDATA[Dapple]]></category>
+
+		<category><![CDATA[Games]]></category>
+
+		<category><![CDATA[Streaming Colour]]></category>
+
+		<guid isPermaLink="false">http://everburning.com/news/dapple-is-coming/</guid>
+		<description><![CDATA[<p>Owen has finally published some screenshots and copy for the game he&#8217;s been working on. If you&#8217;ve got an iPhone or iPod Touch you should head over and check out <a href="http://dapplegame.com" onclick="javascript:pageTracker._trackPageview ('/outbound/dapplegame.com');">Dapple</a> from <a href="http://streamingcolour.com" onclick="javascript:pageTracker._trackPageview ('/outbound/streamingcolour.com');">Streaming Colour Studios</a>.</p>
+<p>You should also buy it when it comes out, else I&#8217;ll have to come find it. I know people who own big sticks&#8230;.</p>
+<p>(But then, the game stands on its own. Owen sent me a prototype that was a lot of fun to poke around. The new version looks like it&#8217;s miles ahead of what I played so I&#8217;m looking forward to the release.)</p>
+]]></description>
+			<content:encoded><![CDATA[<p>Owen has finally published some screenshots and copy for the game he&#8217;s been working on. If you&#8217;ve got an iPhone or iPod Touch you should head over and check out <a href="http://dapplegame.com" onclick="javascript:pageTracker._trackPageview ('/outbound/dapplegame.com');">Dapple</a> from <a href="http://streamingcolour.com" onclick="javascript:pageTracker._trackPageview ('/outbound/streamingcolour.com');">Streaming Colour Studios</a>.</p>
+<p>You should also buy it when it comes out, else I&#8217;ll have to come find it. I know people who own big sticks&#8230;.</p>
+<p>(But then, the game stands on its own. Owen sent me a prototype that was a lot of fun to poke around. The new version looks like it&#8217;s miles ahead of what I played so I&#8217;m looking forward to the release.)</p>
+]]></content:encoded>
+			<wfw:commentRss>http://everburning.com/news/dapple-is-coming/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Riding the Rabbit</title>
+		<link>http://everburning.com/news/ridding-the-rabbit/</link>
+		<comments>http://everburning.com/news/ridding-the-rabbit/#comments</comments>
+		<pubDate>Sun, 14 Dec 2008 03:40:07 +0000</pubDate>
+		<dc:creator>dj2</dc:creator>
+		
+		<category><![CDATA[Computers]]></category>
+
+		<category><![CDATA[Programming]]></category>
+
+		<category><![CDATA[AMQP]]></category>
+
+		<category><![CDATA[RabbitMQ]]></category>
+
+		<category><![CDATA[Ruby]]></category>
+
+		<guid isPermaLink="false">http://everburning.com/?p=354</guid>
+		<description><![CDATA[<p><img src="http://everburning.com/wp-content/uploads/2008/12/img_5523.png" alt="img_5523" title="img_5523" width="250" height="257" class="alignleft size-full wp-image-356" />We&#8217;ve started using <a href="http://www.rabbitmq.com/" onclick="javascript:pageTracker._trackPageview ('/outbound/www.rabbitmq.com');">RabbitMQ</a> at <a href="http://postrank.com" onclick="javascript:pageTracker._trackPageview ('/outbound/postrank.com');">work</a> for some of our messaging needs. We&#8217;ve been using the <a href="http://github.com/tmm1/amqp/tree/master" onclick="javascript:pageTracker._trackPageview ('/outbound/github.com');">Ruby AMQP</a> library for all of our communication with Rabbit so far. So, I thought I&#8217;d write up a quick article on how to use the Ruby AMQP library.</p>
+<p>I&#8217;ll be showing some code from a <a href="http://github.com/dj2/amqp/tree/master" onclick="javascript:pageTracker._trackPageview ('/outbound/github.com');">fork</a> of the Ruby AMQP code that adds a bit of reconnect logic. I&#8217;ll call out this difference when we get there.</p>
+<p>The Ruby AMQP bindings are written using the <a href="http://rubyeventmachine.com/" onclick="javascript:pageTracker._trackPageview ('/outbound/rubyeventmachine.com');">EventMachine</a> framework so we&#8217;ll be working under that for this article.</p>
+<p>We&#8217;re going to look at a couple simple examples, adding to an exchange and draining messages off an exchange.</p>
+<p><img src="http://everburning.com/wp-content/uploads/2008/12/img_5677.png" alt="img_5677" title="img_5677" width="200" height="212" class="alignright size-full wp-image-355" />First, a quick note on AMQP terminology, this isn&#8217;t complete but should cover us for our purpose. When you publish a message to an AMQP server (I&#8217;m just going to use Rabbit from now on) it gets published onto an exchange. A client who wishes to listen to the exchange attaches a queue to the exchange. Queues and exchanges can be set as durable which means they&#8217;ll survive a restart of Rabbit. Messages can be marked as persistent which means they&#8217;ll sit on the queues attached to the exchange until the consumer picks them up. If a message isn&#8217;t persistent it will just disappear from the queue if there is no client listening.</p>
+<p>The first step is setting up our Rabbit instance. I&#8217;m not going to explain this stuff, the Rabbit documentation can do a better job then I can.</p>
+<pre><code>
+[dj2@titania ~]# rabbitmqctl add_vhost /my_vhost
+Creating vhost "/my_vhost" ...done.
+
+[dj2@titania ~]# rabbitmqctl add_user dj2 secret_password
+Creating user "dj2" ...done.
+[dj2@titania ~]# rabbitmqctl add_user reader some_pass
+Creating user "reader" ...done.
+
+[dj2@titania ~]# rabbitmqctl map_user_vhost dj2 /my_vhost
+Mapping user "dj2" to vhost "/my_vhost" ...done.
+[dj2@titania ~]# rabbitmqctl map_user_vhost reader /my_vhost
+Mapping user "reader" to vhost "/my_vhost" ...done.
+
+[dj2@titania ~]# rabbitmqctl set_permissions dj2 /my_vhost /data all
+Setting permissions for user "dj2", vhost "/my_vhost", realm "/data" ...done.
+[dj2@titania ~]# rabbitmqctl set_permissions reader /my_vhost /data all
+Setting permissions for user "reader", vhost "/my_vhost", realm "/data" ...done.
+</code></pre>
+<p>With that out of the way, lets move to something a bit more interesting.</p>
+<pre><code>
+#!/usr/local/bin/ruby
+
+require 'rubygems'
+require 'mq'
+
+EM.run do
+  AMQP.connect(:user => 'dj2', :pass => 'secret_password',
+               :host => 'localhost', :vhost => '/my_vhost') do |conn|
+    @connection = conn
+    channel = MQ.new(@connection)
+    @xchange = channel.fanout('my_exchange', :durable => true)
+  end
+
+  EM.add_timer(1) do
+    @xchange.publish("data to publish")
+    EM.add_timer(1) { EM.stop_event_loop }
+  end
+end
+</code></pre>
+<p>As I mentioned, everything runs under EventMachine, so our main code is wrapped inside an <code>EM#run</code> block. The first thing we&#8217;re doing is connecting to Rabbit. This is done with <code>AMQP#connect</code>. In the official Ruby AMQP code you don&#8217;t provide a block to <code>AMQP#connect</code> it returns the connection object. If you&#8217;re using the reconnect fork you pass a block to <code>AMQP#connect</code> that will be executed when we reconnect to the server (it also returns the connection object if you want).</p>
+<p>Once we&#8217;ve got the connection we need to create the channel that we&#8217;re going to work with. This is done with <code>MQ#new</code>. With the channel in hand we can create our exchange. In this case we&#8217;re creating a <em>fanout</em> exchange. The exchange will be named <em>my_exchange</em> and will be durable, so the exchange will survive a Rabbit restart.</p>
+<p>I&#8217;m setting up an EventMachine timer to publish my message. This gives everything a few seconds to startup and connect to Rabbit. We then use the <code>publish</code> method to send the message to the exchange.</p>
+<p>We kill off EventMachine a second later so the application will exit.</p>
+<pre><code>
+#!/usr/local/bin/ruby
+
+require 'rubygems'
+require 'mq'
+
+EM.run do
+  trap("INT") { EM.stop }
+  trap("TERM") { EM.stop }
+
+  AMQP.connect(:user => 'reader', :pass => 'some_pass',
+               :host => 'localhost', :vhost => '/my_vhost') do |conn|
+    @connection = conn
+    channel = MQ.new(@connection)
+
+    xchange = channel.fanout('my_exchange', :durable => false)
+    q = MQ::Queue.new(channel, 'my_queue', :durable => false)
+    q.bind(xchange)
+
+    q.subscribe do |header, msg|
+      puts "GOT #{msg}"
+    end
+  end
+end
+</code></pre>
+<p>You&#8217;ll notice the similarities between this code and the last block of code.  Once we&#8217;ve created our exchange we create a queue on the exchange. This is done using <code>MQ::Queue#new</code> We give the queue a unique name and set it to a non-durable. We then bind the queue to the exchange. With the queue bound we use the <code>subscribe</code> method to listen on the queue. When messages arrive the code block will be executed with the header and message provided.</p>
+<p>That&#8217;s it. It&#8217;s all pretty simple. Well, at least in these examples it is. This is just the tip of the AMQP iceberg but hopefully you&#8217;ve got enough information to start digging in.</p>
+<p>Have fun.</p>
+]]></description>
+			<content:encoded><![CDATA[<p><img src="http://everburning.com/wp-content/uploads/2008/12/img_5523.png" alt="img_5523" title="img_5523" width="250" height="257" class="alignleft size-full wp-image-356" />We&#8217;ve started using <a href="http://www.rabbitmq.com/" onclick="javascript:pageTracker._trackPageview ('/outbound/www.rabbitmq.com');">RabbitMQ</a> at <a href="http://postrank.com" onclick="javascript:pageTracker._trackPageview ('/outbound/postrank.com');">work</a> for some of our messaging needs. We&#8217;ve been using the <a href="http://github.com/tmm1/amqp/tree/master" onclick="javascript:pageTracker._trackPageview ('/outbound/github.com');">Ruby AMQP</a> library for all of our communication with Rabbit so far. So, I thought I&#8217;d write up a quick article on how to use the Ruby AMQP library.</p>
+<p>I&#8217;ll be showing some code from a <a href="http://github.com/dj2/amqp/tree/master" onclick="javascript:pageTracker._trackPageview ('/outbound/github.com');">fork</a> of the Ruby AMQP code that adds a bit of reconnect logic. I&#8217;ll call out this difference when we get there.</p>
+<p>The Ruby AMQP bindings are written using the <a href="http://rubyeventmachine.com/" onclick="javascript:pageTracker._trackPageview ('/outbound/rubyeventmachine.com');">EventMachine</a> framework so we&#8217;ll be working under that for this article.</p>
+<p>We&#8217;re going to look at a couple simple examples, adding to an exchange and draining messages off an exchange.</p>
+<p><img src="http://everburning.com/wp-content/uploads/2008/12/img_5677.png" alt="img_5677" title="img_5677" width="200" height="212" class="alignright size-full wp-image-355" />First, a quick note on AMQP terminology, this isn&#8217;t complete but should cover us for our purpose. When you publish a message to an AMQP server (I&#8217;m just going to use Rabbit from now on) it gets published onto an exchange. A client who wishes to listen to the exchange attaches a queue to the exchange. Queues and exchanges can be set as durable which means they&#8217;ll survive a restart of Rabbit. Messages can be marked as persistent which means they&#8217;ll sit on the queues attached to the exchange until the consumer picks them up. If a message isn&#8217;t persistent it will just disappear from the queue if there is no client listening.</p>
+<p>The first step is setting up our Rabbit instance. I&#8217;m not going to explain this stuff, the Rabbit documentation can do a better job then I can.</p>
+<pre><code>
+[dj2@titania ~]# rabbitmqctl add_vhost /my_vhost
+Creating vhost "/my_vhost" ...done.
+
+[dj2@titania ~]# rabbitmqctl add_user dj2 secret_password
+Creating user "dj2" ...done.
+[dj2@titania ~]# rabbitmqctl add_user reader some_pass
+Creating user "reader" ...done.
+
+[dj2@titania ~]# rabbitmqctl map_user_vhost dj2 /my_vhost
+Mapping user "dj2" to vhost "/my_vhost" ...done.
+[dj2@titania ~]# rabbitmqctl map_user_vhost reader /my_vhost
+Mapping user "reader" to vhost "/my_vhost" ...done.
+
+[dj2@titania ~]# rabbitmqctl set_permissions dj2 /my_vhost /data all
+Setting permissions for user "dj2", vhost "/my_vhost", realm "/data" ...done.
+[dj2@titania ~]# rabbitmqctl set_permissions reader /my_vhost /data all
+Setting permissions for user "reader", vhost "/my_vhost", realm "/data" ...done.
+</code></pre>
+<p>With that out of the way, lets move to something a bit more interesting.</p>
+<pre><code>
+#!/usr/local/bin/ruby
+
+require 'rubygems'
+require 'mq'
+
+EM.run do
+  AMQP.connect(:user => 'dj2', :pass => 'secret_password',
+               :host => 'localhost', :vhost => '/my_vhost') do |conn|
+    @connection = conn
+    channel = MQ.new(@connection)
+    @xchange = channel.fanout('my_exchange', :durable => true)
+  end
+
+  EM.add_timer(1) do
+    @xchange.publish("data to publish")
+    EM.add_timer(1) { EM.stop_event_loop }
+  end
+end
+</code></pre>
+<p>As I mentioned, everything runs under EventMachine, so our main code is wrapped inside an <code>EM#run</code> block. The first thing we&#8217;re doing is connecting to Rabbit. This is done with <code>AMQP#connect</code>. In the official Ruby AMQP code you don&#8217;t provide a block to <code>AMQP#connect</code> it returns the connection object. If you&#8217;re using the reconnect fork you pass a block to <code>AMQP#connect</code> that will be executed when we reconnect to the server (it also returns the connection object if you want).</p>
+<p>Once we&#8217;ve got the connection we need to create the channel that we&#8217;re going to work with. This is done with <code>MQ#new</code>. With the channel in hand we can create our exchange. In this case we&#8217;re creating a <em>fanout</em> exchange. The exchange will be named <em>my_exchange</em> and will be durable, so the exchange will survive a Rabbit restart.</p>
+<p>I&#8217;m setting up an EventMachine timer to publish my message. This gives everything a few seconds to startup and connect to Rabbit. We then use the <code>publish</code> method to send the message to the exchange.</p>
+<p>We kill off EventMachine a second later so the application will exit.</p>
+<pre><code>
+#!/usr/local/bin/ruby
+
+require 'rubygems'
+require 'mq'
+
+EM.run do
+  trap("INT") { EM.stop }
+  trap("TERM") { EM.stop }
+
+  AMQP.connect(:user => 'reader', :pass => 'some_pass',
+               :host => 'localhost', :vhost => '/my_vhost') do |conn|
+    @connection = conn
+    channel = MQ.new(@connection)
+
+    xchange = channel.fanout('my_exchange', :durable => false)
+    q = MQ::Queue.new(channel, 'my_queue', :durable => false)
+    q.bind(xchange)
+
+    q.subscribe do |header, msg|
+      puts "GOT #{msg}"
+    end
+  end
+end
+</code></pre>
+<p>You&#8217;ll notice the similarities between this code and the last block of code.  Once we&#8217;ve created our exchange we create a queue on the exchange. This is done using <code>MQ::Queue#new</code> We give the queue a unique name and set it to a non-durable. We then bind the queue to the exchange. With the queue bound we use the <code>subscribe</code> method to listen on the queue. When messages arrive the code block will be executed with the header and message provided.</p>
+<p>That&#8217;s it. It&#8217;s all pretty simple. Well, at least in these examples it is. This is just the tip of the AMQP iceberg but hopefully you&#8217;ve got enough information to start digging in.</p>
+<p>Have fun.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://everburning.com/news/ridding-the-rabbit/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>A Peek at Ruby Internals</title>
+		<link>http://everburning.com/news/a-peek-at-ruby-internals/</link>
+		<comments>http://everburning.com/news/a-peek-at-ruby-internals/#comments</comments>
+		<pubDate>Tue, 14 Oct 2008 02:08:20 +0000</pubDate>
+		<dc:creator>dj2</dc:creator>
+		
+		<category><![CDATA[Computers]]></category>
+
+		<category><![CDATA[Programming]]></category>
+
+		<category><![CDATA[Ruby]]></category>
+
+		<guid isPermaLink="false">http://everburning.com/?p=345</guid>
+		<description><![CDATA[<p>The MountainWest Ruby Conf 2008 had an interesting talk on <a href="http://mtnwestrubyconf2008.confreaks.com/11farley.html" onclick="javascript:pageTracker._trackPageview ('/outbound/mtnwestrubyconf2008.confreaks.com');">Ruby Internals</a> by Patrick Farley . If you&#8217;ve worked with Ruby and are interested in learning more about classes, meta-classes and how all the method dispatch magic works give it a gander.</p>
+<p>Well worth the 50 minutes of time.</p>
+]]></description>
+			<content:encoded><![CDATA[<p>The MountainWest Ruby Conf 2008 had an interesting talk on <a href="http://mtnwestrubyconf2008.confreaks.com/11farley.html" onclick="javascript:pageTracker._trackPageview ('/outbound/mtnwestrubyconf2008.confreaks.com');">Ruby Internals</a> by Patrick Farley . If you&#8217;ve worked with Ruby and are interested in learning more about classes, meta-classes and how all the method dispatch magic works give it a gander.</p>
+<p>Well worth the 50 minutes of time.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://everburning.com/news/a-peek-at-ruby-internals/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Forked by rSpec</title>
+		<link>http://everburning.com/news/forked-by-rspec/</link>
+		<comments>http://everburning.com/news/forked-by-rspec/#comments</comments>
+		<pubDate>Fri, 03 Oct 2008 19:57:18 +0000</pubDate>
+		<dc:creator>dj2</dc:creator>
+		
+		<category><![CDATA[Programming]]></category>
+
+		<category><![CDATA[Work]]></category>
+
+		<category><![CDATA[rspec]]></category>
+
+		<guid isPermaLink="false">http://everburning.com/?p=343</guid>
+		<description><![CDATA[<p>So, I&#8217;ve been working at integrating some more of our test code into our automated build system at work and have spent a day trying to figure out why everything was failing with the tests. They ran fine in my lab, they&#8217;d run fine individually but when I used rake to run them everything would bomb.</p>
+<p>Eventually, I found out that all the rspec tests were being run twice. The first set of tests all passed the second set all failed. After a while I also realized the second set of tests were being run in the background. Odd, very odd.</p>
+<p>Fast forward another hour, a lot of digging in the rspec code and I realized it&#8217;s because we fork inside the spec files. We fork and execute the server we want to test. rSpec sets up an <em>at_exit</em> handler to run the specs at exit if they haven&#8217;t been run. That at_exit handler would run number of forks + 1 times for each spec file.</p>
+<p>I finally found <a href="http://blog.hiremaga.com/2008/01/31/dont-get-forked-by-rspec/" onclick="javascript:pageTracker._trackPageview ('/outbound/blog.hiremaga.com');">Don’t get forked by rSpec</a>, setup the <code>at_exit { exit! }</code> code in my spec files and everything is happy again.</p>
+<p>Wheeee&#8230;</p>
+]]></description>
+			<content:encoded><![CDATA[<p>So, I&#8217;ve been working at integrating some more of our test code into our automated build system at work and have spent a day trying to figure out why everything was failing with the tests. They ran fine in my lab, they&#8217;d run fine individually but when I used rake to run them everything would bomb.</p>
+<p>Eventually, I found out that all the rspec tests were being run twice. The first set of tests all passed the second set all failed. After a while I also realized the second set of tests were being run in the background. Odd, very odd.</p>
+<p>Fast forward another hour, a lot of digging in the rspec code and I realized it&#8217;s because we fork inside the spec files. We fork and execute the server we want to test. rSpec sets up an <em>at_exit</em> handler to run the specs at exit if they haven&#8217;t been run. That at_exit handler would run number of forks + 1 times for each spec file.</p>
+<p>I finally found <a href="http://blog.hiremaga.com/2008/01/31/dont-get-forked-by-rspec/" onclick="javascript:pageTracker._trackPageview ('/outbound/blog.hiremaga.com');">Don’t get forked by rSpec</a>, setup the <code>at_exit { exit! }</code> code in my spec files and everything is happy again.</p>
+<p>Wheeee&#8230;</p>
+]]></content:encoded>
+			<wfw:commentRss>http://everburning.com/news/forked-by-rspec/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Still kicking</title>
+		<link>http://everburning.com/news/still-kicking/</link>
+		<comments>http://everburning.com/news/still-kicking/#comments</comments>
+		<pubDate>Mon, 29 Sep 2008 02:19:22 +0000</pubDate>
+		<dc:creator>dj2</dc:creator>
+		
+		<category><![CDATA[Everburning]]></category>
+
+		<category><![CDATA[Life]]></category>
+
+		<category><![CDATA[Work]]></category>
+
+		<category><![CDATA[Odin]]></category>
+
+		<guid isPermaLink="false">http://everburning.com/?p=338</guid>
+		<description><![CDATA[<p>Well, as usual, it&#8217;s been quite a while since I last posted. Lots going on the past month or two. As you know, I got a job a <a href="http://aiderss.com" onclick="javascript:pageTracker._trackPageview ('/outbound/aiderss.com');">AideRSS</a> where I&#8217;ve been having a lot of fun working with Rails, MySQL, Ruby and a few other bits. Lots of interesting stuff happening on both the front and back-end systems.</p>
+<p>Along with the job, we&#8217;ve moved into our new house in Waterloo. <a href="http://perplexity.org" onclick="javascript:pageTracker._trackPageview ('/outbound/perplexity.org');">Stacy</a> and I have been busy unpacking and organizing stuff for the last couple of weeks. Most stuff is sorted out now I think, Canada Post finally found our mail from the two week hold they had on stuff and both of us are settling in pretty well. Just waiting on the last few pieces of furniture to arrive.</p>
+<p><a href="http://everburning.com/wp-content/uploads/2008/09/2896374351_f9caa4236e.jpg"><img src="http://everburning.com/wp-content/uploads/2008/09/2896374351_f9caa4236e-300x199.jpg" alt="" title="2896374351_f9caa4236e" width="300" height="199" class="alignleft size-medium wp-image-339" /></a>Since we&#8217;ve finally got a house, and a bit of a yard, we picked up a puppy on Saturday. We got ourselves a little Welsh Corgi which we&#8217;ve named Odin. He&#8217;s been a lot of fun so far. Lots of energy and lots of sleep seem to be the orders of the day.</p>
+<p>There have been lots of other fun side trips, losing of Foosball tournaments, wine tasting and other goings on that I&#8217;m leaving out at the moment.</p>
+<p>Hopefully I&#8217;ll get back into some more regularly schedule writing now that things are starting to settle down. Although, I appear to be getting volunteered to do a presentation at <a href="http://devwaterloo.pbwiki.com/" onclick="javascript:pageTracker._trackPageview ('/outbound/devwaterloo.pbwiki.com');">DevWaterloo</a> tomorrow so we&#8217;ll see what happens.</p>
+]]></description>
+			<content:encoded><![CDATA[<p>Well, as usual, it&#8217;s been quite a while since I last posted. Lots going on the past month or two. As you know, I got a job a <a href="http://aiderss.com" onclick="javascript:pageTracker._trackPageview ('/outbound/aiderss.com');">AideRSS</a> where I&#8217;ve been having a lot of fun working with Rails, MySQL, Ruby and a few other bits. Lots of interesting stuff happening on both the front and back-end systems.</p>
+<p>Along with the job, we&#8217;ve moved into our new house in Waterloo. <a href="http://perplexity.org" onclick="javascript:pageTracker._trackPageview ('/outbound/perplexity.org');">Stacy</a> and I have been busy unpacking and organizing stuff for the last couple of weeks. Most stuff is sorted out now I think, Canada Post finally found our mail from the two week hold they had on stuff and both of us are settling in pretty well. Just waiting on the last few pieces of furniture to arrive.</p>
+<p><a href="http://everburning.com/wp-content/uploads/2008/09/2896374351_f9caa4236e.jpg"><img src="http://everburning.com/wp-content/uploads/2008/09/2896374351_f9caa4236e-300x199.jpg" alt="" title="2896374351_f9caa4236e" width="300" height="199" class="alignleft size-medium wp-image-339" /></a>Since we&#8217;ve finally got a house, and a bit of a yard, we picked up a puppy on Saturday. We got ourselves a little Welsh Corgi which we&#8217;ve named Odin. He&#8217;s been a lot of fun so far. Lots of energy and lots of sleep seem to be the orders of the day.</p>
+<p>There have been lots of other fun side trips, losing of Foosball tournaments, wine tasting and other goings on that I&#8217;m leaving out at the moment.</p>
+<p>Hopefully I&#8217;ll get back into some more regularly schedule writing now that things are starting to settle down. Although, I appear to be getting volunteered to do a presentation at <a href="http://devwaterloo.pbwiki.com/" onclick="javascript:pageTracker._trackPageview ('/outbound/devwaterloo.pbwiki.com');">DevWaterloo</a> tomorrow so we&#8217;ll see what happens.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://everburning.com/news/still-kicking/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>code_swarm</title>
+		<link>http://everburning.com/news/code_swarm/</link>
+		<comments>http://everburning.com/news/code_swarm/#comments</comments>
+		<pubDate>Sun, 10 Aug 2008 03:39:05 +0000</pubDate>
+		<dc:creator>dj2</dc:creator>
+		
+		<category><![CDATA[Computers]]></category>
+
+		<category><![CDATA[Videos]]></category>
+
+		<category><![CDATA[code_swarm]]></category>
+
+		<guid isPermaLink="false">http://everburning.com/?p=334</guid>
+		<description><![CDATA[<p>I think <a href="http://vis.cs.ucdavis.edu/~ogawa/codeswarm/" onclick="javascript:pageTracker._trackPageview ('/outbound/vis.cs.ucdavis.edu');">code_swarm</a> is the most awesomest thing I&#8217;ve ever seen. Go watch the <a href="http://www.vimeo.com/1076588" onclick="javascript:pageTracker._trackPageview ('/outbound/www.vimeo.com');">Apache</a> video. Seriously cool stuff.</p>
+<p>Thanks to <a href="http://j3thomas.wordpress.com/" onclick="javascript:pageTracker._trackPageview ('/outbound/j3thomas.wordpress.com');">Jaime Thomas</a> for pointing this out (and, generating an <a href="http://www.vimeo.com/1497202" onclick="javascript:pageTracker._trackPageview ('/outbound/www.vimeo.com');">Ewl</a> video).</p>
+]]></description>
+			<content:encoded><![CDATA[<p>I think <a href="http://vis.cs.ucdavis.edu/~ogawa/codeswarm/" onclick="javascript:pageTracker._trackPageview ('/outbound/vis.cs.ucdavis.edu');">code_swarm</a> is the most awesomest thing I&#8217;ve ever seen. Go watch the <a href="http://www.vimeo.com/1076588" onclick="javascript:pageTracker._trackPageview ('/outbound/www.vimeo.com');">Apache</a> video. Seriously cool stuff.</p>
+<p>Thanks to <a href="http://j3thomas.wordpress.com/" onclick="javascript:pageTracker._trackPageview ('/outbound/j3thomas.wordpress.com');">Jaime Thomas</a> for pointing this out (and, generating an <a href="http://www.vimeo.com/1497202" onclick="javascript:pageTracker._trackPageview ('/outbound/www.vimeo.com');">Ewl</a> video).</p>
+]]></content:encoded>
+			<wfw:commentRss>http://everburning.com/news/code_swarm/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>End of an era</title>
+		<link>http://everburning.com/news/end-of-an-era/</link>
+		<comments>http://everburning.com/news/end-of-an-era/#comments</comments>
+		<pubDate>Mon, 04 Aug 2008 16:55:23 +0000</pubDate>
+		<dc:creator>dj2</dc:creator>
+		
+		<category><![CDATA[Computers]]></category>
+
+		<category><![CDATA[Programming]]></category>
+
+		<category><![CDATA[Enlightenment]]></category>
+
+		<category><![CDATA[Ewl]]></category>
+
+		<guid isPermaLink="false">http://everburning.com/?p=331</guid>
+		<description><![CDATA[<p>So, I revoked my Enlightenment CVS access today. With the recent license flamewars and the sudden switch from Bugzilla to Trac I&#8217;m sick of the politics surrounding the project. It isn&#8217;t fun anymore.</p>
+<p>To that end, I&#8217;m giving <a href="http://ningerso.blogspot.com/" onclick="javascript:pageTracker._trackPageview ('/outbound/ningerso.blogspot.com');">Nathan</a> the authority to do what he sees fit with my code in CVS (including changing the license if he so desires).</p>
+<p>It&#8217;s been a long strange trip. Now to figure out what to poke at next.</p>
+]]></description>
+			<content:encoded><![CDATA[<p>So, I revoked my Enlightenment CVS access today. With the recent license flamewars and the sudden switch from Bugzilla to Trac I&#8217;m sick of the politics surrounding the project. It isn&#8217;t fun anymore.</p>
+<p>To that end, I&#8217;m giving <a href="http://ningerso.blogspot.com/" onclick="javascript:pageTracker._trackPageview ('/outbound/ningerso.blogspot.com');">Nathan</a> the authority to do what he sees fit with my code in CVS (including changing the license if he so desires).</p>
+<p>It&#8217;s been a long strange trip. Now to figure out what to poke at next.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://everburning.com/news/end-of-an-era/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>On the road to clean</title>
+		<link>http://everburning.com/news/on-the-road-to-clean/</link>
+		<comments>http://everburning.com/news/on-the-road-to-clean/#comments</comments>
+		<pubDate>Sun, 03 Aug 2008 02:03:34 +0000</pubDate>
+		<dc:creator>dj2</dc:creator>
+		
+		<category><![CDATA[Life]]></category>
+
+		<category><![CDATA[Dyson]]></category>
+
+		<guid isPermaLink="false">http://everburning.com/?p=327</guid>
+		<description><![CDATA[<p>Since I start my new job at <a href="http://aiderss.com" onclick="javascript:pageTracker._trackPageview ('/outbound/aiderss.com');">AideRSS</a> on Tuesday in Waterloo, <a href="http://perplexity.org" onclick="javascript:pageTracker._trackPageview ('/outbound/perplexity.org');">Stacy</a> and I have been busy getting the condo ready for sale. I spent a good portion of today steam cleaning the carpet in the living room. </p>
+<p>While the steam cleaner works well at picking a lot of gunk out of the carpet it doesn&#8217;t do so well with cat hair. The hair just kind of clumps together into balls. Stacy spent a bit of time picking these up as our vacuum cleaner sucks.</p>
+<p>Once we got sick of this method we went and bought a Dyson. If you don&#8217;t have a Dyson go buy one, it&#8217;s awesome. We didn&#8217;t have to steam clean the bedroom as the Dyson made the carpet look new. Damn, the amount of cat hair that thing sucked up. Was an impressive sight.</p>
+<p>So, with the carpets almost clean, the holes in the walls filled and primed and about 1/2 of our stuff shipped up to my parents house, we should be ready to have this place on the market in a few days.</p>
+<p>Here&#8217;s to hoping for a quick sell.</p>
+]]></description>
+			<content:encoded><![CDATA[<p>Since I start my new job at <a href="http://aiderss.com" onclick="javascript:pageTracker._trackPageview ('/outbound/aiderss.com');">AideRSS</a> on Tuesday in Waterloo, <a href="http://perplexity.org" onclick="javascript:pageTracker._trackPageview ('/outbound/perplexity.org');">Stacy</a> and I have been busy getting the condo ready for sale. I spent a good portion of today steam cleaning the carpet in the living room. </p>
+<p>While the steam cleaner works well at picking a lot of gunk out of the carpet it doesn&#8217;t do so well with cat hair. The hair just kind of clumps together into balls. Stacy spent a bit of time picking these up as our vacuum cleaner sucks.</p>
+<p>Once we got sick of this method we went and bought a Dyson. If you don&#8217;t have a Dyson go buy one, it&#8217;s awesome. We didn&#8217;t have to steam clean the bedroom as the Dyson made the carpet look new. Damn, the amount of cat hair that thing sucked up. Was an impressive sight.</p>
+<p>So, with the carpets almost clean, the holes in the walls filled and primed and about 1/2 of our stuff shipped up to my parents house, we should be ready to have this place on the market in a few days.</p>
+<p>Here&#8217;s to hoping for a quick sell.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://everburning.com/news/on-the-road-to-clean/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>The first day of Reckoning</title>
+		<link>http://everburning.com/news/the-first-day-of-reckoning/</link>
+		<comments>http://everburning.com/news/the-first-day-of-reckoning/#comments</comments>
+		<pubDate>Fri, 01 Aug 2008 03:32:00 +0000</pubDate>
+		<dc:creator>dj2</dc:creator>
+		
+		<category><![CDATA[Computers]]></category>
+
+		<category><![CDATA[Programming]]></category>
+
+		<category><![CDATA[Cocoa]]></category>
+
+		<category><![CDATA[Reckoning]]></category>
+
+		<guid isPermaLink="false">http://everburning.com/?p=310</guid>
+		<description><![CDATA[<p>I&#8217;ve been poking at <a href="http://developer.apple.com/cocoa/" onclick="javascript:pageTracker._trackPageview ('/outbound/developer.apple.com');">Cocoa</a> development for quite a while now. That said, I haven&#8217;t finished anything I&#8217;ve started as of yet. I start a lot of things and then move to something else. <a href="http://perplexity.org" onclick="javascript:pageTracker._trackPageview ('/outbound/perplexity.org');">Stacy</a> thinks I have a problem. To that end, I&#8217;ve started a small application for Stacy. Nothing special, it&#8217;s just designed to do simple tracking of invoices and payments for her freelance business.</p>
+<p>Since I&#8217;ve actually got someone who wants to use the application I&#8217;ve actually got a reason to finish it. I&#8217;ve imported the initial application, <a href="http://github.com/dj2/reckoning/tree/master" onclick="javascript:pageTracker._trackPageview ('/outbound/github.com');">Reckoning</a>, into <a href="http://github.com" onclick="javascript:pageTracker._trackPageview ('/outbound/github.com');">GitHub</a> for all the world to marvel over my ability to click icons in <a href="http://developer.apple.com/tools/xcode/" onclick="javascript:pageTracker._trackPageview ('/outbound/developer.apple.com');">Xcode</a> and <a href="http://developer.apple.com/tools/interfacebuilder.html" onclick="javascript:pageTracker._trackPageview ('/outbound/developer.apple.com');">Interface Builder</a>.</p>
+<p>Since I&#8217;m working on the application I may as well write about it a bit as well. Hm, I think I mentioned something about not being able to do just one thing?</p>
+<p>With that in mind, let&#8217;s begin.</p>
+<p>As mentioned, Reckoning is a simple application to track invoices and payments. There are four main items that will be tracked: Clients, Invoices, Line Items and Payments. To get this party started fire up Xcode and create a new <a href="http://developer.apple.com/macosx/coredata.html" onclick="javascript:pageTracker._trackPageview ('/outbound/developer.apple.com');">Core Data</a> Application. (This maybe better as a Core Data Document based Application but I picked Core Data Application.)</p>
+<p>I got started by developing the data model (well, developing the data model after reformatting the default code to match my personal style). Double click on the <code>Reckoning_DataModel.xcdatamodel</code> file to launch the data modeling tool.</p>
+<p>Before we get into the data model tool I guess I should tell you a bit more about my data. The system will have the following structure:</p>
+<ul>
+<li>
+    Client</p>
+<ul>
+<li>name :: string (default: New Client)</li>
+<li>invoice_period :: integer (default: 30)</li>
+<li>invoice_notes :: string</li>
+<li>contact_name :: string</li>
+<li>contact_email :: string</li>
+<li>address :: string</li>
+<li>city :: string (default: Toronto)</li>
+<li>province :: string (default: Ontario)</li>
+<li>postal_code :: string</li>
+<li>country :: string (default: Canada)</li>
+<li>invoices :: to-many relationship to the Invoice table</li>
+</ul>
+</li>
+<li>
+   Invoice</p>
+<ul>
+<li>date :: date (default: &#8220;today&#8221;) [note the quotes matter for the date fields]</li>
+<li>due_date :: date (default: &#8220;today&#8221;)</li>
+<li>notes :: string</li>
+<li>taxes_saved :: float</li>
+<li>total_invoiced :: float</li>
+<li>total_received :: float</li>
+<li>client :: relationship to the Client table</li>
+<li>line_items :: to-many relationship to the LineItem table</li>
+<li>payments :: to-many relationship to the Payment table</li>
+</ul>
+</li>
+<li>
+     Line Items</p>
+<ul>
+<li>date :: date (default &#8220;today&#8221;)</li>
+<li>description :: string</li>
+<li>hours_worked :: float</li>
+<li>rate :: float</li>
+<li>invoice :: relationship to the Invoice table</li>
+</ul>
+</li>
+<li>
+       Payment</p>
+<ul>
+<li>amount :: float</li>
+<li>date :: date (default: &#8220;today&#8221;)</li>
+<li>invoice :: relationship to the Invoice table</li>
+</ul>
+</li>
+</ul>
+<p>You&#8217;ll end up with something similar to the figure below in the data modeler.<br />
+<div id="attachment_312" class="wp-caption alignnone" style="width: 310px"><a href="http://everburning.com/wp-content/uploads/2008/07/picture-1.png"><img src="http://everburning.com/wp-content/uploads/2008/07/picture-1-300x270.png" alt="Reckoning Data Model" title="picture-1" width="300" height="270" class="size-medium wp-image-312" /></a><p class="wp-caption-text">Reckoning Data Model</p></div></p>
+<p>About the only item not mentioned in the above is the regular expression used to validate the email address. After a bit of Googling I found a <a href="http://www.regular-expressions.info/email.html" onclick="javascript:pageTracker._trackPageview ('/outbound/www.regular-expressions.info');">great resource</a> on matching email addresses and entered <code>^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$</code> as the <code>contact_email</code> regular expression.</p>
+<p>Simple enough. Although, writing this I realized I forgot the <code>default_rate</code> field in the <code>Client</code> table. Oh well, something to do tomorrow.</p>
+<p>The next step in our application is to start the user interface. For the first revision I&#8217;ve created the ability to add clients, invoices and payments. You can&#8217;t edit many of the details yet but the basic creation is there. (I&#8217;ll actually have to write some code to get that part done.)</p>
+<p>Closing the data modeler tool we can now click on the <code>MainMenu.xib</code> (or .nib if you&#8217;re using an earlier version of Xcode) to launch Interface Builder.</p>
+<p>Currently everything happens in the main Reckoning window. I&#8217;ll need to add sheets and property dialogs and things as time goes on but for now, one window.</p>
+<div id="attachment_315" class="wp-caption alignnone" style="width: 289px"><a href="http://everburning.com/wp-content/uploads/2008/07/picture-2.png"><img src="http://everburning.com/wp-content/uploads/2008/07/picture-2-279x300.png" alt="Main Reckoning Window" title="picture-2" width="279" height="300" class="size-medium wp-image-315" /></a><p class="wp-caption-text">Main Reckoning Window</p></div>
+<p>The three fields in the <em>Income</em> section are set to non-editable text fields with a number formatter attached. All three number formatters are set to the <code>currency</code> style. (These three boxes do nothing in the current version.)  The <code>Due Date</code> and <code>Date</code> columns have a date formatter attached. The <code>Amount</code> column has a <code>currency</code> formatter similar to the <em>Income</em> fields.</p>
+<p>About the only other thing that needs explanation is the <em>7 outstanding invoices</em>. This line will dynamically update in the final version of the app to give information on the outstanding and overdue invoices for each client. I&#8217;m also hoping to be able to colour the table cell text differently depending on the invoice status.</p>
+<p>The <code>Edit</code> buttons are currently unused. The <code>+</code> and <code>-</code> buttons are used to add and remove items from their section.</p>
+<p>Ok, lets see how much of this thing we can hookup without diving into any code.</p>
+<p>First up, we need some controllers. We have three Core Data tables we&#8217;re going to want to pull data from for this first iteration. To that end we&#8217;ll drag three array controllers from the library down to the information window. Set the name of one to <code>Client Controller</code>, one to <code>Invoice Controller</code> and one to <code>Payment Controller</code>.</p>
+<div id="attachment_316" class="wp-caption alignnone" style="width: 310px"><a href="http://everburning.com/wp-content/uploads/2008/07/picture-3.png"><img src="http://everburning.com/wp-content/uploads/2008/07/picture-3-300x200.png" alt="Information Window" title="picture-3" width="300" height="200" class="size-medium wp-image-316" /></a><p class="wp-caption-text">Information Window</p></div>
+<p>In the inspector set the mode of all three to <code>Entity</code> and set the <code>Entity Name</code> to the corresponding entity name in our data model (<code>Client</code>, <code>Invoice</code> and <code>Payment</code> respectively).</p>
+<p>Next up are the bindings for our array controllers. We&#8217;ll start with the <code>Client Controller</code>.</p>
+<div id="attachment_317" class="wp-caption alignnone" style="width: 206px"><a href="http://everburning.com/wp-content/uploads/2008/07/picture-4.png"><img src="http://everburning.com/wp-content/uploads/2008/07/picture-4-196x300.png" alt="Client Controller" title="picture-4" width="196" height="300" class="size-medium wp-image-317" /></a><p class="wp-caption-text">Client Controller Bindings</p></div>
+<p>This is the simplest controller to hookup. We just have to tell the controller that it will be getting its <code>Managed Object Context</code> from the <code>Reckoning_AppDelegate</code> using the <code>mangedObjectContext</code> <code>Model Key Path</code>. The <code>Reckoning_AppDelegate</code> was created for us when we created the application.</p>
+<p>Next up is the <code>Invoice Controller</code>.</p>
+<div id="attachment_318" class="wp-caption alignnone" style="width: 126px"><a href="http://everburning.com/wp-content/uploads/2008/07/picture-5.png"><img src="http://everburning.com/wp-content/uploads/2008/07/picture-5-116x300.png" alt="Invoice Controller Bindings" title="picture-5" width="116" height="300" class="size-medium wp-image-318" /></a><p class="wp-caption-text">Invoice Controller Bindings</p></div>
+<p>You&#8217;ll notice an extra section to our bindings for this one. The bottom, <code>Managed Object Context</code> binding, is setup exactly the same as our <code>Client Controller</code>. The extra binding, the <code>Content Set</code> binding, allows us to bind the content of the <code>Invoice Controller</code> to the currently selected item in the <code>Client Controller</code>. This way we&#8217;ll only show the invoices for the selected client. So, you can see we&#8217;ve bound to the <code>Client Controller</code> with a <code>Controller Key</code> of <code>selection</code> and a <code>Model Key Path</code> of <code>invoices</code>. What this is doing is taking the current <code>selection</code> from the <code>Client Controller</code> and retrieving the array returned from the <code>invoices</code> method. The <code>invoices</code> method was created for us by Core Data based on the <code>invoices</code> relationship we created in our model.</p>
+<p>Finally the <code>Payment Controller</code>.</p>
+<div id="attachment_319" class="wp-caption alignnone" style="width: 126px"><a href="http://everburning.com/wp-content/uploads/2008/07/picture-6.png"><img src="http://everburning.com/wp-content/uploads/2008/07/picture-6-116x300.png" alt="Payment Controller Binding" title="picture-6" width="116" height="300" class="size-medium wp-image-319" /></a><p class="wp-caption-text">Payment Controller Binding</p></div>
+<p>This one is very similar to the <code>Invoice Controller</code> binding. We just bind to the <code>Invoice Controller</code> instead of <code>Client Controller</code> and we want the <code>payments</code> key path in the <code>invoice</code> model.</p>
+<p>Sweet, our arrays are now hooked into our Core Data model and are ready to populate our tables. We&#8217;ll bind the <code>Clients</code> table first.</p>
+<div id="attachment_320" class="wp-caption alignnone" style="width: 166px"><a href="http://everburning.com/wp-content/uploads/2008/07/picture-7.png"><img src="http://everburning.com/wp-content/uploads/2008/07/picture-7-156x300.png" alt="Client Table Bindings" title="picture-7" width="156" height="300" class="size-medium wp-image-320" /></a><p class="wp-caption-text">Client Table Bindings</p></div>
+<p>Nothing too complicated in there. We want to bind the <code>Value</code> binding for the <em>Table Column</em> (make sure you have the Table Column and not the Table View or Text Field Cell or the Scroll View). We bind to the <code>Client Controller</code> as it&#8217;s the client information we want to display. We use the <code>Controller Key</code> of <code>arrangedObjects</code> which will return the objects in the given controller. I setup the cells to display the name of the client so we use the <code>name</code> key path into the <code>Client</code> object. I&#8217;ve also checked the <code>Continuously Updates Value</code> field. I&#8217;m not sure what this does but one of the tutorials mentioned it so I use it. If you know, please let me know.</p>
+<p>We now move onto the <code>Invoicing</code> table.</p>
+<div id="attachment_321" class="wp-caption alignnone" style="width: 166px"><a href="http://everburning.com/wp-content/uploads/2008/07/picture-8.png"><img src="http://everburning.com/wp-content/uploads/2008/07/picture-8-156x300.png" alt="Invoicing Client Column Bindings" title="picture-8" width="156" height="300" class="size-medium wp-image-321" /></a><p class="wp-caption-text">Invoicing Client Column Bindings</p></div>
+<p>This is similar to our <code>Client</code> bindings from above. We want to bind to the <code>Invoice Controller</code> and I&#8217;m using a different model key. The model key is set to <code>client.name</code>. This allows me to retrieve the <code>name</code> field of the <code>client</code> associated with this invoice. (Remember we have a relationship from <code>Invoice</code> to <code>Client</code> in our model.) You can use the dot notation to chain these methods together to pull out the exact information you require.</p>
+<p>The <code>Due Date</code> column is the same except I bind the model key to <code>due_date</code>.</p>
+<p>Finally the <code>Payment</code> table is basically the same bindings. For the <code>Client</code> column I bind the model key to <code>invoice.client.name</code> to pull out the client name for the invoice associated to this payment. The other fields just bind to <code>date</code> and <code>amount</code> respectively.</p>
+<p>Cool. Ok, we can now display the data stored in our Core Data model. I guess it would help if we could actually add some data. If you haven&#8217;t noticed, pretty much everything we&#8217;ve done has been fairly easy (assuming you know the right syntax for the model keys and the controller keys.) Hooking up add and remove is no different.</p>
+<p>If you option-click on the <code>+</code> symbol in the <code>Clients</code> section you can drag (and a blue line will appear) down to the <code>Client Controller</code>. Releasing the mouse you&#8217;ll see a popup. Select the <code>add:</code> entry. Do the same option-click and drag from the <code>-</code> button and select the <code>remove:</code> entry. </p>
+<p>Follow the same procedure for the buttons in the <code>Invoicing</code> and <code>Payments</code> sections.</p>
+<p>Save the file in Interface Builder, switch back to Xcode and run the application. You should be able to add clients, invoices and payments and hitting apple-s will save the file. If you close Reckoning and re-open you should see your created data populating the tables.</p>
+<p>Not bad for not actually writing a line of code, eh?</p>
+<p>Next time we&#8217;ll be attempting to hookup the <code>Edit</code> buttons for the client and invoicing information.</p>
+]]></description>
+			<content:encoded><![CDATA[<p>I&#8217;ve been poking at <a href="http://developer.apple.com/cocoa/" onclick="javascript:pageTracker._trackPageview ('/outbound/developer.apple.com');">Cocoa</a> development for quite a while now. That said, I haven&#8217;t finished anything I&#8217;ve started as of yet. I start a lot of things and then move to something else. <a href="http://perplexity.org" onclick="javascript:pageTracker._trackPageview ('/outbound/perplexity.org');">Stacy</a> thinks I have a problem. To that end, I&#8217;ve started a small application for Stacy. Nothing special, it&#8217;s just designed to do simple tracking of invoices and payments for her freelance business.</p>
+<p>Since I&#8217;ve actually got someone who wants to use the application I&#8217;ve actually got a reason to finish it. I&#8217;ve imported the initial application, <a href="http://github.com/dj2/reckoning/tree/master" onclick="javascript:pageTracker._trackPageview ('/outbound/github.com');">Reckoning</a>, into <a href="http://github.com" onclick="javascript:pageTracker._trackPageview ('/outbound/github.com');">GitHub</a> for all the world to marvel over my ability to click icons in <a href="http://developer.apple.com/tools/xcode/" onclick="javascript:pageTracker._trackPageview ('/outbound/developer.apple.com');">Xcode</a> and <a href="http://developer.apple.com/tools/interfacebuilder.html" onclick="javascript:pageTracker._trackPageview ('/outbound/developer.apple.com');">Interface Builder</a>.</p>
+<p>Since I&#8217;m working on the application I may as well write about it a bit as well. Hm, I think I mentioned something about not being able to do just one thing?</p>
+<p>With that in mind, let&#8217;s begin.</p>
+<p>As mentioned, Reckoning is a simple application to track invoices and payments. There are four main items that will be tracked: Clients, Invoices, Line Items and Payments. To get this party started fire up Xcode and create a new <a href="http://developer.apple.com/macosx/coredata.html" onclick="javascript:pageTracker._trackPageview ('/outbound/developer.apple.com');">Core Data</a> Application. (This maybe better as a Core Data Document based Application but I picked Core Data Application.)</p>
+<p>I got started by developing the data model (well, developing the data model after reformatting the default code to match my personal style). Double click on the <code>Reckoning_DataModel.xcdatamodel</code> file to launch the data modeling tool.</p>
+<p>Before we get into the data model tool I guess I should tell you a bit more about my data. The system will have the following structure:</p>
+<ul>
+<li>
+    Client</p>
+<ul>
+<li>name :: string (default: New Client)</li>
+<li>invoice_period :: integer (default: 30)</li>
+<li>invoice_notes :: string</li>
+<li>contact_name :: string</li>
+<li>contact_email :: string</li>
+<li>address :: string</li>
+<li>city :: string (default: Toronto)</li>
+<li>province :: string (default: Ontario)</li>
+<li>postal_code :: string</li>
+<li>country :: string (default: Canada)</li>
+<li>invoices :: to-many relationship to the Invoice table</li>
+</ul>
+</li>
+<li>
+   Invoice</p>
+<ul>
+<li>date :: date (default: &#8220;today&#8221;) [note the quotes matter for the date fields]</li>
+<li>due_date :: date (default: &#8220;today&#8221;)</li>
+<li>notes :: string</li>
+<li>taxes_saved :: float</li>
+<li>total_invoiced :: float</li>
+<li>total_received :: float</li>
+<li>client :: relationship to the Client table</li>
+<li>line_items :: to-many relationship to the LineItem table</li>
+<li>payments :: to-many relationship to the Payment table</li>
+</ul>
+</li>
+<li>
+     Line Items</p>
+<ul>
+<li>date :: date (default &#8220;today&#8221;)</li>
+<li>description :: string</li>
+<li>hours_worked :: float</li>
+<li>rate :: float</li>
+<li>invoice :: relationship to the Invoice table</li>
+</ul>
+</li>
+<li>
+       Payment</p>
+<ul>
+<li>amount :: float</li>
+<li>date :: date (default: &#8220;today&#8221;)</li>
+<li>invoice :: relationship to the Invoice table</li>
+</ul>
+</li>
+</ul>
+<p>You&#8217;ll end up with something similar to the figure below in the data modeler.<br />
+<div id="attachment_312" class="wp-caption alignnone" style="width: 310px"><a href="http://everburning.com/wp-content/uploads/2008/07/picture-1.png"><img src="http://everburning.com/wp-content/uploads/2008/07/picture-1-300x270.png" alt="Reckoning Data Model" title="picture-1" width="300" height="270" class="size-medium wp-image-312" /></a><p class="wp-caption-text">Reckoning Data Model</p></div></p>
+<p>About the only item not mentioned in the above is the regular expression used to validate the email address. After a bit of Googling I found a <a href="http://www.regular-expressions.info/email.html" onclick="javascript:pageTracker._trackPageview ('/outbound/www.regular-expressions.info');">great resource</a> on matching email addresses and entered <code>^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$</code> as the <code>contact_email</code> regular expression.</p>
+<p>Simple enough. Although, writing this I realized I forgot the <code>default_rate</code> field in the <code>Client</code> table. Oh well, something to do tomorrow.</p>
+<p>The next step in our application is to start the user interface. For the first revision I&#8217;ve created the ability to add clients, invoices and payments. You can&#8217;t edit many of the details yet but the basic creation is there. (I&#8217;ll actually have to write some code to get that part done.)</p>
+<p>Closing the data modeler tool we can now click on the <code>MainMenu.xib</code> (or .nib if you&#8217;re using an earlier version of Xcode) to launch Interface Builder.</p>
+<p>Currently everything happens in the main Reckoning window. I&#8217;ll need to add sheets and property dialogs and things as time goes on but for now, one window.</p>
+<div id="attachment_315" class="wp-caption alignnone" style="width: 289px"><a href="http://everburning.com/wp-content/uploads/2008/07/picture-2.png"><img src="http://everburning.com/wp-content/uploads/2008/07/picture-2-279x300.png" alt="Main Reckoning Window" title="picture-2" width="279" height="300" class="size-medium wp-image-315" /></a><p class="wp-caption-text">Main Reckoning Window</p></div>
+<p>The three fields in the <em>Income</em> section are set to non-editable text fields with a number formatter attached. All three number formatters are set to the <code>currency</code> style. (These three boxes do nothing in the current version.)  The <code>Due Date</code> and <code>Date</code> columns have a date formatter attached. The <code>Amount</code> column has a <code>currency</code> formatter similar to the <em>Income</em> fields.</p>
+<p>About the only other thing that needs explanation is the <em>7 outstanding invoices</em>. This line will dynamically update in the final version of the app to give information on the outstanding and overdue invoices for each client. I&#8217;m also hoping to be able to colour the table cell text differently depending on the invoice status.</p>
+<p>The <code>Edit</code> buttons are currently unused. The <code>+</code> and <code>-</code> buttons are used to add and remove items from their section.</p>
+<p>Ok, lets see how much of this thing we can hookup without diving into any code.</p>
+<p>First up, we need some controllers. We have three Core Data tables we&#8217;re going to want to pull data from for this first iteration. To that end we&#8217;ll drag three array controllers from the library down to the information window. Set the name of one to <code>Client Controller</code>, one to <code>Invoice Controller</code> and one to <code>Payment Controller</code>.</p>
+<div id="attachment_316" class="wp-caption alignnone" style="width: 310px"><a href="http://everburning.com/wp-content/uploads/2008/07/picture-3.png"><img src="http://everburning.com/wp-content/uploads/2008/07/picture-3-300x200.png" alt="Information Window" title="picture-3" width="300" height="200" class="size-medium wp-image-316" /></a><p class="wp-caption-text">Information Window</p></div>
+<p>In the inspector set the mode of all three to <code>Entity</code> and set the <code>Entity Name</code> to the corresponding entity name in our data model (<code>Client</code>, <code>Invoice</code> and <code>Payment</code> respectively).</p>
+<p>Next up are the bindings for our array controllers. We&#8217;ll start with the <code>Client Controller</code>.</p>
+<div id="attachment_317" class="wp-caption alignnone" style="width: 206px"><a href="http://everburning.com/wp-content/uploads/2008/07/picture-4.png"><img src="http://everburning.com/wp-content/uploads/2008/07/picture-4-196x300.png" alt="Client Controller" title="picture-4" width="196" height="300" class="size-medium wp-image-317" /></a><p class="wp-caption-text">Client Controller Bindings</p></div>
+<p>This is the simplest controller to hookup. We just have to tell the controller that it will be getting its <code>Managed Object Context</code> from the <code>Reckoning_AppDelegate</code> using the <code>mangedObjectContext</code> <code>Model Key Path</code>. The <code>Reckoning_AppDelegate</code> was created for us when we created the application.</p>
+<p>Next up is the <code>Invoice Controller</code>.</p>
+<div id="attachment_318" class="wp-caption alignnone" style="width: 126px"><a href="http://everburning.com/wp-content/uploads/2008/07/picture-5.png"><img src="http://everburning.com/wp-content/uploads/2008/07/picture-5-116x300.png" alt="Invoice Controller Bindings" title="picture-5" width="116" height="300" class="size-medium wp-image-318" /></a><p class="wp-caption-text">Invoice Controller Bindings</p></div>
+<p>You&#8217;ll notice an extra section to our bindings for this one. The bottom, <code>Managed Object Context</code> binding, is setup exactly the same as our <code>Client Controller</code>. The extra binding, the <code>Content Set</code> binding, allows us to bind the content of the <code>Invoice Controller</code> to the currently selected item in the <code>Client Controller</code>. This way we&#8217;ll only show the invoices for the selected client. So, you can see we&#8217;ve bound to the <code>Client Controller</code> with a <code>Controller Key</code> of <code>selection</code> and a <code>Model Key Path</code> of <code>invoices</code>. What this is doing is taking the current <code>selection</code> from the <code>Client Controller</code> and retrieving the array returned from the <code>invoices</code> method. The <code>invoices</code> method was created for us by Core Data based on the <code>invoices</code> relationship we created in our model.</p>
+<p>Finally the <code>Payment Controller</code>.</p>
+<div id="attachment_319" class="wp-caption alignnone" style="width: 126px"><a href="http://everburning.com/wp-content/uploads/2008/07/picture-6.png"><img src="http://everburning.com/wp-content/uploads/2008/07/picture-6-116x300.png" alt="Payment Controller Binding" title="picture-6" width="116" height="300" class="size-medium wp-image-319" /></a><p class="wp-caption-text">Payment Controller Binding</p></div>
+<p>This one is very similar to the <code>Invoice Controller</code> binding. We just bind to the <code>Invoice Controller</code> instead of <code>Client Controller</code> and we want the <code>payments</code> key path in the <code>invoice</code> model.</p>
+<p>Sweet, our arrays are now hooked into our Core Data model and are ready to populate our tables. We&#8217;ll bind the <code>Clients</code> table first.</p>
+<div id="attachment_320" class="wp-caption alignnone" style="width: 166px"><a href="http://everburning.com/wp-content/uploads/2008/07/picture-7.png"><img src="http://everburning.com/wp-content/uploads/2008/07/picture-7-156x300.png" alt="Client Table Bindings" title="picture-7" width="156" height="300" class="size-medium wp-image-320" /></a><p class="wp-caption-text">Client Table Bindings</p></div>
+<p>Nothing too complicated in there. We want to bind the <code>Value</code> binding for the <em>Table Column</em> (make sure you have the Table Column and not the Table View or Text Field Cell or the Scroll View). We bind to the <code>Client Controller</code> as it&#8217;s the client information we want to display. We use the <code>Controller Key</code> of <code>arrangedObjects</code> which will return the objects in the given controller. I setup the cells to display the name of the client so we use the <code>name</code> key path into the <code>Client</code> object. I&#8217;ve also checked the <code>Continuously Updates Value</code> field. I&#8217;m not sure what this does but one of the tutorials mentioned it so I use it. If you know, please let me know.</p>
+<p>We now move onto the <code>Invoicing</code> table.</p>
+<div id="attachment_321" class="wp-caption alignnone" style="width: 166px"><a href="http://everburning.com/wp-content/uploads/2008/07/picture-8.png"><img src="http://everburning.com/wp-content/uploads/2008/07/picture-8-156x300.png" alt="Invoicing Client Column Bindings" title="picture-8" width="156" height="300" class="size-medium wp-image-321" /></a><p class="wp-caption-text">Invoicing Client Column Bindings</p></div>
+<p>This is similar to our <code>Client</code> bindings from above. We want to bind to the <code>Invoice Controller</code> and I&#8217;m using a different model key. The model key is set to <code>client.name</code>. This allows me to retrieve the <code>name</code> field of the <code>client</code> associated with this invoice. (Remember we have a relationship from <code>Invoice</code> to <code>Client</code> in our model.) You can use the dot notation to chain these methods together to pull out the exact information you require.</p>
+<p>The <code>Due Date</code> column is the same except I bind the model key to <code>due_date</code>.</p>
+<p>Finally the <code>Payment</code> table is basically the same bindings. For the <code>Client</code> column I bind the model key to <code>invoice.client.name</code> to pull out the client name for the invoice associated to this payment. The other fields just bind to <code>date</code> and <code>amount</code> respectively.</p>
+<p>Cool. Ok, we can now display the data stored in our Core Data model. I guess it would help if we could actually add some data. If you haven&#8217;t noticed, pretty much everything we&#8217;ve done has been fairly easy (assuming you know the right syntax for the model keys and the controller keys.) Hooking up add and remove is no different.</p>
+<p>If you option-click on the <code>+</code> symbol in the <code>Clients</code> section you can drag (and a blue line will appear) down to the <code>Client Controller</code>. Releasing the mouse you&#8217;ll see a popup. Select the <code>add:</code> entry. Do the same option-click and drag from the <code>-</code> button and select the <code>remove:</code> entry. </p>
+<p>Follow the same procedure for the buttons in the <code>Invoicing</code> and <code>Payments</code> sections.</p>
+<p>Save the file in Interface Builder, switch back to Xcode and run the application. You should be able to add clients, invoices and payments and hitting apple-s will save the file. If you close Reckoning and re-open you should see your created data populating the tables.</p>
+<p>Not bad for not actually writing a line of code, eh?</p>
+<p>Next time we&#8217;ll be attempting to hookup the <code>Edit</code> buttons for the client and invoicing information.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://everburning.com/news/the-first-day-of-reckoning/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Get your game on</title>
+		<link>http://everburning.com/news/get-your-game-on/</link>
+		<comments>http://everburning.com/news/get-your-game-on/#comments</comments>
+		<pubDate>Tue, 29 Jul 2008 00:42:23 +0000</pubDate>
+		<dc:creator>dj2</dc:creator>
+		
+		<category><![CDATA[Life]]></category>
+
+		<category><![CDATA[Streaming Colour]]></category>
+
+		<guid isPermaLink="false">http://everburning.com/?p=224</guid>
+		<description><![CDATA[<p>A friend of mine has just returned from many moons out in Vancouver working for big game companies to start his own indie company. He&#8217;s keeping a blog of the trials and tribulations of starting a company and creating his first game.</p>
+<p>It&#8217;s been pretty interesting so far. If you&#8217;re interested, check it out over at <a href="http://www.streamingcolour.com/blog/" onclick="javascript:pageTracker._trackPageview ('/outbound/www.streamingcolour.com');">http://streamingcolour.com/blog</a>.</p>
+]]></description>
+			<content:encoded><![CDATA[<p>A friend of mine has just returned from many moons out in Vancouver working for big game companies to start his own indie company. He&#8217;s keeping a blog of the trials and tribulations of starting a company and creating his first game.</p>
+<p>It&#8217;s been pretty interesting so far. If you&#8217;re interested, check it out over at <a href="http://www.streamingcolour.com/blog/" onclick="javascript:pageTracker._trackPageview ('/outbound/www.streamingcolour.com');">http://streamingcolour.com/blog</a>.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://everburning.com/news/get-your-game-on/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Delta can bite my shiny metal ass</title>
+		<link>http://everburning.com/news/delta-can-bite-my-shiny-metal-ass/</link>
+		<comments>http://everburning.com/news/delta-can-bite-my-shiny-metal-ass/#comments</comments>
+		<pubDate>Tue, 29 Jul 2008 00:31:18 +0000</pubDate>
+		<dc:creator>dj2</dc:creator>
+		
+		<category><![CDATA[Life]]></category>
+
+		<guid isPermaLink="false">http://everburning.com/?p=219</guid>
+		<description><![CDATA[<p><img src="http://everburning.com/wp-content/uploads/2008/07/2116047447_f5c205ed70-199x300.jpg" alt="" title="2116047447_f5c205ed70" width="199" height="300" class="alignleft size-medium wp-image-221" />So, <a href="http://perplexity.org" onclick="javascript:pageTracker._trackPageview ('/outbound/perplexity.org');">Stacy</a> and I were planning on going to Seattle this week for a vacation. We wandered off to the airport early this afternoon and arrived at about 2.20 (our flight was for 4.20 so lots of time.)</p>
+<p>At this point we ran into what must have been the longest line I&#8217;ve seen in an airport. All queued up for the Delta checkin.  Ok, fine, I&#8217;ve been in lines before, we join the line. We wait. And wait. And wait. Three steps every 10 minutes isn&#8217;t much progress. The clock rolls around to 3 and we&#8217;re starting to get a bit nervous. You have to check in an hour before your flight so we start looking around for any Delta people on the floor that we could talk to. There was an American Airlines guy but he was just helping his passengers through the Delta line.</p>
+<p>At about 3.20 I jumped the line to ask the guy at the Delta counter if we should be moving up as we had the 4.20 flight. I was, tersely, informed that everyone in the line was waiting for the 4.20 flight. Back to the line I went. 3.30. 3.40. 4. 4.10. 4.20. By this point we were about 10 feet from the start of the roped off section marking the beginning of the line. According to the flight board our flight was still on time. 4.30. 4.50. 5. 5.10. Ok, about 10 people left in front of us in line. Well, except for all the people that keep budding into line. And the people that take 45 minutes at the counter. What could you possible be doing that takes 45 minutes and the ticket agent to be on 2 phones at the same time? Yes, she had a phone pressed against each ear.</p>
+<p>Keep in mind, in all this time Delta hasn&#8217;t said anything to us. There are no Delta agents in sight except for the people behind the counter. The GTAA (Greater Toronto Airport Authority) agents keep telling us that a Delta agent will be out soon to tell us what&#8217;s going on. No Delta agent appeared.</p>
+<p>5.30 rolls around and an agent stands up and says <i>Ok, everyone in line will have to be rebooked on a flight tomorrow.</i> At which point a lot of people go ape shit. The two ladies in front of us were trying to get a connection so they can get to England. It looked like that managed to brow beat the agent into giving them a ticket.</p>
+<p>Stacy and I didn&#8217;t bother. I called up Expedia and after an bit time on the phone got a full refund from Delta and most of a refund for the hotel. We&#8217;ve got to pay for one night but that&#8217;s it. Not too bad. Sounded like she didn&#8217;t&#8217; have too much trouble with the Delta office either. Other people in line were calling and Delta was telling them they were still able to get on the flight or it was their problem for being late (not what you want to tell someone after they&#8217;ve been in line for 3 hrs at your ticket counter.)</p>
+<p>So, kudos to Expedia for getting everything cancelled and the refunds for us. Delta, bite my shiny metal ass. I&#8217;ll never book on your airline again.</p>
+]]></description>
+			<content:encoded><![CDATA[<p><img src="http://everburning.com/wp-content/uploads/2008/07/2116047447_f5c205ed70-199x300.jpg" alt="" title="2116047447_f5c205ed70" width="199" height="300" class="alignleft size-medium wp-image-221" />So, <a href="http://perplexity.org" onclick="javascript:pageTracker._trackPageview ('/outbound/perplexity.org');">Stacy</a> and I were planning on going to Seattle this week for a vacation. We wandered off to the airport early this afternoon and arrived at about 2.20 (our flight was for 4.20 so lots of time.)</p>
+<p>At this point we ran into what must have been the longest line I&#8217;ve seen in an airport. All queued up for the Delta checkin.  Ok, fine, I&#8217;ve been in lines before, we join the line. We wait. And wait. And wait. Three steps every 10 minutes isn&#8217;t much progress. The clock rolls around to 3 and we&#8217;re starting to get a bit nervous. You have to check in an hour before your flight so we start looking around for any Delta people on the floor that we could talk to. There was an American Airlines guy but he was just helping his passengers through the Delta line.</p>
+<p>At about 3.20 I jumped the line to ask the guy at the Delta counter if we should be moving up as we had the 4.20 flight. I was, tersely, informed that everyone in the line was waiting for the 4.20 flight. Back to the line I went. 3.30. 3.40. 4. 4.10. 4.20. By this point we were about 10 feet from the start of the roped off section marking the beginning of the line. According to the flight board our flight was still on time. 4.30. 4.50. 5. 5.10. Ok, about 10 people left in front of us in line. Well, except for all the people that keep budding into line. And the people that take 45 minutes at the counter. What could you possible be doing that takes 45 minutes and the ticket agent to be on 2 phones at the same time? Yes, she had a phone pressed against each ear.</p>
+<p>Keep in mind, in all this time Delta hasn&#8217;t said anything to us. There are no Delta agents in sight except for the people behind the counter. The GTAA (Greater Toronto Airport Authority) agents keep telling us that a Delta agent will be out soon to tell us what&#8217;s going on. No Delta agent appeared.</p>
+<p>5.30 rolls around and an agent stands up and says <i>Ok, everyone in line will have to be rebooked on a flight tomorrow.</i> At which point a lot of people go ape shit. The two ladies in front of us were trying to get a connection so they can get to England. It looked like that managed to brow beat the agent into giving them a ticket.</p>
+<p>Stacy and I didn&#8217;t bother. I called up Expedia and after an bit time on the phone got a full refund from Delta and most of a refund for the hotel. We&#8217;ve got to pay for one night but that&#8217;s it. Not too bad. Sounded like she didn&#8217;t&#8217; have too much trouble with the Delta office either. Other people in line were calling and Delta was telling them they were still able to get on the flight or it was their problem for being late (not what you want to tell someone after they&#8217;ve been in line for 3 hrs at your ticket counter.)</p>
+<p>So, kudos to Expedia for getting everything cancelled and the refunds for us. Delta, bite my shiny metal ass. I&#8217;ll never book on your airline again.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://everburning.com/news/delta-can-bite-my-shiny-metal-ass/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Edition the 4th. Thoughts.</title>
+		<link>http://everburning.com/news/edition-the-4th-thoughts/</link>
+		<comments>http://everburning.com/news/edition-the-4th-thoughts/#comments</comments>
+		<pubDate>Mon, 28 Jul 2008 03:55:11 +0000</pubDate>
+		<dc:creator>dj2</dc:creator>
+		
+		<category><![CDATA[Books]]></category>
+
+		<category><![CDATA[Gaming]]></category>
+
+		<category><![CDATA[dnd]]></category>
+
+		<guid isPermaLink="false">http://everburning.com/?p=216</guid>
+		<description><![CDATA[<p><img src="http://everburning.com/wp-content/uploads/2008/07/dscn0102-300x225.jpg" alt="" title="dscn0102" width="300" height="225" class="alignleft size-medium wp-image-217" />We finally ran it. A few of us got together this weekend to play 4th edition Dungeons and Dragons. We wanted to give the game a fair shake so we played strictly by the rules. (We&#8217;ve got so many house rules for DnD that this was almost a challenge, heh.) We also played the adventure in the back of the Dungeons Masters guide as that seemed like a good way to start.</p>
+<p>I was Tolvan an Eladrin Rogue. We also had a Dragonborn Warlord, a Dwarven Figher and a Tiefling Warlock. One character short of a full party but we scaled the monsters down as needed. As I mentioned, this was a learning game, there were a lot of combat rules referenced.</p>
+<p>So, how did it go? The campaign went well. We accomplished the required quests (although I was an hour late leaving to visit my parents.) I think we got a feel for the game played with a strict adherence to the rules and I think we all got a feel on what we thought of 4th edition.</p>
+<p>Now, I know you&#8217;re all chomping at the bit to know what I think but, one more interlude. These comments are based on playing with the real rules. Like I said, we never play with the real rules as we&#8217;ve house-ruled everything. We&#8217;re going to give this another shake at some point to see how it feels with our custom changes attached.</p>
+<p>That aside, I was a little disappointed in how the game played. It has been mentioned in several places that 4th gives DnD an feel similar to a massively multiplayer online game. I&#8217;d have to agree with this statement. They&#8217;ve done a lot of work to simplify things (which, in some cases, makes it more convoluted) and changed the game a lot to cater to new players. Some of this served more to distract me then to add to the game.</p>
+<p>What did I like? Well, I like the new skill combinations. Makes everything a lot simpler and makes a lot of sense. The idea that you just have Perception instead of Search, Spot, Listen and who knows what else is a good abstraction. The fact that you&#8217;re either Trained or Un-Trained I&#8217;m not so hot on. As well, the fact that you can only learn new skills though a feat? What the duse? (Yes, I know, re-training, but we&#8217;ll get to that.) I think the concept of skill points and ranks wasn&#8217;t too bad. It let me put points into things that aren&#8217;t necessarily combat related (yes, one of my characters has ranks in profession sailing) and the removal of the craft related skills takes something away from the game.</p>
+<p>Powers are an interesting one. I&#8217;m on the fence about these. I like the idea, I think they add flavor to the game. The fact that I have to make every attack use a power or I&#8217;m gimped drives me up the wall. Whatever happened to good old fashioned, <i>I&#8217;m hitting that guy</i>? Now it&#8217;s <i>I&#8217;m using my Sly Flourish power to hit that guy</i>. Damn it, sometimes I just want to hit things and I don&#8217;t want to get gimped for it. (I&#8217;m also a little bitter in that every time I used my Daily power I missed so it didn&#8217;t have any effect.) The other side of powers that I both like and dislike is how they work. Your power will tell you what to roll and what&#8217;s used for defense against the power. Say, Dexterity vs Reflex. This is good, this is kinda cool. This gives me a way to hit the fighter with an armor class of 21 but a Reflex save of 10. This also kinda sucks in that it&#8217;s a pain in the ass to remember what modifiers you&#8217;re adding and what the defense is for that role.</p>
+<p>What&#8217;s the deal with feats? There aren&#8217;t very many and even when you dig into them so many are class specific that there is a very small pool to choose from.</p>
+<p>I said I&#8217;d get to it, so here we go, re-training. Similar to powers I both like and dislike re-training. Why is it good? Well, there have been several occasions where I get high enough level, pick a prestige class (yes, yes, 3.5 reference but it&#8217;s my reference point) and realize I&#8217;m missing a simple skill pre-requisite. I then have to wait until I&#8217;ve got enough skill points I can use to raise that skill. This always kinda sucks. (I guess if I was really anal I would plan out my character from first to 30th before I start to play but I&#8217;m just too lazy. I like the more random approach.)</p>
+<p>In this situation re-training would be helpful as I can move the training from a more minor skill into the needed skill.</p>
+<p>This also doesn&#8217;t make any sense. What, I magically wake up one day and forget about Religion and learn everything there is to know about Nature? Same argument for feats. What, I suddenly forget how to stab someone in the back so my Sneak Attack damage has decreased?</p>
+<p>Re-training does make sense for powers as I still think of them similar to spells.</p>
+<p>Speaking of spells, personally, I think wizards got gimped. Sure, they get twice as many powers but they still have to pick the same number as everyone else at the start of the day, they just have a wider selection. You can&#8217;t memorize the same spell twice, so I can&#8217;t cast fly on two characters in the same day? Suck.</p>
+<p>As Deacon said, <i>I can&#8217;t play this game, there&#8217;s no 10 foot pole.</i></p>
+<p>Concluding, I&#8217;m going to give 4e another shake. We&#8217;ll see what happens when we house rule a few things. I&#8217;m leaning towards preferring 3.5 but who knows.</p>
+]]></description>
+			<content:encoded><![CDATA[<p><img src="http://everburning.com/wp-content/uploads/2008/07/dscn0102-300x225.jpg" alt="" title="dscn0102" width="300" height="225" class="alignleft size-medium wp-image-217" />We finally ran it. A few of us got together this weekend to play 4th edition Dungeons and Dragons. We wanted to give the game a fair shake so we played strictly by the rules. (We&#8217;ve got so many house rules for DnD that this was almost a challenge, heh.) We also played the adventure in the back of the Dungeons Masters guide as that seemed like a good way to start.</p>
+<p>I was Tolvan an Eladrin Rogue. We also had a Dragonborn Warlord, a Dwarven Figher and a Tiefling Warlock. One character short of a full party but we scaled the monsters down as needed. As I mentioned, this was a learning game, there were a lot of combat rules referenced.</p>
+<p>So, how did it go? The campaign went well. We accomplished the required quests (although I was an hour late leaving to visit my parents.) I think we got a feel for the game played with a strict adherence to the rules and I think we all got a feel on what we thought of 4th edition.</p>
+<p>Now, I know you&#8217;re all chomping at the bit to know what I think but, one more interlude. These comments are based on playing with the real rules. Like I said, we never play with the real rules as we&#8217;ve house-ruled everything. We&#8217;re going to give this another shake at some point to see how it feels with our custom changes attached.</p>
+<p>That aside, I was a little disappointed in how the game played. It has been mentioned in several places that 4th gives DnD an feel similar to a massively multiplayer online game. I&#8217;d have to agree with this statement. They&#8217;ve done a lot of work to simplify things (which, in some cases, makes it more convoluted) and changed the game a lot to cater to new players. Some of this served more to distract me then to add to the game.</p>
+<p>What did I like? Well, I like the new skill combinations. Makes everything a lot simpler and makes a lot of sense. The idea that you just have Perception instead of Search, Spot, Listen and who knows what else is a good abstraction. The fact that you&#8217;re either Trained or Un-Trained I&#8217;m not so hot on. As well, the fact that you can only learn new skills though a feat? What the duse? (Yes, I know, re-training, but we&#8217;ll get to that.) I think the concept of skill points and ranks wasn&#8217;t too bad. It let me put points into things that aren&#8217;t necessarily combat related (yes, one of my characters has ranks in profession sailing) and the removal of the craft related skills takes something away from the game.</p>
+<p>Powers are an interesting one. I&#8217;m on the fence about these. I like the idea, I think they add flavor to the game. The fact that I have to make every attack use a power or I&#8217;m gimped drives me up the wall. Whatever happened to good old fashioned, <i>I&#8217;m hitting that guy</i>? Now it&#8217;s <i>I&#8217;m using my Sly Flourish power to hit that guy</i>. Damn it, sometimes I just want to hit things and I don&#8217;t want to get gimped for it. (I&#8217;m also a little bitter in that every time I used my Daily power I missed so it didn&#8217;t have any effect.) The other side of powers that I both like and dislike is how they work. Your power will tell you what to roll and what&#8217;s used for defense against the power. Say, Dexterity vs Reflex. This is good, this is kinda cool. This gives me a way to hit the fighter with an armor class of 21 but a Reflex save of 10. This also kinda sucks in that it&#8217;s a pain in the ass to remember what modifiers you&#8217;re adding and what the defense is for that role.</p>
+<p>What&#8217;s the deal with feats? There aren&#8217;t very many and even when you dig into them so many are class specific that there is a very small pool to choose from.</p>
+<p>I said I&#8217;d get to it, so here we go, re-training. Similar to powers I both like and dislike re-training. Why is it good? Well, there have been several occasions where I get high enough level, pick a prestige class (yes, yes, 3.5 reference but it&#8217;s my reference point) and realize I&#8217;m missing a simple skill pre-requisite. I then have to wait until I&#8217;ve got enough skill points I can use to raise that skill. This always kinda sucks. (I guess if I was really anal I would plan out my character from first to 30th before I start to play but I&#8217;m just too lazy. I like the more random approach.)</p>
+<p>In this situation re-training would be helpful as I can move the training from a more minor skill into the needed skill.</p>
+<p>This also doesn&#8217;t make any sense. What, I magically wake up one day and forget about Religion and learn everything there is to know about Nature? Same argument for feats. What, I suddenly forget how to stab someone in the back so my Sneak Attack damage has decreased?</p>
+<p>Re-training does make sense for powers as I still think of them similar to spells.</p>
+<p>Speaking of spells, personally, I think wizards got gimped. Sure, they get twice as many powers but they still have to pick the same number as everyone else at the start of the day, they just have a wider selection. You can&#8217;t memorize the same spell twice, so I can&#8217;t cast fly on two characters in the same day? Suck.</p>
+<p>As Deacon said, <i>I can&#8217;t play this game, there&#8217;s no 10 foot pole.</i></p>
+<p>Concluding, I&#8217;m going to give 4e another shake. We&#8217;ll see what happens when we house rule a few things. I&#8217;m leaning towards preferring 3.5 but who knows.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://everburning.com/news/edition-the-4th-thoughts/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Wanted</title>
+		<link>http://everburning.com/news/wanted/</link>
+		<comments>http://everburning.com/news/wanted/#comments</comments>
+		<pubDate>Mon, 28 Jul 2008 03:10:48 +0000</pubDate>
+		<dc:creator>dj2</dc:creator>
+		
+		<category><![CDATA[Books]]></category>
+
+		<category><![CDATA[Wanted]]></category>
+
+		<guid isPermaLink="false">http://everburning.com/?p=214</guid>
+		<description><![CDATA[<p><img src="http://everburning.com/wp-content/uploads/2008/07/200px-wanted-194x300.jpg" alt="" title="200px-wanted" width="194" height="300" class="alignleft size-medium wp-image-215" />I&#8217;m sure you&#8217;ve all heard about the Wanted movie that&#8217;s come out in recent weeks. I&#8217;m not here to talk about that. I&#8217;m here to talk about the comic that the movie is kinda, sorta, maybe, if you squint enough, based upon.</p>
+<p>I picked this one up while on my hunt for the Watchmen last week. It&#8217;s pretty short, so I started reading it on the subway on the way home. I finished it off this weekend.</p>
+<p>Wanted is excellent. The writing, art and execution are all very well done. Although, if you don&#8217;t like mature content, I&#8217;d say skip this one.</p>
+<p>Wanted is a story about villains. Super-villains to be exact. It&#8217;s the story of one mans rise from the drudgery of modern day to being the worlds greatest killer. There are a lot of little references and nods towards real comic book heros and villains but none are mentioned straight out.</p>
+<p>I really liked the concept for this book and I&#8217;ve always had a soft spot for the villain as the hero (see <a href="http://en.wikipedia.org/wiki/Villains_by_Necessity" onclick="javascript:pageTracker._trackPageview ('/outbound/en.wikipedia.org');">Villains by Necessity</a> for a great villain as hero novel) so this book appealed to me.</p>
+<p>I&#8217;ve you&#8217;ve read a few graphic novels, maybe cut your teeth on some Preacher, give Wanted a go. You maybe pleasantly surprised. Or, you&#8217;ll throw the book across the room, burn it and say 100 Hail Marys to purge yourself after.</p>
+<p>One or the other.</p>
+]]></description>
+			<content:encoded><![CDATA[<p><img src="http://everburning.com/wp-content/uploads/2008/07/200px-wanted-194x300.jpg" alt="" title="200px-wanted" width="194" height="300" class="alignleft size-medium wp-image-215" />I&#8217;m sure you&#8217;ve all heard about the Wanted movie that&#8217;s come out in recent weeks. I&#8217;m not here to talk about that. I&#8217;m here to talk about the comic that the movie is kinda, sorta, maybe, if you squint enough, based upon.</p>
+<p>I picked this one up while on my hunt for the Watchmen last week. It&#8217;s pretty short, so I started reading it on the subway on the way home. I finished it off this weekend.</p>
+<p>Wanted is excellent. The writing, art and execution are all very well done. Although, if you don&#8217;t like mature content, I&#8217;d say skip this one.</p>
+<p>Wanted is a story about villains. Super-villains to be exact. It&#8217;s the story of one mans rise from the drudgery of modern day to being the worlds greatest killer. There are a lot of little references and nods towards real comic book heros and villains but none are mentioned straight out.</p>
+<p>I really liked the concept for this book and I&#8217;ve always had a soft spot for the villain as the hero (see <a href="http://en.wikipedia.org/wiki/Villains_by_Necessity" onclick="javascript:pageTracker._trackPageview ('/outbound/en.wikipedia.org');">Villains by Necessity</a> for a great villain as hero novel) so this book appealed to me.</p>
+<p>I&#8217;ve you&#8217;ve read a few graphic novels, maybe cut your teeth on some Preacher, give Wanted a go. You maybe pleasantly surprised. Or, you&#8217;ll throw the book across the room, burn it and say 100 Hail Marys to purge yourself after.</p>
+<p>One or the other.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://everburning.com/news/wanted/feed/</wfw:commentRss>
+		</item>
+	</channel>
+</rss>

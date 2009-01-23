@@ -1,0 +1,1309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="http://feeds.feedburner.com/~d/styles/rss2full.xsl" type="text/xsl" media="screen"?><?xml-stylesheet href="http://feeds.feedburner.com/~d/styles/itemcontent.css" type="text/css" media="screen"?><rss xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+
+<channel>
+	<title>The Devver Blog</title>
+	
+	<link>http://devver.net/blog</link>
+	<description>A Boulder startup improving the way developers work.</description>
+	<pubDate>Tue, 20 Jan 2009 22:47:31 +0000</pubDate>
+	<generator>http://wordpress.org/?v=2.6.3</generator>
+	<language>en</language>
+			<atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" href="http://feeds.feedburner.com/devver/blog" type="application/rss+xml" /><item>
+		<title>Using Ruby to Send Update Emails to Our Mentors</title>
+		<link>http://devver.net/blog/2009/01/using-ruby-to-send-update-emails-to-our-mentors/</link>
+		<comments>http://devver.net/blog/2009/01/using-ruby-to-send-update-emails-to-our-mentors/#comments</comments>
+		<pubDate>Tue, 20 Jan 2009 22:46:30 +0000</pubDate>
+		<dc:creator>Ben</dc:creator>
+		
+		<category><![CDATA[Development]]></category>
+
+		<category><![CDATA[Devver]]></category>
+
+		<category><![CDATA[Hacking]]></category>
+
+		<category><![CDATA[Ruby]]></category>
+
+		<guid isPermaLink="false">http://devver.net/blog/?p=1140</guid>
+		<description><![CDATA[At Devver.net, we send out weekly email updates to an awesome set of mentors. We do this for a number of reasons. First and foremost, we get valuable feedback and advice from our mentors on a variety of issues. But it&#8217;s also an easy and effective way to keep us on track and even maximize [...]]]></description>
+			<content:encoded><![CDATA[<p>At Devver.net, we send out weekly email updates to an awesome set of mentors. We do this for a number of reasons. First and foremost, we get valuable feedback and advice from our mentors on a variety of issues. But it&#8217;s also an easy and effective way to keep us on track and even maximize our chances of success. As Paul Graham says in <a href="http://www.paulgraham.com/die.html">How Not To Die</a> (he was talking directly to YC teams, but you&#8217;ll get the idea):</p>
+<blockquote><p>&#8220;For us the main indication of impending doom is when we don&#8217;t hear from you.  When we haven&#8217;t heard from, or about, a startup for a couple months, that&#8217;s a bad sign.</p>
+<p>&#8230;</p>
+<p>Maybe if you can arrange that we keep hearing from you, you won&#8217;t die.</p>
+<p>That may not be so naive as it sounds. &#8230; [The] mere constraint of staying in regular contact with us will push you to make things happen, because otherwise you&#8217;ll be embarrassed to tell us that you haven&#8217;t done anything new since the last time we talked.&#8221;</p></blockquote>
+<p><a href="http://foodzie.com">Foodzie</a> started emailing their mentors early in the summer. We actually borrowed (stole) their email format and best practices.</p>
+<p>One thing we&#8217;ve tried to not do is send out a completely generic email to all our mentors. Depending on the content and the interaction we&#8217;ve had with a specific mentor, we&#8217;ll adjust his email accordingly. We begin each email with their name and send it directly to them (in other words, we don&#8217;t put a huge list of addresses in the To, CC, or BCC fields). We do this because we can tailor it and it helps elicit individual responses from each mentor (it&#8217;s easier to ignore a question if it&#8217;s sent to a group).</p>
+<p>But, of course, sometimes the emails to a few mentors can be identical. In this case, my not-so-well-kept secret is that I just use a simple Ruby script to send out a duplicate email that appears to be hand-crafted (or at least copied and pasted).</p>
+<p>I&#8217;ve been told that Outlook can perform this functionality easily, but I don&#8217;t know of any way to do this within Gmail. If there is, let me know so I can feel a little silly (in any case, the Ruby code was fun to write).</p>
+<p>To run this code, you&#8217;ll need to install the <a href="http://highline.rubyforge.org/">highline gem</a>. You&#8217;ll also need to add your Gmail account, recipients, subject message, etc. Finally, you&#8217;ll want to put your message inside a separate file within project directory. That way, you can easily modify, spellcheck, and format to your heart&#8217;s content before sending.</p>
+<p>You can get the entire <a href="http://github.com/bhb/gmailr/tree/master">gmailr source code</a> (all two files!) at Github. Please use this script for good, not evil - no one likes a spammer. Enjoy!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://devver.net/blog/2009/01/using-ruby-to-send-update-emails-to-our-mentors/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Ruby people on Twitter</title>
+		<link>http://devver.net/blog/2009/01/ruby-people-on-twitter/</link>
+		<comments>http://devver.net/blog/2009/01/ruby-people-on-twitter/#comments</comments>
+		<pubDate>Thu, 08 Jan 2009 21:08:34 +0000</pubDate>
+		<dc:creator>Dan</dc:creator>
+		
+		<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://devver.net/blog/?p=1047</guid>
+		<description><![CDATA[The Ruby community is always quickly moving, changing, and adopting new things. It is good to keep your ear to the ground so you can learn and adopt things that the community is finding really useful. There are a number of ways to do this, like watching the most popular Ruby projects on GitHub, most [...]]]></description>
+			<content:encoded><![CDATA[<p>The Ruby community is always quickly moving, changing, and adopting new things. It is good to keep your ear to the ground so you can learn and adopt things that the community is finding really useful. There are a number of ways to do this, like watching the <a href="http://github.com/languages/Ruby">most popular Ruby projects on GitHub</a>, <a href="http://rubyforge.org/top/mostactive.php?type=week">most active projects on RubyForge</a>, <a href="http://ruby.reddit.com/">Ruby Reddit</a>, or listening to the <a href="http://podcast.rubyonrails.org/">Rails podcast</a>. The way I have found most effective is following a good collection of the Ruby community on <a href="http://twitter.com">Twitter</a>, many of the most active Ruby community members and companies are on Twitter. It is where I have first heard of many things going on in Ruby like the recent Merb/Rails merge.</p>
+<p>You can find a great list of <a href="http://rubylearning.com/blog/2008/10/29/50-rubyists-to-follow-on-twitter/">50+ (now 100+) Rubyists to follow on Twitter</a> from <a href="http://rubylearning.com">RubyLearning</a>. I thought we might as well give out a list of some of the Ruby people Devver.net is following on twitter.</p>
+<p><a href="http://twitter.com/technoweenie">technoweenie</a><br />
+<a href="http://twitter.com/jamis">jamis / Jamis Buck</a><br />
+<a href="http://twitter.com/obie">obie / Obie Fernandez</a><br />
+<a href="http://twitter.com/chadfowler">chadfowler / Chad Fowler</a><br />
+<a href="http://twitter.com/engineyard">engineyard / Engine Yard</a><br />
+<a href="http://twitter.com/d2h">d2h / DHH</a><br />
+<a href="http://twitter.com/rjs">rjs / Ryan Singer</a><br />
+<a href="http://twitter.com/jasonfried">jasonfried / Jason Fried</a><br />
+<a href="http://twitter.com/37signals">37signals</a><br />
+<a href="http://twitter.com/foodzie">foodzie</a><br />
+<a href="http://twitter.com/fiveruns">fiveruns</a><br />
+<a href="http://twitter.com/_why">_why / why the lucky stiff</a><br />
+<a href="http://twitter.com/gilesgoatboy">gilesgoatboy  / Giles Bowkett</a><br />
+<a href="http://twitter.com/dlsspy">dlsspy  / Dustin Sallings</a><br />
+<a href="http://twitter.com/Julien51">julien51 / julien</a><br />
+<a href="http://twitter.com/rbates">rbates / Ryan Bates</a><br />
+<a href="http://twitter.com/defunkt">defunkt / Chris Wanstrath</a><br />
+<a href="http://twitter.com/chrismatthieu">chrismatthieu / Chris Matthieu</a><br />
+<a href="http://twitter.com/littleidea">littleidea  / Andrew Clay Shafer</a><br />
+<a href="http://twitter.com/headius">headius / Charles Nutter</a><br />
+<a href="http://twitter.com/bascule">bascule / Tony Arcieri</a><br />
+<a href="http://twitter.com/atmos">atmos / Corey Donohoe</a><br />
+<a href="http://twitter.com/ubermajestix">ubermajestix  / Tyler Montgomery</a><br />
+<a href="http://twitter.com/raganwald">raganwald / Reg Braithwaite</a><br />
+<a href="http://twitter.com/chriseppstein">chriseppstein</a></p>
+<hr />of course I have to give a special shout to ourselves:</p>
+<p><a href="http://twitter.com/wastedbrains">wastedbrains / Dan Mayer</a><br />
+<a href="http://twitter.com/bbrinck">bbrinck / Ben Brinckerhoff</a><br />
+<a href="http://twitter.com/devver">devver.net</a></p>
+<p>If we should be following you also send us an email at <a href="mailto:contact@devver.net">contact@devver.net</a>, and we can hook up on Twitter as well.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://devver.net/blog/2009/01/ruby-people-on-twitter/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Boulder CTO December Lunch with Tim Wolters</title>
+		<link>http://devver.net/blog/2008/12/boulder-cto-december-lunch-with-tim-wolters/</link>
+		<comments>http://devver.net/blog/2008/12/boulder-cto-december-lunch-with-tim-wolters/#comments</comments>
+		<pubDate>Thu, 11 Dec 2008 16:50:30 +0000</pubDate>
+		<dc:creator>Dan</dc:creator>
+		
+		<category><![CDATA[Boulder]]></category>
+
+		<category><![CDATA[First Steps]]></category>
+
+		<category><![CDATA[Funding]]></category>
+
+		<category><![CDATA[Misc]]></category>
+
+		<category><![CDATA[Tips &amp; Tricks]]></category>
+
+		<guid isPermaLink="false">http://devver.net/blog/?p=1073</guid>
+		<description><![CDATA[The Boulder CTO Lunch meets once a month with a guest speaker and covers topics and questions that startup CTOs should find interesting. This month, the group had Tim Wolters from Collective Intellect come lead the discussion. Tim is a serial entrepreneur currently working on using artificial intelligence and semantic analysis to extract knowledge from [...]]]></description>
+			<content:encoded><![CDATA[<p>The Boulder CTO Lunch meets once a month with a guest speaker and covers topics and questions that startup CTOs should find interesting. This month, the group had <a href="http://timwolters.blogspot.com/">Tim Wolters</a> from <a href="http://collectiveintellect.com/">Collective Intellect</a> come lead the discussion. Tim is a serial entrepreneur currently working on using artificial intelligence and semantic analysis to extract knowledge from unstructured text found in social media.   Collective Intellect&#8217;s customers use this analysis to inform and measure the effectiveness of their PR and marketing strategy.</p>
+<p>Tim is considering working on a book, a startup survival guide for CTOs. Some of his ideas for the book helped lead our discussion during our meeting.  I will try to present my notes under topic headings that Tim mentioned, but since this was a open free formed discussion, I am sure I couldn&#8217;t capture everything and not all my notes are completely accurate.</p>
+<p><strong>The Idea</strong><br />
+People should keep a journal of ideas. Tim keeps a journal which he updates, tags, and adds ideas. On any idea, keep track of what is near term, what resources are needed, what is the cost, and what does the related market look like. (I highly recommend this! Ben and I keep a wiki, which has grown to be an incredibly useful resource and was the initial starting point for our last two companies)</p>
+<p>Ideas should have an &#8220;Aha!&#8221; factor that makes you wonder why someone else isn&#8217;t already doing it (or some emotional appeal that makes lives better).</p>
+<p>During the first few years of a startup you can&#8217;t work on all the ideas that come to mind, that is why it is best to keep a journal, just add little notes to the idea to keep them in the back burner.</p>
+<p>Talk to others about ideas and perhaps have a group move on an idea and lay the groundwork while leading as an adviser.</p>
+<p>Don&#8217;t be worried about people taking ideas. After starting a few companies you know how hard it is to really bring something to market.</p>
+<p>What about brainstorming for ideas with a group?<br />
+Brainstorming groups have never worked for Tim, it just hasn&#8217;t worked out. If you have the right people around the table (people that can make things happen), it could work, but Tim hasn&#8217;t seen it.</p>
+<p>Ideas depend a lot on timing in the marketplace. If the market is moving slow you can slowly look at an idea. If the market it really moving fast you need to spin it up quick and get a lot of people working on it to really make a move on the idea.</p>
+<p>Look over your ideas once in awhile and see what still really interest you.</p>
+<p><strong>The Role</strong><br />
+As a CTO, you paint a landscape of the product and market.</p>
+<p>There are two kinds of CTOs: tactical and visionary. Tactical CTOs are internally focused, manages the team, makes the day-to-day tactics so the product gets out there. The visionary CTO sees where the product could go in the market place, signs early deals and customers, looks for features that lead towards or away from markets/competitors/partnerships. The visionary isn&#8217;t working on architecture but the market landscape, what partners will benefit the product or get it out sooner.</p>
+<p>CTO should be thinking about things such as the three hardest problems that the company faces, so they know what will also be affecting their competitors.</p>
+<p>People who liked architectural purity but learned it isn&#8217;t as import at winning at the business end up making great CTOs.</p>
+<p>CTOs need to stay involved with customers to make decisions about the project innovation and development. Stay active on sales calls, talk with sales people, read all the <a href="http://en.wikipedia.org/wiki/Request_for_Proposal">RFPs</a>.</p>
+<p>Becoming the CTO vs VP of engineering?<br />
+Are you good at managing or not? VP of engineering is a managing role. If not, divide off the management as soon as possible (in his case that wasn&#8217;t possible until the company was about 20 people).</p>
+<p>Good sales people leverage a CTO as a company evangelist. If you are a CTO you have to be comfortable with presenting and publicity. You will be at conferences, sales calls, giving presentations, and fund raising. If you aren&#8217;t comfortable with these things, get comfortable with it.</p>
+<p>time spent:</p>
+<ul>
+<li>10% guiding research</li>
+<li>30% Sales</li>
+<li>30% Partnerships</li>
+<li>30% Biz Dev Dealings</li>
+</ul>
+<p><strong>Reputation</strong><br />
+After some startups, successes, and expanding your network things like getting a team, funding, and getting a startup off the ground are much easier the next time.</p>
+<p>It will take 3 to 5 times longer than you think to get a project going if you are an unknown entrepreneur with no reputation.</p>
+<p>Don&#8217;t solve the big unsolvable problems first, the first time start with smaller problems and develop a reputation while solving them. Angels and VCs aren&#8217;t funding research efforts, don&#8217;t just chase after big impossible goals.</p>
+<p>After a company is bought, it makes sense to make the purchaser successful. It builds on your reputation.</p>
+<p>Become a big fish in a small pond and then move to a bigger pond.</p>
+<p><strong>Putting together the team</strong><br />
+The ideal size for an engineering team is 6-8 people, bigger teams have difficulties maintaining the right amount of communication.</p>
+<p>For hiring, Tim personally sits down with the key hires, and if it is research he does interviews with applicants as well.</p>
+<p><strong>The Traps and Pitfalls of Startup Companies</strong><br />
+3 things that companies get stuck on that can kill the company.</p>
+<ul>
+<li>Problem with getting over enamored with their original idea, startups must be able to adapt</li>
+<li>Getting enamored with the research technology, for technology&#8217;s sake</li>
+<li>Getting emotionally tied to architecturally purity. Working on layers of abstraction on abstraction to avoid some possible future problem.</li>
+</ul>
+<p>Other things that kill companies (which are kind of like a marriage)</p>
+<ul>
+<li>Not the right chemistry</li>
+<li>Bad culture or losing company culture</li>
+<li>Employees need some sense of allegiance. If they don&#8217;t have it cut them immediately</li>
+<li>Lacks a culture of adaptability</li>
+<li>Not thinking about how to quickly get to the market and solve problems</li>
+</ul>
+<p>Continual code death march. Sometimes companies go on code marches to get something to the marketplace. This can&#8217;t be done many nights or it will start taking a toll on other aspects of your life.  Strive for balance.</p>
+<p>During a startup, you continually are hitting false summits, you think that if you could just get that contact, solve that roadblock, pass this milestone, or make this key hire then everything will fall into place.  While these are important as milestones and you should celebrate them you are not done.  Or rather, it typically doesn&#8217;t get any easier.  What it does is takes more risk out allowing you to go solve bigger/other problems.</p>
+<p>When founders or others in a company argue, which they need to do sometimes, don&#8217;t do it in front of everyone. Discuss disputes offline, reach agreement and present a unified front to the company.</p>
+<hr />Thanks so much to Tim for sharing some of his thoughts with our group. I will leave you with a final question and quote. Someone once asked why Tim likes to start companies?<br />
+<strong>&#8220;I like to pick where I work and who I work with.&#8221;</strong></p>
+]]></content:encoded>
+			<wfw:commentRss>http://devver.net/blog/2008/12/boulder-cto-december-lunch-with-tim-wolters/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Installing and running git-svn on Mac OSX 10.4 Tiger</title>
+		<link>http://devver.net/blog/2008/12/installing-and-running-git-svn-on-mac-osx-104-tiger/</link>
+		<comments>http://devver.net/blog/2008/12/installing-and-running-git-svn-on-mac-osx-104-tiger/#comments</comments>
+		<pubDate>Tue, 09 Dec 2008 18:16:39 +0000</pubDate>
+		<dc:creator>Dan</dc:creator>
+		
+		<category><![CDATA[Development]]></category>
+
+		<category><![CDATA[Hacking]]></category>
+
+		<category><![CDATA[Misc]]></category>
+
+		<category><![CDATA[Tips &amp; Tricks]]></category>
+
+		<category><![CDATA[Tools]]></category>
+
+		<guid isPermaLink="false">http://devver.net/blog/?p=844</guid>
+		<description><![CDATA[I am shocked at how much time it took me to get git-svn working on my mac. I use MacPorts, which works well most of the time. Sometimes it has problems which makes me really wish for apt-get on OS X. apt-get normally has worked much nicer for me, but can have its issues too. [...]]]></description>
+			<content:encoded><![CDATA[<p>I am shocked at how much time it took me to get git-svn working on my mac. I use <a href="http://macports.org">MacPorts</a>, which works well most of the time. Sometimes it has problems which makes me really wish for apt-get on OS X. apt-get normally has worked much nicer for me, but can have its issues too. I even occasionally wish for Windows and a simple install.exe which works 95% of the time out of the box. Really I wish Apple would throw some engineer support to <a href="http://macports.org">MacPorts</a> and make the service rock solid.</p>
+<p>I have had git installed and working for awhile, but preparing to switch our main project from Subversion (svn) to git, I thought I should <a href="http://git.or.cz/course/svn.html">start using git-svn</a>. It seemed smart to use git-svn for awhile to get used to git, before a full switch so I could fall back on svn in a crunch. I decided to start using git-svn, but the first run of the git-svn command caused this error, and I had no idea how much of my night was about to be wasted&#8230;</p>
+<p><code>Can't locate SVN/Core.pm in @INC</code></p>
+<p>Searching led to a couple of webpages, but the most useful was <a href="http://hexmen.com/blog/2008/08/getting-git-to-work-on-os-x-tiger/">getting git to work on OS X Tiger</a>. It had a quick fix that might work or the long route fix. For some lucky people it is just a path problem. I checked if that was the case for me, by the following command</p>
+<p><code>PATH=/opt/local/bin:$PATH; git svn</code></p>
+<p>unfortunately for me I got the same error, OK I need to reinstall SVN with additional bindings&#8230;</p>
+<p><code>&gt; sudo port uninstall -f subversion-perlbindings<br />
+&gt; sudo port install -f subversion-perlbindings</code></p>
+<p>leading to this error:</p>
+<p><code>---&gt;  Building serf with target all<br />
+Error: Target org.macports.build returned: shell command " cd "/opt/local/var/macports/build/_opt_local_var_macports_sources_rsync.macports.org_release_ports_www_serf/work/serf-0.2.0" &amp;&amp; make all " returned error 2<br />
+Command output: /opt/local/share/apr-1/build/libtool --silent --mode=compile /usr/bin/gcc-4.0 -O2 -I/opt/local/include -DDARWIN -DSIGPROCMASK_SETS_THREAD_MASK -no-cpp-precomp -I. -I/opt/local/include/apr-1 -I/opt/local/include/apr-1  -c -o buckets/aggregate_buckets.lo buckets/aggregate_buckets.c &amp;&amp; touch buckets/aggregate_buckets.lo<br />
+libtool: compile: unable to infer tagged configuration<br />
+libtool: compile: specify a tag with `--tag'<br />
+make: *** [buckets/aggregate_buckets.lo] Error 1<br />
+</code></p>
+<p>I spent some time searching and eventually I find the solution to the serf error. I couldn&#8217;t read the blog because it wasn&#8217;t in English, but I could read enough to solve my <a href="http://www.extendi.it/ruby-on-rails/index.php/2008/09/18/serf-020-fails-to-build-on-port/">MacPorts serf install problem</a>. I followed these few lines from the blog</p>
+<p><code>cd /opt/local/var/macports/build/_opt_local_var_macports_sources_rsync.macports.org_release_ports_www_serf/work/serf-0.2.0<br />
+$ sudo ./configure --prefix=/opt/local --with-apr=/opt/local --with-apr-util=/opt/local<br />
+$ sudo make all<br />
+$ sudo port install serf<br />
+</code></p>
+<p>Awesome, I have serf. Now what is next? Back to building svn with perl bindings, that works. Now, let&#8217;s build git again since svn with perl bindings is finally installed.</p>
+<p><code>sudo port install git-core +svn</code></p>
+<p>Which fails because of p5-svn-simple</p>
+<p><code>dyld: lazy symbol binding failed: Symbol not found: _Perl_Gthr_key_ptr<br />
+Referenced from: /usr/local/lib/libsvn_swig_perl-1.0.dylib<br />
+Expected in: flat namespace</code></p>
+<p><code>dyld: Symbol not found: _Perl_Gthr_key_ptr<br />
+Referenced from: /usr/local/lib/libsvn_swig_perl-1.0.dylib<br />
+Expected in: flat namespace</code></p>
+<p><code>Error: Status 1 encountered during processing.</code></p>
+<p>OK, I need to get p5-svn-simple working. Searching leads to this thread <a href="https://trac.macports.org/ticket/15279">MacPort errors related to git</a>. Here you will find the amazingly useful comment by Orestis:</p>
+<p>&#8220;As mentioned move your libsvn_swig_perl* out of /usr/local/lib AND out of /usr/lib into temporary folders.</p>
+<p>Uninstall and reinstall subversion-perlbindings</p>
+<p>Install p5-svn-simple (and git-core +svn which is what lead me here)</p>
+<p>Move the libsvn_swig_perl files back in /usr/lib and /usr/local/lib (or else git svn won&#8217;t work). </p>
+<p><code>&gt; cd /usr/local<br />
+&gt; mv ./lib/libsvn_swig_perl* ./bak/<br />
+&gt; sudo port install p5-svn-simple</code></p>
+<p>Sweet that works now</p>
+<p><code>&gt; sudo port install git-core +svn<br />
+&gt; cd /usr/local<br />
+&gt; mv ./bak/libsvn_swig_perl* ./lib/</code></p>
+<p>Finally I try to run git-svn, only to see the same ERROR I had from the very beginning! I am about to lose it but decide that I should try the quick fix again to see if it is the path issue&#8230;</p>
+<p><code>PATH=/opt/local/bin:$PATH; git svn</code></p>
+<p>It works! Alright now it is just a path problem. So I open up my .bash_profile, and notice I already have that path included</p>
+<p><code># Setting the path for MacPorts.<br />
+export PATH=/opt/local/bin:/opt/local/sbin:/Applications/MzScheme\ v352/bin:$PATH</code></p>
+<p>But I also have an additional path added from when I originally built git from source, and it looks like I was running my old broken version of git-svn. So I just had to remove this one line from my .bash_profile</p>
+<p><code>export PATH=~/projects/git-1.5.6.1:$PATH</code></p>
+<p>and hours later and with a ton of frustration I have a fully functioning git-svn.</p>
+<p>Now that it is working, you can move on to <a href="http://tsunanet.blogspot.com/2007/07/learning-git-svn-in-5min.html">learning git-svn in 5 minutes</a>.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://devver.net/blog/2008/12/installing-and-running-git-svn-on-mac-osx-104-tiger/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Revisiting additional Ruby Tools</title>
+		<link>http://devver.net/blog/2008/12/revisiting-additional-ruby-tools/</link>
+		<comments>http://devver.net/blog/2008/12/revisiting-additional-ruby-tools/#comments</comments>
+		<pubDate>Wed, 03 Dec 2008 17:01:51 +0000</pubDate>
+		<dc:creator>Dan</dc:creator>
+		
+		<category><![CDATA[Development]]></category>
+
+		<category><![CDATA[Hacking]]></category>
+
+		<category><![CDATA[Misc]]></category>
+
+		<category><![CDATA[Ruby]]></category>
+
+		<category><![CDATA[Tools]]></category>
+
+		<guid isPermaLink="false">http://devver.net/blog/?p=923</guid>
+		<description><![CDATA[I have heard about new Ruby tools since I did my Ruby Tools Roundup. I am always interested in tools that can help improve our code, so I had to check some of them out. Similar to my last tools post, I will be trying out a tool and writing my general impressions along with [...]]]></description>
+			<content:encoded><![CDATA[<p>I have heard about new Ruby tools since I did my <a href="http://devver.net/blog/2008/10/ruby-tools-roundup/">Ruby Tools Roundup</a>. I am always interested in tools that can help improve our code, so I had to check some of them out. Similar to my last tools post, I will be trying out a tool and writing my general impressions along with the basic usage.</p>
+<h3>reek</h3>
+<hr />I have to start with <a href="http://reek.rubyforge.org/">reek</a>, since it has been the most requested and searched on our site since I originally wrote about tools. reek will help identify code smells, allowing you to fix up your code. Instead of looking at cyclomatic complexity or other metrics, reek looks at patterns to warn you about bad code. Reek currently detects a few code smells (Long Method, Large Class, Feature Envy, Uncommunicative Name, Long Parameter List, Utility Function, Nested Iterators, Control Couple, Duplication) but more are on the way.<br />
+<br/>I think this project is useful but would need to be more customized before a nightly run would yield very useful results. The biggest problem I have is the signal to noise ratio seemed pretty high. Reek was warning me about &#8220;long methods&#8221; that were only 7 statements long, which just isn&#8217;t something I am concerned about. The warnings on duplicate methods calls can be useful, after running reek on a few files I found a couple places where duplicate method calls were wasting time. Many of the other smells are interesting like &#8216;Feature Envy&#8217;, and &#8216;Utility Function&#8217;. I will need to use reek more before I know if these smells are good indicators or often false positives.<br />
+<br/>Below reek finds a utility function next_tick which is definitely a helper function that actually exists in two of our files, which probably should be moved into a helper mixin.</p>
+<pre class="ruby" name="code">def next_tick
+    if(EM.reactor_running?)
+      EM.next_tick do
+        yield
+      end
+    else
+      yield
+    end
+end</pre>
+<p>I am really looking forward to see how the tool progresses. If the project allows for a simple config customization to change the thresholds as well as ignore some files/smells, this could become a very useful tool to help keep a team maintain a high expectation of code quality. It would be useful to get nightly reports about any code that might not meet expectations, so a quick group code review could decide if it is an exception (which can be quickly added to the config) or if the code should be refactored and cleaned up.<br />
+<code><br />
+dmayer$ sudo gem install reek<br />
+dmayer$ reek ./lib/client/client.rb<br />
+[Utility Function] Client#next_tick doesn&#8217;t depend on instance state<br />
+[Long Method] Client#process_done has approx 7 statements<br />
+[Duplication] Client#process_ready calls @buffer.create_reload_msg more than once<br />
+[Long Method] Client#process_ready has approx 10 statements<br />
+[Duplication] Client#report_system_message calls result.msg more than once<br />
+[Feature Envy] Client#report_system_message refers to result more than self<br />
+[Duplication] Client#send_tests calls Time.now more than once<br />
+[Long Method] Client#send_tests has approx 24 statements<br />
+[Feature Envy] Client#send_tests refers to tests more than self<br />
+#check a whole directory<br />
+dmayer$ reek ./lib/client/*<br />
+</code></p>
+<h3>Towelie</h3>
+<hr /><a href="http://gilesbowkett.blogspot.com/2008/09/towelie-keeps-your-code-dry.html">Towelie</a> helps discover duplication in Ruby code, it will help keep your code <a href="http://en.wikipedia.org/wiki/Don%27t_repeat_yourself">DRY</a>. It doesn&#8217;t have a nice interface at the moment and it is pretty young code. That being said, it can still be a really useful tool to help guide refactoring and code cleanup.</p>
+<pre class="ruby" name="code">~/projects dmayer$ git clone git://github.com/gilesbowkett/towelie.git
+dmayer$ cd ~/projects/devver/
+dmayer$ irb -r ~/projects/towelie/lib/towelie.rb
+irb(main):001:0&gt; @t = Towelie.new
+=&gt; #, @model=#&gt;
+irb(main):002:0&gt; @t.parse "lib/client"
+(string):24: warning: useless use of a variable in void context
+=&gt; nil
+irb(main):003:0&gt; puts @t.duplicates
+found in:
+lib/client/test_unit_reporter.rb
+lib/client/rspec_reporter.rb
+
+def nl
+report_nl
+end
+
+... 2 more dupes in the reporters ...
+
+found in:
+lib/client/test_unit_reporter.rb
+lib/client/rspec_reporter.rb
+
+def report(str)
+print(str.to_s)
+end
+
+found in:
+lib/client/sync_client.rb
+lib/client/rev_sync_client.rb
+lib/client/rev_client.rb
+lib/client/client.rb
+
+def quit
+send(@buffer.create_quit_msg)
+end
+
+found in:
+lib/client/sync_client.rb
+lib/client/rev_sync_client.rb
+lib/client/rev_client.rb
+lib/client/client.rb
+
+def send_quit
+send(@buffer.create_quit_msg)
+end
+
+=&gt; nil
+irb(main):004:0&gt;</pre>
+<p>There are currently many duplications because we are maintaining two clients while deciding what route to eventually take. We have also moved a lot of our shared client code into a mixin, and Towelie finds some methods that really should be moved there as well such as the methods &#8220;quit&#8221; and &#8220;send_quit&#8221;, which is currently duped in 4 files. Towelie also points to the fact that we should refactor our reporters because they both duplicate code.</p>
+<p>I have always been annoyed with copied and pasted functions accidentally working its way in code, this could be a useful nightly run to keep a team DRY. Sometimes two team members implement the same functionality without even knowing a solution already exists in the code base.  If you want to go a bit more in depth, check out <a href="http://gilesbowkett.blogspot.com/">Giles Bowkett&#8217;s</a> (creator of Towelie) <a href="http://gilesbowkett.blogspot.com/2008/10/verbatim-how-to-find-patterns-in-code.html">How to use Towelie</a></p>
+<h3>Flay</h3>
+<hr /><a href="http://ruby.sadi.st/Flay.html">Flay</a> is another great tool by <a href="http://blog.zenspider.com/">Ryan Davis</a> who also works on <a href="http://ruby.sadi.st/Heckle.html">Heckle</a> and <a href="http://ruby.sadi.st/Flog.html">Flog</a> which I covered in the past. Flay, like Towelie, helps keep your code DRY, it detects exact and similar code throughout a project. It seems to be more powerful than Towelie, as seen in this <a href="http://blog.zenspider.com/2008/11/flay-detecting-identical-and-s.html">Towelie and Flay comparison</a>. My biggest complaint is the current release has some pretty basic output that you see below. The output I got from Towelie was immediately more recognizable and useful, while Flay currently requires you to dig in a bit deeper on your own into its suggestions. An improvement is already being worked on and a verbose output mode should be in the release soon. Once better output is included I think Flay will be immediately useful out of the box even with small amounts of developer effort.<br />
+<br/>I like that Flay has weight system, which should make it easy to set some threshold to ignore, high level weights are more likely to be worth your time and attention. One piece of code Flay tagged with a low weight was code that rescued and logged different errors thrown, which while similar actually served a purpose.</p>
+<pre class="ruby" name="code">rescue Errno::EISDIR =&gt; ed
+      @stderr.puts "Error: #{ed.message}" if @stderr
+      @stderr.puts "You can't pass a directory to devver only test files. Quitting." if @stderr
+      send_quit
+    rescue LoadError =&gt; le
+      @stderr.puts "Error: #{le.message}" if @stderr
+      @stderr.puts "Not all of the files can be found. Quitting." if @stderr
+      send_quit
+    rescue SyntaxError, NameError =&gt; se
+      @stderr.puts "Error: #{se.message}" if @stderr
+      @stderr.puts "This file doesn't appear to be a valid Ruby file. Quitting." if @stderr
+      send_quit
+end</pre>
+<p>Digging into the Flay results turned up some duplicate code that Towelie had missed. Since Towelie also caught a method that was duped in 4 client files that Flay missed (I was expecting Towelie&#8217;s results to be a subset of what Flay found), perhaps there is room for both of the tools and learning to work with both a little bit is worth the time. After a little bit of work perhaps one of the projects will become a clearly better option. Until then I will be following both of these projects.</p>
+<pre>sudo gem install flay
+dmayer$ flay lib/client/*.rb
+Processing lib/client/client.rb...
+Processing lib/client/mod_client.rb...
+...
+Processing lib/client/syncer.rb...
+
+Matches found in :defn (mass = 84)
+lib/client/mod_client.rb:86
+lib/client/mod_rev_client.rb:124
+
+Matches found in :block (mass = 57)
+lib/client/client.rb:201
+lib/client/client.rb:205
+lib/client/client.rb:209
+
+... 6 more results ...
+
+Matches found in :if (mass = 34)
+lib/client/mod_client.rb:63
+lib/client/mod_rev_client.rb:111
+
+Matches found in :defn (mass = 32)
+lib/client/mod_rev_client.rb:36
+lib/client/mod_rev_client.rb:50</pre>
+<p><br/></p>
+<h3>Conclusions</h3>
+<hr />That should cover it for this Ruby tools post, but I am really enjoying checking out the tools showing up in the Ruby scene. So as always let me know if I missed something, or if there is a tool you would like to see a full write up on. After some of the tools mature a little bit I will have to revisit a few of the tools which are currently in the early stages. I hope the Ruby tools scene keeps as active as it has been lately because there are some interesting projects being worked on.</p>
+<p><strong>honorable mentions</strong> (things I didn&#8217;t think really needed a full write up)</p>
+<hr />
+<ul>
+<li><a href="http://metric-fu.rubyforge.org/">metric-fu</a> a great gem to give quick access to a bunch of tools and metrics about your code (RCov, Saikuro, Flog, SCM Churn, and Rails Stats)</li>
+<li><a href="http://cruisecontrolrb.thoughtworks.com/">CruiseControl.rb</a> when you start using all of these tools, continuous integration starts to become more important (or doing nightly runs). CruiseControl.rb is dead simple continuous integration.</li>
+<li><a href="http://www.redhillconsulting.com.au/products/simian/">Simian</a> another code duplication tool, which is mentioned in <a href="http://www.rubyinside.com/3-tools-for-drying-your-ruby-code-1305.html">3 tools for drying your Ruby code</a> (free for OSS, $99 for a license)</li>
+<li><a href="http://rubyforge.org/projects/rubytidy/">Ruby Tidy</a> a tool for cleaning up HTML (I haven&#8217;t used this in Ruby, but loved the Java version in my Java days)</li>
+<li><a href="http://wtr.rubyforge.org/">Watir</a> is an open-source library for automating web browsers. It allows you to write tests that are easy to read and maintain. It is simple and flexible.</li>
+<li><a href="http://ph7spot.com/articles/getting_started_with_autotest">Autotest</a>, if you haven&#8217;t heard of autotest, check it out, continuously run your tests every time you save a file in your project.</li>
+<li><a href="http://rufus.rubyforge.org/rufus-treechecker/files/README_txt.html">Rufus</a> a tool that checks if code you are about to load is safe. Allows you to look for custom patterns that you don&#8217;t want to run.</li>
+<li>I wrote about a couple benchmarking tools last time and here is a great article / <a href="http://on-ruby.blogspot.com/2008/12/benchmarking-makes-it-better.html">tutorial on Ruby benchmarking</a></li>
+</ul>
+]]></content:encoded>
+			<wfw:commentRss>http://devver.net/blog/2008/12/revisiting-additional-ruby-tools/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Devver.net is hiring!</title>
+		<link>http://devver.net/blog/2008/12/devvernet-is-hiring/</link>
+		<comments>http://devver.net/blog/2008/12/devvernet-is-hiring/#comments</comments>
+		<pubDate>Tue, 02 Dec 2008 17:35:16 +0000</pubDate>
+		<dc:creator>Ben</dc:creator>
+		
+		<category><![CDATA[Devver]]></category>
+
+		<guid isPermaLink="false">http://devver.net/blog/?p=1044</guid>
+		<description><![CDATA[We are looking for a top-notch Ruby hacker who wants to help us build the next generation of developer tools.
+At Devver.net, you&#8217;ll be solving new and interesting problems on a daily basis. You&#8217;ll help us improve our architecture and build new features.
+If you have a passion for Ruby, developer tools, and highly distributed systems, please [...]]]></description>
+			<content:encoded><![CDATA[<p>We are looking for a top-notch Ruby hacker who wants to help us build the next generation of developer tools.</p>
+<p>At Devver.net, you&#8217;ll be solving new and interesting problems on a daily basis. You&#8217;ll help us improve our architecture and build new features.</p>
+<p>If you have a passion for Ruby, developer tools, and highly distributed systems, please <a href="http://devver.net/jobs">read more about the job</a> and contact us at <a href="mailto:jobs@devver.net">jobs@devver.net</a></p>
+]]></content:encoded>
+			<wfw:commentRss>http://devver.net/blog/2008/12/devvernet-is-hiring/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Building a iPhone web app in under 50 lines with Sinatra and iUI</title>
+		<link>http://devver.net/blog/2008/11/building-a-iphone-web-app-in-under-50-lines-with-sinatra-and-iui/</link>
+		<comments>http://devver.net/blog/2008/11/building-a-iphone-web-app-in-under-50-lines-with-sinatra-and-iui/#comments</comments>
+		<pubDate>Tue, 25 Nov 2008 16:14:06 +0000</pubDate>
+		<dc:creator>Ben</dc:creator>
+		
+		<category><![CDATA[Hacking]]></category>
+
+		<category><![CDATA[Tools]]></category>
+
+		<guid isPermaLink="false">http://devver.net/blog/?p=950</guid>
+		<description><![CDATA[One awesome thing about the iPhone is that it can display documents very nicely, including Word, Excel, and PDF files. However, the other day I was complaining that it&#8217;s not very easy to view the documents you store on your computer on your iPhone. Sure, you could email them to yourself, but then you have [...]]]></description>
+			<content:encoded><![CDATA[<p>One awesome thing about the iPhone is that it can display documents very nicely, including Word, Excel, and PDF files. However, the other day I was complaining that it&#8217;s not very easy to view the documents you store on your computer on your iPhone. Sure, you could email them to yourself, but then you have to search through your mail on your iPhone to find your documents. And I&#8217;m sure there is a snazzy iPhone app from the App Store to do this as well. But instead, let&#8217;s build a quick web app using <a href="http://sinatra.rubyforge.org/">Sinatra</a> and <a href="http://code.google.com/p/iui/">iUI</a>.</p>
+<p>Here&#8217;s what we&#8217;ll be building (screenshot courtesy of <a href="http://marketcircle.com/iphoney/">iPhoney</a>, which rules, by the way):</p>
+<table border="0" width="100%">
+<tbody>
+<tr>
+<td>
+<p><div id="attachment_965" class="wp-caption alignnone" style="width: 218px"><a href="http://devver.net/blog/wp-content/uploads/2008/11/butler.jpg"><img class="size-medium wp-image-965" title="butler screenshot" src="http://devver.net/blog/wp-content/uploads/2008/11/butler.jpg" alt="A screenshot of the butler iPhone web app" width="208" height="392" /></a><p class="wp-caption-text">It doesn&#39;t look like much, but hey, it&#39;s less than 50 lines of code</p></div></td>
+<td>
+<p><div id="attachment_973" class="wp-caption alignnone" style="width: 218px"><a href="http://devver.net/blog/wp-content/uploads/2008/11/git_pdf.jpg"><img class="size-medium wp-image-973" title="git_pdf" src="http://devver.net/blog/wp-content/uploads/2008/11/git_pdf.jpg" alt="When you click on git-tutorial.pdf, you'll see the full document" width="208" height="392" /></a><p class="wp-caption-text">When you click on git-tutorial.pdf, you&#39;ll see this</p></div></td>
+</tr>
+</tbody>
+</table>
+<p>Sinatra is a really awesome minimalist web framework. It lets you build web applications with just a few lines of code. iUI is a collection of JavaScript, CSS, and images that lets you easily make your web sites look great on the iPhone. Using these two tools, it&#8217;s really easy to build simple iPhone apps.</p>
+<p>To begin, install the Sinatra gem:</p>
+<p><code><br />
+&gt; gem install sinatra<br />
+</code></p>
+<p>Now, let&#8217;s start with a simplest version of our app, which we&#8217;ll call &#8216;butler&#8217;. Let&#8217;s make a directory for butler.</p>
+<p><code><br />
+&gt; mkdir butler<br />
+&gt; cd butler<br />
+&gt; touch butler.rb<br />
+</code></p>
+<p>Open up butler.rb in your favorite editor and type:</p>
+<p><script src="http://gist.github.com/27247.js"></script> Now start butler on your command line:  <code> &gt; ruby -rubygems ./butler.rb </code> and point your browser to http://localhost:4567 (you can use your computer&#8217;s browser or the one on your iPhone - it doesn&#8217;t matter. I find it&#8217;s better to use the one on my computer while building the app, since it&#8217;s easier to read Sinatra&#8217;s debugging messages if something goes wrong).  You should see a page that just says &#8220;Your files, sir.&#8221; Congrats! You&#8217;ve made your first Sinatra app. Wasn&#8217;t that easy?</p>
+<p>OK, let&#8217;s make butler a little more useful. Sinatra will serve up any files in a subdirectory named <code>public</code>. Since we&#8217;ll eventually be using this <code>public</code> directory for holding other JavaScript and CSS files as well, we&#8217;ll actually put our files in <code>./public/files</code>. We&#8217;ll also make a link for convenience. Finally, while we&#8217;re at it, let&#8217;s put a few test files in there.</p>
+<p><code>&gt; mkdir -p public/files<br />
+ &gt; ln -s public/files files<br />
+ &gt; echo "foo" &gt; public/files/foo.txt<br />
+ &gt; echo "bar" &gt; public/files/bar.txt </code></p>
+<p>We want butler to link to each file, so let&#8217;s build a little helper for that. In Sinatra, you can include helpers within a <code>helper</code> block. We&#8217;ll also try out our helper for one file.    <script src="http://gist.github.com/27250.js"></script></p>
+<p>Go refresh your browser to see the changes. There&#8217;s no need to restart your application, because Sinatra automatically reloads changes (very cool!). You should see a link to <code>foo.txt</code>. Click on it, and you&#8217;ll see the contents.</p>
+<p>Clearly, we don&#8217;t want to hardcode this for just one file. Let&#8217;s alter butler to look for every file within the <code>./files</code> directory.</p>
+<p><script src="http://gist.github.com/27251.js"></script> OK, refresh your browser and you should see both foo.txt and bar.txt.  This is looking pretty good, but we&#8217;re not really creating valid HTML right now. We&#8217;re missing <code>html</code>, <code>head</code>, and, <code>body</code> tags at the very least. We could add this all within our &#8220;get&#8221; handler, but that would clutter up the code.</p>
+<p>Instead, let&#8217;s put this code into a view.  Sinatra actually lets you put the view right after your other code, so you can build an entire application in one file. For simplicity, I&#8217;m going to do that for this tutorial. However, if this approach bothers you (or just messes up syntax highlighting in your editor), rest assured you can place the view code in a <code>views</code> directory and it would work the same way.</p>
+<p>Let&#8217;s add the view to the end of our file, and use it in our handler. Notice that I name the view &#8216;index&#8217; by beginning my declaration with <code>@@ index</code> - if I wanted a separate file, I would just put it in <code>./views/index.erb</code> (you can also use Haml, if that&#8217;s your cup of tea). Note I assign <code>@links</code> in the handler and it automatically is available in the view.    <script src="http://gist.github.com/27253.js"></script></p>
+<p>Refreshing the browser now isn&#8217;t really that exciting, since things look the same, but if you wanted, you could easily play around with the view to make things look different.</p>
+<p>One glaring problem is that this page isn&#8217;t very usable on the iPhone itself. That&#8217;s where iUI comes in. Start by downloading it (URL is in instructions below) to your butler directory, unzipping it, and copying the necessary files into your public directory.</p>
+<p><code><br />
+&gt; mkdir iui<br />
+&gt; cd iui<br />
+&gt; wget http://iui.googlecode.com/files/iui-0.13.tar.gz<br />
+&gt; tar -xzvf iui-0.13.tar.gz<br />
+&gt; cd ..<br />
+&gt; mkdir public/images<br />
+&gt; cp iui/iui/*.png public/images<br />
+&gt; cp iui/iui/*.gif public/images<br />
+&gt; mkdir public/javascripts<br />
+&gt; cp iui/iui/*.js public/javascripts<br />
+&gt; mkdir public/stylesheets<br />
+&gt; cp iui/iui/*.css public/stylesheets<br />
+</code></p>
+<p>To use iUI, you&#8217;ll need to include the JavaScript and CSS in your view. You&#8217;ll also need to add some elements to the body of your view. When you&#8217;re done, the view will look like this:</p>
+<p><script src="http://gist.github.com/27255.js"></script> This html is probably a bit confusing, but don&#8217;t worry. There are a few examples in <code>./iui/samples/</code> to learn from (and good iUI tutorials on the web).  Finally, you&#8217;ll want to alter the <code>file_link</code> helper to print out iUI code, like so:  <script src="http://gist.github.com/27256.js"></script></p>
+<p>Note that <code>target='_self'</code> code. You need that to get iUI to open a link in a normal way. If you leave it off, it will use an AJAX call to load the file within the current page, which looks really funny when you try to open a binary file like a PDF.</p>
+<p>The final code looks like this:</p>
+<p><script src="http://gist.github.com/27232.js"></script></p>
+<p>And there you have it - an iPhone web app in less than 50 lines of code, thanks to Sinatra and iUI. Now, whenever you want to view some files on your iPhone, either copy the file:</p>
+<p><code>&gt; cp path/to/my_file ./files</code></p>
+<p>or if you prefer, link it:</p>
+<p><code>ln -s path/to/my_file ./files</code></p>
+<p>&#8230; and then run butler</p>
+<p><code>ruby -rubygems ./butler.rb</code></p>
+<p>Figure out the IP address of your computer and simply point your iPhone browser to <code>http://&lt;ip&gt;:4567</code></p>
+<p>I use butler primarily within my home network, but if you want to be able to view your files on the go, you&#8217;ll need to poke a hole in your firewall. That&#8217;s a bit outside the scope of this tutorial, but a quick Google search should give you some good results.</p>
+<p>Enjoy!</p>
+<p><strong>Update:</strong> Removed an unused parameter from the code after pmccann called it to my attention.<br />
+<strong>Update:</strong> Added -z option to <code>tar</code> after Peter pointed out the omission. The <code>tar</code> command without -z worked for me on OS X 10.5, but this is definitely more correct.<br />
+<strong>Update:</strong> Added -rubygems option to <code>ruby</code> command. If you&#8217;d prefer to not use this option, check the comments below for ways to use RubyGems in a Ruby script.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://devver.net/blog/2008/11/building-a-iphone-web-app-in-under-50-lines-with-sinatra-and-iui/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Ruby Beanstalkd distributed worker intermediate lessons</title>
+		<link>http://devver.net/blog/2008/11/ruby-beanstalkd-distributed-worker-intermediate-lessons/</link>
+		<comments>http://devver.net/blog/2008/11/ruby-beanstalkd-distributed-worker-intermediate-lessons/#comments</comments>
+		<pubDate>Wed, 19 Nov 2008 22:19:01 +0000</pubDate>
+		<dc:creator>Dan</dc:creator>
+		
+		<category><![CDATA[Development]]></category>
+
+		<category><![CDATA[Hacking]]></category>
+
+		<category><![CDATA[Ruby]]></category>
+
+		<guid isPermaLink="false">http://devver.net/blog/?p=839</guid>
+		<description><![CDATA[This post is a follow up to Ruby beanstalkd basics, I will try to make the example code little more interesting and useful. I am calling this is a Ruby beanstalkd intermediate write up, it sets up a few workers and distributes and receives results simultaneously. In this example the code resembles real code a [...]]]></description>
+			<content:encoded><![CDATA[<p>This post is a follow up to <a href="http://devver.net/blog/2008/10/ruby-beanstalkd-distributed-worker-basics/">Ruby beanstalkd basics</a>, I will try to make the example code little more interesting and useful. I am calling this is a Ruby <a href="http://xph.us/software/beanstalkd/">beanstalkd</a> intermediate write up, it sets up a few workers and distributes and receives results simultaneously. In this example the code resembles real code a bit more (using a queue cache and block passing). If there is enough interest in the Ruby/beanstalkd community, I will follow up with beanstalkd advanced lessons, and go into how we deal with failure cases such as worker dying during jobs, random jobs failing, processing multiple &#8216;projects&#8217; at one time, using job priority settings, and using TTR/timeouts.</p>
+<p>So in this example we are making an estimate of PI. Yes I know that there are far better approximations out there than my simple results, but this was what I came up with for an incredibly simple distributed computing problem. I based my example on the <a href="https://computing.llnl.gov/tutorials/parallel_comp/#ExamplesPI">PI Calculation</a> problem from an <a href="https://computing.llnl.gov/tutorials/parallel_comp/">Introduction to Parallel Computing</a>. The basic idea is that you can calculate pi by guessing random points in a square and then seeing how many points are inside a circle that fits inside the square (PI= 4 * points_in_circle/total_points).</p>
+<p>I made a bunch of comments in the code that should help you follow but there are a few key sections worth pointing out.</p>
+<p>In the <a href="http://devver.net/blog/2008/10/ruby-beanstalkd-distributed-worker-basics/">Ruby beanstalkd Basics</a>, both the Server and the Clients only used one queue at a time. Now since we are sending on one queue while also listening on another we need access to both queues at once. We simply have a helper function with a queue_cache to make getting and reusing multiple queues incredibly easy.</p>
+<pre name="code" class="ruby">def get_queue(queue_name)
+    @queue_cache ||= {}
+    if @queue_cache.has_key?(queue_name)
+      return @queue_cache[queue_name]
+    else
+      queue = Beanstalk::Pool.new(["#{SERVER_IP}:#{DEFAULT_PORT}"])
+      queue.watch(queue_name)
+      queue.use(queue_name)
+      queue.ignore('default')
+      @queue_cache[queue_name] = queue
+      return queue
+    end
+  end</pre>
+<p>In the basic example each class had a function that got a job and did some work and deleted the job. It is easy to imagine workers that might have many different kinds of work to do on jobs. In every case they are going to grab a job, work on the job, and delete the job. We decided to break that up and make it easy to just pass a work block when workers get a job.</p>
+<pre name="code" class="ruby">def take_msg(queue)
+    msg = queue.reserve
+    #by calling ybody we get the content of the message and convert it from yml
+    body = msg.ybody
+    if block_given?
+      yield(body)
+    end
+    msg.delete
+  end
+
+#call take_msg like so
+take_msg(queue) do |body|
+  #work on body
+end</pre>
+<p>One other thing you should keep a look out for in the code below is checking if a queue has any jobs. Many times workers will check if jobs exist and take them, and if there aren&#8217;t any jobs the process is free to do something else. I do this in this example, the server continually checks incoming results to immediately display. If no results have arrived yet, the server continues sending out job requests as fast as it can. This is useful since taking jobs from beanstalkd is a blocking call. They did add support for non-blocking calls in beanstalkd 1.1, but I haven&#8217;t started using the newest version yet. I think everything else should be pretty self explanatory, feel free to ask me any questions. To run the code it is the same as before: download <a href="#">beanstalk_intermediate.rb</a>, start beanstalkd, and run the example with ruby.<br />
+<code><br />
+$ beanstalkd &amp;<br />
+$ ruby beanstalk_intermediate.rb<br />
+starting distributor<br />
+starting client(s)<br />
+distributor sending out  jobs<br />
+.......................................................<br />
+.............................................<br />
+received all the results our estimate for pi is: 3.142776</code></p>
+<table border="1" width="80%">
+<tr>
+<td># of workers</td>
+<td>time to complete</td>
+</tr>
+<tr>
+<td valign="top">1</td>
+<td>real    0m7.282s<br />
+user    0m4.114s<br />
+sys     0m0.978s</td>
+</tr>
+<tr>
+<td valign="top">2</td>
+<td>real    0m5.667s<br />
+user    0m2.736s<br />
+sys     0m0.670s</td>
+</tr>
+<tr>
+<td valign="top">3</td>
+<td>real    0m4.999s<br />
+user    0m2.014s<br />
+sys     0m0.515s</td>
+</tr>
+<tr>
+<td valign="top">4</td>
+<td>real    0m4.612s<br />
+user    0m1.608s<br />
+sys     0m0.442s</td>
+</tr>
+<tr>
+<td valign="top">5</td>
+<td>real    0m4.517s<br />
+user    0m1.474s<br />
+sys     0m0.416s</td>
+</tr>
+</table>
+<pre name="code" class="ruby">require 'beanstalk-client.rb'
+
+DEFAULT_PORT = 11300
+SERVER_IP = '127.0.0.1'
+#beanstalk will order the queues based on priority, with the same priority
+#it acts FIFO, in a later example we will use the priority
+#(higher numbers are higher priority)
+DEFAULT_PRIORITY = 65536
+#TTR is time for the job to reappear on the queue.
+#Assuming a worker died before completing work and never called job.delete
+#the same job would return back on the queue (in TTR seconds)
+TTR = 3
+
+class BeanBase
+
+  #To work with multiple queues you must tell beanstalk which queues
+  #you plan on writing to (use), and which queues you will reserve jobs from
+  #(watch). In this case we also want to ignore the default queue
+  #you need a different queue object for each tube you plan on using or
+  #you can switch what the tub is watching and using a bunch, we just keep a few
+  #queues open on the tubes we want.
+  def get_queue(queue_name)
+    @queue_cache ||= {}
+    if @queue_cache.has_key?(queue_name)
+      return @queue_cache[queue_name]
+    else
+      queue = Beanstalk::Pool.new(["#{SERVER_IP}:#{DEFAULT_PORT}"])
+      queue.watch(queue_name)
+      queue.use(queue_name)
+      queue.ignore('default')
+      @queue_cache[queue_name] = queue
+      return queue
+    end
+  end
+
+  #this will take a message off the queue, and process it with the block
+  def take_msg(queue)
+    msg = queue.reserve
+    #by calling ybody we get the content of the message and convert it from yml
+    body = msg.ybody
+    if block_given?
+      yield(body)
+    end
+    msg.delete
+  end
+
+  def results_ready?(queue)
+    queue.peek_ready!=nil
+  end
+
+end
+
+class BeanDistributor &lt; BeanBase
+
+  def initialize(chunks,points_per_chunk)
+    @chunks = chunks
+    @points_per_chunk = points_per_chunk
+    @messages_out = 0
+    @circle_count = 0
+  end
+
+  def get_incoming_results(queue)
+    if(results_ready?(queue))
+      result = nil
+      take_msg(queue) do |body|
+        result = body.count
+      end
+      @messages_out -= 1
+      print "." #display that we received another result
+      @circle_count += result
+    else
+      #do nothing
+    end
+  end
+
+  def start_distributor
+    request_queue = get_queue('requests')
+    results_queue = get_queue('results')
+    #put all the work on the request queue
+    puts "distributor sending out #{@messages} jobs"
+    @chunks.times do |num|
+      msg = BeanRequest.new(1,@points_per_chunk)
+      #Take our ruby object and convert it to yml and put it on the queue
+      request_queue.yput(msg,pri=DEFAULT_PRIORITY, delay=0, ttr=TTR)
+      @messages_out += 1
+      #if there are results get them if not continue sending out work
+      get_incoming_results(results_queue)
+    end
+
+    while @messages_out &gt; 0
+      get_incoming_results(results_queue)
+    end
+    npoints = @chunks * @points_per_chunk
+    pi = 4.0*@circle_count/(npoints)
+    puts "\nreceived all the results our estimate for pi is: #{pi}"
+  end
+
+end
+
+class BeanWorker &lt; BeanBase
+
+  def initialize()
+  end
+
+  def write_result(queue, result)
+    msg = BeanResult.new(1,result)
+    queue.yput(msg,pri=DEFAULT_PRIORITY, delay=0, ttr=TTR)
+  end
+
+  def in_circle
+    #generate 2 random numbers see if they are in the circle
+    range = 1000000.0
+    radius = range / 2
+    xcord = rand(range) - radius
+    ycord = rand(range) - radius
+    if( (xcord**2) + (ycord**2) &lt;= (radius**2) )
+      return 1
+    else
+      return 0
+    end
+  end
+
+  def start_worker
+    request_queue = get_queue('requests')
+    results_queue = get_queue('results')
+    #get requests and do the work until the worker is killed
+    while(true)
+      result = 0
+      take_msg(request_queue) do |body|
+        chunks = body.count
+        chunks.times { result += in_circle}
+      end
+      write_result(results_queue,result)
+    end
+
+  end
+
+end
+
+############
+# These are just simple message classes that we pass using beanstalks
+# to yml and from yml functions.
+############
+class BeanRequest
+  attr_accessor :project_id, :count
+  def initialize(project_id, count=0)
+    @project_id = project_id
+    @count = count
+  end
+end
+
+class BeanResult
+  attr_accessor :project_id, :count
+  def initialize(project_id, count=0)
+    @project_id = project_id
+    @count = count
+  end
+end
+
+#how many different jobs we should do
+chunks = 100
+#how many points to calculate per chunk
+points_per_chunk = 10000
+#how many workers should we have
+#(normally different machines, in our example fork them off)
+workers = 5
+
+# Most of the time you will have two entirely separate classes
+# but to make it easy to run this example we will just fork and start our server
+# and client separately. We will wait for them to complete and check
+# if we received all the messages we expected.
+puts "starting distributor"
+server_pid = fork {
+  BeanDistributor.new(chunks,points_per_chunk).start_distributor
+}
+
+puts "starting client(s)"
+client_pids = []
+workers.times do |num|
+  client_pid = fork {
+    BeanWorker.new.start_worker
+  }
+  client_pids &lt;&lt; client_pid
+end
+
+Process.wait(server_pid)
+#take down the clients
+client_pids.each do |pid|
+  Process.kill("HUP",pid)
+end</pre>
+]]></content:encoded>
+			<wfw:commentRss>http://devver.net/blog/2008/11/ruby-beanstalkd-distributed-worker-intermediate-lessons/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Shazam vs Mashup Music</title>
+		<link>http://devver.net/blog/2008/11/shazam-vs-mashup-music/</link>
+		<comments>http://devver.net/blog/2008/11/shazam-vs-mashup-music/#comments</comments>
+		<pubDate>Fri, 14 Nov 2008 17:21:36 +0000</pubDate>
+		<dc:creator>Dan</dc:creator>
+		
+		<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://devver.net/blog/?p=866</guid>
+		<description><![CDATA[I had a funny thought while listening to some music recently and decided I needed to do battle between music mashups and music recognition software.
+Shazam is a pretty cool app on the iPhone to help you recognize and find music, it uses the microphone and listens to whatever music is near the iPhone. Shazam then [...]]]></description>
+			<content:encoded><![CDATA[<p>I had a funny thought while listening to some music recently and decided I needed to do battle between music mashups and music recognition software.</p>
+<p><a href="http://www.shazam.com/music/web/pages/iphone.html">Shazam</a> is a pretty cool app on the iPhone to help you recognize and find music, it uses the microphone and listens to whatever music is near the iPhone. Shazam then compares the few second recorded sound to an online database of music data to try to determine the song. I was curious what would happen when it was given mashup music which contains parts of many songs. Would it just be entirely confused? Would it recognize the mashup? Would it recognize the currently most prominent sample in the mashup?</p>
+<table border="1" width="100%">
+<tbody>
+<tr>
+<td>Artist, Song Title</td>
+<td>Results</td>
+</tr>
+<tr>
+<td colspan="2">First let&#8217;s test it on some normal songs and check the accuracy</p>
+<p>(played on iTunes)</td>
+</tr>
+<tr>
+<td>Beck, Loser</td>
+<td>correct</td>
+</tr>
+<tr>
+<td>Aquabats, Red Sweater!</td>
+<td>unrecognized</td>
+</tr>
+<tr>
+<td>Beastie Boys, Intergalatic</td>
+<td>correct</td>
+</tr>
+<tr>
+<td>Pearl Jam, Elderly Woman Behind the Counter in a Small Town</td>
+<td>correct</td>
+</tr>
+<tr>
+<td>Billy Joel, Captain Jack</td>
+<td>correct</td>
+</tr>
+<tr>
+<td>Flobots, Handlebars</td>
+<td>correct</td>
+</tr>
+<tr>
+<td>Weezer, Surf Wax America</td>
+<td>correct</td>
+</tr>
+<tr>
+<td colspan="2">Now let&#8217;s throw it some mashups and see what happens</p>
+<p>(Shazam used randomly during song)</td>
+</tr>
+<tr>
+<td valign="top">Jay-Zeezer, Surf Wax Off your Shoulder</td>
+<td><span style="color: green;">rating: Good</span><br />
+<span style="color: red;">Fails twice</span></p>
+<p>identifies as Lil Jay, Dirt off your Shoulda Shurga twice (Should be Jay-Z, Dirt Off Your Shoulder, but it is basically a cover)</p>
+<p>identifies as Weezer, Surf Wax America twice</td>
+</tr>
+<tr>
+<td valign="top">Girl Talk, <a href="http://en.wikipedia.org/wiki/Feed_The_Animals#5._.22Set_It_Off.22_-_3:42">Set It Off</a></td>
+<td><span style="color: green;">rating: <strong>Great<strong></strong></strong></span><strong><strong><br />
+<span style="color: red;">Fails three times</span></strong></strong></p>
+<p><strong><strong>identifies as Jay-Z, Roc Boys (correctly in song)</strong></strong></p>
+<p><strong><strong>identifies as Mary J. Blige, Real Love (correctly in song)</strong></strong></p>
+<p><strong><strong>identifies as Fatman, Scoop Be Faithful (correctly in song)</strong></strong></td>
+</tr>
+<tr>
+<td valign="top">Girl Talk, <a href="http://en.wikipedia.org/wiki/Feed_The_Animals#14._.22Play_Your_Part_.28Pt._2.29.22_-_3:25">Play Your Part (part 2)</a></td>
+<td><span style="color: red;">rating: Poor</span><br />
+<span style="color: red;">Fails eight times</span></p>
+<p>identifies as Huey Pop, Lock &amp; Drop It once (correctly in song)</td>
+</tr>
+<tr>
+<td valign="top">Girl Talk, <a href="http://en.wikipedia.org/wiki/Feed_The_Animals#2._.22Shut_the_Club_Down.22_-_3:07">Shut The Club Down</a></td>
+<td><span style="color: blue;">rating: OK</span><br />
+<span style="color: red;">Fails two times</span></p>
+<p>identifies as Dolla Feat. T-Pain and Tay Dizm, Who The F**k is That? (correctly in song (there are multiple versions of this song see below))</p>
+<p>identifies as T-Pain Feat. Dolla &amp; Akon, Who the F is That (correctly in song (there are multiple versions of this song see above))</p>
+<p>identifies as Rich Boy Feat. Polow Da Don, Throw Some D&#8217;s (correctly in song)</td>
+</tr>
+<tr>
+<td valign="top">Danger Mouse, 99 Problems (<a href="http://en.wikipedia.org/wiki/Grey_Album">The Grey Album</a>)</td>
+<td><span style="color: green;">rating: <strong>Awesome!</strong></span><br />
+<span style="color: green;">No Failures!</span></p>
+<p>identifies as Jay-Z, 99 Problems (correctly in song)</p>
+<p>identifies as Dangermouse, 99 Problems/Helter Skelter five times (This is the actual mashup)</td>
+</tr>
+<tr>
+<td valign="top">Danger Mouse, Public Service Announcement (<a href="http://en.wikipedia.org/wiki/Grey_Album">The Grey Album</a>)</td>
+<td><span style="color: red;">rating: Poor</span><br />
+identifies as Jay-Z, Interlude three times (correct artist and album but the wrong song)</td>
+</tr>
+<tr>
+<td valign="top">Danger Mouse, What More Can I Say (<a href="http://en.wikipedia.org/wiki/Grey_Album">The Grey Album</a>)</td>
+<td><span style="color: green;">rating: <strong>Great</strong></span><br />
+identifies as Jay-Z, What More Can I Say nine times (correctly in song)</p>
+<p>identifies as George Harrison, While My Guitar Gently Weeps twice (correctly in song)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Conclusion</strong><br />
+It was far more noticeable when the dominant sample was playing during both <a href="http://www.jay-zeezer.com/">Jay-Zeezer</a> and <a href="http://stereo.lu/grey/">The Grey Album</a> which seemed to mean that Shazam could pick out the individual songs easier. I was quite impressed when it even correctly identified some of the Grey Album as actually being a mashup. <a href="http://74.124.198.47/illegal-art.net/__girl__talk___feed__the__anima.ls___/">Girl Talk</a> gave the program a harder time, which makes sense seeing as many samples are put together for very small amounts of times and many of the samples are slightly altered. Some songs where there were dominant samples for a period of time, it did a decent job. It is a cool way to figure out what songs contribute to a mashup if you are unsure about a piece of a song. I was pretty impressed with Shazam&#8217;s abilities to pick apart the pieces of the songs. I guess the results aren&#8217;t really that surprising, but it was still a fun way to spend some of a Saturday afternoon listening to music and testing some software.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://devver.net/blog/2008/11/shazam-vs-mashup-music/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Displaying code on your blog</title>
+		<link>http://devver.net/blog/2008/11/displaying-code-on-your-blog/</link>
+		<comments>http://devver.net/blog/2008/11/displaying-code-on-your-blog/#comments</comments>
+		<pubDate>Thu, 13 Nov 2008 18:19:26 +0000</pubDate>
+		<dc:creator>Ben</dc:creator>
+		
+		<category><![CDATA[Tools]]></category>
+
+		<guid isPermaLink="false">http://devver.net/blog/?p=890</guid>
+		<description><![CDATA[A few weeks ago, I wrote about my desire for an awesome embeddable code widget.The most common solution that people suggested in the comments (and on the thread on Stack Overflow) was SyntaxHighlighter. I had seen the SyntaxHighlighter (SH) widget on a few blogs and was impressed, so I decided to install the WordPress plugin. [...]]]></description>
+			<content:encoded><![CDATA[<p>A few weeks ago, I wrote about my desire for <a href="http://devver.net/blog/2008/10/someone-please-build-an-awesome-embeddable-code-widget/">an awesome embeddable code widget</a>.The most common solution that people suggested in the comments (and on the thread on <a href="http://stackoverflow.com/questions/251297/is-there-a-good-embeddable-code-widget-for-blogs">Stack Overflow</a>) was <a href="http://code.google.com/p/syntaxhighlighter/">SyntaxHighlighter</a>. I had seen the SyntaxHighlighter (SH) widget on a few blogs and was impressed, so I decided to install the <a href="http://wordpress.org/extend/plugins/google-syntax-highlighter/">WordPress plugin</a>. The installation was easy enough, but unfortunately the plugin comes with a slightly old version of SH. Luckily, it was really easy to download the newest version from the SH site and drop it into the plugin.</p>
+<p>Now we can just wrap code in <code>&lt;pre name='code' class='ruby'&gt;...some code...&lt;/pre&gt;</code> and it will look like this:</p>
+<pre class="ruby" name="code">class Foo
+   def bar
+     puts "Hello, world!"
+   end
+end</pre>
+<p>Pretty sweet! In fact, we ended up converting all of the code snippets on our blog to use SH.</p>
+<p>Although SH is really, really cool, it does suffer from inherent drawbacks: it has to be installed and it has to be periodically updated. What I initially described in my previous post was something simpler - a web app where you could easily post code and then embed it in your blog. In other words, <a href="http://pastie.org/">Pastie</a> with a <a href="http://youtube.com">YouTube</a>-like embed feature.</p>
+<p><a href="http://pomoti.com/">Dirceu Jr.</a> pointed out <a href="http://gist.github.com/">Gist</a> from <a href="http://github.com/">GitHub</a>, which is exactly what I was looking for. Even without signing up, you can post code (<a href="http://gist.github.com/24490">like so</a>) and then embed it in your blog.</p>
+<p><script src="http://gist.github.com/24490.js"></script>Dirceu Jr. even wrote a <a href="http://pomoti.com/gist-it-english">WordPress plugin</a> if you really want to install something! The only weird thing is that while the embedded code is nicely syntax-highlighted, the <a href="http://gist.github.com/24490">original gist</a> is not for some reason. <strong>Update:</strong> Yoan pointed out that you can get syntax-coloring by naming your gist properly (I renamed my gist foo.rb and it worked). It&#8217;s still not clear to me why it doesn&#8217;t work if I manually select &#8216;Ruby&#8217; as the language for an unnamed gist, however.<br />
+<br/><br />
+Finally, while SyntaxHighlighter supports the most popular languages (and therefore is likely to be fine for most programming blogs), Gist supports a truly insane number of languages, making it a better choice if you want to post code snippets of say, Lua, Erlang, or Haskell.</p>
+<table style="text-align: left; width: 100%;" border="1">
+<tbody>
+<tr>
+<td style="width: 33%; background-color: #c0c0c0;">Language</td>
+<td style="width: 33%; background-color: #c0c0c0;">SyntaxHighlighter</td>
+<td style="background-color: #c0c0c0;">Gist</td>
+</tr>
+<tr>
+<td style="background-color: #c0c0c0;" colspan="3">Popular languages</td>
+</tr>
+<tr>
+<td>ActionScript</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>Bash</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>C</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>C#</td>
+<td>X</td>
+<td>X</td>
+</tr>
+<tr>
+<td>C++</td>
+<td>X</td>
+<td>X</td>
+</tr>
+<tr>
+<td>CSS</td>
+<td>X</td>
+<td>X</td>
+</tr>
+<tr>
+<td>Delphi</td>
+<td>X</td>
+<td>X</td>
+</tr>
+<tr>
+<td>Diff</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>Erlang</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>HTML</td>
+<td>X</td>
+<td>X</td>
+</tr>
+<tr>
+<td>Haskell</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>Io</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>Java</td>
+<td>X</td>
+<td>X</td>
+</tr>
+<tr>
+<td>JavaScript</td>
+<td>X</td>
+<td>X</td>
+</tr>
+<tr>
+<td>Lua</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>OCaml</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>Objective-C</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>PHP</td>
+<td>X</td>
+<td>X</td>
+</tr>
+<tr>
+<td>Perl</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>Plain Text</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>Python</td>
+<td>X</td>
+<td>X</td>
+</tr>
+<tr>
+<td>RHTML</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>Ruby</td>
+<td>X</td>
+<td>X</td>
+</tr>
+<tr>
+<td>SQL</td>
+<td>X</td>
+<td>X</td>
+</tr>
+<tr>
+<td>Scheme</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>Smalltalk</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>Smarty</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>VB or VB.net</td>
+<td>X</td>
+<td>X</td>
+</tr>
+<tr>
+<td>XML</td>
+<td>X</td>
+<td>X</td>
+</tr>
+<tr>
+<td style="background-color: #c0c0c0;" colspan="3">Other crazy stuff</td>
+</tr>
+<tr>
+<td>Batchfile</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>Befunge</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>Boo</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>Brainfuck</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>Common Lisp</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>D</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>Darcs Patch</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>Dylan</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>Fortran</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>GAS</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>Genshi</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>Gettext Catalog</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>Groff</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>HTML+PHP</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>INI</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>IRC logs</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>Java Server Page</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>LLVM</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>Literate Haskell</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>Logtalk</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>MOOCode</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>Makefile</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>Mako</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>Matlab</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>MiniD</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>MuPAD</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>Myghty</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>NumPy</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>Python Traceback</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>Raw token data</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>Redcode</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>S</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>Tcl</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>Tcsh</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>TeX</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>Text only</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>VimL</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>XSLT</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>c-objdump</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>cpp-objdump</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>d-objdump</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>objdump</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>reStructuredText</td>
+<td></td>
+<td>X</td>
+</tr>
+</tbody>
+</table>
+<p>Both of these projects provide great-looking ways to display code on your blog. If you know of other projects that you like, let me know in the comments.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://devver.net/blog/2008/11/displaying-code-on-your-blog/feed/</wfw:commentRss>
+		</item>
+	</channel>
+</rss>

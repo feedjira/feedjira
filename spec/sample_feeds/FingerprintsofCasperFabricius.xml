@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="http://feeds.feedburner.com/~d/styles/rss2full.xsl" type="text/xsl" media="screen"?><?xml-stylesheet href="http://feeds.feedburner.com/~d/styles/itemcontent.css" type="text/css" media="screen"?><rss xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+
+<channel>
+	<title>casperfabricius.com</title>
+	
+	<link>http://casperfabricius.com/site</link>
+	<description>expert ruby on rails development</description>
+	<pubDate>Mon, 19 Jan 2009 19:44:26 +0000</pubDate>
+	<generator>http://wordpress.org/?v=2.6.5</generator>
+	<language>en</language>
+			<atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" href="http://feeds.feedburner.com/FingerprintsOfCasperFabricius" type="application/rss+xml" /><item>
+		<title>Hello Merb</title>
+		<link>http://casperfabricius.com/site/2009/01/01/hello-merb/</link>
+		<comments>http://casperfabricius.com/site/2009/01/01/hello-merb/#comments</comments>
+		<pubDate>Thu, 01 Jan 2009 15:46:32 +0000</pubDate>
+		<dc:creator>Casper Fabricius</dc:creator>
+		<br />
+<b>Warning</b>:  Invalid argument supplied for foreach() in <b>/home/cfp/casperfabricius.com/site/wp-content/plugins/autometa/autometa.php</b> on line <b>324</b><br />
+
+		<category><![CDATA[engines]]></category>
+
+		<category><![CDATA[radiant]]></category>
+
+		<category><![CDATA[rails]]></category>
+
+		<category><![CDATA[railsconf]]></category>
+
+	<!-- AutoMeta Start -->
+	<!-- AutoMeta End -->
+	
+		<guid isPermaLink="false">http://casperfabricius.com/site/?p=158</guid>
+		<description><![CDATA[Merb is getting merged into Ruby on Rails. Together they will become Rails 3, as announced by David Heinemeier Hansson here and Yehuda Katz here.
+I wish I could claim to have been playing with Merb for a while and have some real insight into the framework, but to be honest, I haven&#8217;t. I still think [...]]]></description>
+			<content:encoded><![CDATA[<p><a href="http://www.merbivore.org/">Merb</a> is getting merged into <a href="http://www.rubyonrails.com">Ruby on Rails</a>. Together they will become Rails 3, as announced by David Heinemeier Hansson <a href="http://weblog.rubyonrails.org/2008/12/23/merb-gets-merged-into-rails-3">here</a> and Yehuda Katz <a href="http://yehudakatz.com/2008/12/23/rails-and-merb-merge/">here</a>.</p>
+<p>I wish I could claim to have been playing with Merb for a while and have some real insight into the framework, but to be honest, I haven&#8217;t. I still think this a very interesting news, though, and in my opinion this can only be good news for the Rails community. Already, the brilliant Merb guys are optimizing and improving Rails, for instance <a href="http://yehudakatz.com/2008/12/27/status-memorandum/">this 8% speed boost in using <code>respond_to</code></a>.</p>
+<p>So, how can we expect the the merge to affect the Rails framework we know and love? Let&#8217;s peek into the possibilities of combining these two frameworks.</p>
+<p><span id="more-158"></span></p>
+<p>One change that seems certain, is changes to the <b>routing system</b>. &#8220;Plans are already underway to port the Merb router over to Rails. At the very least, you will have the option to use the Merb DSL syntax instead of the Rails hash-based syntax. We’ll see which one becomes the default.&#8221; Katz <a href="http://yehudakatz.com/2008/12/29/another-rails-2x3-update/">says</a>. David <a href="http://www.loudthinking.com/posts/37-bringing-merbs-providesdisplay-into-rails-3">explains</a> how Merb concepts for rendering resources in different formats will be used in Rails 3, but with more intuitive or &#8220;Rails-like&#8221; naming.</p>
+<p>Another change which is likely to make it into Rails 3 is <b>slices</b>, as indicated by Katz in a response to his own <a href="http://yehudakatz.com/2008/12/23/rails-and-merb-merge/">announcement</a>. Slices are &#8220;similar to what Rails-Engines promise, except merb-slices are built into the framework&#8221; as Ezra Zygmuntowicz <a href="http://brainspl.at/articles/2008/05/21/merb-slices">explains</a>. This is exiting news! I&#8217;ve always been interested gaining leverage by having reusable application slices, and I&#8217;ve actively built and used both <a href="http://rails-engines.org/">Rails Engines</a> and <a href="http://casperfabricius.com/site/2007/07/19/advanced-radiant-extensions/">Radiant extensions</a>. Engines has previously been frowned upon by leading figures in the Rails community, but it has been improved to work in a quite clean and easy-to-understand manner since the release of Rails 2.0, and are in fact compared to Merb slices <a href="http://rails-engines.org/news/2008/05/24/merb-slices-again/">here</a>. Radiant extensions are obviously only for Radiant CMS-based websites, but the <a href="http://ext.radiantcms.org/extensions">diversity</a> of these extensions illustrates the potential of getting support for real full-stack application slices into the Rails core. A project like <a href="https://github.com/svenfuchs/adva_cms/tree">Adva CMS</a> also illustrates how it is possible to build high quality reusable application slices for the common good.</p>
+<p>A third change I hope to see as a result of the merge is <b>controller-based mailers and partials</b>. <code>ActionMailer</code> has always been a bit of an ugly stepchild in the Rails framework, and the positioning of a <code>Mailer</code> as a sort-of model, but with templates, doesn&#8217;t seem logic to me. Merb has an <code>AbstractController</code> class that both mailers and partials (called parts in Merb) inherit from, which allows for a more intuitive control in rendering mails and parts.</p>
+<p>I was curious to find out how the Merb community has reacted to this decision. The Rails community doesn&#8217;t seem to be overly concerned. Perhaps it&#8217;s because the merge of Merb and Rails are called &#8220;Rails 3&#8243;. Not &#8220;Merb 2&#8243;, not &#8220;MerbRails&#8221; - the names clearly signals that the merge will be done on Rails&#8217; terms. While it has become popular in the Rails community to dissociate one self with David Heinemeier Hansson, I still think people sees him as a good security for not letting the Rails principles go in the merge.</p>
+<p>I browsed through the more than 100 comments to <a href="http://yehudakatz.com/2008/12/23/rails-and-merb-merge/">Yehuda Katzs announcement</a> of the merge, and while about half of the commenters simply expresses their happiness and agreement with the decision, the objections of the other half falls roughly into three categories: Technical, personal and economic.</p>
+<p>The <b>technical concerns</b> are of course fully expected, and some of the more interesting are:</p>
+<ul>
+<li>&#8220;Does merging a lightweight framework into a bloated framework make the bloated framework any lighter?&#8221;</li>
+<li>&#8220;I really hope that merb will be able to continue it’s ‘no-magic’ attitude and bring that to rails without compromises&#8221;</li>
+<li>&#8220;I would have liked to see merb go further on its own just to push the envelope further&#8221;</li>
+<li>&#8220;How many planned advancements are being put on hold while Rails catches up?&#8221;</li>
+</ul>
+<p>The <b>personal objections</b> is about one very visible person: David Heinemeier Hansson. I hold no grudge against David, so I shall only repeat one of the more curious comments in this category: &#8220;The big problem, as always with Rails, is DHH: a vainglorious, two-faced prima donna with a massive and fragile ego. He’s good, but not nearly as unique and amazing as he thinks he is. I went to Merb to get away from DHH. Ugh.&#8221; If many people in the Merb community feels like this guy, I understand if they are concerned that David will simply steamroller the philosophy of Merb. David has been fast to <a href="http://www.loudthinking.com/posts/36-work-on-what-you-use-and-share-the-rest">address these concerns</a>, but the question is if just saying everyone should work on what the care about is enough.</p>
+<p>The <b>economic perspective</b> of the merge is where things gets interesting. Rails is trademarked by David and synonymous with <a href="http://www.37signals.com">37signals</a>, while Merb is very closely linked to <a href="http://www.engineyard.com">EngineYard</a>. Two commenters really nail it down:</p>
+<ul>
+<li>&#8220;How has the ‘Opinionated Software’ philosophy of “Fuck You (DHH)” Rails become aligned with the ‘open’ and democratic philosophy of Merb? Is this some kind of preemptive marketing in advance of a joint investment in both Engine Yard and 37 Signals by a common investor?&#8221;</li>
+<li>&#8220;My suspicion turns to the fact that almost every Merb core team member is owned by Engine Yard. Something doesn’t smell right.&#8221;</li>
+</ul>
+<p>It&#8217;ll be interesting to follow not just the architectural design choices made on the technical front during the merge process, but also how this will change the positioning of 37signals and EngineYard, and if the two companies are really warming up to some kind of close relationship.</p>
+<p>The timeline for a first peek at Rails 3 - the union of Merb and Rails - is <a href="http://merbist.com/2008/12/23/rails-and-merb-merge/">said</a> to be RailsConf 2009 - 4 months from now.</p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~f/FingerprintsOfCasperFabricius?a=4bpqzW.P"><img src="http://feeds.feedburner.com/~f/FingerprintsOfCasperFabricius?i=4bpqzW.P" border="0"></img></a> <a href="http://feeds.feedburner.com/~f/FingerprintsOfCasperFabricius?a=j3oLCg.p"><img src="http://feeds.feedburner.com/~f/FingerprintsOfCasperFabricius?i=j3oLCg.p" border="0"></img></a> <a href="http://feeds.feedburner.com/~f/FingerprintsOfCasperFabricius?a=MdOwqM.p"><img src="http://feeds.feedburner.com/~f/FingerprintsOfCasperFabricius?i=MdOwqM.p" border="0"></img></a>
+</div>]]></content:encoded>
+			<wfw:commentRss>http://casperfabricius.com/site/2009/01/01/hello-merb/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Christmas greetings from a happy boy</title>
+		<link>http://casperfabricius.com/site/2008/12/22/christmas-greetings/</link>
+		<comments>http://casperfabricius.com/site/2008/12/22/christmas-greetings/#comments</comments>
+		<pubDate>Mon, 22 Dec 2008 08:52:38 +0000</pubDate>
+		<dc:creator>Casper Fabricius</dc:creator>
+		<br />
+<b>Warning</b>:  Invalid argument supplied for foreach() in <b>/home/cfp/casperfabricius.com/site/wp-content/plugins/autometa/autometa.php</b> on line <b>324</b><br />
+
+		<category><![CDATA[other]]></category>
+
+	<!-- AutoMeta Start -->
+	<!-- AutoMeta End -->
+	
+		<guid isPermaLink="false">http://casperfabricius.com/site/?p=156</guid>
+		<description><![CDATA[Dear friends and clients, business associates and regular blog readers.
+Thank you for helping me out, thank you for doing business with me, and thank you for following my ramblings. Let&#8217;s do it all again next year!
+Now that I&#8217;ve had some time to experience self-employment on my own, I&#8217;ve come to realize that there are many [...]]]></description>
+			<content:encoded><![CDATA[<p><strong>Dear friends and clients, business associates and regular blog readers.</strong></p>
+<p>Thank you for helping me out, thank you for doing business with me, and thank you for following my ramblings. Let&#8217;s do it all again next year!</p>
+<p>Now that I&#8217;ve had some time to experience self-employment on my own, I&#8217;ve come to realize that there are many similarities between being an entrepreneur and being a nissemand. Both is hard, but when and if you reach the happy ending, everything will be good. As a Christmas greeting especially for you, I&#8217;ve recorded a song about just that :)</p>
+<p><object width="425" height="344"><param name="movie" value="http://www.youtube.com/v/bylkpFb88fw&#038;hl=en&#038;fs=1"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/bylkpFb88fw&#038;hl=en&#038;fs=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="344"></embed></object></p>
+<p>I wish you a merry Christmas and a happy New Year!</p>
+<p>All the best,<br />
+Casper</p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~f/FingerprintsOfCasperFabricius?a=oaUcO"><img src="http://feeds.feedburner.com/~f/FingerprintsOfCasperFabricius?i=oaUcO" border="0"></img></a> <a href="http://feeds.feedburner.com/~f/FingerprintsOfCasperFabricius?a=OoEHo"><img src="http://feeds.feedburner.com/~f/FingerprintsOfCasperFabricius?i=OoEHo" border="0"></img></a> <a href="http://feeds.feedburner.com/~f/FingerprintsOfCasperFabricius?a=zr5Io"><img src="http://feeds.feedburner.com/~f/FingerprintsOfCasperFabricius?i=zr5Io" border="0"></img></a>
+</div>]]></content:encoded>
+			<wfw:commentRss>http://casperfabricius.com/site/2008/12/22/christmas-greetings/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Removing Rails validations with metaprogramming</title>
+		<link>http://casperfabricius.com/site/2008/12/06/removing-rails-validations-with-metaprogramming/</link>
+		<comments>http://casperfabricius.com/site/2008/12/06/removing-rails-validations-with-metaprogramming/#comments</comments>
+		<pubDate>Sat, 06 Dec 2008 14:10:05 +0000</pubDate>
+		<dc:creator>Casper Fabricius</dc:creator>
+		<br />
+<b>Warning</b>:  Invalid argument supplied for foreach() in <b>/home/cfp/casperfabricius.com/site/wp-content/plugins/autometa/autometa.php</b> on line <b>324</b><br />
+
+		<category><![CDATA[radiant]]></category>
+
+		<category><![CDATA[rails]]></category>
+
+	<!-- AutoMeta Start -->
+	<!-- AutoMeta End -->
+	
+		<guid isPermaLink="false">http://casperfabricius.com/site/?p=153</guid>
+		<description><![CDATA[I recently found myself facing a metaprogramming challenge. I solved it by combining two terrible ugly hacks, and as such I won&#8217;t say I found a solution that is anywhere near to be elegant.
+My problem was this: I was developing a Radiant extension called tags_multi_site, which allows the tags extension to play nice with the [...]]]></description>
+			<content:encoded><![CDATA[<p>I recently found myself facing a metaprogramming challenge. I solved it by combining two terrible ugly hacks, and as such I won&#8217;t say I found a solution that is anywhere near to be elegant.</p>
+<p>My problem was this: I was developing a <a href="http://radiantcms.org">Radiant</a> extension called <a href="http://github.com/RSpace/radiant-tags_multi_site-extension/tree/master">tags_multi_site</a>, which allows the <a href="http://github.com/jomz/radiant-tags-extension/tree/master">tags extension</a> to play nice with the <a href="http://github.com/radiant/radiant-multi-site-extension/tree/master">multi_site extension</a>. This required me to scope all tags within a site, so that tags with the same name could exist in different sites, but in the same physical database table.</p>
+<p>The tags extension has this validation:</p>
+<pre>
+class MetaTag < ActiveRecord::Base
+  validates_uniqueness_of :name, :case_sensitive => false
+end
+</pre>
+<p>I needed to add <code>:scope => :site_id</code>, but I couldn&#8217;t touch the code of tags extension itself, since that would terribly un-DRY and not reusable for anyone else. I had to either modify the existing validation programmatically from my own extension or to remove it and add my own.</p>
+<p><span id="more-153"></span></p>
+<p>I went for the last solution. I quickly discovered that validations are saved in an array available as an inheritable attribute on the model (<code>read_inheritable_attribute(:validate)</code>), and that the built-in Rails validation are stored as <code>Proc</code>s in this array. One could remove all validations added so far by emptying this array, but I only wanted to remove <code>validates_uniqueness_of</code> to stay as loosely coupled as possible.</p>
+<p><code>Proc</code>s can&#8217;t tell much about themselves - they are mostly just there to be called. But I knew from the Rails code that each validation <code>Proc</code> is added from inside the class method of the validation. So, I just had to figure out a way to determine the method context the <code>Proc</code> had been declared in to be able to remove the right one.</p>
+<p>I realized I could read variables from the <code>Proc</code>&#8217;s context by doing an <code>eval</code> with the <code>Proc</code>&#8217;s binding applied. I also found an expression somewhere that returned the name of current method by using the stacktrace information in <code>caller</code>.</p>
+<p>All in all, the solution ended up like this:</p>
+<pre>
+module TagsMultiSite
+  module MetaTagExtensions
+    def self.included(base)
+      base.extend(ClassMethods)
+      base.class_eval {
+        # HACK: Remove the existing validates_uniqueness_of block
+        read_inheritable_attribute(:validate).reject! do |proc|
+          if proc.is_a?(Proc)
+            method = eval("caller[0] =~ /`([^']*)'/ and $1", proc.binding).to_sym rescue nil # Returns the name of method the proc was declared in
+            :validates_uniqueness_of == method
+          else
+            false
+          end
+        end
+
+        # Add new validates_uniqueness_of with correct scope
+        validates_uniqueness_of :name, :case_sensitive => false, :scope => :site_id
+      }
+    end
+  end
+end
+</pre>
+<p>It would be easy to make this into a generalized method for removing Rails validations, but I think this issue is pretty rare. Usually people can just change or remove the original validation. Still, this example demonstrates fairly well how the trusting nature of Ruby allow us to make far-fetched metaprogramming hacks to solve our problems.</p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~f/FingerprintsOfCasperFabricius?a=2eeHO"><img src="http://feeds.feedburner.com/~f/FingerprintsOfCasperFabricius?i=2eeHO" border="0"></img></a> <a href="http://feeds.feedburner.com/~f/FingerprintsOfCasperFabricius?a=2rDoo"><img src="http://feeds.feedburner.com/~f/FingerprintsOfCasperFabricius?i=2rDoo" border="0"></img></a> <a href="http://feeds.feedburner.com/~f/FingerprintsOfCasperFabricius?a=12t3o"><img src="http://feeds.feedburner.com/~f/FingerprintsOfCasperFabricius?i=12t3o" border="0"></img></a>
+</div>]]></content:encoded>
+			<wfw:commentRss>http://casperfabricius.com/site/2008/12/06/removing-rails-validations-with-metaprogramming/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Getting started with JRuby on Rails on OS X</title>
+		<link>http://casperfabricius.com/site/2008/11/05/getting-started-with-jruby-on-rails-on-os-x/</link>
+		<comments>http://casperfabricius.com/site/2008/11/05/getting-started-with-jruby-on-rails-on-os-x/#comments</comments>
+		<pubDate>Wed, 05 Nov 2008 19:14:44 +0000</pubDate>
+		<dc:creator>Casper Fabricius</dc:creator>
+		<br />
+<b>Warning</b>:  Invalid argument supplied for foreach() in <b>/home/cfp/casperfabricius.com/site/wp-content/plugins/autometa/autometa.php</b> on line <b>324</b><br />
+
+		<category><![CDATA[rails]]></category>
+
+		<category><![CDATA[tutorial]]></category>
+
+	<!-- AutoMeta Start -->
+	<!-- AutoMeta End -->
+	
+		<guid isPermaLink="false">http://casperfabricius.com/site/?p=142</guid>
+		<description><![CDATA[I&#8217;ve been an independent web developer for over a month now, and I am enjoying every moment of it! If the first step in the liberation of programmers is getting Java- or .NET-free, the second step must be to get employer-free. Of course, being an employee has many benefits and doesn&#8217;t hold much risk (especially [...]]]></description>
+			<content:encoded><![CDATA[<p>I&#8217;ve been an independent web developer for over a month now, and I am enjoying every moment of it! If the first step in the liberation of programmers is getting Java- or .NET-free, the second step must be to get employer-free. Of course, being an employee has many benefits and doesn&#8217;t hold much risk (especially not if you live in one of these countries where it is practically impossible to fire people, such as Sweden or France), and being independent doesn&#8217;t mean - at least not yet for me - that you don&#8217;t have to do boring or tedious work.</p>
+<p>But it does mean that any time during work hours where I am not doing work for a customer is my own time, and on my own time I get to decide what to work on. I am building a product during these free hours, and while I&#8217;d like to hold the details a bit longer (&#8221;don&#8217;t tell - show!&#8221; someone smart has said), I can say that it is a Ruby on Rails application allowing manipulation of PDF documents. Ruby has some decent PDF libraries, and <a href="http://github.com/sandal/prawn/tree/master">Prawn</a> holds a great potential, but none of these allow me to manipulate existing PDF documents.</p>
+<p>The Java library <a href="http://www.lowagie.com/iText/">iText</a> is capable of doing so, and so is the .NET port <a href="http://itextsharp.sourceforge.net/">iTextSharp</a>, but would I really have to build some kind of web service in one of these forsaken frameworks? I was complaining about it to a friend, and promptly asked me: Why don&#8217;t you build it in JRuby? The more I thought about it, the more this seemed to be the perfect excuse for trying out JRuby, and so I set out to build my first ever JRuby on Rails application. It also helped that I got a free OpenSolaris/Glassfish VPS from <a href="http://www.sun.com/third-party/global/glassfish/index.jsp">Sun</a> and <a href="http://www.layeredtech.com/sun">Layered Technologies</a>.</p>
+<p><span id="more-142"></span></p>
+<p>Now, this long introduction was meant to disguise the fact that it is really very easy to get started on some JRuby on Rails development on Mac OS X. All I did was to follow <a href="http://rorblog.techcfl.com/2007/06/01/get-jruby-onto-the-rails-on-mac-os-x/">this great installation guide</a>. I do however have a few corrections and recommendations of my own, which I recommend you read before you go on to Robert Dempseys blog. </p>
+<p>First, the guide doesn&#8217;t tell you where to install JRuby, and that&#8217;s because you can install anywhere you want. I chose to put it in <code>/Library/Java/</code>, because it makes sense to me to place it with the other Java stuff. Also, make sure you download the newest JRuby version from their <a href="http://dist.codehaus.org/jruby/">download page</a> - that&#8217;s <i>not</i> the first in the list. Second, the guide assumes that you have Ant - a tool for building Java apps - installed, but I bet you haven&#8217;t. To do this, you can either follow <a href="http://www.asceticmonk.com/blog/?p=388">this guide</a>, or you can simply <a href="http://ant.apache.org/bindownload.cgi">download Ant</a> and put it in <code>/Library/Java/</code>. Remember to put <code>JAVA_HOME</code> and <code>ANT_HOME</code> in your <code>.bash_profile</code> as Robert&#8217;s guide says.</p>
+<p>If you need to work with ordinary Ruby applications alongside your JRuby apps, I wouldn&#8217;t recommend putting the JRuby lib in your default path. While it is easy to distinguish between the <code>ruby</code> and <code>jruby</code> commands, JRuby also have its own version of other well-known  tools such as <code>gem</code> and <code>rake</code>, and since JRuby for instance keeps its own gem repository, you can end up being quite confused as to what gems you are seeing. My solution is not the most elegant, but it works for me. I have created a file with the contents below in my home directory, and when I want to work with JRuby, I simply have to write <code>source ./~.jruby</code> in my console:</p>
+<pre>
+  export PATH="/Library/Java/jruby-1.1.4/bin/:$PATH"
+</pre>
+<p>There is one part of Robert&#8217;s guide that is slightly outdated. The name and structure of the ActiveRecord gems that allow using MySQL through JDBC has changed. Instead of installing the now non-existing <code>activerecord-jdbc</code> gem, you should install <code>activerecord-jdbc-adapter</code> and <code>activerecord-jdbcmysql-adapter</code>:</p>
+<pre>
+  sudo gem install activerecord-jdbc-adapter activerecord-jdbcmysql-adapter
+</pre>
+<p><a href="http://rubylearning.com/blog/2008/07/28/using-activerecord-and-jdbc-with-jruby/">This article</a> explains the various JDBC adapters available in depth.</p>
+<p>Also, I didn&#8217;t need to add the lines in <code>environment.rb</code> starting with <code>if RUBY_PLATFORM =~ /java/</code>. With the gems installed and the MySQL jar in place, it worked out of the box for me.</p>
+<p>By now you should hopefully be able to build and run your JRuby application. But what you want to debug? I like to use <a href="http://bashdb.sourceforge.net/ruby-debug.html">ruby-debug</a> in my Rails applications, because it allows me to break anywhere in the code by adding a <code>debugger</code> statement. For JRuby, the official ruby-debug gem won&#8217;t work because it relies on compiled C code, but luckily a JRuby compatible verison has been released as described in <a href="http://wiki.jruby.org/wiki/Using_the_JRuby_Debugger">the JRuby wiki</a>. With this installed, you simply add the <code>-d</code> when you call <code>jruby</code>, and the code will break at any <code>debugger</code> like we are used to.</p>
+<p>Next up is interacting with Java libraries and deploying JRuby on Rails applications, but that&#8217;ll have to be in separate articles &#8230;</p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~f/FingerprintsOfCasperFabricius?a=sd19N"><img src="http://feeds.feedburner.com/~f/FingerprintsOfCasperFabricius?i=sd19N" border="0"></img></a> <a href="http://feeds.feedburner.com/~f/FingerprintsOfCasperFabricius?a=H6zQn"><img src="http://feeds.feedburner.com/~f/FingerprintsOfCasperFabricius?i=H6zQn" border="0"></img></a> <a href="http://feeds.feedburner.com/~f/FingerprintsOfCasperFabricius?a=IHgFn"><img src="http://feeds.feedburner.com/~f/FingerprintsOfCasperFabricius?i=IHgFn" border="0"></img></a>
+</div>]]></content:encoded>
+			<wfw:commentRss>http://casperfabricius.com/site/2008/11/05/getting-started-with-jruby-on-rails-on-os-x/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Keeping git repositories on Dreamhost using SSH</title>
+		<link>http://casperfabricius.com/site/2008/09/21/keeping-git-repositories-on-dreamhost-using-ssh/</link>
+		<comments>http://casperfabricius.com/site/2008/09/21/keeping-git-repositories-on-dreamhost-using-ssh/#comments</comments>
+		<pubDate>Sun, 21 Sep 2008 19:00:46 +0000</pubDate>
+		<dc:creator>Casper Fabricius</dc:creator>
+		<br />
+<b>Warning</b>:  Invalid argument supplied for foreach() in <b>/home/cfp/casperfabricius.com/site/wp-content/plugins/autometa/autometa.php</b> on line <b>324</b><br />
+
+		<category><![CDATA[other]]></category>
+
+		<category><![CDATA[tutorial]]></category>
+
+	<!-- AutoMeta Start -->
+	<!-- AutoMeta End -->
+	
+		<guid isPermaLink="false">http://casperfabricius.com/site/?p=130</guid>
+		<description><![CDATA[&#8220;is bemused/awed by how fast svn became a legacy technology in ruby community/developers&#8221; Dr. Nic recently said on Twitter. It is true. Greatly aided by Geoffrey Grosenbach&#8217;s screencast on git, I myself is starting to feel comfortable enough with git to start abandoning subversion altogether.
+Github is great, but there is really no reason to pay [...]]]></description>
+			<content:encoded><![CDATA[<p><a href="http://twitter.com/drnic/statuses/924483088">&#8220;is bemused/awed by how fast svn became a legacy technology in ruby community/developers&#8221;</a> <a href="http://drnicwilliams.com/">Dr. Nic</a> recently said on <a href="http://twitter.com">Twitter</a>. It is true. Greatly aided by <a href="http://nubyonrails.com/">Geoffrey Grosenbach&#8217;s</a> screencast on <a href="http://peepcode.com/products/git">git</a>, I myself is starting to feel comfortable enough with git to start abandoning subversion altogether.</p>
+<p><a href="http://github.com">Github</a> is great, but there is really no reason to pay for private git repositories unless you need the added functionality. I have a <a href="http://dreamhost.com">Dreamhost</a> account that I am happy with, so why not use that for my private git repos? It is easy to do through SSH, now that git is installed on all Dreamhost servers, but it is not <i>that</i>, so I thought I&#8217;d better document it here for my own future reference.</p>
+<p>(This stuff is tested on Mac OSX, and should work fine for *nix users. Windows users will have to do some workarounds, but can use this as a reference point.)</p>
+<p><span id="more-130"></span></p>
+<p><b>Create and add your public key (optional)</b><br />
+If you are used to use SSH access with Dreamhost, you probably already have this step setup, but if you don&#8217;t, this will help you avoid having to type your password everyone you connect through SSH, which will be every time you pull and push to and from the git repo on Dreamhost.</p>
+<p>If haven&#8217;t done any SSH at all, you will probably need to generate a public/private set of RSA keys:</p>
+<pre><code>
+ssh-keygen -t rsa
+</code></pre>
+<p>Then you&#8217;ll need to to add your public key to your server (thanks to <a href="http://www.davethewave.it/rails-capistrano-dreamhost/">Dave the Wave</a> for this trick):</p>
+<pre><code>
+cat .ssh/id_rsa.pub | ssh user@domain.tld 'cat >> .ssh/authorized_keys'
+</code></pre>
+<p>And with that, you can SSH to the server without typing your password, which is almost a must when doing git over SSH.</p>
+<p><b>Create the <code>dreamgit</code> shell script</b><br />
+<a href="http://toolmantim.com/article/2007/12/5/setting_up_a_new_remote_git_repository">Toolman Tim</a> explains very well how to setup a remote git repository over SSH, but it is easy to mess things up, and I&#8217;m planning on doing all my stuff in git from now on - so an automated script to suit my needs is essential.</p>
+<p>I am not an expert in either git or shell scripting, so this script can probably be optimized quite a bit - in fact I am more than willing to update it if I get any comments from the real experts out there. But this script works for me:</p>
+<pre><code>
+DREAMGIT_DOMAIN=user@domain.tld
+ssh $DREAMGIT_DOMAIN 'mkdir -p ~/git/'$1'.git &#038;&#038; cd ~/git/'$1'.git &#038;&#038; git --bare init'
+mkdir $1
+cd $1
+git init
+git remote add origin ssh://$DREAMGIT_DOMAIN/~/git/$1.git
+touch .gitignore
+git add .
+git commit -m 'Created new repo'
+git push origin master
+echo "
+[branch \"master\"]
+  remote = origin
+  merge = refs/heads/master" >>.git/config
+echo "Your new git repo '$1' is ready and initialized at $DREAMGIT_DOMAIN/~/git/$1.git"
+</code></pre>
+<p>Put the above code into a file you place in a directory in your <code>PATH</code>. Remember to change <code>user@domain.tld</code> to your real Dreamhost SSH user and domain. I&#8217;ve selected to name the command <code>dreamgit</code> and put it in <code>/usr/local/bin</code> like this:</p>
+<pre><code>
+sudo mate /usr/local/bin/dreamgit
+</code></pre>
+<p>Paste the code in and save the file. Make your new command executable:</p>
+<pre><code>
+sudo chmod a+x /usr/local/bin/dreamgit
+</code></pre>
+<p>You now have a new command - <code>dreamgit</code> - that you can invoke in any directory on your local machine. You call it with a single argument - the name of your project - like this:</p>
+<pre><code>
+dreamgit test05
+
+Initialized empty Git repository in /home/.char/cfp/git/test05.git/
+Initialized empty Git repository in .git/
+Created initial commit f4fbb71: Created new repo
+ 0 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 .gitignore
+Counting objects: 3, done.
+Writing objects: 100% (3/3), 220 bytes, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To ssh://cfp@casperfabricius.com/~/git/test05.git
+ * [new branch]      master -> master
+Your new git repo 'test05' is ready and initialized at cfp@casperfabricius.com/~/git/test05.git
+</code></pre>
+<p>As it says - you now have a fresh repository ready for action, pulling and pushing to your remote repo at Dreamhost.</p>
+<p><b>How it works</b><br />
+On the server, it creates a folder named <code>git</code> in your home directory - if it doesn&#8217;t already exists - and creates a directory named <code><i>project_name</i>.git</code> in it. It then initializes a <i>bare</i> git repo in that directory, meaning that the repo will hold the git database only, and is not used for doing actual work in.</p>
+<p>On your local machine it creates a directory with the project name, initializes a git repo in it, adds an commit an empty <code>.gitignore</code> file to it, and pushes that to the remote repo on your server. Finally it sets up the remote repo to be the default push and pull location for the master branch the local repository. This way, we only have to type <code>git push</code> and <code>git pull</code> without specifying which remote repo and branch we want to interact with.</p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~f/FingerprintsOfCasperFabricius?a=IB0YL"><img src="http://feeds.feedburner.com/~f/FingerprintsOfCasperFabricius?i=IB0YL" border="0"></img></a> <a href="http://feeds.feedburner.com/~f/FingerprintsOfCasperFabricius?a=UYs2l"><img src="http://feeds.feedburner.com/~f/FingerprintsOfCasperFabricius?i=UYs2l" border="0"></img></a> <a href="http://feeds.feedburner.com/~f/FingerprintsOfCasperFabricius?a=pIm2l"><img src="http://feeds.feedburner.com/~f/FingerprintsOfCasperFabricius?i=pIm2l" border="0"></img></a>
+</div>]]></content:encoded>
+			<wfw:commentRss>http://casperfabricius.com/site/2008/09/21/keeping-git-repositories-on-dreamhost-using-ssh/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>RailsConf Europe 2008 write-up</title>
+		<link>http://casperfabricius.com/site/2008/09/13/railsconf-europe-2008-write-up/</link>
+		<comments>http://casperfabricius.com/site/2008/09/13/railsconf-europe-2008-write-up/#comments</comments>
+		<pubDate>Sat, 13 Sep 2008 17:39:33 +0000</pubDate>
+		<dc:creator>Casper Fabricius</dc:creator>
+		
+		<category><![CDATA[rails]]></category>
+
+		<category><![CDATA[railsconf]]></category>
+
+	<!-- AutoMeta Start -->
+	<category />
+	<category />
+	<category />
+	<category />
+	<category />
+	<category />
+	<!-- AutoMeta End -->
+	
+		<guid isPermaLink="false">http://casperfabricius.com/site/?p=122</guid>
+		<description><![CDATA[
+
+&#169; 2008 Jacob Lauemøller
+
+We had meeting in Copenhagen Ruby Brigade the other night with a theme of &#8220;Present something interesting from this year&#8217;s RailsConf Europe&#8221;. Three had found the time to prepare a presentation, and I was one of them. I gave a summary of the Juggernaut presentation, not only because it was interesting and [...]]]></description>
+			<content:encoded><![CDATA[<div class="photo left"><a href="http://www.flickr.com/photos/jlauemoeller/2839127886/in/set-72157607175283477"><img src="http://farm4.static.flickr.com/3074/2839127886_a8e0227dcf_m_d.jpg" alt="RailsConf Europe Danes dinner" /><br />
+</a>
+<div class="caption">&copy; 2008 <a href="http://www.flickr.com/photos/jlauemoeller/">Jacob Lauemøller</a></div>
+</div>
+<p>We had meeting in <a href="http://www.copenhagenrb.dk">Copenhagen Ruby Brigade</a> the other night with a theme of &#8220;Present something interesting from this year&#8217;s RailsConf Europe&#8221;. Three had found the time to prepare a presentation, and I was one of them. I gave a summary of the <a href="#">Juggernaut presentation</a>, not only because it was interesting and entertaining (the original presentation, not my summary!), but because it really made me feel like start coding an application using Juggernaut right away. <a href="#">Juggernaut</a> is a small server and a Rails plugin that allows the web server to push information in real time to clients using an open Flash socket. The syntax for pushing data (typically javascript or JSON) to client is very similar to RJS, e.g.:</p>
+<pre><code>render :juggernaut do |page|
+    page.insert_html :top, 'chat_data', "#{h(params[:chat])}"
+  end</code></pre>
+<p>When a client wants to broadcast to other clients, it simply fires an ordinary AJAX request to a controller, which in turn passes the message on through Juggernaut. The presenters showed a running example where the audience could place their home towns on a Google Map, which updated in real time as people used it. There is something fundamentally fun about coding real time interaction between multiple clients, at least that&#8217;s how I feel. Perhaps it goes back to my time as a developer on a large-scale European chat site, but ironically I worked on everything but the real time communication during that time.</p>
+<p><span id="more-122"></span></p>
+<p>I had looked forward to the talk about the new localization (l10n) and internationalization (i18n) features of Rails 2.2, and especially to see and meet <a href="#">Sven Fuchs</a>. We never managed to meet before the presentation or talk much after (sorry Sven, my bad!), but the presentation was well-structured and well executed, and the prospects of having a default interface for i18n in Rails are great! Sven explained that he and the other i18n contributors had (after long discussions) made three key decisions:</p>
+<ul>
+<li>Do the simplest thing that could ever work for Rails</li>
+<li>Make a 100% swappable back end</li>
+<li>Do not aim for a full-blown l10n solution</li>
+</ul>
+<p>These are three very important decisions. The very different approaches various i18n plugins for Rails have had clearly show that people&#8217;s needs are very different when it comes to l10n and i18n. Some really just need to run their application in a single language that is not English. Some like to have translations stored in YAML files for easy versioning and others like to have them in the database for easy changes through a web interface. Some need full blown i18n of currency, dates, times and even the layout of content.</p>
+<p>This has resulted in a simple, yet powerful i18n API that centers around the I18n class. <code>I18n.translate</code> (aliased as <code>I18n.t</code>) returns a translated string. <code>I18n.localize</code> (aliased as <code>I18n.l</code>) returns a localized time, date, currency etc. The I18n class is completely back end / plugin agnostic, but Rails ships with <i>SimpleBackend</i> which allows English and other latin languages with English-like grammar to be loaded from YAML-files. However, Sven underlined that he hopes that people will start building many small i18n and l10n plugins serving specific needs, and get away from big plugins that tries to serve all, but never does so satisfactory. Globalize2 is on its way, he said, but that will be a complete rewrite and a much smaller plugin than the current.</p>
+<p>I also took a lot away from the talk on advanced REST. Most of us understand the basics of RESTful architecture and modeling by now, but in a number of cases the whole resource/CRUD paradigm doesn&#8217;t seem to fit so well. <a href="http://www.culann.com">Ben Scofield</a> took us through a number of such cases and suggested solutions for each:</p>
+<ul>
+<li>Password resets: <code>map.resources :users, :has_one => :password</code> (password is a resource by itself, and each user has one)</li>
+<li>Previews: <code>map.resources :posts, :has_one => [:preview]</code> (preview is a seperate resource that is not created in the database)</li>
+<li>Search: <code>map.resource :search</code> (use the index action with a query, not post)</li>
+<li>Wizards: Take the user past different resources, e.g. <code>/galleries/new</code> -> <code>/restaurants/:id/photos/new</code> -> <code>/restaurants/:id/photos/edit</code></li>
+</ul>
+<p><strike>Ben also recommended the <a href="http://github.com/jcfischer/make_resourceful/tree">make_resourceful</a> as his preferred plugin for handling common RESTful tasks</strike> Ben said the RESTful controller plugins was too much magic for him, but he recommended the audience to take a look at the projects <a href="http://github.com/bmizerany/sinatra/tree">Sinatra</a>, <a href="http://github.com/dyoder/waves/tree">Waves</a> and <a href="http://github.com/mtodd/halcyon/tree">Halcyon</a>.</p>
+<p>There where many other talks that I liked, but as we discussed at the Copenhagen Ruby Brigade meeting, the technical level was a bit too low, there weren&#8217;t many really new insights and woah! moments, and there where many empty slots! One must wonder how we could end up with I think around 6-8 empty slots during just two days? There was, after all, presentaion proposals enough to arrange a RejectConf. Anyway, RailsConf US will be in Las Vegas next year, so &#8230; I mean &#8230; do we have any choice, really? Rumors also say that RailsConf Europe will take place in Barcelona next year - another tempting destination!</p>
+<p>One final note: I put a new design on my blog - what do you think? I made the change because I am now an independent Ruby on Rails developer, and I like the swirly light design of this theme as well as the orange box (also an awesome game bundle) where I can present myself.</p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~f/FingerprintsOfCasperFabricius?a=fvHwL"><img src="http://feeds.feedburner.com/~f/FingerprintsOfCasperFabricius?i=fvHwL" border="0"></img></a> <a href="http://feeds.feedburner.com/~f/FingerprintsOfCasperFabricius?a=TUyvl"><img src="http://feeds.feedburner.com/~f/FingerprintsOfCasperFabricius?i=TUyvl" border="0"></img></a> <a href="http://feeds.feedburner.com/~f/FingerprintsOfCasperFabricius?a=8qKsl"><img src="http://feeds.feedburner.com/~f/FingerprintsOfCasperFabricius?i=8qKsl" border="0"></img></a>
+</div>]]></content:encoded>
+			<wfw:commentRss>http://casperfabricius.com/site/2008/09/13/railsconf-europe-2008-write-up/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>David’s RailsConf Europe 2008 keynote: Legacy, concerns and DRY exceptions</title>
+		<link>http://casperfabricius.com/site/2008/09/03/legacy-concerns-and-dry-exceptions/</link>
+		<comments>http://casperfabricius.com/site/2008/09/03/legacy-concerns-and-dry-exceptions/#comments</comments>
+		<pubDate>Wed, 03 Sep 2008 13:34:39 +0000</pubDate>
+		<dc:creator>Casper Fabricius</dc:creator>
+		
+		<category><![CDATA[rails]]></category>
+
+		<category><![CDATA[railsconf]]></category>
+
+	<!-- AutoMeta Start -->
+	<category />
+	<category />
+	<category />
+	<category>railsconf</category>
+	<category>railsconfeurope</category>
+	<category>railsconfeurope2008</category>
+	<category />
+	<category />
+	<!-- AutoMeta End -->
+	
+		<guid isPermaLink="false">http://casperfabricius.com/blog/?p=68</guid>
+		<description><![CDATA[Be proud of your legacy code. Extract concerns. Make exceptions from DRY. David Heinemeier Hansson&#8217;s keynote at RailsConf Europe 2008 was titled &#8220;Living with legacy software&#8221;, and centered around the notion of how to deal with your own old code. The articles summarizes the talk.
+
+&#169; 2008 James Duncan Davidson
+
+Rails has been around for 5 years [...]]]></description>
+			<content:encoded><![CDATA[<p>Be proud of your legacy code. Extract concerns. Make exceptions from DRY. David Heinemeier Hansson&#8217;s keynote at <a href="http://en.oreilly.com/railseurope2008/">RailsConf Europe 2008</a> was titled &#8220;Living with legacy software&#8221;, and centered around the notion of how to deal with your own old code. The articles summarizes the talk.</p>
+<div class="photo left"><a href="http://flickr.com/photos/x180/2823891043/"><img src="http://farm4.static.flickr.com/3227/2823891043_541e790064_m_d.jpg" alt="David Heinemeier Hansson" /></a>
+<div class="caption">&copy; 2008 <a href="mailto:james@duncandavidson.com/">James Duncan Davidson</a></div>
+</div>
+<p>Rails has been around for 5 years now, and that&#8217;s an eternity in software, David said. People who are moving to Rails, see the platform as a salvation for their legacy applications, and as an excuse not to have to think anymore. That&#8217;s wrong, David pointed out with a big read slide.</p>
+<p>People use the term legacy as though it is a well-defined attribute of code base, but it is really an personal opinion. &#8220;PHP is legacy! Java is legacy! - well, that one may be right&#8221;, David said jokingly, but really legacy is about your own evolvement of your taste, your knowledge and your personal preferences. Most people who wrote legacy code, thought the code was great when they wrote it. Later people&#8217;s perspective change, and even though the code hasn&#8217;t changed, it is suddenly considered legacy.</p>
+<p><span id="more-65"></span></p>
+<p>David compared code to a tomato. In the beginning you have a beautiful red tomato, but before you know it, it has turned into a rotten tomato. But it is not the software that change, it doesn&#8217;t rewrite itself. The code is not making itself worse, it is our perception that change. So why see legacy as a rotten tomato? Why can&#8217;t it be about you? You got smarter. You learned more. When that tomato got rotten, that was a process in you. That&#8217;s not something to feel sad or depressed about, that&#8217;s cause for celebration. Legacy software is not a negative thing, it&#8217;s a positive thing, as it shows that you have grown as programmer.</p>
+<p>If you don&#8217;t accept that your code will become legacy, you will be disappointed again and again. The best programmers write the most legacy software. The more software you are writing, the more you are looking back thinking: &#8220;This feels stale and old&#8221;, the better you have become. Howver, you don&#8217;t change your perceptions as much when you have working with a platform for 5 years. The better you become, the longer you must spend on a project to learn something.</p>
+<p>David quoted Joel Spolsky: <a href="http://www.joelonsoftware.com/articles/fog0000000017.html">&#8220;Good software takes 10 years to write&#8221;</a>, but then rephrased it to: &#8220;<i>Truly successful</i> software takes 10 years to write&#8221;. If you want to make something successful, you are going to have work with it for a long time. &#8220;Now is the time where Basecamp is having the most impact and reaching most people, so now is the time where I should be most engaged in it&#8221;, David said. The goal for everybody should be to be involved with software that could take 10 years to write, and be happy about it.</p>
+<p>Another Joel Spolsky quote is: &#8220;The single worst strategic mistake that any software company can make: Rewrite the code from scratch&#8221;, and I fully believe in this, David said. &#8220;Basecamp was the very first project I wrote in Ruby, along with Rails. In so many ways, Basecamp felt so legacy to me.&#8221;  But you can&#8217;t solve all your legacy decisions in one big swoop, you have to do it step by step.</p>
+<p>As a rule of thumb for cleaning up legacy code, David used: &#8220;You have to leave the code you touch in a better condition than you found it&#8221;. As an example, he showed the <code>ApplicationHelper</code> from Basecamp: 500 lines of different helper methods for a broad variety of purposes. The <code>ApplicationHelper</code> was introduced to solve the problem that helper methods, used in multiple controllers, had to be extracted into modules and included everywhere they where needed. Unfortunately this has turned <code>ApplicationHelper</code> into a garbage can - a broken window. Today, we can just write <code>helper :all</code> in our controllers, and this allows us to extract methods into separate helpers with describing names such as <code>LayoutHelper</code>. In fact, ApplicationHelper is supposed to be empty. It is a staging point, where you put things you don&#8217;t really know where to put. Just like you put things in lib before you put them in a plugin. But eventually, methods in <code>ApplicationHelper</code> should be put into separate helpers.</p>
+<p>Then David introduced the notion of a <i>concern</i>. As an example, he showed the <code>Person</code> object of Highrise, which has a relation to <code>configuration</code>. This is only used for recording if the has seen a certain system notice, and is not really a core part of what defines a <code>Person</code>. For this reason, the code should be extraced into a <i>concern</i>, which is nothing more than a module with certain aspects of <code>Person</code>. A concern is not introduced for the purpose of reuse, but to heighten comprehension and coherence in your application.</p>
+<p>A last point in the keynote was that exceptions from the DRY principle (Don&#8217;t Repeat Yourself) exists. It can be really hard to change just one thing a completely DRY application. As an example, David explained that Highrise has the abstract class <code>Recording</code>, which fits pretty well with three subclasses, but was giving him problems when a fourth subclass, quite different from the others, was introduced. This resulted in a very complicated view partial for recordings, and a more pragmatic solutions was to create a separate view for the new subclass, duplicating some code, but eliminating a lot of checks in the original partial.</p>
+<p>Legacy ain&#8217;t so bad, David finished off, it keeps you honest about yourself and how you are growing as a programmer.</p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~f/FingerprintsOfCasperFabricius?a=F0qmL"><img src="http://feeds.feedburner.com/~f/FingerprintsOfCasperFabricius?i=F0qmL" border="0"></img></a> <a href="http://feeds.feedburner.com/~f/FingerprintsOfCasperFabricius?a=CclJl"><img src="http://feeds.feedburner.com/~f/FingerprintsOfCasperFabricius?i=CclJl" border="0"></img></a> <a href="http://feeds.feedburner.com/~f/FingerprintsOfCasperFabricius?a=rX7Gl"><img src="http://feeds.feedburner.com/~f/FingerprintsOfCasperFabricius?i=rX7Gl" border="0"></img></a>
+</div>]]></content:encoded>
+			<wfw:commentRss>http://casperfabricius.com/site/2008/09/03/legacy-concerns-and-dry-exceptions/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Writing a custom Radiant page type</title>
+		<link>http://casperfabricius.com/site/2008/08/11/writing-a-custom-radiant-page-type/</link>
+		<comments>http://casperfabricius.com/site/2008/08/11/writing-a-custom-radiant-page-type/#comments</comments>
+		<pubDate>Mon, 11 Aug 2008 09:42:29 +0000</pubDate>
+		<dc:creator>Casper Fabricius</dc:creator>
+		
+		<category><![CDATA[radiant]]></category>
+
+		<category><![CDATA[rails]]></category>
+
+	<!-- AutoMeta Start -->
+	<category />
+	<!-- AutoMeta End -->
+	
+		<guid isPermaLink="false">http://casperfabricius.com/blog/?p=67</guid>
+		<description><![CDATA[I haven&#8217;t blogged much over the summer, but I have a fair number of excuses:
+
+Vacation
+When I have had the time to write, I have tried to prioritize my now almost finished master&#8217;s thesis
+I got a lot of fun computer games and interesting books for my birthday
+When I have had the time to write, but haven&#8217;t [...]]]></description>
+			<content:encoded><![CDATA[<p>I haven&#8217;t blogged much over the summer, but I have a fair number of excuses:</p>
+<ol>
+<li>Vacation</li>
+<li>When I have had the time to write, I have tried to prioritize my now almost finished master&#8217;s thesis</li>
+<li>I got a lot of fun computer games and interesting books for my birthday</li>
+<li>When I have had the time to write, but haven&#8217;t felt like writing on the thesis, I have felt I should prioritize the <a href="http://wiki.radiantcms.org/Summer_Reboot">Summer Reboot</a> documentation project for <a href="http://radiantcms.org/">Radiant</a>
+</ol>
+<p>Excuses aside, I think my latest contribution the the Radiant documentation base turned out quite good. It describes how to create a custom page type in Radiant in an extension, adding page tags, custom fields and other good stuff.</p>
+<p><a href="http://wiki.radiantcms.org/Creating_an_extension_V">Check it out in the Radiant wiki</a>.</p>
+<p>(I&#8217;m headed for RailsConf Europe in the beginning of September, and I hope a lot of articles will come out of that as usual - hope to see you there!)</p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~f/FingerprintsOfCasperFabricius?a=C8iGL"><img src="http://feeds.feedburner.com/~f/FingerprintsOfCasperFabricius?i=C8iGL" border="0"></img></a> <a href="http://feeds.feedburner.com/~f/FingerprintsOfCasperFabricius?a=qFI3l"><img src="http://feeds.feedburner.com/~f/FingerprintsOfCasperFabricius?i=qFI3l" border="0"></img></a> <a href="http://feeds.feedburner.com/~f/FingerprintsOfCasperFabricius?a=oHIFl"><img src="http://feeds.feedburner.com/~f/FingerprintsOfCasperFabricius?i=oHIFl" border="0"></img></a>
+</div>]]></content:encoded>
+			<wfw:commentRss>http://casperfabricius.com/site/2008/08/11/writing-a-custom-radiant-page-type/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Mary Poppendieck: Agile theses and mistakes</title>
+		<link>http://casperfabricius.com/site/2008/06/25/mary-poppendieck-agile-theses-and-mistakes/</link>
+		<comments>http://casperfabricius.com/site/2008/06/25/mary-poppendieck-agile-theses-and-mistakes/#comments</comments>
+		<pubDate>Wed, 25 Jun 2008 20:45:48 +0000</pubDate>
+		<dc:creator>Casper Fabricius</dc:creator>
+		
+		<category><![CDATA[agile]]></category>
+
+	<!-- AutoMeta Start -->
+	<category>mary</category>
+	<category>poppendieck</category>
+	<category>agile</category>
+	<category>copenhagenrb</category>
+	<category>essential</category>
+	<category>tension</category>
+	<category>fad</category>
+	<category>silver</category>
+	<category>bullet</category>
+	<category>mistakes</category>
+	<category />
+	<!-- AutoMeta End -->
+	
+		<guid isPermaLink="false">http://casperfabricius.com/blog/?p=66</guid>
+		<description><![CDATA[On June 24th Mary Poppendieck gave a free talk at the IT University in Copenhagen arranged by BestBrains. The title of the talk was &#8220;Is Agile a Fad?&#8221; with the subtitle &#8220;Will Agile Software Development End Up On the Dumping Grounds of History?&#8221;. This dramatically titled talk gathered more than a 100 agile enthusiasts in [...]]]></description>
+			<content:encoded><![CDATA[<p>On June 24th <a href="http://www.poppendieck.com/">Mary Poppendieck</a> gave a free talk at the <a href="http://www.itu.dk">IT University</a> in Copenhagen arranged by <a href="http://www.bestbrains.dk/">BestBrains</a>. The title of the talk was &#8220;Is Agile a Fad?&#8221; with the subtitle &#8220;Will Agile Software Development End Up On the Dumping Grounds of History?&#8221;. This dramatically titled talk gathered more than a 100 agile enthusiasts in a packed auditorium, and I spotted several members from <a href="http://daug.nordija.dk/">Danish Agile User Group</a> and <a href="http://copenhagenrb.dk/">Copenhagen Ruby Brigade</a>, as well as both students and teachers from <a href="http://www.cbs.dk">Copenhagen Business School</a> and, of course, ITU.</p>
+<p>Mary Poppendieck started her talk with a story about the dot-com bubble of the 1800&#8217;s: <a href="http://en.wikipedia.org/wiki/Plank_road">Plank roads</a>. She ended the story by asking: Is agile development a plank road? Is agile development just another fad that gets everyone exited for a time, but doesn&#8217;t <i>really</i> solve anything in the long run? Poppendieck never really answered this question, but she went on to go through software development from the 1960&#8217;s up to our century, concluding that for each decade and each new software development paradigm, large software projects (over a year) was still late, over budget and full of bugs - even today this is the case. She did, however, point out that the opportunity to do small software projects (around 3 months) has increased greatly during these decades, and that large projects is falling out of favor.</p>
+<p><span id="more-63"></span></p>
+<p>Why is software development so hard to manage? Why have we passed through so many paradigms in such a short time span? Poppendieck had three theses on why this might be so:</p>
+<p><b>Thesis 1: Silver Bullet Thinking</b><br />
+People has a tendency to believe that a certain process, method or tool is so great that it will magically solve the problems right away for anyone who use it. They tend to ignore the details of this silver bullet, and just try to apply it directly to their company or project while ignoring what the real world is like. When this happens, the &#8220;silver bullet&#8221; will just be a fad, and it won&#8217;t work.</p>
+<p><b>Thesis 2: Different Contexts</b><br />
+Extremely different approaches to software development exists, from the very rigorous and structured to the very people-driven and agile, and both extremes and a lot between seem to work in different contexts. One approach might be good for one kind of software, but not necessarily for another kind of software. There is no single answer, no single method that works for all contexts.</p>
+<p><b>Thesis 3: Essential Tension</b><br />
+There is an essential tension between getting started with development (coding) right away versus planning and spending time doing design and architecture. The first might get you fast results and early feedback, while the latter might save you from major refactoring and incoherent software. Spending time planning is good, but following a plan you created when you where most ignorant is not. Maybe there is a fundamental tension between these two poles, and maybe projects need to be in the middle, driven by essential tension.</p>
+<p>Mary Poppendieck went on to describe how to fail with agile. She listed four mistakes that people are likely to do when trying to adapt agile processes, but she also listed four principles that should be followed to avoid these mistakes:</p>
+<p><b>Mistake #1: Copy What Successful Companies are Doing</b><br />
+Poppendieck referred a lot to the book <a href="http://www.amazon.com/Wisdom-Crowds-James-Surowiecki/dp/0385721706/">The Wisdom of Crowds</a>, and quoted the notion of &#8220;the instinct to imitate&#8221; from book in connection with this mistake. If we let ourselves be influenced too much by existing practice, we will believe the same things are right and make the same mistakes. The solution is to maintain indepence and think for yourself. Don&#8217;t believe in all success stories, but look for the flaws and mistakes in them. Just because it is the textbook&#8217;s way of doing it, it doesn&#8217;t mean that way  is good for you. You don&#8217;t get world class development by copying best practice, but by inventing it.</p>
+<p><b>Mistake #2: Insist that Everyone Follow a Standard Process</b><br />
+Different people have different views of the world, and different processes will work best for them. For this reason, the agile process should draw on local knowledge, letting people fit the process to their needs locally and constantly improve this process. Again, there is no such thing as a &#8220;best practice&#8221; for everyone.</p>
+<p><b>Mistake #3: Limit Agile Implementation to Software Development</b><br />
+Poppendieck quoted The Wisdom of Crowds for its notion of &#8220;the value of cognitive diversity&#8221;. Having a team with software developers only is not very diverse, so you need to gather a group of people from all parts of the organization - creative, testers, operations, etc. The solution is to widen the boundaries and accept that &#8220;IT&#8221; is part of &#8220;The Business&#8221; and not outside of it. The team should be responsible for business success, not just technical success, which has no value in itself.</p>
+<p><b>Mistake #4: Avoid Tension</b><br />
+There is a natural tension, not just between programming and planning, but also between marketing people who wants the job finished right now, and developers who want to develop forever. Many other examples could be found. Tension, even conflicts, is what provides a balanced solution, and consensus decisions is nothing to strive for.</p>
+<p>Mary Poppendieck concluded her talk by explaining, that if we want to make agile something more than a fad, we must recognize all three theses - stop silver bullet thinking, recognize different contexts and welcome essential tension - while avoiding the common mistakes.</p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~f/FingerprintsOfCasperFabricius?a=dsizL"><img src="http://feeds.feedburner.com/~f/FingerprintsOfCasperFabricius?i=dsizL" border="0"></img></a> <a href="http://feeds.feedburner.com/~f/FingerprintsOfCasperFabricius?a=KsYLl"><img src="http://feeds.feedburner.com/~f/FingerprintsOfCasperFabricius?i=KsYLl" border="0"></img></a> <a href="http://feeds.feedburner.com/~f/FingerprintsOfCasperFabricius?a=9qcNl"><img src="http://feeds.feedburner.com/~f/FingerprintsOfCasperFabricius?i=9qcNl" border="0"></img></a>
+</div>]]></content:encoded>
+			<wfw:commentRss>http://casperfabricius.com/site/2008/06/25/mary-poppendieck-agile-theses-and-mistakes/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Serialize doesn’t play nice with Rails 2.1 partial updates</title>
+		<link>http://casperfabricius.com/site/2008/06/12/serialize-doesnt-play-nice-with-rails-21-partial-updates/</link>
+		<comments>http://casperfabricius.com/site/2008/06/12/serialize-doesnt-play-nice-with-rails-21-partial-updates/#comments</comments>
+		<pubDate>Thu, 12 Jun 2008 13:03:31 +0000</pubDate>
+		<dc:creator>Casper Fabricius</dc:creator>
+		
+		<category><![CDATA[rails]]></category>
+
+	<!-- AutoMeta Start -->
+	<category />
+	<!-- AutoMeta End -->
+	
+		<guid isPermaLink="false">http://casperfabricius.com/blog/?p=65</guid>
+		<description><![CDATA[One of the new features in Rails 2.1 is dirty models, which in turn allows for partial updates.
+However, this can result in fields not being updated in the database, if you do not use the conventional setter attributes. One unconventional way of updating an attribute, is to change the object of a serialized attribute - [...]]]></description>
+			<content:encoded><![CDATA[<p>One of the new features in Rails 2.1 is <a href="http://ryandaigle.com/articles/2008/3/31/what-s-new-in-edge-rails-dirty-objects">dirty models</a>, which in turn allows for <a href="http://ryandaigle.com/articles/2008/4/1/what-s-new-in-edge-rails-partial-updates">partial updates</a>.</p>
+<p>However, this can result in fields not being updated in the database, if you do not use the conventional setter attributes. One unconventional way of updating an attribute, is to change the object of a serialized attribute - typically a Hash.</p>
+<p>If I have this model:</p>
+<pre>
+class Page < ActiveRecord::Base
+  serialize :properties, Hash
+end
+</pre>
+<p>- then this code will <i>not</i> update my serialized field in the database:</p>
+<pre>
+p = Page.first
+p.properties[:color] = 'fff'
+p.save
+</pre>
+<p>- since I haven&#8217;t assigned anything to <code>properties</code>, but just changed the contents of the Hash <i>inside</i> <code>properties</code>.</p>
+<p>To get the properties field properly updated in the database, I need to call <code>properties_will_change!</code> like this:</p>
+<pre>
+p = Page.first
+p.properties_will_change!
+p.properties[:color] = 'fff'
+p.save
+</pre>
+<p>I wonder if this is a bug or a feature &#8230; ?</p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~f/FingerprintsOfCasperFabricius?a=L6CuL"><img src="http://feeds.feedburner.com/~f/FingerprintsOfCasperFabricius?i=L6CuL" border="0"></img></a> <a href="http://feeds.feedburner.com/~f/FingerprintsOfCasperFabricius?a=sVDwl"><img src="http://feeds.feedburner.com/~f/FingerprintsOfCasperFabricius?i=sVDwl" border="0"></img></a> <a href="http://feeds.feedburner.com/~f/FingerprintsOfCasperFabricius?a=iIqGl"><img src="http://feeds.feedburner.com/~f/FingerprintsOfCasperFabricius?i=iIqGl" border="0"></img></a>
+</div>]]></content:encoded>
+			<wfw:commentRss>http://casperfabricius.com/site/2008/06/12/serialize-doesnt-play-nice-with-rails-21-partial-updates/feed/</wfw:commentRss>
+		</item>
+	</channel>
+</rss>

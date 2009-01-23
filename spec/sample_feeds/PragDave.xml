@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:thr="http://purl.org/syndication/thread/1.0">
+    <title>PragDave</title>
+    <link rel="self" type="application/atom+xml" href="http://pragdave.blogs.pragprog.com/pragdave/atom.xml" />
+    <link rel="alternate" type="text/html" href="http://pragdave.blogs.pragprog.com/pragdave/" />
+    <id>tag:typepad.com,2003:weblog-632147</id>
+    <updated>2009-01-20T18:28:41-06:00</updated>
+    <subtitle>Dave Thomas–Pragmatic Programmer</subtitle>
+    <generator uri="http://www.typepad.com/">TypePad</generator>
+    <entry>
+        <title>So I need a symetric coroutine example</title>
+        <link rel="alternate" type="text/html" href="http://pragdave.blogs.pragprog.com/pragdave/2009/01/so-i-need-a-symetric-coroutine-example.html" />
+        <link rel="replies" type="text/html" href="http://pragdave.blogs.pragprog.com/pragdave/2009/01/so-i-need-a-symetric-coroutine-example.html" thr:count="9" thr:updated="2009-01-21T16:21:12-06:00" />
+        <id>tag:typepad.com,2003:post-61676210</id>
+        <published>2009-01-20T18:28:41-06:00</published>
+        <updated>2009-01-21T16:21:12-06:00</updated>
+        <summary>I&#39;m getting close to wrapping up the new PickAxe. One of the last things I need is an example of symetric coroutines for the standard library section on the Fiber class.I have lots of asymetric examples, but I&#39;m struggling to...</summary>
+        <author>
+            <name>Dave Thomas</name>
+        </author>
+        <category scheme="http://www.sixapart.com/ns/types#category" term="Ruby &amp; Rails" />
+        
+        
+<content type="html" xml:lang="en-US" xml:base="http://pragdave.blogs.pragprog.com/pragdave/">
+&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;I&#39;m getting close to wrapping up the new PickAxe. One of the last things I need is an example of symetric coroutines for the standard library section on the Fiber class.&lt;br&gt;&lt;br&gt;I have lots of asymetric examples, but I&#39;m struggling to come up with something decent for symetric coroutines (which use transfer to pass control between themselves.) I&#39;ve coded up Conway&#39;s line squeezer, but it works better using asymetric coroutines. I&#39;ve tried to come up with puzzles that are best solved with symetric coroutines, but without luck.&amp;nbsp; I&#39;ve coded up a simple blackjack game, but again it works better with asymetric coroutines. Although, for fun, here&#39;s the dealer, which shows some of the new Ruby 1.9 array methods:&lt;br&gt;&lt;br&gt;
+&lt;script src=&quot;http://gist.github.com/49769.js&quot;&gt;&lt;/script&gt;
+&lt;br&gt;But, I&#39;m still stuck. So... can any of you clever folk come up with something compelling that uses less that 35 lines of code?&lt;br&gt;&lt;br&gt;&lt;/div&gt;
+</content>
+
+
+    </entry>
+    <entry>
+        <title>Rails Studio Early Registration ends soon</title>
+        <link rel="alternate" type="text/html" href="http://pragdave.blogs.pragprog.com/pragdave/2008/12/rails-studio-early-registration-ends-soon.html" />
+        <link rel="replies" type="text/html" href="http://pragdave.blogs.pragprog.com/pragdave/2008/12/rails-studio-early-registration-ends-soon.html" thr:count="1" thr:updated="2009-01-09T05:53:09-06:00" />
+        <id>tag:typepad.com,2003:post-60558964</id>
+        <published>2008-12-29T11:08:59-06:00</published>
+        <updated>2009-01-09T05:53:09-06:00</updated>
+        <summary>View Full Size on Viddler I love doing the Pragmatic Studios. Nicole, Mike, and Chad are all good friends, and that creates a really relaxed and fun atmosphere for what could otherwise be a pretty intense three days.The next studio...</summary>
+        <author>
+            <name>Dave Thomas</name>
+        </author>
+        <category scheme="http://www.sixapart.com/ns/types#category" term="Ruby &amp; Rails" />
+        
+        
+<content type="html" xml:lang="en-US" xml:base="http://pragdave.blogs.pragprog.com/pragdave/">
+&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;div id=&quot;viddler&quot; style=&quot;float: right; padding-left: 1em;&quot;&gt;
+&lt;object classid=&quot;clsid:D27CDB6E-AE6D-11cf-96B8-444553540000&quot; id=&quot;viddler_9e62334c&quot; height=&quot;205&quot; width=&quot;247&quot;&gt;&lt;param name=&quot;movie&quot; value=&quot;http://www.viddler.com/simple/9e62334c/&quot;&gt;&lt;param name=&quot;allowScriptAccess&quot; value=&quot;always&quot;&gt;&lt;param name=&quot;allowFullScreen&quot; value=&quot;true&quot;&gt;&lt;embed src=&quot;http://www.viddler.com/simple/9e62334c/&quot; type=&quot;application/x-shockwave-flash&quot; allowscriptaccess=&quot;always&quot; allowfullscreen=&quot;true&quot; name=&quot;viddler_9e62334c&quot; height=&quot;205&quot; width=&quot;247&quot;&gt;&lt;/object&gt;
+ &lt;p&gt;
+  &lt;a href=&quot;http://www.viddler.com/explore/pragstudio/videos/2/&quot;&gt;
+   View Full Size on Viddler&lt;/a&gt;
+ &lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;I love doing the Pragmatic Studios. Nicole, Mike, and Chad are all good friends, and that creates a really relaxed and fun atmosphere for what could otherwise be a pretty intense three days.&lt;/p&gt;&lt;p&gt;The &lt;a href=&quot;http://pragmaticstudio.com/rails/&quot;&gt;next studio&lt;/a&gt; is in Denver at the end of January, and I&#39;m really looking forward to it—living in Texas, I relish being able to see mountains and snow. I just wish I was a skier so I could have an excuse to take an extra day or two to head on up to a resort.&lt;/p&gt;
+&lt;p&gt;
+If you are planning on going, though, don&#39;t put it off—&lt;a href=&quot;http://pragmaticstudio.com/register/rails&quot;&gt;early registration&lt;/a&gt; (a $300 savings) ends in a week.
+&lt;/p&gt;
+&lt;p&gt;There&#39;s one bad side to the studios, though. Mike put together a video showing what studios are like. Notice anything? Food. Lots of it. Scarily good food. Must resist. Must…&lt;/p&gt;&lt;pre id=&quot;line272&quot;&gt;&lt;br&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;
+</content>
+
+
+    </entry>
+    <entry>
+        <title>Little bit of musical fluff</title>
+        <link rel="alternate" type="text/html" href="http://pragdave.blogs.pragprog.com/pragdave/2008/12/little-bit-of-musical-fluff.html" />
+        <link rel="replies" type="text/html" href="http://pragdave.blogs.pragprog.com/pragdave/2008/12/little-bit-of-musical-fluff.html" thr:count="11" thr:updated="2009-01-13T14:45:53-06:00" />
+        <id>tag:typepad.com,2003:post-60467112</id>
+        <published>2008-12-26T14:12:25-06:00</published>
+        <updated>2009-01-13T14:45:53-06:00</updated>
+        <summary>I decided a while back to publish the music I&#39;m writing, if nothing else as a way of keeping myself honest. So, here&#39;s a little piece of fluff I wrote just to play with time signatures—alternating 5/8 and 6/8 has...</summary>
+        <author>
+            <name>Dave Thomas</name>
+        </author>
+        <category scheme="http://www.sixapart.com/ns/types#category" term="Music" />
+        
+        
+<content type="xhtml" xml:lang="en-US" xml:base="http://pragdave.blogs.pragprog.com/pragdave/">
+<div xmlns="http://www.w3.org/1999/xhtml"><p><a href="http://pragdave.blogs.pragprog.com/.a/6a00d83451c41c69e20105369d55c6970c-pi" style="float: right;"><img alt="56" border="0" class="at-xid-6a00d83451c41c69e20105369d55c6970c " src="http://pragdave.blogs.pragprog.com/.a/6a00d83451c41c69e20105369d55c6970c-800wi" style="margin: 0px 0px 5px 5px;" title="56" /></a>
+ I decided a while back to publish the music I&#39;m writing, if nothing else as a way of keeping myself honest. So, here&#39;s a little piece of fluff I wrote just to play with time signatures—alternating 5/8 and 6/8 has a nice drive to it. </p><p>But, I have a problem: I can&#39;t actually perform any of the pieces I write, so I&#39;m somewhat at the mercy of the good will of others (notably my teacher) to record them for me. <span style="text-decoration: line-through;">And Christmas is a busy season for my teacher, so I don&#39;t yet have a recording of this piece.</span></p><p>Because this piece is so simple, Sibelius&#39; built-in playback sounds OK, so that&#39;s what I&#39;m posting. But if anyone fancies recording this, or taking it and turning it into something cool (as Chris Morris did with<a href="http://pragdave.blogs.pragprog.com/pragdave/2008/09/more-music-brea.html" target="_blank"> my previous piece</a>) please send me a link and I&#39;ll add it here.</p><p>In the meantime, here&#39;s</p><ul>
+<li>the <a href="http://pragdave.blogs.pragprog.com/music/56.pdf">score</a>, </li>
+<li>the Sibelius <a href="http://pragdave.blogs.pragprog.com/music/56.mp3">mp3</a>, and</li>
+<li>a <a href="http://pragdave.blogs.pragprog.com/music/56.mid">midi version</a> (don&#39;t listen to this—it sounds horrible. It&#39;s just here for folks who want to import to a sequencer)</li>
+</ul>
+<p>Update: here&#39;s my teacher&#39;s <a href="http://pragdave.blogs.pragprog.com/music/56_piano.mp3">rendition</a>—thanks, Mike!</p></div>
+</content>
+
+        <link rel="enclosure" type="audio/mpeg" href="http://pragdave.blogs.pragprog.com/music/56.mp3" length="949102" />
+        <link rel="enclosure" type="audio/mpeg" href="http://pragdave.blogs.pragprog.com/music/56_piano.mp3" length="1791689" />
+
+    </entry>
+    <entry>
+        <title>Clearly I&#39;ve missed an opportunity with our book covers</title>
+        <link rel="alternate" type="text/html" href="http://pragdave.blogs.pragprog.com/pragdave/2008/12/clearly-ive-missed-an-opportunity-with-our-book-covers.html" />
+        <link rel="replies" type="text/html" href="http://pragdave.blogs.pragprog.com/pragdave/2008/12/clearly-ive-missed-an-opportunity-with-our-book-covers.html" />
+        <id>tag:typepad.com,2003:post-60289612</id>
+        <published>2008-12-21T16:52:09-06:00</published>
+        <updated>2008-12-21T16:53:31-06:00</updated>
+        <summary>Like the rest of our publishing business, I like to keep our covers simply and easy. But now I realize that these covers fail to capture the true epic nature of our books. Joey deVilla posted some reworkings of book...</summary>
+        <author>
+            <name>Dave Thomas</name>
+        </author>
+        <category scheme="http://www.sixapart.com/ns/types#category" term="Books" />
+        
+        
+<content type="xhtml" xml:lang="en-US" xml:base="http://pragdave.blogs.pragprog.com/pragdave/">
+<div xmlns="http://www.w3.org/1999/xhtml"><p><a href="http://pragdave.blogs.pragprog.com/.a/6a00d83451c41c69e20105368a3148970b-popup" onclick="window.open( this.href, &#39;_blank&#39;, &#39;width=640,height=480,scrollbars=no,resizable=no,toolbar=no,directories=no,location=no,menubar=no,status=no,left=0,top=0&#39; ); return false" style="float: right;"><img alt="Agile_web_dev_w_rails" class="at-xid-6a00d83451c41c69e20105368a3148970b " src="http://pragdave.blogs.pragprog.com/.a/6a00d83451c41c69e20105368a3148970b-320wi" style="margin: 0px 0px 5px 5px; width: 244px; height: 316px;" /></a>
+ <br />Like the rest of our publishing business, I like to keep our covers simply and easy. But now I realize that these covers fail to capture the true epic nature of our books. <span class="author vcard fn">Joey deVilla posted some <a href="http://www.globalnerdy.com/2007/09/14/reimagining-programming-book-covers/" target="_blank" title="Rworking some book covers">reworkings</a> of book covers last year, but I only came across them today. I&#39;m inspired...<br /><br />The strange thing is: I&#39;m not sure where he got hold of the image. After we posed for the picture, DHH and I thought better of it. We thought we had destroyed all the copies...<br /></span></p></div>
+</content>
+
+
+    </entry>
+    <entry>
+        <title>Ruby 1.9 can check your indentation</title>
+        <link rel="alternate" type="text/html" href="http://pragdave.blogs.pragprog.com/pragdave/2008/12/ruby-19-can-check-your-indentation.html" />
+        <link rel="replies" type="text/html" href="http://pragdave.blogs.pragprog.com/pragdave/2008/12/ruby-19-can-check-your-indentation.html" thr:count="13" thr:updated="2008-12-31T21:22:30-06:00" />
+        <id>tag:typepad.com,2003:post-60127434</id>
+        <published>2008-12-17T08:35:48-06:00</published>
+        <updated>2008-12-31T21:22:30-06:00</updated>
+        <summary>All Ruby programmers regularly encounter the mystical error “syntax error, unexpected $end, expecting keyword_end.” We know what it means: we left off an end somewhere in the code. As Ruby compiled our source, it keeps track of nesting, and when...</summary>
+        <author>
+            <name>Dave Thomas</name>
+        </author>
+        <category scheme="http://www.sixapart.com/ns/types#category" term="Ruby &amp; Rails" />
+        
+        
+<content type="xhtml" xml:lang="en-US" xml:base="http://pragdave.blogs.pragprog.com/pragdave/">
+<div xmlns="http://www.w3.org/1999/xhtml"><p>All Ruby programmers regularly encounter the mystical error <span style="font-family: Courier;">“syntax error, unexpected $end, expecting keyword_end</span>.” We know what it means: we left off an <span style="color: #0000bf; font-size: 14px; font-family: Courier;">end</span> somewhere in the code. As Ruby compiled our source, it keeps track of nesting, and when it reached the end of file (<span style="font-family: Courier;">$end</span>), it was expecting to see one more <span style="font-size: 14px; color: #0000bf; font-family: Georgia;">end</span> keyword, and none was there.</p><p>So, we trundle back through the source, and after a while discover we&#39;d deleted just one too many lines during that last edit.</p><p>Ruby 1.9 makes that easier. For example, here&#39;s a source file:</p><p><span style="font-family: Courier;"><strong><span style="color: #0000bf; font-family: Courier;">class</span></strong> Example</span><br /><span style="font-family: Courier;">&#0160; <strong><span style="color: #0000bf; font-family: Courier;">def</span></strong> meth1</span><br /><span style="font-family: Courier;">&#0160;&#0160;&#0160; <strong><span style="color: #0000bf; font-family: Courier;">if</span></strong> Time.now.hours &gt; 12</span><br /><span style="font-family: Courier;">&#0160;&#0160;&#0160;&#0160;&#0160; puts &quot;Afternoon&quot;</span><br /><span style="font-family: Courier;">&#0160; <strong><span style="color: #0000bf; font-family: Courier;">end</span></strong></span><strong><br /></strong><span style="font-family: Courier;"><strong><span style="color: #0000bf; font-family: Courier;">&#0160; </span><span style="color: #0000bf; font-family: Courier;">def</span></strong> meth2</span><br /><span style="font-family: Courier;">&#0160;&#0160;&#0160; # ...</span><br /><span style="font-family: Courier;">&#0160; <strong><span style="color: #0000bf; font-family: Courier;">end</span></strong></span><strong><br /><span style="color: #0000bf; font-family: Courier;">end</span></strong></p><p>Run it through Ruby 1.9, and you&#39;ll get the same old error message:</p><p><span style="font-family: Courier;">dave[RUBY3/Book 8:26:48*] <strong>ruby t.rb</strong>&#0160;&#0160; </span><br /><span style="font-family: Courier;">t.rb:10: syntax error, unexpected $end, expecting keyword_end</span></p><p>But add the -w flag, and things get more interesting.</p><p><span style="font-family: Courier;">dave[RUBY3/Book 8:26:51*] <strong>ruby -w t.rb</strong></span><br /><span style="font-family: Courier;">t.rb:5: warning: mismatched indentations at &#39;end&#39; with &#39;if&#39; at 3</span><br /><span style="font-family: Courier;">t.rb:9: warning: mismatched indentations at &#39;end&#39; with &#39;def&#39; at 2</span><br /><span style="font-family: Courier;">t.rb:10: syntax error, unexpected $end, expecting keyword_end</span></p><p>It&#39;s the small things in life...</p></div>
+</content>
+
+
+    </entry>
+    <entry>
+        <title>Names of encodings built in to Ruby 1.9</title>
+        <link rel="alternate" type="text/html" href="http://pragdave.blogs.pragprog.com/pragdave/2008/12/names-of-encodings-built-in-to-ruby-19.html" />
+        <link rel="replies" type="text/html" href="http://pragdave.blogs.pragprog.com/pragdave/2008/12/names-of-encodings-built-in-to-ruby-19.html" thr:count="4" thr:updated="2008-12-15T18:20:31-06:00" />
+        <id>tag:typepad.com,2003:post-59838134</id>
+        <published>2008-12-10T18:49:43-06:00</published>
+        <updated>2008-12-15T18:20:31-06:00</updated>
+        <summary>I&#39;ve heard of about 10% of these... What an amazing piece of work.</summary>
+        <author>
+            <name>Dave Thomas</name>
+        </author>
+        
+        
+<content type="xhtml" xml:lang="en-US" xml:base="http://pragdave.blogs.pragprog.com/pragdave/">
+<div xmlns="http://www.w3.org/1999/xhtml"><p><a href="http://pragdave.blogs.pragprog.com/.a/6a00d83451c41c69e20105365a55f4970c-pi" style="display: inline;"><img alt="Encoding" border="0" class="at-xid-6a00d83451c41c69e20105365a55f4970c image-full " src="http://pragdave.blogs.pragprog.com/.a/6a00d83451c41c69e20105365a55f4970c-800wi" title="Encoding" /></a>
+ </p><p>I&#39;ve heard of about 10% of these... </p><p>What an amazing piece of work.</p></div>
+</content>
+
+
+    </entry>
+    <entry>
+        <title>What&#39;s on my mind...</title>
+        <link rel="alternate" type="text/html" href="http://pragdave.blogs.pragprog.com/pragdave/2008/12/whats-on-my-mind.html" />
+        <link rel="replies" type="text/html" href="http://pragdave.blogs.pragprog.com/pragdave/2008/12/whats-on-my-mind.html" thr:count="4" thr:updated="2008-12-11T19:06:37-06:00" />
+        <id>tag:typepad.com,2003:post-59724294</id>
+        <published>2008-12-08T22:19:51-06:00</published>
+        <updated>2008-12-11T19:06:37-06:00</updated>
+        <summary></summary>
+        <author>
+            <name>Dave Thomas</name>
+        </author>
+        
+        
+<content type="html" xml:lang="en-US" xml:base="http://pragdave.blogs.pragprog.com/pragdave/">
+&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;div style=&quot;text-align: center;&quot;&gt;&lt;a href=&quot;http://www.wordle.net/gallery/wrdl/371848/Pragdave&quot; 
+		  title=&quot;Wordle: Pragdave&quot;&gt;&lt;img
+		  src=&quot;http://www.wordle.net/thumb/wrdl/371848/Pragdave&quot;
+		  style=&quot;padding:4px;border:1px solid #ddd&quot;&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;/div&gt;
+</content>
+
+
+    </entry>
+    <entry>
+        <title>Forking Ruby—my RubyConf Keynote is now up</title>
+        <link rel="alternate" type="text/html" href="http://pragdave.blogs.pragprog.com/pragdave/2008/12/forking-rubymy-rubyconf-keynote-is-now-up.html" />
+        <link rel="replies" type="text/html" href="http://pragdave.blogs.pragprog.com/pragdave/2008/12/forking-rubymy-rubyconf-keynote-is-now-up.html" thr:count="11" thr:updated="2008-12-27T17:53:04-06:00" />
+        <id>tag:typepad.com,2003:post-59392902</id>
+        <published>2008-12-02T15:51:49-06:00</published>
+        <updated>2008-12-27T17:53:05-06:00</updated>
+        <summary>There&#39;s a sound that no presenter wants to hear, and that&#39;s dead silence. And that&#39;s what greeted me when I made the suggestion in my RubyConf keynote that the community should fork the Ruby language. I think by the end...</summary>
+        <author>
+            <name>Dave Thomas</name>
+        </author>
+        
+        
+<content type="html" xml:lang="en-US" xml:base="http://pragdave.blogs.pragprog.com/pragdave/">
+&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;p&gt;There&#39;s a sound that no presenter wants to hear, and that&#39;s dead silence. And that&#39;s what greeted me when I made the suggestion in my RubyConf keynote that the community should fork the Ruby language. I think by the end of the talk, though, most people were convinced.&lt;/p&gt;&lt;p&gt;Am I anti Ruby? no.&lt;/p&gt;&lt;p&gt;Am I suggesting Matz is doing a bad job? Not in the least.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;http://rubyconf2008.confreaks.com/keynote.html&quot; style=&quot;float: right;&quot;&gt;&lt;img  alt=&quot;Confreaks_ RubyConf 2008&quot; class=&quot;at-xid-6a00d83451c41c69e201053632cc12970c &quot; src=&quot;http://pragdave.blogs.pragprog.com/.a/6a00d83451c41c69e201053632cc12970c-800wi&quot; style=&quot;margin: 0px 0px 5px 5px;&quot; title=&quot;Confreaks_ RubyConf 2008&quot; border=&quot;0&quot;&gt;&lt;/a&gt;
+ But I do think the complexity of the current language inhibits experimentation with language features. Want to implement parallel Ruby? If you do it with the current syntax and semantics, you&#39;ll be struggling with the integration of global variables, the non-threadsafe nature of &lt;span style=&quot;font-family: Courier;&quot;&gt;require&lt;/span&gt;, continuations, and so on, and so on. So before starting these kinds of experimental projects, I&#39;m saying we should fork the language. Produce variants that let us focus in on the aspects under test. Make the new language a rich-enough subset that you can do useful work with it. Then let people play with it. Maybe the ideas are stellar, in which case we can all talk about integrating the changes back into the mainline language. And maybe the idea didn&#39;t pan out, in which case we can quietly forget it, and we&#39;ve done no damage to the language itself.&lt;/p&gt;&lt;p&gt;A mutation is an altered fork of the original. And mutations are essential to the diversity and strength of a genetic line over time. Let&#39;s not be afraid to create Ruby mutants and let them compete.&lt;/p&gt;&lt;p&gt;The keynote is available from &lt;a href=&quot;http://rubyconf2008.confreaks.com/keynote.html&quot; target=&quot;_blank&quot; title=&quot;RubyConf 2008 keynote&quot;&gt;Confreaks&lt;/a&gt;. &lt;/p&gt;&lt;/div&gt;
+</content>
+
+
+    </entry>
+    <entry>
+        <title>See Rails request paths in &#39;top&#39;</title>
+        <link rel="alternate" type="text/html" href="http://pragdave.blogs.pragprog.com/pragdave/2008/11/trivial-request-logging-for-rails.html" />
+        <link rel="replies" type="text/html" href="http://pragdave.blogs.pragprog.com/pragdave/2008/11/trivial-request-logging-for-rails.html" thr:count="4" thr:updated="2008-12-10T02:32:38-06:00" />
+        <id>tag:typepad.com,2003:post-59270640</id>
+        <published>2008-11-30T18:17:55-06:00</published>
+        <updated>2008-12-10T02:32:38-06:00</updated>
+        <summary>During our sale, we had one particular request that came in and wedged the application: every time it hit, the mongrel process size zoomed steadily up to 500Mb, so we had to kill it. But finding out which request was...</summary>
+        <author>
+            <name>Dave Thomas</name>
+        </author>
+        
+        
+<content type="xhtml" xml:lang="en-US" xml:base="http://pragdave.blogs.pragprog.com/pragdave/">
+<div xmlns="http://www.w3.org/1999/xhtml"><p>During our sale, we had one particular request that came in and wedged the application: every time it hit, the mongrel process size zoomed steadily up to 500Mb, so we had to kill it. But finding out which request was doing this was tricky. The log files didn&#39;t help—with the amount of traffic we were getting, it was a small needle and a large haystack.</p><div>Eventually, we found the culprit. But it would have been a lot easier if I&#39;d thought of this hack on Friday, and not after the sale ended.</div><br /><div>If you put this into your application controller:</div><br /><div><div><span style="font-family: Courier;">before_filter :set_process_name_from_request</span></div><div><span style="color: #0000bf; font-family: Courier; "><span style="font-weight: bold;">def</span></span><span style="font-family: Courier;"> set_process_name_from_request</span></div><div><span style="font-family: Courier;"><span style="white-space: pre;">&#0160; </span>$0 = request.path[0,16]&#0160;</span></div><div><span style="color: #6000bf; "><span style="font-weight: bold; color: #0000bf; font-family: Courier; ">end</span></span><span style="font-family: Courier;"> &#0160;&#0160;</span></div><div><span style="font-family: Courier;"><br /></span></div><div><span style="font-family: Courier;">after_filter :unset_process_name_from_request</span></div><div><span style="color: #0000bf; font-family: Courier; "><span style="font-weight: bold;">def</span></span><span style="font-family: Courier;"> unset_process_name_from_request</span></div><div><span style="font-family: Courier;"><span style="white-space: pre;">&#0160; </span>$0 = request.path[0,15] + &quot;*&quot;</span></div><div><span style="color: #0000bf; font-family: Courier; "><span style="font-weight: bold;">end</span></span><span style="font-family: Courier;"> &#0160;</span></div><br /><div>then Ruby will set the <span style="font-family: Courier;">cmd</span> field in your process control block to the first 16 characters of the request path. You&#0160;can then use <span style="font-family: Courier;">top</span> to see&#0160;what&#0160;request&#0160;is&#0160;being&#0160;handled&#0160;by&#0160;each&#0160;mongrel.</div><br /><div><a href="http://pragdave.blogs.pragprog.com/.a/6a00d83451c41c69e20105362d6365970c-pi" style="display: inline;"><img alt="Pragmatic@ey00-s00220_~ — ssh — 155×40" border="0" class="at-xid-6a00d83451c41c69e20105362d6365970c image-full " src="http://pragdave.blogs.pragprog.com/.a/6a00d83451c41c69e20105362d6365970c-800wi" title="Pragmatic@ey00-s00220_~ — ssh — 155×40" /></a>
+ <br /></div><br /><br /><div>Once the request has been&#0160;handled, an asterisk sign is appended, so you can see the last URL when a mongrel becomes idle.&#0160;<br /></div><br /><div><div><a href="http://pragdave.blogs.pragprog.com/.a/6a00d83451c41c69e20105362537ff970b-pi" style="display: inline; color: blue; text-decoration: underline; cursor: pointer; "><img alt="Pragmatic@ey00-s00220_~ — ssh — 155×40-1" border="0" class="at-xid-6a00d83451c41c69e20105362537ff970b image-full " src="http://pragdave.blogs.pragprog.com/.a/6a00d83451c41c69e20105362537ff970b-800wi" style="cursor: pointer !important; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; width: 100%; " title="Pragmatic@ey00-s00220_~ — ssh — 155×40-1" /></a><br /></div><br /></div><div>If your version of <span style="font-family: Courier;">top</span>&#0160;doesn&#39;t show the short command by default, use the <span style="font-family: Courier;"><span style="font-weight: bold;">c</span></span>&#0160;keyboard command to see it.</div><br /><div>This is probably common knowledge, but I thought it was cool.</div></div></div>
+</content>
+
+
+    </entry>
+    <entry>
+        <title>Just in case you missed it...</title>
+        <link rel="alternate" type="text/html" href="http://pragdave.blogs.pragprog.com/pragdave/2008/11/just-in-case-you-missed-it.html" />
+        <link rel="replies" type="text/html" href="http://pragdave.blogs.pragprog.com/pragdave/2008/11/just-in-case-you-missed-it.html" thr:count="4" thr:updated="2008-11-29T07:35:27-06:00" />
+        <id>tag:typepad.com,2003:post-59129736</id>
+        <published>2008-11-26T15:31:53-06:00</published>
+        <updated>2008-11-29T07:35:27-06:00</updated>
+        <summary>We&#39;re having a sale on Friday...</summary>
+        <author>
+            <name>Dave Thomas</name>
+        </author>
+        
+        
+<content type="html" xml:lang="en-US" xml:base="http://pragdave.blogs.pragprog.com/pragdave/">
+&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;a style=&quot;display: inline;&quot; href=&quot;http://pragprog.com&quot;&gt;&lt;img  class=&quot;at-xid-6a00d83451c41c69e201053625b8f3970c &quot; alt=&quot;Turkey&quot; title=&quot;Turkey&quot; src=&quot;http://pragdave.blogs.pragprog.com/.a/6a00d83451c41c69e201053625b8f3970c-800wi&quot; border=&quot;0&quot; width=&quot;75&quot; height=&quot;90&quot;&gt;&lt;/a&gt; We&#39;re having a &lt;a href=&quot;http://pragprog.com&quot;&gt;sale&lt;/a&gt; on Friday...&lt;/div&gt;
+</content>
+
+
+    </entry>
+ 
+</feed>
+<!-- ph=1 -->
+<!-- nhm:dynamic-ssi -->

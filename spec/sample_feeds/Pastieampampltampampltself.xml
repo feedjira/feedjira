@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<rdf:RDF
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:cc="http://web.resource.org/cc/"
+  xmlns="http://purl.org/rss/1.0/">
+
+<channel rdf:about="http://blog.pastie.org/">
+<title>Pastie &lt;&lt; self</title>
+<link>http://blog.pastie.org/</link>
+<description>All things Tech, Rails, Ruby, or design related and more.</description>
+<dc:language>en-US</dc:language>
+<dc:creator></dc:creator>
+<dc:date>2009-01-15T18:24:50-05:00</dc:date>
+<admin:generatorAgent rdf:resource="http://www.typepad.com/" />
+
+
+<items>
+<rdf:Seq><rdf:li rdf:resource="http://blog.pastie.org/2009/01/survive-hard-economic-times-in-the-bahamas-at-railsbizconf-2009.html" />
+<rdf:li rdf:resource="http://blog.pastie.org/2009/01/getting-open-with-back-under-control.html" />
+<rdf:li rdf:resource="http://blog.pastie.org/2009/01/copyright-hysteria.html" />
+<rdf:li rdf:resource="http://blog.pastie.org/2008/12/passenger-wtf-1-nilcontroller_name-in-sweepers-module.html" />
+<rdf:li rdf:resource="http://blog.pastie.org/2008/11/arts-plugin-and-rails-222.html" />
+<rdf:li rdf:resource="http://blog.pastie.org/2008/11/haproxy-13-on-centos.html" />
+<rdf:li rdf:resource="http://blog.pastie.org/2008/11/pastie-lesson-1-question-your-first-assumption.html" />
+<rdf:li rdf:resource="http://blog.pastie.org/2008/11/refactoring-pastie-lessons-learned.html" />
+<rdf:li rdf:resource="http://blog.pastie.org/2008/11/pastie-adds-embedding-js-support.html" />
+<rdf:li rdf:resource="http://blog.pastie.org/2008/11/leopard-ruby-and-oniguruma-gem.html" />
+<rdf:li rdf:resource="http://blog.pastie.org/2008/11/rails-dev-mode-performance-plugin.html" />
+<rdf:li rdf:resource="http://blog.pastie.org/2008/11/moon-attempt-1.html" />
+<rdf:li rdf:resource="http://blog.pastie.org/2008/10/looking-for-a-rubyconf-2008-ticket-anyone.html" />
+<rdf:li rdf:resource="http://blog.pastie.org/2008/10/thanks-rails-machine-long-live-pastie.html" />
+<rdf:li rdf:resource="http://blog.pastie.org/2008/10/mysql-64-bit-ruby-32-bit-friends-again.html" />
+</rdf:Seq>
+</items>
+
+</channel>
+
+<item rdf:about="http://blog.pastie.org/2009/01/survive-hard-economic-times-in-the-bahamas-at-railsbizconf-2009.html">
+<title>Survive hard economic times in the Bahamas at RailsBizConf 2009</title>
+<link>http://blog.pastie.org/2009/01/survive-hard-economic-times-in-the-bahamas-at-railsbizconf-2009.html</link>
+<description>Looks like a potential new RailsBizConf in the works says Obie Fernandez in a message to the rails-business google group: I am in preliminary stages of planning a business-oriented conference for principals of agile/rails consultancies. We will cover everything from...</description>
+<content:encoded>&lt;p&gt;Looks like a potential new RailsBizConf in the works says &lt;a href=http://obiefernandez.com/&quot;&quot;&gt;Obie Fernandez&lt;/a&gt; in a message to the &lt;a href=&quot;http://groups.google.com/group/rails-business&quot;&gt;rails-business&lt;/a&gt; google group:&lt;/p&gt;
+
+&lt;blockquote&gt;I am in preliminary stages of planning a business-oriented conference
+for principals of agile/rails consultancies. We will cover everything
+from sales and marketing, to financing, to keeping your clients happy
+and &lt;strong&gt;surviving in these tough economic times&lt;/strong&gt;. [emphasis mine]&lt;/blockquote&gt;
+
+&lt;p&gt;If you&#39;d like to weigh in on RailsBizConf 2009 please do &lt;a href=&quot;http://obiefernandez.wufoo.com/forms/railsbizconf/&quot;&gt;fill out the survey&lt;/a&gt;.  The &lt;em&gt;first&lt;/em&gt; question caught my eye:&lt;/p&gt;
+
+&lt;p&gt;&lt;a style=&quot;display: inline;&quot; href=&quot;http://joshgoebel.typepad.com/.a/6a00e552517e378834010536d521be970c-pi&quot;&gt;&lt;img  src=&quot;http://joshgoebel.typepad.com/.a/6a00e552517e378834010536d521be970c-800wi&quot; border=&quot;0&quot;  width=&quot;550&quot; style=&quot;border:1px solid #ccc; padding: 0 4px 4px 4px&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;My recommendation to Rails shops trying to trim some fat from the books:  &lt;strong&gt; Fewer discretionary trips to exotic tropical island paradises.&lt;/strong&gt; &lt;/p&gt;
+
+&lt;p&gt;Or if you absolutely must... vote Bahamas and fly coach. :-)&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;/p&gt;</content:encoded>
+
+
+<dc:subject>Rails</dc:subject>
+
+<dc:creator>Josh Goebel</dc:creator>
+<dc:date>2009-01-15T18:24:50-05:00</dc:date>
+</item>
+<item rdf:about="http://blog.pastie.org/2009/01/getting-open-with-back-under-control.html">
+<title>Getting &quot;Open With&quot; back under control</title>
+<link>http://blog.pastie.org/2009/01/getting-open-with-back-under-control.html</link>
+<description>So I have a few apps installed (and a few instances of Fluid) and this is what my Open With menu used to look like: A little Googling found me Many Trick&#39;s very helpful Open-With Manager and now my Open...</description>
+<content:encoded>&lt;p&gt;So I have a few apps installed (and a few instances of Fluid) and this is what my Open With menu used to look like:&lt;/p&gt;
+
+&lt;p&gt;&lt;a style=&quot;display: inline;&quot; href=&quot;http://joshgoebel.typepad.com/.a/6a00e552517e378834010536bbc9e3970b-pi&quot;&gt;&lt;img  width=&quot;550&quot; src=&quot;http://joshgoebel.typepad.com/.a/6a00e552517e378834010536bbc9e3970b-800wi&quot; border=&quot;0&quot;  /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;A little Googling found me Many Trick&#39;s very helpful &lt;a href=&quot;http://www.manytricks.com/openwithmanager/&quot;&gt;Open-With Manager&lt;/a&gt; and now my Open With menu is much better behaved:&lt;/p&gt;
+
+&lt;p&gt;&lt;a style=&quot;display: inline;&quot; href=&quot;http://joshgoebel.typepad.com/.a/6a00e552517e378834010536bbca50970b-pi&quot;&gt;&lt;img src=&quot;http://joshgoebel.typepad.com/.a/6a00e552517e378834010536bbca50970b-800wi&quot; border=&quot;0&quot;  width=&quot;550&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Open-With Manager won&#39;t touch signed apps (think Xcode, QuickTime Player, etc) so if you want to remove any of those from your menu then you&#39;ll need &lt;a href=&quot;http://macromates.com/&quot;&gt;your favorite text editor&lt;/a&gt; and the following hint: &lt;a href=&quot;http://www.macosxhints.com/article.php?story=20030730161311391&quot;&gt;Remove excess &#39;Open with...&#39; contextual menu entries&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I think OS X will ultimately figure out (give it a few minutes) that you&#39;ve changed the menu but if not you can run the following command from terminal to clear the cache:&lt;/p&gt;
+
+&lt;pre&gt;
+`locate lsregister` -kill -r -domain local -domain system -domain user
+&lt;/pre&gt;
+
+&lt;p&gt;Open-With Manager seems to have decent defaults for pictures and movies for if your cup of tea is something else entirely the preferences allow a ton of flexibility.&lt;/p&gt;
+
+&lt;p&gt;&lt;a style=&quot;display: inline;&quot; href=&quot;http://joshgoebel.typepad.com/.a/6a00e552517e378834010536c56829970c-pi&quot;&gt;&lt;img src=&quot;http://joshgoebel.typepad.com/.a/6a00e552517e378834010536c56829970c-800wi&quot; border=&quot;0&quot;  /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Enjoy your cleaner and lighter Open With.&lt;/strong&gt;		&lt;/p&gt;</content:encoded>
+
+
+
+<dc:creator>Josh Goebel</dc:creator>
+<dc:date>2009-01-11T06:50:07-05:00</dc:date>
+</item>
+<item rdf:about="http://blog.pastie.org/2009/01/copyright-hysteria.html">
+<title>Copyright Hysteria</title>
+<link>http://blog.pastie.org/2009/01/copyright-hysteria.html</link>
+<description>The first case of the pot calling the kettle black this new year: Jason Freed blogs about Trademark hysteria and how trademarks are being misused by companies these days for the silliest reasons. I wish he could apply the same...</description>
+<content:encoded>&lt;p&gt;The first case of the pot calling the kettle black this new year:  Jason Freed blogs about &lt;a href=&quot;http://www.37signals.com/svn/posts/1501-trademark-hysteria&quot;&gt;Trademark hysteria&lt;/a&gt; and how trademarks are being misused by companies these days for the silliest reasons.&lt;/p&gt;
+
+&lt;p&gt;I wish he could apply the same critical thinking skills to 37signals own sad case of &quot;Copyright hysteria&quot; that I&#39;ve quite vocally &lt;a href=&quot;http://blog.pastie.org/2008/05/copyright---des.html&quot;&gt;blogged about in the past&lt;/a&gt;.  &lt;/p&gt;
+
+&lt;p&gt;Just because you can slap a &quot;Copyright (c) 37signals, LLC&quot; sticker on everything you touch  (whether it&#39;s legally copyrightable or not) does not mean you should.&lt;/p&gt;</content:encoded>
+
+
+<dc:subject>Web/Tech</dc:subject>
+
+<dc:creator>Josh Goebel</dc:creator>
+<dc:date>2009-01-01T18:47:57-05:00</dc:date>
+</item>
+<item rdf:about="http://blog.pastie.org/2008/12/passenger-wtf-1-nilcontroller_name-in-sweepers-module.html">
+<title>Passenger Woes - nil.controller_name in Sweepers module</title>
+<link>http://blog.pastie.org/2008/12/passenger-wtf-1-nilcontroller_name-in-sweepers-module.html</link>
+<description>So I deploy an existing app using Passenger for the first time and hit this: Embedded pastie: The only Google results had to do with components and how they could result in the sweeper&#39;s after filter getting called twice which...</description>
+<content:encoded>&lt;p&gt;So I deploy an existing app using &lt;a href=&quot;http://www.modrails.com/&quot;&gt;Passenger&lt;/a&gt; for the first time and hit this:&lt;br /&gt;
+&lt;noscript&gt;Embedded pastie:&lt;/noscript&gt;&lt;script src=&#39;http://pastie.org/329752.js&#39;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;The only Google results had to do with components and how they could result in the sweeper&#39;s after filter getting called twice which would results in a nil controller variable the second time thru.  But I wasn&#39;t using components.&lt;/p&gt;
+
+&lt;p&gt;Finally after adding a bit of logging to show me FULL stack traces each time cache_sweeper was called I found something interesting: &lt;strong&gt;application.rb was being loaded twice.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;I use &lt;a href=&quot;http://github.com/defunkt/exception_logger/tree/master&quot;&gt;Exception Logger&lt;/a&gt; in this app so I have this small bit of code in my production environment:&lt;br /&gt;
+&lt;noscript&gt;Embedded pastie:&lt;/noscript&gt;&lt;script src=&#39;http://pastie.org/329758.js&#39;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;That set&#39;s up authentication on the LoggedException controller so not just anyone can access it in production.  The problem is line #2.  We&#39;re requiring application.rb since we don&#39;t have it yet this early in the stack.  But then Passenger is coming along a little later and requiring it again inside preload_application.&lt;/p&gt;
+
+&lt;p&gt;Thankfully Passenger is using require_dependency (which checks to see if the same dependency has already been loaded via require_dependency)... so if we used require_dependency also then we&#39;d avoid this.  A diff:&lt;br /&gt;
+&lt;noscript&gt;Embedded pastie:&lt;/noscript&gt;&lt;script src=&#39;http://pastie.org/329761.js&#39;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Problem solved.  I&#39;ll be submitting a patch on github for this as well.&lt;/p&gt;
+
+&lt;h2&gt;But is it really Passenger&#39;s fault?&lt;/h2&gt;
+
+&lt;p&gt;Someone tried to make the argument that this has nothing to do with Passenger.  I could argue it&#39;s not my require call that breaks anything but rather Passenger&#39;s later require_dependency call - but I won&#39;t do that.&lt;/p&gt;
+
+&lt;p&gt;My point of view is this: &lt;strong&gt;It worked before for years and when I moved to Passenger it broke.&lt;/strong&gt;  From where I&#39;m standing it doesn&#39;t really matter who is to blame.  Only that the app worked in a &quot;traditional&quot; Rails deployment (Mongrel) and did not work with Passenger.&lt;/p&gt;
+
+&lt;p&gt;Regardless of who&#39;s code is at fault I think this is the type of issue Passenger has to take some of the heat for.  If someone comes out with a new car with the gas and brake pedals reversed I think one could make a strong argument that the car manufacturer shares some of the blame (if not most) for wrecks resulting from people hitting the wrong pedal.  It&#39;s not a perfect analogy, but we don&#39;t live in a perfect world. :-)&lt;/p&gt;
+
+&lt;p&gt;This post is mostly intended to help others deal with similar problems they might have moving to Passenger - not just to cast stones at Passenger.&lt;/p&gt;</content:encoded>
+
+
+
+<dc:creator>Josh Goebel</dc:creator>
+<dc:date>2008-12-03T08:38:12-05:00</dc:date>
+</item>
+<item rdf:about="http://blog.pastie.org/2008/11/arts-plugin-and-rails-222.html">
+<title>Arts plugin and Rails 2.2.2</title>
+<link>http://blog.pastie.org/2008/11/arts-plugin-and-rails-222.html</link>
+<description>It seems the arts plugin has some problems with Rails 2.2.2. Seems to be a simple enough fix. I simply added the following to the bottom of my arts.rb file. Embedded pastie: It seems there was a new with_output_buffer method...</description>
+<content:encoded>&lt;p&gt;It seems the arts plugin has some problems with Rails 2.2.2.  Seems to be a simple enough fix.  I simply added the following to the bottom of my arts.rb file.&lt;/p&gt;
+
+&lt;p&gt;Embedded pastie:&lt;br /&gt;
+&lt;script src=&#39;http://pastie.org/321244.js&#39;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;It seems there was a new with_output_buffer method added in Rails 2.2.2.  I&#39;d guess it does something useful with regard to output buffering in the context of an actual request - but for testing purposes it seems to work fine if we add it to the Arts module and just have it call the block it&#39;s passed.&lt;/p&gt;
+
+&lt;p&gt;Hope this helps someone else.&lt;/p&gt;</content:encoded>
+
+
+<dc:subject>Rails</dc:subject>
+
+<dc:creator>Josh Goebel</dc:creator>
+<dc:date>2008-11-22T00:17:43-05:00</dc:date>
+</item>
+<item rdf:about="http://blog.pastie.org/2008/11/haproxy-13-on-centos.html">
+<title>HAProxy 1.3 on CentOS</title>
+<link>http://blog.pastie.org/2008/11/haproxy-13-on-centos.html</link>
+<description>I used the examples/haproxy.spec to build a RPM of HAProxy 1.2. It was painless. 1.3 was a bit more annoying but I got it working and thought I should share the changes I made to the spec: Embedded pastie: This...</description>
+<content:encoded>&lt;p&gt;I used the examples/haproxy.spec to build a RPM of HAProxy 1.2.  It was painless.  1.3 was a bit more annoying but I got it working and thought I should share the changes I made to the spec:&lt;/p&gt;
+
+&lt;p&gt;Embedded pastie:&lt;br /&gt;
+&lt;script src=&#39;http://pastie.org/315884.js&#39;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;This is the reason for Pastie&#39;s downtime earlier tonight *grrrr*.  When I did get haproxy to build it silently died when run.  Turns out /usr/share/haproxy was missing and it was silently trying to chroot there.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong style=&quot;color:#090&quot;&gt;Note to developers:&lt;/strong&gt; Such MAJOR errors should result in output without having to run your program in debug mode!  Please!&lt;/p&gt;
+
+&lt;p&gt;&lt;strong style=&quot;color:#c00&quot;&gt;Update:&lt;/strong&gt;  The author contacted me a few hours later with a patch for the silent error issue.  Evidently for some historical reasons daemon mode triggers quiet mode which suppresses a lot of error messages.&lt;/p&gt;
+
+&lt;p&gt;&lt;noscript&gt;Embedded pastie:&lt;/noscript&gt;&lt;br /&gt;
+&lt;script src=&#39;http://pastie.org/316205.js&#39;&gt;&lt;/script&gt;&lt;br /&gt;
+&lt;/p&gt;</content:encoded>
+
+
+
+<dc:creator>Josh Goebel</dc:creator>
+<dc:date>2008-11-15T22:27:24-05:00</dc:date>
+</item>
+<item rdf:about="http://blog.pastie.org/2008/11/pastie-lesson-1-question-your-first-assumption.html">
+<title>Pastie: Lesson 1 - Question your first assumption</title>
+<link>http://blog.pastie.org/2008/11/pastie-lesson-1-question-your-first-assumption.html</link>
+<description>So before I dug in to really work on Pastie I did a quick bump from 2.0 to 2.1. And I was instantly horrified at memory usage. &quot;Memory out of bounds&quot; e-mails were pouring into my inbox every hour two...</description>
+<content:encoded>&lt;p&gt;So before I dug in to really work on Pastie I did a quick bump from 2.0 to 2.1.  And I was instantly horrified at memory usage.  &quot;Memory out of bounds&quot; e-mails were pouring into my inbox every hour two notifying me that Mongrels were getting killed and restarted by &lt;a href=&quot;http://god.rubyforge.org/&quot;&gt;god&lt;/a&gt;.  This was something entirely new.&lt;/p&gt;
+
+&lt;p&gt;Initially I thought perhaps Rails 2.1 was just more of a memory hog than 2.0.  Perhaps I just needed to raise my memory ceiling and then things would be happy. Then I stumbled on to the real problem.&lt;/p&gt;
+
+&lt;h2&gt;The Real Problem&lt;/h2&gt;
+
+&lt;p&gt;Pastie makes extensive use of action caching to cache it&#39;s over 300,000 syntax highlighted Pasties.  Rails 2.1 defaults to the memory store for caching rather than the file store (the previous default).  &lt;em&gt;And the file store for Pastie was easily over 10 gigabytes.&lt;/em&gt;  Memory store, FAIL. :-)&lt;/p&gt;
+
+&lt;p&gt;Sometimes the problem isn&#39;t what we think.  Sometimes it is.  But sometimes the beginning of the solution should start with leaning back and asking yourself &quot;What else could this be?&quot; &lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Question your first assumption.&lt;/strong&gt;&lt;/p&gt;</content:encoded>
+
+
+<dc:subject>Rails</dc:subject>
+
+<dc:creator>Josh Goebel</dc:creator>
+<dc:date>2008-11-15T19:42:50-05:00</dc:date>
+</item>
+<item rdf:about="http://blog.pastie.org/2008/11/refactoring-pastie-lessons-learned.html">
+<title>Re-factoring Pastie: Lessons Learned</title>
+<link>http://blog.pastie.org/2008/11/refactoring-pastie-lessons-learned.html</link>
+<description>It&#39;s been almost 2.5 years since Pastie #1. For the most part Pastie has changed little. I can only think of a few new features that have appeared since day one: true integration with TextMate (ie, the ability to paste...</description>
+<content:encoded>&lt;p&gt;It&#39;s been almost 2.5 years since &lt;a href=&quot;http://pastie.org/pastes/1&quot;&gt;Pastie #1&lt;/a&gt;.  For the most part Pastie has changed little.  I can only think of a few new features that have appeared since day one:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;true integration with TextMate (ie, the ability to paste any type of file in full color regardless of whether Pastie knows how to syntax highlight it or not)&lt;/li&gt;
+&lt;li&gt;private pastes&lt;/li&gt;
+&lt;li&gt;the switch from CodeRay to Ultraviolet leading to the support of many more languages&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This lack of updates is largely due to my feeling that Pastie does everything it was designed to do - and does it amazingly well.  I will concede though that Pastie has been a bit neglected recently.  Other things have had my attention and Pastie has taken a back seat and also gotten a bit of a reputation (in some circles) for being finicky when it comes to reliability.&lt;/p&gt;
+
+&lt;p&gt;Recently my focus has returned to my beloved Pastie.  Code has been re-factored, &lt;a href=&quot;/2008/11/pastie-adds-embedding-js-support.html&quot;&gt;new features have been added&lt;/a&gt; while performance, responsiveness, and reliability have been restored. &lt;/p&gt;
+
+&lt;p&gt;Along the way I&#39;ve learned a few interesting things that I&#39;d like to share.  I don&#39;t know if any of this will be astounding or rocket science.  But maybe you&#39;ll learn something new or just find a new way to approach a problem you&#39;re having with your own app.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;h3&gt;Lessons&lt;/h3&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://blog.pastie.org/2008/11/pastie-lesson-1-question-your-first-assumption.html&quot;&gt;Lesson 1 - Question your first assumption&lt;/a&gt;	&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I&#39;ll add the other lessons here as I post them.	&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;/p&gt;</content:encoded>
+
+
+<dc:subject>Rails</dc:subject>
+
+<dc:creator>Josh Goebel</dc:creator>
+<dc:date>2008-11-15T19:41:31-05:00</dc:date>
+</item>
+<item rdf:about="http://blog.pastie.org/2008/11/pastie-adds-embedding-js-support.html">
+<title>Pastie adds embedding JS support</title>
+<link>http://blog.pastie.org/2008/11/pastie-adds-embedding-js-support.html</link>
+<description>So you like pasting your code to Pastie, but you&#39;ve always wished it was easier to include that same code in your blog or webpages? Wish no longer. Below is an embedded Pastie of a cute little helper I wrote...</description>
+<content:encoded>&lt;p&gt;So you like pasting your code to Pastie, but you&#39;ve always wished it was easier to include that same code in your blog or webpages?  Wish no longer.&lt;/p&gt;
+
+&lt;p&gt;&lt;img  alt=&quot;Picture 1&quot; title=&quot;Picture 1&quot; src=&quot;http://joshgoebel.typepad.com/.a/6a00e552517e378834010535f3a783970c-800wi&quot; border=&quot;0&quot;  /&gt;&lt;/p&gt;
+
+&lt;p&gt;Below is an embedded Pastie of a cute little helper I wrote during the process of adding this feature.&lt;/p&gt;
+
+&lt;p&gt;&lt;script src=&quot;http://pastie.org/314230.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Here is an example of how Pastie use&#39;s the helper to avoid worrying about all the document.write stuff... and just concentrating on building a straight HTML view.&lt;/p&gt;
+
+&lt;p&gt;&lt;script src=&#39;http://pastie.org/314267.js&#39;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;I&#39;m also thinking of allowing you to pass a param that determines which of the available  color themes your Pastie is displayed with.&lt;/p&gt;
+
+&lt;p&gt;Any thoughts of ideas?  Does this fit the bill for those of you who&#39;ve been wanting an easier way to get Pastie&#39;s into your blogs?&lt;/p&gt;</content:encoded>
+
+
+<dc:subject>Web/Tech</dc:subject>
+
+<dc:creator>Josh Goebel</dc:creator>
+<dc:date>2008-11-13T16:32:28-05:00</dc:date>
+</item>
+<item rdf:about="http://blog.pastie.org/2008/11/leopard-ruby-and-oniguruma-gem.html">
+<title>Leopard Ruby and Oniguruma gem</title>
+<link>http://blog.pastie.org/2008/11/leopard-ruby-and-oniguruma-gem.html</link>
+<description>Ok I spent WAY too much time getting this to work so I&#39;m just going to tell you what finally worked for me. * Edit your ports down to 5.8 and port install oniguruma5 (5.9.1 might work, haven&#39;t retried it)...</description>
+<content:encoded>&lt;p&gt;Ok I spent WAY too much time getting this to work so I&#39;m just going to tell you what finally worked for me.&lt;/p&gt;
+
+&lt;p&gt;* Edit your ports down to 5.8 and port install oniguruma5 (5.9.1 might work, haven&#39;t retried it)&lt;br /&gt;
+* ln -sf /opt/local/include/oniguruma.h /usr/include&lt;br /&gt;
+* ln -sf /opt/local/lib/libonig.2.0.0.dylib /usr/lib&lt;br /&gt;
+* ln -sf /opt/local/lib/libonig.2.dylib /usr/lib&lt;br /&gt;
+* ln -sf /opt/local/lib/libonig.dylib /usr/lib&lt;br /&gt;
+* gem install oniguruma&lt;/p&gt;
+
+&lt;p&gt;Essentially we&#39;re just tricking it into thinking the bits it needs are installed in the more traditional locations.&lt;/p&gt;
+
+&lt;p&gt;On my other computer I&#39;m using ruby from ports... and this was 100% seamless... and there may be some way to pass the right args to gem install to get it to find the include and link things properly, but if it can be done I couldn&#39;t figure it out.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Good luck.&lt;/strong&gt;&lt;/p&gt;</content:encoded>
+
+
+
+<dc:creator>Josh Goebel</dc:creator>
+<dc:date>2008-11-11T12:08:39-05:00</dc:date>
+</item>
+<item rdf:about="http://blog.pastie.org/2008/11/rails-dev-mode-performance-plugin.html">
+<title>Rail&#39;s Dev Mode Performance Plugin</title>
+<link>http://blog.pastie.org/2008/11/rails-dev-mode-performance-plugin.html</link>
+<description>NOTICE: Don&#39;t even try this on 2.0... It&#39;s tested against 2.1.2 only but I plan to have it working on 2.2 soon. Once upon a time there was dev_mode_performance_fixes. I was on a Powerbook at the time and almost crying...</description>
+<content:encoded>&lt;p&gt;&lt;span style=&quot;color:#c00&quot;&gt;&lt;strong&gt;NOTICE:&lt;/strong&gt; Don&#39;t even try this on 2.0... It&#39;s tested against 2.1.2 only but I plan to have it working on 2.2 soon.&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Once upon a time there was &lt;a href=&quot;http://svn.techno-weenie.net/projects/plugins/dev_mode_performance_fixes/&quot;&gt;dev_mode_performance_fixes&lt;/a&gt;.  I was on a Powerbook at the time and almost crying from how slow Rails 1.2 was in development mode for any non-trivial app.  &lt;/p&gt;
+
+&lt;h3&gt;Then things changed...&lt;/h3&gt;
+
+&lt;p&gt;Rails went 2.0, I got a Macbook Pro, and the plugin was all but forgotten.  I think there was some minor interest in making it work with 2.1 but I didn&#39;t pay much attention because it really wasn&#39;t an issue for me anymore.  &lt;/p&gt;
+
+&lt;h3&gt;...and many moons came and went.&lt;/h3&gt;
+
+&lt;p&gt;Today I&#39;m proud to announce &lt;a href=&quot;http://github.com/yyyc514/rails_dev_mode_performance/tree/master&quot;&gt;rails_dev_mode_performance&lt;/a&gt;.  It&#39;s the original plugin reborn.  I&#39;m seeing an order of magnitude (12x) &lt;a href=&quot;http://github.com/yyyc514/rails_dev_mode_performance/tree/master/BENCHMARKS&quot;&gt;improvement in performance&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;It&#39;s mostly a port of the old code to Rails 2.0 with all new hacks to deal with Rail&#39;s new TemplateFinder and it&#39;s dev mode performance issues.  And now it&#39;s on GitHub... so if you want to contribute you can e-mail me bug fixes or fork the repository and send me a pull request.&lt;/p&gt;
+
+&lt;h2&gt;How it Works&lt;/h2&gt;
+
+&lt;p&gt;How all this works is that we&#39;re trying (very carefully) to track every dependency and relationship between objects back to the filesystem.  When you edit a file in your application any objects that are somehow affected by that file are flushed and reloaded at the beginning of the next request.  &lt;/p&gt;
+
+&lt;p&gt;This could mean reloading classes that inherit from a class that was defined in that file... or perhaps you&#39;ve edited a module that you included in 12 classes... each of those classes have to be flushed before the next request so they can be reloaded to include the new version of your module.&lt;/p&gt;
+
+&lt;h2&gt;Potential Gotchas&lt;/h2&gt;
+
+&lt;p&gt;As you can imagine this requires a lot of hooks into dependency loading, modules inclusion, etc... the original plugin was patched numerous time to take this or that edge case into account.  I&#39;m sure we&#39;ll find more of these edge cases and I think there are probably solutions for most of them.  &lt;/p&gt;
+
+&lt;p&gt;If you&#39;re doing something totally whacked and you know it (loading entire modules and classes from the database would be one thing that comes to mind) then this plugin may never work for you.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;I think it can work for most of us though.&lt;/strong&gt;  Please check it out and let me know any bugs or issues you find.&lt;/p&gt;
+
+&lt;p&gt;&lt;span style=&quot;color:#c00&quot;&gt;&lt;strong&gt;NOTICE:&lt;/strong&gt; Don&#39;t even try this on 2.0... It&#39;s tested against 2.1.2 only but I plan to have it working on 2.2 soon.&lt;/span&gt;&lt;/p&gt;</content:encoded>
+
+
+<dc:subject>Rails</dc:subject>
+
+<dc:creator>Josh Goebel</dc:creator>
+<dc:date>2008-11-09T06:50:48-05:00</dc:date>
+</item>
+<item rdf:about="http://blog.pastie.org/2008/11/moon-attempt-1.html">
+<title>Moon, attempt #1</title>
+<link>http://blog.pastie.org/2008/11/moon-attempt-1.html</link>
+<description>So I bought a Opteka 650-1300mm lens for play enough though I heard they are crap. Here is one of my first moon shots: You can click on the image to see the full-size version at SmugMug. I&#39;m going to...</description>
+<content:encoded>&lt;p&gt;So I bought a &lt;a href=&quot;http://www.amazon.com/Opteka-650-1300mm-Definition-Telephoto-Digital/dp/B000IMRTFO&quot;&gt;Opteka 650-1300mm&lt;/a&gt; lens for play enough though I heard they are crap.  Here is one of my first moon shots:&lt;/p&gt;
+
+&lt;p&gt;&lt;a style=&quot;display: inline;&quot; href=&quot;http://joshgoebel.smugmug.com/gallery/6457297_Tpaeg&quot;&gt;&lt;img class=&quot;&quot; alt=&quot;The moon&quot; src=&quot;http://joshgoebel.typepad.com/.a/6a00e552517e378834010535d05b58970b-800wi&quot; border=&quot;0&quot;  /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;You can click on the image to see the full-size version at SmugMug.&lt;/p&gt;
+
+&lt;p&gt;I&#39;m going to try a few more over the next few nights.  If I can&#39;t get anything really sharp I&#39;ll sell the Opteka and try again with a better zoom and teleconverter I suppose.&lt;/p&gt;</content:encoded>
+
+
+<dc:subject>Photography</dc:subject>
+
+<dc:creator>Josh Goebel</dc:creator>
+<dc:date>2008-11-03T21:40:05-05:00</dc:date>
+</item>
+<item rdf:about="http://blog.pastie.org/2008/10/looking-for-a-rubyconf-2008-ticket-anyone.html">
+<title>Looking for a RubyConf 2008 ticket... anyone?</title>
+<link>http://blog.pastie.org/2008/10/looking-for-a-rubyconf-2008-ticket-anyone.html</link>
+<description>If anyone has an extra RubyConf 2008 ticket for sale, I&#39;m interested... drop a comment here I&#39;ll get back with you right away. I meant to get one early, but it didn&#39;t happen.</description>
+<content:encoded>&lt;p&gt;If anyone has an extra RubyConf 2008 ticket for sale, I&#39;m interested... drop a comment here I&#39;ll get back with you right away.&lt;/p&gt;
+
+&lt;p&gt;I meant to get one early, but it didn&#39;t happen.&lt;/p&gt;</content:encoded>
+
+
+<dc:subject>Web/Tech</dc:subject>
+
+<dc:creator>Josh Goebel</dc:creator>
+<dc:date>2008-10-25T15:38:32-04:00</dc:date>
+</item>
+<item rdf:about="http://blog.pastie.org/2008/10/thanks-rails-machine-long-live-pastie.html">
+<title>Thanks Rails Machine. Long Live Pastie!</title>
+<link>http://blog.pastie.org/2008/10/thanks-rails-machine-long-live-pastie.html</link>
+<description>Just wanted to give a shout out to Rails Machine who just bumped Pastie&#39;s storage from 20gig to 40gig today. In case any of you don&#39;t know Rails Machine is an awesome place to host your Ruby on Rails hotness...</description>
+<content:encoded>&lt;p&gt;&lt;img src=&quot;http://joshgoebel.typepad.com/.a/6a00e552517e37883401053598a19a970b-800wi&quot; border=&quot;0&quot; style=&quot;padding:0px; border:1px solid #ccc;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Just wanted to give a shout out to &lt;a href=&quot;http://railsmachine.com/&quot;&gt;Rails Machine&lt;/a&gt; who just bumped &lt;a href=&quot;http://pastie.org/&quot;&gt;Pastie&#39;s&lt;/a&gt; storage from 20gig to 40gig today.  In case any of you don&#39;t know Rails Machine is an awesome place to host your Ruby on Rails hotness and they also provide the server, storage, and bandwidth to keep Pastie up and running.&lt;/p&gt;
+
+&lt;p&gt;Yes, I know Pastie has it&#39;s issues from time to time (the damn Ultraviolet library I think) but let no one confuse them with Rails Machine problems. :-)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Rails Machine rocks!&lt;/strong&gt;&lt;br /&gt;
+&lt;/p&gt;</content:encoded>
+
+
+<dc:subject>Web/Tech</dc:subject>
+
+<dc:creator>Josh Goebel</dc:creator>
+<dc:date>2008-10-21T08:49:26-04:00</dc:date>
+</item>
+<item rdf:about="http://blog.pastie.org/2008/10/mysql-64-bit-ruby-32-bit-friends-again.html">
+<title>MySQL 64-bit, Ruby 32-bit, Friends Again</title>
+<link>http://blog.pastie.org/2008/10/mysql-64-bit-ruby-32-bit-friends-again.html</link>
+<description>Thanks to Timothy Harper for suggesting the (in hindsight fairly obvious) way out of this dilemma: build and link against the 32-bit version of the MySQL library. Unfortunately I didn&#39;t find it anywhere near that simple, but here is what...</description>
+<content:encoded>&lt;p&gt;Thanks to &lt;a href=&quot;http://tim.theenchanter.com/&quot;&gt;Timothy Harper&lt;/a&gt; for suggesting the (in hindsight fairly obvious) way out of this dilemma: build and link against the 32-bit version of the MySQL library.  Unfortunately I didn&#39;t find it anywhere near that simple, but here is what I did:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt; Install 64-bit MySQL (you&#39;re probably already past this)&lt;/li&gt;
+&lt;li&gt; Install 32-bit MySQL&lt;/li&gt;
+&lt;li&gt; change directory to /usr/local&lt;/li&gt;
+&lt;li&gt;re-symlink mysql &amp;rarr; to the 64-bit version (since the 32-bit install clobbered the symlink)&lt;/li&gt;
+&lt;li&gt;symlink sql32 &amp;rarr; to the 32-bit version (for hackery later the name length needs to be the same so when we edit the binary lib file we change as little as possible)&lt;/li&gt;
+&lt;li&gt;Re-install 64-bit MySQL (the 32-bit version hosed mine)&lt;/li&gt;
+&lt;li&gt;Build the gem against the 32-bit MySQL&lt;/li&gt;
+&lt;li&gt;Binary edit your /Library/Ruby/Gems/1.8/gems/mysql2.7/lib/mysql.bundle to fix the broken hard-coded path&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3&gt;Maybe&lt;/h3&gt;
+
+&lt;p&gt;You may also need to remove (or move) /Library/Ruby/Site/1.8/universal-darwin9.0/mysql.bundle if Ruby tries to use it over the gem version you installed.&lt;/p&gt;
+
+&lt;h3&gt;Steps 7 and 8&lt;/h3&gt;
+
+&lt;p&gt;First, lets build out MySQL gem.  If you read the verbose output you&#39;ll see it&#39;s building and linking against the sql32 libs.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;
+sudo env ARCHFLAGS=&quot;-arch i386&quot; gem install -V mysql -- --with-mysql-config=/usr/local/sql32/bin/mysql_config
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Unfortunately the mysql.bundle this builds still has a hard reference to /usr/local/mysql/lib (does it get it from the libmysqlclient file which also has it hard coded?) so we will need to open it in a binary editor (I used &lt;a href=&quot;http://www.suavetech.com/0xed/0xed.html&quot;&gt;0xED&lt;/a&gt;) and do a search and replace like this (I just found it manually and re-typed it... I don&#39;t actually see a search and replace option):&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;strong&gt;local/mysql/lib &amp;rarr; local/sql32/lib&lt;/strong&gt;
+&lt;/li&gt;&lt;/ul&gt;
+
+&lt;p&gt;0xED doesn&#39;t seem to support authenticating sudo style so you may need to save your changes to your desktop and then copy the mysql.bundle back into your gems folder.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Ok, I&#39;ll be the first to admit that is a royal pain in the ass.&lt;/strong&gt; It would have been easier to just re-install 32-bit and be done with it... but I feel a warm, fuzzy sense of satisfaction knowing I&#39;m still using the mighty 64-bit MySQL.&lt;/p&gt;
+
+&lt;p&gt;If anyone seems any ideas on how to improve the process please let me know and I&#39;ll update the post.  I just fired up Rails and confirmed this seems to work perfectly.&lt;/p&gt;</content:encoded>
+
+
+
+<dc:creator>Josh Goebel</dc:creator>
+<dc:date>2008-10-21T04:56:03-04:00</dc:date>
+</item>
+
+
+</rdf:RDF>
+<!-- ph=1 -->
+<!-- nhm:dynamic-ssi -->

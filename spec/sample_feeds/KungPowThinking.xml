@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="http://feeds.feedburner.com/~d/styles/atom10full.xsl" type="text/xsl" media="screen"?><?xml-stylesheet href="http://feeds.feedburner.com/~d/styles/itemcontent.css" type="text/css" media="screen"?><feed xmlns="http://www.w3.org/2005/Atom" xmlns:thr="http://purl.org/syndication/thread/1.0" xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" xml:lang="en" xml:base="http://www.kungpowthinking.com/wp-atom.php">
+	<title type="text">KungPowThinking</title>
+	<subtitle type="text">Making your brain hurt with every word</subtitle>
+
+	<updated>2008-11-29T08:46:34Z</updated>
+	<generator uri="http://wordpress.org/" version="2.6.2">WordPress</generator>
+
+	<link rel="alternate" type="text/html" href="http://www.kungpowthinking.com" />
+	<id>http://www.kungpowthinking.com/feed/atom/</id>
+	
+
+			<link rel="self" href="http://feeds.feedburner.com/Kungpowthinking" type="application/atom+xml" /><entry>
+		<author>
+			<name>Josh Viney</name>
+						<uri>http://www.kungpowthinking.com</uri>
+					</author>
+		<title type="html"><![CDATA[A Problem that Needs Solving]]></title>
+		<link rel="alternate" type="text/html" href="http://feeds.feedburner.com/~r/Kungpowthinking/~3/469155447/" />
+		<id>http://www.kungpowthinking.com/?p=154</id>
+		<updated>2008-11-29T08:46:34Z</updated>
+		<published>2008-11-29T08:46:34Z</published>
+		<category scheme="http://www.kungpowthinking.com" term="" />		<summary type="html"><![CDATA[In the past week I&#8217;ve had almost identical conversations with two of my friends. One friend I&#8217;ve known since high school. He&#8217;s in the middle of the process of creating a 501 c 3 non-profit focused on creation of sustainable communities using cool new stackable hydroponic growing technology. My other friend is a director at [...]]]></summary>
+		<content type="html" xml:base="http://www.kungpowthinking.com/2008/11/29/a-problem-that-needs-solving/">&lt;p&gt;In the past week I&amp;#8217;ve had almost identical conversations with two of my friends. One friend I&amp;#8217;ve known since high school. He&amp;#8217;s in the middle of the process of creating a 501 c 3 non-profit focused on creation of sustainable communities using cool new stackable hydroponic growing technology. My other friend is a director at a non-profit focused on aging research and resources for the elderly. Two very different guys who don&amp;#8217;t know each other focused on two very different problems. Interestingly enough they both have the exact same problem. The problem is that non-profits are notoriously bad at managing their data.&lt;/p&gt;
+&lt;p&gt;My friend who is starting his non-profit ran square into the reporting issue while applying for 501 c 3 status. From what he tells me, there are a fair number of hoops that must be jumped through during the application process and even more required when applying for grants. He mentioned to me that two things became apparent during the process. One is that it is very difficult to find funding for a startup non-profit, and the other is that it is even more difficult to find the data to create the projections necessary for an accurate plan. He mentioned that the government provides census data, but after that the real detailed data is decentralized in the hands of existing non-profits who tend to store their data in massive Excel spreadsheets, on hardcopies filed away, or in custom legacy systems no one can use.&lt;/p&gt;
+&lt;p&gt;My friend at the existing non-profit told me a story about his first month there when he realized that almost no one who worked for him really knew how to use a computer for anything other than entering data into spreadsheets. He mentioned trying to gather reports and having to sort through giant printed pages of data before almost giving up entirely. He ended up having to let people go and appointing one of the few employees who understood reporting, an ex-banker, in charge of working with him to centralize their data. They&amp;#8217;ve bee working on it for a while and still aren&amp;#8217;t done.&lt;/p&gt;
+&lt;p&gt;Hearing these stories really upset me for a couple of reasons. The first is purely economic. I know quantifying the dollar value of the social good produced by non-profits is not really the point, but there must be some accountability considering the current state of the economy and the likelihood that services who can&amp;#8217;t prove their worth will be discontinued. The lack of decent reporting technology, tactics and know-how makes this accountability inaccurate at best and impossible at worst. The bottom line is that any business run using the reporting tactics of non-profits would cease to exist very very quickly. The second thing that really bothered me was hearing about all of the extremely important data, the kind of data that gives real insight into what is happening in people&amp;#8217;s lives, being hidden away in boxes in backrooms and warehouses. Non-profits gather tons of data. In fact, many non-profits are focused on doing nothing but gathering data, but there doesn&amp;#8217;t seem to be a reliable way for them to share their findings or for anyone looking to provide services, including the government, to access the data without a monumental effort.&lt;/p&gt;
+&lt;p&gt;After hearing all of this, I did some quick Googling, because I know absolutely nothing about non-profits or about which inexpensive tools they actually have access to. What I found in my ten minutes of online research pointed to software solutions for helping non-profits manage their organizations. Software targeted at managing staff, fundraising, web site content management, email newsletter tools, etc. What I did not find was a centralized place for them to store their data that would allow others to access it. So that they could share their findings and work together. Now I&amp;#8217;m not saying it doesn&amp;#8217;t exist. I didn&amp;#8217;t look very long and my friends just might not be aware of the solutions, but I&amp;#8217;m guessing that this central data repository doesn&amp;#8217;t exist for a few reasons. The main reason being that the data gathered by within each non-profit sector can be dramatically different and very difficult to reasonably store and query - a pretty big technology problem. Another being that traditionally non-profits do not have a lot of money or expertise in technology and have cultures that tend towards &amp;#8220;old school&amp;#8221; thinking. Things like giant spreadsheets, hardcopies and legacy custom databases are very likely to be the norm given their culture and budgets.&lt;/p&gt;
+&lt;p&gt;If I&amp;#8217;m right and this problem is real, there&amp;#8217;s also opportunity here. There&amp;#8217;s opportunity for some business to put a solution together that could help solve the problem and probably make a reasonable amount of money doing so. For some reason I see Google as the perfect business fit. But better than a business opportunity, there&amp;#8217;s an opportunity for the Open Source community to solve a real problem and do some material good in the process. The more I think about it, the more it seems to me that this is the perfect problem for the Open Source community to tackle because it will take good technology and lots of motivated folks to find the answer - oh and non-profits as individual organizations really don&amp;#8217;t tend to have much money to spend on this kind of thing until the value can be proven and the budgets put together.&lt;/p&gt;
+&lt;p&gt;So, here&amp;#8217;s my plan to help. First, I&amp;#8217;m writing this rambling blog post on my site that receives approximately ten visitors per day. Second, I&amp;#8217;m asking that anyone reading this post who knows more about non-profits and technology solutions please comment and leave links to available resources that my friends might be able to use. Third, I&amp;#8217;m asking that anyone involved in the Open Source community please seriously consider this as a problem to tackle. I&amp;#8217;m certain there will be many appreciate people out there and plenty of glory if it can be solved.&lt;/p&gt;
+&lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/Kungpowthinking?a=0tFPN"&gt;&lt;img src="http://feeds.feedburner.com/~f/Kungpowthinking?i=0tFPN" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/Kungpowthinking/~4/469155447" height="1" width="1"/&gt;</content>
+		<link rel="replies" type="text/html" href="http://www.kungpowthinking.com/2008/11/29/a-problem-that-needs-solving/#comments" thr:count="-1" />
+		<link rel="replies" type="application/atom+xml" href="http://www.kungpowthinking.com/2008/11/29/a-problem-that-needs-solving/feed/atom/" thr:count="-1" />
+		<thr:total>-1</thr:total>
+	<feedburner:origLink>http://www.kungpowthinking.com/2008/11/29/a-problem-that-needs-solving/</feedburner:origLink></entry>
+		<entry>
+		<author>
+			<name>Josh Viney</name>
+						<uri>http://www.kungpowthinking.com</uri>
+					</author>
+		<title type="html"><![CDATA[Tough Times]]></title>
+		<link rel="alternate" type="text/html" href="http://feeds.feedburner.com/~r/Kungpowthinking/~3/416487873/" />
+		<id>http://www.kungpowthinking.com/?p=149</id>
+		<updated>2008-10-10T05:42:44Z</updated>
+		<published>2008-10-10T05:42:44Z</published>
+		<category scheme="http://www.kungpowthinking.com" term="" />		<summary type="html"><![CDATA[So, it&#8217;s been a tough few weeks for a lot of folks. Quite an understatement huh?
+The crazy thing about it is that it&#8217;s really just begun, especially for Web folks. A lot of Web folks haven&#8217;t felt the crunch quite yet for a variety of reasons, the biggest being that a lot are sitting on [...]]]></summary>
+		<content type="html" xml:base="http://www.kungpowthinking.com/2008/10/10/tough-times/">&lt;p&gt;So, it&amp;#8217;s been a tough few weeks for a lot of folks. Quite an understatement huh?&lt;/p&gt;
+&lt;p&gt;The crazy thing about it is that it&amp;#8217;s really just begun, especially for Web folks. A lot of Web folks haven&amp;#8217;t felt the crunch quite yet for a variety of reasons, the biggest being that a lot are sitting on some funding that should last them a little while. The problem is that, unless they have a real profit model, that funding is going to dry up and the next round is probably not going to be there. The bright side is that this isn&amp;#8217;t the first time it&amp;#8217;s happened to many of us, and the smart companies realized a year ago that this Web 2.0 boom couldn&amp;#8217;t last forever and prepared for the downturn. Here&amp;#8217;s my take on what will happen.&lt;/p&gt;
+&lt;p&gt;The bad news:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Companies who have been living off of funding without a profit model are going to feel the squeeze real soon. If you&amp;#8217;ve been focusing on growing a user base without a profit model in the hopes of an exit, you&amp;#8217;re probably out of luck for a little while&lt;/li&gt;
+&lt;li&gt;Start-ups looking to start something better be looking to bootstrap because investors are going to get stingy, there&amp;#8217;s no way to get loans, and the &amp;#8220;big win&amp;#8221; exit strategies are quickly evaporating (&lt;a href="http://en.wikipedia.org/wiki/Sarbanes-Oxley_Act" title="Wikipedia Sarbanes Oxley Act" target="_self" onclick="javascript:pageTracker._trackPageview ('/outbound/en.wikipedia.org');"&gt;Sarbanes-Oxley&lt;/a&gt; took away the IPO option and the big Web companies aren&amp;#8217;t going to have the cash to acquire for a while)&lt;/li&gt;
+&lt;li&gt;Impression-based advertising is going to dry up as companies reduce marketing and advertising budgets. The ad agencies and remaining portals are going to be in trouble. Just watch to see if Y!, MSN, etc. start serving house ads for their own products and services.&lt;/li&gt;
+&lt;li&gt;Luxury consumer products and electronics are going to take a hit. This is obvious, but I don&amp;#8217;t see many people buying computers, flat screen TVs, blueray disc players, smart phones, cars, etc. I say this for two reasons. The first is that no one has disposable income and the second is that everyone in the world just got done buying those things a year ago&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;On the bright side:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Companies who focus on performance-based advertising will be ok. That means anyone doing search pay-per-click advertising or acquisition based advertising. I back this up by pointing to Google&amp;#8217;s remarkable success during the dot com bust, and the likelihood that many companies are going to look for smart measurable ways to increase sales&lt;/li&gt;
+&lt;li&gt;Companies who make money by helping people save money will be ok. This includes companies like &lt;a href="http://ebay.com" title="EBay" target="_self" onclick="javascript:pageTracker._trackPageview ('/outbound/ebay.com');"&gt;Ebay&lt;/a&gt; (even though they just laid people off), &lt;a href="http://zappos.com" title="Zappos" target="_self" onclick="javascript:pageTracker._trackPageview ('/outbound/zappos.com');"&gt;Zappos&lt;/a&gt;, &lt;a href="http://netflix.com" title="Netflix" target="_self" onclick="javascript:pageTracker._trackPageview ('/outbound/netflix.com');"&gt;Netflix&lt;/a&gt;, etc. Consumers are going to tighten their belts, but they&amp;#8217;ll still want to make purchases especially for the holiday season. They know that you can get the best bargains online and they&amp;#8217;ll go where they know the deals are&lt;/li&gt;
+&lt;li&gt;Anyone providing entertainment or distraction at a reasonable cost will be ok. People will be looking for reasonably priced distractions from the madness, and online media distribution is real this time around. Netflix is cheaper than going to a movie. iTunes, Hulu, YouTube, etc. If they&amp;#8217;re monetizing their traffic, will be ok&lt;/li&gt;
+&lt;li&gt;This is different than the first time around. A lot of companies have been here before and know how to tighten their belts, and everyone can be confident that the Web will survive. That experience and confidence is huge this time around. The Web isn&amp;#8217;t run by kids anymore&lt;/li&gt;
+&lt;li&gt;Thanks to cloud computing, google apps, development platforms like Ruby on Rails, viral marketing, and web standards, the operational cost of running a successful web site is dramatically less than it was just a few years ago&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So what do you do? Well, here&amp;#8217;s what I recommend. If you have a job, stay where you are. If you work for a start-up that has some good traction but generates no revenue or relies on impression-based advertising, find a way to start charging for your service. Don&amp;#8217;t be scared to ask for money for your quality product or service. A lot of companies are scared to charge, and that fear is going to drive them right out of business. Find ways to cut costs other than laying off smart people. Your people are your greatest asset. Look for smart inexpensive technology like Google Apps and cloud computing. Don&amp;#8217;t be retarded and spend money on things you don&amp;#8217;t need. Don&amp;#8217;t spend ridiculous money on Sharepoint when Basecamp and Google Docs are enough. Take open source products seriously. They will save you money. They&amp;#8217;ve matured a lot in the past five years and many are comprable or better than similar closed source products. Also consider that many of the folks who contribute to open source products to it for the passion and glory, not the money. They&amp;#8217;re going to be paying attention while the closed source folks are laying people off. Speaking of layoffs, it might even be a great time to hire as some companies lay off and freelancers run for cover. Hire if you&amp;#8217;ve got the money, and just like in the NFL draft, go for talent not position. This might just be your chance to get that ninja developer you always wanted.&lt;/p&gt;
+&lt;p&gt;Take this opportunity to innovate, build a tight team and streamline your business. If you succeed you might just be looking at a very big win. Oh yea and I&amp;#8217;ll say it one more time to be absolutely clear. KEEP YOUR SMART PEOPLE AT ALL COSTS. THEY ARE YOUR BEST ASSET. Of course, if you don&amp;#8217;t want them, let me know because I&amp;#8217;ve got some kickass ideas and my company is ready to go.&lt;/p&gt;
+&lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/Kungpowthinking?a=xRJbM"&gt;&lt;img src="http://feeds.feedburner.com/~f/Kungpowthinking?i=xRJbM" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/Kungpowthinking/~4/416487873" height="1" width="1"/&gt;</content>
+		<link rel="replies" type="text/html" href="http://www.kungpowthinking.com/2008/10/10/tough-times/#comments" thr:count="-1" />
+		<link rel="replies" type="application/atom+xml" href="http://www.kungpowthinking.com/2008/10/10/tough-times/feed/atom/" thr:count="-1" />
+		<thr:total>-1</thr:total>
+	<feedburner:origLink>http://www.kungpowthinking.com/2008/10/10/tough-times/</feedburner:origLink></entry>
+		<entry>
+		<author>
+			<name>Josh Viney</name>
+						<uri>http://www.kungpowthinking.com</uri>
+					</author>
+		<title type="html"><![CDATA[The Future of Browsing Courtesy of MS and Mozilla]]></title>
+		<link rel="alternate" type="text/html" href="http://feeds.feedburner.com/~r/Kungpowthinking/~3/377527971/" />
+		<id>http://www.kungpowthinking.com/?p=143</id>
+		<updated>2008-08-28T22:29:23Z</updated>
+		<published>2008-08-28T22:24:50Z</published>
+		<category scheme="http://www.kungpowthinking.com" term="" />		<summary type="html"><![CDATA[Very cool stuff people. Mozilla&#8217;s Ubiquity and MS IE 8 Beta 2. Two different takes trying to solve very similar problems. I think I smell a very interesting trend.
+The problem:
+
+The Web as we use it today is only very loosely connected through hyperlinks or developer created mashups. Even though the business environment on the Web [...]]]></summary>
+		<content type="html" xml:base="http://www.kungpowthinking.com/2008/08/28/the-future-of-browsing-courtesy-of-ms-and-mozilla/">&lt;p&gt;Very cool stuff people. &lt;a href="http://labs.mozilla.com/2008/08/introducing-ubiquity/" title="Mozilla Ubiquity" target="_self" onclick="javascript:pageTracker._trackPageview ('/outbound/labs.mozilla.com');"&gt;Mozilla&amp;#8217;s Ubiquity&lt;/a&gt; and &lt;a href="http://www.microsoft.com/windows/products/winfamily/ie/ie8/default.mspx" title="MS IE 8 Beta 1" target="_self" onclick="javascript:pageTracker._trackPageview ('/outbound/www.microsoft.com');"&gt;MS IE 8 Beta 2&lt;/a&gt;. Two different takes trying to solve very similar problems. I think I smell a very interesting trend.&lt;/p&gt;
+&lt;p&gt;The problem:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The Web as we use it today is only very loosely connected through hyperlinks or developer created mashups. Even though the business environment on the Web has shifted slightly toward openness, mashups are limited by technical issues like API&amp;#8217;s and business relationships. User don&amp;#8217;t care about either. They just want to add maps to email and tell their friends about it.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Ubiquity is all about empowering users to create their own mashups leveraging natural language. To use and visualize data and functionality provided by various sites as they see fit. Ubiquity has real potential to put an end to the limitations of walled gardens, and finally put the power in the hands of the people. It&amp;#8217;s in super early Alpha release and there are definitely some challenges ahead, but I really dig it. Check out &lt;a href="http://www.azarask.in/blog/" title="Aza Raskin Blog" target="_self" onclick="javascript:pageTracker._trackPageview ('/outbound/www.azarask.in');"&gt;Aza Raskin&amp;#8217;s blog&lt;/a&gt; and the Mozilla site for Ubiquity to find out more. My quick take, this is exactly the kind of thing that could make the Web exciting again. Only limitation is that it looks to be linked directly to Firefox. It would be even cooler if it could stay away from the browser wars altogether. Something like &lt;a href="http://docs.blacktree.com/quicksilver/what_is_quicksilver" title="More Info About Quicksilver" target="_self" onclick="javascript:pageTracker._trackPageview ('/outbound/docs.blacktree.com');"&gt;QuickSilver&lt;/a&gt; by Blacktree or &lt;a href="http://humanized.com/enso/" title="More Info About Enso" target="_self" onclick="javascript:pageTracker._trackPageview ('/outbound/humanized.com');"&gt;Enso&lt;/a&gt; by Humanized. I also wonder how &lt;a href="http://dictionary.reference.com/browse/ubiquitous" title="Definition of Ubiquitous" target="_self" onclick="javascript:pageTracker._trackPageview ('/outbound/dictionary.reference.com');"&gt;ubiquitous&lt;/a&gt; something leveraging &amp;#8220;natural language&amp;#8221; can be. I mean - which language? Note: if Aza reads this, I&amp;#8217;d love to lend a UX hand with Ubiquity. Seriously.&lt;/p&gt;
+&lt;p&gt;&lt;object width="400" height="298"&gt;&lt;param name="allowfullscreen" value="true" /&gt;&lt;param name="allowscriptaccess" value="always" /&gt;&lt;param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=1561578&amp;amp;server=vimeo.com&amp;amp;show_title=1&amp;amp;show_byline=1&amp;amp;show_portrait=0&amp;amp;color=&amp;amp;fullscreen=1" /&gt;&lt;embed src="http://vimeo.com/moogaloop.swf?clip_id=1561578&amp;amp;server=vimeo.com&amp;amp;show_title=1&amp;amp;show_byline=1&amp;amp;show_portrait=0&amp;amp;color=&amp;amp;fullscreen=1" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="400" height="298"&gt;&lt;/embed&gt;&lt;/object&gt;&lt;br /&gt;&lt;a href="http://vimeo.com/1561578?pg=embed&amp;amp;sec=1561578" onclick="javascript:pageTracker._trackPageview ('/outbound/vimeo.com');"&gt;Ubiquity for Firefox&lt;/a&gt; from &lt;a href="http://vimeo.com/user532161?pg=embed&amp;amp;sec=1561578" onclick="javascript:pageTracker._trackPageview ('/outbound/vimeo.com');"&gt;Aza Raskin&lt;/a&gt; on &lt;a href="http://vimeo.com?pg=embed&amp;amp;sec=1561578" onclick="javascript:pageTracker._trackPageview ('/outbound/vimeo.com?pg=embed&amp;amp;sec=1561578');"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;IE 8 seems to be Microsoft&amp;#8217;s attempt to solve the same problem through &lt;a href="http://www.microsoft.com/windows/products/winfamily/ie/ie8/features.mspx" title="IE 8 Features" target="_self" onclick="javascript:pageTracker._trackPageview ('/outbound/www.microsoft.com');"&gt;Accelerators and WebSlices&lt;/a&gt;. Accelerators are contextual services accessible via highlighting web page content and clicking the &lt;a href="http://www.ieaddons.com/en/accelerators/" title="IE 8 Accelerators" target="_self" onclick="javascript:pageTracker._trackPageview ('/outbound/www.ieaddons.com');"&gt;Accelerators&lt;/a&gt; icon. Developers can build Accelerators for their services and users can install them on IE 8. Webslices let users save sections of web pages for future access - not unlike Apple&amp;#8217;s Widgets which should be no surprise. Microsoft&amp;#8217;s solution is definitely further along than Ubiquity, but it still relies on developers to build the Accelerators and doesn&amp;#8217;t rely on natural language parsing black magic.&lt;/p&gt;
+&lt;p&gt;On a side note: I&amp;#8217;ve always thought it strange that MS causes complete software development nightmares for itself by trying to build operating systems that work on just about any hardware configuration users can splice together, but still can&amp;#8217;t come to terms with relinguishing control of software development. Reminds me of Steve Ballmer&amp;#8217;s famous freakout - &amp;#8220;Developers, developers, developers, developers.&amp;#8221; I&amp;#8217;ve always considered good developers to be scarce resources. It&amp;#8217;s gotta be tough to be a company that makes a ton of money selling developers the tools to build consumer products while still trying to sell consumer products yourself. I&amp;#8217;d prefer to see a CEO running around a stage yelling, &amp;#8220;people, people, people, people&amp;#8221; or even &amp;#8220;customers, customers, customers, customers&amp;#8221; wouldn&amp;#8217;t you?&lt;/p&gt;
+&lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/Kungpowthinking?a=5zQCYK"&gt;&lt;img src="http://feeds.feedburner.com/~f/Kungpowthinking?i=5zQCYK" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/Kungpowthinking/~4/377527971" height="1" width="1"/&gt;</content>
+		<link rel="replies" type="text/html" href="http://www.kungpowthinking.com/2008/08/28/the-future-of-browsing-courtesy-of-ms-and-mozilla/#comments" thr:count="1" />
+		<link rel="replies" type="application/atom+xml" href="http://www.kungpowthinking.com/2008/08/28/the-future-of-browsing-courtesy-of-ms-and-mozilla/feed/atom/" thr:count="1" />
+		<thr:total>1</thr:total>
+	<feedburner:origLink>http://www.kungpowthinking.com/2008/08/28/the-future-of-browsing-courtesy-of-ms-and-mozilla/</feedburner:origLink></entry>
+		<entry>
+		<author>
+			<name>Josh Viney</name>
+						<uri>http://www.kungpowthinking.com</uri>
+					</author>
+		<title type="html"><![CDATA[Some things in New York are just plain pathetic.]]></title>
+		<link rel="alternate" type="text/html" href="http://feeds.feedburner.com/~r/Kungpowthinking/~3/372219584/" />
+		<id>http://www.kungpowthinking.com/?p=141</id>
+		<updated>2008-08-22T22:01:19Z</updated>
+		<published>2008-08-22T22:01:19Z</published>
+		<category scheme="http://www.kungpowthinking.com" term="" />		<summary type="html"><![CDATA[Around the corner from my office they decided to construct a bike lane and &#8220;pedestrian plazas&#8221; down the center of Broadway between Times Square and Herald Square. They cut Broadway into two lanes, which happens to be an interesting choice for a city that claims to have major congestion problems. Note: I&#8217;m originally from Southern [...]]]></summary>
+		<content type="html" xml:base="http://www.kungpowthinking.com/2008/08/22/some-things-in-new-york-are-just-plain-pathetic/">&lt;p&gt;Around the corner from my office they decided to construct a bike lane and &amp;#8220;pedestrian plazas&amp;#8221; down the center of Broadway between Times Square and Herald Square. They cut Broadway into two lanes, which happens to be an interesting choice for a city that claims to have major congestion problems. Note: I&amp;#8217;m originally from Southern California, and compared to traffic on the 405 or 10 at rush hour, Manhattan traffic is laughable. One of my friends has a theory that they want to make Manhattan traffic and parking so bad that people will quit driving into the city all together. I don&amp;#8217;t have a car anymore, so I don&amp;#8217;t really care. I&amp;#8217;ll leave the traffic management conspiracy theories to the folks who suffer the most. My problem with the recent &amp;#8220;construction&amp;#8221; is that it&amp;#8217;s stupid and pathetic.&lt;/p&gt;
+&lt;p&gt;So I googled the construction to see if I could find any details online. I found the plans (&lt;a href="http://www.streetsblog.org/wp-content/pdf/broadwayblvd.pdf" title="Broadway Construction Plans PDF" target="_self" onclick="javascript:pageTracker._trackPageview ('/outbound/www.streetsblog.org');"&gt;PDF&lt;/a&gt;) and some early concepts at &lt;a href="http://www.streetsblog.org/2008/06/16/dot-gives-its-regards-to-broadway/" title="Streetsblog.org" target="_self" onclick="javascript:pageTracker._trackPageview ('/outbound/www.streetsblog.org');"&gt;Streetsblog.org&lt;/a&gt;, which seem kinda nice. I mean there&amp;#8217;s no question this area of Midtown could use some significant beautification and bike lanes are always kinda nice. My problem is with how they went about constructing the so called &amp;#8220;pedestrian plazas&amp;#8221;. Here&amp;#8217;s what they did as far as I can tell.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Painted new lane lines down Broadway cutting the car lanes in half&lt;/li&gt;
+&lt;li&gt;Painted a bike lane down the eastern side&lt;/li&gt;
+&lt;li&gt;Poured tar or something similar (I don&amp;#8217;t think they actually use tar anymore) all over the space between the car lanes and the new bike lane&lt;/li&gt;
+&lt;li&gt;Dumped sand all over the &amp;#8220;tar&amp;#8221;&lt;/li&gt;
+&lt;li&gt;Put potted plants and outdoor furniture on the sand covered tar&lt;/li&gt;
+&lt;li&gt;Called it a &amp;#8220;pedestrian plaza&amp;#8221;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;I&amp;#8217;m no expert in this stuff, but it seems kinda odd. There are no raised medians around the sand covered &amp;#8220;plazas&amp;#8221;, the sand doesn&amp;#8217;t stick very well so it constantly needs to be manicured, lawn chairs and potted plants do not a plaza make, and it cannot be safe. Besides all that, who in the world wants to sit in the middle of the street while cars are zooming by with exhaust blowing in your face? This half-assed effort reminds me of the so called &amp;#8220;park&amp;#8221; at Herald Square across from Macy&amp;#8217;s. They call it a park, but really it&amp;#8217;s a gated off concrete median/lane divider. I mean come on people. If you&amp;#8217;re gonna call something a plaza make it a plaza, and if you&amp;#8217;re gonna call something a park make a park. No wonder everyone in Manhattan seems so miserable.&lt;/p&gt;
+&lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/Kungpowthinking?a=sIg5FK"&gt;&lt;img src="http://feeds.feedburner.com/~f/Kungpowthinking?i=sIg5FK" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/Kungpowthinking/~4/372219584" height="1" width="1"/&gt;</content>
+		<link rel="replies" type="text/html" href="http://www.kungpowthinking.com/2008/08/22/some-things-in-new-york-are-just-plain-pathetic/#comments" thr:count="1" />
+		<link rel="replies" type="application/atom+xml" href="http://www.kungpowthinking.com/2008/08/22/some-things-in-new-york-are-just-plain-pathetic/feed/atom/" thr:count="1" />
+		<thr:total>1</thr:total>
+	<feedburner:origLink>http://www.kungpowthinking.com/2008/08/22/some-things-in-new-york-are-just-plain-pathetic/</feedburner:origLink></entry>
+		<entry>
+		<author>
+			<name>Josh Viney</name>
+						<uri>http://www.kungpowthinking.com</uri>
+					</author>
+		<title type="html"><![CDATA[Barack get&#8217;s Rickrolled. Hahahaha.]]></title>
+		<link rel="alternate" type="text/html" href="http://feeds.feedburner.com/~r/Kungpowthinking/~3/371599031/" />
+		<id>http://www.kungpowthinking.com/?p=139</id>
+		<updated>2008-08-22T05:46:37Z</updated>
+		<published>2008-08-22T05:46:37Z</published>
+		<category scheme="http://www.kungpowthinking.com" term="" />		<summary type="html"><![CDATA[Kaltura
+]]></summary>
+		<content type="html" xml:base="http://www.kungpowthinking.com/2008/08/22/barack-gets-rickrolled-hahahaha/">&lt;p&gt;&lt;object name="kaltura_player_1219383856" id="kaltura_player_1219383856" type="application/x-shockwave-flash" allowScriptAccess="always" allowNetworking="all" allowFullScreen="true" height="358" width="400" data="http://www.kaltura.com/index.php/kwidget/wid/zquzv6m85c"&gt;&lt;param name="allowScriptAccess" value="always" /&gt;&lt;param name="allowNetworking" value="all" /&gt;&lt;param name="allowFullScreen" value="true" /&gt;&lt;param name="bgcolor" value="#000000" /&gt;&lt;param name="movie" value="http://www.kaltura.com/index.php/kwidget/wid/zquzv6m85c"/&gt;&lt;param name="flashVars" value=""/&gt;&lt;param name="wmode" value="opaque"/&gt;&lt;a href="http://www.kaltura.com" style="color:#bcff63; text-decoration:none; " onclick="javascript:pageTracker._trackPageview ('/outbound/www.kaltura.com');"&gt;Kaltura&lt;/a&gt;&lt;/object&gt;&lt;/p&gt;
+&lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/Kungpowthinking?a=66HE0K"&gt;&lt;img src="http://feeds.feedburner.com/~f/Kungpowthinking?i=66HE0K" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/Kungpowthinking/~4/371599031" height="1" width="1"/&gt;</content>
+		<link rel="replies" type="text/html" href="http://www.kungpowthinking.com/2008/08/22/barack-gets-rickrolled-hahahaha/#comments" thr:count="-1" />
+		<link rel="replies" type="application/atom+xml" href="http://www.kungpowthinking.com/2008/08/22/barack-gets-rickrolled-hahahaha/feed/atom/" thr:count="-1" />
+		<thr:total>-1</thr:total>
+	<feedburner:origLink>http://www.kungpowthinking.com/2008/08/22/barack-gets-rickrolled-hahahaha/</feedburner:origLink></entry>
+		<entry>
+		<author>
+			<name>Josh Viney</name>
+						<uri>http://www.kungpowthinking.com</uri>
+					</author>
+		<title type="html"><![CDATA[Here&#8217;s to Politics - More YouTube]]></title>
+		<link rel="alternate" type="text/html" href="http://feeds.feedburner.com/~r/Kungpowthinking/~3/370541518/" />
+		<id>http://www.kungpowthinking.com/?p=137</id>
+		<updated>2008-08-21T02:41:50Z</updated>
+		<published>2008-08-21T02:41:50Z</published>
+		<category scheme="http://www.kungpowthinking.com" term="" />		<summary type="html"><![CDATA[
+]]></summary>
+		<content type="html" xml:base="http://www.kungpowthinking.com/2008/08/20/heres-to-politics-more-youtube/">&lt;p&gt;&lt;object width="425" height="344"&gt;&lt;param name="movie" value="http://www.youtube.com/v/DCNagTxA6Z0&amp;#038;hl=en&amp;#038;fs=1"&gt;&lt;/param&gt;&lt;param name="allowFullScreen" value="true"&gt;&lt;/param&gt;&lt;embed src="http://www.youtube.com/v/DCNagTxA6Z0&amp;#038;hl=en&amp;#038;fs=1" type="application/x-shockwave-flash" allowfullscreen="true" width="425" height="344"&gt;&lt;/embed&gt;&lt;/object&gt;&lt;/p&gt;
+&lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/Kungpowthinking?a=32WvcK"&gt;&lt;img src="http://feeds.feedburner.com/~f/Kungpowthinking?i=32WvcK" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/Kungpowthinking/~4/370541518" height="1" width="1"/&gt;</content>
+		<link rel="replies" type="text/html" href="http://www.kungpowthinking.com/2008/08/20/heres-to-politics-more-youtube/#comments" thr:count="-1" />
+		<link rel="replies" type="application/atom+xml" href="http://www.kungpowthinking.com/2008/08/20/heres-to-politics-more-youtube/feed/atom/" thr:count="-1" />
+		<thr:total>-1</thr:total>
+	<feedburner:origLink>http://www.kungpowthinking.com/2008/08/20/heres-to-politics-more-youtube/</feedburner:origLink></entry>
+		<entry>
+		<author>
+			<name>Josh Viney</name>
+						<uri>http://www.kungpowthinking.com</uri>
+					</author>
+		<title type="html"><![CDATA[&#8230;and now for some YouTube]]></title>
+		<link rel="alternate" type="text/html" href="http://feeds.feedburner.com/~r/Kungpowthinking/~3/369373640/" />
+		<id>http://www.kungpowthinking.com/?p=134</id>
+		<updated>2008-08-19T21:16:40Z</updated>
+		<published>2008-08-19T21:16:40Z</published>
+		<category scheme="http://www.kungpowthinking.com" term="" />		<summary type="html"><![CDATA[
+]]></summary>
+		<content type="html" xml:base="http://www.kungpowthinking.com/2008/08/19/and-now-for-some-youtube/">&lt;p&gt;&lt;object width="425" height="344"&gt;&lt;param name="movie" value="http://www.youtube.com/v/6bB1XyNqcbU&amp;#038;hl=en&amp;#038;fs=1"&gt;&lt;/param&gt;&lt;param name="allowFullScreen" value="true"&gt;&lt;/param&gt;&lt;embed src="http://www.youtube.com/v/6bB1XyNqcbU&amp;#038;hl=en&amp;#038;fs=1" type="application/x-shockwave-flash" allowfullscreen="true" width="425" height="344"&gt;&lt;/embed&gt;&lt;/object&gt;&lt;/p&gt;
+&lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/Kungpowthinking?a=xvdpiK"&gt;&lt;img src="http://feeds.feedburner.com/~f/Kungpowthinking?i=xvdpiK" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/Kungpowthinking/~4/369373640" height="1" width="1"/&gt;</content>
+		<link rel="replies" type="text/html" href="http://www.kungpowthinking.com/2008/08/19/and-now-for-some-youtube/#comments" thr:count="-1" />
+		<link rel="replies" type="application/atom+xml" href="http://www.kungpowthinking.com/2008/08/19/and-now-for-some-youtube/feed/atom/" thr:count="-1" />
+		<thr:total>-1</thr:total>
+	<feedburner:origLink>http://www.kungpowthinking.com/2008/08/19/and-now-for-some-youtube/</feedburner:origLink></entry>
+		<entry>
+		<author>
+			<name>Josh Viney</name>
+						<uri>http://www.kungpowthinking.com</uri>
+					</author>
+		<title type="html"><![CDATA[Resolution]]></title>
+		<link rel="alternate" type="text/html" href="http://feeds.feedburner.com/~r/Kungpowthinking/~3/367527892/" />
+		<id>http://www.kungpowthinking.com/?p=130</id>
+		<updated>2008-08-17T21:15:36Z</updated>
+		<published>2008-08-17T21:15:36Z</published>
+		<category scheme="http://www.kungpowthinking.com" term="" />		<summary type="html"><![CDATA[So, last Thursday evening I was walking in SoHo to meet with a couple friends. It had started raining a bit earlier in the day and caught most people off guard. I was lucky because I was able to grab up one of the few extra umbrellas at the office before I left. So here&#8217;s [...]]]></summary>
+		<content type="html" xml:base="http://www.kungpowthinking.com/2008/08/17/resolution/">&lt;p&gt;So, last Thursday evening I was walking in SoHo to meet with a couple friends. It had started raining a bit earlier in the day and caught most people off guard. I was lucky because I was able to grab up one of the few extra umbrellas at the office before I left. So here&amp;#8217;s the scenario - Me w/ umbrella walking in SoHo relatively dry. I&amp;#8217;m about half a block from my destination when I see a girl waiting to cross the street. She&amp;#8217;s stuck in the rain w/out an umbrella and trying her best to keep dry by hiding under the crosswalk sign. I turn to see what she&amp;#8217;s doing, she turns to look at me with a slightly embarrassed smile on her face&amp;#8230; That&amp;#8217;s where it ends.&lt;/p&gt;
+&lt;p&gt;I kept walking, and now I feel bad. Been thinking about it for a couple days, and basically I should have given her my umbrella. Not because she was pretty or because I would have liked to have met her, but simply because she needed it a hell of a lot more than I did. I honestly don&amp;#8217;t even like carrying an umbrella. So my resolution is to put an extra umbrella in my messenger bag (one of the cheap $5 ones that they sell on the street) and next time it rains like that I&amp;#8217;m going to give it to a stranger in need. I know I could use the karmic boost.&lt;/p&gt;
+&lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/Kungpowthinking?a=J5jJFK"&gt;&lt;img src="http://feeds.feedburner.com/~f/Kungpowthinking?i=J5jJFK" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/Kungpowthinking/~4/367527892" height="1" width="1"/&gt;</content>
+		<link rel="replies" type="text/html" href="http://www.kungpowthinking.com/2008/08/17/resolution/#comments" thr:count="1" />
+		<link rel="replies" type="application/atom+xml" href="http://www.kungpowthinking.com/2008/08/17/resolution/feed/atom/" thr:count="1" />
+		<thr:total>1</thr:total>
+	<feedburner:origLink>http://www.kungpowthinking.com/2008/08/17/resolution/</feedburner:origLink></entry>
+		<entry>
+		<author>
+			<name>Josh Viney</name>
+						<uri>http://www.kungpowthinking.com</uri>
+					</author>
+		<title type="html"><![CDATA[Nothing Makes Me Want to Buy Something More Than an Error]]></title>
+		<link rel="alternate" type="text/html" href="http://feeds.feedburner.com/~r/Kungpowthinking/~3/364419560/" />
+		<id>http://www.kungpowthinking.com/?p=127</id>
+		<updated>2008-08-14T02:30:56Z</updated>
+		<published>2008-08-14T02:30:56Z</published>
+		<category scheme="http://www.kungpowthinking.com" term="" /><category scheme="http://www.kungpowthinking.com" term="error" /><category scheme="http://www.kungpowthinking.com" term="user experienc" />		<summary type="html"><![CDATA[So after attempting to sign out of my bank&#8217;s web site, I received this wonderful default .Net exception error instead of the usual credit card cross-sell.
+
+Nothing makes me feel secure in my bank or want to buy something more than a giant exception error. I especially like this one because it&#8217;s the default .Net error [...]]]></summary>
+		<content type="html" xml:base="http://www.kungpowthinking.com/2008/08/13/nothing-makes-me-want-to-buy-something-more-than-an-error/">&lt;p&gt;So after attempting to sign out of my bank&amp;#8217;s web site, I received this wonderful default .Net exception error instead of the usual credit card cross-sell.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.kungpowthinking.com/wp-content/uploads/2008/08/bankofamericaerror.png"&gt;&lt;img class="alignnone size-medium wp-image-128" title="bankofamericaerror" src="http://www.kungpowthinking.com/wp-content/uploads/2008/08/bankofamericaerror-300x233.png" alt="" width="300" height="233" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Nothing makes me feel secure in my bank or want to buy something more than a giant exception error. I especially like this one because it&amp;#8217;s the default .Net error and includes instructions to the developers about how to replace it with something more useful to the user. Here&amp;#8217;s a thought guys - REPLACE IT WITH SOMETHING MORE USEFUL TO THE USER.&lt;/p&gt;
+&lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/Kungpowthinking?a=Wd04rK"&gt;&lt;img src="http://feeds.feedburner.com/~f/Kungpowthinking?i=Wd04rK" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/Kungpowthinking/~4/364419560" height="1" width="1"/&gt;</content>
+		<link rel="replies" type="text/html" href="http://www.kungpowthinking.com/2008/08/13/nothing-makes-me-want-to-buy-something-more-than-an-error/#comments" thr:count="2" />
+		<link rel="replies" type="application/atom+xml" href="http://www.kungpowthinking.com/2008/08/13/nothing-makes-me-want-to-buy-something-more-than-an-error/feed/atom/" thr:count="2" />
+		<thr:total>2</thr:total>
+	<feedburner:origLink>http://www.kungpowthinking.com/2008/08/13/nothing-makes-me-want-to-buy-something-more-than-an-error/</feedburner:origLink></entry>
+		<entry>
+		<author>
+			<name>Josh Viney</name>
+						<uri>http://www.kungpowthinking.com</uri>
+					</author>
+		<title type="html"><![CDATA[Stuff White People Like Raises an Interesting Question]]></title>
+		<link rel="alternate" type="text/html" href="http://feeds.feedburner.com/~r/Kungpowthinking/~3/364221337/" />
+		<id>http://www.kungpowthinking.com/?p=125</id>
+		<updated>2008-08-13T21:11:16Z</updated>
+		<published>2008-08-13T21:11:16Z</published>
+		<category scheme="http://www.kungpowthinking.com" term="" />		<summary type="html"><![CDATA[One of the funniest blogs around (StuffWhitePeopleLike.com) actually raises a very interesting question about how folks move between online social networks and how that compares to how they move within their real world
+Someone really really really needs to do some modeling that compares social network to real-world real estate markets. Take existing real estate models [...]]]></summary>
+		<content type="html" xml:base="http://www.kungpowthinking.com/2008/08/13/stuff-white-people-like-raises-an-interesting-question/">&lt;p&gt;One of the funniest blogs around (&lt;a href="http://stuffwhitepeoplelike.com/2008/07/31/106-facebook/" title="Stuff White People Like" target="_self" onclick="javascript:pageTracker._trackPageview ('/outbound/stuffwhitepeoplelike.com');"&gt;StuffWhitePeopleLike.com&lt;/a&gt;) actually raises a very interesting question about how folks move between online social networks and how that compares to how they move within their real world&lt;/p&gt;
+&lt;p&gt;Someone really really really needs to do some modeling that compares social network to real-world real estate markets. Take existing real estate models that show trends like suburbanization , &amp;#8220;white flight&amp;#8221;, immigration, and gentrification with data showing real estate price valuations and compare them to what happens on the interwebs. It might be an interesting way to predict who will be the next big social network or even a way to figure out what each network is really worth. I can see some potential trends already.&lt;/p&gt;
+&lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/Kungpowthinking?a=9nhAyK"&gt;&lt;img src="http://feeds.feedburner.com/~f/Kungpowthinking?i=9nhAyK" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/Kungpowthinking/~4/364221337" height="1" width="1"/&gt;</content>
+		<link rel="replies" type="text/html" href="http://www.kungpowthinking.com/2008/08/13/stuff-white-people-like-raises-an-interesting-question/#comments" thr:count="-1" />
+		<link rel="replies" type="application/atom+xml" href="http://www.kungpowthinking.com/2008/08/13/stuff-white-people-like-raises-an-interesting-question/feed/atom/" thr:count="-1" />
+		<thr:total>-1</thr:total>
+	<feedburner:origLink>http://www.kungpowthinking.com/2008/08/13/stuff-white-people-like-raises-an-interesting-question/</feedburner:origLink></entry>
+	</feed>

@@ -1,0 +1,824 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>mike.daless.io/blog: Articles</title>
+    <description>Keep your head down and keep coding.</description>
+    <link>http://mike.daless.io/aintablog/posts.rss</link>
+    <item>
+      <title>Nokogiri, Your New Swiss Army Knife</title>
+      <description>&lt;h2&gt;Prologue&lt;/h2&gt;
+&lt;p&gt;Today I&amp;#8217;d like to talk about the use of regular expressions to parse&lt;br /&gt;
+and modify &lt;span class=&quot;caps&quot;&gt;HTML&lt;/span&gt;. Or rather, the &lt;strong&gt;misuse&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;I&amp;#8217;m going to try to convince you that it&amp;#8217;s a &lt;em&gt;very&lt;/em&gt; bad idea to use&lt;br /&gt;
+regexes for &lt;span class=&quot;caps&quot;&gt;HTML&lt;/span&gt;. And I&amp;#8217;m going to introduce you to&lt;br /&gt;
+&lt;a href=&quot;http://github.com/tenderlove/nokogiri/tree/master&quot;&gt;Nokogiri&lt;/a&gt;, my new&lt;br /&gt;
+best friend and life companion, who can do this job way better, and&lt;br /&gt;
+nearly as fast.&lt;/p&gt;
+&lt;p&gt;For those of you who just want the meat without all the starch:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;You don&amp;#8217;t parse Ruby or &lt;span class=&quot;caps&quot;&gt;YAML&lt;/span&gt; with regular expressions, so don&amp;#8217;t do it with &lt;span class=&quot;caps&quot;&gt;HTML&lt;/span&gt;, either.&lt;/li&gt;
+&lt;li&gt;If you know how to use Hpricot, you know how to use Nokogiri.&lt;/li&gt;
+&lt;li&gt;Nokogiri can parse and modify &lt;span class=&quot;caps&quot;&gt;HTML&lt;/span&gt; more robustly than regexes, with less penalty than formatting Markdown or Textile.&lt;/li&gt;
+&lt;li&gt;Nokogiri is 4 to 10 times faster than Hpricot performing the typical &lt;span class=&quot;caps&quot;&gt;HTML&lt;/span&gt;-munging operations benchmarked.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;The Scene&lt;/h2&gt;
+&lt;p&gt;On one of the open-source projects I contribute to (names will be&lt;br /&gt;
+withheld for the protection of the innocent, this isn&amp;#8217;t&lt;br /&gt;
+&lt;a href=&quot;http://thedailywtf.com/&quot;&gt;Daily &lt;span class=&quot;caps&quot;&gt;WTF&lt;/span&gt;&lt;/a&gt;), I came across the following code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;def spanify_links(text)
+  text.gsub(/&amp;amp;lt;a\s+(.*)&amp;amp;gt;(.*)&amp;amp;lt;\/a&amp;amp;gt;/i, '&amp;amp;lt;a \1&amp;amp;gt;&amp;amp;lt;span&amp;amp;gt;\2&amp;amp;lt;/span&amp;amp;gt;&amp;amp;lt;/a&amp;amp;gt;')
+end
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In case it&amp;#8217;s not clear, the goal of this method is to insert a&lt;br /&gt;
+&lt;code&gt;&amp;amp;lt;span&amp;amp;gt;&lt;/code&gt; element inside the link, converting hyperlinks from&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;amp;lt;a href='http://foo.com/'&amp;amp;gt; Foo! &amp;amp;lt;/a&amp;amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;to&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;amp;lt;a href='http://foo.com/'&amp;amp;gt; &amp;amp;lt;span&amp;amp;gt; Foo! &amp;amp;lt;/span&amp;amp;gt; &amp;amp;lt;/a&amp;amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;for &lt;span class=&quot;caps&quot;&gt;CSS&lt;/span&gt; styling.&lt;/p&gt;
+&lt;h2&gt;The Problem&lt;/h2&gt;
+&lt;p&gt;Look, I love regexes as much as the next guy, but this regex is&lt;br /&gt;
+seriously busticated. If there is more than one &lt;code&gt;&amp;amp;lt;a&amp;amp;gt;&lt;/code&gt; tag on a line,&lt;br /&gt;
+only the final one will be spanified. If the tag contains an embedded&lt;br /&gt;
+newline, nothing will be spanified. There are probably other unobvious&lt;br /&gt;
+bugs, too, and that means there&amp;#8217;s a&lt;br /&gt;
+ &lt;strong&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Code_smell&quot;&gt;code smell&lt;/a&gt;&lt;/strong&gt; here.&lt;/p&gt;
+&lt;p&gt;Sure, the regex could be fixed to work in these cases. But does a&lt;br /&gt;
+trivial feature like this justify the time spent writing test cases&lt;br /&gt;
+and playing whack-a-mole with regex bugs? &lt;strong&gt;Code smell.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Let&amp;#8217;s look at it another way: If you were going to modify Ruby code&lt;br /&gt;
+programmatically, would you use regular expressions? I seriously doubt&lt;br /&gt;
+it. You&amp;#8217;d use something like&lt;br /&gt;
+&lt;a href=&quot;http://rubyforge.org/projects/parsetree/&quot;&gt;ParseTree&lt;/a&gt;, which&lt;br /&gt;
+understands all of Ruby&amp;#8217;s syntax and will correctly interpret&lt;br /&gt;
+everything in context, not just in isolation.&lt;/p&gt;
+&lt;p&gt;What about &lt;span class=&quot;caps&quot;&gt;YAML&lt;/span&gt;? Would you modify &lt;span class=&quot;caps&quot;&gt;YAML&lt;/span&gt; files with regular expressions?&lt;br /&gt;
+&lt;em&gt;Hells&lt;/em&gt; no. You&amp;#8217;d slurp it with &lt;code&gt;YAML.parse()&lt;/code&gt;, modify the in-memory&lt;br /&gt;
+data structures, and then write it back out.&lt;/p&gt;
+&lt;p&gt;Why wouldn&amp;#8217;t you do the same with &lt;span class=&quot;caps&quot;&gt;HTML&lt;/span&gt;, which has its own nontrivial&lt;br /&gt;
+(and &lt;span class=&quot;caps&quot;&gt;DTD&lt;/span&gt;-dependent) syntax?&lt;/p&gt;
+&lt;p&gt;Regular expressions just aren&amp;#8217;t the right tool for this job. Jamie&lt;br /&gt;
+Zawinski said it best:&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Some people, when confronted with a problem, think &amp;#8220;I know,&lt;br /&gt;
+  I&amp;#8217;ll use regular expressions.&amp;#8221;  Now they have two problems.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;Why, God? Why?&lt;/h2&gt;
+&lt;p&gt;So, what drives otherwise intelligent people (myself included) to whip&lt;br /&gt;
+out regular expressions when it comes time to munge &lt;span class=&quot;caps&quot;&gt;HTML&lt;/span&gt;?&lt;/p&gt;
+&lt;p&gt;My only guess is this: A lack of worthy &lt;span class=&quot;caps&quot;&gt;XML&lt;/span&gt;/&lt;span class=&quot;caps&quot;&gt;HTML&lt;/span&gt; libraries.&lt;/p&gt;
+&lt;p&gt;Whoa, whoa, put down the flamethrower and let me explain myself. By&lt;br /&gt;
+&amp;#8220;worthy&amp;#8221;, I mean three things:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;fast, high-performance, suitable for use in a web server&lt;/li&gt;
+&lt;li&gt;nice &lt;span class=&quot;caps&quot;&gt;API&lt;/span&gt;, easy for a developer to learn and use&lt;/li&gt;
+&lt;li&gt;will successfully parse broken &lt;span class=&quot;caps&quot;&gt;HTML&lt;/span&gt; commonly found on the intarwebs&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&quot;http://xmlsoft.org/&quot;&gt;libxml2&lt;/a&gt;&lt;br /&gt;
+and &lt;a href=&quot;http://libxml.rubyforge.org/&quot;&gt;libxml-ruby&lt;/a&gt; have been around for&lt;br /&gt;
+ages, and they&amp;#8217;re&lt;br /&gt;
+&lt;a href=&quot;http://www.xml.com/pub/a/2007/05/09/xml-parser-benchmarks-part-1.html&quot;&gt;incredibly fast&lt;/a&gt;.&lt;br /&gt;
+But have you seen the &lt;span class=&quot;caps&quot;&gt;API&lt;/span&gt;? It&amp;#8217;s&lt;br /&gt;
+&lt;a href=&quot;http://libxml.rubyforge.org/rdoc/classes/LibXML/XML/Document.html#M000354&quot;&gt;totally sadistic&lt;/a&gt;,&lt;br /&gt;
+and as a result it&amp;#8217;s inappropriate and not easily usable in simple&lt;br /&gt;
+cases like the one described above.&lt;/p&gt;
+&lt;p&gt;Now, &lt;a href=&quot;http://code.whytheluckystiff.net/hpricot/&quot;&gt;Hpricot&lt;/a&gt; is pure&lt;br /&gt;
+genius. It&amp;#8217;s pretty fast, and the &lt;span class=&quot;caps&quot;&gt;API&lt;/span&gt; is absolutely delightful to work&lt;br /&gt;
+with. It supports &lt;span class=&quot;caps&quot;&gt;CSS&lt;/span&gt; as well as XPath queries. I&amp;#8217;ve even used it&lt;br /&gt;
+(with &lt;a href=&quot;http://code.google.com/p/feed-normalizer/&quot;&gt;feed-normalizer&lt;/a&gt;) in&lt;br /&gt;
+a Rails application, and it performed reasonably well. But it&amp;#8217;s still&lt;br /&gt;
+much slower than regexes. Here&amp;#8217;s a (totally unfair) sample benchmark&lt;br /&gt;
+comparing Hpricot to a comparable (though buggy) regular expression&lt;br /&gt;
+(see below for a link to the benchmark gist):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;For an html snippet 2374 bytes long ...
+                          user     system      total        real
+regex * 1000          0.160000   0.010000   0.170000 (  0.182207)
+hpricot * 1000        5.740000   0.650000   6.390000 (  6.401207)
+
+it took an average of 0.0064 seconds for Hpricot to parse and operate on an HTML snippet 2374 bytes long
+
+For an html snippet 97517 bytes long ...
+                          user     system      total        real
+regex * 10            0.100000   0.020000   0.120000 (  0.122117)
+hpricot * 10          3.190000   0.300000   3.490000 (  3.502819)
+
+it took an average of 0.3503 seconds for Hpricot to parse and operate on an HTML snippet 97517 bytes long
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;So, historically, I haven&amp;#8217;t used Hpricot everywhere I could have, and&lt;br /&gt;
+that&amp;#8217;s because I was overly-cautious about performance.&lt;/p&gt;
+&lt;h2&gt;Get On With It, Already&lt;/h2&gt;
+&lt;p&gt;Oooooh, if only there was a library with libxml2&amp;#8217;s speed and Hpricot&amp;#8217;s&lt;br /&gt;
+&lt;span class=&quot;caps&quot;&gt;API&lt;/span&gt;. Then maybe people wouldn&amp;#8217;t keep trying to use regular expressions&lt;br /&gt;
+where an &lt;span class=&quot;caps&quot;&gt;HTML&lt;/span&gt; parser is needed.&lt;/p&gt;
+&lt;p&gt;Oh wait, there is. Everyone, meet&lt;br /&gt;
+&lt;a href=&quot;http://tenderlovemaking.com/2008/10/30/nokogiri-is-released/&quot;&gt;Nokogiri&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Check out the &lt;a href=&quot;http://gist.github.com/25854&quot;&gt;full benchmark&lt;/a&gt;,&lt;br /&gt;
+comparing the same operation (spanifying links and removing&lt;br /&gt;
+possibly-unsafe tags) across regular expressions, Hpricot and&lt;br /&gt;
+Nokogiri:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;For an html snippet 2374 bytes long ...
+                          user     system      total        real
+regex * 1000          0.160000   0.010000   0.170000 (  0.182207)
+nokogiri * 1000       1.440000   0.060000   1.500000 (  1.537546)
+hpricot * 1000        5.740000   0.650000   6.390000 (  6.401207)
+
+it took an average of 0.0015 seconds for Nokogiri to parse and operate on an HTML snippet 2374 bytes long
+it took an average of 0.0064 seconds for Hpricot to parse and operate on an HTML snippet 2374 bytes long
+
+For an html snippet 97517 bytes long ...
+                          user     system      total        real
+regex * 10            0.100000   0.020000   0.120000 (  0.122117)
+nokogiri * 10         0.310000   0.020000   0.330000 (  0.322290)
+hpricot * 10          3.190000   0.300000   3.490000 (  3.502819)
+
+it took an average of 0.0322 seconds for Nokogiri to parse and operate on an HTML snippet 97517 bytes long
+it took an average of 0.3503 seconds for Hpricot to parse and operate on an HTML snippet 97517 bytes long
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Wow! Nokogiri parsed and modified blog-sized &lt;span class=&quot;caps&quot;&gt;HTML&lt;/span&gt; snippets in under 2&lt;br /&gt;
+milliseconds! This performance, though still significantly slower than&lt;br /&gt;
+regular expressions, is still fast enough for me to consider using it&lt;br /&gt;
+in a web application server.&lt;/p&gt;
+&lt;p&gt;Hell, that&amp;#8217;s as fast (faster, actually) than BlueCloth or RedCloth can&lt;br /&gt;
+render Markdown or Textile of similar length. If you can justify using&lt;br /&gt;
+&lt;em&gt;those&lt;/em&gt; in your web application, you can certainly afford the overhead&lt;br /&gt;
+of Nokogiri.&lt;/p&gt;
+&lt;p&gt;And as for usability, let&amp;#8217;s compare the regular expressions to the Nokogiri operations:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;html.gsub(/&amp;amp;lt;a\s+(.*)&amp;amp;gt;(.*)&amp;amp;lt;\/a&amp;amp;gt;/i, '&amp;amp;lt;a \1&amp;amp;gt;&amp;amp;lt;span&amp;amp;gt;\2&amp;amp;lt;/span&amp;amp;gt;&amp;amp;lt;/a&amp;amp;gt;') # broken regex
+html.gsub(/&amp;amp;lt;(script|noscript|object|embed|style|frameset|frame|iframe)[&amp;amp;gt;\s\S]*&amp;amp;lt;\/\1&amp;amp;gt;/, '')
+
+doc.search(&quot;a/text()&quot;).wrap(&quot;&amp;amp;lt;span&amp;amp;gt;&amp;amp;lt;/span&amp;amp;gt;&quot;)
+doc.search(&quot;script&quot;,&quot;noscript&quot;,&quot;object&quot;,&quot;embed&quot;,&quot;style&quot;,&quot;frameset&quot;,&quot;frame&quot;,&quot;iframe&quot;).unlink
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The Nokogiri version is &lt;em&gt;much&lt;/em&gt; clearer. More maintainable, more robust&lt;br /&gt;
+and, for me, just fast enough to start jamming into all kinds of&lt;br /&gt;
+places.&lt;/p&gt;
+&lt;h2&gt;Where Else Can I Use Nokogiri?&lt;/h2&gt;
+&lt;p&gt;You can use Nokogiri anywhere you read, write or modify &lt;span class=&quot;caps&quot;&gt;HTML&lt;/span&gt; or&lt;br /&gt;
+&lt;span class=&quot;caps&quot;&gt;XML&lt;/span&gt;. It&amp;#8217;s your new swiss army knife.&lt;/p&gt;
+&lt;p&gt;What about your test cases? &lt;a href=&quot;http://www.merbivore.com/&quot;&gt;Merb&lt;/a&gt; is using&lt;br /&gt;
+Nokogiri extensively in their controller tests, and they&amp;#8217;re&lt;br /&gt;
+reportedly much faster than before. And those Merb dudes are S-M-R-T.&lt;/p&gt;
+&lt;p&gt;Have you thought about using Nokogiri::Builder to generate &lt;span class=&quot;caps&quot;&gt;XML&lt;/span&gt;,&lt;br /&gt;
+instead of the default Rails &lt;span class=&quot;caps&quot;&gt;XML&lt;/span&gt; template builder? Boy, I&lt;br /&gt;
+have. Upcoming blog post, hopefully.&lt;/p&gt;
+&lt;p&gt;Let me know where else you&amp;#8217;ve found Nokogiri useful! Or better yet,&lt;br /&gt;
+join the &lt;a href=&quot;http://rubyforge.org/mailman/listinfo/nokogiri-talk&quot;&gt;mailing list&lt;/a&gt; and tell&lt;br /&gt;
+the community!&lt;/p&gt;</description>
+      <author>Flavoriffic</author>
+      <guid>http://flavoriffic.blogspot.com/2008/11/nokogiri-your-new-swiss-army-knife.html</guid>
+      <pubDate>Mon, 17 Nov 2008 19:28:00 +0000</pubDate>
+      <link>http://flavoriffic.blogspot.com/2008/11/nokogiri-your-new-swiss-army-knife.html</link>
+    </item>
+    <item>
+      <title>Nokogiri: World's Finest (XML/HTML) Saw</title>
+      <description>&lt;p&gt;Yesterday was a big day, and I nearly missed it, since I spent nearly all of the sunlight hours at the wheel of a car. Nine hours sitting on your butt is no way to &amp;#8230; oh wait, that&amp;#8217;s actually how I spend every day. Just usually not in a rental Hyundai. Never mind, I digress.&lt;/p&gt;
+&lt;p&gt;It was a big day because &lt;a href='http://nokogiri.rubyforge.org/nokogiri/'&gt;Nokogiri&lt;/a&gt; was released. I&amp;#8217;ve spent quite a bit of time over the last couple of months working with &lt;a href='http://tenderlovemaking.com/'&gt;Aaron Patterson&lt;/a&gt; (of &lt;a href='http://rubyforge.org/projects/mechanize/'&gt;Mechanize&lt;/a&gt; fame) on this excellent library, and so I&amp;#8217;m walking around, feeling satisfied.&lt;/p&gt;
+&lt;p&gt;&amp;#8220;What&amp;#8217;s Nokogiri?&amp;#8221; Good question, I&amp;#8217;m glad I asked it.&lt;/p&gt;
+&lt;p&gt;Nokogiri is the best damn &lt;span class=&quot;caps&quot;&gt;XML&lt;/span&gt;/&lt;span class=&quot;caps&quot;&gt;HTML&lt;/span&gt; parsing library out there in Rubyland. What makes it so good? You can search by XPath. You can search by &lt;span class=&quot;caps&quot;&gt;CSS&lt;/span&gt;. You can search by both XPath &lt;i&gt;and&lt;/i&gt; &lt;span class=&quot;caps&quot;&gt;CSS&lt;/span&gt;. Plus, it uses &lt;a href='http://xmlsoft.org/'&gt;libxml2&lt;/a&gt; as the parsing engine, &lt;a href='http://www.xml.com/pub/a/2007/05/09/xml-parser-benchmarks-part-1.html'&gt;so it&amp;#8217;s fast&lt;/a&gt;. But the best part is, it&amp;#8217;s got a dead-simple interface that we shamelessly lifted from &lt;a href='http://code.whytheluckystiff.net/hpricot/'&gt;Hpricot&lt;/a&gt;, everyone&amp;#8217;s favorite delightful parser.&lt;/p&gt;
+&lt;p&gt;I had big plans to do a series of posts with examples and benchmarks, but right now I&amp;#8217;m in &lt;a href='http://www.google.com/search?q=dst+hell'&gt;&lt;span class=&quot;caps&quot;&gt;DST&lt;/span&gt; Hell&lt;/a&gt; and don&amp;#8217;t have the quality time to invest.&lt;/p&gt;
+&lt;p&gt;So, as I am wont to do, I&amp;#8217;m punting. Thankfully, Aaron was his usual prolific self, and has kindly provided lots of documentation and examples:&lt;br /&gt;
+&lt;ul&gt;&lt;br /&gt;
+&lt;li&gt;&lt;a href='http://tenderlovemaking.com/2008/10/30/nokogiri-is-released/'&gt;Aaron&amp;#8217;s blog post&lt;/a&gt;&lt;br /&gt;
+&lt;li&gt;&lt;a href='http://nokogiri.rubyforge.org/nokogiri/'&gt;Documentation (RDoc)&lt;/a&gt;&lt;br /&gt;
+&lt;li&gt;&lt;a href='http://github.com/tenderlove/nokogiri/wikis'&gt;Nokogiri-the-Wiki&lt;/a&gt;&lt;br /&gt;
+&lt;li&gt;&lt;a href='http://rubyforge.org/projects/nokogiri'&gt;Nokogiri on Rubyforge&lt;/a&gt;&lt;br /&gt;
+&lt;li&gt;&lt;a href='http://gist.github.com/18533'&gt;Benchmarks&lt;/a&gt;&lt;br /&gt;
+&lt;li&gt;&lt;a href='http://github.com/tenderlove/nokogiri/'&gt;Git repository&lt;/a&gt;&lt;/ul&gt;
+&lt;/p&gt;
+&lt;p&gt;Use it in good health! Carry on.&lt;/p&gt;
+&lt;p&gt;P.S. Please start following Aaron on &lt;a href='http://twitter.com/tenderlove'&gt;Twitter&lt;/a&gt;. :)&lt;/p&gt;</description>
+      <author>Flavoriffic</author>
+      <guid>http://flavoriffic.blogspot.com/2008/10/nokogiri-worlds-finest-xmlhtml-saw.html</guid>
+      <pubDate>Fri, 31 Oct 2008 15:36:00 +0000</pubDate>
+      <link>http://flavoriffic.blogspot.com/2008/10/nokogiri-worlds-finest-xmlhtml-saw.html</link>
+    </item>
+    <item>
+      <title>Rails Model Firewall Mixin</title>
+      <description>&lt;p&gt;At my company, &lt;a href=&quot;http://www.pharos-ei.com/&quot;&gt;Pharos&lt;/a&gt;, we&amp;#8217;re about to&lt;br /&gt;
+launch a new product which will contain sensitive data for multiple&lt;br /&gt;
+firms in a single database. This is essentially a lightweight version&lt;br /&gt;
+of our flagship product, which was built for a single client.&lt;/p&gt;
+&lt;p&gt;Of course, as a result, I had to refactor like crazy to get rid of the&lt;br /&gt;
+implicit &amp;#8220;one-firm&amp;#8221; assumption that was built into the code and database&lt;br /&gt;
+schemas.&lt;/p&gt;
+&lt;p&gt;The essential task was to add &amp;#8220;firm_id&amp;#8221; to each of the private table&lt;br /&gt;
+schemas, and then make sure that all the code that accesses the model&lt;br /&gt;
+specifies the firm in the query. The two access idioms that were being&lt;br /&gt;
+widely used (unsurprisingly):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;results = ClassName.find(:all, :conditions =&amp;amp;gt; [....])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;and&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;results = ClassName.find_by_entity_id_and_hour(...)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I was able to make minimal changes to the code by supporting the&lt;br /&gt;
+following new idioms through a mixin (the mixin code is at the end of&lt;br /&gt;
+the article):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;results = ClassName.find_in_firm_scope(firm_id, :all, :conditions =&amp;amp;gt; [....])
+
+results = ClassName.with_firm_scope(firm_id) do |klass|
+  klass.find_by_entity_id_and_hour(...)
+end
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;(The second idiom I found easier to make (and the diff easier to read) than:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ClassName.find_by_firm_id_and_entity_id_and_hour(firm_id, ...)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;but really, that&amp;#8217;s a matter of taste.)&lt;/p&gt;
+&lt;p&gt;But I was still nervous. What if I missed an instance of a database&lt;br /&gt;
+lookup that wasn&amp;#8217;t specifying firm, and as a result one client saw&lt;br /&gt;
+another client&amp;#8217;s records? That would be a Really Bad Thing&lt;br /&gt;
+&lt;sup&gt;TM&lt;/sup&gt;, and I want to explicitly make sure that can&amp;#8217;t&lt;br /&gt;
+happen. But how?&lt;/p&gt;
+&lt;p&gt;After a half hour of poking around and futzing, I came up with a&lt;br /&gt;
+&lt;code&gt;find()&lt;/code&gt;-and-friends implementation that will check &lt;code&gt;with_scope&lt;/code&gt;&lt;br /&gt;
+conditions as well as the &lt;code&gt;:conditions&lt;/code&gt; parameter to the find() call:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;amp;gt;&amp;amp;gt; My::PrivateModel.find_by_entity_id(1)
+RuntimeError: My::PrivateModel PrivateRecord find() did not specify firm_id
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Without further ado, here&amp;#8217;s the mixin:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# lib/private_record.rb
+module PrivateRecord
+  def self.included(base)
+    base.validates_presence_of :firm_id
+    base.extend PrivateRecordClassExtendor
+  end
+end
+
+module PrivateRecordClassExtendor
+
+  def find_every(*args)
+    check_for_firm_id(*args)
+    super(*args)
+  end
+
+  # the DRY idiom here is: results = ClassName.with_firm_scope(firm) {|klass| klass.find(...) }
+  def with_firm_scope(firm, &amp;amp;amp;block)
+    with_scope(:find =&amp;amp;gt; {:conditions =&amp;amp;gt; &quot;firm_id = #{firm}&quot;}, :create =&amp;amp;gt; {:firm_id =&amp;amp;gt; firm}) do
+      yield self
+    end
+  end
+
+  def find_in_firm_scope(firm, *args)
+    with_firm_scope(firm) do
+      find(*args)
+    end
+  end
+
+private
+  FIRM_ID_RE = /firm_id =/
+  def check_for_firm_id(*args)
+    ok = false
+    if scoped_methods
+      scoped_methods.each do |j|
+        if j[:find] &amp;amp;amp;&amp;amp;amp; j[:find][:conditions] &amp;amp;amp;&amp;amp;amp; j[:find][:conditions] =~ FIRM_ID_RE
+          ok = true 
+          break
+        end
+      end
+    end
+    if !ok
+      args.each do |j|
+        if j.is_a?(Hash) &amp;amp;amp;&amp;amp;amp; j[:conditions]
+          if (j[:conditions].is_a?(String) &amp;amp;amp;&amp;amp;amp; j[:conditions] =~ FIRM_ID_RE) \
+             or (j[:conditions].is_a?(Hash) &amp;amp;amp;&amp;amp;amp; j[:conditions][:firm_id])
+            ok = true 
+            break
+          end
+        end
+      end
+    end
+    raise &quot;#{self} PrivateRecord find() did not specify firm_id&quot; if !ok
+  end
+end
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The magic is all in the &lt;code&gt;check_for_firm_id()&lt;/code&gt; method. To use this, simply:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;include PrivateRecord
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;and go to town.&lt;/p&gt;
+&lt;p&gt;Oh, and lest ye be skeptical, here are the test cases:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;require File.dirname(__FILE__) + '/../test_helper'
+
+class PrivateModelTest &amp;amp;lt; ActiveSupport::TestCase
+
+  fixtures :isone_da_schedules
+
+  def test_privaterecord_disallow_find_requirement
+    assert_raises(RuntimeError) { My::PrivateModel.find(1) }
+    assert_raises(RuntimeError) { My::PrivateModel.find_by_entity_id(1) }
+    assert_raises(RuntimeError) { My::PrivateModel.find_all_by_entity_id(1) }
+    assert_raises(RuntimeError) { My::PrivateModel.find(:all, :conditions =&amp;amp;gt; 'entity_id = 1') }
+    assert_raises(RuntimeError) { My::PrivateModel.find(:first, :conditions =&amp;amp;gt; 'entity_id = 1') }
+  end
+
+  def test_privaterecord_allow_find_requirement
+    assert_nothing_thrown { My::PrivateModel.find_in_firm_scope(1, 1) }
+    assert_nothing_thrown { My::PrivateModel.with_firm_scope(1) {|k| k.find_by_entity_id(1) } }
+    assert_nothing_thrown { My::PrivateModel.with_firm_scope(1) {|k| k.find_all_by_entity_id(1) } }
+    assert_nothing_thrown { My::PrivateModel.find_in_firm_scope(1, :all, :conditions =&amp;amp;gt; 'entity_id = 0') }
+    assert_nothing_thrown { My::PrivateModel.find_in_firm_scope(1, :first, :conditions =&amp;amp;gt; 'entity_id = 0') }
+    assert_nothing_thrown { My::PrivateModel.find_by_firm_id_and_entity_id(1, 1) }
+  end
+
+end
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Let me know in the comments if you found this at all useful! Keep coding.&lt;/p&gt;</description>
+      <author>Flavoriffic</author>
+      <guid>http://flavoriffic.blogspot.com/2008/08/rails-model-firewall-mixin.html</guid>
+      <pubDate>Tue, 26 Aug 2008 05:28:00 +0000</pubDate>
+      <link>http://flavoriffic.blogspot.com/2008/08/rails-model-firewall-mixin.html</link>
+    </item>
+    <item>
+      <title>Freezing Deep Ruby Data Structures</title>
+      <description>&lt;p&gt;On one of my current ruby projects, I&amp;#8217;m reading in a &lt;span class=&quot;caps&quot;&gt;YML&lt;/span&gt; file and&lt;br /&gt;
+using the generated data structure as a hackish set of global&lt;br /&gt;
+configuation settings:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;firm_1:
+    departments:
+        sales: 419
+        executive: 999
+        IT: 232
+    locations:
+        NY: 19
+        WV: 27
+        CA: 102
+firm_2:
+    ...
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Because these should be treated as constants, they should not be overwritten (accidentally, of course).&lt;br /&gt;
+I wanted to go ahead and freeze them:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;global_conf = YAML.load_file(&quot;...&quot;)
+global_conf.freeze
+global_conf['firm_1'] = {'foo' =&amp;amp;gt; 'bar'}
+=&amp;amp;gt; TypeError: can't modify frozen hash
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;But, as you probably know, Ruby&amp;#8217;s &lt;code&gt;freeze&lt;/code&gt; doesn&amp;#8217;t affect the objects in a container.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;global_conf['firm_1']['departments'] = {'foo' =&amp;amp;gt; 'bar'}
+=&amp;amp;gt; {&quot;foo&quot;=&amp;amp;gt;&quot;bar&quot;}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;That&amp;#8217;s bad.&lt;/p&gt;
+&lt;p&gt;So I hacked up a quick monkeypatch (or whatever the duck punchers call it these days) to recursively freeze containers:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#
+#  allow us to freeze deep data structures by recursively freezeing each nested object
+#
+class Hash
+    def deep_freeze # har, har ,har
+        each { |k,v| v.deep_freeze if v.respond_to? :deep_freeze }
+        freeze
+    end
+end
+class Array
+    def deep_freeze
+        each { |j| j.deep_freeze if j.respond_to? :deep_freeze }
+        freeze
+    end
+end
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;After loading these patches, calling &lt;code&gt;deep_freeze&lt;/code&gt; does what we want:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;global_conf = YAML.load_file(&quot;...&quot;)
+global_conf.deep_freeze
+global_conf['firm_1']['departments'] = {'foo' =&amp;amp;gt; 'bar'}
+=&amp;amp;gt; TypeError: can't modify frozen hash
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Nice!&lt;/p&gt;</description>
+      <author>Flavoriffic</author>
+      <guid>http://flavoriffic.blogspot.com/2008/08/freezing-deep-ruby-data-structures.html</guid>
+      <pubDate>Sun, 24 Aug 2008 22:23:00 +0000</pubDate>
+      <link>http://flavoriffic.blogspot.com/2008/08/freezing-deep-ruby-data-structures.html</link>
+    </item>
+    <item>
+      <title>Flash and the Firefox Reframe Problem</title>
+      <description>&lt;p&gt;So I spent the last two days trying to figure out why Firefox insists&lt;br /&gt;
+on reloading flash content whenever I flip around in my&lt;br /&gt;
+tasty javascript-y tabbed interface.&lt;/p&gt;
+&lt;p&gt;You haven&amp;#8217;t seen this? I&amp;#8217;m not surprised, it really only occurs if&lt;br /&gt;
+you&amp;#8217;re embedding flash into a web page whose layout is being managed by&lt;br /&gt;
+javascript. Some examples of UI libraries like this are&lt;br /&gt;
+&lt;a href=&quot;http://script.aculo.us/&quot;&gt;Scriptaculous&lt;/a&gt;, &lt;a href=&quot;http://extjs.com/&quot;&gt;Ext-JS&lt;/a&gt;,&lt;br /&gt;
+and my latest &lt;span class=&quot;caps&quot;&gt;BSO&lt;/span&gt;, &lt;a href=&quot;http://jquery.com/&quot;&gt;jQuery&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;All of these libraries modify the style of the flash object&amp;#8217;s parent&lt;br /&gt;
+&lt;code&gt;&amp;amp;lt;div&amp;amp;gt;&lt;/code&gt; in ways (usually, &lt;code&gt;display:none&lt;/code&gt;, but &lt;code&gt;position:absolute&lt;/code&gt; will&lt;br /&gt;
+do it, too) that somehow goads Firefox into helpfully reloading the&lt;br /&gt;
+Flash from scratch. Reportedly it&amp;#8217;s not just swfobjects &amp;#8212; any generic&lt;br /&gt;
+&lt;code&gt;&amp;amp;lt;object&amp;amp;gt;&lt;/code&gt; or &lt;code&gt;&amp;amp;lt;embed&amp;amp;gt;&lt;/code&gt;, including Java applets, will get reloaded.&lt;/p&gt;
+&lt;p&gt;For flash charting components (we&amp;#8217;re playing with&lt;br /&gt;
+&lt;a href=&quot;http://amcharts.com&quot;&gt;amCharts&lt;/a&gt; at my company,&lt;br /&gt;
+&lt;a href=&quot;http://www.pharos-ei.com&quot;&gt;Pharos&lt;/a&gt;), this problem is multiplied by the&lt;br /&gt;
+fact that the flash application will re-download whatever historical&lt;br /&gt;
+data you&amp;#8217;re trying to present, delaying the presentation and using up&lt;br /&gt;
+more bandwidth. (Hey, how&amp;#8217;s your&lt;br /&gt;
+&lt;a href=&quot;http://intertwingly.net/blog/2006/06/05/Elevator-Pitch&quot;&gt;ETag&lt;/a&gt; support&lt;br /&gt;
+looking?)&lt;/p&gt;
+&lt;p&gt;It actually took me about two hours to find what the root problem is,&lt;br /&gt;
+and you&amp;#8217;re not going to believe it:&lt;/p&gt;
+&lt;blockquote&gt;
+    &lt;p&gt;&lt;a href=&quot;https://bugzilla.mozilla.org/show_bug.cgi?id=90268&quot;&gt;https://bugzilla.mozilla.org/show_bug.cgi?id=90268&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This bug has been open since &lt;a href=&quot;http://en.wikipedia.org/wiki/July_2001&quot;&gt;July&lt;br /&gt;
+2001&lt;/a&gt;! That&amp;#8217;s &lt;a href=&quot;http://www.mozilla.com/en-US/firefox/releases/0.9.html&quot;&gt;Firefox&lt;br /&gt;
+0.9&lt;/a&gt;!  Holy&lt;br /&gt;
+cripey!&lt;/p&gt;
+&lt;p&gt;Worse, it&amp;#8217;s still not fixed, even in the brand-spanking-new &lt;a href=&quot;http://www.mozilla.com/en-US/firefox/all-rc.html&quot;&gt;Firefox&lt;br /&gt;
+3&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The good news is, there&amp;#8217;s a relatively easy way to get around this, if&lt;br /&gt;
+your JS library is using &lt;span class=&quot;caps&quot;&gt;CSS&lt;/span&gt; for hiding elements. What I mean by that&lt;br /&gt;
+is, the javascript code is hiding elements by adding a class to them&lt;br /&gt;
+(in Ext-JS, this class name defaults to &lt;code&gt;.x-hide-display&lt;/code&gt;), and is not&lt;br /&gt;
+setting &lt;code&gt;display:none&lt;/code&gt; directly on your &lt;span class=&quot;caps&quot;&gt;DOM&lt;/span&gt; elements. (You&amp;#8217;ll probably&lt;br /&gt;
+need to look at the implementation of &lt;code&gt;hide()&lt;/code&gt; and &lt;code&gt;show()&lt;/code&gt; for your&lt;br /&gt;
+specific library to know for sure.)&lt;/p&gt;
+&lt;p&gt;So if hiding &lt;span class=&quot;caps&quot;&gt;DOM&lt;/span&gt; elements is done via style classes, the low-hanging&lt;br /&gt;
+fruit is to redefine the &lt;span class=&quot;caps&quot;&gt;CSS&lt;/span&gt; rule to look like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;.x-hide-display {
+    display:block!important; /* overrides the display:none in the original rule */
+    height:0!important;
+    width:0!important;
+    border:none!important;
+    visibility:hidden!important;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;(this is exactly what I did to make my flash charts work in Ext-JS).&lt;/p&gt;
+&lt;p&gt;You can probably override the &lt;code&gt;hide()&lt;/code&gt; and &lt;code&gt;show()&lt;/code&gt; functions in your&lt;br /&gt;
+particular library to do something like this, as well. &lt;span class=&quot;caps&quot;&gt;YMMV&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Now, you&amp;#8217;re saying to yourself, &amp;#8220;Dude, you must be breaking something&lt;br /&gt;
+else that used to depend on the &lt;code&gt;display:none&lt;/code&gt; behavior.&amp;#8221; Well, you&amp;#8217;re&lt;br /&gt;
+probably right, but I haven&amp;#8217;t found it yet. If you know, or if you&lt;br /&gt;
+find out, let me know in the comments.&lt;/p&gt;</description>
+      <author>Flavoriffic</author>
+      <guid>http://flavoriffic.blogspot.com/2008/05/flash-and-firefox-reframe-problem.html</guid>
+      <pubDate>Thu, 22 May 2008 19:23:00 +0000</pubDate>
+      <link>http://flavoriffic.blogspot.com/2008/05/flash-and-firefox-reframe-problem.html</link>
+    </item>
+    <item>
+      <title>jQuery UI and Closable Tabs</title>
+      <description>&lt;p&gt;
+&lt;p&gt;So last week I decided (at my company, &lt;a href=&quot;http://www.pharos-ei.com/&quot;&gt;Pharos&lt;/a&gt;) to dump &lt;a href=&quot;http://extjs.com/&quot;&gt;Ext-JS&lt;/a&gt; in favor of &lt;a href=&quot;http://jquery.com/&quot;&gt;jQuery&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;br /&gt;
+The short version is that Ext-JS is hard to style with &lt;span class=&quot;caps&quot;&gt;CSS&lt;/span&gt;, plus I was getting odd sizing of objects in my (pretty complicated) layouts that I just couldn&amp;#8217;t figure out. (The longer version has to do with how easy (hard) it is to write and find contributed extensions.)&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;br /&gt;
+Anyway, I&amp;#8217;m getting off-topic. &lt;a href=&quot;http://www.google.com/search?q=jquery+rocks&quot;&gt;jQuery rocks&lt;/a&gt;. And the &lt;a href=&quot;http://ui.jquery.com/&quot;&gt;jQuery-UI&lt;/a&gt; project is really coming along, in terms of functionality. They&amp;#8217;re pushing hard to get the 1.5 release candidate out the door.&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;br /&gt;
+There are some missing pieces, though, as in any young &lt;span class=&quot;caps&quot;&gt;GUI&lt;/span&gt; project. But because I&amp;#8217;m betting on jQuery, I&amp;#8217;m willing to work to make it do what I want. Until today, this meant contributing some (very) minor bugfixes.&lt;/p&gt;
+&lt;p&gt;&lt;a onblur=&quot;try {parent.deselectBloggerImageGracefully();} catch(e) {}&quot; href=&quot;http://bp2.blogger.com/_Ve7bb1LcoGY/SCyo4FJ81pI/AAAAAAAAAQg/n4RX06bIUvY/s1600-h/jquery.ui.tabs.closable-all.png&quot;&gt;&lt;img style=&quot;margin: 0pt 0pt 10px 10px; float: right; cursor: pointer;&quot; src=&quot;http://bp2.blogger.com/_Ve7bb1LcoGY/SCyo4FJ81pI/AAAAAAAAAQg/n4RX06bIUvY/s320/jquery.ui.tabs.closable-all.png&quot; alt=&quot;&quot; id=&quot;BLOGGER_PHOTO_ID_5200717351116134034&quot; border=&quot;0&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;br /&gt;
+But this afternoon, I implemented closable tabs. Check out &lt;a href=&quot;http://dev.jquery.com/ticket/2470&quot;&gt;jQuery trac 2470&lt;/a&gt; for the patch and working examples (including &lt;span class=&quot;caps&quot;&gt;CSS&lt;/span&gt;).&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;br /&gt;
+Here&amp;#8217;s a couple of screenshots showing the closable tabs in &amp;#8216;all&amp;#8217; mode, and &amp;#8216;selected&amp;#8217; mode. And you can play around with it on the &lt;b&gt;&lt;a href='http://pharos-ei.com/mike/jquery/examples/index.html'&gt;demo page!&lt;/a&gt;&lt;/b&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;br /&gt;
+General description:&lt;br /&gt;
+&lt;ul&gt;&lt;br /&gt;
+&lt;li&gt;A clickable &amp;#8220;button&amp;#8221; (really an A tag) appears on the tab. When the button is clicked, the tab is removed.&lt;br /&gt;
+&lt;li&gt; LI tags are dynamically modified to contain a second tag:&lt;br /&gt;
+&lt;pre&gt;&lt;br /&gt;
+          &amp;lt;a onclick=&amp;#8220;return false;&amp;#8221;&amp;gt;&amp;lt;span&amp;gt;#{text}&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;&lt;br /&gt;
+&lt;/pre&gt;&lt;br /&gt;
+&lt;li&gt; The #{text} snippet will be replaced by the configuration option closeText (which is &amp;#8216;(x)&amp;#8217; by default), and the snippet itself can be set via the configuration option closeTemplate.&lt;/p&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a onblur=&quot;try {parent.deselectBloggerImageGracefully();} catch(e) {}&quot; href=&quot;http://bp3.blogger.com/_Ve7bb1LcoGY/SCypCVJ81qI/AAAAAAAAAQo/NEBWJC5geGI/s1600-h/jquery.ui.tabs.closable-selected.png&quot;&gt;&lt;img style=&quot;margin: 0pt 0pt 10px 10px; float: right; cursor: pointer;&quot; src=&quot;http://bp3.blogger.com/_Ve7bb1LcoGY/SCypCVJ81qI/AAAAAAAAAQo/NEBWJC5geGI/s320/jquery.ui.tabs.closable-selected.png&quot; alt=&quot;&quot; id=&quot;BLOGGER_PHOTO_ID_5200717527209793186&quot; border=&quot;0&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;p&gt;Some specifics:&lt;br /&gt;
+&lt;ul&gt;&lt;br /&gt;
+&lt;li&gt;New creation option closable can be set to false, &amp;#8216;all&amp;#8217; or &amp;#8216;selected&amp;#8217;&lt;br /&gt;
+&lt;ul&gt;&lt;br /&gt;
+&lt;li&gt; default is false, meaning no closable tabs.&lt;br /&gt;
+&lt;li&gt; &amp;#8216;all&amp;#8217; means all tabs have are closable.&lt;br /&gt;
+&lt;li&gt; &amp;#8216;selected&amp;#8217; means only the selected tab is closable.&lt;/p&gt;
+&lt;/ul&gt;
+&lt;li&gt; New creation options closeTemplate and closeText allow overriding default markup.&lt;br /&gt;
+&lt;li&gt; When a tab is closable, a second A is dynamically added to the tab LI after the normal tab anchor&lt;br /&gt;
+&lt;ul&gt;&lt;br /&gt;
+&lt;li&gt; this tag is only added to the &lt;span class=&quot;caps&quot;&gt;DOM&lt;/span&gt; if options.closable is non-false&lt;br /&gt;
+&lt;li&gt; this tag is hidden in unselected tabs if options.closable is &amp;#8216;selected&amp;#8217;&lt;/ul&gt;
+&lt;li&gt; &lt;span class=&quot;caps&quot;&gt;CSS&lt;/span&gt; / styles&lt;br /&gt;
+&lt;ul&gt;&lt;br /&gt;
+&lt;li&gt; Note that this patch is backwards-compatible with &lt;span class=&quot;caps&quot;&gt;CSS&lt;/span&gt; as long as the closable option is not turned on.&lt;br /&gt;
+&lt;li&gt; Close-button tag has class ui-tabs-close&lt;br /&gt;
+&lt;li&gt; However, existing &lt;span class=&quot;caps&quot;&gt;CSS&lt;/span&gt; will probably need to be modified to support the new close button.&lt;br /&gt;
+&lt;li&gt; A new class, ui-tabs-tab is associated with the normal A to allow differentiation for themes/styles.&lt;br /&gt;
+&lt;li&gt; see examples.tar.gz for example &lt;span class=&quot;caps&quot;&gt;CSS&lt;/span&gt; support&lt;/ul&gt;
+&lt;/ul&gt;
+&lt;p&gt;So, if you find the code useful, let me know! It&amp;#8217;s attached to &lt;a href=&quot;http://dev.jquery.com/ticket/2470&quot;&gt;jQuery trac 2470&lt;/a&gt;, along with the sample &lt;span class=&quot;caps&quot;&gt;CSS&lt;/span&gt; and code in the snapshot. And don&amp;#8217;t forget to test drive it at the &lt;b&gt;&lt;a href='http://pharos-ei.com/mike/jquery/examples/index.html'&gt;demo page!&lt;/a&gt;&lt;/b&gt;&lt;/p&gt;</description>
+      <author>Flavoriffic</author>
+      <guid>http://flavoriffic.blogspot.com/2008/05/jquery-ui-and-closable-tabs.html</guid>
+      <pubDate>Thu, 15 May 2008 21:07:00 +0000</pubDate>
+      <link>http://flavoriffic.blogspot.com/2008/05/jquery-ui-and-closable-tabs.html</link>
+    </item>
+    <item>
+      <title>Managing Git Submodules With git.rake</title>
+      <description>&lt;p&gt;&lt;em&gt;Update 2008-05-21: Tim Dysinger and Pat Maddox pointed out that git submodules are inherently not well-suited for frequently updated projects. &lt;strong&gt;Read the comments for more details&lt;/strong&gt;, and please use submodules with caution on projects where you can&amp;#8217;t guarantee a shared repository has not changed between &amp;#8216;pull&amp;#8217; and &amp;#8216;push&amp;#8217; operation.&lt;/em&gt;&lt;br /&gt;
+&lt;br /&gt;
+&lt;p&gt;Today I&amp;#8217;m releasing git.rake into the wild under an open-source license. It&amp;#8217;s a rakefile for managing multiple git submodules in a shared-server development environment.&lt;/p&gt;
+&lt;p&gt;We&amp;#8217;ve been using it internally at my company, &lt;a href='http://www.pharos-ei.com'&gt;Pharos Enterprise Intelligence&lt;/a&gt;, for the last 5 months and it&amp;#8217;s been a huge timesaver for us. Read below for a detailed description of the features and its use.&lt;/p&gt;
+&lt;p&gt;The code is being released under the &lt;span class=&quot;caps&quot;&gt;MIT&lt;/span&gt; license and the git repository is being hosted on &lt;a href='http://github.com'&gt;github&lt;/a&gt;. Take a look:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;a href='http://github.com/mdalessio/git-rake'&gt;http://github.com/mdalessio/git-rake&lt;/a&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;What git.rake Is&lt;/h3&gt;
+&lt;p&gt;A set of rake tasks that will:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Keep your superproject in synch with multiple submodules, and vice&lt;br /&gt;
+versa. This includes branching, merging, pushing and pulling to/from a&lt;br /&gt;
+shared server, and committing. (Biff!)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Keep a description of all changes made to submodules in the commit&lt;br /&gt;
+log of the superproject. (Bam!)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Display the status of each submodule and the superproject in an&lt;br /&gt;
+easily-scannable representation, suppressing what you don&amp;#8217;t want or&lt;br /&gt;
+need to see. (Pow!)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Execute arbitrary commands in each repository (submodule and&lt;br /&gt;
+superproject), terminating execution if something fails. (Whamm!)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Configure a rails project for use with git. (Although, you&amp;#8217;ve seen&lt;br /&gt;
+that elsewhere and are justifiably unimpressed.)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Prerequisites&lt;/h3&gt;
+&lt;p&gt;If you&amp;#8217;re not sure how to add a submodule to your repo, or you&amp;#8217;re not&lt;br /&gt;
+sure what a submodule is, take a quick trip over to &lt;a href=&quot;http://git.or.cz/gitwiki/GitSubmoduleTutorial&quot;&gt;the Git Submodule&lt;br /&gt;
+Tutorial&lt;/a&gt;, and then&lt;br /&gt;
+come back. In fact, even if you &lt;span class=&quot;caps&quot;&gt;ARE&lt;/span&gt; familiar with submodules, it&amp;#8217;s&lt;br /&gt;
+probably worth reviewing.&lt;/p&gt;
+&lt;h3&gt;The Problem We&amp;#8217;re Trying to Solve Here&lt;/h3&gt;
+&lt;p&gt;Let&amp;#8217;s start with stating our basic assumptions:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;you&amp;#8217;re using a shared repository (like github)&lt;/li&gt;
+&lt;li&gt;you&amp;#8217;re actively developing in one or more submodules&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;This model of development can get very tedious very quickly if you&lt;br /&gt;
+don&amp;#8217;t have the right tools, because everytime you decide to&lt;br /&gt;
+&amp;#8220;checkpoint&amp;#8221; and commit your code (either locally or up to the shared&lt;br /&gt;
+server), you have to:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;iterate through your submodules, doing things like:&lt;br /&gt;
+&lt;ul&gt;&lt;br /&gt;
+&lt;li&gt;making sure you&amp;#8217;re on the right branch,&lt;/li&gt;
+&lt;li&gt;making sure you&amp;#8217;ve pulled changes down from the server,&lt;/li&gt;
+&lt;li&gt;making sure that you&amp;#8217;ve committed your changes,&lt;/li&gt;
+&lt;li&gt;and pushed all your commits&lt;/li&gt;
+&lt;p&gt;&lt;/ul&gt;&lt;/li&gt;&lt;br /&gt;
+&lt;li&gt;and then making sure that your superproject&amp;#8217;s references to the&lt;br /&gt;
+submodules have also been committed and pushed.&lt;/li&gt;&lt;/p&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you do this a few times, you&amp;#8217;ll see that it&amp;#8217;s tedious and&lt;br /&gt;
+error-prone. You could mistakenly push a version of the superproject&lt;br /&gt;
+that refers to a &lt;em&gt;local&lt;/em&gt; commit of a submodule. When people try to&lt;br /&gt;
+pull that down from the server, all hell will break loose because that&lt;br /&gt;
+commit won&amp;#8217;t exist for them.&lt;/p&gt;
+&lt;p&gt;Ugh! This is monkey work. Let&amp;#8217;s automate it.&lt;/p&gt;
+&lt;h3&gt;Simple Solution&lt;/h3&gt;
+&lt;p&gt;OK, fixing this issue sounds easy. All we have to do is:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;develop some primitives for iterating over the submodules (and&lt;br /&gt;
+optionally the superproject),&lt;/li&gt;
+&lt;li&gt;and then throw some actual functionality on top for sanity checking, pulling,&lt;br /&gt;
+pushing and committing.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;The Tasks&lt;/h3&gt;
+&lt;p&gt;git-rake presents a set of tasks for dealing with the submodules:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    git:sub:commit     # git commit for submodules
+    git:sub:diff       # git diff for submodules
+    git:sub:for_each   # Execute a command in the root directory of each submodule.\
+                         Requires CMD='command' environment variable.
+    git:sub:pull       # git pull for submodules
+    git:sub:push       # git push for submodules
+    git:sub:status     # git status for submodules
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;And the corresponding tasks that run for the submodules &lt;span class=&quot;caps&quot;&gt;PLUS&lt;/span&gt; the superproject:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    git:commit         # git commit for superproject and submodules
+    git:diff           # git diff for superproject and submodules
+    git:for_each       # Run command in all submodules and superproject. \
+                         Requires CMD='command' environment variable.
+    git:pull           # git pull for superproject and submodules
+    git:push           # git push for superproject and submodules
+    git:status         # git status for superproject and submodules
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;It&amp;#8217;s worth noting here that most of these tasks do pretty much just&lt;br /&gt;
+what they advertise, in some cases less, and certainly nothing more&lt;br /&gt;
+(well, maybe a sanity check or two, but no destructive actions).&lt;/p&gt;
+&lt;p&gt;The exception is &lt;code&gt;git:commit&lt;/code&gt;, which depends on &lt;code&gt;git:update&lt;/code&gt;, and that has&lt;br /&gt;
+some pixie dust in it. More on this below.&lt;/p&gt;
+&lt;p&gt;Leaving only the following specialty tasks to be explained:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    git:configure      # Configure Rails for git
+    git:update         # Update superproject with current submodules
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The first is simple: configuration of a rails project for use with&lt;br /&gt;
+git.&lt;/p&gt;
+&lt;p&gt;The other, &lt;code&gt;git:update&lt;/code&gt;, does two powerful things:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;(Only if on branch &amp;#8216;master&amp;#8217;) Submodules are pushed to the shared&lt;br /&gt;
+server. This guarantees that the superproject will not have any&lt;br /&gt;
+references to local-only submodule commits.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;For each submodule, retrieve the git-log for all uncommitted (in&lt;br /&gt;
+the superproject) revisions, and jam them into a superproject commit&lt;br /&gt;
+message.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Here&amp;#8217;s an example of such a superproject commit message:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    commit 17272d53c298bd6a8ccee6528e0bc0d62104c268
+    Author: Mike Dalessio &amp;amp;lt;mike@csa.net&amp;amp;gt;
+    Date:   Mon May 5 20:48:13 2008 -0400
+
+            updating to latest vendor/plugins/pharos_library
+
+            &amp;amp;gt; commit f4dbbce6177de4b561aa8388f3fa9f7bf015fa0b
+            &amp;amp;gt; Author: Mike Dalessio &amp;amp;lt;mike@csa.net&amp;amp;gt;
+            &amp;amp;gt; Date:   Mon May 5 20:47:46 2008 -0400
+            &amp;amp;gt;
+            &amp;amp;gt;     git:for_each now exits if any of the subcommands fails.
+            &amp;amp;gt;
+            &amp;amp;gt; commit 6f15dee8c52ced20c98eef63b3f3fd1c29d91bbf
+            &amp;amp;gt; Author: Mike Dalessio &amp;amp;lt;mike@csa.net&amp;amp;gt;
+            &amp;amp;gt; Date:   Fri May 2 13:58:17 2008 -0400
+            &amp;amp;gt;
+            &amp;amp;gt;     think i've got the tempfile handling correct now. awkward, but right.
+            &amp;amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Excellent! Not only did &lt;code&gt;git:update&lt;/code&gt; automatically generate a useful log&lt;br /&gt;
+message for me (indicating that we&amp;#8217;re updating to the latest submodule&lt;br /&gt;
+version), but it&amp;#8217;s also &lt;strong&gt;embedding original commit logs&lt;/strong&gt; for all the&lt;br /&gt;
+changes included in that commit! That makes it much easier to find a&lt;br /&gt;
+specific submodule commit in the superproject commit log.&lt;/p&gt;
+&lt;h3&gt;A Note on Branching and Merging&lt;/h3&gt;
+&lt;p&gt;Note that there are no tasks for handling branching and merging. This&lt;br /&gt;
+is intentional! It could be very dangerous to try to read your mind&lt;br /&gt;
+about actions on branches, and frankly, I&amp;#8217;m just not up to it today.&lt;/p&gt;
+&lt;p&gt;For example, let&amp;#8217;s say I invented a task to copy the current branch&lt;br /&gt;
+&lt;code&gt;master&lt;/code&gt; to a new branch &lt;code&gt;foo&lt;/code&gt; (the equivalent of &lt;code&gt;git checkout -b foo
+master&lt;/code&gt;) in all submodules, but one of the submodules already has a&lt;br /&gt;
+branch named &lt;code&gt;foo&lt;/code&gt;!&lt;/p&gt;
+&lt;p&gt;Do we reduce this action to a simple &lt;code&gt;git checkout foo&lt;/code&gt; for that&lt;br /&gt;
+submodule? That could yield unexpected results if we a) forgot we had&lt;br /&gt;
+a branch named &lt;code&gt;foo&lt;/code&gt; and b) that branch is very different from the&lt;br /&gt;
+&lt;code&gt;master&lt;/code&gt; we expected to copy.&lt;/p&gt;
+&lt;p&gt;Well, then &amp;#8212; we can delete (or rename) the existing &lt;code&gt;foo&lt;/code&gt; branch and&lt;br /&gt;
+follow that up by copying &lt;code&gt;master&lt;/code&gt; to &lt;code&gt;foo&lt;/code&gt;. But then we&amp;#8217;re silently&lt;br /&gt;
+renaming (or deleting) branches that a) could be upstream on the&lt;br /&gt;
+shared server or b) we intended to keep around, but forgot to&lt;br /&gt;
+git-stash.&lt;/p&gt;
+&lt;p&gt;In any case, my point is that it can get complicated, and so I&amp;#8217;m&lt;br /&gt;
+punting. If you want to copy branches or do simple checkouts, you&lt;br /&gt;
+should use the &lt;code&gt;git:for_each&lt;/code&gt; command.&lt;/p&gt;
+&lt;h3&gt;Everyday Use of git:rake&lt;/h3&gt;
+&lt;p&gt;In my day job, I&amp;#8217;ve taken the vendor-everything approach and&lt;br /&gt;
+refactored lots of common code (across clients) into plugins, which&lt;br /&gt;
+are each a git submodule. My current project has 14 submodules, of&lt;br /&gt;
+which I am actively coding in probably 5 to 7 at any one time. (Plenty&lt;br /&gt;
+of motivation for creating git:rake right there.)&lt;/p&gt;
+&lt;p&gt;Let&amp;#8217;s say I&amp;#8217;ve hacked for an hour or two and am ready to commit to&lt;br /&gt;
+my local repository. Let&amp;#8217;s first take a look at what&amp;#8217;s changed:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    $ rake git:status
+
+    All repositories are on branch 'master'
+    /home/mike/git-repos/demo1/vendor/plugins/core: master, changes need to be committed
+    #   modified:   app/models/user_mailer.rb
+    #   public/images/mail_alert.png        (may need to be 'git add'ed)
+    WARNING: vendor/plugins/core needs to be pushed to remote origin
+    /home/mike/git-repos/demo1/vendor/plugins/pharos_library: master, changes need to be committed
+    #   deleted:    tasks/rake/git.rake
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You&amp;#8217;ll notice first of all that, despite having 14 submodules, I&amp;#8217;m&lt;br /&gt;
+only seeing output for the ones that need commits, and even that&lt;br /&gt;
+output is minimal, listing only the specific files and not all the&lt;br /&gt;
+cruft in the original message. It tells me that all submodules are on&lt;br /&gt;
+the same branch. It&amp;#8217;s smart enough to tell me that a file may need to&lt;br /&gt;
+be git-added. It will even alert me when a repo needs to be pushed to&lt;br /&gt;
+the origin.&lt;/p&gt;
+&lt;p&gt;I&amp;#8217;ll have to manually &lt;code&gt;cd&lt;/code&gt; to the submodule and git-add that one&lt;br /&gt;
+file, but once that&amp;#8217;s done, I can commit my changes by running:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    $ rake git:commit
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;which will run &lt;code&gt;git commit -a -v&lt;/code&gt; for each submodule, fire up the&lt;br /&gt;
+editor for commit messages along the way, push each submodule to the&lt;br /&gt;
+shared server, and then automagically create verbose commit logs for&lt;br /&gt;
+the superproject.&lt;/p&gt;
+&lt;p&gt;To pull changes from the shared server:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    $ rake git:pull
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;When you run this command, you&amp;#8217;ll notice that the output is filtered,&lt;br /&gt;
+so if no changes were pulled, you&amp;#8217;ll see no output. Silence is golden.&lt;/p&gt;
+&lt;p&gt;To push?&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    $ rake git:push
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Not only will this be silent if there&amp;#8217;s nothing to push, but the rake&lt;br /&gt;
+task is smart enough to not even attempt to push to the server if&lt;br /&gt;
+master is no different from origin/master. So it&amp;#8217;s silent and fast.&lt;/p&gt;
+&lt;p&gt;Let&amp;#8217;s say I want to copy the current branch, &lt;code&gt;master&lt;/code&gt;, to a new&lt;br /&gt;
+branch, &lt;code&gt;working&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    $ rake git:for_each CMD='git checkout -b working master'
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;If the command fails for any submodules, the rake task will terminate&lt;br /&gt;
+immediately.&lt;/p&gt;
+&lt;p&gt;Merging changes from &amp;#8216;working&amp;#8217; back into &amp;#8216;master&amp;#8217; for every submodule&lt;br /&gt;
+(and the superproject)?&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    $ rake git:for_each CMD='git checkout master'
+    $ rake git:for_each CMD='git merge working'
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;What git.rake Doesn&amp;#8217;t Do&lt;/h3&gt;
+&lt;p&gt;A couple of things that come quickly to mind that git.rake should&lt;br /&gt;
+probably do:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Push to the shared server for &lt;span class=&quot;caps&quot;&gt;ANY&lt;/span&gt; branch that we&amp;#8217;re tracking from a&lt;br /&gt;
+remote branch.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Be more intelligent about when we push to the server. Right now, the&lt;br /&gt;
+code pushes submodules to the shared server every time we want to&lt;br /&gt;
+commit the superproject. We might be able to get away with only&lt;br /&gt;
+pushing the submodules when we push the superproject.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Parsing the output from various &amp;#8216;git&amp;#8217; commands is prone to breakage&lt;br /&gt;
+if the git crew starts modifying some of the strings.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;There should probably be some unit/functional tests. See previous&lt;br /&gt;
+item.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Anyway, the code is all up on github. Go hack it, and send back patches!&lt;/p&gt;</description>
+      <author>Flavoriffic</author>
+      <guid>http://flavoriffic.blogspot.com/2008/05/managing-git-submodules-with-gitrake.html</guid>
+      <pubDate>Tue, 06 May 2008 16:36:00 +0000</pubDate>
+      <link>http://flavoriffic.blogspot.com/2008/05/managing-git-submodules-with-gitrake.html</link>
+    </item>
+    <item>
+      <title>JS development on IE is busted.</title>
+      <description>&lt;p&gt;My git commit for this afternoon, following 3 hours of debugging and work, contained the following description:&lt;/p&gt;
+&lt;blockquote&gt;IE7 fixes. &lt;span class=&quot;caps&quot;&gt;DAMN&lt;/span&gt; that browser is busted.&lt;/blockquote&gt;
+&lt;p&gt;Look, I&amp;#8217;m not going to go off on a rant, but there are lots of things that can be done to make debugging Javascript in the browser easier, and Microsoft (and the windows community) has done exactly none of them.&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;1. Javascript console&lt;/b&gt;&lt;/p&gt;
+&lt;p&gt;Hello? I&amp;#8217;d like to see what the error is, and where it&amp;#8217;s happening. By default, all that IE gives you is the Gray Box of Doom that tells you the problem is on line 24696, but won&amp;#8217;t tell you &lt;i&gt;which file&lt;/i&gt; it&amp;#8217;s referring to.&lt;/p&gt;
+&lt;p&gt;&lt;a onblur=&quot;try {parent.deselectBloggerImageGracefully();} catch(e) {}&quot; href=&quot;http://bp3.blogger.com/_Ve7bb1LcoGY/SAz20U0stVI/AAAAAAAAAPg/XsPlm6vQUGc/s1600-h/gray-box-of-doom.png&quot;&gt;&lt;img style=&quot;margin: 0pt 0pt 10px 10px; float: right; cursor: pointer;&quot; src=&quot;http://bp3.blogger.com/_Ve7bb1LcoGY/SAz20U0stVI/AAAAAAAAAPg/XsPlm6vQUGc/s320/gray-box-of-doom.png&quot; alt=&quot;&quot; id=&quot;BLOGGER_PHOTO_ID_5191795849254712658&quot; border=&quot;0&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;A quick Google query for &lt;a href=&quot;http://www.google.com/search?q=ie7+javascript+console&quot;&gt;IE7 javascript console&lt;/a&gt; does a good job at showing the general level of pain about this out there.&lt;/p&gt;
+&lt;p&gt;Firefox has a basic Javascript console built in. Open source 1, Microsoft 0.&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;2. Javascript debugger&lt;/b&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.microsoft.com/downloads/details.aspx?FamilyID=2f465be0-94fd-4569-b3c4-dffdf19ccd99&amp;amp;displaylang=en&quot;&gt;Microsoft Script Debugger&lt;/a&gt; is the only standalone tool available, and it&amp;#8217;s no longer supported by MS. The other options require installation of either Front Page or Visual Studio. Puh-lease.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.getfirebug.com/&quot;&gt;Firebug&lt;/a&gt; is free for Firefox. Open source 2, Microsoft 0.&lt;/p&gt;
+&lt;p&gt;I did find a nice tool called &lt;a href=&quot;http://www.debugbar.com/&quot;&gt;DebugBar&lt;/a&gt;, but it&amp;#8217;s only available freely for personal use. Even when I test-drove it, though, most functionality doesn&amp;#8217;t work properly for dynamically-created &lt;span class=&quot;caps&quot;&gt;DOM&lt;/span&gt; elements. So, anything you&amp;#8217;ve created or updated via &lt;span class=&quot;caps&quot;&gt;AJAX&lt;/span&gt; calls are not going to be debuggable by DebugBar. Lose! This is basically everything that excellent javascript frameworks and libraries like &lt;a href=&quot;http://extjs.com/&quot;&gt;ExtJS&lt;/a&gt;, &lt;a href=&quot;http://dojotoolkit.org/&quot;&gt;Dojo&lt;/a&gt; and &lt;a href=&quot;http://script.aculo.us/&quot;&gt;Scriptaculous&lt;/a&gt; have been working towards for years.&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;3. Basic EcmaScript extensions&lt;/b&gt;&lt;/p&gt;
+&lt;p&gt;Array.forEach() doesn&amp;#8217;t work? That&amp;#8217;s been around since &lt;a href=&quot;http://developer.mozilla.org/en/docs/Core_JavaScript_1.5_Reference:Objects:Array:forEach&quot;&gt;Ecmascript 1.6!&lt;/a&gt; That&amp;#8217;s right, IE7 still doesn&amp;#8217;t implement any of the crafty Array iterator methods.&lt;/p&gt;
+&lt;p&gt;I&amp;#8217;m just going to point you at &lt;a href=&quot;http://erik.eae.net/archives/2006/04/26/23.23.02/&quot;&gt;this terrific blog entry&lt;/a&gt; detailing the changelist for Microsoft Javascript support since 2001. (Hint: the changelist is empty.)&lt;/p&gt;
+&lt;p&gt;Got that? In seven years, IE has not improved its Javascript support &lt;i&gt;one whit&lt;/i&gt;. Where were you in 2001?&lt;/p&gt;
+&lt;p&gt;Just. Effing. Boggling.&lt;/p&gt;
+&lt;p&gt;At the end of all that, which quite frankly made me more dumb than when I started, I found myself asking the question: &amp;#8220;Can I get away without supporting IE in my product?&amp;#8221;&lt;/p&gt;
+&lt;p&gt;The realistic answer is obvious, but doesn&amp;#8217;t the fact that I&amp;#8217;m asking the question in the first place tell you that something is seriously busticated?&lt;/p&gt;
+&lt;p&gt;The details behind the Pit of Despair Known As Internet Explorer have been covered in &lt;a href=&quot;http://alex.dojotoolkit.org/?p=536&quot;&gt;way more detail&lt;/a&gt; (and by more knowledgable people) than I can hope to do. I&amp;#8217;m just adding my voice to the chorus of &amp;#8220;&lt;span class=&quot;caps&quot;&gt;WTF&lt;/span&gt;?&amp;#8221;s that are already out there.&lt;/p&gt;
+&lt;p&gt;If anyone knows of better tools for debugging a rich javascript application on IE7, puh-lease let me know.&lt;/p&gt;</description>
+      <author>Flavoriffic</author>
+      <guid>http://flavoriffic.blogspot.com/2008/04/js-development-on-ie-is-busted.html</guid>
+      <pubDate>Mon, 21 Apr 2008 20:08:00 +0000</pubDate>
+      <link>http://flavoriffic.blogspot.com/2008/04/js-development-on-ie-is-busted.html</link>
+    </item>
+    <item>
+      <title>(Re-) Starting Up</title>
+      <description>&lt;p&gt;Hey there. It&amp;#8217;s been a while. Sorry about that. Thankfully, the interweb (that&amp;#8217;s you!) hasn&amp;#8217;t gone anywhere.&lt;/p&gt;
+&lt;p&gt;I&amp;#8217;ve recently started up my own software company with a close friend from college, so I figured I&amp;#8217;d resurrect my blog to record for posterity how the startup is going. We&amp;#8217;re doing some interesting software development (by some people&amp;#8217;s standards, anyway), so there&amp;#8217;ll be some articles in that vein, as well as anecdotes about running the business, deep thoughts on existential topics like &amp;#8220;What kind of monkey is best?&amp;#8221; (answer: they&amp;#8217;re &lt;em&gt;all&lt;/em&gt; the best) and just plain old me-being-me (my Mom tells me I&amp;#8217;m funny).&lt;/p&gt;
+&lt;p&gt;My company is &lt;a href=&quot;http://www.pharos-ei.com/&quot;&gt;Pharos Enterprise Intelligence&lt;/a&gt;, and just this week our alpha test site (invitation only) went live with &lt;a href=&quot;http://engineyard.com/&quot;&gt;Engine Yard&lt;/a&gt;. I&amp;#8217;ll talk more about the product, the technology and our business model in later posts. You&amp;#8217;ll just have to wait.&lt;/p&gt;
+&lt;p&gt;And to top it off, our public-facing &lt;a href=&quot;http://www.pharos-ei.com/&quot;&gt;intarnets site&lt;/a&gt; went live this week. If you really loved me, you&amp;#8217;d subscribe to our &lt;a href=&quot;http://www.pharos-ei.com/?q=rss.xml&quot;&gt;&lt;span class=&quot;caps&quot;&gt;RSS&lt;/span&gt; feed&lt;/a&gt;.&lt;/p&gt;</description>
+      <author>Flavoriffic</author>
+      <guid>http://flavoriffic.blogspot.com/2008/04/re-starting-up.html</guid>
+      <pubDate>Thu, 17 Apr 2008 17:52:00 +0000</pubDate>
+      <link>http://flavoriffic.blogspot.com/2008/04/re-starting-up.html</link>
+    </item>
+    <item>
+      <title>Evidence of Things Not Seen</title>
+      <description>&lt;p&gt;OK, so earlier today I was complaining to my friend Jordan about the &lt;a href=&quot;http://www.amazon.com/West-Wing-Complete-Sixth-Season/dp/B000EGEJI4/sr=8-3/qid=1163719069/ref=pd_bbs_sr_3/102-0983709-0892908?ie=UTF8&amp;s=dvd&quot;&gt;&amp;#8220;West Wing: Sixth Season&amp;#8221; &lt;span class=&quot;caps&quot;&gt;DVD&lt;/span&gt; set.&lt;/a&gt; (Yes, the same Jordan who promised years ago he&amp;#8217;d run the Marathon with me, but has since completely reneged on the deal.)&lt;/p&gt;
+&lt;p&gt;I was hoping to be able to get through season 6 during my treadmill workouts. Without commercials, each episode runs about 42 minutes, which is about how long my workouts are taking.&lt;/p&gt;
+&lt;p&gt;I got through some of season 5 during my previous brief stint of jogging (in March). Because my treadmill is a little loud, I turned on subtitles so as to not miss any of the dialogue.&lt;/p&gt;
+&lt;p&gt;So here&amp;#8217;s the problem with the season 6 DVDs: no English subtitles.&lt;/p&gt;
+&lt;p&gt;At first, you might think, &amp;#8220;So what?&amp;#8221; Well, let&amp;#8217;s stop and consider a couple of things.&lt;/p&gt;
+&lt;p&gt;1) They talk fast in the West Wing.&lt;/p&gt;
+&lt;p&gt;Ok, so Toby would roll his eyes and correct me (he talks &lt;span style=&quot;font-style: italic;&quot;&gt;quickly&lt;/span&gt;), but you know what I mean. Aaron Sorkin practically invented the walk-and-talk, and sometimes you just miss something. Subtitles help with that. A lot. (And yes, fanboy, I know Sorkin didn&amp;#8217;t write season 6.)&lt;/p&gt;
+&lt;p&gt;2) They talk about obscure aspects of government.&lt;/p&gt;
+&lt;p&gt;Sorkin is a policy wonk. So are the current writers for the show. Sometimes you miss what the hell they&amp;#8217;re talking about &lt;span style=&quot;font-style: italic;&quot;&gt;now &lt;/span&gt;because you&amp;#8217;re still trying to absorb some fact from 15 seconds ago. Like why the Secretary of Defense is trying to torpedo a uranium transfer from the Republic of Georgia for budgetary reasons. Subtitles help with that, too.&lt;/p&gt;
+&lt;p&gt;3) The plot and character development are &lt;span class=&quot;caps&quot;&gt;ENTIRELY&lt;/span&gt; dialogue-driven.&lt;/p&gt;
+&lt;p&gt;In the West Wing, we hardly ever get to see anything &lt;span style=&quot;font-style: italic;&quot;&gt;actually happen&lt;/span&gt;. We usually hear third-hand about what happened somewhere far from the White House. Sometimes we hear the &lt;span class=&quot;caps&quot;&gt;CIA&lt;/span&gt; director talk about how it happened. Then some guys from Foggy Bottom talk some more about what to do about it. Sometimes people talk loudly. But mostly they talk quickly. While walking around. About obscure aspects of government.&lt;/p&gt;
+&lt;p&gt;4) One of the recurring characters is played by an Oscar-winning actress &lt;a href=&quot;http://www.imdb.com/name/nm0559144/&quot;&gt;who also happens to be deaf.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Savor the irony.&lt;/p&gt;
+&lt;p&gt;What logic would lead someone to include subtitles for French and Spanish, but not English, on a North American release? Boggling, just boggling. And it&amp;#8217;s interfering with my running.&lt;/p&gt;
+&lt;p&gt;Well, not so much &amp;#8220;interfering&amp;#8221; as &amp;#8220;making a little less fun.&amp;#8221; But as Josh would say, that&amp;#8217;s an important &amp;#8230; thing.&lt;/p&gt;</description>
+      <author>Flavoriffic</author>
+      <guid>http://flavoriffic.blogspot.com/2006/10/evidence-of-things-not-seen.html</guid>
+      <pubDate>Tue, 31 Oct 2006 18:47:00 +0000</pubDate>
+      <link>http://flavoriffic.blogspot.com/2006/10/evidence-of-things-not-seen.html</link>
+    </item>
+  </channel>
+</rss>

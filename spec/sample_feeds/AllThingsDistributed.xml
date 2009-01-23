@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>All Things Distributed</title>
+        <link>http://www.allthingsdistributed.com/</link>
+        <description>Werner Vogels&apos; weblog on building scalable and robust distributed systems.</description>
+        <language>en</language>
+        <copyright>Copyright 2009</copyright>
+        <lastBuildDate>Tue, 23 Dec 2008 00:15:07 -0800</lastBuildDate>
+        <generator>http://www.sixapart.com/movabletype/</generator>
+        <docs>http://www.rssboard.org/rss-specification</docs>
+        
+        <item>
+            <title>Eventually Consistent - Revisited</title>
+            <description><![CDATA[<p>
+<i>I wrote a <a href="http://www.allthingsdistributed.com/2007/12/eventually_consistent.html">first version of this posting</a> on consistency models about a year ago, but I was never happy with it as it was written in haste and the topic is important enough to receive a more thorough treatment. <a href="http://queue.acm.org/issuedetail.cfm?issue=1466443">ACM Queue</a> asked me to revise it for use in their magazine and I took the opportunity to improve the article. This is that new version.</i>
+</p><p>
+<b>Eventually Consistent - Building reliable distributed systems at a worldwide scale demands trade-offs between consistency and availability. </b>
+</p>
+<p>At the foundation of Amazon's cloud computing are infrastructure services such as Amazon's S3 (Simple Storage Service), SimpleDB, and EC2 (Elastic Compute Cloud) that provide the resources for constructing Internet-scale computing platforms and a great variety of applications. The requirements placed on these infrastructure services are very strict; they need to score high marks in the areas of security, scalability, availability, performance, and cost effectiveness, and they need to meet these requirements while serving millions of customers around the globe, continuously. </p><p>
+  Under the covers these services are massive distributed systems that operate on a worldwide scale. This scale creates additional challenges, because when a system processes trillions and trillions of requests, events that normally have a low probability of occurrence are now guaranteed to happen and need to be accounted for up front in the design and architecture of the system. Given the worldwide scope of these systems, we use replication techniques ubiquitously to guarantee consistent performance and high availability. Although replication brings us closer to our goals, it cannot achieve them in a perfectly transparent manner; under a number of conditions the customers of these services will be confronted with the consequences of using replication techniques inside the services.</p><p>
+One of the ways in which this manifests itself is in the type of data consistency that is provided, particularly when the underlying distributed system provides an eventual consistency model for data replication. When designing these large-scale systems at Amazon, we use a set of guiding principles and abstractions related to large-scale data replication and focus on the trade-offs between high availability and data consistency. In this article I present some of the relevant background that has informed our approach to delivering reliable distributed systems that need to operate on a global scale. An <a href="http://www.allthingsdistributed.com/2007/12/eventually_consistent.html">earlier version of this text</a> appeared as a posting on the All Things Distributed weblog in December 2007 and was greatly improved with the help of its readers.</p>
+<p>
+Read the full article at the <a href= "http://www.allthingsdistributed.com/2008/12/eventually_consistent.html">Eventually Consistent - Revisited</a> posting on All Things Distributed.
+</p>]]></description>
+            <link>http://www.allthingsdistributed.com/2008/12/eventually_consistent.html</link>
+            <guid>http://www.allthingsdistributed.com/2008/12/eventually_consistent.html</guid>
+            
+                <category domain="http://www.sixapart.com/ns/types#category">Distributed Systems</category>
+            
+            
+            <pubDate>Tue, 23 Dec 2008 00:15:07 -0800</pubDate>
+        </item>
+        
+        <item>
+            <title>Teamwork</title>
+            <description><![CDATA[<p>
+A question I get asked frequently is how working in industry is different from working in academia. My answer from the beginning has been that the main difference is teamwork. While in academia there are collaborations among faculty and there are student teams working together, the work is still rather individual, as is the reward structure. In industry you cannot get anything done without teamwork. Products do not get build by individuals but by teams; definition, implementation, delivery and operation are all collaborative processes that have many people from many different disciplines working together.
+</p><p>
+ As such the <a href="http://www.informationweek.com/news/management/interviews/showArticle.jhtml?articleID=212501217">Information Week's Chief of the Year</a> award cannot be my award. It is an award for all the Amazonians who in the past years have developed technologies and processes that are so innovative that they have defined a whole business landscape: first in ecommerce and now with Amazon Web Services they are defining Cloud Computing through the delivery of Infrastructure as a Service.  Compared to the immense work that was needed to make all of this work, my involvement has been small. 
+</p><p>
+A relentless focus on innovation by all Amazonians has made this possible: from new hardware development to the definition of new business models, from building ultra-reliable storage services to a massively scalable compute cloud, from pervasive monitoring and performance control to revolutionary efficient software architectures. At a scale and with reliability, performance and cost-effectiveness that is unparalleled in today's technology world. All these advances are based on 13 years of experience with building the world's most customer centric ecommerce operation, and as such the success of AWS is absolutely not the work of a single individual but the success of all Amazonians.
+</p><p>
+But this is only the beginning. We are intent on building the world's most customer-centric cloud computing operation and, as we have done with ecommerce, we will not accept the old norms of what must be done. We will always focus on what our customers need and work backwards from there.  We will continue to innovate and roll out services and features that address the real needs of our customers.
+</p><p>
+It is still only Day One...
+</p>]]></description>
+            <link>http://www.allthingsdistributed.com/2008/12/teamwork.html</link>
+            <guid>http://www.allthingsdistributed.com/2008/12/teamwork.html</guid>
+            
+                <category domain="http://www.sixapart.com/ns/types#category">Amazon Web Services</category>
+            
+                <category domain="http://www.sixapart.com/ns/types#category">CTO</category>
+            
+                <category domain="http://www.sixapart.com/ns/types#category">Personal</category>
+            
+            
+            <pubDate>Sat, 20 Dec 2008 10:30:17 -0800</pubDate>
+        </item>
+        
+        <item>
+            <title>Expanding the Cloud:  Amazon EC2 in Europe</title>
+            <description><![CDATA[</a><p>
+Starting today the <a href="http://aws.amazon.com/ec2">Amazon Elastic Computing Cloud </a>(EC2) supports the ability to launch instances in multiple geographically distinct regions. The new EU region enables users to launch instances in Europe.  
+</p><p>
+This addresses the requests from many our European customers and from companies that want to run instances closer to European customers. Over the past year I have visited with many of our European customers and frequently they remarked "if only we had EC2 in Europe".  We heard their requests loud and clear and have worked very hard to roll out the European Region. This is a very important milestone on the road to local access to all our services.
+</p><p>
+These are three of the main drivers for the requests by our customers
+</p><p>
+<ol>
+	<li>Lower latency from EC2 instances to their clients. The European Region can be accessed with low latency from all major European network hubs.</li>
+	<li>Low latency access to data stored in the <a href="http://aws.amazon.com/s3">Amazon Simple Storage Service </a>(S3). A large number of customers have stored data into the European Region of Amazon S3. With the new European region this data can now be accessed with low latency from within EC2 at no cost</li>
+<li>Regulatory requirements may require that data be stored in the EU and/or processing take place within the EU.  With the European Regions of Amazon S3 and Amazon EC2 developers now can address those requirements.</li>
+</ol>
+</p><p>
+<img alt="globe-europe" src="http://www.allthingsdistributed.com/images/globe-europe.jpg" width="347" height="346" style="float: right; margin: 0 0 20px 20px;" />
+The new European Region will also contain two Availability Zones such that developers can build applications that can tolerate a variety of failure scenarios.  One can even develop fail-over scenarios that will span multiple continents. Amazon Elastic Block Storage will also be available to our customers that launch instances in the European Region. 
+</p><p>
+With the European Regions of Amazon EC2, S3 and SQS, combined with Amazon CloudFront, developers now have a full set of services that can help them address the European market.
+</p><p>
+I am very excited about the launch of the Amazon EC2 in European and I am looking forward to work with our European partners and customers to roll out their applications and services in the EU Region.
+</p><p>
+More details on the <a href="http://aws.amazon.com/ec2/">Amazon EC2 detail page </a>, the <a href="http://aws.typepad.com/aws/2008/12/amazon-ec2-crosses-the-atlantic.html">AWS blog</a> and at <a href="http://blog.rightscale.com/2008/12/09/amazon-launches-in-europe">RightScale</a>
+</p>]]></description>
+            <link>http://www.allthingsdistributed.com/2008/12/amazon_ec2_in_europe.html</link>
+            <guid>http://www.allthingsdistributed.com/2008/12/amazon_ec2_in_europe.html</guid>
+            
+                <category domain="http://www.sixapart.com/ns/types#category">Amazon Web Services</category>
+            
+            
+            <pubDate>Tue, 09 Dec 2008 22:00:19 -0800</pubDate>
+        </item>
+        
+        <item>
+            <title>Expanding the Cloud:  Amazon CloudFront </title>
+            <description><![CDATA[<p>
+Today marks the launch of <a href="http://aws.amazon.com/cloudfront">Amazon CloudFront</a>, the new Amazon Web Service for content delivery.  It integrates seamlessly with Amazon S3 to provide low-latency distribution of content with high data transfer speeds through a world-wide network of edge locations.  It requires no upfront commitments and is a pay-as-you-go service in the same style as the other Amazon Web Services.
+</p><p>
+Amazon CloudFront has been designed to be fast; the service will cache copies of the content in edge locations close to the end-user's location, significantly lowering the access latency to the content. High sustainable data transfer rates can be achieved with the service especially when distributing larger objects.
+</p><p>
+Amazon CloudFront will be useful for many different application scenarios such as giving your customers low-latency access to popular objects and protecting your site from popularity surges; other popular examples are low-cost delivery of rich media and sustainable fast transfer rates for software distributions.
+</p><p>
+See also the posting on the <a href="http://aws.typepad.com/aws/2008/11/distribute-your-content-with-amazon-cloudfront.html">AWS Developer weblog</a> and at <a href="http://blog.rightscale.com/2008/11/17/amazon-releases-cloudfront/">Rightscale</a>.
+</p><p>
+<img alt="Amazon CloudFront" src="http://www.allthingsdistributed.com/images/etc_nologo.jpg" width="600" height="303" style="text-align: center; display: block; margin: 0 auto 20px;" />
+</p><p>
+<b>Seamless integration</b>
+</p><p>
+A content delivery service that would extend Amazon S3 has been something that is very high on the wish list of our customers. They were already successfully using Amazon S3 for some of their content distribution needs, but many wanted the choice to do so with even lower latency and with higher data transfer rates to any place in the world. 
+</p><p>
+Customers really appreciate the scalability, reliability and cost-effectiveness of Amazon S3 and the fact that it integrates so easily with Amazon EC2. Amazon CloudFront builds further on that seamless integration by making it really simple to distribute Amazon S3 content world-wide. The combination of the two services is really powerful: Amazon S3 will give you durable storage of your data, and the network of edge locations on three continents used by the Amazon CloudFront will deliver the content to your customers with low latency from the most appropriate location.
+</p><p>
+<strong>The network of edge locations</strong>
+</p><p>
+To ensure low-latency delivery, Amazon CloudFront uses a network of edge locations world-wide:
+</p><p>
+<ul>
+	<li><em>United States</em>: Ashburn (VA), Dallas/Fort Worth, Los Angeles, Miami, Newark, Palo Alto, Seattle and St. Louis</li>
+	<li><em>Europe</em>: Amsterdam, Dublin, Frankfurt and London</li>
+	<li><em>Asia</em>: Hong Kong and Tokyo</li>
+</ul>
+</p><p>
+These edge locations work together to direct customers' requests to the edge location that can provide the response with the lowest latency.
+</p><p>
+<strong>Simplicity</strong>
+</p><p>
+Because Amazon CloudFront follows the core principles of all Amazon Web Services it is a unique content delivery service. The simplicity in getting started has been described by many of our early customers as a very important feature.
+</p><p>
+Using Amazon CloudFront is dead simple:
+</p><p>
+<ol>
+	<li>Put your objects in an Amazon S3 bucket.</li>
+	<li>Call the CreateDistribution API with the name of the S3 bucket, which will return your distribution's domain name.</li>
+	<li>Use the new domain name in urls on your web or in your application. Whenever these urls are accessed CloudFront will determine the optimal edge location from where to serve your content.</li>
+</ol>
+</p><p>
+Many of our private beta customers have reported that it only took them 10-15 minutes from the moment that they first signed up for the service to the moment that Amazon CloudFront was distributing their content.
+</p><p>
+The second Amazon Web Services principle that sets Amazon CloudFront apart is that no upfront commitments are necessary and you only pay for what you have used. There are no upfront fees or high volume requirements and no negotiations are necessary because we have published low prices from the start. This brings content delivery in the hands of all businesses, and you can exploit the benefits of Amazon's world-wide network of edge locations, regardless of whether you are a highly popular website, a small blog, a complex enterprise application or a developer doing some prototyping. 
+</p><p>
+Tools such as <a href="http://www.suchisoft.com/ext/s3fox.php">S3Fox</a> have support for Amazon CloudFront built-in such that if you want to avoid any programming you can immediately start exploiting world-wide, low-latency content delivery.
+</p><p>
+<strong>A core distributed systems component</strong>
+</p><p>
+It is not uncommon to think about a service for content delivery such as Amazon CloudFront only in the context of media distribution for web sites, but it actually plays a more fundamental role.  
+</p><p>
+There are two main technology components to such a service; the first is intelligent request routing, which routes requests to the location that can best serve the user given a series of requirements and the status of the network. The second technology component is that of object caching, which is a fundamental building block in both operating systems and in distributed systems. 
+</p><p>
+For example your operating system will have a file cache, where it will store popular, recently-accessed files in memory to provide much faster access and greater throughput. Without a file cache your whole computer would appear much slower as all work would happen at the speed of the disk instead of memory. 
+</p><p>
+Caching is an essential technique that is used to make sure that components can operate at the fastest speed possible, to overcome the performance differences that exist in systems. For example CPU's have caches that are much faster than memory, memory works as caches for disks, local disks can function as caches for remote disks, etc.
+</p><p>
+In distributed systems caching is primarily used to provide fast access to popular objects that are located in remote storage servers. These systems of caching servers often cooperate to create massive aggregate world-wide capacity to provide low latency access.  And by using globally decentralized cache servers for distribution, very high data transfer speed can be achieved.
+</p><p>
+Caching technology has long been the center piece of computer systems research and in Amazon CloudFront we use the type of highly advanced algorithms for reliability and scale that you have come to expect from our Amazon services.
+</p><p>
+Many of our customers will look to Amazon CloudFront for rock solid content distribution for websites, but its application is not limited to that. Developers can easily integrate the service into their desktop and server applications and benefit from the advanced routing and caching that Amazon CloudFront offers. For example enterprise style applications such as <a href="https://data.nasdaq.com/MR.aspx">NASDAQ's Market Replay</a> application are ideal candidates to integrate Amazon CloudFront to provide low latency access to popular market data while reducing the cost of data transfers.
+</p><p>
+<small>Graphic by Renato Valdés Olmos of <a href="http://postmachina.com">Postmachina</a></small>
+</p>]]></description>
+            <link>http://www.allthingsdistributed.com/2008/11/amazon_cloudfront.html</link>
+            <guid>http://www.allthingsdistributed.com/2008/11/amazon_cloudfront.html</guid>
+            
+                <category domain="http://www.sixapart.com/ns/types#category">Amazon Web Services</category>
+            
+                <category domain="http://www.sixapart.com/ns/types#category">Distributed Systems</category>
+            
+            
+            <pubDate>Mon, 17 Nov 2008 22:00:05 -0800</pubDate>
+        </item>
+        
+        <item>
+            <title>Using the Cloud to build highly-efficient systems</title>
+            <description><![CDATA[<p>
+These are times where many companies are focusing on the basics of their IT operations and are asking themselves how they can operate more efficiently to make sure that every dollar is spent wisely. This is not the first time that we have gone through this cycle, but this time there are tools available to CIOs and CTOs that help them to manage their IT budgets very differently. By using infrastructure as a service, basic IT costs are moved from a capital expense to a variable cost, building clearer relationships between expenditures and revenue generating activities. CFOs are especially excited about the premise of this shift.
+</p><p>
+In recent weeks in my discussions with many of our Amazon Web Services customers I have seen a heightened interest in moving functionality into the AWS cloud to get a better grasp on controlling cost. And this is across the board; from young businesses to Fortune 500 enterprises, from research labs to television networks, all are concerned about reducing upfront cost associated with the new ventures and reducing waste in existing operations. Most of them point to 3 properties of the Amazon Web Services model that helps them become more efficient:
+</p><p>
+<ol>
+	<li><p><strong>The pay-as-you-go model</strong>. There are significant advantages to this model for efficiency as one only pays for those resources one has actually consumed. If the application scales along the right revenue generating dimensions these costs will be in line with the revenue being generated.</p> </li>
+<li><p><strong>Managing peak capacity</strong>. Many IT organizations need to maintain extra capacity for anticipated peak loads, capacity that sits idle for most of the time. These peak loads can be driven by customer demand such as in the online world, but it can also be capacity required to execute essential IT tasks such as periodic document indexing or business tasks such as closing the books at the end of a quarter.  This is often the first step that our enterprise customers take to become familiar with using infrastructure as a service.  After successfully running some of their peaks jobs they will then starting moving more permanent processing into the cloud. </p><p>
+A great example in the online world is the Indy 500 organization that normally runs 50 servers to serve their customers, but during the races move all of their processing into Amazon EC2 to handle all traffic no matter how many hundreds of thousands of customers show up at the same time. The savings for the Indy IT budget during the races this spring was over 50%. </p></li>
+<li><p><strong>Higher reliability at lower cost.</strong> Negotiating several contracts with different datacenter and network providers to make sure the IT tasks can survive complex failure scenarios is a difficult task and many organizations find it hard to achieve this in a cost efficient manner. Amazon EC2 with its Regions and Availability Zones gives its customers access to several high-end datacenters with highly redundant networking capabilities at a single pricing model, without any negotiations. </p>
+</li>
+</ol>
+</p><p>
+<strong>Amazon's efficiency principles</strong>
+</p><p>
+At Amazon we have a long history of implementing our services in a highly efficient manner. Whether these are our infrastructure services or our high-level ecommerce services, frugality is essential in our retail business. Margins in a retail business are traditionally small and these constraints have driven major innovations in the way that we manage our IT capacity. We have developed a lot of expertise in building highly efficient architectures to support Amazon's goal of providing our customer with products at low prices.  Every savings we have been able to make in our IT cost we have been able to give back to our customers in terms of lowering prices. This tradition of letting customers benefit from our cost saving is something that we also apply to our Amazon Web Services business. When earlier this year we were able to negotiate better deals with our network providers we immediately reduced the bandwidth cost for our customers.
+</p><p>
+But we have learned at Amazon that having a low cost infrastructure is only the starting point of being as efficient as possible. You need to make sure that your applications will make use of the infrastructure in an adaptive and scalable manner to achieve a high degree of efficiency.  In the Amazon architecture being incrementally scalable is key. This means that services' and applications' main course of action to handle increasing load or larger datasets is to grow one unit at a time. A more precise definition can be found <a href="http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html">here</a>. 
+</p><p>
+All services at Amazon are built to be horizontally scalable. An efficient request routing mechanism delivers requests to services in a manner that optimizes performance at a certain efficiency point. Capacity is acquired and released on short time frames to handle increase and decreases in resource usage.  To achieve this principle of automatic scaling our services there are four basic components that need to work together:
+</p><p>
+<ol>
+	<li><p><strong>Elastic Compute Capacity</strong>. The basic resources required to execute our services and applications need to be able to grow and shrink at a moment's notice in a fully automated fashion. This is the fundamental premise behind Amazon EC2; whenever an Amazon service requires additional capacity it can use a simple API call to acquire additional capacity without any interference from operators or data techs, and can release it when no longer needed.<p></li>
+	<li><p><strong>Monitoring</strong>. We relentlessly measure every possible resource usage parameter, every application counter, and every customer's experience.  Many gigabits per second of monitoring data flows continuously through the Amazon networks to make sure that our customers are getting serviced at the levels they can expect and at an efficiency level the business desires.  We don't really care that much about averages or medians, for us performance at the 99.9 percentile is important to make sure that all our customers get the right experience.</P.</li>
+	<li><p><strong>Load balancing</strong>. Using the monitoring information we route requests intelligently, using several algorithms, to those services instances that can provide responses with the expected performance. In reality balancing the load is a secondary task of the request routing system as it is the customer's experience we are most driven by. The optimization quest is to deliver the right customer experience at the optimal resource utilization.</P></li>
+	<li><p><strong>Automatic scaling</strong>. Using Monitoring data, Load balancing and EC2, the auto-scaling service monitors service health and performance, brings more capacity on-line if needed or reduces the number of instances to meet efficiency goals. It spreads instances over multiple availability zones and regions to achieve the desired reliability guarantees. All without interference of developers or operators. </b></li>
+</ol>
+</p><p>
+These four services are the core of Amazon's highly efficient infrastructure that has allowed us to drive our IT costs to the floor for our retail operations.
+</p><p>
+<img alt="scale LB monitoring" src="http://www.allthingsdistributed.com/images/a-m-lb.jpg" width="410" height="313"  style="text-align: center; display: block; margin: 0 auto 20px;" />
+</p><p>
+<strong>Building highly-efficient systems on AWS</strong>
+</p><p>
+To make sure our customers can also benefit from our experience in building highly efficient systems we have decided to release versions of these services on the Amazon Web Services platform. The Monitoring, Load Balancing and Auto-Scaling services will be combined with a Management Console that provides a simple, point-and-click web interface that lets you configure, manage and access your AWS cloud resources.
+</p><p>
+They will first be released in private beta and you can <a href="http://aws.amazon.com/contact-us/new-features-for-amazon-ec2">express your interest</a> in that program on the AWS web site. More details can be found in the posting on the <a href="http://aws.typepad.com/aws/2008/10/big-day-for-ec2.html">Amazon Web Services blog</a>.
+</p><p>
+<small>Graphic by Renato Valdés Olmos of <a href="http://postmachina.com">Postmachina</a></small>
+</p>]]></description>
+            <link>http://www.allthingsdistributed.com/2008/10/using_the_cloud_to_build_highl.html</link>
+            <guid>http://www.allthingsdistributed.com/2008/10/using_the_cloud_to_build_highl.html</guid>
+            
+                <category domain="http://www.sixapart.com/ns/types#category">Amazon Web Services</category>
+            
+            
+            <pubDate>Thu, 23 Oct 2008 05:31:00 -0800</pubDate>
+        </item>
+        
+        <item>
+            <title>Amazon EC2 in Full Production</title>
+            <description><![CDATA[<p>
+Congratulations to the <a href="http://aws.amazon.com/ec2">Amazon EC2</a> team for the hard work to get to the point where the beta tag is removed from the service and it is now in full production. Not only that, but there now is an <a href="http://aws.amazon.com/ec2-sla">SLA</a>, and <a href="http://aws.amazon.com/windows">Microsoft Windows and SQL Server</a> are available as of today. 
+</p><p>
+More details on the <a href="http://aws.amazon.com/ec2">Amazon EC2</a> product page and on the <a href="http://aws.typepad.com/aws/2008/10/big-day-for-ec2.html">Amazon Web Services weblog</a>.
+</p>]]></description>
+            <link>http://www.allthingsdistributed.com/2008/10/amazon_ec2_in_full_production.html</link>
+            <guid>http://www.allthingsdistributed.com/2008/10/amazon_ec2_in_full_production.html</guid>
+            
+                <category domain="http://www.sixapart.com/ns/types#category">Amazon Web Services</category>
+            
+            
+            <pubDate>Thu, 23 Oct 2008 05:30:00 -0800</pubDate>
+        </item>
+        
+        <item>
+            <title>Expanding the Cloud: Microsoft Windows Server on Amazon EC2</title>
+            <description><![CDATA[<img alt="cloud-reflection-office-small.jpg" src="http://www.allthingsdistributed.com/images/cloud-reflection-office-small.jpg" width="220" height="147" style="float: right; margin: 0 0 20px 20px" />
+<p>
+The backend servers that power the world of Internet Services have become increasingly diverse. With <a href="http://aws.amazon.com/windows/">today's announcement</a> that Microsoft Windows Server is available on <a href="http://aws.amazon.com/ec2">Amazon EC2</a> we can now run the majority of popular software systems in the cloud.  Windows Server ranked very high on the list of requests by customers so we are happy that we will be able to provide this.  
+</p><p>
+One particular area that customers have been asking for <a href="http://aws.amazon.com/windows/">Amazon EC2 with Windows Server</a> was for Windows Media transcoding and streaming.  There is a range of excellent codecs available for Windows Media and there is a large amount of legacy content in those formats. In past weeks I met with a number of folks from the entertainment industry and often their first question was: when can we run on windows?
+</p><p>
+There are many different reasons why customers have requested Windows Server; for example many customers want to run ASP.NET websites using Internet Information Server and use Microsoft SQL Server as their database.  Amazon EC2 running Windows Server enables this scenario for building scalable websites.  In addition, several customers would like to maintain a global single Windows-based desktop environment using Microsoft Remote Desktop, and Amazon EC2 is a scalable and dependable platform on which to do so.
+</p><p>
+Amazon EC2 with Windows Server is still currently in private beta testing, but will be available for general use before the end of the year. Keep an eye on the <a href="http://aws.typepad.com/aws/2008/10/coming-soon-ama.html">AWS Weblog</a> for information about Amazon Web Services at the Microsoft <a href="http://www.microsoftpdc.com/">Professional Developer Conference</a>.
+</p>]]></description>
+            <link>http://www.allthingsdistributed.com/2008/09/amazon_ec2_with_microsoft_wind.html</link>
+            <guid>http://www.allthingsdistributed.com/2008/09/amazon_ec2_with_microsoft_wind.html</guid>
+            
+                <category domain="http://www.sixapart.com/ns/types#category">Amazon Web Services</category>
+            
+            
+            <pubDate>Tue, 30 Sep 2008 23:30:00 -0800</pubDate>
+        </item>
+        
+        <item>
+            <title>AWS Startup Challenge 2008</title>
+            <description><![CDATA[<a href="http://aws.amazon.com/startupchallenge/"><img src="http://awsmedia.s3.amazonaws.com/startup-challenge.gif" width="200" height="118" style="float: right; margin: 0 0 20px 20px;"/></a>
+<p>The last week for submitting the applications for the <a href="http://aws.amazon.com/startupchallenge/">AWS Startup Challenge</a> has started. Looking at the proposals that are being submitted it looks like this will be another very inspiring challenge. These proposals are reviewed by a panel and five finalists will be selected. The finalists will come to Seattle to compete for $50K in cash, $50K in AWS credits, 2 years of Premium Support and more. All finalists will receive <a href="http://rightscale.com/">Rightscale</a> Premium for 6 months and there will be a number of promotional events that includes all the finalists.
+</p><p>
+Last year there were 900 applications which made for very intense proposal reading sessions.  Eventual <a href="http://ooyala.com/">Ooyala</a> won the challenge and got to <a href="http://www.allthingsdistributed.com/2007/12/and_the_winner_is.html">smash the server to bits</a>. The <a href="http://developer.amazonwebservices.com/connect/amazon_startupchallenge.jsp">videos of last year's finalists</a> are still online.
+</p><p>
+If you have a brilliant idea/business that we should be evaluating you have until October 10 <a href="http://aws.amazon.com/startupchallenge/">to let us know</a>.]]></description>
+            <link>http://www.allthingsdistributed.com/2008/09/aws_startup_challenge_2008.html</link>
+            <guid>http://www.allthingsdistributed.com/2008/09/aws_startup_challenge_2008.html</guid>
+            
+                <category domain="http://www.sixapart.com/ns/types#category">Amazon Web Services</category>
+            
+            
+            <pubDate>Mon, 29 Sep 2008 04:42:21 -0800</pubDate>
+        </item>
+        
+        <item>
+            <title>Expanding the Cloud</title>
+            <description><![CDATA[<p>
+For many the "Cloud" in Cloud Computing signifies the notion of location independence; that somewhere in the internet services are provided and that to access them you do not need any specific knowledge of where they are located. Many applications have already been built using cloud services and they indeed achieve this location transparency; their customers do not have to worry about where and how the application is being served. 
+</p><p>
+However for developers to do their job properly the cloud cannot be fully transparent.  As much as we would like to make it easy and simple for everyone, building high-performance and highly reliable applications in the cloud requires that the developers have more control. For example a reality is that failures can happen; servers can crash and networks can become disconnected. Even if these are only temporary glitches and are transient errors, the developer of applications in the cloud really wants to make sure his or her application can continue to serve customers even in the face of these rare glitches. A similar issue is that of network latency; as much as we would like to see the cloud to be transparent, the transport of network packets is still limited to the speed of light (at best) and customers of cloud applications may experience a different performance depending on where they are located in relation to where the applications are running.  We have seen that for many applications that works just fine, but there are developers who would like more control over how their customers are being served and for example would like to give all their customers low latency access, regardless of their location. 
+</p><p>
+At Amazon we have been building applications on these cloud principles for several years now and we are very much aware of the tools that developers need to build applications that are required to meet very high standards with respect to scalability, reliability, performance and cost-effectiveness.  We are also listening very closely to the feedback AWS customers are giving us to make sure we expose the right tools for them to do their job. We launched <a href="http://www.allthingsdistributed.com/2007/11/amazon_s3_in_europe.html">Amazon S3 in Europe</a> to ensure that developers could build applications that could serve data out of a European storage cloud. We launched <a href="http://www.allthingsdistributed.com/2008/03/on_the_road_to_highly_availabl.html">Regions and Availability Zones</a> (combined with Elastic IPs) for Amazon EC2 such that developers would have better control over where their applications would be running to ensure high-availability. We are now ready to expand the cloud even further and bring the cloud storage to its customers' doorstep.
+</p><p>
+Today we are announcing that we are expanding the cloud by adding a new service that will give developers and businesses the ability to serve data to their customers world-wide, using low-latency and high data transfer rates.  Using a global network of edge locations this new service can deliver popular data stored in Amazon S3 to customers around the globe through local access. 
+</p><p>
+We have developed this content delivery service using the robust AWS principles we know work well for our customers:
+</p><p><ul>
+<li>Cost-effective: no commitments and no minimum usage requirements. You only pay for what you use in a manner similar to the other Amazon Web Services.
+<li>Simple to use: one API call gets you going. You store the data you want to distribute in an Amazon S3 bucket and you use this API call to register this bucket with the content distribution service.  The registration will provide you with a new domain name that you can use in url's to access the data through this service with HTTP. When your customer accesses your content through your new url the data it refers to will be delivered through a network of edge servers. 
+<li>Works well with other services: The service integrates seamlessly with Amazon S3 and the data/content served through the service can be accessed using the standard HTTP access techniques.
+<li>Reliable: Amazon S3 will give you durable storage of your data, and the network of edge locations on three continents used by the new service will deliver your content to your customers from the most appropriate location.
+</ul>
+</p><p>
+This is an important first step in expanding the cloud to give developers even more control over how their applications and their data are served by the cloud. The service is currently in private beta but we expect to have the service widely available before the end of the year. You can get a few more details and sign up to get notified when the service is becoming on <a href="http://www.amazon.com/gp/html-forms-controller/aws-content-delivery-service">this AWS page</a> Also check Jeff Bar's posting on the <a href="http://aws.typepad.com/aws/2008/09/were-never-cont.html">AWS weblog</a>.
+</p>]]></description>
+            <link>http://www.allthingsdistributed.com/2008/09/expanding_the_cloud.html</link>
+            <guid>http://www.allthingsdistributed.com/2008/09/expanding_the_cloud.html</guid>
+            
+                <category domain="http://www.sixapart.com/ns/types#category">Amazon Web Services</category>
+            
+                <category domain="http://www.sixapart.com/ns/types#category">Distributed Systems</category>
+            
+            
+            <pubDate>Thu, 18 Sep 2008 02:00:00 -0800</pubDate>
+        </item>
+        
+        <item>
+            <title>Amazon EBS - Elastic Block Store has launched</title>
+            <description><![CDATA[<p>Today marks the launch of Amazon EBS (<a href="http://www.amazon.com/b/ref=sc_fe_c_1_3435361_1?ie=UTF8&node=689343011&no=3435361&me=A36L942TSJ2AJA">Elastic Block Store</a>), the long awaited persistent storage service for EC2. Details can be found on the <a href="http://aws.amazon.com/ec2">EC2 detail page</a>, the <a href="http://phx.corporate-ir.net/phoenix.zhtml?c=176060&p=irol-newsArticle&ID=1189249&highlight=">press release</a> and Jeff Barr's <a href="http://aws.typepad.com/aws/2008/08/amazon-elastic.html">posting over on the AWS evangelists blog</a>. Also the folks at Rightscale have two detailed postings: <a href="http://blog.rightscale.com/2008/08/20/why-amazon-ebs-matters/">why Amazon EBS matters</a> and <a href="http://blog.rightscale.com/2008/08/20/amazon-ebs-explained/">Amazon EBS explained</a>.
+</p><p>
+With the launch of the Elastic Block Store we complete an important milestone in offering a complete suite of storage solutions as part of the Amazon Infrastructure Services. Back in the days when we made the architectural decision to virtualize the internal Amazon infrastructure one of the first steps we took was a deep analysis of the way that storage was used by the internal Amazon services. We had to make sure that the infrastructure storage solutions we were going to develop would be highly effective for developers by addressing the most common patterns first. That analysis led us to three top patterns:
+</p><p>
+<ol>
+	<li><b>Key-Value storage</b>. The majority of the Amazon storage patterns were based on primary key access leading to single value or object. This pattern led to the development of <a href="http://aws.amazon.com/s3">Amazon S3</a>.</li>
+	<li><b>Simple Structured Data storage</b>. A second large category of storage patterns were satisfied by access to simple query interface into structured datasets. Fast indexing allows high-speed lookups over large dataset. This pattern led to the development of <a href="http://aws.amazon.com/sdb">Amazon SimpleDB</a>. A common pattern we see is that secondary keys to objects stored in Amazon S3 are stored in SimpleDB, where lookups result in sets of S3 (primary) keys.</li>
+	<li><b>Block storage</b>. The remaining bucket holds a variety of storage patterns ranging special file systems such as ZFS to applications managing their own block storage (e.g. cache servers) to relational databases.  This category is served by Amazon EBS which provides the fundamental building block for implementing a variety of storage patterns.</li>
+</ol>
+</p><p>
+I <a href="http://www.allthingsdistributed.com/2008/04/persistent_storage_for_amazon.html">have written before</a> about the basic features of Amazon EBS:
+</p><p>
+<ul>
+	<li>Amazon EBS will be offered in the form of storage volumes which you can mount into your EC2 instance as a raw block storage device. It basically looks like an unformatted hard disk. Once you have the volume mounted for the first time you can format it with any file system you want or if you have advanced applications such as high-end database engines, you could use it directly. </li>
+	<li>Developers can create multiple volumes, in size ranging from 1 GB to 1TB. This volume will be created within a specified Availability Zone and will be accessible by your EC2 instances running in that Availability Zone. As to be expected with a volume abstraction only one instance can have the volume mounted at any given time. Volumes can migrate and be reattached to other instances if necessary for failure handling or application migration reasons. </li>
+	<li>The consistency of data written to this device is similar to that of other local and network-attached devices; it is under control of the developer when and how to force flush data to disk if you want to bypass the traditional lazy-writer functionality in the operating systems file-cache. Because of the session oriented model for access to the volume you do not need to worry about eventual consistency issues.</li>
+</ul>
+</p><p>
+However Amazon EBS isn't just a massive volume storage array within an Availability Zone, it provides a unique feature that allows for the creation of novel storage management scenarios: the ability to create snapshots and store those snapshots into Amazon S3. These snapshots can then be used as the starting point for creating new volumes within any availability zone.
+</p><p>
+We see developers use this feature for long term backup purposes, for use in rollback strategies, for (world-wide) volume re-creation purposes.  Snapshots also play an important role in building fault-tolerance scenarios when combined with managing applications using Elastic IP addresses and Availability Zones.
+</p><p>
+Congratulations to the EBS team for delivering a great service that will help a lot of EC2 customers managing their storage efficiently.
+</p>]]></description>
+            <link>http://www.allthingsdistributed.com/2008/08/amazon_ebs_elastic_block_store.html</link>
+            <guid>http://www.allthingsdistributed.com/2008/08/amazon_ebs_elastic_block_store.html</guid>
+            
+                <category domain="http://www.sixapart.com/ns/types#category">Amazon Web Services</category>
+            
+            
+            <pubDate>Wed, 20 Aug 2008 22:50:00 -0800</pubDate>
+        </item>
+        
+        <item>
+            <title>Root Cause</title>
+            <description><![CDATA[For those of you interested in the details of last Sunday's Amazon S3 Availability issue you should read the <a href="http://status.aws.amazon.com/s3-20080720.html">detailed explanation posted </a>at the <a href="http://status.aws.amazon.com">AWS Status Dashboard</a>. Root cause was single bit corruption of internal state messages that are distributed via Gossip techniques.]]></description>
+            <link>http://www.allthingsdistributed.com/2008/07/root_cause.html</link>
+            <guid>http://www.allthingsdistributed.com/2008/07/root_cause.html</guid>
+            
+                <category domain="http://www.sixapart.com/ns/types#category">Amazon Web Services</category>
+            
+                <category domain="http://www.sixapart.com/ns/types#category">Distributed Systems</category>
+            
+            
+            <pubDate>Fri, 25 Jul 2008 17:51:25 -0800</pubDate>
+        </item>
+        
+        <item>
+            <title>An Album for Each Year</title>
+            <description><![CDATA[<p>What better way to pick up posting again than with following a
+meme. Nick Carr in <a href="http://www.roughtype.com/archives/2008/07/albums_going_st.php"> Albums Going Steady</a> describes the challenge to
+list &quot;a favorite album for every year of your life.&quot;  I
+actually do not have the problem described by Nick and others to really start with
+my birth year. The challenge has two restrictions: <i>only one album per year and
+there can be no repeats of artists</i>.  I have added for myself the
+restriction that I should actually own the album, which restricts the set to
+choose from significantly and also makes for some peculiar choices.</p>
+
+<p>Here is my list</p>
+
+<p>
+1958: Jerry Lee Lewis, <i>Great Balls of Fire </i><br>
+1959: Ray Charles, <i>What I'd Say </i><br>
+1960: Miles Davis, <i>Sketches of Spain </i><br>
+1961: Robert Johnson, <i>King of the Delta Blues Singers </i><br>
+1962: Booker T & MG, <i>Green Onions </i><br>
+1963: James Brown, <i>Live at the Apollo </i><br>
+1964: John Coltrane, <i>Love Supreme </i><br>
+1965: Bob Dylan, <i>Highway 61 Revisted </i><br>
+1966: Cream, <i>Fresh Cream </i><br>
+1967: The Doors, <i>The Doors </i><br>
+1968: Johnny Cash , <i>At Folsom Prison </i><br>
+1969: Rolling Stones, <i>Let it Bleed </i><br>
+1970: The Who, <i>Live at Leads </i><br>
+1971: Marvin Gaye, <i>What's going on </i><br>
+1972: Deep Purple, <i>Made in Japan </i><br>
+1973: Pink Floyd, <i>Dark Side of the Moon </i><br>
+1974: Genesis, <i>The Lamb Lies Down on Broadway </i><br>
+1975: Led Zeppelin, <i>Physical Graffiti </i><br>
+1976: Eagles, <i>Hotel California </i><br>
+1977: The Stranglers, <i>Rattus Norvegicus  </i><br>
+1978: Herman Brood and his Wild Romance, <i>Shpritsz </i><br>
+1979: The Clash, <i>London Calling </i><br>
+1980: AC/DC, <i>Black in Black </i><br>
+1981: The Police, <i>Ghost in the Machine </i><br>
+1982: Steel Pulse, <i>True Democracy </i><br>
+1983: U2, <i>Under a Blood Red Sky </i><br>
+1984: Talking Heads, <i>Stop Making Sense </i><br>
+1985: John Cougar Mellencamp, <i>Scarecrow </i><br>
+1986: Run DMC, <i>Raising Hell </i><br>
+1987: Guns N' Roses, <i>Appetite for Destruction </i><br>
+1988: Public Enemy, <i>It Takes A Nation of Millions to Hold Us Back </i><br>
+1989: Eric Clapton, <i>Journeyman </i><br>
+1990: Angelo Badalamenti, <i>Twin Peaks Soundtrack </i><br>
+1991: Nirvana, <i>Nervermind </i><br>
+1992: Rage Against the Machine, <i>Rage Against the Machine </i><br>
+1993: Live, <i>Throwing Copper </i><br>
+1994: Neil Young , <i>Sleeps with Angels </i><br>
+1995: Garbage, <i>Garbage </i><br>
+1996: James Cotton, <i>Deep in the Blues </i><br>
+1997: Erykah Badu, <i>Baduizm </i><br>
+1998: DMX, <i>Flesh of my Flesh, Blood of my Blood</i><br>
+1999: Red Hot Chili Peppers, <i>Californication </i><br>
+2000: Eminem, <i>The Marshal Mathers LP </i><br>
+2001: The Strokes, <i>Is This It </i><br>
+2002: Richard Locker, <i>Jewish Cello Master Pieces </i><br>
+2003: Linkin Park, <i>Meteora </i><br>
+2004: Green Day, <i>American Idiot </i><br>
+2005: Fiona Apple , <i>Extraordinary Machine </i><br>
+2006: Matisyahu, <i>Youth </i><br>
+2007: Foo Fighters, <i>Echoes, Silence, Patience & Grace </i><br>
+</p>
+
+<p>The hardest part was leaving Albums out; Too
+many masterpieces in the 70's for example. But also some other era were
+difficult: I really wanted Linton Kwesi Johnson in there but every time he had formidable
+competition.  Madness got beaten by AC/DC, Beastie Boys by  Run DMC, Nirvana
+kept Metallica out, The Stranglers win it from Jonny Rotten every time,.
+Honorable mentions for Traffic, Apocalyptica, Counting Crows and Nine Inch
+Nails; they almost made it.</p>
+]]></description>
+            <link>http://www.allthingsdistributed.com/2008/07/an_album_for_each_year.html</link>
+            <guid>http://www.allthingsdistributed.com/2008/07/an_album_for_each_year.html</guid>
+            
+                <category domain="http://www.sixapart.com/ns/types#category">Humor</category>
+            
+                <category domain="http://www.sixapart.com/ns/types#category">Personal</category>
+            
+            
+            <pubDate>Thu, 17 Jul 2008 23:28:19 -0800</pubDate>
+        </item>
+        
+        <item>
+            <title>The Perfect Laptop - Unboxing the X300</title>
+            <description><![CDATA[<p>
+The laptop that appeared on the cover of business week as part of the story “<a href="http://www.businessweek.com/magazine/content/08_08/b4072042350389.htm">Building the Perfect Laptop</a>” is the Thinkpad X300. It arrived at my doorstep this afternoon. It is everything it promised to be and more; superlight, rugged,  SSD, full ports, wifi, lan & cell networks, dvd, replaceable batteries and 13.3" screen with 1440x900 graphics.
+</p><p>
+<img alt="x300-front.jpg" src="http://www.allthingsdistributed.com/images/x300-front.jpg" width="567" height="238" style="text-align: left; display: block; margin: 0 auto 20px;"/>
+</p><p>
+And all of this weighs in at 1420 grams.
+</p><p>
+<img alt="x300.jpg" src="http://www.allthingsdistributed.com/images/x300.jpg" width="566" height="278" style="text-align: left; display: block; margin: 0 auto 20px;"/>
+</p><p>
+It is amazing how light it is for a full featured laptop. See the <a href="http://www.flickr.com/photos/wernervogels/sets/72157604807575503/">unboxing pictures on flickr</a>.
+</p>]]></description>
+            <link>http://www.allthingsdistributed.com/2008/04/the_perfect_laptop.html</link>
+            <guid>http://www.allthingsdistributed.com/2008/04/the_perfect_laptop.html</guid>
+            
+                <category domain="http://www.sixapart.com/ns/types#category">Hardware</category>
+            
+            
+            <pubDate>Tue, 29 Apr 2008 21:23:11 -0800</pubDate>
+        </item>
+        
+        <item>
+            <title>Ahead in the Cloud</title>
+            <description><![CDATA[<p>
+My opening slide for tomorrow's keynote at the <a href="http://en.oreilly.com/mysql2008/public/content/home">MySQL Conference</a> has this feel of speed and excitement to it that represents the current progress towards Cloud Computing. <a href="http://www.allthingsdistributed.com/2008/04/persistent_storage_for_amazon.html">Persistent Storage for EC2</a> will be an important part of the presentation, but I'll mainly focus on general non-functional lesson from building large-scale services.
+</p><p>
+<img alt="mysql-opening-slide.JPG" src="http://www.allthingsdistributed.com/images/mysql-opening-slide.JPG" width="588" height="441" style="text-align: center; display: block; margin: 0 auto 20px;"/>
+</p>]]></description>
+            <link>http://www.allthingsdistributed.com/2008/04/ahead_in_the_cloud.html</link>
+            <guid>http://www.allthingsdistributed.com/2008/04/ahead_in_the_cloud.html</guid>
+            
+                <category domain="http://www.sixapart.com/ns/types#category">Amazon Web Services</category>
+            
+                <category domain="http://www.sixapart.com/ns/types#category">Conferences</category>
+            
+            
+            <pubDate>Mon, 14 Apr 2008 23:23:52 -0800</pubDate>
+        </item>
+        
+        <item>
+            <title>Persistent Storage for Amazon EC2</title>
+            <description><![CDATA[<p>
+I would like to introduce to you the newest feature of Amazon EC2: Persistent local storage. This has been very high on the request list of EC2 customers and I believe that combined with the <a href="http://www.allthingsdistributed.com/2008/03/on_the_road_to_highly_availabl.html">Availability Zones and Elastic IP Address</a> features released earlier this month this makes EC2 the ideal environment for building highly scalable and reliable applications.
+</p><p>
+Significant innovation has gone into this feature: Instead of restricting developers to the use of a particular (distributed) file-system we once again decided to look at what is the most fundamental building block and how we could offer that in the most scalable and reliable manner. 
+</p><p>
+Persistent storage for Amazon EC2 will be offered in the form of storage volumes which you can mount into your EC2 instance as a raw block storage device. It basically looks like an unformatted hard disk.  Once you have the volume mounted for the first time you can format it with any file system you want or if you have advanced applications such as high-end database engines, you could use it directly.
+</p><p>
+Developers can create any number of volumes they want, in size ranging from 1 GB to 1TB. This volume will be created within a specified Availability Zone and will be accessible by your EC2 instances running in that Availability Zone. As to be expected with a volume abstraction only one instance can have the volume mounted at any given time.  Volumes can migrate and be reattached to other instances if necessary for failure handling or application migration reasons.
+</p><p>
+The consistency of data written to this device is similar to that of other local and network-attached devices; it is under control of the developer when and how to force flush data to disk if you want to bypass the traditional lazy-writer functionality in the operating systems file-cache. Because of the session oriented model for access to the volume you do not need to worry about <a href="http://www.allthingsdistributed.com/2007/12/eventually_consistent.html">eventual consistency issues</a>.
+</p><p>
+<b>Snapshots</b>
+</p><p>
+<img alt="abstract-disk.jpg" src="http://www.allthingsdistributed.com/images/abstract-disk.jpg" width="292" height="411" style="float: right; margin: 0 0 20px 20px;"/>
+If we would have stopped here that would have already been quite a solid service for developers to use. We realized we needed to do more to make sure that developers could build truly geo-scalable applications. For that we introduced snapshot functionality: you ask the EC2 to make a <i>snapshot</i> of your volume and store it into Amazon S3.  You can use this for long term backup purposes, for use in rollback strategies, but also for (world-wide) volume re-creation purposes.
+</p><p>
+When you create a volume you can ask it to be created from a particular snapshot. And because this snapshot is stored in S3, which is accessible in all Availability Zones, your new volume can be created in any zone, not just the one where the snapshot originated from. 
+</p><p>
+The snapshot is extremely powerful technology and allows for building highly fault-tolerant applications operating world-wide. Combine these snapshots with Availability Zones and Elastic IPs and you have all the tools to manage and migrate even the most complex of applications.
+</p><p>
+And the great thing is it that it is all done with using standard technologies such that you can use this with any kind of application, middleware or any infrastructure software, whether it is legacy or brand new.
+</p><p>
+<b>Early access</b>
+</p><p>
+This new functionality is already being used privately by a handful of customers, and will be publically available later this year. We are talking about this service at this early stage because we believe this will help many of our EC2 customers with setting their development priorities for this year.
+</p><p>
+You can find more information at the <a href="http://aws.typepad.com/aws/2008/04/block-to-the-fu.html">AWS developer’s blog</a>.
+</p><p>
+<b>update:</b>Thorsten from <a href="http://www.rightscale.com">RightScale</a>, who has been using the service, <a href="http://blog.rightscale.com/2008/04/13/amazon-takes-ec2-to-the-next-level-with-persistent-storage-volumes/">writes about his experiences</a>
+</p>]]></description>
+            <link>http://www.allthingsdistributed.com/2008/04/persistent_storage_for_amazon.html</link>
+            <guid>http://www.allthingsdistributed.com/2008/04/persistent_storage_for_amazon.html</guid>
+            
+                <category domain="http://www.sixapart.com/ns/types#category">Amazon Web Services</category>
+            
+            
+            <pubDate>Sun, 13 Apr 2008 21:00:00 -0800</pubDate>
+        </item>
+        
+    </channel>
+</rss>
+
+

@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:media="http://search.yahoo.com/mrss/"
+	>
+
+<channel>
+	<title>Fabio Kung</title>
+	<atom:link href="http://fabiokung.com/feed/" rel="self" type="application/rss+xml" />
+	<link>http://fabiokung.com</link>
+	<description>better than writing good code is deleting code</description>
+	<pubDate>Thu, 22 Jan 2009 18:42:23 +0000</pubDate>
+	<generator>http://wordpress.org/?v=MU</generator>
+	<language>en</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<image>
+		<url>http://www.gravatar.com/blavatar/4774c20e8f8313df1d4528a77be5a951?s=96&#038;d=http://s.wordpress.com/i/buttonw-com.png</url>
+		<title>Fabio Kung</title>
+		<link>http://fabiokung.com</link>
+	</image>
+			<item>
+		<title>JettyRails 0.7, Merb 1.0 support</title>
+		<link>http://fabiokung.com/2008/11/28/jettyrails-07-merb-10-support/</link>
+		<comments>http://fabiokung.com/2008/11/28/jettyrails-07-merb-10-support/#comments</comments>
+		<pubDate>Fri, 28 Nov 2008 15:06:30 +0000</pubDate>
+		<dc:creator>Fabio Kung</dc:creator>
+		
+		<category><![CDATA[java]]></category>
+
+		<category><![CDATA[jetty]]></category>
+
+		<category><![CDATA[jruby]]></category>
+
+		<category><![CDATA[merb]]></category>
+
+		<category><![CDATA[rails]]></category>
+
+		<category><![CDATA[jetty-rails]]></category>
+
+		<category><![CDATA[release]]></category>
+
+		<guid isPermaLink="false">http://fabiokung.wordpress.com/?p=118</guid>
+		<description><![CDATA[After the 1.0 official release, Merb is gaining more and more attention.
+I&#8217;ve updated JettyRails to support Merb 1.0 applications, making it a good choice to run your rails and merb applications with JRuby, particularly in development time.
+The release notes include:
+
+* Merb 1.0 support!
+* jruby-rack updated to the latest release (0.9.3)
+* jetty server update to 6.1.14
+* [...]<img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=fabiokung.com&blog=3424388&post=118&subd=fabiokung&ref=&feed=1" />]]></description>
+			<content:encoded><![CDATA[<div class='snap_preview'><br /><p>After the <a href="http://brainspl.at/articles/2008/11/08/merb-1-0">1.0 official release</a>, Merb is gaining more and more attention.</p>
+<p>I&#8217;ve updated <a href="http://jetty-rails.rubyforge.org">JettyRails</a> to support <a href="http://merbivore.org">Merb</a> 1.0 applications, making it a good choice to run your rails and merb applications with JRuby, particularly in development time.</p>
+<p>The release notes include:</p>
+<blockquote><p>
+* Merb 1.0 support!<br />
+* jruby-rack updated to the latest release (0.9.3)<br />
+* jetty server update to 6.1.14<br />
+* JSP and JSP Expression Language support<br />
+* some minor bugs
+</p></blockquote>
+<p>It is very simple to run any Merb 1.0.x and Rails 2.x applications. You just need to have <a href="http://wiki.jruby.org/wiki/Getting_Started">JRuby properly installed</a>, but JettyRails doesn&#8217;t work with jruby-1.1.4 (<a href="http://jira.codehaus.org/browse/JRUBY-2959">JRUBY-2959</a>). First step is to install jetty-rails:</p>
+<p><code>
+<pre>jruby -S gem install jetty-rails</pre>
+<p></code></p>
+<p>Then, for Rails applications:</p>
+<p><code>
+<pre>cd myrailsapp
+jruby -S jetty_rails</pre>
+<p></code></p>
+<p>And for Merb applications:</p>
+<p><code>
+<pre>cd mymerbapp
+jruby -S jetty_merb</pre>
+<p></code></p>
+<p>Please note that you can&#8217;t use Merb with <a href="http://datamapper.org/">DataMapper</a> in JRuby right now, but ActiveRecord does the job. Work is being done by Yehuda Katz (<a href="http://twitter.com/wycats">wycats</a>) and <a href="http://nicksieger.com">Nick Sieger</a> to port the native parts of DataObjects (used by DataMapper) in the <a href="http://github.com/sam/do/tree/master">do_jdbc</a> project. Because of that, you can&#8217;t just install the merb gem. Wanted Merb modules should be installed separately:</p>
+<p><code>
+<pre>jruby -S gem install merb-core # required
+jruby -S gem install merb-more # extras</pre>
+<p></code></p>
+Posted in java, jetty, jruby, merb, rails&nbsp;&nbsp;&nbsp;Tagged: jetty, jetty-rails, jruby, merb, rails, release&nbsp;&nbsp;&nbsp;<a rel="nofollow" href="http://feeds.wordpress.com/1.0/gocomments/fabiokung.wordpress.com/118/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/fabiokung.wordpress.com/118/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godelicious/fabiokung.wordpress.com/118/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/delicious/fabiokung.wordpress.com/118/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gostumble/fabiokung.wordpress.com/118/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/stumble/fabiokung.wordpress.com/118/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godigg/fabiokung.wordpress.com/118/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/digg/fabiokung.wordpress.com/118/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/goreddit/fabiokung.wordpress.com/118/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/reddit/fabiokung.wordpress.com/118/" /></a> <img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=fabiokung.com&blog=3424388&post=118&subd=fabiokung&ref=&feed=1" /></div>]]></content:encoded>
+			<wfw:commentRss>http://fabiokung.com/2008/11/28/jettyrails-07-merb-10-support/feed/</wfw:commentRss>
+	
+		<media:content url="http://www.gravatar.com/avatar/251c190c5a8277a3bc6197491f32da51?s=96&#38;d=wavatar&#38;r=PG" medium="image">
+			<media:title type="html">Fabio Kung</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>Play with JMaglev yourself</title>
+		<link>http://fabiokung.com/2008/11/22/play-with-jmaglev-yourself/</link>
+		<comments>http://fabiokung.com/2008/11/22/play-with-jmaglev-yourself/#comments</comments>
+		<pubDate>Sat, 22 Nov 2008 20:59:04 +0000</pubDate>
+		<dc:creator>Fabio Kung</dc:creator>
+		
+		<category><![CDATA[cluster]]></category>
+
+		<category><![CDATA[java]]></category>
+
+		<category><![CDATA[jruby]]></category>
+
+		<category><![CDATA[maglev]]></category>
+
+		<category><![CDATA[ruby]]></category>
+
+		<category><![CDATA[terracotta]]></category>
+
+		<category><![CDATA[jmaglev]]></category>
+
+		<category><![CDATA[github]]></category>
+
+		<category><![CDATA[opensource]]></category>
+
+		<guid isPermaLink="false">http://fabiokung.wordpress.com/?p=109</guid>
+		<description><![CDATA[JMaglev is finally public available!
+I&#8217;m releasing my experiments with JRuby and Terracotta, so you can play with JMaglev and contribute some code. The project is in Github.
+I had to patch JRuby to make RubyObjects a little less dependent from the JRuby Runtime. It isn&#8217;t perfect yet, but is working. The patch against the current jruby [...]<img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=fabiokung.com&blog=3424388&post=109&subd=fabiokung&ref=&feed=1" />]]></description>
+			<content:encoded><![CDATA[<div class='snap_preview'><br /><p>JMaglev is finally public available!</p>
+<p>I&#8217;m releasing my experiments with <a href="http://fabiokung.com/2008/10/08/jruby-sharing-objects-across-multiple-runtimes-jmaglev">JRuby and Terracotta</a>, so you can play with JMaglev and contribute some code. The project is in <a href="http://github.com/fabiokung/clustered-jruby/tree/master">Github</a>.</p>
+<p>I had to patch <a href="http://jruby.codehaus.org">JRuby</a> to make RubyObjects a little less dependent from the JRuby Runtime. It isn&#8217;t perfect yet, but is working. The <a href="http://github.com/fabiokung/clustered-jruby/tree/master/clustering_jruby.patch">patch against the current jruby trunk</a> (<em>rev. 8091</em>) and the patched jruby-complete are included in the <a href="http://github.com/fabiokung/clustered-jruby/tree/master">project</a>.</p>
+<p>The code in Github is just a <strong>TIM</strong> (<strong>T</strong>erracotta <strong>I</strong>ntegration <strong>M</strong>odule) with a sample maven project and the JMaglev use-case included. Unfortunately, I haven&#8217;t any time yet to upload the TIM to Terracotta Forge. BTW, does anyone know how to do this?</p>
+<p>For those who want to reproduce my JMaglev demo, here is a step-by-step. You must have <a href="http://git.or.cz/">GIT</a>, <a href="http://maven.apache.org">Maven 2</a> and the <a href="http://java.sun.com">JDK</a> properly installed. It only works on Linux and OS X. Is anyone wanting to contribute support for Windows users?</p>
+<ol>
+<li><code>git clone git://github.com/fabiokung/clustered-jruby.git</code></li>
+<li>long time waiting, because terracotta-2.7.1 (vanilla) and jruby-complete (patched) are bundled.</li>
+<li><code>cd clustered-jruby</code></li>
+<li><code>mvn install</code> (although <code>mvn package</code> is enough)</li>
+<li><code>cd jmaglev</code></li>
+<li>start the terracotta server: <br />
+<code>lib/terracotta-2.7.1/bin/start-tc-server.sh</code></li>
+<li>open another two terminals</li>
+<li>run the simplified jirb inside them:</li>
+<p><code>
+<pre>cd clustered-jruby/jmaglev
+./bin/jmaglev jmaglev.rb</pre>
+<p></code></li>
+<li>Follow the demo. You will be able to share global variables among all jmaglevs:
+<pre name="code" class="ruby">
+
+require &#039;hat&#039;
+$hat
+require &#039;rabbit&#039;
+$hat.put(Rabbit.new)
+</pre>
+</li>
+<li>in the other terminal, try to see the <strong>magic hat</strong> contents:
+<pre name="code" class="ruby">
+
+$hat
+</pre>
+</li>
+</ol>
+<p>I haven&#8217;t tested it with rails applications, but right now, it isn&#8217;t able to run IRB. I never thought that running IRB could be <strong>so</strong> hard.  <img src='http://s.wordpress.com/wp-includes/images/smilies/icon_smile.gif' alt=':-)' class='wp-smiley' /> </p>
+<p>More drawbacks and limitations are being discussed in the <a href="http://archive.codehaus.org/lists/org.codehaus.jruby.user/msg/da6044750811221230q2d7d6d20jc1fd16cd52d6707e@mail.gmail.com">JRuby Users Mailing List</a>.</p>
+<p>I hope to see many contributions. Happy hacking!</p>
+Posted in cluster, java, jruby, maglev, ruby, terracotta&nbsp;&nbsp;&nbsp;Tagged: cluster, github, jmaglev, jruby, maglev, opensource, terracotta&nbsp;&nbsp;&nbsp;<a rel="nofollow" href="http://feeds.wordpress.com/1.0/gocomments/fabiokung.wordpress.com/109/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/fabiokung.wordpress.com/109/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godelicious/fabiokung.wordpress.com/109/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/delicious/fabiokung.wordpress.com/109/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gostumble/fabiokung.wordpress.com/109/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/stumble/fabiokung.wordpress.com/109/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godigg/fabiokung.wordpress.com/109/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/digg/fabiokung.wordpress.com/109/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/goreddit/fabiokung.wordpress.com/109/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/reddit/fabiokung.wordpress.com/109/" /></a> <img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=fabiokung.com&blog=3424388&post=109&subd=fabiokung&ref=&feed=1" /></div>]]></content:encoded>
+			<wfw:commentRss>http://fabiokung.com/2008/11/22/play-with-jmaglev-yourself/feed/</wfw:commentRss>
+	
+		<media:content url="http://www.gravatar.com/avatar/251c190c5a8277a3bc6197491f32da51?s=96&#38;d=wavatar&#38;r=PG" medium="image">
+			<media:title type="html">Fabio Kung</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>EJB 4: the Future</title>
+		<link>http://fabiokung.com/2008/10/08/ejb-4-the-future/</link>
+		<comments>http://fabiokung.com/2008/10/08/ejb-4-the-future/#comments</comments>
+		<pubDate>Thu, 09 Oct 2008 02:33:04 +0000</pubDate>
+		<dc:creator>Fabio Kung</dc:creator>
+		
+		<category><![CDATA[di]]></category>
+
+		<category><![CDATA[ioc]]></category>
+
+		<category><![CDATA[java]]></category>
+
+		<category><![CDATA[future container ioc di ejb]]></category>
+
+		<guid isPermaLink="false">http://fabiokung.wordpress.com/?p=84</guid>
+		<description><![CDATA[Reading an article from Reza Rahman in TSS about what is new in EJB 3.1, I could predict the future. Here is a code snippet from the article:
+
+
+EJBContainer container = EJBContainerFactory.createEJBContainer();
+Context context = container.getContext();
+PlaceBid placeBid = (PlaceBid) context.lookup(&#34;java:global/action-bazaar/PlaceBid&#34;);
+placeBid.addBid(new Bid(&#34;rrahman&#34;, 10059, 200.50));
+container.close();
+
+Yes, PicoContainer will be standardized as EJB 4.0!
+How long is going to take to people [...]<img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=fabiokung.com&blog=3424388&post=84&subd=fabiokung&ref=&feed=1" />]]></description>
+			<content:encoded><![CDATA[<div class='snap_preview'><br /><p>Reading an article from <a href="http://www.theserverside.com/tt/articles/article.tss?l=NewFeaturesinEJB31-Part5">Reza Rahman in TSS</a> about what is new in EJB 3.1, I could predict the future. Here is a code snippet from the article:</p>
+<pre name="code" class="java">
+
+EJBContainer container = EJBContainerFactory.createEJBContainer();
+Context context = container.getContext();
+PlaceBid placeBid = (PlaceBid) context.lookup(&quot;java:global/action-bazaar/PlaceBid&quot;);
+placeBid.addBid(new Bid(&quot;rrahman&quot;, 10059, 200.50));
+container.close();
+</pre>
+<p>Yes, <a href="http://www.picocontainer.org/">PicoContainer</a> will be standardized as <strong>EJB 4.0</strong>!</p>
+<p>How long is going to take to people learn that <strong>less is more</strong>?</p>
+<p style="font-size:.5em;color:#888;">This is obviously a joke. It isn&#8217;t really true.</p>
+Posted in di, ioc, java&nbsp;&nbsp;&nbsp;Tagged: future container ioc di ejb&nbsp;&nbsp;&nbsp;<a rel="nofollow" href="http://feeds.wordpress.com/1.0/gocomments/fabiokung.wordpress.com/84/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/fabiokung.wordpress.com/84/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godelicious/fabiokung.wordpress.com/84/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/delicious/fabiokung.wordpress.com/84/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gostumble/fabiokung.wordpress.com/84/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/stumble/fabiokung.wordpress.com/84/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godigg/fabiokung.wordpress.com/84/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/digg/fabiokung.wordpress.com/84/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/goreddit/fabiokung.wordpress.com/84/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/reddit/fabiokung.wordpress.com/84/" /></a> <img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=fabiokung.com&blog=3424388&post=84&subd=fabiokung&ref=&feed=1" /></div>]]></content:encoded>
+			<wfw:commentRss>http://fabiokung.com/2008/10/08/ejb-4-the-future/feed/</wfw:commentRss>
+	
+		<media:content url="http://www.gravatar.com/avatar/251c190c5a8277a3bc6197491f32da51?s=96&#38;d=wavatar&#38;r=PG" medium="image">
+			<media:title type="html">Fabio Kung</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>JRuby, sharing objects across multiple runtimes. JMagLev?</title>
+		<link>http://fabiokung.com/2008/10/08/jruby-sharing-objects-across-multiple-runtimes-jmaglev/</link>
+		<comments>http://fabiokung.com/2008/10/08/jruby-sharing-objects-across-multiple-runtimes-jmaglev/#comments</comments>
+		<pubDate>Wed, 08 Oct 2008 09:39:31 +0000</pubDate>
+		<dc:creator>Fabio Kung</dc:creator>
+		
+		<category><![CDATA[java]]></category>
+
+		<category><![CDATA[jruby]]></category>
+
+		<category><![CDATA[maglev]]></category>
+
+		<category><![CDATA[ruby]]></category>
+
+		<category><![CDATA[terracotta]]></category>
+
+		<category><![CDATA[jruby terracotta nailgun screencast maglev gemstone mul]]></category>
+
+		<guid isPermaLink="false">http://fabiokung.wordpress.com/?p=72</guid>
+		<description><![CDATA[MagLev was a show from the last RailsConf (2008). Presentation and demos of the product are really impressive.
+Recently, Brian Takita asked in the JRuby mailing list:
+JRuby + TerraCotta == Maglev?
+What an idea! In the last few days I&#8217;ve tried to make something useful and I&#8217;m happy to have something to show.
+The first demo runs with [...]<img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=fabiokung.com&blog=3424388&post=72&subd=fabiokung&ref=&feed=1" />]]></description>
+			<content:encoded><![CDATA[<div class='snap_preview'><br /><p>MagLev was a show from the last RailsConf (2008). Presentation and demos of the product are <a href="http://www.vimeo.com/1147409">really impressive</a>.</p>
+<p>Recently, <a href="http://www.workingwithrails.com/person/8888-brian-takita">Brian Takita</a> asked in the <a href="http://archive.hausfoundation.org/lists/org.codehaus.jruby.dev/msg/1d7ddd110809291539t213f56c1s5ef79d7755976c5f@mail.gmail.com">JRuby mailing list</a>:</p>
+<blockquote><p>JRuby + TerraCotta == Maglev?</p></blockquote>
+<p>What an idea! In the last few days I&#8217;ve tried to make something useful and I&#8217;m happy to have something to show.</p>
+<div id="attachment_78" class="wp-caption aligncenter" style="width: 333px"><a href="http://blog.caelum.com.br/video/jruby/fabiokung-jmaglev.swf" target="_blank"><img src="http://fabiokung.files.wordpress.com/2008/10/jmaglev-demo.png?w=323&#038;h=373" alt="JRuby + Nailgun and JRuby + Terracotta" title="JRuby + Nailgun and JRuby + Terracotta" width="323" height="373" class="size-full wp-image-78" /></a><p class="wp-caption-text">Screencast: Reproducing Avi Bryant's Demo with JRuby + Nailgun and JRuby + Terracotta. (5 min)</p></div>
+<p>The first demo runs with Nailgun. The basic idea is to share a single Java VM across all clients, so they can share some objects. The second is much more complete, as its clients have their own Java VM. There are many true interpreters running, and they are sharing objects through <a href="http://www.terracotta.org/">Terracotta</a>. Terracotta is responsible for sharing memory in Java VM clusters and, despite of its slow startup, has much more to offer. The shared objects (hats and rabbits) could be automatically persisted by Terracotta, as MagLev also does.</p>
+<p>I&#8217;ve patched JRuby and configured Terracotta to make demos run. I&#8217;ll upload the patches and configuration somewhere, ASAP.</p>
+<p>Working on JRuby to make it run multiple runtimes (VMs) at the same time is being really fun!</p>
+Posted in java, jruby, maglev, ruby, terracotta&nbsp;&nbsp;&nbsp;Tagged: jruby terracotta nailgun screencast maglev gemstone mul&nbsp;&nbsp;&nbsp;<a rel="nofollow" href="http://feeds.wordpress.com/1.0/gocomments/fabiokung.wordpress.com/72/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/fabiokung.wordpress.com/72/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godelicious/fabiokung.wordpress.com/72/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/delicious/fabiokung.wordpress.com/72/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gostumble/fabiokung.wordpress.com/72/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/stumble/fabiokung.wordpress.com/72/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godigg/fabiokung.wordpress.com/72/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/digg/fabiokung.wordpress.com/72/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/goreddit/fabiokung.wordpress.com/72/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/reddit/fabiokung.wordpress.com/72/" /></a> <img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=fabiokung.com&blog=3424388&post=72&subd=fabiokung&ref=&feed=1" /></div>]]></content:encoded>
+			<wfw:commentRss>http://fabiokung.com/2008/10/08/jruby-sharing-objects-across-multiple-runtimes-jmaglev/feed/</wfw:commentRss>
+	
+		<media:content url="http://www.gravatar.com/avatar/251c190c5a8277a3bc6197491f32da51?s=96&#38;d=wavatar&#38;r=PG" medium="image">
+			<media:title type="html">Fabio Kung</media:title>
+		</media:content>
+
+		<media:content url="http://fabiokung.files.wordpress.com/2008/10/jmaglev-demo.png" medium="image">
+			<media:title type="html">JRuby + Nailgun and JRuby + Terracotta</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>Jetty installed base growing</title>
+		<link>http://fabiokung.com/2008/09/02/jetty-installed-base-growing/</link>
+		<comments>http://fabiokung.com/2008/09/02/jetty-installed-base-growing/#comments</comments>
+		<pubDate>Tue, 02 Sep 2008 17:38:24 +0000</pubDate>
+		<dc:creator>Fabio Kung</dc:creator>
+		
+		<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://fabiokung.wordpress.com/?p=67</guid>
+		<description><![CDATA[I&#8217;m happy to know that Jetty Web Server Closes Gap on Tomcat. From the article:
+Jetty web server statistics reach 80% of Apache Tomcat
+Great!
+       <img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=fabiokung.com&blog=3424388&post=67&subd=fabiokung&ref=&feed=1" />]]></description>
+			<content:encoded><![CDATA[<div class='snap_preview'><br /><p>I&#8217;m happy to know that <a title="from Reuters" href="http://www.reuters.com/article/pressRelease/idUS205622+21-May-2008+BW20080521">Jetty Web Server Closes Gap on Tomcat</a>. From the article:</p>
+<blockquote><p>Jetty web server statistics reach 80% of Apache Tomcat</p></blockquote>
+<p>Great!</p>
+<img alt="" border="0" src="http://feeds.wordpress.com/1.0/categories/fabiokung.wordpress.com/67/" /> <img alt="" border="0" src="http://feeds.wordpress.com/1.0/tags/fabiokung.wordpress.com/67/" /> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gocomments/fabiokung.wordpress.com/67/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/fabiokung.wordpress.com/67/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godelicious/fabiokung.wordpress.com/67/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/delicious/fabiokung.wordpress.com/67/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gostumble/fabiokung.wordpress.com/67/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/stumble/fabiokung.wordpress.com/67/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godigg/fabiokung.wordpress.com/67/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/digg/fabiokung.wordpress.com/67/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/goreddit/fabiokung.wordpress.com/67/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/reddit/fabiokung.wordpress.com/67/" /></a> <img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=fabiokung.com&blog=3424388&post=67&subd=fabiokung&ref=&feed=1" /></div>]]></content:encoded>
+			<wfw:commentRss>http://fabiokung.com/2008/09/02/jetty-installed-base-growing/feed/</wfw:commentRss>
+	
+		<media:content url="http://www.gravatar.com/avatar/251c190c5a8277a3bc6197491f32da51?s=96&#38;d=wavatar&#38;r=PG" medium="image">
+			<media:title type="html">Fabio Kung</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>I&#8217;m a Certified Ruby Programmer Silver</title>
+		<link>http://fabiokung.com/2008/08/19/im-a-certified-ruby-programmer-silver/</link>
+		<comments>http://fabiokung.com/2008/08/19/im-a-certified-ruby-programmer-silver/#comments</comments>
+		<pubDate>Tue, 19 Aug 2008 19:14:53 +0000</pubDate>
+		<dc:creator>Fabio Kung</dc:creator>
+		
+		<category><![CDATA[ruby]]></category>
+
+		<category><![CDATA[certification ruby]]></category>
+
+		<guid isPermaLink="false">http://fabiokung.wordpress.com/?p=50</guid>
+		<description><![CDATA[I&#8217;ve just passed the certification exam from Ruby Association. I&#8217;m not allowed to talk much about the test itself, but I leave my warning here: be prepared.
+I was surprised, when I found it wasn&#8217;t an easy exam. I haven&#8217;t studied anything, as I&#8217;m working with Ruby everyday. But I should. Unfortunately, the test requires you [...]<img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=fabiokung.com&blog=3424388&post=50&subd=fabiokung&ref=&feed=1" />]]></description>
+			<content:encoded><![CDATA[<div class='snap_preview'><br /><p>I&#8217;ve just passed the certification exam from <a title="Ruby Association" href="http://www.ruby-assn.org/">Ruby Association</a>. I&#8217;m not allowed to talk much about the test itself, but I leave my warning here: <strong>be prepared.</strong></p>
+<div id="attachment_59" class="wp-caption aligncenter" style="width: 254px"><a href="http://fabiokung.files.wordpress.com/2008/08/ruby-logo-r.png"><img class="size-medium wp-image-59" src="http://fabiokung.files.wordpress.com/2008/08/ruby-logo-r.png?w=244&#038;h=300" alt="Ruby Programming Language" width="244" height="300" /></a><p class="wp-caption-text">Copyright (C) 2008 Ruby Association LLC</p></div>
+<p>I was surprised, when I found it wasn&#8217;t an easy exam. I haven&#8217;t studied anything, as I&#8217;m working with Ruby everyday. But I should. Unfortunately, the test requires you to memorize many methods from core classes.</p>
+<p><strong>Learn</strong> the <a title="Ruby Core Documentation" href="http://ruby-doc.org/core/">Core API</a>, mainly the <a href="http://ruby-doc.org/core/classes/Array.html">Array</a>, <a href="http://ruby-doc.org/core/classes/Hash.html"><strong>Hash</strong></a>, <a href="http://ruby-doc.org/core/classes/String.html">String</a>, <a href="http://ruby-doc.org/core/classes/Fixnum.html">Fixnum</a>, <a href="http://ruby-doc.org/core/classes/Float.html">Float</a>, <a href="http://ruby-doc.org/core/classes/Object.html">Object</a>, <a href="http://ruby-doc.org/core/classes/Kernel.html">Kernel</a>, <a href="http://ruby-doc.org/core/classes/Time.html">Time</a> and <a href="http://ruby-doc.org/core/classes/File.html">File</a> classes. Study until you memorize their methods. There are many questions about Hashes, Strings and Arrays. Caution with methods that modify the objects itself and methods that don&#8217;t (mutable vs immutable).</p>
+<p>Also, be sure that you have a good understanding of Ruby Regular Expressions.</p>
+<p>It would be great if the certification had more questions about OO in Ruby, Strings vs Symbols, less API memorization, blocks being the functional guys, operator overloading, modules as mixins, Test::Unit, threads, duck typing, dynamic typing, &#8230;</p>
+<p>I haven&#8217;t seen <strong>any</strong> question about polymorphism! Shame.</p>
+<p><em>Just to be clear</em>, I don&#8217;t care that much for certifications. There are many people discussing if certifications are good or not (at least here in Brazil). I won&#8217;t discuss it here. My decision to be certified was made, because I teach Ruby classes and, at least here in Brazil, certifications are important to instructors.</p>
+<img alt="" border="0" src="http://feeds.wordpress.com/1.0/categories/fabiokung.wordpress.com/50/" /> <img alt="" border="0" src="http://feeds.wordpress.com/1.0/tags/fabiokung.wordpress.com/50/" /> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gocomments/fabiokung.wordpress.com/50/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/fabiokung.wordpress.com/50/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godelicious/fabiokung.wordpress.com/50/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/delicious/fabiokung.wordpress.com/50/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gostumble/fabiokung.wordpress.com/50/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/stumble/fabiokung.wordpress.com/50/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godigg/fabiokung.wordpress.com/50/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/digg/fabiokung.wordpress.com/50/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/goreddit/fabiokung.wordpress.com/50/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/reddit/fabiokung.wordpress.com/50/" /></a> <img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=fabiokung.com&blog=3424388&post=50&subd=fabiokung&ref=&feed=1" /></div>]]></content:encoded>
+			<wfw:commentRss>http://fabiokung.com/2008/08/19/im-a-certified-ruby-programmer-silver/feed/</wfw:commentRss>
+	
+		<media:content url="http://www.gravatar.com/avatar/251c190c5a8277a3bc6197491f32da51?s=96&#38;d=wavatar&#38;r=PG" medium="image">
+			<media:title type="html">Fabio Kung</media:title>
+		</media:content>
+
+		<media:content url="http://fabiokung.files.wordpress.com/2008/08/ruby-logo-r.png?w=244" medium="image">
+			<media:title type="html">Ruby Programming Language</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>Revising my opinion about Spring Framework</title>
+		<link>http://fabiokung.com/2008/07/26/revising-my-opinion-about-spring-framework/</link>
+		<comments>http://fabiokung.com/2008/07/26/revising-my-opinion-about-spring-framework/#comments</comments>
+		<pubDate>Sat, 26 Jul 2008 17:43:35 +0000</pubDate>
+		<dc:creator>Fabio Kung</dc:creator>
+		
+		<category><![CDATA[di]]></category>
+
+		<category><![CDATA[ioc]]></category>
+
+		<category><![CDATA[java]]></category>
+
+		<category><![CDATA[spring]]></category>
+
+		<category><![CDATA[spring ioc di framework opinion java]]></category>
+
+		<guid isPermaLink="false">http://fabiokung.wordpress.com/?p=37</guid>
+		<description><![CDATA[In past, at comm.world (Germany), I worked with projects based on Spring. At that time, I built my opinion about the framework: useless. It had nothing you couldn&#8217;t do without it. Everything that came with Spring could be done in simpler ways: PicoContainer or plain constructor injection for IoC/DI, plain decorators, dynamic proxies or Servlet [...]<img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=fabiokung.com&blog=3424388&post=37&subd=fabiokung&ref=&feed=1" />]]></description>
+			<content:encoded><![CDATA[<div class='snap_preview'><br /><p>In past, at <a href="http://www.commworld.de/">comm.world</a> (Germany), I worked with projects based on Spring. At that time, I built my opinion about the framework: <strong>useless</strong>. It had nothing you couldn&#8217;t do without it. Everything that came with Spring could be done in simpler ways: <a href="http://www.picocontainer.org">PicoContainer</a> or plain constructor injection for IoC/DI, plain decorators, dynamic proxies or Servlet Filters instead of AOP for the same results, WebWork simpler than Spring MVC, &#8230;</p>
+<p>Some time has passed and, influenced by some friends in our endless discussions about Spring, I&#8217;ve decided to give it another try and I&#8217;ve started to refactor the <a href="http://www.vraptor.org">VRaptor Web Framework</a>, changing it to be fully Spring-based.</p>
+<p>After this experience, I must admit: I was <del datetime="00">a bit</del> wrong. I am going to explain it better, but I think the best part of Spring is that it already comes with many things done, ready to be used; out of the box. Furthermore, <a href="http://www.infoq.com/articles/spring-2.5-part-1">Spring 2.5 is much, much better</a>.</p>
+<p>Now, I have the sense that Spring brings some complexity, compared to lightweight alternatives; but not that much. This is the cost for the benefits the framework introduces. It is extremely flexible, supporting many different programming styles and idioms. I would be able to completely rewrite VRaptor to use Spring building blocks. Most of the current frameworks could be changed to be Spring-based, with little influence in their current APIs and programming styles!</p>
+<p>People has already <a href="http://www.jroller.com/Solomon/entry/guice_and_spring_2_51">(re)implemented Google Guice on top of Spring</a>. The EJB3 programming model (<code>@EJB</code>, <code>@PersistenceContext</code>, <code>@Stateless</code>, <code>@Stateful</code>, <code>@Resource</code>, &#8230;) can be easily replicated on Spring applications (<a href="http://www.onjava.com/pub/a/onjava/2005/06/29/spring-ejb3.html?page=2">old - 2005 - article that may be done better nowadays</a>). One could even provide an EJB3 implementation on top of Spring, JBoss Seam could be rewritten on top of Spring and even PicoContainer could be Spring-based.</p>
+<p>My current opinion is that Spring is a truly <em>framework</em>, in its <a href="http://en.wikipedia.org/wiki/Software_framework">original sense</a>, because it acts as a solid base for applications to be built on top of it, <strong>without imposing</strong> any programming model, style or idiom. You aren&#8217;t required to use XML, Spring classes and even Spring annotations. The little bureaucracy comes with a bunch of ready functionality to be used, and with the great flexibility the framework has to be extended.</p>
+<p>Today I can say I would consider using Spring Framework for new projects. I even consider it to be a good candidate to become <a href="http://www.infoq.com/news/2008/04/springsource-app-platform">one or more JSRs</a>. It is a great base for applications and other frameworks to be built on top of it. <a href="http://blog.springsource.com/main/2007/07/03/java-ee-6-gets-it-right">Rod Johnson is a member of Java EE 6 Expert Group</a>, which could point things to something in this direction.</p>
+<img alt="" border="0" src="http://feeds.wordpress.com/1.0/categories/fabiokung.wordpress.com/37/" /> <img alt="" border="0" src="http://feeds.wordpress.com/1.0/tags/fabiokung.wordpress.com/37/" /> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gocomments/fabiokung.wordpress.com/37/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/fabiokung.wordpress.com/37/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godelicious/fabiokung.wordpress.com/37/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/delicious/fabiokung.wordpress.com/37/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gostumble/fabiokung.wordpress.com/37/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/stumble/fabiokung.wordpress.com/37/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godigg/fabiokung.wordpress.com/37/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/digg/fabiokung.wordpress.com/37/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/goreddit/fabiokung.wordpress.com/37/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/reddit/fabiokung.wordpress.com/37/" /></a> <img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=fabiokung.com&blog=3424388&post=37&subd=fabiokung&ref=&feed=1" /></div>]]></content:encoded>
+			<wfw:commentRss>http://fabiokung.com/2008/07/26/revising-my-opinion-about-spring-framework/feed/</wfw:commentRss>
+	
+		<media:content url="http://www.gravatar.com/avatar/251c190c5a8277a3bc6197491f32da51?s=96&#38;d=wavatar&#38;r=PG" medium="image">
+			<media:title type="html">Fabio Kung</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>jetty_rails at RailsConf 2008</title>
+		<link>http://fabiokung.com/2008/05/31/jetty_rails-at-railsconf-2008/</link>
+		<comments>http://fabiokung.com/2008/05/31/jetty_rails-at-railsconf-2008/#comments</comments>
+		<pubDate>Sat, 31 May 2008 18:26:42 +0000</pubDate>
+		<dc:creator>Fabio Kung</dc:creator>
+		
+		<category><![CDATA[conference]]></category>
+
+		<category><![CDATA[jetty]]></category>
+
+		<category><![CDATA[jruby]]></category>
+
+		<category><![CDATA[rails]]></category>
+
+		<category><![CDATA[ruby]]></category>
+
+		<guid isPermaLink="false">http://fabiokung.wordpress.com/?p=34</guid>
+		<description><![CDATA[Jeremy Kemper talked about jetty_rails in his keynote at RailsConf 2008. Wow!
+
+In the same keynote, Jeremy also made the official release of Rails 2.1. Unfortunately, I couldn&#8217;t go to RailsConf this year, but I hope to be in the next!
+I&#8217;m extremely excited about this. Thanks to Nick Sieger (who talked to Jeremy about jetty_rails) and [...]<img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=fabiokung.com&blog=3424388&post=34&subd=fabiokung&ref=&feed=1" />]]></description>
+			<content:encoded><![CDATA[<div class='snap_preview'><br /><p><a href="http://en.oreilly.com/rails2008/public/schedule/speaker/21443">Jeremy Kemper</a> talked about <strong><a href="http://jetty-rails.rubyforge.org/">jetty_rails</a></strong> in his <a href="http://en.oreilly.com/rails2008/public/schedule/detail/4337">keynote at RailsConf 2008</a>. Wow!</p>
+<p><a href="http://fabiokung.files.wordpress.com/2008/05/jetty_railsconf.jpg"><img src="http://fabiokung.files.wordpress.com/2008/05/jetty_railsconf.jpg?w=300&#038;h=225" alt="jetty_rails at Jeremy\&#39;s keynote" width="300" height="225" class="aligncenter size-medium wp-image-36" /></a></p>
+<p>In the same keynote, Jeremy also made the <strong>official release of Rails 2.1</strong>. Unfortunately, I couldn&#8217;t go to RailsConf this year, but I hope to be in the next!</p>
+<p>I&#8217;m extremely excited about this. Thanks to <a href="http://blog.nicksieger.com/">Nick Sieger</a> (who talked to Jeremy about jetty_rails) and <a href="http://akitaonrails.com">Fabio Akita</a> for the photo and great news.</p>
+<img alt="" border="0" src="http://feeds.wordpress.com/1.0/categories/fabiokung.wordpress.com/34/" /> <img alt="" border="0" src="http://feeds.wordpress.com/1.0/tags/fabiokung.wordpress.com/34/" /> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gocomments/fabiokung.wordpress.com/34/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/fabiokung.wordpress.com/34/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godelicious/fabiokung.wordpress.com/34/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/delicious/fabiokung.wordpress.com/34/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gostumble/fabiokung.wordpress.com/34/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/stumble/fabiokung.wordpress.com/34/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godigg/fabiokung.wordpress.com/34/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/digg/fabiokung.wordpress.com/34/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/goreddit/fabiokung.wordpress.com/34/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/reddit/fabiokung.wordpress.com/34/" /></a> <img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=fabiokung.com&blog=3424388&post=34&subd=fabiokung&ref=&feed=1" /></div>]]></content:encoded>
+			<wfw:commentRss>http://fabiokung.com/2008/05/31/jetty_rails-at-railsconf-2008/feed/</wfw:commentRss>
+	
+		<media:content url="http://www.gravatar.com/avatar/251c190c5a8277a3bc6197491f32da51?s=96&#38;d=wavatar&#38;r=PG" medium="image">
+			<media:title type="html">Fabio Kung</media:title>
+		</media:content>
+
+		<media:content url="http://fabiokung.files.wordpress.com/2008/05/jetty_railsconf.jpg?w=300" medium="image">
+			<media:title type="html">jetty_rails at Jeremy\&#39;s keynote</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>JRuby and autotest (ZenTest)</title>
+		<link>http://fabiokung.com/2008/05/27/jruby-and-autotest-zentest/</link>
+		<comments>http://fabiokung.com/2008/05/27/jruby-and-autotest-zentest/#comments</comments>
+		<pubDate>Tue, 27 May 2008 04:00:03 +0000</pubDate>
+		<dc:creator>Fabio Kung</dc:creator>
+		
+		<category><![CDATA[autotest]]></category>
+
+		<category><![CDATA[jruby]]></category>
+
+		<category><![CDATA[ruby]]></category>
+
+		<category><![CDATA[tdd]]></category>
+
+		<category><![CDATA[test]]></category>
+
+		<guid isPermaLink="false">http://fabiokung.wordpress.com/?p=33</guid>
+		<description><![CDATA[JRuby 1.1.2 is going to be released (probably) today and it fixes a bug with $~ constants (Regexp.last_match), which made autotest finally work!
+
+
+jruby -S gem install ZenTest
+cd myproject
+jruby -S autotest
+
+
+I&#8217;ve previously submitted a patch to ZenTest guys. It makes the use of autotest possible with any JRuby 1.x, but now, with JRuby 1.1.2, autotest should [...]<img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=fabiokung.com&blog=3424388&post=33&subd=fabiokung&ref=&feed=1" />]]></description>
+			<content:encoded><![CDATA[<div class='snap_preview'><br /><p>JRuby 1.1.2 is going to be released (probably) today and it fixes a <a href="http://jira.codehaus.org/browse/JRUBY-2318">bug</a> with <code>$~</code> constants (<code>Regexp.last_match</code>), <strong>which made autotest finally work</strong>!</p>
+<p><code>
+<pre>
+jruby -S gem install ZenTest
+cd myproject
+jruby -S autotest
+</pre>
+<p></code></p>
+<p>I&#8217;ve previously <a href="http://rubyforge.org/tracker/index.php?func=detail&amp;aid=19773&amp;group_id=419&amp;atid=1680">submitted a patch</a> to ZenTest guys. It makes the use of autotest possible with any JRuby 1.x, but now, with JRuby 1.1.2, autotest should just work out of the box!</p>
+<img alt="" border="0" src="http://feeds.wordpress.com/1.0/categories/fabiokung.wordpress.com/33/" /> <img alt="" border="0" src="http://feeds.wordpress.com/1.0/tags/fabiokung.wordpress.com/33/" /> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gocomments/fabiokung.wordpress.com/33/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/fabiokung.wordpress.com/33/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godelicious/fabiokung.wordpress.com/33/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/delicious/fabiokung.wordpress.com/33/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gostumble/fabiokung.wordpress.com/33/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/stumble/fabiokung.wordpress.com/33/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godigg/fabiokung.wordpress.com/33/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/digg/fabiokung.wordpress.com/33/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/goreddit/fabiokung.wordpress.com/33/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/reddit/fabiokung.wordpress.com/33/" /></a> <img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=fabiokung.com&blog=3424388&post=33&subd=fabiokung&ref=&feed=1" /></div>]]></content:encoded>
+			<wfw:commentRss>http://fabiokung.com/2008/05/27/jruby-and-autotest-zentest/feed/</wfw:commentRss>
+	
+		<media:content url="http://www.gravatar.com/avatar/251c190c5a8277a3bc6197491f32da51?s=96&#38;d=wavatar&#38;r=PG" medium="image">
+			<media:title type="html">Fabio Kung</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>jetty-rails 0.4 is also jetty-merb</title>
+		<link>http://fabiokung.com/2008/05/22/jetty-rails-04-is-also-jetty-merb/</link>
+		<comments>http://fabiokung.com/2008/05/22/jetty-rails-04-is-also-jetty-merb/#comments</comments>
+		<pubDate>Thu, 22 May 2008 05:46:16 +0000</pubDate>
+		<dc:creator>Fabio Kung</dc:creator>
+		
+		<category><![CDATA[java]]></category>
+
+		<category><![CDATA[jetty]]></category>
+
+		<category><![CDATA[jruby]]></category>
+
+		<category><![CDATA[merb]]></category>
+
+		<category><![CDATA[rails]]></category>
+
+		<category><![CDATA[ruby]]></category>
+
+		<category><![CDATA[web]]></category>
+
+		<guid isPermaLink="false">http://fabiokung.wordpress.com/?p=32</guid>
+		<description><![CDATA[I&#8217;ve just released a new version of the jetty-rails gem. Now, you can also run Merb applications inside JRuby and Jetty!
+
+
+jruby -S gem install jetty-rails
+cd mymerbapp
+jruby -S jetty_merb
+
+
+Unfortunately, it&#8217;s blocking my console (ctrl + c doesn&#8217;t terminate it). Has anyone suggestions on this?
+I&#8217;ve also updated the basic documentation, as you can see here.
+The Merb support [...]<img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=fabiokung.com&blog=3424388&post=32&subd=fabiokung&ref=&feed=1" />]]></description>
+			<content:encoded><![CDATA[<div class='snap_preview'><br /><p>I&#8217;ve just released a new version of the jetty-rails gem. Now, <strong>you can also run <a href="http://merbivore.com/">Merb</a> applications</strong> inside JRuby and Jetty!</p>
+<p><code>
+<pre>
+jruby -S gem install jetty-rails
+cd mymerbapp
+jruby -S jetty_merb
+</pre>
+<p></code></p>
+<p>Unfortunately, it&#8217;s blocking my console (ctrl + c doesn&#8217;t terminate it). Has anyone suggestions on this?</p>
+<p>I&#8217;ve also updated the basic documentation, as you can see <a href="http://jetty-rails.rubyforge.org">here</a>.</p>
+<p>The Merb support was actually done in <a href="http://wiki.jruby.org/wiki/JRuby_Rack">JRuby Rack</a>. It was quite simple to support it. Many thanks to Nick Sieger, Dudley Flanders e cia!</p>
+<img alt="" border="0" src="http://feeds.wordpress.com/1.0/categories/fabiokung.wordpress.com/32/" /> <img alt="" border="0" src="http://feeds.wordpress.com/1.0/tags/fabiokung.wordpress.com/32/" /> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gocomments/fabiokung.wordpress.com/32/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/fabiokung.wordpress.com/32/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godelicious/fabiokung.wordpress.com/32/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/delicious/fabiokung.wordpress.com/32/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gostumble/fabiokung.wordpress.com/32/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/stumble/fabiokung.wordpress.com/32/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godigg/fabiokung.wordpress.com/32/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/digg/fabiokung.wordpress.com/32/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/goreddit/fabiokung.wordpress.com/32/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/reddit/fabiokung.wordpress.com/32/" /></a> <img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=fabiokung.com&blog=3424388&post=32&subd=fabiokung&ref=&feed=1" /></div>]]></content:encoded>
+			<wfw:commentRss>http://fabiokung.com/2008/05/22/jetty-rails-04-is-also-jetty-merb/feed/</wfw:commentRss>
+	
+		<media:content url="http://www.gravatar.com/avatar/251c190c5a8277a3bc6197491f32da51?s=96&#38;d=wavatar&#38;r=PG" medium="image">
+			<media:title type="html">Fabio Kung</media:title>
+		</media:content>
+	</item>
+	</channel>
+</rss>

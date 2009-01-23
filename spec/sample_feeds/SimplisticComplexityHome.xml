@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="http://feeds.feedburner.com/~d/styles/rss2full.xsl" type="text/xsl" media="screen"?><?xml-stylesheet href="http://feeds.feedburner.com/~d/styles/itemcontent.css" type="text/css" media="screen"?><!-- generator="wordpress/2.3.1" --><rss xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" version="2.0">
+
+<channel>
+	<title>Simplistic Complexity</title>
+	<link>http://www.simplisticcomplexity.com</link>
+	<description>Just another WordPress weblog</description>
+	<pubDate>Thu, 22 Jan 2009 08:00:37 +0000</pubDate>
+	<generator>http://wordpress.org/?v=2.3.1</generator>
+	<language>en</language>
+			<atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" href="http://feeds.feedburner.com/SimplisticComplexity" type="application/rss+xml" /><item>
+		<title>First iPhone App: Summizer</title>
+		<link>http://feeds.feedburner.com/~r/SimplisticComplexity/~3/414097374/</link>
+		<comments>http://www.simplisticcomplexity.com/2008/10/07/first-iphone-app-summizer/#comments</comments>
+		<pubDate>Tue, 07 Oct 2008 19:41:11 +0000</pubDate>
+		<dc:creator>jon</dc:creator>
+		
+		<category><![CDATA[Uncategorized]]></category>
+
+		<category><![CDATA[summizer iphone app twitter trends]]></category>
+
+		<guid isPermaLink="false">http://www.simplisticcomplexity.com/2008/10/07/first-iphone-app-summizer/</guid>
+		<description><![CDATA[About a month ago I launched my first iPhone application, Summizer. 
+
+Summizer allows you to search Twitter and save your searches. Saved searches are basically trends. No one really wants to search Twitter, not in the way you search Google. What you really want to do is track what people are saying about a certain [...]]]></description>
+			<content:encoded><![CDATA[<p>About a month ago I launched my first iPhone application, <a href="http://www.mustacheinc.com/summizer">Summizer</a>. </p>
+
+<p>Summizer allows you to search Twitter and save your searches. Saved searches are basically trends. No one really wants to <em>search</em> Twitter, not in the way you search Google. What you really want to do is track what people are saying about a certain topic. This might be your company, your company's product, your favorite band, or even you.</p>
+
+<p>Just like Twitter, Summizer is a bit tough to grok its usefulness, until you use it. Once you get it, play with it, and add your own trends, you are addicted to it. Its the ultimate 1 minute use app. Waiting for the train? Bust out Summizer and see what people are saying about the election. Waiting in line for food? Bust out Summizer to see what people are saying about your new Rails plugin.</p>
+
+<p>Once you start using Summizer, it will become as useful as your feed reader. And thats a promise! </p>
+
+<div class="centered">
+<a href="http://www.mustacheinc.com/summizer"><img src="http://www.mustacheinc.com/images/projects/summizer/1_1/home.jpg" alt="home " /></a>
+<a href="http://www.mustacheinc.com/summizer"><img src="http://www.mustacheinc.com/images/projects/summizer/1_1/tweets.jpg" alt="tweets " /></a>
+</div><img src="http://feeds.feedburner.com/~r/SimplisticComplexity/~4/414097374" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://www.simplisticcomplexity.com/2008/10/07/first-iphone-app-summizer/feed/</wfw:commentRss>
+		<feedburner:origLink>http://www.simplisticcomplexity.com/2008/10/07/first-iphone-app-summizer/</feedburner:origLink></item>
+		<item>
+		<title>Newest Project Launch</title>
+		<link>http://feeds.feedburner.com/~r/SimplisticComplexity/~3/307723154/</link>
+		<comments>http://www.simplisticcomplexity.com/2008/06/08/newest-project-launch/#comments</comments>
+		<pubDate>Mon, 09 Jun 2008 03:22:19 +0000</pubDate>
+		<dc:creator>jon</dc:creator>
+		
+		<category><![CDATA[projects]]></category>
+
+		<guid isPermaLink="false">http://www.simplisticcomplexity.com/2008/06/08/newest-project-launch/</guid>
+		<description><![CDATA[
+
+My newest client project just launched! playlist.maxfm.fm is an app for a radio station to allow its user's to create playlists to air on the radio. 
+
+More details here
+
+Comments are welcomed as always.]]></description>
+			<content:encoded><![CDATA[<p><a href="http://playlist.maxfm.fm" title="playlist.maxfm.fm"><img class="centered" src='http://www.simplisticcomplexity.com/wp-content/uploads/2008/06/picture-1.jpg' alt='playlist.maxfm.fm' /></a></p>
+
+<p>My newest client project just launched! <a href="http://playlist.maxfm.fm">playlist.maxfm.fm</a> is an app for a radio station to allow its user's to create playlists to air on the radio. </p>
+
+<p>More details <a href="http://blog.mustacheinc.com/post/37676155/playlist-maxfm-fm-project-launch">here</a></p>
+
+<p>Comments are welcomed as always.</p><img src="http://feeds.feedburner.com/~r/SimplisticComplexity/~4/307723154" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://www.simplisticcomplexity.com/2008/06/08/newest-project-launch/feed/</wfw:commentRss>
+		<feedburner:origLink>http://www.simplisticcomplexity.com/2008/06/08/newest-project-launch/</feedburner:origLink></item>
+		<item>
+		<title>Jeez People, Stop Fretting Over Installing RMagick</title>
+		<link>http://feeds.feedburner.com/~r/SimplisticComplexity/~3/306541423/</link>
+		<comments>http://www.simplisticcomplexity.com/2008/06/06/jeez-people-stop-fretting-over-installing-rmagick/#comments</comments>
+		<pubDate>Sat, 07 Jun 2008 03:19:28 +0000</pubDate>
+		<dc:creator>jon</dc:creator>
+		
+		<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://www.simplisticcomplexity.com/2008/06/06/jeez-people-stop-fretting-over-installing-rmagick/</guid>
+		<description><![CDATA[Rmagick. It sucks, I know. We all hate it. But you have apps that depend on it and haven't changed that yet. So you need it installed for development. And you hate installing it.
+
+But really, its not that installing RMagick sucks, its installing ImageMagick that sucks. Its hard. But the only thing worse than hard, [...]]]></description>
+			<content:encoded><![CDATA[<p>Rmagick. It sucks, I know. We all hate it. But you have apps that depend on it and haven't changed that yet. So you need it installed for development. And you hate installing it.</p>
+
+<p>But really, its not that installing RMagick sucks, its installing ImageMagick that sucks. Its hard. But the only thing worse than hard, is stupid ass MacPorts. Which is ********.</p>
+
+<p>So all I hear is people complain over and over about having to install it. Meanwhile there has been a script to install ImageMagick and RMagick on OS X forever, but people just don't seem to know its there. </p>
+
+<p>I tell people about it and they just ignore me and then complain about installing RMagick to me later on!! <span class="caps">WTF</span>?!</p>
+
+<p>So, I've had it. When you format or get a new computer go here: <del datetime="2009-01-22T07:54:59+00:00"><a href="http://rubyforge.org/frs/?group_id=12&amp;release_id=21634">http://rubyforge.org/frs/?group_id=12&amp;release_id=21634</a></del></p>
+
+<p><del datetime="2009-01-22T07:58:22+00:00">Download rm_install</del></p>
+
+<p>That old script isn't maintained and never works. I've decided to post one myself on GitHub with the hope that people will not only use it, but make sure it never gets stale. Grab it here: <a href="http://www.github.com/maddox/magick-installer"> http://www.github.com/maddox/magick-installer </a></p>
+
+
+<p>Now, once its downloaded. Do this:</p>
+
+
+<div class="wp_syntax"><div class="code"><pre class="bash"><span style="color: #c20cb9; font-weight: bold;">sudo</span> ./magick-installer.<span style="color: #c20cb9; font-weight: bold;">sh</span></pre></div></div>
+
+
+
+
+<p>and let it run forever. Done. Pretty easy right? There. <span class="caps">PLEASE USE IT.</span> Its a fantastic script that works really well. Its not hard to install ImageMagick anymore! Dance!</p><img src="http://feeds.feedburner.com/~r/SimplisticComplexity/~4/306541423" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://www.simplisticcomplexity.com/2008/06/06/jeez-people-stop-fretting-over-installing-rmagick/feed/</wfw:commentRss>
+		<feedburner:origLink>http://www.simplisticcomplexity.com/2008/06/06/jeez-people-stop-fretting-over-installing-rmagick/</feedburner:origLink></item>
+		<item>
+		<title>BeCamp 2008</title>
+		<link>http://feeds.feedburner.com/~r/SimplisticComplexity/~3/280999248/</link>
+		<comments>http://www.simplisticcomplexity.com/2008/04/30/becamp-2008/#comments</comments>
+		<pubDate>Wed, 30 Apr 2008 19:44:58 +0000</pubDate>
+		<dc:creator>jon</dc:creator>
+		
+		<category><![CDATA[Event]]></category>
+
+		<category><![CDATA[Talks]]></category>
+
+		<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://www.simplisticcomplexity.com/2008/04/30/becamp-2008/</guid>
+		<description><![CDATA[
+
+BeCamp 2008 is this weekend in Charlottesville, Va. I'm pretty excited since this will be my first BarCamp. It seems that every time I have a chance to go to one the timing has been bad.
+
+If you're in the area, defiantly come up for what is going to be a great time. I'm planning on [...]]]></description>
+			<content:encoded><![CDATA[<p><a href='http://barcamp.org/beCamp2008'><img src='http://www.simplisticcomplexity.com/wp-content/uploads/2008/04/becamp-badge-black-195w.png' alt='becamp 2008' class="centered" /></a></p>
+
+<p><a href="http://barcamp.org/beCamp2008">BeCamp 2008</a> is this weekend in Charlottesville, Va. I'm pretty excited since this will be my first BarCamp. It seems that every time I have a chance to go to one the timing has been bad.</p>
+
+<p>If you're in the area, defiantly come up for what is going to be a great time. I'm planning on doing a demo of my sweet barcode scanner integration. </p>
+
+<p>Mustache is sponsoring breakfast on Saturday morning. So if you see me, come say hi.</p><img src="http://feeds.feedburner.com/~r/SimplisticComplexity/~4/280999248" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://www.simplisticcomplexity.com/2008/04/30/becamp-2008/feed/</wfw:commentRss>
+		<feedburner:origLink>http://www.simplisticcomplexity.com/2008/04/30/becamp-2008/</feedburner:origLink></item>
+		<item>
+		<title>Show Your GIT Branch Name In Your Prompt</title>
+		<link>http://feeds.feedburner.com/~r/SimplisticComplexity/~3/251054620/</link>
+		<comments>http://www.simplisticcomplexity.com/2008/03/13/show-your-git-branch-name-in-your-prompt/#comments</comments>
+		<pubDate>Thu, 13 Mar 2008 23:31:17 +0000</pubDate>
+		<dc:creator>jon</dc:creator>
+		
+		<category><![CDATA[GIT]]></category>
+
+		<category><![CDATA[Snippets]]></category>
+
+		<guid isPermaLink="false">http://www.simplisticcomplexity.com/2008/03/13/show-your-git-branch-name-in-your-prompt/</guid>
+		<description><![CDATA[Typing git branch over and over to see what branch you are on sucks. Sure, you could argue that you should always KNOW what branch you're currently working on. And if you did, you would obviously not be a git user.
+
+Bouncing around branches can be pretty common, and I know I've messed some things up [...]]]></description>
+			<content:encoded><![CDATA[<p>Typing <code>git branch</code> over and over to see what branch you are on sucks. Sure, you could argue that you should always <span class="caps">KNOW </span>what branch you're currently working on. And if you did, you would obviously not be a git user.</p>
+
+<p>Bouncing around branches can be pretty common, and I know I've messed some things up pretty bad not knowing what branch I was on. </p>
+
+<p>So set up your shell to always put the name of the current branch into your prompt.<br />
+<img src="http://img.skitch.com/20080313-1qjnda6nm9reb4sgkii4qy3bcf.jpg" alt="" height="18" width="457" /></p>
+
+
+<div class="wp_syntax"><div class="code"><pre class="bash"><span style="color: #000000; font-weight: bold;">function</span> parse_git_branch <span style="color: #7a0874; font-weight: bold;">&#123;</span>
+  git branch --no-color <span style="color: #000000;">2</span>&gt; /dev/null | <span style="color: #c20cb9; font-weight: bold;">sed</span> -e <span style="color: #ff0000;">'/^[^*]/d'</span> -e <span style="color: #ff0000;">'s/* <span style="color: #000099; font-weight: bold;">\(</span>.*<span style="color: #000099; font-weight: bold;">\)</span>/(<span style="color: #000099; font-weight: bold;">\1</span>)/'</span>
+<span style="color: #7a0874; font-weight: bold;">&#125;</span>
+&nbsp;
+<span style="color: #000000; font-weight: bold;">function</span> proml <span style="color: #7a0874; font-weight: bold;">&#123;</span>
+  <span style="color: #7a0874; font-weight: bold;">local</span>        <span style="color: #007800;">BLUE=</span><span style="color: #ff0000;">&quot;<span style="color: #000099; font-weight: bold;">\[</span><span style="color: #000099; font-weight: bold;">\0</span>33[0;34m<span style="color: #000099; font-weight: bold;">\]</span>&quot;</span>
+  <span style="color: #7a0874; font-weight: bold;">local</span>         <span style="color: #007800;">RED=</span><span style="color: #ff0000;">&quot;<span style="color: #000099; font-weight: bold;">\[</span><span style="color: #000099; font-weight: bold;">\0</span>33[0;31m<span style="color: #000099; font-weight: bold;">\]</span>&quot;</span>
+  <span style="color: #7a0874; font-weight: bold;">local</span>   <span style="color: #007800;">LIGHT_RED=</span><span style="color: #ff0000;">&quot;<span style="color: #000099; font-weight: bold;">\[</span><span style="color: #000099; font-weight: bold;">\0</span>33[1;31m<span style="color: #000099; font-weight: bold;">\]</span>&quot;</span>
+  <span style="color: #7a0874; font-weight: bold;">local</span>       <span style="color: #007800;">GREEN=</span><span style="color: #ff0000;">&quot;<span style="color: #000099; font-weight: bold;">\[</span><span style="color: #000099; font-weight: bold;">\0</span>33[0;32m<span style="color: #000099; font-weight: bold;">\]</span>&quot;</span>
+  <span style="color: #7a0874; font-weight: bold;">local</span> <span style="color: #007800;">LIGHT_GREEN=</span><span style="color: #ff0000;">&quot;<span style="color: #000099; font-weight: bold;">\[</span><span style="color: #000099; font-weight: bold;">\0</span>33[1;32m<span style="color: #000099; font-weight: bold;">\]</span>&quot;</span>
+  <span style="color: #7a0874; font-weight: bold;">local</span>       <span style="color: #007800;">WHITE=</span><span style="color: #ff0000;">&quot;<span style="color: #000099; font-weight: bold;">\[</span><span style="color: #000099; font-weight: bold;">\0</span>33[1;37m<span style="color: #000099; font-weight: bold;">\]</span>&quot;</span>
+  <span style="color: #7a0874; font-weight: bold;">local</span>  <span style="color: #007800;">LIGHT_GRAY=</span><span style="color: #ff0000;">&quot;<span style="color: #000099; font-weight: bold;">\[</span><span style="color: #000099; font-weight: bold;">\0</span>33[0;37m<span style="color: #000099; font-weight: bold;">\]</span>&quot;</span>
+  <span style="color: #000000; font-weight: bold;">case</span> <span style="color: #007800;">$TERM</span> <span style="color: #000000; font-weight: bold;">in</span>
+    xterm*<span style="color: #7a0874; font-weight: bold;">&#41;</span>
+    <span style="color: #007800;">TITLEBAR=</span><span style="color: #ff0000;">'<span style="color: #000099; font-weight: bold;">\[</span><span style="color: #000099; font-weight: bold;">\0</span>33]0;<span style="color: #000099; font-weight: bold;">\u</span>@<span style="color: #000099; font-weight: bold;">\h</span>:<span style="color: #000099; font-weight: bold;">\w</span><span style="color: #000099; font-weight: bold;">\0</span>07<span style="color: #000099; font-weight: bold;">\]</span>'</span>
+    ;;
+    *<span style="color: #7a0874; font-weight: bold;">&#41;</span>
+    <span style="color: #007800;">TITLEBAR=</span><span style="color: #ff0000;">&quot;&quot;</span>
+    ;;
+  <span style="color: #000000; font-weight: bold;">esac</span>
+&nbsp;
+<span style="color: #007800;">PS1=</span><span style="color: #ff0000;">&quot;${TITLEBAR}<span style="color: #000099; font-weight: bold;">\</span>
+$BLUE[$RED<span style="color: #000099; font-weight: bold;">\$</span>(date +%H:%M)$BLUE]<span style="color: #000099; font-weight: bold;">\</span>
+$BLUE[$RED<span style="color: #000099; font-weight: bold;">\u</span>@<span style="color: #000099; font-weight: bold;">\h</span>:<span style="color: #000099; font-weight: bold;">\w</span>$GREEN<span style="color: #000099; font-weight: bold;">\$</span>(parse_git_branch)$BLUE]<span style="color: #000099; font-weight: bold;">\</span>
+$GREEN<span style="color: #000099; font-weight: bold;">\$</span> &quot;</span>
+<span style="color: #007800;">PS2=</span><span style="color: #ff0000;">'&gt; '</span>
+<span style="color: #007800;">PS4=</span><span style="color: #ff0000;">'+ '</span>
+<span style="color: #7a0874; font-weight: bold;">&#125;</span>
+proml</pre></div></div>
+
+
+
+
+<p><a href="http://pastie.caboo.se/pastes/165446">Pastie Link</a></p>
+
+<p>Put this at the top of your .bash_profile and you'll be pimping your branch all over.</p>
+
+<p>Thanks to <a href="http://ozmm.org">@defunkt</a> for this.</p><img src="http://feeds.feedburner.com/~r/SimplisticComplexity/~4/251054620" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://www.simplisticcomplexity.com/2008/03/13/show-your-git-branch-name-in-your-prompt/feed/</wfw:commentRss>
+		<feedburner:origLink>http://www.simplisticcomplexity.com/2008/03/13/show-your-git-branch-name-in-your-prompt/</feedburner:origLink></item>
+		<item>
+		<title>GIT Intro Tonight @ CVREG</title>
+		<link>http://feeds.feedburner.com/~r/SimplisticComplexity/~3/249512187/</link>
+		<comments>http://www.simplisticcomplexity.com/2008/03/11/git-intro-tonight-cvreg/#comments</comments>
+		<pubDate>Tue, 11 Mar 2008 13:48:05 +0000</pubDate>
+		<dc:creator>jon</dc:creator>
+		
+		<category><![CDATA[CVREG]]></category>
+
+		<category><![CDATA[GIT]]></category>
+
+		<category><![CDATA[Ruby]]></category>
+
+		<category><![CDATA[Talks]]></category>
+
+		<guid isPermaLink="false">http://www.simplisticcomplexity.com/2008/03/11/git-intro-tonight-cvreg/</guid>
+		<description><![CDATA[
+
+I will be giving a talk on GIT at tonights CVREG meeting. 
+
+If you've been reading about GIT lately and haven't had time to get your feet wet, come by to learn a little and see how it works. I'll be going over the benefits of GIT as well as doing some live demos to [...]]]></description>
+			<content:encoded><![CDATA[<p><img src="/images/git.jpg" alt="" height="450" width="563" class="centered" /></p>
+
+<p>I will be giving a talk on <span class="caps">GIT </span>at <a href="http://cvreg.org/2008/3/5/march-meeting-git-and-prototype">tonights</a> <a href="http://cvreg.org/"><span class="caps">CVREG</span></a> meeting. </p>
+
+<p>If you've been reading about <span class="caps">GIT </span>lately and haven't had time to get your feet wet, come by to learn a little and see how it works. I'll be going over the benefits of <span class="caps">GIT </span>as well as doing some live demos to show how nice its silky smooth features work.</p>
+
+<p>More info on the <a href="http://upcoming.yahoo.com/event/448333">upcoming page</a></p><img src="http://feeds.feedburner.com/~r/SimplisticComplexity/~4/249512187" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://www.simplisticcomplexity.com/2008/03/11/git-intro-tonight-cvreg/feed/</wfw:commentRss>
+		<feedburner:origLink>http://www.simplisticcomplexity.com/2008/03/11/git-intro-tonight-cvreg/</feedburner:origLink></item>
+		<item>
+		<title>Cleanly Migrate Your Subversion Repository To a GIT Repository</title>
+		<link>http://feeds.feedburner.com/~r/SimplisticComplexity/~3/246297857/</link>
+		<comments>http://www.simplisticcomplexity.com/2008/03/05/cleanly-migrate-your-subversion-repository-to-a-git-repository/#comments</comments>
+		<pubDate>Wed, 05 Mar 2008 19:13:46 +0000</pubDate>
+		<dc:creator>jon</dc:creator>
+		
+		<category><![CDATA[GIT]]></category>
+
+		<category><![CDATA[Snippets]]></category>
+
+		<guid isPermaLink="false">http://www.simplisticcomplexity.com/2008/03/05/cleanly-migrate-your-subversion-repository-to-a-git-repository/</guid>
+		<description><![CDATA[So you're ready to ride the GIT train eh? But what about all those projects in your subversion repository? Sure you could just use git-svn but what you really want is to cleanly move that repository and all its history to a nice new GIT repository.
+
+Luckily it's not that hard. For this example I'm going [...]]]></description>
+			<content:encoded><![CDATA[<p>So you're ready to ride the <span class="caps">GIT </span>train eh? But what about all those projects in your subversion repository? Sure you could just use <code>git-svn</code> but what you really want is to cleanly move that repository and all its history to a nice new <span class="caps">GIT </span>repository.</p>
+
+<p>Luckily it's not that hard. For this example I'm going to use <strong>my_blog</strong> as the application name you're porting to a <span class="caps">GIT </span>repository. We're basically going to just initialize a new <span class="caps">GIT </span>repository, point it at your <span class="caps">SVN </span>repository, and suck in your code and history while remapping the users to <span class="caps">GIT </span>users. We'll then just clone <span class="caps">THAT </span>repository to have a clean <span class="caps">GIT </span>repository free of <span class="caps">SVN </span>clutter.</p>
+
+<p>The first thing we need to do is create a <em>users</em> file that maps all your <span class="caps">SVN </span>users to your <span class="caps">GIT </span>users. Just make a file on your Desktop named 'users.txt'. Map the users using this format:</p>
+
+
+
+<pre><code>jmaddox = Jon Maddox &lt;jon@gmail.com&gt;
+bigpappa = Brian Biggs &lt;bigpappa@gmail.com&gt;
+</code></pre>
+
+
+
+<p>Simple. Now here are the commands you'll run. I'll explain them below.</p>
+
+
+<div class="wp_syntax"><div class="code"><pre class="bash"><span style="color: #c20cb9; font-weight: bold;">mkdir</span> my_blog_tmp
+<span style="color: #7a0874; font-weight: bold;">cd</span> my_blog_tmp
+git-svn init http://code.yoursite.net/my_blog/trunk/ --no-metadata
+git config svn.authorsfile ~/Desktop/<span style="color: #c20cb9; font-weight: bold;">users</span>.txt
+git-svn fetch</pre></div></div>
+
+
+
+
+<p>The first two are self explanatory, we're making a new directory for the temporary repository. The second command initializes the directory as a git-svn hybrid thing and points the origin at your <span class="caps">SVN </span>repository. The flag, <code>--no-metadata</code>, tells <span class="caps">GIT </span>to leave all the <span class="caps">SVN </span>details behind (not the commit log). The fourth command tells <span class="caps">GIT </span>to remap all the <span class="caps">SVN </span>users to <span class="caps">GIT </span>users when it sucks down the source and history. The last command actually does the fetching.</p>
+
+<p>Ok, so now after a few <span class="caps">LONG </span>minutes, your source is all there. Do a <code>git log</code> to see that your users have been mapped. Sweet!</p>
+
+<p>Now you just have one last step. You need to clone this repository. Why do we do this? When doing a normal <code>git clone</code> it will take everything we want from the temporary repository, while leaving behind all the <span class="caps">SVN </span>cruft that was there to support the <code>git-svn</code> stuff.</p>
+
+
+<div class="wp_syntax"><div class="code"><pre class="bash">git clone my_blog_tmp my_blog</pre></div></div>
+
+
+
+
+<p>Boom! You're done. Now you have a super clean <span class="caps">GIT </span>repository all ready to use.</p><img src="http://feeds.feedburner.com/~r/SimplisticComplexity/~4/246297857" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://www.simplisticcomplexity.com/2008/03/05/cleanly-migrate-your-subversion-repository-to-a-git-repository/feed/</wfw:commentRss>
+		<feedburner:origLink>http://www.simplisticcomplexity.com/2008/03/05/cleanly-migrate-your-subversion-repository-to-a-git-repository/</feedburner:origLink></item>
+		<item>
+		<title>GIT It?</title>
+		<link>http://feeds.feedburner.com/~r/SimplisticComplexity/~3/245790457/</link>
+		<comments>http://www.simplisticcomplexity.com/2008/03/04/git-it/#comments</comments>
+		<pubDate>Tue, 04 Mar 2008 23:50:12 +0000</pubDate>
+		<dc:creator>jon</dc:creator>
+		
+		<category><![CDATA[GIT]]></category>
+
+		<category><![CDATA[Tools]]></category>
+
+		<guid isPermaLink="false">http://www.simplisticcomplexity.com/2008/03/04/git-it/</guid>
+		<description><![CDATA[While working today I think I heard GIT mentioned on every form of communication I use daily. It was mentioned in several IRC channels, on twitter a ton, in an email, over IM, and a couple of new posts in my feeds. It has become obvious that GIT has hit the early adopter phase.
+
+I'm not [...]]]></description>
+			<content:encoded><![CDATA[<p>While working today I think I heard <span class="caps">GIT </span>mentioned on every form of communication I use daily. It was mentioned in several <span class="caps">IRC </span>channels, on twitter a ton, in an email, over <span class="caps">IM, </span>and a couple of new posts in my feeds. It has become obvious that <span class="caps">GIT </span>has hit the early adopter phase.</p>
+
+<p>I'm not going to <em>sell</em> <span class="caps">GIT </span>or even try to explain why it's so great. There are tons of places online that already do that. I'm just going to share a couple stories.</p>
+
+<h4>Who Gives a Crap, I Gotta Get Work Done</h4>
+
+<p>This new source code management software that seems to be gaining a <span class="caps">HUGE </span>amount of steam first popped on my radar early last summer. I contemplated playing with it, but like most things, I skipped it. I figured as a single developer, it wouldn't mean much to me. I code,commit, iterate. <em>"What do i need with fancy branching?"</em> I <a href="http://twitter.com/maddox/statuses/170044712">said</a>. But <a href="http://twitter.com/peterc">@peterc</a> <a href="http://twitter.com/peterc/statuses/170110182">replied</a> with my answer. I just didn't get it then.</p>
+
+<p>Months went by as I used <span class="caps">SVN </span>like everyone else. I was just happy with versioned code, that's about all that <span class="caps">SVN </span>did for me. </p>
+
+<h4>RubyConf 2007</h4>
+
+<p>As I was outside with the rest of the Ruby Smoking Crew, I got Chris Wanstrath, unofficial <span class="caps">GIT </span>ambassador, to try to sell me on it. He started with the normal branching pitch, and I stoppped him. </p>
+
+<blockquote><p><em>"I don't branch"</em>. </p></blockquote>
+
+<blockquote><p><em>"Because you don't use <span class="caps">GIT</span>"</em>. </p></blockquote>
+
+<p><span class="caps">BOOM.</span> It hit me. I don't <strong>branch</strong> because branching with <span class="caps">SVN </span><strong>sucks</strong> so much fucking arse that it's just not worth it. <span class="caps">CERTAINLY </span>not for changes that take only a few hours. With <span class="caps">SVN </span>you hang out on trunk and make your thousands of commits. Forget if you want to try something wacky real fast, you'd have to branch it! And thats just a whole lot of work.</p>
+
+<h4>Fast Forward a Few Days.</h4>
+
+<p>I'm sitting in a cube at Yahoo!. I'd been given a task a few days earlier. I was working on it and hit a stopping point. I needed to make a huge sweeping change. <span class="caps">BUT, </span>two hours later, I had to demo it to a room full of Yahoo! people I had never even met. <span class="caps">AND </span>they expected it to work. I knew my changes were going to break the whole app for a little while.</p>
+
+<p>Ok, so first off, this project was neither IN a repository, nor did I even have access to one. I'd only been there for like two days. So I could copy my source directory and file it away for the demo, or... I could finally throw <span class="caps">GIT </span>on my laptop and try it out! So I installed <span class="caps">GIT, </span>initialized my rep. Branched it...whoa what? Thats it. <code>git checkout -b new_model</code>? Thats it?! <span class="caps">SICK.</span></p>
+
+<p>I continued my work and when it came time for the demo I just used <code>git checkout master</code> and voila, I was back to my fully working copy. I finally 'got' <span class="caps">GIT.</span> At least the branching part. Not only is it easy to branch, you can branch locally. And by locally, I mean privately. So if you want to try something weird and crazy out, you don't need to worry about making a new branch at the central repository, just branch it locally and go to town. If it worked out, merge it back into <em>master</em>. If it doesn't, just dump it. Now, like most <span class="caps">GIT </span>users, I don't even work directly on master.</p>
+
+<p>Ok, thats my story. I guess the moral is, you're never going to get why something is good for <span class="caps">YOU </span>until <span class="caps">YOU </span>use it. Everyone takes different things away from products, especially when you're talking about productivity.</p><img src="http://feeds.feedburner.com/~r/SimplisticComplexity/~4/245790457" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://www.simplisticcomplexity.com/2008/03/04/git-it/feed/</wfw:commentRss>
+		<feedburner:origLink>http://www.simplisticcomplexity.com/2008/03/04/git-it/</feedburner:origLink></item>
+		<item>
+		<title>Mustache is Real</title>
+		<link>http://feeds.feedburner.com/~r/SimplisticComplexity/~3/234582521/</link>
+		<comments>http://www.simplisticcomplexity.com/2008/02/13/mustache-is-real/#comments</comments>
+		<pubDate>Wed, 13 Feb 2008 21:30:18 +0000</pubDate>
+		<dc:creator>jon</dc:creator>
+		
+		<category><![CDATA[Rails]]></category>
+
+		<category><![CDATA[Ruby]]></category>
+
+		<guid isPermaLink="false">http://www.simplisticcomplexity.com/2008/02/13/mustache-is-real/</guid>
+		<description><![CDATA[So I finally got around to getting legit and filed my papers. I'll now be operating under the name Mustache, Inc. But mainly just Mustache. WTF? Mustache? Why? 
+
+Why would I name my company Mustache? Well, why not. I came up with the logo and liked it, and wanted something a bit abstract. Plus it [...]]]></description>
+			<content:encoded><![CDATA[<p>So I finally got around to getting legit and filed my papers. I'll now be operating under the name <a href="http://www.mustacheinc.com">Mustache, Inc.</a> But mainly just Mustache. <span class="caps">WTF</span>? Mustache? Why? </p>
+
+<p>Why would I name my company Mustache? Well, why not. I came up with the logo and liked it, and wanted something a bit abstract. Plus it is going to work well as a first line of defense for boring stuck up clients. If you can't work with a company named Mustache, then Mustache can't work with you.</p>
+
+<p>If you've met me, you'd know I'm a pretty laid back guy. I don't kiss ass and I don't bullshit. I let my work and commitment to projects speak for itself. I've tried to convey this with initial consults with clients. I tend to give them "100% Maddox" during these meetings and lay it all on the table. So far it has worked out great. It's amazing what happens when you operate a business as an honest and transparent person. It actually works! Imagine that!</p>
+
+<p>So let it be known, I'm officially available for hire. Check out the site and let me know what you think. </p>
+
+<p><a href="http://www.mustacheinc.com">http://www.mustacheinc.com</a></p><img src="http://feeds.feedburner.com/~r/SimplisticComplexity/~4/234582521" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://www.simplisticcomplexity.com/2008/02/13/mustache-is-real/feed/</wfw:commentRss>
+		<feedburner:origLink>http://www.simplisticcomplexity.com/2008/02/13/mustache-is-real/</feedburner:origLink></item>
+		<item>
+		<title>Spec Out Your Cookies with Rspec</title>
+		<link>http://feeds.feedburner.com/~r/SimplisticComplexity/~3/228712674/</link>
+		<comments>http://www.simplisticcomplexity.com/2008/02/04/spec-out-your-cookies-with-rspec/#comments</comments>
+		<pubDate>Mon, 04 Feb 2008 05:22:24 +0000</pubDate>
+		<dc:creator>jon</dc:creator>
+		
+		<category><![CDATA[Rails]]></category>
+
+		<category><![CDATA[Snippets]]></category>
+
+		<category><![CDATA[Testing]]></category>
+
+		<guid isPermaLink="false">http://www.simplisticcomplexity.com/2008/02/04/spec-out-your-cookies-with-rspec/</guid>
+		<description><![CDATA[Here's something that got me this weekend and I couldn't find much info on it anywhere. So like my Internet taught me, I'm sharing.
+
+links_controller.rb
+
+
+cookies&#91;:phone&#93; = params&#91;:phone&#93;
+
+
+
+
+links_controller_spec.rb
+
+
+it &#34;should save the phone number in a cookie&#34; do
+  @my_cookies = mock&#40;'cookies'&#41;
+  @my_cookies.stub!&#40;:&#91;&#93;=&#41;
+  controller.stub!&#40;:cookies&#41;.and_return&#40;@my_cookies&#41;
+&#160;
+  @my_cookies.should_receive&#40;:&#91;&#93;=&#41;.with&#40;:phone, '804-755-7555'&#41;
+&#160;
+  do_post
+end
+
+
+
+
+Here I'm making the expectation that a cookie [...]]]></description>
+			<content:encoded><![CDATA[<p>Here's something that got me this weekend and I couldn't find much info on it anywhere. So like my Internet taught me, I'm sharing.</p>
+
+<code>links_controller.rb</code>
+
+
+<div class="wp_syntax"><div class="code"><pre class="ruby">cookies<span style="color:#006600; font-weight:bold;">&#91;</span><span style="color:#ff3333; font-weight:bold;">:phone</span><span style="color:#006600; font-weight:bold;">&#93;</span> = params<span style="color:#006600; font-weight:bold;">&#91;</span><span style="color:#ff3333; font-weight:bold;">:phone</span><span style="color:#006600; font-weight:bold;">&#93;</span></pre></div></div>
+
+
+
+
+<code>links_controller_spec.rb</code>
+
+
+<div class="wp_syntax"><div class="code"><pre class="ruby">it <span style="color:#996600;">&quot;should save the phone number in a cookie&quot;</span> <span style="color:#9966CC; font-weight:bold;">do</span>
+  <span style="color:#0066ff; font-weight:bold;">@my_cookies</span> = mock<span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#996600;">'cookies'</span><span style="color:#006600; font-weight:bold;">&#41;</span>
+  <span style="color:#0066ff; font-weight:bold;">@my_cookies</span>.<span style="color:#9900CC;">stub</span>!<span style="color:#006600; font-weight:bold;">&#40;</span>:<span style="color:#006600; font-weight:bold;">&#91;</span><span style="color:#006600; font-weight:bold;">&#93;</span>=<span style="color:#006600; font-weight:bold;">&#41;</span>
+  controller.<span style="color:#9900CC;">stub</span>!<span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#ff3333; font-weight:bold;">:cookies</span><span style="color:#006600; font-weight:bold;">&#41;</span>.<span style="color:#9900CC;">and_return</span><span style="color:#006600; font-weight:bold;">&#40;</span>@my_cookies<span style="color:#006600; font-weight:bold;">&#41;</span>
+&nbsp;
+  <span style="color:#0066ff; font-weight:bold;">@my_cookies</span>.<span style="color:#9900CC;">should_receive</span><span style="color:#006600; font-weight:bold;">&#40;</span>:<span style="color:#006600; font-weight:bold;">&#91;</span><span style="color:#006600; font-weight:bold;">&#93;</span>=<span style="color:#006600; font-weight:bold;">&#41;</span>.<span style="color:#9900CC;">with</span><span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#ff3333; font-weight:bold;">:phone</span>, <span style="color:#996600;">'804-755-7555'</span><span style="color:#006600; font-weight:bold;">&#41;</span>
+&nbsp;
+  do_post
+<span style="color:#9966CC; font-weight:bold;">end</span></pre></div></div>
+
+
+
+
+<p>Here I'm making the expectation that a cookie will be set with the key of 'phone' and a value of a passed in parameter. My <code>do_post</code> method takes care of the post and passes in the parameter <code>:phone =&gt; '804-755-7555'</code>. </p><img src="http://feeds.feedburner.com/~r/SimplisticComplexity/~4/228712674" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://www.simplisticcomplexity.com/2008/02/04/spec-out-your-cookies-with-rspec/feed/</wfw:commentRss>
+		<feedburner:origLink>http://www.simplisticcomplexity.com/2008/02/04/spec-out-your-cookies-with-rspec/</feedburner:origLink></item>
+	</channel>
+</rss>

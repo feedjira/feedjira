@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="/stylesheets/rss.css"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+  <channel>
+    <title>Nimble Code</title>
+    <link>http://www.nimblecode.com/</link>
+    <language>en-us</language>
+    <ttl>40</ttl>
+    <description>Jacob Harris' Weblog</description>
+    <item>
+      <title>Another Twitter Talk</title>
+      <description>&lt;p&gt;I&amp;#8217;m not much of a blogger these days. Between my &lt;a href="http://nytimes.com/"&gt;day job&lt;/a&gt; and some of its &lt;a href="http://elections.nytimes.com/"&gt;high-priority projects&lt;/a&gt; and my spare time at home with my family, including one rambunctious toddler, lengthy self-reflection is not often in the cards, especially since I &lt;a href="http://open.blogs.nytimes.com/"&gt;blog there too!&lt;/a&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;But I do &lt;a href="http://www.twitter.com/harrisj"&gt;twitter&lt;/a&gt;. &lt;a href="http://twitter.grader.com/harrisj"&gt;A lot&lt;/a&gt;. Which makes sense, because twitter offers me a sweet combination of low demands (&lt;em&gt;even I can do 140 characters of text regularly&lt;/em&gt;), convenient access (&lt;em&gt;via all sorts of third-party tools&lt;/em&gt;), and the superficial-yet-addictive connectedness of &lt;a href="http://www.disambiguity.com/ambient-intimacy/"&gt;ambient intimacy&lt;/a&gt;. Recently, I was asked to deliver a few introductory talks about twitter at the &lt;a href="http://www.nytimes.com/"&gt;New York Times&lt;/a&gt;&amp;#8212;where I work and where I created the &lt;a href="http://www.twitter.com/nytimes"&gt;nytimes twitter feeds&lt;/a&gt; for my own benefit back in March 2007. I had done this before, but I lost those slides in a laptop malfunction, and I figured it would be fun to start fresh and experiment with a scrolling transition to suggest the fluid nature of twitter timelines. This is hard to see in a &lt;span class="caps"&gt;PDF&lt;/span&gt;, so I&amp;#8217;m sharing them here in two formats.&lt;/p&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;&lt;a href="http://harrisj-share.s3.amazonaws.com/twitter.pdf"&gt;PDF&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="http://harrisj-share.s3.amazonaws.com/twitter.mov"&gt;Quicktime&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;p&gt;Note that this is not the complete presentation. Although none of the information in here is confidential, I&amp;#8217;ve been asked to remove a few slides near the end where I suggest some future directions for twitter usage at the New York Times. I have personally been thinking about twitter and the news a lot recently (more blog posts on that later) and thought it would be cool to suggest some ideas and examples. But I don&amp;#8217;t want anyone to assume I am the Official Strategist for Twitter at the Times and any of my personal musings are corporate or editorial strategy. So, those slides had to go.&lt;/p&gt;
+
+
+	&lt;p&gt;Enjoy.&lt;/p&gt;</description>
+      <pubDate>Sat, 10 Jan 2009 10:05:00 -0800</pubDate>
+      <guid isPermaLink="false">urn:uuid:2cd936ff-c11c-4051-9f0e-7f54c92ca046</guid>
+      <author>harrisj@nimblecode.com (Jacob Harris)</author>
+      <link>http://www.nimblecode.com/articles/2009/01/10/another-twitter-talk</link>
+      <category>Web</category>
+      <category>Newspapers</category>
+      <category>twitter</category>
+      <trackback:ping>http://www.nimblecode.com/articles/trackback/996</trackback:ping>
+    </item>
+    <item>
+      <title>Explaining Twitter</title>
+      <description>&lt;p&gt;As regular readers might know, I&amp;#8217;m a big fan of &lt;a href="http://www.twitter.com/harrisj"&gt;Twitter&lt;/a&gt;. Perhaps it&amp;#8217;s my lamentably shrinking free time or the general state of fatigue that makes it hard for me to coerce sentences together into a coherent post, but it&amp;#8217;s a lot easier for me to prolifically twitter about all the profound and mundane (&lt;em&gt;okay, pretty much just the mundane&lt;/em&gt;) moments in my life. More personal than the &lt;a href="http://harrisj.tumblr.com"&gt;referential style of tumbleblogging&lt;/a&gt; but also &lt;a href="http://en.wikipedia.org/wiki/Flash_fiction"&gt;too short to generally encourage overweening preciousness&lt;/a&gt;, Twitter hits that nice sweet spot of letting my friends know what I&amp;#8217;m up to, but without it becoming a large chore to do it. Yeah, twitter is stupid, but it&amp;#8217;s the &lt;a href="http://open.nytimes.com/2007/09/11/the-right-kind-of-stupid/"&gt;right kind of stupid&lt;/a&gt; in the way in which it emphasizes that communication is the glue of community and the ease in which it allows everyone to take part. &lt;a href="http://catbird.tumblr.com/post/35429148"&gt;Microblogging is here to stay.&lt;/a&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;Last week, I gave a talk at the &lt;em&gt;New York Times&lt;/em&gt; about Twitter. At the &lt;em&gt;Times&lt;/em&gt;, we regularly have lunchtime talks on various educational topics and I thought it would be fun to do one on twitter and why I think it matters (_on a related note, it is interesting to see how various sections in the paper &lt;a href="http://query.nytimes.com/search/query?frow=0&amp;#38;n=10&amp;#38;srcht=a&amp;#38;query=twitter&amp;#38;srchst=nyt&amp;#38;submit.x=26&amp;#38;submit.y=7&amp;#38;submit=sub&amp;#38;hdlquery=&amp;#38;bylquery=&amp;#38;daterange=period&amp;#38;mon1=01&amp;#38;day1=01&amp;#38;year1=2007&amp;#38;mon2=05&amp;#38;day2=27&amp;#38;year2=2008"&gt;have covered the twitter phenomenon so far&lt;/a&gt;). As the developer behind the &lt;a href="http://www.twitter.com/nytimes"&gt;nytimes twitter feed&lt;/a&gt;, I also personally have an interest in seeing how twitter might mesh with more traditional forms of journalism and discuss what we could do further with the feeds, so it seemed like an excellent opportunity to talk about new technology at the Gray Lady. Here are the slides.&lt;/p&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;&lt;a href="http://harrisj-share.s3.amazonaws.com/twitter_explained.pdf"&gt;Twitter Explained&lt;/a&gt; (&lt;em&gt;5MB &lt;span class="caps"&gt;PDF&lt;/span&gt;&lt;/em&gt;)&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;p&gt;I was going for a more oblique visual style on the slides, so you might need to infer the context for a few of them, but the general thrust should be apparent. I&amp;#8217;ve also had to redact a couple of slides where I made some suggestions about how the &lt;em&gt;New York Times&lt;/em&gt; could expand and enhance its presence on twitter. There was nothing proprietary or wildly radical in them, but I wanted to just head off &lt;a href="http://www.gawker.com/"&gt;Gawker&lt;/a&gt; or other sites that might erroneously construe them as representing the Grand Official Vision for the New York Times on Twitter. There are some changes I would like to make to the feeds (&lt;em&gt;visual branding of the icons is an obvious one&lt;/em&gt;), but my real goal here is to be part of a discussion at the paper and beyond about our place on Twitter and the modern Web at large. Let me know what you think. Thanks.&lt;/p&gt;</description>
+      <pubDate>Tue, 27 May 2008 20:30:00 -0700</pubDate>
+      <guid isPermaLink="false">urn:uuid:826ff94f-4aef-428d-a270-b7942803ef1c</guid>
+      <author>harrisj@nimblecode.com (Jacob Harris)</author>
+      <link>http://www.nimblecode.com/articles/2008/05/27/explaining-twitter</link>
+      <category>Web</category>
+      <category>twitter</category>
+      <category>presentations</category>
+      <trackback:ping>http://www.nimblecode.com/articles/trackback/995</trackback:ping>
+    </item>
+    <item>
+      <title>On Returning To Blogging Here After A Long Time Away</title>
+      <description>&lt;p&gt;&lt;em&gt;In which the author continues to use a title formulation&amp;#8212;one that seems right out of the 19th century, but these days denotes a certain overweening preciousness well suited to be published by &lt;a href="http://store.mcsweeneys.net/"&gt;McSweeney&amp;#8217;s&lt;/a&gt;&amp;#8212;to explain his long absence from-,&lt;/em&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;Ah, screw it. The question on the minds of my remaining readers (all 10 of you) might be where the heck have I been (&lt;em&gt;sorry for the sad invective, but I&amp;#8217;ve been trying to cut down on my cursing for reasons that should soon be clear&lt;/em&gt;) and why am I blogging again now? 250-some days is a long day to be quiet, and it&amp;#8217;s not like the blog was that awesome before it went on hiatus. What happened?&lt;/p&gt;
+
+
+	&lt;p&gt;Good question. To be honest, the main reason is I&amp;#8217;ve been rather busy. For starters, I have still been blogging all  this while, but for the New York Times&amp;#8217; open source initiatives at our blog &lt;a href="http://open.blogs.nytimes.com/author/harrisj/"&gt;Open&lt;/a&gt;.  The main reason though is that I am &lt;a href="http://www.flickr.com/photos/harrisj/tags/alex/"&gt;a proud father&lt;/a&gt;  of the most amazing kid in thr world. It&amp;#8217;s not that the baby keeps me from blogging, rather it&amp;#8217;s just that blogging doesn&amp;#8217;t really compare at all to spending time with him (&lt;em&gt;my personal coding productivity has similarly been very low&lt;/em&gt;). Especially since, to be bluntly honest, the writing on this blog had become as boring as listening to a Garrison Keillor marathon. Better not to do it.&lt;/p&gt;
+
+
+	&lt;p&gt;So, why restart now? Because it just feels fun again. And because I actually feel like it might also be &lt;strong&gt;interesting&lt;/strong&gt; as well to continue my musings on the future of newspapers (&lt;em&gt;and my experiences and experiments along those lines&lt;/em&gt;) in a forum that is not as official and fraught with consequences for misplayed snark like the official New York Times blog would be.&lt;/p&gt;
+
+
+	&lt;p&gt;This is not to say I will be dishing dirt and spilling secrets. I like my job  enough to not want to lose it, and that&amp;#8217;s not really my style. But I think it would be fun (&lt;em&gt;at least to me&lt;/em&gt;) to post my occasional rants with perspective from inside the New York Times, and perhaps, if I&amp;#8217;m lucky, fun for some random people on the Interwebs to read it. Sound like a plan?&lt;/p&gt;
+
+
+	&lt;p&gt;If worse comes to worse, I&amp;#8217;ll just stop again. It wouldn&amp;#8217;t be the first time&amp;#8230;&lt;/p&gt;</description>
+      <pubDate>Thu, 10 Apr 2008 18:30:00 -0700</pubDate>
+      <guid isPermaLink="false">urn:uuid:a28f9ba6-3d48-4358-a19c-bd5b3a98d15a</guid>
+      <author>harrisj@nimblecode.com (Jacob Harris)</author>
+      <link>http://www.nimblecode.com/articles/2008/04/10/on-returning-to-blogging-here-after-a-long-time-away</link>
+      <category>Meta</category>
+      <trackback:ping>http://www.nimblecode.com/articles/trackback/993</trackback:ping>
+    </item>
+    <item>
+      <title>On Appearing In The Background Behind Two Pulitzer Winners</title>
+      <description>&lt;p&gt;&lt;a href="http://www.flickr.com/photos/harrisj/2397226122/" title="Adventures in Background Lurking by harrisj, on Flickr"&gt;&lt;img src="http://farm3.static.flickr.com/2093/2397226122_9e3649ea39.jpg" width="500" height="360" alt="Adventures in Background Lurking" /&gt;&lt;/a&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;Wow, this is just so unexpected&amp;#8230; Where to begin&amp;#8230;&lt;/p&gt;
+
+
+	&lt;p&gt;Let me start by stating how amazed I am to be here. As a semipro quasi-journalist wannabe, I&amp;#8217;ve been in awe of the Pulitzers for a long time. And while I have daydreamed many a tired morning of winning one, I never seriously believed I would find myself in this spot today: &lt;a href="http://www.nytimes.com/2008/04/07/business/media/07cnd-pulitzers.html?hp"&gt;unwittingly standing in the background in a photograph of two Pulitzer winners&lt;/a&gt;.&lt;/p&gt;
+
+
+	&lt;p&gt;I wish I could say it was skill: my uncanny knack for being sublimely oblivious to photographers focusing on their actual subjects a few feet in front on me. But I must admit that luck has played a far larger part in my current fortune than most other men might want to admit. If not for the chance proximity of me to these fine Pulitzer winners, my labor would be relegated to obscurity like so many other such pictures, scattered across the negatives and memory cards of so many tourists&amp;#8217; vacations.&lt;/p&gt;
+
+
+	&lt;p&gt;Of course, fate may have delivered me to this moment, but once there my years of training guided to success. I refrained from blinking, I didn&amp;#8217;t pick my nose, I subconsciously stood at the right place to hide the coffee stain on my jeans, all of which made a difference in the selection of this photo over so many others. Luck may deliver you to these opportunities, but once there, it&amp;#8217;s up to your talents to make the most of it.&lt;/p&gt;
+
+
+	&lt;p&gt;But enough about me; sorry I&amp;#8217;m rambling so much, it&amp;#8217;s just such a crazy moment! To riff on Hillary, it certainly takes a village to take a Pulitzer crowd shot, and I have so many people to thank for making this day possible. Obviously, a lot of praise goes to &lt;a href="http://topics.nytimes.com/top/reference/timestopics/people/b/walt_bogdanich/index.html"&gt;Walt Bogdanich&lt;/a&gt; and &lt;a href="http://topics.nytimes.com/top/reference/timestopics/people/h/amy_harmon/index.html?inline=nyt-per"&gt;Amy Harmon&lt;/a&gt; not just for truly excellent reporting that illustrates the power of journalism but also for standing in front of me at the decisive moment.&lt;/p&gt;
+
+
+	&lt;p&gt;To the amazing &lt;span class="caps"&gt;NY &lt;/span&gt;Times photography desk, for their peerless skill at capturing the moment when the winners are smiling and I don&amp;#8217;t have a dorky look on my face. They make it look easy, but it&amp;#8217;s not! Photography was the key difference in bringing my story to light&amp;#8230; Of course, thanks also go to Graphics and Computer Assisted Reporting, who led the way up the stairs but at a key moment went left while I went right. And to the Web Producers who ran this photo on the website, thus ensuring I had my 15 minutes of Internet fame to blog about. And that &lt;a href="http://www.nytimes.com/"&gt;Website&lt;/a&gt; which also gave me a job so that I could one day stand here. Right behind the Pulitzer winners.&lt;/p&gt;
+
+
+	&lt;p&gt;Of course, thanks also go out to Renzo Piano for designing &lt;a href="http://www.newyorktimesbuilding.com/"&gt;this new building&lt;/a&gt; with its skylight that allows me to be bathed in flattering natural light as opposed to the harsh judgment of flourescent.&lt;/p&gt;
+
+
+	&lt;p&gt;And where would I be without Bill Keller who drove this story every step of the way: from calling the all-hands meeting to naming the awards to pointing out the Pulitzer winners just a few feet from where I haplessly stood.&lt;/p&gt;
+
+
+	&lt;p&gt;Finally, none of this would be possible without the fine work of our publisher Arthur Sulzberger, Jr.. Not only does he continue the best damn newspaper in the whole world. Not only did he give us this fine new newsroom. But he continues  the tradition of championing excellence and integrity in journalism that all of us stand behind.&lt;/p&gt;
+
+
+	&lt;p&gt;For some of us, more literally than others. Thank you.&lt;/p&gt;</description>
+      <pubDate>Tue, 08 Apr 2008 07:45:00 -0700</pubDate>
+      <guid isPermaLink="false">urn:uuid:c7c2a44b-6b2b-417d-8a51-6115734c1530</guid>
+      <author>harrisj@nimblecode.com (Jacob Harris)</author>
+      <link>http://www.nimblecode.com/articles/2008/04/08/on-appearing-in-the-background-behind-two-pulitzer-winners</link>
+      <category>Silly</category>
+      <category>pulitzer</category>
+      <trackback:ping>http://www.nimblecode.com/articles/trackback/991</trackback:ping>
+    </item>
+    <item>
+      <title>Rails Under the Knife</title>
+      <description>&lt;p&gt;After months of rehearsing and revising, I finally gave the talk at &lt;span class="caps"&gt;OSCON&lt;/span&gt;. I think it could use another month of refinement, but people seemed to enjoy it, and I actually enjoyed giving it as well. If you were at the talk, thank you for coming and feel free to let me know if you have any feedback or questions.&lt;/p&gt;
+
+
+	&lt;p&gt;My talk was &lt;strong&gt;Rails Under the Knife&lt;/strong&gt;, a look at the some of the internals of Rails to get a better idea of 3 powerful Ruby techniques:&lt;/p&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;Metaprogramming&lt;/li&gt;
+		&lt;li&gt;Reflection&lt;/li&gt;
+		&lt;li&gt;Blocks&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;p&gt;You can download the slides at&lt;/p&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;&lt;a href="http://s3.amazonaws.com/harrisj-share/oscon2007.pdf"&gt;http://s3.amazonaws.com/harrisj-share/oscon2007.pdf&lt;/a&gt; (&lt;em&gt;5mb &lt;span class="caps"&gt;PDF&lt;/span&gt;!&lt;/em&gt;)&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;p&gt;This talk is aimed at an intermediate Rails programmer who knows the basics of Rails coding (I have another similar talk for beginners called Rubyisms in Rails), but still is a bit unsure about the power trio of serious Rails hackery. Hopefully, this will help to provide some inspiration for you to delve into the Rails code on your own. Enjoy.&lt;/p&gt;</description>
+      <pubDate>Thu, 26 Jul 2007 18:20:00 -0700</pubDate>
+      <guid isPermaLink="false">urn:uuid:7b7fce0c-25ef-4561-8ca1-6552ceb9e572</guid>
+      <author>harrisj@nimblecode.com (Jacob Harris)</author>
+      <link>http://www.nimblecode.com/articles/2007/07/26/rails-under-the-knife</link>
+      <category>Programming</category>
+      <category>ruby</category>
+      <category>rails</category>
+      <category>oscon</category>
+      <trackback:ping>http://www.nimblecode.com/articles/trackback/990</trackback:ping>
+    </item>
+    <item>
+      <title>See You at OSCON, Maybe...</title>
+      <description>&lt;p&gt;I know I haven&amp;#8217;t been posting to this blog much lately (see &lt;a href="http://open.nytimes.com/"&gt;this link&lt;/a&gt; for one reason why). But I just wanted to note that I will be giving a talk at &lt;span class="caps"&gt;OSCON 2007&lt;/span&gt; in Portland this week, and I would love to talk to you if you are there.&lt;/p&gt;
+
+
+&lt;ul&gt;
+&lt;li class="vevent"&gt;&lt;a class="url" href="http://conferences.oreillynet.com/cs/os2007/view/e_sess/12908"&gt;&lt;span class="summary"&gt;Rails Under The Knife (Jacob Harris)&lt;/span&gt;&lt;/a&gt; &lt;abbr class="dtstart" title="20070726T1435"&gt;July 26th, 2:35pm&lt;/abbr&gt; to &lt;abbr class="dtend" title="20070726T1520"&gt;3:20pm&lt;/abbr&gt; (&lt;span class="location"&gt;Portland 255&lt;/span&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+	&lt;p&gt;In addition, my coworker will be giving a talk on the DBSlayer (one of the projects we&amp;#8217;re open sourcing) that should be fun to see.&lt;/p&gt;
+
+
+&lt;ul&gt;
+  &lt;li class="vevent"&gt;&lt;a class="url" href="http://conferences.oreillynet.com/cs/os2007/view/e_sess/14733"&gt;&lt;span class="summary"&gt;DBSlayer: Architecting Database Connection Pooling (Derek Gottfrid)&lt;/span&gt;&lt;/a&gt; &lt;abbr class="dtstart" title="20070725T1435"&gt;July 25th, 2:35pm&lt;/abbr&gt; to &lt;abbr class="dtend" title="20070725T1520"&gt;3:20pm&lt;/abbr&gt; (&lt;span class="location"&gt;Room &lt;span class="caps"&gt;E142&lt;/span&gt;&lt;/span&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+	&lt;p&gt;Finally, be sure to come to one of our Birds of a Feather (BoF) sessions:&lt;/p&gt;
+
+
+&lt;ul&gt;
+&lt;li class="vevent"&gt;&lt;a class="url" href="http://conferences.oreillynet.com/cs/os2007/view/e_sess/14816"&gt;&lt;span class="summary"&gt;Using Amazon Webservices &lt;span class="caps"&gt;EC2&lt;/span&gt;/S3/SQS for computing on large data sets&lt;/span&gt;&lt;/a&gt; &lt;abbr class="dtstart" title="20070725T1930"&gt;July 25th, 7:30pm&lt;/abbr&gt; to &lt;abbr class="dtend" title="20070725T2030"&gt;8:30pm&lt;/abbr&gt; (&lt;span class="location"&gt;Room &lt;span class="caps"&gt;F150&lt;/span&gt;&lt;/span&gt;)&lt;/li&gt;
+&lt;li class="vevent"&gt;&lt;a class="url" href="http://conferences.oreillynet.com/cs/os2007/view/e_sess/14532"&gt;&lt;span class="summary"&gt;Shaping the Web Future of the Newspaper&lt;/span&gt;&lt;/a&gt; &lt;abbr class="dtstart" title="20070725T2030"&gt;July 25th, 8:30pm&lt;/abbr&gt; to &lt;abbr class="dtend" title="20070725T2130"&gt;9:30pm&lt;/abbr&gt; (&lt;span class="location"&gt;Room &lt;span class="caps"&gt;E143&lt;/span&gt;-144&lt;/span&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+	&lt;p&gt;Now I just have to make it there, which is the subject of another angry post about disconnecting effects of technology, or how United Airlines can oversell flights and then randomly bump  a father and mother with 2-month old infant leaving them to scramble for a flight next day. To be followed by 45 minutes waiting in a customer service line only to be told I&amp;#8217;m supposed to go to a customer service station in the next terminal. Joy!&lt;/p&gt;
+
+
+	&lt;p&gt;The shorter version of this story: United Airlines is a miserable and indecent excuse for a business and when they go bankrupt again, I shan&amp;#8217;t shed a tear&amp;#8230;&lt;/p&gt;</description>
+      <pubDate>Mon, 23 Jul 2007 19:44:00 -0700</pubDate>
+      <guid isPermaLink="false">urn:uuid:30700ddf-b2eb-45ac-a1cc-78b1b37ffc0c</guid>
+      <author>harrisj@nimblecode.com (Jacob Harris)</author>
+      <link>http://www.nimblecode.com/articles/2007/07/23/see-you-at-oscon-maybe</link>
+      <category>Miscellaneous</category>
+      <category>oscon</category>
+      <trackback:ping>http://www.nimblecode.com/articles/trackback/989</trackback:ping>
+    </item>
+    <item>
+      <title>Unsafe At Any Speed</title>
+      <description>&lt;p&gt;Last night, I almost saw my dog killed in front of my very eyes.&lt;/p&gt;
+
+
+	&lt;p&gt;We were crossing with the light on 7th Avenue in Brooklyn, having just stopped by Cafe Steinhof to say hi to some of the people outside. When an &lt;span class="caps"&gt;SUV&lt;/span&gt; accelerated into the left turn, I saw a front bumper miss me by an inch and pass over my dog&amp;#8217;s head. I then had to pull her out of the front wheel well before he crushed her and bring her back to the curb. The driver was oblivious to my screaming and kept on down the road. Nobody got the plates, and I was on my way running down a few blocks to the pet hospital with Bella in my arms (when you&amp;#8217;re on adrenalin, a 55-pound dog seems much lighter).&lt;/p&gt;
+
+
+	&lt;p&gt;We should probably rename her &amp;#8220;Lucky.&amp;#8221; After $500 of tests and screening, she may have emerged without much in the way of major injury (I&amp;#8217;m hoping a tear in her Anterior Crucial Ligament isn&amp;#8217;t in the cards though), but she hasn&amp;#8217;t been too happy here at home, even with the pain killers. So, I guess I should be feeling fortunate&amp;#8230;&lt;/p&gt;
+
+
+	&lt;p&gt;But I just feel angry instead. This was not an accident that had to happen, and I think the fact it was a massive &lt;span class="caps"&gt;SUV&lt;/span&gt; was the cause of the problem. This is not to say that there are no bad drivers for smaller cars, but it&amp;#8217;s a lot harder to run someone over and not notice in a &lt;span class="caps"&gt;MINI&lt;/span&gt;. The driver did not race away in a panic, we were just a bump in the road, a minor skip for the CD system, nothing to notice. And that was the truly scary part to me. How can car makers talk about the &amp;#8220;safety&amp;#8221; of your vehicle, when they&amp;#8217;re really engineering a decrease in safety for everyone else? And what does this do to our cities, our public places, when we create these speed lanes for the oblivious and disconnected to barrel through without any caution? There is no single point to blame here, but I feel like we&amp;#8217;re engineering a society disconnected from the effects of its actions, insulated from the outside world, and craving more of the same. And that just fills me with sadness this morning.&lt;/p&gt;</description>
+      <pubDate>Mon, 18 Jun 2007 12:22:47 -0700</pubDate>
+      <guid isPermaLink="false">urn:uuid:68d29b2e-0ce0-4317-9cbf-3615e546ccb1</guid>
+      <author>harrisj@nimblecode.com (Jacob Harris)</author>
+      <link>http://www.nimblecode.com/articles/2007/06/18/unsafe-at-any-speed</link>
+      <trackback:ping>http://www.nimblecode.com/articles/trackback/983</trackback:ping>
+    </item>
+    <item>
+      <title>Blogging? Me?</title>
+      <description>&lt;p&gt;Sometimes, it&amp;#8217;s best to just come out and say it, so here we go: I suck at blogging these days. This is not me beating myself &amp;#8211; I don&amp;#8217;t feel bad in the slightest &amp;#8211; I just am acknowledging the truth of the matter. Sorry for any of my readers who haven&amp;#8217;t consigned me to the dustbins of their feed readers yet, but it&amp;#8217;s unlikely I will be producing any riveting content anytime in the near future. I have a lot of changes in my life coming up &amp;#8211; new coop! baby! projects here at the Times! &amp;#8211; that I&amp;#8217;m spent when I get home to blog (of course, thanks to Time-Warner Cable I haven&amp;#8217;t had Internet at home anyway) and don&amp;#8217;t produce any writing that meets my high standards for &lt;a href="http://www.nimblecode.com/articles/2006/02/16/original-blogging-content"&gt;Original Blogging Content&lt;/a&gt; (TM).&lt;/p&gt;
+
+
+	&lt;p&gt;However, I do still have time to feed content into a few other places, for those that need to get their Jake fix. For starters, you can follow the minutiae of my random thoughts (all less then 140 characters) at &lt;a href="http://twitter.com/harrisj"&gt;Twitter&lt;/a&gt;. In addition, I have started what&amp;#8217;s known as a tumbleblog over on &lt;a href="http://harrisj.tumblr.com/"&gt;Tumblr&lt;/a&gt;, which is where I will post content that&amp;#8217;s the opposite of Nimble Code: pithy, snarky, non-technical, and varied. Feel free to check both out and one day I will get back to writing here as well.&lt;/p&gt;
+
+
+	&lt;p&gt;Finally, if you were interested in some of the topics from my &lt;a href="http://www.nimblecode.com/articles/2006/11/29/all-the-news-thats-fit-to-serve"&gt;Future of Newspapers&lt;/a&gt; posts but want to see a professional journalist&amp;#8217;s perspective, I strongly suggest Frontline&amp;#8217;s &lt;a href="http://www.pbs.org/wgbh/pages/frontline/newswar/"&gt;News War&lt;/a&gt; series, being broadcast now on &lt;span class="caps"&gt;PBS&lt;/span&gt; and also viewable on the Web.&lt;/p&gt;</description>
+      <pubDate>Mon, 05 Mar 2007 16:37:00 -0800</pubDate>
+      <guid isPermaLink="false">urn:uuid:36dac81b-bfad-4e0e-b005-6e09efe79810</guid>
+      <author>harrisj@nimblecode.com (Jacob Harris)</author>
+      <link>http://www.nimblecode.com/articles/2007/03/05/blogging-me</link>
+      <category>Meta</category>
+      <trackback:ping>http://www.nimblecode.com/articles/trackback/982</trackback:ping>
+    </item>
+    <item>
+      <title>Packaging Your First Gem With Hoe</title>
+      <description>&lt;p&gt;My name is Jacob Harris, and I am a rubygem addict. I&amp;#8217;d estimate I have hundreds of them tooling around on my hard drive, useful little snippets of Ruby or C library wrappers or random noodlings. I might not actually use most of them in any of my projects, but like a vast library of unread books, I enjoy having them around. But for the longest time, I&amp;#8217;ve been a freeloader. I&amp;#8217;ve downloaded gems, but I&amp;#8217;ve never written one, but it&amp;#8217;s time I start giving something back.&lt;/p&gt;
+
+
+	&lt;p&gt;And so, I&amp;#8217;ve written my first gem. It&amp;#8217;s nothing incredible &amp;#8211; all things have to start simple &amp;#8211; but I like it. It&amp;#8217;s called &lt;a href="http://amazon-hacks.rubyforge.com/"&gt;Amazon Hacks&lt;/a&gt; and it consists of two classes (for now) to benefit people whose sites handle Amazon links. The Amazon::Hacks::Link class contains a few methods to extract an &lt;span class="caps"&gt;ASIN&lt;/span&gt; from any product link, normalize product links, and append an affiliate ID easily. The slightly sillier Amazon::Hacks::Image class puts a convenient Ruby wrapper around the &lt;a href="http://aaugh.com/imageabuse.html"&gt;convoluted syntax Amazon uses for its image transformation engine&lt;/a&gt;. If you work on a site that links to Amazon product pages (e.g.,  &lt;a href="http://www.allconsuming.net/"&gt;All Consuming&lt;/a&gt;), try it out and let me know if it works for you or it can be improved. It&amp;#8217;s simple to get started, simply run&lt;/p&gt;
+
+
+	&lt;blockquote&gt;
+		&lt;p&gt;&lt;strong&gt;gem install amazon-hacks&amp;#8212;include-dependencies&lt;/strong&gt;&lt;/p&gt;
+	&lt;/blockquote&gt;
+
+
+	&lt;p&gt;Which brings me to &lt;strong&gt;hoe&lt;/strong&gt;. Last night, I gave a talk on hoe to the &lt;a href="http://www.nycruby.org/"&gt;NYC.rb group&lt;/a&gt; and the slides are here if you want to learn more about the process. &lt;/p&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;&lt;a href="http://www.nimblecode.com/files/hoetalk.pdf"&gt;Building Your First Gem With Hoe&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;p&gt;Before last week, I had no idea of what it takes to create a gem, but it seemed like a lot, and I had better things to distract myself with. And it does indeed require a fair amount of busy work, what I call &lt;em&gt;administrivia&lt;/em&gt;, to turn your snippet of Ruby code into a packaged gem, and this work has to be started anew for each gem you want to create. Now, as pragmatic programmers, we learn to automate menial tasks whenever possible, and hoe makes the creation of gems a lot more manageable by automating the busy-work away via a set of useful rake tests. The result is more time for coding, faster releases, and more likely you&amp;#8217;ll release that gem in the first place. So, give hoe a shot, learn about gems, and start writing gems. You&amp;#8217;re a brilliant Ruby coder, it&amp;#8217;s time to share it with the world. And when you write that gem, I&amp;#8217;ve got a cherished spot on my hard drive for it.&lt;/p&gt;</description>
+      <pubDate>Wed, 10 Jan 2007 14:36:00 -0800</pubDate>
+      <guid isPermaLink="false">urn:uuid:8260c73d-36d8-4853-a148-a946e2961226</guid>
+      <author>harrisj@nimblecode.com (Jacob Harris)</author>
+      <link>http://www.nimblecode.com/articles/2007/01/10/packaging-your-first-gem-with-hoe</link>
+      <category>Programming</category>
+      <category>hoe</category>
+      <category>gems</category>
+      <category>presentations</category>
+      <category>ruby</category>
+      <trackback:ping>http://www.nimblecode.com/articles/trackback/980</trackback:ping>
+    </item>
+    <item>
+      <title>A Year In Consumption</title>
+      <description>&lt;p&gt;This year, as an experiment I started living in public. By this, I don&amp;#8217;t mean I jumped into the &lt;a href="http://www.furiousseasons.com/archives/2006/12/love_american_style_web_20_and_narcissism_1.html"&gt;online exhibitionist extreme&lt;/a&gt; that seems to be required for MySpace users, but I have started tracking my media consumption of books/movies/music online. So, as a short post to tide everyone over until I gird myself to continue the &lt;a href="http://www.nimblecode.com/articles/2006/11/29/all-the-news-thats-fit-to-serve"&gt;never-ending newspapers series&lt;/a&gt;, here&amp;#8217;s a review of my year in media.&lt;/p&gt;
+
+
+	&lt;p&gt;In the last year, I read &lt;a href="http://www.allconsuming.net/person/harrisj/consumed/book"&gt;approximately 63 books&lt;/a&gt;, of which the most notable were:&lt;/p&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;The Ghost Map, by Steven Johnson&lt;/li&gt;
+		&lt;li&gt;The Echo Maker, by Richard Powers&lt;/li&gt;
+		&lt;li&gt;La Perdida, by Jessica Abel&lt;/li&gt;
+		&lt;li&gt;Maps of the Imagination, by Peter Turchi&lt;/li&gt;
+		&lt;li&gt;Rip It Up And Start Again, by Simon Reynolds&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;p&gt;This last year I also saw approximately &lt;a href="http://www.allconsuming.net/person/harrisj/consumed/movie"&gt;67 movies and TV shows&lt;/a&gt; (new and rentals), of which the following 5 were the best, in no ranked order:&lt;/p&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;The New World&lt;/li&gt;
+		&lt;li&gt;Little Miss Sunshine&lt;/li&gt;
+		&lt;li&gt;Aguirre, The Wrath of God&lt;/li&gt;
+		&lt;li&gt;Grizzly Man&lt;/li&gt;
+		&lt;li&gt;Veronica Mars, seasons 1&amp;#38;2&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;p&gt;Finally, here were the top 10 bands I listened to last year, courtesy of &lt;a href="http://www.last.fm/user/harrisj/"&gt;last.fm&lt;/a&gt;&lt;/p&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;Boards of Canada&lt;/li&gt;
+		&lt;li&gt;Xela&lt;/li&gt;
+		&lt;li&gt;Sigur Rós&lt;/li&gt;
+		&lt;li&gt;Yeah Yeah Yeahs&lt;/li&gt;
+		&lt;li&gt;Ms. John Soda&lt;/li&gt;
+		&lt;li&gt;Thom Yorke&lt;/li&gt;
+		&lt;li&gt;The American Analog Set&lt;/li&gt;
+		&lt;li&gt;Ulrich Schnauss&lt;/li&gt;
+		&lt;li&gt;Aphex Twin&lt;/li&gt;
+		&lt;li&gt;Ladytron&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;p&gt;Anyhow, there you have it; my life as a consumer for one year (but am I going to go see movies this weekend? Yes!) Anyhow, happy new year and see you all next year! If you&amp;#8217;ll excuse me, I&amp;#8217;ve got some more books to read.&lt;/p&gt;</description>
+      <pubDate>Sat, 30 Dec 2006 10:43:32 -0800</pubDate>
+      <guid isPermaLink="false">urn:uuid:70f02eb0-511d-4c03-867f-86edca73c938</guid>
+      <author>harrisj@nimblecode.com (Jacob Harris)</author>
+      <link>http://www.nimblecode.com/articles/2006/12/30/a-year-in-consumption</link>
+      <category>Books</category>
+      <category>Music</category>
+      <category>Miscellaneous</category>
+      <trackback:ping>http://www.nimblecode.com/articles/trackback/975</trackback:ping>
+    </item>
+  </channel>
+</rss>

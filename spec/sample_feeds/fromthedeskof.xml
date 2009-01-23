@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="http://feeds.feedburner.com/~d/styles/atom10full.xsl" type="text/xsl" media="screen"?><?xml-stylesheet href="http://feeds.feedburner.com/~d/styles/itemcontent.css" type="text/css" media="screen"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-US">
+  <id>tag:nuttnet.net,2005:/index</id>
+  <link type="text/html" rel="alternate" href="http://nuttnet.net" />
+  
+  <title>from the desk of</title>
+  <updated>2008-06-10T20:58:00Z</updated>
+  <link rel="self" href="http://feeds.feedburner.com/nuttnet/qWLn" type="application/atom+xml" /><entry>
+    <id>tag:nuttnet.net,2005:PostPresenter/2538</id>
+    <published>2008-06-10T20:58:00Z</published>
+    <updated>2008-06-10T21:08:33-04:00</updated>
+    <link type="text/html" rel="alternate" href="http://nuttnet.net/posts/2538-Rethinking-Car-Design" />
+    <title>Rethinking Car Design</title>
+    <content type="html">&lt;p&gt;I just ran across this brilliant new idea from BMW:&lt;/p&gt;&lt;p&gt;&lt;object height="315" width="388"&gt;&lt;param name="movie" value="http://www.youtube.com/v/kTYiEkQYhWY&amp;amp;amp;hl=en" /&gt;&lt;param name="wmode" value="transparent" /&gt;&lt;embed src="http://www.youtube.com/v/kTYiEkQYhWY&amp;amp;amp;hl=en" type="application/x-shockwave-flash" height="315" wmode="transparent" width="388"&gt;&lt;/embed&gt;&lt;/object&gt;&lt;/p&gt;&lt;p&gt;Why do we need metal bodies for cars, anyway? Assuming that a carbon fiber frame is just as sturdy as a regular steel frame with regular panels, I can't see any reason you would.  Washing might be difficult, but I'd imagine you could just take the fabric off and throw it in the wash.  Five years down the road when it's not looking so great, just buy a new cover for a couple hundred bucks.&lt;/p&gt;&lt;p&gt;Will this revolutionize the car industry? Probably not any time soon at least, but hopefully it'll get things moving in that direction. &lt;/p&gt;</content>
+    <author>
+      <name>michael</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:nuttnet.net,2005:PostPresenter/2482</id>
+    <published>2008-06-05T23:57:00Z</published>
+    <updated>2008-06-06T00:10:59-04:00</updated>
+    <link type="text/html" rel="alternate" href="http://nuttnet.net/posts/2482-Rails-routing-and-namespaces" />
+    <title>Rails routing and namespaces</title>
+    <content type="html">&lt;p&gt;A while back, Rails gained the ability to namespace routes.  For instance, if you wanted to add a blog to your app but didn't want to pollute its top-level URL space, you could do this:&lt;/p&gt;&lt;pre&gt;namespace(:blog) do 
+  map.resources :posts
+  map.resources :tags
+end&lt;/pre&gt;
+&lt;p&gt;Then you get a nice blog at "/blog" and everything is great, right?  You now have to put your post blog controller in app/controllers/blog/posts_controller.rb, and put your views in app/view/blogs/posts/.  It seems clean, but it turns into so much typing that it gets annoying.  When rendering partials explicitly, you have to add the "blog/" prefix.  Worse, you now have to append "blog_" to every named route helper you use.&lt;/p&gt;&lt;p&gt;Namespaced do happen to be great for disambiguation, however.  Admin interfaces are a perfect example: you can put your exposed blog controller in app/controllers/blogs_controller.rb and put your admin blog controller in app/controllers/admin/blogs_controller.rb.&lt;/p&gt;&lt;p&gt;I made the mistake of namespacing a number of controllers because I thought it would make for a cleaner grouping, and I am paying for it in the time I have to take to de-namespace.  The moral of the story is to only use namespaced routes when :path_prefix =&amp;gt; "/blog" won't work. &lt;/p&gt;</content>
+    <author>
+      <name>michael</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:nuttnet.net,2005:PostPresenter/2360</id>
+    <published>2008-05-27T20:45:00Z</published>
+    <updated>2008-06-06T00:20:10-04:00</updated>
+    <link type="text/html" rel="alternate" href="http://nuttnet.net/posts/2360-mod-rails" />
+    <title>mod_rails</title>
+    <content type="html">&lt;p&gt;The webserver stack for Rails-based projects changes every 6 months or so.  First it was apache+fastcgi, then lighttpd+fastcgi, then apache+mongrel, then nginx+mongrel.  Our production servers for limespot.com are using nginx+mongrel, but there's a new deployment option out now: &lt;a href="http://www.modrails.com"&gt;Phusion Passenger&lt;/a&gt;, otherwise known as mod_rails.&lt;/p&gt;&lt;p&gt;At last week's hackfest I decided to try out mod_rails to see how easy it was.  The website advertised it as the easiest deployment option, so here it is:&lt;/p&gt;&lt;p&gt;Installation is really as simple as &lt;span class="Apple-style-span" style="font-style: italic;"&gt;gem install phusion-passenger&lt;/span&gt; and then &lt;span class="Apple-style-span" style=""&gt;&lt;span class="Apple-style-span" style="font-style: italic;"&gt;passenger-install-apache2-module&lt;/span&gt;&lt;span class="Apple-style-span" style="font-family: Verdana; line-height: normal; white-space: normal;"&gt;&lt;span class="Apple-style-span" style="font-style: italic;"&gt; &lt;/span&gt;while following its instructions.  I'm using Leopard so I already had apache and simply edited /etc/apache2/httpd.conf and added the three required lines.&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;From there it got a little bit weird.  I think mod_rails' ideal use in development would be to be able to point it to ~/Sites and have it rails-ify each of the sub-directories.  I tried setting Apache's DocumentRoot to /Users/michael/Sites, but mod_rails didn't pick up the sub-directories as rails apps.  I had to link each public directory to my webserver's DocumentRoot and use the RailsBaseURI directive in order to manually specify each rails app.&lt;/p&gt;&lt;p&gt;The first rails app I tried was my company's intranet app.  I was quickly presented with a beautiful error page telling me I had failed.  It wasn't very helpful, but wow did it look good!  It wasn't hitting rails at all and the only apache log message was "define INLINE_DIR or HOME in your environment"  ImageScience was to blame, and I never could figure out how to get it to find INLINE_DIR on its own.&lt;/p&gt;&lt;p&gt;I figured I would go ahead and try LimeSpot, and to my pleasant surprise it just worked (mostly).  Rails' stylesheet caching didn't work properly, but after I turned it off the stylesheets came down just fine and everything was rewritten with the "/limespot" prefix.  Our custom mongrel handlers didn't work, obviously, so it will be a while before LimeSpot switches to mod_rails.&lt;/p&gt;&lt;p&gt;All in all, mod_rails is looking to be a really promising deployment solution, even in a development environment. It would be great if it could be made to detect all rails projects in a directory and automagically serve them from subdomains or subdirectories.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; mod_rails supposedly supports &lt;a href="http://rack.rubyforge.org"&gt;Rack&lt;/a&gt; now, though I haven't looked into it. &lt;/p&gt;</content>
+    <author>
+      <name>michael</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:nuttnet.net,2005:PostPresenter/2183</id>
+    <published>2008-05-15T01:37:00Z</published>
+    <updated>2008-05-15T01:44:24-04:00</updated>
+    <link type="text/html" rel="alternate" href="http://nuttnet.net/posts/2183-Graduation" />
+    <title>Graduation</title>
+    <content type="html">&lt;img src="http://assets.limespot.com/fs/media/2/247381,390,260,p,n.png" alt="IMG_3825.JPG" /&gt;&lt;p&gt; I went down to Houston this weekend to see my brother graduate.  It was &lt;em&gt;hot&lt;/em&gt;.  I've only been to Houston a couple of times since he started school, and it seems like only recently that I was helping him move into his freshman dorm.  Surveying his new apartment, I began thinking of all the trade-offs that one makes living in New York—cramped apartments, dirty streets, and alternating cold/hot weather.  I still think they're worth it. &lt;/p&gt;</content>
+    <author>
+      <name>michael</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:nuttnet.net,2005:PostPresenter/2044</id>
+    <published>2008-05-05T23:32:00Z</published>
+    <updated>2008-05-05T23:45:43-04:00</updated>
+    <link type="text/html" rel="alternate" href="http://nuttnet.net/posts/2044-The-Bleeding-Edge" />
+    <title>The Bleeding Edge</title>
+    <content type="html">&lt;p&gt;I've spent a few evenings hunting down a particularly annoying bug in my latest rails app.&lt;/p&gt;
+
+ActionController::InvalidAuthenticityToken 
+    (ActionController::InvalidAuthenticityToken):
+    /vendor/rails/actionpack/lib/action_controller/
+    request_forgery_protection.rb:73:in 
+    `verify_authenticity_token'
+...
+
+&lt;p&gt;I was trying to get a script.aculo.us sortable list working, and I spent tons of time debugging with Firefox + Firebug to try and figure out why the authenticity token wasn't getting passed.&lt;/p&gt;
+
+&lt;p&gt;Firefox 3 includes tons of great new features and it requires a new Firebug, so every couple of days I'm getting the latest alpha release of Firebug.  For some reason I was sure my rails app was broken, rather than Firebug.  As a matter of fact, it turns out my rails app was working just fine and Firebug was &lt;i&gt;lying&lt;/i&gt; to me and resubmitting the request when I tried to use it to check out the response. (score: Rails CSRF protection 1, my sanity 0)&lt;/p&gt;
+
+&lt;p&gt;I fixed it by either turning on Firebug's new debugging mode, or turning on its network monitoring.  I can't really tell which because I can't seem to figure out which one actually solves the problem.  &lt;/p&gt;
+
+&lt;p&gt;These nifty development tools are great, but sometimes there is no substitute for inspecting outgoing TCP packets. &lt;/p&gt;</content>
+    <author>
+      <name>michael</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:nuttnet.net,2005:PostPresenter/1786</id>
+    <published>2008-04-14T15:48:00Z</published>
+    <updated>2008-04-14T15:49:55-04:00</updated>
+    <link type="text/html" rel="alternate" href="http://nuttnet.net/posts/1786-Feeds" />
+    <title>Feeds</title>
+    <content type="html">For the first time, my blog now has an RSS feed.  Welcome to 1999!</content>
+    <author>
+      <name>michael</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:nuttnet.net,2005:PostPresenter/1697</id>
+    <published>2008-04-07T00:55:00Z</published>
+    <updated>2008-04-14T15:34:59-04:00</updated>
+    <link type="text/html" rel="alternate" href="http://nuttnet.net/posts/1697-Spread-Thin" />
+    <title>Spread Thin</title>
+    <content type="html">&lt;p&gt;In some ways I don't like being spread broadly around the web, in the sense that all of the content I use is hosted all over the place at a number of sites.&lt;/p&gt;&lt;p&gt;I'm not even a prolific creator of content.  I don't take as many photos these days, I don't record video, and I rarely find time to write new blog entries.  What I do have: &lt;a href="http://nuttnet.net"&gt;blog entries on nuttnet&lt;/a&gt; (which is really &lt;a href="http://limespot.com"&gt;LimeSpot&lt;/a&gt;), &lt;a href="http://twitter.com/michaeln3"&gt;tweets on twitter&lt;/a&gt;, &lt;a href="http://flickr.com/photos/nutt"&gt;photos on flickr&lt;/a&gt;, old entries on livejournal, a single video on youtube, stuff behind the facebook walled garden, and other content that I can't even remember posting.&lt;/p&gt; 
+&lt;p&gt;One of the topics heavily under discussion at the past few conferences I've attended is the idea of personal content ownership.  The current model for startups is to build a service, attract users, and let those users post their own content which attracts more users. Once the cycle repeats a few times network effects start to kick in and the site takes off.  Some sites have attempted to address the discrepancy between users providing the content and sites selling ads by offering revenue sharing programs, but I think the possibly more important issue is user control.&lt;/p&gt;&lt;p&gt;When I press the "publish" button for this post, where does it go?  Perhaps I want to also publish it on another site.  Plain text is fairly unique in that you can copy and paste your way to your post's freedom, but right now LimeSpot only really offers two ways to see a post: displayed in rendered form in my blog, and in the RSS feed.  Take something more abstract, such as adding a user as a friend: does the social networking site "own" that piece of data that says we are friends?  Should it?&lt;/p&gt;&lt;p&gt;I used to think that having control of my data meant being able to move it to my own website, on my hosting provider.  So how is that any different than leaving a video on YouTube? Since my hosting provider allows me to run applications, I can create any interface I like for retrieving data.  But what if a website (say, LimeSpot) could provide the same flexibility?  It would be like a hosting provider that had a bunch of reasonable defaults for retrieving data, but allowed you to come up with your own if you wanted.&lt;/p&gt;&lt;p&gt;By "retrieving data" I mean a number of different things: perhaps you want to segregate your different types of content and have a separate blog, list of videos, photos, etc.  Perhaps you want a big list twitter/pownce-style of everything you're doing online.  Maybe you want to see everything you're doing mixed in with everything your friends are doing.  Maybe you want to write your own API for retrieving your data.&lt;/p&gt;&lt;p&gt;Obviously there are disadvantages of all of a user's data actually living in a centralized place.  Sites like twitter and youtube are popular because of the sense of community people have with other people on the site.  I'd much rather pull in data to LimeSpot than have it hosted there.&lt;/p&gt;&lt;p&gt;This idea isn't a catch-all solution by any means.  I didn't even link to my livejournal site because it is rarely updated and probably embarassing.  Some information needs to stay separate, but it should be the user's choice, not the site owner's. &lt;/p&gt;</content>
+    <summary type="html">&lt;p&gt;In some ways I don't like being spread broadly around the web, in the sense that all of the content I use is hosted all over the place at a number of sites.&lt;/p&gt;&lt;p&gt;I'm not even a prolific creator of content.  I don't take as many photos these days, I don't record video, and I rarely find time to write new blog entries.  What I do have: &lt;a href="http://nuttnet.net"&gt;blog entries on nuttnet&lt;/a&gt; (which is really &lt;a href="http://limespot.com"&gt;LimeSpot&lt;/a&gt;), &lt;a href="http://twitter.com/michaeln3"&gt;tweets on twitter&lt;/a&gt;, &lt;a href="http://flickr.com/photos/nutt"&gt;photos on flickr&lt;/a&gt;, old entries on livejournal, a single video on youtube, stuff behind the facebook walled garden, and other content that I can't even remember posting.&lt;/p&gt;</summary>
+    <author>
+      <name>michael</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:nuttnet.net,2005:PostPresenter/1473</id>
+    <published>2008-03-10T15:11:00Z</published>
+    <updated>2008-03-10T15:12:21-04:00</updated>
+    <link type="text/html" rel="alternate" href="http://nuttnet.net/posts/1473-SXSW" />
+    <title>SXSW</title>
+    <content type="html">I suppose it's a bit late, but I'm down in Austin at South By Southwest this year.  Come say hi at our &lt;a href="http://sxsw.limespot.com"&gt;party tonight&lt;/a&gt;.</content>
+    <author>
+      <name>michael</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:nuttnet.net,2005:PostPresenter/1423</id>
+    <published>2008-03-05T00:43:00Z</published>
+    <updated>2008-03-05T00:45:29-05:00</updated>
+    <link type="text/html" rel="alternate" href="http://nuttnet.net/posts/1423-The-Magic-is-Temporarily-Unavailable" />
+    <title>The Magic is Temporarily Unavailable</title>
+    <content type="html">And that's what I get for neglecting my own theme while building other peoples'.  The cobbler's children have no shoes.</content>
+    <author>
+      <name>michael</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:nuttnet.net,2005:PostPresenter/1269</id>
+    <published>2008-02-20T16:02:00Z</published>
+    <updated>2008-02-20T16:10:30-05:00</updated>
+    <link type="text/html" rel="alternate" href="http://nuttnet.net/posts/1269-Firefox-Clutter" />
+    <title>Firefox Clutter</title>
+    <content type="html">&lt;p&gt;Confession: I used to use Windows as my main operating system, and for a long time I used Internet Explorer as my browser.  As a 14-year-old, I always saved my money to buy as much memory as I could, because at any given time I'd have 20 or 30 browser windows open.  When I discovered Firefox and tabbed browsing, I dropped down to 5 or 10 browser windows, but they had 10-20 tabs each.  My room was also cluttered as a kid.&lt;/p&gt;&lt;p&gt;Now I use Mac OS with only a single Firefox window, but I still have entirely too many tabs open.  This mostly results from links appearing outside the browser, such as links in instant message windows and emails.  I usually open these links once, look at the page, then forget about them.  It would be really nice if I could specify one of Firefox's tabs as a &amp;quot;junk tab&amp;quot;, to be reused for all external links.&lt;/p&gt;&lt;p&gt;I can't think of a clean way to fit the feature into Firefox's user interface, but I'm looking forward to the new bookmark management system. &lt;/p&gt;</content>
+    <author>
+      <name>michael</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:nuttnet.net,2005:PostPresenter/1234</id>
+    <published>2008-02-14T00:28:00Z</published>
+    <updated>2008-02-14T00:32:04-05:00</updated>
+    <link type="text/html" rel="alternate" href="http://nuttnet.net/posts/1234-Moving" />
+    <title>Moving</title>
+    <content type="html">I just shut down the Athlon64 server sitting in my living room.  Suddenly the room goes quiet. I could hear crickets chirping if such things could survive in New York.  The quiet is disconcerting; I begin to wonder if the steady hum of the fans is all that has kept me sane for the last year and a half as I sit alone in my old apartment.</content>
+    <author>
+      <name>michael</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:nuttnet.net,2005:PostPresenter/1207</id>
+    <published>2008-02-09T01:03:00Z</published>
+    <updated>2008-02-09T02:02:54-05:00</updated>
+    <link type="text/html" rel="alternate" href="http://nuttnet.net/posts/1207-Challenge" />
+    <title>Challenge</title>
+    <content type="html">&lt;p&gt;&lt;img class="embedded-img-right" src="http://assets.limespot.com/fs/media/2/243268,152,203,p,n.png" alt="IMG_0084.JPG copy" /&gt;Today I was invited at the last minute to a challenge of epic proportions.&lt;/p&gt;&lt;p&gt;I'm not usually one to participate in eating competitions, but macaroni and cheese is one of my favorite foods ever (yes, I'm still four years old) and I gave in to old-fashioned peer pressure.  Secretly I was planning on only eating half and taking the rest home, but one thing led to another and I ended up finishing the &amp;quot;Mongo&amp;quot; size.  So did Nathan, and he finished first.  &lt;/p&gt;&lt;p&gt;We were rewarded with nothing but pride, though the waitress did give me a free water for finishing.&lt;/p&gt;</content>
+    <author>
+      <name>michael</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:nuttnet.net,2005:PostPresenter/1191</id>
+    <published>2008-02-06T23:31:00Z</published>
+    <updated>2008-02-06T23:38:16-05:00</updated>
+    <link type="text/html" rel="alternate" href="http://nuttnet.net/posts/1191-Apartment-Hunt" />
+    <title>Apartment Hunt</title>
+    <content type="html">&lt;p&gt;&lt;img class="embedded-img-right" src="http://assets.limespot.com/fs/media/2/243232,124,166,p,n.png" alt="IMG_0064.JPG copy" /&gt;I've nearly secured an apartment.  It's in the East Village, and it's quite nice.  It's cozy (read: small) but also cozy in that it just feels nice.  The bedroom has no windows so that's going to be weird, but I think I'm just going to sleep with the door open.  I have one final thing to do tomorrow morning and it's mine.&lt;/p&gt;&lt;p&gt;Of course, as with anything in New York there's a chance that it'll slip through my fingers and I'll have to go back to looking through craigslist and calling brokers.  I think New York requires a certain fortitude that is most heavily tested during relocation.&lt;/p&gt;&lt;p&gt;At least I'm not buying a house. &lt;/p&gt;</content>
+    <author>
+      <name>michael</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:nuttnet.net,2005:PostPresenter/1180</id>
+    <published>2008-02-05T19:12:00Z</published>
+    <updated>2008-02-05T19:15:10-05:00</updated>
+    <link type="text/html" rel="alternate" href="http://nuttnet.net/posts/1180-Primary" />
+    <title>Primary</title>
+    <content type="html">&lt;p class="post_body"&gt;I voted today.  You should too, unless you're Canadian, a convict, or generally disenfranchised.&lt;p&gt;The
+nearest polling place was a school a few blocks from me, which was
+incredibly hot and humid, especially considering the nice 50-degree weather we're
+having in New York.  I was not on the list.  I ended up having
+to go back to my old polling place in Prospect Heights, where the smell
+of freshly baked chocolate chip cookies from the school cafeteria made me very hungry and not
+particularly politically inclined.&lt;/p&gt;&lt;p&gt;Last night a coworker pointed me to &lt;a href="http://lessig.org/blog/2008/02/20_minutes_or_so_on_why_i_am_4.html"&gt;Lawrence Lessig's  video on why you should vote for Barack Obama&lt;/a&gt;.   &lt;/p&gt;
+    &lt;/p&gt;</content>
+    <author>
+      <name>michael</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:nuttnet.net,2005:PostPresenter/1181</id>
+    <published>2008-02-03T14:07:00Z</published>
+    <updated>2008-02-05T19:19:34-05:00</updated>
+    <link type="text/html" rel="alternate" href="http://nuttnet.net/posts/1181-How-I-Got-Here" />
+    <title>How I Got Here</title>
+    <content type="html">I was only vaguely familiar with LimeWire in college. The career center
+at my school basically gave me two options: go to work for one of those
+mind-numbingly boring local government contractors that showed up to
+the career fairs, or go to grad school. Our school had an online job
+board filled with the previously mentioned government contractors, but
+in the middle of listings by Raytheon and Lockheed-Martin I noticed a
+Ruby on Rails position listed by Lime Wire.&lt;br /&gt;&lt;br /&gt;&amp;quot;Those guys are a company?&amp;quot;&lt;br /&gt;&lt;br /&gt;I've
+since gotten that question more times than I can count at career fairs
+and info sessions. People generally seem to think that either LimeWire
+was written by some nerds in their basements, or that it just appeared
+one day through some sort of Intelligent Design.  Maybe the internet created it.&lt;br /&gt;&lt;br /&gt;I had a very nice chat with Justin Schmidt, who
+asked a bunch of algorithms questions, described the design of
+Limespot, and got me very interested in the project. At the time I was interested in Rails, but was still new to it. For whatever reason he invited me up to New York for an interview.&lt;br /&gt;&lt;br /&gt;Since
+Lime Wire was my first real interview ever, there were a few things I
+hadn't yet learned. I flew myself up to New York and slept on a
+friend's floor out on Long Island the night before. The day of the
+interview I woke up very early and took the two hour train ride into
+New York City. Being the confused tourist I was, I mistakenly got off
+at the 23rd street subway stop, and walked approximately 30 blocks
+through the pouring rain. By the time I got there my shoes made
+squishing noises as I walked, and I was soaked from the shoulders down.&lt;br /&gt;&lt;br /&gt;Fortunately
+I made the correct judgment not to wear my Interview/Wedding/Funeral
+suit that my parents had given me, and instead opted to wear jeans. At
+least I was comfortable during the strenuous day-long interview. As I
+left the interview, I was sure that there was no way Lime Wire would hire
+me. I think I might have even failed the reverse-a-string question at
+one point. I nearly even declined the dinner invitation as to not waste
+any more of their time. Two weeks later, I had the job.&lt;br /&gt;&lt;br /&gt;From the
+outside, I saw the Lime Wire interview process as a Really Big Deal. I
+kind of imagined it like a trial, where the interviewers interrogated
+me, analyzed the laws, and made some sort of ruling. In retrospect it's
+just a bunch of regular people trying to find the best co-workers they
+can.&lt;br /&gt;&lt;br /&gt;One year and two months later, LimeSpot is a reality.</content>
+    <author>
+      <name>michael</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:nuttnet.net,2005:PostPresenter/383</id>
+    <published>2007-08-28T20:20:10Z</published>
+    <updated>2007-08-28T20:20:16-04:00</updated>
+    <link type="text/html" rel="alternate" href="http://nuttnet.net/posts/383-Limespot-com-has-launched-" />
+    <title>Limespot.com has launched!</title>
+    <content type="html">It's finally live!  After over a year of working on it, &lt;a href="http://limespot.com/"&gt;limespot.com&lt;/a&gt; has gone online.  It powers &lt;a href="http://blog.limewire.com"&gt;blog.limewire.com&lt;/a&gt;, also.</content>
+    <author>
+      <name>michael</name>
+    </author>
+  </entry>
+</feed>

@@ -1,0 +1,1086 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="http://feeds.feedburner.com/~d/styles/atom10full.xsl" type="text/xsl" media="screen"?><?xml-stylesheet href="http://feeds.feedburner.com/~d/styles/itemcontent.css" type="text/css" media="screen"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-US">
+  <title>Bamboo Blog - Home</title>
+  <id>tag:blog.new-bamboo.co.uk,2009:mephisto/</id>
+  <generator version="0.7.3" uri="http://mephistoblog.com">Mephisto Noh-Varr</generator>
+  
+  <link href="http://blog.new-bamboo.co.uk/" rel="alternate" type="text/html" />
+  <updated>2009-01-12T16:55:10Z</updated>
+  <link rel="self" href="http://feeds.feedburner.com/newbamboo" type="application/atom+xml" /><entry xml:base="http://blog.new-bamboo.co.uk/">
+    <author>
+      <name>gwyn</name>
+    </author>
+    <id>tag:blog.new-bamboo.co.uk,2009-01-19:5025</id>
+    <published>2009-01-19T09:00:00Z</published>
+    <updated>2009-01-12T16:55:10Z</updated>
+    <link href="http://blog.new-bamboo.co.uk/2009/1/19/story-workshops-and-the-brain-dump" rel="alternate" type="text/html" />
+    <title>Story Workshops and the Brain Dump</title>
+<content type="html">
+            &lt;p&gt;It seemed wasteful to bring the entire development team of four into the whole-day User Stories Workshop, so we didn't. I wanted to take half an hour to brain-dump the result into the two absent developers, but never got the chance. So we went into the estimation session with two developers who'd been at the USW, and two who were working only from the cards.&lt;/p&gt;
+
+&lt;p&gt;We tried Speed Poker without success; two developers were playing '?' cards or wildly varying estimates. The estimating took a half-day, using up all the time we'd saved at the workshop.&lt;/p&gt;
+
+&lt;p&gt;The User Stories Workshop isn't just about writing story cards; it's about loading a whole lot of &lt;em&gt;extra&lt;/em&gt; data, that doesn't make it on to the cards, into the brains of everyone there. I still think we can optimise the process, since the developer-developer interface is higher bandwidth than the client-developer interface (and &lt;em&gt;much&lt;/em&gt; higher than the meeting-developer interface). But in cases where we do exclude some people from the workshop, we need to rigorously schedule a developer brain-dump immediately afterwards.&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://blog.new-bamboo.co.uk/">
+    <author>
+      <name>gwyn</name>
+    </author>
+    <id>tag:blog.new-bamboo.co.uk,2009-01-12:4065</id>
+    <published>2009-01-12T09:00:00Z</published>
+    <updated>2009-01-08T11:57:33Z</updated>
+    <link href="http://blog.new-bamboo.co.uk/2009/1/12/our-agile-toolbox-part-1" rel="alternate" type="text/html" />
+    <title>Advanced Poker</title>
+<content type="html">
+            &lt;p&gt;Planning Poker is a basic part of the Agile process. We've optimised it.&lt;/p&gt;
+
+&lt;p&gt;We can play without cards. For short sessions, or when we need to re-estimate on the fly, fingers behind the back work perfectly. Big stories need both hands. Hands behind the back means "I'm ready to estimate", a crooked finger means "half a point", open palms means "I don't know". This works well in release planning when we're discussing descoping a card; the client agrees to a change, and we do a new estimate on the spot.&lt;/p&gt;
+
+&lt;p&gt;When we use cards, we use good ones - presented to us by a client, our Planning Poker decks have been custom-printed by moo.com and feature a bonus "WTF?" card as well as the usuals.&lt;/p&gt;
+
+&lt;p&gt;We play fast. The 'classic' approach is to talk about a story, explore all the options and implications, then finally estimate. When we do this, we nearly always get matching estimates. But it's time-consuming, and if we're not planning to implement the story straight away (in which case we needed to have the conversation anyway), it's wasteful. &lt;/p&gt;
+
+&lt;p&gt;So when there's a big stack of cards to get through - like after a User Stories Workshop on a new project - we play Speed Poker. We select a card, read it verbatim, and estimate. If the estimates all match up, we move to the next card - we were all thinking the same thing, and we've saved the time needed to have the conversation. If they don't match up, we use the classic approach for that card.&lt;/p&gt;
+
+&lt;p&gt;We play commitment poker. For new projects, or those without a stable velocity, we use commitment-based planning rather than velocity-based planning. That is, after each story is added to the plan, we check that each member of the team is still comfortable committing. This suffers from the same 'peer pressure' effect as normal estimation, though, and we solve it the same way: on three, thumbs-up means "I'm sure we can do this", thumbs-down means "I'm no longer sure".&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://blog.new-bamboo.co.uk/">
+    <author>
+      <name>gwyn</name>
+    </author>
+    <id>tag:blog.new-bamboo.co.uk,2009-01-08:5027</id>
+    <published>2009-01-08T11:56:00Z</published>
+    <updated>2009-01-08T11:57:09Z</updated>
+    <link href="http://blog.new-bamboo.co.uk/2009/1/8/blackberry-break" rel="alternate" type="text/html" />
+    <title>Blackberry Break</title>
+<content type="html">
+            &lt;p&gt;Stakeholder availability is a problem for any methodology, but Agile gets hit particularly hard. The User Stories Workshop is most vulnerable; although the rest of the process uses a single Product Owner, the USW needs representatives from all over the client organisation. This, combined with a typical half-day duration, makes it very hard to schedule.&lt;/p&gt;
+
+&lt;p&gt;Above a certain level in the management hierarchy, nobody's ever really 100% present in any case. At our last workshop, both high-level stakeholders had mobiles out, dealing with incoming emails that are more polite, but not much less disruptive, than incoming calls.&lt;/p&gt;
+
+&lt;p&gt;So we extended the coffee break to a fifteen-minute Blackberry Break. Those with urgent issues dealt with them. Everyone else had an out-of-band chat about how the process was going, and dealt with other todo items like external dependencies and scheduling.&lt;/p&gt;
+
+&lt;p&gt;We returned to the meeting with everybody focused. Going forward, we might even make this explicit: "there'll be a Blackberry Break every half hour". For product demos, we could go as far as "this is a fifteen-minute demo. Phones off, please".&lt;/p&gt;
+
+&lt;p&gt;Singletasking: it's the future.&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://blog.new-bamboo.co.uk/">
+    <author>
+      <name>damien</name>
+    </author>
+    <id>tag:blog.new-bamboo.co.uk,2009-01-06:5028</id>
+    <published>2009-01-06T11:18:00Z</published>
+    <updated>2009-01-06T11:28:57Z</updated>
+    <link href="http://blog.new-bamboo.co.uk/2009/1/6/how-to-setup-your-own-virtualized-rails-hosting-environment-with-xen" rel="alternate" type="text/html" />
+    <title>How-to setup your own virtualized Rails hosting environment with Xen</title>
+<summary type="html">&lt;p&gt;&lt;a href="http://www.flickr.com/photos/kky/704056791/"&gt;&lt;img class="picture" src="/assets/2009/1/6/704056791_63f1e492d8_m.jpg" /&gt;&lt;/a&gt;A few months ago we transitioned from hosting all of our apps in development on two &lt;a href="http://slicehost.com"&gt;Slicehost&lt;/a&gt; slices to individual Amazon EC2 instances for each. As much you want vendor frozen Rails and Merb to work (including all your app's dependencies) it's always plagued with issues. Having completely separate environment for each app clears up a lot of issues, including the all to often mistake of upgrading Rails only to find some old project isn't able to co-exist with it. Our EC2 setup involved creating a base image with the basic Rails environment, and whenever a new staging server was needed we would clone the Base image and modify it specifically for the app. Being able to startup new environments with a single command is wonderfully easy, but a dozen staging servers later, the cost certainly starts to add up.&lt;/p&gt;
+
+&lt;p&gt;So for the cost of 1 month of our EC2 instances, we purchased a Dell box with 8Gb to run as an internal staging server and host all of our virtual servers. We chose Ubuntu as both the host and guest operating system. We started out trying &lt;a href="https://help.ubuntu.com/community/KVM"&gt;KVM&lt;/a&gt; which is officially supported by Ubuntu. Everything went to plan and we had a great setup except for one major problem: slices would randomly lock up. After no success finding a remedy we decided to give &lt;a href="http://www.xen.org/"&gt;Xen&lt;/a&gt; a go and with a little work got it setup and running along nicely.&lt;/p&gt;
+
+&lt;p&gt;Most of the instructions here have come from a combination of the &lt;a href="https://help.ubuntu.com/community/"&gt;Ubuntu&lt;/a&gt; and &lt;a href="http://www.virtuatopia.com/index.php/Xen_Virtualization_Essentials"&gt;Virtuatopia&lt;/a&gt; wikis.&lt;/p&gt;</summary><content type="html">
+            &lt;p&gt;&lt;a href="http://www.flickr.com/photos/kky/704056791/"&gt;&lt;img class="picture" src="/assets/2009/1/6/704056791_63f1e492d8_m.jpg" /&gt;&lt;/a&gt;A few months ago we transitioned from hosting all of our apps in development on two &lt;a href="http://slicehost.com"&gt;Slicehost&lt;/a&gt; slices to individual Amazon EC2 instances for each. As much you want vendor frozen Rails and Merb to work (including all your app's dependencies) it's always plagued with issues. Having completely separate environment for each app clears up a lot of issues, including the all to often mistake of upgrading Rails only to find some old project isn't able to co-exist with it. Our EC2 setup involved creating a base image with the basic Rails environment, and whenever a new staging server was needed we would clone the Base image and modify it specifically for the app. Being able to startup new environments with a single command is wonderfully easy, but a dozen staging servers later, the cost certainly starts to add up.&lt;/p&gt;
+
+&lt;p&gt;So for the cost of 1 month of our EC2 instances, we purchased a Dell box with 8Gb to run as an internal staging server and host all of our virtual servers. We chose Ubuntu as both the host and guest operating system. We started out trying &lt;a href="https://help.ubuntu.com/community/KVM"&gt;KVM&lt;/a&gt; which is officially supported by Ubuntu. Everything went to plan and we had a great setup except for one major problem: slices would randomly lock up. After no success finding a remedy we decided to give &lt;a href="http://www.xen.org/"&gt;Xen&lt;/a&gt; a go and with a little work got it setup and running along nicely.&lt;/p&gt;
+
+&lt;p&gt;Most of the instructions here have come from a combination of the &lt;a href="https://help.ubuntu.com/community/"&gt;Ubuntu&lt;/a&gt; and &lt;a href="http://www.virtuatopia.com/index.php/Xen_Virtualization_Essentials"&gt;Virtuatopia&lt;/a&gt; wikis.&lt;/p&gt;
+&lt;p&gt;The first step was to install &lt;a href="http://www.ubuntu.com/getubuntu/download"&gt;Ubuntu 8.10 (Intrepid) Server Edition&lt;/a&gt; (remember to select the "Server Edition" tab before downloading).&lt;/p&gt;
+
+&lt;h1&gt;Setup Xen&lt;/h1&gt;
+
+&lt;p&gt;Detailed instructions are on the &lt;a href="https://help.ubuntu.com/community/Xen"&gt;Ubuntu wiki Xen page&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get install ubuntu-xen-server
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;Install Xen kernel from Hardy&lt;/h2&gt;
+
+&lt;p&gt;Grab the .deb from here: &lt;a href="http://packages.ubuntu.com/hardy-updates/linux-image-2.6.24-21-xen"&gt;http://packages.ubuntu.com/hardy-updates/linux-image-2.6.24-21-xen&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo dpkg -i linux-image-2.6.24-21-xen_2.6.24-21.43_amd64.deb
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Make sure your eth0 is configured.&lt;/p&gt;
+
+&lt;p&gt;Reboot.&lt;/p&gt;
+
+&lt;h1&gt;Using xen-tools to create images&lt;/h1&gt;
+
+&lt;p&gt;We should now have an Ubuntu server running the Xen kernel with all the standard Xen tools installed.&lt;/p&gt;
+
+&lt;p&gt;Next we'll create a base Xen image running Debian Etch. In an ideal world it would be running Ubuntu 8.10 (Intrepid), but there isn't yet a xen-tools template for Ubuntu, so Debian has to do.&lt;/p&gt;
+
+&lt;p&gt;Configure xen-tools:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;vim /etc/xen-tools/xen-tools.conf
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This is our config (installing Debian Etch):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;dir = ~/slices
+install-method = debootstrap
+
+size   = 4Gb      # Disk image size.
+memory = 256Mb    # Memory size
+swap   = 512Mb    # Swap size
+fs     = ext3     # use the EXT3 filesystem for the disk image.
+dist   = etch     # Default distribution to install.
+image  = sparse   # Specify sparse vs. full disk images.
+
+dhcp = 1
+
+passwd = 1
+
+accounts = 1
+
+kernel      = /boot/vmlinuz-`uname -r`
+initrd      = /boot/initrd.img-`uname -r`
+
+arch = amd64
+
+mirror = http://ftp.us.debian.org/debian/
+
+ext3_options   = noatime,nodiratime,errors=remount-ro
+ext2_options   = noatime,nodiratime,errors=remount-ro
+xfs_options    = defaults
+reiser_options = defaults
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you want to include anything extra in the image, you can put files in the /etc/xen-tools/skel directory. We've written a script to configure the slice for Rails with Apache running Phusion Passenger.&lt;/p&gt;
+
+&lt;p&gt;Grab the &lt;a href="http://gist.github.com/43765"&gt;boot_xen_passenger.sh&lt;/a&gt; script, and copy it to /etc/xen-tools/skel if you plan on using it.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo vim /etc/xen-tools/skel/boot_xen_passenger.sh 
+sudo chmod +x /etc/xen-tools/skel/boot_xen_passenger.sh
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Create your first slice:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mkdir ~/slices
+sudo xen-create-image --hostname=xentest1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Start image:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo xm create /etc/xen/xentest1.cfg
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;View slices with:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo xm list
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Attach to the console with:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo xm console xentest1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;SSH in and run the setup script:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo ./boot_xen_passenger.sh
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1&gt;Networking&lt;/h1&gt;
+
+&lt;h2&gt;Hostname resloving&lt;/h2&gt;
+
+&lt;p&gt;Dnsmasq is a nice little dns server which will allow us to reference our slices by their hostnames.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get install dnsmasq
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Dnsmasq can also act as a dhcp server. When you slices ask for a dhcp lease they will also give dnsmasq their hostname. This way you won't need to reserve ip addresses for slices. However we've had some issues with the dhcp client on Debian when used in conjunction dnsmasq. In some cases you will want to forward certain ports from the outside world to a slice, and if have a dumb router it will only be able to forward to a specific ip.&lt;/p&gt;
+
+&lt;p&gt;If you wish you setup the dhcp server in dnsmasq:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo vim /etc/dnsmasq.conf
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Uncommend the line &lt;code&gt;#dhcp-range=192.168.0.50,192.168.0.150,12h&lt;/code&gt; and edit the ip range if desired.&lt;/p&gt;
+
+&lt;p&gt;If you use a separate router for your internet, you'll want to set the gateway options as well by uncommenting the following line &lt;code&gt;dhcp-option=option:router,192.168.1.1&lt;/code&gt; and replacing &lt;code&gt;1.2.3.4&lt;/code&gt; with your router's ip.&lt;/p&gt;
+
+&lt;p&gt;Now restart dnsmasq:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo /etc/init.d/dnsmasq restart
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you have an existing dhcp server on the network you will need to change it to forward requests to the new dnsmasq dhcp server. This is to ensure that new slices ask dnsmasq for an ip address, and when doing so it will also broadcast its hostname. On the local network this will allow you do to nice things like http://myslice and &lt;code&gt;ssh myslice&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;However if you've opted not use dnsmasq as your dhcp server, you will need to add a line to the host's /etc/hosts file with the hostname of the slice and its ip address (every time you edit /etc/hosts you will also need to restart dnsmasq). You will also need to specify the ip address of your slices when they are created. See the &lt;a href="http://www.virtuatopia.com/index.php/Building_a_Xen_Guest_Domain_using_Xen-Tools#Configuring_Xen_Guest_Network_Options"&gt;Configuring Xen Guest Network Options wiki page&lt;/a&gt; for more information about configuring xen-tools.&lt;/p&gt;
+
+&lt;p&gt;On your router or for individual clients you will also need to add the ip of the server with dnsmasq setup as a DNS server.&lt;/p&gt;
+
+&lt;h2&gt;Magic subdomain forwarding with nginx&lt;/h2&gt;
+
+&lt;p&gt;Any slice we startup should now be accessible by its hostname. To reduce the configuration required for each slice, we setup Nginx on the host to automatically forward http requests from any subdomain under our staging domain to the slice with a hostname the same as the subdomain. So that if you visit http://myslice.mystagingdomain.com from anywhere, it will be internally redirected to http://myslice and allow all your slices to be behind one ip.&lt;/p&gt;
+
+&lt;h3&gt;Setup nginx&lt;/h3&gt;
+
+&lt;p&gt;Grab nginx:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get install nginx
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then add a new site config for the slice forwarding:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo vim /etc/nginx/sites-available/slices_proxy.conf
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Here is the config we have:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;map $host $backend {
+    hostnames;
+}
+
+server {
+  resolver 127.0.0.1;
+  listen   80;
+  server_name  _;
+
+  access_log  /var/log/nginx/localhost.access.log;
+
+  location / {
+    if ($host ~* "^(.*).mystagingdomain.co.uk") {
+      set $host_without_www $1;
+      proxy_pass http://$host_without_www$request_uri;
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Enable the config:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo ln -s /etc/nginx/sites-available/slices_proxy.conf /etc/nginx/sites-enabled/slices_proxy.conf
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Best to also remove the default config:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo rm /etc/nginx/sites-enabled/default
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then restart nginx:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo /etc/init.d/nginx restart
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;Setup DNS&lt;/h3&gt;
+
+&lt;p&gt;Next add an wildcard A record to your mystagingdomain.com domain to point to your host's external ip, and all should be good to go.&lt;/p&gt;
+
+&lt;h1&gt;Next steps&lt;/h1&gt;
+
+&lt;p&gt;The instructions here should get you started with a local Xen setup. However there's still a few of the finer points to perfect. The Rails setup script could be integrated with Xen better so it's automatically run when a slice is created. The script itself is also very brittle and likely to fail on another environment. Using &lt;a href="http://www.deprec.org/"&gt;deprec&lt;/a&gt; would probably be a better solution in the long term.&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://blog.new-bamboo.co.uk/">
+    <author>
+      <name>damien</name>
+    </author>
+    <id>tag:blog.new-bamboo.co.uk,2008-09-18:4958</id>
+    <published>2008-09-18T11:49:00Z</published>
+    <updated>2008-09-18T11:53:28Z</updated>
+    <link href="http://blog.new-bamboo.co.uk/2008/9/18/amazon-s-cdn-is-coming-soon" rel="alternate" type="text/html" />
+    <title>Amazon's CDN is coming soon</title>
+<content type="html">
+            &lt;p&gt;It couldn't have been better timed. Amazon has announced their forthcoming CDN service on the &lt;a href="http://aws.typepad.com/aws/2008/09/were-never-cont.html"&gt;AWS Blog&lt;/a&gt;. Once released this service will be a perfect complement to &lt;a href="http://pandastream.com"&gt;Panda&lt;/a&gt;, allowing videos to be streamed to users even more efficiently!&lt;/p&gt;
+
+&lt;blockquote&gt;
+    &lt;p&gt;You will start by storing your content in an Amazon S3 bucket and then marking the content as publicly readable. Next you'll make a single API call to register the bucket. The call will return a domain name that you'll use to refer to your content in your web page or application. When clients request the object via the returned domain name they'll be routed to the nearest edge location, for high performance delivery.&lt;/p&gt;
+&lt;/blockquote&gt;
+          </content>  </entry>
+  <entry xml:base="http://blog.new-bamboo.co.uk/">
+    <author>
+      <name>damien</name>
+    </author>
+    <id>tag:blog.new-bamboo.co.uk,2008-09-11:4950</id>
+    <published>2008-09-11T17:29:00Z</published>
+    <updated>2008-09-11T17:29:56Z</updated>
+    <category term="panda" />
+    <link href="http://blog.new-bamboo.co.uk/2008/9/11/panda-open-source-video-encoding-powered-by-merb-ec2-s3-and-simpledb" rel="alternate" type="text/html" />
+    <title>Panda - open source video encoding powered by Merb, EC2, S3 and SimpleDB</title>
+<content type="html">
+            &lt;p&gt;&lt;a href="http://pandastream.com/"&gt;&lt;img class="picture" src="http://blog.new-bamboo.co.uk/assets/2008/9/11/panda_logo_arch_1.gif" /&gt;&lt;/a&gt;
+Earlier in the year, we found many of our clients were looking for a solution to allow users to easily upload their own videos. We had a good look into the &lt;a href="http://sesamevault.com/"&gt;numerous&lt;/a&gt; &lt;a href="http://heywatch.com"&gt;existing&lt;/a&gt; &lt;a href="http://gomediaplug.com/"&gt;services&lt;/a&gt; &lt;a href="http://zencoder.tv/"&gt;already&lt;/a&gt; &lt;a href="http://www.filepipes.com/"&gt;available&lt;/a&gt;, but ultimately found none quite fit the bill; either being too expensive, closed source or overly complex. &lt;a href="http://pandastream.com/"&gt;Panda&lt;/a&gt; was conceived to be a simple open source solution for handling online video. Essentially, &lt;a href="http://pandastream.com/"&gt;Panda&lt;/a&gt; allows you seamlessly integrate video uploading, encoding and streaming into your web application, while utilizing the power of the cloud.&lt;/p&gt;
+
+&lt;p&gt;We took inspiration from what was already out there and distilled it down to its core. &lt;a href="http://pandastream.com/"&gt;Panda&lt;/a&gt; runs entirely on &lt;a href="http://aws.amazon.com/"&gt;Amazon's Web Services&lt;/a&gt; utilising &lt;a href="http://aws.amazon.com/ec2"&gt;EC2&lt;/a&gt;, &lt;a href="http://aws.amazon.com/s3"&gt;S3&lt;/a&gt; and &lt;a href="http://aws.amazon.com/simpledb"&gt;SimpleDB&lt;/a&gt; and the &lt;a href="http://merbivore.com"&gt;Merb&lt;/a&gt; framework. Once you've started up the application on an EC2 instance you can access the API and administration backend. The REST API allow painless integration with your own web application. Videos are uploaded directly to &lt;a href="http://pandastream.com/"&gt;Panda&lt;/a&gt; and transcoded using &lt;a href="http://ffmpeg.mplayerhq.hu/"&gt;FFmpeg&lt;/a&gt; to any format you desire. Video can be streamed using any Flash video player such as the &lt;a href="http://www.jeroenwijering.com/?item=JW_FLV_Player"&gt;JW FLV Media Player&lt;/a&gt;, and with the addition of h264 support in Flash  0.9.115 users can enjoy full HD quality.&lt;/p&gt;
+
+&lt;p&gt;So, visit the &lt;a href="http://pandastream.com/"&gt;Panda site&lt;/a&gt;, grab the code from &lt;a href="http://github.com/newbamboo/panda"&gt;Github&lt;/a&gt;, read the &lt;a href="http://pandastream.com/docs/getting_started"&gt;Getting Started Guide&lt;/a&gt; and don't forget to join the &lt;a href="http://groups.google.com/group/pandastream"&gt;Google Group&lt;/a&gt; if you have any questions or success stories to talk about!&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://blog.new-bamboo.co.uk/">
+    <author>
+      <name>max</name>
+    </author>
+    <id>tag:blog.new-bamboo.co.uk,2008-09-04:4943</id>
+    <published>2008-09-04T16:58:00Z</published>
+    <updated>2008-09-04T17:04:55Z</updated>
+    <link href="http://blog.new-bamboo.co.uk/2008/9/4/protect-them-humans" rel="alternate" type="text/html" />
+    <title>Protect them humans</title>
+<content type="html">
+            &lt;p&gt;&lt;a href="http://protectthehuman.com"&gt;&lt;img class="picture" src="http://blog.new-bamboo.co.uk/assets/2008/9/4/pth.jpg" /&gt;&lt;/a&gt;
+We don't normally use the blog to announce the launch of client websites, but it might interest some people to check out some of the work we actually do. With this in mind, I'd like to introduce you to &lt;a href="http://protectthehuman.com"&gt;Protect The Human&lt;/a&gt;, a recently launched project for &lt;a href="http://www.amnesty.org.uk/"&gt;Amnesty International UK&lt;/a&gt; that we have been working on for the past few months in collaboration with our design peeps up in London &lt;a href="http://madebymany.co.uk"&gt;Made by Many&lt;/a&gt;. Though it has been publicly available for a couple of weeks now, I wanted to let the dust settle a bit before posting.&lt;/p&gt;
+
+&lt;p&gt;So what is it? It is different things depending on who you talk to, but for me it is an assortment of different parts, playing a key role in Amnesty's online strategy to increasing activism (catchy, eh?). It is firstly a content publishing platform; populated by fantastic Amnesty videos, galleries of images about the work they do, and masses of bookmarks to fascinating and current content all over the interweb. But this is not purely a top down publishing platform, users of the site are actively encouraged to create their own content, and rate comment and discuss any item that is on there.&lt;/p&gt;
+
+&lt;p&gt;This is a site about activism: the small things people can do which collectively create interest for others and effect change on important issues. Users are prompted to take various actions at every opportunity, depending on the time they have available. Examples of actions can be signing online petitions for the victims of Human rights abuses, attending protests, or simply sending great content to friends to help spread the word. This aspect of the site has been a real eye opener, I have never before seen so many opportunities to take proactive action on such important issues in such an accessible way.&lt;/p&gt;
+
+&lt;p&gt;There are other parts to this site, such as hubs for the various campaigns Amnesty UK are engaged in, and rather than me describe it all, the best thing to do is to have a poke around. Because we worked in an Agile way, there are still more features which are going to be rolling out soon, and we hope to be iteratively improving the site over the next few months.&lt;/p&gt;
+
+&lt;p&gt;We will probably be talking about how the Agile process worked in practice on this at some point, but that will have to wait a bit. For the moment, have a look, sign up, and take some actions. There really isn't any excuse not to, the site makes it so easy to make a contribution, whatever that might be.&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://blog.new-bamboo.co.uk/">
+    <author>
+      <name>paul</name>
+    </author>
+    <id>tag:blog.new-bamboo.co.uk,2008-08-29:762</id>
+    <published>2008-08-29T16:24:00Z</published>
+    <updated>2008-08-29T16:26:27Z</updated>
+    <category term="apml" />
+    <link href="http://blog.new-bamboo.co.uk/2008/8/29/apml" rel="alternate" type="text/html" />
+    <title>APML</title>
+<summary type="html">&lt;p&gt;&lt;a href="http://apml.org"&gt;APML&lt;/a&gt; is an XML file format used to store the attention profiles of users, and it's got the potential to become a revenue stream for web 2.0.&lt;/p&gt;</summary><content type="html">
+            &lt;p&gt;&lt;a href="http://apml.org"&gt;APML&lt;/a&gt; is an XML file format used to store the attention profiles of users, and it's got the potential to become a revenue stream for web 2.0.&lt;/p&gt;
+&lt;p&gt;From my time at various web 2.0 start-ups, one of my gripes with the industry was that too many start-ups were focussing on advertising as their sole revenue stream, gunning to grow big and sell to GYM (Google Yahoo Microsoft), and hope that whoever bought them would figure out how to make them profitable. This strategy has worked for some, but I doubt that it will work for all. There are start-ups out there who may have to find other ways to make money, rather than just chase VCs and old media conglomerates, and shovel the cash on a bonfire.&lt;/p&gt;
+
+&lt;p&gt;My topic today is about an xml file format called &lt;a href="http://apml.org"&gt;APML&lt;/a&gt;, used to store attention profiles of users. The technology is not complex, and there are plenty of places where it could be implemented. What's more, the interesting thing about APML is that is has the potential to turn a lot of the data that web 2.0 startups have into valuable information that can be sold as a commodity. In other words, a revenue stream that isn't "AdBucks saves the day!"&lt;/p&gt;
+
+&lt;h2&gt;Introducing APML&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href="http://apml.org"&gt;APML&lt;/a&gt; is an xml file format for Attention Profiles, and Attention Profiles are lists of things that you are interested in, with a value signalling how interested you are in that thing. Examples of attention profiles include:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;A list of your favourite music artists collected by Last.fm, ranked by how often you listen to them.&lt;/li&gt;
+&lt;li&gt;A list of topics that you like to Twitter about, ranked by a count of how many times you mention each topic.&lt;/li&gt;
+&lt;li&gt;A list of products that I looked at and purchased / bid on from Amazon or Ebay, ranked by clicks.&lt;/li&gt;
+&lt;li&gt;A list of urls I have bookmarked via del.icio.us, ranked by the number of visits to each link.&lt;/li&gt;
+&lt;li&gt;A list of articles I have read on BusinessWeek, ranked by the number of visits to each article.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Let's grab a real example so you can see what I mean. Here's my &lt;a href="http://last.fm/user/paulbjensen"&gt;my last.fm profile&lt;/a&gt;. Notice the list of top artists, ranked by the number of times I've played songs/albums by those artists. And here is &lt;a href="http://aura.darkstar.sunlabs.com/AttentionProfile/apml/last.fm/paulbjensen"&gt;the APML file of the same data&lt;/a&gt;. There we go, an APML file of my favourite musicians/music categories, courtesy of SunLabs and Last.fm.&lt;/p&gt;
+
+&lt;p&gt;Comparing the two sources, you get a better idea of what APML does to Attention Profile data. Here's a diagram of the schema for APML:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://farm4.static.flickr.com/3152/2636182051_2beb83f36a_o_d.png" alt="APML schema" /&gt;&lt;/p&gt;
+
+&lt;p&gt;If you like all the juicy details, &lt;a href="http://apml.pbwiki.com/"&gt;here you go&lt;/a&gt;. In the meantime, I'll give you a quick runthrough. &lt;/p&gt;
+
+&lt;p&gt;The head element contains some basic descriptive data about the Attention Data, who it belongs to (the email), what application / site generated it, and when. Then in the Body element, we have 2 sub-elements; profile, and applications. Profile is where the real meat is, it's essentially a grouping of the Attention Profile data, in my example Last.fm provided a list of all the music I like, and the music I have listened to in the last week.&lt;/p&gt;
+
+&lt;p&gt;The Profile element contains 2 sub-elements; ExplicitData, ImplicitData. Explicit and Implicit Data are similar in their schema, meaning that they store the same kind of data, but the difference is this; Explicit data is data that the user generated and gave to the application/site (in my last.fm example, that is the list of musicians I listened to), and Implicit data is data that the application generated (the list of music categories that I liked). I tell last.fm what artists I like (Explicit), and last.fm tells me what music categories I listen to (Implicit).&lt;/p&gt;
+
+&lt;p&gt;The Explicit/Implicit data element contains 2 sub-elements; concepts, and sources. Concepts are a collection of elements representing the thing that you are interested in, such as a music artist, and a value representing your level of interest in that item. The value is ranked from 1 to 0, with 1 being the thing which you are most interested in, and everything else being compared against that top concept. Sources are a collection of the sources of the data stored in concepts, such as blog sites, web applications, etc.&lt;/p&gt;
+
+&lt;p&gt;Jumping up a couple of levels, the Application element is used to store information about the application which generated the APML file, as well as any meta-data that the application carries with it. I have to put my hands up here and admit that I don't fully understand this element, so you're best bet is to flick through the juicy details rather than take my vague description as gospel.&lt;/p&gt;
+
+&lt;h2&gt;Why its good&lt;/h2&gt;
+
+&lt;p&gt;All APML does essentially is add structure to information about what we as people are interested in, which for its own sake seems a rather pointless venture. However, as Orwell once said, knowledge is power, and what APML offers is a number of opportunities to turn an excess product of web 2.0 into a commodity of value.&lt;/p&gt;
+
+&lt;p&gt;Finding out what stuff people are interested in and organising that information has proven to be useful information to businesses, just ask Tesco why they place beer next to nappies*. Web 2.0 start-ups are collecting a massive amount of this raw data about their users, but not necessarily putting it to full use.&lt;/p&gt;
+
+&lt;p&gt;But who's buying the data? That's where I get creative and illustrate to you a business idea that I think could work for an APML analytics service...&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://farm4.static.flickr.com/3238/2809084336_5bb2ee96c0_o_d.png" alt="APML business idea" /&gt;&lt;/p&gt;
+
+&lt;p&gt;This diagram might be worth 1000 words, but I'll explain it anyway (accessibility ; ) ). Various web services which collect data about their users convert that data to APML, and post it to us. We take it, store it in a big database alongside data from other providers, and then do 3 things with that data:&lt;/p&gt;
+
+&lt;p&gt;1 - Provide an analytics service to interested 3rd parties, advertisers and publishers to analyse a large data-set and spot interest patterns across a whole range of consumer products (nappies and beer?).&lt;/p&gt;
+
+&lt;p&gt;2 - Provide a recommendation engine service to interested web services looking to pool a large data-set to get highly-accuracy suggestions to users.&lt;/p&gt;
+
+&lt;p&gt;3 - Provide (and this is where I shoot myself in the foot) an Advertising Management service that suggests the most relevant ads based on the user's APML data across various services.&lt;/p&gt;
+
+&lt;p&gt;The general idea for the revenue stream here would be to charge for these 3 individual services, and apportion a percentage of that revenue to the APML data providers, based on how much of their data was used by the customer. That's really all there is to it. &lt;/p&gt;
+
+&lt;h2&gt;Summary&lt;/h2&gt;
+
+&lt;p&gt;APML helps to standardise data about what users are interested in, and in doing this, an opportunity might be open to build a web-based service that can sort all of that data and spit it out into a neat little analytics service for 3rd parties to analyse to bits, alongside the recommendation engine to serve to interested web services, as well as the (choke) Ad management service to suggest relevant ads. All in all, this could be a way to provide those web 2.0 services with a revenue stream where they provide a web service with APML, and get money back in return.&lt;/p&gt;
+
+&lt;p&gt;To explain the nappies and beer reference, Tesco's loyalty card scheme provides a wealth of information about consumer purchase patterns, one of which was that men in their 30's would be visiting their stores on a Friday night to buy nappies of all things (as my sister's partner must be finding out). They strategically placed beer next to nappies, and boosted their sales.&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://blog.new-bamboo.co.uk/">
+    <author>
+      <name>damien</name>
+    </author>
+    <id>tag:blog.new-bamboo.co.uk,2008-08-10:4931</id>
+    <published>2008-08-10T15:37:00Z</published>
+    <updated>2008-08-10T15:38:47Z</updated>
+    <link href="http://blog.new-bamboo.co.uk/2008/8/10/bambinos-our-tumblog" rel="alternate" type="text/html" />
+    <title>Bambinos: our tumblog</title>
+<content type="html">
+            &lt;p&gt;A lot goes on here, believe me. Not everything is worthy of a full post though, so we've been running a tumblog internally for a little while. &lt;a href="http://bambinos.tumblr.com/"&gt;Bambinos&lt;/a&gt; is where all those useful code snippets and links go. If you enjoy the posts here I'd certainly recommend you &lt;a href="http://feeds.feedburner.com/bambinos"&gt;subscribe&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Some recent picks from the archive:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://bambinos.tumblr.com/post/44320406/hangup-meetings-an-improvement-on-xps-stand-up"&gt;HangUp Meetings&lt;/a&gt; - An improvement on XP’s stand-up meeting...&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://bambinos.tumblr.com/post/43059473/picture-bong"&gt;Picture Bong&lt;/a&gt; - Graphs for the Bong benchmarking tool...&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://bambinos.tumblr.com/post/42774103/manec2"&gt;ManEC2&lt;/a&gt; - Keep tracks of all those EC2 instances you have...&lt;/li&gt;
+&lt;/ul&gt;
+          </content>  </entry>
+  <entry xml:base="http://blog.new-bamboo.co.uk/">
+    <author>
+      <name>matt</name>
+    </author>
+    <id>tag:blog.new-bamboo.co.uk,2008-07-04:3313</id>
+    <published>2008-07-04T18:23:00Z</published>
+    <updated>2008-08-21T16:45:04Z</updated>
+    <category term="merb" />
+    <category term="Merb" />
+    <link href="http://blog.new-bamboo.co.uk/2008/7/4/supersexy-forms-for-merb" rel="alternate" type="text/html" />
+    <title>Sexy Forms for Merb</title>
+<content type="html">
+            &lt;p&gt;I've written a little lib which piggy backs on the standard merb form helpers to give you nicer looking forms with help from Andy and Martyn.&lt;/p&gt;
+
+&lt;p&gt;We weren't happy with our forms and we were writing too much code. So we wrapped some goodies around the merb form helpers. We've got notes, inline errors, required / not required formatting, and cancel buttons. The API is so minimal you won't be able to resist.&lt;/p&gt;
+
+&lt;p&gt;Here's an example of the ruby code, the generated HTML, and what it looks like with some sexy CSS:&lt;/p&gt;
+
+&lt;h2&gt;Example Code&lt;/h2&gt;
+
+&lt;h3&gt;Ruby&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class="ruby"&gt;&amp;lt;%= field(:text, :nickname, :required =&amp;gt; true, :note =&amp;gt; &amp;quot;You'll be known by this on the site. Don't use your real name. It has to be unique, and you can't change it later.&amp;quot;)%&amp;gt;
+&amp;lt;%= field(:password, :password, :required =&amp;gt; true)%&amp;gt;
+&amp;lt;%= field(:password, :password_confirmation, :required =&amp;gt; true, :note =&amp;gt; &amp;quot;Type the same password again, just to make sure we've got it right&amp;quot; )%&amp;gt;
+&amp;lt;%= field(:checkbox, :terms_and_conditions, :required =&amp;gt; true, :value =&amp;gt; true, :label=&amp;gt;&amp;quot;I accept the terms and conditions&amp;quot;)%&amp;gt;
+&amp;lt;%= form_submit &amp;quot;Sign Up!&amp;quot; %&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;Html Generated&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class="html"&gt;&amp;lt;div class=&amp;quot;field password required&amp;quot;&amp;gt;
+&amp;lt;label for=&amp;quot;user_password&amp;quot;&amp;gt;Password&amp;lt;/label&amp;gt;
+&amp;lt;input type=&amp;quot;password&amp;quot; class=&amp;quot;password&amp;quot; name=&amp;quot;user[password]&amp;quot; id=&amp;quot;user_password&amp;quot; /&amp;gt;
+&amp;lt;/div&amp;gt;
+
+&amp;lt;div class=&amp;quot;field password required&amp;quot;&amp;gt;
+&amp;lt;label for=&amp;quot;user_password_confirmation&amp;quot;&amp;gt;Password confirmation&amp;lt;/label&amp;gt;
+&amp;lt;input type=&amp;quot;password&amp;quot; class=&amp;quot;password&amp;quot; name=&amp;quot;user[password_confirmation]&amp;quot; id=
+&amp;quot;user_password_confirmation&amp;quot; /&amp;gt;
+
+&amp;lt;p class=&amp;quot;note&amp;quot;&amp;gt;Type the same password again, just to make sure we've got it right
+&amp;lt;abbr title=&amp;quot;smile&amp;quot;&amp;gt;: )&amp;lt;/abbr&amp;gt;&amp;lt;/p&amp;gt;
+&amp;lt;/div&amp;gt;
+
+&amp;lt;div class=&amp;quot;field checkbox required&amp;quot;&amp;gt;
+&amp;lt;input type=&amp;quot;hidden&amp;quot; class=&amp;quot;hidden&amp;quot; name=&amp;quot;user[terms_and_conditions]&amp;quot; value=&amp;quot;0&amp;quot; /&amp;gt;
+&amp;lt;input type=&amp;quot;checkbox&amp;quot; class=&amp;quot;checkbox&amp;quot; name=&amp;quot;user[terms_and_conditions]&amp;quot; value=&amp;quot;1&amp;quot;
+id=&amp;quot;user_terms_and_conditions&amp;quot; /&amp;gt;
+&amp;lt;label for=&amp;quot;user_terms_and_conditions&amp;quot;&amp;gt;I accept the terms and conditions&amp;lt;/label&amp;gt;
+&amp;lt;/div&amp;gt;
+
+&amp;lt;div class=&amp;quot;field controls&amp;quot;&amp;gt;
+&amp;lt;button type=&amp;quot;submit&amp;quot; class=&amp;quot;positive&amp;quot;&amp;gt;Sign Up!&amp;lt;/button&amp;gt;
+&amp;lt;/div&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;Html with Errors&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;div class=&amp;quot;field error password required&amp;quot;&amp;gt;
+&amp;lt;label for=&amp;quot;user_password&amp;quot;&amp;gt;Password&amp;lt;/label&amp;gt;
+&amp;lt;input type=&amp;quot;password&amp;quot; class=&amp;quot;error password&amp;quot; name=&amp;quot;user[password]&amp;quot; id=&amp;quot;user_password&amp;quot; /&amp;gt;
+
+&amp;lt;p class=&amp;quot;error&amp;quot;&amp;gt;can't be blank and is too short (minimum is 4 characters)&amp;lt;/p&amp;gt;
+&amp;lt;/div&amp;gt;
+
+&amp;lt;div class=&amp;quot;field error password required&amp;quot;&amp;gt;
+&amp;lt;label for=&amp;quot;user_password_confirmation&amp;quot;&amp;gt;Password confirmation&amp;lt;/label&amp;gt;
+&amp;lt;input type=&amp;quot;password&amp;quot; class=&amp;quot;error password&amp;quot; name=&amp;quot;user[password_confirmation]&amp;quot; id=&amp;quot;user_password_confirmation&amp;quot; /&amp;gt;
+
+&amp;lt;p class=&amp;quot;note&amp;quot;&amp;gt;Type the same password again, just to make sure we've got it right
+&amp;lt;abbr title=&amp;quot;smile&amp;quot;&amp;gt;: )&amp;lt;/abbr&amp;gt;&amp;lt;/p&amp;gt;
+
+&amp;lt;p class=&amp;quot;error&amp;quot;&amp;gt;can't be blank&amp;lt;/p&amp;gt;
+&amp;lt;/div&amp;gt;
+
+&amp;lt;div class=&amp;quot;field error checkbox required&amp;quot;&amp;gt;
+&amp;lt;input type=&amp;quot;hidden&amp;quot; class=&amp;quot;hidden&amp;quot; name=&amp;quot;user[terms_and_conditions]&amp;quot; value=&amp;quot;0&amp;quot; /&amp;gt;
+&amp;lt;input type=&amp;quot;checkbox&amp;quot; class=&amp;quot;error checkbox&amp;quot; name=&amp;quot;user[terms_and_conditions]&amp;quot; value=&amp;quot;1&amp;quot; id=&amp;quot;user_terms_and_conditions&amp;quot; /&amp;gt;
+&amp;lt;label for=&amp;quot;user_terms_and_conditions&amp;quot;&amp;gt;I accept the terms and conditions&amp;lt;/label&amp;gt;
+
+&amp;lt;p class=&amp;quot;error&amp;quot;&amp;gt;must be accepted&amp;lt;/p&amp;gt;
+&amp;lt;/div&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;Sexy Form&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src="http://blog.new-bamboo.co.uk/assets/2008/7/4/sexyform.png" alt="sexyform" /&gt;&lt;/p&gt;
+
+&lt;p&gt;You can be the judge of the sexyness of these forms, but they are much nicer than the default error message in my opinion.&lt;/p&gt;
+
+&lt;h2&gt;Code/CSS&lt;/h2&gt;
+
+&lt;p&gt;Code is licensed under the MIT License, and under no guarantee that it will not break if they change the external API for form helpers. &lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="http://www.friendpaste.com/F4j3Q3VM"&gt;For Merb and AR&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="http://www.friendpaste.com/NZrQcCjb"&gt;For Merb and DM&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="http://www.friendpaste.com/9aFfN4ce"&gt;The CSS&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Install&lt;/h3&gt;
+
+&lt;p&gt;Add the file in your lib folder, add the dependency in your init.rb and then include in your global helpers.&lt;/p&gt;
+
+&lt;p&gt;Enjoy!&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://blog.new-bamboo.co.uk/">
+    <author>
+      <name>martyn</name>
+    </author>
+    <id>tag:blog.new-bamboo.co.uk,2008-06-06:746</id>
+    <published>2008-06-06T14:55:00Z</published>
+    <updated>2008-06-06T14:55:43Z</updated>
+    <link href="http://blog.new-bamboo.co.uk/2008/6/6/api_cache" rel="alternate" type="text/html" />
+    <title>APICache</title>
+<content type="html">
+            &lt;p&gt;You want to use the Twitter API but you don't want to die? I have the solution to API caching:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;APICache.get("http://twitter.com/statuses/public_timeline.rss")
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You get the following functionality for free:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;New data every 10 minutes&lt;/li&gt;
+&lt;li&gt;If the twitter API dies then keep using the last data received for a day. Then assume it's invalid and announce that Twitter has FAILED (optional).&lt;/li&gt;
+&lt;li&gt;Don't hit the rate limit (70 requests per 60 minutes)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So what exactly does &lt;code&gt;APICache&lt;/code&gt; do? Given cached data less than 10 minutes old, it returns that. Otherwise, assuming it didn't try to request the URL within the last minute (to avoid the rate limit), it makes a get request to the Twitter API. If the Twitter API timeouts or doesn't return a 2xx code (very likely) we're still fine: it just returns the last data fetched (as long as it's less than a day old). In the exceptional case that all is lost and no data can be returned, it raises an &lt;code&gt;APICache::NotAvailableError&lt;/code&gt; exception. You're responsible for catching this exception and complaining bitterly to the internet.&lt;/p&gt;
+
+&lt;p&gt;All very simple. What if you need to do something more complicated? Say you need authentication or the silly API you're using doesn't follow a nice convention of returning 2xx for success. Then you need a block:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;APICache.get('twitter_replies', :cache =&amp;gt; 3600) do
+  Net::HTTP.start('twitter.com') do |http|
+    req = Net::HTTP::Get.new('/statuses/replies.xml')
+    req.basic_auth 'username', 'password'
+    response = http.request(req)
+    case response
+    when Net::HTTPSuccess
+      # 2xx response code
+      response.body
+    else
+      raise APICache::Invalid
+    end
+  end
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;All the caching is still handled for you. If you supply a block then the first argument to &lt;code&gt;APICache.get&lt;/code&gt; is assumed to be a unique key rather than a URL. Throwing &lt;code&gt;APICache::Invalid&lt;/code&gt; signals to &lt;code&gt;APICache&lt;/code&gt; that the request was not successful.&lt;/p&gt;
+
+&lt;p&gt;You can send any of the following options to &lt;code&gt;APICache.get(url, options = {}, &amp;amp;block)&lt;/code&gt;. These are the default values (times are all in seconds):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{
+  :cache =&amp;gt; 600,    # 10 minutes  After this time fetch new data
+  :valid =&amp;gt; 86400,  # 1 day       Maximum time to use old data
+                    #             :forever is a valid option
+  :period =&amp;gt; 60,    # 1 minute    Maximum frequency to call API
+  :timeout =&amp;gt; 5     # 5 seconds   API response timeout
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Before using the APICache you need to initialize the caches. In merb, for example, put this in your &lt;code&gt;init.rb&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;APICache.start
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Currently there are two stores available: &lt;code&gt;MemcacheStore&lt;/code&gt; and &lt;code&gt;MemoryStore&lt;/code&gt;. &lt;code&gt;MemcacheStore&lt;/code&gt; is the default but if you'd like to use &lt;code&gt;MemoryStore&lt;/code&gt;, or another store - see &lt;code&gt;AbstractStore&lt;/code&gt;, just supply it to the start method:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;APICache.start(APICache::MemoryStore)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I suppose you'll want to get your hands on this magic. For now just grab the source from &lt;a href="http://github.com/mloughran/api_cache/tree/master"&gt;http://github.com/mloughran/api_cache/tree/master&lt;/a&gt; and &lt;code&gt;rake install&lt;/code&gt;. I'll get a gem sorted soon.&lt;/p&gt;
+
+&lt;p&gt;This is the irb quickstart so that you don't have to re-parse the above:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;require 'rubygems'
+require 'api_cache'
+APICache.start(APICache::MemoryStore)
+APICache.get("http://twitter.com/statuses/public_timeline.rss")
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Please send feedback if you think of any other functionality that would be handy.&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://blog.new-bamboo.co.uk/">
+    <author>
+      <name>gwyn</name>
+    </author>
+    <id>tag:blog.new-bamboo.co.uk,2008-04-23:673</id>
+    <published>2008-04-23T08:38:00Z</published>
+    <updated>2008-04-23T08:39:44Z</updated>
+    <link href="http://blog.new-bamboo.co.uk/2008/4/23/integration-testing-merb-with-webrat" rel="alternate" type="text/html" />
+    <title>Integration testing Merb with Webrat</title>
+<content type="html">
+            &lt;p&gt;&lt;a href="http://rspec.info/"&gt;RSpec stories&lt;/a&gt; are a way of doing integration and acceptance testing using plaintext executable tests. You can use them in Merb as well as Rails. Here's how.&lt;/p&gt;
+
+&lt;h2&gt;Setting up&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href="http://merbivore.com/get_merb.html#trunk"&gt;Install edge Merb&lt;/a&gt;; the latest gem (0.9.2) will not work. You need merb-core, merb-more, and merb-plugins.&lt;/p&gt;
+
+&lt;p&gt;Merb-plugins gives you the merb_stories gem, so you don't need to install that separately.&lt;/p&gt;
+
+&lt;p&gt;Add this line to your app's config/environments/test.rb:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;dependencies "merb_stories", "webrat"
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;(Note that merb_stories' README file is wrong about this, for now - and the generator will create a dependency on merb-rspec, which no longer exists. &lt;a href="http://github.com/gwynm/merb-plugins/tree/master"&gt;My fork&lt;/a&gt; fixes this.)&lt;/p&gt;
+
+&lt;p&gt;Now generate your story:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;merb-gen story mystory
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now run your story:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;rake story\[mystory\]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Yes, you must include the square brackets, and you have to escape them.&lt;/p&gt;
+
+&lt;h2&gt;Writing stories&lt;/h2&gt;
+
+&lt;p&gt;Now fill out your story. There are some differences to Rails' versions. The best places to look for help are in the Merb code itself:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;spec/public/test/controller _matchers _spec.rb&lt;/li&gt;
+&lt;li&gt;lib/merb-core/test/helpers&lt;/li&gt;
+&lt;li&gt;lib/merb-core/test/matchers&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;To start you off, here are the steps for a simple integration test:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;steps_for(:homepage) do
+  When("I visit the root") do
+    @mycontroller = get("/")
+  end
+  Then("I should see the home page") do
+    @mycontroller.should respond_successfully
+    @mycontroller.body.should contain("Hello") 
+  end    
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;As you write your tests, don't trust Merb absolutely. Some things are wrong, don't work, or aren't meant to work [yet]. As part of debugging, look at the Merb source, and &lt;a href="http://gweezlebur.com/2008/2/9/contributing-to-merb-part-2"&gt;fork it and fix it&lt;/a&gt; if needed. &lt;/p&gt;
+
+&lt;h2&gt;Adding Webrat&lt;/h2&gt;
+
+&lt;p&gt;Webrat lets you write integration tests that are even closer to natural language. You can say things like:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;visits '/auth/login'
+fills_in 'username',:with=&amp;gt;"bob"
+fills_in 'password',:with=&amp;gt;"hunter2"
+clicks_button "login"
+response.should be_successful
+...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I've &lt;a href="http://github.com/gwynm/webrat/tree/master"&gt;forked Webrat to add Merb support&lt;/a&gt;. &lt;/p&gt;
+
+&lt;p&gt;To get started, &lt;a href="http://gwynmorfey.com/categories/1-on-the-job/articles/128-git-github-and-rubygems-quickstart"&gt;clone it, build the gem and install it&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;You'll also need to make sure you're using the memory session store (for testing), or your sessions won't be preserved:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Merb::Config.use do |c|
+  c[:session_store] = 'memory' 
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;Continuous integration&lt;/h2&gt;
+
+&lt;p&gt;Autotest will run your specs continuously, but won't run your stories. You can fix this, but stories run very slowly, since they use the full stack. At the very least, though, you want to run your stories after you deploy, in case you have "works on dev machine, dies on production" problems.&lt;/p&gt;
+
+&lt;p&gt;Add this to deploy.rb:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;namespace :deploy do
+  task :after_deploy do
+    run_remote_tests
+  end
+  desc "Run tests on remote server"
+  task :run_remote_tests do
+    run "cd #{deploy_to}/current &amp;amp;&amp;amp; rake spec"
+    run "cd #{deploy_to}/current &amp;amp;&amp;amp; rake story[all] MERB_ENV=test"
+  end 
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This will fail if you're using &lt;a href="http://blog.new-bamboo.co.uk/2008/3/14/freeze-gems-in-a-merb-application"&gt;Vendor Everything&lt;/a&gt; like us - it won't be able to find merb-core. To fix it, replace stories/stories/all.rb:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;env = ENV['MERB_ENV'] || 'test'
+require 'rubygems'
+Gem.clear_paths
+Gem.path.unshift(File.join(File.dirname(__FILE__), "..","..","gems"))
+
+require 'merb-core'
+Merb.load_dependencies(:environment =&amp;gt; env)
+
+require 'spec'
+Merb.start_environment(:testing =&amp;gt; true, :adapter =&amp;gt; 'runner', :environment =&amp;gt; env)
+
+dir = File.dirname(__FILE__)
+Dir[File.expand_path("#{dir}/**/*.rb")].uniq.each do |file|
+  require file
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You'll have the same problem with specs. Edit spec/spec_helper.rb:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Gem.clear_paths
+Gem.path.unshift(File.join(File.dirname(__FILE__), "..","gems"))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now you have natural-language integration tests that run automatically on deployment. Sweet.&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://blog.new-bamboo.co.uk/">
+    <author>
+      <name>matt</name>
+    </author>
+    <id>tag:blog.new-bamboo.co.uk,2008-04-18:667</id>
+    <published>2008-04-18T17:08:00Z</published>
+    <updated>2008-04-19T11:49:03Z</updated>
+    <link href="http://blog.new-bamboo.co.uk/2008/4/18/merb-book-part-3" rel="alternate" type="text/html" />
+    <title>Merb Book (Part 3)</title>
+<summary type="html">&lt;p&gt;Here we are going cover the install instructions for Merb, RSpec, and DataMapper (0.9) and how to create a bare application. The next post will cover aspects of the framework and introduce the example application we will be building.&lt;/p&gt;</summary><content type="html">
+            &lt;p&gt;Here we are going cover the install instructions for Merb, RSpec, and DataMapper (0.9) and how to create a bare application. The next post will cover aspects of the framework and introduce the example application we will be building.&lt;/p&gt;
+&lt;h2&gt;Getting Started&lt;/h2&gt;
+
+&lt;p&gt;Before we get started I'm going to assume you have the following installed:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.ruby-lang.org/"&gt;Ruby&lt;/a&gt; &lt;/li&gt;
+&lt;li&gt;A DBMS (we'll use &lt;a href="http://mysql.org/"&gt;MySQL&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://subversion.tigris.org/"&gt;SVN&lt;/a&gt; and &lt;a href="http://git.or.cz/"&gt;git&lt;/a&gt; (on OSX, port install &lt;code&gt;git-core&lt;/code&gt; worked for me)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Installing Merb&lt;/h3&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;If you have an older version of Merb (&amp;lt;0.9.2) you should remove the all the gems before continuing. Use &lt;code&gt;gem list&lt;/code&gt; to see your installed gems.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Installing the &lt;code&gt;merb&lt;/code&gt; gems should be as simple as:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo gem install merb --source http://merbivore.org
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Unfortunately&lt;/strong&gt; we are living right on the edge of development so we'll need to get down and dirty with building our own gems from source. Luckiliy this is much easier than it sounds... &lt;/p&gt;
+
+&lt;p&gt;Start by installing the &lt;code&gt;gem&lt;/code&gt; dependancies:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo gem install rack mongrel json_pure erubis mime-types rspec hpricot \
+    mocha rubigen haml markaby mailfactory ruby2ruby
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then download the &lt;code&gt;merb&lt;/code&gt; source:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git clone git://github.com/wycats/merb-core.git
+git clone git://github.com/wycats/merb-plugins.git
+git clone git://github.com/wycats/merb-more.git
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then install the gems via rake:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cd merb-core ; rake install ; cd ..    
+cd merb-more ; rake install ; cd ..
+cd merb-plugins; rake install ; cd ..
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The &lt;code&gt;json_pure&lt;/code&gt; gem is needed for merb to install on &lt;a href="http://jruby.codehaus.org/"&gt;JRuby&lt;/a&gt; (Java implementation of a Ruby Interpreter), otherwise use the &lt;code&gt;json&lt;/code&gt; gem as it's faster.&lt;/p&gt;
+
+&lt;p&gt;Merb is ORM agnostic, but as the title of this book suggests we'll be using DataMapper.
+Should you want to stick with ActiveRecord or play with Sequel, check the &lt;a href="http://merb.rubyforge.org/files/README.html"&gt;merb documentation&lt;/a&gt; for install instructions.&lt;/p&gt;
+
+&lt;h3&gt;Installing DataMapper&lt;/h3&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;DataMapper is splitting into &lt;code&gt;dm-core&lt;/code&gt; and &lt;code&gt;dm-more&lt;/code&gt; so &lt;code&gt;datamapper 0.3&lt;/code&gt; will be outdated soon.
+If you have an older version of &lt;code&gt;datamapper&lt;/code&gt;, &lt;code&gt;data_objects&lt;/code&gt;, or &lt;code&gt;do_mysql&lt;/code&gt;, &lt;code&gt;merb_datamapper&lt;/code&gt; (&amp;lt; 0.9) you should remove them first. Remove the &lt;code&gt;merb_datamapper&lt;/code&gt; gem  before installing &lt;code&gt;dm-merb&lt;/code&gt; within &lt;code&gt;dm-more&lt;/code&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;We will use MySQL in the following example, but you can use either sqlite3 or PostgreSQL, just install the appropriate gem. You will also need to ensure that MySQL is on your system path for the gem to install correctly.&lt;/p&gt;
+
+&lt;p&gt;(TODO) - gem instructions for DM 0.9 once they are released&lt;/p&gt;
+
+&lt;p&gt;To get the gems from source:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git clone git://github.com/sam/do.git
+
+cd do
+cd data_objects
+rake install ; cd ..
+cd do_mysql  # || do_postgres || do_sqlite3
+rake install
+
+git clone git://github.com/sam/dm-core.git
+git clone git://github.com/sam/dm-more.git
+
+cd dm-core ; rake install ; cd ..
+cd dm-more
+cd dm-merb ; rake install ; cd ..    
+cd dm-validations ; rake install ; cd ..
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To update a gem from source, run &lt;code&gt;git pull&lt;/code&gt; and &lt;code&gt;rake install&lt;/code&gt; again.&lt;/p&gt;
+
+&lt;h3&gt;Install RSpec&lt;/h3&gt;
+
+&lt;p&gt;The &lt;code&gt;rspec&lt;/code&gt; gem was installed in the Merb section above. However, if for some reason you didn't install it there, or want to grab the it from source, run the following commands:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;gem install rspec
+svn checkout http://rspec.rubyforge.org/svn/trunk rspec_trunk
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;Creating an App&lt;/h2&gt;
+
+&lt;p&gt;Now that we've got all of that installed, time to create a test Merb application. Merb follows the same naming convention for projects as rails, so 'my_test_app' and 'Test2' are valid names but 'T 3' is not (they need to be valid SQL table names).&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;merb-gen app test
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This will generate an empty Merb app, so lets go in and take a look. You'll notice that the directory structure is similar to Rails, with a few differences.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# expected output
+RubiGen::Scripts::Generate
+  create  app
+  create  app/controllers
+  create  app/helpers
+  create  app/views
+  create  app/views/exceptions
+  create  app/views/layout
+  create  autotest
+  create  config
+  create  config/environments
+  create  public
+  create  public/images
+  create  public/stylesheets
+  create  spec
+  create  app/controllers/application.rb
+  create  app/controllers/exceptions.rb
+  create  app/helpers/global_helpers.rb
+  create  app/views/exceptions/internal_server_error.html.erb
+  create  app/views/exceptions/not_acceptable.html.erb
+  create  app/views/exceptions/not_found.html.erb
+  create  app/views/layout/application.html.erb
+  create  autotest/discover.rb
+  create  autotest/merb.rb
+  create  autotest/merb_rspec.rb
+  create  config/rack.rb
+  create  config/router.rb
+  create  config/init.rb
+  create  config/environments/development.rb
+  create  config/environments/production.rb
+  create  config/environments/rake.rb
+  create  config/environments/test.rb
+  create  public/merb.fcgi
+  create  public/images/merb.jpg
+  create  public/stylesheets/master.css
+  create  spec/spec.opts
+  create  spec/spec_helper.rb
+  create  /Rakefile
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;Configuring Merb&lt;/h3&gt;
+
+&lt;p&gt;Before we get the server running, you'll need to edit the init.rb file and un-comment the following lines (this is only necessary if you need to connect to a database, which we do in our case):&lt;/p&gt;
+
+&lt;p&gt;config/init.rb&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;use_orm :dm_core
+
+use_test :rspec
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Typing &lt;code&gt;merb&lt;/code&gt; now in your command line will try and start the server.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Started merb_init.rb ...
+No database.yml file found in /Users/work/merb/example_one/config.
+A sample file was created called database.sample.yml for you to copy and edit.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;As you can see, we forgot to set up the database. A sample file has helpfully been generated for us. Edit this and rename it to database.yml:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# This is a sample database file for the DataMapper ORM
+development:
+   adapter: mysql
+   database: test
+   username: root
+   password: 
+   host: localhost
+   socket: /tmp/mysql.sock
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Don't forget to specify your socket, if you do not know it's location, you can find it by typing:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mysql_config --socket
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Starting Merb again shows that everything is running okay.&lt;/p&gt;
+
+&lt;p&gt;The following command will give you access to the Merb console:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;merb -i
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You'll notice Merb runs on port 4000, but this can be changed with flag &lt;code&gt;-p [port number]&lt;/code&gt;. More options can be found by typing:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;merb --help
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can even run Merb with any application server that supports rack (thin, evented_mongrel, fcgi, mongrel, and webrick):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;merb -a thin
+&lt;/code&gt;&lt;/pre&gt;
+          </content>  </entry>
+  <entry xml:base="http://blog.new-bamboo.co.uk/">
+    <author>
+      <name>matt</name>
+    </author>
+    <id>tag:blog.new-bamboo.co.uk,2008-04-17:666</id>
+    <published>2008-04-17T22:02:00Z</published>
+    <updated>2008-04-17T22:11:17Z</updated>
+    <link href="http://blog.new-bamboo.co.uk/2008/4/17/merb-and-datamapper-book-part-2" rel="alternate" type="text/html" />
+    <title>Merb and DataMapper Book (Part 2)</title>
+<summary type="html">&lt;p&gt;Here is the next part of the &lt;a href="http://blog.new-bamboo.co.uk/2008/4/9/life-on-the-edge-with-merb-datamapper-rspec-part-1"&gt;Merb, DataMapper, RSpec book&lt;/a&gt;. I was planning on releasing more today but I am rewriting the examples for DataMapper 0.9. There is a example app for DataMapper 0.3 in the &lt;a href="http://github.com/deimos1986/book_mdar/tree/master"&gt;git repository of the book&lt;/a&gt;, if you can't wait to play with it. &lt;/p&gt;</summary><content type="html">
+            &lt;p&gt;Here is the next part of the &lt;a href="http://blog.new-bamboo.co.uk/2008/4/9/life-on-the-edge-with-merb-datamapper-rspec-part-1"&gt;Merb, DataMapper, RSpec book&lt;/a&gt;. I was planning on releasing more today but I am rewriting the examples for DataMapper 0.9. There is a example app for DataMapper 0.3 in the &lt;a href="http://github.com/deimos1986/book_mdar/tree/master"&gt;git repository of the book&lt;/a&gt;, if you can't wait to play with it. &lt;/p&gt;
+&lt;h2&gt;Communities&lt;/h2&gt;
+
+&lt;blockquote&gt;
+    &lt;p&gt;i'm going to become rich and famous after i invent a device that allows you to stab people in the face over the internet - &amp;lt;[SA]HatfulOfHollow&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The internet is a scary place, but fortunately the Ruby community is very friendly. All these open source projects rely on the contributions from the community, if something needs fixing consider helping out.&lt;/p&gt;
+
+&lt;h3&gt;Websites&lt;/h3&gt;
+
+&lt;p&gt;These are the first places to go for help. Check out the API documentation and see if you can find your answer there.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://merbivore.com/"&gt;http://merbivore.com/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://datamapper.org/"&gt;http://datamapper.org/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://rspec.info/"&gt;http://rspec.info/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;IRC Channels - freenode.net&lt;/h3&gt;
+
+&lt;p&gt;If you can't find what you were looking for in the API docs then you could join the respective IRC channel on FreeNode and ask your question in there, you may need to wait for a response. &lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="irc://irc.freenode.net/merb"&gt;#merb&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="irc://irc.freenode.net/datamapper"&gt;#datamapper&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="irc://irc.freenode.net/rspec"&gt;#rspec&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Mailing Lists&lt;/h3&gt;
+
+&lt;p&gt;The mailing lists are another good way to get help, the response time isn't as fast as asking in an irc channel but it can be useful to do a search to see if someone else has had your problem before.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://groups.google.com/group/merb/"&gt;http://groups.google.com/group/merb/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://groups.google.com/group/datamapper/"&gt;http://groups.google.com/group/datamapper/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://rubyforge.org/pipermail/rspec-users/"&gt;http://rubyforge.org/pipermail/rspec-users/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Bug Trackers&lt;/h3&gt;
+
+&lt;p&gt;Your problem may or may not be a known bug. Search the bug trackers and submit a ticket if its not there already (don't forget to include a description and test cases, or better yet: a patch!). You may find the ticket is solved in the edge version.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://merb.lighthouseapp.com/"&gt;http://merb.lighthouseapp.com/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://wm.lighthouseapp.com/projects/4819-datamapper/overview"&gt;http://wm.lighthouseapp.com/projects/4819-datamapper/overview&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://wm.lighthouseapp.com/projects/4819-datamapper/overview"&gt;http://rspec.lighthouseapp.com/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Wikis&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://wiki.merbivore.com/"&gt;http://wiki.merbivore.com/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://wiki.datamapper.org/doku.php?id=start"&gt;http://wiki.datamapper.org/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Next we'll cover installing the gems, and generating a bare project.&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://blog.new-bamboo.co.uk/">
+    <author>
+      <name>matt</name>
+    </author>
+    <id>tag:blog.new-bamboo.co.uk,2008-04-09:660</id>
+    <published>2008-04-09T14:11:00Z</published>
+    <updated>2008-04-09T14:12:01Z</updated>
+    <link href="http://blog.new-bamboo.co.uk/2008/4/9/life-on-the-edge-with-merb-datamapper-rspec-part-1" rel="alternate" type="text/html" />
+    <title>Merb and DataMapper Book (Part 1)</title>
+<summary type="html">&lt;p&gt;When I started learning Merb and DataMapper I kept a collection of notes to help me keep up with these projects. These grew to the point that they couldn't fit nicely into a single text file. With contributions from others I started to put together a small &lt;a href="http://github.com/deimos1986/book_mdar/tree/master"&gt;book&lt;/a&gt; on developing web apps with Merb and DataMapper. I have decided to release it as we go. There is also a project in GitHub if you want to check it out and contribute. &lt;/p&gt;
+
+&lt;p&gt;So here we go (corrections and comments welcome):&lt;/p&gt;
+
+&lt;h2&gt;Life On The Edge With Merb, DataMapper &amp;amp; RSpec&lt;/h2&gt;</summary><content type="html">
+            &lt;p&gt;When I started learning Merb and DataMapper I kept a collection of notes to help me keep up with these projects. These grew to the point that they couldn't fit nicely into a single text file. With contributions from others I started to put together a small &lt;a href="http://github.com/deimos1986/book_mdar/tree/master"&gt;book&lt;/a&gt; on developing web apps with Merb and DataMapper. I have decided to release it as we go. There is also a project in GitHub if you want to check it out and contribute. &lt;/p&gt;
+
+&lt;p&gt;So here we go (corrections and comments welcome):&lt;/p&gt;
+
+&lt;h2&gt;Life On The Edge With Merb, DataMapper &amp;amp; RSpec&lt;/h2&gt;
+&lt;h2&gt;What's Merb, DataMapper &amp;amp; RSpec?&lt;/h2&gt;
+
+&lt;blockquote&gt;
+    &lt;p&gt;If you're not living on the edge, you're taking up too much room. - Alice Bartlett&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Merb, DataMapper and RSpec are all open source projects, which can be used for building kick-ass web applications. They are all in active development and it can be hard to keep up, but we'll try our best to keep up to date.&lt;/p&gt;
+
+&lt;h3&gt;&lt;a href="http://merbivore.com/"&gt;Merb&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;It's a relatively new framework (a bit like Ruby on Rails) and was created by &lt;a href="http://brainspl.at/"&gt;Ezra Zygmuntowicz&lt;/a&gt;.  Merb stands for Mongrel + ERB although now it supports the &lt;a href="http://rack.rubyforge.org/"&gt;rack webserver interface&lt;/a&gt; so it can user any web server that has rack support (Mongrel, Thin, ebb, etc).&lt;/p&gt;
+
+&lt;p&gt;If you know Ruby and have used Rails you're likely to get the hang of Merb quite easily. Noticeable differences from Merb to Rails are, it's stance on being less opinionated and it's approach to modularisation.&lt;/p&gt;
+
+&lt;p&gt;Merb is actually made up of a number of gems: &lt;code&gt;merb-core&lt;/code&gt;, &lt;code&gt;merb-more&lt;/code&gt; and &lt;code&gt;merb-plugins&lt;/code&gt;. This is so you can pick and choose the functionality you need. The &lt;code&gt;merb&lt;/code&gt; gem installs both &lt;code&gt;merb-core&lt;/code&gt; and &lt;code&gt;merb-more&lt;/code&gt; so you can get started straight away. The benefit of modularity is it's kept simple with additional functionality provided by gems.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;merb-core&lt;/code&gt; alone can be used as an upload server, to provide an API or to create a simple web app (a la &lt;a href="http://code.whytheluckystiff.net/camping/"&gt;camping&lt;/a&gt;) where the functionality of a fully fledged framework isn't necessary.&lt;/p&gt;
+
+&lt;h3&gt;&lt;a href="http://datamapper.org/"&gt;DataMapper&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;DataMapper is an Object-Relational Mapper (ORM) written in Ruby, by Sam Smoot. It's what we'll be using with Merb. It's possible to use the same ORM as Rails (ActiveRecord), but as there are plenty of examples of using ActiveRecord already I've chosen to use DataMapper.&lt;/p&gt;
+
+&lt;p&gt;It has some nice features which makes it faster than ActiveRecord in some cases. What really stands out for me is the way it handles database attributes. The schema, migrations and attributes are all defined in one place: your model. So you no longer have to look around in your database or other files to see what is defined.&lt;/p&gt;
+
+&lt;p&gt;DataMapper has some similarities with ActiveRecord. We will be highlighting the differences as we go along.&lt;/p&gt;
+
+&lt;h3&gt;&lt;a href="http://rspec.info/"&gt;RSpec&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;RSpec is a Behaviour Driven Development framework for Ruby. 
+Merb currently supports the Test::Unit and RSpec testing frameworks. As the specs for Merb and Datamapper are written in RSpec, we will be covering some aspects of RSpec but it will not be our main focus. &lt;/p&gt;
+
+&lt;h2&gt;What About Ruby On Rails?&lt;/h2&gt;
+
+&lt;blockquote&gt;
+    &lt;p&gt;[Merb is] Harder, Better, Faster, Stronger, to quote Daft Punk - Max Williams&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;So what's the big deal? We have Ruby on Rails and that's enough, isn't it? There is little doubt that Ruby on Rails has rocked the web application development world. You have to give credit where credit's due, but it can be unforgiving if you don't want to do things 'the Rails way'.&lt;/p&gt;
+
+&lt;p&gt;Where Rails is opinionated, Merb is agnostic. You can easily use your favourite ORM (ActiveRecord, DataMapper, Sequel) or none at all, Javascript Library and template language.&lt;/p&gt;
+
+&lt;p&gt;Merb also has super-fast routing and is thread-safe (If performant were a word, Merb would be it). The core functionality is kept separate from the other plugins and it uses less Ruby 'magic', which makes it easy to understand and hack.&lt;/p&gt;
+
+&lt;p&gt;Rails (and consequently Ruby) has received a lot of criticism for not being suitable for large scale web applications, which isn't necessarily true and Merb has been built from the outset to prove that Ruby is a viable language for building fast and scaleable web applications.&lt;/p&gt;
+
+&lt;p&gt;At the end of the day it's about choice. There are many new Ruby frameworks springing up, undoubtedly helped by the success of Rails, but in my opinion Merb shows the most promise as a Rails competitor.&lt;/p&gt;
+
+&lt;p&gt;If you'd like to take a look at some other frameworks these links should get you started:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://camping.rubyforge.org/files/README.html"&gt;http://camping.rubyforge.org/files/README.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.nitroproject.org/"&gt;http://www.nitroproject.org/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://ramaze.rubyforge.org/"&gt;http://ramaze.rubyforge.org/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://sinatra.rubyforge.org/"&gt;http://sinatra.rubyforge.org/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://halcyon.rubyforge.org/"&gt;http://halcyon.rubyforge.org/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://wisteria.swiftcore.org/"&gt;http://wisteria.swiftcore.org/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;So that's it for now, stay tuned for how to install/set-up merb and datamapper next... &lt;/p&gt;
+          </content>  </entry>
+</feed>

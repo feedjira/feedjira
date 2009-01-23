@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="http://feeds.feedburner.com/~d/styles/rss2full.xsl" type="text/xsl" media="screen"?><?xml-stylesheet href="http://feeds.feedburner.com/~d/styles/itemcontent.css" type="text/css" media="screen"?><rss xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" version="2.0">
+<channel>
+<title>sneer</title>
+<link>http://sneer.org/</link>
+<description />
+<copyright>Copyright 2009</copyright>
+<lastBuildDate>Thu, 22 Jan 2009 00:00:00 -0600</lastBuildDate>
+<generator>http://www.movabletype.org/?v=3.21</generator>
+<docs>http://blogs.law.harvard.edu/tech/rss</docs> 
+
+    <geo:lat>41.990631</geo:lat><geo:long>-87.666705</geo:long><atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" href="http://feeds.feedburner.com/sneer/blog" type="application/rss+xml" /><feedburner:browserFriendly>This is an XML content feed. It is intended to be viewed in a newsreader or syndicated to another site, subject to copyright and fair use.</feedburner:browserFriendly><item><title>Links for 2009-01-21 [del.icio.us]</title><link>http://feeds.feedburner.com/~r/sneer/blog/~3/519472198/jperkins</link><pubDate>Thu, 22 Jan 2009 00:00:00 -0600</pubDate><guid isPermaLink="false">http://del.icio.us/jperkins#2009-01-21</guid><content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<ul>
+<li><a href="http://flickr.com/groups/officeporn/pool/">Flickr: The Office Porn Pool</a><br/>
+Wonderful collection of beautifully photographed &quot;paper products.&quot;</li>
+<li><a href="http://estimator.astuteo.com/">Web Development Project Estimator</a><br/>
+&quot;Enter your default hourly rate... [and] adjust anticipated hours accordingly to generate your total project estimate.&quot;</li>
+<li><a href="http://patterntap.com/">Pattern Tap  : Interface Collection for Design Inspiration</a><br/>
+User contributed collection of common interface patterns and elements (comments, calendars, etc). Very nice and catching on in the design community.</li>
+<li><a href="http://waferbaby.com/setup/2009/01/22/john-gruber">The Setup: John Gruber on waferbaby</a></li>
+</ul><img src="http://feeds.feedburner.com/~r/sneer/blog/~4/519472198" height="1" width="1"/>]]></content:encoded><description>&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://flickr.com/groups/officeporn/pool/"&gt;Flickr: The Office Porn Pool&lt;/a&gt;&lt;br/&gt;
+Wonderful collection of beautifully photographed &amp;quot;paper products.&amp;quot;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://estimator.astuteo.com/"&gt;Web Development Project Estimator&lt;/a&gt;&lt;br/&gt;
+&amp;quot;Enter your default hourly rate... [and] adjust anticipated hours accordingly to generate your total project estimate.&amp;quot;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://patterntap.com/"&gt;Pattern Tap  : Interface Collection for Design Inspiration&lt;/a&gt;&lt;br/&gt;
+User contributed collection of common interface patterns and elements (comments, calendars, etc). Very nice and catching on in the design community.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://waferbaby.com/setup/2009/01/22/john-gruber"&gt;The Setup: John Gruber on waferbaby&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description><feedburner:origLink>http://del.icio.us/jperkins#2009-01-21</feedburner:origLink></item><item>
+        <title>Heart of Chicago</title>
+        <description>&lt;p&gt;&lt;object type="application/x-shockwave-flash" width="400" height="327" data="http://www.flickr.com/apps/video/stewart.swf?v=66518" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"&gt; &lt;param name="flashvars" value="intl_lang=en-us&amp;amp;photo_secret=7a9e6e7193&amp;amp;photo_id=3214310881"&gt;&lt;/param&gt; &lt;param name="movie" value="http://www.flickr.com/apps/video/stewart.swf?v=66518"&gt;&lt;/param&gt; &lt;param name="bgcolor" value="#000000"&gt;&lt;/param&gt; &lt;param name="allowFullScreen" value="true"&gt;&lt;/param&gt;&lt;embed type="application/x-shockwave-flash" src="http://www.flickr.com/apps/video/stewart.swf?v=66518" bgcolor="#000000" allowfullscreen="true" flashvars="intl_lang=en-us&amp;amp;photo_secret=7a9e6e7193&amp;amp;photo_id=3214310881" height="327" width="400"&gt;&lt;/embed&gt;&lt;/object&gt;&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/sneer/blog/~4/518467513" height="1" width="1"/&gt;</description>
+        <link>http://feeds.feedburner.com/~r/sneer/blog/~3/518467513/</link>
+        <guid isPermaLink="false">http://sneer.org/archives/2009/01/21/heart_of_chicago/</guid>
+        <category>Chicago</category>
+        <pubDate>Wed, 21 Jan 2009 03:30:14 -0600</pubDate>
+    <feedburner:awareness>http://api.feedburner.com/awareness/1.0/GetItemData?uri=sneer/blog&amp;itemurl=http%3A%2F%2Fsneer.org%2Farchives%2F2009%2F01%2F21%2Fheart_of_chicago%2F</feedburner:awareness><feedburner:origLink>http://sneer.org/archives/2009/01/21/heart_of_chicago/</feedburner:origLink></item>
+    <item><title>Links for 2009-01-18 [del.icio.us]</title><link>http://feeds.feedburner.com/~r/sneer/blog/~3/516334632/jperkins</link><pubDate>Mon, 19 Jan 2009 00:00:00 -0600</pubDate><guid isPermaLink="false">http://del.icio.us/jperkins#2009-01-18</guid><content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<ul>
+<li><a href="http://www.backtoessentials.com/graphics/mini-icons-for-web-designers/">Mini Icons For Web Designers | Back to Essentials</a><br/>
+Large selection of free mini icons</li>
+<li><a href="http://nettuts.s3.amazonaws.com/154_cheatsheet/jquery12_colorcharge.png">jQuery Cheat Sheet</a></li>
+</ul><img src="http://feeds.feedburner.com/~r/sneer/blog/~4/516334632" height="1" width="1"/>]]></content:encoded><description>&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.backtoessentials.com/graphics/mini-icons-for-web-designers/"&gt;Mini Icons For Web Designers | Back to Essentials&lt;/a&gt;&lt;br/&gt;
+Large selection of free mini icons&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://nettuts.s3.amazonaws.com/154_cheatsheet/jquery12_colorcharge.png"&gt;jQuery Cheat Sheet&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description><feedburner:origLink>http://del.icio.us/jperkins#2009-01-18</feedburner:origLink></item><item><title>Links for 2009-01-18 [del.icio.us]</title><link>http://feeds.feedburner.com/~r/sneer/blog/~3/516334632/jperkins</link><pubDate>Mon, 19 Jan 2009 00:00:00 -0600</pubDate><guid isPermaLink="false">http://del.icio.us/jperkins#2009-01-18</guid><content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<ul>
+<li><a href="http://www.backtoessentials.com/graphics/mini-icons-for-web-designers/">Mini Icons For Web Designers | Back to Essentials</a><br/>
+Large selection of free mini icons</li>
+<li><a href="http://nettuts.s3.amazonaws.com/154_cheatsheet/jquery12_colorcharge.png">jQuery Cheat Sheet</a></li>
+</ul><img src="http://feeds.feedburner.com/~r/sneer/blog/~4/516334632" height="1" width="1"/>]]></content:encoded><description>&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.backtoessentials.com/graphics/mini-icons-for-web-designers/"&gt;Mini Icons For Web Designers | Back to Essentials&lt;/a&gt;&lt;br/&gt;
+Large selection of free mini icons&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://nettuts.s3.amazonaws.com/154_cheatsheet/jquery12_colorcharge.png"&gt;jQuery Cheat Sheet&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description><feedburner:origLink>http://del.icio.us/jperkins#2009-01-18</feedburner:origLink></item><item><title>Links for 2009-01-10 [del.icio.us]</title><link>http://feeds.feedburner.com/~r/sneer/blog/~3/508653020/jperkins</link><pubDate>Sun, 11 Jan 2009 00:00:00 -0600</pubDate><guid isPermaLink="false">http://del.icio.us/jperkins#2009-01-10</guid><content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<ul>
+<li><a href="http://www.sun.com/bigadmin/content/dtrace/">BigAdmin: DTrace</a></li>
+<li><a href="http://www.mactech.com/articles/mactech/Vol.23/23.11/ExploringLeopardwithDTrace/index.html">Exploring Leopard with DTrace with DTrace</a></li>
+<li><a href="http://www.joyeur.com/2007/10/03/using-dtrace-on-mysql">Joyeur: Using DTrace on MySQL</a></li>
+<li><a href="http://www.joyeur.com/2008/04/24/dtrace-mysql-ganglia-and-digging-for-solutions">Joyeur: DTrace, MySQL, Ganglia, and Digging for Solutions</a></li>
+<li><a href="https://dtrace.joyent.com/projects/ruby-dtrace/wiki/Ruby+DTrace">wiki . retrospectiva</a></li>
+<li><a href="http://www.solarisinternals.com/wiki/index.php/DTrace_Topics_Intro#How_to_use_DTrace">DTrace Topics Intro - Siwiki</a></li>
+<li><a href="http://www.solarisinternals.com/wiki/index.php/DTrace_Topics_One_Liners">DTrace Topics One Liners</a></li>
+<li><a href="http://blogs.sun.com/bmc/entry/dtrace_and_ruby">DTrace and Ruby : The Observation Deck</a></li>
+<li><a href="http://prefetch.net/articles/solaris.dtracetopten.html">Top Ten DTrace (D) Scripts</a></li>
+<li><a href="http://krow.livejournal.com/546977.html">MySQL, dtrace, C++, Makefile.am, Now taking patches...</a></li>
+<li><a href="http://blogs.sun.com/ahl/entry/dtrace_time">DTrace time</a></li>
+<li><a href="http://uadmin.blogspot.com/2005/03/dtrace-links.html">Unix Admin Corner: Dtrace Links</a></li>
+<li><a href="http://uadmin.blogspot.com/2006/05/what-is-dtrace.html">Unix Admin Corner: What is Dtrace</a></li>
+<li><a href="http://blogs.sun.com/moazam/entry/when_apache_met_dtrace_meet">When Apache met DTrace -- meet mod_dtrace : garbage collection II</a></li>
+<li><a href="http://prefetch.net/projects/apache_modtrace/index.html">Apache DTrace module</a></li>
+</ul><img src="http://feeds.feedburner.com/~r/sneer/blog/~4/508653020" height="1" width="1"/>]]></content:encoded><description>&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.sun.com/bigadmin/content/dtrace/"&gt;BigAdmin: DTrace&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.mactech.com/articles/mactech/Vol.23/23.11/ExploringLeopardwithDTrace/index.html"&gt;Exploring Leopard with DTrace with DTrace&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.joyeur.com/2007/10/03/using-dtrace-on-mysql"&gt;Joyeur: Using DTrace on MySQL&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.joyeur.com/2008/04/24/dtrace-mysql-ganglia-and-digging-for-solutions"&gt;Joyeur: DTrace, MySQL, Ganglia, and Digging for Solutions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://dtrace.joyent.com/projects/ruby-dtrace/wiki/Ruby+DTrace"&gt;wiki . retrospectiva&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.solarisinternals.com/wiki/index.php/DTrace_Topics_Intro#How_to_use_DTrace"&gt;DTrace Topics Intro - Siwiki&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.solarisinternals.com/wiki/index.php/DTrace_Topics_One_Liners"&gt;DTrace Topics One Liners&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://blogs.sun.com/bmc/entry/dtrace_and_ruby"&gt;DTrace and Ruby : The Observation Deck&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://prefetch.net/articles/solaris.dtracetopten.html"&gt;Top Ten DTrace (D) Scripts&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://krow.livejournal.com/546977.html"&gt;MySQL, dtrace, C++, Makefile.am, Now taking patches...&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://blogs.sun.com/ahl/entry/dtrace_time"&gt;DTrace time&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://uadmin.blogspot.com/2005/03/dtrace-links.html"&gt;Unix Admin Corner: Dtrace Links&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://uadmin.blogspot.com/2006/05/what-is-dtrace.html"&gt;Unix Admin Corner: What is Dtrace&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://blogs.sun.com/moazam/entry/when_apache_met_dtrace_meet"&gt;When Apache met DTrace -- meet mod_dtrace : garbage collection II&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://prefetch.net/projects/apache_modtrace/index.html"&gt;Apache DTrace module&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description><feedburner:origLink>http://del.icio.us/jperkins#2009-01-10</feedburner:origLink></item><item><title>Links for 2009-01-06 [del.icio.us]</title><link>http://feeds.feedburner.com/~r/sneer/blog/~3/504978771/jperkins</link><pubDate>Wed, 07 Jan 2009 00:00:00 -0600</pubDate><guid isPermaLink="false">http://del.icio.us/jperkins#2009-01-06</guid><content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<ul>
+<li><a href="http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-talk/100511">How to duck type? - the psychology of static typing in Ruby</a></li>
+<li><a href="http://mindview.net/WebLog/log-0025">Bruce Eckel's MindView, Inc: 5-2-03 Strong Typing vs. Strong Testing</a></li>
+<li><a href="http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-talk/78502">Re: Ducktype, right?</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Duck_typing">Duck typing - Wikipedia, the free encyclopedia</a></li>
+</ul><img src="http://feeds.feedburner.com/~r/sneer/blog/~4/504978771" height="1" width="1"/>]]></content:encoded><description>&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-talk/100511"&gt;How to duck type? - the psychology of static typing in Ruby&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://mindview.net/WebLog/log-0025"&gt;Bruce Eckel's MindView, Inc: 5-2-03 Strong Typing vs. Strong Testing&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-talk/78502"&gt;Re: Ducktype, right?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://en.wikipedia.org/wiki/Duck_typing"&gt;Duck typing - Wikipedia, the free encyclopedia&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description><feedburner:origLink>http://del.icio.us/jperkins#2009-01-06</feedburner:origLink></item><item>
+        <title>Coworking Space in Chicago</title>
+        <description>&lt;div class="photomatte"&gt;
+    &lt;img src="http://sneer.org/media/CO_4.jpg" alt="chicago coworking space" border="0" width="415" height="239" /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Nice looking &lt;a href="http://www.coworkchicago.com/"&gt;coworking space&lt;/a&gt; in Fulton Market, though a coffee shop fits my current needs.&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/sneer/blog/~4/504808083" height="1" width="1"/&gt;</description>
+        <link>http://feeds.feedburner.com/~r/sneer/blog/~3/504808083/</link>
+        <guid isPermaLink="false">http://sneer.org/archives/2009/01/06/coworking_space_in_chicago/</guid>
+        <category>Chicago</category>
+        <pubDate>Tue, 06 Jan 2009 20:03:44 -0600</pubDate>
+    <feedburner:awareness>http://api.feedburner.com/awareness/1.0/GetItemData?uri=sneer/blog&amp;itemurl=http%3A%2F%2Fsneer.org%2Farchives%2F2009%2F01%2F06%2Fcoworking_space_in_chicago%2F</feedburner:awareness><feedburner:origLink>http://sneer.org/archives/2009/01/06/coworking_space_in_chicago/</feedburner:origLink></item>
+    <item><title>Links for 2009-01-03 [del.icio.us]</title><link>http://feeds.feedburner.com/~r/sneer/blog/~3/502316291/jperkins</link><pubDate>Sun, 04 Jan 2009 00:00:00 -0600</pubDate><guid isPermaLink="false">http://del.icio.us/jperkins#2009-01-03</guid><content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<ul>
+<li><a href="http://qrayg.com/learn/">Learn Fireworks</a></li>
+<li><a href="http://www.brownbatterystudios.com/sixthings/">SixThings</a></li>
+<li><a href="http://www.fireworkszone.com/">FIREWORKS ZONE | Adobe Fireworks tutorials - Fireworks CS4</a></li>
+<li><a href="http://www.adobe.com/devnet/fireworks/">Adobe - Fireworks Developer Center</a></li>
+<li><a href="http://abduzeedo.com/tags/fireworks">fireworks | Abduzeedo - design inspiration &amp; tutorials</a></li>
+</ul><img src="http://feeds.feedburner.com/~r/sneer/blog/~4/502316291" height="1" width="1"/>]]></content:encoded><description>&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://qrayg.com/learn/"&gt;Learn Fireworks&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.brownbatterystudios.com/sixthings/"&gt;SixThings&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.fireworkszone.com/"&gt;FIREWORKS ZONE | Adobe Fireworks tutorials - Fireworks CS4&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.adobe.com/devnet/fireworks/"&gt;Adobe - Fireworks Developer Center&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://abduzeedo.com/tags/fireworks"&gt;fireworks | Abduzeedo - design inspiration &amp;amp; tutorials&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description><feedburner:origLink>http://del.icio.us/jperkins#2009-01-03</feedburner:origLink></item><item><title>Links for 2008-12-05 [del.icio.us]</title><link>http://feeds.feedburner.com/~r/sneer/blog/~3/476395185/jperkins</link><pubDate>Sat, 06 Dec 2008 00:00:00 -0600</pubDate><guid isPermaLink="false">http://del.icio.us/jperkins#2008-12-05</guid><content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<ul>
+<li><a href="http://talklikeaduck.denhaven2.com/articles/2007/06/15/a-meeting-with-gill-bates">A Meeting with &quot;Gill Bates&quot;</a></li>
+</ul><img src="http://feeds.feedburner.com/~r/sneer/blog/~4/476395185" height="1" width="1"/>]]></content:encoded><description>&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://talklikeaduck.denhaven2.com/articles/2007/06/15/a-meeting-with-gill-bates"&gt;A Meeting with &amp;quot;Gill Bates&amp;quot;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description><feedburner:origLink>http://del.icio.us/jperkins#2008-12-05</feedburner:origLink></item><item>
+        <title>Why Cal Hates Django</title>
+        <description>&lt;p&gt;&lt;a href="http://www.iamcal.com/"&gt;Cal Henderson&lt;/a&gt; is one of the best technical speakers around. Check out his talk at &lt;a href="http://djangocon.org/"&gt;DjangoCon&lt;/a&gt; on why he hates &lt;a href="http://www.djangoproject.com/"&gt;Django&lt;/a&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;object width="425" height="344"&gt;&lt;param name="movie" value="http://www.youtube.com/v/i6Fr65PFqfk&amp;amp;hl=en&amp;amp;fs=1"&gt;&lt;/param&gt;&lt;param name="allowFullScreen" value="true"&gt;&lt;/param&gt;&lt;embed src="http://www.youtube.com/v/i6Fr65PFqfk&amp;amp;hl=en&amp;amp;fs=1" type="application/x-shockwave-flash" allowfullscreen="true" width="425" height="344"&gt;&lt;/embed&gt;&lt;/object&gt;&lt;/p&gt;
+
+&lt;p&gt;The bits about &lt;a href="http://www.rubyonrails.org/"&gt;Rails&lt;/a&gt; developers and &lt;a href="http://www.php.net/"&gt;PHP&lt;/a&gt; are hilariously funny. &lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/sneer/blog/~4/394183831" height="1" width="1"/&gt;</description>
+        <link>http://feeds.feedburner.com/~r/sneer/blog/~3/394183831/</link>
+        <guid isPermaLink="false">http://sneer.org/archives/2008/09/16/why_cal_hates_django/</guid>
+        <category>Web Development</category>
+        <pubDate>Tue, 16 Sep 2008 07:04:29 -0600</pubDate>
+    <feedburner:awareness>http://api.feedburner.com/awareness/1.0/GetItemData?uri=sneer/blog&amp;itemurl=http%3A%2F%2Fsneer.org%2Farchives%2F2008%2F09%2F16%2Fwhy_cal_hates_django%2F</feedburner:awareness><feedburner:origLink>http://sneer.org/archives/2008/09/16/why_cal_hates_django/</feedburner:origLink></item>
+    <item>
+        <title>Sensible Defaults</title>
+        <description>&lt;p&gt;If you&amp;#8217;re using &lt;a href="http://www.capify.org/"&gt;Capistrano&lt;/a&gt; for your deployments and don&amp;#8217;t want to accidentally have master (as opposed to your well-tested branch) deployed to production, it&amp;#8217;s probably a good idea to write your deployment task so that it&amp;#8217;s impossible to deploy anything that&amp;#8217;s not a branch to your production environment. Ahem.&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/sneer/blog/~4/394183832" height="1" width="1"/&gt;</description>
+        <link>http://feeds.feedburner.com/~r/sneer/blog/~3/394183832/</link>
+        <guid isPermaLink="false">http://sneer.org/archives/2008/09/16/sensible_defaults/</guid>
+        <category>Tech</category>
+        <pubDate>Tue, 16 Sep 2008 07:00:33 -0600</pubDate>
+    <feedburner:awareness>http://api.feedburner.com/awareness/1.0/GetItemData?uri=sneer/blog&amp;itemurl=http%3A%2F%2Fsneer.org%2Farchives%2F2008%2F09%2F16%2Fsensible_defaults%2F</feedburner:awareness><feedburner:origLink>http://sneer.org/archives/2008/09/16/sensible_defaults/</feedburner:origLink></item>
+    <item>
+        <title>Code Annotations</title>
+        <description>&lt;p&gt;You know the TODO&amp;#8217;s and FIXME&amp;#8217;s that accumulate in code and then nothing ever happens with them? We&amp;#8217;ve added the explicit step in out retrospective where we search our code for instances of these, throw them up on the wall with the projector and one of three things happens:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;A ticket is created that captures the gist of the annotation and is thrown into the &lt;a href="http://www.mountaingoatsoftware.com/product_backlog"&gt;product backlog&lt;/a&gt;. The annotation is deleted;&lt;/li&gt;
+&lt;li&gt;The annotation is acted upon and the annotation is deleted;&lt;/li&gt;
+&lt;li&gt;After discussion, the annotation is deleted. &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;This way we&amp;#8217;ve got one place for all of the things that we want to do (our backlog), the author of the annotation had a better chance of being able to recall the details that led to the creation of the annotation (since they&amp;#8217;re at most two weeks old) and our code isn&amp;#8217;t being littered with annotations that no one ever acts on.&lt;/p&gt;
+
+&lt;p&gt;We have a large &lt;a href="http://en.wikipedia.org/wiki/Refactoring"&gt;refactoring&lt;/a&gt; coming up that the code that we&amp;#8217;re presently working on will touch and we are annotating where our new code will interact with the refactored code. We&amp;#8217;ve established a unique annotation for this and are leaving these in for the planning of the refactor at which point they&amp;#8217;ll be removed. For every rules there&amp;#8217;s an exception and common sense should prevail.&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/sneer/blog/~4/394170723" height="1" width="1"/&gt;</description>
+        <link>http://feeds.feedburner.com/~r/sneer/blog/~3/394170723/</link>
+        <guid isPermaLink="false">http://sneer.org/archives/2008/09/16/code_annotations/</guid>
+        <category>Web Development</category>
+        <pubDate>Tue, 16 Sep 2008 06:47:43 -0600</pubDate>
+    <feedburner:awareness>http://api.feedburner.com/awareness/1.0/GetItemData?uri=sneer/blog&amp;itemurl=http%3A%2F%2Fsneer.org%2Farchives%2F2008%2F09%2F16%2Fcode_annotations%2F</feedburner:awareness><feedburner:origLink>http://sneer.org/archives/2008/09/16/code_annotations/</feedburner:origLink></item>
+    <item>
+        <title>Turkish Delight</title>
+        <description>&lt;p&gt;Josh&amp;#8217;s band, &lt;a href="http://www.myspace.com/parksandgardens"&gt;Parks and Gardens&lt;/a&gt;, performed last night and Kathy was good enough to video one of the songs for those of us that couldn&amp;#8217;t make it.&lt;/p&gt;
+
+&lt;p&gt;&lt;object width="425" height="344"&gt;&lt;param name="movie" value="http://www.youtube.com/v/Pio5OCSf8FU&amp;amp;hl=en&amp;amp;fs=1"&gt;&lt;/param&gt;&lt;param name="allowFullScreen" value="true"&gt;&lt;/param&gt;&lt;embed src="http://www.youtube.com/v/Pio5OCSf8FU&amp;amp;hl=en&amp;amp;fs=1" type="application/x-shockwave-flash" allowfullscreen="true" width="425" height="344"&gt;&lt;/embed&gt;&lt;/object&gt;&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/sneer/blog/~4/392852728" height="1" width="1"/&gt;</description>
+        <link>http://feeds.feedburner.com/~r/sneer/blog/~3/392852728/</link>
+        <guid isPermaLink="false">http://sneer.org/archives/2008/09/14/turkish_delight/</guid>
+        <category>Personal</category>
+        <pubDate>Sun, 14 Sep 2008 21:45:09 -0600</pubDate>
+    <feedburner:awareness>http://api.feedburner.com/awareness/1.0/GetItemData?uri=sneer/blog&amp;itemurl=http%3A%2F%2Fsneer.org%2Farchives%2F2008%2F09%2F14%2Fturkish_delight%2F</feedburner:awareness><feedburner:origLink>http://sneer.org/archives/2008/09/14/turkish_delight/</feedburner:origLink></item>
+    <item>
+        <title>Dead Man's Switch</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;Shit happens. Sometimes, it happens to you. If it does happen, you might
+  wish there was something you had told the people around you. How you
+  feel, what you regret, where the money is stashed.&lt;/p&gt;
+  
+  &lt;p&gt;For this, you need a dead man&amp;#8217;s switch.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Such a great idea!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://www.deadmansswitch.net/"&gt;Link&lt;/a&gt;&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/sneer/blog/~4/392852729" height="1" width="1"/&gt;</description>
+        <link>http://feeds.feedburner.com/~r/sneer/blog/~3/392852729/</link>
+        <guid isPermaLink="false">http://sneer.org/archives/2008/09/14/dead_mans_switch/</guid>
+        <category>Web Development</category>
+        <pubDate>Sun, 14 Sep 2008 21:41:03 -0600</pubDate>
+    <feedburner:awareness>http://api.feedburner.com/awareness/1.0/GetItemData?uri=sneer/blog&amp;itemurl=http%3A%2F%2Fsneer.org%2Farchives%2F2008%2F09%2F14%2Fdead_mans_switch%2F</feedburner:awareness><feedburner:origLink>http://sneer.org/archives/2008/09/14/dead_mans_switch/</feedburner:origLink></item>
+    <item>
+        <title>Jimmy Wales (of Wikipedia) on Steak Knives</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;Imagine if you’re designing a restaurant. And in this restaurant we’re
+  going to be serving steak. And because we’re going to be serving steak
+  we’re going to be using steak knives. And since we have steak knives,
+  people might be stabbing each other. And therefore we need to put fences
+  around all the tables. We need to have cages so that people are
+  protected from each other, because who knows what godawful thing they
+  might do, sitting there with knives.&lt;/p&gt;
+  
+  &lt;p&gt;That isn’t a good idea. It isn’t a good way to design a restaurant, it
+  isn’t a good way for us to live our lives in society. A society that is
+  based on a lack of trust ends up being a distrustful and violent
+  society. We normally don’t think twice about sitting next to someone
+  with a steak knife because we trust them. And yes, occasionally people
+  go berserk in restaurants and stab each other with steak knives. We put
+  up with this, though, because we like the human community and it’s kind
+  of nice that I can go and sit in a room and not worry about people
+  stabbing me, not because there are cages but because they’re basically
+  good people.&lt;/p&gt;
+  
+  &lt;p&gt;So at Wikipedia we consistently had a design philosophy to use the
+  softest possible security. We try not to lock anything down unless it
+  absolutely needs to be locked down.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This type of common sense is like a breathe of fresh air.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://xark.typepad.com/my_weblog/2005/10/jimmy_wales_on_.html"&gt;Link&lt;/a&gt;&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/sneer/blog/~4/392852730" height="1" width="1"/&gt;</description>
+        <link>http://feeds.feedburner.com/~r/sneer/blog/~3/392852730/</link>
+        <guid isPermaLink="false">http://sneer.org/archives/2008/09/14/jimmy_wales_of_wikipedia_on_steak_knives/</guid>
+        <category>Web Development</category>
+        <pubDate>Sun, 14 Sep 2008 21:39:03 -0600</pubDate>
+    <feedburner:awareness>http://api.feedburner.com/awareness/1.0/GetItemData?uri=sneer/blog&amp;itemurl=http%3A%2F%2Fsneer.org%2Farchives%2F2008%2F09%2F14%2Fjimmy_wales_of_wikipedia_on_steak_knives%2F</feedburner:awareness><feedburner:origLink>http://sneer.org/archives/2008/09/14/jimmy_wales_of_wikipedia_on_steak_knives/</feedburner:origLink></item>
+    <item>
+        <title>Ten Aspects of Web 2.0 Strategy That Every CTO and CIO Should Know</title>
+        <description>&lt;p&gt;If anyone had any doubt, &amp;#8220;Web 2.0&amp;#8221; has jumped the shark.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://web2.socialcomputingmagazine.com/ten_aspects_of_web_20_strategy_that_every_cto_and_cio_shoul.htm"&gt;Link&lt;/a&gt;&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/sneer/blog/~4/392840633" height="1" width="1"/&gt;</description>
+        <link>http://feeds.feedburner.com/~r/sneer/blog/~3/392840633/</link>
+        <guid isPermaLink="false">http://sneer.org/archives/2008/09/14/ten_aspects_of_web_20_strategy_that_every_cto_and_cio_should_know/</guid>
+        <category>Web Development</category>
+        <pubDate>Sun, 14 Sep 2008 21:37:40 -0600</pubDate>
+    <feedburner:awareness>http://api.feedburner.com/awareness/1.0/GetItemData?uri=sneer/blog&amp;itemurl=http%3A%2F%2Fsneer.org%2Farchives%2F2008%2F09%2F14%2Ften_aspects_of_web_20_strategy_that_every_cto_and_cio_should_know%2F</feedburner:awareness><feedburner:origLink>http://sneer.org/archives/2008/09/14/ten_aspects_of_web_20_strategy_that_every_cto_and_cio_should_know/</feedburner:origLink></item>
+    <item>
+        <title>One In Five Employers Uses Social Networks In Hiring Process</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;CareerBuilder recommends that job seekers:&lt;/p&gt;
+  
+  &lt;p&gt;Remove pictures, content and links that can send the wrong message to potential employers.&lt;/p&gt;
+  
+  &lt;p&gt;Update social networking profiles regularly to highlight latest accomplishments.&lt;/p&gt;
+  
+  &lt;p&gt;Consider blocking comments to avoid questionable posts; avoid joining groups whose names could turn off potential employers.&lt;/p&gt;
+  
+  &lt;p&gt;Consider setting profile to private so only designated friends can view it.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Why should totalitarian governments have all the fun? Also, no mention if the 20% of employers that do this are the kind of places that you want to work in the first place.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://www.computerworld.com/action/article.do?command=viewArticleBasic&amp;amp;taxonomyName=knowledge_center&amp;amp;articleId=9114560&amp;amp;taxonomyId=1&amp;amp;intsrc=kc_top"&gt;Link&lt;/a&gt;&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/sneer/blog/~4/392852731" height="1" width="1"/&gt;</description>
+        <link>http://feeds.feedburner.com/~r/sneer/blog/~3/392852731/</link>
+        <guid isPermaLink="false">http://sneer.org/archives/2008/09/14/one_in_five_employers_uses_social_networks_in_hiring_process/</guid>
+        <category>Tech</category>
+        <pubDate>Sun, 14 Sep 2008 21:28:27 -0600</pubDate>
+    <feedburner:awareness>http://api.feedburner.com/awareness/1.0/GetItemData?uri=sneer/blog&amp;itemurl=http%3A%2F%2Fsneer.org%2Farchives%2F2008%2F09%2F14%2Fone_in_five_employers_uses_social_networks_in_hiring_process%2F</feedburner:awareness><feedburner:origLink>http://sneer.org/archives/2008/09/14/one_in_five_employers_uses_social_networks_in_hiring_process/</feedburner:origLink></item>
+    <item>
+        <title>2008 AWS Start-Up Challenge</title>
+        <description>&lt;p&gt;Amazon Web Services is hosting their 2008 Start-Up Challenge. They&amp;#8217;re looking for the next hot start-up that will use AWS for its infrastructure with a grand prize of $100,000.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://www.amazon.com/gp/browse.html?node=377634011"&gt;Link&lt;/a&gt;&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/sneer/blog/~4/387636997" height="1" width="1"/&gt;</description>
+        <link>http://feeds.feedburner.com/~r/sneer/blog/~3/387636997/</link>
+        <guid isPermaLink="false">http://sneer.org/archives/2008/09/09/2008_aws_startup_challenge/</guid>
+        <category>Tech</category>
+        <pubDate>Tue, 09 Sep 2008 07:01:57 -0600</pubDate>
+    <feedburner:awareness>http://api.feedburner.com/awareness/1.0/GetItemData?uri=sneer/blog&amp;itemurl=http%3A%2F%2Fsneer.org%2Farchives%2F2008%2F09%2F09%2F2008_aws_startup_challenge%2F</feedburner:awareness><feedburner:origLink>http://sneer.org/archives/2008/09/09/2008_aws_startup_challenge/</feedburner:origLink></item>
+    <item>
+        <title>daemon_controller</title>
+        <description>&lt;p&gt;Phusion released daemon_controller, a Ruby library for managing daemons and it looks very good!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://blog.phusion.nl/2008/08/25/daemon_controller-a-library-for-robust-daemon-management/"&gt;Link&lt;/a&gt;&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/sneer/blog/~4/387625027" height="1" width="1"/&gt;</description>
+        <link>http://feeds.feedburner.com/~r/sneer/blog/~3/387625027/</link>
+        <guid isPermaLink="false">http://sneer.org/archives/2008/09/09/daemon_controller/</guid>
+        <category>Web Development</category>
+        <pubDate>Tue, 09 Sep 2008 06:44:10 -0600</pubDate>
+    <feedburner:awareness>http://api.feedburner.com/awareness/1.0/GetItemData?uri=sneer/blog&amp;itemurl=http%3A%2F%2Fsneer.org%2Farchives%2F2008%2F09%2F09%2Fdaemon_controller%2F</feedburner:awareness><feedburner:origLink>http://sneer.org/archives/2008/09/09/daemon_controller/</feedburner:origLink></item>
+    <item>
+        <title>Understanding Map and Reduce</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;&amp;#8230;how do you know when to use map or reduce on a collection? Simple.
+    When iterating through an array, if you don’t want a return value from
+    the operations, use each; and if you’re looking for a return value, use
+    the iterator method that delivers the type of value you want returned.
+    So if you want to take a collection and return a subset of that
+    collection based on some criteria, use select. (See an earlier article
+    for more.) If you want to return a transformed version of each element,
+    use map. And if you want to return any value whatsoever, or a value that
+    doesn’t match another iterator method, use reduce.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;A solid introduction to map and reduce. Rails Spikes also has a &lt;a href="http://railspikes.com/2008/9/8/lambda-in-ruby-1-9"&gt;good introduction&lt;/a&gt; to the changes introduced in Ruby 1.9 to lambda and proc.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://railspikes.com/2008/8/11/understanding-map-and-reduce"&gt;Link&lt;/a&gt;&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/sneer/blog/~4/387613348" height="1" width="1"/&gt;</description>
+        <link>http://feeds.feedburner.com/~r/sneer/blog/~3/387613348/</link>
+        <guid isPermaLink="false">http://sneer.org/archives/2008/09/09/understanding_map_and_reduce/</guid>
+        <category>Web Development</category>
+        <pubDate>Tue, 09 Sep 2008 06:24:09 -0600</pubDate>
+    <feedburner:awareness>http://api.feedburner.com/awareness/1.0/GetItemData?uri=sneer/blog&amp;itemurl=http%3A%2F%2Fsneer.org%2Farchives%2F2008%2F09%2F09%2Funderstanding_map_and_reduce%2F</feedburner:awareness><feedburner:origLink>http://sneer.org/archives/2008/09/09/understanding_map_and_reduce/</feedburner:origLink></item>
+    <item>
+        <title>The New Merb-Cache</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;The strategy store is the new kid on the block. A strategy store wraps
+    one or more fundamental stores, acting as a middle man between caching
+    requests. For example, if you need to save memory on your Memcache
+    server, you could wrap your MemcachedStore with a GzipStore. This would
+    automatically compress the cached data when put into the cache, and
+    decompress it on the way out. You can even wrap strategy caches with
+    other strategy caches. If your key was comprised of sensitive
+    information, like a SSN, you might want to encrypt the key before
+    storage. Wrapping your GzipStore in a SHA1Store would take care of that
+    for you.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href="http://merbunity.com/tutorials/15"&gt;Link&lt;/a&gt;&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/sneer/blog/~4/387613349" height="1" width="1"/&gt;</description>
+        <link>http://feeds.feedburner.com/~r/sneer/blog/~3/387613349/</link>
+        <guid isPermaLink="false">http://sneer.org/archives/2008/09/09/the_new_merbcache/</guid>
+        <category>Tech</category>
+        <pubDate>Tue, 09 Sep 2008 06:20:51 -0600</pubDate>
+    <feedburner:awareness>http://api.feedburner.com/awareness/1.0/GetItemData?uri=sneer/blog&amp;itemurl=http%3A%2F%2Fsneer.org%2Farchives%2F2008%2F09%2F09%2Fthe_new_merbcache%2F</feedburner:awareness><feedburner:origLink>http://sneer.org/archives/2008/09/09/the_new_merbcache/</feedburner:origLink></item>
+    <item>
+        <title>Hurricanes, As Seen From Orbit</title>
+        <description>&lt;p&gt;Breathtaking collection of photos of hurricanes from orbit.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://www.boston.com/bigpicture/2008/09/hurricanes_as_seen_from_orbit.html"&gt;Link&lt;/a&gt;&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/sneer/blog/~4/387613350" height="1" width="1"/&gt;</description>
+        <link>http://feeds.feedburner.com/~r/sneer/blog/~3/387613350/</link>
+        <guid isPermaLink="false">http://sneer.org/archives/2008/09/09/hurricanes_as_seen_from_orbit/</guid>
+        <category>Pictures</category>
+        <pubDate>Tue, 09 Sep 2008 06:19:27 -0600</pubDate>
+    <feedburner:awareness>http://api.feedburner.com/awareness/1.0/GetItemData?uri=sneer/blog&amp;itemurl=http%3A%2F%2Fsneer.org%2Farchives%2F2008%2F09%2F09%2Fhurricanes_as_seen_from_orbit%2F</feedburner:awareness><feedburner:origLink>http://sneer.org/archives/2008/09/09/hurricanes_as_seen_from_orbit/</feedburner:origLink></item>
+
+
+<feedburner:awareness>http://api.feedburner.com/awareness/1.0/GetFeedData?uri=sneer/blog</feedburner:awareness></channel>
+</rss>

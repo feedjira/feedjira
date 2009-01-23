@@ -1,0 +1,807 @@
+<!DOCTYPE rss PUBLIC "-//Netscape Communications//DTD RSS 0.91//EN"
+                     "http://my.netscape.com/publish/formats/rss-0.91.dtd"> 
+<rss version="0.91">
+<channel>
+  <title>{ |one, step, back| }</title>
+  <link>http://www.onestepback.org/index.cgi</link>
+  <description>Jim Weirich's Blog</description>
+  <language>en-us</language>
+  <image>
+    <title>{ |one, step, back| }</title>
+    <link>http://onestepback.org</link>
+    <url>http://onestepback.org/images/jwface.gif</url>
+  </image>
+  <item>
+    <title>Presenting for Presenters</title>
+    <link>http://www.onestepback.org/index.cgi/Tech/Conferences/RubyConf2008/PresentingForPresenters.red</link>
+    <description>&lt;p style=&quot;padding-left:3em;&quot;&gt;&lt;em&gt;If you are speaking at RubyConf this year, we have a special
+opportunity for you.&lt;/em&gt;&lt;/p&gt;
+
+
+	&lt;h2&gt;Are You Speaking at RubyConf 2008?&lt;/h2&gt;
+
+
+	&lt;p&gt;If so, congratuations!  And have we got a deal for you &amp;#8230;&lt;/p&gt;
+
+
+	&lt;p&gt;Wednesday evening, Nov 5, at 6:00 pm, (that&amp;#8217;s the night before the
+conference) we are inviting all speakers to a special training
+session.  I&amp;#8217;m going to be sharing some ideas for putting together and
+delivering a good presentation.&lt;/p&gt;
+
+
+	&lt;p&gt;After my talk, Patrick Ewing and Adam Keys are geared up to do some
+Powerpoint Karaoke with everyone there.  I&amp;#8217;m not even sure what
+Powerpoint Karaoke is, but it sounds like fun.&lt;/p&gt;
+
+
+	&lt;p&gt;I hope to see everyone there.&lt;/p&gt;
+
+
+	&lt;h2&gt;Update (4/Nov/08)&lt;/h2&gt;
+
+
+	&lt;p&gt;I&amp;#8217;ve talked to Adam today.  He says that Patrick isn&amp;#8217;t going to
+able to make RubyConf this year, but we will be ready to roll with
+Powerpoint Karaoke anyways.&lt;/p&gt;
+
+
+	&lt;h2&gt;Update (5/Nov/08)&lt;/h2&gt;
+
+
+	&lt;p&gt;It looks like the speakers training will be in the Olympic Room
+tonight.  The Olympic Room is on the same floor as the registration
+desk.  Go to the left past the elevators and turn right down that hall
+(or ask someone who looks like they know what they are doing).&lt;/p&gt;</description>
+  </item>
+
+  <item>
+    <title>Articles are Back!</title>
+    <link>http://www.onestepback.org/index.cgi/General/ArticlesAreBack.red</link>
+    <description>&lt;p style=&quot;padding-left:3em;&quot;&gt;&lt;em&gt;I&amp;#8217;ve received a lot of requests for my old articles &amp;#8230;&lt;/em&gt;&lt;/p&gt;
+
+
+	&lt;h2&gt;The Article Section has been Restored&lt;/h2&gt;
+
+
+	&lt;p&gt;When I changed to my new hosting machine, I moved all my blog posts
+but didn&amp;#8217;t move any of the articles.  Of course I &lt;em&gt;intended&lt;/em&gt; to move
+them eventually but never got around to it.&lt;/p&gt;
+
+
+	&lt;p&gt;A lot of people have been asking for this article or that
+presentation, or pointing out that a number of old bookmarked links
+are no longer any good.  So due to popular demand the &lt;b&gt;Articles and
+Presentations&lt;/b&gt; section of onestepback.org is now restored.&lt;/p&gt;
+
+
+	&lt;p&gt;Enjoy&lt;/p&gt;</description>
+  </item>
+
+  <item>
+    <title>Comments Are Now Enabled</title>
+    <link>http://www.onestepback.org/index.cgi/General/DiscusComments.red</link>
+    <description>&lt;p style=&quot;padding-left:3em;&quot;&gt;&lt;em&gt;I&amp;#8217;ve gone without comments on this blog for a long time &amp;#8230;&lt;/em&gt;&lt;/p&gt;
+
+
+	&lt;h2&gt;Comments via Disqus&lt;/h2&gt;
+
+
+	&lt;p&gt;I&amp;#8217;ve gone through several commenting systems for this blog over
+time.  First was the really cool
+&lt;a href=&quot;http://onestepback.org/index.cgi/Tech/Web/MoreWebApps.rdoc&quot;&gt;TagSurf&lt;/a&gt;
+application that allowed commenting on about any web page on the
+internet arbitrary tags.  Unfortunately, TagSurf died a (in the words
+of its creator) &amp;#8220;well deserved&amp;#8221; death.&lt;/p&gt;
+
+
+	&lt;p&gt;Then I tried a wiki for comments.  That worked pretty good (aside from
+spam issues), but setting up a new page for comments for each new post
+was just too much hassle.&lt;/p&gt;
+
+
+	&lt;p&gt;Now I&amp;#8217;m trying &lt;a href=&quot;http://disqus.com/docs/about/&quot;&gt;Disqus&lt;/a&gt; for comments.
+It only took an hour or so to integrate Disqus with my ancient
+blogging engine (anyone else still using Rublog?).&lt;/p&gt;
+
+
+	&lt;p&gt;Kick the tires and see how it works.  If you have feedback &amp;#8230; well,
+just leave a comment.&lt;/p&gt;
+
+
+	&lt;p&gt;I guess this means I&amp;#8217;ll have to start writing some &lt;em&gt;real&lt;/em&gt; content
+here so there will be something worth commenting on &amp;#8230; let&amp;#8217;s see if
+there is anything I feel like ranting about &amp;#8230;&lt;/p&gt;
+
+
+	&lt;p&gt;(Oh, and a hat tip to &lt;a href=&quot;http://brionesandco.com/ryanbriones/&quot;&gt;Ryan
+Briones&lt;/a&gt; for pointing out Disqus
+when I was ready to go out and implement something from scratch.)&lt;/p&gt;</description>
+  </item>
+
+  <item>
+    <title>RedMine For Rake</title>
+    <link>http://www.onestepback.org/index.cgi/Tech/Rake/RedmineSetup.red</link>
+    <description>&lt;p style=&quot;padding-left:3em;&quot;&gt;&lt;em&gt;The is now a RedMine setup for Rake, FlexMock and Builder.&lt;/em&gt;&lt;/p&gt;
+
+
+	&lt;h2&gt;RedMine&lt;/h2&gt;
+
+
+	&lt;p&gt;As part of an effort to get better control of changes to the my open
+source projects, I&amp;#8217;ve setup a RedMine issue tracking site for Rake,
+FlexMock and Builder. You can find it at
+&lt;a href=&quot;http://onestepback.org/redmine&quot;&gt;http://onestepback.org/redmine&lt;/a&gt;.&lt;/p&gt;</description>
+  </item>
+
+  <item>
+    <title>Moving Blog Host</title>
+    <link>http://www.onestepback.org/index.cgi/General/MovingBlogHost.red</link>
+    <description>&lt;p style=&quot;padding-left:3em;&quot;&gt;&lt;em&gt;I am changing host  for the One Step Back blog.&lt;/em&gt;&lt;/p&gt;
+
+
+	&lt;h2&gt;It&amp;#8217;s Time to Move&lt;/h2&gt;
+
+
+	&lt;p&gt;This is just a quick little post to let you know that the One Step
+Back blog is moving.  In fact, it has already moved.  But don&amp;#8217;t worry,
+we aren&amp;#8217;t going far.&lt;/p&gt;
+
+
+	&lt;p&gt;Originally this blog was hosted on a shared co-op system run by
+&lt;a href=&quot;http://www.n2net.net/&quot;&gt;N2Net&lt;/a&gt;. It was dirt cheap and easy to maintain.
+The down side was that support was sporadic. As the hardware has aged,
+the Co-op has decided to let the current system run until the hardware
+dies, and then disolve the co-op.&lt;/p&gt;
+
+
+	&lt;p&gt;Today there are tons more hosting opportunities available than there
+were when the co-op was first formed. I&amp;#8217;m now leasing a Linode
+&lt;a href=&quot;http://www.linode.com/&quot;&gt;node&lt;/a&gt; and running the blog and other
+associated software from there.  Its almost as inexpensive and the
+co-op and uptime &lt;em&gt;should&lt;/em&gt; be better.&lt;/p&gt;
+
+
+	&lt;p&gt;Write now the blog has been moved. As time passes I&amp;#8217;ll move the
+article archive as well. Let me know if anything looks amiss.&lt;/p&gt;
+
+
+	&lt;p&gt;&amp;#8212;Jim Weirich&lt;/p&gt;</description>
+  </item>
+
+  <item>
+    <title>How did you get started in software development.</title>
+    <link>http://www.onestepback.org/index.cgi/Tech/Programming/SoftwareDevelSteps.red</link>
+    <description>&lt;h2&gt;Tagged&lt;/h2&gt;
+
+
+	&lt;p&gt;Looks like &lt;a href=&quot;http://objo.com/2008/6/7/how-did-you-get-started-in-programming&quot;&gt;Joe
+O&amp;#8217;Brien&lt;/a&gt;
+tagged me for answers to the following questions. He, in turn, was
+tagged by &lt;a href=&quot;http://joshholmes.com/&quot;&gt;Josh Owens&lt;/a&gt;, who in turn was tagged
+by &lt;a href=&quot;http://www.jeffblankenburg.com/index.html&quot;&gt;Jeff Blankenburg&lt;/a&gt;. It
+looks like &lt;a href=&quot;http://www.codinggeekette.com&quot;&gt;Sarah Dutkiewicz&lt;/a&gt; and
+&lt;a href=&quot;http://michaeleatonconsulting.com/blog/archive/2008/06/04/how-did-you-get-started-in-software-development.aspx&quot;&gt;Micheal
+Eaton&lt;/a&gt; started this.&lt;/p&gt;
+
+
+	&lt;p&gt;OK, sounds like fun. Here goes.&lt;/p&gt;
+
+
+	&lt;h2&gt;How old were you when you started programming?&lt;/h2&gt;
+
+
+	&lt;p&gt;I was introduced to programming in high school by reading a book on
+the topic. The book taught me how to write machine code for a strange
+decimal-based machine. Unfortunately, there was no actual computer
+involved in the process. Shoot, who had computers back then? Certainly
+not our high school (the personal computers? not invented yet!)&lt;/p&gt;
+
+
+	&lt;p&gt;In college, I learned a smattering of &lt;span class=&quot;caps&quot;&gt;FORTRAN&lt;/span&gt;. Just enough to drive a
+Calcomp plotter to plot data from my undergraduate physics courses.
+But didn&amp;#8217;t really get into programming until my junior year in
+college.  (Story continued in next question)&lt;/p&gt;
+
+
+	&lt;h2&gt;How did you get started in programming?&lt;/h2&gt;
+
+
+	&lt;p&gt;So, I was planning out the courses for my junior year in college and I
+had a hole in my math courses. The math class I needed was not offered
+that semester, so my adviser suggested taking a computer programming
+course. He said it would be useful and, who knows, I might enjoy it.&lt;/p&gt;
+
+
+	&lt;p&gt;So I signed up for an introduction to &lt;span class=&quot;caps&quot;&gt;FORTRAN&lt;/span&gt; course, figuring it
+would be easy because I already knew a little bit of &lt;span class=&quot;caps&quot;&gt;FORTRAN&lt;/span&gt;. I show
+up on the first day of class and after a few preliminaries the
+instructor jumps right into some code, that looked like this:&lt;/p&gt;
+
+
+&lt;pre&gt;
+  (de member (pip deck) (cond
+    ((null deck) nil)
+    ((eq pip (car deck)) t)
+    (t (member pip (cdr deck)))))
+&lt;/pre&gt;
+
+	&lt;p&gt;I remember scratching my head and thinking this was the strangest
+&lt;span class=&quot;caps&quot;&gt;FORTRAN I&lt;/span&gt; had ever seen. I was totally confused for about three days,
+then something clicked on the third day of class. I suddenly
+&amp;#8220;&lt;em&gt;got&lt;/em&gt;&amp;#8221; what the instructor was trying to get across and it all
+made perfect sense.&lt;/p&gt;
+
+
+	&lt;p&gt;If you haven&amp;#8217;t figured it out yet, the instructor taught us Lisp as
+part of an introduction to &lt;span class=&quot;caps&quot;&gt;FORTRAN&lt;/span&gt;. The instructor turned out to be
+Daniel Friedman, the author of &lt;a href=&quot;http://www.amazon.com/Little-LISPer-Third-Daniel-Friedman/dp/0023397632&quot;&gt;&lt;em&gt;The Little
+Lisper&lt;/em&gt;&lt;/a&gt;,
+and was well known in the Lisp community. That small exposure to Lisp
+hooked me on programming from that point on. I took as many CompSci
+courses as I could in my remaining year and a half in college. I
+eventually graudated with a BS in Physics, but had a strong background
+in Computer Science as well.&lt;/p&gt;
+
+
+	&lt;h2&gt;What was your first language?&lt;/h2&gt;
+
+
+	&lt;p&gt;Technically, &lt;span class=&quot;caps&quot;&gt;FORTRAN&lt;/span&gt; was my first language. But Lisp is the language I
+fell in love with and is what got me hooked on programming.&lt;/p&gt;
+
+
+	&lt;h2&gt;What was the first real program you wrote?&lt;/h2&gt;
+
+
+	&lt;p&gt;I have a very clear memory of the very first program I wrote
+professionally. The reason it is so clear is that this was the first
+program I wrote that was intended for actual use by someone who wanted
+it. Everything else up to that time was done for my own personal
+enjoyment or to satisfy some course requirement.&lt;/p&gt;
+
+
+	&lt;p&gt;The program calculated the &amp;#8220;critical angles&amp;#8221; of &amp;#8220;pieces&amp;#8221;. I was given
+the requirements by Anne Exline, a senior programmer, and proceeded to
+write the program to spec. It took a few days, but when I was done I
+showed the result to Anne and she was pleased with the result.&lt;/p&gt;
+
+
+	&lt;p&gt;The funny thing is that I had no idea what a &amp;#8220;piece&amp;#8221; was nor what was
+so critical about the angles I was calculating. I was so excited about
+writing an actual program that I did not ask until the software was
+done. When asked, Anne just looked at me funny and said &amp;#8220;Rocket
+Pieces&amp;#8221;. When Cape Canaveral lauches a rocket, they track it very
+carefully to make sure it stays on course. If it strays, the range
+safety officer is required to activate the self destruct. The critical
+angles are those angles that would cause the &amp;#8220;rocket pieces&amp;#8221; to land
+outside the safety area of the flight path.&lt;/p&gt;
+
+
+	&lt;p&gt;So, my very first professional program was not only useful, it might
+actually save lives.&lt;/p&gt;
+
+
+	&lt;h2&gt;What languages have you used since you started programming?&lt;/h2&gt;
+
+
+	&lt;p&gt;Languages I have used as part of my professional career (in roughly
+chronological order) include &lt;span class=&quot;caps&quot;&gt;FORTRAN&lt;/span&gt;, various assembly languages,
+&lt;span class=&quot;caps&quot;&gt;FORTH&lt;/span&gt;, C, PL/M, C++, Java, Ruby.&lt;/p&gt;
+
+
+	&lt;p&gt;Languages I have used in addition to those mentioned above: Pascal,
+Perl, Eiffel, and Lisp/Scheme.&lt;/p&gt;
+
+
+	&lt;p&gt;Languages I can read, but never wrote anything significant in them:
+Ada, Python, Erlang, Smalltalk, &lt;span class=&quot;caps&quot;&gt;SNOBOL&lt;/span&gt;, Algol, Pascal.&lt;/p&gt;
+
+
+	&lt;h2&gt;What was your first professional programming gig?&lt;/h2&gt;
+
+
+	&lt;p&gt;I was hired by the &lt;span class=&quot;caps&quot;&gt;RCA&lt;/span&gt; Missile Test project in Cape Canaveral, Florida
+as a Near Real Time Analyst. Duties included programming various
+launch related software (e.g. the critical angle program mentioned
+above) and working launch support.&lt;/p&gt;
+
+
+	&lt;p&gt;The launch support was the &amp;#8220;Near Real Time&amp;#8221; part of the job
+description. From the moment a rocket is launched until it reaches
+orbital velocity, any malfunction could cause it to fall back to
+earth. During this initial portion of the launch, the launch is
+monitored in &amp;#8220;real-time&amp;#8221; so that we know exactly where it would land
+if the engines were to cut off &lt;span class=&quot;caps&quot;&gt;NOW&lt;/span&gt;. Trajectory calculations had to be
+done in fractions of a second and updated constantly in real time.&lt;/p&gt;
+
+
+	&lt;p&gt;After the rocket reaches oribital velocity (usually somewhere between
+8 and 14 minutes into its flight), it won&amp;#8217;t fall back to earth. At
+this point the real time trajectory program is shut down and the near
+real time program is started. The near real time program can take a
+few minutes to calculate a more exact orbital prediction and then send
+that prediction to downrange radars (e.g. the the &lt;a href=&quot;http://en.wikipedia.org/wiki/Ascension_Island&quot;&gt;Ascension
+Island&lt;/a&gt; station) that
+won&amp;#8217;t see the rocket until about 20 minutes after launch. It was the
+job of the Near Real Time analyst to run that program and provide
+oribital predictions for downrange station.&lt;/p&gt;
+
+
+	&lt;h2&gt;If there is one thing you learned along the way that you would tell new developers, what would it be?&lt;/h2&gt;
+
+
+	&lt;p&gt;Find something that you enjoy and do that. Life is too short to work
+in a job that you dislike.&lt;/p&gt;
+
+
+	&lt;h2&gt;What’s the most fun you’ve ever had … programming?&lt;/h2&gt;
+
+
+	&lt;p&gt;Oh, the fun I have had.  This story still makes me smile.&lt;/p&gt;
+
+
+	&lt;p&gt;My first computer was a single board &lt;span class=&quot;caps&quot;&gt;Z80&lt;/span&gt; microcomputer with 4 KB of
+memory. I wrote a small &lt;span class=&quot;caps&quot;&gt;FORTH&lt;/span&gt;-like interpreter for it and hacked a
+version of the animal game in &lt;span class=&quot;caps&quot;&gt;FORTH&lt;/span&gt;. The animal game is a program that
+plays 20 questions to figure out what animal you are thinking of. It
+constructs a binary tree where each node is a question and the
+subtrees are the yes and no answers to the question. To play the game,
+all the program does is walk the tree, ask the question at the current
+node and follow either the &lt;span class=&quot;caps&quot;&gt;YES&lt;/span&gt; branch or the NO branch as appropriate.&lt;/p&gt;
+
+
+	&lt;p&gt;If the program guesses wrong, it will ask you for your animal and a
+question that will distinguish your animal from the one it guessed. It
+then adds your question to the tree. By this extremely simple
+mechanism, it is able to expand its knowledge base. (see &lt;a href=&quot;http://www.rubyquiz.com/quiz15.html&quot;&gt;Ruby Quiz
+#15&lt;/a&gt; for more details).&lt;/p&gt;
+
+
+	&lt;p&gt;I had just finished the program and had seeded it with a single
+animal, a mouse. I turned to my wife and asked her to play the game.
+She thinks of an animal and starts the program, which immediately
+asked her &amp;#8220;Is it a mouse?&amp;#8221;. She turned to me with surprise and said
+&amp;#8220;How did it know?&amp;#8221;.  Of course, the animal she picked was a mouse.&lt;/p&gt;
+
+
+	&lt;p&gt;I don&amp;#8217;t think I have ever impressed anyone with my programming skills
+as much as she was impressed with that game.&lt;/p&gt;
+
+
+	&lt;h2&gt;Who&amp;#8217;s up next?&lt;/h2&gt;
+
+
+	&lt;p&gt;I&amp;#8217;m tagging the following people. Remember, this is entirely
+voluntary so don&amp;#8217;t feel obligated to answer.  But I&amp;#8217;m betting the
+answers are interesting:&lt;/p&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;&lt;a href=&quot;http://mysterycoder.blogspot.com/&quot;&gt;Chris Nelson&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;http://clarkware.com/cgi/blosxom&quot;&gt;Mike Clark&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;http://gilesbowkett.blogspot.com/&quot;&gt;Giles Bowkett&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;http://railsstudio.com/&quot;&gt;Mark Windholtz&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;http://www.vanderburg.org/Blog&quot;&gt;Glenn Vanderburg&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;</description>
+  </item>
+
+  <item>
+    <title>Rails Conf 2008 Summary</title>
+    <link>http://www.onestepback.org/index.cgi/Tech/Conferences/RailsConf2008/RailsConf2008Summary.red</link>
+    <description>&lt;h2&gt;Conference Summary Video&lt;/h2&gt;
+
+
+	&lt;p&gt;Wow, what a great conference! There was a lot of energy flowing at
+RailsConf this year. Overall I&amp;#8217;d rate this year as head and shoulders
+above last year. I&amp;#8217;m not going cover much here, but will direct you
+attention to a &lt;a href=&quot;http://www.railsenvy.com/2008/6/2/Railsconf-videos&quot;&gt;Rails Envy
+VideoCase&lt;/a&gt; that
+Greg Pollack put together. The video is a series of very short
+interviews with a number of presenters giving summaries of their own
+talks. The only downside with the video is that I wish it was
+available &lt;em&gt;before&lt;/em&gt; the conference. I see there were a number of
+interesting talks that I missed.&lt;/p&gt;
+
+
+	&lt;h2&gt;Followup on the &amp;#8220;Modelling Dialogue&amp;#8221;&lt;/h2&gt;
+
+
+	&lt;p&gt;Joe O&amp;#8217;Brien, Chris Nelson and myself did a dialogue style presentation
+on the difference between object modelling and data modelling. The
+most common question I got after the talk was requests for book titles
+to learn more about object oriented modelling.  Here are the books
+that Joe, Chris and I have recommended:&lt;/p&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;&lt;em&gt;&lt;a href=&quot;http://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/ref=pd_bbs_sr_1?ie=UTF8&amp;#38;s=books&amp;#38;qid=1212463473&amp;#38;sr=1-1&quot;&gt;Domain Driven Design&lt;/a&gt;&lt;/em&gt;&amp;#8212;Eric Evans&lt;/li&gt;
+		&lt;li&gt;&lt;em&gt;&lt;a href=&quot;http://www.amazon.com/Software-Development-Principles-Patterns-Practices/dp/0135974445/ref=sr_1_1?ie=UTF8&amp;#38;s=books&amp;#38;qid=1212502027&amp;#38;sr=1-1&quot;&gt;AgileSoftware Development, Principles, Patterns, and Practices&lt;/a&gt;&lt;/em&gt;&amp;#8212;Bob Martin&lt;/li&gt;
+		&lt;li&gt;&lt;em&gt;&lt;a href=&quot;http://www.amazon.com/Refactoring-Improving-Existing-Addison-Wesley-Technology/dp/0201485672/ref=pd_bbs_sr_1?ie=UTF8&amp;#38;s=books&amp;#38;qid=1212465268&amp;#38;sr=1-1&quot;&gt;Refactoring: Improving the Design of Existing Code&lt;/a&gt;&lt;/em&gt;&amp;#8212;Martin Fowler&lt;/li&gt;
+	&lt;/ul&gt;</description>
+  </item>
+
+  <item>
+    <title>Artichoke Music Rocks</title>
+    <link>http://www.onestepback.org/index.cgi/Tech/Conferences/RailsConf2008/ArtichokeMusic.red</link>
+    <description>&lt;p style=&quot;float: right; padding: 0.5em;&quot;&gt;&lt;a href=&quot;http://www.artichokemusic.com/index2.htm&quot;&gt;&lt;img border=&quot;0&quot; src=&quot;http://www.artichokemusic.com/LogocommUnity-sm.jpg&quot;/&gt;&lt;/a&gt;&lt;/p&gt;
+
+	&lt;p&gt;The Musician&amp;#8217;s Birds of a Feather gathering at RailsConf was great. We
+had a room full people, two guitars, a ukulele, a flute, several
+harmonicas and an improvised drum set. Unfortunately, one of the
+guitars was an electric travel guitar which had a dead battery,
+therefore no way to really hear it.&lt;/p&gt;
+
+
+	&lt;p&gt;However, the other guitar was a nice Epiphone accoustic which was
+passed from player to player.  It became the quickly became the basis
+for most of the music performed that night.&lt;/p&gt;
+
+
+	&lt;p&gt;I want to thank &lt;a href=&quot;http://www.artichokemusic.com/index2.htm&quot;&gt;Artichoke Community
+Music&lt;/a&gt; for supplying the
+guitar. Travelling with a guitar by plane is a big pain, so I arrived
+with nothing to bring to the music &lt;span class=&quot;caps&quot;&gt;BOF&lt;/span&gt;. I called several local music
+stores looking for a guitar that I could rent for an evening.
+Artichoke music said they had a &amp;#8220;not-for-profit&amp;#8221; guitar that they
+would let me borrow for a day. Not many stores would do that for an
+out-of-town stranger.&lt;/p&gt;
+
+
+	&lt;p&gt;So, if you&amp;#8217;re in Portland looking for a good guitar store, check out
+the great people at &lt;a href=&quot;http://www.artichokemusic.com/index2.htm&quot;&gt;Artichoke Community
+Music&lt;/a&gt;.&lt;/p&gt;</description>
+  </item>
+
+  <item>
+    <title>Test Driven Studio in June 2008</title>
+    <link>http://www.onestepback.org/index.cgi/Tech/Conferences/TestingInRails/TddStudioJune2008.red</link>
+    <description>&lt;p&gt;&lt;em&gt;Joe O&amp;#8217;Brien and I will be leading another Test Driven
+Studio in Denver, June 9-11.&lt;/em&gt;&lt;/p&gt;
+
+
+&lt;p style=&quot;float: right; padding: 0.5em;&quot;&gt;&lt;a href=&quot;http://pragmaticstudio.com/images/studio/tdd-with-rails-icon.jpg&quot;&gt;&lt;img border=&quot;0&quot; src=&quot;http://onestepback.org/images/pragstudio/studio-medium.gif&quot;/&gt;&lt;/a&gt;&lt;/p&gt;
+
+	&lt;h2&gt;Testing, Colorado, June &amp;#8230; What&amp;#8217;s not to like?&lt;/h2&gt;
+
+
+	&lt;p&gt;About 8 years ago I come upon a technique that radically changed the
+way I developed code.  I was reading Martin Fowler&amp;#8217;s &amp;#8220;Refactoring&amp;#8221; 
+book and came across this paragraph:&lt;/p&gt;
+
+
+	&lt;p style=&quot;padding-left:3em;&quot;&gt;&lt;em&gt;&amp;#8220;Whenever I do refactoring, the first step is always the
+same.  I need to build a solid set of tests for that section of code.
+The test are essential because even though I follow refactorings
+structured to avoid most of the opportunities for introducing bugs,
+I&amp;#8217;m still human and still make mistakes.  Thus I need solid
+tests.&amp;#8221; &lt;/em&gt;&amp;#8212;Martin Fowler&lt;/p&gt;
+
+
+	&lt;p&gt;Chapter 4 of &amp;#8220;Refactoring&amp;#8221; was my first introduction to JUnit and got
+me interested in &amp;#8220;Test First Design&amp;#8221; (what we now tend to call &amp;#8220;Test
+Driven Development&amp;#8221;).  Although I wrote &lt;em&gt;good&lt;/em&gt; code before, the
+confidence I had in my code took a dramatic leap forward after I
+started adopting &lt;span class=&quot;caps&quot;&gt;TDD&lt;/span&gt; practices.&lt;/p&gt;
+
+
+	&lt;p&gt;On June 9 through 11, &lt;a href=&quot;http://objo.com&quot;&gt;Joe O&amp;#8217;Brien&lt;/a&gt; and I will have
+the pleasure of leading the next Pragmatic Programmer&amp;#8217;s &lt;a href=&quot;http://pragmaticstudio.com/testing-rails&quot;&gt;Test-Driven
+Development with Rails
+Studio.&lt;/a&gt; in Denver.  We will
+have an opportunity to share with you some of our experiences in using
+&lt;span class=&quot;caps&quot;&gt;TDD&lt;/span&gt; with Ruby and Rails.&lt;/p&gt;
+
+
+	&lt;p&gt;There are still seats available, so its not too late to sign up.  More
+information is available
+&lt;a href=&quot;http://pragmaticstudio.com/testing-rails&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;</description>
+  </item>
+
+  <item>
+    <title>Lisp in Ruby</title>
+    <link>http://www.onestepback.org/index.cgi/Tech/Ruby/LispInRuby.red</link>
+    <description>&lt;p style=&quot;padding-left:3em;&quot;&gt;&lt;em&gt;I stumbled across &lt;a href=&quot;http://bc.tech.coop/blog/080101.html&quot;&gt;this&lt;/a&gt; and it got me thinking &amp;#8230;&lt;/em&gt;&lt;/p&gt;
+
+
+	&lt;h3&gt;Update&lt;/h3&gt;
+
+
+	&lt;p style=&quot;padding-left:3em;&quot;&gt;&lt;em&gt;I&amp;#8217;ve updated the Textile formatter on the site and the code
+for this entry is now displaying correctly.  The previous version was
+swalling the == operators in the code.&lt;/em&gt;&lt;/p&gt;
+
+
+	&lt;h2&gt;Lisp 1.5 Programmer&amp;#8217;s Manual&lt;/h2&gt;
+
+
+	&lt;p&gt;I stumbled across &lt;a href=&quot;http://bc.tech.coop/blog/080101.html&quot;&gt;this&lt;/a&gt; in
+Bill Clementson&amp;#8217;s blog and remembered using the Lisp 1.5 Prgrammers
+manual from the college years.  I have strong memories of pouring over
+that particular page in the manual and attempting to understand all
+the nuances.&lt;/p&gt;
+
+
+	&lt;p&gt;If you&amp;#8217;ve never read the Lisp 1.5 Programamers Manual, page 13 is
+the guts of a Lisp Interpreter, the &amp;#8220;eval&amp;#8221; and &amp;#8220;apply&amp;#8221; functions.  It
+is written in Lisp, although the notation used is a bit funky.  The
+entire interpreter (minus two utility functions) is presented on a
+single page of the book.  Talk about a concise language definition!&lt;/p&gt;
+
+
+	&lt;h2&gt;In Ruby?&lt;/h2&gt;
+
+
+	&lt;p&gt;I had often thought about implementing a Lisp interpreter, but back in
+the &amp;#8220;old days&amp;#8221;, the thought of implementing garbage collection and the
+whole runtime thing was a bit daunting.  This was in the day before C,
+so my implementation language would have been assembler &amp;#8230; yech.&lt;/p&gt;
+
+
+	&lt;p&gt;But as I was reviewing the page, I realized that with today&amp;#8217;s modern
+languages, I could problably just convert the funky M-Expressions used
+on page 13 directly into code.  So &amp;#8230; why not?&lt;/p&gt;
+
+
+	&lt;h2&gt;The Code&lt;/h2&gt;
+
+
+	&lt;p&gt;Here is the complete Ruby source code for the Lisp interpreter from
+page 13 of the Lisp Programmers manual:&lt;/p&gt;
+
+
+&lt;pre&gt;
+  # Kernel Extensions to support Lisp
+  class Object
+    def lisp_string
+      to_s
+    end
+  end
+
+  class NilClass
+    def lisp_string
+      &quot;nil&quot; 
+    end
+  end
+
+  class Array
+    # Convert an Array into an S-expression (i.e. linked list).
+    # Subarrays are converted as well.
+    def sexp
+      result = nil
+      reverse.each do |item|
+        item = item.sexp if item.respond_to?(:sexp)
+        result = cons(item, result)
+      end
+      result
+    end
+  end
+
+  # The Basic Lisp Cons cell data structures.  Cons cells consist of a
+  # head and a tail.
+  class Cons
+    attr_reader :head, :tail
+
+    def initialize(head, tail)
+      @head, @tail = head, tail
+    end
+
+    def ==(other)
+      return false unless other.class == Cons
+      return true if self.object_id == other.object_id
+      return car(self) == car(other) &amp;#38;&amp;#38; cdr(self) == cdr(other)
+    end
+
+    # Convert the lisp expression to a string.
+    def lisp_string
+      e = self
+      result = &quot;(&quot; 
+      while e
+        if e.class != Cons
+          result &amp;lt;&amp;lt; &quot;. &quot; &amp;lt;&amp;lt; e.lisp_string
+          e = nil
+        else
+          result &amp;lt;&amp;lt; car(e).lisp_string
+          e = cdr(e)
+          result &amp;lt;&amp;lt; &quot; &quot; if e
+        end
+      end
+      result &amp;lt;&amp;lt; &quot;)&quot; 
+      result
+    end
+  end
+
+  # Lisp Primitive Functions.
+
+  # It is an atom if it is not a cons cell.
+  def atom?(a)
+    a.class != Cons
+  end
+
+  # Get the head of a list.
+  def car(e)
+    e.head
+  end
+
+  # Get the tail of a list.
+  def cdr(e)
+    e.tail
+  end
+
+  # Construct a new list from a head and a tail.
+  def cons(h,t)
+    Cons.new(h,t)
+  end
+
+  # Here is the guts of the Lisp interpreter.  Apply and eval work
+  # together to interpret the S-expression.  These definitions are taken
+  # directly from page 13 of the Lisp 1.5 Programmer's Manual.
+
+  def apply(fn, x, a)
+    if atom?(fn)
+      case fn
+      when :car then caar(x)
+      when :cdr then cdar(x)
+      when :cons then cons(car(x), cadr(x))
+      when :atom then atom?(car(x))
+      when :eq then car(x) == cadr(x)
+      else
+        apply(eval(fn,a), x, a)
+      end
+    elsif car(fn) == :lambda
+      eval(caddr(fn), pairlis(cadr(fn), x, a))
+    elsif car(fn) == :label
+      apply(caddr(fn), x, cons(cons(cadr(fn), caddr(fn)), a))
+    end
+  end
+
+  def eval(e,a)
+    if atom?(e)
+      cdr(assoc(e,a))
+    elsif atom?(car(e))
+      if car(e) == :quote
+        cadr(e)
+      elsif car(e) == :cond
+        evcon(cdr(e),a)
+      else
+        apply(car(e), evlis(cdr(e), a), a)
+      end
+    else
+      apply(car(e), evlis(cdr(e), a), a)
+    end
+  end
+
+  # And now some utility functions used by apply and eval.  These are
+  # also given in the Lisp 1.5 Programmer's Manual.
+
+  def evcon(c,a)
+    if eval(caar(c), a)
+      eval(cadar(c), a)
+    else
+      evcon(cdr(c), a)
+    end
+  end
+
+  def evlis(m, a)
+    if m.nil?
+      nil
+    else
+      cons(eval(car(m),a), evlis(cdr(m), a))
+    end
+  end
+
+  def assoc(a, e)
+    if e.nil?
+      fail &quot;#{a.inspect} not bound&quot; 
+    elsif a == caar(e)
+      car(e)
+    else
+      assoc(a, cdr(e))
+    end
+  end
+
+  def pairlis(vars, vals, a)
+    while vars &amp;#38;&amp;#38; vals
+      a = cons(cons(car(vars), car(vals)), a)
+      vars = cdr(vars)
+      vals = cdr(vals)
+    end
+    a
+  end
+
+  # Handy lisp utility functions built on car and cdr.
+
+  def caar(e)
+    car(car(e))
+  end
+
+  def cadr(e)
+    car(cdr(e))
+  end
+
+  def caddr(e)
+    car(cdr(cdr(e)))
+  end
+
+  def cdar(e)
+    cdr(car(e))
+  end
+
+  def cadar(e)
+    car(cdr(car(e)))
+  end
+&lt;/pre&gt;
+
+	&lt;h2&gt;An Example&lt;/h2&gt;
+
+
+	&lt;p&gt;And to prove it, here&amp;#8217;s an example program using Lisp.  I didn&amp;#8217;t
+bother to write a Lisp parser, so I need to express the lists in
+standard Ruby Array notation (which is converted to a linked list via
+the &amp;#8220;sexp&amp;#8221; method).&lt;/p&gt;
+
+
+	&lt;p&gt;Here&amp;#8217;s the ruby program using the lisp interpreter.  The Lisp system
+is very primitive.  The only way to define the function needed is to
+put them in the environment structure, which is simply an association
+list of keys and values.&lt;/p&gt;
+
+
+&lt;pre&gt;
+  require 'lisp'
+
+  # Create an environment where the reverse, rev_shift and null
+  # functions are bound to an appropriate identifier.
+
+  env = [
+    cons(:rev_shift,
+      [:lambda, [:list, :result],
+        [:cond,
+          [[:null, :list], :result],
+          [:t, [:rev_shift, [:cdr, :list],
+              [:cons, [:car, :list], :result]]]]].sexp),
+    cons(:reverse,
+      [:lambda, [:list], [:rev_shift, :list, nil]].sexp),
+    cons(:null, [:lambda, [:e], [:eq, :e, nil]].sexp),
+    cons(:t, true), 
+    cons(nil, nil)
+  ].sexp
+
+  # Evaluate an S-Expression and print the result
+
+  exp = [:reverse, [:quote, [:a, :b, :c, :d, :e]]].sexp
+
+  puts &quot;EVAL: #{exp.lisp_string}&quot; 
+  puts &quot;  =&amp;gt;  #{eval(exp,env).lisp_string}&quot; 
+&lt;/pre&gt;
+
+	&lt;p&gt;The program will print:&lt;/p&gt;
+
+
+	&lt;pre&gt;&lt;code&gt;$ ruby reverse.rb
+EVAL: (reverse (quote (a b c d e)))
+  =&amp;gt;  (e d c b a)&lt;/code&gt;&lt;/pre&gt;
+
+
+	&lt;p&gt;All I need to do is write a Lisp parser and a &lt;span class=&quot;caps&quot;&gt;REPL&lt;/span&gt;, and I&amp;#8217;m in business!&lt;/p&gt;
+
+
+	&lt;h2&gt;The Example in Standard Lisp Notation&lt;/h2&gt;
+
+
+	&lt;p&gt;If you found the Ruby-ized Lisp code hard to read, here is the reverse
+funtions written in a more Lisp-like manner.&lt;/p&gt;
+
+
+&lt;pre&gt;
+(defun reverse (list)
+  (rev-shift list nil))
+
+(defun rev-shift (list result)
+  (cond ((null list) result)
+        (t (rev-shift (cdr list) (cons (car list) result))) ))
+&lt;/pre&gt;</description>
+  </item>
+
+</channel>
+</rss>

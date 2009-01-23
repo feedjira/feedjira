@@ -1,0 +1,208 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<feed xmlns='http://www.w3.org/2005/Atom'
+xmlns:itunes='http://www.itunes.com/dtds/podcast-1.0.dtd'
+xmlns:on='http://www.oreillynet.com/csrss/'
+xml:lang='en-US'>
+
+<title>RailsConf</title>
+<link rel="alternate" type="text/html" href="http://www.oreillynet.com/conferences/blog/railsconf/" hreflang="en" title="RailsConf" />
+<subtitle type='text'>Explore the latest Rails developments at this four-day event co-presented by O'Reilly and Ruby Central.</subtitle>
+<rights>Copyright O'Reilly Media, Inc.</rights>
+<id>http://www.oreillynet.com/conferences/blog/railsconf/</id>
+<updated>2009-01-07T15:49:02-08:00</updated>
+<link rel="self" type="application/atom+xml" href="http://www.oreillynet.com/pub/feed/89"/>
+<itunes:author>O'Reilly Media, Inc.</itunes:author>
+<itunes:category text='Technology' />
+<itunes:explicit>no</itunes:explicit>
+<itunes:owner>
+<itunes:name>O'Reilly Media, Inc.</itunes:name>
+<itunes:email>webmaster@oreillynet.com</itunes:email>
+</itunes:owner>
+
+<entry>
+	<title>Rails + Merb = Rails 3</title>
+	<id>http://feeds.feedburner.com/~r/oreillyconferencesrailsconf/~3/505692909/rails_merb_rails_3.html</id>
+	<link rel='alternate' href='http://feeds.feedburner.com/~r/OreillyConferencesRailsconf/~3/505692909/rails_merb_rails_3.html'/>
+	<summary type='html'>
+	&lt;p&gt;One particularly sweet and surprising piece of tech news happened just before Christmas, traditionally a pretty slow time of year for most important announcements: Rails and Merb will be merged into Rails 3. &lt;/p&gt;
+&lt;p&gt;Judging from the wealth of comments on both &lt;a href="http://weblog.rubyonrails.org/2008/12/23/merb-gets-merged-into-rails-3"&gt;David Heinemeier Hansson&amp;#8217;s&lt;/a&gt; and &lt;a href="http://yehudakatz.com/2008/12/23/rails-and-merb-merge/"&gt;Yehuda Katz&amp;#8217;s&lt;/a&gt; blog posts about it, the news was enthusiastically received by both communities. As one of the nearly 200 commenters on DHH&amp;#8217;s blog post announcing the merger wrote, &amp;#8220;Rails 3 FTW!&amp;#8221;&lt;/p&gt;
+&lt;p&gt;Over on the Eden Development blog, &lt;a href="http://blog.edendevelopment.co.uk/2009/01/05/rails-and-merb-to-merge-an-opinion/"&gt;Chris wrote&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;
+Now, the best bits of merb will become Rails 3, and some of the best ruby coders in the business will be working on the framework we use every day. That&amp;#8217;s a great thing for Rails users everywhere. Despite the claims of some, it&amp;#8217;s not about one set of people &amp;#8216;winning&amp;#8217; and one &amp;#8216;losing&amp;#8217;. Ultimately the combined codebase is the real winner, and therefore the people that use it, such as companies like ourselves. We&amp;#8217;ll certainly do all we can to support the move here.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;While tentatively scheduled to release during RailsConf May 4-7 in Las Vegas (an admittedly ambitious timeframe), DHH recently noted that &lt;a href="http://loudthinking.com/posts/37-bringing-merbs-providesdisplay-into-rails-3"&gt;the flow of Merb ideas into Rails 3 is already under way&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The &lt;a href="http://en.oreilly.com/rails2009/public/cfp/46"&gt;Call for Participation&lt;/a&gt; for RailsConf is open until February 17&amp;#8211;a much longer period than usual, precisely to accommodate new developments like this.&lt;/p&gt;&lt;img height="1" src="http://feeds.feedburner.com/~r/OreillyConferencesRailsconf/~4/505692909" width="1" /&gt;
+	</summary>
+	<author><name>Suzanne Axtell, Communications Gal</name></author>
+	<category term="Railsconf" />
+	<updated>2009-01-07T15:49:02-08:10</updated>
+</entry>
+
+<entry>
+	<title>News Release: RailsConf 2009 Opens Call for Participation: Extended Review Period Will Include Up-to-the-minute Materials</title>
+	<id>http://feeds.feedburner.com/~r/oreillyconferencesrailsconf/~3/424060439/news_release_railsconf_2009_op.html</id>
+	<link rel='alternate' href='http://feeds.feedburner.com/~r/OreillyConferencesRailsconf/~3/424060439/news_release_railsconf_2009_op.html'/>
+	<summary type='html'>
+	&lt;p&gt; Sebastopol, CA, October 14, 2008&amp;#8211;RailsConf 2009 will gather the Ruby on Rails community in Las Vegas May 4-7, 2009, at the Las Vegas Hilton. Ruby Central, Inc. and O&amp;#8217;Reilly Media, Inc. have opened the Call for Participation, which will remain open an extra three months in order to accommodate the most up-to-the minute Rails topics. Program Chair Chad Fowler invites proposals for conference sessions, workshops, and panels from Rubyists, hackers, web developers, system administrators, and anyone else with a passion for Rails.&lt;/p&gt;
+&lt;p&gt;RailsConf, co-presented by Ruby Central, Inc. and O&amp;#8217;Reilly Media, Inc., is the largest official conference dedicated to everything Rails. Through keynotes, sessions, tutorials, panels, and events, RailsConf is an interactive meeting ground for the most innovative and successful Rails experts and companies. The conference provides attendees with examples of business models, development paradigms, and design strategies to enable mainstream businesses and new arrivals to the Web and Rails to take advantage of this new generation of services and opportunities.&lt;/p&gt;
+&lt;p&gt;Read the &lt;a href="http://press.oreilly.com/pub/pr/2114"&gt;full release.&lt;/a&gt;&lt;/p&gt;&lt;img height="1" src="http://feeds.feedburner.com/~r/OreillyConferencesRailsconf/~4/424060439" width="1" /&gt;
+	</summary>
+	<author><name>Jackie Hadley, Communications Associate</name></author>
+	<category term="Railsconf" />
+	<updated>2008-10-17T14:19:03-08:11</updated>
+</entry>
+
+<entry>
+	<title>Call for Participation Is Open for RailsConf 2009</title>
+	<id>http://feeds.feedburner.com/~r/oreillyconferencesrailsconf/~3/420710445/call_for_participation_is_open.html</id>
+	<link rel='alternate' href='http://feeds.feedburner.com/~r/OreillyConferencesRailsconf/~3/420710445/call_for_participation_is_open.html'/>
+	<summary type='html'>
+	&lt;p&gt;Head to Vegas, baby! Ruby Central and O&amp;#8217;Reilly Media have just opened the call for speakers for the &lt;a href="http://en.oreilly.com/rails2009/"&gt;2009 edition of RailsConf&lt;/a&gt;. If you&amp;#8217;re a hacker, Rubyist, trainer, web developer, Rails system administrator, and/or entrepreneur, &lt;a href="http://en.oreilly.com/rails2009/public/cfp/46"&gt;submit a proposal to speak at RailsConf 2009&lt;/a&gt;. Help make the next RailsConf the best ever!&lt;/p&gt;&lt;img height="1" src="http://feeds.feedburner.com/~r/OreillyConferencesRailsconf/~4/420710445" width="1" /&gt;
+	</summary>
+	<author><name>Suzanne Axtell, Communications Gal</name></author>
+	<category term="Railsconf" />
+	<updated>2008-10-14T10:19:16-08:12</updated>
+</entry>
+
+<entry>
+	<title>newsblaze.com: RailsConf '08-Passionate about Rails</title>
+	<id>http://feeds.feedburner.com/~r/oreillyconferencesrailsconf/~3/377460728/newsblazecom_railsconf_08passi_1.html</id>
+	<link rel='alternate' href='http://feeds.feedburner.com/~r/OreillyConferencesRailsconf/~3/377460728/newsblazecom_railsconf_08passi_1.html'/>
+	<summary type='html'>
+	&lt;p&gt;News Blaze highlights RailsConf &amp;#8216;08:&lt;br /&gt;
+&lt;blockquote&gt;&amp;#8220;Passionate and fascinating&amp;#8221; is the way one developer summed up RailsConf 2008 in Portland May 26-June 1, the largest physical gathering of Ruby and Rails developers in the world. &lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;Read &lt;a href="http://newsblaze.com/story/20080818144916zzzz.nb/topstory.html"&gt;more.&lt;/a&gt;&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/OreillyConferencesRailsconf/~4/377460728" height="1" width="1"/&gt;
+	</summary>
+	<author><name>Jackie Hadley, Communications Associate</name></author>
+	<updated>2008-08-28T15:39:23-08:13</updated>
+</entry>
+
+<entry>
+	<title>Espndev.com: RailsConf 2008 Retrospective</title>
+	<id>http://feeds.feedburner.com/~r/oreillyconferencesrailsconf/~3/304100953/espndevcom_railsconf_2008_retr.html</id>
+	<link rel='alternate' href='http://feeds.feedburner.com/~r/OreillyConferencesRailsconf/~3/304100953/espndevcom_railsconf_2008_retr.html'/>
+	<summary type='html'>
+	&lt;p&gt;Dary praises RailsConf 2008  as &lt;a href="http://espndev.com/blog/railsconf-2008-retrospective-part-the-first/" &gt;passionate and fascinating.&lt;/a&gt;&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/OreillyConferencesRailsconf/~4/304100953" height="1" width="1"/&gt;
+	</summary>
+	<author><name>Maureen Jennings, Conferences Publicist</name></author>
+	<updated>2008-06-03T13:18:33-08:14</updated>
+</entry>
+
+<entry>
+	<title>Infoq.Com: GemStone Revealed Plans for MagLev Ruby</title>
+	<id>http://feeds.feedburner.com/~r/oreillyconferencesrailsconf/~3/302424784/infoqcom_gemstone_revealed_pla.html</id>
+	<link rel='alternate' href='http://feeds.feedburner.com/~r/OreillyConferencesRailsconf/~3/302424784/infoqcom_gemstone_revealed_pla.html'/>
+	<summary type='html'>
+	&lt;p&gt;Nick Laiacona &lt;a href="http://www.infoq.com/news/2008/05/MagLevAtRailsConf"&gt;covers the news about GemStone&amp;#8217;s new MagLev project&lt;/a&gt; &lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/OreillyConferencesRailsconf/~4/302424784" height="1" width="1"/&gt;
+	</summary>
+	<author><name>Maureen Jennings, Conferences Publicist</name></author>
+	<updated>2008-06-01T13:18:33-08:15</updated>
+</entry>
+
+<entry>
+	<title>Drewblas.com: RailsConf 2008 - Friday Evening Summary</title>
+	<id>http://feeds.feedburner.com/~r/oreillyconferencesrailsconf/~3/301965858/drewblascom_railsconf_2008_fri.html</id>
+	<link rel='alternate' href='http://feeds.feedburner.com/~r/OreillyConferencesRailsconf/~3/301965858/drewblascom_railsconf_2008_fri.html'/>
+	<summary type='html'>
+	&lt;p&gt;Drew Blas &lt;a href= "http://drewblas.com/2008/05/31/railsconf-2008-friday-evening-summary/"&gt;posts this excellent, in-depth summation&lt;/a&gt; of Friday night at RailsConf. Blas reports on Charles Nutter&amp;#8217;s talk &amp;#8220;The Sun you don&amp;#8217;t know,&amp;#8221; the winners of the Ruby Hero awards, and contributes a thoughtful, detailed exploration of David Heinemeier Hansson&amp;#8217;s thought-provoking keynote.&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/OreillyConferencesRailsconf/~4/301965858" height="1" width="1"/&gt;
+	</summary>
+	<author><name>Avila Reese - PR Contributor</name></author>
+	<updated>2008-05-31T13:18:33-08:16</updated>
+</entry>
+
+<entry>
+	<title>Internetnews.com: Twitter Rocks on Ruby on Rails</title>
+	<id>http://feeds.feedburner.com/~r/oreillyconferencesrailsconf/~3/301959059/internetnewscom_twitter_rocks.html</id>
+	<link rel='alternate' href='http://feeds.feedburner.com/~r/OreillyConferencesRailsconf/~3/301959059/internetnewscom_twitter_rocks.html'/>
+	<summary type='html'>
+	&lt;p&gt;Sean Michael Kerner &lt;a href= "http://blog.internetnews.com/skerner/2008/05/twitter-rocks-on-ruby-on-rails.html"&gt;enters this perspective&lt;/a&gt; on recent Twitter hiccups and RoR.&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/OreillyConferencesRailsconf/~4/301959059" height="1" width="1"/&gt;
+	</summary>
+	<author><name>Avila Reese - PR Contributor</name></author>
+	<updated>2008-05-31T13:18:33-08:17</updated>
+</entry>
+
+<entry>
+	<title>InfoWorld: Microsoft Linking Silverlight, Ruby on Rails</title>
+	<id>http://feeds.feedburner.com/~r/oreillyconferencesrailsconf/~3/301959061/infoworld_microsoft_linking_si.html</id>
+	<link rel='alternate' href='http://feeds.feedburner.com/~r/OreillyConferencesRailsconf/~3/301959061/infoworld_microsoft_linking_si.html'/>
+	<summary type='html'>
+	&lt;p&gt;Paul Krill &lt;a href= "http://www.infoworld.com/article/08/05/30/Microsoft-linking-Silverlight-Ruby-on-Rails_1.html"&gt;reports on&lt;/a&gt; Microsoft&amp;#8217;s demonstration of their new Silveright browser plug-in technology at RailsConf this year.&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/OreillyConferencesRailsconf/~4/301959061" height="1" width="1"/&gt;
+	</summary>
+	<author><name>Avila Reese - PR Contributor</name></author>
+	<updated>2008-05-31T13:18:33-08:18</updated>
+</entry>
+
+<entry>
+	<title>BetaNews: Twitter Developer Hints it May Not be Hot on Ruby on Rails After All</title>
+	<id>http://feeds.feedburner.com/~r/oreillyconferencesrailsconf/~3/301959062/betanews_twitter_developer_hin.html</id>
+	<link rel='alternate' href='http://feeds.feedburner.com/~r/OreillyConferencesRailsconf/~3/301959062/betanews_twitter_developer_hin.html'/>
+	<summary type='html'>
+	&lt;p&gt;Scott M. Fulton, III &lt;a href= "http://www.betanews.com/article/Twitter_developer_hints_it_may_not_be_hot_on_Ruby_on_Rails_after_all/1212162613"&gt;examines the ramifications and implications&lt;/a&gt; of Twitters recent technical problems.&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;
+Two weeks ago, following the rapid spread of rumors that the Twitter service &amp;#8212; recently besieged with technical troubles &amp;#8212; may be abandoning the Ruby on Rails development platform in building a replacement platform for itself, the company&amp;#8217;s co-founder Biz Stone flat out refuted those rumors in a comment to BetaNews.
+&lt;/p&gt;&lt;/blockquote&gt;&lt;img src="http://feeds.feedburner.com/~r/OreillyConferencesRailsconf/~4/301959062" height="1" width="1"/&gt;
+	</summary>
+	<author><name>Avila Reese - PR Contributor</name></author>
+	<updated>2008-05-31T13:18:33-08:19</updated>
+</entry>
+
+<entry>
+	<title>TMCnet: Intridea Debuts Scalr, Hosting Environment Using the Amazon Cloud</title>
+	<id>http://feeds.feedburner.com/~r/oreillyconferencesrailsconf/~3/301446635/tmcnet_intridea_debuts_scalr_h.html</id>
+	<link rel='alternate' href='http://feeds.feedburner.com/~r/OreillyConferencesRailsconf/~3/301446635/tmcnet_intridea_debuts_scalr_h.html'/>
+	<summary type='html'>
+	&lt;p&gt;David Simms &lt;a href= "http://opensourcepbx.tmcnet.com/topics/development-tools/articles/29400-intridea-debuts-scalr-hosting-environment-using-amazon-cloud.htm"&gt;examines Intridea&amp;#8217;s new launch Scalr&lt;/a&gt;, which debuted at RailsConf Thursday, May 29. &lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/OreillyConferencesRailsconf/~4/301446635" height="1" width="1"/&gt;
+	</summary>
+	<author><name>Avila Reese - PR Contributor</name></author>
+	<updated>2008-05-30T13:18:33-08:20</updated>
+</entry>
+
+<entry>
+	<title>InfoWorld: The Path Towards a Language Specification for Ruby</title>
+	<id>http://feeds.feedburner.com/~r/oreillyconferencesrailsconf/~3/301412606/infoworld_the_path_towards_a_l.html</id>
+	<link rel='alternate' href='http://feeds.feedburner.com/~r/OreillyConferencesRailsconf/~3/301412606/infoworld_the_path_towards_a_l.html'/>
+	<summary type='html'>
+	&lt;p&gt;Savio Rodrigues &lt;a href= "http://weblog.infoworld.com/openresource/archives/2008/05/the_path_toward.html"&gt;reports on Engin Yard&amp;#8217;s Rubinius project &lt;/a&gt;which previewed at RailsConf. &lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;
+What&amp;#8217;s interesting is that since Ruby doesn&amp;#8217;t really have a specification, it&amp;#8217;s difficult to say that platform xyz is not a compatible implementation of a Ruby runtime. In response, Rubinius decided to create a test suite that could help standardize Ruby as a language across the growing number of VM implementations for Ruby.
+&lt;/p&gt;&lt;/blockquote&gt;&lt;img src="http://feeds.feedburner.com/~r/OreillyConferencesRailsconf/~4/301412606" height="1" width="1"/&gt;
+	</summary>
+	<author><name>Avila Reese - PR Contributor</name></author>
+	<updated>2008-05-30T13:18:33-08:21</updated>
+</entry>
+
+<entry>
+	<title>Washingtonpost.com: Don't Debug Alone With FiveRuns' TuneUp</title>
+	<id>http://feeds.feedburner.com/~r/oreillyconferencesrailsconf/~3/301404347/washingtonpostcom_dont_debug_a.html</id>
+	<link rel='alternate' href='http://feeds.feedburner.com/~r/OreillyConferencesRailsconf/~3/301404347/washingtonpostcom_dont_debug_a.html'/>
+	<summary type='html'>
+	&lt;p&gt;Henry Work &lt;a href= "http://www.washingtonpost.com/wp-dyn/content/article/2008/05/30/AR2008053000115.html"&gt;reports on the FiveRuns launch&lt;/a&gt;&amp;#8211; TuneUp, a &amp;#8220;social debugging tool for Rails applications.&amp;#8221;&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/OreillyConferencesRailsconf/~4/301404347" height="1" width="1"/&gt;
+	</summary>
+	<author><name>Avila Reese - PR Contributor</name></author>
+	<updated>2008-05-30T13:18:33-08:22</updated>
+</entry>
+
+<entry>
+	<title>Register While You Can for RailsConf 2008</title>
+	<id>http://feeds.feedburner.com/~r/oreillyconferencesrailsconf/~3/243422202/register_while_you_can_for_rai.html</id>
+	<link rel='alternate' href='http://feeds.feedburner.com/~r/OreillyConferencesRailsconf/~3/243422202/register_while_you_can_for_rai.html'/>
+	<summary type='html'>
+	&lt;p&gt;Once again Chad Fowler and his Ruby Central cohorts have put together an excellent schedule of &lt;a href="http://en.oreilly.com/rails2008/public/schedule/presentations/General"&gt;sessions&lt;/a&gt; and &lt;a href="http://en.oreilly.com/rails2008/public/schedule/topic/tutorial"&gt;tutorials&lt;/a&gt;. This probably explains why, like last year, seats are going fast for &lt;a href="http://railsconf.com"&gt;RailsConf 2008&lt;/a&gt;, so &lt;a href="https://en.oreilly.com/rails2008/public/register"&gt;sign up&lt;/a&gt; while you can. &lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/OreillyConferencesRailsconf/~4/243422202" height="1" width="1"/&gt;
+	</summary>
+	<author><name>Suzanne Axtell, Communications Gal</name></author>
+	<updated>2008-02-29T09:40:28-08:23</updated>
+</entry>
+
+<entry>
+	<title>Daniel Todd Blog: Flex sessions at RailsConf Europe</title>
+	<id>http://feeds.feedburner.com/~r/oreillyconferencesrailsconf/~3/191431556/daniel_todd_blog_flex_sessions.html</id>
+	<link rel='alternate' href='http://feeds.feedburner.com/~r/OreillyConferencesRailsconf/~3/191431556/daniel_todd_blog_flex_sessions.html'/>
+	<summary type='html'>
+	&lt;p&gt;This blog entry compares the agenda for the RailsConf stateside and RailsConf Europe:&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;&lt;a href="http://www.danieltodd.com/blog/?p=87"&gt;It looks like RailsConf Europe in Berlin, Germany (17-19 September 2007) is concentrating on Flex&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;img src="http://feeds.feedburner.com/~r/OreillyConferencesRailsconf/~4/191431556" height="1" width="1"/&gt;
+	</summary>
+	<author><name>Dawn Applegate</name></author>
+	<updated>2008-01-16T08:53:18-08:24</updated>
+</entry>
+
+</feed>

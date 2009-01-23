@@ -1,0 +1,708 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	>
+
+<channel>
+	<title>The Merbist</title>
+	<atom:link href="http://merbist.com/feed/" rel="self" type="application/rss+xml" />
+	<link>http://merbist.com</link>
+	<description>Merb &#38; Rails 3 news - consulting - training</description>
+	<pubDate>Wed, 14 Jan 2009 04:20:46 +0000</pubDate>
+	<generator>http://wordpress.org/?v=2.6.2</generator>
+	<language>en</language>
+			<item>
+		<title>recent news Jan 13 2009</title>
+		<link>http://merbist.com/2009/01/13/recent-news-jan-13-2009/</link>
+		<comments>http://merbist.com/2009/01/13/recent-news-jan-13-2009/#comments</comments>
+		<pubDate>Wed, 14 Jan 2009 04:20:46 +0000</pubDate>
+		<dc:creator>Matt Aimonetti</dc:creator>
+		
+		<category><![CDATA[News]]></category>
+
+		<guid isPermaLink="false">http://merbist.com/?p=436</guid>
+		<description><![CDATA[Lately, I have been really busy with my business, an upcoming training and some non rails-merb related experimentations. (I&#8217;m learning objective-c and playing with macruby)
+However, here are some of the latest news:
+
+Merb 1.0.8 should be released soon with some bug fixes and some improvements
+The Merb book got 2 new sections, Sequel and Active Record. I&#8217;ll [...]]]></description>
+			<content:encoded><![CDATA[<p>Lately, I have been really busy with my <a href="http://ma-agile.com" target="_blank">business</a>, an <a href="http://merbclass.com" target="_blank">upcoming training</a> and some non rails-merb related experimentations. (I&#8217;m learning objective-c and playing with <a href="http://www.macruby.org/trac/wiki/MacRuby" target="_blank">macruby</a>)</p>
+<p>However, here are some of the latest news:</p>
+<ul>
+<li>Merb 1.0.8 should be released soon with some bug fixes and some improvements</li>
+<li>The Merb book got 2 new sections, Sequel and Active Record. I&#8217;ll be spending quite a lot of time on the book in the next weeks.</li>
+<li>Ted Han is working on reorganizing the <a href="http://wiki.merbivore.com" target="_blank">Merb wiki</a></li>
+<li>We started a new mailing list for people wanting to help with the <a href="http://groups.google.com/group/rubyonrails-wiki" target="_blank">Rails wiki</a></li>
+<li>We also started a mailing list for people wanting to help with the <a href="http://groups.google.com/group/rails-activism" target="_blank">activism effort</a></li>
+</ul>
+<p>For those in the Phoenix area, next week, <a href="http://yehuda" target="_blank">Yehuda</a> and I will be at <a href="http://integrumtech.com/" target="_blank">integrum</a>/<a href="http://gangplankhq.com/" target="_blank">gangplank</a>&#8217;s for the <a href="http://phxrails.com/" target="_blank">Phoenix Rails User Group</a>.</p>
+<p>We are looking to meeting you all.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://merbist.com/2009/01/13/recent-news-jan-13-2009/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Meet the merbists: Hampton Catlin</title>
+		<link>http://merbist.com/2009/01/06/meet-the-merbists-hampton-catlin/</link>
+		<comments>http://merbist.com/2009/01/06/meet-the-merbists-hampton-catlin/#comments</comments>
+		<pubDate>Tue, 06 Jan 2009 20:13:37 +0000</pubDate>
+		<dc:creator>Matt Aimonetti</dc:creator>
+		
+		<category><![CDATA[Meet the merbists]]></category>
+
+		<category><![CDATA[hampton catlin]]></category>
+
+		<category><![CDATA[merb]]></category>
+
+		<category><![CDATA[wikipedia]]></category>
+
+		<guid isPermaLink="false">http://merbist.com/?p=417</guid>
+		<description><![CDATA[
+Meet today&#8217;s merbist: Hampton Catlin
+I&#8217;m personally looking forward to seeing Hampton&#8217;s work migrated to Rails 3 in a few months.
+
+Matt Aimonetti: Hi Hampton, could you please introduce yourself and tell us what you do for a living.
+Hampton Catlin: I&#8217;m Hampton Catlin. I&#8217;m &#8220;The Haml Guy&#8221; as I&#8217;m apparently termed all the time when introduced. I&#8217;m [...]]]></description>
+			<content:encoded><![CDATA[<div class="mtm-question"><img class="alignleft" title="Hampton Catlin" src="http://farm1.static.flickr.com/156/379744976_8f241811fe_m.jpg" alt="" width="160" height="240" /></div>
+<div class="mtm-question">Meet today&#8217;s merbist: <a href="http://hamptoncatlin.com/" target="_blank">Hampton Catlin</a></div>
+<div class="mtm-question">I&#8217;m personally looking forward to seeing Hampton&#8217;s work migrated to Rails 3 in a few months.</div>
+<p><br class="spacer" /></p>
+<div class="mtm-question"><strong>Matt Aimonetti</strong>: Hi Hampton, could you please introduce yourself and tell us what you do for a living.</div>
+<div class="mtm-answer"><strong>Hampton Catlin: </strong>I&#8217;m Hampton Catlin. I&#8217;m &#8220;The Haml Guy&#8221; as I&#8217;m apparently termed all the time when introduced. I&#8217;m an early Rails hacker who has done a lot more than Haml, but whatever. These days, I&#8217;m doing a ton of iPhone development and am currently heading Wikimedia&#8217;s efforts for a new mobile platform&#8230; based on Merb!</div>
+<p><br class="spacer" /></p>
+<div class="mtm-question"><strong>Matt Aimonetti</strong>: How did you get started with Ruby, what&#8217;s your background?</div>
+<div class="mtm-answer"><strong>Hampton Catlin</strong>: Well, everyone is welcome to laugh. But Slashdot introduced me to Ruby. I got into it about two months before Rails because the hotness (it was an obscure project at the time) and I grabbed a copy of the Pickaxe and never looked back.  Prior to that I was working a crappy job getting people coffee at a bank. And then prior to that I was doing research for Nasa at my university with Java beuwolf clusters. It sounds fancier than it was.</div>
+<p><br class="spacer" /></p>
+<div class="mtm-question"><strong>Matt Aimonetti:</strong> You chose to learn and use Merb, could you please let us know why and how that happened?</div>
+<div class="mtm-answer"><strong>Hampton Catlin: </strong>I had known of Ezra for a while and Yehuda. And so when I heard about the project, I was very interested. At the time I was looking forward to using a &#8220;Rails Light&#8221;. Of course, we know Merb is much  more than that, but that was the original attraction.<br class="spacer" /><br />
+Also, at some point I got really upset by the use of global variables in both of the frameworks, so I did some major patching to Merb to change over to module based constants. Aka, Merb.root instead of MERB_ROOT. I was ranting about it enough that I decided to do something about it. Also, I did some patches that messed up Merb with some weird documentation stuff. Sorry, Ezra.</div>
+<p><br class="spacer" /></p>
+<div class="mtm-question"><strong>Matt Aimonetti</strong>: Do you have some Merb projects available online we can look at? what was your experience so far?</div>
+<div class="mtm-answer"><strong>Hampton Catlin</strong>: My most successful iPhone app (which was recently purchased by Wikimedia) was an app to browse Wikipedia. I chose Merb because I knew that I wanted something a little more bare bones than Rails, and it turned out to be a really good choice. And now, I&#8217;m getting a chance to extend that work into an entire platform for Wikimedia mobile. I am still looking for help with it&#8230;.</p>
+<p><a href="http://github.com/hcatlin/wikimedia-mobile/tree/master">http://github.com/hcatlin/wikimedia-mobile/tree/master</a><br />
+Its not live yet with wikipedia, but that&#8217;s the code that you can help with! <img src='http://merbist.com/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </div>
+<p><br class="spacer" /></p>
+<div class="mtm-question"><strong>Matt Aimonetti</strong> What is your favorite aspect of the Merb framework?</div>
+<div class="mtm-answer"><strong>Hampton Catlin: </strong>Its modular design. Its as complex or as simple as you would like it to be. Also, its easy to run Haml, and the more people that use Haml, the harder my nipples get.</div>
+<p><br class="spacer" /></p>
+<div class="mtm-question"><strong>Matt Aimonetti</strong> Could you please mention an aspect of Merb you hope to see being improved in the near future?</div>
+<div class="mtm-answer"><strong>Hampton Catlin</strong>: Honestly, everyone is wild about gems, but I&#8217;m not particularly. I find gem management a bit cumbersome. I&#8217;m most likely doing something wrong or not doing it the right way. But yeah, I still find it cumbersome. I&#8217;d like to pair the excellent Gem support with better library creation support. I think both are needed. I don&#8217;t want to throw stuff in my /lib folder or randomly in my project. I want some structure and some simplicity. Somewhere between plugins and base libraries. I think this is where Merb *could* shine.<br class="spacer" /><br />
+Also, resource handling. I wrote make_resourceful for Rails and I keep needing to do something similar for Merb. m_r is not very popular because I haven&#8217;t really put much time into spreading the word. Mostly, I just use it. However, there are about 60 other Rails developers in the world that use it extensively. So, its a small, close-knit group of developers using the tool. And, I think something like it could be much more elegantly mixed into Merb. Obviously its a plug-in, but I think its a low hanging fruit. &#8220;current_object&#8221; as a method should ALWAYS be around when its logical.</div>
+<p><br class="spacer" /></p>
+<div class="mtm-question"><strong>Matt Aimonetti</strong> Thank you for your time. Anything else you would like to add?</div>
+<div class="mtm-answer"><strong>Hampton Catlin</strong>: Buy my book. Buy my book. Buy my book. Buy my book. Buy my book. Buy my book. Buy my book. Buy my book. Buy my book. Buy my book. Ok, not really. My book isn&#8217;t very good. But, I just wanted to make a &#8220;The Critic&#8221; reference.</div>
+<p><br class="spacer" /></p>
+]]></content:encoded>
+			<wfw:commentRss>http://merbist.com/2009/01/06/meet-the-merbists-hampton-catlin/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Presenting the Rails Activists</title>
+		<link>http://merbist.com/2009/01/05/presenting-the-rails-activists/</link>
+		<comments>http://merbist.com/2009/01/05/presenting-the-rails-activists/#comments</comments>
+		<pubDate>Mon, 05 Jan 2009 18:15:44 +0000</pubDate>
+		<dc:creator>Matt Aimonetti</dc:creator>
+		
+		<category><![CDATA[News]]></category>
+
+		<category><![CDATA[rails]]></category>
+
+		<category><![CDATA[activists]]></category>
+
+		<category><![CDATA[evangelism]]></category>
+
+		<category><![CDATA[merb]]></category>
+
+		<category><![CDATA[rails 3.0]]></category>
+
+		<category><![CDATA[rails3]]></category>
+
+		<guid isPermaLink="false">http://merbist.com/?p=422</guid>
+		<description><![CDATA[Today is Monday. I usually don&#8217;t like Mondays.
+Being Monday goes with waking up early, going back to work, and lots of deadlines.
+However, today is a special Monday. It&#8217;s the first Monday of the year and I have a special announcement!
+During the Rails/Merb merge announcement, it was mentioned that I will be joining the soon to [...]]]></description>
+			<content:encoded><![CDATA[<p>Today is Monday. I usually don&#8217;t like Mondays.<br />
+Being Monday goes with waking up early, going back to work, and lots of deadlines.</p>
+<p>However, today is a special Monday. It&#8217;s the first Monday of the year and I have a <strong>special announcement</strong>!</p>
+<p>During the Rails/Merb merge announcement, it was mentioned that I will be joining the soon to be created <strong>&#8220;Evangelism team&#8221;</strong>.</p>
+<p>A few people asked me what being a <strong>&#8220;Rails Evangelist&#8221;</strong> means. To reassure my parents and close friends, no, <em>I didn&#8217;t join a new cult worshiping locomotives</em>. However, I still think that public transportation should be improved, especially in this time of crisis (but that&#8217;s a different topic).</p>
+<p>A technical evangelist, is usually someone who knows and uses a specific technology and thinks others should look into it. This is something I&#8217;ve been doing for Merb while being part of the core team. I initiated and helped organizing MerbCamp, re-did the wiki, started working on the merb-book, spent time looking for and listening to users, spent time with third party developers and people pushing Merb to a new level (YellowPages, Wikimedia and many others).</p>
+<p>This interaction with the end users and the third party developers is something the entire Merb team valued a great deal and I always felt it was something the community really appreciated.</p>
+<p>As part of the merge, it was agreed that we would push things further and have a team within the Rails team to take care of &#8220;communication&#8221;. Rails is a bigger project than Merb and communication between the dev team and the users isn&#8217;t always something easy to do.</p>
+<p>That&#8217;s why we have formed a separate team that will help communicate and support the community better. We now even have <a href="http://rubyonrails.org/activists" target="_blank">an official page on the Rails website</a> itself <img src='http://merbist.com/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+<h2>The Rails Activists</h2>
+<p><a href="http://merbist.com/wp-content/uploads/2009/01/ateam.jpg"><img class="alignleft size-medium wp-image-423" title="a team" src="http://merbist.com/wp-content/uploads/2009/01/ateam-300x225.jpg" alt="" width="300" height="225" /></a>The A-Team <a href="http://weblog.rubyonrails.org/2009/1/5/announcing-the-rails-activists" target="_blank">just got announced on the Rails blog</a>.</p>
+<p>Instead of being called &#8220;evangelists&#8221;, we are going to be called &#8220;activists&#8221;. I think part of the argument was that the E-Team doesn&#8217;t sound as good as the A-Team.</p>
+<p>We started with team of 4. You might not know them yet but they all are brilliant people and I&#8217;m really glad to be working with them.</p>
+<p><br class="spacer" /><br />
+<br class="spacer" /><br />
+<br class="spacer" /></p>
+<p><img class="alignleft" style="clear:both" title="Gregg Pollack" src="http://weblog.rubyonrails.com/assets/2009/1/4/gregg_pollack.png" alt="" width="90" height="103" /><strong>Gregg Pollack</strong>, from Rails Envy. You might remember Gregg from the Rails vs * commercials or from the Rails Envy podcasts. I&#8217;ve known Gregg for a little while and he&#8217;s someone you can rely on and always full of energy/new ideas.<br class="spacer" /><br />
+<br class="spacer" /></p>
+<p><img class="alignleft" style="clear:both" title="Ryan Bates" src="http://weblog.rubyonrails.com/assets/2009/1/4/ryan_bates.png" alt="" width="90" height="103" /><strong><br />
+Ryan Bates</strong>, mainly known for his Railscasts. I only met Ryan once in person, but I&#8217;ve always been impressed by his work (don&#8217;t tell anyone, but I secretly dreamt of having something like Railscasts but for Merb <img src='http://merbist.com/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> )<br class="spacer" /><br />
+<br class="spacer" /></p>
+<p><img class="alignleft" style="clear:both" title="Mike Gunderloy" src="http://weblog.rubyonrails.com/assets/2009/1/4/mike_gunderloy.png" alt="" width="90" height="103" /><strong>Mike Gunderloy</strong>. I actually did not know Mike but I have read and enjoyed his <a href="http://afreshcup.com/" target="_blank">blog</a> and have seen his work on the Rails guides. Mike is an experienced writer and developer. He joked the other day saying that he started programming before any member of the Rails team was even born. Mike is a great addition to the team and I&#8217;m looking forward to learning from his experience.<br />
+<br class="spacer" /></p>
+<p>Gregg and Ryan also covered the event, you might want to check their blog posts (<a href="http://www.railsenvy.com/2009/1/5/the-rails-activist-team" target="_blank">Gregg&#8217;s</a> and <a href="http://afreshcup.com/2009/01/05/announcing-the-rails-activists/" target="_blank">Mike&#8217;s</a>)</p>
+<h2 style="clear:both">So what are we going to do?</h2>
+<p>Pretty simple. We&#8217;ve boiled it down to 2 sentences:</p>
+<blockquote><p>The mission of the Rails Activists is to empower and support the worldwide network of Ruby on Rails users. We do this by publicizing Rails, making adoption easier, and enhancing developer support.</p></blockquote>
+<p>if you prefer a few more details, here are some of the tasks we are going to work on:</p>
+<ul>
+<li>Public Relations with media of all sizes</li>
+<li>Ombudsman work to ensure good user-to-user support</li>
+<li>Community Leadership at events and conferences</li>
+<li>Media Organization to help create good promotional opportunities</li>
+<li>Website maintenance</li>
+<li>Documentation efforts</li>
+<li>Developer support</li>
+</ul>
+<h2>Do we need help?</h2>
+<p><strong>Absolutely!</strong> The idea is not that we are going to do all the work. The concept of this new team is to help organize the community. We are going to build a Rails Network, a network of people involved in local Rails &#8220;evangelism&#8221;/activism, people contributing and/or translating documentation, third part developers etc&#8230;</p>
+<p>First thing would be to <a href="http://groups.google.com/group/rails-activism" target="_blank">join the mailing list</a> and share your suggestions, comments, concerns, etc., with us.</p>
+<p>Secondly, we have already set up some forums to hear your feedback.</p>
+<p>To start off, we are asking people to let us know what they <a href="http://rails.uservoice.com/" target="_blank">would like to see happening in the Rails3 timeframe</a>.<br />
+We have other forums for more <a href="http://rails.uservoice.com/pages/general_feedback" target="_blank">general feedback</a>, but we need to work with deadlines so we can prioritize accordingly. Using the Rails3 milestone should help us focus on a short/medium term deadline. <a href="http://rails.uservoice.com/pages/rails_future" target="_blank">Long term and not specific suggestions</a> are welcome in the other forums.</p>
+<p>Finally, contact us. You can find multiple ways to do so on the <a href="http://rubyonrails.org/activists" target="_blank">activism team web page</a>.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://merbist.com/2009/01/05/presenting-the-rails-activists/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>latest Merb and Rails 3.0 news</title>
+		<link>http://merbist.com/2008/12/29/latest-merb-and-rails-30-news/</link>
+		<comments>http://merbist.com/2008/12/29/latest-merb-and-rails-30-news/#comments</comments>
+		<pubDate>Mon, 29 Dec 2008 21:57:38 +0000</pubDate>
+		<dc:creator>Matt Aimonetti</dc:creator>
+		
+		<category><![CDATA[News]]></category>
+
+		<category><![CDATA[merb]]></category>
+
+		<category><![CDATA[rails]]></category>
+
+		<category><![CDATA[rails 3.0]]></category>
+
+		<guid isPermaLink="false">http://merbist.com/?p=412</guid>
+		<description><![CDATA[
+
+Foy Savas, author or the &#8220;merb way&#8221; wrote a very well written post on &#8220;Rails monoculture&#8221;
+Pat Eyler, wrote an article asking if Rails and Merb would be better together.
+Ben Aldred, tell people to stop worrying and start loving Rails 3.
+fotonauts.com a Rails and Merb Photo website developed by an ex-apple team, was featured in TechCrunch. [...]]]></description>
+			<content:encoded><![CDATA[<p><a href="http://foysavas.com"><img class="alignleft size-medium wp-image-414" title="foy-savas" src="http://merbist.com/wp-content/uploads/2008/12/foy-savas-1.png" alt="" width="200" height="235" /></a></p>
+<ul>
+<li><a href="http://foysavas.com" target="_blank">Foy Savas</a>, author or the &#8220;<a href="http://my.safaribooksonline.com/9780321601636" target="_blank">merb way</a>&#8221; wrote a very well written <a href="http://www.foysavas.com/blog/2008/12/25/lets-be-clear-the-rails-monoculture-is-over.html" target="_blank">post on &#8220;Rails monoculture&#8221;</a></li>
+<li><a href="http://on-ruby.blogspot.com/" target="_blank">Pat Eyler</a>, wrote an article asking if <a href="http://on-ruby.blogspot.com/2008/12/rails-and-merb-better-together.html" target="_blank">Rails and Merb would be better together</a>.</li>
+<li><a href="http://www.geekmade.co.uk/" target="_blank">Ben Aldred</a>, tell people to <a href="http://www.geekmade.co.uk/2008/12/stop-worrying-and-start-loving-rails-3/" target="_blank">stop worrying and start loving Rails 3</a>.</li>
+<li><span class="entry-content"><a href="http://www.fotonauts.com/" target="_blank">fotonauts.com</a> a Rails and Merb Photo website developed by an ex-apple team, was <a href="http://www.techcrunch.com/2008/12/24/fotonauts-opens-up-a-little-more-skip-the-5000-long-waitlist/" target="_blank">featured in TechCrunch</a>. Fotonauts is the perfect example of an app that will bain a lot from the merge.</span></li>
+<li><a href="http://yehudakatz.com" target="_blank">Yehuda</a> has been blogging a lot about every single step and even though most people are enjoying a well deserved break, you can read the <a href="http://yehudakatz.com/2008/12/26/dispatch-from-the-front-lines/" target="_blank">details</a> <a href="http://yehudakatz.com/2008/12/27/status-memorandum/" target="_blank">of</a> the <a href="http://yehudakatz.com/2008/12/29/another-rails-2x3-update/" target="_blank">work</a> started on the merge.</li>
+</ul>
+<p>Basically, the work started, we are getting familiar with the rails code base and are optimizing things slowly but surely with a focus on testing JRuby. The Merb router is being optimized and ported over to Rails 3.0. Rails and Merb developers will be able to stick to their DSL (so we stay backward compatible). Merb bootloader is also being ported over without breaking the backward compatibility. Finally, ActiveSupport is being broken down in more manageable/independant chunks so people will be able to pick only what they want to use. A &#8220;mini&#8221; version is also on the work.</p>
+<ul>
+<li><a href="http://yehudakatz.com/2008/12/28/merb-107-release-notes/" target="_blank">Merb 1.0.7 got released</a> yesterday with a bunch of bug fixes.</li>
+<li>merb_sequel 1.0 should be released sometime this week and i&#8217;m planning on adding rails i18n syntax support to merb_babel.</li>
+</ul>
+]]></content:encoded>
+			<wfw:commentRss>http://merbist.com/2008/12/29/latest-merb-and-rails-30-news/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Merb/Rails merge, or Why should merbists be happy?</title>
+		<link>http://merbist.com/2008/12/25/merb-rails-merge-or-why-should-merbists-be-happy/</link>
+		<comments>http://merbist.com/2008/12/25/merb-rails-merge-or-why-should-merbists-be-happy/#comments</comments>
+		<pubDate>Fri, 26 Dec 2008 04:11:02 +0000</pubDate>
+		<dc:creator>Matt Aimonetti</dc:creator>
+		
+		<category><![CDATA[merb]]></category>
+
+		<category><![CDATA[rails]]></category>
+
+		<category><![CDATA[merge]]></category>
+
+		<category><![CDATA[rails 3.0]]></category>
+
+		<guid isPermaLink="false">http://merbist.com/?p=398</guid>
+		<description><![CDATA[December 23, 2008, was an important day for the Ruby community. People who used to argue and not get along, have decided to sit down, talk and evaluate their differences. The end result is a strong collaboration of two teams who share the exact same goal.
+Overall, the news was very well received, just look at [...]]]></description>
+			<content:encoded><![CDATA[<p><a href="http://flickr.com/photos/xrrr/2478140383/"><img class="alignright" title="merge" src="http://farm4.static.flickr.com/3211/2478140383_8e2e4ab7a3_m.jpg" alt="" width="240" height="160" /></a>December 23, 2008, was an important day for the Ruby community. People who used to argue and not get along, have decided to sit down, talk and evaluate their differences. The end result is a strong collaboration of two teams who share the exact same goal.</p>
+<p>Overall, the news was very well received, just look at the tweets out there and the comments on <a href="http://yehudakatz.com/2008/12/23/rails-and-merb-merge/" target="_blank">Yehuda&#8217;s</a> and <a href="http://weblog.rubyonrails.org/2008/12/23/merb-gets-merged-into-rails-3" target="_blank">Rails&#8217; blogs</a>.</p>
+<p>Interestingly enough, the Rails community really embraced this decision and just got totally excited about the perspective of merging merb&#8217;s philosophy and expertise into Rails. If you re-read David&#8217;s blog post you can see that it&#8217;s a <strong>real homage to Merb</strong>.</p>
+<p>The rest of the internet sounds pretty happy about the news, here are few posts:</p>
+<ul>
+<li><a href="http://arstechnica.com/news.ars/post/20081224-ruby-on-rails-and-merb-to-merge-for-rails-3.html" target="_blank">arstechnica.com</a></li>
+<li><a href="http://www.internetnews.com/dev-news/article.php/3793296/Merb+Merges+With+Rails.htm" target="_blank">internetnews</a></li>
+</ul>
+<p>Even <a href="http://www.zedshaw.com" target="_blank">Zed the entertainer</a> thought it was a good thing:</p>
+<blockquote><p><a href="http://www.zedshaw.com/blog/index.html" target="_blank">&#8220;I honestly didn’t think that would ever happen. I just assumed that Merb<br />
+would eventually wipe out Rails by being the better framework, or they’d<br />
+wipe each other out soon.</a></p>
+<p><a href="http://www.zedshaw.com/blog/index.html" target="_blank">So, congrats are in order. You guys are finally grown-ups and now have<br />
+the chance to make something better.&#8221;</a></p></blockquote>
+<p>Some <a href="http://iamruinous.com/2008/12/23/why-merb-becoming-rails-3-is-a-good-thing/" target="_blank">merbists like Jade Meskill</a> really understood what we are trying to do while some other ones got really <a href="http://www.mr-eel.com/archives/158" target="_blank">mad at us</a>.</p>
+<p>I think a pattern emerged from the negative reactions:</p>
+<ul>
+<li>Why merge when we are about to win?!</li>
+<li>What does Merb win by being merged into Rails?</li>
+<li>Why not merge Rails into Merb?</li>
+<li>You are killing innovation by killing the competition</li>
+<li>You screwed us over and now I have to go &#8220;back&#8221; to Rails</li>
+<li>Rails 3.0 won&#8217;t even be as good as Merb 1.x</li>
+<li>The Rails team won&#8217;t let you do what you have to do to merge Merb into Rails</li>
+<li>DHH is a jerk</li>
+</ul>
+<p>Let me quote Yehuda:  <strong>&#8220;Calm yourselves ;)&#8221;</strong>.</p>
+<h2>Why merge when we are about to win?!</h2>
+<p>This is probably the most rational argument. This is also something the Merb core team considered for a little bit.<br />
+Merb is gaining huge momentum and the target audience was very reactive to what we did.<br />
+<a href="http://flickr.com/photos/mhaithaca/1317815300/"><img class="alignleft" title="super heroes" src="http://farm2.static.flickr.com/1087/1317815300_095983272e_m.jpg" alt="" width="240" height="160" /></a>People such as Yellow Pages, Wikipedia and even Adobe started using or looking seriously at Merb because of its focus on modularity and performance.<br />
+We started building an elite community and we were pretty proud of that.</p>
+<p>But take a moment to think about it. Our goal has never been to hurt or compete with Rails. Our goals were to get modularity, performance and a strong API. If the Rails team really wants that, and will work on it, why should we work against each other?<br />
+It&#8217;s not about winning or losing. It&#8217;s all about the long term plan of your framework, about the people involved and the community behind it. We had to take ourselves out of the equation and consider what would be good for the Ruby community.</p>
+<h2>What does Merb win by being merged into Rails?</h2>
+<p>People seem to easily find things we might lose but have a hard time finding things we are gaining.<br />
+<img class="alignright size-medium wp-image-404" title="rails" src="http://merbist.com/wp-content/uploads/2008/12/rails.png" alt="" width="87" height="112" />Looking at it on the very short term, this is probably correct. The merb team will have to learn how to work with the Rails team.<br />
+We need to understand the reasons behind every single aspect of the code and find ways of merging things nicely.<br />
+On top of that, we still need to work on merb as promised. (see Wycats&#8217; post)</p>
+<p>However, in the long term we get all the benefits of Rails:<br />
+- stability<br />
+- community<br />
+- traction<br />
+- experience<br />
+- don&#8217;t have to always justify why use Merb instead of Rails</p>
+<p>But more importantly, we extend our team.</p>
+<p>Most people using a framework might not realize what it is to work on a big Open Source project.<br />
+When you work on an OSS project, people come and go, and that&#8217;s why you usually have a core team of people you can rely on.<br />
+Merb has a lot of contributors but a small core team of 5 people (Yehuda, Carl, Daniel, Michael and myself).<br />
+Managing a project, such as merb, requires a tremendous amount of time and patience. Rails has the same problem with its core team of 6 people. People have lives, business, projects etc&#8230;</p>
+<p>Joining two teams of experts in developing web frameworks in Ruby is like if in the next Soccer World Cup, the French and Italian teams would go on the fields at the same time to beat other teams. 22 players on 1 side, training and learning together. American readers, please imagine the Giants and the Colts facing the Green Bay Packers (I was told I don&#8217;t like the Packers).</p>
+<p>Long term, you will get better quality and more frequent releases. We also have different world views and backgrounds which means we will learn a lot from each other, again that means better code for you guys <img src='http://merbist.com/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+<h2>Why not merge Rails into Merb?</h2>
+<p>That&#8217;s actually a good question. We discussed maybe using merb-core as a base for Rails 3.0<br />
+The truth is that Merb 2.0 would probably be as big as Rails but more modular.<br />
+So we have the choice to keep on building on top of Merb 2.0 or deconstruct Rails.<br />
+As the Russians say: &#8216;ломать — не строить&#8217;, it&#8217;s always easier to take things apart <img src='http://merbist.com/wp-includes/images/smilies/icon_wink.gif' alt=';)' class='wp-smiley' /> </p>
+<p><img class="alignright" title="merge rails" src="http://farm4.static.flickr.com/3033/2814371262_04b9876490_m.jpg" alt="" width="180" height="240" />Rails already has a test suite, it has already been tested on the wild for a while and its internals are known to many developers. Taking apart the code to make it faster, cleaner and more modular is arguably easier than reinventing the wheel. At the end of the day it doesn&#8217;t really matter from which end you start as long as you end up with the same result.</p>
+<p>Some people even asked to come up with a new name for the merged project. Meails, Mr Ails, Reverb, Reab were suggested. While I thought it was a joke, some people were really serious. Can you imagine if during the recent bailout, banks changed names every time they were purchased by another bank? People would be super confused and would not even know where to send their mortgage payments.<br />
+On top of that, Rails has a huge user base compared to Merb and has an immense brand recognition in the world at large, it would be foolish to throw that away.</p>
+<p>Let&#8217;s not be chauvinistic and see what&#8217;s best for all.</p>
+<h2>You are killing innovation by killing the competition</h2>
+<p>Again, a good point but my question to you is: Should we stay in the competition just for the sake of it?</p>
+<p>Rails clearly told us: we want what you have and we would love you to work with us. So the options were:</p>
+<ul>
+<li>tell them to go to hell and let them try to redo what we already did and know how to do.</li>
+<li> accept to work with them and make Rails a better framework.</li>
+</ul>
+<p><em>Option 1</em> would keep the competition alive, but now you have 2 groups of people trying to do the same thing and being better at different aspects. The community gets confused and communication breaks.</p>
+<p><em>Option 2</em>: we lose the Merb vs Rails competition, but we double the amount of people working on Rails and therefore increase the change to make it better faster.</p>
+<p>We went for option 2 and we know there is already some competition out there and there will be more coming up soon. I don&#8217;t think it&#8217;s realistic to expect us not to merge because we want to keep the competition going.</p>
+<h2>You screwed us over and now I have to go &#8220;back&#8221; to Rails</h2>
+<p>Yehuda will blog about some more detailed examples as we are making progress, but you need to stop thinking that Merb will just be absorbed into Rails.<br />
+If Rails just wanted to add some &#8220;Merb flavor&#8221; to Rails, they would have just taken whatever they needed and would not be interested in a merge.<br />
+See Rails 3.0 as a new generation of Rails, whatever we promised you for merb 2.0 plus all the goodies from Rails. Rails users will still have their default stack and all choices will be made for them (like in the current Merb stack). The difference for standard Rails user will be better performance, a static API and an option to go off the &#8220;golden path&#8221;.<br />
+Merbists won&#8217;t lose the stuff they like in Merb, stacks, full support for DataMapper, Sequel and other ORMS, jQuery or other JS library, opt-in solution using just rails-core, better core isolation, built-in RSpec and webrat support, slices, merb-cache, merb-auth and all the other key plugins that will be ported over.</p>
+<p>To be able to achieve all of that, we will have to make some infrastructure and code modifications.</p>
+<p>Rails internals should end up:</p>
+<p>* way less magical (even Merb uses some magic, but we&#8217;ll make sure to keep it to a minimum)<br />
+* returning shorter and cleaner stack traces<br />
+* cleaner (required for the new API)<br />
+* better isolated (required to increase the modularity)<br />
+* alias_method_chain won&#8217;t be available at the public API level (we probably still will need some chaining mechanism internally, but that&#8217;s a different story)</p>
+<p>So, no, you don&#8217;t have to go &#8220;back&#8221; to Rails. In fact, imagine you could do exactly what Rails does but with the performance and modular architecture of Merb. That&#8217;s what you will get with Rails 3.0.</p>
+<h2>Rails 3.0 won&#8217;t even be as good as Merb 1.x</h2>
+<p>I think I mainly replied to this question in my previous answer.<br />
+There is no reason why Rails 3.0 won&#8217;t be better than Merb 1.x.  Actually, I believe our API will actually be even better. With the help of David, the existing Rails core team, and the Rails community, we will be able to define an awesome API that will change the way ruby web development will be done.<br />
+The merb API is great but we already know some of its limitations and we don&#8217;t have as many plugin developers to work with. Working with plugin developers is something I&#8217;m personally excited about. As a Rails developer I have been really frustrated when using 3rd party plugins and trying to develop my own.<br />
+Having a well tested, developed against, public API will make all the Rails 3.0 plugins so much better. And because Merb plugins already use an API, we will be able to port all the plugins over, so it will be at least as good as 1.x<br />
+Also, we are going to work on real app benchmark tests to make sure the performance gain is at least as good as what we have with Merb.</p>
+<p>Migration will be easy and well documented. We are not giving up on the Merb book and it will be very useful to explain the Merb way to new comers wanting an idea of the new stuff in Rails 3.0. It will also be the best source of information to migrate your app to Rails 3.0.</p>
+<p>Talking about migration, we promised to give you a sane migration path when it will be time to migrate.<br />
+Again, don&#8217;t freak out because we are changing the name, the spirit of Merb will keep on living.</p>
+<h2>The Rails team won&#8217;t let you do what you have to do to merge Merb into Rails</h2>
+<p>In all honestly, I was worried about that. I was wondering if all of that was not an evil scam planned by DHH to kill Merb as it was getting a good momentum. I like conspiracy theories and it sounded pretty good.<br />
+To my surprised, after a few private conversations with David, I realized that he was genuinely interested in making Rails better for people and fulfill the needs of people who need more flexibility.<br />
+Just re-read his blog post <a href="http://weblog.rubyonrails.org/2008/12/23/merb-gets-merged-into-rails-3">http://weblog.rubyonrails.org/2008/12/23/merb-gets-merged-into-rails-3</a>. After what he said, how can he back up and just keep Rails the way it is? And why in the world would he want that to happen?<br />
+It&#8217;s a team effort and we have already spent hours and hours discussing some details. I can promise you that the Rails team is very excited about the new stuff that&#8217;s coming up. But don&#8217;t forget that it&#8217;s a merge and we are reconsidering some of the stuff we did in Merb to better re-implement them in Rails 3.0.<br />
+So far, I haven&#8217;t seen any of the Rails core team member tell us, no you can&#8217;t do that because that&#8217;s not the way it&#8217;s done in Rails or because we just don&#8217;t like it.</p>
+<h2>DHH is a jerk</h2>
+<p>Recently, in an interview I gave to rubylearning.com <a href="http://rubylearning.com/blog/2008/12/18/matt-aimonetti-why-on-earth-would-you-ignore-merb/">http://rubylearning.com/blog/2008/12/18/matt-aimonetti-why-on-earth-would-you-ignore-merb/</a> I mentioned that a big difference between Merb and Rails was the way we were dealing with the user base.<br />
+I quoted David from an Interview he gave to InfoQ <a href="http://www.infoq.com/interviews/David-Hansson">http://www.infoq.com/interviews/David-Hansson</a> back in 2006.</p>
+<p>As part of the merging evaluation process we literally spent hours talking back and forth. I had a seriously hard time believing that Rails and David honestly wanted to change their world views. How can you go from saying what you said in 2006 to adopting what Merb is pushing for: letting the framework bend to make what each developer wants if he doesn&#8217;t want to follow the &#8220;golden path&#8221;?</p>
+<p>Interestingly enough, David recently addressed this point on his blog. <a href="http://www.loudthinking.com/posts/36-work-on-what-you-use-and-share-the-rest">http://www.loudthinking.com/posts/36-work-on-what-you-use-and-share-the-rest</a></p>
+<p>&#8220;I wanted to take a few minutes to address some concerns of the last 4%. The people who feel like this might not be such a good idea. And in particular, the people who feel like it might not be such a good idea because of various things that I&#8217;ve said or done over the years.&#8221;</p>
+<p>First thing first, David addresses the minority of people worried about his image and what it means for them.<br />
+So, David actually cares about hard core merbists and he wants them to join the fun. I personally see this as something very encouraging!</p>
+<p>A recurring theme we hear a lot is that Rails becomes whatever DHH/37signals needs/wants. If DHH needs something new, it will make it to Rails, if he doesn&#8217;t need it, it won&#8217;t.</p>
+<p>David has a very simple and almost shocking response: DHH != Rails</p>
+<p>David is really happy with Rails. Rails satisfies his needs but he knows that some people out there need/want something more/different.</p>
+<p>&#8220;I personally use all of those default choices, so do many other Rails programmers. The vanilla ride is a great one and it&#8217;ll remain a great one. But that doesn&#8217;t mean it has to be the only one. There are lots of reasons why someone might want to use Data Mapper or Sequel instead of Active Record. I won&#8217;t think of them any less because they do. In fact, I believe Rails should have open arms to such alternatives.&#8221;</p>
+<p>So, you can still think whatever you want about David. What&#8217;s important is that Rails is more than David. It&#8217;s an entire team of people with different needs and different views.</p>
+<p>DHH isn&#8217;t a dictator and based on concrete examples such as the &#8220;respond_to vs provides&#8221; discussion, I can reassure you that David has been very receptive to arguments and never tried to force any decision because he thought it was better.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://merbist.com/2008/12/25/merb-rails-merge-or-why-should-merbists-be-happy/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Rails and Merb core team working together on their next release</title>
+		<link>http://merbist.com/2008/12/23/rails-and-merb-merge/</link>
+		<comments>http://merbist.com/2008/12/23/rails-and-merb-merge/#comments</comments>
+		<pubDate>Tue, 23 Dec 2008 19:50:02 +0000</pubDate>
+		<dc:creator>Matt Aimonetti</dc:creator>
+		
+		<category><![CDATA[News]]></category>
+
+		<category><![CDATA[merb]]></category>
+
+		<category><![CDATA[merge]]></category>
+
+		<category><![CDATA[rails]]></category>
+
+		<category><![CDATA[rails 3.0]]></category>
+
+		<category><![CDATA[ruby]]></category>
+
+		<guid isPermaLink="false">http://merbist.com/?p=382</guid>
+		<description><![CDATA[This is huge!
+While people still try to find some drama in a hypothetical war between Rails and merb &#8230;
+The Rails team and the Merb team announced today that they will work together on a joined version of the 2 frameworks. This is so exciting! Nobody believed it could ever happen (I personally, seriously had my [...]]]></description>
+			<content:encoded><![CDATA[<h3>This is huge!</h3>
+<p>While people still try to find some drama in a hypothetical war between Rails and merb &#8230;</p>
+<p><img class="alignright size-medium wp-image-389" title="surprise1" src="http://merbist.com/wp-content/uploads/2008/12/surprise1-296x300.jpg" alt="" width="296" height="300" />The Rails team and the Merb team announced today that they will work together on a joined version of the 2 frameworks. This is so exciting! Nobody believed it could ever happen (I personally, seriously had my doubt).</p>
+<p>Yehuda had a <a href="http://yehudakatz.com/2008/12/23/rails-and-merb-merge/" target="_blank">great post</a> laying out the plan and explaining things in details. Check out <a href="http://weblog.rubyonrails.org/2008/12/23/merb-gets-merged-into-rails-3" target="_blank">David&#8217;s post </a>explaining why he wants us to work together and his vision of a better Ruby world.</p>
+<p>I have to say that I have been impressed by the Rails core team and especially David (DHH).</p>
+<p>I&#8217;ve known David for few years now and we had long (sometimes heated) discussions on topics like i18n/l10n for Rails. David is known to be a very opinionated person. But if you come up with the right arguments, he can be convinced and when that happens, he is willing to move forward and shake things up.</p>
+<p>This merge is a concrete example that David and the rest of the Rails team care about Rails and the Ruby community more than we usually give them credit for. As a unified team, we are going to change the way web development in Ruby is done!</p>
+<p>But what does it mean for you?</p>
+<p>I put together a FAQ video which, I hope will answer your questions.</p>
+<p><object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="400" height="300" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="src" value="http://vimeo.com/moogaloop.swf?clip_id=2607919&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=&amp;fullscreen=1" /><embed type="application/x-shockwave-flash" width="400" height="300" src="http://vimeo.com/moogaloop.swf?clip_id=2607919&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=&amp;fullscreen=1" allowscriptaccess="always" allowfullscreen="true"></embed></object><br />
+<a href="http://vimeo.com/2607919">Matt Aimonetti: message to all merbists</a></p>
+<p>Transcript:</p>
+<p>Hi, I&#8217;m Matt Aimonetti from the merb core team and as you might have heard, a big announcement was made earlier today.<br />
+I did this video to hopefully answer the questions you might have.</p>
+<h3>Q: So what&#8217;s the big news?</h3>
+<ul>
+<li>merb and Rails team will work together on the next version of their frameworks</li>
+<li>merb 2.0 and Rails 3.0 share the same common endpoint</li>
+<li>we realized we now have the same objectives and agreed on all the key principles.</li>
+<li>merb will provide Rails with agnosticism, modularity, improved performance and a public API.</li>
+<li>The end product will be called Rails 3.0 but what real matters is that it&#8217;s a huge gain for the entire community.</li>
+</ul>
+<h3>Q: What??? I thought there was a war going on between Rails and merb, what happened?</h3>
+<ul>
+<li> There was no war between Rails and merb</li>
+<li> We created merb because Rails was not fitting us</li>
+<li> We wanted better performance, more choices/ more modularity and a Public API.</li>
+<li> The Rails team now embraces these concepts and want Rails to follow them, so why not work together?</li>
+</ul>
+<h3>Q: Wait, does that mean that merb is dead?</h3>
+<ul>
+<li> Absolutely not!</li>
+<li> merb development won&#8217;t stop, we are going to keep on releasing updates until Rails 3.0</li>
+<li> clear migration path, and upgrading to Rails 3.0 will be as trivial as upgrading from Rails 2.x to Rails 3.0</li>
+</ul>
+<h3>Q: What does the timeline look like?</h3>
+<p>We just started getting together to discuss the technical details. We are shooting for a release at RailsConf 2009. However it&#8217;s hard to estimate this kind of thing so, again, that&#8217;s just an estimate <img src='http://merbist.com/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+<h3>Q: I just started a merb project, so what now?</h3>
+<p>I&#8217;m sure you had valid reasons to use merb, you needed modularity, performance and a solid API.<br />
+Keep on using Merb, we won&#8217;t let you down. The good news is that the next version of merb (Rails 3.0) will be even awesomer!</p>
+<h3>Q: What about my client who was looking at using merb for his new project?</h3>
+<p>If your client is going to be using merb for valid reasons (and not just because it&#8217;s not Rails) they should still use merb, but with the full understanding that they will end up using Rails in 6 months or so. Again, Rails 3.0 will have what pushed you to use merb.</p>
+<h3>Q: I&#8217;ve been involved with the merb-book, what will happen with this project?</h3>
+<ul>
+<li> Rails 3.0 won&#8217;t get released right away</li>
+<li> still need awesome documentation</li>
+<li> if we look at Rails 3.0 as merb 2.0, we can easily imagine how the current work can be extended to the new version</li>
+<li> Rails team will also include an evangelism team which I will be part of, so will be able to focus more on projects like the book</li>
+</ul>
+<h3>Q: I&#8217;ve been working on a merb plugin, what should I do?</h3>
+<p>Keep working on it! We&#8217;ll assist you with the migration process and the new solid API.</p>
+<h3>Q: What if I still have questions?</h3>
+<p>Come talk with me, or any member of the new team. We&#8217;ll be open to hear your questions, worries, frustrations.<br />
+merb always valued its developers and we will continue to do so but on a bigger scale.</p>
+<hr />Concretely, nothing changes for merb users. People loving merb should not worry. The way you build merb apps won&#8217;t change until merb2.0/Rails3.0. We will still work on your favorite framework and improve it.</p>
+<p>Lori Holden worked on merb_sequel and we should release a 1.0 release of the plugin in a few days.</p>
+<p>I&#8217;m sure this news comes as a shock for many of you, but try to not see Rails 3.0 as the way Rails is right now. Imagine a version of Rails with true modularity and agnosticism (sequel, DM and AR will still be supported) and the same type of performance as what you get with merb. In other words, the Rails world is about to discover the power of merb!</p>
+<p>Here is what Yehuda explicitly says in his blog post:</p>
+<ul>
+<li>Rails will become more modular, starting with a rails-core, and including the ability to opt in or out of specific components. [...]</li>
+<li>We will port all of our performance improvements into Rails. This includes architectural decisions that are big performance wins.[..]</li>
+<li>As of Rails 3, Rails will have a defined public API with a test suite for that API. [..]</li>
+<li>Rails will still ship with the &#8220;stack&#8221; version as the default (just as merb does since 1.0), but the goal is to make it easy to do with Rails what people do with merb today.</li>
+<li>Rails will be modified to more easily support DataMapper or Sequel as first-class ORMs. [..]</li>
+<li>Rails will continue their recent embrace of Rack, which [..] will improve the state of modular, sharable logic between applications.</li>
+<li>In general, we will take a look at features in merb that are not in Rails (the most obvious example is the more robust router) and find a way to bring them into Rails.</li>
+</ul>
+<h2>Personal perspective</h2>
+<p>I&#8217;m personally really excited about this opportunity. I had a hard time believing that we could work together but I was proved wrong. We have many challenges in front of us, but watching the two teams working together is very reassuring.</p>
+<p>I&#8217;m also glad to see that we will have a Rails Evangelism team that I will be part of. I strongly believe that one of the many reasons why merb has been so successful is because we work and listen to our community. We have put a tremendous amount of energy into trying to understand what you guys need and what you like and dislike. In return, we have seen many people working hard on the wiki and the merb-book.</p>
+<p>Can you imagine doing that with almost 4 Million Rails developers?</p>
+<p>I&#8217;m also looking forward to working with a team and reaching to even more people.</p>
+<h2>Other news related to the merge:</h2>
+<ul>
+<li>The RubyOnRails website will keep a trace of this historical moment: <a href="http://rubyonrails.org/merb" target="_blank">http://rubyonrails.org/merb</a></li>
+<li>The <a href="http://merbclass.com/" target="_blank">merb training scheduled for Jan 19-21</a>, in partnership with <a href="http://integrumtech.com/" target="_blank">Integrum</a>, will still take place, and if you want to get a head start and learn about the things that will make Rails 3.0 totally kick ass, I&#8217;d suggest you join us.</li>
+</ul>
+<p>If you have any questions, or if you want me to publicly answer questions on your blog please contact me. I&#8217;ll do my best to get back to everyone.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://merbist.com/2008/12/23/rails-and-merb-merge/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Meet the merbists: Jason Seifer</title>
+		<link>http://merbist.com/2008/12/20/meet-the-merbists-jason-seifer/</link>
+		<comments>http://merbist.com/2008/12/20/meet-the-merbists-jason-seifer/#comments</comments>
+		<pubDate>Sat, 20 Dec 2008 12:02:47 +0000</pubDate>
+		<dc:creator>Matt Aimonetti</dc:creator>
+		
+		<category><![CDATA[Meet the merbists]]></category>
+
+		<category><![CDATA[merb]]></category>
+
+		<category><![CDATA[jason seifer]]></category>
+
+		<category><![CDATA[jruby]]></category>
+
+		<category><![CDATA[merbist]]></category>
+
+		<guid isPermaLink="false">http://merbist.com/?p=372</guid>
+		<description><![CDATA[
+Today I&#8217;m interviewing Jason Seifer known for the funny envyads and the weekly RailsEnvy podcast.
+Matt Aimonetti: Hi Jason, could you please introduce yourself and tell us what you do for a living?
+Jason Seifer: My name is Jason Seifer and I do mostly web development for a living along with podcasting and screencasting.
+
+Matt Aimonetti: How did [...]]]></description>
+			<content:encoded><![CDATA[<div class="mtm-question">
+<div id="attachment_373" class="wp-caption alignleft" style="width: 310px"><img class="size-medium wp-image-373" title="jason seifer" src="http://merbist.com/wp-content/uploads/2008/12/jason-seifer-300x225.jpg" alt="Jason Seifer" width="300" height="225" /><p class="wp-caption-text">Jason Seifer</p></div>
+<p>Today I&#8217;m interviewing <a href="http://jasonseifer.com/" target="_blank">Jason Seifer</a> known for the funny <a href="http://www.youtube.com/user/envyads" target="_blank">envyads</a> and the weekly <a href="http://railsenvy.com/" target="_blank">RailsEnvy podcast</a>.</div>
+<div class="mtm-question"><strong>Matt Aimonetti:</strong> Hi Jason, could you please introduce yourself and tell us what you do for a living?</div>
+<div class="mtm-answer"><strong>Jason Seifer:</strong> My name is Jason Seifer and I do mostly web development for a living along with podcasting and screencasting.</div>
+<p><br class="spacer" /></p>
+<div class="mtm-question"><strong>Matt Aimonetti:</strong> How did you get started with Ruby, what&#8217;s your background?</div>
+<div class="mtm-answer"><strong>Jason Seifer:</strong> As far as my background goes, I have a degree in Psychology from the University of Central Florida. I got started with Ruby by way of learning Rails. I used to do some hacking on perl and php but never anything for full time work until Rails came along. I fell in love with the Ruby language that way.</div>
+<p><br class="spacer" /></p>
+<div class="mtm-question"><strong>Matt Aimonetti:</strong> You chose to learn and use Merb, could you please let us know why and how that happened?</div>
+<div class="mtm-answer"><strong>Jason Seifer:</strong> Doing the Rails Envy podcast, I&#8217;ve been keeping up with the latest merb news for a while now. Along the way I&#8217;ve been extremely impressed by how the merb team handles things, listens to its users, and implements new features. At the same time, I&#8217;m pretty lazy when it comes to coding so I wanted to wait until the API was stable and version 1.0ish before jumping in to building merb apps. I have a lot of Rails experience so picking it up wasn&#8217;t too hard.</div>
+<p><br class="spacer" /></p>
+<div class="mtm-question"><strong>Matt Aimonetti:</strong> Do you have some Merb projects available online we can look at? what was your experience so far?</div>
+<div class="mtm-answer"><strong>Jason Seifer:</strong> I don&#8217;t have anything online at the moment but I am working on a couple of things that I hope to release in the coming months. Working with merb is a pleasure most of the time, though it&#8217;s pretty easy to get confused with some common rails functions that differ slightly by name (before/before_filter, etc) if you&#8217;ve been doing Rails for a while. One thing that&#8217;s really nice about working with merb is how compact and easy to understand the framework code is. It&#8217;s very easy to jump in and see how something works if you&#8217;re having trouble.</div>
+<p><br class="spacer" /></p>
+<div class="mtm-question"><strong>Matt Aimonetti:</strong> What is your favorite aspect of the Merb framework?</div>
+<div class="mtm-answer"><strong>Jason Seifer:</strong> As far as features go, I love run_later. It&#8217;s pretty nice not to have to run a message queue for decoupling simple things like sending email from the request/response cycle. There are a number of smaller features like that which make merb nice to work with.<br class="spacer" /><br />
+My favorite aspect of merb, though, is the stable api. It&#8217;s very comforting to know that by upgrading to the next stable point release of the framework that I&#8217;m not going to have things that break. This of course doesn&#8217;t mean that a stable and comprehensive test suite isn&#8217;t important but it is one less worry.</div>
+<p><br class="spacer" /></p>
+<div class="mtm-question"><strong>Matt Aimonetti:</strong> Could you please mention an aspect of Merb you hope to see being improved in the near future?</div>
+<div class="mtm-answer"><strong>Jason Seifer:</strong> If you had asked me this question a few weeks ago I would have said documentation, but that itch is being scratched by the merb book. Though not exactly merb, I&#8217;d really love to see DataMapper get JRuby compatibility so we can get the full stack on JRuby for deployment. That would be very exciting what with everything going on in JRuby land at the moment.</div>
+<p><br class="spacer" /></p>
+<div class="mtm-question"><strong>Matt Aimonetti:</strong> Thank you for your time. Anything else you would like to add?</div>
+<p><strong>Jason Seifer:</strong><br />
+I would encourage people to try merb if they&#8217;ve been holding out at all. It&#8217;s a great time to get involved and the community is great, too. Also, I&#8217;ll be starting a merb podcast soon so stay tuned for that. Thanks very much for talking with me.</p>
+<p><br class="spacer" /></p>
+]]></content:encoded>
+			<wfw:commentRss>http://merbist.com/2008/12/20/meet-the-merbists-jason-seifer/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>meet the merbists: Andy Delcambre</title>
+		<link>http://merbist.com/2008/12/18/meet-the-merbists-andy-delcambre/</link>
+		<comments>http://merbist.com/2008/12/18/meet-the-merbists-andy-delcambre/#comments</comments>
+		<pubDate>Thu, 18 Dec 2008 12:22:09 +0000</pubDate>
+		<dc:creator>Matt Aimonetti</dc:creator>
+		
+		<category><![CDATA[Meet the merbists]]></category>
+
+		<category><![CDATA[merb]]></category>
+
+		<category><![CDATA[Andy Delcambre]]></category>
+
+		<guid isPermaLink="false">http://merbist.com/?p=378</guid>
+		<description><![CDATA[
+Today, Andy Delcambre is our featured merbist.
+Matt Aimonetti: Could you please introduce yourself and tell us what you do for a living.
+Andy Delcambre: My name is Andy Delcambre and I work for Engine Yard
+(http://engineyard.com) as a Software Engineer.  I work primarily on
+internal and customer facing projects.  These projects are almost
+exclusively written in Merb. [...]]]></description>
+			<content:encoded><![CDATA[<div class="mtm-question">
+<div id="attachment_379" class="wp-caption alignleft" style="width: 234px"><a href="http://andy.delcambre.com"><img class="size-medium wp-image-379" title="andy delcambre" src="http://merbist.com/wp-content/uploads/2008/12/andy_cafe-224x300.jpg" alt="Andy Delcambre" width="224" height="300" /></a><p class="wp-caption-text">Andy Delcambre</p></div>
+<p>Today, <a href="http://andy.delcambre.com" target="_blank">Andy Delcambre</a> is our featured merbist.</div>
+<div class="mtm-question"><strong>Matt Aimonetti:</strong> Could you please introduce yourself and tell us what you do for a living.</div>
+<div class="mtm-answer"><strong>Andy Delcambre:</strong> My name is Andy Delcambre and I work for Engine Yard<br />
+(http://engineyard.com) as a Software Engineer.  I work primarily on<br />
+internal and customer facing projects.  These projects are almost<br />
+exclusively written in Merb.  At Engine Yard we take advantage of many<br />
+of the modular aspects of Merb.  For example, we use Salesforce for<br />
+customer tracking and have a Merb slice which includes the DataMapper<br />
+adapters for Salesforce.  This gives us the ability to interact with<br />
+salesforce from any application for free.</div>
+<p><br class="spacer" /></p>
+<div class="mtm-question"><strong>Matt Aimonetti:</strong> How did you get started with Ruby, and what&#8217;s your general programming background?</div>
+<div class="mtm-answer"><strong>Andy Delcambre:</strong> I majored in Computer Science at college and had been hearing about<br />
+Ruby and Ruby on Rails for a while before I finally dove in.  I worked<br />
+for the College of Engineering as a Linux Administrator and took the<br />
+opportunity to build my first rails application: a tool for managing<br />
+our automated deployments.  This was a huge learning experience, I had<br />
+done web development in raw php before, but this was my first time<br />
+using a framework.  It was both a bit overwhelming and a breath of<br />
+fresh air.  When I graduated from University, I decided to pursue Ruby<br />
+and Rails as a career path and have yet to look back.</div>
+<p><br class="spacer" /></p>
+<div class="mtm-question"><strong>Matt Aimonetti:</strong> You chose to contribute to Merb;  how and why did that happened?</div>
+<div class="mtm-answer"><strong>Andy Delcambre:</strong> I was working at Planet Argon (http://planetargon.com), a small Ruby<br />
+on Rails development company and was looking to do some open source<br />
+contributions.  I had been hearing quite a lot about Merb in the rails<br />
+community, especially that it was smaller, lighter and faster.  I<br />
+decided to look in the bug tracker and see if there was something<br />
+small I could tackle and found a bug with the way nil and false<br />
+default arguments were handled in merb_action_args.  When my patch was<br />
+accepted I was fairly hooked.  I have been submitting small patches<br />
+ever since.  I also led the inline documentation team at the Merb<br />
+sprint in San Diego during the run up to 1.0</div>
+<p><br class="spacer" /></p>
+<div class="mtm-question"><strong>Matt Aimonetti:</strong> Do you have any Merb projects available online we can look at? What&#8217;s your experience been so far?</div>
+<div class="mtm-answer"><strong>Andy Delcambre:</strong> All of my merb projects are projects at Engine Yard right now.  I<br />
+wrote a simple Merb app to manage the content on the Engine Yard<br />
+homepage and the blog is based on the Feather blogging engine, written<br />
+in Merb.  My current projects are not yet publicly available but<br />
+should be very cool when they come out.</div>
+<p><br class="spacer" /></p>
+<div class="mtm-question"><strong>Matt Aimonetti:</strong> What is your favorite aspect of the Merb framework?</div>
+<div class="mtm-answer"><strong>Andy Delcambre:</strong> I have two answers, first as a someone who works on merb, then as<br />
+someone who works with merb.</p>
+<p>Ever since that first patch to action_args, I have loved the ease with<br />
+which I can jump in and dig under the hood.  I have dug down into the<br />
+router, the dispatcher, the form helpers, and the mailer, all without<br />
+much problem understanding the code.</p>
+<p>Second, as a developer of merb applications I think the direction merb<br />
+is going with the heavy emphasis on modularity is fantastic.  In the<br />
+app I am currently working on, we are using four different slices<br />
+right now.  One of which is an entirely different merb app modified<br />
+slightly and mounted within the application.  One is a custom<br />
+merb-auth strategy that we use internally that makes it much much<br />
+easier to maintain consistency for our internal applications.  These<br />
+would be much much harder to integrate for most other frameworks.  It<br />
+is so useful to be able to just plug in these small, specific pieces<br />
+of functionality.</p></div>
+<p><br class="spacer" /></p>
+<div class="mtm-question"><strong>Matt Aimonetti:</strong> What parts of Merb you hope to see improved in the near future?</div>
+<div class="mtm-answer"><strong>Andy Delcambre:</strong> I am looking forward to the future improvements to the modularity of<br />
+merb.  I am really ready for the day that you can mount entire merb<br />
+apps inside one another.  Then, once everything uses merb-auth, I can<br />
+imagine mounting a blog and a cms inside the same &#8220;app&#8221; and have the<br />
+users shared across, automatically.  How awesome would that be.</div>
+<p><br class="spacer" /></p>
+<div class="mtm-question"><strong>Matt Aimonetti:</strong> Anything else you would like to add?</div>
+<div class="mtm-answer"><strong>Andy Delcambre:</strong> I am looking forward to being part of the merb community as this<br />
+project just keeps getting better and kicking more butt.  Thanks a lot<br />
+for including me in this series.</div>
+]]></content:encoded>
+			<wfw:commentRss>http://merbist.com/2008/12/18/meet-the-merbists-andy-delcambre/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Meet the merbists: Lori Holden</title>
+		<link>http://merbist.com/2008/12/17/meet-the-merbists-lori-holden/</link>
+		<comments>http://merbist.com/2008/12/17/meet-the-merbists-lori-holden/#comments</comments>
+		<pubDate>Wed, 17 Dec 2008 14:00:27 +0000</pubDate>
+		<dc:creator>Matt Aimonetti</dc:creator>
+		
+		<category><![CDATA[Meet the merbists]]></category>
+
+		<category><![CDATA[merb]]></category>
+
+		<category><![CDATA[Lori Holden]]></category>
+
+		<category><![CDATA[merbists]]></category>
+
+		<guid isPermaLink="false">http://merbist.com/?p=359</guid>
+		<description><![CDATA[
+Today, I&#8217;m interviewing Lori Holden from YellowPages.com/AT&#38;T Interactive.
+I met Lori on IRC a bit before MerbCamp 2008 where she gave a very interesting talk on Sequel.
+
+Matt Aimonetti Hi Lori, could you please introduce yourself and the company you work for?
+Lori Holden: Hi Matt, my name is Lori Holden.  I originally became interested in software [...]]]></description>
+			<content:encoded><![CDATA[<div class="mtm-question">
+<div id="attachment_361" class="wp-caption alignleft" style="width: 211px"><a href="http://loriholden.com/"><img class="size-medium wp-image-361" title="lori holden" src="http://merbist.com/wp-content/uploads/2008/12/lori_at_desk-201x300.png" alt="Lori Holden" width="201" height="300" /></a><p class="wp-caption-text">Lori Holden</p></div>
+<p>Today, I&#8217;m interviewing <a href="http://loriholden.com/" target="_blank">Lori Holden</a> from <a href="http://www.yellowpages.com/" target="_blank">YellowPages.com</a>/<a href="http://www.research.att.com/projects.cfm" target="_blank">AT&amp;T Interactive</a>.</div>
+<div class="mtm-question">I met Lori on IRC a bit before <a href="http://merbcamp.com/" target="_blank">MerbCamp 2008</a> where she gave a very interesting talk on <a href="http://sequel.rubyforge.org/" target="_blank">Sequel</a>.</div>
+<div class="mtm-question"></div>
+<div class="mtm-question"><strong>Matt Aimonetti</strong> Hi Lori, could you please introduce yourself and the company you work for?</div>
+<div class="mtm-answer"><strong>Lori Holden:</strong> Hi Matt, my name is Lori Holden.  I originally became interested in software development when I was 10.  Since then, I have been a professional developer for over 10 years now and currently work as a Senior Software Engineer for AT&amp;T Interactive.</div>
+<p><br class="spacer" /></p>
+<div class="mtm-question"><strong>Matt Aimonetti</strong> How did you get started with Ruby, what&#8217;s your background?</div>
+<div class="mtm-answer"><strong>Lori Holden:</strong> Years ago I had been hearing talk about an &#8216;upcoming&#8217; new language called Ruby.  At the time it didn&#8217;t have many people in the US working with it, but I really loved how similar to Smalltalk it was.</p>
+<p>My core background experience is centered around Ruby, Java, C++, PHP, and Javascript.  Outside of that, I consider myself a language geek&#8230; and have quite a bit of experience in Python, Smalltalk, OCaml, IO Language, and Perl, along with several others.</p></div>
+<p><br class="spacer" /></p>
+<div class="mtm-question"><strong>Matt Aimonetti</strong> You chose to learn, support and use Merb, could you please let us know why and how that happened?</div>
+<div class="mtm-answer"><strong>Lori Holden:</strong> I was one of the original Rails developers.  Since then, I have used Rails off and on&#8230; but have found myself growing more and more unsatisfied with it.  On top of that, I have also found myself growing out of touch with the core developers over the last couple years, which I am sure doesn&#8217;t help things.<br />
+Merb is fresh.  I find it carries a lot less baggage with it than Rails.  Even better, the project is still small and I seem to get along quite well with the the other developers on the project.</div>
+<p><br class="spacer" /></p>
+<div class="mtm-question"><strong>Matt Aimonetti</strong> You have been contributing to the Merb project and gave a Sequel presentation during MerbCamp 08, what is your motivation?</div>
+<div class="mtm-answer"><strong>Lori Holden:</strong> Primarily, I just like the developers.  Everyone seems to be really passionate about Merb and are willing to push it in some really cool directions.  At the same time, Merb still manages to remain slim and with very little bloat.<br />
+I really enjoy helping projects push through to release and I was glad to be a part of that for Merb.<br />
+Sequel is a really wonderful tool, and I was finding that just not that many people in the Merb community were using it.  I had a lot of experience with getting Merb and Sequel to work with each other, and figured I should share my experience with everyone else.</div>
+<p><br class="spacer" /></p>
+<div class="mtm-question"><strong>Matt Aimonetti:</strong> What is your favorite aspect of the Merb framework?</div>
+<div class="mtm-answer"><strong>Lori Holden:</strong> This is a really odd one, but my favorite aspect of Merb is that I know it very well inside and out.  If I need to browse the source for some feature, I already know where to go and what to look at.  I attribute this to how slim the merb-core has remained.  I think it is quite easy to work with.</div>
+<p><br class="spacer" /></p>
+<div class="mtm-question"><strong>Matt Aimonetti:</strong> Could you please mention an aspect of Merb you hope to see be improved in the near future?</div>
+<div class="mtm-answer"><strong>Lori Holden:</strong> Merb is still immature in some areas.  Gem management is one thing that I am finding to be a bit lacking.  The support for Sequel could use a bit more improvement&#8230; but I suppose that&#8217;s something I should work on.  And finally, something that I hope Merb always works on: Keep it Small. Keep it Simple. Keep it Core. Bloat should be a plugin away, not an upgrade.</div>
+<p><br class="spacer" /></p>
+<div class="mtm-question"><strong>Matt Aimonetti:</strong> Thank you for your time. Anything else you would like to add?</div>
+<div class="mtm-answer"><strong>Lori Holden:</strong> Thank you Matt. I hope you and your wife have a great winter solstice.</div>
+<p><br class="spacer" /></p>
+]]></content:encoded>
+			<wfw:commentRss>http://merbist.com/2008/12/17/meet-the-merbists-lori-holden/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Meet the merbists: Derek Neighbors</title>
+		<link>http://merbist.com/2008/12/15/meet-the-merbists-derek-neighbors/</link>
+		<comments>http://merbist.com/2008/12/15/meet-the-merbists-derek-neighbors/#comments</comments>
+		<pubDate>Mon, 15 Dec 2008 18:46:27 +0000</pubDate>
+		<dc:creator>Matt Aimonetti</dc:creator>
+		
+		<category><![CDATA[Meet the merbists]]></category>
+
+		<category><![CDATA[merb]]></category>
+
+		<category><![CDATA[community]]></category>
+
+		<category><![CDATA[Derek Neighbors]]></category>
+
+		<category><![CDATA[integrum]]></category>
+
+		<category><![CDATA[merbist]]></category>
+
+		<guid isPermaLink="false">http://merbist.com/?p=345</guid>
+		<description><![CDATA[
+Today, I&#8217;m starting a new series called meet the the merbists. My goal is to feature various people from our community and ask them a few questions about Ruby, Merb and their projects.
+Let&#8217;s get started with Derek Neighbors from Integrum.
+Matt Aimonetti: Hi Derek, could you please introduce yourself and the company you work for?
+Derek Neighbors: [...]]]></description>
+			<content:encoded><![CDATA[<div id="attachment_348" class="wp-caption alignleft" style="width: 310px"><a href="http://derekneighbors.com/"><img class="size-medium wp-image-348" title="derek neighbors" src="http://merbist.com/wp-content/uploads/2008/12/derek_pr2-300x199.jpg" alt="Derek Neighbors" width="300" height="199" /></a><p class="wp-caption-text">Derek Neighbors</p></div>
+<p>Today, I&#8217;m starting a new series called <strong>meet the the merbists</strong>. My goal is to feature various people from our community and ask them a few questions about Ruby, Merb and their projects.</p>
+<p>Let&#8217;s get started with <a href="http://derekneighbors.com/" target="_blank">Derek Neighbors</a> from <a href="http://integrumtech.com/" target="_blank">Integrum</a>.</p>
+<div class="mtm-question"><strong>Matt Aimonetti:</strong> Hi Derek, could you please introduce yourself and the company you work for?</div>
+<div class="mtm-answer"><strong>Derek Neighbors:</strong> I am Derek Neighbors and I work for Integrum Technologies, an agile software company based in Chandler, AZ focused on web solutions using Ruby.</div>
+<p><br class="spacer" /></p>
+<div class="mtm-question"><strong>Matt Aimonetti:</strong> How did you get started with Ruby, what&#8217;s your background?</div>
+<div class="mtm-answer"><strong>Derek Neighbors:</strong> We were doing custom software development using PHP and Python.  We mostly had Python backends with PHP front ends that would communicate via XML-RPC.  While this was working, it just didn&#8217;t feel productive.  We had heard some inklings about this new framework called Ruby on Rails.  It was nearing 1.0 and so we decided to do an important but relatively simple e-commerce application in it.  We fell in love almost immediately and within 3 months started solely using Ruby for development.  The productivity gain just could not be ignored.</div>
+<p><br class="spacer" /></p>
+<div class="mtm-question"><strong>Matt Aimonetti:</strong> You chose to learn, support and use Merb, could you please let us know why?</div>
+<div class="mtm-answer"><strong>Derek Neighbors:</strong> We deal with a lot of customers that also have opinions.  When we need to work to integrate into their systems, we need the flexibility to do things their way at times.  Having to dismantle a framework to do little things can be frustrating.  Having a framework with solid engineering practices behind it better allows our developers to help improve or deviate from the framework when necessary.  This is something we were struggling with in Ruby on Rails.</div>
+<p><br class="spacer" /></p>
+<div class="mtm-question"><strong>Matt Aimonetti:</strong> Do you have a public project you wrote using Merb that people can look at?</div>
+<div class="mtm-answer"><strong>Derek Neighbors:</strong> We have an academic scheduling program we are starting to work on, but have not yet released.</div>
+<p><br class="spacer" /></p>
+<div class="mtm-question"><strong>Matt Aimonetti:</strong> What is your favorite aspect of the Merb framework?</div>
+<div class="mtm-answer"><strong>Derek Neighbors:</strong> It reminds me of unix.  Lots of small pieces that do their job really well, that when combined make up something pretty spectacular.  If you don&#8217;t need a piece you can leave it out.  If you like emacs (datamapper) instead of vi (active record) then use it.  In particular, the concept of Merb Slices is very appealing for code re-use.  Something we have struggled with in Ruby on Rails to date.  While plug-ins help with re-use there is nothing that would allow the flexibility that say merb-auth enjoys today as a slice.</div>
+<p><br class="spacer" /></p>
+<div class="mtm-question"><strong>Matt Aimonetti:</strong> Could you please mention an aspect of Merb you hope to see be improved in the near future?</div>
+<div class="mtm-answer"><strong>Derek Neighbors: </strong>Documentation is pretty high on the list, but also losing some of the &#8220;you have to be a ruby hacker to use merb&#8221; implications. While it is a hacker&#8217;s framework, things like opinionated stacks and talks of Django-like admin interfaces make it sound pretty appealing to the non-hacker audience as well.  I am looking forward to Merb not being only for hackers, but still preferred by hackers.</div>
+<p><br class="spacer" /></p>
+<div class="mtm-question"><strong>Matt Aimonetti:</strong> Thank you for your time. Anything else you would like to add?</div>
+<div class="mtm-answer"><strong>Derek Neighbors: </strong>I just want to thank Merb-Core for their dedication and passion towards Merb.  I think believing in quality and having the determination to make frameworks take it to the next level is what improvement is all about.  I thank them for loving Ruby on Rails enough to push the development of both Merb and Ruby on Rails forward by not being okay with &#8220;good enough&#8221;.  People don&#8217;t tell open source programmers enough how much they are appreciated.  So Merb-Core.. AGAIN, THANK YOU!</div>
+]]></content:encoded>
+			<wfw:commentRss>http://merbist.com/2008/12/15/meet-the-merbists-derek-neighbors/feed/</wfw:commentRss>
+		</item>
+	</channel>
+</rss>
+
+<!-- Dynamic Page Served (once) in 4.850 seconds -->
+<!-- Cached page served by WP-Cache -->

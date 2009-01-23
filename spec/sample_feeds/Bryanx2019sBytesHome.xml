@@ -1,0 +1,913 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="http://feeds.feedburner.com/~d/styles/atom10full.xsl" type="text/xsl" media="screen"?><?xml-stylesheet href="http://feeds.feedburner.com/~d/styles/itemcontent.css" type="text/css" media="screen"?><feed xmlns="http://www.w3.org/2005/Atom" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" xml:lang="en-US">
+  <title>Bryan Helmkamp - Home</title>
+  <id>tag:www.brynary.com,2009:mephisto/</id>
+  <generator uri="http://mephistoblog.com" version="0.8.0">Mephisto Drax</generator>
+  
+  <link href="http://www.brynary.com/" rel="alternate" type="text/html" />
+  <updated>2009-01-20T19:11:23Z</updated>
+  <geo:lat>40.765714</geo:lat><geo:long>-73.985607</geo:long><link rel="self" href="http://feeds.feedburner.com/brynary" type="application/atom+xml" /><entry xml:base="http://www.brynary.com/">
+    <author>
+      <name>bhelmkamp</name>
+    </author>
+    <id>tag:www.brynary.com,2009-01-20:1104</id>
+    <published>2009-01-20T19:10:00Z</published>
+    <updated>2009-01-20T19:11:23Z</updated>
+    <category term="Agile" />
+    <category term="Ruby" />
+    <link href="http://feeds.feedburner.com/~r/brynary/~3/518025987/features2cards-released-convert-cucumber-feature-files-to-pdf-task-cards" rel="alternate" type="text/html" />
+    <title>features2cards released: Convert Cucumber feature files to PDF task cards</title>
+<content type="html">
+            &lt;p&gt;Today I’d like to announce the first real release of features2cards 0.1.1. The code has been sitting in my &lt;a href="http://github.com/brynary/features2cards"&gt;GitHub repository&lt;/a&gt; for awhile now, but I thought it was time to give it a formal release announcement.&lt;/p&gt;
+
+
+	&lt;p&gt;features2cards is a simple tool to generate a printable &lt;span class="caps"&gt;PDF&lt;/span&gt; of scenario cards from Cucumber feature files. At weplay, we use this at the start of each sprint to get out Scrum task board up-to-date. Interally, features2cards uses the Cucumber feature parser and Prawn for &lt;span class="caps"&gt;PDF&lt;/span&gt; generation (in native Ruby!).&lt;/p&gt;
+
+
+	&lt;p&gt;I’ve uploaded the gem and you should be able to install it off RubyForge very soon:&lt;/p&gt;
+
+
+	&lt;pre&gt;&lt;code&gt;sudo gem install features2cards&lt;/code&gt;&lt;/pre&gt;
+
+
+	&lt;p&gt;Here’s how you use it:&lt;/p&gt;
+
+
+	&lt;pre&gt;&lt;code&gt;features2cards features/scale_rails.feature&lt;/code&gt;&lt;/pre&gt;
+
+
+	&lt;p&gt;This will generate a file called cards.pdf in the current directory. Open that up, print it, and you’ve got cards ready to be chopped up and stuck to your Agile task board.&lt;/p&gt;
+
+
+	&lt;p&gt;&lt;img src="http://www.brynary.com/assets/2009/1/20/cards_pdf.jpg" alt="" /&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;That’s all there is to it for now. Fork away. It’s only 150 lines including whitespace. I’d be happy to add additional formats, color support and other enhancements.&lt;/p&gt;
+
+
+	&lt;p&gt;&lt;em&gt;Special thanks to &lt;a href="http://www.lukemelia.com/"&gt;Luke Melia&lt;/a&gt;. His &lt;a href="http://www.lukemelia.com/blog/archives/2007/12/29/pdf-storycards-001-released-my-first-gem"&gt;pdf-storycards&lt;/a&gt; project inspired this.&lt;/em&gt;&lt;/p&gt;
+          </content>  <feedburner:origLink>http://www.brynary.com/2009/1/20/features2cards-released-convert-cucumber-feature-files-to-pdf-task-cards</feedburner:origLink></entry>
+  <entry xml:base="http://www.brynary.com/">
+    <author>
+      <name>bhelmkamp</name>
+    </author>
+    <id>tag:www.brynary.com,2008-09-01:1094</id>
+    <published>2008-09-01T00:48:00Z</published>
+    <updated>2008-09-01T00:49:48Z</updated>
+    <category term="Agile" />
+    <link href="http://feeds.feedburner.com/~r/brynary/~3/380042942/setting-the-git-commit-author-to-pair-programmers-names" rel="alternate" type="text/html" />
+    <title>Setting the git commit author to pair programmers' names</title>
+<content type="html">
+            &lt;p&gt;Are you using git? Are you writing all your code that needs to be maintained in pairs? Great. Your commits probably look something like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;commit a5ab4d39be608280fbea6ba9710aea4593f20bc6
+&lt;b&gt;Author: Bryan Helmkamp &amp;lt;bryan@brynary.com&amp;gt;&lt;/b&gt;
+Date:   Fri Aug 29 18:47:29 2008 -0400
+
+    Some important refactoring &lt;b&gt;LM/BH&lt;/b&gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Subversion has limited support for tracking authors, so we used to manually add the initials of the programmers working on a changeset for future reference. With git, however, we can specify arbitrary author names for each commit. Now our commits look like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;commit a5ab4d39be608280fbea6ba9710aea4593f20bc6
+&lt;b&gt;Author: Luke Melia and Bryan Helmkamp &amp;lt;developers@weplay.com&amp;gt;&lt;/b&gt;
+Date:   Fri Aug 29 18:47:29 2008 -0400
+
+    Some important refactoring&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To simplify updating the git author configuration as we switch pairs, I whipped up a quick Ruby shell script called &lt;code&gt;pair&lt;/code&gt;. Called with a list of developers' initials, it configures the git author name and email fields. Called with no arguments, it unsets the per-project git author configuration so your global settings take effect.&lt;/p&gt;
+
+&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td title="click to toggle" class="line_numbers"&gt;&lt;pre&gt;1&lt;tt&gt;
+&lt;/tt&gt;2&lt;tt&gt;
+&lt;/tt&gt;3&lt;tt&gt;
+&lt;/tt&gt;4&lt;tt&gt;
+&lt;/tt&gt;&lt;strong&gt;5&lt;/strong&gt;&lt;tt&gt;
+&lt;/tt&gt;6&lt;tt&gt;
+&lt;/tt&gt;7&lt;tt&gt;
+&lt;/tt&gt;8&lt;tt&gt;
+&lt;/tt&gt;9&lt;tt&gt;
+&lt;/tt&gt;&lt;strong&gt;10&lt;/strong&gt;&lt;tt&gt;
+&lt;/tt&gt;11&lt;tt&gt;
+&lt;/tt&gt;12&lt;tt&gt;
+&lt;/tt&gt;13&lt;tt&gt;
+&lt;/tt&gt;14&lt;tt&gt;
+&lt;/tt&gt;&lt;strong&gt;15&lt;/strong&gt;&lt;tt&gt;
+&lt;/tt&gt;16&lt;tt&gt;
+&lt;/tt&gt;17&lt;tt&gt;
+&lt;/tt&gt;18&lt;tt&gt;
+&lt;/tt&gt;19&lt;tt&gt;
+&lt;/tt&gt;&lt;strong&gt;20&lt;/strong&gt;&lt;tt&gt;
+&lt;/tt&gt;21&lt;tt&gt;
+&lt;/tt&gt;22&lt;tt&gt;
+&lt;/tt&gt;23&lt;tt&gt;
+&lt;/tt&gt;24&lt;tt&gt;
+&lt;/tt&gt;&lt;strong&gt;25&lt;/strong&gt;&lt;tt&gt;
+&lt;/tt&gt;26&lt;tt&gt;
+&lt;/tt&gt;27&lt;tt&gt;
+&lt;/tt&gt;28&lt;tt&gt;
+&lt;/tt&gt;29&lt;tt&gt;
+&lt;/tt&gt;&lt;strong&gt;30&lt;/strong&gt;&lt;tt&gt;
+&lt;/tt&gt;31&lt;tt&gt;
+&lt;/tt&gt;32&lt;tt&gt;
+&lt;/tt&gt;33&lt;tt&gt;
+&lt;/tt&gt;34&lt;tt&gt;
+&lt;/tt&gt;&lt;strong&gt;35&lt;/strong&gt;&lt;tt&gt;
+&lt;/tt&gt;36&lt;tt&gt;
+&lt;/tt&gt;37&lt;tt&gt;
+&lt;/tt&gt;38&lt;tt&gt;
+&lt;/tt&gt;39&lt;tt&gt;
+&lt;/tt&gt;&lt;strong&gt;40&lt;/strong&gt;&lt;tt&gt;
+&lt;/tt&gt;41&lt;tt&gt;
+&lt;/tt&gt;42&lt;tt&gt;
+&lt;/tt&gt;43&lt;tt&gt;
+&lt;/tt&gt;44&lt;tt&gt;
+&lt;/tt&gt;&lt;strong&gt;45&lt;/strong&gt;&lt;tt&gt;
+&lt;/tt&gt;46&lt;tt&gt;
+&lt;/tt&gt;47&lt;tt&gt;
+&lt;/tt&gt;48&lt;tt&gt;
+&lt;/tt&gt;49&lt;tt&gt;
+&lt;/tt&gt;&lt;strong&gt;50&lt;/strong&gt;&lt;tt&gt;
+&lt;/tt&gt;51&lt;tt&gt;
+&lt;/tt&gt;52&lt;tt&gt;
+&lt;/tt&gt;53&lt;tt&gt;
+&lt;/tt&gt;54&lt;tt&gt;
+&lt;/tt&gt;&lt;strong&gt;55&lt;/strong&gt;&lt;tt&gt;
+&lt;/tt&gt;56&lt;tt&gt;
+&lt;/tt&gt;57&lt;tt&gt;
+&lt;/tt&gt;&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="c"&gt;#!/usr/bin/env ruby&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;&lt;tt&gt;
+&lt;/tt&gt;&lt;span class="c"&gt;# Configures the git author to a list of developers when pair programming&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;&lt;span class="c"&gt;# &lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;&lt;span class="c"&gt;# Usage: pair lm bh (Sets the author to 'Luke Melia and Bryan Helmkamp')&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;&lt;span class="c"&gt;#        pair       (Unsets the author so the git global config takes effect)&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;&lt;span class="c"&gt;# &lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;&lt;span class="c"&gt;# Author: Bryan Helmkamp (http://brynary.com)&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;&lt;tt&gt;
+&lt;/tt&gt;&lt;span class="c"&gt;#######################################################################&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;&lt;span class="c"&gt;## Configuration&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;&lt;tt&gt;
+&lt;/tt&gt;&lt;span class="co"&gt;PAIR_EMAIL&lt;/span&gt; = &lt;span class="s"&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;developers@weplay.com&lt;/span&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;&lt;tt&gt;
+&lt;/tt&gt;&lt;span class="co"&gt;AUTHORS&lt;/span&gt; = {&lt;tt&gt;
+&lt;/tt&gt;  &lt;span class="s"&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;bh&lt;/span&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; =&amp;gt; &lt;span class="s"&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;Bryan Helmkamp&lt;/span&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,&lt;tt&gt;
+&lt;/tt&gt;  &lt;span class="s"&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;lm&lt;/span&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; =&amp;gt; &lt;span class="s"&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;Luke Melia&lt;/span&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;  &lt;span class="c"&gt;# ...&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;}&lt;tt&gt;
+&lt;/tt&gt;&lt;tt&gt;
+&lt;/tt&gt;&lt;span class="c"&gt;## End of configuration&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;&lt;span class="c"&gt;#######################################################################&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;&lt;tt&gt;
+&lt;/tt&gt;&lt;span class="r"&gt;unless&lt;/span&gt; &lt;span class="co"&gt;File&lt;/span&gt;.exists?(&lt;span class="s"&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;.git&lt;/span&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;)&lt;tt&gt;
+&lt;/tt&gt;  puts &lt;span class="s"&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;This doesn't look like a git repository.&lt;/span&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;  exit &lt;span class="i"&gt;1&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;&lt;span class="r"&gt;end&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;&lt;tt&gt;
+&lt;/tt&gt;authors = &lt;span class="pc"&gt;ARGV&lt;/span&gt;.map &lt;span class="r"&gt;do&lt;/span&gt; |initials|&lt;tt&gt;
+&lt;/tt&gt;  &lt;span class="r"&gt;if&lt;/span&gt; &lt;span class="co"&gt;AUTHORS&lt;/span&gt;[initials.downcase]&lt;tt&gt;
+&lt;/tt&gt;    &lt;span class="co"&gt;AUTHORS&lt;/span&gt;[initials.downcase]&lt;tt&gt;
+&lt;/tt&gt;  &lt;span class="r"&gt;else&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;    puts &lt;span class="s"&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;Couldn't find author name for initials: &lt;/span&gt;&lt;span class="il"&gt;&lt;span class="dl"&gt;#{&lt;/span&gt;initials&lt;span class="dl"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;    exit &lt;span class="i"&gt;1&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;  &lt;span class="r"&gt;end&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;&lt;span class="r"&gt;end&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;&lt;tt&gt;
+&lt;/tt&gt;&lt;span class="r"&gt;if&lt;/span&gt; authors.any?&lt;tt&gt;
+&lt;/tt&gt;  &lt;span class="r"&gt;if&lt;/span&gt; authors.size == &lt;span class="i"&gt;1&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;    authors = authors.first&lt;tt&gt;
+&lt;/tt&gt;  &lt;span class="r"&gt;elsif&lt;/span&gt; authors.size == &lt;span class="i"&gt;2&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;    authors = authors.join(&lt;span class="s"&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt; and &lt;/span&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;)&lt;tt&gt;
+&lt;/tt&gt;  &lt;span class="r"&gt;else&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;    authors = authors[&lt;span class="i"&gt;0&lt;/span&gt;..&lt;span class="i"&gt;-2&lt;/span&gt;].join(&lt;span class="s"&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;, &lt;/span&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;) + &lt;span class="s"&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt; and &lt;/span&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; + authors.last&lt;tt&gt;
+&lt;/tt&gt;  &lt;span class="r"&gt;end&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;  &lt;tt&gt;
+&lt;/tt&gt;  &lt;span class="sh"&gt;&lt;span class="dl"&gt;`&lt;/span&gt;&lt;span class="k"&gt;git config user.name '&lt;/span&gt;&lt;span class="il"&gt;&lt;span class="dl"&gt;#{&lt;/span&gt;authors&lt;span class="dl"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class="k"&gt;'&lt;/span&gt;&lt;span class="dl"&gt;`&lt;/span&gt;&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;  &lt;span class="sh"&gt;&lt;span class="dl"&gt;`&lt;/span&gt;&lt;span class="k"&gt;git config user.email '&lt;/span&gt;&lt;span class="il"&gt;&lt;span class="dl"&gt;#{&lt;/span&gt;&lt;span class="co"&gt;PAIR_EMAIL&lt;/span&gt;&lt;span class="dl"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class="k"&gt;'&lt;/span&gt;&lt;span class="dl"&gt;`&lt;/span&gt;&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;  &lt;tt&gt;
+&lt;/tt&gt;  puts &lt;span class="s"&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;user.name = &lt;/span&gt;&lt;span class="il"&gt;&lt;span class="dl"&gt;#{&lt;/span&gt;authors&lt;span class="dl"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;  puts &lt;span class="s"&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;user.email = &lt;/span&gt;&lt;span class="il"&gt;&lt;span class="dl"&gt;#{&lt;/span&gt;&lt;span class="co"&gt;PAIR_EMAIL&lt;/span&gt;&lt;span class="dl"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;&lt;span class="r"&gt;else&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;  &lt;span class="sh"&gt;&lt;span class="dl"&gt;`&lt;/span&gt;&lt;span class="k"&gt;git config --unset user.name&lt;/span&gt;&lt;span class="dl"&gt;`&lt;/span&gt;&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;  &lt;span class="sh"&gt;&lt;span class="dl"&gt;`&lt;/span&gt;&lt;span class="k"&gt;git config --unset user.email&lt;/span&gt;&lt;span class="dl"&gt;`&lt;/span&gt;&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;  &lt;tt&gt;
+&lt;/tt&gt;  puts &lt;span class="s"&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;Unset user.name and user.email&lt;/span&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;&lt;span class="r"&gt;end&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;&lt;em&gt;Note:&lt;/em&gt; If you're using &lt;a href="http://github.com/"&gt;GitHub&lt;/a&gt;, it's important to choose a &lt;code&gt;PAIR_EMAIL&lt;/code&gt; value that &lt;em&gt;does not&lt;/em&gt; correspond to a GitHub account. Otherwise, GitHub will resolve the email address to a GitHub user and display their username instead of the value of the &lt;code&gt;author.name&lt;/code&gt;. We just made one up.&lt;/p&gt;
+          </content>  <feedburner:origLink>http://www.brynary.com/2008/9/1/setting-the-git-commit-author-to-pair-programmers-names</feedburner:origLink></entry>
+  <entry xml:base="http://www.brynary.com/">
+    <author>
+      <name>bhelmkamp</name>
+    </author>
+    <id>tag:www.brynary.com,2008-08-03:1082</id>
+    <published>2008-08-03T20:49:00Z</published>
+    <updated>2008-08-10T21:39:42Z</updated>
+    <category term="Rails" />
+    <category term="Ruby" />
+    <link href="http://feeds.feedburner.com/~r/brynary/~3/354675175/our-git-deployment-workflow" rel="alternate" type="text/html" />
+    <title>Our Git deployment workflow</title>
+<content type="html">
+            &lt;p&gt;At weplay, we recently switched to pure git version control from &lt;code&gt;git-svn&lt;/code&gt;.
+Now that we've had a couple weeks for the dust to settle, I'd like to
+share our workflow for managing deployments to our staging and production
+clusters.&lt;/p&gt;
+
+&lt;p&gt;We started by outlining the goals of our system:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;All code that's pushed to our staging and production environments must be in &lt;a href="http://github.com"&gt;GitHub&lt;/a&gt;. Nothing
+goes straight from a local repository to our servers.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Any developer can deploy our most recent work to staging.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Any developer can deploy the code on staging into production. We (try to) avoid
+deploying anything to production that hasn't been pushed to staging first.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Any developer can see a diff between "What is deployed" and "What I'm
+about to deploy."&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Any developer can branch from the production codebase for time sensitive
+tweaks and fixes. These need to be staged before they're deployed to
+production too.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;That functionality is available in an automated, safe, easy to use form.
+(Hint: rake)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We ruled out having "production" and "staging" tags because updating tags
+across a tree of remotes doesn't seem to work smoothly. We also ruled out
+doing git merges from master into our staging branch. Our staging server/codebase jumps
+around from the latest changes to the production code (up to a week old)
+based on what we need to test, so we really just want to replace it.&lt;/p&gt;
+
+&lt;p&gt;We settled on using remote git branches for production and staging on origin
+and hard resetting them to other branches to simulate a copy. We treat these
+branches more like tags and never commit to them directly. This has worked
+great so far.&lt;/p&gt;
+
+&lt;p&gt;Here's what our rake tasks look like:&lt;/p&gt;
+
+&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td title="click to toggle" class="line_numbers"&gt;&lt;pre&gt;1&lt;tt&gt;
+&lt;/tt&gt;2&lt;tt&gt;
+&lt;/tt&gt;3&lt;tt&gt;
+&lt;/tt&gt;4&lt;tt&gt;
+&lt;/tt&gt;&lt;strong&gt;5&lt;/strong&gt;&lt;tt&gt;
+&lt;/tt&gt;6&lt;tt&gt;
+&lt;/tt&gt;7&lt;tt&gt;
+&lt;/tt&gt;8&lt;tt&gt;
+&lt;/tt&gt;9&lt;tt&gt;
+&lt;/tt&gt;&lt;strong&gt;10&lt;/strong&gt;&lt;tt&gt;
+&lt;/tt&gt;11&lt;tt&gt;
+&lt;/tt&gt;12&lt;tt&gt;
+&lt;/tt&gt;13&lt;tt&gt;
+&lt;/tt&gt;14&lt;tt&gt;
+&lt;/tt&gt;&lt;strong&gt;15&lt;/strong&gt;&lt;tt&gt;
+&lt;/tt&gt;16&lt;tt&gt;
+&lt;/tt&gt;17&lt;tt&gt;
+&lt;/tt&gt;18&lt;tt&gt;
+&lt;/tt&gt;19&lt;tt&gt;
+&lt;/tt&gt;&lt;strong&gt;20&lt;/strong&gt;&lt;tt&gt;
+&lt;/tt&gt;21&lt;tt&gt;
+&lt;/tt&gt;22&lt;tt&gt;
+&lt;/tt&gt;23&lt;tt&gt;
+&lt;/tt&gt;24&lt;tt&gt;
+&lt;/tt&gt;&lt;strong&gt;25&lt;/strong&gt;&lt;tt&gt;
+&lt;/tt&gt;26&lt;tt&gt;
+&lt;/tt&gt;27&lt;tt&gt;
+&lt;/tt&gt;28&lt;tt&gt;
+&lt;/tt&gt;29&lt;tt&gt;
+&lt;/tt&gt;&lt;strong&gt;30&lt;/strong&gt;&lt;tt&gt;
+&lt;/tt&gt;31&lt;tt&gt;
+&lt;/tt&gt;32&lt;tt&gt;
+&lt;/tt&gt;33&lt;tt&gt;
+&lt;/tt&gt;34&lt;tt&gt;
+&lt;/tt&gt;&lt;strong&gt;35&lt;/strong&gt;&lt;tt&gt;
+&lt;/tt&gt;36&lt;tt&gt;
+&lt;/tt&gt;37&lt;tt&gt;
+&lt;/tt&gt;38&lt;tt&gt;
+&lt;/tt&gt;39&lt;tt&gt;
+&lt;/tt&gt;&lt;strong&gt;40&lt;/strong&gt;&lt;tt&gt;
+&lt;/tt&gt;41&lt;tt&gt;
+&lt;/tt&gt;42&lt;tt&gt;
+&lt;/tt&gt;43&lt;tt&gt;
+&lt;/tt&gt;44&lt;tt&gt;
+&lt;/tt&gt;&lt;strong&gt;45&lt;/strong&gt;&lt;tt&gt;
+&lt;/tt&gt;46&lt;tt&gt;
+&lt;/tt&gt;47&lt;tt&gt;
+&lt;/tt&gt;48&lt;tt&gt;
+&lt;/tt&gt;49&lt;tt&gt;
+&lt;/tt&gt;&lt;strong&gt;50&lt;/strong&gt;&lt;tt&gt;
+&lt;/tt&gt;51&lt;tt&gt;
+&lt;/tt&gt;52&lt;tt&gt;
+&lt;/tt&gt;53&lt;tt&gt;
+&lt;/tt&gt;54&lt;tt&gt;
+&lt;/tt&gt;&lt;strong&gt;55&lt;/strong&gt;&lt;tt&gt;
+&lt;/tt&gt;56&lt;tt&gt;
+&lt;/tt&gt;57&lt;tt&gt;
+&lt;/tt&gt;58&lt;tt&gt;
+&lt;/tt&gt;59&lt;tt&gt;
+&lt;/tt&gt;&lt;strong&gt;60&lt;/strong&gt;&lt;tt&gt;
+&lt;/tt&gt;61&lt;tt&gt;
+&lt;/tt&gt;62&lt;tt&gt;
+&lt;/tt&gt;63&lt;tt&gt;
+&lt;/tt&gt;64&lt;tt&gt;
+&lt;/tt&gt;&lt;strong&gt;65&lt;/strong&gt;&lt;tt&gt;
+&lt;/tt&gt;66&lt;tt&gt;
+&lt;/tt&gt;67&lt;tt&gt;
+&lt;/tt&gt;68&lt;tt&gt;
+&lt;/tt&gt;69&lt;tt&gt;
+&lt;/tt&gt;&lt;strong&gt;70&lt;/strong&gt;&lt;tt&gt;
+&lt;/tt&gt;71&lt;tt&gt;
+&lt;/tt&gt;72&lt;tt&gt;
+&lt;/tt&gt;73&lt;tt&gt;
+&lt;/tt&gt;74&lt;tt&gt;
+&lt;/tt&gt;&lt;strong&gt;75&lt;/strong&gt;&lt;tt&gt;
+&lt;/tt&gt;76&lt;tt&gt;
+&lt;/tt&gt;77&lt;tt&gt;
+&lt;/tt&gt;78&lt;tt&gt;
+&lt;/tt&gt;79&lt;tt&gt;
+&lt;/tt&gt;&lt;strong&gt;80&lt;/strong&gt;&lt;tt&gt;
+&lt;/tt&gt;81&lt;tt&gt;
+&lt;/tt&gt;82&lt;tt&gt;
+&lt;/tt&gt;83&lt;tt&gt;
+&lt;/tt&gt;84&lt;tt&gt;
+&lt;/tt&gt;&lt;strong&gt;85&lt;/strong&gt;&lt;tt&gt;
+&lt;/tt&gt;86&lt;tt&gt;
+&lt;/tt&gt;87&lt;tt&gt;
+&lt;/tt&gt;88&lt;tt&gt;
+&lt;/tt&gt;89&lt;tt&gt;
+&lt;/tt&gt;&lt;strong&gt;90&lt;/strong&gt;&lt;tt&gt;
+&lt;/tt&gt;&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="r"&gt;class&lt;/span&gt; &lt;span class="cl"&gt;GitCommands&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;&lt;tt&gt;
+&lt;/tt&gt;  &lt;span class="r"&gt;def&lt;/span&gt; &lt;span class="fu"&gt;diff_staging&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;    &lt;span class="sh"&gt;&lt;span class="dl"&gt;`&lt;/span&gt;&lt;span class="k"&gt;git fetch&lt;/span&gt;&lt;span class="dl"&gt;`&lt;/span&gt;&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;    puts &lt;span class="sh"&gt;&lt;span class="dl"&gt;`&lt;/span&gt;&lt;span class="k"&gt;git diff origin/production origin/staging&lt;/span&gt;&lt;span class="dl"&gt;`&lt;/span&gt;&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;  &lt;span class="r"&gt;end&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;  &lt;tt&gt;
+&lt;/tt&gt;  &lt;span class="r"&gt;def&lt;/span&gt; &lt;span class="fu"&gt;tag_staging&lt;/span&gt;(branch_name)&lt;tt&gt;
+&lt;/tt&gt;    verify_working_directory_clean&lt;tt&gt;
+&lt;/tt&gt;    &lt;tt&gt;
+&lt;/tt&gt;    &lt;span class="sh"&gt;&lt;span class="dl"&gt;`&lt;/span&gt;&lt;span class="k"&gt;git fetch&lt;/span&gt;&lt;span class="dl"&gt;`&lt;/span&gt;&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;    &lt;span class="sh"&gt;&lt;span class="dl"&gt;`&lt;/span&gt;&lt;span class="k"&gt;git branch -f staging origin/staging&lt;/span&gt;&lt;span class="dl"&gt;`&lt;/span&gt;&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;    &lt;span class="sh"&gt;&lt;span class="dl"&gt;`&lt;/span&gt;&lt;span class="k"&gt;git checkout staging&lt;/span&gt;&lt;span class="dl"&gt;`&lt;/span&gt;&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;    &lt;span class="sh"&gt;&lt;span class="dl"&gt;`&lt;/span&gt;&lt;span class="k"&gt;git reset --hard origin/&lt;/span&gt;&lt;span class="il"&gt;&lt;span class="dl"&gt;#{&lt;/span&gt;branch_name&lt;span class="dl"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class="dl"&gt;`&lt;/span&gt;&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;    &lt;span class="sh"&gt;&lt;span class="dl"&gt;`&lt;/span&gt;&lt;span class="k"&gt;git push -f origin staging&lt;/span&gt;&lt;span class="dl"&gt;`&lt;/span&gt;&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;    &lt;span class="sh"&gt;&lt;span class="dl"&gt;`&lt;/span&gt;&lt;span class="k"&gt;git checkout master&lt;/span&gt;&lt;span class="dl"&gt;`&lt;/span&gt;&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;    &lt;span class="sh"&gt;&lt;span class="dl"&gt;`&lt;/span&gt;&lt;span class="k"&gt;git branch -D staging&lt;/span&gt;&lt;span class="dl"&gt;`&lt;/span&gt;&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;  &lt;span class="r"&gt;end&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;  &lt;tt&gt;
+&lt;/tt&gt;  &lt;span class="r"&gt;def&lt;/span&gt; &lt;span class="fu"&gt;tag_production&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;    verify_working_directory_clean&lt;tt&gt;
+&lt;/tt&gt;    &lt;tt&gt;
+&lt;/tt&gt;    &lt;span class="sh"&gt;&lt;span class="dl"&gt;`&lt;/span&gt;&lt;span class="k"&gt;git fetch&lt;/span&gt;&lt;span class="dl"&gt;`&lt;/span&gt;&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;    &lt;span class="sh"&gt;&lt;span class="dl"&gt;`&lt;/span&gt;&lt;span class="k"&gt;git branch -f production origin/production&lt;/span&gt;&lt;span class="dl"&gt;`&lt;/span&gt;&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;    &lt;span class="sh"&gt;&lt;span class="dl"&gt;`&lt;/span&gt;&lt;span class="k"&gt;git checkout production&lt;/span&gt;&lt;span class="dl"&gt;`&lt;/span&gt;&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;    &lt;span class="sh"&gt;&lt;span class="dl"&gt;`&lt;/span&gt;&lt;span class="k"&gt;git reset --hard origin/staging&lt;/span&gt;&lt;span class="dl"&gt;`&lt;/span&gt;&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;    &lt;span class="sh"&gt;&lt;span class="dl"&gt;`&lt;/span&gt;&lt;span class="k"&gt;git push -f origin production&lt;/span&gt;&lt;span class="dl"&gt;`&lt;/span&gt;&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;    &lt;span class="sh"&gt;&lt;span class="dl"&gt;`&lt;/span&gt;&lt;span class="k"&gt;git checkout master&lt;/span&gt;&lt;span class="dl"&gt;`&lt;/span&gt;&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;    &lt;span class="sh"&gt;&lt;span class="dl"&gt;`&lt;/span&gt;&lt;span class="k"&gt;git branch -D production&lt;/span&gt;&lt;span class="dl"&gt;`&lt;/span&gt;&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;  &lt;span class="r"&gt;end&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;&lt;tt&gt;
+&lt;/tt&gt;  &lt;span class="r"&gt;def&lt;/span&gt; &lt;span class="fu"&gt;branch_production&lt;/span&gt;(branch_name)&lt;tt&gt;
+&lt;/tt&gt;    verify_working_directory_clean&lt;tt&gt;
+&lt;/tt&gt;    &lt;tt&gt;
+&lt;/tt&gt;    &lt;span class="sh"&gt;&lt;span class="dl"&gt;`&lt;/span&gt;&lt;span class="k"&gt;git fetch&lt;/span&gt;&lt;span class="dl"&gt;`&lt;/span&gt;&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;    &lt;span class="sh"&gt;&lt;span class="dl"&gt;`&lt;/span&gt;&lt;span class="k"&gt;git branch -f production origin/production&lt;/span&gt;&lt;span class="dl"&gt;`&lt;/span&gt;&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;    &lt;span class="sh"&gt;&lt;span class="dl"&gt;`&lt;/span&gt;&lt;span class="k"&gt;git checkout production&lt;/span&gt;&lt;span class="dl"&gt;`&lt;/span&gt;&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;    &lt;span class="sh"&gt;&lt;span class="dl"&gt;`&lt;/span&gt;&lt;span class="k"&gt;git branch &lt;/span&gt;&lt;span class="il"&gt;&lt;span class="dl"&gt;#{&lt;/span&gt;branch_name&lt;span class="dl"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class="dl"&gt;`&lt;/span&gt;&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;    &lt;span class="sh"&gt;&lt;span class="dl"&gt;`&lt;/span&gt;&lt;span class="k"&gt;git checkout &lt;/span&gt;&lt;span class="il"&gt;&lt;span class="dl"&gt;#{&lt;/span&gt;branch_name&lt;span class="dl"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class="dl"&gt;`&lt;/span&gt;&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;    &lt;span class="sh"&gt;&lt;span class="dl"&gt;`&lt;/span&gt;&lt;span class="k"&gt;git push origin &lt;/span&gt;&lt;span class="il"&gt;&lt;span class="dl"&gt;#{&lt;/span&gt;branch_name&lt;span class="dl"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class="dl"&gt;`&lt;/span&gt;&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;  &lt;span class="r"&gt;end&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;  &lt;tt&gt;
+&lt;/tt&gt;protected&lt;tt&gt;
+&lt;/tt&gt;&lt;tt&gt;
+&lt;/tt&gt;  &lt;span class="r"&gt;def&lt;/span&gt; &lt;span class="fu"&gt;verify_working_directory_clean&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;    &lt;span class="r"&gt;return&lt;/span&gt; &lt;span class="r"&gt;if&lt;/span&gt; &lt;span class="sh"&gt;&lt;span class="dl"&gt;`&lt;/span&gt;&lt;span class="k"&gt;git status&lt;/span&gt;&lt;span class="dl"&gt;`&lt;/span&gt;&lt;/span&gt; =~ &lt;span class="rx"&gt;&lt;span class="dl"&gt;/&lt;/span&gt;&lt;span class="k"&gt;working directory clean&lt;/span&gt;&lt;span class="dl"&gt;/&lt;/span&gt;&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;    raise &lt;span class="s"&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;Must have clean working directory&lt;/span&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;  &lt;span class="r"&gt;end&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;&lt;span class="r"&gt;end&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;&lt;tt&gt;
+&lt;/tt&gt;&lt;tt&gt;
+&lt;/tt&gt;namespace &lt;span class="sy"&gt;:tag&lt;/span&gt; &lt;span class="r"&gt;do&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;  desc &lt;span class="s"&gt;&lt;span class="dl"&gt;&amp;lt;&amp;lt;-DESC&lt;/span&gt;&lt;/span&gt;&lt;span class="s"&gt;&lt;span class="k"&gt;&lt;tt&gt;
+&lt;/tt&gt;    Update the staging branch to prepare for a staging deploy.&lt;tt&gt;
+&lt;/tt&gt;    Defaults to master. Optionally specify a BRANCH=name&lt;/span&gt;&lt;span class="dl"&gt;&lt;tt&gt;
+&lt;/tt&gt;  DESC&lt;/span&gt;&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;  &lt;tt&gt;
+&lt;/tt&gt;  task &lt;span class="sy"&gt;:staging&lt;/span&gt; &lt;span class="r"&gt;do&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;    branch_name = &lt;span class="co"&gt;ENV&lt;/span&gt;[&lt;span class="s"&gt;&lt;span class="dl"&gt;'&lt;/span&gt;&lt;span class="k"&gt;BRANCH&lt;/span&gt;&lt;span class="dl"&gt;'&lt;/span&gt;&lt;/span&gt;] || &lt;span class="s"&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;master&lt;/span&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;    &lt;span class="co"&gt;GitCommands&lt;/span&gt;.new.tag_staging(branch_name)&lt;tt&gt;
+&lt;/tt&gt;  &lt;span class="r"&gt;end&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;&lt;tt&gt;
+&lt;/tt&gt;  desc &lt;span class="s"&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;Update the remove production branch to prepare for a release&lt;/span&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;  task &lt;span class="sy"&gt;:production&lt;/span&gt; =&amp;gt; [&lt;span class="s"&gt;&lt;span class="dl"&gt;'&lt;/span&gt;&lt;span class="k"&gt;diff:staging&lt;/span&gt;&lt;span class="dl"&gt;'&lt;/span&gt;&lt;/span&gt;] &lt;span class="r"&gt;do&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;    &lt;span class="co"&gt;GitCommands&lt;/span&gt;.new.tag_production&lt;tt&gt;
+&lt;/tt&gt;  &lt;span class="r"&gt;end&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;&lt;span class="r"&gt;end&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;&lt;tt&gt;
+&lt;/tt&gt;namespace &lt;span class="sy"&gt;:diff&lt;/span&gt; &lt;span class="r"&gt;do&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;  desc &lt;span class="s"&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;Show the differences between the staging branch and the production branch&lt;/span&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;  task &lt;span class="sy"&gt;:staging&lt;/span&gt; &lt;span class="r"&gt;do&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;    &lt;span class="co"&gt;GitCommands&lt;/span&gt;.new.diff_staging&lt;tt&gt;
+&lt;/tt&gt;  &lt;span class="r"&gt;end&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;&lt;span class="r"&gt;end&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;&lt;tt&gt;
+&lt;/tt&gt;namespace &lt;span class="sy"&gt;:branch&lt;/span&gt; &lt;span class="r"&gt;do&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;  desc &lt;span class="s"&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;Branch from production for tweaks or bug fixs. Specify BRANCH=name&lt;/span&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;  task &lt;span class="sy"&gt;:production&lt;/span&gt; &lt;span class="r"&gt;do&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;    branch_name = &lt;span class="co"&gt;ENV&lt;/span&gt;[&lt;span class="s"&gt;&lt;span class="dl"&gt;'&lt;/span&gt;&lt;span class="k"&gt;BRANCH&lt;/span&gt;&lt;span class="dl"&gt;'&lt;/span&gt;&lt;/span&gt;]&lt;tt&gt;
+&lt;/tt&gt;    raise &lt;span class="s"&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;You must specify a branch name using BRANCH=name&lt;/span&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; &lt;span class="r"&gt;unless&lt;/span&gt; branch_name&lt;tt&gt;
+&lt;/tt&gt;    &lt;span class="co"&gt;GitCommands&lt;/span&gt;.new.branch_production&lt;tt&gt;
+&lt;/tt&gt;  &lt;span class="r"&gt;end&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;&lt;span class="r"&gt;end&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;&lt;tt&gt;
+&lt;/tt&gt;namespace &lt;span class="sy"&gt;:deploy&lt;/span&gt; &lt;span class="r"&gt;do&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;  desc &lt;span class="s"&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;Tag and deploy staging&lt;/span&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;  task &lt;span class="sy"&gt;:staging&lt;/span&gt; =&amp;gt; &lt;span class="s"&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;tag:staging&lt;/span&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; &lt;span class="r"&gt;do&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;    &lt;span class="sh"&gt;&lt;span class="dl"&gt;`&lt;/span&gt;&lt;span class="k"&gt;cap staging deploy:long&lt;/span&gt;&lt;span class="dl"&gt;`&lt;/span&gt;&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;  &lt;span class="r"&gt;end&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;&lt;span class="r"&gt;end&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;The last one (&lt;code&gt;rake deploy:staging&lt;/code&gt;) simply wraps up the common task of tagging
+our latest code to be pushed to staging and initiating a staging deploy.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Note:&lt;/em&gt; To use most of these commands, your local working directory must be clean. If we have outstanding changes in our tree when we need to run them, we use &lt;code&gt;git-stash&lt;/code&gt; to temporarily move them out of the way. &lt;/p&gt;
+
+&lt;p&gt;Thanks to &lt;a href="http://jointheconversation.org/"&gt;Scott Chacon&lt;/a&gt; for helping us work this out. Be sure to check
+out his &lt;a href="http://www.gitcasts.com/"&gt;GitCasts&lt;/a&gt; and &lt;a href="http://peepcode.com/products/git-internals-pdf"&gt;Git Internals PDF&lt;/a&gt;.&lt;/p&gt;
+          </content>  <feedburner:origLink>http://www.brynary.com/2008/8/3/our-git-deployment-workflow</feedburner:origLink></entry>
+  <entry xml:base="http://www.brynary.com/">
+    <author>
+      <name>bhelmkamp</name>
+    </author>
+    <id>tag:www.brynary.com,2008-06-30:1081</id>
+    <published>2008-06-30T05:02:00Z</published>
+    <updated>2008-07-22T18:45:24Z</updated>
+    <category term="Random" />
+    <link href="http://feeds.feedburner.com/~r/brynary/~3/322991050/how-i-got-started-programming" rel="alternate" type="text/html" />
+    <title>How I got started programming</title>
+<content type="html">
+            &lt;p&gt;&lt;a href="http://www.pauldix.net/2008/06/how-i-got-start.html"&gt;Mr. Paul C. Dix tagged me&lt;/a&gt; to answer these...&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;How old were you when you started programming?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;I started to understand the concept of programming around age nine or ten. I remember how amazing I thought it was that making the computer do new things didn't require rooms full of special equipment.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;How did you get started programming?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;A lot of my experiences around this time are blurred together.&lt;/p&gt;
+
+&lt;p&gt;My parents got me into a beginner programming course for kids at the local community college. The instructor taught the basics of variables and control structures while the students swapped QBasic games they downloaded at home.&lt;/p&gt;
+
+&lt;p&gt;The first program I distinctly remember working on calculated golf handicaps from a series of scores. I wrote it with an elementary school friend in his basement using a copy of Borland C++ he found. We fumbled around with functions like getch and cout without any idea that they stood for.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;What was your first language?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Beginners All-purpose Symbolic Instructional Code.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;What was the first real program you wrote?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;When I joined the website development team at my high school half way though the ninth grade, I took on the task of creating a system to post football scores and statistics to our website. After a frustrating first attempt in Perl, I discovered PHP and rewrote it.&lt;/p&gt;
+
+&lt;p&gt;The program allowed our statistician to enter the numbers into a form, saving the web team from having to manually enter all the data from paper print outs. It calculated simple averages and YTD totals.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;What languages have you used since you started programming?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;In no particular order: QBasic, Visual Basic, Bash, Java, JavaScript, C, C++, Ruby, Perl, PHP, Python, and SQL.&lt;/p&gt;
+
+&lt;p&gt;So far, Ruby is my favorite hands down. I'm fortunate enough to say I've never written a line of real production code in either Java or .NET.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;What was your first professional programming gig?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The summer before my senior year of high school, I interned in a local government IT applications department. The other developers were doing mostly ASP work, but I built their first PHP application which I deployed on their first Linux server.&lt;/p&gt;
+
+&lt;p&gt;Unsatisfied with the maintainability of PHP apps I had built in the past, I developed a Struts-like framework in the process. At this point I was feeling pain with the PHP language and the lack of a suitable web development framework. After a brief exploration into Python, I would soon find relief in Ruby and Rails.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;If there is one thing you learned along the way that you would tell new developers, what would it be?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Engage in the community, both locally and online, as much as possible. Attend user group meetings, contribute to mailing lists, blog, go to conferences that look interesting. Surround yourself with other programmers, especially those you admire. You won't regret it.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;What's the most fun you've ever had programming?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Solving interesting problems with great developers while building applications with an impact. 'Nuff said.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Up Next&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;It's entirely optional, of course.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://jackbaty.com/go/blog"&gt;Jack Baty&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.leebankewitz.com/"&gt;Lee Bankewitz&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://metaclass.org/"&gt;Wilson Bilkovich&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;âˆš &lt;a href="http://blog.davidchelimsky.net/2008/7/1/how-i-got-started-programming"&gt;David Chelimsky&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.lukemelia.com/devblog/"&gt;Luke Melia&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;âˆš &lt;a href="http://boxornot.com/2008/07/21/how-i-became-a-programmer/"&gt;Noah Davis&lt;/a&gt; (&lt;em&gt;Edit:&lt;/em&gt; Added Noah after he started a blog)&lt;/li&gt;
+&lt;/ul&gt;
+          </content>  <feedburner:origLink>http://www.brynary.com/2008/6/30/how-i-got-started-programming</feedburner:origLink></entry>
+  <entry xml:base="http://www.brynary.com/">
+    <author>
+      <name>bhelmkamp</name>
+    </author>
+    <id>tag:www.brynary.com,2008-04-26:1078</id>
+    <published>2008-04-26T18:09:00Z</published>
+    <updated>2008-04-26T18:09:55Z</updated>
+    <category term="Agile" />
+    <category term="BDD" />
+    <category term="Rails" />
+    <category term="Ruby" />
+    <link href="http://feeds.feedburner.com/~r/brynary/~3/283697744/story-driven-development-slides-posted" rel="alternate" type="text/html" />
+    <title>Story Driven Development slides posted</title>
+<content type="html">
+            &lt;p&gt;Just wrapped up my Story Driven Development talk at GoRuCo 2008. There were some great questions at the end, and I'm looking forward to more hallway track conversations about SDD.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href="http://www.brynary.com/uploads/Story_Driven_Development.pdf"&gt;Download the slides&lt;/a&gt;&lt;/strong&gt; as a PDF (1.6 MB)&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Note:&lt;/em&gt; Confreaks is recording the talks today, so a full video of my presentation should be online soon.&lt;/p&gt;
+          </content>  <feedburner:origLink>http://www.brynary.com/2008/4/26/story-driven-development-slides-posted</feedburner:origLink></entry>
+  <entry xml:base="http://www.brynary.com/">
+    <author>
+      <name>bhelmkamp</name>
+    </author>
+    <id>tag:www.brynary.com,2008-03-26:1074</id>
+    <published>2008-03-26T06:49:00Z</published>
+    <updated>2008-03-26T06:50:04Z</updated>
+    <category term="Rails" />
+    <category term="Random" />
+    <link href="http://feeds.feedburner.com/~r/brynary/~3/258138990/weplay-launches" rel="alternate" type="text/html" />
+    <title>weplay launches</title>
+<content type="html">
+            &lt;p&gt;The online community for youth sports I’ve been working on for the last month or so, &lt;a href="http://weplay.com/"&gt;weplay&lt;/a&gt;, is now in public beta. It’s been a roller coaster, but entirely worth it.&lt;/p&gt;
+
+
+	&lt;p&gt;As part of this launch, we’re set to appear on the front page of the New York Times business section in tomorrow’s paper. The &lt;a href="http://www.nytimes.com/2008/03/26/technology/26caa.html"&gt;online version of the article&lt;/a&gt; is already available, and we’ve been busy all night responding to our first production load…. ever.&lt;/p&gt;
+
+
+	&lt;p&gt;Check it out, don’t mind a few bumps and bruises as we settle in, and expect more to come soon. Oh, and be sure to checkout &lt;a href="http://www.weplay.com/users/bryan"&gt;my weplay profile&lt;/a&gt;.&lt;/p&gt;
+          </content>  <feedburner:origLink>http://www.brynary.com/2008/3/26/weplay-launches</feedburner:origLink></entry>
+  <entry xml:base="http://www.brynary.com/">
+    <author>
+      <name>bhelmkamp</name>
+    </author>
+    <id>tag:www.brynary.com,2008-02-09:955</id>
+    <published>2008-02-09T22:12:00Z</published>
+    <updated>2008-02-09T22:14:01Z</updated>
+    <category term="Agile" />
+    <category term="BDD" />
+    <category term="Rails" />
+    <category term="Ruby" />
+    <link href="http://feeds.feedburner.com/~r/brynary/~3/232347309/presenting-at-goruco" rel="alternate" type="text/html" />
+    <title>Presenting at GoRuCo in NYC</title>
+<content type="html">
+            &lt;p&gt;I just received word that my proposal to speak at &lt;span class="caps"&gt;NYC&lt;/span&gt;’s very own second annual &lt;a href="http://2008.goruco.com/"&gt;GoRuCo&lt;/a&gt; has been accepted. The conference is set for Saturday, April 26th at Pace University downtown. My topic will be the same as my &lt;a href="http://www.brynary.com/2008/1/31/presenting-at-scotland-on-rails"&gt;Scotland on Rails presentation&lt;/a&gt;.&lt;/p&gt;
+
+
+	&lt;p&gt;I’m really excited to have the opportunity to present at home, in front of many of my friends and colleagues. Now I just need to make sure I don’t suck. Better get back to working on my slide deck…&lt;/p&gt;
+          </content>  <feedburner:origLink>http://www.brynary.com/2008/2/9/presenting-at-goruco</feedburner:origLink></entry>
+  <entry xml:base="http://www.brynary.com/">
+    <author>
+      <name>bhelmkamp</name>
+    </author>
+    <id>tag:www.brynary.com,2008-01-31:952</id>
+    <published>2008-01-31T17:44:00Z</published>
+    <updated>2008-01-31T17:47:14Z</updated>
+    <category term="Agile" />
+    <category term="BDD" />
+    <category term="Rails" />
+    <category term="Ruby" />
+    <link href="http://feeds.feedburner.com/~r/brynary/~3/226686694/presenting-at-scotland-on-rails" rel="alternate" type="text/html" />
+    <title>Presenting at Scotland on Rails</title>
+<content type="html">
+            &lt;p&gt;I’m going to be presenting on Story Driven Development at the first Scottish Ruby on Rails conference, &lt;a href="http://scotlandonrails.com/"&gt;Scotland on Rails&lt;/a&gt;. I’ll be exploring the concept of Story-first development from both an agile process and implementation standpoint.&lt;/p&gt;
+
+
+	&lt;p&gt;Topics will include:&lt;/p&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;Collaborating with the product owner on stories&lt;/li&gt;
+		&lt;li&gt;What makes good stories and scenarios?&lt;/li&gt;
+		&lt;li&gt;Driving stories with a browser simulator like Webrat&lt;/li&gt;
+		&lt;li&gt;Potential pitfalls and ways to avoid them&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;p&gt;If you’re going to be in Edinburgh for the conference, let me know.&lt;/p&gt;
+          </content>  <feedburner:origLink>http://www.brynary.com/2008/1/31/presenting-at-scotland-on-rails</feedburner:origLink></entry>
+  <entry xml:base="http://www.brynary.com/">
+    <author>
+      <name>bhelmkamp</name>
+    </author>
+    <id>tag:www.brynary.com,2007-12-16:920</id>
+    <published>2007-12-16T02:57:00Z</published>
+    <updated>2007-12-16T03:26:50Z</updated>
+    <category term="Rails" />
+    <link href="http://feeds.feedburner.com/~r/brynary/~3/201013338/yui-pages-plugin-0-1-0-released" rel="alternate" type="text/html" />
+    <title>YUI Pages plugin 0.1.0 released</title>
+<content type="html">
+            &lt;p&gt;Tonight I’m releasing version 0.1.0 of my new &lt;a href="http://www.brynary.com/uploads/yui_pages/rdoc/index.html"&gt;&lt;span class="caps"&gt;YUI&lt;/span&gt; Pages&lt;/a&gt; Rails plugin. Here’s a quick example of what it can do (from the &lt;span class="caps"&gt;README&lt;/span&gt;):&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;% yui_page :width =&amp;gt; YUIPages::PAGE_750, :secondary =&amp;gt; YUIPages::RIGHT_180 do %&amp;gt;
+  &amp;lt;% header do %&amp;gt;
+    Page title
+  &amp;lt;% end %&amp;gt;
+
+  &amp;lt;% body do %&amp;gt;
+    &amp;lt;% main do %&amp;gt;
+      &amp;lt;% grid :columns =&amp;gt; YUIPages::GRID_75_25 do %&amp;gt;
+        &amp;lt;% unit do %&amp;gt;
+          Content for the 75% width first column.
+        &amp;lt;% end %&amp;gt;
+        &amp;lt;% unit do %&amp;gt;
+          Content for the 25% width second column.
+        &amp;lt;% end %&amp;gt;
+      &amp;lt;% end %&amp;gt;
+    &amp;lt;% end %&amp;gt;
+
+    &amp;lt;% secondary do %&amp;gt;
+      Content for the 180px right sidebar.
+    &amp;lt;% end %&amp;gt;      
+  &amp;lt;% end %&amp;gt;
+
+  &amp;lt;% footer do %&amp;gt;
+    Footer links here
+  &amp;lt;% end %&amp;gt;
+&amp;lt;% end %&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;This light (less than 90 lines of code) plugin saves me from having to remember or care about the &lt;span class="caps"&gt;YUI&lt;/span&gt; Grids &lt;span class="caps"&gt;CSS&lt;/span&gt; IDs and classes, and handles preparing correct markup regardless of my grid arrangement.&lt;/p&gt;
+
+
+	&lt;p&gt;No more looking up that “yui-t3” means a 300px sidebar on the left or forgetting to class the first unit in a grid with “first” because I moved things around in my layout file. A small victory, but a victory nonetheless.&lt;/p&gt;
+
+
+	&lt;p&gt;&lt;span class="caps"&gt;SVN&lt;/span&gt; is at &lt;a href="http://svn.eastmedia.net/public/plugins/yui_pages/"&gt;http://svn.eastmedia.net/public/plugins/yui_pages/&lt;/a&gt;. Check out the full &lt;a href="http://www.brynary.com/uploads/yui_pages/rdoc/index.html"&gt;&lt;span class="caps"&gt;README&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
+          </content>  <feedburner:origLink>http://www.brynary.com/2007/12/16/yui-pages-plugin-0-1-0-released</feedburner:origLink></entry>
+  <entry xml:base="http://www.brynary.com/">
+    <author>
+      <name>bhelmkamp</name>
+    </author>
+    <id>tag:www.brynary.com,2007-12-12:909</id>
+    <published>2007-12-12T17:39:00Z</published>
+    <updated>2007-12-12T17:47:15Z</updated>
+    <category term="Rails" />
+    <category term="Ruby" />
+    <link href="http://feeds.feedburner.com/~r/brynary/~3/199298599/what-s-new-in-rails-2-slides-posted" rel="alternate" type="text/html" />
+    <title>"What's new in Rails 2?" slides posted</title>
+<content type="html">
+            &lt;p&gt;Thanks to everyone who attended my “What’s new in Rails 2?” talk last night at &lt;span class="caps"&gt;NYC&lt;/span&gt;.rb. The questions were great, and I picked up a few tips myself from the discussions we had.&lt;/p&gt;
+
+
+	&lt;p&gt;&lt;strong&gt;&lt;a href="http://www.brynary.com/uploads/Whats_new_in_Rails_2.pdf"&gt;PDF&lt;/span&gt; (1.4 MB).&lt;/p&gt;
+          </content>  <feedburner:origLink>http://www.brynary.com/2007/12/12/what-s-new-in-rails-2-slides-posted</feedburner:origLink></entry>
+  <entry xml:base="http://www.brynary.com/">
+    <author>
+      <name>bhelmkamp</name>
+    </author>
+    <id>tag:www.brynary.com,2007-12-08:908</id>
+    <published>2007-12-08T06:38:00Z</published>
+    <updated>2007-12-08T06:44:08Z</updated>
+    <category term="Ruby" />
+    <link href="http://feeds.feedburner.com/~r/brynary/~3/197030631/save-the-date-goruco-will-be-april-26th-2008" rel="alternate" type="text/html" />
+    <title>Save the date: GoRuCo will be April 26th, 2008</title>
+<content type="html">
+            &lt;p&gt;The second annual &lt;strong&gt;Gotham Ruby Conference&lt;/strong&gt; a.k.a. &lt;a href="http://goruco.com/"&gt;GoRuCo&lt;/a&gt; will be held Saturday, April 26th 2008 at Pace University in Manhattan. Last year was a great day of learning and socializing with fellow Ruby geeks, and we expect this year to be even better. I’ll see you there!&lt;/p&gt;
+          </content>  <feedburner:origLink>http://www.brynary.com/2007/12/8/save-the-date-goruco-will-be-april-26th-2008</feedburner:origLink></entry>
+  <entry xml:base="http://www.brynary.com/">
+    <author>
+      <name>bhelmkamp</name>
+    </author>
+    <id>tag:www.brynary.com,2007-12-08:907</id>
+    <published>2007-12-08T06:32:00Z</published>
+    <updated>2007-12-08T06:37:23Z</updated>
+    <category term="Rails" />
+    <category term="Ruby" />
+    <link href="http://feeds.feedburner.com/~r/brynary/~3/197030633/speaking-at-nyc-rb-on-tuesday" rel="alternate" type="text/html" />
+    <title>Speaking at NYC.rb on Tuesday</title>
+<content type="html">
+            &lt;p&gt;On &lt;a href="http://nycruby.org/wiki/pages/December+11+2007+Meeting+Agenda"&gt;Tuesday, December 11th&lt;/a&gt;, I’ll be speaking at &lt;a href="http://nycruby.org/wiki/"&gt;&lt;span class="caps"&gt;NYC&lt;/span&gt;.rb&lt;/a&gt; about &lt;strong&gt;“What’s new in Rails 2?”&lt;/strong&gt;.  Come by and watch or check back after then and I’ll be sure to have my slides up.&lt;/p&gt;
+          </content>  <feedburner:origLink>http://www.brynary.com/2007/12/8/speaking-at-nyc-rb-on-tuesday</feedburner:origLink></entry>
+  <entry xml:base="http://www.brynary.com/">
+    <author>
+      <name>bhelmkamp</name>
+    </author>
+    <id>tag:www.brynary.com,2007-12-08:906</id>
+    <published>2007-12-08T06:28:00Z</published>
+    <updated>2007-12-16T02:23:56Z</updated>
+    <category term="BDD" />
+    <category term="Rails" />
+    <category term="Ruby" />
+    <link href="http://feeds.feedburner.com/~r/brynary/~3/197030634/webrat-0-1-0-released" rel="alternate" type="text/html" />
+    <title>Webrat 0.1.0 released</title>
+<content type="html">
+            &lt;p&gt;Last week I pushed &lt;a href="http://www.brynary.com/uploads/webrat/rdoc/index.html"&gt;Webrat 0.1.0&lt;/a&gt; out the door. So far the response has been great, and I’ve already received a couple patched (Thanks, David!). Here’s a quick usage example (from the &lt;span class="caps"&gt;README&lt;/span&gt;):&lt;/p&gt;
+
+
+&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td title="click to toggle" class="line_numbers"&gt;&lt;pre&gt;1&lt;tt&gt;
+&lt;/tt&gt;2&lt;tt&gt;
+&lt;/tt&gt;3&lt;tt&gt;
+&lt;/tt&gt;4&lt;tt&gt;
+&lt;/tt&gt;&lt;strong&gt;5&lt;/strong&gt;&lt;tt&gt;
+&lt;/tt&gt;6&lt;tt&gt;
+&lt;/tt&gt;7&lt;tt&gt;
+&lt;/tt&gt;8&lt;tt&gt;
+&lt;/tt&gt;&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="r"&gt;def&lt;/span&gt; &lt;span class="fu"&gt;test_sign_up&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;    visits &lt;span class="s"&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;/&lt;/span&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;    clicks_link &lt;span class="s"&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;Sign up&lt;/span&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;    fills_in &lt;span class="s"&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;Email&lt;/span&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;, &lt;span class="sy"&gt;:with&lt;/span&gt; =&amp;gt; &lt;span class="s"&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;good@example.com&lt;/span&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;    select &lt;span class="s"&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;Free account&lt;/span&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;    clicks_button &lt;span class="s"&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;Register&lt;/span&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;    ...&lt;tt&gt;
+&lt;/tt&gt;  &lt;span class="r"&gt;end&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+
+
+	&lt;p&gt;Behind the scenes, this will perform the following work:&lt;/p&gt;
+
+
+	&lt;ol&gt;
+	&lt;li&gt;Verify that loading the home page is successful&lt;/li&gt;
+		&lt;li&gt;Verify that a “Sign up” link exists on the home page&lt;/li&gt;
+		&lt;li&gt;Verify that loading the &lt;span class="caps"&gt;URL&lt;/span&gt; pointed to by the “Sign up” link leads to a successful page&lt;/li&gt;
+		&lt;li&gt;Verify that there is an “Email” input field on the Sign Up page&lt;/li&gt;
+		&lt;li&gt;Verify that there is an select field on the Sign Up page with an option for “Free account” &lt;/li&gt;
+		&lt;li&gt;Verify that there is a “Register” submit button on the page&lt;/li&gt;
+		&lt;li&gt;Verify that submitting the Sign Up form with the values “good@example.com” and “Free account” leads to a successful page&lt;/li&gt;
+	&lt;/ol&gt;
+
+
+	&lt;p&gt;Take special note of the things &lt;em&gt;not&lt;/em&gt; specified in that test, that might cause tests to break unnecessarily as your application evolves:&lt;/p&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;The input field IDs or names (e.g. “user_email” or “user[email]”), which could change if you rename a model&lt;/li&gt;
+		&lt;li&gt;The ID of the form element (Webrat can do a good job of guessing, even if there are multiple forms on the page.)&lt;/li&gt;
+		&lt;li&gt;The URLs of links followed&lt;/li&gt;
+		&lt;li&gt;The &lt;span class="caps"&gt;URL&lt;/span&gt; the form submission should be sent to, which could change if you adjust your routes or controllers&lt;/li&gt;
+		&lt;li&gt;The &lt;span class="caps"&gt;HTTP&lt;/span&gt; method for the login request&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;p&gt;A test written with Webrat can handle these changes smoothly.&lt;/p&gt;
+
+
+	&lt;p&gt;&lt;span class="caps"&gt;SVN&lt;/span&gt; is at &lt;a href="http://svn.eastmedia.net/public/plugins/webrat/"&gt;http://svn.eastmedia.net/public/plugins/webrat/&lt;/a&gt;. Check out the full &lt;a href="http://www.brynary.com/uploads/webrat/rdoc/index.html"&gt;&lt;span class="caps"&gt;README&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
+          </content>  <feedburner:origLink>http://www.brynary.com/2007/12/8/webrat-0-1-0-released</feedburner:origLink></entry>
+  <entry xml:base="http://www.brynary.com/">
+    <author>
+      <name>bhelmkamp</name>
+    </author>
+    <id>tag:www.brynary.com,2007-09-13:899</id>
+    <published>2007-09-13T05:07:00Z</published>
+    <updated>2007-09-13T05:12:11Z</updated>
+    <category term="Rails" />
+    <category term="Ruby" />
+    <link href="http://feeds.feedburner.com/~r/brynary/~3/155810808/scourging-your-ruby-code-with-flog" rel="alternate" type="text/html" />
+    <title>Scourging your Ruby code with Flog</title>
+<content type="html">
+            &lt;p&gt;&lt;a href="http://ruby.sadi.st/Flog.html"&gt;Flog&lt;/a&gt; is a tool build by &lt;a href="http://blog.zenspider.com/"&gt;Ryan Davis&lt;/a&gt; to analyze Ruby code complexity. It’s dead simple to run, and immediately provides useful metrics in the form of a “Flog score” per method. Don’t get too hung up on the actual values, but high outliers are prime candidates for refactoring.&lt;/p&gt;
+
+
+	&lt;p&gt;I ran this on a couple recent projects I worked on, and it proved quite accurate in identifying the areas of code that seem to be in the most pain. Flog doesn’t replace hands-on code review, but it is still a helpful aid.&lt;/p&gt;
+
+
+	&lt;p&gt;Below is a rake task I threw together for running Flog on a Rails project. Seems like a great candidate to install via Chris Wanstrath’s &lt;a href="http://errtheblog.com/post/6069"&gt;Sake&lt;/a&gt;, a system for handling Rake tasks that you want to be available from anywhere.&lt;/p&gt;
+
+
+&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td title="click to toggle" class="line_numbers"&gt;&lt;pre&gt;1&lt;tt&gt;
+&lt;/tt&gt;2&lt;tt&gt;
+&lt;/tt&gt;3&lt;tt&gt;
+&lt;/tt&gt;4&lt;tt&gt;
+&lt;/tt&gt;&lt;strong&gt;5&lt;/strong&gt;&lt;tt&gt;
+&lt;/tt&gt;6&lt;tt&gt;
+&lt;/tt&gt;7&lt;tt&gt;
+&lt;/tt&gt;8&lt;tt&gt;
+&lt;/tt&gt;9&lt;tt&gt;
+&lt;/tt&gt;&lt;strong&gt;10&lt;/strong&gt;&lt;tt&gt;
+&lt;/tt&gt;11&lt;tt&gt;
+&lt;/tt&gt;12&lt;tt&gt;
+&lt;/tt&gt;13&lt;tt&gt;
+&lt;/tt&gt;14&lt;tt&gt;
+&lt;/tt&gt;&lt;strong&gt;15&lt;/strong&gt;&lt;tt&gt;
+&lt;/tt&gt;16&lt;tt&gt;
+&lt;/tt&gt;17&lt;tt&gt;
+&lt;/tt&gt;18&lt;tt&gt;
+&lt;/tt&gt;19&lt;tt&gt;
+&lt;/tt&gt;&lt;strong&gt;20&lt;/strong&gt;&lt;tt&gt;
+&lt;/tt&gt;21&lt;tt&gt;
+&lt;/tt&gt;22&lt;tt&gt;
+&lt;/tt&gt;23&lt;tt&gt;
+&lt;/tt&gt;24&lt;tt&gt;
+&lt;/tt&gt;&lt;strong&gt;25&lt;/strong&gt;&lt;tt&gt;
+&lt;/tt&gt;26&lt;tt&gt;
+&lt;/tt&gt;27&lt;tt&gt;
+&lt;/tt&gt;28&lt;tt&gt;
+&lt;/tt&gt;29&lt;tt&gt;
+&lt;/tt&gt;&lt;strong&gt;30&lt;/strong&gt;&lt;tt&gt;
+&lt;/tt&gt;&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="r"&gt;def&lt;/span&gt; &lt;span class="fu"&gt;flog&lt;/span&gt;(output, *directories)&lt;tt&gt;
+&lt;/tt&gt;  &lt;span class="sh"&gt;&lt;span class="dl"&gt;`&lt;/span&gt;&lt;span class="k"&gt;find &lt;/span&gt;&lt;span class="il"&gt;&lt;span class="dl"&gt;#{&lt;/span&gt;directories.join(&lt;span class="s"&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt; &lt;/span&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;)&lt;span class="dl"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class="k"&gt; -name &lt;/span&gt;&lt;span class="ch"&gt;\\&lt;/span&gt;&lt;span class="k"&gt;*.rb|xargs flog &amp;gt; &lt;/span&gt;&lt;span class="il"&gt;&lt;span class="dl"&gt;#{&lt;/span&gt;&lt;span class="co"&gt;RAILS_ROOT&lt;/span&gt;&lt;span class="dl"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class="k"&gt;/tmp/flog/&lt;/span&gt;&lt;span class="il"&gt;&lt;span class="dl"&gt;#{&lt;/span&gt;output&lt;span class="dl"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class="k"&gt;.txt&lt;/span&gt;&lt;span class="dl"&gt;`&lt;/span&gt;&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;&lt;span class="r"&gt;end&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;&lt;tt&gt;
+&lt;/tt&gt;desc &lt;span class="s"&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;Flog models, controller, helpers and lib&lt;/span&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;task &lt;span class="sy"&gt;:flog&lt;/span&gt; &lt;span class="r"&gt;do&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;  flog &lt;span class="s"&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;all&lt;/span&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;, *&lt;span class="s"&gt;&lt;span class="dl"&gt;%w[&lt;/span&gt;&lt;span class="k"&gt;app/models app/controllers app/helpers lib&lt;/span&gt;&lt;span class="dl"&gt;]&lt;/span&gt;&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;&lt;span class="r"&gt;end&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;&lt;tt&gt;
+&lt;/tt&gt;namespace &lt;span class="sy"&gt;:flog&lt;/span&gt; &lt;span class="r"&gt;do&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;  desc &lt;span class="s"&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;Flog code in app/models&lt;/span&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;  task &lt;span class="sy"&gt;:models&lt;/span&gt; &lt;span class="r"&gt;do&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;    flog &lt;span class="s"&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;models&lt;/span&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;, &lt;span class="s"&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;app/models&lt;/span&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;  &lt;span class="r"&gt;end&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;  &lt;tt&gt;
+&lt;/tt&gt;  desc &lt;span class="s"&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;Flog code in app/controllers&lt;/span&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;  &lt;tt&gt;
+&lt;/tt&gt;  task &lt;span class="sy"&gt;:controllers&lt;/span&gt; &lt;span class="r"&gt;do&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;    flog &lt;span class="s"&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;controllers&lt;/span&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;, &lt;span class="s"&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;app/controllers&lt;/span&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;  &lt;span class="r"&gt;end&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;  &lt;tt&gt;
+&lt;/tt&gt;  desc &lt;span class="s"&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;Flog code in app/helpers&lt;/span&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;  &lt;tt&gt;
+&lt;/tt&gt;  task &lt;span class="sy"&gt;:helpers&lt;/span&gt; &lt;span class="r"&gt;do&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;    flog &lt;span class="s"&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;helpers&lt;/span&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;, &lt;span class="s"&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;app/helpers&lt;/span&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;  &lt;span class="r"&gt;end&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;  &lt;tt&gt;
+&lt;/tt&gt;  desc &lt;span class="s"&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;Flog code in lib&lt;/span&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;  &lt;tt&gt;
+&lt;/tt&gt;  task &lt;span class="sy"&gt;:lib&lt;/span&gt; &lt;span class="r"&gt;do&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;    flog &lt;span class="s"&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;lib&lt;/span&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;, &lt;span class="s"&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;lib&lt;/span&gt;&lt;span class="dl"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;  &lt;span class="r"&gt;end&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;&lt;span class="r"&gt;end&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+          </content>  <feedburner:origLink>http://www.brynary.com/2007/9/13/scourging-your-ruby-code-with-flog</feedburner:origLink></entry>
+  <entry xml:base="http://www.brynary.com/">
+    <author>
+      <name>bhelmkamp</name>
+    </author>
+    <id>tag:www.brynary.com,2007-09-12:897</id>
+    <published>2007-09-12T03:30:00Z</published>
+    <updated>2007-09-12T03:31:41Z</updated>
+    <category term="Rails" />
+    <link href="http://feeds.feedburner.com/~r/brynary/~3/155325883/modeling-tip-replace-booleans-with-timestamps" rel="alternate" type="text/html" />
+    <title>Modeling tip: Replace booleans with timestamps</title>
+<content type="html">
+            &lt;p&gt;Let’s say you’re building a blogging application and you’ve got a Post model. Posts should not show up on the public site until they are approved. Approval is done by clicking an “Approve” button next to the post in the admin area.&lt;/p&gt;
+
+
+	&lt;p&gt;Your first inclination (and mine, up until recently) might be to implement this with a boolean column:&lt;/p&gt;
+
+
+&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td title="click to toggle" class="line_numbers"&gt;&lt;pre&gt;1&lt;tt&gt;
+&lt;/tt&gt;2&lt;tt&gt;
+&lt;/tt&gt;3&lt;tt&gt;
+&lt;/tt&gt;4&lt;tt&gt;
+&lt;/tt&gt;&lt;strong&gt;5&lt;/strong&gt;&lt;tt&gt;
+&lt;/tt&gt;6&lt;tt&gt;
+&lt;/tt&gt;7&lt;tt&gt;
+&lt;/tt&gt;8&lt;tt&gt;
+&lt;/tt&gt;&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="r"&gt;class&lt;/span&gt; &lt;span class="cl"&gt;Post&lt;/span&gt; &amp;lt; &lt;span class="co"&gt;ActiveRecord&lt;/span&gt;::&lt;span class="co"&gt;Base&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;  &lt;span class="c"&gt;# assuming posts.approved_at is a boolean column&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;&lt;tt&gt;
+&lt;/tt&gt;  &lt;span class="r"&gt;def&lt;/span&gt; &lt;span class="fu"&gt;approve!&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;    &lt;span class="pc"&gt;self&lt;/span&gt;.approved = &lt;span class="pc"&gt;true&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;  &lt;span class="r"&gt;end&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;&lt;tt&gt;
+&lt;/tt&gt;&lt;span class="r"&gt;end&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+
+
+	&lt;p&gt;That works just fine, and may be all you need. On the other hand, my experience has shown that storing a little bit more data is generally worth the tiny incurred complexity. For example:&lt;/p&gt;
+
+
+&lt;table class="CodeRay"&gt;&lt;tr&gt;
+  &lt;td title="click to toggle" class="line_numbers"&gt;&lt;pre&gt;1&lt;tt&gt;
+&lt;/tt&gt;2&lt;tt&gt;
+&lt;/tt&gt;3&lt;tt&gt;
+&lt;/tt&gt;4&lt;tt&gt;
+&lt;/tt&gt;&lt;strong&gt;5&lt;/strong&gt;&lt;tt&gt;
+&lt;/tt&gt;6&lt;tt&gt;
+&lt;/tt&gt;7&lt;tt&gt;
+&lt;/tt&gt;8&lt;tt&gt;
+&lt;/tt&gt;9&lt;tt&gt;
+&lt;/tt&gt;&lt;strong&gt;10&lt;/strong&gt;&lt;tt&gt;
+&lt;/tt&gt;11&lt;tt&gt;
+&lt;/tt&gt;12&lt;tt&gt;
+&lt;/tt&gt;&lt;/pre&gt;&lt;/td&gt;
+  &lt;td class="code"&gt;&lt;pre&gt;&lt;span class="r"&gt;class&lt;/span&gt; &lt;span class="cl"&gt;Post&lt;/span&gt; &amp;lt; &lt;span class="co"&gt;ActiveRecord&lt;/span&gt;::&lt;span class="co"&gt;Base&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;  &lt;span class="c"&gt;# assuming posts.approved_at is a datetime column&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;&lt;tt&gt;
+&lt;/tt&gt;  &lt;span class="r"&gt;def&lt;/span&gt; &lt;span class="fu"&gt;approve!&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;    &lt;span class="pc"&gt;self&lt;/span&gt;.approved_at = &lt;span class="co"&gt;Time&lt;/span&gt;.now&lt;tt&gt;
+&lt;/tt&gt;  &lt;span class="r"&gt;end&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;&lt;tt&gt;
+&lt;/tt&gt;  &lt;span class="r"&gt;def&lt;/span&gt; &lt;span class="fu"&gt;approved?&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;    !approved_at.nil?&lt;tt&gt;
+&lt;/tt&gt;  &lt;span class="r"&gt;end&lt;/span&gt;&lt;tt&gt;
+&lt;/tt&gt;&lt;tt&gt;
+&lt;/tt&gt;&lt;span class="r"&gt;end&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+
+
+	&lt;p&gt;This has proven extremely valuable for debugging and audit trail purposes, even if the extra timestamp data is never exposed in a user interface.  Approved posts can still be easily queried using &lt;span class="caps"&gt;SQL&lt;/span&gt; by using a &lt;code&gt;WHERE approved_at IS NOT NULL&lt;/code&gt; condition.&lt;/p&gt;
+          </content>  <feedburner:origLink>http://www.brynary.com/2007/9/12/modeling-tip-replace-booleans-with-timestamps</feedburner:origLink></entry>
+</feed>

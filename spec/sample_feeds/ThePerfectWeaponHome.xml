@@ -1,0 +1,722 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xml:lang="en-US" xmlns="http://www.w3.org/2005/Atom">
+  <title>The Perfect Weapon - Home</title>
+  <id>tag:metaclass.org,2008:mephisto/</id>
+  <generator version="0.7.3" uri="http://mephistoblog.com">Mephisto Noh-Varr</generator>
+  <link href="http://metaclass.org/feed/atom.xml" rel="self" type="application/atom+xml"/>
+  <link href="http://metaclass.org/" rel="alternate" type="text/html"/>
+  <updated>2008-06-07T20:47:55Z</updated>
+  <entry xml:base="http://metaclass.org/">
+    <author>
+      <name>wilson</name>
+    </author>
+    <id>tag:metaclass.org,2008-06-07:45</id>
+    <published>2008-06-07T20:47:00Z</published>
+    <updated>2008-06-07T20:47:55Z</updated>
+    <category term="Ruby"/>
+    <link href="http://metaclass.org/2008/6/7/calling-in-the-dark" rel="alternate" type="text/html"/>
+    <title>Calling in the dark</title>
+<content type="html">
+            Some of you may have overheard me on the first day of RailsConf bitching about some crazy piece of code in RSpec that was totally broken in Rubinius.
+If not, well, here is that code:
+&lt;pre&gt;
+&lt;code&gt;
+eval(&quot;caller&quot;, registration_binding_block.binding)
+&lt;/code&gt;
+&lt;/pre&gt;
+
+	&lt;p&gt;Wow, what is going on here?
+After tracing through the RSpec code, I learned that &#8216;registration_binding_block&#8217; was a block being turned into a Proc via block_pass.&lt;/p&gt;
+
+
+For example:
+&lt;pre&gt;
+&lt;code&gt;
+def describe(&#38;block)
+  @registration_binding_block = block
+  yield
+end
+&lt;/code&gt;
+&lt;/pre&gt;
+
+So now we know what&#8217;s being returned by this method, but what about the rest of that line?
+Some people may not know that eval can take a Proc as a second argument.  For the purposes of eval, a Proc and that Proc&#8217;s binding produce the same result.
+So we should also be able to say:
+&lt;pre&gt;
+&lt;code&gt;
+eval(&quot;caller&quot;, registration_binding_block)
+&lt;/code&gt;
+&lt;/pre&gt;
+
+	&lt;p&gt;What does it even mean to ask for &#8220;caller&#8221; in a Proc&#8217;s binding? What are we asking for? The Proc in question may not even have executed yet. It could just be sitting around, waiting to be called.&lt;/p&gt;
+
+
+	&lt;p&gt;It turns out that RSpec wants to know the stack trace, not from this call to &#8216;eval&#8217;, but back from where the &#8220;registration_binding_block&#8221; was originally written; for example, one of the user&#8217;s spec files.
+RSpec uses this fairly extreme meta-programming trick in order to match your specs back to the file and line they were written on.&lt;/p&gt;
+
+
+	&lt;p&gt;After the massive headache of understanding what the fix was, it turned out to be fairly easy to hack into Rubinius, and most of the RSpec specs now pass.&lt;/p&gt;
+
+
+	&lt;p&gt;For everyone running benchmarks on unfinished Ruby implementations.. good luck keeping your speed when you are done with the really fun Ruby features.&lt;/p&gt;
+
+
+	&lt;p&gt;Anyone out there know an easier way to ask a Proc what its &#8220;definition trace&#8221; is than what RSpec uses?  I can&#8217;t think of one myself yet..&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://metaclass.org/">
+    <author>
+      <name>wilson</name>
+    </author>
+    <id>tag:metaclass.org,2008-06-04:44</id>
+    <published>2008-06-04T22:34:00Z</published>
+    <updated>2008-06-23T20:33:34Z</updated>
+    <category term="Computing"/>
+    <link href="http://metaclass.org/2008/6/4/github-is-pretty-awesome" rel="alternate" type="text/html"/>
+    <title>GitHub is pretty awesome</title>
+<content type="html">
+            &lt;p&gt;Here are some of the things the GitHub team totally nailed:&lt;/p&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;Projects do not get a homepage. At SourceForge and its clones, you get this lame default page that you have to maintain, even if you don&#8217;t want it.   At this point in history, I think we can assume that projects will already have a homepage, no matter how small.&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;Bi-directional connections between parent projects and forks.  This lowers the barrier to entry for a typical open source patch tenfold. A simple idea that seems obvious in retrospect.&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;Having user URLs so close to the toplevel makes it trivial to remember the path to a particular project without searching.  Imagine github.com/users/wilson/projects/213?name=foo and give thanks for what we have instead.&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;No need to fear github turning &#8216;evil&#8217; or shutting off all the servers. Every clone of the project is another complete backup, unlike the nightmare of Subversion.&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;A &#8216;forker&#8217; can trivially request an upstream developer&#8217;s attention via a pull request.&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;Optimized for storing and displaying source code, rather than downloading binaries.&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;p&gt;There is a little bit of pain here during the &#8216;transition period&#8217; as github takes over the open source world; existing projects will have to either enforce a single technique, or start checking two different places for patches.
+Presumably better Trac / Lighthouse integration with GitHub is forthcoming, however.&lt;/p&gt;
+
+
+	&lt;p&gt;I recently had the opportunity to spin off a fork of RSpec in order to work on better Rubinius support; thus far the process has been painless for both me and the RSpec team. Nice work, GitHub.&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://metaclass.org/">
+    <author>
+      <name>wilson</name>
+    </author>
+    <id>tag:metaclass.org,2008-05-17:38</id>
+    <published>2008-05-17T20:13:00Z</published>
+    <updated>2008-05-17T20:30:30Z</updated>
+    <link href="http://metaclass.org/2008/5/17/how-about-some-activerecord" rel="alternate" type="text/html"/>
+    <title>How about some ActiveRecord?</title>
+<content type="html">
+            &lt;pre&gt;
+➞ rbx script/console
+Loading development environment (Rails 2.0.2)
+&amp;gt;&amp;gt; Snippet.find(:all)
+=&amp;gt; [#&amp;lt;Snippet id: 1, user_name: &quot;Defiler&quot;, language: &quot;ruby&quot;, description: &quot;foo&quot;, body: &quot;def foo\r\n  p 5\r\nend&quot;, created_at: &quot;2008-05-17 15:33:34&quot;, key: &quot;cbb30968&quot;&amp;gt;]
+&amp;gt;&amp;gt;
+&lt;/pre&gt;
+          </content>  </entry>
+  <entry xml:base="http://metaclass.org/">
+    <author>
+      <name>wilson</name>
+    </author>
+    <id>tag:metaclass.org,2008-05-16:37</id>
+    <published>2008-05-16T19:47:00Z</published>
+    <updated>2008-05-16T19:47:49Z</updated>
+    <category term="Ruby"/>
+    <link href="http://metaclass.org/2008/5/16/rubyspec-in-mri" rel="alternate" type="text/html"/>
+    <title>RubySpec in MRI</title>
+<content type="html">
+            Check out the bottom of the MRI 1.8 Makefile:&lt;br /&gt;
+&lt;br /&gt;
+&lt;a href=&quot;http://svn.ruby-lang.org/repos/ruby/branches/ruby_1_8/Makefile.in&quot;&gt;http://svn.ruby-lang.org/repos/ruby/branches/ruby_1_8/Makefile.in&lt;/a&gt;
+          </content>  </entry>
+  <entry xml:base="http://metaclass.org/">
+    <author>
+      <name>wilson</name>
+    </author>
+    <id>tag:metaclass.org,2008-05-10:31</id>
+    <published>2008-05-10T07:13:00Z</published>
+    <updated>2008-05-10T07:13:55Z</updated>
+    <category term="Ruby"/>
+    <link href="http://metaclass.org/2008/5/10/merb-on-rubinius" rel="alternate" type="text/html"/>
+    <title>Merb on Rubinius</title>
+<content type="html">
+            Now that we have working OpenSSL support, we can run Merb:&lt;br /&gt;
+&lt;pre&gt;
+fastness ➞ merbinius -a webrick
+ ~ Loaded DEVELOPMENT Environment...
+ ~ Compiling routes...
+ ~ Using 'share-nothing' cookie sessions (4kb limit per client)
+ ~ Using Webrick adapter
+ ~ WEBrick 1.3.1
+ ~ ruby 1.8.6 (05/07/2008) [i686-apple-darwin9.2.2]
+ ~ TCPServer.new(0.0.0.0, 4000)
+ ~ Rack::Handler::WEBrick is mounted on /.
+ ~ WEBrick::HTTPServer#start: pid=61939 port=4000
+ ~ accept: 127.0.0.1:59883
+ ~ Rack::Handler::WEBrick is invoked.
+ ~ Request: 
+ ~ Routed to: {:action=&gt;&quot;index&quot;, :controller=&gt;&quot;hello&quot;}
+ ~ Params: {&quot;action&quot;=&gt;&quot;index&quot;, &quot;controller&quot;=&gt;&quot;hello&quot;}
+ ~ {:after_filters_time=&gt;1.8e-05, :before_filters_time=&gt;3.1e-05, 
+     :dispatch_time=&gt;0.069112, :action_time=&gt;0.068106}
+&lt;/pre&gt;
+          </content>  </entry>
+  <entry xml:base="http://metaclass.org/">
+    <author>
+      <name>wilson</name>
+    </author>
+    <id>tag:metaclass.org,2008-03-10:26</id>
+    <published>2008-03-10T00:15:00Z</published>
+    <updated>2008-03-25T20:03:48Z</updated>
+    <link href="http://metaclass.org/2008/3/10/searching-for-a-deleted-method-with-git" rel="alternate" type="text/html"/>
+    <title>Searching for a deleted method with git</title>
+<content type="html">
+            &lt;p&gt;This question cropped up in #rubinius today, and I'll toss the answer out there because Google wasn't particularly helpful at the time.&lt;/p&gt;
+
+&lt;p&gt;There are several common ways to search for a commit message in git, but in this case, we are looking for a piece of text that will only appear in the full diff.&lt;/p&gt;
+
+&lt;p&gt;Since you already know the string you are searching for, paging through all the changes in a particular file seems wasteful.&lt;/p&gt;
+
+&lt;p&gt;I am (now) aware of two ways to do this with git:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;git log -S'some_string'&lt;/li&gt;
+&lt;li&gt;git whatchanged -p  (after the pager comes up, type '/' and then 'some_string')&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If you know of a better trick, feel free to post a comment.&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://metaclass.org/">
+    <author>
+      <name>wilson</name>
+    </author>
+    <id>tag:metaclass.org,2008-02-18:24</id>
+    <published>2008-02-18T18:30:00Z</published>
+    <updated>2008-02-18T18:31:04Z</updated>
+    <category term="Ruby"/>
+    <link href="http://metaclass.org/2008/2/18/captured-on-video" rel="alternate" type="text/html"/>
+    <title>Captured On Video</title>
+<content type="html">
+            &lt;p&gt;InfoQ just posted a video interview they recorded with me at the last RubyConf.
+I haven&#8217;t been brave enough yet to watch it, but you could check it out and then come tell me how badly I embarrassed myself.&lt;/p&gt;
+
+
+	&lt;p&gt;&lt;a href=&quot;http://www.infoq.com/interviews/wilson-bilkovich-discusses-rubinius&quot;&gt;Click here to unveil the terror&lt;/a&gt;&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://metaclass.org/">
+    <author>
+      <name>wilson</name>
+    </author>
+    <id>tag:metaclass.org,2007-09-18:22</id>
+    <published>2007-09-18T02:06:00Z</published>
+    <updated>2007-09-18T16:13:13Z</updated>
+    <category term="Ruby"/>
+    <link href="http://metaclass.org/2007/9/18/define-method" rel="alternate" type="text/html"/>
+    <title>Implementing define_method</title>
+<summary type="html">A walkthrough of how 'define_method' is implemented in &lt;a href=&quot;http://rubini.us/&quot;&gt;Rubinius&lt;/a&gt;&lt;br /&gt;</summary><content type="html">
+            A walkthrough of how 'define_method' is implemented in &lt;a href=&quot;http://rubini.us/&quot;&gt;Rubinius&lt;/a&gt;&lt;br /&gt;
+&lt;p&gt;
+This week I participated in the first &lt;a href=&quot;http://blog.brightredglow.com/2007/9/17/rubinius-sprint-retrospective&quot;&gt;Rubinius sprint&lt;/a&gt; in Denver, CO. A good time was had by all, and quite a lot of useful code was cranked out.&lt;/p&gt;
+&lt;p&gt;
+Brian has covered the basics rather well at the above link, so I won't bother to repeat them here, other than to thank Sun for sponsoring the travel expenses.  Sun is showing a lot of class in the Ruby community by paying attention to more than their own JRuby project.
+&lt;/p&gt;
+
+&lt;p&gt;
+Prior to the sprint, one Ruby feature that was horribly broken in Rubinius was &lt;span style=&quot;color: #9f9fcf;&quot;&gt;Module#define_method&lt;/span&gt;.
+In its most commonly-encountered form, this feature takes a block and 'promotes' it into an actual method.
+While it has some unfortunate limitations in ruby 1.8, this is still a very mainstream feature, and it needs to work.
+&lt;/p&gt;
+
+I won't &lt;span style=&quot;color: #9f9fcf;&quot;&gt;torture you&lt;/span&gt; by showing you the code as it existed prior to the sprint, but basically it:
+&lt;ol&gt;
+  &lt;li&gt; Made a copy of the method object that called define_method&lt;/li&gt;
+  &lt;li&gt; Surgically removed the compiled code from said method&lt;/li&gt;
+  &lt;li&gt; Injected the bytecodes representing the block into the method&lt;/li&gt;
+  &lt;li&gt; Placed the newly-built method into the MethodTable of the appropriate class&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;
+While it is a testament to the incredible dynamism of Rubinius that this approach was even possible, it turns out that define_method has some unique requirements that weren't obvious to me at first.
+&lt;/p&gt;
+
+Let's say we have a class like this:
+&lt;pre class=&quot;sunburst&quot;&gt;&lt;span class=&quot;Keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;JEntityNameType&quot;&gt;SomeClass&lt;/span&gt;
+  &lt;span class=&quot;Keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;Entity&quot;&gt;to_s&lt;/span&gt;
+    &lt;span class=&quot;String&quot;&gt;&lt;span class=&quot;String&quot;&gt;&amp;quot;&lt;/span&gt;someclass&lt;span class=&quot;String&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&quot;Keyword&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;Keyword&quot;&gt;end&lt;/span&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;
+Now we want to define a new method on it called 'some_method'.  Generally, define_method is used when you need to create a method that 'encloses' variables that are available to the caller, just like a block or a Proc.
+&lt;/p&gt;
+
+&lt;pre class=&quot;sunburst&quot;&gt;&lt;span class=&quot;Keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;JEntityNameType&quot;&gt;SomeClass&lt;/span&gt;
+  x &lt;span class=&quot;Keyword&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;Constant&quot;&gt;5&lt;/span&gt;
+  &lt;span class=&quot;Entity&quot;&gt;define_method&lt;/span&gt;(&lt;span class=&quot;Constant&quot;&gt;&lt;span class=&quot;Constant&quot;&gt;:&lt;/span&gt;some_method&lt;/span&gt;) { x }
+&lt;span class=&quot;Keyword&quot;&gt;end&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+In this case, we've got 'x', a local variable, that we want to be able to access when we call the newly-defined method.
+&lt;/p&gt;
+&lt;p&gt;
+Simply doing &quot;def some_method&quot; would prevent us from accessing this variable.
+&lt;pre class=&quot;sunburst&quot;&gt;&lt;span class=&quot;Support&quot;&gt;SomeClass&lt;/span&gt;.&lt;span class=&quot;Entity&quot;&gt;new&lt;/span&gt;.&lt;span class=&quot;Entity&quot;&gt;some_method&lt;/span&gt; &lt;span class=&quot;Comment&quot;&gt;&lt;span class=&quot;Comment&quot;&gt;#&lt;/span&gt; =&amp;gt; 5&lt;/span&gt;
+&lt;/pre&gt;
+As expected, this return '5'.
+&lt;/p&gt;
+
+&lt;p&gt;
+So far this is looking pretty straightforward. We can access the calling scope at runtime, when the defined method is invoked.
+&lt;/p&gt;
+
+&lt;p&gt;
+How about this, though?
+&lt;/p&gt;
+
+&lt;pre class=&quot;sunburst&quot;&gt;&lt;span class=&quot;Keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;JEntityNameType&quot;&gt;SomeClass&lt;/span&gt;
+  &lt;span class=&quot;Entity&quot;&gt;define_method&lt;/span&gt;(&lt;span class=&quot;Constant&quot;&gt;&lt;span class=&quot;Constant&quot;&gt;:&lt;/span&gt;some_method&lt;/span&gt;) { &lt;span class=&quot;Variable&quot;&gt;self&lt;/span&gt; }
+&lt;span class=&quot;Keyword&quot;&gt;end&lt;/span&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;
+If, based on the earlier code, you expected 'self' to be the caller of define_method, you would be wrong.
+&lt;/p&gt;
+&lt;pre class=&quot;sunburst&quot;&gt;p &lt;span class=&quot;Support&quot;&gt;SomeClass&lt;/span&gt;.&lt;span class=&quot;Entity&quot;&gt;new&lt;/span&gt;.&lt;span class=&quot;Entity&quot;&gt;some_method&lt;/span&gt; &lt;span class=&quot;Comment&quot;&gt;&lt;span class=&quot;Comment&quot;&gt;#&lt;/span&gt; =&amp;gt; &amp;quot;someclass&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+If you were, don't feel bad. Evan and I guessed wrong too.&lt;br /&gt;
+If you weren't fooled, you are smart and should come contribute to Rubinius.
+&lt;/p&gt;
+
+&lt;p&gt;
+As you can see, 'self' is what it would be if you had defined the method normally.  Calling the new method seems to behave more like 'instance_eval' than 'call'. Even more importantly, self is known only when the method is called, not when it is defined.  Each invocation might give a different result, just like a normal method.
+&lt;/p&gt;
+
+&lt;p&gt;
+To implement this, I added a new Rubinius 'primitive' that implements what we are calling a 'Delegated Method'.  A delegated method is a placeholder in the method table that, when called, executes the necessary code in the correct context.
+&lt;/p&gt;
+
+&lt;pre class=&quot;sunburst&quot;&gt;t1 = NTH_FIELD(mo, &lt;span class=&quot;Constant&quot;&gt;4&lt;/span&gt;); &lt;span class=&quot;Comment&quot;&gt;&lt;span class=&quot;Comment&quot;&gt;//&lt;/span&gt; Which method to call&lt;/span&gt;
+t2 = NTH_FIELD(mo, &lt;span class=&quot;Constant&quot;&gt;5&lt;/span&gt;); &lt;span class=&quot;Comment&quot;&gt;&lt;span class=&quot;Comment&quot;&gt;//&lt;/span&gt; What are we calling this method on&lt;/span&gt;
+t3 = NTH_FIELD(mo, &lt;span class=&quot;Constant&quot;&gt;6&lt;/span&gt;); &lt;span class=&quot;Comment&quot;&gt;&lt;span class=&quot;Comment&quot;&gt;//&lt;/span&gt; Do we need 'self' to be available?&lt;/span&gt;
+&lt;span class=&quot;Keyword&quot;&gt;if&lt;/span&gt;(Qtrue == t3) {
+  num_args++; &lt;span class=&quot;Comment&quot;&gt;&lt;span class=&quot;Comment&quot;&gt;//&lt;/span&gt; Method expects 'self' as an argument&lt;/span&gt;
+} &lt;span class=&quot;Keyword&quot;&gt;else&lt;/span&gt; {
+  stack_pop(); &lt;span class=&quot;Comment&quot;&gt;&lt;span class=&quot;Comment&quot;&gt;//&lt;/span&gt; Discard self&lt;/span&gt;
+}
+cpu_send_method2(state, c, t2, t1, num_args, Qnil); &lt;span class=&quot;Comment&quot;&gt;&lt;span class=&quot;Comment&quot;&gt;//&lt;/span&gt; Invoke it&lt;/span&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;
+This code is fairly typical of the parts of Rubinius that are implemented in C.&lt;br /&gt;
+In other words, it is pretty easy to understand at first glance, and very short.
+&lt;/p&gt;
+
+&lt;p&gt;
+This approach suddenly makes implementing define_method straightforward:
+&lt;/p&gt;
+&lt;pre class=&quot;sunburst&quot;&gt;&lt;span class=&quot;Keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;Entity&quot;&gt;define_method&lt;/span&gt;(&lt;span class=&quot;Variable&quot;&gt;name&lt;span class=&quot;Variable&quot;&gt;,&lt;/span&gt; meth &lt;span class=&quot;Keyword&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;Constant&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;Variable&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;Keyword&quot;&gt;&amp;amp;&lt;/span&gt;prc&lt;/span&gt;)
+  meth &lt;span class=&quot;Keyword&quot;&gt;||=&lt;/span&gt; prc
+
+  &lt;span class=&quot;Keyword&quot;&gt;if&lt;/span&gt; meth.&lt;span class=&quot;Entity&quot;&gt;kind_of?&lt;/span&gt;(&lt;span class=&quot;Variable&quot;&gt;Proc&lt;/span&gt;)
+    block_env &lt;span class=&quot;Keyword&quot;&gt;=&lt;/span&gt; meth.&lt;span class=&quot;Entity&quot;&gt;block&lt;/span&gt;
+    cm &lt;span class=&quot;Keyword&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;Support&quot;&gt;DelegatedMethod&lt;/span&gt;.&lt;span class=&quot;Entity&quot;&gt;build&lt;/span&gt;(&lt;span class=&quot;Constant&quot;&gt;&lt;span class=&quot;Constant&quot;&gt;:&lt;/span&gt;call_on_instance&lt;/span&gt;, block_env, &lt;span class=&quot;Constant&quot;&gt;true&lt;/span&gt;)
+  &lt;span class=&quot;Keyword&quot;&gt;elsif&lt;/span&gt; meth.&lt;span class=&quot;Entity&quot;&gt;kind_of?&lt;/span&gt;(&lt;span class=&quot;Variable&quot;&gt;Method&lt;/span&gt;)
+    cm &lt;span class=&quot;Keyword&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;Support&quot;&gt;DelegatedMethod&lt;/span&gt;.&lt;span class=&quot;Entity&quot;&gt;build&lt;/span&gt;(&lt;span class=&quot;Constant&quot;&gt;&lt;span class=&quot;Constant&quot;&gt;:&lt;/span&gt;call&lt;/span&gt;, meth, &lt;span class=&quot;Constant&quot;&gt;false&lt;/span&gt;)
+  &lt;span class=&quot;Keyword&quot;&gt;elsif&lt;/span&gt; meth.&lt;span class=&quot;Entity&quot;&gt;kind_of?&lt;/span&gt;(&lt;span class=&quot;Variable&quot;&gt;UnboundMethod&lt;/span&gt;)
+    cm &lt;span class=&quot;Keyword&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;Support&quot;&gt;DelegatedMethod&lt;/span&gt;.&lt;span class=&quot;Entity&quot;&gt;build&lt;/span&gt;(&lt;span class=&quot;Constant&quot;&gt;&lt;span class=&quot;Constant&quot;&gt;:&lt;/span&gt;call_on_instance&lt;/span&gt;, meth, &lt;span class=&quot;Constant&quot;&gt;true&lt;/span&gt;)
+  &lt;span class=&quot;Keyword&quot;&gt;else&lt;/span&gt;
+    &lt;span class=&quot;Keyword&quot;&gt;raise&lt;/span&gt; &lt;span class=&quot;Variable&quot;&gt;TypeError&lt;/span&gt;, &lt;span class=&quot;String&quot;&gt;&lt;span class=&quot;String&quot;&gt;&amp;quot;&lt;/span&gt;wrong argument type &lt;span class=&quot;StringEmbeddedSource&quot;&gt;&lt;span class=&quot;StringEmbeddedSource&quot;&gt;#{&lt;/span&gt;meth&lt;span class=&quot;StringEmbeddedSource&quot;&gt;&lt;span class=&quot;StringEmbeddedSource&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;Entity&quot;&gt;class&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;StringEmbeddedSource&quot;&gt;}&lt;/span&gt;&lt;/span&gt; (expected Proc/Method)&lt;span class=&quot;String&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&quot;Keyword&quot;&gt;end&lt;/span&gt;
+
+  &lt;span class=&quot;Variable&quot;&gt;self&lt;/span&gt;.&lt;span class=&quot;Entity&quot;&gt;method_table&lt;/span&gt;[name.&lt;span class=&quot;Entity&quot;&gt;to_sym&lt;/span&gt;] &lt;span class=&quot;Keyword&quot;&gt;=&lt;/span&gt; cm
+  &lt;span class=&quot;Variable&quot;&gt;VM&lt;/span&gt;.&lt;span class=&quot;Entity&quot;&gt;reset_method_cache&lt;/span&gt;(name.&lt;span class=&quot;Entity&quot;&gt;to_sym&lt;/span&gt;)
+  meth
+&lt;span class=&quot;Keyword&quot;&gt;end&lt;/span&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;
+In the case of our example code, execution will follow the &quot;if kind_of?(Proc)&quot; path. define_method can also take a Method object in ruby 1.8, hence the other code branches.
+&lt;/p&gt;
+&lt;p&gt;
+This code:
+&lt;ol&gt;
+  &lt;li&gt;Fetches the block that was given to define_method&lt;/li&gt;
+  &lt;li&gt;Makes a new DelegatedMethod that wraps up the block&lt;/li&gt;
+  &lt;li&gt;Adds the new method to the method table&lt;/li&gt;
+  &lt;li&gt;Resets the method cache so that any older versions of this method are discarded&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+A nice side-effect of this approach is that the newly-defined method is almost as fast as a normal one, bypassing the extremely large slowdown experienced in ruby 1.8.
+&lt;/p&gt;
+
+&lt;p&gt;
+Implementing a Ruby VM in Ruby turns out to feel pretty natural. Next up on the chopping block, eval.
+&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://metaclass.org/">
+    <author>
+      <name>wilson</name>
+    </author>
+    <id>tag:metaclass.org,2006-12-28:14</id>
+    <published>2006-12-28T18:55:00Z</published>
+    <updated>2006-12-31T22:10:04Z</updated>
+    <category term="Ruby"/>
+    <link href="http://metaclass.org/2006/12/28/lame-code-considered-harmful" rel="alternate" type="text/html"/>
+    <title>Lame Code Considered Harmful</title>
+<summary type="html">In this chapter, our intrepid hero writes slightly-more-tolerable code.</summary><content type="html">
+            In this chapter, our intrepid hero writes slightly-more-tolerable code.
+&lt;p&gt;
+This is a follow-up to my earlier article &lt;a href=&quot;http://metaclass.org/2006/12/22/making-a-mockery-of-activerecord&quot;&gt;Making a mockery of ActiveRecord&lt;/a&gt;.
+
+That seemed to prompt a fair amount of useful discussion. One of the most interesting can be found here, on
+&lt;a href=&quot;http://blog.floehopper.org/articles/2006/12/23/tell-dont-ask&quot;&gt;James Mead's blog&lt;/a&gt;.
+He is more polite about it than this, but to summarize: &lt;span style=&quot;color: #9f9fcf;&quot;&gt;&quot;Your tests would be easier to write if your code didn't suck.&quot;&lt;/span&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+One way to think about testing (particularly in a message-oriented language like Ruby) is as a weak mathematical proof. Don't take that analogy too far, since we aren't really formally proving anything. Consult a medical professional before using my blog, or any other drug.
+&lt;/p&gt;
+&lt;p&gt;
+Suppose we have a method called 'a', and it invokes the methods 'b', 'c', and 'd' to get its job done. 
+If we have already written tests for 'b', 'c', and 'd' showing that they behave correctly when given a certain set of inputs, all that is left is to show that 'a' gives them that input.
+This is the concept that lets us use mocks, and still be comfortable that our code is probably correct.  We don't need to re-test method 'b' every time it is called. &lt;span style=&quot;color: #9f9fcf;&quot;&gt;We already know that it works.&lt;/span&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+What does this have to do with my previous article? James indirectly pointed out to me that I hadn't written a &lt;a href=&quot;http://c2.com/ppr/wiki/WikiPagesAboutRefactoring/ComposedMethod.html&quot;&gt;Composed Method&lt;/a&gt;, and I was making life hard for myself.&lt;br /&gt;
+Here's what the code looked like when I wrote the article:
+&lt;/p&gt;
+
+&lt;pre style=&quot;background-color: #000000; color: #f8f8f8;&quot;&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt; 1 &lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#bcd2ee&quot;&gt;def &lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#7a44b2&quot;&gt;generate_email_messages&lt;/font&gt;&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt; 2 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyBlock&quot;&gt;  people = &lt;/span&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#00cdcd&quot;&gt;self&lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyBlock&quot;&gt;.recipients&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt; 3 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyBlock&quot;&gt;  &lt;/span&gt;&lt;font color=&quot;#8db6cd&quot;&gt;Message&lt;/font&gt;&lt;span class=&quot;rubyBlock&quot;&gt;.transaction &lt;/span&gt;&lt;font color=&quot;#1e90ff&quot;&gt;&lt;u&gt;do&lt;/u&gt;&lt;/font&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt; 4 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;    people.each &lt;/span&gt;&lt;font color=&quot;#1e90ff&quot;&gt;&lt;u&gt;do&lt;/u&gt;&lt;/font&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt; |&lt;/span&gt;&lt;font color=&quot;#8db6cd&quot;&gt;person&lt;/font&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;|&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt; 5 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;      &lt;/span&gt;&lt;font color=&quot;#1e90ff&quot;&gt;&lt;u&gt;unless&lt;/u&gt;&lt;/font&gt;&lt;span class=&quot;rubyNoDoBlock&quot;&gt; person.campaigns.include?(&lt;/span&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#00cdcd&quot;&gt;self&lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyNoDoBlock&quot;&gt;.campaign)&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt; 6 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyNoDoBlock&quot;&gt;        person.subscriptions.create &lt;/span&gt;&lt;font color=&quot;#1e90ff&quot;&gt;:campaign&lt;/font&gt;&lt;span class=&quot;rubyNoDoBlock&quot;&gt; =&amp;gt; &lt;/span&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#00cdcd&quot;&gt;self&lt;/font&gt;&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt; 7 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyNoDoBlock&quot;&gt;      &lt;/span&gt;&lt;font color=&quot;#1e90ff&quot;&gt;&lt;u&gt;end&lt;/u&gt;&lt;/font&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt; 8 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;      em = &lt;/span&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#00cdcd&quot;&gt;self&lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;.email_messages.create &lt;/span&gt;&lt;font color=&quot;#1e90ff&quot;&gt;:person&lt;/font&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt; =&amp;gt; person, &lt;/span&gt;&lt;font color=&quot;#1e90ff&quot;&gt;:message&lt;/font&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt; =&amp;gt; &lt;/span&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#00cdcd&quot;&gt;self&lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;, &lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt; 9 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;        &lt;/span&gt;&lt;font color=&quot;#1e90ff&quot;&gt;:direction&lt;/font&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt; =&amp;gt; &lt;/span&gt;&lt;font color=&quot;#999999&quot;&gt;'&lt;/font&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#80a0ff&quot;&gt;mt&lt;/font&gt;&lt;/span&gt;&lt;font color=&quot;#999999&quot;&gt;'&lt;/font&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;, &lt;/span&gt;&lt;font color=&quot;#1e90ff&quot;&gt;:sent_at&lt;/font&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt; =&amp;gt; &lt;/span&gt;&lt;font color=&quot;#8db6cd&quot;&gt;Time&lt;/font&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;.now.utc, &lt;/span&gt;&lt;font color=&quot;#1e90ff&quot;&gt;:body&lt;/font&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt; =&amp;gt; &lt;/span&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#00cdcd&quot;&gt;self&lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;.body&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;10 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;      &lt;/span&gt;&lt;font color=&quot;#1e90ff&quot;&gt;&lt;u&gt;unless&lt;/u&gt;&lt;/font&gt;&lt;span class=&quot;rubyNoDoBlock&quot;&gt; em.valid?&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;11 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyNoDoBlock&quot;&gt;        &lt;/span&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#1e90ff&quot;&gt;raise&lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyNoDoBlock&quot;&gt; &lt;/span&gt;&lt;font color=&quot;#8db6cd&quot;&gt;RuntimeError&lt;/font&gt;&lt;span class=&quot;rubyNoDoBlock&quot;&gt;.new(&lt;/span&gt;&lt;font color=&quot;#999999&quot;&gt;&amp;quot;&lt;/font&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#80a0ff&quot;&gt;Unable to ..blah.. for &lt;/font&gt;&lt;/span&gt;&lt;font color=&quot;#999999&quot;&gt;#{person.email_address}&lt;/font&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#80a0ff&quot;&gt;.&lt;/font&gt;&lt;/span&gt;&lt;font color=&quot;#999999&quot;&gt;&amp;quot;&lt;/font&gt;&lt;span class=&quot;rubyNoDoBlock&quot;&gt;)&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;12 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyNoDoBlock&quot;&gt;      &lt;/span&gt;&lt;font color=&quot;#1e90ff&quot;&gt;&lt;u&gt;end&lt;/u&gt;&lt;/font&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;13 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;    &lt;/span&gt;&lt;font color=&quot;#1e90ff&quot;&gt;&lt;u&gt;end&lt;/u&gt;&lt;/font&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;14 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;  &lt;/span&gt;&lt;font color=&quot;#1e90ff&quot;&gt;&lt;u&gt;end&lt;/u&gt;&lt;/font&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;15 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyBlock&quot;&gt;  people.size&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;16 &lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#bcd2ee&quot;&gt;end&lt;/font&gt;&lt;/span&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;
+This isn't too bad, but it definitely has some flaws. On line 5, I am reaching out 'through' Person, and interrogating it to decide whether I need to create a Subscription. Clearly, the Person model should be deciding whether or not it needs a subscription.
+&lt;/p&gt;
+
+&lt;p&gt;
+The same thing happens again on line 10. I reach through the email_messages association, and then raise an error if the creation failed.  The EmailMessage model should contain the knowledge of what constitutes an error. This is particularly true since this example is greatly simplified, and the real model uses acts_as_state_machine with conditional validations. As your models grow in complexity, the importance of having the functionality in the right place rises.
+&lt;/p&gt;
+
+&lt;p&gt;Here's what the code looks like now.&lt;/p&gt;
+
+&lt;pre style=&quot;background-color: #000000; color: #f8f8f8;&quot;&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt; 1 &lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#bcd2ee&quot;&gt;def &lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#7a44b2&quot;&gt;generate_email_messages&lt;/font&gt;&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt; 2 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyBlock&quot;&gt;  people = &lt;/span&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#00cdcd&quot;&gt;self&lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyBlock&quot;&gt;.recipients&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt; 3 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyBlock&quot;&gt;  &lt;/span&gt;&lt;font color=&quot;#8db6cd&quot;&gt;Message&lt;/font&gt;&lt;span class=&quot;rubyBlock&quot;&gt;.transaction &lt;/span&gt;&lt;font color=&quot;#1e90ff&quot;&gt;&lt;u&gt;do&lt;/u&gt;&lt;/font&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt; 4 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;    people.each &lt;/span&gt;&lt;font color=&quot;#1e90ff&quot;&gt;&lt;u&gt;do&lt;/u&gt;&lt;/font&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt; |&lt;/span&gt;&lt;font color=&quot;#8db6cd&quot;&gt;person&lt;/font&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;|&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt; 5 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;      person.subscribe_to(&lt;/span&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#00cdcd&quot;&gt;self&lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;.campaign)&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt; 6 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;      &lt;/span&gt;&lt;font color=&quot;#8db6cd&quot;&gt;EmailMessage&lt;/font&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;.generate_message_for(&lt;/span&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#00cdcd&quot;&gt;self&lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;, person)&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt; 7 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;    &lt;/span&gt;&lt;font color=&quot;#1e90ff&quot;&gt;&lt;u&gt;end&lt;/u&gt;&lt;/font&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt; 8 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;  &lt;/span&gt;&lt;font color=&quot;#1e90ff&quot;&gt;&lt;u&gt;end&lt;/u&gt;&lt;/font&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt; 9 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyBlock&quot;&gt;  people.size&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;10 &lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#bcd2ee&quot;&gt;end&lt;/font&gt;&lt;/span&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;
+There are new methods on Person and EmailMessage that encapsulate the necessary steps.
+At first glance, those methods look trivial. Neither is longer than three lines. However, they can now be tested in isolation, and work the same way with both existing and unsaved objects.
+ActiveRecord's association proxies (email_messages, campaigns, etc) are powerful tools, but they can also distract you from the actual goal, which is always to write readable programs with as few defects as possible.
+&lt;/p&gt;
+          </content>  </entry>
+  <entry xml:base="http://metaclass.org/">
+    <author>
+      <name>wilson</name>
+    </author>
+    <id>tag:metaclass.org,2006-12-22:2</id>
+    <published>2006-12-22T07:07:00Z</published>
+    <updated>2006-12-22T21:49:36Z</updated>
+    <category term="Ruby"/>
+    <link href="http://metaclass.org/2006/12/22/making-a-mockery-of-activerecord" rel="alternate" type="text/html"/>
+    <title>Making a mockery of ActiveRecord</title>
+<summary type="html">A code walkthrough; specifying the behavior of an ActiveRecord model 'mock-first'...</summary><content type="html">
+            A code walkthrough; specifying the behavior of an ActiveRecord model 'mock-first'...
+&lt;br /&gt;&lt;br /&gt;
+&lt;h2&gt;This is long, so grab a drink&lt;/h2&gt;
+I had a good &lt;a href=&quot;http://rspec.rubyforge.org/&quot;&gt;RSpec&lt;/a&gt; experience today (well, it is a weekday) that I thought was worth sharing.&lt;br /&gt;
+&lt;p&gt;
+If this is your first time reading about mocks, or if you're just rusty, you may want to hit up this nice collection of info:
+&lt;a href=&quot;http://sbrew.typepad.com/software/2006/11/ruby_mock_objec.html&quot;&gt;Ruby Mock Objects&lt;/a&gt;
+&lt;/p&gt;
+
+The setup:
+&lt;ul&gt;
+&lt;li&gt;An email Campaign.&lt;/li&gt;
+&lt;li&gt;A Message that represents what is arguably a template.&lt;/li&gt;
+&lt;li&gt;People and semi-dynamic Lists of people.&lt;/li&gt;
+&lt;li&gt;People can be connected to a Campaign directly via a Subscription (an opt-in), or they can simply be on a List. &lt;br /&gt;(We won't see the reasoning for that in this simplified example, but just pretend it makes sense.)&lt;/li&gt;
+&lt;/ul&gt;
+
+When Messages are ready to be delivered, they are told to &lt;em&gt;generate&lt;/em&gt; EmailMessage records.&lt;br /&gt;
+EmailMessages are connected directly to People, and represent what will eventually be sent as real emails.&lt;br /&gt;
+&lt;br /&gt;
+If this seems involved, it's because you haven't seen the customer requirements, &lt;span style=&quot;color: #9f9fcf;&quot;&gt;so stop complaining&lt;/span&gt;.&lt;br /&gt;
+&lt;br /&gt;
+The traditional Rails solution to testing this would be to make fixtures for all of the above models, and any join models.&lt;br /&gt;
+You would then load and roll back those fixtures numerous times, repetitively testing what you already know; namely, that your database service has been started properly.&lt;br /&gt;
+&lt;br /&gt;
+This has a number of drawbacks, not least of which is that you are probably referring back to your fixtures as you write your tests, to make sure you get the names right, and that you pick the appropriate fixture for each scenario.&lt;br /&gt;
+&lt;br /&gt;
+Enter Mocks.&lt;br /&gt;
+&lt;br /&gt;
+Even in an alternate world where mocks were no more expressive than fixtures, they would be worth using simply to have your 'setup' information right there on screen as you write your specs. Luckily, they are &lt;span style=&quot;color: #9f9fcf;&quot;&gt;a lot&lt;/span&gt; cooler than that.&lt;br /&gt;
+
+I'll take you through a tour of the various steps along the way to specifying the behavior of the EmailMessage generation process, 'mock-first'.&lt;br /&gt;
+&lt;br /&gt;
+&lt;h2&gt;Round One&lt;/h2&gt;
+Here is the first cut at the code.&lt;br /&gt;
+&lt;br /&gt;
+&lt;pre&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt; 1 &lt;/font&gt;&lt;/span&gt;context &lt;font color=&quot;#999999&quot;&gt;&amp;quot;&lt;/font&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#80a0ff&quot;&gt;A Message being generated for delivery&lt;/font&gt;&lt;/span&gt;&lt;font color=&quot;#999999&quot;&gt;&amp;quot;&lt;/font&gt; &lt;font color=&quot;#1e90ff&quot;&gt;&lt;u&gt;do&lt;/u&gt;&lt;/font&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt; 2 &lt;/font&gt;&lt;/span&gt;  setup &lt;font color=&quot;#1e90ff&quot;&gt;&lt;u&gt;do&lt;/u&gt;&lt;/font&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt; 3 &lt;/font&gt;&lt;/span&gt;    &lt;font color=&quot;#8db6cd&quot;&gt;@campaign&lt;/font&gt; = mock(&lt;font color=&quot;#999999&quot;&gt;&amp;quot;&lt;/font&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#80a0ff&quot;&gt;campaign&lt;/font&gt;&lt;/span&gt;&lt;font color=&quot;#999999&quot;&gt;&amp;quot;&lt;/font&gt;)
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt; 4 &lt;/font&gt;&lt;/span&gt;    &lt;font color=&quot;#8db6cd&quot;&gt;@campaign&lt;/font&gt;.stub!(&lt;font color=&quot;#1e90ff&quot;&gt;:is_a?&lt;/font&gt;).and_return(&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#00cdcd&quot;&gt;true&lt;/font&gt;&lt;/span&gt;)
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt; 5 &lt;/font&gt;&lt;/span&gt;    &lt;font color=&quot;#8db6cd&quot;&gt;@campaign&lt;/font&gt;.stub!(&lt;font color=&quot;#1e90ff&quot;&gt;:new_record?&lt;/font&gt;).and_return(&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#00cdcd&quot;&gt;false&lt;/font&gt;&lt;/span&gt;)
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt; 6 &lt;/font&gt;&lt;/span&gt;    &lt;font color=&quot;#8db6cd&quot;&gt;@campaign&lt;/font&gt;.stub!(&lt;font color=&quot;#1e90ff&quot;&gt;:id&lt;/font&gt;).and_return(rand(&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#02abea&quot;&gt;1000&lt;/font&gt;&lt;/span&gt;))
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt; 7 &lt;/font&gt;&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt; 8 &lt;/font&gt;&lt;/span&gt;    &lt;font color=&quot;#8db6cd&quot;&gt;@person&lt;/font&gt; = mock(&lt;font color=&quot;#999999&quot;&gt;&amp;quot;&lt;/font&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#80a0ff&quot;&gt;person&lt;/font&gt;&lt;/span&gt;&lt;font color=&quot;#999999&quot;&gt;&amp;quot;&lt;/font&gt;)
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt; 9 &lt;/font&gt;&lt;/span&gt;    &lt;font color=&quot;#8db6cd&quot;&gt;@person&lt;/font&gt;.stub!(&lt;font color=&quot;#1e90ff&quot;&gt;:is_a?&lt;/font&gt;).and_return(&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#00cdcd&quot;&gt;true&lt;/font&gt;&lt;/span&gt;)
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;10 &lt;/font&gt;&lt;/span&gt;    &lt;font color=&quot;#8db6cd&quot;&gt;@person&lt;/font&gt;.stub!(&lt;font color=&quot;#1e90ff&quot;&gt;:new_record?&lt;/font&gt;).and_return(&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#00cdcd&quot;&gt;false&lt;/font&gt;&lt;/span&gt;)
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;11 &lt;/font&gt;&lt;/span&gt;    &lt;font color=&quot;#8db6cd&quot;&gt;@person&lt;/font&gt;.stub!(&lt;font color=&quot;#1e90ff&quot;&gt;:id&lt;/font&gt;).and_return(rand(&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#02abea&quot;&gt;1000&lt;/font&gt;&lt;/span&gt;))
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;12 &lt;/font&gt;&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;13 &lt;/font&gt;&lt;/span&gt;    &lt;font color=&quot;#8db6cd&quot;&gt;@message&lt;/font&gt; = &lt;font color=&quot;#8db6cd&quot;&gt;Message&lt;/font&gt;.new &lt;font color=&quot;#1e90ff&quot;&gt;:name&lt;/font&gt; =&amp;gt; &lt;font color=&quot;#999999&quot;&gt;&amp;quot;&lt;/font&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#80a0ff&quot;&gt;Hello, world&lt;/font&gt;&lt;/span&gt;&lt;font color=&quot;#999999&quot;&gt;&amp;quot;&lt;/font&gt;, &lt;font color=&quot;#1e90ff&quot;&gt;:campaign&lt;/font&gt; =&amp;gt; &lt;font color=&quot;#8db6cd&quot;&gt;@campaign&lt;/font&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;14 &lt;/font&gt;&lt;/span&gt;    &lt;font color=&quot;#8db6cd&quot;&gt;@list&lt;/font&gt; = mock(&lt;font color=&quot;#999999&quot;&gt;&amp;quot;&lt;/font&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#80a0ff&quot;&gt;list&lt;/font&gt;&lt;/span&gt;&lt;font color=&quot;#999999&quot;&gt;&amp;quot;&lt;/font&gt;)
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;15 &lt;/font&gt;&lt;/span&gt;    &lt;font color=&quot;#8db6cd&quot;&gt;@subscriptions&lt;/font&gt; = mock(&lt;font color=&quot;#999999&quot;&gt;&amp;quot;&lt;/font&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#80a0ff&quot;&gt;subscriptions&lt;/font&gt;&lt;/span&gt;&lt;font color=&quot;#999999&quot;&gt;&amp;quot;&lt;/font&gt;)
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;16 &lt;/font&gt;&lt;/span&gt;  &lt;font color=&quot;#1e90ff&quot;&gt;&lt;u&gt;end&lt;/u&gt;&lt;/font&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;17 &lt;/font&gt;&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;18 &lt;/font&gt;&lt;/span&gt;  specify &lt;font color=&quot;#999999&quot;&gt;&amp;quot;&lt;/font&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#80a0ff&quot;&gt;should create EmailMessages but not Subscriptions when include_subscribers is false&lt;/font&gt;&lt;/span&gt;&lt;font color=&quot;#999999&quot;&gt;&amp;quot;&lt;/font&gt; &lt;font color=&quot;#1e90ff&quot;&gt;&lt;u&gt;do&lt;/u&gt;&lt;/font&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;19 &lt;/font&gt;&lt;/span&gt;    &lt;font color=&quot;#8db6cd&quot;&gt;@message&lt;/font&gt;.should_receive(&lt;font color=&quot;#1e90ff&quot;&gt;:lists&lt;/font&gt;).and_return([&lt;font color=&quot;#8db6cd&quot;&gt;@list&lt;/font&gt;])
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;20 &lt;/font&gt;&lt;/span&gt;    &lt;font color=&quot;#8db6cd&quot;&gt;@list&lt;/font&gt;.should_receive(&lt;font color=&quot;#1e90ff&quot;&gt;:people&lt;/font&gt;).and_return([&lt;font color=&quot;#8db6cd&quot;&gt;@person&lt;/font&gt;])
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;21 &lt;/font&gt;&lt;/span&gt;    &lt;font color=&quot;#8db6cd&quot;&gt;@message&lt;/font&gt;.should_receive(&lt;font color=&quot;#1e90ff&quot;&gt;:campaign&lt;/font&gt;).and_return(&lt;font color=&quot;#8db6cd&quot;&gt;@campaign&lt;/font&gt;)
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;22 &lt;/font&gt;&lt;/span&gt;    &lt;font color=&quot;#8db6cd&quot;&gt;@person&lt;/font&gt;.should_receive(&lt;font color=&quot;#1e90ff&quot;&gt;:campaigns&lt;/font&gt;).and_return([&lt;font color=&quot;#8db6cd&quot;&gt;@campaign&lt;/font&gt;])
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;23 &lt;/font&gt;&lt;/span&gt;    &lt;font color=&quot;#8db6cd&quot;&gt;@message&lt;/font&gt;.generate.should == &lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#02abea&quot;&gt;1&lt;/font&gt;&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;24 &lt;/font&gt;&lt;/span&gt;    &lt;font color=&quot;#8db6cd&quot;&gt;@message&lt;/font&gt;.should_have(&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#02abea&quot;&gt;1&lt;/font&gt;&lt;/span&gt;).email_messages
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;25 &lt;/font&gt;&lt;/span&gt;  &lt;font color=&quot;#1e90ff&quot;&gt;&lt;u&gt;end&lt;/u&gt;&lt;/font&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;26 &lt;/font&gt;&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;27 &lt;/font&gt;&lt;/span&gt;  specify &lt;font color=&quot;#999999&quot;&gt;&amp;quot;&lt;/font&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#80a0ff&quot;&gt;should create EmailMessages and Subscriptions when include_subscribers is true&lt;/font&gt;&lt;/span&gt;&lt;font color=&quot;#999999&quot;&gt;&amp;quot;&lt;/font&gt; &lt;font color=&quot;#1e90ff&quot;&gt;&lt;u&gt;do&lt;/u&gt;&lt;/font&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;28 &lt;/font&gt;&lt;/span&gt;    &lt;font color=&quot;#8db6cd&quot;&gt;@message&lt;/font&gt;.include_subscribers = &lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#00cdcd&quot;&gt;true&lt;/font&gt;&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;29 &lt;/font&gt;&lt;/span&gt;    &lt;font color=&quot;#8db6cd&quot;&gt;@message&lt;/font&gt;.should_receive(&lt;font color=&quot;#1e90ff&quot;&gt;:lists&lt;/font&gt;).and_return([&lt;font color=&quot;#8db6cd&quot;&gt;@list&lt;/font&gt;])
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;30 &lt;/font&gt;&lt;/span&gt;    &lt;font color=&quot;#8db6cd&quot;&gt;@message&lt;/font&gt;.should_receive(&lt;font color=&quot;#1e90ff&quot;&gt;:campaign&lt;/font&gt;).twice.and_return(&lt;font color=&quot;#8db6cd&quot;&gt;@campaign&lt;/font&gt;)
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;31 &lt;/font&gt;&lt;/span&gt;    &lt;font color=&quot;#8db6cd&quot;&gt;@list&lt;/font&gt;.should_receive(&lt;font color=&quot;#1e90ff&quot;&gt;:people&lt;/font&gt;).and_return([&lt;font color=&quot;#8db6cd&quot;&gt;@person&lt;/font&gt;])
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;32 &lt;/font&gt;&lt;/span&gt;    &lt;font color=&quot;#8db6cd&quot;&gt;@person&lt;/font&gt;.should_receive(&lt;font color=&quot;#1e90ff&quot;&gt;:campaigns&lt;/font&gt;).and_return([])
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;33 &lt;/font&gt;&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;34 &lt;/font&gt;&lt;/span&gt;    &lt;font color=&quot;#8db6cd&quot;&gt;@person&lt;/font&gt;.should_receive(&lt;font color=&quot;#1e90ff&quot;&gt;:subscriptions&lt;/font&gt;).and_return(&lt;font color=&quot;#8db6cd&quot;&gt;@subscriptions&lt;/font&gt;)
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;35 &lt;/font&gt;&lt;/span&gt;    &lt;font color=&quot;#8db6cd&quot;&gt;@subscriptions&lt;/font&gt;.should_receive(&lt;font color=&quot;#1e90ff&quot;&gt;:create&lt;/font&gt;).and_return(&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#00cdcd&quot;&gt;nil&lt;/font&gt;&lt;/span&gt;)
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;36 &lt;/font&gt;&lt;/span&gt;    &lt;font color=&quot;#8db6cd&quot;&gt;@campaign&lt;/font&gt;.should_receive(&lt;font color=&quot;#1e90ff&quot;&gt;:people&lt;/font&gt;).and_return([])
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;37 &lt;/font&gt;&lt;/span&gt;    &lt;font color=&quot;#8db6cd&quot;&gt;@message&lt;/font&gt;.should_have(&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#02abea&quot;&gt;1&lt;/font&gt;&lt;/span&gt;).email_messages
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;38 &lt;/font&gt;&lt;/span&gt;  &lt;font color=&quot;#1e90ff&quot;&gt;&lt;u&gt;end&lt;/u&gt;&lt;/font&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;39 &lt;/font&gt;&lt;/span&gt;&lt;font color=&quot;#1e90ff&quot;&gt;&lt;u&gt;end&lt;/u&gt;&lt;/font&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;40 &lt;/font&gt;&lt;/span&gt;
+&lt;/pre&gt;
+&lt;br /&gt;
+This is pretty decent, really. Probably fewer lines of code than the equivalent fixtures, and faster because we're not hitting the database.&lt;br /&gt;
+On the other hand, there's 'setup' everywhere, and it's hard to see what the actual expectations are.&lt;br /&gt;
+@message.should_have(1).email_messages is like a needle in a haystack.&lt;br /&gt;
+&lt;br /&gt;
+Also, I've got everything in a single 'context', even though &lt;span style=&quot;color: #9f9fcf;&quot;&gt;quite literally&lt;/span&gt; there are two different ones in play here.&lt;br /&gt;
+I simply didn't want to have to repeat the 'setup' block in a second context, and got lazy.&lt;br /&gt;
+&lt;br /&gt;
+Let's fix that first, since maybe it's at the heart of the problem.&lt;br /&gt;
+&lt;br /&gt;
+&lt;h2&gt;Round Two&lt;/h2&gt;
+&lt;br /&gt;
+&lt;pre&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt; 1 &lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#bcd2ee&quot;&gt;module &lt;/font&gt;&lt;/span&gt;&lt;font color=&quot;#a0a0ff&quot;&gt;MessageSetup&lt;/font&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt; 2 &lt;/font&gt;&lt;/span&gt;  &lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#bcd2ee&quot;&gt;def &lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#7a44b2&quot;&gt;setup_message&lt;/font&gt;&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt; 3 &lt;/font&gt;&lt;/span&gt;    &lt;font color=&quot;#8db6cd&quot;&gt;@campaign&lt;/font&gt; = mock(&lt;font color=&quot;#999999&quot;&gt;&amp;quot;&lt;/font&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#80a0ff&quot;&gt;campaign&lt;/font&gt;&lt;/span&gt;&lt;font color=&quot;#999999&quot;&gt;&amp;quot;&lt;/font&gt;)
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt; 4 &lt;/font&gt;&lt;/span&gt;    &lt;font color=&quot;#8db6cd&quot;&gt;@campaign&lt;/font&gt;.stub!(&lt;font color=&quot;#1e90ff&quot;&gt;:is_a?&lt;/font&gt;).and_return(&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#00cdcd&quot;&gt;true&lt;/font&gt;&lt;/span&gt;)
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt; 5 &lt;/font&gt;&lt;/span&gt;    &lt;font color=&quot;#8db6cd&quot;&gt;@campaign&lt;/font&gt;.stub!(&lt;font color=&quot;#1e90ff&quot;&gt;:new_record?&lt;/font&gt;).and_return(&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#00cdcd&quot;&gt;false&lt;/font&gt;&lt;/span&gt;)
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt; 6 &lt;/font&gt;&lt;/span&gt;    &lt;font color=&quot;#8db6cd&quot;&gt;@campaign&lt;/font&gt;.stub!(&lt;font color=&quot;#1e90ff&quot;&gt;:id&lt;/font&gt;).and_return(rand(&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#02abea&quot;&gt;1000&lt;/font&gt;&lt;/span&gt;))
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt; 7 &lt;/font&gt;&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt; 8 &lt;/font&gt;&lt;/span&gt;    &lt;font color=&quot;#8db6cd&quot;&gt;@person&lt;/font&gt; = mock(&lt;font color=&quot;#999999&quot;&gt;&amp;quot;&lt;/font&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#80a0ff&quot;&gt;person&lt;/font&gt;&lt;/span&gt;&lt;font color=&quot;#999999&quot;&gt;&amp;quot;&lt;/font&gt;)
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt; 9 &lt;/font&gt;&lt;/span&gt;    &lt;font color=&quot;#8db6cd&quot;&gt;@person&lt;/font&gt;.stub!(&lt;font color=&quot;#1e90ff&quot;&gt;:is_a?&lt;/font&gt;).and_return(&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#00cdcd&quot;&gt;true&lt;/font&gt;&lt;/span&gt;)
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;10 &lt;/font&gt;&lt;/span&gt;    &lt;font color=&quot;#8db6cd&quot;&gt;@person&lt;/font&gt;.stub!(&lt;font color=&quot;#1e90ff&quot;&gt;:new_record?&lt;/font&gt;).and_return(&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#00cdcd&quot;&gt;false&lt;/font&gt;&lt;/span&gt;)
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;11 &lt;/font&gt;&lt;/span&gt;    &lt;font color=&quot;#8db6cd&quot;&gt;@person&lt;/font&gt;.stub!(&lt;font color=&quot;#1e90ff&quot;&gt;:id&lt;/font&gt;).and_return(rand(&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#02abea&quot;&gt;1000&lt;/font&gt;&lt;/span&gt;))
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;12 &lt;/font&gt;&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;13 &lt;/font&gt;&lt;/span&gt;    &lt;font color=&quot;#8db6cd&quot;&gt;@message&lt;/font&gt; = &lt;font color=&quot;#8db6cd&quot;&gt;Message&lt;/font&gt;.new &lt;font color=&quot;#1e90ff&quot;&gt;:name&lt;/font&gt; =&amp;gt; &lt;font color=&quot;#999999&quot;&gt;&amp;quot;&lt;/font&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#80a0ff&quot;&gt;Hello, world&lt;/font&gt;&lt;/span&gt;&lt;font color=&quot;#999999&quot;&gt;&amp;quot;&lt;/font&gt;, &lt;font color=&quot;#1e90ff&quot;&gt;:campaign&lt;/font&gt; =&amp;gt; &lt;font color=&quot;#8db6cd&quot;&gt;@campaign&lt;/font&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;14 &lt;/font&gt;&lt;/span&gt;    &lt;font color=&quot;#8db6cd&quot;&gt;@list&lt;/font&gt; = mock(&lt;font color=&quot;#999999&quot;&gt;&amp;quot;&lt;/font&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#80a0ff&quot;&gt;list&lt;/font&gt;&lt;/span&gt;&lt;font color=&quot;#999999&quot;&gt;&amp;quot;&lt;/font&gt;)
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;15 &lt;/font&gt;&lt;/span&gt;    &lt;font color=&quot;#8db6cd&quot;&gt;@subscriptions&lt;/font&gt; = mock(&lt;font color=&quot;#999999&quot;&gt;&amp;quot;&lt;/font&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#80a0ff&quot;&gt;subscriptions&lt;/font&gt;&lt;/span&gt;&lt;font color=&quot;#999999&quot;&gt;&amp;quot;&lt;/font&gt;)
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;16 &lt;/font&gt;&lt;/span&gt;  &lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#bcd2ee&quot;&gt;end&lt;/font&gt;&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;17 &lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#bcd2ee&quot;&gt;end&lt;/font&gt;&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;18 &lt;/font&gt;&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;19 &lt;/font&gt;&lt;/span&gt;context &lt;font color=&quot;#999999&quot;&gt;&amp;quot;&lt;/font&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#80a0ff&quot;&gt;A Message being generated without include_subscribers&lt;/font&gt;&lt;/span&gt;&lt;font color=&quot;#999999&quot;&gt;&amp;quot;&lt;/font&gt; &lt;font color=&quot;#1e90ff&quot;&gt;&lt;u&gt;do&lt;/u&gt;&lt;/font&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;20 &lt;/font&gt;&lt;/span&gt;  &lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#a2b5cd&quot;&gt;include&lt;/font&gt;&lt;/span&gt; &lt;font color=&quot;#8db6cd&quot;&gt;MessageSetup&lt;/font&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;21 &lt;/font&gt;&lt;/span&gt;  setup { setup_message }
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;22 &lt;/font&gt;&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;23 &lt;/font&gt;&lt;/span&gt;  specify &lt;font color=&quot;#999999&quot;&gt;&amp;quot;&lt;/font&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#80a0ff&quot;&gt;should create EmailMessages but not Subscriptions&lt;/font&gt;&lt;/span&gt;&lt;font color=&quot;#999999&quot;&gt;&amp;quot;&lt;/font&gt; &lt;font color=&quot;#1e90ff&quot;&gt;&lt;u&gt;do&lt;/u&gt;&lt;/font&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;24 &lt;/font&gt;&lt;/span&gt;    &lt;font color=&quot;#8db6cd&quot;&gt;@message&lt;/font&gt;.should_receive(&lt;font color=&quot;#1e90ff&quot;&gt;:lists&lt;/font&gt;).and_return([&lt;font color=&quot;#8db6cd&quot;&gt;@list&lt;/font&gt;])
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;25 &lt;/font&gt;&lt;/span&gt;    &lt;font color=&quot;#8db6cd&quot;&gt;@list&lt;/font&gt;.should_receive(&lt;font color=&quot;#1e90ff&quot;&gt;:people&lt;/font&gt;).and_return([&lt;font color=&quot;#8db6cd&quot;&gt;@person&lt;/font&gt;])
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;26 &lt;/font&gt;&lt;/span&gt;    &lt;font color=&quot;#8db6cd&quot;&gt;@message&lt;/font&gt;.should_receive(&lt;font color=&quot;#1e90ff&quot;&gt;:campaign&lt;/font&gt;).and_return(&lt;font color=&quot;#8db6cd&quot;&gt;@campaign&lt;/font&gt;)
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;27 &lt;/font&gt;&lt;/span&gt;    &lt;font color=&quot;#8db6cd&quot;&gt;@person&lt;/font&gt;.should_receive(&lt;font color=&quot;#1e90ff&quot;&gt;:campaigns&lt;/font&gt;).and_return([&lt;font color=&quot;#8db6cd&quot;&gt;@campaign&lt;/font&gt;])
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;28 &lt;/font&gt;&lt;/span&gt;    &lt;font color=&quot;#8db6cd&quot;&gt;@message&lt;/font&gt;.generate.should == &lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#02abea&quot;&gt;1&lt;/font&gt;&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;29 &lt;/font&gt;&lt;/span&gt;    &lt;font color=&quot;#8db6cd&quot;&gt;@message&lt;/font&gt;.should_have(&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#02abea&quot;&gt;1&lt;/font&gt;&lt;/span&gt;).email_messages
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;30 &lt;/font&gt;&lt;/span&gt;  &lt;font color=&quot;#1e90ff&quot;&gt;&lt;u&gt;end&lt;/u&gt;&lt;/font&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;31 &lt;/font&gt;&lt;/span&gt;&lt;font color=&quot;#1e90ff&quot;&gt;&lt;u&gt;end&lt;/u&gt;&lt;/font&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;32 &lt;/font&gt;&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;33 &lt;/font&gt;&lt;/span&gt;context &lt;font color=&quot;#999999&quot;&gt;&amp;quot;&lt;/font&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#80a0ff&quot;&gt;A Message being generated with include_subscribers enabled&lt;/font&gt;&lt;/span&gt;&lt;font color=&quot;#999999&quot;&gt;&amp;quot;&lt;/font&gt; &lt;font color=&quot;#1e90ff&quot;&gt;&lt;u&gt;do&lt;/u&gt;&lt;/font&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;34 &lt;/font&gt;&lt;/span&gt;  &lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#a2b5cd&quot;&gt;include&lt;/font&gt;&lt;/span&gt; &lt;font color=&quot;#8db6cd&quot;&gt;MessageSetup&lt;/font&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;35 &lt;/font&gt;&lt;/span&gt;  setup { setup_message }
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;36 &lt;/font&gt;&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;37 &lt;/font&gt;&lt;/span&gt;  specify &lt;font color=&quot;#999999&quot;&gt;&amp;quot;&lt;/font&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#80a0ff&quot;&gt;should create Subscriptions and EmailMessages&lt;/font&gt;&lt;/span&gt;&lt;font color=&quot;#999999&quot;&gt;&amp;quot;&lt;/font&gt; &lt;font color=&quot;#1e90ff&quot;&gt;&lt;u&gt;do&lt;/u&gt;&lt;/font&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;38 &lt;/font&gt;&lt;/span&gt;    &lt;font color=&quot;#8db6cd&quot;&gt;@message&lt;/font&gt;.include_subscribers = &lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#00cdcd&quot;&gt;true&lt;/font&gt;&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;39 &lt;/font&gt;&lt;/span&gt;    &lt;font color=&quot;#8db6cd&quot;&gt;@message&lt;/font&gt;.should_receive(&lt;font color=&quot;#1e90ff&quot;&gt;:lists&lt;/font&gt;).and_return([&lt;font color=&quot;#8db6cd&quot;&gt;@list&lt;/font&gt;])
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;40 &lt;/font&gt;&lt;/span&gt;    &lt;font color=&quot;#8db6cd&quot;&gt;@message&lt;/font&gt;.should_receive(&lt;font color=&quot;#1e90ff&quot;&gt;:campaign&lt;/font&gt;).twice.and_return(&lt;font color=&quot;#8db6cd&quot;&gt;@campaign&lt;/font&gt;)
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;41 &lt;/font&gt;&lt;/span&gt;    &lt;font color=&quot;#8db6cd&quot;&gt;@list&lt;/font&gt;.should_receive(&lt;font color=&quot;#1e90ff&quot;&gt;:people&lt;/font&gt;).and_return([&lt;font color=&quot;#8db6cd&quot;&gt;@person&lt;/font&gt;])
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;42 &lt;/font&gt;&lt;/span&gt;    &lt;font color=&quot;#8db6cd&quot;&gt;@person&lt;/font&gt;.should_receive(&lt;font color=&quot;#1e90ff&quot;&gt;:campaigns&lt;/font&gt;).and_return([])
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;43 &lt;/font&gt;&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;44 &lt;/font&gt;&lt;/span&gt;    &lt;font color=&quot;#8db6cd&quot;&gt;@person&lt;/font&gt;.should_receive(&lt;font color=&quot;#1e90ff&quot;&gt;:subscriptions&lt;/font&gt;).and_return(&lt;font color=&quot;#8db6cd&quot;&gt;@subscriptions&lt;/font&gt;)
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;45 &lt;/font&gt;&lt;/span&gt;    &lt;font color=&quot;#8db6cd&quot;&gt;@subscriptions&lt;/font&gt;.should_receive(&lt;font color=&quot;#1e90ff&quot;&gt;:create&lt;/font&gt;).and_return(&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#00cdcd&quot;&gt;nil&lt;/font&gt;&lt;/span&gt;)
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;46 &lt;/font&gt;&lt;/span&gt;    &lt;font color=&quot;#8db6cd&quot;&gt;@campaign&lt;/font&gt;.should_receive(&lt;font color=&quot;#1e90ff&quot;&gt;:people&lt;/font&gt;).and_return([])
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;47 &lt;/font&gt;&lt;/span&gt;    &lt;font color=&quot;#8db6cd&quot;&gt;@message&lt;/font&gt;.generate.should == &lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#02abea&quot;&gt;1&lt;/font&gt;&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;48 &lt;/font&gt;&lt;/span&gt;    &lt;font color=&quot;#8db6cd&quot;&gt;@message&lt;/font&gt;.should_have(&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#02abea&quot;&gt;1&lt;/font&gt;&lt;/span&gt;).email_messages
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;49 &lt;/font&gt;&lt;/span&gt;  &lt;font color=&quot;#1e90ff&quot;&gt;&lt;u&gt;end&lt;/u&gt;&lt;/font&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;50 &lt;/font&gt;&lt;/span&gt;&lt;font color=&quot;#1e90ff&quot;&gt;&lt;u&gt;end&lt;/u&gt;&lt;/font&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;51 &lt;/font&gt;&lt;/span&gt;
+&lt;/pre&gt;
+&lt;br /&gt;
+Here I've taken the 'setup' code, moved it into a module, and mixed it into the two contexts.&lt;br /&gt;
+It looks a little showy, but at least it keep the setup code away from the specs.&lt;br /&gt;
+Also, now that there are two separate contexts, the specs can be a little more readable.&lt;br /&gt;
+&lt;br /&gt;
+All that being said, I'm still not happy. The ugly stubs required to fake out ActiveRecord are distracting, and appear in every context that needs to say:&lt;br /&gt;
+@real_activerecord_model.some_association = some_mock&lt;br /&gt;
+&lt;br /&gt;
+Under the hood, ActiveRecord checks to make sure the association is being handed a compatible object.  We have to stub that to make this all work.  Why are we bothering again?  Test isolation.  Future model changes that don't affect this code shouldn't break these specs.  If you are dealing with six or seven model classes per spec, that is &lt;span style=&quot;color: #9f9fcf;&quot;&gt;ridiculously&lt;/span&gt; easy to do.&lt;br /&gt;
+&lt;br /&gt;
+What can we do about this boilerplate?  Well, let's make a helper.&lt;br /&gt;
+&lt;br /&gt;
+&lt;h2&gt;Round Three&lt;/h2&gt;
+&lt;br /&gt;
+&lt;pre&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt; 1 &lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#bcd2ee&quot;&gt;module &lt;/font&gt;&lt;/span&gt;&lt;font color=&quot;#a0a0ff&quot;&gt;MessageSetup&lt;/font&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt; 2 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyBlock&quot;&gt;  &lt;/span&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#bcd2ee&quot;&gt;def &lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#7a44b2&quot;&gt;setup_message&lt;/font&gt;&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt; 3 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyBlock&quot;&gt;    mock_model &lt;/span&gt;&lt;font color=&quot;#1e90ff&quot;&gt;:campaign&lt;/font&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt; 4 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyBlock&quot;&gt;    mock_model &lt;/span&gt;&lt;font color=&quot;#1e90ff&quot;&gt;:person&lt;/font&gt;&lt;span class=&quot;rubyBlock&quot;&gt; &lt;/span&gt;&lt;font color=&quot;#1e90ff&quot;&gt;&lt;u&gt;do&lt;/u&gt;&lt;/font&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt; |&lt;/span&gt;&lt;font color=&quot;#8db6cd&quot;&gt;m&lt;/font&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;|&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt; 5 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;      m.should_receive(&lt;/span&gt;&lt;font color=&quot;#1e90ff&quot;&gt;:campaigns&lt;/font&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;).and_return([&lt;/span&gt;&lt;font color=&quot;#8db6cd&quot;&gt;@campaign&lt;/font&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;])&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt; 6 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;    &lt;/span&gt;&lt;font color=&quot;#1e90ff&quot;&gt;&lt;u&gt;end&lt;/u&gt;&lt;/font&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt; 7 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyBlock&quot;&gt;    mock_model &lt;/span&gt;&lt;font color=&quot;#1e90ff&quot;&gt;:list&lt;/font&gt;&lt;span class=&quot;rubyBlock&quot;&gt; &lt;/span&gt;&lt;font color=&quot;#1e90ff&quot;&gt;&lt;u&gt;do&lt;/u&gt;&lt;/font&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt; |&lt;/span&gt;&lt;font color=&quot;#8db6cd&quot;&gt;m&lt;/font&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;|&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt; 8 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;      m.should_receive(&lt;/span&gt;&lt;font color=&quot;#1e90ff&quot;&gt;:people&lt;/font&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;).and_return([&lt;/span&gt;&lt;font color=&quot;#8db6cd&quot;&gt;@person&lt;/font&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;])&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt; 9 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;    &lt;/span&gt;&lt;font color=&quot;#1e90ff&quot;&gt;&lt;u&gt;end&lt;/u&gt;&lt;/font&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;10 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyBlock&quot;&gt;    &lt;/span&gt;&lt;font color=&quot;#8db6cd&quot;&gt;@message&lt;/font&gt;&lt;span class=&quot;rubyBlock&quot;&gt; = &lt;/span&gt;&lt;font color=&quot;#8db6cd&quot;&gt;Message&lt;/font&gt;&lt;span class=&quot;rubyBlock&quot;&gt;.new &lt;/span&gt;&lt;font color=&quot;#1e90ff&quot;&gt;:name&lt;/font&gt;&lt;span class=&quot;rubyBlock&quot;&gt; =&amp;gt; &lt;/span&gt;&lt;font color=&quot;#999999&quot;&gt;&amp;quot;&lt;/font&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#80a0ff&quot;&gt;Hello, world&lt;/font&gt;&lt;/span&gt;&lt;font color=&quot;#999999&quot;&gt;&amp;quot;&lt;/font&gt;&lt;span class=&quot;rubyBlock&quot;&gt;, &lt;/span&gt;&lt;font color=&quot;#1e90ff&quot;&gt;:campaign&lt;/font&gt;&lt;span class=&quot;rubyBlock&quot;&gt; =&amp;gt; &lt;/span&gt;&lt;font color=&quot;#8db6cd&quot;&gt;@campaign&lt;/font&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;11 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyBlock&quot;&gt;  &lt;/span&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#bcd2ee&quot;&gt;end&lt;/font&gt;&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;12 &lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#bcd2ee&quot;&gt;end&lt;/font&gt;&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;13 &lt;/font&gt;&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;14 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;&quot;&gt;context &lt;/span&gt;&lt;font color=&quot;#999999&quot;&gt;&amp;quot;&lt;/font&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#80a0ff&quot;&gt;A Message being generated without include_subscribers&lt;/font&gt;&lt;/span&gt;&lt;font color=&quot;#999999&quot;&gt;&amp;quot;&lt;/font&gt;&lt;span class=&quot;&quot;&gt; &lt;/span&gt;&lt;font color=&quot;#1e90ff&quot;&gt;&lt;u&gt;do&lt;/u&gt;&lt;/font&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;15 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;  &lt;/span&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#a2b5cd&quot;&gt;include&lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt; &lt;/span&gt;&lt;font color=&quot;#8db6cd&quot;&gt;MessageSetup&lt;/font&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;16 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;  setup &lt;/span&gt;&lt;span class=&quot;rubyCurlyBlock&quot;&gt;{ setup_message }&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;17 &lt;/font&gt;&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;18 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;  specify &lt;/span&gt;&lt;font color=&quot;#999999&quot;&gt;&amp;quot;&lt;/font&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#80a0ff&quot;&gt;should create EmailMessages but not Subscriptions&lt;/font&gt;&lt;/span&gt;&lt;font color=&quot;#999999&quot;&gt;&amp;quot;&lt;/font&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt; &lt;/span&gt;&lt;font color=&quot;#1e90ff&quot;&gt;&lt;u&gt;do&lt;/u&gt;&lt;/font&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;19 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;    &lt;/span&gt;&lt;font color=&quot;#8db6cd&quot;&gt;@message&lt;/font&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;.should_receive(&lt;/span&gt;&lt;font color=&quot;#1e90ff&quot;&gt;:lists&lt;/font&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;).and_return([&lt;/span&gt;&lt;font color=&quot;#8db6cd&quot;&gt;@list&lt;/font&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;])&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;20 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;    &lt;/span&gt;&lt;font color=&quot;#8db6cd&quot;&gt;@message&lt;/font&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;.should_receive(&lt;/span&gt;&lt;font color=&quot;#1e90ff&quot;&gt;:campaign&lt;/font&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;).and_return(&lt;/span&gt;&lt;font color=&quot;#8db6cd&quot;&gt;@campaign&lt;/font&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;)&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;21 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;    &lt;/span&gt;&lt;font color=&quot;#8db6cd&quot;&gt;@message&lt;/font&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;.generate.should == &lt;/span&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#02abea&quot;&gt;1&lt;/font&gt;&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;22 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;    &lt;/span&gt;&lt;font color=&quot;#8db6cd&quot;&gt;@message&lt;/font&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;.should_have(&lt;/span&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#02abea&quot;&gt;1&lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;).email_messages&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;23 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;  &lt;/span&gt;&lt;font color=&quot;#1e90ff&quot;&gt;&lt;u&gt;end&lt;/u&gt;&lt;/font&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;24 &lt;/font&gt;&lt;/span&gt;&lt;font color=&quot;#1e90ff&quot;&gt;&lt;u&gt;end&lt;/u&gt;&lt;/font&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;25 &lt;/font&gt;&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;26 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;&quot;&gt;context &lt;/span&gt;&lt;font color=&quot;#999999&quot;&gt;&amp;quot;&lt;/font&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#80a0ff&quot;&gt;A Message being generated with include_subscribers enabled&lt;/font&gt;&lt;/span&gt;&lt;font color=&quot;#999999&quot;&gt;&amp;quot;&lt;/font&gt;&lt;span class=&quot;&quot;&gt; &lt;/span&gt;&lt;font color=&quot;#1e90ff&quot;&gt;&lt;u&gt;do&lt;/u&gt;&lt;/font&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;27 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;  &lt;/span&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#a2b5cd&quot;&gt;include&lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt; &lt;/span&gt;&lt;font color=&quot;#8db6cd&quot;&gt;MessageSetup&lt;/font&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;28 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;  setup &lt;/span&gt;&lt;font color=&quot;#1e90ff&quot;&gt;&lt;u&gt;do&lt;/u&gt;&lt;/font&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;29 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;    setup_message&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;30 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;    &lt;/span&gt;&lt;font color=&quot;#8db6cd&quot;&gt;@subscriptions&lt;/font&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt; = mock(&lt;/span&gt;&lt;font color=&quot;#999999&quot;&gt;&amp;quot;&lt;/font&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#80a0ff&quot;&gt;subscriptions&lt;/font&gt;&lt;/span&gt;&lt;font color=&quot;#999999&quot;&gt;&amp;quot;&lt;/font&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;)&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;31 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;    &lt;/span&gt;&lt;font color=&quot;#8db6cd&quot;&gt;@campaign&lt;/font&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;.should_receive(&lt;/span&gt;&lt;font color=&quot;#1e90ff&quot;&gt;:people&lt;/font&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;).and_return([])&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;32 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;    &lt;/span&gt;&lt;font color=&quot;#8db6cd&quot;&gt;@person&lt;/font&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;.should_receive(&lt;/span&gt;&lt;font color=&quot;#1e90ff&quot;&gt;:subscriptions&lt;/font&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;).and_return(&lt;/span&gt;&lt;font color=&quot;#8db6cd&quot;&gt;@subscriptions&lt;/font&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;)&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;33 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;    &lt;/span&gt;&lt;font color=&quot;#8db6cd&quot;&gt;@message&lt;/font&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;.include_subscribers = &lt;/span&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#00cdcd&quot;&gt;true&lt;/font&gt;&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;34 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;  &lt;/span&gt;&lt;font color=&quot;#1e90ff&quot;&gt;&lt;u&gt;end&lt;/u&gt;&lt;/font&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;35 &lt;/font&gt;&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;36 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;  specify &lt;/span&gt;&lt;font color=&quot;#999999&quot;&gt;&amp;quot;&lt;/font&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#80a0ff&quot;&gt;should create Subscriptions and EmailMessages&lt;/font&gt;&lt;/span&gt;&lt;font color=&quot;#999999&quot;&gt;&amp;quot;&lt;/font&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt; &lt;/span&gt;&lt;font color=&quot;#1e90ff&quot;&gt;&lt;u&gt;do&lt;/u&gt;&lt;/font&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;37 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;    &lt;/span&gt;&lt;font color=&quot;#8db6cd&quot;&gt;@message&lt;/font&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;.should_receive(&lt;/span&gt;&lt;font color=&quot;#1e90ff&quot;&gt;:lists&lt;/font&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;).and_return([&lt;/span&gt;&lt;font color=&quot;#8db6cd&quot;&gt;@list&lt;/font&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;])&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;38 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;    &lt;/span&gt;&lt;font color=&quot;#8db6cd&quot;&gt;@message&lt;/font&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;.should_receive(&lt;/span&gt;&lt;font color=&quot;#1e90ff&quot;&gt;:campaign&lt;/font&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;).twice.and_return(&lt;/span&gt;&lt;font color=&quot;#8db6cd&quot;&gt;@campaign&lt;/font&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;)&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;39 &lt;/font&gt;&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;40 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;    &lt;/span&gt;&lt;font color=&quot;#8db6cd&quot;&gt;@subscriptions&lt;/font&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;.should_receive(&lt;/span&gt;&lt;font color=&quot;#1e90ff&quot;&gt;:create&lt;/font&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;).and_return(&lt;/span&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#00cdcd&quot;&gt;nil&lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;)&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;41 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;    &lt;/span&gt;&lt;font color=&quot;#8db6cd&quot;&gt;@message&lt;/font&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;.generate.should == &lt;/span&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#02abea&quot;&gt;1&lt;/font&gt;&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;42 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;    &lt;/span&gt;&lt;font color=&quot;#8db6cd&quot;&gt;@message&lt;/font&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;.should_have(&lt;/span&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#02abea&quot;&gt;1&lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;).email_messages&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;43 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyDoBlock&quot;&gt;  &lt;/span&gt;&lt;font color=&quot;#1e90ff&quot;&gt;&lt;u&gt;end&lt;/u&gt;&lt;/font&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;44 &lt;/font&gt;&lt;/span&gt;&lt;font color=&quot;#1e90ff&quot;&gt;&lt;u&gt;end&lt;/u&gt;&lt;/font&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;45 &lt;/font&gt;&lt;/span&gt;
+&lt;/pre&gt;
+
+&lt;br /&gt;
+Hey, that's looking pretty good.  &quot;mock_model&quot; says pretty directly what the mission is, and having it take a block avoids the need to repeat the name of the instance variable. &lt;br /&gt;
+In fact, there's no longer a need to assign the mock return value to something, since, in typical 'convention over configuration' style, the mock automatically goes into an instance variable with the same name as the model.&lt;br /&gt;
+&lt;br /&gt;
+How did we do? Let's see what the &quot;time&quot; command has to say:&lt;br /&gt;
+&lt;pre&gt;
+time drbspec spec/models/message_spec.rb
+
+.............
+
+Finished in 0.268692 seconds
+
+13 specifications, 0 failures
+drbspec spec/models/message_spec.rb  
+0.08s user 
+0.02s system 
+11% cpu 
+0.852 total
+&lt;/pre&gt;
+&lt;br /&gt;
+Under a second of wall-clock time &lt;span style=&quot;color: #9f9fcf;&quot;&gt;isn't half bad&lt;/span&gt;.&lt;br /&gt;
+&lt;br /&gt;
+Here's the helper code, which goes in the 'EvalContext' of spec_helper.rb.&lt;br /&gt;
+I'll probably be adding some more features before submitting it as a patch, but you're welcome to it.&lt;br /&gt;
+&lt;br /&gt;
+&lt;pre&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt; 1 &lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#bcd2ee&quot;&gt;def &lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#7a44b2&quot;&gt;mock_model&lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyBlock&quot;&gt;(name)&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt; 2 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyBlock&quot;&gt;  name = name.to_s&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt; 3 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyBlock&quot;&gt;  m = mock(name)&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt; 4 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyBlock&quot;&gt;  instance_variable_set(&lt;/span&gt;&lt;font color=&quot;#999999&quot;&gt;&amp;quot;&lt;/font&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#80a0ff&quot;&gt;@&lt;/font&gt;&lt;/span&gt;&lt;font color=&quot;#999999&quot;&gt;#{name}&lt;/font&gt;&lt;font color=&quot;#999999&quot;&gt;&amp;quot;&lt;/font&gt;&lt;span class=&quot;rubyBlock&quot;&gt;, m)&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt; 5 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyBlock&quot;&gt;  m.stub!(&lt;/span&gt;&lt;font color=&quot;#1e90ff&quot;&gt;:id&lt;/font&gt;&lt;span class=&quot;rubyBlock&quot;&gt;).and_return(rand(&lt;/span&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#02abea&quot;&gt;10_000&lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyBlock&quot;&gt;))&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt; 6 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyBlock&quot;&gt;  m.stub!(&lt;/span&gt;&lt;font color=&quot;#1e90ff&quot;&gt;:new_record?&lt;/font&gt;&lt;span class=&quot;rubyBlock&quot;&gt;).and_return(&lt;/span&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#00cdcd&quot;&gt;false&lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyBlock&quot;&gt;)&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt; 7 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyBlock&quot;&gt;  klass = name.singularize.camelize&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt; 8 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyBlock&quot;&gt;  m.send(&lt;/span&gt;&lt;font color=&quot;#1e90ff&quot;&gt;:__mock_handler&lt;/font&gt;&lt;span class=&quot;rubyBlock&quot;&gt;).instance_eval &amp;lt;&amp;lt;-&lt;/span&gt;&lt;font color=&quot;#999999&quot;&gt;CODE&lt;/font&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt; 9 &lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#80a0ff&quot;&gt;          def @target.is_a?(other)&lt;/font&gt;&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;10 &lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#80a0ff&quot;&gt;            other == &lt;/font&gt;&lt;/span&gt;&lt;font color=&quot;#999999&quot;&gt;#{klass}&lt;/font&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;11 &lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#80a0ff&quot;&gt;          end&lt;/font&gt;&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;12 &lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#80a0ff&quot;&gt;          def @target.class&lt;/font&gt;&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;13 &lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#80a0ff&quot;&gt;            &lt;/font&gt;&lt;/span&gt;&lt;font color=&quot;#999999&quot;&gt;#{klass}&lt;/font&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;14 &lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#80a0ff&quot;&gt;          end&lt;/font&gt;&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;15 &lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#80a0ff&quot;&gt;  &lt;/font&gt;&lt;/span&gt;&lt;font color=&quot;#999999&quot;&gt;CODE&lt;/font&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;16 &lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyBlock&quot;&gt;  &lt;/span&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#1e90ff&quot;&gt;&lt;u&gt;yield&lt;/u&gt;&lt;/font&gt;&lt;/span&gt;&lt;span class=&quot;rubyBlock&quot;&gt; m &lt;/span&gt;&lt;font color=&quot;#1e90ff&quot;&gt;&lt;u&gt;if&lt;/u&gt;&lt;/font&gt;&lt;span class=&quot;rubyBlock&quot;&gt; block_given?&lt;/span&gt;
+&lt;span style=&quot;background-color: #0f0f0f&quot;&gt;&lt;font color=&quot;#777777&quot;&gt;17 &lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;background-color: #000000&quot;&gt;&lt;font color=&quot;#bcd2ee&quot;&gt;end&lt;/font&gt;&lt;/span&gt;
+&lt;/pre&gt;
+          </content>  </entry>
+</feed>

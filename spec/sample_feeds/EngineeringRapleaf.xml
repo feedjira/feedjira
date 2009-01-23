@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- generator="wordpress/2.2.2" -->
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	>
+
+<channel>
+	<title>Engineering Rapleaf</title>
+	<link>http://blog.rapleaf.com/dev</link>
+	<description>For engineers by engineers</description>
+	<pubDate>Fri, 12 Dec 2008 16:58:03 +0000</pubDate>
+	<generator>http://wordpress.org/?v=2.2.2</generator>
+	<language>en</language>
+			<item>
+		<title>Graceful shutdown, Hadoop, and black magic</title>
+		<link>http://blog.rapleaf.com/dev/?p=39</link>
+		<comments>http://blog.rapleaf.com/dev/?p=39#comments</comments>
+		<pubDate>Fri, 12 Dec 2008 16:58:03 +0000</pubDate>
+		<dc:creator>bryan</dc:creator>
+		
+		<category><![CDATA[Hadoop]]></category>
+
+		<guid isPermaLink="false">http://blog.rapleaf.com/dev/?p=39</guid>
+		<description><![CDATA[Recently, while working on the Collector, I noticed that we had an issue with graceful shutdown of our servers. The Collector uses a JVM shutdown hook to catch the SIGTERM and take some cleanup actions before allowing the exit to go on. However, every time I would try to gracefully shut down a server, I&#8217;d [...]]]></description>
+			<content:encoded><![CDATA[<p>Recently, while working on the <a href="http://blog.rapleaf.com/dev/?p=34">Collector</a>, I noticed that we had an issue with graceful shutdown of our servers. The Collector uses a <a href="http://java.sun.com/developer/TechTips/2000/tt0711.html">JVM shutdown hook</a> to catch the SIGTERM and take some cleanup actions before allowing the exit to go on. However, every time I would try to gracefully shut down a server, I&#8217;d get an error in the logs from Hadoop about the FileSystem already being closed. As a result, attempts to close in-progress files would fail.</p>
+<p>Now, this was truly perplexing to me. Who was closing FileSystems? A thorough dig through all Rapleaf code found me no calls to FileSystem.closeAll(). I thought it might have been that due to the way the shutdown progressed, it wasn&#8217;t truly a graceful shutdown. An afternoon worth of refactoring proved that not to be the case. </p>
+<p>Finally, I decided to go looking into Hadoop&#8217;s code itself to see if I might find an offender. Sure enough, in FileSystem.java, as soon as you open a FileSystem, HDFS registers its own shutdown hook! When the JVM is exiting, HDFS tries to clean up all its open FileSystems. For client applications, this makes a fair amount of sense - you can basically connect to whatever filesystems you want with impunity, and HDFS will make sure it cleans up after you. However, for server applications, this is almost definitely the wrong thing to do. Unexpected side effects are the bane of tightly controlled workflows.</p>
+<p>To make matters worse, the JVM&#8217;s spec for shutdown hooks seems very naive. When there are multiple shutdown hooks registered, they are run in an undefined order, or even concurrently. Either way, HDFS&#8217;s shutdown hook was definitely running in advance of mine, and thus was heading off my graceful shutdown efforts.</p>
+<p>So, now that the problem is found, what to do? Firstly, FileSystem exposes no methods for disabling this shutdown hook. Secondly, the JVM has methods for removing a particular shutdown hook, but offers no methods for enumerating the existing shutdown hooks in the first place, so you have to have the hook object already to disable it. To cap it all off, the shutdown hook object is kept in a private static member of the FileSystem class, so there&#8217;s no way to get at it. </p>
+<p>Or is there? It turns out that through the use of some clever Java reflection, you can set that private static member to public and get its value. Then, once you have it, you can deregister it as a shutdown hook and then execute it as your leisure. Here&#8217;s the code I ended up creating to work around the problem:</p>
+<pre>
+  private void suppressHdfsShutdownHook() {
+    try {
+      Field field = FileSystem.class.getDeclaredField("clientFinalizer");
+      field.setAccessible(true);
+      hdfsClientFinalizer = (Thread)field.get(null);
+      if (hdfsClientFinalizer == null) {
+        throw new RuntimeException("client finalizer is null, can't suppress!");
+      }
+      Runtime.getRuntime().removeShutdownHook(hdfsClientFinalizer);
+    } catch (NoSuchFieldException nsfe) {
+      LOG.fatal("Couldn't find field 'clientFinalizer' in FileSystem!", nsfe);
+      throw new RuntimeException("Failed to suppress HDFS shutdown hook");
+    } catch (IllegalAccessException iae) {
+      LOG.fatal("Couldn't access field 'clientFinalizer' in FileSystem!", iae);
+      throw new RuntimeException("Failed to suppress HDFS shutdown hook");
+    }
+  }
+</pre>
+<p>Long term, the right thing to do is to patch HDFS itself to allow disabling the shutdown hook. I&#8217;ve opened an issue to that effect <a href="https://issues.apache.org/jira/browse/HADOOP-4829">here</a>.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://blog.rapleaf.com/dev/?feed=rss2&amp;p=39</wfw:commentRss>
+		</item>
+		<item>
+		<title>Rapleaf Challenge Problem</title>
+		<link>http://blog.rapleaf.com/dev/?p=40</link>
+		<comments>http://blog.rapleaf.com/dev/?p=40#comments</comments>
+		<pubDate>Thu, 11 Dec 2008 22:56:46 +0000</pubDate>
+		<dc:creator>nathan</dc:creator>
+		
+		<category><![CDATA[Hadoop]]></category>
+
+		<category><![CDATA[Miscellaneous]]></category>
+
+		<guid isPermaLink="false">http://blog.rapleaf.com/dev/?p=40</guid>
+		<description><![CDATA[We&#8217;ve created a challenge problem based on one of the core problems we&#8217;ve had to solve in our MapReduce workflow. A word of warning - this isn&#8217;t one of those toy problems other companies put out on their careers page. This one is so hard it will make you cry.
+Rapleaf Challenge Problem 
+]]></description>
+			<content:encoded><![CDATA[<p>We&#8217;ve created a challenge problem based on one of the core problems we&#8217;ve had to solve in our MapReduce workflow. A word of warning - this isn&#8217;t one of those toy problems other companies put out on their careers page. This one is so hard it will make you cry.</p>
+<p><a href="http://business.rapleaf.com/rapleaf_challenge.html">Rapleaf Challenge Problem </a></p>
+]]></content:encoded>
+			<wfw:commentRss>http://blog.rapleaf.com/dev/?feed=rss2&amp;p=40</wfw:commentRss>
+		</item>
+		<item>
+		<title>Rent or Own: Amazon EC2 vs. Colocation Comparison for Hadoop Clusters</title>
+		<link>http://blog.rapleaf.com/dev/?p=38</link>
+		<comments>http://blog.rapleaf.com/dev/?p=38#comments</comments>
+		<pubDate>Thu, 11 Dec 2008 02:09:19 +0000</pubDate>
+		<dc:creator>bryan</dc:creator>
+		
+		<category><![CDATA[Hadoop]]></category>
+
+		<guid isPermaLink="false">http://blog.rapleaf.com/dev/?p=38</guid>
+		<description><![CDATA[For some time now, Rapleaf has been hard at work converting a critical portion of our infrastructure from a MySQL-based system to a Hadoop-based one. We see it as a much more obvious path to linear scalability of our processing pipeline. Since scalability is our goal, a technology that has obviously found its way into [...]]]></description>
+			<content:encoded><![CDATA[<p>For some time now, Rapleaf has been hard at work converting a critical portion of our infrastructure from a MySQL-based system to a <a href="http://hadoop.apache.org/core/">Hadoop</a>-based one. We see it as a much more obvious path to linear scalability of our processing pipeline. Since scalability is our goal, a technology that has obviously found its way into our view is Amazon Web Services&#8217; <a href="http://aws.amazon.com/ec2/">EC2</a> offering. </p>
+<p>For those of you that don&#8217;t know, in brief, EC2 is a virtualization service that allows you to host as many instances of a given machine image as you&#8217;d like in Amazon&#8217;s datacenters, effectively giving you the ability to nearly instantly scale up any portion of your infrastructure. It&#8217;s a pretty compelling idea, but designing an architecture around it can be confusing at times. Even worse, trying to compare costs between running in EC2 and on your own machines in a colocation facility really isn&#8217;t comparing apples to apples, but you have to do it in order to understand the costs.</p>
+<p>We recently took some time to try and slay this dragon and actually quantify our decision to use or not use EC2 one way or another. I&#8217;ll run through our logic in this post so you can try and compare your own use case to ours and make an informed decision.</p>
+<h3>Comparison Factors</h3>
+<p>First, let&#8217;s look at the dimensions within which we&#8217;re trying to compare the two options. The better solution should balance all of the following:</p>
+<ul>
+<li><strong>Scalability.</strong> We want to be able to scale up to handle more capacity relatively easily, and maintenance associated with our setup to be pretty low. </li>
+<li><strong>Performance.</strong> Whatever solution we choose, it should be capable of completing its needed tasks in the allotted time. Particularly for our application, we have a 6-hour execution window.</li>
+<li><strong>Cost.</strong> Of course, we&#8217;d love our solution to be as cheap as possible, without sacrificing too much of our other goals.</li>
+</ul>
+<p>Let&#8217;s take a look at each of these factors in turn.</p>
+<h4>Scalability</h4>
+<p>There&#8217;s no question that EC2 is a far more scalable approach to running a Hadoop application. When it comes time to use more machines, you just use Amazon&#8217;s tools to boot up more instances. You pay for what you need and no more. When you don&#8217;t need the extra, you can always just power them down. Enough said.</p>
+<p>Conversely, scaling in a colo can range from merely time consuming to downright nightmarish. In the best situation, you already have space in your cage, so you only have to purchase, install, and configure a bunch of new machines. Just getting the machines from the vendor is probably going to take a week, and installation some additional time, though you can likely do some work up front to have a machine image that reduces installation time greatly. In a worse situation, you might be out of space and have to consider renting some new space in another cage or cabinets, which brings on questions like network topology. </p>
+<p>However, the real killer in owning your own machines seems to me to be the possible maintenance costs. Specifically, how many sysadmins are you going to need to keep all those machines spinning away? There&#8217;s all the installing and updating of software, hardware failures and replacements, and troubleshooting a host of other possible issues. The industry average machine:sysadmin ratio sits at around 120 machines per person. Hadoop deployments are probably a little simpler than the average install, though, so I&#8217;m guessing this number is more like 200+ machines per person. (Obviously, this does not take into account many variables like hardware failure rates, so your mileage may vary.) Comparatively, there&#8217;s no hardware maintenance in EC2, and Amazon takes care of the machine imaging and network management for you, so I would estimate that a single sysadmin could probably manage something like 2000 machines. </p>
+<p>The absolute worst problem is what happens when you reach the limits of your current setup. For instance, when you cross your 200-machine productivity limit, you&#8217;ll have to hire another sysadmin, which is an enormous expense and time investment. Or, when you cross the limit of the number of switches you can affordably daisy chain together, the cost of purchasing much more expensive networking gear. Etcetera. EC2 is only effected by the personnel issue, but even then, at such a scale that it probably isn&#8217;t an issue.</p>
+<h4>Performance</h4>
+<p>The performance issue is not quite as clear cut as one might think. For starters, you&#8217;re able to get pretty much whatever kind of machine your heart desires on EC2, so you can match with whatever machine you&#8217;d like to get in your datacenter. At Rapleaf, we&#8217;re eying up the highest-end machines, the &#8220;High CPU Large Instances&#8221; (pricing and details can be found <a href="http://aws.amazon.com/ec2/#pricing">here</a>), which are roughly equivalent to the machines we&#8217;d like to have in our datacenter. </p>
+<p>Right off, though, there are some differences. First, none of the EC2 instance offerings with 8 cores have more than 7GB of memory. We want at least 8GB (which seems like a pretty rational number when you have 8 cores&#8230;), and we like to have the option of more if we ever needed it. Next, we managed to find a vendor of 1U machines that support 4 SATA disks, allowing us to get the performance of 4 spindles and 4TB of raw space per node, which is pretty nice. The biggest disks available in EC2 are 1690GB, which would impose some restrictions on how we do things. Amazon has an add-on feature called <a href="http://aws.amazon.com/ebs/">Elastic Block Stores</a> that would allow us to have more disk space per instance, but at an additional cost.</p>
+<p>There&#8217;s another subtle issue, though. In your own datacenter, you control the precise layout of your machines and network, allowing you to place all of your worker machines on either a single switch or a set of trunked switches, keeping the aggregate bandwidth in the cluster very high. EC2 makes no guarantees at all about where your machines might physically be located. As a result, you&#8217;re completely barred from configuring Hadoop rack awareness, which robs you of some performance. (Amazon does allow something called <a href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=1347">Availability Zones</a>, within which computers are considered &#8220;close&#8221;, but not necessarily in the same rack.)</p>
+<p>In effect, this all boils down to the fact that in EC2, you&#8217;re giving up control of some of the finer details. This can be a benefit in some scenarios, but it means that you have to be prepared to accept whatever performance EC2 gives you with the inherent machine configuration.</p>
+<h4>Cost</h4>
+<p>So, let&#8217;s try and put it all together into a consistent cost calculation and see where it comes down. We&#8217;ll assume for the sake of argument that you have a fairly well-paid sysadmin who makes $120,000 a year, and that if you have less machines than the maximum productive number, your sysadmin can find something else to do with his spare time. All the numbers about colocation costs are roughly based on numbers we&#8217;re currently paying. Finally, I&#8217;m just going to leave out any possible bandwidth costs because any estimation would be very subjective based on the application architecture and the data source. (In a real application, you probably need to consider bandwidth costs very closely!)</p>
+<h5>EC2</h5>
+<p>High CPU Large Instance cost per hour: $.80<br />
+Maintenance cost per hour: $120k/year / 12 months in a year / 30 days in a month / 24 hours in a day / 2000 machines = $.007 / hour<br />
+Total cost per hour: $.807</p>
+<h5>Owned machine</h5>
+<p>Machine cost per hour amortized over 36 months of use: $2000 / 36 / 30 / 24 = $.07<br />
+Cost of cabinet and power per hour: $2500 per cabinet / 30 / 24 / 40 machines per cabinet = $.09<br />
+Maintenance cost per hour: $120k/year / 12 months / 30 / 24 / 200 machines = $.07<br />
+Total cost per hour: $.23</p>
+<p>In terms of flat cost per hour for like numbers of machines, owning the machines and running them in colo space you rent monthly is 1/3 to 1/4 the cost of running your cluster in EC2. Somewhat surprising, no?</p>
+<h3>The Caveat&#8230;</h3>
+<p>There is one final piece of the analysis that is missing: the cost, or rather, the benefit, of the scalability attributes of EC2. I&#8217;ve purposely left this out of the computation because, honestly, it is in an incredibly hard attribute to quantify, at least for our current application. Clearly, for those of you who know without a doubt that there will be unpredictable overages, your need to protect yourself from being overwhelmed or performing poorly might vastly outweigh the 2/3-3/4 premium you&#8217;ll be paying. However, it doesn&#8217;t appear that Rapleaf has that problem at this point. More to the point, if you&#8217;re already at the point of deploying a Hadoop application, then you&#8217;re probably well aware that it isn&#8217;t something that shouldn&#8217;t be depended on for realtime answers, and thus you can probably bear a longer scaling path.</p>
+<h3>Conclusion</h3>
+<p>For Rapleaf, we currently expect our cluster to start at something like 40 machines and grow modestly for the near future. As a result, it looks like we&#8217;ll stick it out in a colo. Maybe when we hit the ceiling on that plan we&#8217;ll reevaluate again.</p>
+<p>I would love to hear everyone&#8217;s thoughts on this analysis. Did I leave out any glaring costs that will swing us in the opposite direction?</p>
+]]></content:encoded>
+			<wfw:commentRss>http://blog.rapleaf.com/dev/?feed=rss2&amp;p=38</wfw:commentRss>
+		</item>
+		<item>
+		<title>Give me liberty or give me death, but don&#8217;t give me small files!</title>
+		<link>http://blog.rapleaf.com/dev/?p=36</link>
+		<comments>http://blog.rapleaf.com/dev/?p=36#comments</comments>
+		<pubDate>Fri, 21 Nov 2008 01:14:18 +0000</pubDate>
+		<dc:creator>nathan</dc:creator>
+		
+		<category><![CDATA[MapReduce]]></category>
+
+		<category><![CDATA[Hadoop]]></category>
+
+		<guid isPermaLink="false">http://blog.rapleaf.com/dev/?p=36</guid>
+		<description><![CDATA[Small files are the bane of Hadoop MapReduce. 300GB of data kept in a few files versus thousands of files can cause a 100x performance difference in jobs run over that data. For this reason, it is of paramount importance to keep files on HDFS large.
+There are many reasons for this. With larger files, input [...]]]></description>
+			<content:encoded><![CDATA[<p>Small files are the bane of Hadoop MapReduce. 300GB of data kept in a few files versus thousands of files can cause a 100x performance difference in jobs run over that data. For this reason, it is of paramount importance to keep files on HDFS large.</p>
+<p>There are many reasons for this. With larger files, input splits for Hadoop jobs are larger and so more work is done per map task. Additionally, there are much fewer map tasks which mitigates the startup cost of each mapper. With small files, the startup cost of creating a mapper can dominate the execution time. Additionally, having data in lots of small files uses up namenode memory which is the most precious resource in a cluster.</p>
+<p>To battle this problem, we have developed a tool called the Consolidator which will take a set of files containing records belonging to the same logical file and merge the files together into larger files. Ideally, all the files would be merged into one file, but this is not practical for terabytes of data since the Consolidator would take too long to run. Instead, we balance the Consolidator speed with the desired size of files by giving the Consolidator a parameter of &#8220;desired file size&#8221;. The &#8220;desired file size&#8221; is set to some multiple of the HDFS block size so that input splits are as large as possible to optimize for locality.</p>
+<p>The Consolidator is a map-only job that creates a map task for each &#8220;consolidation&#8221;. A consolidation task is given a list of files, and it reads each record from each of those files and outputs them all into a new, uniquely named file. Because each consolidation task is run in parallel and the amount of work each task does is bounded by the &#8220;desired file size&#8221;, the Consolidator runs very fast.</p>
+<p>To generate each consolidation task, the Consolidator must select a subset of its set of files that comes as close to the desired file size as possible but not over. Unfortunately, this is known as the <a href="http://en.wikipedia.org/wiki/Subset_sum_problem">&#8220;Subset-sum problem&#8221;</a> and is NP-complete. Fortunately, there are algorithms that work very well in practice. We use a slight variation of the algorithm described in the paper <a href="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.26.1162">&#8220;A Fast Approximation Algorithm for the Subset-Sum Problem&#8221;</a> which has been very effective.</p>
+<p>We use the Consolidator all the time. It is particularly useful when used in conjunction with the <a href="http://blog.rapleaf.com/dev/?p=34" title="Collector">Collector</a> since the Collector tends to generate a lot of small files. In general, though, Hadoop jobs sometimes output a lot of files, and we have found the Consolidator to be a very effective way to control file sizes rather than trying to do so from within the job itself.</p>
+<p>We are planning to release this tool as open-source as part of the Collector release, so stay tuned!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://blog.rapleaf.com/dev/?feed=rss2&amp;p=36</wfw:commentRss>
+		</item>
+		<item>
+		<title>Hadoop Meetup Presentation Videos</title>
+		<link>http://blog.rapleaf.com/dev/?p=35</link>
+		<comments>http://blog.rapleaf.com/dev/?p=35#comments</comments>
+		<pubDate>Fri, 31 Oct 2008 15:09:43 +0000</pubDate>
+		<dc:creator>bryan</dc:creator>
+		
+		<category><![CDATA[Hadoop]]></category>
+
+		<guid isPermaLink="false">http://blog.rapleaf.com/dev/?p=35</guid>
+		<description><![CDATA[Here are links to the videos of all the presentations we had last week. 
+
+The Collector - Multi-Writer Appends into HDFS
+by Bryan Duxbury, Software Engineer at Rapleaf
+http://www.vimeo.com/2084824
+Katta - Distributed Lucene Index in Production
+by Stefan Groshupf, Founder/CTO at 101tec Inc. and Co-Founder at Scale Unlimited Inc.
+http://www.vimeo.com/2085140
+Debugging and Tuning Map-Reduce Applications
+by Arun C Murthy, Principal Engineer at [...]]]></description>
+			<content:encoded><![CDATA[<p>Here are links to the videos of all the presentations we had last week. </p>
+<p><strong><br />
+The Collector - Multi-Writer Appends into HDFS</strong><br />
+by Bryan Duxbury, Software Engineer at Rapleaf<br />
+<a href="http://www.vimeo.com/2084824">http://www.vimeo.com/2084824</a></p>
+<p><strong>Katta - Distributed Lucene Index in Production</strong><br />
+by Stefan Groshupf, Founder/CTO at 101tec Inc. and Co-Founder at Scale Unlimited Inc.<br />
+<a href="http://www.vimeo.com/2085140">http://www.vimeo.com/2085140</a></p>
+<p><strong>Debugging and Tuning Map-Reduce Applications</strong><br />
+by Arun C Murthy, Principal Engineer at Yahoo! and Member of Apache Hadoop PMC<br />
+<a href="http://www.vimeo.com/2085477">http://www.vimeo.com/2085477</a></p>
+]]></content:encoded>
+			<wfw:commentRss>http://blog.rapleaf.com/dev/?feed=rss2&amp;p=35</wfw:commentRss>
+		</item>
+		<item>
+		<title>The Collector</title>
+		<link>http://blog.rapleaf.com/dev/?p=34</link>
+		<comments>http://blog.rapleaf.com/dev/?p=34#comments</comments>
+		<pubDate>Wed, 22 Oct 2008 18:26:25 +0000</pubDate>
+		<dc:creator>bryan</dc:creator>
+		
+		<category><![CDATA[Hadoop]]></category>
+
+		<guid isPermaLink="false">http://blog.rapleaf.com/dev/?p=34</guid>
+		<description><![CDATA[Last night at the Rapleaf-hosted Hadoop meetup, I talked about a project we&#8217;ve created here at Rapleaf called the Collector. 
+
+Basically, Rapleaf is starting to Hadoopify our workflow, and like a lot of people out there, we&#8217;ve found the need to manage many processes writing to HDFS so that our data can be processed by [...]]]></description>
+			<content:encoded><![CDATA[<p>Last night at the <a href="http://rapleafhadoop.eventbrite.com/">Rapleaf-hosted Hadoop meetup</a>, I talked about a project we&#8217;ve created here at Rapleaf called the Collector. </p>
+<p><iframe src='http://docs.google.com/EmbedSlideshow?docid=dgz78tv5_10gpjhnvg9' frameborder='0' width='410' height='342'></iframe></p>
+<p>Basically, Rapleaf is starting to Hadoopify our workflow, and like a lot of people out there, we&#8217;ve found the need to manage many processes writing to HDFS so that our data can be processed by Hadoop Map/Reduce. Our particular application has hundreds of Ruby processes spread across a bunch of machines all needing to write to the same place.</p>
+<p>A very attractive approach espoused in the <a href="http://labs.google.com/papers/gfs.html">Google Filesystem paper</a> is this idea of &#8220;record append&#8221; - you don&#8217;t particularly care about the order, and you can tolerate duplication, but what you really care about is speed and durability. Alas, HDFS doesn&#8217;t have a record append feature, so you&#8217;re left trying to find some approximation. </p>
+<p>The Collector is one such approximation. It&#8217;s a service written in Java with a Thrift interface and only one meaningful method - append. The append method takes the name of a logical file (we call it a &#8220;bucket&#8221;) and a byte array record, and writes it to an HDFS file named in a particular convention. There&#8217;s only one Collector instance per host that contains data sources, so the net effect is one file per host per rotation interval. </p>
+<p>To add durability, we have a local write-ahead log that every record gets written to before it is written to the actual HDFS file. Then, if there is some error that causes the HDFS stream to be interrupted, we can recover the already-written data by replaying the write-ahead log.</p>
+<p>The Collector is pretty fast - it can take writes pretty much as fast as HDFS can take writes. It also scales pretty well - since it&#8217;s deployed on each host, it grows with your application.</p>
+<p>Finally, to handle the map/reduce end of the workflow, we have custom InputFormat implementations that deal with the &#8220;bucket&#8221; as a whole so the user never has to think about all the files in it. </p>
+<p>The Collector is not yet open source, though I believe that we will make it so soon. There&#8217;s probably 6 hours of work or so to be done to clean it up for release, but then we can stick it on SourceForge or try to contrib it directly to Hadoop. I&#8217;ll keep the blog posted with information about how this effort is going.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://blog.rapleaf.com/dev/?feed=rss2&amp;p=34</wfw:commentRss>
+		</item>
+		<item>
+		<title>Goodbye MapReduce, Hello Cascading</title>
+		<link>http://blog.rapleaf.com/dev/?p=33</link>
+		<comments>http://blog.rapleaf.com/dev/?p=33#comments</comments>
+		<pubDate>Fri, 05 Sep 2008 21:11:41 +0000</pubDate>
+		<dc:creator>nathan</dc:creator>
+		
+		<category><![CDATA[Cascading]]></category>
+
+		<category><![CDATA[MapReduce]]></category>
+
+		<category><![CDATA[Hadoop]]></category>
+
+		<guid isPermaLink="false">http://blog.rapleaf.com/dev/?p=33</guid>
+		<description><![CDATA[We have been doing a lot of batch processing with Hadoop MapReduce lately, and we quickly realized how painful it can be to write MapReduce jobs by hand. Some parts of our workflow require up to TEN MapReduce jobs to execute in sequence, requiring a lot of hand-coordination of intermediate data and execution order. Additionally, [...]]]></description>
+			<content:encoded><![CDATA[<p>We have been doing a lot of batch processing with Hadoop MapReduce lately, and we quickly realized how painful it can be to write MapReduce jobs by hand. Some parts of our workflow require up to <strong>TEN</strong> MapReduce jobs to execute in sequence, requiring a lot of hand-coordination of intermediate data and execution order. Additionally, anyone who has done really complex MapReduce workflows knows how hard it is to keep &#8220;thinking&#8221; in MapReduce.</p>
+<p>Luckily, we discovered a great new open source product called Cascading which has alleviated a ton of our pain. <a href="http://www.cascading.org">Cascading</a> is the brainchild and work of Chris Wensel, and he&#8217;s done a great job developing an API which solves many of our problems. Cascading abstracts away MapReduce into a more natural logical model and provides a workflow management layer to handle things like intermediate data and data staleness. <a href="http://blog.rapleaf.com/dev/?p=33#more-33" class="more-link">(more&#8230;)</a></p>
+]]></content:encoded>
+			<wfw:commentRss>http://blog.rapleaf.com/dev/?feed=rss2&amp;p=33</wfw:commentRss>
+		</item>
+		<item>
+		<title>Watch out for those random numbers!</title>
+		<link>http://blog.rapleaf.com/dev/?p=32</link>
+		<comments>http://blog.rapleaf.com/dev/?p=32#comments</comments>
+		<pubDate>Wed, 13 Aug 2008 22:57:34 +0000</pubDate>
+		<dc:creator>nathan</dc:creator>
+		
+		<category><![CDATA[Security]]></category>
+
+		<guid isPermaLink="false">http://blog.rapleaf.com/dev/?p=32</guid>
+		<description><![CDATA[The improper use of random number generators can lead to major security vulnerabilities in an application. For example, suppose you are using a language&#8217;s built-in random number generator for creating temporary passwords (like to reset someone&#8217;s password). Then, it could be possible for an attacker to hijack the account of anyone on the site!
+This is [...]]]></description>
+			<content:encoded><![CDATA[<p>The improper use of random number generators can lead to major security vulnerabilities in an application. For example, suppose you are using a language&#8217;s built-in random number generator for creating temporary passwords (like to reset someone&#8217;s password). Then, it could be possible for an attacker to hijack the account of anyone on the site!</p>
+<p>This is possible because creating a random password relies on the random numbers being <em>unpredictable</em> - a property that is not held by any language&#8217;s built-in random number generator that I am aware of. In Ruby, for example, once you see a series of around 600 generated numbers, you can then predict every future generated number from that generator. So if a language&#8217;s built-in random number generator doesn&#8217;t produce &#8220;random&#8221; numbers, what exactly does it do? It creates a nice distribution of numbers which pass a variety of statistical tests.</p>
+<p>An attack on an improperly used random number generator might look something like this:</p>
+<p>Let&#8217;s say your site creates ten character temporary passwords. Early in the morning when not many users are using a site, an attacker sets up about 60 accounts with 60 e-mail addresses the attacker owns. In sequence, the attacker resets the password on each account. The attacker then resets the password on the account he wants to hijack. The attacker reconstructs the random numbers used to create the first 60 passwords, predicts the next ten numbers, and reconstructs the password generated for the account he reset. The attacker then logs into that account and chooses a new password for it, completing the hijacking of the target account.</p>
+<p>This can be a really severe vulnerability, and I imagine it is very prevalent due to the general lack of understanding of random number generators. Luckily, the solution is really simple - use a random number generator that is unpredictable. One class of such random number generators are called &#8220;cryptographically secure random number generators&#8221;. I won&#8217;t get into the math behind these generators, but they can be depended on for unpredictability. Java has a great class called <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/security/SecureRandom.html">SecureRandom</a> that can be used for this. Another option is to use a generator like <a href="http://en.wikipedia.org/wiki/RC4">RC4</a> which is not necessarily cryptographically secure, but is still unpredictable (and fast).</p>
+]]></content:encoded>
+			<wfw:commentRss>http://blog.rapleaf.com/dev/?feed=rss2&amp;p=32</wfw:commentRss>
+		</item>
+		<item>
+		<title>Thrift TextMate Bundle</title>
+		<link>http://blog.rapleaf.com/dev/?p=29</link>
+		<comments>http://blog.rapleaf.com/dev/?p=29#comments</comments>
+		<pubDate>Tue, 01 Jul 2008 16:47:29 +0000</pubDate>
+		<dc:creator>bryan</dc:creator>
+		
+		<category><![CDATA[Thrift]]></category>
+
+		<guid isPermaLink="false">http://blog.rapleaf.com/dev/?p=29</guid>
+		<description><![CDATA[Rapleaf intern Kevin Ballard has been hard at work this summer making Thrift more pleasant to work with for those of us who are Ruby-inclined. Between sweeping API refactoring and calls to deprecate!, he&#8217;s found the time to create a TextMate bundle for the Thrift IDL! It supports syntax highlighting and tab-completion snippets for a [...]]]></description>
+			<content:encoded><![CDATA[<p>Rapleaf intern Kevin Ballard has been hard at work this summer making <a href="http://incubator.apache.org/thrift/">Thrift</a> more pleasant to work with for those of us who are Ruby-inclined. Between sweeping API refactoring and calls to deprecate!, he&#8217;s found the time to create a TextMate bundle for the Thrift IDL! It supports syntax highlighting and tab-completion snippets for a bunch of Thrift constructs. You can get it out of the official TextMate Bundle SVN repository under the inventive name of &#8220;Thrift.tmbundle&#8221;. </p>
+<p>(Instructions for installing bundles can be found <a href="http://manual.macromates.com/en/bundles#getting_more_bundles">here</a>.)</p>
+]]></content:encoded>
+			<wfw:commentRss>http://blog.rapleaf.com/dev/?feed=rss2&amp;p=29</wfw:commentRss>
+		</item>
+		<item>
+		<title>HBase Interview on InfoQ</title>
+		<link>http://blog.rapleaf.com/dev/?p=28</link>
+		<comments>http://blog.rapleaf.com/dev/?p=28#comments</comments>
+		<pubDate>Tue, 29 Apr 2008 19:20:58 +0000</pubDate>
+		<dc:creator>bryan</dc:creator>
+		
+		<category><![CDATA[HBase]]></category>
+
+		<guid isPermaLink="false">http://blog.rapleaf.com/dev/?p=28</guid>
+		<description><![CDATA[Jim Kellerman, Michael Stack, and I recently responded to an email interview about HBase and related topics. You can find the result here.
+]]></description>
+			<content:encoded><![CDATA[<p>Jim Kellerman, Michael Stack, and I recently responded to an email interview about <a href="http://www.hbase.org">HBase</a> and related topics. You can find the result <a href="http://www.infoq.com/news/2008/04/hbase-interview">here</a>.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://blog.rapleaf.com/dev/?feed=rss2&amp;p=28</wfw:commentRss>
+		</item>
+	</channel>
+</rss>

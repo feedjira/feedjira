@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>RubyCorner</title>
+    <link>http://www.rubycorner.com</link>
+    <language>en</language>
+    <pubDate>Fri, 23 Jan 2009 02:52:15 GMT</pubDate>
+    <description>Last updated blogs at RubyCorner</description>
+    <item>
+      <title>Softies on Rails :: Do You Test Your Views?</title>
+      <link>http://feedproxy.google.com/~r/SoftiesOnRails/~3/-kGe2TFpKJM/do-you-test-your-views</link>
+      <guid>http://feedproxy.google.com/~r/SoftiesOnRails/~3/-kGe2TFpKJM/do-you-test-your-views</guid>
+      <description>Those of you following me on twitter already know that I&#8217;m learning Cucumber.
+
+
+  Traditionally I don&#8217;t test my views or controllers all that much.  I know, I know, it&#8217;s heresy.  But I&#8217;ve just...</description>
+      <pubDate>Fri, 23 Jan 2009 02:52:15 GMT</pubDate>
+      <author>Jeff</author>
+    </item>
+    <item>
+      <title>Going Up -- Life on Rails</title>
+      <link>http://blog.inquirylabs.com/</link>
+      <guid>http://blog.inquirylabs.com/</guid>
+      <description></description>
+      <pubDate>Fri, 23 Jan 2009 02:18:53 GMT</pubDate>
+      <author>Duane Johnson</author>
+    </item>
+    <item>
+      <title>Doppio :: An XBox, A Fried Router, and Girl Scout Cookies</title>
+      <link>http://espressosoftware.blogspot.com/2009/01/xbox-fried-router-and-girl-scout.html</link>
+      <guid>http://espressosoftware.blogspot.com/2009/01/xbox-fried-router-and-girl-scout.html</guid>
+      <description>About six months ago I bought a Linksys WRT54G to replace my DLink wireless router.  The DLink was a horrible POS, with poor signal strength, inexplicably bad bandwidth and requiring power-supply rebo...</description>
+      <pubDate>Thu, 22 Jan 2009 18:06:36 GMT</pubDate>
+      <author>ChrisA</author>
+    </item>
+    <item>
+      <title>Paul Dix Explains Nothing :: Making a Ruby C library even faster</title>
+      <link>http://feeds.feedburner.com/~r/PaulDixExplainsNothing/~3/519925023/making-a-ruby-c-library-even-faster.html</link>
+      <guid>http://feeds.feedburner.com/~r/PaulDixExplainsNothing/~3/519925023/making-a-ruby-c-library-even-faster.html</guid>
+      <description>Last week I released the first version of a SAX based XML parsing library called SAX-Machine. It uses Nokogiri, which uses libxml, so it's pretty fast. However, I felt that it could be even faster. Th...</description>
+      <pubDate>Thu, 22 Jan 2009 15:51:17 GMT</pubDate>
+      <author>Paul Dix</author>
+    </item>
+    <item>
+      <title>Applicake Delicious Blog :: RubyTip: System commands</title>
+      <link>http://applicake.com/posts/44-rubytip-system-commands.rss</link>
+      <guid>http://applicake.com/posts/44-rubytip-system-commands.rss</guid>
+      <description>Backticks and %x{} behave the same. Executing `ls` or %x{ls} gives us: "one\nthree\ntwo\n".</description>
+      <pubDate>Thu, 22 Jan 2009 15:42:15 GMT</pubDate>
+      <author>Applicake</author>
+    </item>
+    <item>
+      <title>Maniacal Rage :: pretty things. (via riot jane)</title>
+      <link>http://feeds.feedburner.com/~r/garrettmurray/log/~3/519449314/72239116</link>
+      <guid>http://feeds.feedburner.com/~r/garrettmurray/log/~3/519449314/72239116</guid>
+      <description>pretty things. (via riot jane)</description>
+      <pubDate>Thu, 22 Jan 2009 04:50:15 GMT</pubDate>
+      <author>garrettmurray</author>
+    </item>
+    <item>
+      <title>ape tec</title>
+      <link>http://aeondust.com</link>
+      <guid>http://aeondust.com</guid>
+      <description></description>
+      <pubDate>Thu, 22 Jan 2009 03:59:31 GMT</pubDate>
+      <author>eeby</author>
+    </item>
+    <item>
+      <title>Jay Fields Thoughts :: Questions To Ask an Interviewer</title>
+      <link>http://feedproxy.google.com/~r/jayfields/mjKQ/~3/Hl7nUYfwWl8/questions-to-ask-interviewer.html</link>
+      <guid>http://feedproxy.google.com/~r/jayfields/mjKQ/~3/Hl7nUYfwWl8/questions-to-ask-interviewer.html</guid>
+      <description>If you've ever read tips on interviewing then you know it's a good idea to have questions ready to ask someone who's just interviewed you. If you're not good at remembering questions under-pressure yo...</description>
+      <pubDate>Thu, 22 Jan 2009 03:36:52 GMT</pubDate>
+      <author>jay</author>
+    </item>
+    <item>
+      <title>un Desarrollador Web Freelance :: Como linkar a la &#250;ltima versi&#243;n de un fichero en GitHub</title>
+      <link>http://www.fernandoguillen.info/es/blog/2009/01/22/como-linkar-a-la-ultima-version-de-un-fichero-en-github/</link>
+      <guid>http://www.fernandoguillen.info/es/blog/2009/01/22/como-linkar-a-la-ultima-version-de-un-fichero-en-github/</guid>
+      <description>Sino conoces github no sigas leyendo.. y &#233;chale un vistazo, sino es el caso igual te interese este truquito que he descubierto trasteando.
+Resulta que si quieres compartir un link de un fichero de un...</description>
+      <pubDate>Thu, 22 Jan 2009 03:32:44 GMT</pubDate>
+      <author>Fernando Guillen</author>
+    </item>
+    <item>
+      <title>mir.aculo.us :: Want JavaScript performance? You got it!</title>
+      <link>http://feedproxy.google.com/~r/miraculous/~3/bbCk8RU7GvE/want-javascript-performance-you-got-it</link>
+      <guid>http://feedproxy.google.com/~r/miraculous/~3/bbCk8RU7GvE/want-javascript-performance-you-got-it</guid>
+      <description>We&#8217;ve just released the beta of the JavaScript performance book we&#8217;ve been writing on for a while (we is my wife Amy Hoy and me!).
+
+
+  
+
+
+  Without further ado:
+
+
+  
+  More than a hundred pages on...</description>
+      <pubDate>Thu, 22 Jan 2009 00:44:28 GMT</pubDate>
+      <author>RubyCorner's Admin</author>
+    </item>
+    <item>
+      <title>self.collect(&amp;:code) :: Scoped mixins</title>
+      <link>http://benanne.net/code/?p=186</link>
+      <guid>http://benanne.net/code/?p=186</guid>
+      <description>A while ago I read one of Peter Harkins&#8217;s posts about open classes in Ruby, and how insanely awesome and useful they are. As you can probably tell, I wholeheartedly agree. Open classes are just one ...</description>
+      <pubDate>Wed, 21 Jan 2009 23:58:48 GMT</pubDate>
+      <author>Sander</author>
+    </item>
+    <item>
+      <title>Ruby Railways :: The Top 30 Most Helpful People on #rubyonrails</title>
+      <link>http://www.rubyrailways.com/the-top-30-most-helpful-people-on-rubyonrails/</link>
+      <guid>http://www.rubyrailways.com/the-top-30-most-helpful-people-on-rubyonrails/</guid>
+      <description>Just about 2 weeks ago I have been bitching about the #rubyonrails channel (no need to look it up as this article will negate that anyways). Fortunately (for everyone I guess  some prominent rails guy...</description>
+      <pubDate>Wed, 21 Jan 2009 22:58:05 GMT</pubDate>
+      <author>rubyrailways</author>
+    </item>
+    <item>
+      <title>PragDave :: So I need a symetric coroutine example</title>
+      <link>http://pragdave.blogs.pragprog.com/pragdave/2009/01/so-i-need-a-symetric-coroutine-example.html</link>
+      <guid>http://pragdave.blogs.pragprog.com/pragdave/2009/01/so-i-need-a-symetric-coroutine-example.html</guid>
+      <description>I'm getting close to wrapping up the new PickAxe. One of the last things I need is an example of symetric coroutines for the standard library section on the Fiber class.I have lots of asymetric exampl...</description>
+      <pubDate>Wed, 21 Jan 2009 22:21:12 GMT</pubDate>
+      <author>pragdave</author>
+    </item>
+    <item>
+      <title>Atlantic Dominion Solutions :: Manning Publications Sponsors Acts as Conference</title>
+      <link>http://feeds.feedburner.com/~r/AtlanticDominionSolutions/~3/518711253/</link>
+      <guid>http://feeds.feedburner.com/~r/AtlanticDominionSolutions/~3/518711253/</guid>
+      <description>We are happy to announce that Manning Publications is the newest sponsor of Acts as Conference. Manning has generously donated 4 copies of JQuery in Action, 10 vouchers for the Merb in Action PDF, and...</description>
+      <pubDate>Wed, 21 Jan 2009 20:38:45 GMT</pubDate>
+      <author>Robert Dempsey</author>
+    </item>
+    <item>
+      <title>4 Trabes - Historias de una Start-up en 20 metros cuadrados :: Conseguir que una Hp 2605dn imprima a doble cara en Cups</title>
+      <link>http://4trabes.com/2009/1/21/conseguir-que-una-hp-2605dn-imprima-a-doble-cara-en-cups</link>
+      <guid>http://4trabes.com/2009/1/21/conseguir-que-una-hp-2605dn-imprima-a-doble-cara-en-cups</guid>
+      <description>
+La soluci&#243;n est&#225; aqu&#237;. Para los m&#225;s vagos, el tema va de "tocar" el ppd de la impresora (/etc/cups/ppd/loquesea.ppd y dejar la parte donde habla del duplex tal que asi:
+
+
+*% Duplexing Unit
+*% ===...</description>
+      <pubDate>Wed, 21 Jan 2009 20:14:35 GMT</pubDate>
+      <author>Marcos [www.trabesoluciones.com]</author>
+    </item>
+    <item>
+      <title>Nullcreations.net :: Mid Island Web Workers Group</title>
+      <link>http://feeds.feedburner.com/~r/Nullcreations/~3/519031718/mid-island-web-workers-group</link>
+      <guid>http://feeds.feedburner.com/~r/Nullcreations/~3/519031718/mid-island-web-workers-group</guid>
+      <description>Last night was the first meeting of the newly created Mid Island Web Workers Group at the Longwood Brewpub in Nanaimo. There were a lot of familiar faces as well as a bunch of new people, it was fun t...</description>
+      <pubDate>Wed, 21 Jan 2009 20:04:10 GMT</pubDate>
+      <author>Jerrett</author>
+    </item>
+    <item>
+      <title>techno weenie :: IsLOSTOnYet no longer a ghost town</title>
+      <link>http://techno-weenie.net/2009/1/21/islostonyet-no-longer-a-ghost-town</link>
+      <guid>http://techno-weenie.net/2009/1/21/islostonyet-no-longer-a-ghost-town</guid>
+      <description>I pushed a little update last night that started filling the IsLOSTOnYet stream with a flurry of updates.  Where did all this come from?  search.twitter.com, courtesy of the twitter gem.
+
+The first st...</description>
+      <pubDate>Wed, 21 Jan 2009 20:00:09 GMT</pubDate>
+      <author>RubyCorner's Admin</author>
+    </item>
+    <item>
+      <title>Hivelogic :: Steve, Get Well</title>
+      <link>http://stevegetwell.com/</link>
+      <guid>http://stevegetwell.com/</guid>
+      <description>The latest site from Koombea: a thoughtful get-well message for Steve Jobs. Sign up and leave your message for Jobs.
+
+
+  [permalink]</description>
+      <pubDate>Wed, 21 Jan 2009 18:53:40 GMT</pubDate>
+      <author>Hivelogic</author>
+    </item>
+    <item>
+      <title>langturk :: Kargo i&#231;in desi hesaplama</title>
+      <link>http://www.langturk.com/kargo-icin-desi-hesaplama/</link>
+      <guid>http://www.langturk.com/kargo-icin-desi-hesaplama/</guid>
+      <description>Bir kargo g&#195;&#182;nderece&#196;&#376;im desi hesab&#196;&#177; gerekli oldu, kargo &#197;&#376;irketleri bu hesaba g&#195;&#182;re kargonun ne kadar tutaca&#196;&#376;&#196;&#177;n&#196;&#177; hesapl&#196;&#177;yor. Tabi sadece desi hesab&#196;&#177;na g&#195;&#182;re de&#196;&#376;il ayn&#196;&#177; zamanda ka&#195;&#167; kilo oldu&#196;...</description>
+      <pubDate>Wed, 21 Jan 2009 16:31:49 GMT</pubDate>
+      <author>webdr</author>
+    </item>
+    <item>
+      <title>Zen and the Art of Ruby Programming :: Install DB2 on Mac OS X and give us feedback</title>
+      <link>http://feeds.feedburner.com/~r/ZenAndTheArtOfRubyProgramming/~3/518147147/</link>
+      <guid>http://feeds.feedburner.com/~r/ZenAndTheArtOfRubyProgramming/~3/518147147/</guid>
+      <description>A little over a week ago IBM released a new version of the DB2 beta for Mac OS X Leopard, following up on valuable feedback that we&#8217;d received in response to earlier versions. This version is import...</description>
+      <pubDate>Wed, 21 Jan 2009 15:45:13 GMT</pubDate>
+      <author>Antonio Cangiano</author>
+    </item>
+  </channel>
+</rss>

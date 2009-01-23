@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" version="2.0"><channel><title>AlternateIdea - Home</title><link>http://alternateidea.com/</link><language>en-US</language><lastBuildDate>Mon, 12 Jan 2009 11:23:47 -0600</lastBuildDate><generator>Mephisto Noh-Varr http://mephistoblog.com</generator><description></description><item><title>YouTube Launches House &amp; Senate Hubs</title><link>http://feeds.feedburner.com/~r/encytemedia/~3/509970713/youtube-launches-house-senate-hubs</link><category>tumble</category><category>url</category><category>congress</category><category>house</category><category>senate</category><category>transparency</category><category>youtube</category><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Justin</dc:creator><pubDate>Mon, 12 Jan 2009 11:23:47 -0600</pubDate><guid isPermaLink="false">tag:alternateidea.com,2009-01-12:5011</guid><description>&lt;p&gt;YouTube has &lt;a href="http://www.youtube.com/blog?entry=XzRSzC2JAQA"&gt;just announced&lt;/a&gt; &lt;a href="http://www.youtube.com/user/househub"&gt;HouseHub&lt;/a&gt; and &lt;a href="http://www.youtube.com/user/senatehub"&gt;Senate Hub&lt;/a&gt;.&lt;/p&gt;&lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/encytemedia?a=11DAo3.P"&gt;&lt;img src="http://feeds.feedburner.com/~f/encytemedia?i=11DAo3.P" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/encytemedia?a=RWVJ9P.P"&gt;&lt;img src="http://feeds.feedburner.com/~f/encytemedia?i=RWVJ9P.P" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;</description><feedburner:origLink>http://alternateidea.com/blog/articles/2009/1/12/youtube-launches-house-senate-hubs</feedburner:origLink></item><item><title>Best Practices For Cocoa and CocoaTouch</title><link>http://feeds.feedburner.com/~r/encytemedia/~3/416947304/best-practices-for-cocoa-and-cocoatouch</link><category>tumble</category><category>url</category><category>cocoa</category><category>cocoatouch</category><category>objective-c</category><category>xcode</category><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Justin</dc:creator><pubDate>Fri, 10 Oct 2008 11:33:19 -0500</pubDate><guid isPermaLink="false">tag:alternateidea.com,2008-10-10:4140</guid><description>&lt;p&gt;&lt;a href="http://stackoverflow.com/questions/155964/what-are-best-practices-that-you-use-when-writing-objective-c-and-cocoa#175874"&gt;Best Practices For Cocoa and CocoaTouch&lt;/a&gt;&amp;mdash;Invaluable tips from Cocoa developers.&lt;/p&gt;&lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/encytemedia?a=7jl6VO.P"&gt;&lt;img src="http://feeds.feedburner.com/~f/encytemedia?i=7jl6VO.P" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/encytemedia?a=JXNf4p.P"&gt;&lt;img src="http://feeds.feedburner.com/~f/encytemedia?i=JXNf4p.P" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;</description><feedburner:origLink>http://alternateidea.com/blog/articles/2008/10/10/best-practices-for-cocoa-and-cocoatouch</feedburner:origLink></item><item><title>Deploying Static Websites With Net::SCP</title><link>http://feeds.feedburner.com/~r/encytemedia/~3/415014145/deploying-static-websites-with-net-scp</link><category>posts</category><category>capistrano</category><category>deploy</category><category>netscp</category><category>netssh</category><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Justin</dc:creator><pubDate>Wed, 08 Oct 2008 12:55:53 -0500</pubDate><guid isPermaLink="false">tag:alternateidea.com,2008-10-08:4113</guid><content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[
+            <p>I recently had a couple of projects that consisted of a few static HTML files and a couple images.  I could have used a blog or lightweight CMS, but those were overkill.  I could use <code>scp</code>, but remembering the <code>scp</code> command every time I made a small change proved to be a hassle.   I could have used <a href="http://www.capify.org">Capistrano</a>, but that too, felt overboard for my simple needs.  Lucky for me, in addition to Capistrano, <a href="http://weblog.jamisbuck.org/">Jamis Buck</a> wrote <a href="http://github.com/jamis/net-scp/tree/master">Net::SCP</a> which was the perfect tool for the job.</p>
+<p>From the Net:SCP documentation:</p>
+
+<blockquote>
+    <p>”Net::SCP implements the SCP (Secure CoPy) client protocol, allowing Ruby programs to securely and programmatically transfer individual files or entire directory trees to and from remote servers. It provides support for multiple simultaneous SCP copies working in parallel over the same connection, as well as for synchronous, serial copies.”</p>
+</blockquote>
+
+<p>The only thing we’re interested in is uploading, so lets get down to the code which I’ve packaged as a rake task.</p>
+
+<pre><code class="ruby">
+REMOTE_DIR = &quot;/home/caged/public/website.com/public&quot;
+
+desc 'Upload the site'
+task :deploy do
+  Net::SCP.start(&quot;hostname&quot;, &quot;caged&quot;, :port =&gt; 3000) do |scp|
+    scp.upload! 'site/index.html',  REMOTE_DIR
+    scp.upload! 'site/stylesheets', REMOTE_DIR, :recursive =&gt; true
+    scp.upload! 'site/images',      REMOTE_DIR, :recursive =&gt; true
+    scp.upload! 'site/article',     REMOTE_DIR, :recursive =&gt; true
+  end
+end
+</code></pre>
+
+<p>Now lets take a look at the code.  If you’re not using a public-key authentication, you’ll need to set <code>:password</code> in the <code>start</code> method.  The <code>upload!</code> method is a synchronous (blocking) upload.  If you’re uploading a lot of large files, you should consider using <code>upload</code> (no !) which will return immediately and continue processing your script while the upload is in progress.  Finally, instead of specifying the name of every file inside a directory, you can set <code>:recursive =&gt; true</code> and Net::SCP will create the directory on the remote server and upload the files contained in it.</p>
+
+<p>That’s it, the no-frills way to deploy a small static website.</p>
+          <div class="feedflare">
+<a href="http://feeds.feedburner.com/~f/encytemedia?a=01Xobg.P"><img src="http://feeds.feedburner.com/~f/encytemedia?i=01Xobg.P" border="0"></img></a> <a href="http://feeds.feedburner.com/~f/encytemedia?a=Yn4gIi.P"><img src="http://feeds.feedburner.com/~f/encytemedia?i=Yn4gIi.P" border="0"></img></a>
+</div>]]></content:encoded><description>&lt;p&gt;I recently had a couple of projects that consisted of a few static HTML files and a couple images.  I could have used a blog or lightweight CMS, but those were overkill.  I could use &lt;code&gt;scp&lt;/code&gt;, but remembering the &lt;code&gt;scp&lt;/code&gt; command every time I made a small change proved to be a hassle.   I could have used &lt;a href="http://www.capify.org"&gt;Capistrano&lt;/a&gt;, but that too, felt overboard for my simple needs.  Lucky for me, in addition to Capistrano, &lt;a href="http://weblog.jamisbuck.org/"&gt;Jamis Buck&lt;/a&gt; wrote &lt;a href="http://github.com/jamis/net-scp/tree/master"&gt;Net::SCP&lt;/a&gt; which was the perfect tool for the job.&lt;/p&gt;</description><feedburner:origLink>http://alternateidea.com/blog/articles/2008/10/8/deploying-static-websites-with-net-scp</feedburner:origLink></item><item><title>Programming Politics</title><link>http://feeds.feedburner.com/~r/encytemedia/~3/413624434/programming-politics</link><category>posts</category><category>apis</category><category>cnn</category><category>election</category><category>govtrack</category><category>ogosh</category><category>politics</category><category>transparency</category><category>twitter</category><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Justin</dc:creator><pubDate>Mon, 12 Jan 2009 11:24:59 -0600</pubDate><guid isPermaLink="false">tag:alternateidea.com,2008-10-07:4041</guid><content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[
+            <p>Could you imagine, for a moment, what the political scene would be like without the social media giants Memeorandum, Reddit, Twitter, Digg, and Youtube?  What about the old media websites that <a href="http://en.wikipedia.org/wiki/Cnn.com#Online">started as an experiment</a>, required a registration and charged for access to  content?  Yes, it’s hard to imagine, but it was only four short years ago that none of these social websites existed and the old media websites were merely second class citizens to their broadcast counterparts.  Meanwhile, while we’ve been caught up in the infinite streams of information, there has been a small, but highly motivated community of hackers opening up government in a whole new way, providing APIs ripe for mashups and experimentation.</p>
+<h3>The Post-Bush vs. Kerry Boom</h3>
+
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Reddit">Reddit</a> - <em>Founded 2005</em></li>
+<li><a href="http://en.wikipedia.org/wiki/Techmeme">Memeorandum &amp; Techmeme</a> - Founded September 12, 2005</li>
+<li><a href="http://en.wikipedia.org/wiki/Digg">Digg</a> - Launched December 5, 2004</li>
+<li><a href="http://en.wikipedia.org/wiki/Youtube">Youtube</a> - Created February 2005</li>
+<li><a href="http://en.wikipedia.org/wiki/Twitter">Twitter</a> - Officially launched October 2006</li>
+</ul>
+
+<p>It’s been a whirlwind of a political season.  In 2004, we might never have seen a <a href="http://www.reddit.com/search?q=bailout&amp;amp;x=0&amp;amp;y=0&amp;amp;sort=top">hoard of angry Redditors opposing the bailout</a>;  We’d have to do some real digging to find a video of <a href="http://www.youtube.com/watch?v=nH5ixmT83JE">Jeremiah Wright saying “God Damn America”</a>;  We’d be hard pressed to find <a href="http://www.youtube.com/watch?v=Fe751kMBwms">the speech that was the tipping point for “YES WE CAN”</a> and the <a href="http://www.youtube.com/watch?v=jjXyqcx-mYY">subsequent song and video inspired by that speech</a> that went on to win an Emmy.  We may have never been able to see <a href="http://www.c-spanarchives.org/library/index.php?main_page=product_video_info&amp;amp;products_id=195195-1">Sarah Palin in the Alaskan Gubernatorial Debate in 2006</a>.  You can almost conclude that anything that has happened in the last four years of politics can be found online in some form or fashion if your Google skills are up to par.</p>
+
+<p>Unlike today’s modern, up-to-the-minute websites, in 2004, old media websites such as <a href="http://cnn.com">CNN</a>, <a href="http://msnbc.com">MSNBC</a>, <a href="http://www.foxnews.com/">Fox News</a> were not so flattering.</p>
+
+<p><strong>CNN - Nov 5, 2004</strong>
+<img src="http://alternateidea.com/assets/2008/10/2/20081002-eckxh9s5k7nfnedpin1w1ssy97.jpg" alt="CNN Nov 5, 2004" />
+<br /><span>Kudos to those who spotted Obama winning the Illinois Senate</span></p>
+
+<p><strong>MSNBC - Oct 27, 2004</strong>
+<img src="http://alternateidea.com/assets/2008/10/2/msnbc-oct-27-2004-thumb.jpg" alt="MSNBC - Oct 27, 2004" /></p>
+
+<p><strong>FOX News - Oct 14, 2004</strong>
+<img src="http://alternateidea.com/assets/2008/10/2/foxnews-oct-14-2004-thumb.jpg" alt="FOX News - Oct 14, 2004" /></p>
+
+<h3>Pioneering the way.  Open APIs and Open Source efforts</h3>
+
+<p>I must admit, when I started to research Open Source efforts in government, I was skeptical.  I haven’t heard of much in passing, even given my rationale that tech news will always be accompanied by political news.  But, I pressed on and I was soon exposed to a small, but extremely active and knowledgeable community of Open Source hackers and organizations committed to bringing transparency to our government.</p>
+
+<p><strong>Govtrack: The Granddaddy of them all</strong> </p>
+
+<p>From my research, Govtrack is the data provider for an overwhelming majority of the websites I found.  Govtrack describes itself:</p>
+
+<blockquote>
+    <blockquote>
+        <blockquote>
+            <p>An independent, non-partisan, non-commercial website launched in September 2004, GovTrack.us was the first website whose primary goal was to provide comprehensive legislative tracking for everyday citizens and was the first congressional transparency website to embrace Web 2.0 and principles of open data. </p>
+        </blockquote>
+    </blockquote>
+</blockquote>
+
+<p>Earlier this year, Joshua Tauberer, the creator and primary maintainer of Govtrack decided to <a href="http://www.govtrack.us/source.xpd">open source the Govtrack application</a>.</p>
+
+<p><strong>Sunlight Foundation: The Incubator</strong></p>
+
+<p>Sunlight Foundation is the YCombinator of the open government movement (in spirit).  They give <a href="http://www.sunlightfoundation.com/grants/">small grants to help fund websites</a> whose mission is to open government and provide transparency in some fashion.</p>
+
+<h3>A List of Resources</h3>
+
+<h4>Open Data &amp; APIs</h4>
+
+<ul>
+<li><strong><a href="http://govtrack.us/data">Govtrack Congressional Data</a></strong> <span>[XML]</span> - Everything from votes to the full text of speeches.</li>
+<li><strong><a href="http://services.sunlightlabs.com/api/">Sunlight Labs API</a></strong> <span>[XML, JSON]</span> - A meta API that links candidates to external services such as Eventful, Govtrack, VoteSmart, etc.   Also provides a short bio.</li>
+<li><strong><a href="http://www.votesmart.org/services_api.php">Project Votesmart API</a></strong> <span>[XML, JSON]</span> - A wealth of information including votes grouped by issues, state, etc.</li>
+<li><strong><a href="http://www.votesmart.org/services_api.php">Watchdog</a></strong> <span>[N3, XML, JSON]</span> - Recently started by Reddit’s Cofounder, <a href="http://www.aaronsw.com/">Aaron Swartz</a>, contains all types of information relative to a candidate such as Interest Group Alignment, Earmark data, and Money.  This project can also be <a href="http://www.aaronsw.com/">found on GitHub</a>.</li>
+<li><strong><a href="http://metavid.org/wiki/Help:Advanced#APIs">Metavid US Legislative Footage API</a></strong> <span>[RSS, XML]</span> - A nice search API for public domain legislative videos.  Find when John McCain mention’s “my friends” and when Barack Obama mentions “change”.</li>
+<li><strong><a href="http://www.opensecrets.org/action/apis.php">Open Secrects</a></strong> <span>[XML, JSON]</span> - In depth tracking of campaign contributions.</li>
+<li><strong><a href="ftp://ftp.fec.gov/FEC/">FEC Data</a></strong> <span>[TXT, CSV, ZIP]</span> - FTP access to all the data collected by the Federal Election Commission.</li>
+<li><strong><a href="http://www.followthemoney.org/services/index.phtml">Follow The Money</a></strong> <span>[XML]</span> - State-level campaign donor data.</li>
+</ul>
+
+<h4>Mailing Lists</h4>
+
+<ul>
+<li><strong><a href="http://groups.yahoo.com/group/govtrack/">Govtrack developers list</a></strong> - Get help with Govtrack resources.</li>
+<li><strong><a href="http://groups.google.com/group/openhouseproject">Open House Project</a></strong> -A non-partisan group working to enhance public access to Congressional information.</li>
+<li><strong><a href="http://groups.google.com/group/poliparse">Open House Project</a></strong> -Dedicated to those who are parsing political data</li>
+<li><strong><a href="http://groups.google.com/group/watchdog-volunteers">Watchdog Volunteers</a></strong> - Volunteer collaboration for <a href="http://watchdog.net">watchdog.net</a></li>
+</ul>
+
+<h4>Other Resources</h4>
+
+<ul>
+<li><strong><a href="http://www.sourcewatch.org/index.php?title=Members_of_Congress_who_Twitter">Members of Congress who Twitter</a></strong> - Group effort to track congress on twitter fostered by the Sunlight Foundation</li>
+<li><strong><a href="http://www.facebook.com/group.php?gid=45606565313">oGosh Facebook Group</a></strong> - Open Government Open Source Hacking</li>
+<li><strong><a href="http://publicmarkup.org">Public Markup</a></strong> - Review and comment on proposed bills before they are even introduced—or while they are pending—in Congress.</li>
+</ul>
+          <div class="feedflare">
+<a href="http://feeds.feedburner.com/~f/encytemedia?a=CrXyEs.P"><img src="http://feeds.feedburner.com/~f/encytemedia?i=CrXyEs.P" border="0"></img></a> <a href="http://feeds.feedburner.com/~f/encytemedia?a=iePfrv.P"><img src="http://feeds.feedburner.com/~f/encytemedia?i=iePfrv.P" border="0"></img></a>
+</div>]]></content:encoded><description>&lt;p&gt;Could you imagine, for a moment, what the political scene would be like without the social media giants Memeorandum, Reddit, Twitter, Digg, and Youtube?  What about the old media websites that &lt;a href="http://en.wikipedia.org/wiki/Cnn.com#Online"&gt;started as an experiment&lt;/a&gt;, required a registration and charged for access to  content?  Yes, it’s hard to imagine, but it was only four short years ago that none of these social websites existed and the old media websites were merely second class citizens to their broadcast counterparts.  Meanwhile, while we’ve been caught up in the infinite streams of information, there has been a small, but highly motivated community of hackers opening up government in a whole new way, providing APIs ripe for mashups and experimentation.&lt;/p&gt;</description><feedburner:origLink>http://alternateidea.com/blog/articles/2008/10/7/programming-politics</feedburner:origLink></item><item><title>Track House And Senate Votes On Twitter</title><link>http://feeds.feedburner.com/~r/encytemedia/~3/403386207/track-house-and-senate-votes-on-twitter</link><category>tumble</category><category>url</category><category>government</category><category>legislate</category><category>politics</category><category>transparency</category><category>twitter</category><category>vote</category><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Justin</dc:creator><pubDate>Mon, 12 Jan 2009 11:25:22 -0600</pubDate><guid isPermaLink="false">tag:alternateidea.com,2008-09-26:4040</guid><description>&lt;p&gt;&lt;a href="http://twitter.com/legislate"&gt;Track House And Senate Votes On Twitter&lt;/a&gt;.  I’ve put together a small script that parses vote data collected by &lt;a href="http://govtrack.us"&gt;Govtrack.us&lt;/a&gt; and posts to twitter.&lt;/p&gt;&lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/encytemedia?a=tpm2yW.P"&gt;&lt;img src="http://feeds.feedburner.com/~f/encytemedia?i=tpm2yW.P" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/encytemedia?a=Azbh4S.P"&gt;&lt;img src="http://feeds.feedburner.com/~f/encytemedia?i=Azbh4S.P" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;</description><feedburner:origLink>http://alternateidea.com/blog/articles/2008/9/26/track-house-and-senate-votes-on-twitter</feedburner:origLink></item><item><title>Protip: Color grep searches in terminal</title><link>http://feeds.feedburner.com/~r/encytemedia/~3/348657920/protip-color-grep-searches-in-terminal</link><category>code</category><category>tumble</category><category>ansi</category><category>color</category><category>grep</category><category>osx</category><category>protip</category><category>snippet</category><category>terminal</category><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Justin</dc:creator><pubDate>Mon, 28 Jul 2008 15:54:24 -0500</pubDate><guid isPermaLink="false">tag:alternateidea.com,2008-07-28:3974</guid><description>&lt;pre&gt;&lt;code class="javascript"&gt;
+alias grep='GREP_COLOR=&amp;quot;1;37;41&amp;quot; LANG=C grep --color=auto'
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Stash this away in your Z Shell (~/.zshenv) or Bash environment (~/.bashrc) and set your preferred ANSI code.&lt;/p&gt;&lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/encytemedia?a=HkK8su.P"&gt;&lt;img src="http://feeds.feedburner.com/~f/encytemedia?i=HkK8su.P" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/encytemedia?a=yiqTyc.P"&gt;&lt;img src="http://feeds.feedburner.com/~f/encytemedia?i=yiqTyc.P" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;</description><feedburner:origLink>http://alternateidea.com/blog/articles/2008/7/28/protip-color-grep-searches-in-terminal</feedburner:origLink></item><item><title>MacRuby: The Path Forward</title><link>http://feeds.feedburner.com/~r/encytemedia/~3/314087707/macruby-the-path-forward</link><category>posts</category><category>macruby</category><category>objective-c</category><category>rubycocoa</category><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Justin</dc:creator><pubDate>Fri, 20 Jun 2008 12:45:48 -0500</pubDate><guid isPermaLink="false">tag:alternateidea.com,2008-06-17:3917</guid><content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[
+            <p><a href="http://ruby.macosforge.org/trac/wiki/MacRuby">MacRuby</a> is quietly making progress. Destined to replace <a href="http://rubycocoa.sourceforge.net/HomePage">RubyCocoa</a> as the de facto standard for writing Cocoa applications in Ruby; it’s shaping up to become more than just a fun experiment, it’ll soon be a viable choice.  </p>
+<h3>Burn Baby Burn</h3>
+
+<p>Unlike RubyCocoa, MacRuby is based on Ruby 1.9, powered by the YARV bytecode interpreter, resulting in significantly faster execution times.  From the <a href="http://ruby.macosforge.org/trac/wiki/WhyMacRuby">“Why MacRuby”</a> page:</p>
+
+<blockquote>
+    <p>In MacRuby, all Ruby classes and objects are actually Objective-C classes and objects. There is no need to create costly proxies, convert objects and cache instances. A Ruby object can be toll-free casted at the C level as an Objective-C object, and the Ruby VM can also handle incoming Objective-C objects without conversion.</p>
+    
+    <p>Also, the primitive Ruby classes, such as String, Array and Hash in MacRuby have been re-implemented on top of their Cocoa equivalents, respectively NSString, NSArray and NSDictionary. As an example, all strings in MacRuby are Cocoa strings, and can be passed to underlying C or Objective-C APIs that expect Cocoa strings without requiring a conversion. And it is possible to call any method of the String interface on any Cocoa string too.</p>
+</blockquote>
+
+<p>That’s exciting news. MacRuby applications significantly outperform RubyCocoa applications and aim to enable the creation of full-fledged Mac OS X applications which do not sacrifice performance in order to enjoy the benefits of using Ruby. </p>
+
+<h3>Syntax</h3>
+
+<p>Considering String, Array, and Hash/Dictionary require no conversion, we get both the Ruby methods and the Objective-C methods without needing to cast back and forth.</p>
+
+<pre><code class="ruby">
+#MacRuby
+components = &quot;foo/bar/baz&quot;.pathComponents
+
+# RubyCocoa
+components = &quot;foo/bar/baz&quot;.to_ns.pathComponents
+# or...
+components = OSX::NSString.stringWithString(&quot;foo/bar/baz&quot;).pathComponents
+
+#Objective-C
+NSArray *components = [@&quot;foo/bar/baz&quot; pathComponents];
+# or...
+NSArray *components = [[NSString stringWithString:@&quot;foo/bar/baz&quot;] pathComponents];
+</code></pre>
+
+<p>And the biggest change is probably keyed arguments.  I’ve grown to like keyed arguments in Objective-C because of their descriptive nature.  Normally you can look at a method definition and determine what’s what.</p>
+
+<pre><code class="ruby">
+def fetch_url(url, timeout)
+  ...
+end
+</code></pre>
+
+<p>However, unless you look up the method definition in the source or documentation, you don’t fully understand what the second argument encompasses during invocation. </p>
+
+<pre><code class="ruby">obj.fetch_url(&quot;http://foo.com&quot;, 60)</code></pre>
+
+<p>This is where keyed arguments come into play.  Take a look at how this method would be composed in Objective-C.</p>
+
+<pre><code class="ruby">
+- (void)fetchURL:(NSURL *)url timeout:(float)theTimeout {
+  ...
+}
+
+[obj fetchURL:[NSURL URLWithString:@&quot;http://foo.com&quot;] timeout:60.0];
+</code></pre>
+
+<p>And finally, we could write this method in MacRuby with the new keyed arguments syntax.</p>
+
+<pre><code class="ruby">
+def fetch_url(url, timeout:timeout)
+...
+end
+
+obj.fetch_url(&quot;http://foo.com&quot;, timeout:60.0)
+</code></pre>
+
+<p>We get the added benefit of clarity at the cost of verbosity.  And finally, there is an additional nuance: CamelCase or under_score.  I think I’ve settled with camelCase for now, because it’s not possible (practical ATM) to use underscored Objective-C methods, however, I’ve been told it’s being considered.</p>
+
+<h3>The Big Macs: macruby, macrake, macirb, macgem</h3>
+
+<p>Once you’ve set yourself up with MacRuby, you should know your programs are given a prefix of <strong>mac</strong> unless you specify a different prefix when compiling by hand.  This means we’ll need to use <code>macruby</code> to invoke our Ruby scripts written for MacRuby.  </p>
+
+<p>In a completely convoluted example, lets grab the name of every application running on our machine; print it’s application name, and replace “Applications” in it’s path with “FOO”.</p>
+
+<pre><code class="ruby">
+framework 'AppKit'
+
+NSWorkspace.sharedWorkspace.launchedApplications.each do |app|
+  appname  = app[&quot;NSApplicationName&quot;]
+  fullpath = app[&quot;NSApplicationPath&quot;]
+  puts appname
+  puts fullpath.stringByReplacingOccurrencesOfString(&quot;Applications&quot;, withString:&quot;FOO&quot;)
+end
+</code></pre>
+
+<p>Save this file and run with <code>macruby thisfile.rb</code>.  You should see a list of applications running and their paths, with FOO replacing Applications.  Got it?  Schweet!</p>
+
+<p><code>framework</code> is a new method of Kernel that allows you to import any framework, including your custom frameworks.  In this example, we’re including the AppKit framework and iterating over the launched applications.</p>
+
+<h4>Gems: A ruby in the rough</h4>
+
+<p>At the time of writing this article, <strong>it’s not possible to use rubygems or macruby gems</strong> in the traditional <code>require</code> and run method.  However, you can vendor your gems and include them directly which should work perfectly fine.  This is a bug that will be addressed very soon.</p>
+
+<h3>Get Involved</h3>
+
+<p>MacRuby is an official effort by Apple to make Ruby a first class citizen in Cocoa.  It’s still very early in development and you’re definitely encouraged to start playing with it, writing about it, and <a href="http://ruby.macosforge.org/trac/wiki/MacRuby">getting involved in the project</a>.  And one final note, you can join the very helpful #ruby-osx channel on freenode.net if you’re looking for assistance.</p>
+          <div class="feedflare">
+<a href="http://feeds.feedburner.com/~f/encytemedia?a=RDBnO"><img src="http://feeds.feedburner.com/~f/encytemedia?i=RDBnO" border="0"></img></a> <a href="http://feeds.feedburner.com/~f/encytemedia?a=P7ovO"><img src="http://feeds.feedburner.com/~f/encytemedia?i=P7ovO" border="0"></img></a>
+</div>]]></content:encoded><description>&lt;p&gt;&lt;a href="http://ruby.macosforge.org/trac/wiki/MacRuby"&gt;MacRuby&lt;/a&gt; is quietly making progress. Destined to replace &lt;a href="http://rubycocoa.sourceforge.net/HomePage"&gt;RubyCocoa&lt;/a&gt; as the de facto standard for writing Cocoa applications in Ruby; it’s shaping up to become more than just a fun experiment, it’ll soon be a viable choice.  &lt;/p&gt;</description><feedburner:origLink>http://alternateidea.com/blog/articles/2008/6/17/macruby-the-path-forward</feedburner:origLink></item><item><title>ActiveRecord Ported To Objective-C</title><link>http://feeds.feedburner.com/~r/encytemedia/~3/307553334/activerecord-ported-to-objective-c</link><category>tumble</category><category>url</category><category>activerecord</category><category>cocoa</category><category>objective-c</category><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Justin</dc:creator><pubDate>Sun, 08 Jun 2008 15:59:19 -0500</pubDate><guid isPermaLink="false">tag:alternateidea.com,2008-06-08:3910</guid><description>&lt;p&gt;&lt;a href="http://code.google.com/p/activerecord/"&gt;ActiveRecord Ported To Objective-C&lt;/a&gt; brought to us by &lt;a href="http://ninjakitten.us"&gt;Ninja Kitten&lt;/a&gt;&lt;/p&gt;&lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/encytemedia?a=e87ijv.P"&gt;&lt;img src="http://feeds.feedburner.com/~f/encytemedia?i=e87ijv.P" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/encytemedia?a=CyYMlB.P"&gt;&lt;img src="http://feeds.feedburner.com/~f/encytemedia?i=CyYMlB.P" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;</description><feedburner:origLink>http://alternateidea.com/blog/articles/2008/6/8/activerecord-ported-to-objective-c</feedburner:origLink></item><item><title>Browser-based Developer Tools Come Full Circle</title><link>http://feeds.feedburner.com/~r/encytemedia/~3/284958171/browser-based-developer-tools-come-full-circle</link><category>longquote</category><category>tumble</category><category>devtools</category><category>dragonfly</category><category>drosera</category><category>firebug</category><category>firefox</category><category>ie8</category><category>opera</category><category>safari</category><category>webinspector</category><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Justin</dc:creator><pubDate>Tue, 06 May 2008 17:26:19 -0500</pubDate><guid isPermaLink="false">tag:alternateidea.com,2008-05-06:3755</guid><description>&lt;p&gt;With the release of Opera’s &lt;a href="http://www.opera.com/products/dragonfly/"&gt;DragonFly&lt;/a&gt;, IE 8’s &lt;a href="http://msdn.microsoft.com/en-us/library/cc304131.aspx"&gt;Developer tools&lt;/a&gt;, Safari’s/Webkit’s &lt;a href="http://webkit.org/blog/108/yet-another-one-more-thing-a-new-web-inspector/"&gt;Web Inspector&lt;/a&gt; and &lt;a href="http://trac.webkit.org/wiki/Drosera"&gt;Drosera&lt;/a&gt;; and the Grand Daddy of them all, &lt;a href="http://www.getfirebug.com/"&gt;Firebug&lt;/a&gt; – we’ve now come full circle.&lt;/p&gt;&lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/encytemedia?a=gBrbO"&gt;&lt;img src="http://feeds.feedburner.com/~f/encytemedia?i=gBrbO" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/encytemedia?a=GCGXO"&gt;&lt;img src="http://feeds.feedburner.com/~f/encytemedia?i=GCGXO" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;</description><feedburner:origLink>http://alternateidea.com/blog/articles/2008/5/6/browser-based-developer-tools-come-full-circle</feedburner:origLink></item><item><title>Automating Rick Rolls with launchd</title><link>http://feeds.feedburner.com/~r/encytemedia/~3/281705146/automating-rick-rolls-with-launchd</link><category>posts</category><category>launchctl</category><category>launchd</category><category>rickroll</category><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Justin</dc:creator><pubDate>Thu, 01 May 2008 17:09:18 -0500</pubDate><guid isPermaLink="false">tag:alternateidea.com,2008-05-01:3747</guid><content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[
+            <p>Lets face it:  Your coworkers can be a real pain in the ass sometimes.  What better way 
+to remind them of this than automated Rick rolls?  They’re likely to never know what hit them.</p>
+<h3>What is launchd?</h3>
+
+<p>According to the <a href="http://developer.apple.com/macosx/launchd.html">launchd guide on Apple’s website</a>:</p>
+
+<blockquote>
+    <p>The launchd daemon takes over many tasks from cron, xinetd, mach_init, and init, 
+    which are UNIX programs that traditionally have handled system initialization, called 
+    systems scripts, run startup items, and generally prepared the system for the user</p>
+</blockquote>
+
+<p>launchd stores tasks in <code>plist</code> format.  You can find your agents in ~/Library/LaunchAgents.
+Here is a typical launcd file that will open iTunes every 60 seconds:</p>
+
+<pre><code class="html">
+  &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+  &lt;!DOCTYPE plist PUBLIC &quot;-//Apple//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;
+  &lt;plist version=&quot;1.0&quot;&gt;
+  &lt;dict&gt;
+    &lt;key&gt;Label&lt;/key&gt;
+    &lt;string&gt;com.alternateidea.article.test&lt;/string&gt;
+    &lt;key&gt;ProgramArguments&lt;/key&gt;
+    &lt;array&gt;
+        &lt;string&gt;/usr/bin/open&lt;/string&gt;
+        &lt;string&gt;-b&lt;/string&gt;
+    &lt;string&gt;com.apple.iTunes&lt;/string&gt;
+    &lt;/array&gt;
+    &lt;key&gt;RunAtLoad&lt;/key&gt;
+    &lt;false/&gt;
+    &lt;key&gt;StartInterval&lt;/key&gt;
+    &lt;integer&gt;60&lt;/integer&gt;
+  &lt;/dict&gt;
+  &lt;/plist&gt;
+</code></pre>
+
+<p>Obviously this would be seriously annoying, but for the purpose of this demonstration, 
+save this file as “com.alternateidea.article.test” in your ~/Library/LaunchAgents folder.</p>
+
+<p>This script won’t run automatically, so we need to load it up first using the <code>launchctl</code> 
+program:</p>
+
+<pre><code>launchctl load ~/Library/LaunchAgents/com.alternateidea.article.test.plist</code></pre>
+
+<p>Our agent is loaded up now.  After 60 seconds, you should see iTunes.app open.  Pretty nice, eh?</p>
+
+<p>Ok, so we don’t want to keep running this agent.  Lets unload it:</p>
+
+<pre><code>launchctl unload ~/Library/LaunchAgents/com.alternateidea.article.test.plist</code></pre>
+
+<h3>Never gonna give you up.  Never gonna automate your Mac.</h3>
+
+<p>So, here’s the trick:  Wait until your coworker goes to lunch or you know they’ll be out of the 
+office for 10 minutes or so.  Then, let the mischief begin. </p>
+
+<p>The first thing we need to do is create our agent:</p>
+
+<pre><code class="html">
+  &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+  &lt;!DOCTYPE plist PUBLIC &quot;-//Apple//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;
+  &lt;plist version=&quot;1.0&quot;&gt;
+  &lt;dict&gt;
+    &lt;key&gt;Label&lt;/key&gt;
+    &lt;string&gt;com.youtube.rickroll&lt;/string&gt;
+    &lt;key&gt;ProgramArguments&lt;/key&gt;
+    &lt;array&gt;
+        &lt;string&gt;/usr/bin/open&lt;/string&gt;
+        &lt;string&gt;-b&lt;/string&gt;
+            &lt;string&gt;com.apple.Safari&lt;/string&gt;
+            &lt;string&gt;http://www.youtube.com/watch?v=eBGIQ7ZuuiU&lt;/string&gt;
+    &lt;/array&gt;
+    &lt;key&gt;RunAtLoad&lt;/key&gt;
+    &lt;false/&gt;
+    &lt;key&gt;StartInterval&lt;/key&gt;
+    &lt;integer&gt;1800&lt;/integer&gt;
+  &lt;/dict&gt;
+  &lt;/plist&gt;
+</code></pre>
+
+<p>Everything should be pretty obvious in this plist.  The <code>StartInterval</code> is in seconds.  I 
+want to be an asshole every 30 minutes (1800) seconds.  If you want to be a bigger asshole 
+(or <a href="http://www.youtube.com/watch?v=9xhsKB0rvXg">Son of a Bitch</a>) you could set this to run in 
+shorter intervals. </p>
+
+<p>Now, we need to save this and load it up on your coworkers computer.  Save this 
+to <code>~/Library/USERNAME/LaunchAgents/com.youtube.rickroll</code>.  And load it up:</p>
+
+<pre><code>
+  launchctl load ~/Library/LaunchAgents/com.youtube.rickroll.plist
+</code></pre>
+
+<p>If you want to test and make sure everything is in working order, you can run:</p>
+
+<pre><code>launchctl start com.youtube.rickroll</code></pre>
+
+<p><strong>Question:</strong> Did you just Rick Roll yourself?</p>
+
+<p>Now, if your test ran successfully slip back to your desk and wait in anticipation for that 
+awesome intro.</p>
+
+<p><strong>Disclaimer:  If you destroy your coworkers computer or end up scrapping in the street, I’m not responsible.</strong></p>
+          <div class="feedflare">
+<a href="http://feeds.feedburner.com/~f/encytemedia?a=EvxTL5.P"><img src="http://feeds.feedburner.com/~f/encytemedia?i=EvxTL5.P" border="0"></img></a> <a href="http://feeds.feedburner.com/~f/encytemedia?a=tIDnB3.P"><img src="http://feeds.feedburner.com/~f/encytemedia?i=tIDnB3.P" border="0"></img></a>
+</div>]]></content:encoded><description>&lt;p&gt;Lets face it:  Your coworkers can be a real pain in the ass sometimes.  What better way 
+to remind them of this than automated Rick rolls?  They’re likely to never know what hit them.&lt;/p&gt;</description><feedburner:origLink>http://alternateidea.com/blog/articles/2008/5/1/automating-rick-rolls-with-launchd</feedburner:origLink></item><item><title>DoubleClick and Define using Apple Dictionary</title><link>http://feeds.feedburner.com/~r/encytemedia/~3/231880112/javascript-define-with-apple-dictionary</link><category>code</category><category>tumble</category><category>dictionary</category><category>javascript</category><category>osx</category><category>snippet</category><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Justin</dc:creator><pubDate>Fri, 08 Feb 2008 16:40:45 -0600</pubDate><guid isPermaLink="false">tag:alternateidea.com,2008-02-08:3612</guid><description>&lt;pre&gt;&lt;code class="javascript"&gt;
+var selection;
+if(window.getSelection)
+  selection = window.getSelection();
+else if(document.selection)
+  selection = document.selection.createRange();
+
+document.observe(&amp;quot;dblclick&amp;quot;, function() {
+  if(navigator.userAgent.include(&amp;quot;Macintosh&amp;quot;)) {
+      location.href = &amp;quot;dict://&amp;quot; + selection;
+    }
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A quick (and probably dirty) Prototype-based hack allowing Mac users to get the definition of any word by double clicking it.&lt;/p&gt;&lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/encytemedia?a=BjJH2Y.P"&gt;&lt;img src="http://feeds.feedburner.com/~f/encytemedia?i=BjJH2Y.P" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/encytemedia?a=07p86L.P"&gt;&lt;img src="http://feeds.feedburner.com/~f/encytemedia?i=07p86L.P" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;</description><feedburner:origLink>http://alternateidea.com/blog/articles/2008/2/8/javascript-define-with-apple-dictionary</feedburner:origLink></item><item><title>A strftime for Prototype</title><link>http://feeds.feedburner.com/~r/encytemedia/~3/231873733/a-strftime-for-prototype</link><category>code</category><category>tumble</category><category>javascript</category><category>prototype</category><category>snippet</category><category>strftime</category><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Justin</dc:creator><pubDate>Tue, 26 Feb 2008 18:44:02 -0600</pubDate><guid isPermaLink="false">tag:alternateidea.com,2008-02-08:3645</guid><description>&lt;pre&gt;&lt;code class="javascript"&gt;
+Object.extend(Date.prototype, {
+  strftime: function(format) {
+    var day = this.getUTCDay(), month = this.getUTCMonth();
+    var hours = this.getUTCHours(), minutes = this.getUTCMinutes();
+    function pad(num) { return num.toPaddedString(2); };
+
+    return format.gsub(/\%([aAbBcdDHiImMpSwyY])/, function(part) {
+      switch(part[1]) {
+        case 'a': return $w(&amp;quot;Sun Mon Tue Wed Thu Fri Sat&amp;quot;)[day]; break;
+        case 'A': return $w(&amp;quot;Sunday Monday Tuesday Wednesday Thursday Friday Saturday&amp;quot;)[day]; break;
+        case 'b': return $w(&amp;quot;Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec&amp;quot;)[month]; break;
+        case 'B': return $w(&amp;quot;January February March April May June July August September October November December&amp;quot;)[month]; break;
+        case 'c': return this.toString(); break;
+        case 'd': return this.getUTCDate(); break;
+        case 'D': return pad(this.getUTCDate()); break;
+        case 'H': return pad(hours); break;
+        case 'i': return (hours === 12 || hours === 0) ? 12 : (hours + 12) % 12; break;
+        case 'I': return pad((hours === 12 || hours === 0) ? 12 : (hours + 12) % 12); break;
+        case 'm': return pad(month + 1); break;
+        case 'M': return pad(minutes); break;
+        case 'p': return hours &amp;gt; 11 ? 'PM' : 'AM'; break;
+        case 'S': return pad(this.getUTCSeconds()); break;
+        case 'w': return day; break;
+        case 'y': return pad(this.getUTCFullYear() % 100); break;
+        case 'Y': return this.getUTCFullYear().toString(); break;
+      }
+    }.bind(this));
+  }
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;UPDATE:&lt;/strong&gt; Bugs fixed.  Thanks &lt;a href="http://andrewdupont.net/"&gt;Andrew&lt;/a&gt; and &lt;a href="http://www.designkitchen.com/"&gt;Stephen&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Also, some of my old and new code has been posted on &lt;a href="http://github.com/Caged/javascript-bits/"&gt;GitHub&lt;/a&gt;.  You might find something useful.&lt;/p&gt;&lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/encytemedia?a=6WjlQo.P"&gt;&lt;img src="http://feeds.feedburner.com/~f/encytemedia?i=6WjlQo.P" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/encytemedia?a=qPhAnq.P"&gt;&lt;img src="http://feeds.feedburner.com/~f/encytemedia?i=qPhAnq.P" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;</description><feedburner:origLink>http://alternateidea.com/blog/articles/2008/2/8/a-strftime-for-prototype</feedburner:origLink></item><item><title>Processing in Action</title><link>http://feeds.feedburner.com/~r/encytemedia/~3/229166772/processing-in-action</link><category>tumble</category><category>video</category><category>fire</category><category>flight404</category><category>music</category><category>organic</category><category>processing</category><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Justin</dc:creator><pubDate>Mon, 04 Feb 2008 16:17:16 -0600</pubDate><guid isPermaLink="false">tag:alternateidea.com,2008-02-04:3640</guid><description>&lt;p&gt;&amp;lt;object height="225" width="400"&gt; &amp;lt;param /&gt;   &amp;lt;param /&gt;   &amp;lt;param /&gt;  &amp;lt;param /&gt;&amp;lt;/object&gt;&lt;/p&gt;
+
+&lt;p&gt;A beautiful, organic animation by &lt;a href="http://www.flight404.com/blog/"&gt;Flight404&lt;/a&gt; created using &lt;a href="http://processing.org"&gt;Processing&lt;/a&gt;.&lt;/p&gt;&lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/encytemedia?a=M4UyL"&gt;&lt;img src="http://feeds.feedburner.com/~f/encytemedia?i=M4UyL" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/encytemedia?a=jMmvL"&gt;&lt;img src="http://feeds.feedburner.com/~f/encytemedia?i=jMmvL" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;</description><feedburner:origLink>http://alternateidea.com/blog/articles/2008/2/4/processing-in-action</feedburner:origLink></item><item><title>Calling Ruby from JavaScript</title><link>http://feeds.feedburner.com/~r/encytemedia/~3/213480625/calling-ruby-from-javascript</link><category>tumble</category><category>url</category><category>javascript</category><category>javascript2ruby</category><category>racc</category><category>rkelly</category><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Justin</dc:creator><pubDate>Tue, 08 Jan 2008 17:53:47 -0600</pubDate><guid isPermaLink="false">tag:alternateidea.com,2008-01-08:3610</guid><description>&lt;p&gt;Aaron Patterson shows us how to &lt;a href="http://tenderlovemaking.com/2008/01/03/happy-new-year-rkelly-progress-report/"&gt;define ruby methods which can be called from JavaScript&lt;/a&gt; using RKelly.&lt;/p&gt;&lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/encytemedia?a=VJo7L"&gt;&lt;img src="http://feeds.feedburner.com/~f/encytemedia?i=VJo7L" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/encytemedia?a=WvYTL"&gt;&lt;img src="http://feeds.feedburner.com/~f/encytemedia?i=WvYTL" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;</description><feedburner:origLink>http://alternateidea.com/blog/articles/2008/1/8/calling-ruby-from-javascript</feedburner:origLink></item><item><title>Pimp My JavaScript Skillz</title><link>http://feeds.feedburner.com/~r/encytemedia/~3/212888709/pimp-my-javascript-skillz</link><category>tumble</category><category>url</category><category>designpatterns</category><category>javascript</category><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Justin</dc:creator><pubDate>Mon, 07 Jan 2008 18:30:30 -0600</pubDate><guid isPermaLink="false">tag:alternateidea.com,2008-01-08:3608</guid><description>&lt;p&gt;Dustin might not surprise you at your house with a book in hand, but he’ll damn sure send you his innermost fu in the form of a shiny yellow and black book.  It’s an excellent read if you’re looking to put more &lt;a href="http://www.rickjames.com/"&gt;funk&lt;/a&gt; in your functions and class in your classes.  Check out &lt;a href="http://jsdesignpatterns.com"&gt;“Pro JavaScript Design Patterns”&lt;/a&gt; by Dustin and Ross Harmes.&lt;/p&gt;
+
+&lt;p&gt;&amp;mdash;I’m Justin Palmer and I approve this message.&lt;/p&gt;&lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/encytemedia?a=TQvmek.P"&gt;&lt;img src="http://feeds.feedburner.com/~f/encytemedia?i=TQvmek.P" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/encytemedia?a=Zuk7sK.P"&gt;&lt;img src="http://feeds.feedburner.com/~f/encytemedia?i=Zuk7sK.P" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;</description><feedburner:origLink>http://alternateidea.com/blog/articles/2008/1/8/pimp-my-javascript-skillz</feedburner:origLink></item></channel></rss>

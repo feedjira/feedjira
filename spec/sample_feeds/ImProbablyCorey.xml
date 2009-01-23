@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:media="http://search.yahoo.com/mrss/"
+	>
+
+<channel>
+	<title>I'm Probably Corey</title>
+	<atom:link href="http://probablycorey.wordpress.com/feed/" rel="self" type="application/rss+xml" />
+	<link>http://probablycorey.wordpress.com</link>
+	<description></description>
+	<pubDate>Sat, 26 Apr 2008 20:03:31 +0000</pubDate>
+	<generator>http://wordpress.org/?v=MU</generator>
+	<language>en</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<image>
+		<url>http://www.gravatar.com/blavatar/f7a26c7162ea0f6507612ed2419d1f8b?s=96&#038;d=http://s.wordpress.com/i/buttonw-com.png</url>
+		<title>I'm Probably Corey</title>
+		<link>http://probablycorey.wordpress.com</link>
+	</image>
+			<item>
+		<title>POW!</title>
+		<link>http://probablycorey.wordpress.com/2008/04/26/pow/</link>
+		<comments>http://probablycorey.wordpress.com/2008/04/26/pow/#comments</comments>
+		<pubDate>Sat, 26 Apr 2008 20:01:30 +0000</pubDate>
+		<dc:creator>probablycorey</dc:creator>
+		
+		<category><![CDATA[ruby]]></category>
+
+		<guid isPermaLink="false">http://probablycorey.wordpress.com/?p=13</guid>
+		<description><![CDATA[Ever get frustrated dealing with files or directories in ruby? Maybe it&#8217;s just me, but using File, Dir, FileUtils, Pathname, etc makes me queasy. So I wrote POW! to make life easier.
+Git it here http://github.com/probablycorey/pow
+or sudo gem install pow
+Since path manipulation is kind of boring, I&#8217;ll just give a few examples of how it&#8217;s helped [...]<img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=probablycorey.wordpress.com&blog=2577425&post=13&subd=probablycorey&ref=&feed=1" />]]></description>
+			<content:encoded><![CDATA[<div class='snap_preview'><br /><p>Ever get frustrated dealing with files or directories in ruby? Maybe it&#8217;s just me, but using File, Dir, FileUtils, Pathname, etc makes me queasy. So I wrote POW! to make life easier.</p>
+<p>Git it here <a href="http://github.com/probablycorey/pow">http://github.com/probablycorey/pow</a></p>
+<p>or <strong>sudo gem install pow</strong></p>
+<p>Since path manipulation is kind of boring, I&#8217;ll just give a few examples of how it&#8217;s helped me. Consider this directory structure&#8230;</p>
+<pre>/tmp
+  /sub_dir
+    /deeper_dir
+  /extra_dir
+  file.txt
+  program
+  README
+</pre>
+<p></p>
+<p><strong>To open a directory</strong></p>
+<pre name="code" class="ruby">
+
+path = Pow(&quot;tmp&quot;)
+</pre>
+<p><strong>Open a file</strong></p>
+<pre name="code" class="ruby">
+
+Pow(:tmp, :sub_dir, :file.txt) do |file|
+  # All the stuff you usually do with an open file!
+  file.read
+end
+</pre>
+<p><strong><br />
+Check out what&#8217;s inside a directory</strong></p>
+<pre name="code" class="ruby">
+
+path = Pow(&quot;tmp&quot;)
+path.each {|child| puts &quot;#{child} - #{child.class.name}!&quot; }
+
+# Output!
+# -------
+/tmp/README - Pow::File
+/tmp/subdir - Pow::Directory
+/tmp/sub_dir/deeper_dir - Pow::Directory
+/tmp/sub_dir/file.txt - Pow::File
+/tmp/sub_dir/program - Pow::File
+/tmp/extra_dir - Pow::Directory
+</pre>
+<p><strong>Access a file in that directory</strong></p>
+<pre name="code" class="ruby">
+
+# The / operator accepcts symbols, strings or other Pow objects
+file = path / :subdir / &quot;file.txt&quot;
+
+# You can also use brackets to access paths
+file = path[:subdir, &quot;file.txt&quot;]
+</pre>
+<p><strong>Create nested directories</strong></p>
+<pre name="code" class="ruby">
+
+# Great for code generation
+
+Pow(&quot;MOAR&quot;).create do
+Pow(&quot;sub_dir&quot;).create do
+Pow(&quot;info.txt&quot;).create do |file|
+  file.puts &quot;Here is the info you desired!&quot;
+end
+
+Pow(&quot;README&quot;).create_file do |file|
+  file.puts &quot;I&#039;m so glad you read this.&quot;
+end
+
+# Creates directory structure
+/MOAR
+  /sub_dir
+    info.txt
+  README
+</pre>
+<p><strong>Sort a bunch of files by the modified date</strong></p>
+<pre name="code" class="ruby">
+
+Pow(&quot;images&quot;).files.sort_by {|file| file.modified_at}
+</pre>
+<img alt="" border="0" src="http://feeds.wordpress.com/1.0/categories/probablycorey.wordpress.com/13/" /> <img alt="" border="0" src="http://feeds.wordpress.com/1.0/tags/probablycorey.wordpress.com/13/" /> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gocomments/probablycorey.wordpress.com/13/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/probablycorey.wordpress.com/13/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godelicious/probablycorey.wordpress.com/13/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/delicious/probablycorey.wordpress.com/13/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gostumble/probablycorey.wordpress.com/13/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/stumble/probablycorey.wordpress.com/13/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godigg/probablycorey.wordpress.com/13/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/digg/probablycorey.wordpress.com/13/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/goreddit/probablycorey.wordpress.com/13/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/reddit/probablycorey.wordpress.com/13/" /></a> <img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=probablycorey.wordpress.com&blog=2577425&post=13&subd=probablycorey&ref=&feed=1" /></div>]]></content:encoded>
+			<wfw:commentRss>http://probablycorey.wordpress.com/2008/04/26/pow/feed/</wfw:commentRss>
+	
+		<media:content url="http://www.gravatar.com/avatar/ad2c4ad6157960abb72c99a0c8d2eaee?s=96&#38;d=identicon" medium="image">
+			<media:title type="html">probablycorey</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>Abusing Ruby&#8217;s question mark methods.</title>
+		<link>http://probablycorey.wordpress.com/2008/03/28/abusing-rubys-question-mark-methods/</link>
+		<comments>http://probablycorey.wordpress.com/2008/03/28/abusing-rubys-question-mark-methods/#comments</comments>
+		<pubDate>Fri, 28 Mar 2008 14:25:24 +0000</pubDate>
+		<dc:creator>probablycorey</dc:creator>
+		
+		<category><![CDATA[ruby]]></category>
+
+		<category><![CDATA[meta]]></category>
+
+		<guid isPermaLink="false">http://probablycorey.wordpress.com/?p=10</guid>
+		<description><![CDATA[I&#8217;ve always enjoyed the ruby convention of using question marks to denote boolean methods. empty?, exist?, any?, alive?, etc&#8230; They&#8217;re concise and easy to read. I do have one gripe with it, sometimes testing the inverse makes my code read like yoda wrote it.
+
+
+not sting.empty?
+not path.file?
+not param.blank?
+
+In rails I use not something.blank? a lot, so [...]<img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=probablycorey.wordpress.com&blog=2577425&post=10&subd=probablycorey&ref=&feed=1" />]]></description>
+			<content:encoded><![CDATA[<div class='snap_preview'><br /><p>I&#8217;ve always enjoyed the ruby convention of using question marks to denote boolean methods. <b><i>empty?</i></b>, <b><i>exist?</i></b>, <b><i>any?</i></b>, <b><i>alive?</i></b>, etc&#8230; They&#8217;re concise and easy to read. I do have one gripe with it, sometimes testing the inverse makes my code read like yoda wrote it.</p>
+<pre name="code" class="ruby">
+
+not sting.empty?
+not path.file?
+not param.blank?
+</pre>
+<p>In rails I use <b><i>not something.blank?</i></b> a lot, so creating a <b><i>not_blank?</i></b> method wrapper around <b><i>blank?</i></b> was a nice simple fix. But I&#8217;m lazy and easily give into the temptation of the dark side, so I created a <a href="http://en.wikipedia.org/wiki/Bizarro">Bizarro</a> Object. Which lets me do this&#8230;</p>
+<pre name="code" class="ruby">
+
+# Meaningless examples that prove my point
+
+&quot;&quot;.not.empty?       #=&gt; false
+&quot;words&quot;.not.empty?  #=&gt; true
+
+0.not.zero?         #=&gt; false
+1.not.zero?         #=&gt; true
+</pre>
+<p>And here is the bit of code that makes it work&#8230;</p>
+<pre name="code" class="ruby">
+
+class BizarroObject
+  # Since this is a proxy, get rid of every default method
+  # Copied from Jim Weirich&#039;s BlankSlate class
+  # http://onestepback.org/index.cgi/Tech/Ruby/BlankSlate.rdoc
+  instance_methods.each { |m| undef_method m unless m =~ /^__/ }
+
+  # Takes an object as a parameter and will invert the return values of all it&#039;s methods.
+  def initialize(object)
+    @object = object
+  end
+
+  def method_missing(symbol, *args)
+    !@object.send(symbol, *args)
+  end
+end
+
+class Object
+  # This is where the proxy/bizarro object is created
+  def not
+    BizarroObject.new(self)
+  end
+end
+</pre>
+<p>It&#8217;s not optimized, and it&#8217;s a little ridiculous, but I love that ruby lets me abuse it like this.</p>
+<img alt="" border="0" src="http://feeds.wordpress.com/1.0/categories/probablycorey.wordpress.com/10/" /> <img alt="" border="0" src="http://feeds.wordpress.com/1.0/tags/probablycorey.wordpress.com/10/" /> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gocomments/probablycorey.wordpress.com/10/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/probablycorey.wordpress.com/10/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godelicious/probablycorey.wordpress.com/10/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/delicious/probablycorey.wordpress.com/10/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gostumble/probablycorey.wordpress.com/10/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/stumble/probablycorey.wordpress.com/10/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godigg/probablycorey.wordpress.com/10/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/digg/probablycorey.wordpress.com/10/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/goreddit/probablycorey.wordpress.com/10/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/reddit/probablycorey.wordpress.com/10/" /></a> <img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=probablycorey.wordpress.com&blog=2577425&post=10&subd=probablycorey&ref=&feed=1" /></div>]]></content:encoded>
+			<wfw:commentRss>http://probablycorey.wordpress.com/2008/03/28/abusing-rubys-question-mark-methods/feed/</wfw:commentRss>
+	
+		<media:content url="http://www.gravatar.com/avatar/ad2c4ad6157960abb72c99a0c8d2eaee?s=96&#38;d=identicon" medium="image">
+			<media:title type="html">probablycorey</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>Git hooks make me giddy</title>
+		<link>http://probablycorey.wordpress.com/2008/03/07/git-hooks-make-me-giddy/</link>
+		<comments>http://probablycorey.wordpress.com/2008/03/07/git-hooks-make-me-giddy/#comments</comments>
+		<pubDate>Fri, 07 Mar 2008 16:16:29 +0000</pubDate>
+		<dc:creator>probablycorey</dc:creator>
+		
+		<category><![CDATA[git]]></category>
+
+		<category><![CDATA[ruby]]></category>
+
+		<guid isPermaLink="false">http://probablycorey.wordpress.com/?p=9</guid>
+		<description><![CDATA[I have a rails project that is too wily for autotest, but I still want a simple way to make sure my tests are passing. Using git hooks is a simple solution to this problem.
+Git Hooks?
+Hooks (more info here) are little scripts that git triggers after certain commands. They are located in your projects GIT_DIR/hooks [...]<img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=probablycorey.wordpress.com&blog=2577425&post=9&subd=probablycorey&ref=&feed=1" />]]></description>
+			<content:encoded><![CDATA[<div class='snap_preview'><br /><p>I have a rails project that is too wily for autotest, but I still want a simple way to make sure my tests are passing. Using git hooks is a simple solution to this problem.</p>
+<p><b>Git Hooks?</b><br />
+Hooks (<a href="http://www.kernel.org/pub/software/scm/git/docs/hooks.html">more info here</a>) are little scripts that git triggers after certain commands. They are located in your projects <i>GIT_DIR/hooks</i> directory and are disabled by default. To enable them just <i>chmod +x</i> the hook you want to run.</p>
+<p><b>How is this helpful for testing?</b><br />
+You can run your specs from the <i>GIT_DIR/hooks/pre-commit</i> hook! The script is run every time you call <i>git commit</i>. If the script exits with a non-zero status your changes won&#8217;t be committed and you can scurry to fix your specs. Here is a little example of how I&#8217;m using in one of my apps</p>
+<pre name="code" class="ruby">
+
+#!/usr/bin/env ruby
+
+html_path = &quot;spec_results.html&quot;
+
+`spec -f h:#{html_path} -f p spec` # run the spec. send progress to screen. save html results to html_path
+
+# find out how many errors were found
+html = open(html_path).read
+examples = html.match(/(\d+) examples/)[0].to_i rescue 0
+failures = html.match(/(\d+) failures/)[0].to_i rescue 0
+pending = html.match(/(\d+) pending/)[0].to_i rescue 0
+
+if failures.zero?
+  puts &quot;0 failures! #{examples} run, #{pending} pending&quot;
+else
+  puts &quot;\aDID NOT COMMIT YOUR FILES!&quot;
+  puts &quot;View spec results at #{File.expand_path(html_path)}&quot;
+  puts
+  puts &quot;#{failures} failures! #{examples} run, #{pending} pending&quot;
+  exit 1
+end
+</pre>
+<img alt="" border="0" src="http://feeds.wordpress.com/1.0/categories/probablycorey.wordpress.com/9/" /> <img alt="" border="0" src="http://feeds.wordpress.com/1.0/tags/probablycorey.wordpress.com/9/" /> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gocomments/probablycorey.wordpress.com/9/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/probablycorey.wordpress.com/9/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godelicious/probablycorey.wordpress.com/9/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/delicious/probablycorey.wordpress.com/9/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gostumble/probablycorey.wordpress.com/9/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/stumble/probablycorey.wordpress.com/9/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godigg/probablycorey.wordpress.com/9/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/digg/probablycorey.wordpress.com/9/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/goreddit/probablycorey.wordpress.com/9/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/reddit/probablycorey.wordpress.com/9/" /></a> <img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=probablycorey.wordpress.com&blog=2577425&post=9&subd=probablycorey&ref=&feed=1" /></div>]]></content:encoded>
+			<wfw:commentRss>http://probablycorey.wordpress.com/2008/03/07/git-hooks-make-me-giddy/feed/</wfw:commentRss>
+	
+		<media:content url="http://www.gravatar.com/avatar/ad2c4ad6157960abb72c99a0c8d2eaee?s=96&#38;d=identicon" medium="image">
+			<media:title type="html">probablycorey</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>Ruby Equality! equal? eql? == and ===</title>
+		<link>http://probablycorey.wordpress.com/2008/02/26/ruby-equality-equal-eql-and/</link>
+		<comments>http://probablycorey.wordpress.com/2008/02/26/ruby-equality-equal-eql-and/#comments</comments>
+		<pubDate>Wed, 27 Feb 2008 01:37:11 +0000</pubDate>
+		<dc:creator>probablycorey</dc:creator>
+		
+		<category><![CDATA[ruby]]></category>
+
+		<guid isPermaLink="false">http://probablycorey.wordpress.com/?p=7</guid>
+		<description><![CDATA[The equality methods in ruby confuse me about once a month. So it&#8217;s time to permanently embed this information into my brain.
+The first confusing part is remembering which object is doing the comparing.
+
+
+1 == 2
+# It makes more sense if you think of it like this
+1.==(2)
+
+1 calls it&#8217;s method == with the argument 2. I [...]<img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=probablycorey.wordpress.com&blog=2577425&post=7&subd=probablycorey&ref=&feed=1" />]]></description>
+			<content:encoded><![CDATA[<div class='snap_preview'><br /><p>The equality methods in ruby confuse me about once a month. So it&#8217;s time to permanently embed this information into my brain.</p>
+<p>The first confusing part is remembering which object is doing the comparing.</p>
+<pre name="code" class="ruby">
+
+1 == 2
+# It makes more sense if you think of it like this
+1.==(2)
+</pre>
+<p>1 calls it&#8217;s method == with the argument 2. I like to think of it as 1 is put in charge of checking if it equals 2. 2 is just along for the ride.The second confusing part is there are several methods that deal with equality but in a slightly different ways.</p>
+<p><b>equal?</b><br />
+Returns true if the <a href="http://www.ruby-doc.org/core/classes/Object.html#M000378">object_id&#8217;s</a> are equal. Rarely used, and should not be overridden. You can basically forget out it.</p>
+<pre name="code" class="ruby">
+a = b = &quot;bob&quot;
+a.equal? b # true
+
+a.equal? &quot;bob&quot; # false since the object_id for the literal &quot;bob&quot; is different than will be different
+</pre>
+<p><b>==</b><br />
+The most common equality operator. It is generally used to test the value of objects instead of the object_id&#8217;s.</p>
+<pre name="code" class="ruby">
+&lt;/pre&gt;
+string = &quot;bob&quot;
+
+array = [1,2,3]
+array == [1,2,3] # true
+
+string == &quot;bob&quot; # true
+
+1 == 1.0 # true
+</pre>
+<p><b>eql?</b><br />
+Just like == but more strict (i.e. returns false for objects are different types.) As far as I can tell, this is only used to compare hash keys. Like the equal? method, you can basically forget about this one.</p>
+<pre name="code" class="ruby">
+
+string = &quot;bob&quot;
+
+string.eql? &quot;bob&quot; # true
+
+1.eql? 1.0 # false since 1 is a Fixnum and 1.0 is a Float
+</pre>
+<p><b>===</b><br />
+Used for case statements. It is full of magic and sprinkled with mystery. This case statement&#8230;</p>
+<pre name="code" class="ruby">
+
+case 1
+
+when Numeric then &quot;Number&quot;
+
+when String then &quot;String&quot;
+
+end
+# It is equivalent to...
+if Numeric === 1 then &quot;Number&quot;
+
+elsif String === 1 then &quot;String&quot;
+
+end
+</pre>
+<p>This seems kind of unintuitive since the arguments for === seem to be in the reversed in the case statement. But this technique has more power than <a href="http://www.youtube.com/watch?v=fO1ChfM94yQ">greyskull</a>. Check out <a href="http://www.ruby-doc.org/core/classes/Regexp.html#M001224">Regex</a>, <a href="http://www.ruby-doc.org/core/classes/Range.html#M000704">Range</a>, and <a href="http://www.ruby-doc.org/core/classes/Module.html#M001689">Module</a> to see clever === uses. Also remember <b>a === b</b> may be true, but it&#8217;s converse <b>b === a</b> could be false!</p>
+<img alt="" border="0" src="http://feeds.wordpress.com/1.0/categories/probablycorey.wordpress.com/7/" /> <img alt="" border="0" src="http://feeds.wordpress.com/1.0/tags/probablycorey.wordpress.com/7/" /> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gocomments/probablycorey.wordpress.com/7/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/probablycorey.wordpress.com/7/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godelicious/probablycorey.wordpress.com/7/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/delicious/probablycorey.wordpress.com/7/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gostumble/probablycorey.wordpress.com/7/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/stumble/probablycorey.wordpress.com/7/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godigg/probablycorey.wordpress.com/7/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/digg/probablycorey.wordpress.com/7/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/goreddit/probablycorey.wordpress.com/7/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/reddit/probablycorey.wordpress.com/7/" /></a> <img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=probablycorey.wordpress.com&blog=2577425&post=7&subd=probablycorey&ref=&feed=1" /></div>]]></content:encoded>
+			<wfw:commentRss>http://probablycorey.wordpress.com/2008/02/26/ruby-equality-equal-eql-and/feed/</wfw:commentRss>
+	
+		<media:content url="http://www.gravatar.com/avatar/ad2c4ad6157960abb72c99a0c8d2eaee?s=96&#38;d=identicon" medium="image">
+			<media:title type="html">probablycorey</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>Ruby, Rails and Google Sitemaps</title>
+		<link>http://probablycorey.wordpress.com/2008/02/20/ruby-rails-and-google-sitemaps/</link>
+		<comments>http://probablycorey.wordpress.com/2008/02/20/ruby-rails-and-google-sitemaps/#comments</comments>
+		<pubDate>Wed, 20 Feb 2008 16:46:45 +0000</pubDate>
+		<dc:creator>probablycorey</dc:creator>
+		
+		<category><![CDATA[ruby]]></category>
+
+		<category><![CDATA[seo]]></category>
+
+		<guid isPermaLink="false">http://probablycorey.wordpress.com/?p=6</guid>
+		<description><![CDATA[Setting up a google sitemap is an easy way to force google to notice your site. A sitemap is just a simple xml file that lists every url you want google to know about.
+They are especially useful if&#8230;
+
+You have dynamic content.
+ Your site is new and google is unaware of it.
+ You use a lot [...]<img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=probablycorey.wordpress.com&blog=2577425&post=6&subd=probablycorey&ref=&feed=1" />]]></description>
+			<content:encoded><![CDATA[<div class='snap_preview'><br /><p>Setting up a <a href="http://www.google.com/support/webmasters/bin/answer.py?answer=40318&amp;topic=13450">google sitemap</a> is an easy way to force google to notice your site. A sitemap is just a simple xml file that lists every url you want google to know about.<br />
+They are especially useful if&#8230;</p>
+<ul>
+<li>You have dynamic content.</li>
+<li> Your site is new and google is unaware of it.</li>
+<li> You use a lot of AJAX or Flash.</li>
+</ul>
+<p>You also get the added benefit of seeing where the googlebot looked last, where it encountered errors, and your sites top search keywords.</p>
+<p>So it&#8217;s helpful, but is it easy to setup? If you&#8217;re using Ruby on Rails (or any other ruby based framework) it&#8217;s cake!</p>
+<p><b>Step 1: Created a script (RAILS_ROOT/scripts/sitemap)</b><br />
+This script will collect all relevant urls and create a file at RAILS_ROOT/public/sitemap.xml that contains info about each url. For example, let&#8217;s pretend we have a site devoted to hippo pictures, our script would look like this&#8230;</p>
+<pre name="code" class="ruby">
+
+#!/usr/bin/env ruby
+
+ENV[&#039;RAILS_ENV&#039;] ||= &quot;production&quot;
+
+Dir.chdir(File.expand_path(File.dirname(__FILE__) + &quot;/..&quot;)) # Change current directory to RAILS_ROOT
+require &quot;config/environment&quot; # Start up rails
+
+# These two lines make life super easy... It allows you to call url_for/link_to outside of a controller or view
+include ActionController::UrlWriter
+default_url_options[:host] = &#039;www.hippos-are-awesome.com&#039;
+
+filename = &quot;#{RAILS_ROOT}/public/sitemap.xml&quot;
+
+hippo_pics = HippoPic.find(:all) # Such a wonderful collection
+
+File.open(filename, &quot;w&quot;) do |file|
+  xml = Builder::XmlMarkup.new(:target =&gt; file, :indent =&gt; 2)
+
+  # This
+  xml.instruct!
+  xml.urlset &quot;xmlns&quot; =&gt; &quot;http://www.sitemaps.org/schemas/sitemap/0.9&quot; do
+    for hippo_pic in hippo_pics
+      xml.url do
+        xml.loc url_for(:controller =&gt; &quot;hippos&quot;, :id =&gt; hippo_pic.id)
+        xml.lastmod hippo_pic.updated_at.xmlschema
+        xml.changefreq &quot;weekly&quot;
+        xml.priority 0.5
+      end
+    end
+  end
+end
+</pre>
+<p>For more info about what the lastmod, changefreq and priority mean in the sitemap, google explains it all <a href="https://www.google.com/webmasters/tools/docs/en/protocol.html">here</a>. Basically they tell google which urls are more important.<b></b><b></b></p>
+<p><b>Step 2: Create a daily or weekly cronjob to run the sitemap script</b><br />
+Just switch to the user that runs your ruby apps and add this to its crontab.</p>
+<p><b></b>20 2 * * * PATH_TO_RAILS_APP/script/sitemap # Runs the sitemap script every morning</p>
+<p><b></b><b>Step 3: Let google know about your sitemap</b><br />
+Head over to google&#8217;s <a href="https://www.google.com/webmasters/tools">webmaster tools</a> and follow the instructions on how to point google to your sitemap</p>
+<p>That&#8217;s it. Some other additional things to consider are</p>
+<ul>
+<li> gzip your sitemap. Google can read them just fine and you save on bandwidth.</li>
+<li> If you have more than 50,000 links you need to split your sitemap into several files.</li>
+<li>Other search engines (like yahoo) can take google style sitemaps too.</li>
+</ul>
+<img alt="" border="0" src="http://feeds.wordpress.com/1.0/categories/probablycorey.wordpress.com/6/" /> <img alt="" border="0" src="http://feeds.wordpress.com/1.0/tags/probablycorey.wordpress.com/6/" /> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gocomments/probablycorey.wordpress.com/6/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/probablycorey.wordpress.com/6/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godelicious/probablycorey.wordpress.com/6/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/delicious/probablycorey.wordpress.com/6/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gostumble/probablycorey.wordpress.com/6/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/stumble/probablycorey.wordpress.com/6/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godigg/probablycorey.wordpress.com/6/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/digg/probablycorey.wordpress.com/6/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/goreddit/probablycorey.wordpress.com/6/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/reddit/probablycorey.wordpress.com/6/" /></a> <img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=probablycorey.wordpress.com&blog=2577425&post=6&subd=probablycorey&ref=&feed=1" /></div>]]></content:encoded>
+			<wfw:commentRss>http://probablycorey.wordpress.com/2008/02/20/ruby-rails-and-google-sitemaps/feed/</wfw:commentRss>
+	
+		<media:content url="http://www.gravatar.com/avatar/ad2c4ad6157960abb72c99a0c8d2eaee?s=96&#38;d=identicon" medium="image">
+			<media:title type="html">probablycorey</media:title>
+		</media:content>
+	</item>
+	</channel>
+</rss>

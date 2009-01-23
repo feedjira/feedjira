@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- generator="wordpress/2.2" -->
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	>
+
+<channel>
+	<title>Eribium</title>
+	<link>http://www.eribium.org/blog</link>
+	<description>19yr old hacking away at Ruby on Rails and Flex</description>
+	<pubDate>Mon, 05 Jan 2009 15:36:44 +0000</pubDate>
+	<generator>http://wordpress.org/?v=2.2</generator>
+	<language>en</language>
+			<item>
+		<title>Saasy - SaaS for Rails</title>
+		<link>http://www.eribium.org/blog/?p=196</link>
+		<comments>http://www.eribium.org/blog/?p=196#comments</comments>
+		<pubDate>Mon, 05 Jan 2009 15:36:44 +0000</pubDate>
+		<dc:creator>maccman</dc:creator>
+		
+		<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://www.eribium.org/blog/?p=196</guid>
+		<description><![CDATA[I&#8217;ve been working on an open source SaaS solution for Rails over Christmas called Saasy (pronouced &#8220;sarrsy&#8221; - using a posh voice).
+Saasy provides:
+
+Subscription management
+Recurring billing
+Credit card management
+User authentication and SSO
+Mailers for invoices etc
+
+
+]]></description>
+			<content:encoded><![CDATA[<p>I&#8217;ve been working on an open source SaaS solution for Rails over Christmas called <a href="http://github.com/maccman/saasy/tree/master">Saasy</a> (pronouced &#8220;sarrsy&#8221; - using a posh voice).</p>
+<p>Saasy provides:</p>
+<ul>
+<li>Subscription management</li>
+<li>Recurring billing</li>
+<li>Credit card management</li>
+<li>User authentication and SSO</li>
+<li>Mailers for invoices etc</li>
+</ul>
+<p><a href="http://www.madebymany.co.uk/wp-content/uploads/2009/01/saasy_billing.png"><img class="alignnone size-full wp-image-406" title="Saasy billing" src="http://www.madebymany.co.uk/wp-content/uploads/2009/01/saasy_billing.png" alt="" width="500" height="241" /></a></p>
+<p> <a href="http://www.eribium.org/blog/?p=196#more-196" class="more-link">(more&#8230;)</a></p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.eribium.org/blog/?feed=rss2&amp;p=196</wfw:commentRss>
+		</item>
+		<item>
+		<title>Ruby Manor</title>
+		<link>http://www.eribium.org/blog/?p=195</link>
+		<comments>http://www.eribium.org/blog/?p=195#comments</comments>
+		<pubDate>Tue, 25 Nov 2008 11:30:22 +0000</pubDate>
+		<dc:creator>maccman</dc:creator>
+		
+		<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://www.eribium.org/blog/?p=195</guid>
+		<description><![CDATA[
+On Saturday I did a presentation at Ruby Manor on using recommendation systems in production featuring our plugin, acts as recommendable (AAR).
+This was, without a doubt, the best conference I&#8217;ve been too - and the icing on the cake was the leftover £500 behind a students bar afterwards - ginger beers for everyone!
+Graham Ashton has [...]]]></description>
+			<content:encoded><![CDATA[<p><a href="http://rubymanor.org"><img class="alignright alignnone size-medium wp-image-340" style="float: right;" title="Ruby Manor" src="http://www.madebymany.co.uk/wp-content/uploads/2008/11/picture-5-300x246.png" alt="" width="300" height="246" /></a></p>
+<p>On Saturday I did a presentation at Ruby Manor on using recommendation systems in production featuring our plugin, <a href="http://github.com/maccman/acts_as_recommendable/tree/master">acts as recommendable</a> (AAR).</p>
+<p>This was, without a doubt, the best conference I&#8217;ve been too - and the icing on the cake was the leftover £500 behind a students bar afterwards - ginger beers for everyone!</p>
+<p><a href="http://effectif.com">Graham Ashton</a> has done a <a href="http://effectif.com/2008/11/22/notes-from-the-ruby-manor">write</a> <a href="http://effectif.com/2008/11/23/notes-from-the-ruby-manor-part-2">up</a> of all the talks and <a href="http://blog.chrislowis.co.uk/">Chris Lowis</a> has <a href="http://blog.chrislowis.co.uk/2008/11/24/ruby-gsl-pearson.html">converted</a> AAR to use the GNU scientific lib.</p>
+<p>I was going to use Slideshare, but they seem to have broken it, so you can download a pdf of the presentation <a href="http://mxm.s3.amazonaws.com/Acts As Recommendable.pdf">here</a> (video will be up soon). The slides don&#8217;t make much sense by themselves though.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.eribium.org/blog/?feed=rss2&amp;p=195</wfw:commentRss>
+		</item>
+		<item>
+		<title>Juggernaut Chat Tutorial</title>
+		<link>http://www.eribium.org/blog/?p=191</link>
+		<comments>http://www.eribium.org/blog/?p=191#comments</comments>
+		<pubDate>Tue, 05 Aug 2008 09:18:51 +0000</pubDate>
+		<dc:creator>maccman</dc:creator>
+		
+		<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://www.eribium.org/blog/?p=191</guid>
+		<description><![CDATA[Taelor has just written a brilliant Juggernaut tutorial which is well worth checking out, especially if you&#8217;re new to the project.  
+I also want to take this opportunity to list some of the other tutorials
+
+Juggernaut - up to date tutorial
+Juggernaut, Push Server, The future of the web
+Juggernaut - Rails Spikes (out of date but [...]]]></description>
+			<content:encoded><![CDATA[<p>Taelor has just <a href="http://www.slightlycoded.com/blog/the-juggernaut-a-push-server-for-ruby-on-rails">written</a> a brilliant <a href="http://juggernaut.rubyforge.org">Juggernaut</a> tutorial which is well worth checking out, especially if you&#8217;re new to the project.  </p>
+<p>I also want to take this opportunity to list some of the other tutorials</p>
+<ul>
+<li><a href="http://www.dorkalev.com/2008/04/juggernaut-up-to-date-tutorial-1042008.html">Juggernaut - up to date tutorial</a></li>
+<li><a href="http://www.dorkalev.com/2008/04/juggernaut-push-server-future-of-web.html">Juggernaut, Push Server, The future of the web</a></li>
+<li><a href="http://railspikes.com/2007/6/27/juggernaut">Juggernaut - Rails Spikes</a> (out of date but still a good read)</li>
+</ul>
+<p><img src='http://www.eribium.org/blog/wp-content/uploads/2008/08/juggernaut_comic.gif' alt='juggernaut_comic.gif' /></p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.eribium.org/blog/?feed=rss2&amp;p=191</wfw:commentRss>
+		</item>
+		<item>
+		<title>Recommendations &#038; Collaborative Filtering</title>
+		<link>http://www.eribium.org/blog/?p=190</link>
+		<comments>http://www.eribium.org/blog/?p=190#comments</comments>
+		<pubDate>Mon, 04 Aug 2008 14:52:27 +0000</pubDate>
+		<dc:creator>maccman</dc:creator>
+		
+		<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://www.eribium.org/blog/?p=190</guid>
+		<description><![CDATA[I&#8217;ve been blogging over at Made by Many&#8217;s site about Recommendations &#038; Collaborative Filtering regarding my new Rails plugin, &#8216;acts_as_recommendable&#8216;. 
+I recommend subscribing to Made by Many&#8217;s feed, as there are a lot of interesting articles there, and I&#8217;m sure there will be a lot more forthcoming too.
+Incidentally, I&#8217;m also talking at Rails Conf Europe [...]]]></description>
+			<content:encoded><![CDATA[<p>I&#8217;ve <a href="http://www.madebymany.co.uk/recommendations-collaborative-filtering-00211">been blogging</a> over at <a href="http://www.madebymany.co.uk">Made by Many</a>&#8217;s site about Recommendations &#038; Collaborative Filtering regarding my new Rails plugin, &#8216;<a href="http://github.com/maccman/acts_as_recommendable/tree/master">acts_as_recommendable</a>&#8216;. </p>
+<p>I recommend subscribing to Made by Many&#8217;s <a href="http://madebymany.co.uk/feed">feed</a>, as there are a lot of interesting articles there, and I&#8217;m sure there will be a lot more forthcoming too.</p>
+<p>Incidentally, I&#8217;m also talking at Rails Conf Europe about <a href="http://juggernaut.rubyforge.org">Juggernaut</a>.</p>
+<p><a href="http://www.railsconfeurope.com"><img src="http://assets.en.oreilly.com/1/event/13/railseurope2008_spk_210x60.gif" width="210" height="60"  border="0"  alt="RailsConf Europe 2008" title="RailsConf Europe 2008"  /></a></p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.eribium.org/blog/?feed=rss2&amp;p=190</wfw:commentRss>
+		</item>
+		<item>
+		<title>CSRF &#038; Working With Rails</title>
+		<link>http://www.eribium.org/blog/?p=189</link>
+		<comments>http://www.eribium.org/blog/?p=189#comments</comments>
+		<pubDate>Thu, 12 Jun 2008 16:32:22 +0000</pubDate>
+		<dc:creator>maccman</dc:creator>
+		
+		<category><![CDATA[Rails]]></category>
+
+		<guid isPermaLink="false">http://www.eribium.org/blog/?p=189</guid>
+		<description><![CDATA[About a week ago Mislav Marohnic wrote about a simple CSRF attack on Working with Rails.
+What Mislav exploited was the fact that Working With Rails didn&#8217;t require a POST request to create recommendations, so just by visiting his blog you&#8217;d inadvertadly recommend him (if you were logged into WWR).
+In less than 24 hours Mislav got [...]]]></description>
+			<content:encoded><![CDATA[<p>About a week ago <a href="http://mislav.caboo.se">Mislav Marohnic</a> <a href="http://mislav.caboo.se/rails/excercise-in-csrf/">wrote</a> about a simple CSRF attack on <a href="http://workingwithrails.com/person/13081-alex-maccaw">Working with Rails</a>.</p>
+<p>What Mislav exploited was the fact that Working With Rails didn&#8217;t require a POST request to create recommendations, so just by visiting his blog you&#8217;d inadvertadly recommend him (if you were logged into WWR).<br />
+In less than 24 hours Mislav got enough recommendations to boost his raking by 10 places.</p>
+<p>WWR fixed that particular hack, they disallowed GET requests to the create action, only allowing POST ones.</p>
+<p>However, <strong>they certainly haven&#8217;t solved the problem</strong>. It&#8217;s possible to make cross site POST requests without the user actively submitting a form. <a href="http://pastie.org/213772">This script</a> I made creates an iframe with a form inside, and submits the form. So, without a user realizing it, they&#8217;ve recommended me on WWR (I haven&#8217;t used it in this site btw).</p>
+<p>It just shows that it&#8217;s fundamentally important to use a form authentication token (which Rails 2 now does by default) to prevent CSRF.</p>
+<p>And, it&#8217;s worth bearing in mind that an open <a href="http://jeremiahgrossman.blogspot.com/2008/05/crossdomainxml-invites-cross-site.html">crossdomain.xml file </a> would make any CSRF protections absolutely worthless, since you could go and grab that form authentication token with Flash.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.eribium.org/blog/?feed=rss2&amp;p=189</wfw:commentRss>
+		</item>
+		<item>
+		<title>Airdoc - Google Doc Uploader</title>
+		<link>http://www.eribium.org/blog/?p=187</link>
+		<comments>http://www.eribium.org/blog/?p=187#comments</comments>
+		<pubDate>Tue, 15 Apr 2008 14:36:26 +0000</pubDate>
+		<dc:creator>maccman</dc:creator>
+		
+		<category><![CDATA[Air (Apollo)]]></category>
+
+		<guid isPermaLink="false">http://www.eribium.org/blog/?p=187</guid>
+		<description><![CDATA[If you die a little inside when someone sends you a Word/Excel/Powerpoint document to read then Airdoc is for you!
+The other day someone sent me a Powerpoint file containing some screenshots, wrong on so many levels, but perhaps some good will come out of it since it motivated  me to write this simple Air [...]]]></description>
+			<content:encoded><![CDATA[<p>If you die a little inside when someone sends you a Word/Excel/Powerpoint document to read then Airdoc is for you!</p>
+<p>The other day someone sent me a Powerpoint file containing some screenshots, wrong on so many levels, but perhaps some good will come out of it since it motivated  me to write this simple Air app.</p>
+<p>Airdoc is a very simple Air application that registers itself to open those Office documents. It&#8217;ll then proceed to upload them to Google Docs - and open them right in your browser.</p>
+<p>You&#8217;ll need to install <a href="http://get.adobe.com/air/">Adobe Air</a> first.</p>
+<p><a href="http://maccman.s3.amazonaws.com/airdoc.air">Download Airdoc</a>.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.eribium.org/blog/?feed=rss2&amp;p=187</wfw:commentRss>
+		</item>
+		<item>
+		<title>We don&#8217;t need mod_rails - we need mod_rack</title>
+		<link>http://www.eribium.org/blog/?p=188</link>
+		<comments>http://www.eribium.org/blog/?p=188#comments</comments>
+		<pubDate>Tue, 15 Apr 2008 10:14:42 +0000</pubDate>
+		<dc:creator>maccman</dc:creator>
+		
+		<category><![CDATA[Ruby]]></category>
+
+		<category><![CDATA[Rails]]></category>
+
+		<guid isPermaLink="false">http://www.eribium.org/blog/?p=188</guid>
+		<description><![CDATA[Mod rails is certainly a step in the right direction - but I think a much better idea would be to implement support for Rack. 
+Rack is an abstraction between Webservers and Ruby web frameworks. Thin, for example, uses this to great effect - by using Rack, Thin automatically supports tons of Ruby web frameworks [...]]]></description>
+			<content:encoded><![CDATA[<p><a href="http://www.modrails.com">Mod rails</a> is certainly a step in the right direction - but I think a much better idea would be to implement support for <a href="http://rack.rubyforge.org">Rack</a>. </p>
+<p>Rack is an abstraction between Webservers and Ruby web frameworks. <a href="http://code.macournoyer.com/thin/">Thin</a>, for example, uses this to great effect - by using Rack, Thin automatically supports tons of Ruby web frameworks out of the box:</p>
+<ul>
+<li>Camping</li>
+<li>Coset</li>
+<li>Halcyon</li>
+<li>Maveric</li>
+<li>Merb</li>
+<li>Ramaze</li>
+<li>Sinatra</li>
+<li>Vintage</li>
+</ul>
+<p>There is also a Rails adapter to Rack (in the Thin repo)</p>
+<p>So, wouldn&#8217;t it make more sense for the mod_rails team to work on mod_rack? Then you could upload a simple Ruby script like this to your webserver, and it would just work:</p>
+<p>rack_app = Proc.new do |env|<br />
+  [200, {&#8221;Content-Type&#8221;=>&#8221;text/html&#8221;}, &#8220;hello world!&#8221;]<br />
+end<br />
+run rack_app</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.eribium.org/blog/?feed=rss2&amp;p=188</wfw:commentRss>
+		</item>
+		<item>
+		<title>IPlayer RSS Feed</title>
+		<link>http://www.eribium.org/blog/?p=186</link>
+		<comments>http://www.eribium.org/blog/?p=186#comments</comments>
+		<pubDate>Thu, 13 Mar 2008 12:28:34 +0000</pubDate>
+		<dc:creator>maccman</dc:creator>
+		
+		<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://www.eribium.org/blog/?p=186</guid>
+		<description><![CDATA[Update: download has been cracked again.
+After Paul&#8217;s neat hack to allow downloading of IPlayer programs, I thought I&#8217;d also improve the IPlayer&#8217;s pink experience by providing an RSS feed. 
+The Big British Castle, in their infinite wisdom, don&#8217;t provide a feed to the IPlayer, but instead email you updates - how antiquated is that!
+So, I&#8217;ve [...]]]></description>
+			<content:encoded><![CDATA[<p><strong>Update:</strong> download has been cracked <a href="http://po-ru.com/diary/bbc-iplayer-fix-hacked-again/">again</a>.</p>
+<p>After <a href="http://po-ru.com/diary/cracking-open-the-iplayer/">Paul&#8217;s neat hack</a> to allow downloading of <a href="http://www.bbc.co.uk/iplayer">IPlayer</a> programs, I thought I&#8217;d also improve the IPlayer&#8217;s pink experience by providing an RSS feed. </p>
+<p>The <a href="http://www.bbc.co.uk">Big British Castle</a>, in their infinite wisdom, don&#8217;t provide a feed to the IPlayer, but instead email you updates - how antiquated is that!</p>
+<p>So, I&#8217;ve made a simple script that scrapes their website (with Hpricot), and constructs a RSS feed. And I have a cron job that runs it daily.<br />
+For example:<br />
+./iplayer-feed /path/to/apache/public/dir/iplayer-feed.rss<br />
+Or in the crontab:<br />
+20 4 * * * /path/to/iplayer-feed /path/to/apache/public/dir/iplayer-feed.rss  >/dev/null</p>
+<p>Originally I subscribed to the daily updates (as you can see from the code). However - I underestimated how much unwatchable content they make, so I had to cut back to a few categories. Since everyone&#8217;s taste is different, I&#8217;d thought I&#8217;d post the code, rather than host the feed, so people can customise it to suit themselves. </p>
+<p>So, just browse the IPlayer site, choose a few categories, and paste the urls into the code. Or, take the full plunge, and subscribe to the daily updates (don&#8217;t say I didn&#8217;t warn you).</p>
+<p>Anyway, here&#8217;s the <a href="http://www.eribium.org/blog/wp-content/uploads/iplayer-feed">code</a>.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.eribium.org/blog/?feed=rss2&amp;p=186</wfw:commentRss>
+		</item>
+		<item>
+		<title>EventMachine VS Twisted</title>
+		<link>http://www.eribium.org/blog/?p=184</link>
+		<comments>http://www.eribium.org/blog/?p=184#comments</comments>
+		<pubDate>Tue, 26 Feb 2008 17:18:30 +0000</pubDate>
+		<dc:creator>maccman</dc:creator>
+		
+		<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://www.eribium.org/blog/?p=184</guid>
+		<description><![CDATA[I was interested in the performance differences between Twisted and EventMachine for an application I&#8217;ve developing which is going to have to handle a lot of load as clients will be regularly polling it.
+Disclaimer: I&#8217;m fairly new to Python and Twisted  - so there may be a way of speeding them up which I&#8217;m [...]]]></description>
+			<content:encoded><![CDATA[<p>I was interested in the performance differences between <a class="ext-link" href="http://twistedmatrix.com/"><span class="icon">Twisted</span></a> and <a class="wiki" href="http://www.rubyeventmachine.com">EventMachine</a> for an application I&#8217;ve developing which is going to have to handle a lot of load as clients will be regularly polling it.</p>
+<p><strong>Disclaimer:</strong> I&#8217;m fairly new to Python and Twisted  - so there may be a way of speeding them up which I&#8217;m not aware of - perhaps by compiling to byte code or using a stackless interpreter. </p>
+<p>Rather than test performance at a TCP level, I thought I&#8217;d do more of a real world example - and test HTTP servers. <a class="ext-link" href="http://code.macournoyer.com/thin/"><span class="icon">Thin</span></a> (combined with <a class="ext-link" href="http://rack.rubyforge.org"><span class="icon">Rack</span></a>) is a HTTP layer to <a class="wiki" href="http://www.rubyeventmachine.com">EventMachine</a>. Twisted has its own HTTP parser built in. </p>
+<h2>Results (recorded with ab)</h2>
+<p>Concurrency: 20<br />
+Requests: 2000</p>
+<p><strong>EventMachine:</strong> Requests per second:    3327.79/sec (mean)<br />
+<strong>Twisted:</strong>      Requests per second:    3194.76/sec (mean)</p>
+<p>Concurrency: 200<br />
+Requests: 20000</p>
+<p><strong>EventMachine:</strong> Requests per second:    4401.80/sec (mean)<br />
+<strong>Twisted:</strong>      Requests per second:    4761.90/sec (mean)</p>
+<h2>Conclusion</h2>
+<p>Take these tests with a pinch of salt, as the old saying goes something along the lines of &#8216;There are lies, damned lies, and then there are statistics&#8217;.</p>
+<p>The results are remarkably similar - with EM beating Twisted at some concurrency levels, and vica versa. There doesn&#8217;t seem to be an obvious difference in requests per second - even with an extremely large volume of requests.</p>
+<p>To be honest, I&#8217;m a bit surprised. Ruby isn&#8217;t know for it&#8217;s speed, and we&#8217;re already using 2 more gems, Thin and Rack which, although they are as light as possible, still add overhead.</p>
+<p>When it comes down to virtual memory Ruby uses a hefty 47 mb, but Python isn&#8217;t much better at 39 mb. I don&#8217;t suppose that would be a deal breaker for most people though.</p>
+<p>I call it a draw ;)</p>
+<p>You can see the code I used <a href="http://rubyeventmachine.com/wiki/EMvsTwisted">here</a>.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.eribium.org/blog/?feed=rss2&amp;p=184</wfw:commentRss>
+		</item>
+		<item>
+		<title>Aireo Beta</title>
+		<link>http://www.eribium.org/blog/?p=183</link>
+		<comments>http://www.eribium.org/blog/?p=183#comments</comments>
+		<pubDate>Sun, 17 Feb 2008 18:30:27 +0000</pubDate>
+		<dc:creator>maccman</dc:creator>
+		
+		<category><![CDATA[Aireo]]></category>
+
+		<guid isPermaLink="false">http://www.eribium.org/blog/?p=183</guid>
+		<description><![CDATA[Well, it&#8217;s been a while but the private beta of Aireo has been released. You can signup for the beta here. I can&#8217;t promise invites for everyone, but I&#8217;ll do my best.
+Aireo is an digital asset solution, letting you simply upload your files to the internet, keeping them backed up safety, and providing a intuitive [...]]]></description>
+			<content:encoded><![CDATA[<p>Well, it&#8217;s been a while but the private beta of <a href="http://aireohq.com">Aireo</a> has been released. You can signup for the beta <a href="http://signup.aireohq.com/">here</a>. I can&#8217;t promise invites for everyone, but I&#8217;ll do my best.</p>
+<p>Aireo is an digital asset solution, letting you simply upload your files to the internet, keeping them backed up safety, and providing a intuitive interface to access them anywhere.<br />
+On top of this, Aireo&#8217;s sharing capabilities allow you to email files and create links to them (shown in the last screenshot).</p>
+<p><a href="http://www.flickr.com/photos/maccman/2266491765/" title="Aireo by maccman, on Flickr"><img src="http://farm3.static.flickr.com/2173/2266491765_604a077e4a.jpg" width="500" height="241" alt="Aireo" /></a></p>
+<p><a href="http://www.flickr.com/photos/maccman/2152607635/" title="Aireo Link by maccman, on Flickr"><img src="http://farm3.static.flickr.com/2013/2152607635_42ed28b3f5.jpg" width="500" height="179" alt="Aireo Link" /></a></p>
+<p>I&#8217;m also working on a client side part of Aireo which will be released next.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.eribium.org/blog/?feed=rss2&amp;p=183</wfw:commentRss>
+		</item>
+	</channel>
+</rss>
