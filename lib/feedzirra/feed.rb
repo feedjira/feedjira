@@ -7,8 +7,10 @@ module Feedzirra
       start_of_doc = xml.slice(0, 500)
       if start_of_doc =~ /Atom/
         atom_feed_classes.detect {|feed_class| feed_class.will_parse?(start_of_doc)} || Atom
-      elsif RDF.will_parse?(xml)
+      elsif RDF.will_parse?(start_of_doc)
         RDF
+      elsif RSS.will_parse?(start_of_doc)
+        RSS
       end
     end
     

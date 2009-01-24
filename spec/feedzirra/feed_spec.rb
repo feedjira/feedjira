@@ -2,16 +2,20 @@ require File.dirname(__FILE__) + '/../spec_helper'
 
 describe Feedzirra::Feed do
   describe "#determine_feed_parser_for_xml" do
-    it "should return a Feedzirra::Atom object for an atom feed" do
+    it "should return the Feedzirra::Atom class for an atom feed" do
       Feedzirra::Feed.determine_feed_parser_for_xml(sample_atom_feed).should == Feedzirra::Atom
     end
     
-    it "should return a Feedzirra::AtomFeedBurner object for an atom feedburner feed" do
+    it "should return the Feedzirra::AtomFeedBurner class for an atom feedburner feed" do
       Feedzirra::Feed.determine_feed_parser_for_xml(sample_feedburner_atom_feed).should == Feedzirra::AtomFeedBurner
     end
     
-    it "should return a Feedzirra::RDF object for an rdf/rss 1.0 feed" do
+    it "should return the Feedzirra::RDF class for an rdf/rss 1.0 feed" do
       Feedzirra::Feed.determine_feed_parser_for_xml(sample_rdf_feed).should == Feedzirra::RDF
+    end
+    
+    it "should return the Feedzirra::RSS object for an rss 2.0 feed" do
+      Feedzirra::Feed.determine_feed_parser_for_xml(sample_rss_feed).should == Feedzirra::RSS
     end
   end
   
