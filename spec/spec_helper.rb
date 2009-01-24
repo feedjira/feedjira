@@ -17,6 +17,10 @@ def sample_rdf_feed
   File.read("#{File.dirname(__FILE__)}/sample_feeds/ArunGuptasBlog.xml")
 end
 
+def sample_rss_feed
+  File.read("#{File.dirname(__FILE__)}/sample_feeds/AListApart.xml")
+end
+
 def sample_feedburner_atom_feed
   File.read("#{File.dirname(__FILE__)}/sample_feeds/PaulDixExplainsNothing.xml")
 end

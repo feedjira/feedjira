@@ -6,6 +6,7 @@ require 'feedzirra/feed'
 require 'feedzirra/atom'
 require 'feedzirra/atom_feed_burner'
 require 'feedzirra/rdf'
+require 'feedzirra/rss'
 
 module SAXMachine
   VERSION = "0.0.1"

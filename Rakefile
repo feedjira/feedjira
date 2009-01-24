@@ -1,6 +1,6 @@
 require "spec"
 require "spec/rake/spectask"
-require 'lib/sax-machine.rb'
+require 'lib/feedzirra.rb'
 
 Spec::Rake::SpecTask.new do |t|
   t.spec_opts = ['--options', "\"#{File.dirname(__FILE__)}/spec/spec.opts\""]
