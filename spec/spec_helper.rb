@@ -13,6 +13,10 @@ def sample_atom_feed
   File.read("#{File.dirname(__FILE__)}/sample_feeds/AmazonWebServicesBlog.xml")
 end
 
+def sample_atom_entry_content
+  File.read("#{File.dirname(__FILE__)}/sample_feeds/AmazonWebServicesBlogFirstEntryContent.xml")
+end
+
 def sample_rdf_feed
   File.read("#{File.dirname(__FILE__)}/sample_feeds/ArunGuptasBlog.xml")
 end

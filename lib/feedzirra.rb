@@ -8,6 +8,7 @@ require 'feedzirra/atom_entry'
 require 'feedzirra/atom_feed_burner'
 require 'feedzirra/rdf'
 require 'feedzirra/rss'
+require 'feedzirra/feed_utilities'
 
 module SAXMachine
   VERSION = "0.0.1"
