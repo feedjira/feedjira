@@ -10,4 +10,26 @@ describe Feedzirra::Atom do
       Feedzirra::Atom.will_parse?(sample_rdf_feed).should be_false
     end
   end
+  
+  describe "parsing" do
+    before(:each) do
+      @feed = Feedzirra::Atom.parse(sample_atom_feed)
+    end
+    
+    it "should parse the title" do
+      @feed.title.should == "Amazon Web Services Blog"
+    end
+    
+    it "should parse the url" do
+      @feed.url.should == "http://aws.typepad.com/aws/"
+    end
+    
+    it "should parse the feed_url" do
+      @feed.feed_url.should == "http://aws.typepad.com/aws/atom.xml"
+    end
+    
+    it "should parse entries" do
+      @feed.entries.size.should == 10
+    end
+  end
 end

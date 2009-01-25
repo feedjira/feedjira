@@ -4,6 +4,7 @@ $LOAD_PATH.unshift(File.expand_path(File.dirname(__FILE__))) unless $LOAD_PATH.i
 
 require 'feedzirra/feed'
 require 'feedzirra/atom'
+require 'feedzirra/atom_entry'
 require 'feedzirra/atom_feed_burner'
 require 'feedzirra/rdf'
 require 'feedzirra/rss'
