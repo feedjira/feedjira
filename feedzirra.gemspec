@@ -14,6 +14,7 @@ Gem::Specification.new do |s|
     "lib/feedzirra/atom.rb",
     "lib/feedzirra/atom_entry.rb",
     "lib/feedzirra/atom_feed_burner.rb",
+    "lib/feedzirra/atom_feed_burner_entry.rb",
     "lib/feedzirra/rdf.rb",
     "lib/feedzirra/rss.rb",
     "lib/feedzirra/feed_utilities.rb",
@@ -24,6 +25,7 @@ Gem::Specification.new do |s|
     "spec/feedzirra/atom_spec.rb",
     "spec/feedzirra/atom_entry_spec.rb",
     "spec/feedzirra/atom_feed_burner_spec.rb",
+    "spec/feedzirra/atom_feed_burner_entry_spec.rb"
     "spec/feedzirra/rdf_spec.rb",
     "spec/feedzirra/rss_spec.rb",
     "spec/feedzirra/feed_utilities_spec.rb"]

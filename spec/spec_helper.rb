@@ -28,3 +28,7 @@ end
 def sample_feedburner_atom_feed
   File.read("#{File.dirname(__FILE__)}/sample_feeds/PaulDixExplainsNothing.xml")
 end
+
+def sample_feedburner_atom_entry_content
+  File.read("#{File.dirname(__FILE__)}/sample_feeds/PaulDixExplainsNothingFirstEntryContent.xml")
+end
