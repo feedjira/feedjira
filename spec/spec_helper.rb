@@ -18,7 +18,11 @@ def sample_atom_entry_content
 end
 
 def sample_rdf_feed
-  File.read("#{File.dirname(__FILE__)}/sample_feeds/ArunGuptasBlog.xml")
+  File.read("#{File.dirname(__FILE__)}/sample_feeds/HREFConsideredHarmful.xml")
+end
+
+def sample_rdf_entry_content
+  File.read("#{File.dirname(__FILE__)}/sample_feeds/HREFConsideredHarmfulFirstEntry.xml")
 end
 
 def sample_rss_feed

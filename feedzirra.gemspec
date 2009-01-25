@@ -16,6 +16,7 @@ Gem::Specification.new do |s|
     "lib/feedzirra/atom_feed_burner.rb",
     "lib/feedzirra/atom_feed_burner_entry.rb",
     "lib/feedzirra/rdf.rb",
+    "lib/feedzirra/rdf_entry.rb",
     "lib/feedzirra/rss.rb",
     "lib/feedzirra/feed_utilities.rb",
     "README.textile", "Rakefile", 
@@ -27,6 +28,7 @@ Gem::Specification.new do |s|
     "spec/feedzirra/atom_feed_burner_spec.rb",
     "spec/feedzirra/atom_feed_burner_entry_spec.rb"
     "spec/feedzirra/rdf_spec.rb",
+    "spec/feedzirra/rdf_entry_spec.rb",
     "spec/feedzirra/rss_spec.rb",
     "spec/feedzirra/feed_utilities_spec.rb"]
   s.has_rdoc = true

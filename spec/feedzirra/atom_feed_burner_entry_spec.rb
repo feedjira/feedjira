@@ -1,6 +1,6 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 
-describe Feedzirra::AtomEntry do
+describe Feedzirra::AtomFeedBurnerEntry do
   before(:each) do
     # I don't really like doing it this way because these unit test should only rely on AtomEntry,
     # but this is actually how it should work. You would never just pass entry xml straight to the AtomEnry

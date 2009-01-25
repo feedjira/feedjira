@@ -1,3 +1,4 @@
+require 'sax-machine'
 require 'feedzirra/feed_utilities'
 
 module Feedzirra

@@ -8,6 +8,7 @@ require 'feedzirra/atom_entry'
 require 'feedzirra/atom_feed_burner'
 require 'feedzirra/atom_feed_burner_entry'
 require 'feedzirra/rdf'
+require 'feedzirra/rdf_entry'
 require 'feedzirra/rss'
 require 'feedzirra/feed_utilities'
 
