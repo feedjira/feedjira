@@ -26,7 +26,11 @@ def sample_rdf_entry_content
 end
 
 def sample_rss_feed
-  File.read("#{File.dirname(__FILE__)}/sample_feeds/AListApart.xml")
+  File.read("#{File.dirname(__FILE__)}/sample_feeds/TenderLovemaking.xml")
+end
+
+def sample_rss_entry_content
+  File.read("#{File.dirname(__FILE__)}/sample_feeds/TenderLovemakingFirstEntry.xml")
 end
 
 def sample_feedburner_atom_feed

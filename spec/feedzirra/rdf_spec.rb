@@ -25,8 +25,10 @@ describe Feedzirra::RDF do
     end
     
     # rdf doesn't actually specify the feed_url. This should be set in the fetcher.
-    # this is just a reminder that I need to do that later.
-    it "should parse the feed_url"
+    it "should provide an accessor for the feed_url" do
+      @feed.respond_to?(:feed_url).should == true
+      @feed.respond_to?(:feed_url=).should == true
+    end
     
     it "should parse entries" do
       @feed.entries.size.should == 10

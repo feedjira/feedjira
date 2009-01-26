@@ -10,8 +10,9 @@ require 'feedzirra/atom_feed_burner_entry'
 require 'feedzirra/rdf'
 require 'feedzirra/rdf_entry'
 require 'feedzirra/rss'
+require 'feedzirra/rss_entry'
 require 'feedzirra/feed_utilities'
 
-module SAXMachine
+module Feedzirra
   VERSION = "0.0.1"
 end

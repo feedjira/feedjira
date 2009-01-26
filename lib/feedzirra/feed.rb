@@ -5,12 +5,12 @@ module Feedzirra
   class Feed
     def self.determine_feed_parser_for_xml(xml)
       start_of_doc = xml.slice(0, 500)
-      if start_of_doc =~ /Atom/
-        atom_feed_classes.detect {|feed_class| feed_class.will_parse?(start_of_doc)} || Atom
+      if RSS.will_parse?(start_of_doc)
+        RSS
       elsif RDF.will_parse?(start_of_doc)
         RDF
-      elsif RSS.will_parse?(start_of_doc)
-        RSS
+      elsif start_of_doc =~ /Atom/
+        atom_feed_classes.detect {|feed_class| feed_class.will_parse?(start_of_doc)} || Atom
       end
     end
     

@@ -7,6 +7,8 @@ module Feedzirra
     element :title
     element :link, :as => :url
     elements :item, :as => :entries, :class => RDFEntry
+
+    attr_accessor :feed_url
     
     def self.will_parse?(xml)
       xml =~ /rdf\:RDF/ || false
