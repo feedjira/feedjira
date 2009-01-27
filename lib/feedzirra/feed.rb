@@ -3,6 +3,10 @@ require 'feedzirra/atom_feed_burner'
 
 module Feedzirra
   class Feed
+    def self.parse(xml)
+      determine_feed_parser_for_xml(xml).parse(xml)
+    end
+
     def self.determine_feed_parser_for_xml(xml)
       start_of_doc = xml.slice(0, 500)
       if RSS.will_parse?(start_of_doc)
