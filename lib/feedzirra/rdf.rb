@@ -10,7 +10,7 @@ module Feedzirra
 
     attr_accessor :feed_url
     
-    def self.will_parse?(xml)
+    def self.able_to_parse?(xml)
       xml =~ /rdf\:RDF/ || false
     end
   end

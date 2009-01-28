@@ -11,8 +11,8 @@ module Feedzirra
     
     attr_accessor :feed_url
     
-    def self.will_parse?(xml)
-      xml =~ /rss version\=\"2\.0\"/ || false
+    def self.able_to_parse?(xml)
+      xml =~ /rss version\=\"2\.0\"/
     end
   end
 end

@@ -50,10 +50,10 @@ describe Feedzirra::Feed do
   end
   
   describe "adding feed types" do
-    it "should be able to add an atom feed type" do
+    it "should be able to add a feed type" do
       @klass = Class.new
-      Feedzirra::Feed.add_atom_feed_class(@klass)
-      Feedzirra::Feed.atom_feed_classes.last.should == @klass
+      Feedzirra::Feed.add_feed_class(@klass)
+      Feedzirra::Feed.feed_classes.last.should == @klass
     end
   end
 end

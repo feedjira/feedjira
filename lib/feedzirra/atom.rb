@@ -9,8 +9,8 @@ module Feedzirra
     element :link, :as => :feed_url, :value => :href, :with => {:type => "application/atom+xml"}
     elements :entry, :as => :entries, :class => AtomEntry
     
-    def self.will_parse?(xml)
-      xml =~ /Atom/ || false
+    def self.able_to_parse?(xml)
+      xml =~ /Atom/
     end
   end
 end
