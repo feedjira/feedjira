@@ -20,6 +20,7 @@ Gem::Specification.new do |s|
     "lib/feedzirra/rss.rb",
     "lib/feedzirra/rss_entry.rb",
     "lib/feedzirra/feed_utilities.rb",
+    "lib/feedzirra/feed_entry_utilities.rb",
     "README.textile", "Rakefile", 
     "spec/spec.opts", 
     "spec/spec_helper.rb",
@@ -32,7 +33,8 @@ Gem::Specification.new do |s|
     "spec/feedzirra/rdf_entry_spec.rb",
     "spec/feedzirra/rss_spec.rb",
     "spec/feedzirra/rss_entry_spec.rb",
-    "spec/feedzirra/feed_utilities_spec.rb"]
+    "spec/feedzirra/feed_utilities_spec.rb",
+    "spec/feedzirra/feed_entry_utilities_spec.rb"]
   s.has_rdoc = true
   s.homepage = %q{http://github.com/pauldix/feedzirra}
   s.require_paths = ["lib"]

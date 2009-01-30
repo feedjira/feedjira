@@ -4,7 +4,7 @@ require 'feedzirra/feed_utilities'
 module Feedzirra
   class RDFEntry
     include SAXMachine
-    include FeedUtilities
+    include FeedEntryUtilities
     element :title
     element :link, :as => :url
     element :"dc:creator", :as => :author

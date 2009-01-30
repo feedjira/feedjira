@@ -6,12 +6,33 @@ describe Feedzirra::FeedUtilities do
       include Feedzirra::FeedUtilities
     end
   end
-  
-  describe "handling dates" do
-    it "should parse an ISO 8601 formatted datetime into Time" do
-      time = @klass.new.parse_datetime("2008-02-20T8:05:00-010:00")
-      time.class.should == Time
-      time.to_s.should == "Wed Feb 20 18:05:00 UTC 2008"
+
+  describe "instance methods" do
+    it "should provide an updated? accessor" do
+      feed = @klass.new
+      feed.should_not be_updated
+      feed.updated = true
+      feed.should be_updated
+    end
+    
+    it "should provide a new_entries accessor" do
+      feed = @klass.new
+      feed.new_entries.should == []
+      feed.new_entries = [:foo]
+      feed.new_entries.should == [:foo]
+    end
+    
+    it "should provide an etag accessor" do
+      feed = @klass.new
+      feed.etag = "foo"
+      feed.etag.should == "foo"
+    end
+    
+    it "should provide a last_modified accessor" do
+      feed = @klass.new
+      time = Time.now
+      feed.last_modified = time
+      feed.last_modified.should == time
     end
   end
 end

@@ -4,7 +4,7 @@ require 'feedzirra/feed_utilities'
 module Feedzirra
   class AtomEntry
     include SAXMachine
-    include FeedUtilities
+    include FeedEntryUtilities
     element :title
     element :link, :as => :url, :value => :href, :with => {:type => "text/html"}
     element :name, :as => :author
