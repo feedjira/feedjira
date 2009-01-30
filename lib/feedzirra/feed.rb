@@ -17,7 +17,7 @@ module Feedzirra
     end
 
     def self.add_feed_class(klass)
-      feed_classes << klass
+      feed_classes.unshift klass
     end
     
     def self.feed_classes

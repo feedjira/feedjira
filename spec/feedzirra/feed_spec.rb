@@ -50,13 +50,21 @@ describe Feedzirra::Feed do
   end
   
   describe "adding feed types" do
-    it "should be able to add a feed type" do
-      @klass = Class.new
-      Feedzirra::Feed.add_feed_class(@klass)
-      Feedzirra::Feed.feed_classes.last.should == @klass
+    it "should prioritize added feed types over the built in ones" do
+      feed_text = "Atom asdf"
+      Feedzirra::Atom.should be_able_to_parse(feed_text)
+      new_feed_type = Class.new do
+        def self.able_to_parse?(val)
+          true
+        end
+      end
+      new_feed_type.should be_able_to_parse(feed_text)
+      Feedzirra::Feed.add_feed_class(new_feed_type)
+      Feedzirra::Feed.determine_feed_parser_for_xml(feed_text).should == new_feed_type
+      
+      # this is a hack so that this doesn't break the rest of the tests
+      Feedzirra::Feed.feed_classes.reject! {|o| o == new_feed_type }
     end
-    
-    it "should prioritize added feed types over the built in ones"
   end
   
   describe "header parsing" do
