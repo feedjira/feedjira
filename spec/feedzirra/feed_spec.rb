@@ -73,25 +73,78 @@ describe Feedzirra::Feed do
   
   describe "fetching feeds" do
     before(:each) do
-      @feed_url = "http://feeds.feedburner.com/PaulDixExplainsNothing"
-      @feed_url2 = "http://feeds.feedburner.com/trottercashion"
+      @paul_feed_url = "http://feeds.feedburner.com/PaulDixExplainsNothing"
+      @trotter_feed_url = "http://feeds.feedburner.com/trottercashion"
     end
     
     describe "#fetch_raw" do
-      it "should return raw xml when not passed a block" do
-        Feedzirra::Feed.fetch_raw(@feed_url).should =~ /^#{Regexp.escape('<?xml version="1.0" encoding="UTF-8"?>')}/
+      it "should take :user_agent as an option"
+      it "should take :if_modified_since as an option"
+      it "should take :if_none_match as an option"
+      it "should take an optional on_success lambda"
+      it "should take an optional on_failure lambda"
+      
+      it "should return raw xml" do
+        Feedzirra::Feed.fetch_raw(@paul_feed_url).should =~ /^#{Regexp.escape('<?xml version="1.0" encoding="UTF-8"?>')}/
       end
       
-      it "should take multiple feed urls and return a hash of urls and responses" do
-        results = Feedzirra::Feed.fetch_raw([@feed_url, @feed_url2])
-        results.keys.should include(@feed_url)
-        results.keys.should include(@feed_url2)
-        results[@feed_url].should =~ /Paul Dix/
-        results[@feed_url2].should =~ /Trotter Cashion/
+      it "should take multiple feed urls and return a hash of urls and response xml" do
+        results = Feedzirra::Feed.fetch_raw([@paul_feed_url, @trotter_feed_url])
+        results.keys.should include(@paul_feed_url)
+        results.keys.should include(@trotter_feed_url)
+        results[@paul_feed_url].should =~ /Paul Dix/
+        results[@trotter_feed_url].should =~ /Trotter Cashion/
       end
     end
     
     describe "#fetch_and_parse" do
+      it "should return a feed object for a single url" do
+        feed = Feedzirra::Feed.fetch_and_parse(@paul_feed_url)
+        feed.title.should == "Paul Dix Explains Nothing"
+      end
+      
+      it "should set the feed_url to the new url if redirected" do
+        feed = Feedzirra::Feed.fetch_and_parse("http://tinyurl.com/tenderlovemaking")
+        feed.feed_url.should == "http://tenderlovemaking.com/feed/"
+      end
+      
+      it "should set the feed_url for an rdf feed" do
+        feed = Feedzirra::Feed.fetch_and_parse("http://www.avibryant.com/rss.xml")
+        feed.feed_url.should == "http://www.avibryant.com/rss.xml"
+      end
+      
+      it "should set the feed_url for an rss feed" do
+        feed = Feedzirra::Feed.fetch_and_parse("http://tenderlovemaking.com/feed/")
+        feed.feed_url.should == "http://tenderlovemaking.com/feed/"
+      end
+      
+      it "should return a hash of feed objects with the passed in feed_url for the key and parsed feed for the value for multiple feeds" do
+        feeds = Feedzirra::Feed.fetch_and_parse([@paul_feed_url, @trotter_feed_url])
+        feeds.size.should == 2
+        feeds[@paul_feed_url].feed_url.should == @paul_feed_url
+        feeds[@trotter_feed_url].feed_url.should == @trotter_feed_url
+      end
+      
+      it "should yeild the url and feed object to a :on_success lambda" do
+        successful_call_mock = mock("successful_call_mock")
+        successful_call_mock.should_receive(:call)
+        Feedzirra::Feed.fetch_and_parse(@paul_feed_url, :on_success => lambda { |feed_url, feed|
+          feed_url.should == @paul_feed_url
+          feed.class.should == Feedzirra::AtomFeedBurner
+          successful_call_mock.call})
+      end
+      
+      it "should yield the url, response_code, response_header, and response_body to a :on_failure lambda" do
+        failure_call_mock = mock("failure_call_mock")
+        failure_call_mock.should_receive(:call)
+        fail_url = "http://localhost"
+        Feedzirra::Feed.fetch_and_parse(fail_url, :on_failure => lambda {|feed_url, response_code, response_header, response_body|
+          feed_url.should == fail_url
+          response_code.should == 0
+          response_header.should == ""
+          response_body.should == ""
+          failure_call_mock.call})
+      end
     end
   end
 end

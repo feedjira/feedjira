@@ -30,13 +30,43 @@ module Feedzirra
       responses = {}
       urls.each do |url|
         easy = Curl::Easy.new(url) do |curl|
-          curl.headers["User-Agent"] = "feedzirra"
+          curl.headers["User-Agent"]        = (options[:user_agent] || "feedzirra http://github.com/pauldix/feedzirra/tree/master")
+          curl.headers["If-Modified-Since"] = options[:if_modified_since] if options.has_key?(:if_modified_since)
+          curl.headers["If-None-Match"]     = options[:if_none_match] if options.has_key?(:if_none_match)
           curl.follow_location = true
           curl.on_success do |c|
             responses[url] = c.body_str
           end
           curl.on_failure do |c|
             responses[url] = c.response_code
+          end
+        end
+        multi.add(easy)
+      end
+
+      multi.perform
+      return responses.size == 1 ? responses.values.first : responses
+    end
+    
+    def self.fetch_and_parse(urls, options = {})
+      urls = [*urls]
+      multi = Curl::Multi.new
+      responses = {}
+      urls.each do |url|
+        easy = Curl::Easy.new(url) do |curl|
+          curl.headers["User-Agent"]        = (options[:user_agent] || "feedzirra http://github.com/pauldix/feedzirra/tree/master")
+          curl.headers["If-Modified-Since"] = options[:if_modified_since] if options.has_key?(:if_modified_since)
+          curl.headers["If-None-Match"]     = options[:if_none_match] if options.has_key?(:if_none_match)
+          curl.follow_location = true
+          curl.on_success do |c|
+            feed = Feed.parse(c.body_str)
+            feed.feed_url ||= c.last_effective_url
+            responses[url] = feed
+            options[:on_success].call(url, feed) if options.has_key?(:on_success)
+          end
+          curl.on_failure do |c|
+            responses[url] = c.response_code
+            options[:on_failure].call(url, c.response_code, c.header_str, c.body_str) if options.has_key?(:on_failure)
           end
         end
         multi.add(easy)
