@@ -55,6 +55,8 @@ describe Feedzirra::Feed do
       Feedzirra::Feed.add_feed_class(@klass)
       Feedzirra::Feed.feed_classes.last.should == @klass
     end
+    
+    it "should prioritize added feed types over the built in ones"
   end
   
   describe "header parsing" do
