@@ -4,6 +4,7 @@ require 'feedzirra/rdf_entry'
 module Feedzirra
   class RDF
     include SAXMachine
+    include FeedUtilities
     element :title
     element :link, :as => :url
     elements :item, :as => :entries, :class => RDFEntry
