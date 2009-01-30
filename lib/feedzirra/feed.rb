@@ -1,9 +1,12 @@
 require 'feedzirra/atom'
 require 'feedzirra/atom_feed_burner'
 require 'curb'
+require 'activesupport'
 
 module Feedzirra
   class Feed
+    USER_AGENT = "feedzirra http://github.com/pauldix/feedzirra/tree/master"
+    
     def self.parse(xml)
       determine_feed_parser_for_xml(xml).parse(xml)
     end
@@ -30,8 +33,8 @@ module Feedzirra
       responses = {}
       urls.each do |url|
         easy = Curl::Easy.new(url) do |curl|
-          curl.headers["User-Agent"]        = (options[:user_agent] || "feedzirra http://github.com/pauldix/feedzirra/tree/master")
-          curl.headers["If-Modified-Since"] = options[:if_modified_since] if options.has_key?(:if_modified_since)
+          curl.headers["User-Agent"]        = (options[:user_agent] || USER_AGENT)
+          curl.headers["If-Modified-Since"] = options[:if_modified_since].httpdate if options.has_key?(:if_modified_since)
           curl.headers["If-None-Match"]     = options[:if_none_match] if options.has_key?(:if_none_match)
           curl.follow_location = true
           curl.on_success do |c|
@@ -54,8 +57,8 @@ module Feedzirra
       responses = {}
       urls.each do |url|
         easy = Curl::Easy.new(url) do |curl|
-          curl.headers["User-Agent"]        = (options[:user_agent] || "feedzirra http://github.com/pauldix/feedzirra/tree/master")
-          curl.headers["If-Modified-Since"] = options[:if_modified_since] if options.has_key?(:if_modified_since)
+          curl.headers["User-Agent"]        = (options[:user_agent] || USER_AGENT)
+          curl.headers["If-Modified-Since"] = options[:if_modified_since].httpdate if options.has_key?(:if_modified_since)
           curl.headers["If-None-Match"]     = options[:if_none_match] if options.has_key?(:if_none_match)
           curl.follow_location = true
           curl.on_success do |c|

@@ -47,14 +47,17 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<nokogiri>, ["> 0.0.0"])
       s.add_runtime_dependency(%q<pauldix-sax-machine>, [">= 0.0.7"])
       s.add_runtime_dependency(%q<taf2-curb>, [">= 0.2.3"])
+      s.add_runtime_dependency(%q<activesupport>, [">=2.0.0"])
     else
       s.add_dependency(%q<nokogiri>, ["> 0.0.0"])
       s.add_dependency(%q<pauldix-sax-machine>, [">= 0.0.7"])
       s.add_dependency(%q<taf2-curb>, [">= 0.2.3"])
+      s.add_dependency(%q<activesupport>, [">=2.0.0"])
     end
   else
     s.add_dependency(%q<nokogiri>, ["> 0.0.0"])
     s.add_dependency(%q<pauldix-sax-machine>, [">= 0.0.7"])
     s.add_dependency(%q<taf2-curb>, [">= 0.2.3"])
+    s.add_dependency(%q<activesupport>, [">=2.0.0"])
   end
 end

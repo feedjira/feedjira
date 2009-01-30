@@ -145,6 +145,10 @@ describe Feedzirra::Feed do
           response_body.should == ""
           failure_call_mock.call})
       end
+      
+      it "should return a not modified status for a feed with a :if_modified_since is past its last update" do
+        Feedzirra::Feed.fetch_and_parse(@paul_feed_url, :if_modified_since => Time.now).should == 304
+      end      
     end
   end
 end
