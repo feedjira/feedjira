@@ -1,6 +1,3 @@
-require 'sax-machine'
-require 'feedzirra/atom_feed_burner_entry'
-
 module Feedzirra
   class AtomFeedBurner
     include SAXMachine

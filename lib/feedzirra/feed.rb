@@ -1,8 +1,3 @@
-require 'feedzirra/atom'
-require 'feedzirra/atom_feed_burner'
-require 'curb'
-require 'activesupport'
-
 module Feedzirra
   class NoParserAvailable < StandardError; end
   

@@ -1,6 +1,3 @@
-require 'sax-machine'
-require 'feedzirra/rss_entry'
-
 module Feedzirra
   class RSS
     include SAXMachine

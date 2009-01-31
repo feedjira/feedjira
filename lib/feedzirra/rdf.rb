@@ -1,6 +1,3 @@
-require 'sax-machine'
-require 'feedzirra/rdf_entry'
-
 module Feedzirra
   class RDF
     include SAXMachine
