@@ -1,5 +1,7 @@
 module Feedzirra
   module FeedUtilities
+    UPDATABLE_ATTRIBUTES = %w(title feed_url url)
+    
     attr_writer :new_entries, :updated
     attr_accessor :etag, :last_modified
     
@@ -12,17 +14,20 @@ module Feedzirra
     end
     
     def update_from_feed(feed)
-      if self.title != feed.title
-        self.title = feed.title
-        self.updated = true
-      end
-      if self.feed_url != feed.feed_url
-        self.feed_url = feed.feed_url
-        self.updated = true
-      end
-      if self.url != feed.url
-        self.url = feed.url
-        self.updated = true
+      updated! if UPDATABLE_ATTRIBUTES.any? { |name| updated_attribute?(feed, name) }
+    end
+    
+    private
+    
+    def updated!
+      self.updated = true
+    end
+    
+    def updated_attribute?(feed, name)
+      old_value, new_value = send(name), feed.send(name)
+      
+      if old_value != new_value
+        send("#{name}=", new_value)
       end
     end
   end
