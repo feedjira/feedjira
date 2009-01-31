@@ -28,7 +28,15 @@ module Feedzirra
       self.new_entries += find_new_entries_for(feed)
       self.entries += self.new_entries
       
-      updated! if UPDATABLE_ATTRIBUTES.any? { |name| updated_attribute?(feed, name) }
+      updated! if UPDATABLE_ATTRIBUTES.any? { |name| update_attribute(feed, name) }
+    end
+    
+    def update_attribute(feed, name)
+      old_value, new_value = send(name), feed.send(name)
+      
+      if old_value != new_value
+        send("#{name}=", new_value)
+      end
     end
     
     private
@@ -43,14 +51,6 @@ module Feedzirra
     
     def existing_entry?(test_entry)
       entries.any? { |entry| entry.url == test_entry.url }
-    end
-    
-    def updated_attribute?(feed, name)
-      old_value, new_value = send(name), feed.send(name)
-      
-      if old_value != new_value
-        send("#{name}=", new_value)
-      end
     end
   end
 end
