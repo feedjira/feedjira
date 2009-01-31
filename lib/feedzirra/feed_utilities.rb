@@ -42,7 +42,7 @@ module Feedzirra
     private
     
     def updated!
-      self.updated = true
+      @updated = true
     end
     
     def find_new_entries_for(feed)
