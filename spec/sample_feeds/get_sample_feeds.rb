@@ -13,6 +13,7 @@ feeds = elements.map do |opml_entry|
     :url      => opml_entry.attributes["htmlUrl"].to_s)
 end
 
+urls = []
 multi = Curl::Multi.new
 feeds.each do |feed|
   on_failure = lambda do |ex|
@@ -23,11 +24,11 @@ feeds.each do |feed|
 
   on_success = lambda do |body|
     puts "got #{feed.title} - #{feed.feed_url}"
-    File.open("#{feed.title.gsub(/\W/, "")}.xml", "w") do |f|
-      f.write(body)
-    end
+    urls << feed.feed_url
   end
   multi.get(feed.feed_url, on_success, on_failure)
 end
 
 multi.select([], []) while multi.size > 0
+
+File.open("successful_feed_urls.txt", "w") {|f| f.write(urls.join("\n"))}
