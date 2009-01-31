@@ -1,5 +1,3 @@
-puts "Loading AtomFeedBurner"
-
 Feedzirra.parses_feed('AtomFeedBurner', /Atom/, /feedburner/) do
   element :title
   element :link, :as => :url, :value => :href, :with => {:type => "text/html"}
