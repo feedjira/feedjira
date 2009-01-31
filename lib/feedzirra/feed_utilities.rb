@@ -1,12 +1,15 @@
 module Feedzirra
   module FeedUtilities
-    UPDATABLE_ATTRIBUTES = %w(title feed_url url)
+    UPDATABLE_ATTRIBUTES = %w(title feed_url url last_modified)
     
     attr_writer   :last_modified, :new_entries, :updated
     attr_accessor :etag
 
     def last_modified
-      @last_modified ||= entries.inject(Time.now - 10.years) {|last_time, entry| entry.published > last_time ? entry.published : last_time}
+      @last_modified ||= begin
+        entry = entries.sort_by { |entry| entry.published }.last
+        entry ? entry.published : nil
+      end
     end
     
     def updated?
@@ -22,7 +25,6 @@ module Feedzirra
     end
     
     def update_from_feed(feed)
-      self.last_modified = [feed.last_modified, last_modified].max
       self.new_entries += find_new_entries_for(feed)
       self.entries += self.new_entries
       
