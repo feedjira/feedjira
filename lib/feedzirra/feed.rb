@@ -1,3 +1,8 @@
+require 'feedzirra/atom'
+require 'feedzirra/atom_feed_burner'
+require 'curb'
+require 'activesupport'
+
 module Feedzirra
   class NoParserAvailable < StandardError; end
   
@@ -22,7 +27,7 @@ module Feedzirra
     end
     
     def self.feed_classes
-      @feed_classes ||= []
+      @feed_classes ||= [RSS, RDF, AtomFeedBurner, Atom]
     end
 
     # can take a single url or an array of urls
