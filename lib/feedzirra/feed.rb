@@ -4,11 +4,17 @@ require 'curb'
 require 'activesupport'
 
 module Feedzirra
+  class NoParserAvailable < StandardError; end
+  
   class Feed
     USER_AGENT = "feedzirra http://github.com/pauldix/feedzirra/tree/master"
     
     def self.parse(xml)
-      determine_feed_parser_for_xml(xml).parse(xml)
+      if parser = determine_feed_parser_for_xml(xml)
+        parser.parse(xml)
+      else
+        raise NoParserAvailable.new("no valid parser for content.")
+      end
     end
 
     def self.determine_feed_parser_for_xml(xml)
