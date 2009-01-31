@@ -23,7 +23,8 @@ module Feedzirra
     
     def update_from_feed(feed)
       self.last_modified = [feed.last_modified, last_modified].max
-      self.entries += (self.new_entries += find_new_entries_for(feed))
+      self.new_entries += find_new_entries_for(feed)
+      self.entries += self.new_entries
       
       updated! if UPDATABLE_ATTRIBUTES.any? { |name| updated_attribute?(feed, name) }
     end
