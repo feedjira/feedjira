@@ -50,10 +50,20 @@ describe Feedzirra::Feed do
   end
   
   describe "adding feed types" do
-    it "should be able to add a feed type" do
-      @klass = Class.new
-      Feedzirra::Feed.add_feed_class(@klass)
-      Feedzirra::Feed.feed_classes.last.should == @klass
+    it "should prioritize added feed types over the built in ones" do
+      feed_text = "Atom asdf"
+      Feedzirra::Atom.should be_able_to_parse(feed_text)
+      new_feed_type = Class.new do
+        def self.able_to_parse?(val)
+          true
+        end
+      end
+      new_feed_type.should be_able_to_parse(feed_text)
+      Feedzirra::Feed.add_feed_class(new_feed_type)
+      Feedzirra::Feed.determine_feed_parser_for_xml(feed_text).should == new_feed_type
+      
+      # this is a hack so that this doesn't break the rest of the tests
+      Feedzirra::Feed.feed_classes.reject! {|o| o == new_feed_type }
     end
   end
   
@@ -66,8 +76,16 @@ describe Feedzirra::Feed do
       Feedzirra::Feed.etag_from_header(@header).should == "ziEyTl4q9GH04BR4jgkImd0GvSE"
     end
     
+    it "should return nil if there is no etag in header" do
+      Feedzirra::Feed.etag_from_header("foo").should be_nil
+    end
+    
     it "should parse out a last-modified date" do
-      Feedzirra::Feed.last_modified_from_header(@header).should == "Wed, 28 Jan 2009 04:10:32 GMT"
+      Feedzirra::Feed.last_modified_from_header(@header).should == Time.parse("Wed, 28 Jan 2009 04:10:32 GMT")
+    end
+    
+    it "should return nil if there is no last-modified in header" do
+      Feedzirra::Feed.last_modified_from_header("foo").should be_nil
     end
   end
   
@@ -148,7 +166,15 @@ describe Feedzirra::Feed do
       
       it "should return a not modified status for a feed with a :if_modified_since is past its last update" do
         Feedzirra::Feed.fetch_and_parse(@paul_feed_url, :if_modified_since => Time.now).should == 304
-      end      
+      end
+      
+      it "should set the etag from the header" # do
+       #        Feedzirra::Feed.fetch_and_parse(@paul_feed_url).etag.should_not == ""
+       #      end
+      
+      it "should set the last_modified from the header" # do
+       #        Feedzirra::Feed.fetch_and_parse(@paul_feed_url).last_modified.should.class == Time
+       #      end
     end
   end
 end

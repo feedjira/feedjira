@@ -34,53 +34,107 @@ describe Feedzirra::FeedUtilities do
       feed.last_modified = time
       feed.last_modified.should == time
     end
+    
+    it "should return new_entries? as true when entries are put into new_entries" do
+      feed = @klass.new
+      feed.new_entries << :foo
+      feed.should have_new_entries
+    end
+    
+    it "should return a last_modified value from the entry with the most recent published date if the last_modified date hasn't been set" do
+      feed = Feedzirra::Atom.new
+      entry =Feedzirra::AtomEntry.new
+      entry.published = Time.now.to_s
+      feed.entries << entry
+      feed.last_modified.should == entry.published
+    end
   end
   
   describe "#update_from_feed" do
-    before(:each) do
-      # I'm using the Atom class when I know I should be using a different one. However, this update_from_feed
-      # method would only be called against a feed item.
-      @feed = Feedzirra::Atom.new
-      @feed.title    = "A title"
-      @feed.url      = "http://pauldix.net"
-      @feed.feed_url = "http://feeds.feedburner.com/PaulDixExplainsNothing"
-      @feed.updated  = false
-      @new_feed = @feed.dup
+    describe "updating feed attributes" do
+      before(:each) do
+        # I'm using the Atom class when I know I should be using a different one. However, this update_from_feed
+        # method would only be called against a feed item.
+        @feed = Feedzirra::Atom.new
+        @feed.title    = "A title"
+        @feed.url      = "http://pauldix.net"
+        @feed.feed_url = "http://feeds.feedburner.com/PaulDixExplainsNothing"
+        @feed.updated  = false
+        @updated_feed = @feed.dup
+      end
+    
+      it "should update the title if changed" do
+        @updated_feed.title = "new title"
+        @feed.update_from_feed(@updated_feed)
+        @feed.title.should == @updated_feed.title
+        @feed.should be_updated
+      end
+    
+      it "should not update the title if the same" do
+        @feed.update_from_feed(@updated_feed)
+        @feed.should_not be_updated      
+      end
+    
+      it "should update the feed_url if changed" do
+        @updated_feed.feed_url = "a new feed url"
+        @feed.update_from_feed(@updated_feed)
+        @feed.feed_url.should == @updated_feed.feed_url
+        @feed.should be_updated
+      end
+    
+      it "should not update the feed_url if the same" do
+        @feed.update_from_feed(@updated_feed)
+        @feed.should_not be_updated
+      end
+    
+      it "should update the url if changed" do
+        @updated_feed.url = "a new url"
+        @feed.update_from_feed(@updated_feed)
+        @feed.url.should == @updated_feed.url
+      end
+    
+      it "should not update the url if not changed" do
+        @feed.update_from_feed(@updated_feed)
+        @feed.should_not be_updated
+      end
     end
     
-    it "should update the title if changed" do
-      @new_feed.title = "new title"
-      @feed.update_from_feed(@new_feed)
-      @feed.title.should == @new_feed.title
-      @feed.should be_updated
-    end
-    
-    it "should not update the title if the same" do
-      @feed.update_from_feed(@new_feed)
-      @feed.should_not be_updated      
-    end
-    
-    it "should update the feed_url if changed" do
-      @new_feed.feed_url = "a new feed url"
-      @feed.update_from_feed(@new_feed)
-      @feed.feed_url.should == @new_feed.feed_url
-      @feed.should be_updated
-    end
-    
-    it "should not update the feed_url if the same" do
-      @feed.update_from_feed(@new_feed)
-      @feed.should_not be_updated
-    end
-    
-    it "should update the url if changed" do
-      @new_feed.url = "a new url"
-      @feed.update_from_feed(@new_feed)
-      @feed.url.should == @new_feed.url
-    end
-    
-    it "should not update the url if not changed" do
-      @feed.update_from_feed(@new_feed)
-      @feed.should_not be_updated
+    describe "updating entries" do
+      before(:each) do
+        # I'm using the Atom class when I know I should be using a different one. However, this update_from_feed
+        # method would only be called against a feed item.
+        @feed = Feedzirra::Atom.new
+        @feed.title    = "A title"
+        @feed.url      = "http://pauldix.net"
+        @feed.feed_url = "http://feeds.feedburner.com/PaulDixExplainsNothing"
+        @feed.updated  = false
+        @updated_feed = @feed.dup
+        @old_entry = Feedzirra::AtomEntry.new
+        @old_entry.url = "http://pauldix.net/old.html"
+        @old_entry.published = Time.now.to_s
+        @new_entry = Feedzirra::AtomEntry.new
+        @new_entry.url = "http://pauldix.net/new.html"
+        @new_entry.published = (Time.now + 1.day).to_s  
+        @feed.entries << @old_entry
+        @updated_feed.entries << @old_entry
+        @updated_feed.entries << @new_entry
+      end
+      
+      it "should update last-modified from the latest entry date" do
+        @feed.update_from_feed(@updated_feed)
+        @feed.last_modified.should == @new_entry.published
+      end
+      
+      it "should put new entries into new_entries" do
+        @feed.update_from_feed(@updated_feed)
+        @feed.new_entries.should == [@new_entry]
+      end
+      
+      it "should also put new entries into the entries collection" do
+        @feed.update_from_feed(@updated_feed)
+        @feed.entries.should include(@new_entry)
+        @feed.entries.should include(@old_entry)
+      end
     end
   end
 end

@@ -17,7 +17,7 @@ module Feedzirra
     end
 
     def self.add_feed_class(klass)
-      feed_classes << klass
+      feed_classes.unshift klass
     end
     
     def self.feed_classes
@@ -64,6 +64,8 @@ module Feedzirra
           curl.on_success do |c|
             feed = Feed.parse(c.body_str)
             feed.feed_url ||= c.last_effective_url
+            feed.etag = etag_from_header(c.header_str)
+            feed.last_modified = last_modified_from_header(c.header_str)
             responses[url] = feed
             options[:on_success].call(url, feed) if options.has_key?(:on_success)
           end
@@ -86,7 +88,7 @@ module Feedzirra
     
     def self.last_modified_from_header(header)
       header =~ /.*Last-Modified:\s(.*)\r/
-      $1
+      Time.parse($1) if $1
     end
   end
 end
