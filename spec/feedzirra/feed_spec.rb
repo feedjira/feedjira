@@ -76,8 +76,16 @@ describe Feedzirra::Feed do
       Feedzirra::Feed.etag_from_header(@header).should == "ziEyTl4q9GH04BR4jgkImd0GvSE"
     end
     
+    it "should return nil if there is no etag in header" do
+      Feedzirra::Feed.etag_from_header("foo").should be_nil
+    end
+    
     it "should parse out a last-modified date" do
-      Feedzirra::Feed.last_modified_from_header(@header).should == "Wed, 28 Jan 2009 04:10:32 GMT"
+      Feedzirra::Feed.last_modified_from_header(@header).should == Time.parse("Wed, 28 Jan 2009 04:10:32 GMT")
+    end
+    
+    it "should return nil if there is no last-modified in header" do
+      Feedzirra::Feed.last_modified_from_header("foo").should be_nil
     end
   end
   
@@ -158,7 +166,15 @@ describe Feedzirra::Feed do
       
       it "should return a not modified status for a feed with a :if_modified_since is past its last update" do
         Feedzirra::Feed.fetch_and_parse(@paul_feed_url, :if_modified_since => Time.now).should == 304
-      end      
+      end
+      
+      it "should set the etag from the header" # do
+       #        Feedzirra::Feed.fetch_and_parse(@paul_feed_url).etag.should_not == ""
+       #      end
+      
+      it "should set the last_modified from the header" # do
+       #        Feedzirra::Feed.fetch_and_parse(@paul_feed_url).last_modified.should.class == Time
+       #      end
     end
   end
 end
