@@ -1,8 +1,12 @@
 module Feedzirra
   module FeedUtilities
-    attr_writer   :last_modified, :new_entries, :updated
+    attr_writer   :new_entries, :updated
     attr_accessor :etag
 
+    def last_modified=(value)
+      @last_modified = value if value
+    end
+    
     def last_modified
       @last_modified ||= entries.inject(Time.now - 10.years) {|last_time, entry| entry.published > last_time ? entry.published : last_time}
     end
