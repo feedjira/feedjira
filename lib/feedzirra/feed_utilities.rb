@@ -2,7 +2,7 @@ module Feedzirra
   module FeedUtilities
     UPDATABLE_ATTRIBUTES = %w(title feed_url url last_modified)
     
-    attr_writer   :last_modified, :new_entries, :updated
+    attr_writer   :new_entries, :updated, :last_modified
     attr_accessor :etag
 
     def last_modified
@@ -38,7 +38,11 @@ module Feedzirra
     end
     
     def find_new_entries_for(feed)
-      feed.entries.inject([]) { |result, entry| result << entry unless entries.include?(entry); result }
+      feed.entries.inject([]) { |result, entry| result << entry unless existing_entry?(entry); result }
+    end
+    
+    def existing_entry?(test_entry)
+      entries.any? { |entry| entry.url == test_entry.url }
     end
     
     def updated_attribute?(feed, name)

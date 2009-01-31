@@ -81,6 +81,37 @@ module Feedzirra
       return responses.size == 1 ? responses.values.first : responses
     end
     
+    def self.update(feeds, options = {})
+      feeds = [*feeds]
+      multi = Curl::Multi.new
+      responses = {}
+      feeds.each do |feed|
+        easy = Curl::Easy.new(feed.feed_url) do |curl|
+          curl.headers["User-Agent"]        = (options[:user_agent] || USER_AGENT)
+          curl.headers["If-Modified-Since"] = feed.last_modified
+          curl.headers["If-None-Match"]     = feed.etag if feed.etag
+          curl.follow_location = true
+          curl.on_success do |c|
+            updated_feed = Feed.parse(c.body_str)
+            updated_feed.feed_url ||= c.last_effective_url
+            updated_feed.etag = etag_from_header(c.header_str)
+            updated_feed.last_modified = last_modified_from_header(c.header_str)
+            feed.update_from_feed(updated_feed)
+            responses[feed.feed_url] = feed
+            options[:on_success].call(feed) if options.has_key?(:on_success)
+          end
+          curl.on_failure do |c|
+            responses[url] = c.response_code
+            options[:on_failure].call(feed, c.response_code, c.header_str, c.body_str) if options.has_key?(:on_failure)
+          end
+        end
+        multi.add(easy)
+      end
+    
+      multi.perform
+      return responses.size == 1 ? responses.values.first : responses.values
+    end
+    
     def self.etag_from_header(header)
       header =~ /.*ETag:\s(.*)\r/
       $1

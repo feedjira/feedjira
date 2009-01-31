@@ -176,5 +176,20 @@ describe Feedzirra::Feed do
        #        Feedzirra::Feed.fetch_and_parse(@paul_feed_url).last_modified.should.class == Time
        #      end
     end
+
+    describe "#update" do
+      it "should update and return a single feed object" do
+        feed = Feedzirra::Feed.fetch_and_parse(@paul_feed_url)
+        feed.entries.delete_at(0)
+        feed.last_modified = nil
+        feed.etag = nil
+        updated_feed = Feedzirra::Feed.update(feed)
+        updated_feed.new_entries.size.should == 1
+        updated_feed.should have_new_entries
+      end
+
+      it "should update a collection of feed objects"
+      it "should return the feed objects even when not updated"
+    end
   end
 end
