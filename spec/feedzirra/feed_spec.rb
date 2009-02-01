@@ -209,8 +209,28 @@ describe Feedzirra::Feed do
         updated_feed.should have_new_entries
       end
 
-      it "should update a collection of feed objects"
-      it "should return the feed objects even when not updated"
+      it "should update a collection of feed objects" do
+        feeds = Feedzirra::Feed.fetch_and_parse([@paul_feed_url, @trotter_feed_url])
+        paul_entries_size    = feeds[@paul_feed_url].entries.size
+        trotter_entries_size = feeds[@trotter_feed_url].entries.size
+        
+        feeds.values.each do |feed|
+          feed.last_modified = nil
+          feed.etag = nil
+          feed.entries.delete_at(0)
+        end
+        updated_feeds = Feedzirra::Feed.update(feeds.values)
+        updated_feeds.detect {|f| f.feed_url == @paul_feed_url}.entries.size.should == paul_entries_size
+        updated_feeds.detect {|f| f.feed_url == @trotter_feed_url}.entries.size.should == trotter_entries_size
+      end
+      
+      it "should return the feed objects even when not updated" do
+        feeds = Feedzirra::Feed.fetch_and_parse([@paul_feed_url, @trotter_feed_url])
+        updated_feeds = Feedzirra::Feed.update(feeds.values)
+        updated_feeds.size.should == 2
+        updated_feeds.first.should_not be_updated
+        updated_feeds.last.should_not be_updated
+      end
     end
   end
 end
