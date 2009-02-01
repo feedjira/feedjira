@@ -2,14 +2,31 @@ h1. Feedzirra
 
 "http://github.com/pauldix/feedzirra/tree/master":http://github.com/pauldix/feedzirra/tree/master
 
-h2. Description
+h2. Summary
 
 A feed fetching and parsing library that treats the internet like Godzilla treats Japan: it dominates and eats all.
+
+h2. Description
 
 h2. Usage
 
 <pre>
 # put some usage here
+</pre>
+
+h2. Benchmarks
+
+One of the goals of Feedzirra is speed. This includes not only parsing, but fetching multiple feeds as quickly as possible. I ran a benchmark getting 20 feeds 10 times using Feedzirra, rFeedParser, and FeedNormalizer. For more details the "benchmark code can be found in the project in spec/benchmarks/feedzirra_benchmarks.rb":http://github.com/pauldix/feedzirra/blob/7fb5634c5c16e9c6ec971767b462c6518cd55f5d/spec/benchmarks/feedzirra_benchmarks.rb
+<pre>
+feedzirra          5.170000   1.290000   6.460000 ( 18.917796)
+rfeedparser      104.260000  12.220000 116.480000 (244.799063)
+feed-normalizer   66.250000   4.010000  70.260000 (191.589862)
+</pre>
+The result of that benchmark is a bit sketchy because of the network variability. Running 10 times against the same 20 feeds was meant to smooth some of that out. However, there is also a "benchmark comparing parsing speed in spec/benchmarks/parsing_benchmark.rb":http://github.com/pauldix/feedzirra/blob/7fb5634c5c16e9c6ec971767b462c6518cd55f5d/spec/benchmarks/parsing_benchmark.rb on an atom feed.
+<pre>
+feedzirra        0.500000   0.030000   0.530000 (  0.658744)
+rfeedparser      8.400000   1.110000   9.510000 ( 11.839827)
+feed-normalizer  5.980000   0.160000   6.140000 (  7.576140)
 </pre>
 
 h2. LICENSE
