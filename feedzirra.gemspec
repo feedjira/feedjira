@@ -9,6 +9,7 @@ Gem::Specification.new do |s|
   s.date = %q{2009-01-22}
   s.email = %q{paul@pauldix.net}
   s.files = [
+    "lib/core_ext/date.rb"
     "lib/feedzirra.rb",
     "lib/feedzirra/feed.rb",
     "lib/feedzirra/atom.rb",

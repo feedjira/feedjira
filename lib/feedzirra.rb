@@ -1,8 +1,14 @@
 $LOAD_PATH.unshift(File.dirname(__FILE__)) unless $LOAD_PATH.include?(File.dirname(__FILE__))
 
-require 'sax-machine'
+gem 'activesupport'
+
 require 'curb'
-require 'activesupport'
+require 'sax-machine'
+require 'active_support/basic_object'
+require 'active_support/core_ext/object'
+require 'active_support/core_ext/time'
+
+require 'core_ext/date'
 
 require 'feedzirra/feed_utilities'
 require 'feedzirra/feed_entry_utilities'

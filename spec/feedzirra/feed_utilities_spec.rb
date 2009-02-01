@@ -114,7 +114,7 @@ describe Feedzirra::FeedUtilities do
         @old_entry.published = Time.now.to_s
         @new_entry = Feedzirra::AtomEntry.new
         @new_entry.url = "http://pauldix.net/new.html"
-        @new_entry.published = (Time.now + 1.day).to_s  
+        @new_entry.published = (Time.now + 10).to_s  
         @feed.entries << @old_entry
         @updated_feed.entries << @old_entry
         @updated_feed.entries << @new_entry
