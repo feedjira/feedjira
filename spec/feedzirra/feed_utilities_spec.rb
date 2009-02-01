@@ -48,6 +48,15 @@ describe Feedzirra::FeedUtilities do
       feed.entries << entry
       feed.last_modified.should == entry.published
     end
+    
+    it "should not throw an error if one of the entries has published date of nil" do
+      feed = Feedzirra::Atom.new
+      entry = Feedzirra::AtomEntry.new
+      entry.published = Time.now.to_s
+      feed.entries << entry
+      feed.entries << Feedzirra::AtomEntry.new
+      feed.last_modified.should == entry.published
+    end
   end
   
   describe "#update_from_feed" do

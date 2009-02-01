@@ -7,7 +7,7 @@ module Feedzirra
 
     def last_modified
       @last_modified ||= begin
-        entry = entries.sort_by { |entry| entry.published }.last
+        entry = entries.reject {|e| e.published.nil? }.sort_by { |entry| entry.published if entry.published }.last
         entry ? entry.published : nil
       end
     end
