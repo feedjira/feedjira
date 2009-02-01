@@ -8,5 +8,6 @@ module Feedzirra
     element :content
     element :summary
     element :published
+    element :created, :as => :published
   end
 end

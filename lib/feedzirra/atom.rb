@@ -8,7 +8,7 @@ module Feedzirra
     elements :entry, :as => :entries, :class => AtomEntry
     
     def self.able_to_parse?(xml)
-      xml =~ /Atom/
+      xml =~ /(Atom)|(#{Regexp.escape("http://purl.org/atom")})/
     end
   end
 end

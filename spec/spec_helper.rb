@@ -25,6 +25,10 @@ def sample_rdf_entry_content
   File.read("#{File.dirname(__FILE__)}/sample_feeds/HREFConsideredHarmfulFirstEntry.xml")
 end
 
+def sample_rss_feed_burner_feed
+  File.read("#{File.dirname(__FILE__)}/sample_feeds/SamHarrisAuthorPhilosopherEssayistAtheist.xml")
+end
+
 def sample_rss_feed
   File.read("#{File.dirname(__FILE__)}/sample_feeds/TenderLovemaking.xml")
 end

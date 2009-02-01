@@ -39,6 +39,13 @@ describe Feedzirra::Feed do
         }.should raise_error(Feedzirra::NoParserAvailable)
       end      
     end
+    
+    it "should parse an feedburner rss feed" do
+      feed = Feedzirra::Feed.parse(sample_rss_feed_burner_feed)
+      feed.class.should == Feedzirra::RDF
+      feed.title.should == "Sam Harris: Author, Philosopher, Essayist, Atheist"
+      feed.entries.size.should == 10
+    end
   end
   
   describe "#determine_feed_parser_for_xml" do
@@ -52,6 +59,10 @@ describe Feedzirra::Feed do
     
     it "should return the Feedzirra::RDF class for an rdf/rss 1.0 feed" do
       Feedzirra::Feed.determine_feed_parser_for_xml(sample_rdf_feed).should == Feedzirra::RDF
+    end
+    
+    it "should return the Feedzirra::RDF class for an rss feedburner feed" do
+      Feedzirra::Feed.determine_feed_parser_for_xml(sample_rss_feed_burner_feed).should == Feedzirra::RDF
     end
     
     it "should return the Feedzirra::RSS object for an rss 2.0 feed" do

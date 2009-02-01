@@ -63,12 +63,18 @@ module Feedzirra
           curl.headers["If-None-Match"]     = options[:if_none_match] if options.has_key?(:if_none_match)
           curl.follow_location = true
           curl.on_success do |c|
-            feed = Feed.parse(c.body_str)
-            feed.feed_url ||= c.last_effective_url
-            feed.etag = etag_from_header(c.header_str)
-            feed.last_modified = last_modified_from_header(c.header_str)
-            responses[url] = feed
-            options[:on_success].call(url, feed) if options.has_key?(:on_success)
+            xml = c.body_str
+            klass = determine_feed_parser_for_xml(xml)
+            if klass
+              feed = klass.parse(xml)
+              feed.feed_url ||= c.last_effective_url
+              feed.etag = etag_from_header(c.header_str)
+              feed.last_modified = last_modified_from_header(c.header_str)
+              responses[url] = feed
+              options[:on_success].call(url, feed) if options.has_key?(:on_success)
+            else
+              puts "Error determining parser for #{url} - #{c.last_effective_url}"
+            end
           end
           curl.on_failure do |c|
             responses[url] = c.response_code
