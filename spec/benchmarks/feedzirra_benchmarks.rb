@@ -7,7 +7,7 @@ require 'benchmark'
 include Benchmark
 
 iterations = 10
-urls = File.readlines(File.dirname(__FILE__) + "/../sample_feeds/successful_feed_urls.txt")
+urls = File.readlines(File.dirname(__FILE__) + "/../sample_feeds/successful_feed_urls.txt").slice(0, 20)
 puts "benchmarks on #{urls.size} feeds"
 puts "************************************"
 benchmark do |t|    
@@ -28,10 +28,13 @@ benchmark do |t|
   end
 
   t.report("feed-normalizer") do
-    urls.each do |url|
-      feed = FeedNormalizer::FeedNormalizer.parse(open(url), :force_parser => FeedNormalizer::SimpleRssParser)
-      $stdout.print '.'
-      $stdout.flush
+    iterations.times do
+      urls.each do |url|
+        # have to use the :force option to make feed-normalizer parse an atom feed
+        feed = FeedNormalizer::FeedNormalizer.parse(open(url), :force_parser => FeedNormalizer::SimpleRssParser)
+        $stdout.print '.'
+        $stdout.flush
+      end
     end
   end
 end
