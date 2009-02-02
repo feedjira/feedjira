@@ -95,7 +95,7 @@ module Feedzirra
       feeds.each do |feed|
         easy = Curl::Easy.new(feed.feed_url) do |curl|
           curl.headers["User-Agent"]        = (options[:user_agent] || USER_AGENT)
-          curl.headers["If-Modified-Since"] = feed.last_modified if feed.last_modified
+          curl.headers["If-Modified-Since"] = feed.last_modified.httpdate if feed.last_modified
           curl.headers["If-None-Match"]     = feed.etag if feed.etag
           curl.follow_location = true
           curl.on_success do |c|

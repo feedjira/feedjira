@@ -148,7 +148,6 @@ http://fhwang.net/syndicate/ruby.atom
 http://ola-bini.blogspot.com/atom.xml
 http://irthoughts.wordpress.com/feed/
 http://www.zedshaw.com/feed.atom
-http://feeds.feedburner.com/devthatweb
 http://ross.typepad.com/blog/atom.xml
 http://www.pbs.org/cringely/pulpit/rss2.xml
 http://rss.slashdot.org/slashdot/eqWf
