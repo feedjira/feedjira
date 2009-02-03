@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.date = %q{2009-01-22}
   s.email = %q{paul@pauldix.net}
   s.files = [
-    "lib/core_ext/date.rb"
+    "lib/core_ext/date.rb",
     "lib/feedzirra.rb",
     "lib/feedzirra/feed.rb",
     "lib/feedzirra/atom.rb",
@@ -29,7 +29,7 @@ Gem::Specification.new do |s|
     "spec/feedzirra/atom_spec.rb",
     "spec/feedzirra/atom_entry_spec.rb",
     "spec/feedzirra/atom_feed_burner_spec.rb",
-    "spec/feedzirra/atom_feed_burner_entry_spec.rb"
+    "spec/feedzirra/atom_feed_burner_entry_spec.rb",
     "spec/feedzirra/rdf_spec.rb",
     "spec/feedzirra/rdf_entry_spec.rb",
     "spec/feedzirra/rss_spec.rb",
