@@ -27,6 +27,7 @@ For now Feedzirra exists only on github. It also has a few gem requirements that
 gem sources -a http://gems.github.com # if you haven't already
 gem install pauldix-feedzirra
 </pre>
+<b>NOTE:</b>If you are running Mac Ports and you have libcurl installed through there, you need to uninstall it for curb to work! The version in Mac Ports is old and doesn't play nice with curb. If you're running Leopard, you can just uninstall and you should be golden. If you're on an older version of OS X, you'll then need to "download curl":http://curl.haxx.se/download.html and build from source.
 
 h2. Usage
 
