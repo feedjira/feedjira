@@ -53,35 +53,14 @@ module Feedzirra
     end
     
     def self.fetch_and_parse(urls, options = {})
-      urls = [*urls]
+      url_queue = [*urls]
       multi = Curl::Multi.new
+
+      # I broke these down so I would only try to do 30 simultaneously because 
+      # I was getting weird errors when doing a lot. As one finishes it pops another off the queue.
       responses = {}
-      urls.each do |url|
-        easy = Curl::Easy.new(url) do |curl|
-          curl.headers["User-Agent"]        = (options[:user_agent] || USER_AGENT)
-          curl.headers["If-Modified-Since"] = options[:if_modified_since].httpdate if options.has_key?(:if_modified_since)
-          curl.headers["If-None-Match"]     = options[:if_none_match] if options.has_key?(:if_none_match)
-          curl.follow_location = true
-          curl.on_success do |c|
-            xml = c.body_str
-            klass = determine_feed_parser_for_xml(xml)
-            if klass
-              feed = klass.parse(xml)
-              feed.feed_url ||= c.last_effective_url
-              feed.etag = etag_from_header(c.header_str)
-              feed.last_modified = last_modified_from_header(c.header_str)
-              responses[url] = feed
-              options[:on_success].call(url, feed) if options.has_key?(:on_success)
-            else
-              puts "Error determining parser for #{url} - #{c.last_effective_url}"
-            end
-          end
-          curl.on_failure do |c|
-            responses[url] = c.response_code
-            options[:on_failure].call(url, c.response_code, c.header_str, c.body_str) if options.has_key?(:on_failure)
-          end
-        end
-        multi.add(easy)
+      url_queue.slice!(0, 30).each do |url|
+        add_url_to_multi(multi, url, url_queue, responses, options)
       end
 
       multi.perform
@@ -89,40 +68,80 @@ module Feedzirra
     end
     
     def self.update(feeds, options = {})
-      feeds = [*feeds]
+      feed_queue = [*feeds]
       multi = Curl::Multi.new
       responses = {}
-      feeds.each do |feed|
-        easy = Curl::Easy.new(feed.feed_url) do |curl|
-          curl.headers["User-Agent"]        = (options[:user_agent] || USER_AGENT)
-          curl.headers["If-Modified-Since"] = feed.last_modified.httpdate if feed.last_modified
-          curl.headers["If-None-Match"]     = feed.etag if feed.etag
-          curl.follow_location = true
-          curl.on_success do |c|
-            updated_feed = Feed.parse(c.body_str)
-            updated_feed.feed_url ||= c.last_effective_url
-            updated_feed.etag = etag_from_header(c.header_str)
-            updated_feed.last_modified = last_modified_from_header(c.header_str)
-            feed.update_from_feed(updated_feed)
-            responses[feed.feed_url] = feed
-            options[:on_success].call(feed) if options.has_key?(:on_success)
-          end
-          curl.on_failure do |c|
-            response_code = c.response_code
-            if response_code == 304 # it's not modified. this isn't an error condition
-              responses[feed.feed_url] = feed
-              options[:on_success].call(feed) if options.has_key?(:on_success)
-            else
-              responses[feed.url] = c.response_code
-              options[:on_failure].call(feed, c.response_code, c.header_str, c.body_str) if options.has_key?(:on_failure)
-            end
-          end
-        end
-        multi.add(easy)
+      feed_queue.slice!(0, 30).each do |feed|
+        add_feed_to_multi(multi, feed, feed_queue, responses, options)
       end
     
       multi.perform
       return responses.size == 1 ? responses.values.first : responses.values
+    end
+    
+    def self.add_url_to_multi(multi, url, url_queue, responses, options)
+      easy = Curl::Easy.new(url) do |curl|
+        curl.headers["User-Agent"]        = (options[:user_agent] || USER_AGENT)
+        curl.headers["If-Modified-Since"] = options[:if_modified_since].httpdate if options.has_key?(:if_modified_since)
+        curl.headers["If-None-Match"]     = options[:if_none_match] if options.has_key?(:if_none_match)
+        curl.follow_location = true
+        curl.on_success do |c|
+          add_url_to_multi(multi, url_queue.shift, url_queue, responses, options) unless url_queue.empty?
+          xml = c.body_str
+          klass = determine_feed_parser_for_xml(xml)
+          if klass
+            feed = klass.parse(xml)
+            feed.feed_url = c.last_effective_url
+            feed.etag = etag_from_header(c.header_str)
+            feed.last_modified = last_modified_from_header(c.header_str)
+            responses[url] = feed
+            options[:on_success].call(url, feed) if options.has_key?(:on_success)
+          else
+            puts "Error determining parser for #{url} - #{c.last_effective_url}"
+          end
+        end
+        curl.on_failure do |c|
+          add_url_to_multi(multi, url_queue.shift, url_queue, responses, options) unless url_queue.empty?
+          responses[url] = c.response_code
+          options[:on_failure].call(url, c.response_code, c.header_str, c.body_str) if options.has_key?(:on_failure)
+        end
+      end
+      multi.add(easy)
+    end
+    
+    def self.add_feed_to_multi(multi, feed, feed_queue, responses, options)
+      # on_success = options[:on_success]
+      # on_failure = options[:on_failure]
+      # options[:on_success] = lambda do ||
+      
+      easy = Curl::Easy.new(feed.feed_url) do |curl|
+        curl.headers["User-Agent"]        = (options[:user_agent] || USER_AGENT)
+        curl.headers["If-Modified-Since"] = feed.last_modified.httpdate if feed.last_modified
+        curl.headers["If-None-Match"]     = feed.etag if feed.etag
+        curl.follow_location = true
+        curl.on_success do |c|
+          add_feed_to_multi(multi, feed_queue.shift, feed_queue, responses, options) unless feed_queue.empty?
+          updated_feed = Feed.parse(c.body_str)
+          updated_feed.feed_url = c.last_effective_url
+          updated_feed.etag = etag_from_header(c.header_str)
+          updated_feed.last_modified = last_modified_from_header(c.header_str)
+          feed.update_from_feed(updated_feed)
+          responses[feed.feed_url] = feed
+          options[:on_success].call(feed) if options.has_key?(:on_success)
+        end
+        curl.on_failure do |c|
+          add_feed_to_multi(multi, feed_queue.shift, feed_queue, responses, options) unless feed_queue.empty?
+          response_code = c.response_code
+          if response_code == 304 # it's not modified. this isn't an error condition
+            responses[feed.feed_url] = feed
+            options[:on_success].call(feed) if options.has_key?(:on_success)
+          else
+            responses[feed.url] = c.response_code
+            options[:on_failure].call(feed, c.response_code, c.header_str, c.body_str) if options.has_key?(:on_failure)
+          end
+        end
+      end
+      multi.add(easy)
     end
     
     def self.etag_from_header(header)

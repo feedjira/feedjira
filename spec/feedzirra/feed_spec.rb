@@ -115,7 +115,12 @@ describe Feedzirra::Feed do
       @paul_feed_url = "http://feeds.feedburner.com/PaulDixExplainsNothing"
       @trotter_feed_url = "http://feeds.feedburner.com/trottercashion"
     end
-    
+        
+    describe "handling many feeds" do
+      it "should break a large number into more manageable blocks of 40"
+      it "should add to the queue as feeds finish (instead of waiting for each block of 40 to finsih)"
+    end
+
     describe "#fetch_raw" do
       it "should take :user_agent as an option"
       it "should take :if_modified_since as an option"
