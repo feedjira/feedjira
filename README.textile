@@ -1,6 +1,7 @@
 h1. Feedzirra
 
-"http://github.com/pauldix/feedzirra/tree/master":http://github.com/pauldix/feedzirra/tree/master
+"http://github.com/pauldix/feedzirra/tree/master":http://github.com/pauldix/feedzirra/tree/master 
+"group discussion":http://groups.google.com/group/feedzirra
 
 h2. Summary
 
@@ -8,10 +9,76 @@ A feed fetching and parsing library that treats the internet like Godzilla treat
 
 h2. Description
 
+Feedzirra is a feed library that is designed to get and update many feeds as quickly as possible. This includes using libcurl-multi through the "taf2-curb"http://github.com/taf2/curb/tree/master gem for faster http gets, and libxml through "nokogiri":http://github.com/tenderlove/nokogiri/tree/master and "sax-machine":http://github.com/pauldix/sax-machine/tree/master for faster parsing.
+
+Once you have fetched feeds using Feedzirra, they can be updated using the feed objects. Feedzirra automatically inserts etag and last-modified information from the http response headers to lower the use of bandwidth and make things speedier in general.
+
+The fetching and parsing logic have been decoupled so that either of them can be used in isolation if you'd prefer not to use everything that Feedzirra offers. However, the code examples below use helper methods in the Feed class that put everything together to make things as simple as possible.
+
+The final feature of Feedzirra is the ability to define custom parsing classes. In truth, Feedzirra could be used to parse much more than feeds. Microformats, http scraping, and almost anything else are fair game.
+
+h2. Installation
+
+For now Feedzirra exists only on github. It also has a few gem requirements that are only on github. Before you start you need to have "libcurl":http://curl.haxx.se/ and "libxml":http://xmlsoft.org/ installed. If you're on Leopard you have both. Otherwise, you'll need to grab them. Once you've got those libraries, these are the gems you'll need.
+<pre>
+gem install nokogiri
+gem sources -a http://gems.github.com # if you haven't already
+gem install pauldix-sax-machine
+gem install taf2-curb
+gem install pauldix-feedzirra
+</pre>
+
 h2. Usage
 
 <pre>
-# put some usage here
+require 'feedzirra'
+
+# fetching a single feed
+feed = Feedzirra::Feed.fetch_and_parse("http://feeds.feedburner.com/PaulDixExplainsNothing")
+
+# feed and entries accessors
+feed.title          # => "Paul Dix Explains Nothing"
+feed.url            # => "http://www.pauldix.net"
+feed.feed_url       # => "http://feeds.feedburner.com/PaulDixExplainsNothing"
+feed.etag           # => "GunxqnEP4NeYhrqq9TyVKTuDnh0"
+feed.last_modified  # => Sat Jan 31 17:58:16 -0500 2009 # it's a Time object
+
+entry = feed.entries.first
+entry.title      # => "Ruby Http Client Library Performance"
+entry.url        # => "http://www.pauldix.net/2009/01/ruby-http-client-library-performance.html"
+entry.author     # => "Paul Dix"
+entry.summary    # => "..."
+entry.content    # => "..."
+entry.published  # => Thu Jan 29 17:00:19 UTC 2009 # it's a Time object
+
+# updating a single feed
+updated_feed = Feedzirra::Feed.update(feed)
+
+# an updated feed has the following extra accessors
+updated_feed.updated?     # returns true if any of the feed attributes have been modified. will return false if only new entries
+updated_feed.new_entries  # a collection of the entry objects that are newer than the latest in the feed before update
+
+# fetching multiple feeds
+feed_urls = ["http://feeds.feedburner.com/PaulDixExplainsNothing", "http://feeds.feedburner.com/trottercashion"]
+feeds = Feedzirra::Feed.fetch_and_parse(feeds)
+
+# feeds is now a hash with the feed_urls as keys and the parsed feed objects as values. If an error was thrown
+# there will be a Fixnum of the http response code instead of a feed object
+
+# updating multiple feeds. it expects a collection of feed objects
+updated_feeds = Feedzirra::Feed.udpate(feeds.values)
+
+# defining custom behavior on failure or success. note that a return status of 304 (not updated) will call the on_success handler
+feed = Feedzirra::Feed.fetch_and_parse("http://feeds.feedburner.com/PaulDixExplainsNothing",
+	:on_success => lambda {|feed| puts feed.title },
+	:on_failure => lambda {|url, response_code, response_header, response_body| puts response_body })
+# if a collection was passed into fetch_and_parse, the handlers will be called for each one
+
+# the behavior for the handlers when using Feedzirra::Feed.update is slightly different. The feed passed into on_success will be
+# the updated feed with the standard updated accessors. on failure it will be the original feed object passed into update
+
+# Defining custom parsers
+# TODO: the functionality is here, just write some good examples that show how to do this
 </pre>
 
 h2. Benchmarks
@@ -27,6 +94,11 @@ The result of that benchmark is a bit sketchy because of the network variability
 feedzirra        0.500000   0.030000   0.530000 (  0.658744)
 rfeedparser      8.400000   1.110000   9.510000 ( 11.839827)
 feed-normalizer  5.980000   0.160000   6.140000 (  7.576140)
+</pre>
+There's also a "benchmark that shows the results of using Feedzirra to perform updates on feeds":http://github.com/pauldix/feedzirra/blob/45d64319544c61a4c9eb9f7f825c73b9f9030cb3/spec/benchmarks/updating_benchmarks.rb you've already pulled in. I tested against 179 feeds. The first is the initial pull and the second is an update 65 seconds later. I'm not sure how many of them support etag and last-modified, so performance may be better or worse depending on what feeds you're requesting.
+<pre>
+feedzirra fetch and parse  4.010000   0.710000   4.720000 ( 15.110101)
+feedzirra update           0.660000   0.280000   0.940000 (  5.152709)
 </pre>
 
 h2. LICENSE
