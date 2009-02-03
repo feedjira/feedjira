@@ -9,7 +9,7 @@ A feed fetching and parsing library that treats the internet like Godzilla treat
 
 h2. Description
 
-Feedzirra is a feed library that is designed to get and update many feeds as quickly as possible. This includes using libcurl-multi through the "taf2-curb"http://github.com/taf2/curb/tree/master gem for faster http gets, and libxml through "nokogiri":http://github.com/tenderlove/nokogiri/tree/master and "sax-machine":http://github.com/pauldix/sax-machine/tree/master for faster parsing.
+Feedzirra is a feed library that is designed to get and update many feeds as quickly as possible. This includes using libcurl-multi through the "taf2-curb":http://github.com/taf2/curb/tree/master gem for faster http gets, and libxml through "nokogiri":http://github.com/tenderlove/nokogiri/tree/master and "sax-machine":http://github.com/pauldix/sax-machine/tree/master for faster parsing.
 
 Once you have fetched feeds using Feedzirra, they can be updated using the feed objects. Feedzirra automatically inserts etag and last-modified information from the http response headers to lower bandwidth usage, eliminate unnecessary parsing, and make things speedier in general.
 
@@ -19,12 +19,9 @@ The final feature of Feedzirra is the ability to define custom parsing classes. 
 
 h2. Installation
 
-For now Feedzirra exists only on github. It also has a few gem requirements that are only on github. Before you start you need to have "libcurl":http://curl.haxx.se/ and "libxml":http://xmlsoft.org/ installed. If you're on Leopard you have both. Otherwise, you'll need to grab them. Once you've got those libraries, these are the gems you'll need.
+For now Feedzirra exists only on github. It also has a few gem requirements that are only on github. Before you start you need to have "libcurl":http://curl.haxx.se/ and "libxml":http://xmlsoft.org/ installed. If you're on Leopard you have both. Otherwise, you'll need to grab them. Once you've got those libraries, these are the gems that get used: nokogiri, pauldix-sax-machine, taf2-curb, and pauldix-feedzirra. The feedzirra gemspec has all the dependencies so you should be able to get up and running with the standard github gem install routine:
 <pre>
-gem install nokogiri
 gem sources -a http://gems.github.com # if you haven't already
-gem install pauldix-sax-machine
-gem install taf2-curb
 gem install pauldix-feedzirra
 </pre>
 
