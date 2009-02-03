@@ -30,6 +30,7 @@ gem install pauldix-feedzirra
 
 h2. Usage
 
+"A gist of the following code":http://gist.github.com/57285
 <pre>
 require 'feedzirra'
 
