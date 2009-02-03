@@ -14,6 +14,8 @@ Feedzirra is a feed library that is designed to get and update many feeds as qui
 
 Once you have fetched feeds using Feedzirra, they can be updated using the feed objects. Feedzirra automatically inserts etag and last-modified information from the http response headers to lower bandwidth usage, eliminate unnecessary parsing, and make things speedier in general.
 
+Another feature present in Feedzirra is the ability to create callback functions that get called "on success" and "on failure" when getting a feed. This makes it easy to do things like log errors or update data stores.
+
 The fetching and parsing logic have been decoupled so that either of them can be used in isolation if you'd prefer not to use everything that Feedzirra offers. However, the code examples below use helper methods in the Feed class that put everything together to make things as simple as possible.
 
 The final feature of Feedzirra is the ability to define custom parsing classes. In truth, Feedzirra could be used to parse much more than feeds. Microformats, page scraping, and almost anything else are fair game.
@@ -59,7 +61,7 @@ updated_feed.new_entries  # a collection of the entry objects that are newer tha
 
 # fetching multiple feeds
 feed_urls = ["http://feeds.feedburner.com/PaulDixExplainsNothing", "http://feeds.feedburner.com/trottercashion"]
-feeds = Feedzirra::Feed.fetch_and_parse(feeds)
+feeds = Feedzirra::Feed.fetch_and_parse(feeds_urls)
 
 # feeds is now a hash with the feed_urls as keys and the parsed feed objects as values. If an error was thrown
 # there will be a Fixnum of the http response code instead of a feed object
