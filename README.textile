@@ -106,13 +106,15 @@ h2. Next Steps
 
 This thing needs to hammer on many different feeds in the wild. I'm sure there will be bugs. I want to find them and crush them. I didn't bother using the test suite for feedparser. i wanted to start fresh.
 
-Here are some more specific todos.
+Here are some more specific TODOs.
 * Make a feedzirra-rails gem to integrate feedzirra seamlessly with Rails and ActiveRecord.
+* Add function to sanitize content.
 * Add support to automatically handle gzip and deflate encododing.
 * Add support for authenticated feeds.
 * Create a super sweet DSL for defining new parsers.
 * Test against Ruby 1.9.1 and fix any bugs.
 * I'm not keeping track of modified on entries. Should I add this?
+* Should I be parsing stuff like tags or categories for entries?
 * Clean up the fetching code inside feed.rb so it doesn't suck so hard.
 * Make the feed_spec actually mock stuff out so it doesn't hit the net.
 * Readdress how feeds determine if they can parse a document. Maybe I should use namespaces instead?
