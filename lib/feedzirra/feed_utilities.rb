@@ -46,6 +46,11 @@ module Feedzirra
     end
     
     def find_new_entries_for(feed)
+      # this implementation is a hack, which is why it's so ugly.
+      # it's to get around the fact that not all feeds have a published date.
+      # however, they're always ordered with the newest one first.
+      # So we go through the entries just parsed and insert each one as a new entry
+      # until we get to one that has the same url as the the newest for the feed
       latest_entry = self.entries.first
       found_new_entries = []
       feed.entries.each do |entry|
