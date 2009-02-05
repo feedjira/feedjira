@@ -26,7 +26,7 @@ module Feedzirra
     
     def update_from_feed(feed)
       self.new_entries += find_new_entries_for(feed)
-      self.entries += self.new_entries
+      self.entries.unshift(*self.new_entries)
       
       updated! if UPDATABLE_ATTRIBUTES.any? { |name| update_attribute(feed, name) }
     end
@@ -46,7 +46,13 @@ module Feedzirra
     end
     
     def find_new_entries_for(feed)
-      feed.entries.inject([]) { |result, entry| result << entry unless existing_entry?(entry); result }
+      latest_entry = self.entries.first
+      found_new_entries = []
+      feed.entries.each do |entry|
+        break if entry.url == latest_entry.url
+        found_new_entries << entry
+      end
+      found_new_entries
     end
     
     def existing_entry?(test_entry)

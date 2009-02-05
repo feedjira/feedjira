@@ -125,8 +125,8 @@ describe Feedzirra::FeedUtilities do
         @new_entry.url = "http://pauldix.net/new.html"
         @new_entry.published = (Time.now + 10).to_s  
         @feed.entries << @old_entry
-        @updated_feed.entries << @old_entry
         @updated_feed.entries << @new_entry
+        @updated_feed.entries << @old_entry
       end
       
       it "should update last-modified from the latest entry date" do
