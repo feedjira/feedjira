@@ -5,29 +5,29 @@ describe Feedzirra::Feed do
     context "when there's an available parser" do
       it "should parse an rdf feed" do
         feed = Feedzirra::Feed.parse(sample_rdf_feed)
-        feed.class.should == Feedzirra::RDF
         feed.title.should == "HREF Considered Harmful"
+        feed.entries.first.published.to_s.should == "Tue Sep 02 19:50:07 UTC 2008"
         feed.entries.size.should == 10
       end
 
       it "should parse an rss feed" do
         feed = Feedzirra::Feed.parse(sample_rss_feed)
-        feed.class.should == Feedzirra::RSS
         feed.title.should == "Tender Lovemaking"
+        feed.entries.first.published.to_s.should == "Thu Dec 04 17:17:49 UTC 2008"
         feed.entries.size.should == 10
       end
 
       it "should parse an atom feed" do
         feed = Feedzirra::Feed.parse(sample_atom_feed)
-        feed.class.should == Feedzirra::Atom
         feed.title.should == "Amazon Web Services Blog"
+        feed.entries.first.published.to_s.should == "Fri Jan 16 18:21:00 UTC 2009"
         feed.entries.size.should == 10
       end
 
       it "should parse an feedburner atom feed" do
         feed = Feedzirra::Feed.parse(sample_feedburner_atom_feed)
-        feed.class.should == Feedzirra::AtomFeedBurner
         feed.title.should == "Paul Dix Explains Nothing"
+        feed.entries.first.published.to_s.should == "Thu Jan 22 15:50:22 UTC 2009"
         feed.entries.size.should == 5
       end      
     end
@@ -42,8 +42,8 @@ describe Feedzirra::Feed do
     
     it "should parse an feedburner rss feed" do
       feed = Feedzirra::Feed.parse(sample_rss_feed_burner_feed)
-      feed.class.should == Feedzirra::RDF
       feed.title.should == "Sam Harris: Author, Philosopher, Essayist, Atheist"
+      feed.entries.first.published.to_s.should == "Tue Jan 13 17:20:28 UTC 2009"
       feed.entries.size.should == 10
     end
   end
@@ -57,12 +57,12 @@ describe Feedzirra::Feed do
       Feedzirra::Feed.determine_feed_parser_for_xml(sample_feedburner_atom_feed).should == Feedzirra::AtomFeedBurner
     end
     
-    it "should return the Feedzirra::RDF class for an rdf/rss 1.0 feed" do
-      Feedzirra::Feed.determine_feed_parser_for_xml(sample_rdf_feed).should == Feedzirra::RDF
+    it "should return the Feedzirra::RSS class for an rdf/rss 1.0 feed" do
+      Feedzirra::Feed.determine_feed_parser_for_xml(sample_rdf_feed).should == Feedzirra::RSS
     end
     
-    it "should return the Feedzirra::RDF class for an rss feedburner feed" do
-      Feedzirra::Feed.determine_feed_parser_for_xml(sample_rss_feed_burner_feed).should == Feedzirra::RDF
+    it "should return the Feedzirra::RSS class for an rss feedburner feed" do
+      Feedzirra::Feed.determine_feed_parser_for_xml(sample_rss_feed_burner_feed).should == Feedzirra::RSS
     end
     
     it "should return the Feedzirra::RSS object for an rss 2.0 feed" do

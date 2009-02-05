@@ -13,7 +13,7 @@ module Feedzirra
     end
 
     def self.determine_feed_parser_for_xml(xml)
-      start_of_doc = xml.slice(0, 500)
+      start_of_doc = xml.slice(0, 1000)
       feed_classes.detect {|klass| klass.able_to_parse?(start_of_doc)}
     end
 
@@ -22,7 +22,7 @@ module Feedzirra
     end
     
     def self.feed_classes
-      @feed_classes ||= [RSS, RDF, AtomFeedBurner, Atom]
+      @feed_classes ||= [RSS, AtomFeedBurner, Atom]
     end
 
     # can take a single url or an array of urls

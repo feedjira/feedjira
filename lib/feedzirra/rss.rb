@@ -9,7 +9,7 @@ module Feedzirra
     attr_accessor :feed_url
     
     def self.able_to_parse?(xml)
-      xml =~ /rss.*version\=\"2\.0\"/
+      xml =~ /\<rss|rdf/
     end
   end
 end
