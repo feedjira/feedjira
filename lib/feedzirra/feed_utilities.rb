@@ -39,6 +39,10 @@ module Feedzirra
       end
     end
     
+    def sanitize_entries!
+      entries.each {|entry| entry.sanitize!}
+    end
+    
     private
     
     def updated!

@@ -70,6 +70,13 @@ entry.summary    # => "..."
 entry.content    # => "..."
 entry.published  # => Thu Jan 29 17:00:19 UTC 2009 # it's a Time object
 
+# sanitizing an entry's content
+entry.sanitized.title   # => returns the title with harmful stuff escaped
+entry.sanitized.author  # => returns the author with harmful stuff escaped
+entry.sanitized.content # => returns the content with harmful stuff escaped
+entry.sanitize!         # => sanitizes the entry's title, author, and content in place (as in, it changes the value to clean versions)
+feed.sanitize_entries!  # => sanitizes all entries in place
+
 # updating a single feed
 updated_feed = Feedzirra::Feed.update(feed)
 
