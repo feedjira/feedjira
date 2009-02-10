@@ -14,4 +14,32 @@ describe Feedzirra::FeedUtilities do
       time.to_s.should == "Wed Feb 20 18:05:00 UTC 2008"
     end
   end
+  
+  describe "sanitizing" do
+    before(:each) do
+      @feed = Feedzirra::Feed.parse(sample_atom_feed)
+      @entry = @feed.entries.first
+    end
+    
+    it "should provide a sanitized title" do
+      new_title = "<script>" + @entry.title
+      @entry.title = new_title
+      @entry.sanitized.title.should == Dryopteris.sanitize(new_title)
+    end
+    
+    it "should sanitize things in place" do
+      @entry.title   += "<script>"
+      @entry.author  += "<script>"
+      @entry.content += "<script>"
+
+      cleaned_title   = Dryopteris.sanitize(@entry.title)
+      cleaned_author  = Dryopteris.sanitize(@entry.author)
+      cleaned_content = Dryopteris.sanitize(@entry.content)
+      
+      @entry.sanitize!
+      @entry.title.should   == cleaned_title
+      @entry.author.should  == cleaned_author
+      @entry.content.should == cleaned_content
+    end
+  end
 end
