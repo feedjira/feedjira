@@ -18,6 +18,8 @@
         <author>
             <name>Paul Dix</name>
         </author>
+        <category scheme="http://www.sixapart.com/ns/types#category" term="Ruby" />
+        <category scheme="http://www.sixapart.com/ns/types#category" term="Another Category" />
         
         
 <content type="html" xml:lang="en-US" xml:base="http://www.pauldix.net/">&lt;p&gt;Last week I released the first version of a &lt;a href="http://www.pauldix.net/2009/01/sax-machine-sax-parsing-made-easy.html"&gt;SAX based XML parsing library called SAX-Machine&lt;/a&gt;. It uses Nokogiri, which uses libxml, so it's pretty fast. However, I felt that it could be even faster. The only question was how to make a ruby library that is already using c underneath perform better. Since I've never written a Ruby C extension and it's been a few years since I've touched C, I decided it would be a good educational experience to give it a try.&lt;/p&gt;&#xD;

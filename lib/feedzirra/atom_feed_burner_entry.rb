@@ -8,5 +8,6 @@ module Feedzirra
     element :summary
     element :content
     element :published
+    elements :category, :as => :categories, :value => :term
   end
 end
