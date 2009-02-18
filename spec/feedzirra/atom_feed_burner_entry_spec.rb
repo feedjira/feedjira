@@ -11,6 +11,11 @@ describe Feedzirra::AtomFeedBurnerEntry do
     @entry.title.should == "Making a Ruby C library even faster"
   end
   
+  it "should be able to fetch a url via the 'alternate' rel if no origLink exists" do
+    entry = Feedzirra::AtomFeedBurner.parse(File.read("#{File.dirname(__FILE__)}/../sample_feeds/PaulDixExplainsNothingAlternate.xml")).entries.first
+    entry.url.should == 'http://feeds.feedburner.com/~r/PaulDixExplainsNothing/~3/519925023/making-a-ruby-c-library-even-faster.html'
+  end
+
   it "should parse the url" do
     @entry.url.should == "http://www.pauldix.net/2009/01/making-a-ruby-c-library-even-faster.html"
   end
