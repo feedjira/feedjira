@@ -37,9 +37,10 @@ module Feedzirra
           curl.headers["User-Agent"]        = (options[:user_agent] || USER_AGENT)
           curl.headers["If-Modified-Since"] = options[:if_modified_since].httpdate if options.has_key?(:if_modified_since)
           curl.headers["If-None-Match"]     = options[:if_none_match] if options.has_key?(:if_none_match)
+          curl.headers["Accept-encoding"]   = options[:accept_encoding] if options.has_key?(:accept_encoding)
           curl.follow_location = true
           curl.on_success do |c|
-            responses[url] = c.body_str
+            responses[url] = decode_content(c)
           end
           curl.on_failure do |c|
             responses[url] = c.response_code
@@ -67,6 +68,20 @@ module Feedzirra
       return responses.size == 1 ? responses.values.first : responses
     end
     
+    def self.decode_content(c)
+      if c.header_str.match(/Content-Encoding: gzip/)
+        gz =  Zlib::GzipReader.new(StringIO.new(c.body_str))
+        xml = gz.read
+        gz.close
+      elsif c.header_str.match(/Content-Encoding: deflate/)
+        xml = Zlib::Deflate.inflate(c.body_str)
+      else
+        xml = c.body_str
+      end
+      
+      xml
+    end
+    
     def self.update(feeds, options = {})
       feed_queue = [*feeds]
       multi = Curl::Multi.new
@@ -84,10 +99,11 @@ module Feedzirra
         curl.headers["User-Agent"]        = (options[:user_agent] || USER_AGENT)
         curl.headers["If-Modified-Since"] = options[:if_modified_since].httpdate if options.has_key?(:if_modified_since)
         curl.headers["If-None-Match"]     = options[:if_none_match] if options.has_key?(:if_none_match)
+        curl.headers["Accept-encoding"]   = options[:accept_encoding] if options.has_key?(:accept_encoding)
         curl.follow_location = true
         curl.on_success do |c|
           add_url_to_multi(multi, url_queue.shift, url_queue, responses, options) unless url_queue.empty?
-          xml = c.body_str
+          xml = decode_content(c)
           klass = determine_feed_parser_for_xml(xml)
           if klass
             feed = klass.parse(xml)
