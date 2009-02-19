@@ -139,6 +139,11 @@ describe Feedzirra::Feed do
         results[@paul_feed_url].should =~ /Paul Dix/
         results[@trotter_feed_url].should =~ /Trotter Cashion/
       end
+      
+      it "should always return a hash when passed an array" do
+        results = Feedzirra::Feed.fetch_raw([@paul_feed_url])
+        results.class.should == Hash
+      end
     end
     
     describe "#fetch_and_parse" do
@@ -167,6 +172,11 @@ describe Feedzirra::Feed do
         feeds.size.should == 2
         feeds[@paul_feed_url].feed_url.should == @paul_feed_url
         feeds[@trotter_feed_url].feed_url.should == @trotter_feed_url
+      end
+      
+      it "should always return a hash when passed an array" do
+        feeds = Feedzirra::Feed.fetch_and_parse([@paul_feed_url])
+        feeds.class.should == Hash
       end
       
       it "should yeild the url and feed object to a :on_success lambda" do
