@@ -29,10 +29,10 @@ module Feedzirra
     # when passed a single url it returns the body of the response
     # when passed an array of urls it returns a hash with the urls as keys and body of responses as values
     def self.fetch_raw(urls, options = {})
-      urls = [*urls]
+      url_queue = [*urls]
       multi = Curl::Multi.new
       responses = {}
-      urls.each do |url|
+      url_queue.each do |url|
         easy = Curl::Easy.new(url) do |curl|
           curl.headers["User-Agent"]        = (options[:user_agent] || USER_AGENT)
           curl.headers["If-Modified-Since"] = options[:if_modified_since].httpdate if options.has_key?(:if_modified_since)
@@ -50,7 +50,7 @@ module Feedzirra
       end
 
       multi.perform
-      return responses.size == 1 ? responses.values.first : responses
+      return urls.is_a?(String) ? responses.values.first : responses
     end
     
     def self.fetch_and_parse(urls, options = {})
@@ -65,7 +65,7 @@ module Feedzirra
       end
 
       multi.perform
-      return responses.size == 1 ? responses.values.first : responses
+      return urls.is_a?(String) ? responses.values.first : responses
     end
     
     def self.decode_content(c)
