@@ -43,7 +43,7 @@ The SAX C is 7.4 times faster than SAX Nokogiri. Now, that doesn't seem like a w
 &lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/PaulDixExplainsNothing/~4/519925023" height="1" width="1"/&gt;</content>
 
 
-    <feedburner:origLink>http://www.pauldix.net/2009/01/making-a-ruby-c-library-even-faster.html</feedburner:origLink></entry>
+    </entry>
     <entry>
         <title>SAX Machine - SAX Parsing made easy</title>
         <link rel="alternate" type="text/html" href="http://feeds.feedburner.com/~r/PaulDixExplainsNothing/~3/514044516/sax-machine-sax-parsing-made-easy.html" />
@@ -67,7 +67,7 @@ It's about 11 times faster in this test. I have to do more tests before I feel c
 &lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/PaulDixExplainsNothing/~4/514044516" height="1" width="1"/&gt;</content>
 
 
-    <feedburner:origLink>http://www.pauldix.net/2009/01/sax-machine-sax-parsing-made-easy.html</feedburner:origLink></entry>
+    </entry>
     <entry>
         <title>Professional Goals for 2009</title>
         <link rel="alternate" type="text/html" href="http://feeds.feedburner.com/~r/PaulDixExplainsNothing/~3/499546917/professional-goals-for-2009.html" />
@@ -107,7 +107,7 @@ It's about 11 times faster in this test. I have to do more tests before I feel c
 &lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/PaulDixExplainsNothing/~4/499546917" height="1" width="1"/&gt;</content>
 
 
-    <feedburner:origLink>http://www.pauldix.net/2008/12/professional-goals-for-2009.html</feedburner:origLink></entry>
+  </entry>
     <entry>
         <title>Marshal data too short error with ActiveRecord</title>
         <link rel="alternate" type="text/html" href="http://feeds.feedburner.com/~r/PaulDixExplainsNothing/~3/383536354/marshal-data-to.html" />
@@ -139,7 +139,7 @@ It's about 11 times faster in this test. I have to do more tests before I feel c
 &lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/PaulDixExplainsNothing/~4/383536354" height="1" width="1"/&gt;</content>
 
 
-    <feedburner:origLink>http://www.pauldix.net/2008/09/marshal-data-to.html</feedburner:origLink></entry>
+    </entry>
     <entry>
         <title>Serializing data speed comparison: Marshal vs. JSON vs. Eval vs. YAML</title>
         <link rel="alternate" type="text/html" href="http://feeds.feedburner.com/~r/PaulDixExplainsNothing/~3/376401099/serializing-dat.html" />
@@ -169,6 +169,6 @@ It's about 11 times faster in this test. I have to do more tests before I feel c
 &lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/PaulDixExplainsNothing/~4/376401099" height="1" width="1"/&gt;</content>
 
 
-    <feedburner:origLink>http://www.pauldix.net/2008/08/serializing-dat.html</feedburner:origLink></entry>
+    </entry>
  
 </feed>

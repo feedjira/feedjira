@@ -20,6 +20,8 @@
         <author>
             <name>AWS Editor</name>
         </author>
+        <category scheme="http://www.sixapart.com/ns/types#category" term="Turkey" />
+        <category scheme="http://www.sixapart.com/ns/types#category" term="Seattle" />
         
         
 <content type="html" xml:lang="en-US" xml:base="http://aws.typepad.com/aws/">
