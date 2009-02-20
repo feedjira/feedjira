@@ -77,9 +77,10 @@ entry.published  # => Thu Jan 29 17:00:19 UTC 2009 # it's a Time object
 entry.categories # => ["...", "..."]
 
 # sanitizing an entry's content
-entry.sanitized.title   # => returns the title with harmful stuff escaped
-entry.sanitized.author  # => returns the author with harmful stuff escaped
-entry.sanitized.content # => returns the content with harmful stuff escaped
+entry.title.sanitize   # => returns the title with harmful stuff escaped
+entry.author.sanitize  # => returns the author with harmful stuff escaped
+entry.content.sanitize # => returns the content with harmful stuff escaped
+entry.content.sanitize! # => returns content with harmful stuff escaped and replaces original (also exists for author and title)
 entry.sanitize!         # => sanitizes the entry's title, author, and content in place (as in, it changes the value to clean versions)
 feed.sanitize_entries!  # => sanitizes all entries in place
 
@@ -139,8 +140,6 @@ This thing needs to hammer on many different feeds in the wild. I'm sure there w
 
 Here are some more specific TODOs.
 * Make a feedzirra-rails gem to integrate feedzirra seamlessly with Rails and ActiveRecord.
-* Add function to sanitize content.
-* Add support to automatically handle gzip and deflate encododing.
 * Add support for authenticated feeds.
 * Create a super sweet DSL for defining new parsers.
 * Test against Ruby 1.9.1 and fix any bugs.
