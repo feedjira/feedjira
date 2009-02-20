@@ -5,10 +5,11 @@ describe Feedzirra::RSS do
     it "should return true for an RSS feed" do
       Feedzirra::RSS.should be_able_to_parse(sample_rss_feed)
     end
-    
-    it "should return false for an rdf feed" do
-      Feedzirra::RSS.should_not be_able_to_parse(sample_rdf_feed)
-    end
+
+    # this is no longer true. combined rdf and rss into one
+    # it "should return false for an rdf feed" do
+    #   Feedzirra::RSS.should_not be_able_to_parse(sample_rdf_feed)
+    # end
     
     it "should return fase for an atom feed" do
       Feedzirra::RSS.should_not be_able_to_parse(sample_atom_feed)

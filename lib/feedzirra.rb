@@ -2,6 +2,7 @@ $LOAD_PATH.unshift(File.dirname(__FILE__)) unless $LOAD_PATH.include?(File.dirna
 
 gem 'activesupport'
 
+require 'zlib'
 require 'curb'
 require 'sax-machine'
 require 'dryopteris'

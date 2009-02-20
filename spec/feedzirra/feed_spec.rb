@@ -113,7 +113,7 @@ describe Feedzirra::Feed do
   describe "fetching feeds" do
     before(:each) do
       @paul_feed_url = "http://feeds.feedburner.com/PaulDixExplainsNothing"
-      @trotter_feed_url = "http://feeds.feedburner.com/trottercashion"
+      @trotter_feed_url = "http://feeds2.feedburner.com/trottercashion"
     end
         
     describe "handling many feeds" do
