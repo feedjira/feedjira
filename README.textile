@@ -69,6 +69,7 @@ entry.author     # => "Paul Dix"
 entry.summary    # => "..."
 entry.content    # => "..."
 entry.published  # => Thu Jan 29 17:00:19 UTC 2009 # it's a Time object
+entry.categories # => ["...", "..."]
 
 # sanitizing an entry's content
 entry.sanitized.title   # => returns the title with harmful stuff escaped
@@ -139,7 +140,6 @@ Here are some more specific TODOs.
 * Create a super sweet DSL for defining new parsers.
 * Test against Ruby 1.9.1 and fix any bugs.
 * I'm not keeping track of modified on entries. Should I add this?
-* Should I be parsing stuff like tags or categories for entries?
 * Clean up the fetching code inside feed.rb so it doesn't suck so hard.
 * Make the feed_spec actually mock stuff out so it doesn't hit the net.
 * Readdress how feeds determine if they can parse a document. Maybe I should use namespaces instead?
