@@ -9,38 +9,42 @@ $LOAD_PATH.unshift(path) unless $LOAD_PATH.include?(path)
 
 require "lib/feedzirra"
 
+def load_sample(filename)
+  File.read("#{File.dirname(__FILE__)}/sample_feeds/#{filename}")
+end
+
 def sample_atom_feed
-  File.read("#{File.dirname(__FILE__)}/sample_feeds/AmazonWebServicesBlog.xml")
+  load_sample("AmazonWebServicesBlog.xml")
 end
 
 def sample_atom_entry_content
-  File.read("#{File.dirname(__FILE__)}/sample_feeds/AmazonWebServicesBlogFirstEntryContent.xml")
+  load_sample("AmazonWebServicesBlogFirstEntryContent.xml")
 end
 
 def sample_rdf_feed
-  File.read("#{File.dirname(__FILE__)}/sample_feeds/HREFConsideredHarmful.xml")
+  load_sample("HREFConsideredHarmful.xml")
 end
 
 def sample_rdf_entry_content
-  File.read("#{File.dirname(__FILE__)}/sample_feeds/HREFConsideredHarmfulFirstEntry.xml")
+  load_sample("HREFConsideredHarmfulFirstEntry.xml")
 end
 
 def sample_rss_feed_burner_feed
-  File.read("#{File.dirname(__FILE__)}/sample_feeds/SamHarrisAuthorPhilosopherEssayistAtheist.xml")
+  load_sample("SamHarrisAuthorPhilosopherEssayistAtheist.xml")
 end
 
 def sample_rss_feed
-  File.read("#{File.dirname(__FILE__)}/sample_feeds/TenderLovemaking.xml")
+  load_sample("TenderLovemaking.xml")
 end
 
 def sample_rss_entry_content
-  File.read("#{File.dirname(__FILE__)}/sample_feeds/TenderLovemakingFirstEntry.xml")
+  load_sample("TenderLovemakingFirstEntry.xml")
 end
 
 def sample_feedburner_atom_feed
-  File.read("#{File.dirname(__FILE__)}/sample_feeds/PaulDixExplainsNothing.xml")
+  load_sample("PaulDixExplainsNothing.xml")
 end
 
 def sample_feedburner_atom_entry_content
-  File.read("#{File.dirname(__FILE__)}/sample_feeds/PaulDixExplainsNothingFirstEntryContent.xml")
+  load_sample("PaulDixExplainsNothingFirstEntryContent.xml")
 end
