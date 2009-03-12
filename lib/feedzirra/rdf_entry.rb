@@ -8,5 +8,7 @@ module Feedzirra
     element :"content:encoded", :as => :content
     element :description, :as => :summary
     element :"dc:date", :as => :published
+    element :published
+    element :updated
   end
 end

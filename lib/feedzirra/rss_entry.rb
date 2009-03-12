@@ -13,5 +13,7 @@ module Feedzirra
     element :"dc:date", :as => :published
     element :"dc:Date", :as => :published
     elements :category, :as => :categories
+    
+    element :guid, :as => :id
   end
 end
