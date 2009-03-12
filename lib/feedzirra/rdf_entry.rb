@@ -10,5 +10,6 @@ module Feedzirra
     element :"dc:date", :as => :published
     element :published
     element :updated
+    element :item, :as => :id, :value => :about
   end
 end
