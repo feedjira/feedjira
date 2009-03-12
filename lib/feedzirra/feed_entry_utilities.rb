@@ -9,8 +9,10 @@ module Feedzirra
         Dryopteris.sanitize(self)
       end
     end
-
-    attr_reader :published
+    
+    def published
+      @published || @updated
+    end
     
     def parse_datetime(string)
       DateTime.parse(string).feed_utils_to_gm_time
