@@ -22,6 +22,10 @@ module Feedzirra
       @published = parse_datetime(val)
     end
     
+    def updated=(val)
+      @updated = parse_datetime(val)
+    end
+    
     def content
       @content.extend(Sanitize)
     end
