@@ -11,6 +11,7 @@ module Feedzirra
 
     element :pubDate, :as => :published
     element :"dc:date", :as => :published
+    element :"dc:Date", :as => :published
     elements :category, :as => :categories
   end
 end
