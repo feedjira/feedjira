@@ -70,9 +70,14 @@ module Feedzirra
     
     def self.decode_content(c)
       if c.header_str.match(/Content-Encoding: gzip/)
-        gz =  Zlib::GzipReader.new(StringIO.new(c.body_str))
-        xml = gz.read
-        gz.close
+        begin
+          gz =  Zlib::GzipReader.new(StringIO.new(c.body_str))
+          xml = gz.read
+          gz.close
+        rescue Zlib::GzipFile::Error 
+          # Maybe this is not gzipped?
+          xml = c.body_str
+        end
       elsif c.header_str.match(/Content-Encoding: deflate/)
         xml = Zlib::Deflate.inflate(c.body_str)
       else
