@@ -29,17 +29,17 @@ describe Feedzirra::Feed do
         feed.title.should == "Paul Dix Explains Nothing"
         feed.entries.first.published.to_s.should == "Thu Jan 22 15:50:22 UTC 2009"
         feed.entries.size.should == 5
-      end      
+      end
     end
-    
+
     context "when there's no available parser" do
       it "raises Feedzirra::NoParserAvailable" do
         proc {
           Feedzirra::Feed.parse("I'm an invalid feed")
         }.should raise_error(Feedzirra::NoParserAvailable)
-      end      
+      end
     end
-    
+
     it "should parse an feedburner rss feed" do
       feed = Feedzirra::Feed.parse(sample_rss_feed_burner_feed)
       feed.title.should == "Sam Harris: Author, Philosopher, Essayist, Atheist"
@@ -47,31 +47,31 @@ describe Feedzirra::Feed do
       feed.entries.size.should == 10
     end
   end
-  
+
   describe "#determine_feed_parser_for_xml" do
     it "should return the Feedzirra::Atom class for an atom feed" do
       Feedzirra::Feed.determine_feed_parser_for_xml(sample_atom_feed).should == Feedzirra::Atom
     end
-    
+
     it "should return the Feedzirra::AtomFeedBurner class for an atom feedburner feed" do
       Feedzirra::Feed.determine_feed_parser_for_xml(sample_feedburner_atom_feed).should == Feedzirra::AtomFeedBurner
     end
-    
+
     it "should return the Feedzirra::RSS class for an rdf/rss 1.0 feed" do
       Feedzirra::Feed.determine_feed_parser_for_xml(sample_rdf_feed).should == Feedzirra::RSS
     end
-    
+
     it "should return the Feedzirra::RSS class for an rss feedburner feed" do
       Feedzirra::Feed.determine_feed_parser_for_xml(sample_rss_feed_burner_feed).should == Feedzirra::RSS
     end
-    
+
     it "should return the Feedzirra::RSS object for an rss 2.0 feed" do
       Feedzirra::Feed.determine_feed_parser_for_xml(sample_rss_feed).should == Feedzirra::RSS
     end
   end
-  
-  describe "adding feed types" do
-    it "should prioritize added feed types over the built in ones" do
+
+  describe "when adding feed types" do
+    it "should prioritize added types over the built in ones" do
       feed_text = "Atom asdf"
       Feedzirra::Atom.should be_able_to_parse(feed_text)
       new_feed_type = Class.new do
@@ -79,173 +79,200 @@ describe Feedzirra::Feed do
           true
         end
       end
+      
       new_feed_type.should be_able_to_parse(feed_text)
       Feedzirra::Feed.add_feed_class(new_feed_type)
       Feedzirra::Feed.determine_feed_parser_for_xml(feed_text).should == new_feed_type
-      
+
       # this is a hack so that this doesn't break the rest of the tests
       Feedzirra::Feed.feed_classes.reject! {|o| o == new_feed_type }
     end
   end
-  
-  describe "header parsing" do
+
+  describe '#etag_from_header' do
     before(:each) do
       @header = "HTTP/1.0 200 OK\r\nDate: Thu, 29 Jan 2009 03:55:24 GMT\r\nServer: Apache\r\nX-FB-Host: chi-write6\r\nLast-Modified: Wed, 28 Jan 2009 04:10:32 GMT\r\nETag: ziEyTl4q9GH04BR4jgkImd0GvSE\r\nP3P: CP=\"ALL DSP COR NID CUR OUR NOR\"\r\nConnection: close\r\nContent-Type: text/xml;charset=utf-8\r\n\r\n"
     end
-    
-    it "should parse out an etag" do
+
+    it "should return the etag from the header if it exists" do
       Feedzirra::Feed.etag_from_header(@header).should == "ziEyTl4q9GH04BR4jgkImd0GvSE"
     end
-    
-    it "should return nil if there is no etag in header" do
+
+    it "should return nil if there is no etag in the header" do
       Feedzirra::Feed.etag_from_header("foo").should be_nil
     end
-    
-    it "should parse out a last-modified date" do
+
+  end
+
+  describe '#last_modified_from_header' do
+    before(:each) do
+      @header = "HTTP/1.0 200 OK\r\nDate: Thu, 29 Jan 2009 03:55:24 GMT\r\nServer: Apache\r\nX-FB-Host: chi-write6\r\nLast-Modified: Wed, 28 Jan 2009 04:10:32 GMT\r\nETag: ziEyTl4q9GH04BR4jgkImd0GvSE\r\nP3P: CP=\"ALL DSP COR NID CUR OUR NOR\"\r\nConnection: close\r\nContent-Type: text/xml;charset=utf-8\r\n\r\n"
+    end
+
+    it "should return the last modified date from the header if it exists" do
       Feedzirra::Feed.last_modified_from_header(@header).should == Time.parse("Wed, 28 Jan 2009 04:10:32 GMT")
     end
-    
-    it "should return nil if there is no last-modified in header" do
+
+    it "should return nil if there is no last modified date in the header" do
       Feedzirra::Feed.last_modified_from_header("foo").should be_nil
     end
   end
-  
+
   describe "fetching feeds" do
     before(:each) do
-      @paul_feed_url = "http://feeds.feedburner.com/PaulDixExplainsNothing"
-      @trotter_feed_url = "http://feeds2.feedburner.com/trottercashion"
-    end
-        
-    describe "handling many feeds" do
-      it "should break a large number into more manageable blocks of 40"
-      it "should add to the queue as feeds finish (instead of waiting for each block of 40 to finsih)"
+      @paul_feed = { :xml => load_sample("PaulDixExplainsNothing.xml"), :url => "http://feeds.feedburner.com/PaulDixExplainsNothing" }
+      @trotter_feed = { :xml => load_sample("TrotterCashionHome.xml"), :url => "http://feeds2.feedburner.com/trottercashion" }
     end
 
     describe "#fetch_raw" do
-      it "should take :user_agent as an option"
-      it "should take :if_modified_since as an option"
-      it "should take :if_none_match as an option"
-      it "should take an optional on_success lambda"
-      it "should take an optional on_failure lambda"
+      before(:each) do
+        @cmock = stub('cmock', :header_str => '', :body_str => @paul_feed[:xml] )
+        @multi = stub('curl_multi', :add => true, :perform => true)
+        @curl_easy = stub('curl_easy')
+        @curl = stub('curl', :headers => {}, :follow_location= => true, :on_failure => true)
+        @curl.stub!(:on_success).and_yield(@cmock)
+        
+        Curl::Multi.stub!(:new).and_return(@multi)
+        Curl::Easy.stub!(:new).and_yield(@curl).and_return(@curl_easy)
+      end
+
+      it "should set user agent if it's passed as an option" do
+        Feedzirra::Feed.fetch_raw(@paul_feed[:url], :user_agent => 'Custom Useragent')
+        @curl.headers['User-Agent'].should == 'Custom Useragent'
+      end
+
+      it "should set user agent to default if it's not passed as an option" do
+        Feedzirra::Feed.fetch_raw(@paul_feed[:url])
+        @curl.headers['User-Agent'].should == Feedzirra::Feed::USER_AGENT
+      end
       
+      it "should set if modified since as an option if passed" do
+        Feedzirra::Feed.fetch_raw(@paul_feed[:url], :if_modified_since => Time.parse("Wed, 28 Jan 2009 04:10:32 GMT"))
+        @curl.headers["If-Modified-Since"].should == 'Wed, 28 Jan 2009 04:10:32 GMT'
+      end
+
+      it "should set if none match as an option if passed"
+      
+      it 'should set userpwd for http basic authentication if :http_authentication is passed' do
+        @curl.should_receive(:userpwd=).with('username:password')
+        Feedzirra::Feed.fetch_raw(@paul_feed[:url], :http_authentication => ['username', 'password'])
+      end
+
+      it 'should set accepted encodings' do
+        Feedzirra::Feed.fetch_raw(@paul_feed[:url])
+        @curl.headers["Accept-encoding"].should == 'gzip, deflate'
+      end
+
       it "should return raw xml" do
-        Feedzirra::Feed.fetch_raw(@paul_feed_url).should =~ /^#{Regexp.escape('<?xml version="1.0" encoding="UTF-8"?>')}/
+        Feedzirra::Feed.fetch_raw(@paul_feed[:url]).should =~ /^#{Regexp.escape('<?xml version="1.0" encoding="UTF-8"?>')}/
       end
-      
+
       it "should take multiple feed urls and return a hash of urls and response xml" do
-        results = Feedzirra::Feed.fetch_raw([@paul_feed_url, @trotter_feed_url])
-        results.keys.should include(@paul_feed_url)
-        results.keys.should include(@trotter_feed_url)
-        results[@paul_feed_url].should =~ /Paul Dix/
-        results[@trotter_feed_url].should =~ /Trotter Cashion/
+        multi = stub('curl_multi', :add => true, :perform => true)
+        Curl::Multi.stub!(:new).and_return(multi)
+        
+        paul_response = stub('paul_response', :header_str => '', :body_str => @paul_feed[:xml] )
+        trotter_response = stub('trotter_response', :header_str => '', :body_str => @trotter_feed[:xml] )
+
+        paul_curl = stub('paul_curl', :headers => {}, :follow_location= => true, :on_failure => true)
+        paul_curl.stub!(:on_success).and_yield(paul_response)
+
+        trotter_curl = stub('trotter_curl', :headers => {}, :follow_location= => true, :on_failure => true)
+        trotter_curl.stub!(:on_success).and_yield(trotter_response)
+        
+        Curl::Easy.should_receive(:new).with(@paul_feed[:url]).ordered.and_yield(paul_curl)
+        Curl::Easy.should_receive(:new).with(@trotter_feed[:url]).ordered.and_yield(trotter_curl)
+        
+        results = Feedzirra::Feed.fetch_raw([@paul_feed[:url], @trotter_feed[:url]])
+        results.keys.should include(@paul_feed[:url])
+        results.keys.should include(@trotter_feed[:url])
+        results[@paul_feed[:url]].should =~ /Paul Dix/
+        results[@trotter_feed[:url]].should =~ /Trotter Cashion/
       end
-      
+
       it "should always return a hash when passed an array" do
-        results = Feedzirra::Feed.fetch_raw([@paul_feed_url])
+        results = Feedzirra::Feed.fetch_raw([@paul_feed[:url]])
         results.class.should == Hash
       end
     end
-    
+
+    describe "#add_url_to_multi" do
+      before(:each) do
+        @multi_curl = Curl::Multi.new(@paul_feed[:url])
+        @url_queue = []
+        @responses = {}
+      end
+
+      it "should set user agent if it's passed as an option" do
+        @url_queue << @paul_feed[:url]
+        url = Feedzirra::Feed.add_url_to_multi(@multi_curl, @paul_feed[:url], @url_queue, @responses, {})
+        puts url.inspect
+      end
+      
+      it "should set user agent to default if it's not passed as an option"
+      it "should set if modified since as an option if passed"
+      it 'should set follow location to true'
+      it 'should set userpwd for http basic authentication if :http_authentication is passed'
+      it 'should set accepted encodings'
+      it "should set if_none_match as an option if passed"
+      
+      describe 'on success' do
+        it 'should decode the response body'
+        it 'should determine the xml parser class'
+        
+        describe 'when a compatible xml parser class is found' do
+          it 'should call proc if :on_success option is passed'
+        end
+
+        describe 'when no compatible xml parser class is found' do
+          it 'should do something other than puts'
+        end
+      end
+
+      describe 'on failure' do
+        it 'should call proc if :on_failure option is passed'
+        it 'should return the http code in the responses'
+      end
+    end
+
+    describe "#add_feed_to_multi" do
+      it "should set user agent if it's passed as an option"
+      it "should set user agent to default if it's not passed as an option"
+      it "should set if modified since as an option if passed"
+      it 'should set follow location to true'
+      it 'should set userpwd for http basic authentication if :http_authentication is passed'
+      it 'should set accepted encodings'
+      it "should set if_none_match as an option if passed"
+
+      describe 'on success' do
+        it 'if :on_success option is called, should call proc'
+      end
+
+      describe 'on failure' do
+        it 'if :on_failure option is called, should call proc'
+      end
+    end
+
     describe "#fetch_and_parse" do
-      it "should return a feed object for a single url" do
-        feed = Feedzirra::Feed.fetch_and_parse(@paul_feed_url)
-        feed.title.should == "Paul Dix Explains Nothing"
-      end
-      
-      it "should set the feed_url to the new url if redirected" do
-        feed = Feedzirra::Feed.fetch_and_parse("http://tinyurl.com/tenderlovemaking")
-        feed.feed_url.should == "http://tenderlovemaking.com/feed/"
-      end
-      
-      it "should set the feed_url for an rdf feed" do
-        feed = Feedzirra::Feed.fetch_and_parse("http://www.avibryant.com/rss.xml")
-        feed.feed_url.should == "http://www.avibryant.com/rss.xml"
-      end
-      
-      it "should set the feed_url for an rss feed" do
-        feed = Feedzirra::Feed.fetch_and_parse("http://tenderlovemaking.com/feed/")
-        feed.feed_url.should == "http://tenderlovemaking.com/feed/"
-      end
-      
-      it "should return a hash of feed objects with the passed in feed_url for the key and parsed feed for the value for multiple feeds" do
-        feeds = Feedzirra::Feed.fetch_and_parse([@paul_feed_url, @trotter_feed_url])
-        feeds.size.should == 2
-        feeds[@paul_feed_url].feed_url.should == @paul_feed_url
-        feeds[@trotter_feed_url].feed_url.should == @trotter_feed_url
-      end
-      
-      it "should always return a hash when passed an array" do
-        feeds = Feedzirra::Feed.fetch_and_parse([@paul_feed_url])
-        feeds.class.should == Hash
-      end
-      
-      it "should yeild the url and feed object to a :on_success lambda" do
-        successful_call_mock = mock("successful_call_mock")
-        successful_call_mock.should_receive(:call)
-        Feedzirra::Feed.fetch_and_parse(@paul_feed_url, :on_success => lambda { |feed_url, feed|
-          feed_url.should == @paul_feed_url
-          feed.class.should == Feedzirra::AtomFeedBurner
-          successful_call_mock.call})
-      end
-      
-      it "should yield the url, response_code, response_header, and response_body to a :on_failure lambda" do
-        failure_call_mock = mock("failure_call_mock")
-        failure_call_mock.should_receive(:call)
-        fail_url = "http://localhost"
-        Feedzirra::Feed.fetch_and_parse(fail_url, :on_failure => lambda {|feed_url, response_code, response_header, response_body|
-          feed_url.should == fail_url
-          response_code.should == 0
-          response_header.should == ""
-          response_body.should == ""
-          failure_call_mock.call})
-      end
-      
-      it "should return a not modified status for a feed with a :if_modified_since is past its last update" do
-        Feedzirra::Feed.fetch_and_parse(@paul_feed_url, :if_modified_since => Time.now).should == 304
-      end
-      
-      it "should set the etag from the header" # do
-       #        Feedzirra::Feed.fetch_and_parse(@paul_feed_url).etag.should_not == ""
-       #      end
-      
-      it "should set the last_modified from the header" # do
-       #        Feedzirra::Feed.fetch_and_parse(@paul_feed_url).last_modified.should.class == Time
-       #      end
+      it 'should initiate the fetching and parsing using multicurl'
+      it "should pass any request options through to add_url_to_multi"
+      it 'should slice the feeds into groups of thirty for processing'
+      it "should return a feed object if a single feed is passed in"
+      it "should return an return an array of feed objects if multiple feeds are passed in"
+    end
+
+    describe "#decode_content" do
+      it 'should decode the response body using gzip if the Content-Encoding: is gzip'
+      it 'should deflate the response body using inflate if the Content-Encoding: is deflate'
+      it 'should return the response body if it is not encoded'
     end
 
     describe "#update" do
-      it "should update and return a single feed object" do
-        feed = Feedzirra::Feed.fetch_and_parse(@paul_feed_url)
-        feed.entries.delete_at(0)
-        feed.last_modified = nil
-        feed.etag = nil
-        updated_feed = Feedzirra::Feed.update(feed)
-        updated_feed.new_entries.size.should == 1
-        updated_feed.should have_new_entries
-      end
-
-      it "should update a collection of feed objects" do
-        feeds = Feedzirra::Feed.fetch_and_parse([@paul_feed_url, @trotter_feed_url])
-        paul_entries_size    = feeds[@paul_feed_url].entries.size
-        trotter_entries_size = feeds[@trotter_feed_url].entries.size
-        
-        feeds.values.each do |feed|
-          feed.last_modified = nil
-          feed.etag = nil
-          feed.entries.delete_at(0)
-        end
-        updated_feeds = Feedzirra::Feed.update(feeds.values)
-        updated_feeds.detect {|f| f.feed_url == @paul_feed_url}.entries.size.should == paul_entries_size
-        updated_feeds.detect {|f| f.feed_url == @trotter_feed_url}.entries.size.should == trotter_entries_size
-      end
-      
-      it "should return the feed objects even when not updated" do
-        feeds = Feedzirra::Feed.fetch_and_parse([@paul_feed_url, @trotter_feed_url])
-        updated_feeds = Feedzirra::Feed.update(feeds.values)
-        updated_feeds.size.should == 2
-        updated_feeds.first.should_not be_updated
-        updated_feeds.last.should_not be_updated
-      end
+      it 'should initiate the updating using multicurl'
+      it "should pass any request options through to add_feed_to_multi"
+      it 'should slice the feeds into groups of thirty for processing'
+      it "should return a feed object if a single feed is passed in"
+      it "should return an return an array of feed objects if multiple feeds are passed in"
     end
   end
 end

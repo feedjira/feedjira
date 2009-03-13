@@ -1,3 +1,5 @@
+require 'ruby-debug'
+
 module Feedzirra
   class NoParserAvailable < StandardError; end
   
@@ -26,7 +28,7 @@ module Feedzirra
     end
 
     # can take a single url or an array of urls
-    # when passed a single url it returns the body of the response
+    # when pasan array of urls it returns a hash with the urls as keys and body of responses as valuessed a single url it returns the body of the response
     # when passed an array of urls it returns a hash with the urls as keys and body of responses as values
     def self.fetch_raw(urls, options = {})
       url_queue = [*urls]
@@ -39,6 +41,8 @@ module Feedzirra
           curl.headers["If-None-Match"]     = options[:if_none_match] if options.has_key?(:if_none_match)
           curl.headers["Accept-encoding"]   = 'gzip, deflate'
           curl.follow_location = true
+          curl.userpwd = options[:http_authentication].join(':') if options.has_key?(:http_authentication)
+
           curl.on_success do |c|
             responses[url] = decode_content(c)
           end
@@ -51,6 +55,38 @@ module Feedzirra
 
       multi.perform
       return urls.is_a?(String) ? responses.values.first : responses
+    end
+
+    def self.discover(url, options={})
+      feeds = []
+
+      fixed_url = URI.parse(url.match(/http(s?):\/\//) ? url : "http://#{url}")
+      page = Curl::Easy.perform(fixed_url.to_s) { |curl| curl.follow_location = true }
+      
+      if determine_feed_parser_for_xml(page.body_str)
+        feeds << url
+      else
+        elements = Nokogiri::HTML(page.body_str).search(
+          "link[@type='application/rss+xml'][@rel='alternate']",
+          "link[@type='application/atom+xml'][@rel='alternate']",
+          "link[@type='text/xml'][@rel='alternate']",
+          "link[@type='application/x.atom+xml'][@rel='alternate']",
+          "link[@type='application/xml'][@rel='alternate']"
+        )
+        
+         elements.each do |e|
+          url = URI.parse(e.attributes['href'])
+
+          if url.host.nil?
+            url.host = discover_url.host
+            url.scheme = discover_url.scheme
+          end
+
+          feeds << url.to_s
+        end
+      end
+
+      return feeds
     end
     
     def self.fetch_and_parse(urls, options = {})
@@ -101,6 +137,8 @@ module Feedzirra
         curl.headers["If-None-Match"]     = options[:if_none_match] if options.has_key?(:if_none_match)
         curl.headers["Accept-encoding"]   = 'gzip, deflate'
         curl.follow_location = true
+        curl.userpwd = options[:http_authentication].join(':') if options.has_key?(:http_authentication)
+        
         curl.on_success do |c|
           add_url_to_multi(multi, url_queue.shift, url_queue, responses, options) unless url_queue.empty?
           xml = decode_content(c)
@@ -125,15 +163,13 @@ module Feedzirra
       multi.add(easy)
     end
     
-    def self.add_feed_to_multi(multi, feed, feed_queue, responses, options)
-      # on_success = options[:on_success]
-      # on_failure = options[:on_failure]
-      # options[:on_success] = lambda do ||
-      
+    def self.add_feed_to_multi(multi, feed, feed_queue, responses, options)     
       easy = Curl::Easy.new(feed.feed_url) do |curl|
         curl.headers["User-Agent"]        = (options[:user_agent] || USER_AGENT)
         curl.headers["If-Modified-Since"] = feed.last_modified.httpdate if feed.last_modified
         curl.headers["If-None-Match"]     = feed.etag if feed.etag
+        curl.userpwd = options[:http_authentication].join(':') if options.has_key?(:http_authentication)
+
         curl.follow_location = true
         curl.on_success do |c|
           add_feed_to_multi(multi, feed_queue.shift, feed_queue, responses, options) unless feed_queue.empty?
