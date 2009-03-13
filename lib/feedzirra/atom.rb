@@ -7,7 +7,7 @@ module Feedzirra
     element :link, :as => :feed_url, :value => :href, :with => {:type => "application/atom+xml"}
     elements :entry, :as => :entries, :class => AtomEntry
     
-    def self.able_to_parse?(xml)
+    def self.able_to_parse?(xml) #:nodoc:
       xml =~ /(Atom)|(#{Regexp.escape("http://purl.org/atom")})/
     end
   end
