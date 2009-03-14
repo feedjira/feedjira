@@ -30,6 +30,15 @@ describe Feedzirra::Feed do
         feed.entries.first.published.to_s.should == "Thu Jan 22 15:50:22 UTC 2009"
         feed.entries.size.should == 5
       end      
+
+      it "should parse an itunes feed" do
+        feed = Feedzirra::Feed.parse(sample_itunes_feed)
+        feed.title.should == "All About Everything"
+        feed.entries.first.published.to_s.should == "Wed, 15 Jun 2005 19:00:00 GMT"
+        feed.entries.first.itunes_author.should == "John Doe"
+        feed.entries.size.should == 3
+      end
+
     end
     
     context "when there's no available parser" do
@@ -68,6 +77,11 @@ describe Feedzirra::Feed do
     it "should return the Feedzirra::RSS object for an rss 2.0 feed" do
       Feedzirra::Feed.determine_feed_parser_for_xml(sample_rss_feed).should == Feedzirra::RSS
     end
+
+    it "should return the Feedzirra::ITunesRSS object for an itunes feed" do
+      Feedzirra::Feed.determine_feed_parser_for_xml(sample_itunes_feed).should == Feedzirra::ITunesRSS
+    end
+
   end
   
   describe "adding feed types" do
@@ -167,6 +181,11 @@ describe Feedzirra::Feed do
         feed.feed_url.should == "http://tenderlovemaking.com/feed/"
       end
       
+      it "should set the feed_url for an itunes feed" do
+        feed = Feedzirra::Feed.fetch_and_parse("http://www.stanford.edu/group/edcorner/uploads/podcast/EducatorsCorner.xml")
+        feed.feed_url.should == "http://www.stanford.edu/group/edcorner/uploads/podcast/EducatorsCorner.xml"
+      end
+
       it "should return a hash of feed objects with the passed in feed_url for the key and parsed feed for the value for multiple feeds" do
         feeds = Feedzirra::Feed.fetch_and_parse([@paul_feed_url, @trotter_feed_url])
         feeds.size.should == 2

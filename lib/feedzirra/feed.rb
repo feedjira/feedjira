@@ -22,7 +22,7 @@ module Feedzirra
     end
     
     def self.feed_classes
-      @feed_classes ||= [RSS, AtomFeedBurner, Atom]
+      @feed_classes ||= [ITunesRSS, RSS, AtomFeedBurner, Atom]
     end
 
     # can take a single url or an array of urls
