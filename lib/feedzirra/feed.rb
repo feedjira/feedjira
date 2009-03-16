@@ -8,10 +8,8 @@ module Feedzirra
     #
     # === Parameters
     # [xml<String>] The XML that you would like parsed.
-    #
     # === Returns
     # An instance of the determined feed type. By default a Feedzirra::Atom, Feedzirra::AtomFeedBurner, Feedzirra::RDF, or Feedzirra::RSS object.
-    #
     # === Raises
     # Feedzirra::NoParserAvailable : If no valid parser classes could be found for the feed.
     def self.parse(xml)
@@ -26,7 +24,6 @@ module Feedzirra
     # 
     # === Parameters
     # [xml<String>] The XML that you would like determine the parser for.
-    #
     # === Returns
     # The class name of the parser that can handle the XML.
     def self.determine_feed_parser_for_xml(xml)
@@ -38,7 +35,6 @@ module Feedzirra
     #
     # === Parameters
     # [klass<Constant>] The class/constant that you want to register.
-    # 
     # === Returns
     # A updated array of feed parser class names.
     def self.add_feed_class(klass) 
@@ -63,7 +59,6 @@ module Feedzirra
     #                 :if_none_match - String that's normally an etag for the request that was stored previously.
     #                 :on_success - Block that gets executed after a successful request.
     #                 :on_failure - Block that gets executed after a failed request.
-    #   
     # === Returns
     # A String of XML if a single URL is passed.
     # 
@@ -104,8 +99,7 @@ module Feedzirra
     #                 * :if_modified_since - Time object representing when the feed was last updated.
     #                 * :if_none_match - String, an etag for the request that was stored previously.
     #                 * :on_success - Block that gets executed after a successful request.
-    #                 * :on_failure - Block that gets executed after a failed request.
-    # 
+    #                 * :on_failure - Block that gets executed after a failed request. 
     # === Returns
     # A Feed object if a single URL is passed.
     #
@@ -129,7 +123,6 @@ module Feedzirra
     #
     # === Parameters
     # [curl_request<Curl::Easy>] The Curl::Easy response object from the request.
-    #
     # === Returns
     # A decoded string of XML.
     def self.decode_content(curl_request)
@@ -207,7 +200,7 @@ module Feedzirra
             responses[url] = feed
             options[:on_success].call(url, feed) if options.has_key?(:on_success)
           else
-            puts "Error determining parser for #{url} - #{c.last_effective_url}"
+            raise NoParserAvailable.new("Error determining parser for #{url} - #{c.last_effective_url}.")
           end
         end
         

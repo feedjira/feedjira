@@ -248,6 +248,8 @@ describe Feedzirra::Feed do
           Feedzirra::Feed.stub!(:decode_content).and_return(@paul_feed[:xml])
         end
 
+        it 'should process the next feed in the queue'
+
         it 'should decode the response body' do
           Feedzirra::Feed.should_receive(:decode_content).with(@easy_curl).and_return(@paul_feed[:xml])
           Feedzirra::Feed.add_url_to_multi(@multi, @paul_feed[:url], [], {}, {})
@@ -261,11 +263,15 @@ describe Feedzirra::Feed do
         end
         
         describe 'when a compatible xml parser class is found' do
+          it 'should set the last effective url to the feed url'
+          it 'should set the etags on the feed'
+          it 'should set the last modified on the feed'
+          it 'should add the feed to the responses'
           it 'should call proc if :on_success option is passed'
         end
 
         describe 'when no compatible xml parser class is found' do
-          it 'should do something other than puts'
+          it 'should raise a NoParserAvailable exception'
         end
       end
 
@@ -285,11 +291,17 @@ describe Feedzirra::Feed do
       it "should set if_none_match as an option if passed"
 
       describe 'on success' do
-        it 'if :on_success option is called, should call proc'
+        it 'should process the next feed in the queue'
+        it 'should parse the updated feed'
+        it 'should update the last effective url of the feed'
+        it 'should update the etag of the feed'
+        it 'should update the last modified of the feed'
+        it 'should call update from feed on the old feed with the updated feed'
+        it 'should add the feed to the responses'
+        it 'should call proc if :on_success option is passed'
       end
 
       describe 'on failure' do
-        it 'if :on_failure option is called, should call proc'
       end
     end
 
