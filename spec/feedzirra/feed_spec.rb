@@ -257,9 +257,28 @@ describe Feedzirra::Feed do
     end
 
     describe "#decode_content" do
-      it 'should decode the response body using gzip if the Content-Encoding: is gzip'
-      it 'should deflate the response body using inflate if the Content-Encoding: is deflate'
-      it 'should return the response body if it is not encoded'
+      before(:each) do
+        @curl_easy = mock('curl_easy', :body_str => '<xml></xml>')
+      end
+
+      it 'should decode the response body using gzip if the Content-Encoding: is gzip' do
+        @curl_easy.stub!(:header_str).and_return('Content-Encoding: gzip')
+        string_io = mock('stringio', :read => @curl_easy.body_str, :close => true)
+        StringIO.should_receive(:new).and_return(string_io)
+        Zlib::GzipReader.should_receive(:new).with(string_io).and_return(string_io)
+        Feedzirra::Feed.decode_content(@curl_easy)
+      end
+      
+      it 'should deflate the response body using inflate if the Content-Encoding: is deflate' do
+        @curl_easy.stub!(:header_str).and_return('Content-Encoding: deflate')
+        Zlib::Deflate.should_receive(:inflate).with(@curl_easy.body_str)
+        Feedzirra::Feed.decode_content(@curl_easy)
+      end
+
+      it 'should return the response body if it is not encoded' do
+        @curl_easy.stub!(:header_str).and_return('')
+        Feedzirra::Feed.decode_content(@curl_easy).should == '<xml></xml>'
+      end
     end
 
     describe "#update" do

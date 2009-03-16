@@ -1,5 +1,3 @@
-require 'ruby-debug'
-
 module Feedzirra
   class NoParserAvailable < StandardError; end
   
