@@ -1,4 +1,12 @@
 module Feedzirra
+  # == Summary
+  # Parser for dealing with RSS feeds.
+  #
+  # == Attributes
+  # * title
+  # * feed_url
+  # * url
+  # * entries
   class RSS
     include SAXMachine
     include FeedUtilities
@@ -8,7 +16,7 @@ module Feedzirra
     
     attr_accessor :feed_url
     
-    def self.able_to_parse?(xml)
+    def self.able_to_parse?(xml) #:nodoc:
       xml =~ /\<rss|rdf/
     end
   end

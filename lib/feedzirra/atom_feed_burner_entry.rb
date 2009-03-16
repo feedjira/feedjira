@@ -1,4 +1,15 @@
 module Feedzirra
+  # == Summary
+  # Parser for dealing with Feedburner Atom feed entries.
+  #
+  # == Attributes
+  # * title
+  # * url
+  # * author
+  # * content
+  # * summary
+  # * published
+  # * categories
   class AtomFeedBurnerEntry
     include SAXMachine
     include FeedEntryUtilities

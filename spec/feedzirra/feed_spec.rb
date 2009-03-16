@@ -203,12 +203,7 @@ describe Feedzirra::Feed do
         @responses = {}
       end
 
-      it "should set user agent if it's passed as an option" do
-        @url_queue << @paul_feed[:url]
-        url = Feedzirra::Feed.add_url_to_multi(@multi_curl, @paul_feed[:url], @url_queue, @responses, {})
-        puts url.inspect
-      end
-      
+      it "should set user agent if it's passed as an option"
       it "should set user agent to default if it's not passed as an option"
       it "should set if modified since as an option if passed"
       it 'should set follow location to true'
