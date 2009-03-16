@@ -151,7 +151,10 @@ describe Feedzirra::Feed do
         @curl.headers["If-Modified-Since"].should == 'Wed, 28 Jan 2009 04:10:32 GMT'
       end
 
-      it "should set if none match as an option if passed"
+      it "should set if none match as an option if passed" do
+        Feedzirra::Feed.fetch_raw(@paul_feed[:url], :if_none_match => 'ziEyTl4q9GH04BR4jgkImd0GvSE')
+        @curl.headers["If-None-Match"].should == 'ziEyTl4q9GH04BR4jgkImd0GvSE'
+      end
       
       it 'should set userpwd for http basic authentication if :http_authentication is passed' do
         @curl.should_receive(:userpwd=).with('username:password')
@@ -198,22 +201,64 @@ describe Feedzirra::Feed do
 
     describe "#add_url_to_multi" do
       before(:each) do
-        @multi_curl = Curl::Multi.new(@paul_feed[:url])
-        @url_queue = []
-        @responses = {}
+        @multi = Curl::Multi.new(@paul_feed[:url])
+        @multi.stub!(:add)
+        @easy_curl = Curl::Easy.new(@paul_feed[:url])
+        
+        Curl::Easy.should_receive(:new).and_yield(@easy_curl)
       end
 
-      it "should set user agent if it's passed as an option"
-      it "should set user agent to default if it's not passed as an option"
-      it "should set if modified since as an option if passed"
-      it 'should set follow location to true'
-      it 'should set userpwd for http basic authentication if :http_authentication is passed'
-      it 'should set accepted encodings'
-      it "should set if_none_match as an option if passed"
+      it "should set user agent if it's passed as an option" do
+        Feedzirra::Feed.add_url_to_multi(@multi, @paul_feed[:url], [], {}, :user_agent => 'My cool application')
+        @easy_curl.headers["User-Agent"].should == 'My cool application'
+      end
+      
+      it "should set user agent to default if it's not passed as an option" do
+        Feedzirra::Feed.add_url_to_multi(@multi, @paul_feed[:url], [], {}, {})
+        @easy_curl.headers["User-Agent"].should == Feedzirra::Feed::USER_AGENT
+      end
+      
+      it "should set if modified since as an option if passed" do
+        Feedzirra::Feed.add_url_to_multi(@multi, @paul_feed[:url], [], {}, :if_modified_since => Time.parse("Jan 25 2009 04:10:32 GMT"))
+        @easy_curl.headers["If-Modified-Since"].should == 'Sun, 25 Jan 2009 04:10:32 GMT'
+      end
+
+      it 'should set follow location to true' do
+        @easy_curl.should_receive(:follow_location=).with(true)
+        Feedzirra::Feed.add_url_to_multi(@multi, @paul_feed[:url], [], {}, {})
+      end
+
+      it 'should set userpwd for http basic authentication if :http_authentication is passed' do
+        Feedzirra::Feed.add_url_to_multi(@multi, @paul_feed[:url], [], {}, :http_authentication => ['myusername', 'mypassword'])
+        @easy_curl.userpwd.should == 'myusername:mypassword'
+      end
+      
+      it 'should set accepted encodings' do
+        Feedzirra::Feed.add_url_to_multi(@multi, @paul_feed[:url], [], {}, {})
+        @easy_curl.headers["Accept-encoding"].should == 'gzip, deflate'
+      end
+
+      it "should set if_none_match as an option if passed" do
+        Feedzirra::Feed.add_url_to_multi(@multi, @paul_feed[:url], [], {}, :if_none_match => 'ziEyTl4q9GH04BR4jgkImd0GvSE')
+        @easy_curl.headers["If-None-Match"].should == 'ziEyTl4q9GH04BR4jgkImd0GvSE'
+      end
       
       describe 'on success' do
-        it 'should decode the response body'
-        it 'should determine the xml parser class'
+        before(:each) do
+          Feedzirra::Feed.stub!(:decode_content).and_return(@paul_feed[:xml])
+        end
+
+        it 'should decode the response body' do
+          Feedzirra::Feed.should_receive(:decode_content).with(@easy_curl).and_return(@paul_feed[:xml])
+          Feedzirra::Feed.add_url_to_multi(@multi, @paul_feed[:url], [], {}, {})
+          @easy_curl.on_success.call(@easy_curl)
+        end
+        
+        it 'should determine the xml parser class' do
+          Feedzirra::Feed.should_receive(:determine_feed_parser_for_xml).with(@paul_feed[:xml]).and_return(Feedzirra::AtomFeedBurner)
+          Feedzirra::Feed.add_url_to_multi(@multi, @paul_feed[:url], [], {}, {})
+          @easy_curl.on_success.call(@easy_curl)
+        end
         
         describe 'when a compatible xml parser class is found' do
           it 'should call proc if :on_success option is passed'
@@ -282,11 +327,33 @@ describe Feedzirra::Feed do
     end
 
     describe "#update" do
-      it 'should initiate the updating using multicurl'
-      it "should pass any request options through to add_feed_to_multi"
+      before(:each) do
+        @multi_curl = stub('multi_curl', :perform => true)
+        Curl::Multi.stub!(:new).and_return(@multi_curl)
+
+        Feedzirra::Feed.stub!(:add_feed_to_multi).and_return(true)
+
+        @feed_one, @feed_two = mock('feed_one'), mock('feed_two')
+        @feeds = [@feed_one, @feed_two]
+      end
+      
+      it 'should perform the updating using multicurl' do
+        @multi_curl.should_receive(:perform)
+        Feedzirra::Feed.update(@feeds)
+      end
+      
+      it "should pass any request options through to add_feed_to_multi" do
+        Feedzirra::Feed.should_receive(:add_feed_to_multi).with(@multi_curl, @feed_one, [], {} ,{ :user_agent => 'testing' })
+        Feedzirra::Feed.update(@feeds, :user_agent => 'testing')
+      end
+
       it 'should slice the feeds into groups of thirty for processing'
-      it "should return a feed object if a single feed is passed in"
-      it "should return an return an array of feed objects if multiple feeds are passed in"
+
+      it "should return a feed object if a single feed is passed in" do
+      end
+      
+      it "should return an return an array of feed objects if multiple feeds are passed in" do
+      end
     end
   end
 end

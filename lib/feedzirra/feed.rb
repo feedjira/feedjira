@@ -18,7 +18,7 @@ module Feedzirra
       if parser = determine_feed_parser_for_xml(xml)
         parser.parse(xml)
       else
-        raise NoParserAvailable.new("no valid parser for content.")
+        raise NoParserAvailable.new("No valid parser for XML.")
       end
     end
 
@@ -196,9 +196,9 @@ module Feedzirra
         
         curl.on_success do |c|
           add_url_to_multi(multi, url_queue.shift, url_queue, responses, options) unless url_queue.empty?
-         
           xml = decode_content(c)
           klass = determine_feed_parser_for_xml(xml)
+          
           if klass
             feed = klass.parse(xml)
             feed.feed_url = c.last_effective_url
@@ -210,6 +210,7 @@ module Feedzirra
             puts "Error determining parser for #{url} - #{c.last_effective_url}"
           end
         end
+        
         curl.on_failure do |c|
           add_url_to_multi(multi, url_queue.shift, url_queue, responses, options) unless url_queue.empty?
           responses[url] = c.response_code
@@ -234,14 +235,13 @@ module Feedzirra
     # === Returns
     # The updated Curl::Multi object with the request details added to it's stack.
     def self.add_feed_to_multi(multi, feed, feed_queue, responses, options) 
-
       easy = Curl::Easy.new(feed.feed_url) do |curl|
         curl.headers["User-Agent"]        = (options[:user_agent] || USER_AGENT)
         curl.headers["If-Modified-Since"] = feed.last_modified.httpdate if feed.last_modified
         curl.headers["If-None-Match"]     = feed.etag if feed.etag
         curl.userpwd = options[:http_authentication].join(':') if options.has_key?(:http_authentication)
-
         curl.follow_location = true
+
         curl.on_success do |c|
           add_feed_to_multi(multi, feed_queue.shift, feed_queue, responses, options) unless feed_queue.empty?
           updated_feed = Feed.parse(c.body_str)
@@ -252,6 +252,7 @@ module Feedzirra
           responses[feed.feed_url] = feed
           options[:on_success].call(feed) if options.has_key?(:on_success)
         end
+
         curl.on_failure do |c|
           add_feed_to_multi(multi, feed_queue.shift, feed_queue, responses, options) unless feed_queue.empty?
           response_code = c.response_code
