@@ -1,4 +1,12 @@
 module Feedzirra
+  # == Summary
+  # Parser for dealing with RDF feeds.
+  #
+  # == Attributes
+  # * title
+  # * feed_url
+  # * url
+  # * entries
   class RDF
     include SAXMachine
     include FeedUtilities

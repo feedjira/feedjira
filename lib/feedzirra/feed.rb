@@ -123,7 +123,7 @@ module Feedzirra
       return urls.is_a?(String) ? responses.values.first : responses
     end
 
-    # Unencodes the XML document if it was compressed.
+    # Decodes the XML document if it was compressed.
     #
     # === Parameters
     # [curl_request<Curl::Easy>] The Curl::Easy response object from the request.
