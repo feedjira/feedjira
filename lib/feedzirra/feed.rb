@@ -119,7 +119,8 @@ module Feedzirra
             options[:on_success].call(url, feed) if options.has_key?(:on_success)
           else
             # puts "Error determining parser for #{url} - #{c.last_effective_url}"
-            raise NoParserAvailable.new("no valid parser for content.")
+            # raise NoParserAvailable.new("no valid parser for content.") (this would unfirtunately fail the whole 'multi', so it's not really useable)
+            options[:on_failure].call(url, c.response_code, c.header_str, c.body_str) if options.has_key?(:on_failure)
           end
         end
         curl.on_failure do |c|
