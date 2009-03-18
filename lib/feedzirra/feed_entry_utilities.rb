@@ -15,7 +15,12 @@ module Feedzirra
     end
     
     def parse_datetime(string)
-      DateTime.parse(string).feed_utils_to_gm_time
+      begin
+        DateTime.parse(string).feed_utils_to_gm_time
+      rescue
+        puts "DATE CAN'T BE PARSED: #{string}"
+        nil
+      end
     end
     
     ##
