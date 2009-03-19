@@ -32,5 +32,5 @@ require 'feedzirra/atom'
 require 'feedzirra/atom_feed_burner'
 
 module Feedzirra
-  VERSION = "0.0.3"
+  VERSION = "0.0.6"
 end
