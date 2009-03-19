@@ -48,3 +48,7 @@ end
 def sample_feedburner_atom_entry_content
   load_sample("PaulDixExplainsNothingFirstEntryContent.xml")
 end
+
+def sample_wfw_feed
+  load_sample("PaulDixExplainsNothingWFW.xml")
+end

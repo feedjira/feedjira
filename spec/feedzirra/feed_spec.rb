@@ -1,6 +1,24 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 
 describe Feedzirra::Feed do
+  describe "#add_common_feed_entry_element" do
+    before(:all) do
+      Feedzirra::Feed.add_common_feed_entry_element("wfw:commentRss", :as => :comment_rss)
+    end
+    
+    it "should parse the added element out of Atom feeds" do
+      Feedzirra::Feed.parse(sample_wfw_feed).entries.first.comment_rss.should == "this is the new val"
+    end
+    
+    it "should parse the added element out of Atom Feedburner feeds" do
+      Feedzirra::AtomEntry.new.should respond_to(:comment_rss)
+    end
+    
+    it "should parse the added element out of RSS feeds" do
+      Feedzirra::RSSEntry.new.should respond_to(:comment_rss)
+    end
+  end
+  
   describe "#parse" do # many of these tests are redundant with the specific feed type tests, but I put them here for completeness
     context "when there's an available parser" do
       it "should parse an rdf feed" do

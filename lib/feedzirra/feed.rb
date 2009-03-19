@@ -48,6 +48,34 @@ module Feedzirra
     def self.feed_classes
       @feed_classes ||= [RSS, AtomFeedBurner, Atom]
     end
+    
+    # Makes all entry types look for the passed in element to parse. This is actually just a call to 
+    # element (a SAXMachine call) in the class
+    #
+    # === Parameters
+    # [element_tag<String>]
+    # [options<Hash>] Valid keys are same as with SAXMachine
+    def self.add_common_feed_entry_element(element_tag, options = {})
+      # need to think of a better way to do this. will break for people who want this behavior
+      # across their added classes
+      [RSSEntry, AtomFeedBurnerEntry, AtomEntry].each do |klass|
+        klass.send(:element, element_tag, options)
+      end
+    end
+    
+    # Makes all entry types look for the passed in elements to parse. This is actually just a call to 
+    # elements (a SAXMachine call) in the class
+    #
+    # === Parameters
+    # [element_tag<String>]
+    # [options<Hash>] Valid keys are same as with SAXMachine
+    def self.add_common_feed_entry_elements(element_tag, options = {})
+      # need to think of a better way to do this. will break for people who want this behavior
+      # across their added classes
+      [RSSEntry, AtomFeedBurnerEntry, AtomEntry].each do |klass|
+        klass.send(:elements, element_tag, options)
+      end
+    end
 
     # Fetches and returns the raw XML for each URL provided.
     #
