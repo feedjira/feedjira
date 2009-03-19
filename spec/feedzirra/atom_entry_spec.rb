@@ -39,4 +39,7 @@ describe Feedzirra::AtomEntry do
     @entry.updated.to_s.should == "Fri Jan 16 18:21:00 UTC 2009"
   end
   
+  it "should parse the id" do
+    @entry.id.should == "tag:typepad.com,2003:post-61484736"
+  end
 end

@@ -34,4 +34,8 @@ describe Feedzirra::RSSEntry do
   it "should parse the categories" do
     @entry.categories.should == ['computadora', 'nokogiri', 'rails']
   end
+  
+  it "should parse the guid as id" do
+    @entry.id.should == "http://tenderlovemaking.com/?p=198"
+  end
 end
