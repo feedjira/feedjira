@@ -110,6 +110,17 @@ feed = Feedzirra::Feed.fetch_and_parse("http://feeds.feedburner.com/PaulDixExpla
 # the behavior for the handlers when using Feedzirra::Feed.update is slightly different. The feed passed into on_success will be
 # the updated feed with the standard updated accessors. on failure it will be the original feed object passed into update
 
+# You can add custom parsing to the feed entry classes. I made the decision to not include guid parsing. However, you can
+# add that functionality in (or parsing for other elements) with a single line of code.
+Feedzirra::Feed.add_common_feed_entry_element(:id, :as => :guid)
+# The arguments are the same as the SAXMachine arguments for the element method. For more example usage look at the RSSEntry and
+# AtomEntry classes. Now you can access those in an atom feed:
+Feedzirra::Feed.parse(some_atom_xml).entries.first.guid # => guid is now parsed!
+
+# You can also access http basic auth feeds. Unfortunately, you can't get to these inside of a bulk get of a bunch of feeds.
+# You'll have to do it on its own like so:
+Feedzirra::Feed.fetch_and_parse(some_url, :http_authentication => ["myusername", "mypassword"])
+
 # Defining custom parsers
 # TODO: the functionality is here, just write some good examples that show how to do this
 </pre>
