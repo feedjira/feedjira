@@ -153,15 +153,20 @@ module Feedzirra
     # [curl_request<Curl::Easy>] The Curl::Easy response object from the request.
     # === Returns
     # A decoded string of XML.
-    def self.decode_content(curl_request)
-      if curl_request.header_str.match(/Content-Encoding: gzip/)
-        gz =  Zlib::GzipReader.new(StringIO.new(curl_request.body_str))
-        xml = gz.read
-        gz.close
-      elsif curl_request.header_str.match(/Content-Encoding: deflate/)
-        xml = Zlib::Deflate.inflate(curl_request.body_str)
+    def self.decode_content(c)
+      if c.header_str.match(/Content-Encoding: gzip/)
+        begin
+          gz =  Zlib::GzipReader.new(StringIO.new(c.body_str))
+          xml = gz.read
+          gz.close
+        rescue Zlib::GzipFile::Error 
+          # Maybe this is not gzipped?
+          xml = c.body_str
+        end
+      elsif c.header_str.match(/Content-Encoding: deflate/)
+        xml = Zlib::Inflate.inflate(c.body_str)
       else
-        xml = curl_request.body_str
+        xml = c.body_str
       end
 
       xml
@@ -228,7 +233,9 @@ module Feedzirra
             responses[url] = feed
             options[:on_success].call(url, feed) if options.has_key?(:on_success)
           else
-            raise NoParserAvailable.new("Error determining parser for #{url} - #{c.last_effective_url}.")
+            # puts "Error determining parser for #{url} - #{c.last_effective_url}"
+            # raise NoParserAvailable.new("no valid parser for content.") (this would unfirtunately fail the whole 'multi', so it's not really useable)
+            options[:on_failure].call(url, c.response_code, c.header_str, c.body_str) if options.has_key?(:on_failure)
           end
         end
         

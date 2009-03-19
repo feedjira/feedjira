@@ -19,7 +19,11 @@ module Feedzirra
     element :content
     element :summary
     element :published
+    element :id
     element :created, :as => :published
+    element :issued, :as => :published
+    element :updated
+    element :modified, :as => :updated
     elements :category, :as => :categories, :value => :term
   end
 end

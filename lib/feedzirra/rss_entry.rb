@@ -22,6 +22,14 @@ module Feedzirra
 
     element :pubDate, :as => :published
     element :"dc:date", :as => :published
+    element :"dc:Date", :as => :published
+    element :"dcterms:created", :as => :published
+    
+    
+    element :"dcterms:modified", :as => :updated
+    element :issued, :as => :published
     elements :category, :as => :categories
+    
+    element :guid, :as => :id
   end
 end

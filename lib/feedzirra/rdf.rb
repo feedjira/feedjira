@@ -13,7 +13,7 @@ module Feedzirra
     element :title
     element :link, :as => :url
     elements :item, :as => :entries, :class => RDFEntry
-
+    
     attr_accessor :feed_url
     
     def self.able_to_parse?(xml) #:nodoc:

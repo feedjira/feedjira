@@ -523,7 +523,7 @@ describe Feedzirra::Feed do
       
       it 'should deflate the response body using inflate if the Content-Encoding: is deflate' do
         @curl_easy.stub!(:header_str).and_return('Content-Encoding: deflate')
-        Zlib::Deflate.should_receive(:inflate).with(@curl_easy.body_str)
+        Zlib::Inflate.should_receive(:inflate).with(@curl_easy.body_str)
         Feedzirra::Feed.decode_content(@curl_easy)
       end
 

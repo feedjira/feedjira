@@ -34,4 +34,9 @@ describe Feedzirra::AtomEntry do
   it "should parse the categories" do
     @entry.categories.should == ['Turkey', 'Seattle']
   end
+  
+  it "should parse the updated date" do
+    @entry.updated.to_s.should == "Fri Jan 16 18:21:00 UTC 2009"
+  end
+  
 end
