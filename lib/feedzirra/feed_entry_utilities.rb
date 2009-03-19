@@ -1,15 +1,5 @@
 module Feedzirra
   module FeedEntryUtilities
-    module Sanitize
-      def sanitize!
-        self.replace(sanitize)
-      end
-      
-      def sanitize
-        Dryopteris.sanitize(self)
-      end
-    end
-
     attr_reader :published
     
     def parse_datetime(string)
@@ -19,19 +9,7 @@ module Feedzirra
     def published=(val)
       @published = parse_datetime(val)
     end
-    
-    def content
-      @content.extend(Sanitize)
-    end
-    
-    def title
-      @title.extend(Sanitize)
-    end
-    
-    def author
-      @author.extend(Sanitize)
-    end
-    
+
     def sanitize!
       self.title.sanitize!
       self.author.sanitize!

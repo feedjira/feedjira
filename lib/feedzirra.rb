@@ -12,6 +12,7 @@ require 'active_support/core_ext/object'
 require 'active_support/core_ext/time'
 
 require 'core_ext/date'
+require 'core_ext/string'
 
 require 'feedzirra/feed_utilities'
 require 'feedzirra/feed_entry_utilities'
