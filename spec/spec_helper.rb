@@ -21,6 +21,10 @@ def sample_atom_entry_content
   load_sample("AmazonWebServicesBlogFirstEntryContent.xml")
 end
 
+def sample_itunes_feed
+  load_sample("itunes.xml")
+end
+
 def sample_rdf_feed
   load_sample("HREFConsideredHarmful.xml")
 end

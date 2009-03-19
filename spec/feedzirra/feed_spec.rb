@@ -47,6 +47,14 @@ describe Feedzirra::Feed do
         feed.title.should == "Paul Dix Explains Nothing"
         feed.entries.first.published.to_s.should == "Thu Jan 22 15:50:22 UTC 2009"
         feed.entries.size.should == 5
+      end      
+
+      it "should parse an itunes feed" do
+        feed = Feedzirra::Feed.parse(sample_itunes_feed)
+        feed.title.should == "All About Everything"
+        feed.entries.first.published.to_s.should == "Wed, 15 Jun 2005 19:00:00 GMT"
+        feed.entries.first.itunes_author.should == "John Doe"
+        feed.entries.size.should == 3
       end
     end
 
@@ -86,6 +94,11 @@ describe Feedzirra::Feed do
     it "should return the Feedzirra::RSS object for an rss 2.0 feed" do
       Feedzirra::Feed.determine_feed_parser_for_xml(sample_rss_feed).should == Feedzirra::RSS
     end
+
+    it "should return the Feedzirra::ITunesRSS object for an itunes feed" do
+      Feedzirra::Feed.determine_feed_parser_for_xml(sample_itunes_feed).should == Feedzirra::ITunesRSS
+    end
+
   end
 
   describe "when adding feed types" do
@@ -245,7 +258,7 @@ describe Feedzirra::Feed do
         @easy_curl.should_receive(:follow_location=).with(true)
         Feedzirra::Feed.add_url_to_multi(@multi, @paul_feed[:url], [], {}, {})
       end
-
+      
       it 'should set userpwd for http basic authentication if :http_authentication is passed' do
         Feedzirra::Feed.add_url_to_multi(@multi, @paul_feed[:url], [], {}, :http_authentication => ['myusername', 'mypassword'])
         @easy_curl.userpwd.should == 'myusername:mypassword'

@@ -99,7 +99,7 @@ feeds = Feedzirra::Feed.fetch_and_parse(feeds_urls)
 # there will be a Fixnum of the http response code instead of a feed object
 
 # updating multiple feeds. it expects a collection of feed objects
-updated_feeds = Feedzirra::Feed.udpate(feeds.values)
+updated_feeds = Feedzirra::Feed.update(feeds.values)
 
 # defining custom behavior on failure or success. note that a return status of 304 (not updated) will call the on_success handler
 feed = Feedzirra::Feed.fetch_and_parse("http://feeds.feedburner.com/PaulDixExplainsNothing",
