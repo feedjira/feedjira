@@ -116,6 +116,12 @@ Feedzirra::Feed.add_common_feed_entry_element("wfw:commentRss", :as => :comment_
 # AtomEntry classes. Now you can access those in an atom feed:
 Feedzirra::Feed.parse(some_atom_xml).entries.first.comment_rss_ # => wfw:commentRss is now parsed!
 
+
+# You can also define your own parsers and add them to the ones Feedzirra knows about. Here's an example that adds 
+# ITunesRSS parsing. It's included in the library, but not part of Feedzirra by default because some of the field names 
+# differ from other classes, thus breaking normalization.
+Feedzirra::Feed.add_feed_class(ITunesRSS) # now all feeds will be checked to see if they match ITunesRSS before others
+
 # You can also access http basic auth feeds. Unfortunately, you can't get to these inside of a bulk get of a bunch of feeds.
 # You'll have to do it on its own like so:
 Feedzirra::Feed.fetch_and_parse(some_url, :http_authentication => ["myusername", "mypassword"])
@@ -151,7 +157,8 @@ This thing needs to hammer on many different feeds in the wild. I'm sure there w
 Here are some more specific TODOs.
 * Fix the iTunes parser so things are normalized again
 * Fix the Zlib deflate error
-* Fork taf2-curb and require that in feedzirra
+* Fix this error: http://github.com/inbox/70508
+* Convert to use Typhoeus instead of taf2-curb
 * Make the entries parse all link fields
 * Make a feedzirra-rails gem to integrate feedzirra seamlessly with Rails and ActiveRecord.
 * Create a super sweet DSL for defining new parsers.
