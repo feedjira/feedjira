@@ -93,7 +93,7 @@ updated_feed.new_entries  # a collection of the entry objects that are newer tha
 
 # fetching multiple feeds
 feed_urls = ["http://feeds.feedburner.com/PaulDixExplainsNothing", "http://feeds.feedburner.com/trottercashion"]
-feeds = Feedzirra::Feed.fetch_and_parse(feeds_urls)
+feeds = Feedzirra::Feed.fetch_and_parse(feed_urls)
 
 # feeds is now a hash with the feed_urls as keys and the parsed feed objects as values. If an error was thrown
 # there will be a Fixnum of the http response code instead of a feed object
