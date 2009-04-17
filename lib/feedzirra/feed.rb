@@ -115,7 +115,7 @@ module Feedzirra
       end
 
       multi.perform
-      return urls.is_a?(String) ? responses.values.first : responses
+      urls.is_a?(String) ? responses.values.first : responses
     end
 
     # Fetches and returns the parsed XML for each URL provided.
@@ -144,7 +144,7 @@ module Feedzirra
       end
 
       multi.perform
-      return urls.is_a?(String) ? responses.values.first : responses
+      urls.is_a?(String) ? responses.values.first : responses
     end
 
     # Decodes the XML document if it was compressed.
@@ -194,7 +194,7 @@ module Feedzirra
       end
     
       multi.perform
-      return responses.size == 1 ? responses.values.first : responses.values
+      responses.size == 1 ? responses.values.first : responses.values
     end
     
     # An abstraction for adding a feed by URL to the passed Curb::multi stack.
