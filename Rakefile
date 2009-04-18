@@ -20,6 +20,9 @@ def recent_specs(touched_since)
   recent_specs.uniq
 end
 
+desc "Run all the tests"
+task :default => :spec
+
 # Tasks
 Spec::Rake::SpecTask.new do |t|
   t.spec_opts = ['--options', "\"#{File.dirname(__FILE__)}/spec/spec.opts\""]
