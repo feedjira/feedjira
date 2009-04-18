@@ -503,13 +503,13 @@ describe Feedzirra::Feed do
       end
     end
 
-#    describe "#fetch_and_parse" do
-#      it 'should initiate the fetching and parsing using multicurl'
-#      it "should pass any request options through to add_url_to_multi"
-#      it 'should slice the feeds into groups of thirty for processing'
-#      it "should return a feed object if a single feed is passed in"
-#      it "should return an return an array of feed objects if multiple feeds are passed in"
-#    end
+    describe "#fetch_and_parse" do
+      it 'should initiate the fetching and parsing using multicurl'
+      it "should pass any request options through to add_url_to_multi"
+      it 'should slice the feeds into groups of thirty for processing'
+      it "should return a feed object if a single feed is passed in"
+      it "should return an return an array of feed objects if multiple feeds are passed in"
+    end
 
     describe "#decode_content" do
       before(:each) do
@@ -536,11 +536,11 @@ describe Feedzirra::Feed do
       end
     end
 
- #   describe "#update" do
-#      it 'should perform the updating using multicurl'
-#      it "should pass any request options through to add_feed_to_multi"
-#      it "should return a feed object if a single feed is passed in"
-#      it "should return an return an array of feed objects if multiple feeds are passed in" 
-#    end
+    describe "#update" do
+      it 'should perform the updating using multicurl'
+      it "should pass any request options through to add_feed_to_multi"
+      it "should return a feed object if a single feed is passed in"
+      it "should return an return an array of feed objects if multiple feeds are passed in" 
+    end
   end
 end
