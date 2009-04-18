@@ -1,9 +1,9 @@
-require File.dirname(__FILE__) + '/../spec_helper'
+require File.join(File.dirname(__FILE__), %w[.. .. spec_helper])
 
-describe Feedzirra::RSS do
+describe Feedzirra::Parser::RSS do
   describe "#will_parse?" do
     it "should return true for an RSS feed" do
-      Feedzirra::RSS.should be_able_to_parse(sample_rss_feed)
+      Feedzirra::Parser::RSS.should be_able_to_parse(sample_rss_feed)
     end
 
     # this is no longer true. combined rdf and rss into one
@@ -12,13 +12,13 @@ describe Feedzirra::RSS do
     # end
     
     it "should return fase for an atom feed" do
-      Feedzirra::RSS.should_not be_able_to_parse(sample_atom_feed)
+      Feedzirra::Parser::RSS.should_not be_able_to_parse(sample_atom_feed)
     end
   end
 
   describe "parsing" do
     before(:each) do
-      @feed = Feedzirra::RSS.parse(sample_rss_feed)
+      @feed = Feedzirra::Parser::RSS.parse(sample_rss_feed)
     end
     
     it "should parse the title" do

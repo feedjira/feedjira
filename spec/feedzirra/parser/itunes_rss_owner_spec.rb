@@ -1,10 +1,10 @@
-require File.dirname(__FILE__) + '/../spec_helper'
+require File.join(File.dirname(__FILE__), %w[.. .. spec_helper])
 
-describe Feedzirra::ITunesRSSOwner do
+describe Feedzirra::Parser::ITunesRSSOwner do
   before(:each) do
     # I don't really like doing it this way because these unit test should only rely on RSSEntry,
     # but this is actually how it should work. You would never just pass entry xml straight to the ITunesRssOwner
-    @owner = Feedzirra::ITunesRSS.parse(sample_itunes_feed).itunes_owners.first
+    @owner = Feedzirra::Parser::ITunesRSS.parse(sample_itunes_feed).itunes_owners.first
   end
   
   it "should parse the name" do

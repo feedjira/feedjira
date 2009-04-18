@@ -1,10 +1,10 @@
-require File.dirname(__FILE__) + '/../spec_helper'
+require File.join(File.dirname(__FILE__), %w[.. .. spec_helper])
 
-describe Feedzirra::AtomFeedBurnerEntry do
+describe Feedzirra::Parser::AtomFeedBurnerEntry do
   before(:each) do
     # I don't really like doing it this way because these unit test should only rely on AtomEntry,
     # but this is actually how it should work. You would never just pass entry xml straight to the AtomEnry
-    @entry = Feedzirra::AtomFeedBurner.parse(sample_feedburner_atom_feed).entries.first
+    @entry = Feedzirra::Parser::AtomFeedBurner.parse(sample_feedburner_atom_feed).entries.first
   end
   
   it "should parse the title" do
@@ -12,7 +12,7 @@ describe Feedzirra::AtomFeedBurnerEntry do
   end
   
   it "should be able to fetch a url via the 'alternate' rel if no origLink exists" do
-    entry = Feedzirra::AtomFeedBurner.parse(File.read("#{File.dirname(__FILE__)}/../sample_feeds/PaulDixExplainsNothingAlternate.xml")).entries.first
+    entry = Feedzirra::Parser::AtomFeedBurner.parse(File.read("#{File.dirname(__FILE__)}/../../sample_feeds/PaulDixExplainsNothingAlternate.xml")).entries.first
     entry.url.should == 'http://feeds.feedburner.com/~r/PaulDixExplainsNothing/~3/519925023/making-a-ruby-c-library-even-faster.html'
   end
 

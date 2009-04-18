@@ -1,10 +1,10 @@
-require File.dirname(__FILE__) + '/../spec_helper'
+require File.join(File.dirname(__FILE__), %w[.. .. spec_helper])
 
-describe Feedzirra::ITunesRSSItem do
+describe Feedzirra::Parser::ITunesRSSItem do
   before(:each) do
     # I don't really like doing it this way because these unit test should only rely on ITunesRssItem,
     # but this is actually how it should work. You would never just pass entry xml straight to the ITunesRssItem
-    @item = Feedzirra::ITunesRSS.parse(sample_itunes_feed).entries.first
+    @item = Feedzirra::Parser::ITunesRSS.parse(sample_itunes_feed).entries.first
   end
   
   it "should parse the title" do

@@ -42,19 +42,19 @@ describe Feedzirra::FeedUtilities do
     end
     
     it "should return a last_modified value from the entry with the most recent published date if the last_modified date hasn't been set" do
-      feed = Feedzirra::Atom.new
-      entry =Feedzirra::AtomEntry.new
+      feed = Feedzirra::Parser::Atom.new
+      entry =Feedzirra::Parser::AtomEntry.new
       entry.published = Time.now.to_s
       feed.entries << entry
       feed.last_modified.should == entry.published
     end
     
     it "should not throw an error if one of the entries has published date of nil" do
-      feed = Feedzirra::Atom.new
-      entry = Feedzirra::AtomEntry.new
+      feed = Feedzirra::Parser::Atom.new
+      entry = Feedzirra::Parser::AtomEntry.new
       entry.published = Time.now.to_s
       feed.entries << entry
-      feed.entries << Feedzirra::AtomEntry.new
+      feed.entries << Feedzirra::Parser::AtomEntry.new
       feed.last_modified.should == entry.published
     end
   end
@@ -64,7 +64,7 @@ describe Feedzirra::FeedUtilities do
       before(:each) do
         # I'm using the Atom class when I know I should be using a different one. However, this update_from_feed
         # method would only be called against a feed item.
-        @feed = Feedzirra::Atom.new
+        @feed = Feedzirra::Parser::Atom.new
         @feed.title    = "A title"
         @feed.url      = "http://pauldix.net"
         @feed.feed_url = "http://feeds.feedburner.com/PaulDixExplainsNothing"
@@ -112,16 +112,16 @@ describe Feedzirra::FeedUtilities do
       before(:each) do
         # I'm using the Atom class when I know I should be using a different one. However, this update_from_feed
         # method would only be called against a feed item.
-        @feed = Feedzirra::Atom.new
+        @feed = Feedzirra::Parser::Atom.new
         @feed.title    = "A title"
         @feed.url      = "http://pauldix.net"
         @feed.feed_url = "http://feeds.feedburner.com/PaulDixExplainsNothing"
         @feed.updated  = false
         @updated_feed = @feed.dup
-        @old_entry = Feedzirra::AtomEntry.new
+        @old_entry = Feedzirra::Parser::AtomEntry.new
         @old_entry.url = "http://pauldix.net/old.html"
         @old_entry.published = Time.now.to_s
-        @new_entry = Feedzirra::AtomEntry.new
+        @new_entry = Feedzirra::Parser::AtomEntry.new
         @new_entry.url = "http://pauldix.net/new.html"
         @new_entry.published = (Time.now + 10).to_s  
         @feed.entries << @old_entry

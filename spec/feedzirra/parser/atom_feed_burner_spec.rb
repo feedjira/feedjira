@@ -1,23 +1,23 @@
-require File.dirname(__FILE__) + '/../spec_helper'
+require File.join(File.dirname(__FILE__), %w[.. .. spec_helper])
 
-describe Feedzirra::AtomFeedBurner do
+describe Feedzirra::Parser::AtomFeedBurner do
   describe "#will_parse?" do
     it "should return true for a feedburner atom feed" do
-      Feedzirra::AtomFeedBurner.should be_able_to_parse(sample_feedburner_atom_feed)
+      Feedzirra::Parser::AtomFeedBurner.should be_able_to_parse(sample_feedburner_atom_feed)
     end
     
     it "should return false for an rdf feed" do
-      Feedzirra::AtomFeedBurner.should_not be_able_to_parse(sample_rdf_feed)
+      Feedzirra::Parser::AtomFeedBurner.should_not be_able_to_parse(sample_rdf_feed)
     end
     
     it "should return false for a regular atom feed" do
-      Feedzirra::AtomFeedBurner.should_not be_able_to_parse(sample_atom_feed)
+      Feedzirra::Parser::AtomFeedBurner.should_not be_able_to_parse(sample_atom_feed)
     end
   end
 
   describe "parsing" do
     before(:each) do
-      @feed = Feedzirra::AtomFeedBurner.parse(sample_feedburner_atom_feed)
+      @feed = Feedzirra::Parser::AtomFeedBurner.parse(sample_feedburner_atom_feed)
     end
     
     it "should parse the title" do

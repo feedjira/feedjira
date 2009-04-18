@@ -11,11 +11,11 @@ describe Feedzirra::Feed do
     end
     
     it "should parse the added element out of Atom Feedburner feeds" do
-      Feedzirra::AtomEntry.new.should respond_to(:comment_rss)
+      Feedzirra::Parser::AtomEntry.new.should respond_to(:comment_rss)
     end
     
     it "should parse the added element out of RSS feeds" do
-      Feedzirra::RSSEntry.new.should respond_to(:comment_rss)
+      Feedzirra::Parser::RSSEntry.new.should respond_to(:comment_rss)
     end
   end
   
@@ -76,27 +76,27 @@ describe Feedzirra::Feed do
 
   describe "#determine_feed_parser_for_xml" do
     it "should return the Feedzirra::Atom class for an atom feed" do
-      Feedzirra::Feed.determine_feed_parser_for_xml(sample_atom_feed).should == Feedzirra::Atom
+      Feedzirra::Feed.determine_feed_parser_for_xml(sample_atom_feed).should == Feedzirra::Parser::Atom
     end
 
     it "should return the Feedzirra::AtomFeedBurner class for an atom feedburner feed" do
-      Feedzirra::Feed.determine_feed_parser_for_xml(sample_feedburner_atom_feed).should == Feedzirra::AtomFeedBurner
+      Feedzirra::Feed.determine_feed_parser_for_xml(sample_feedburner_atom_feed).should == Feedzirra::Parser::AtomFeedBurner
     end
 
     it "should return the Feedzirra::RSS class for an rdf/rss 1.0 feed" do
-      Feedzirra::Feed.determine_feed_parser_for_xml(sample_rdf_feed).should == Feedzirra::RSS
+      Feedzirra::Feed.determine_feed_parser_for_xml(sample_rdf_feed).should == Feedzirra::Parser::RSS
     end
 
     it "should return the Feedzirra::RSS class for an rss feedburner feed" do
-      Feedzirra::Feed.determine_feed_parser_for_xml(sample_rss_feed_burner_feed).should == Feedzirra::RSS
+      Feedzirra::Feed.determine_feed_parser_for_xml(sample_rss_feed_burner_feed).should == Feedzirra::Parser::RSS
     end
 
     it "should return the Feedzirra::RSS object for an rss 2.0 feed" do
-      Feedzirra::Feed.determine_feed_parser_for_xml(sample_rss_feed).should == Feedzirra::RSS
+      Feedzirra::Feed.determine_feed_parser_for_xml(sample_rss_feed).should == Feedzirra::Parser::RSS
     end
 
     it "should return the Feedzirra::ITunesRSS object for an itunes feed" do
-      Feedzirra::Feed.determine_feed_parser_for_xml(sample_itunes_feed).should == Feedzirra::ITunesRSS
+      Feedzirra::Feed.determine_feed_parser_for_xml(sample_itunes_feed).should == Feedzirra::Parser::ITunesRSS
     end
 
   end
@@ -104,7 +104,7 @@ describe Feedzirra::Feed do
   describe "when adding feed types" do
     it "should prioritize added types over the built in ones" do
       feed_text = "Atom asdf"
-      Feedzirra::Atom.should be_able_to_parse(feed_text)
+      Feedzirra::Parser::Atom.should be_able_to_parse(feed_text)
       new_feed_type = Class.new do
         def self.able_to_parse?(val)
           true
@@ -278,8 +278,8 @@ describe Feedzirra::Feed do
         before(:each) do
           @feed = mock('feed', :feed_url= => true, :etag= => true, :last_modified= => true)
           Feedzirra::Feed.stub!(:decode_content).and_return(@paul_feed[:xml])
-          Feedzirra::Feed.stub!(:determine_feed_parser_for_xml).and_return(Feedzirra::AtomFeedBurner)
-          Feedzirra::AtomFeedBurner.stub!(:parse).and_return(@feed)
+          Feedzirra::Feed.stub!(:determine_feed_parser_for_xml).and_return(Feedzirra::Parser::AtomFeedBurner)
+          Feedzirra::Parser::AtomFeedBurner.stub!(:parse).and_return(@feed)
           Feedzirra::Feed.stub!(:etag_from_header).and_return('ziEyTl4q9GH04BR4jgkImd0GvSE')
           Feedzirra::Feed.stub!(:last_modified_from_header).and_return('Wed, 28 Jan 2009 04:10:32 GMT')
         end
@@ -291,13 +291,13 @@ describe Feedzirra::Feed do
         end
         
         it 'should determine the xml parser class' do
-          Feedzirra::Feed.should_receive(:determine_feed_parser_for_xml).with(@paul_feed[:xml]).and_return(Feedzirra::AtomFeedBurner)
+          Feedzirra::Feed.should_receive(:determine_feed_parser_for_xml).with(@paul_feed[:xml]).and_return(Feedzirra::Parser::AtomFeedBurner)
           Feedzirra::Feed.add_url_to_multi(@multi, @paul_feed[:url], [], {}, {})
           @easy_curl.on_success.call(@easy_curl)
         end
 
         it 'should parse the xml' do
-          Feedzirra::AtomFeedBurner.should_receive(:parse).with(@paul_feed[:xml]).and_return(@feed)
+          Feedzirra::Parser::AtomFeedBurner.should_receive(:parse).with(@paul_feed[:xml]).and_return(@feed)
           Feedzirra::Feed.add_url_to_multi(@multi, @paul_feed[:url], [], {}, {})
           @easy_curl.on_success.call(@easy_curl)
         end
@@ -415,8 +415,8 @@ describe Feedzirra::Feed do
           @new_feed = @feed.clone
           @feed.stub!(:update_from_feed)
           Feedzirra::Feed.stub!(:decode_content).and_return(@paul_feed[:xml])
-          Feedzirra::Feed.stub!(:determine_feed_parser_for_xml).and_return(Feedzirra::AtomFeedBurner)
-          Feedzirra::AtomFeedBurner.stub!(:parse).and_return(@new_feed)
+          Feedzirra::Feed.stub!(:determine_feed_parser_for_xml).and_return(Feedzirra::Parser::AtomFeedBurner)
+          Feedzirra::Parser::AtomFeedBurner.stub!(:parse).and_return(@new_feed)
           Feedzirra::Feed.stub!(:etag_from_header).and_return('ziEyTl4q9GH04BR4jgkImd0GvSE')
           Feedzirra::Feed.stub!(:last_modified_from_header).and_return('Wed, 28 Jan 2009 04:10:32 GMT')
         end
@@ -424,7 +424,7 @@ describe Feedzirra::Feed do
         it 'should process the next feed in the queue'
         
         it 'should parse the updated feed' do
-          Feedzirra::AtomFeedBurner.should_receive(:parse).and_return(@new_feed)
+          Feedzirra::Parser::AtomFeedBurner.should_receive(:parse).and_return(@new_feed)
           Feedzirra::Feed.add_feed_to_multi(@multi, @feed, [], {}, {})
           @easy_curl.on_success.call(@easy_curl)
         end
@@ -500,13 +500,13 @@ describe Feedzirra::Feed do
       end
     end
 
-    describe "#fetch_and_parse" do
-      it 'should initiate the fetching and parsing using multicurl'
-      it "should pass any request options through to add_url_to_multi"
-      it 'should slice the feeds into groups of thirty for processing'
-      it "should return a feed object if a single feed is passed in"
-      it "should return an return an array of feed objects if multiple feeds are passed in"
-    end
+#    describe "#fetch_and_parse" do
+#      it 'should initiate the fetching and parsing using multicurl'
+#      it "should pass any request options through to add_url_to_multi"
+#      it 'should slice the feeds into groups of thirty for processing'
+#      it "should return a feed object if a single feed is passed in"
+#      it "should return an return an array of feed objects if multiple feeds are passed in"
+#    end
 
     describe "#decode_content" do
       before(:each) do
@@ -533,11 +533,11 @@ describe Feedzirra::Feed do
       end
     end
 
-    describe "#update" do
-      it 'should perform the updating using multicurl'
-      it "should pass any request options through to add_feed_to_multi"
-      it "should return a feed object if a single feed is passed in"
-      it "should return an return an array of feed objects if multiple feeds are passed in" 
-    end
+ #   describe "#update" do
+#      it 'should perform the updating using multicurl'
+#      it "should pass any request options through to add_feed_to_multi"
+#      it "should return a feed object if a single feed is passed in"
+#      it "should return an return an array of feed objects if multiple feeds are passed in" 
+#    end
   end
 end

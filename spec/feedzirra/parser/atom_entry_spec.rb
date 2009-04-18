@@ -1,10 +1,10 @@
-require File.dirname(__FILE__) + '/../spec_helper'
+require File.join(File.dirname(__FILE__), %w[.. .. spec_helper])
 
-describe Feedzirra::AtomEntry do
+describe Feedzirra::Parser::AtomEntry do
   before(:each) do
     # I don't really like doing it this way because these unit test should only rely on AtomEntry,
     # but this is actually how it should work. You would never just pass entry xml straight to the AtomEnry
-    @entry = Feedzirra::Atom.parse(sample_atom_feed).entries.first
+    @entry = Feedzirra::Parser::Atom.parse(sample_atom_feed).entries.first
   end
   
   it "should parse the title" do

@@ -1,19 +1,19 @@
-require File.dirname(__FILE__) + '/../spec_helper'
+require File.join(File.dirname(__FILE__), %w[.. .. spec_helper])
 
-describe Feedzirra::ITunesRSS do
+describe Feedzirra::Parser::ITunesRSS do
   describe "#will_parse?" do
     it "should return true for an itunes RSS feed" do
-      Feedzirra::ITunesRSS.should be_able_to_parse(sample_itunes_feed)
+      Feedzirra::Parser::ITunesRSS.should be_able_to_parse(sample_itunes_feed)
     end
 
     it "should return fase for an atom feed" do
-      Feedzirra::ITunesRSS.should_not be_able_to_parse(sample_atom_feed)
+      Feedzirra::Parser::ITunesRSS.should_not be_able_to_parse(sample_atom_feed)
     end
   end
 
   describe "parsing" do
     before(:each) do
-      @feed = Feedzirra::ITunesRSS.parse(sample_itunes_feed)
+      @feed = Feedzirra::Parser::ITunesRSS.parse(sample_itunes_feed)
     end
     
     it "should parse the subtitle" do
