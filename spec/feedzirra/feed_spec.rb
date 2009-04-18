@@ -75,28 +75,28 @@ describe Feedzirra::Feed do
   end
 
   describe "#determine_feed_parser_for_xml" do
-    it "should return the Feedzirra::Atom class for an atom feed" do
+    it "should return the Feedzirra::Parser::Atom class for an atom feed" do
       Feedzirra::Feed.determine_feed_parser_for_xml(sample_atom_feed).should == Feedzirra::Parser::Atom
     end
 
-    it "should return the Feedzirra::AtomFeedBurner class for an atom feedburner feed" do
+    it "should return the Feedzirra::Parser::AtomFeedBurner class for an atom feedburner feed" do
       Feedzirra::Feed.determine_feed_parser_for_xml(sample_feedburner_atom_feed).should == Feedzirra::Parser::AtomFeedBurner
     end
 
-    it "should return the Feedzirra::RSS class for an rdf/rss 1.0 feed" do
+    it "should return the Feedzirra::Parser::RSS class for an rdf/rss 1.0 feed" do
       Feedzirra::Feed.determine_feed_parser_for_xml(sample_rdf_feed).should == Feedzirra::Parser::RSS
     end
 
-    it "should return the Feedzirra::RSS class for an rss feedburner feed" do
+    it "should return the Feedzirra::Parser::RSS class for an rss feedburner feed" do
       Feedzirra::Feed.determine_feed_parser_for_xml(sample_rss_feed_burner_feed).should == Feedzirra::Parser::RSS
     end
 
-    it "should return the Feedzirra::RSS object for an rss 2.0 feed" do
+    it "should return the Feedzirra::Parser::RSS object for an rss 2.0 feed" do
       Feedzirra::Feed.determine_feed_parser_for_xml(sample_rss_feed).should == Feedzirra::Parser::RSS
     end
 
-    it "should return the Feedzirra::ITunesRSS object for an itunes feed" do
-      Feedzirra::Feed.determine_feed_parser_for_xml(sample_itunes_feed).should == Feedzirra::Parser::ITunesRSS
+    it "should return a Feedzirra::Parser::RSS object for an itunes feed" do
+      Feedzirra::Feed.determine_feed_parser_for_xml(sample_itunes_feed).should == Feedzirra::Parser::RSS
     end
 
   end
@@ -193,7 +193,7 @@ describe Feedzirra::Feed do
       end
 
       it 'should set accepted encodings' do
-        Feedzirra::Feed.fetch_raw(@paul_feed[:url])
+        Feedzirra::Feed.fetch_raw(@paul_feed[:url], :compress => true)
         @curl.headers["Accept-encoding"].should == 'gzip, deflate'
       end
 
@@ -265,7 +265,7 @@ describe Feedzirra::Feed do
       end
       
       it 'should set accepted encodings' do
-        Feedzirra::Feed.add_url_to_multi(@multi, @paul_feed[:url], [], {}, {})
+        Feedzirra::Feed.add_url_to_multi(@multi, @paul_feed[:url], [], {}, {:compress => true})
         @easy_curl.headers["Accept-encoding"].should == 'gzip, deflate'
       end
 
