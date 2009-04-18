@@ -1,0 +1,16 @@
+http://www.forbes.com/news/index.xml
+http://www.qarchive.org/feeds/lastreviews.rss
+http://medallia.com/medallia/feeds/rss/full/
+http://www.ecampus.com/rss/
+http://bossip.com/feed/
+http://www.christianpost.com.com/rss/feed.xml
+http://fusion.google.com/add?feedurl=http://feeds.feedburner.com/product-reviews
+http://octanetv.com/episodes.rss
+http://octanetv.com/piclens.rss
+http://sk8rstv.com/rss/
+http://www.sho.com/site/rss/schedule.do?schedule=primetime
+http://www.plaxo.com/rss
+http://emedtv.com/feed.rss
+http://www.bankrate.com/brm/rss/entrypage1.asp
+http://podcasts.odiogo.com/thats-phucked/podcasts-html.php
+http://gallup.com/sitemaps/university.rss

@@ -46,7 +46,7 @@ module Feedzirra
     # === Returns
     # A array of class names.
     def self.feed_classes
-      @feed_classes ||= [ITunesRSS, RSS, AtomFeedBurner, Atom]
+      @feed_classes ||= [RSS, AtomFeedBurner, Atom]
     end
     
     # Makes all entry types look for the passed in element to parse. This is actually just a call to 
@@ -58,7 +58,7 @@ module Feedzirra
     def self.add_common_feed_entry_element(element_tag, options = {})
       # need to think of a better way to do this. will break for people who want this behavior
       # across their added classes
-      [RSSEntry, AtomFeedBurnerEntry, AtomEntry].each do |klass|
+      feed_classes.each do |klass|
         klass.send(:element, element_tag, options)
       end
     end
@@ -86,7 +86,7 @@ module Feedzirra
           curl.headers["User-Agent"]        = (options[:user_agent] || USER_AGENT)
           curl.headers["If-Modified-Since"] = options[:if_modified_since].httpdate if options.has_key?(:if_modified_since)
           curl.headers["If-None-Match"]     = options[:if_none_match] if options.has_key?(:if_none_match)
-          curl.headers["Accept-encoding"]   = 'gzip, deflate'
+          curl.headers["Accept-encoding"]   = 'gzip, deflate' if options.has_key?(:compress)
           curl.follow_location = true
           curl.userpwd = options[:http_authentication].join(':') if options.has_key?(:http_authentication)
 
@@ -202,7 +202,7 @@ module Feedzirra
         curl.headers["User-Agent"]        = (options[:user_agent] || USER_AGENT)
         curl.headers["If-Modified-Since"] = options[:if_modified_since].httpdate if options.has_key?(:if_modified_since)
         curl.headers["If-None-Match"]     = options[:if_none_match] if options.has_key?(:if_none_match)
-        curl.headers["Accept-encoding"]   = 'gzip, deflate'
+        curl.headers["Accept-encoding"]   = 'gzip, deflate' if options.has_key?(:compress)
         curl.follow_location = true
         curl.userpwd = options[:http_authentication].join(':') if options.has_key?(:http_authentication)
         
@@ -212,12 +212,16 @@ module Feedzirra
           klass = determine_feed_parser_for_xml(xml)
           
           if klass
-            feed = klass.parse(xml)
-            feed.feed_url = c.last_effective_url
-            feed.etag = etag_from_header(c.header_str)
-            feed.last_modified = last_modified_from_header(c.header_str)
-            responses[url] = feed
-            options[:on_success].call(url, feed) if options.has_key?(:on_success)
+            begin
+              feed = klass.parse(xml)
+              feed.feed_url = c.last_effective_url
+              feed.etag = etag_from_header(c.header_str)
+              feed.last_modified = last_modified_from_header(c.header_str)
+              responses[url] = feed
+              options[:on_success].call(url, feed) if options.has_key?(:on_success)
+            rescue Exception => e
+              options[:on_failure].call(url, c.response_code, c.header_str, c.body_str) if options.has_key?(:on_failure)
+            end
           else
             # puts "Error determining parser for #{url} - #{c.last_effective_url}"
             # raise NoParserAvailable.new("no valid parser for content.") (this would unfirtunately fail the whole 'multi', so it's not really useable)
@@ -257,14 +261,18 @@ module Feedzirra
         curl.follow_location = true
 
         curl.on_success do |c|
-          add_feed_to_multi(multi, feed_queue.shift, feed_queue, responses, options) unless feed_queue.empty?
-          updated_feed = Feed.parse(c.body_str)
-          updated_feed.feed_url = c.last_effective_url
-          updated_feed.etag = etag_from_header(c.header_str)
-          updated_feed.last_modified = last_modified_from_header(c.header_str)
-          feed.update_from_feed(updated_feed)
-          responses[feed.feed_url] = feed
-          options[:on_success].call(feed) if options.has_key?(:on_success)
+          begin
+            add_feed_to_multi(multi, feed_queue.shift, feed_queue, responses, options) unless feed_queue.empty?
+            updated_feed = Feed.parse(c.body_str)
+            updated_feed.feed_url = c.last_effective_url
+            updated_feed.etag = etag_from_header(c.header_str)
+            updated_feed.last_modified = last_modified_from_header(c.header_str)
+            feed.update_from_feed(updated_feed)
+            responses[feed.feed_url] = feed
+            options[:on_success].call(feed) if options.has_key?(:on_success)
+          rescue Exception => e
+            options[:on_failure].call(feed, c.response_code, c.header_str, c.body_str) if options.has_key?(:on_failure)
+          end
         end
 
         curl.on_failure do |c|
