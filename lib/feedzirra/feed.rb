@@ -58,7 +58,7 @@ module Feedzirra
     def self.add_common_feed_entry_element(element_tag, options = {})
       # need to think of a better way to do this. will break for people who want this behavior
       # across their added classes
-      feed_classes.each do |klass|
+      feed_classes.map{|k| eval("#{k}Entry") }.each do |klass|
         klass.send(:element, element_tag, options)
       end
     end
