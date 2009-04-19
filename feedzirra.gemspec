@@ -2,7 +2,7 @@
  
 Gem::Specification.new do |s|
   s.name = %q{feedzirra}
-  s.version = "0.0.11"
+  s.version = "0.0.12"
  
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Paul Dix"]
@@ -13,30 +13,30 @@ Gem::Specification.new do |s|
     "lib/core_ext/string.rb",
     "lib/feedzirra.rb",
     "lib/feedzirra/feed.rb",
-    "lib/feedzirra/atom.rb",
-    "lib/feedzirra/atom_entry.rb",
-    "lib/feedzirra/atom_feed_burner.rb",
-    "lib/feedzirra/atom_feed_burner_entry.rb",
-    "lib/feedzirra/itunes_rss.rb",
-    "lib/feedzirra/itunes_rss_item.rb",
-    "lib/feedzirra/itunes_rss_owner.rb",
-    "lib/feedzirra/rss.rb",
-    "lib/feedzirra/rss_entry.rb",
+    "lib/feedzirra/parser/atom.rb",
+    "lib/feedzirra/parser/atom_entry.rb",
+    "lib/feedzirra/parser/atom_feed_burner.rb",
+    "lib/feedzirra/parser/atom_feed_burner_entry.rb",
+    "lib/feedzirra/parser/itunes_rss.rb",
+    "lib/feedzirra/parser/itunes_rss_item.rb",
+    "lib/feedzirra/parser/itunes_rss_owner.rb",
+    "lib/feedzirra/parser/rss.rb",
+    "lib/feedzirra/parser/rss_entry.rb",
     "lib/feedzirra/feed_utilities.rb",
     "lib/feedzirra/feed_entry_utilities.rb",
     "README.textile", "Rakefile", 
     "spec/spec.opts", 
     "spec/spec_helper.rb",
     "spec/feedzirra/feed_spec.rb",
-    "spec/feedzirra/atom_spec.rb",
-    "spec/feedzirra/atom_entry_spec.rb",
-    "spec/feedzirra/atom_feed_burner_spec.rb",
-    "spec/feedzirra/atom_feed_burner_entry_spec.rb",
-    "spec/feedzirra/itunes_rss_spec.rb",
-    "spec/feedzirra/itunes_rss_item_spec.rb",
-    "spec/feedzirra/itunes_rss_owner_spec.rb",
-    "spec/feedzirra/rss_spec.rb",
-    "spec/feedzirra/rss_entry_spec.rb",
+    "spec/feedzirra/parser/atom_spec.rb",
+    "spec/feedzirra/parser/atom_entry_spec.rb",
+    "spec/feedzirra/parser/atom_feed_burner_spec.rb",
+    "spec/feedzirra/parser/atom_feed_burner_entry_spec.rb",
+    "spec/feedzirra/parser/itunes_rss_spec.rb",
+    "spec/feedzirra/parser/itunes_rss_item_spec.rb",
+    "spec/feedzirra/parser/itunes_rss_owner_spec.rb",
+    "spec/feedzirra/parser/rss_spec.rb",
+    "spec/feedzirra/parser/rss_entry_spec.rb",
     "spec/feedzirra/feed_utilities_spec.rb",
     "spec/feedzirra/feed_entry_utilities_spec.rb"]
   s.has_rdoc = true
