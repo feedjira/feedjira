@@ -77,7 +77,7 @@ module Feedzirra
     # A String of XML if a single URL is passed.
     # 
     # A Hash if multiple URL's are passed. The key will be the URL, and the value the XML.
-    def self.fetch_raw(urls, options = {})
+    def self.fetch_raw(urls, options = {}, &block)
       url_queue = [*urls]
       multi = Curl::Multi.new
       responses = {}
@@ -89,6 +89,9 @@ module Feedzirra
           curl.headers["Accept-encoding"]   = 'gzip, deflate' if options.has_key?(:compress)
           curl.follow_location = true
           curl.userpwd = options[:http_authentication].join(':') if options.has_key?(:http_authentication)
+          
+          curl.max_redirects = options[:max_redirects] if options[:max_redirects]
+          curl.timeout = options[:timeout] if options[:timeout]
 
           curl.on_success do |c|
             responses[url] = decode_content(c)
@@ -205,6 +208,9 @@ module Feedzirra
         curl.headers["Accept-encoding"]   = 'gzip, deflate' if options.has_key?(:compress)
         curl.follow_location = true
         curl.userpwd = options[:http_authentication].join(':') if options.has_key?(:http_authentication)
+
+        curl.max_redirects = options[:max_redirects] if options[:max_redirects]
+        curl.timeout = options[:timeout] if options[:timeout]
         
         curl.on_success do |c|
           add_url_to_multi(multi, url_queue.shift, url_queue, responses, options) unless url_queue.empty?
@@ -259,6 +265,9 @@ module Feedzirra
         curl.headers["If-None-Match"]     = feed.etag if feed.etag
         curl.userpwd = options[:http_authentication].join(':') if options.has_key?(:http_authentication)
         curl.follow_location = true
+
+        curl.max_redirects = options[:max_redirects] if options[:max_redirects]
+        curl.timeout = options[:timeout] if options[:timeout]
 
         curl.on_success do |c|
           begin
