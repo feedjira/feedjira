@@ -77,7 +77,7 @@ module Feedzirra
     # A String of XML if a single URL is passed.
     # 
     # A Hash if multiple URL's are passed. The key will be the URL, and the value the XML.
-    def self.fetch_raw(urls, options = {}, &block)
+    def self.fetch_raw(urls, options = {})
       url_queue = [*urls]
       multi = Curl::Multi.new
       responses = {}

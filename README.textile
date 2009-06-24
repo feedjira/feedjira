@@ -23,10 +23,12 @@ The final feature of Feedzirra is the ability to define custom parsing classes. 
 h2. Installation
 
 For now Feedzirra exists only on github. It also has a few gem requirements that are only on github. Before you start you need to have "libcurl":http://curl.haxx.se/ and "libxml":http://xmlsoft.org/ installed. If you're on Leopard you have both. Otherwise, you'll need to grab them. Once you've got those libraries, these are the gems that get used: nokogiri, pauldix-sax-machine, taf2-curb (note that this is a fork that lives on github and not the Ruby Forge version of curb), and pauldix-feedzirra. The feedzirra gemspec has all the dependencies so you should be able to get up and running with the standard github gem install routine:
+
 <pre>
 gem sources -a http://gems.github.com # if you haven't already
 gem install pauldix-feedzirra
 </pre>
+
 <b>NOTE:</b>Some people have been reporting a few issues related to installation. First, the Ruby Forge version of curb is not what you want. It will not work. Nor will the curl-multi gem that lives on Ruby Forge. You have to get the "taf2-curb":http://github.com/taf2/curb/tree/master fork installed.
 
 If you see this error when doing a require: 
