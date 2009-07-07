@@ -19,10 +19,12 @@ module Feedzirra
       element :link, :as => :url
 
       element :"dc:creator", :as => :author
+      element :author, :as => :author
       element :"content:encoded", :as => :content
       element :description, :as => :summary
 
       element :pubDate, :as => :published
+      element :pubdate, :as => :published
       element :"dc:date", :as => :published
       element :"dc:Date", :as => :published
       element :"dcterms:created", :as => :published
