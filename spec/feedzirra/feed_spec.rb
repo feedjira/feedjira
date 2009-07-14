@@ -235,7 +235,7 @@ describe Feedzirra::Feed do
 
     describe "#add_url_to_multi" do
       before(:each) do
-        @multi = Curl::Multi.new(@paul_feed[:url])
+        @multi = Curl::Multi.get(@paul_feed[:url])
         @multi.stub!(:add)
         @easy_curl = Curl::Easy.new(@paul_feed[:url])
         
@@ -377,7 +377,7 @@ describe Feedzirra::Feed do
 
     describe "#add_feed_to_multi" do
       before(:each) do
-        @multi = Curl::Multi.new(@paul_feed[:url])
+        @multi = Curl::Multi.get(@paul_feed[:url])
         @multi.stub!(:add)
         @easy_curl = Curl::Easy.new(@paul_feed[:url])
         @feed = Feedzirra::Feed.parse(sample_feedburner_atom_feed)
