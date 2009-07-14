@@ -395,7 +395,13 @@ describe Feedzirra::Feed do
         @easy_curl.headers["User-Agent"].should == Feedzirra::Feed::USER_AGENT
       end
 
-      it "should set if modified since as an option if passed"
+      it "should set if modified since as an option if passed" do
+        modified_time = Time.parse("Wed, 28 Jan 2009 04:10:32 GMT")
+        Feedzirra::Feed.add_feed_to_multi(@multi, @feed, [], {}, {:if_modified_since => modified_time})
+        modified_time.should be > @feed.last_modified
+        
+        @easy_curl.headers["If-Modified-Since"].should == modified_time
+      end
       
       it 'should set follow location to true' do
         @easy_curl.should_receive(:follow_location=).with(true)
@@ -509,6 +515,14 @@ describe Feedzirra::Feed do
       it 'should slice the feeds into groups of thirty for processing'
       it "should return a feed object if a single feed is passed in"
       it "should return an return an array of feed objects if multiple feeds are passed in"
+      
+      it "should set if modified since as an option if passed" do
+        modified_time = Time.parse("Wed, 28 Jan 2009 04:10:32 GMT")
+        Feedzirra::Feed.should_receive(:add_url_to_multi).with(anything, anything, anything, anything, {:if_modified_since => modified_time}).any_number_of_times
+        
+        @feed = Feedzirra::Feed.fetch_and_parse(sample_feedburner_atom_feed, {:if_modified_since => modified_time})
+      end
+      
     end
 
     describe "#decode_content" do
