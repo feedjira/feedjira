@@ -27,7 +27,7 @@ module Feedzirra
     # === Returns
     # The class name of the parser that can handle the XML.
     def self.determine_feed_parser_for_xml(xml)
-      start_of_doc = xml.slice(0, 1000)
+      start_of_doc = xml.slice(0, 2000)
       feed_classes.detect {|klass| klass.able_to_parse?(start_of_doc)}
     end
 
