@@ -27,6 +27,11 @@ module Feedzirra
       element :updated
       element :modified, :as => :updated
       elements :category, :as => :categories, :value => :term
+      elements :link, :as => :links, :value => :href
+      
+      def url
+        @url || links.first
+      end
     end
 
   end

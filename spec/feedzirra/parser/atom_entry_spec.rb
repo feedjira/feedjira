@@ -15,6 +15,10 @@ describe Feedzirra::Parser::AtomEntry do
     @entry.url.should == "http://aws.typepad.com/aws/2009/01/aws-job-architect-designer-position-in-turkey.html"
   end
   
+  it "should parse the url even when" do
+    Feedzirra::Parser::Atom.parse(load_sample("atom_with_link_tag_for_url_unmarked.xml")).entries.first.url.should == "http://www.innoq.com/blog/phaus/2009/07/ja.html"
+  end
+  
   it "should parse the author" do
     @entry.author.should == "AWS Editor"
   end
