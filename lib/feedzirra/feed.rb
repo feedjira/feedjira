@@ -96,7 +96,7 @@ module Feedzirra
           curl.on_success do |c|
             responses[url] = decode_content(c)
           end
-          curl.on_failure do |c|
+          curl.on_failure do |c, err|
             responses[url] = c.response_code
           end
         end
@@ -235,7 +235,7 @@ module Feedzirra
           end
         end
         
-        curl.on_failure do |c|
+        curl.on_failure do |c, err|
           add_url_to_multi(multi, url_queue.shift, url_queue, responses, options) unless url_queue.empty?
           responses[url] = c.response_code
           options[:on_failure].call(url, c.response_code, c.header_str, c.body_str) if options.has_key?(:on_failure)
@@ -284,7 +284,7 @@ module Feedzirra
           end
         end
 
-        curl.on_failure do |c|
+        curl.on_failure do |c, err|
           add_feed_to_multi(multi, feed_queue.shift, feed_queue, responses, options) unless feed_queue.empty?
           response_code = c.response_code
           if response_code == 304 # it's not modified. this isn't an error condition
