@@ -19,7 +19,7 @@ module Feedzirra
       attr_accessor :feed_url
 
       def self.able_to_parse?(xml) #:nodoc:
-        xml =~ /\<rss|rdf/
+        xml =~ /\<rss|\<rdf/
       end
     end
 
