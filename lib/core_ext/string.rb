@@ -4,6 +4,6 @@ class String
   end
   
   def sanitize
-    Dryopteris.sanitize(self)
+    Loofah.scrub_fragment(self, :prune).to_s
   end
 end
