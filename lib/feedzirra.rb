@@ -5,7 +5,7 @@ gem 'activesupport'
 require 'zlib'
 require 'curb'
 require 'sax-machine'
-require 'dryopteris'
+require 'loofah'
 require 'uri'
 require 'active_support/basic_object'
 require 'active_support/core_ext/object'
@@ -30,5 +30,5 @@ require 'feedzirra/parser/atom'
 require 'feedzirra/parser/atom_feed_burner'
 
 module Feedzirra
-  VERSION = "0.0.18"
+  VERSION = "0.0.19"
 end
