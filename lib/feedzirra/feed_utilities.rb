@@ -1,6 +1,6 @@
 module Feedzirra
   module FeedUtilities
-    UPDATABLE_ATTRIBUTES = %w(title feed_url url last_modified)
+    UPDATABLE_ATTRIBUTES = %w(title feed_url url last_modified etag description)
     
     attr_writer   :new_entries, :updated, :last_modified
     attr_accessor :etag
@@ -28,7 +28,10 @@ module Feedzirra
       self.new_entries += find_new_entries_for(feed)
       self.entries.unshift(*self.new_entries)
       
-      updated! if UPDATABLE_ATTRIBUTES.any? { |name| update_attribute(feed, name) }
+      @updated = false
+      UPDATABLE_ATTRIBUTES.each do |name|
+        @updated ||= update_attribute(feed, name)
+      end
     end
     
     def update_attribute(feed, name)
@@ -44,10 +47,6 @@ module Feedzirra
     end
     
     private
-    
-    def updated!
-      @updated = true
-    end
     
     def find_new_entries_for(feed)
       # this implementation is a hack, which is why it's so ugly.
