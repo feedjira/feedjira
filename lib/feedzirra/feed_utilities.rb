@@ -54,6 +54,7 @@ module Feedzirra
       # however, they're always ordered with the newest one first.
       # So we go through the entries just parsed and insert each one as a new entry
       # until we get to one that has the same url as the the newest for the feed
+      return feed.entries if self.entries.length == 0
       latest_entry = self.entries.first
       found_new_entries = []
       feed.entries.each do |entry|
