@@ -30,7 +30,8 @@ module Feedzirra
 
       @updated = false
       UPDATABLE_ATTRIBUTES.each do |name|
-        @updated ||= update_attribute(feed, name)
+        updated = update_attribute(feed, name)
+        @updated ||= updated
       end
     end
 
