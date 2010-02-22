@@ -21,7 +21,7 @@ module Feedzirra
       element :content
       element :summary
       element :published
-      element :id
+      element :id, :as => :entry_id
       element :created, :as => :published
       element :issued, :as => :published
       element :updated
