@@ -32,19 +32,24 @@ gem install pauldix-feedzirra
 <b>NOTE:</b>Some people have been reporting a few issues related to installation. First, the Ruby Forge version of curb is not what you want. It will not work. Nor will the curl-multi gem that lives on Ruby Forge. You have to get the "taf2-curb":http://github.com/taf2/curb/tree/master fork installed.
 
 If you see this error when doing a require: 
+
 <pre>
 /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require': no such file to load -- curb_core (LoadError)
 </pre>
+
 It means that the taf2-curb gem didn't build correctly. To resolve this you can do a git clone git://github.com/taf2/curb.git then run rake gem in the curb directory, then sudo gem install pkg/curb-0.2.4.0.gem. After that you should be good.
 
 If you see something like this when trying to run it:
+
 <pre>
 NoMethodError: undefined method `on_success' for #<Curl::Easy:0x1182724>
 	from ./lib/feedzirra/feed.rb:88:in `add_url_to_multi'
 </pre>
+
 This means that you are requiring curl-multi or the Ruby Forge version of Curb somewhere. You can't use those and need to get the taf2 version up and running.
 
 If you're on Debian or Ubuntu and getting errors while trying to install the taf2-curb gem, it could be because you don't have the latest version of libcurl installed. Do this to fix:
+
 <pre>
 sudo apt-get install libcurl4-gnutls-dev
 </pre>
