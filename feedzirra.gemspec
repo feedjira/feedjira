@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{feedzirra}
-  s.version = "0.0.23"
+  s.version = "0.0.24"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Paul Dix"]
@@ -72,7 +72,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<activesupport>, [">=2.3.8"])
     s.add_dependency(%q<loofah>, [">= 0.3.1"])
   end
-  
+
   s.add_development_dependency('rspec')
   s.add_development_dependency('diff-lcs')
 end
