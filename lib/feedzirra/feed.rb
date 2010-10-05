@@ -78,7 +78,7 @@ module Feedzirra
     #
     # A Hash if multiple URL's are passed. The key will be the URL, and the value the XML.
     def self.fetch_raw(urls, options = {})
-      url_queue = [*urls]
+      url_queue = [*urls.dup]
       multi = Curl::Multi.new
       responses = {}
       url_queue.each do |url|
@@ -122,7 +122,7 @@ module Feedzirra
     #
     # A Hash if multiple URL's are passed. The key will be the URL, and the value the Feed object.
     def self.fetch_and_parse(urls, options = {})
-      url_queue = [*urls]
+      url_queue = [*urls.dup]
       multi = Curl::Multi.new
       responses = {}
 
@@ -174,7 +174,7 @@ module Feedzirra
     #
     # A Hash if multiple Feeds are passed. The key will be the URL, and the value the updated Feed object.
     def self.update(feeds, options = {})
-      feed_queue = [*feeds]
+      feed_queue = [*feeds.dup]
       multi = Curl::Multi.new
       responses = {}
 
