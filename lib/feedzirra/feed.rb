@@ -84,7 +84,7 @@ module Feedzirra
       url_queue.each do |url|
         easy = Curl::Easy.new(url) do |curl|
           curl.headers["User-Agent"]        = (options[:user_agent] || USER_AGENT)
-          curl.headers["If-Modified-Since"] = options[:if_modified_since].to_time.httpdate if options.has_key?(:if_modified_since) && && [Date, DateTime, Time].include?(options[:if_modified_since].class)
+          curl.headers["If-Modified-Since"] = options[:if_modified_since].to_time.httpdate if options.has_key?(:if_modified_since) && [Date, DateTime, Time].include?(options[:if_modified_since].class)
           curl.headers["If-None-Match"]     = options[:if_none_match] if options.has_key?(:if_none_match)
           curl.headers["Accept-encoding"]   = 'gzip, deflate' if options.has_key?(:compress)
           curl.follow_location = true
