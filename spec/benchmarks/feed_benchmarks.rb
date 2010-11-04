@@ -2,7 +2,7 @@
 # multiple feed fetches
 require 'rubygems'
 require 'curb'
-require 'activesupport'
+require 'active_support'
 
 require 'net/http'
 require 'uri'

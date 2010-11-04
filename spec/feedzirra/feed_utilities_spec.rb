@@ -1,4 +1,6 @@
 require File.dirname(__FILE__) + '/../spec_helper'
+require 'rubygems'
+require 'active_support'
 
 describe Feedzirra::FeedUtilities do
   before(:each) do
@@ -31,8 +33,9 @@ describe Feedzirra::FeedUtilities do
     it "should provide a last_modified accessor" do
       feed = @klass.new
       time = Time.now
-      feed.last_modified = time
+      feed.last_modified = time  
       feed.last_modified.should == time
+      feed.last_modified.class.should == Time
     end
     
     it "should return new_entries? as true when entries are put into new_entries" do
@@ -121,9 +124,9 @@ describe Feedzirra::FeedUtilities do
         @old_entry = Feedzirra::Parser::AtomEntry.new
         @old_entry.url = "http://pauldix.net/old.html"
         @old_entry.published = Time.now.to_s
-        @new_entry = Feedzirra::Parser::AtomEntry.new
+        @new_entry = Feedzirra::Parser::AtomEntry.new    
         @new_entry.url = "http://pauldix.net/new.html"
-        @new_entry.published = (Time.now + 10).to_s  
+        @new_entry.published = (Time.now + 10).to_s     
         @feed.entries << @old_entry
         @updated_feed.entries << @new_entry
         @updated_feed.entries << @old_entry
@@ -131,7 +134,7 @@ describe Feedzirra::FeedUtilities do
       
       it "should update last-modified from the latest entry date" do
         @feed.update_from_feed(@updated_feed)
-        @feed.last_modified.should == @new_entry.published
+        @feed.last_modified.should == @new_entry.published    
       end
       
       it "should put new entries into new_entries" do

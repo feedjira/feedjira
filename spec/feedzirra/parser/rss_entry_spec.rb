@@ -1,3 +1,4 @@
+# coding: utf-8
 require File.join(File.dirname(__FILE__), %w[.. .. spec_helper])
 
 describe Feedzirra::Parser::RSSEntry do
@@ -27,7 +28,7 @@ describe Feedzirra::Parser::RSSEntry do
     @entry.summary.should == "Oops!  When I released nokogiri version 1.0.7, I totally forgot to talk about Nokogiri::Slop() feature that was added.  Why is it called \"slop\"?  It lets you sloppily explore documents.  Basically, it decorates your document with method_missing() that allows you to search your document via method calls.\nGiven this document:\n\ndoc = Nokogiri::Slop&#40;&#60;&#60;-eohtml&#41;\n&#60;html&#62;\n&#160; &#60;body&#62;\n&#160; [...]"
   end
   
-  it "should parse the published date" do
+  it "should parse the published date" do      
     @entry.published.to_s.should == "Thu Dec 04 17:17:49 UTC 2008"
   end
 

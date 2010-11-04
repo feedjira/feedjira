@@ -1,6 +1,6 @@
 module Feedzirra
   module FeedEntryUtilities    
-    def published
+    def published    
       @published || @updated
     end
     
@@ -15,20 +15,20 @@ module Feedzirra
     
     ##
     # Returns the id of the entry or its url if not id is present, as some formats don't support it
-    def id
+    def id  
       @entry_id || @url
     end
-    
+          
     ##
     # Writter for published. By default, we keep the "oldest" publish time found.
-    def published=(val)
+    def published=(val) 
       parsed = parse_datetime(val)
-      @published = parsed if !@published || parsed < @published
+      @published = parsed if !@published || parsed < @published     
     end
-    
+        
     ##
     # Writter for udapted. By default, we keep the most recenet update time found.
-    def updated=(val)
+    def updated=(val) 
       parsed = parse_datetime(val)
       @updated = parsed if !@updated || parsed > @updated
     end
