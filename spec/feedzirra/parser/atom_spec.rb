@@ -19,7 +19,11 @@ describe Feedzirra::Parser::Atom do
     it "should parse the title" do
       @feed.title.should == "Amazon Web Services Blog"
     end
-    
+
+    it "should parse the subtitle" do
+      @feed.subtitle.should == "Amazon Web Services, Products, Tools, and Developer Information..."
+    end
+
     it "should parse the url" do
       @feed.url.should == "http://aws.typepad.com/aws/"
     end

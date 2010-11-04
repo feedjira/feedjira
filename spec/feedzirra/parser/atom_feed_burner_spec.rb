@@ -23,7 +23,11 @@ describe Feedzirra::Parser::AtomFeedBurner do
     it "should parse the title" do
       @feed.title.should == "Paul Dix Explains Nothing"
     end
-    
+
+    it "should parse the subtitle" do
+      @feed.subtitle.should == "Entrepreneurship, programming, software development, politics, NYC, and random thoughts."
+    end
+
     it "should parse the url" do
       @feed.url.should == "http://www.pauldix.net/"
     end
