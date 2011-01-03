@@ -107,7 +107,7 @@ describe Feedzirra::Feed do
   describe "when adding feed types" do
     it "should prioritize added types over the built in ones" do
       feed_text = "Atom asdf"
-      Feedzirra::Parser::Atom.should be_able_to_parse(feed_text)
+      Feedzirra::Parser::Atom.stub!(:able_to_parse?).and_return(true)
       new_feed_type = Class.new do
         def self.able_to_parse?(val)
           true
