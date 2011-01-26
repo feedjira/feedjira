@@ -1,5 +1,5 @@
 require "rubygems"
-require "spec"
+require "rspec"
 
 # gem install redgreen for colored test output
 begin require "redgreen" unless ENV['TM_CURRENT_LINE']; rescue LoadError; end
@@ -7,7 +7,7 @@ begin require "redgreen" unless ENV['TM_CURRENT_LINE']; rescue LoadError; end
 path = File.expand_path(File.dirname(__FILE__) + "/../lib/")
 $LOAD_PATH.unshift(path) unless $LOAD_PATH.include?(path)
 
-require "lib/feedzirra"
+require "feedzirra"
 
 def load_sample(filename)
   File.read("#{File.dirname(__FILE__)}/sample_feeds/#{filename}")
@@ -55,4 +55,12 @@ end
 
 def sample_wfw_feed
   load_sample("PaulDixExplainsNothingWFW.xml")
+end       
+       
+# http://eigenclass.org/hiki/Changes+in+Ruby+1.9#l156
+# Default Time.to_s changed in 1.9, monkeypatching it back
+class Time
+  def to_s
+    strftime("%a %b %d %H:%M:%S %Z %Y")
+  end
 end

@@ -1,7 +1,7 @@
-require "spec"
-require "spec/rake/spectask"
+require "rspec"
+require "rspec/core/rake_task"
 require 'rake/rdoctask'
-require 'lib/feedzirra.rb'
+require File.dirname(__FILE__) + "/lib/feedzirra.rb"
 
 # Grab recently touched specs
 def recent_specs(touched_since)
@@ -24,20 +24,17 @@ desc "Run all the tests"
 task :default => :spec
 
 # Tasks
-Spec::Rake::SpecTask.new do |t|
-  t.spec_opts = ['--options', "\"#{File.dirname(__FILE__)}/spec/spec.opts\""]
-  t.spec_files = FileList['spec/**/*_spec.rb']
+RSpec::Core::RakeTask.new do |t|
+  t.pattern = FileList['spec/**/*_spec.rb']
 end
 
 desc 'Run recent specs'
-Spec::Rake::SpecTask.new("spec:recent") do |t|
-  t.spec_opts = ["--format","specdoc","--color"]
-  t.spec_files = recent_specs(Time.now - 600) # 10 min.
+RSpec::Core::RakeTask.new("spec:recent") do |t|
+  t.pattern = recent_specs(Time.now - 600) # 10 min.
 end
 
-Spec::Rake::SpecTask.new('spec:rcov') do |t|
-  t.spec_opts = ['--options', "\"#{File.dirname(__FILE__)}/spec/spec.opts\""]
-  t.spec_files = FileList['spec/**/*_spec.rb']
+RSpec::Core::RakeTask.new('spec:rcov') do |t|
+  t.pattern = FileList['spec/**/*_spec.rb']
   t.rcov = true
   t.rcov_opts = ['--exclude', 'spec,/usr/lib/ruby,/usr/local,/var/lib,/Library', '--text-report']
 end

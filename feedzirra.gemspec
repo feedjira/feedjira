@@ -25,7 +25,7 @@ Gem::Specification.new do |s|
     "lib/feedzirra/feed_utilities.rb",
     "lib/feedzirra/feed_entry_utilities.rb",
     "README.textile", "Rakefile",
-    "spec/spec.opts",
+    ".rspec",
     "spec/spec_helper.rb",
     "spec/feedzirra/feed_spec.rb",
     "spec/feedzirra/parser/atom_spec.rb",
