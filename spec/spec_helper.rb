@@ -21,6 +21,14 @@ def sample_atom_entry_content
   load_sample("AmazonWebServicesBlogFirstEntryContent.xml")
 end
 
+def sample_atom_unescaped_feed
+  load_sample("AtomFeedUnescapedContent.xml")
+end
+
+def sample_atom_unescaped_entry_content
+  load_sample("AtomFeedUnescapedContentFirstEntryContent.xml")
+end
+
 def sample_itunes_feed
   load_sample("itunes.xml")
 end
