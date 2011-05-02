@@ -29,7 +29,7 @@ describe Feedzirra::Parser::RSSEntry do
   end
   
   it "should parse the published date" do      
-    @entry.published.to_s.should == "Thu Dec 04 17:17:49 UTC 2008"
+    @entry.published.should == DateTime.parse("Thu, 04 Dec 2008 17:17:49 +0000")
   end
 
   it "should parse the categories" do
