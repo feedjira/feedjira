@@ -24,14 +24,13 @@ module Feedzirra
     
       # TODO: Change parse override to a universal wrapper with callbacks, i.e. preprocess
       def self.parse(xml)
-        xml = preprocess(xml)
-        super(xml)
+        super(preprocess(xml))
       end
       
       # TODO: Change preprocess as a universal callback for :parse
       # TODO: Possibly read preprocess configuration off of :element definitions of Atom and AtomEntry
-      def self.preprocess(xml)
-        xml = Nokogiri::XML(xml)
+      def self.preprocess(raw_xml)
+        xml = Nokogiri::XML(raw_xml)
         xml.search("entry > content").each do |node|
           node.content = CGI.unescape_html(node.inner_html) unless node.cdata?
         end
