@@ -4,7 +4,6 @@ require 'sax-machine'
 require 'loofah'
 require 'uri'
 
-require 'active_support/version'
 require 'active_support/basic_object'
 require 'active_support/core_ext/module'
 require 'active_support/core_ext/kernel'
