@@ -16,6 +16,8 @@ Gem::Specification.new do |s|
   s.files         = Dir['{lib/spec}/**/*.rb'] + %w[README.textile Rakefile .rspec]
   s.test_files    = Dir['spec/**/*.rb']
 
+  s.platform = Gem::Platform::RUBY
+
   s.add_runtime_dependency 'nokogiri',      ['> 0.0.0']
   s.add_runtime_dependency 'sax-machine',   ['>= 0.0.12']
   s.add_runtime_dependency 'curb',          ['>= 0.2.3']
