@@ -1,7 +1,7 @@
 require "rspec"
 require "rspec/core/rake_task"
-require 'rake/rdoctask'
 require File.dirname(__FILE__) + "/lib/feedzirra.rb"
+require 'rdoc/task'
 
 # Grab recently touched specs
 def recent_specs(touched_since)
@@ -39,7 +39,7 @@ RSpec::Core::RakeTask.new('spec:rcov') do |t|
   t.rcov_opts = ['--exclude', 'spec,/usr/lib/ruby,/usr/local,/var/lib,/Library', '--text-report']
 end
 
-Rake::RDocTask.new do |rd|
+RDoc::Task.new do |rd|
   rd.title    = 'Feedzirra'
   rd.rdoc_dir = 'rdoc'
   rd.rdoc_files.include('README.rdoc', 'lib/feedzirra.rb', 'lib/feedzirra/**/*.rb')
