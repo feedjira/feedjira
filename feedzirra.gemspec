@@ -1,8 +1,12 @@
 # -*- encoding: utf-8 -*-
+lib = File.expand_path('../lib/', __FILE__)
+$:.unshift(lib) unless $:.include?(lib)
+
+require 'feedzirra/version'
 
 Gem::Specification.new do |s|
   s.name    = 'feedzirra'
-  s.version = '0.0.24'
+  s.version = Feedzirra::VERSION
 
   s.authors  = ['Paul Dix']
   s.date     = '2009-02-19'
