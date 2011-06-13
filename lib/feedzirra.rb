@@ -11,8 +11,7 @@ require 'active_support/core_ext/kernel'
 require 'active_support/core_ext/object'
 require 'active_support/time'
 
-require 'core_ext/date'
-require 'core_ext/string'
+require 'feedzirra/core_ext'
 
 module Feedzirra
   autoload :FeedEntryUtilities, 'feedzirra/feed_entry_utilities'
