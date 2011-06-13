@@ -29,6 +29,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'activesupport', ['~> 3.0.8']
   s.add_runtime_dependency 'loofah',        ['~> 1.0.0']
   s.add_runtime_dependency 'rdoc',          ['~> 3.4']
+  s.add_runtime_dependency 'rake',          ['>= 0.8.7']
 
   s.add_development_dependency 'rspec',     ['~> 2.6.0']
 end
