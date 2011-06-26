@@ -524,8 +524,22 @@ describe Feedzirra::Feed do
         Feedzirra::Feed.decode_content(@curl_easy)
       end
       
+      it 'should decode the response body using gzip if the Content-Encoding: is gzip even when the case is wrong' do
+        @curl_easy.stub!(:header_str).and_return('content-encoding: gzip')
+        string_io = mock('stringio', :read => @curl_easy.body_str, :close => true)
+        StringIO.should_receive(:new).and_return(string_io)
+        Zlib::GzipReader.should_receive(:new).with(string_io).and_return(string_io)
+        Feedzirra::Feed.decode_content(@curl_easy)
+      end
+
       it 'should deflate the response body using inflate if the Content-Encoding: is deflate' do
         @curl_easy.stub!(:header_str).and_return('Content-Encoding: deflate')
+        Zlib::Inflate.should_receive(:inflate).with(@curl_easy.body_str)
+        Feedzirra::Feed.decode_content(@curl_easy)
+      end
+
+      it 'should deflate the response body using inflate if the Content-Encoding: is deflate event if the case is wrong' do
+        @curl_easy.stub!(:header_str).and_return('content-encoding: deflate')
         Zlib::Inflate.should_receive(:inflate).with(@curl_easy.body_str)
         Feedzirra::Feed.decode_content(@curl_easy)
       end
