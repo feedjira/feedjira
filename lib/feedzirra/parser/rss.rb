@@ -13,6 +13,7 @@ module Feedzirra
       include SAXMachine
       include FeedUtilities
       element :title
+      element :description
       element :link, :as => :url
       elements :item, :as => :entries, :class => RSSEntry
 
