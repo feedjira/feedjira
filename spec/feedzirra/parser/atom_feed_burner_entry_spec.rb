@@ -20,6 +20,11 @@ describe Feedzirra::Parser::AtomFeedBurnerEntry do
     @entry.url.should == "http://www.pauldix.net/2009/01/making-a-ruby-c-library-even-faster.html"
   end
   
+  it "should parse the url when there is no alternate" do
+    entry = Feedzirra::Parser::AtomFeedBurner.parse(File.read("#{File.dirname(__FILE__)}/../../sample_feeds/FeedBurnerUrlNoAlternate.xml")).entries.first
+    entry.url.should == 'http://example.com/QQQQ.html'
+  end
+
   it "should parse the author" do
     @entry.author.should == "Paul Dix"
   end

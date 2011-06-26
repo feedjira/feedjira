@@ -18,6 +18,7 @@ module Feedzirra
       element :title
       element :name, :as => :author
       element :link, :as => :url, :value => :href, :with => {:type => "text/html", :rel => "alternate"}
+      element :link, :as => :url, :value => :href
       element :"feedburner:origLink", :as => :url
       element :summary
       element :content
