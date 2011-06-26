@@ -1,5 +1,5 @@
 module Feedzirra
-  
+
   module Parser
     # == Summary
     # Parser for dealing with Feedburner Atom feed entries.
@@ -19,7 +19,6 @@ module Feedzirra
       element :name, :as => :author
       element :link, :as => :url, :value => :href, :with => {:type => "text/html", :rel => "alternate"}
       element :"feedburner:origLink", :as => :url
-      element :link, :as => :url, :value => :href
       element :summary
       element :content
       element :published
@@ -29,8 +28,13 @@ module Feedzirra
       element :updated
       element :modified, :as => :updated
       elements :category, :as => :categories, :value => :term
-    end
+      elements :link, :as => :links, :value => :href
 
+      def url
+        @url || links.first
+      end
+
+    end
   end
-    
+
 end
