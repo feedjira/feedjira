@@ -143,7 +143,7 @@ module Feedzirra
     # === Returns
     # A decoded string of XML.
     def self.decode_content(c)
-      if c.header_str.match(/Content-Encoding: gzip/)
+      if c.header_str.match(/Content-Encoding: gzip/i)
         begin
           gz =  Zlib::GzipReader.new(StringIO.new(c.body_str))
           xml = gz.read
@@ -152,7 +152,7 @@ module Feedzirra
           # Maybe this is not gzipped?
           xml = c.body_str
         end
-      elsif c.header_str.match(/Content-Encoding: deflate/)
+      elsif c.header_str.match(/Content-Encoding: deflate/i)
         xml = Zlib::Inflate.inflate(c.body_str)
       else
         xml = c.body_str
