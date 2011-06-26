@@ -1,9 +1,14 @@
-require "rspec"
-require "rspec/core/rake_task"
-require 'rake/rdoctask'
-require File.dirname(__FILE__) + "/lib/feedzirra.rb"
+require 'bundler'
+Bundler.setup
 
-# Grab recently touched specs
+require 'rake'
+require 'rdoc/task'
+require 'rspec'
+require 'rspec/core/rake_task'
+
+$LOAD_PATH.unshift File.expand_path('../lib', __FILE__)
+require 'feedzirra/version'
+
 def recent_specs(touched_since)
   recent_specs = FileList['app/**/*'].map do |path|
 
@@ -20,10 +25,6 @@ def recent_specs(touched_since)
   recent_specs.uniq
 end
 
-desc "Run all the tests"
-task :default => :spec
-
-# Tasks
 RSpec::Core::RakeTask.new do |t|
   t.pattern = FileList['spec/**/*_spec.rb']
 end
@@ -39,15 +40,12 @@ RSpec::Core::RakeTask.new('spec:rcov') do |t|
   t.rcov_opts = ['--exclude', 'spec,/usr/lib/ruby,/usr/local,/var/lib,/Library', '--text-report']
 end
 
-Rake::RDocTask.new do |rd|
+RDoc::Task.new do |rd|
   rd.title    = 'Feedzirra'
   rd.rdoc_dir = 'rdoc'
   rd.rdoc_files.include('README.rdoc', 'lib/feedzirra.rb', 'lib/feedzirra/**/*.rb')
   rd.options = ["--quiet", "--opname", "index.html", "--line-numbers", "--inline-source", '--main', 'README.rdoc']
 end
 
-task :install do
-  rm_rf "*.gem"
-  puts `gem build feedzirra.gemspec`
-  puts `sudo gem install feedzirra-#{Feedzirra::VERSION}.gem`
-end
+desc "Run all the tests"
+task :default => :spec
