@@ -24,28 +24,28 @@ describe Feedzirra::Feed do
       it "should parse an rdf feed" do
         feed = Feedzirra::Feed.parse(sample_rdf_feed)
         feed.title.should == "HREF Considered Harmful"
-        feed.entries.first.published.to_s.should == "Tue Sep 02 19:50:07 UTC 2008"
+        feed.entries.first.published.should == DateTime.parse("Tue Sep 02 19:50:07 UTC 2008")
         feed.entries.size.should == 10
       end
 
       it "should parse an rss feed" do
         feed = Feedzirra::Feed.parse(sample_rss_feed)
         feed.title.should == "Tender Lovemaking"
-        feed.entries.first.published.to_s.should == "Thu Dec 04 17:17:49 UTC 2008"
+        feed.entries.first.published.should == DateTime.parse("Thu Dec 04 17:17:49 UTC 2008")
         feed.entries.size.should == 10
       end
 
       it "should parse an atom feed" do
         feed = Feedzirra::Feed.parse(sample_atom_feed)
         feed.title.should == "Amazon Web Services Blog"
-        feed.entries.first.published.to_s.should == "Fri Jan 16 18:21:00 UTC 2009"
+        feed.entries.first.published.should == DateTime.parse("Fri Jan 16 18:21:00 UTC 2009")
         feed.entries.size.should == 10
       end
 
       it "should parse an feedburner atom feed" do
         feed = Feedzirra::Feed.parse(sample_feedburner_atom_feed)
         feed.title.should == "Paul Dix Explains Nothing"
-        feed.entries.first.published.to_s.should == "Thu Jan 22 15:50:22 UTC 2009"
+        feed.entries.first.published.should == DateTime.parse("Thu, 22 Jan 2009 15:50:22 +0000")
         feed.entries.size.should == 5
       end      
 
@@ -72,7 +72,7 @@ describe Feedzirra::Feed do
     it "should parse an feedburner rss feed" do
       feed = Feedzirra::Feed.parse(sample_rss_feed_burner_feed)
       feed.title.should == "Sam Harris: Author, Philosopher, Essayist, Atheist"
-      feed.entries.first.published.to_s.should == "Tue Jan 13 17:20:28 UTC 2009"
+      feed.entries.first.published.should == DateTime.parse("Tue Jan 13 17:20:28 UTC 2009")
       feed.entries.size.should == 10
     end
   end
