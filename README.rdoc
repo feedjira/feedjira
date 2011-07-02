@@ -108,9 +108,26 @@ If you're still having issues, please let me know on the mailing list. Also, {To
 
 === Extending
 
-==== Adding attributes
+==== Adding a feed parsing class
 
-If you want to add attributes to those parsed by default you have to declare them:
+    # Adds a new feed parsing class, this class will be used first
+    Feedzirra::Feed.add_feed_class MyFeedClass
+
+==== Adding attributes to all feeds types / all entries types
+
+    # Add the generator attribute to all feed types
+    Feedzirra::Feed.add_common_feed_element('generator')
+    Feedzirra::Feed.fetch_and_parse("href="http://www.pauldix.net/atom.xml").generator # => 'TypePad'
+
+    # Add some GeoRss information
+    Feedzirra::Feed.add_common_feed_entry_element('geo:lat', :as => :lat)
+    Feedzirra::Feed.fetch_and_parse("http://www.earthpublisher.com/georss.php").entries.each do |e|
+        p "lat: #{e.lat}, long: #{e.long}"
+    end
+
+==== Adding attributes to only one class
+
+If you want to add attributes for only on class you simply have to declare them in the class
 
     # Add some GeoRss information
     require 'lib/feedzirra/parser/rss_entry'
@@ -124,7 +141,6 @@ If you want to add attributes to those parsed by default you have to declare the
     Feedzirra::Feed.fetch_and_parse("http://www.earthpublisher.com/georss.php").entries.each do |e|
         p "lat: #{e.lat}, long: #{e.long}"
     end
-
 
 === Benchmarks
 

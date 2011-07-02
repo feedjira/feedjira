@@ -1,20 +1,39 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 
 describe Feedzirra::Feed do
+
+  describe "#add_common_feed_element" do
+    before(:all) do
+      Feedzirra::Feed.add_common_feed_element("generator")
+    end
+
+    it "should parse the added element out of Atom feeds" do
+      Feedzirra::Feed.parse(sample_wfw_feed).generator.should == "TypePad"
+    end
+
+    it "should parse the added element out of Atom Feedburner feeds" do
+      Feedzirra::Parser::Atom.new.should respond_to(:generator)
+    end
+
+    it "should parse the added element out of RSS feeds" do
+      Feedzirra::Parser::RSS.new.should respond_to(:generator)
+    end
+  end
+
   describe "#add_common_feed_entry_element" do
     before(:all) do
       Feedzirra::Feed.add_common_feed_entry_element("wfw:commentRss", :as => :comment_rss)
     end
     
-    it "should parse the added element out of Atom feeds" do
+    it "should parse the added element out of Atom feeds entries" do
       Feedzirra::Feed.parse(sample_wfw_feed).entries.first.comment_rss.should == "this is the new val"
     end
     
-    it "should parse the added element out of Atom Feedburner feeds" do
+    it "should parse the added element out of Atom Feedburner feeds entries" do
       Feedzirra::Parser::AtomEntry.new.should respond_to(:comment_rss)
     end
     
-    it "should parse the added element out of RSS feeds" do
+    it "should parse the added element out of RSS feeds entries" do
       Feedzirra::Parser::RSSEntry.new.should respond_to(:comment_rss)
     end
   end
