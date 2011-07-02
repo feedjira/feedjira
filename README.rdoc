@@ -108,6 +108,24 @@ If you're still having issues, please let me know on the mailing list. Also, {To
 
 === Extending
 
+==== Adding attributes
+
+If you want to add attributes to those parsed by default you have to declare them:
+
+    # Add some GeoRss information
+    require 'lib/feedzirra/parser/rss_entry'
+
+    class Feedzirra::Parser::RSSEntry
+        element 'geo:lat', :as => :lat
+        element 'geo:long', :as => :long
+    end
+
+    # Fetch a feed containing GeoRss info and print them
+    Feedzirra::Feed.fetch_and_parse("http://www.earthpublisher.com/georss.php").entries.each do |e|
+        p "lat: #{e.lat}, long: #{e.long}"
+    end
+
+
 === Benchmarks
 
 One of the goals of Feedzirra is speed. This includes not only parsing, but fetching multiple feeds as quickly as possible. I ran a benchmark getting 20 feeds 10 times using Feedzirra, rFeedParser, and FeedNormalizer. For more details the {benchmark code can be found in the project in spec/benchmarks/feedzirra_benchmarks.rb}[http://github.com/pauldix/feedzirra/blob/7fb5634c5c16e9c6ec971767b462c6518cd55f5d/spec/benchmarks/feedzirra_benchmarks.rb]

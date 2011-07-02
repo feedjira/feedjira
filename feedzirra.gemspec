@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.description = 'A feed fetching and parsing library that treats the internet like Godzilla treats Japan: it dominates and eats all.'
 
   s.require_paths = ['lib']
-  s.files         = Dir['{lib/spec}/**/*.rb'] + %w[README.textile Rakefile .rspec]
+  s.files         = Dir['{lib/spec}/**/*.rb'] + %w[README.rdoc Rakefile .rspec]
   s.test_files    = Dir['spec/**/*.rb']
 
   s.platform = Gem::Platform::RUBY
