@@ -20,14 +20,14 @@ module Feedzirra
     end
           
     ##
-    # Writter for published. By default, we keep the "oldest" publish time found.
+    # Writer for published. By default, we keep the "oldest" publish time found.
     def published=(val) 
       parsed = parse_datetime(val)
       @published = parsed if !@published || parsed < @published     
     end
         
     ##
-    # Writter for udapted. By default, we keep the most recenet update time found.
+    # Writer for updated. By default, we keep the most recent update time found.
     def updated=(val) 
       parsed = parse_datetime(val)
       @updated = parsed if !@updated || parsed > @updated
