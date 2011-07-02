@@ -28,7 +28,7 @@ module Feedzirra
       end
       
       def feed_url
-        @feed_url || links.first
+        @feed_url ||= links.first
       end
     end
   end

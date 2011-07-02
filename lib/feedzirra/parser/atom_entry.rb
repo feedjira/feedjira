@@ -30,7 +30,7 @@ module Feedzirra
       elements :link, :as => :links, :value => :href
             
       def url
-        @url || links.first
+        @url ||= links.first
       end
     end
 

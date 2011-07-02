@@ -16,7 +16,7 @@ module Feedzirra
     ##
     # Returns the id of the entry or its url if not id is present, as some formats don't support it
     def id  
-      @entry_id || @url
+      @entry_id ||= @url
     end
           
     ##
