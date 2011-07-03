@@ -49,7 +49,7 @@ module Feedzirra
       @feed_classes ||= [Feedzirra::Parser::RSS, Feedzirra::Parser::AtomFeedBurner, Feedzirra::Parser::Atom]
     end
     
-    # Makes all feeds types look for the passed in element to parse. This is actually just a call to
+    # Makes all registered feeds types look for the passed in element to parse. This is actually just a call to
     # element (a SAXMachine call) in the class
     #
     # === Parameters
@@ -61,7 +61,7 @@ module Feedzirra
       end
     end
 
-    # Makes all entry types look for the passed in element to parse. This is actually just a call to
+    # Makes all registered entry types look for the passed in element to parse. This is actually just a call to
     # element (a SAXMachine call) in the class
     #
     # === Parameters
