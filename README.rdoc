@@ -44,6 +44,10 @@ Another problem could be if you are running Mac Ports and you have libcurl insta
 
 If you're still having issues, please let me know on the mailing list. Also, {Todd Fisher (taf2)}[link:http://github.com/taf2] is working on fixing the gem install. Please send him a full error report.
 
+=== Speedup date parsing
+
+In MRI the date parsing code is written in ruby and is optimized for readability over speed, to speed up this part you can install the {home_run}[https://github.com/jeremyevans/home_run] gem to replace it with an optimized C version.
+
 === Usage
 
 {A gist of the following code}[link:http://gist.github.com/57285]
