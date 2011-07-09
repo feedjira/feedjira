@@ -49,11 +49,11 @@ module Feedzirra
       @feed_classes ||= [Feedzirra::Parser::RSS, Feedzirra::Parser::AtomFeedBurner, Feedzirra::Parser::Atom]
     end
     
-    # Makes all registered feeds types look for the passed in element to parse. This is actually just a call to
-    # element (a SAXMachine call) in the class
+    # Makes all registered feeds types look for the passed in element to parse.
+    # This is actually just a call to element (a SAXMachine call) in the class.
     #
     # === Parameters
-    # [element_tag<String>]
+    # [element_tag<String>] The element tag
     # [options<Hash>] Valid keys are same as with SAXMachine
     def self.add_common_feed_element(element_tag, options = {})
       feed_classes.each do |k|
@@ -61,25 +61,56 @@ module Feedzirra
       end
     end
 
-    # Makes all registered entry types look for the passed in element to parse. This is actually just a call to
-    # element (a SAXMachine call) in the class
+    # Makes all registered feeds types look for the passed in elements to parse.
+    # This is actually just a call to elements (a SAXMachine call) in the class.
+    #
+    # === Parameters
+    # [element_tag<String>] The element tag
+    # [options<Hash>] Valid keys are same as with SAXMachine
+    def self.add_common_feed_elements(element_tag, options = {})
+      feed_classes.each do |k|
+        k.elements element_tag, options
+      end
+    end
+
+    # Makes all registered entry types look for the passed in element to parse.
+    # This is actually just a call to element (a SAXMachine call) in the class.
     #
     # === Parameters
     # [element_tag<String>]
     # [options<Hash>] Valid keys are same as with SAXMachine
     def self.add_common_feed_entry_element(element_tag, options = {})
+      call_on_each_feed_entry :element, element_tag, options
+    end
+    
+    # Makes all registered entry types look for the passed in elements to parse.
+    # This is actually just a call to element (a SAXMachine call) in the class.
+    #
+    # === Parameters
+    # [element_tag<String>]
+    # [options<Hash>] Valid keys are same as with SAXMachine
+    def self.add_common_feed_entry_elements(element_tag, options = {})
+      call_on_each_feed_entry :elements, element_tag, options
+    end
+
+    # Call a method on all feed entries classes.
+    #
+    # === Parameters
+    # [method<Symbol>] The method name
+    # [parameters<Array>] The method parameters
+    def self.call_on_each_feed_entry(method, *parameters)
       feed_classes.each do |k|
         # iterate on the collections defined in the sax collection
         k.sax_config.collection_elements.each_value do |vl|
           # vl is a list of CollectionConfig mapped to an attribute name
           # we'll look for the one set as 'entries' and add the new element
           vl.find_all{|v| (v.accessor == 'entries') && (v.data_class.class == Class)}.each do |v|
-              v.data_class.element element_tag, options
+              v.data_class.send(method, *parameters)
           end
         end
       end
     end
-    
+
     # Fetches and returns the raw XML for each URL provided.
     #
     # === Parameters
