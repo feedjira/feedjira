@@ -1,14 +1,7 @@
 module Feedzirra
-  
+
   module Parser
-    # == Summary
     # Parser for dealing with Atom feeds.
-    #
-    # == Attributes
-    # * title
-    # * feed_url
-    # * url
-    # * entries
     class Atom
       include SAXMachine
       include FeedUtilities
@@ -22,15 +15,15 @@ module Feedzirra
       def self.able_to_parse?(xml) #:nodoc:
         /\<feed[^\>]+xmlns=[\"|\'](http:\/\/www\.w3\.org\/2005\/Atom|http:\/\/purl\.org\/atom\/ns\#)[\"|\'][^\>]*\>/ =~ xml
       end
-      
+
       def url
         @url || links.last
       end
-      
+
       def feed_url
         @feed_url ||= links.first
       end
     end
   end
-  
+
 end

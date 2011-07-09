@@ -1,14 +1,7 @@
 module Feedzirra
 
   module Parser
-    # == Summary
     # Parser for dealing with RSS feeds.
-    #
-    # == Attributes
-    # * title
-    # * feed_url
-    # * url
-    # * entries
     class RSS
       include SAXMachine
       include FeedUtilities
