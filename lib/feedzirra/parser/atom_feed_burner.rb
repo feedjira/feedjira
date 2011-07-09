@@ -1,5 +1,5 @@
 module Feedzirra
-  
+
   module Parser
     # == Summary
     # Parser for dealing with Feedburner Atom feeds.
@@ -19,10 +19,10 @@ module Feedzirra
       elements :entry, :as => :entries, :class => AtomFeedBurnerEntry
 
       def self.able_to_parse?(xml) #:nodoc:
-        (xml =~ /Atom/ && xml =~ /feedburner/) || false
+        ((/Atom/ =~ xml) && (/feedburner/ =~ xml)) || false
       end
     end
 
   end
-  
+
 end

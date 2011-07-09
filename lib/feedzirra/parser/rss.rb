@@ -1,5 +1,5 @@
 module Feedzirra
-  
+
   module Parser
     # == Summary
     # Parser for dealing with RSS feeds.
@@ -20,10 +20,10 @@ module Feedzirra
       attr_accessor :feed_url
 
       def self.able_to_parse?(xml) #:nodoc:
-        xml =~ /\<rss|\<rdf/
+        /\<rss|\<rdf/ =~ xml
       end
     end
 
   end
-  
+
 end
