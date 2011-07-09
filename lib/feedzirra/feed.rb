@@ -111,16 +111,38 @@ module Feedzirra
       end
     end
 
+    # Setup curl from options.
+    # Possible parameters:
+    # * :user_agent          - overrides the default user agent.
+    # * :compress            - any value to enable compression
+    # * :http_authentication - array containing http authentication parameters
+    # * :proxy_url           - proxy url
+    # * :proxy_port          - proxy port
+    # * :max_redirects       - max number of redirections
+    # * :timeout             - timeout
+    def self.setup_easy curl, options
+      curl.headers["Accept-encoding"]   = 'gzip, deflate' if options.has_key?(:compress)
+      curl.headers["User-Agent"]        = (options[:user_agent] || USER_AGENT)
+
+      curl.userpwd = options[:http_authentication].join(':') if options.has_key?(:http_authentication)
+      curl.proxy_url = options[:proxy_url] if options.has_key?(:proxy_url)
+      curl.proxy_port = options[:proxy_port] if options.has_key?(:proxy_port)
+      curl.max_redirects = options[:max_redirects] if options[:max_redirects]
+      curl.timeout = options[:timeout] if options[:timeout]
+
+      curl.follow_location = true
+    end
+
     # Fetches and returns the raw XML for each URL provided.
     #
     # === Parameters
     # [urls<String> or <Array>] A single feed URL, or an array of feed URLs.
     # [options<Hash>] Valid keys for this argument as as followed:
-    #                 :user_agent - String that overrides the default user agent.
     #                 :if_modified_since - Time object representing when the feed was last updated.
     #                 :if_none_match - String that's normally an etag for the request that was stored previously.
     #                 :on_success - Block that gets executed after a successful request.
     #                 :on_failure - Block that gets executed after a failed request.
+    #                 * all parameters defined in setup_easy
     # === Returns
     # A String of XML if a single URL is passed.
     # 
@@ -131,15 +153,10 @@ module Feedzirra
       responses = {}
       url_queue.each do |url|
         easy = Curl::Easy.new(url) do |curl|
-          curl.headers["User-Agent"]        = (options[:user_agent] || USER_AGENT)
+          setup_easy curl, options
+
           curl.headers["If-Modified-Since"] = options[:if_modified_since].httpdate if options.has_key?(:if_modified_since)
           curl.headers["If-None-Match"]     = options[:if_none_match] if options.has_key?(:if_none_match)
-          curl.headers["Accept-encoding"]   = 'gzip, deflate' if options.has_key?(:compress)
-          curl.follow_location = true
-          curl.userpwd = options[:http_authentication].join(':') if options.has_key?(:http_authentication)
-          
-          curl.max_redirects = options[:max_redirects] if options[:max_redirects]
-          curl.timeout = options[:timeout] if options[:timeout]
 
           curl.on_success do |c|
             responses[url] = decode_content(c)
@@ -214,9 +231,9 @@ module Feedzirra
     # === Parameters
     # [feeds<Feed> or <Array>] A single feed object, or an array of feed objects.
     # [options<Hash>] Valid keys for this argument as as followed:
-    #                 * :user_agent - String that overrides the default user agent.
     #                 * :on_success - Block that gets executed after a successful request.
     #                 * :on_failure - Block that gets executed after a failed request.
+    #                 * all parameters defined in setup_easy
     # === Returns
     # A updated Feed object if a single URL is passed.
     #
@@ -243,23 +260,17 @@ module Feedzirra
     # [responses<Hash>] Existing responses that you want the response from the request added to.
     # [feeds<String> or <Array>] A single feed object, or an array of feed objects.
     # [options<Hash>] Valid keys for this argument as as followed:
-    #                 * :user_agent - String that overrides the default user agent.
     #                 * :on_success - Block that gets executed after a successful request.
     #                 * :on_failure - Block that gets executed after a failed request.
+    #                 * all parameters defined in setup_easy
     # === Returns
     # The updated Curl::Multi object with the request details added to it's stack.
     def self.add_url_to_multi(multi, url, url_queue, responses, options)
       easy = Curl::Easy.new(url) do |curl|
-        curl.headers["User-Agent"]        = (options[:user_agent] || USER_AGENT)
+        setup_easy curl, options
         curl.headers["If-Modified-Since"] = options[:if_modified_since].httpdate if options.has_key?(:if_modified_since)
         curl.headers["If-None-Match"]     = options[:if_none_match] if options.has_key?(:if_none_match)
-        curl.headers["Accept-encoding"]   = 'gzip, deflate' if options.has_key?(:compress)
-        curl.follow_location = true
-        curl.userpwd = options[:http_authentication].join(':') if options.has_key?(:http_authentication)
 
-        curl.max_redirects = options[:max_redirects] if options[:max_redirects]
-        curl.timeout = options[:timeout] if options[:timeout]
-        
         curl.on_success do |c|
           add_url_to_multi(multi, url_queue.shift, url_queue, responses, options) unless url_queue.empty?
           xml = decode_content(c)
@@ -295,7 +306,7 @@ module Feedzirra
       end
       multi.add(easy)
     end
-    
+
     # An abstraction for adding a feed by a Feed object to the passed Curb::multi stack.
     #
     # === Parameters
@@ -305,23 +316,16 @@ module Feedzirra
     # [responses<Hash>] Existing responses that you want the response from the request added to.
     # [feeds<String>] or <Array> A single feed object, or an array of feed objects.
     # [options<Hash>] Valid keys for this argument as as followed:
-    #                 * :user_agent - String that overrides the default user agent.
     #                 * :on_success - Block that gets executed after a successful request.
     #                 * :on_failure - Block that gets executed after a failed request.
+    #                 * all parameters defined in setup_easy
     # === Returns
     # The updated Curl::Multi object with the request details added to it's stack.
     def self.add_feed_to_multi(multi, feed, feed_queue, responses, options) 
       easy = Curl::Easy.new(feed.feed_url) do |curl|
-        curl.headers["User-Agent"]        = (options[:user_agent] || USER_AGENT)
+        setup_easy curl, options
         curl.headers["If-Modified-Since"] = feed.last_modified.httpdate if feed.last_modified
         curl.headers["If-None-Match"]     = feed.etag if feed.etag
-        curl.userpwd = options[:http_authentication].join(':') if options.has_key?(:http_authentication)
-        curl.proxy_url = options[:proxy_url] if options.has_key?(:proxy_url)
-        curl.proxy_port = options[:proxy_port] if options.has_key?(:proxy_port)
-        curl.follow_location = true
-
-        curl.max_redirects = options[:max_redirects] if options[:max_redirects]
-        curl.timeout = options[:timeout] if options[:timeout]
 
         curl.on_success do |c|
           begin
