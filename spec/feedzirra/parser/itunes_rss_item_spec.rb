@@ -34,7 +34,7 @@ describe Feedzirra::Parser::ITunesRSSItem do
   end  
 
   it "should parse the published date" do
-    @item.published.should == "Wed, 15 Jun 2005 19:00:00 GMT"
+    @item.published.to_s.should == "Wed Jun 15 19:00:00 UTC 2005"
   end  
 
   it "should parse the duration" do

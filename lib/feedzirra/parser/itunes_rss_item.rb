@@ -5,7 +5,7 @@ module Feedzirra
     # Source: http://www.apple.com/itunes/whatson/podcasts/specs.html
     class ITunesRSSItem
       include SAXMachine
-      include FeedUtilities
+      include FeedEntryUtilities
       element :author
       element :guid
       element :title
