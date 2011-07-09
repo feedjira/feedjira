@@ -255,7 +255,11 @@ module Feedzirra
         curl.on_failure do |c, err|
           add_url_to_multi(multi, url_queue.shift, url_queue, responses, options) unless url_queue.empty?
           responses[url] = c.response_code
-          options[:on_failure].call(url, c.response_code, c.header_str, c.body_str) if options.has_key?(:on_failure)
+          if c.response_code == 304 # it's not modified. this isn't an error condition
+            options[:on_success].call(url, nil) if options.has_key?(:on_success)
+          else
+            options[:on_failure].call(url, c.response_code, c.header_str, c.body_str) if options.has_key?(:on_failure)
+          end
         end
       end
       multi.add(easy)
