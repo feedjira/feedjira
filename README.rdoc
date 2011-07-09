@@ -103,8 +103,8 @@ If you're still having issues, please let me know on the mailing list. Also, {To
     # the behavior for the handlers when using Feedzirra::Feed.update is slightly different. The feed passed into on_success will be
     # the updated feed with the standard updated accessors. on failure it will be the original feed object passed into update
 
-    # Defining custom parsers
-    # TODO: the functionality is here, just write some good examples that show how to do this
+    # fetching a feed via a proxy (optional)
+    feed = Feedzirra::Feed.fetch_and_parse("http://feeds.feedburner.com/PaulDixExplainsNothing", {:proxy_url => '10.0.0.1', :proxy_port => 3084})
 
 === Extending
 

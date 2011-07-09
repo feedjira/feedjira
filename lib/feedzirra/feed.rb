@@ -316,6 +316,8 @@ module Feedzirra
         curl.headers["If-Modified-Since"] = feed.last_modified.httpdate if feed.last_modified
         curl.headers["If-None-Match"]     = feed.etag if feed.etag
         curl.userpwd = options[:http_authentication].join(':') if options.has_key?(:http_authentication)
+        curl.proxy_url = options[:proxy_url] if options.has_key?(:proxy_url)
+        curl.proxy_port = options[:proxy_port] if options.has_key?(:proxy_port)
         curl.follow_location = true
 
         curl.max_redirects = options[:max_redirects] if options[:max_redirects]
