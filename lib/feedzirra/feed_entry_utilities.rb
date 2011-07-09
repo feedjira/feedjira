@@ -1,7 +1,8 @@
 module Feedzirra
   module FeedEntryUtilities    
-    def published    
-      @published || @updated
+
+    def published
+      @published ||= @updated
     end
     
     def parse_datetime(string)
