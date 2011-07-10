@@ -5,16 +5,16 @@ module Feedzirra
     USER_AGENT = "feedzirra http://github.com/pauldix/feedzirra/tree/master"
     
     # Takes a raw XML feed and attempts to parse it. If no parser is available a Feedzirra::NoParserAvailable exception is raised.
-    #
+    # You can pass a block to be called when there's an error during the parsing.
     # === Parameters
     # [xml<String>] The XML that you would like parsed.
     # === Returns
     # An instance of the determined feed type. By default a Feedzirra::Atom, Feedzirra::AtomFeedBurner, Feedzirra::RDF, or Feedzirra::RSS object.
     # === Raises
     # Feedzirra::NoParserAvailable : If no valid parser classes could be found for the feed.
-    def self.parse(xml)
+    def self.parse(xml, &block)
       if parser = determine_feed_parser_for_xml(xml)
-        parser.parse(xml)
+        parser.parse(xml, block)
       else
         raise NoParserAvailable.new("No valid parser for XML.")
       end
@@ -278,7 +278,7 @@ module Feedzirra
           
           if klass
             begin
-              feed = klass.parse(xml)
+              feed = klass.parse(xml, Proc.new{|message| puts "Error while parsing [#{url}] #{message}" })
               feed.feed_url = c.last_effective_url
               feed.etag = etag_from_header(c.header_str)
               feed.last_modified = last_modified_from_header(c.header_str)
@@ -330,7 +330,7 @@ module Feedzirra
         curl.on_success do |c|
           begin
             add_feed_to_multi(multi, feed_queue.shift, feed_queue, responses, options) unless feed_queue.empty?
-            updated_feed = Feed.parse(c.body_str)
+            updated_feed = Feed.parse(c.body_str){ |message| puts "Error while parsing [#{feed.feed_url}] #{message}" }
             updated_feed.feed_url = c.last_effective_url
             updated_feed.etag = etag_from_header(c.header_str)
             updated_feed.last_modified = last_modified_from_header(c.header_str)
