@@ -319,7 +319,7 @@ describe Feedzirra::Feed do
         end
 
         it 'should parse the xml' do
-          Feedzirra::Parser::AtomFeedBurner.should_receive(:parse).with(@paul_feed[:xml]).and_return(@feed)
+          Feedzirra::Parser::AtomFeedBurner.should_receive(:parse).with(@paul_feed[:xml], an_instance_of(Proc)).and_return(@feed)
           Feedzirra::Feed.add_url_to_multi(@multi, @paul_feed[:url], [], {}, {})
           @easy_curl.on_success.call(@easy_curl)
         end
