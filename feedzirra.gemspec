@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
   s.platform = Gem::Platform::RUBY
 
   s.add_runtime_dependency 'nokogiri',      ['~> 1.4.4']
-  s.add_runtime_dependency 'sax-machine',   ['~> 0.0.16']
+  s.add_runtime_dependency 'sax-machine',   ['~> 0.0.20']
   s.add_runtime_dependency 'curb',          ['~> 0.7.15']
   s.add_runtime_dependency 'builder',       ['~> 3.0.0']
   s.add_runtime_dependency 'activesupport', ['~> 3.0.8']
