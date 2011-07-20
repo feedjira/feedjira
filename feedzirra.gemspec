@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.name    = 'feedzirra'
   s.version = Feedzirra::VERSION
 
-  s.authors  = ['Paul Dix']
-  s.date     = '2009-02-19'
+  s.authors  = ['Paul Dix', 'Julien Kirch']
+  s.date     = '2011-07-20'
   s.email    = 'paul@pauldix.net'
   s.homepage = 'http://github.com/pauldix/feedzirra'
 
