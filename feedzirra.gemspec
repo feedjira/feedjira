@@ -30,7 +30,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'loofah',        ['~> 1.0.0']
   s.add_runtime_dependency 'rdoc',          ['~> 3.8']
   s.add_runtime_dependency 'rake',          ['>= 0.9.2']
-  s.add_runtime_dependency 'i18n',          ['~> 0.6.0']
+  s.add_runtime_dependency 'i18n',          ['~> 0.5.0']
 
   s.add_development_dependency 'rspec',     ['~> 2.6.0']
 end
