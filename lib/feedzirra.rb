@@ -6,7 +6,6 @@ require 'uri'
 
 require 'active_support/basic_object'
 require 'active_support/core_ext/module'
-require 'active_support/core_ext/kernel'
 require 'active_support/core_ext/object'
 require 'active_support/time'
 
