@@ -1,10 +1,10 @@
 module Feedzirra
-
   module Parser
     # Parser for dealing with RDF feed entries.
     class RSSEntry
       include SAXMachine
       include FeedEntryUtilities
+
       element :title
       element :link, :as => :url
 
@@ -25,8 +25,8 @@ module Feedzirra
       elements :category, :as => :categories
 
       element :guid, :as => :entry_id
+
+      element :enclosure
     end
-
   end
-
 end
