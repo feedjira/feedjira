@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version = Feedzirra::VERSION
 
   s.authors  = ['Paul Dix', 'Julien Kirch']
-  s.date     = '2011-08-19'
+  s.date     = '2011-09-30'
   s.email    = 'feedzirra@googlegroups.com'
   s.homepage = 'http://github.com/pauldix/feedzirra'
 

@@ -1,3 +1,3 @@
 module Feedzirra
-  VERSION = "0.0.31"
+  VERSION = '0.1.0'
 end
