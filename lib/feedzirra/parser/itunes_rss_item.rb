@@ -6,6 +6,7 @@ module Feedzirra
     class ITunesRSSItem
       include SAXMachine
       include FeedEntryUtilities
+
       element :author
       element :guid
       element :title

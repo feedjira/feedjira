@@ -3,7 +3,6 @@ module Feedzirra
   module Parser
     # Parser for dealing with RDF feed entries.
     class RSSEntry
-      include Enumerable
       include SAXMachine
       include FeedEntryUtilities
 
@@ -28,21 +27,6 @@ module Feedzirra
       
       element :guid, :as => :entry_id
       
-      def each
-        @rss_fields ||= self.instance_variables
-
-        @rss_fields.each do |field|
-          yield(field.to_s.sub('@', ''), self.instance_variable_get(field))
-        end
-      end
-
-      def [](field)
-        self.instance_variable_get("@#{field.to_s}")
-      end
-
-      def []=(field, value)
-        self.instance_variable_set("@#{field.to_s}", value)
-      end
     end
 
   end
