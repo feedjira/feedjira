@@ -11,8 +11,12 @@ describe Feedzirra::Parser::RSS do
     #   Feedzirra::RSS.should_not be_able_to_parse(sample_rdf_feed)
     # end
     
-    it "should return fase for an atom feed" do
+    it "should return false for an atom feed" do
       Feedzirra::Parser::RSS.should_not be_able_to_parse(sample_atom_feed)
+    end
+    
+    it "should return false for an rss feedburner feed" do
+      Feedzirra::Parser::RSS.should_not be_able_to_parse(sample_rss_feed_burner_feed)
     end
   end
 

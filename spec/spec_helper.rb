@@ -34,7 +34,15 @@ def sample_rdf_entry_content
 end
 
 def sample_rss_feed_burner_feed
-  load_sample("SamHarrisAuthorPhilosopherEssayistAtheist.xml")
+  load_sample("TechCrunch.xml")
+end
+
+def sample_rss_feed_burner_entry_content
+  load_sample("TechCrunchFirstEntry.xml")
+end
+
+def sample_rss_feed_burner_entry_description
+  load_sample("TechCrunchFirstEntryDescription.xml")
 end
 
 def sample_rss_feed
