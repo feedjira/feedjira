@@ -248,7 +248,7 @@ module Feedzirra
       end
     
       multi.perform
-      responses.size == 1 ? responses.values.first : responses.values
+      responses.is_a?(Array)? responses.values : responses.values.first
     end
     
     # An abstraction for adding a feed by URL to the passed Curb::multi stack.
