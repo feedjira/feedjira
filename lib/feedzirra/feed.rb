@@ -46,7 +46,7 @@ module Feedzirra
     # === Returns
     # A array of class names.
     def self.feed_classes
-      @feed_classes ||= [Feedzirra::Parser::RSS, Feedzirra::Parser::AtomFeedBurner, Feedzirra::Parser::Atom]
+      @feed_classes ||= [Feedzirra::Parser::RSSFeedBurner, Feedzirra::Parser::RSS, Feedzirra::Parser::AtomFeedBurner, Feedzirra::Parser::Atom]
     end
     
     # Makes all registered feeds types look for the passed in element to parse.
