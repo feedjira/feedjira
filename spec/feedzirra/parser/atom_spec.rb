@@ -9,6 +9,10 @@ describe Feedzirra::Parser::Atom do
     it "should return false for an rdf feed" do
       Feedzirra::Parser::Atom.should_not be_able_to_parse(sample_rdf_feed)
     end
+    
+    it "should return false for an rss feedburner feed" do
+      Feedzirra::Parser::Atom.should_not be_able_to_parse(sample_rss_feed_burner_feed)
+    end
   end
   
   describe "parsing" do

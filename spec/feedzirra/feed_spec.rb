@@ -90,9 +90,9 @@ describe Feedzirra::Feed do
 
     it "should parse an feedburner rss feed" do
       feed = Feedzirra::Feed.parse(sample_rss_feed_burner_feed)
-      feed.title.should == "Sam Harris: Author, Philosopher, Essayist, Atheist"
-      feed.entries.first.published.to_s.should == "Tue Jan 13 17:20:28 UTC 2009"
-      feed.entries.size.should == 10
+      feed.title.should == "TechCrunch"
+      feed.entries.first.published.to_s.should == "Wed Nov 02 17:25:27 UTC 2011"
+      feed.entries.size.should == 20
     end
   end
 
@@ -109,8 +109,8 @@ describe Feedzirra::Feed do
       Feedzirra::Feed.determine_feed_parser_for_xml(sample_rdf_feed).should == Feedzirra::Parser::RSS
     end
 
-    it "should return the Feedzirra::Parser::RSS class for an rss feedburner feed" do
-      Feedzirra::Feed.determine_feed_parser_for_xml(sample_rss_feed_burner_feed).should == Feedzirra::Parser::RSS
+    it "should return the Feedzirra::Parser::RSSFeedBurner class for an rss feedburner feed" do
+      Feedzirra::Feed.determine_feed_parser_for_xml(sample_rss_feed_burner_feed).should == Feedzirra::Parser::RSSFeedBurner
     end
 
     it "should return the Feedzirra::Parser::RSS object for an rss 2.0 feed" do

@@ -12,7 +12,7 @@ module Feedzirra
       elements :entry, :as => :entries, :class => AtomFeedBurnerEntry
 
       def self.able_to_parse?(xml) #:nodoc:
-        ((/Atom/ =~ xml) && (/feedburner/ =~ xml)) || false
+        ((/Atom/ =~ xml) && (/feedburner/ =~ xml) && !(/\<rss|\<rdf/ =~ xml)) || false
       end
     end
 

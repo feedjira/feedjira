@@ -9,6 +9,10 @@ describe Feedzirra::Parser::ITunesRSS do
     it "should return fase for an atom feed" do
       Feedzirra::Parser::ITunesRSS.should_not be_able_to_parse(sample_atom_feed)
     end
+    
+    it "should return false for an rss feedburner feed" do
+      Feedzirra::Parser::ITunesRSS.should_not be_able_to_parse(sample_rss_feed_burner_feed)
+    end
   end
 
   describe "parsing" do
