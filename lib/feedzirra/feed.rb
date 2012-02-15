@@ -129,6 +129,7 @@ module Feedzirra
       curl.proxy_port = options[:proxy_port] if options.has_key?(:proxy_port)
       curl.max_redirects = options[:max_redirects] if options[:max_redirects]
       curl.timeout = options[:timeout] if options[:timeout]
+      curl.ssl_verify_host = options[:ssl_verify_host] if options[:ssl_verify_host]
 
       curl.follow_location = true
     end
