@@ -9,7 +9,7 @@ module Feedzirra
       element :title
       element :link, :as => :url, :value => :href, :with => {:type => "text/html", :rel => "alternate"}
       element :name, :as => :author
-      element :content, :with => {:type => 'text/html'}
+      element :content
       element :summary
       element :published
       element :id, :as => :entry_id
