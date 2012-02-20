@@ -4,3 +4,5 @@ TODO
 Gemfile.lock
 rdoc/
 doc/
+bin
+.bundle
