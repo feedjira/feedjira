@@ -6,3 +6,5 @@ rdoc/
 doc/
 bin
 .bundle
+*.swp
+*.swo
