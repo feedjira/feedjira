@@ -17,6 +17,9 @@ module Feedzirra
       element :modified, :as => :updated
       elements :category, :as => :categories, :value => :term
       elements :link, :as => :links, :value => :href
+      element :"docs:md5Checksum", :as => :checksum
+      element :"docs:filename", :as => :original_filename
+      element :"docs:suggestedFilename", :as => :suggested_filename
 
       def url
         @url ||= links.first

@@ -11,13 +11,21 @@ describe Feedzirra::Parser::GoogleDocsAtom do
     end
   end
 
-  describe '#entries' do
+  describe 'parsing' do
     before do
       @feed = Feedzirra::Parser::GoogleDocsAtom.parse(sample_google_docs_list_feed)
     end
 
     it 'should return a bunch of objects' do
       @feed.entries.should_not be_empty
+    end
+
+    it 'should populate a title, interhited from the Atom entry' do
+      @feed.title.should_not be_nil
+    end
+
+    it 'should return a bunch of entries of type GoogleDocsAtomEntry' do
+      @feed.entries.first.should be_a Feedzirra::Parser::GoogleDocsAtomEntry
     end
   end
 end

@@ -183,7 +183,5 @@
     href="https://docs.google.com/feeds/default/private/full/pdf%3A12345/acl"/>
   <gd:feedLink rel="http://schemas.google.com/docs/2007/revisions"
     href="https://docs.google.com/feeds/default/private/full/document%3A12345/revisions"/>
-
-
 </entry>
 </feed>
