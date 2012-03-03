@@ -97,6 +97,10 @@ describe Feedzirra::Feed do
   end
 
   describe "#determine_feed_parser_for_xml" do
+    it 'should return the Feedzirra::Parser::GoogleDocsAtom calss for a Google Docs atom feed' do
+      Feedzirra::Feed.determine_feed_parser_for_xml(sample_google_docs_list_feed).should == Feedzirra::Parser::GoogleDocsAtom
+    end
+
     it "should return the Feedzirra::Parser::Atom class for an atom feed" do
       Feedzirra::Feed.determine_feed_parser_for_xml(sample_atom_feed).should == Feedzirra::Parser::Atom
     end

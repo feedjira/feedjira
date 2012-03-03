@@ -64,6 +64,10 @@ end
 def sample_wfw_feed
   load_sample("PaulDixExplainsNothingWFW.xml")
 end       
+
+def sample_google_docs_list_feed
+  load_sample("GoogleDocsList.xml")
+end       
        
 # http://eigenclass.org/hiki/Changes+in+Ruby+1.9#l156
 # Default Time.to_s changed in 1.9, monkeypatching it back

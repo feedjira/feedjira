@@ -11,7 +11,7 @@ module Feedzirra
       begin
         DateTime.parse(string).feed_utils_to_gm_time
       rescue
-        puts "DATE CAN'T BE PARSED: [#{string}]"
+        warn "Failed to parse date #{string.inspect}"
         nil
       end
     end
