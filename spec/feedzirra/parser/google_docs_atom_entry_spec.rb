@@ -18,5 +18,13 @@ describe Feedzirra::Parser::GoogleDocsAtomEntry do
     it 'should have the custom suggested filename element' do
       @entry.suggested_filename.should eql "TaxDocument.pdf"
     end
+
+    it 'should yank out content as a download_url' do
+      @entry.download_url.should_not be_empty
+    end
+
+    it 'should yank out content as a mime_type' do
+      @entry.mime_type.should_not be_empty
+    end
   end
 end
