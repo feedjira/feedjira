@@ -26,5 +26,13 @@ describe Feedzirra::Parser::GoogleDocsAtomEntry do
     it 'should yank out content as a mime_type' do
       @entry.mime_type.should_not be_empty
     end
+
+    it 'should yank out a parent collection name' do
+      @entry.parent_collection_title.should == 'ACollectionName'
+    end
+
+    it 'should yank out a parent collection URL' do
+      @entry.parent_collection_url.should == 'https://docs.google.com/feeds/default/private/full/folder%3A12345'
+    end
   end
 end

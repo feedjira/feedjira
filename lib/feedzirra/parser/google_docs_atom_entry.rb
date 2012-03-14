@@ -18,6 +18,8 @@ module Feedzirra
       element :modified, :as => :updated
       elements :category, :as => :categories, :value => :term
       elements :link, :as => :links, :value => :href
+      element :link, :as => :parent_collection_title, :value => :title, :with => { :rel => 'http://schemas.google.com/docs/2007#parent' }
+      element :link, :as => :parent_collection_url, :value => :href, :with => { :rel => 'http://schemas.google.com/docs/2007#parent' }
       element :"docs:md5Checksum", :as => :checksum
       element :"docs:filename", :as => :original_filename
       element :"docs:suggestedFilename", :as => :suggested_filename
