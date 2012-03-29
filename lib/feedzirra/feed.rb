@@ -123,7 +123,8 @@ module Feedzirra
     def self.setup_easy curl, options
       curl.headers["Accept-encoding"]   = 'gzip, deflate' if options.has_key?(:compress)
       curl.headers["User-Agent"]        = (options[:user_agent] || USER_AGENT)
-
+      curl.headers["Cookie"]            = options[:cookie] if options.has_key?(:cookie)
+      
       curl.userpwd = options[:http_authentication].join(':') if options.has_key?(:http_authentication)
       curl.proxy_url = options[:proxy_url] if options.has_key?(:proxy_url)
       curl.proxy_port = options[:proxy_port] if options.has_key?(:proxy_port)
