@@ -26,7 +26,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'sax-machine',   ['~> 0.1.0']
   s.add_runtime_dependency 'curb',          ['~> 0.7.15']
   s.add_runtime_dependency 'builder',       ['>= 2.1.2']
-  s.add_runtime_dependency 'activesupport', ['~> 3.1.1']
+  s.add_runtime_dependency 'activesupport', ['~> 3.1']
   s.add_runtime_dependency 'loofah',        ['~> 1.2.0']
   s.add_runtime_dependency 'rdoc',          ['~> 3.8']
   s.add_runtime_dependency 'rake',          ['>= 0.8.7']
