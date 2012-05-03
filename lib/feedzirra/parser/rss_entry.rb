@@ -13,6 +13,8 @@ module Feedzirra
       element :author, :as => :author
       element :"content:encoded", :as => :content
       element :description, :as => :summary
+
+      element :"media:content", :as => :image, :value => :url
       
       element :pubDate, :as => :published
       element :pubdate, :as => :published
