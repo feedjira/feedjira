@@ -11,6 +11,10 @@ module Feedzirra
       element :name, :as => :author
       element :content
       element :summary
+
+      element :"media:content", :as => :image, :value => :url
+      element :enclosure, :as => :image, :value => :href
+
       element :published
       element :id, :as => :entry_id
       element :created, :as => :published
