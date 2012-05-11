@@ -1,2 +1,7 @@
-source "http://rubygems.org"
+source :rubygems
+
 gemspec
+
+group :development, :test do
+  gem 'rake'
+end
