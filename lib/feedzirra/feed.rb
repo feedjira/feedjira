@@ -1,6 +1,4 @@
-module Feedzirra
-  class NoParserAvailable < StandardError; end
-  
+module Feedzirra  
   class Feed
     USER_AGENT = "feedzirra http://github.com/pauldix/feedzirra/tree/master"
     
