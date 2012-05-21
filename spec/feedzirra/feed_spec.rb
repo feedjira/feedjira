@@ -122,7 +122,7 @@ describe Feedzirra::Feed do
     end
 
     it "should return a Feedzirra::Parser::RSS object for an itunes feed" do
-      Feedzirra::Feed.determine_feed_parser_for_xml(sample_itunes_feed).should == Feedzirra::Parser::RSS
+      Feedzirra::Feed.determine_feed_parser_for_xml(sample_itunes_feed).should == Feedzirra::Parser::ITunesRSS
     end
 
   end
