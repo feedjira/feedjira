@@ -1,13 +1,4 @@
-require "rubygems"
-require "rspec"
-
-# gem install redgreen for colored test output
-begin require "redgreen" unless ENV['TM_CURRENT_LINE']; rescue LoadError; end
-
-path = File.expand_path(File.dirname(__FILE__) + "/../lib/")
-$LOAD_PATH.unshift(path) unless $LOAD_PATH.include?(path)
-
-require "feedzirra"
+require File.expand_path(File.dirname(__FILE__) + '/../lib/feedzirra')
 
 def load_sample(filename)
   File.read("#{File.dirname(__FILE__)}/sample_feeds/#{filename}")
@@ -68,7 +59,12 @@ end
 def sample_google_docs_list_feed
   load_sample("GoogleDocsList.xml")
 end       
-       
+
+RSpec.configure do |config|
+  config.treat_symbols_as_metadata_keys_with_true_values = true
+  config.run_all_when_everything_filtered = true
+  config.filter_run :focus
+end
 # http://eigenclass.org/hiki/Changes+in+Ruby+1.9#l156
 # Default Time.to_s changed in 1.9, monkeypatching it back
 class Time
