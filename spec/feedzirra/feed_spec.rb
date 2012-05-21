@@ -68,14 +68,10 @@ describe Feedzirra::Feed do
         feed.entries.size.should == 5
       end      
 
-      it "should parse an itunes feed as a standard RSS feed" do
+      it "should parse an itunes feed" do
         feed = Feedzirra::Feed.parse(sample_itunes_feed)
         feed.title.should == "All About Everything"
         feed.entries.first.published.should == Time.parse_safely("Wed, 15 Jun 2005 19:00:00 GMT")
-        
-        # Since the commit 621957879, iTunes feeds will be parsed as standard RSS, so this
-        # entry should now not have a method for itunes_author.
-        feed.entries.first.should_not respond_to(:itunes_author)
         feed.entries.size.should == 3
       end
     end
