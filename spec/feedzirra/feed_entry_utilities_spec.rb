@@ -11,7 +11,7 @@ describe Feedzirra::FeedUtilities do
     it "should parse an ISO 8601 formatted datetime into Time" do
       time = @klass.new.parse_datetime("2008-02-20T8:05:00-010:00")
       time.class.should == Time
-      time.to_s.should == "Wed Feb 20 18:05:00 UTC 2008"
+      time.should == Time.parse_safely("Wed Feb 20 18:05:00 UTC 2008")
     end
   end
   

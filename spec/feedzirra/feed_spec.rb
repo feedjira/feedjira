@@ -43,28 +43,28 @@ describe Feedzirra::Feed do
       it "should parse an rdf feed" do
         feed = Feedzirra::Feed.parse(sample_rdf_feed)
         feed.title.should == "HREF Considered Harmful"
-        feed.entries.first.published.to_s.should == "Tue Sep 02 19:50:07 UTC 2008"
+        feed.entries.first.published.should == Time.parse_safely("Tue Sep 02 19:50:07 UTC 2008")
         feed.entries.size.should == 10
       end
 
       it "should parse an rss feed" do
         feed = Feedzirra::Feed.parse(sample_rss_feed)
         feed.title.should == "Tender Lovemaking"
-        feed.entries.first.published.to_s.should == "Thu Dec 04 17:17:49 UTC 2008"
+        feed.entries.first.published.should == Time.parse_safely("Thu Dec 04 17:17:49 UTC 2008")
         feed.entries.size.should == 10
       end
 
       it "should parse an atom feed" do
         feed = Feedzirra::Feed.parse(sample_atom_feed)
         feed.title.should == "Amazon Web Services Blog"
-        feed.entries.first.published.to_s.should == "Fri Jan 16 18:21:00 UTC 2009"
+        feed.entries.first.published.should == Time.parse_safely("Fri Jan 16 18:21:00 UTC 2009")
         feed.entries.size.should == 10
       end
 
       it "should parse an feedburner atom feed" do
         feed = Feedzirra::Feed.parse(sample_feedburner_atom_feed)
         feed.title.should == "Paul Dix Explains Nothing"
-        feed.entries.first.published.to_s.should == "Thu Jan 22 15:50:22 UTC 2009"
+        feed.entries.first.published.should == Time.parse_safely("Thu Jan 22 15:50:22 UTC 2009")
         feed.entries.size.should == 5
       end      
 
@@ -91,7 +91,7 @@ describe Feedzirra::Feed do
     it "should parse an feedburner rss feed" do
       feed = Feedzirra::Feed.parse(sample_rss_feed_burner_feed)
       feed.title.should == "TechCrunch"
-      feed.entries.first.published.to_s.should == "Wed Nov 02 17:25:27 UTC 2011"
+      feed.entries.first.published.should == Time.parse_safely("Wed Nov 02 17:25:27 UTC 2011")
       feed.entries.size.should == 20
     end
   end

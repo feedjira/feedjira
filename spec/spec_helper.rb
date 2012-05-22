@@ -65,10 +65,3 @@ RSpec.configure do |config|
   config.run_all_when_everything_filtered = true
   config.filter_run :focus
 end
-# http://eigenclass.org/hiki/Changes+in+Ruby+1.9#l156
-# Default Time.to_s changed in 1.9, monkeypatching it back
-class Time
-  def to_s
-    strftime("%a %b %d %H:%M:%S %Z %Y")
-  end
-end

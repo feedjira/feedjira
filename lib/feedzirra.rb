@@ -3,7 +3,7 @@ require 'curb'
 require 'sax-machine'
 require 'loofah'
 require 'uri'
-require 'gorillib/some'
+require 'gorillib/datetime/parse'
 
 require 'feedzirra/core_ext'
 
