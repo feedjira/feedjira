@@ -153,10 +153,12 @@ Here are some more specific TODOs.
 
 (The MIT License)
  
-Copyright (c) 2009:
+Copyright (c) 2009-2012:
  
-{Paul Dix}[http://pauldix.net]
- 
+- {Paul Dix}[http://pauldix.net]
+- {Julien Kirch}[http://archiloque.net/]
+- {Ezekiel Templin}[http://zeke.templ.in/]
+
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
 'Software'), to deal in the Software without restriction, including
