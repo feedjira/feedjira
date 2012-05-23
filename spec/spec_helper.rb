@@ -1,3 +1,11 @@
+begin
+  require 'simplecov'
+  SimpleCov.start do
+    add_filter "/spec/"
+  end
+rescue LoadError
+end
+
 require File.expand_path(File.dirname(__FILE__) + '/../lib/feedzirra')
 
 def load_sample(filename)
