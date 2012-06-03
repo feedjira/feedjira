@@ -23,7 +23,6 @@ Gem::Specification.new do |s|
   s.add_dependency 'sax-machine',       '~> 0.1.0'
   s.add_dependency 'curb',              '~> 0.8.0'
   s.add_dependency 'loofah',            '~> 1.2.1'
-  s.add_dependency 'gorillib',          '~> 0.1.9'
 
   s.add_development_dependency 'rspec', '~> 2.10.0'
 end
