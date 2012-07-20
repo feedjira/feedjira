@@ -292,7 +292,19 @@ module Feedzirra
             options[:on_failure].call(url, c.response_code, c.header_str, c.body_str) if options.has_key?(:on_failure)
           end
         end
-        
+
+        #
+        # trigger on_failure for 404s
+        #
+        curl.on_complete do |c|
+          add_url_to_multi(multi, url_queue.shift, url_queue, responses, options) unless url_queue.empty?
+          responses[url] = c.response_code
+
+          if c.response_code == 404 && options.has_key?(:on_failure)
+            options[:on_failure].call(url, c.response_code, c.header_str, c.body_str)
+          end
+        end
+
         curl.on_failure do |c, err|
           add_url_to_multi(multi, url_queue.shift, url_queue, responses, options) unless url_queue.empty?
           responses[url] = c.response_code

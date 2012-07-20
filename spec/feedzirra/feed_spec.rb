@@ -373,6 +373,33 @@ describe Feedzirra::Feed do
 
       describe 'on failure' do
         before(:each) do
+          @headers = "HTTP/1.0 500 Something Bad\r\nDate: Thu, 29 Jan 2009 03:55:24 GMT\r\nServer: Apache\r\nX-FB-Host: chi-write6\r\nLast-Modified: Wed, 28 Jan 2009 04:10:32 GMT\r\n"
+          @body = 'Sorry, something broke'
+
+          @easy_curl.stub!(:response_code).and_return(500)
+          @easy_curl.stub!(:header_str).and_return(@headers)
+          @easy_curl.stub!(:body_str).and_return(@body)
+        end
+
+        it 'should call proc if :on_failure option is passed' do
+          failure = lambda { |url, feed| }
+          failure.should_receive(:call).with(@paul_feed[:url], 500, @headers, @body)
+          Feedzirra::Feed.add_url_to_multi(@multi, @paul_feed[:url], [], {}, { :on_failure => failure })
+          @easy_curl.on_failure.call(@easy_curl)
+        end
+        
+        it 'should return the http code in the responses' do
+          responses = {}
+          Feedzirra::Feed.add_url_to_multi(@multi, @paul_feed[:url], [], responses, {})
+          @easy_curl.on_failure.call(@easy_curl)
+
+          responses.length.should == 1
+          responses[@paul_feed[:url]].should == 500
+        end
+      end
+
+      describe 'on complete for 404s' do
+        before(:each) do
           @headers = "HTTP/1.0 404 Not Found\r\nDate: Thu, 29 Jan 2009 03:55:24 GMT\r\nServer: Apache\r\nX-FB-Host: chi-write6\r\nLast-Modified: Wed, 28 Jan 2009 04:10:32 GMT\r\n"
           @body = 'Page could not be found.'
 
@@ -382,16 +409,16 @@ describe Feedzirra::Feed do
         end
 
         it 'should call proc if :on_failure option is passed' do
-          failure = lambda { |url, feed| }
-          failure.should_receive(:call).with(@paul_feed[:url], 404, @headers, @body)
-          Feedzirra::Feed.add_url_to_multi(@multi, @paul_feed[:url], [], {}, { :on_failure => failure })
-          @easy_curl.on_failure.call(@easy_curl)
+          complete = lambda { |url| }
+          complete.should_receive(:call).with(@paul_feed[:url], 404, @headers, @body)
+          Feedzirra::Feed.add_url_to_multi(@multi, @paul_feed[:url], [], {}, { :on_failure => complete })
+          @easy_curl.on_complete.call(@easy_curl)
         end
         
         it 'should return the http code in the responses' do
           responses = {}
           Feedzirra::Feed.add_url_to_multi(@multi, @paul_feed[:url], [], responses, {})
-          @easy_curl.on_failure.call(@easy_curl)
+          @easy_curl.on_complete.call(@easy_curl)
 
           responses.length.should == 1
           responses[@paul_feed[:url]].should == 404
