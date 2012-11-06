@@ -36,7 +36,7 @@ describe Feedzirra::Parser::RSSFeedBurnerEntry do
   end
 
   it "should parse the published date" do
-    @entry.published.to_s.should == "Wed Nov 02 17:25:27 UTC 2011"
+    @entry.published.should == Time.parse_safely("Wed Nov 02 17:25:27 UTC 2011")
   end
 
   it "should parse the categories" do

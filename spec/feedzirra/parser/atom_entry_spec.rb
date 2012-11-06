@@ -32,7 +32,7 @@ describe Feedzirra::Parser::AtomEntry do
   end
 
   it "should parse the published date" do
-    @entry.published.to_s.should == "Fri Jan 16 18:21:00 UTC 2009"
+    @entry.published.should == Time.parse_safely("Fri Jan 16 18:21:00 UTC 2009")
   end
 
   it "should parse the categories" do
@@ -40,7 +40,7 @@ describe Feedzirra::Parser::AtomEntry do
   end
 
   it "should parse the updated date" do
-    @entry.updated.to_s.should == "Fri Jan 16 18:21:00 UTC 2009"
+    @entry.updated.should == Time.parse_safely("Fri Jan 16 18:21:00 UTC 2009")
   end
 
   it "should parse the id" do

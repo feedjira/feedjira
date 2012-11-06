@@ -1,6 +1,4 @@
 require File.dirname(__FILE__) + '/../spec_helper'
-require 'rubygems'
-require 'active_support'
 
 describe Feedzirra::FeedUtilities do
   before(:each) do
