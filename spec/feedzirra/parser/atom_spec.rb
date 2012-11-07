@@ -13,6 +13,10 @@ describe Feedzirra::Parser::Atom do
     it "should return false for an rss feedburner feed" do
       Feedzirra::Parser::Atom.should_not be_able_to_parse(sample_rss_feed_burner_feed)
     end
+
+    it "should return true for an atom feed that has line breaks in between attributes in the <feed> node" do
+      Feedzirra::Parser::Atom.should be_able_to_parse(sample_atom_feed_line_breaks)
+    end
   end
   
   describe "parsing" do

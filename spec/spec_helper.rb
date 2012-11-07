@@ -16,12 +16,20 @@ def sample_atom_feed
   load_sample("AmazonWebServicesBlog.xml")
 end
 
+def sample_atom_feed_line_breaks
+  load_sample("AtomFeedWithSpacesAroundEquals.xml")
+end
+
 def sample_atom_entry_content
   load_sample("AmazonWebServicesBlogFirstEntryContent.xml")
 end
 
 def sample_itunes_feed
   load_sample("itunes.xml")
+end
+
+def sample_itunes_feed_with_spaces
+  load_sample("ITunesWithSpacesInAttributes.xml")
 end
 
 def sample_rdf_feed

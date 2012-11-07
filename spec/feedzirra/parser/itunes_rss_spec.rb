@@ -6,6 +6,10 @@ describe Feedzirra::Parser::ITunesRSS do
       Feedzirra::Parser::ITunesRSS.should be_able_to_parse(sample_itunes_feed)
     end
 
+    it "should return true for an itunes RSS feed with spaces between attribute names, equals sign, and values" do
+      Feedzirra::Parser::ITunesRSS.should be_able_to_parse(sample_itunes_feed_with_spaces)
+    end
+
     it "should return fase for an atom feed" do
       Feedzirra::Parser::ITunesRSS.should_not be_able_to_parse(sample_atom_feed)
     end
