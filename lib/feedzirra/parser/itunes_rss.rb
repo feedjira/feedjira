@@ -40,7 +40,7 @@ module Feedzirra
       elements :item, :as => :entries, :class => ITunesRSSItem
 
       def self.able_to_parse?(xml)
-        /xmlns:itunes=\"http:\/\/www.itunes.com\/dtds\/podcast-1.0.dtd\"/i =~ xml
+        /xmlns:itunes\s?=\s?\"http:\/\/www.itunes.com\/dtds\/podcast-1.0.dtd\"/i =~ xml
       end
 
     end
