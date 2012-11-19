@@ -376,7 +376,7 @@ module Feedzirra
     # A Time object of the last modified date or nil if it cannot be found in the headers.
     def self.last_modified_from_header(header)
       header =~ /.*Last-Modified:\s(.*)\r/
-      Time.parse($1) if $1
+      Time.parse_safely($1) if $1
     end
   end
 end
