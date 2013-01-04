@@ -146,5 +146,48 @@ describe Feedzirra::FeedUtilities do
         @feed.entries.should include(@old_entry)
       end
     end
+
+    describe "changing the url of an existing entry" do
+      before(:each) do
+        # I'm using the Atom class when I know I should be using a different one. However, this update_from_feed
+        # method would only be called against a feed item.
+        @feed = Feedzirra::Parser::Atom.new
+        @feed.title    = "A title"
+        @feed.url      = "http://pauldix.net"
+        @feed.feed_url = "http://feeds.feedburner.com/PaulDixExplainsNothing"
+        @feed.updated  = false
+        @updated_feed = @feed.dup
+
+        @old_entry = Feedzirra::Parser::AtomEntry.new
+        @old_entry.url = "http://pauldix.net/old.html"
+        @old_entry.published = (Time.now - 10).to_s
+
+        @entry = Feedzirra::Parser::AtomEntry.new
+        @entry.published = (Time.now + 10).to_s
+        @entry.entry_id = "entry_id"
+        @entry.url = "http://pauldix.net/entry.html"
+
+        # only difference is a changed url
+        @entry_changed_url = @entry.dup
+        @entry_changed_url.url = "http://pauldix.net/updated.html"
+
+        # entry with changed url must be first
+        @feed.entries << @entry
+        @feed.entries << @old_entry
+        @updated_feed.entries << @entry_changed_url
+        @updated_feed.entries << @old_entry
+      end
+
+      it "should not put the complete feed into new_entries" do
+        @feed.update_from_feed(@updated_feed)
+
+        @feed.new_entries.should_not include(@entry_changed_url)
+        @feed.new_entries.should_not include(@old_entry)
+
+        # don't return complete feed
+        @feed.new_entries.size.should == 0
+        @feed.new_entries.size.should_not == 2
+      end
+    end
   end
 end
