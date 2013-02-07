@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.homepage = 'http://github.com/pauldix/feedzirra'
 
   s.summary     = 'A feed fetching and parsing library'
-  s.description = 'A feed fetching and parsing library that treats the internet like Godzilla treats Japan: it dominates and eats all.'
+  s.description = 'A library designed to retrieve and parse feeds as quickly as possible'
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
