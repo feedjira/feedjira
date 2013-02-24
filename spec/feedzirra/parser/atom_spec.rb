@@ -44,6 +44,16 @@ describe Feedzirra::Parser::Atom do
       @feed.feed_url.should == "http://aws.typepad.com/aws/atom.xml"
     end
 
+    it "should parse no hub urls" do
+      @feed.hubs.count.should == 0
+    end
+
+    it "should parse the hub urls" do
+      feed_with_hub = Feedzirra::Parser::Atom.parse(load_sample("SamRuby.xml"))
+      feed_with_hub.hubs.count.should == 1
+      feed_with_hub.hubs.first.should == "http://pubsubhubbub.appspot.com/"
+    end
+
     it "should parse entries" do
       @feed.entries.size.should == 10
     end

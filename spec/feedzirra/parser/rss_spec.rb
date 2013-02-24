@@ -37,6 +37,10 @@ describe Feedzirra::Parser::RSS do
       @feed.url.should == "http://tenderlovemaking.com"
     end
 
+    it "should not parse hub urls" do
+      @feed.hubs.should == nil
+    end
+
     it "should provide an accessor for the feed_url" do
       @feed.respond_to?(:feed_url).should == true
       @feed.respond_to?(:feed_url=).should == true

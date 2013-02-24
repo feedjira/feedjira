@@ -40,6 +40,11 @@ describe Feedzirra::Parser::RSSFeedBurner do
       @feed.url.should == "http://techcrunch.com"
     end
 
+    it "should parse the hub urls" do
+      @feed.hubs.count.should == 2
+      @feed.hubs.first.should == "http://pubsubhubbub.appspot.com/"
+    end
+
     it "should provide an accessor for the feed_url" do
       @feed.respond_to?(:feed_url).should == true
       @feed.respond_to?(:feed_url=).should == true
