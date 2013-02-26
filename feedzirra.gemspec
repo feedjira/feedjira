@@ -16,13 +16,14 @@ Gem::Specification.new do |s|
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.require_paths = ['lib']
-  
+
   s.platform = Gem::Platform::RUBY
 
   s.add_dependency 'nokogiri',          '~> 1.5.3'
   s.add_dependency 'sax-machine',       '~> 0.2.0.rc1'
   s.add_dependency 'curb',              '~> 0.8.0'
   s.add_dependency 'loofah',            '~> 1.2.1'
+  s.add_dependency 'activesupport',     '~> 3.2.1'
 
   s.add_development_dependency 'rspec', '~> 2.10.0'
 end
