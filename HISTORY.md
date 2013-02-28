@@ -1,4 +1,5 @@
 # HEAD
+* Added image to the RSS Entry Parser [[#103](https://github.com/pauldix/feedzirra/pull/103)].
 * Compatibility fixes for Ruby 2.0 [[#136](https://github.com/pauldix/feedzirra/pull/136)].
 * Remove gorillib dependency [[#113](https://github.com/pauldix/feedzirra/pull/113)].
 
