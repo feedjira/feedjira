@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.version = Feedzirra::VERSION
 
   s.authors  = ['Paul Dix', 'Julien Kirch', "Ezekiel Templin"]
-  s.date     = Date.today
+  s.date     = '2013-02-28'
   s.email    = 'feedzirra@googlegroups.com'
   s.homepage = 'http://github.com/pauldix/feedzirra'
 
@@ -21,8 +21,8 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'nokogiri',          '~> 1.5.3'
   s.add_dependency 'sax-machine',       '~> 0.2.0.rc1'
-  s.add_dependency 'curb',              '~> 0.8.0'
+  s.add_dependency 'curb',              '~> 0.8.1'
   s.add_dependency 'loofah',            '~> 1.2.1'
 
-  s.add_development_dependency 'rspec', '~> 2.10.0'
+  s.add_development_dependency 'rspec', '~> 2.13.0'
 end
