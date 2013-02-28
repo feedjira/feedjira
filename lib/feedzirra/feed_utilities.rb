@@ -29,9 +29,9 @@ module Feedzirra
       self.entries.unshift(*self.new_entries)
 
       @updated = false
+
       UPDATABLE_ATTRIBUTES.each do |name|
-        updated = update_attribute(feed, name)
-        @updated ||= updated
+        @updated ||= update_attribute(feed, name)
       end
     end
 
@@ -40,6 +40,9 @@ module Feedzirra
 
       if old_value != new_value
         send("#{name}=", new_value)
+        true
+      else
+        false
       end
     end
 
