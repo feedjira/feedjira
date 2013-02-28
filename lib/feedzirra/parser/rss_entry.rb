@@ -13,6 +13,9 @@ module Feedzirra
       element :author, :as => :author
       element :"content:encoded", :as => :content
       element :description, :as => :summary
+
+      element :"media:content", :as => :image, :value => :url
+      element :enclosure, :as => :image, :value => :url
       
       element :pubDate, :as => :published
       element :pubdate, :as => :published
@@ -25,8 +28,7 @@ module Feedzirra
       element :issued, :as => :published
       elements :category, :as => :categories
       
-      element :guid, :as => :entry_id
-      
+      element :guid, :as => :entry_id     
     end
 
   end

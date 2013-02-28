@@ -41,6 +41,7 @@ module Feedzirra
       self.author.sanitize! if self.author
       self.summary.sanitize! if self.summary
       self.content.sanitize! if self.content
+      self.image.sanitize! if self.image
     end
 
     alias_method :last_modified, :published
