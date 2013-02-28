@@ -1,4 +1,5 @@
 # HEAD
+* Compatibility fixes for Ruby 2.0 [[#136](https://github.com/pauldix/feedzirra/pull/136)].
 * Remove gorillib dependency [[#113](https://github.com/pauldix/feedzirra/pull/113)].
 
 # 0.2.0.rc2
