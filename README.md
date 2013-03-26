@@ -22,100 +22,107 @@ In MRI the date parsing code is written in ruby and is optimized for readability
 
 [A gist of the following code](http://gist.github.com/57285)
 
-    require 'feedzirra'
+```ruby
+  require 'feedzirra'
 
-    # fetching a single feed
-    feed = Feedzirra::Feed.fetch_and_parse("http://feeds.feedburner.com/PaulDixExplainsNothing")
+  # fetching a single feed
+  feed = Feedzirra::Feed.fetch_and_parse("http://feeds.feedburner.com/PaulDixExplainsNothing")
 
-    # feed and entries accessors
-    feed.title          # => "Paul Dix Explains Nothing"
-    feed.url            # => "http://www.pauldix.net"
-    feed.feed_url       # => "http://feeds.feedburner.com/PaulDixExplainsNothing"
-    feed.etag           # => "GunxqnEP4NeYhrqq9TyVKTuDnh0"
-    feed.last_modified  # => Sat Jan 31 17:58:16 -0500 2009 # it's a Time object
+  # feed and entries accessors
+  feed.title          # => "Paul Dix Explains Nothing"
+  feed.url            # => "http://www.pauldix.net"
+  feed.feed_url       # => "http://feeds.feedburner.com/PaulDixExplainsNothing"
+  feed.etag           # => "GunxqnEP4NeYhrqq9TyVKTuDnh0"
+  feed.last_modified  # => Sat Jan 31 17:58:16 -0500 2009 # it's a Time object
 
-    entry = feed.entries.first
-    entry.title      # => "Ruby Http Client Library Performance"
-    entry.url        # => "http://www.pauldix.net/2009/01/ruby-http-client-library-performance.html"
-    entry.author     # => "Paul Dix"
-    entry.summary    # => "..."
-    entry.content    # => "..."
-    entry.published  # => Thu Jan 29 17:00:19 UTC 2009 # it's a Time object
-    entry.categories # => ["...", "..."]
+  entry = feed.entries.first
+  entry.title      # => "Ruby Http Client Library Performance"
+  entry.url        # => "http://www.pauldix.net/2009/01/ruby-http-client-library-performance.html"
+  entry.author     # => "Paul Dix"
+  entry.summary    # => "..."
+  entry.content    # => "..."
+  entry.published  # => Thu Jan 29 17:00:19 UTC 2009 # it's a Time object
+  entry.categories # => ["...", "..."]
 
-    # sanitizing an entry's content
-    entry.title.sanitize   # => returns the title with harmful stuff escaped
-    entry.author.sanitize  # => returns the author with harmful stuff escaped
-    entry.content.sanitize # => returns the content with harmful stuff escaped
-    entry.content.sanitize! # => returns content with harmful stuff escaped and replaces original (also exists for author and title)
-    entry.sanitize!         # => sanitizes the entry's title, author, and content in place (as in, it changes the value to clean versions)
-    feed.sanitize_entries!  # => sanitizes all entries in place
+  # sanitizing an entry's content
+  entry.title.sanitize   # => returns the title with harmful stuff escaped
+  entry.author.sanitize  # => returns the author with harmful stuff escaped
+  entry.content.sanitize # => returns the content with harmful stuff escaped
+  entry.content.sanitize! # => returns content with harmful stuff escaped and replaces original (also exists for author and title)
+  entry.sanitize!         # => sanitizes the entry's title, author, and content in place (as in, it changes the value to clean versions)
+  feed.sanitize_entries!  # => sanitizes all entries in place
 
-    # updating a single feed
-    updated_feed = Feedzirra::Feed.update(feed)
+  # updating a single feed
+  updated_feed = Feedzirra::Feed.update(feed)
 
-    # an updated feed has the following extra accessors
-    updated_feed.updated?     # returns true if any of the feed attributes have been modified. will return false if only new entries
-    updated_feed.new_entries  # a collection of the entry objects that are newer than the latest in the feed before update
+  # an updated feed has the following extra accessors
+  updated_feed.updated?     # returns true if any of the feed attributes have been modified. will return false if only new entries
+  updated_feed.new_entries  # a collection of the entry objects that are newer than the latest in the feed before update
 
-    # fetching multiple feeds
-    feed_urls = ["http://feeds.feedburner.com/PaulDixExplainsNothing", "http://feeds.feedburner.com/trottercashion"]
-    feeds = Feedzirra::Feed.fetch_and_parse(feed_urls)
+  # fetching multiple feeds
+  feed_urls = ["http://feeds.feedburner.com/PaulDixExplainsNothing", "http://feeds.feedburner.com/trottercashion"]
+  feeds = Feedzirra::Feed.fetch_and_parse(feed_urls)
 
-    # feeds is now a hash with the feed_urls as keys and the parsed feed objects as values. If an error was thrown
-    # there will be a Fixnum of the http response code instead of a feed object
+  # feeds is now a hash with the feed_urls as keys and the parsed feed objects as values. If an error was thrown
+  # there will be a Fixnum of the http response code instead of a feed object
 
-    # updating multiple feeds. it expects a collection of feed objects
-    updated_feeds = Feedzirra::Feed.update(feeds.values)
+  # updating multiple feeds. it expects a collection of feed objects
+  updated_feeds = Feedzirra::Feed.update(feeds.values)
 
-    # defining custom behavior on failure or success. note that a return status of 304 (not updated) will call the on_success handler
-    feed = Feedzirra::Feed.fetch_and_parse("http://feeds.feedburner.com/PaulDixExplainsNothing",
-        :on_success => lambda [|url, feed| puts feed.title ],
-        :on_failure => lambda [|url, response_code, response_header, response_body| puts response_body ])
-    # if a collection was passed into fetch_and_parse, the handlers will be called for each one
+  # defining custom behavior on failure or success. note that a return status of 304 (not updated) will call the on_success handler
+  feed = Feedzirra::Feed.fetch_and_parse("http://feeds.feedburner.com/PaulDixExplainsNothing",
+      :on_success => lambda [|url, feed| puts feed.title ],
+      :on_failure => lambda [|url, response_code, response_header, response_body| puts response_body ])
+  # if a collection was passed into fetch_and_parse, the handlers will be called for each one
 
-    # the behavior for the handlers when using Feedzirra::Feed.update is slightly different. The feed passed into on_success will be
-    # the updated feed with the standard updated accessors. on failure it will be the original feed object passed into update
+  # the behavior for the handlers when using Feedzirra::Feed.update is slightly different. The feed passed into on_success will be
+  # the updated feed with the standard updated accessors. on failure it will be the original feed object passed into update
 
-    # fetching a feed via a proxy (optional)
-    feed = Feedzirra::Feed.fetch_and_parse("http://feeds.feedburner.com/PaulDixExplainsNothing", [:proxy_url => '10.0.0.1', :proxy_port => 3084])
+  # fetching a feed via a proxy (optional)
+  feed = Feedzirra::Feed.fetch_and_parse("http://feeds.feedburner.com/PaulDixExplainsNothing", [:proxy_url => '10.0.0.1', :proxy_port => 3084])
 
+```
 ## Extending
 
 ### Adding a feed parsing class
 
-    # Adds a new feed parsing class, this class will be used first
-    Feedzirra::Feed.add_feed_class MyFeedClass
+```ruby
+  # Adds a new feed parsing class, this class will be used first
+  Feedzirra::Feed.add_feed_class MyFeedClass
+```
 
 ### Adding attributes to all feeds types / all entries types
 
-    # Add the generator attribute to all feed types
-    Feedzirra::Feed.add_common_feed_element('generator')
-    Feedzirra::Feed.fetch_and_parse("href="http://www.pauldix.net/atom.xml").generator # => 'TypePad'
+```ruby
+  # Add the generator attribute to all feed types
+  Feedzirra::Feed.add_common_feed_element('generator')
+  Feedzirra::Feed.fetch_and_parse("href="http://www.pauldix.net/atom.xml").generator # => 'TypePad'
 
-    # Add some GeoRss information
-    Feedzirra::Feed.add_common_feed_entry_element('geo:lat', :as => :lat)
-    Feedzirra::Feed.fetch_and_parse("http://www.earthpublisher.com/georss.php").entries.each do |e|
-        p "lat: #[e.lat}, long: #{e.long]"
-    end
+  # Add some GeoRss information
+  Feedzirra::Feed.add_common_feed_entry_element('geo:lat', :as => :lat)
+  Feedzirra::Feed.fetch_and_parse("http://www.earthpublisher.com/georss.php").entries.each do |e|
+      p "lat: #[e.lat}, long: #{e.long]"
+  end
+```
 
 ### Adding attributes to only one class
 
 If you want to add attributes for only on class you simply have to declare them in the class
 
-    # Add some GeoRss information
-    require 'lib/feedzirra/parser/rss_entry'
+```ruby
+  # Add some GeoRss information
+  require 'lib/feedzirra/parser/rss_entry'
 
-    class Feedzirra::Parser::RSSEntry
-        element 'geo:lat', :as => :lat
-        element 'geo:long', :as => :long
-    end
+  class Feedzirra::Parser::RSSEntry
+      element 'geo:lat', :as => :lat
+      element 'geo:long', :as => :long
+  end
 
-    # Fetch a feed containing GeoRss info and print them
-    Feedzirra::Feed.fetch_and_parse("http://www.earthpublisher.com/georss.php").entries.each do |e|
-        p "lat: #[e.lat}, long: #{e.long]"
-    end
-
+  # Fetch a feed containing GeoRss info and print them
+  Feedzirra::Feed.fetch_and_parse("http://www.earthpublisher.com/georss.php").entries.each do |e|
+      p "lat: #[e.lat}, long: #{e.long]"
+  end
+```
 ## Benchmarks
 
 One of the goals of Feedzirra is speed. This includes not only parsing, but fetching multiple feeds as quickly as possible. I ran a benchmark getting 20 feeds 10 times using Feedzirra, rFeedParser, and FeedNormalizer. For more details the [benchmark code can be found in the project in spec/benchmarks/feedzirra_benchmarks.rb](https://github.com/pauldix/feedzirra/blob/7fb5634c5c16e9c6ec971767b462c6518cd55f5d/spec/benchmarks/feedzirra_benchmarks.rb)
