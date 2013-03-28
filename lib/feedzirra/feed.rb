@@ -181,7 +181,9 @@ module Feedzirra
     # * :if_none_match - String, an etag for the request that was stored previously.
     # * :on_success - Block that gets executed after a successful request.
     # * :on_failure - Block that gets executed after a failed request.
-    # * :correlated_objects - The objects that each url should be associated with
+    # * :on_complete - Block that gets executed after a request in both success and failure cases.
+    # * :correlated_objects - The collection of objects used to correlate the feedzirra objects with yours.
+    #                         Your object will be available via the method correlated_object on the returned feed.
     # === Returns
     # A Feed object if a single URL is passed.
     #
@@ -237,6 +239,7 @@ module Feedzirra
     # [options<Hash>] Valid keys for this argument as as followed:
     #                 * :on_success - Block that gets executed after a successful request.
     #                 * :on_failure - Block that gets executed after a failed request.
+    #                 * :on_complete - Block that gets executed after a request in both success and failure cases.
     #                 * all parameters defined in setup_easy
     # === Returns
     # A updated Feed object if a single URL is passed.
@@ -311,6 +314,7 @@ module Feedzirra
           if c.response_code == 404 && options.has_key?(:on_failure)
             options[:on_failure].call(url, c.response_code, c.header_str, c.body_str)
           end
+          options[:on_complete].call(url) if options.has_key?(:on_complete)
         end
 
         curl.on_failure do |c, err|
@@ -361,6 +365,10 @@ module Feedzirra
           rescue Exception => e
             options[:on_failure].call(feed, c.response_code, c.header_str, c.body_str) if options.has_key?(:on_failure)
           end
+        end
+
+        curl.on_complete do |c|
+          options[:on_complete].call(feed) if options.has_key?(:on_complete)
         end
 
         curl.on_failure do |c, err|
