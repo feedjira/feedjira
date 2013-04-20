@@ -62,7 +62,7 @@ module Feedzirra
       latest_entry = self.entries.first
       found_new_entries = []
       feed.entries.each do |entry|
-        break if entry.id == latest_entry.id
+        break if entry.entry_id == latest_entry.entry_id || entry.url == latest_entry.url
         found_new_entries << entry
       end
       found_new_entries
