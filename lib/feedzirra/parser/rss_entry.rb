@@ -17,6 +17,7 @@ module Feedzirra
       element :"media:content", :as => :image, :value => :url
       element :enclosure, :as => :image, :value => :url
       
+      element :published
       element :pubDate, :as => :published
       element :pubdate, :as => :published
       element :"dc:date", :as => :published
