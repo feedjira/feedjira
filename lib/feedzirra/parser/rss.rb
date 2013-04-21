@@ -9,7 +9,6 @@ module Feedzirra
       element :description
       element :link, :as => :url
       elements :item, :as => :entries, :class => RSSEntry
-      element :published
 
       attr_accessor :feed_url
 
