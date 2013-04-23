@@ -113,6 +113,8 @@ module Feedzirra
     # Possible parameters:
     # * :user_agent          - overrides the default user agent.
     # * :compress            - any value to enable compression
+    # * :cookiefile          - read the initial set of cookies from the given file.
+    # * :cookies             - exact contents of a cookie header
     # * :http_authentication - array containing http authentication parameters
     # * :proxy_url           - proxy url
     # * :proxy_port          - proxy port
