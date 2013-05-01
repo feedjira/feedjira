@@ -1,7 +1,7 @@
-module Feedzirra  
+module Feedzirra
   class Feed
     USER_AGENT = "feedzirra http://github.com/pauldix/feedzirra/tree/master"
-    
+
     # Takes a raw XML feed and attempts to parse it. If no parser is available a Feedzirra::NoParserAvailable exception is raised.
     # You can pass a block to be called when there's an error during the parsing.
     # === Parameters
@@ -19,7 +19,7 @@ module Feedzirra
     end
 
     # Determines the correct parser class to use for parsing the feed.
-    # 
+    #
     # === Parameters
     # [xml<String>] The XML that you would like determine the parser for.
     # === Returns
@@ -35,7 +35,7 @@ module Feedzirra
     # [klass<Constant>] The class/constant that you want to register.
     # === Returns
     # A updated array of feed parser class names.
-    def self.add_feed_class(klass) 
+    def self.add_feed_class(klass)
       feed_classes.unshift klass
     end
 
@@ -46,7 +46,7 @@ module Feedzirra
     def self.feed_classes
       @feed_classes ||= [Feedzirra::Parser::RSSFeedBurner, Feedzirra::Parser::GoogleDocsAtom, Feedzirra::Parser::AtomFeedBurner, Feedzirra::Parser::Atom, Feedzirra::Parser::ITunesRSS, Feedzirra::Parser::RSS]
     end
-    
+
     # Makes all registered feeds types look for the passed in element to parse.
     # This is actually just a call to element (a SAXMachine call) in the class.
     #
@@ -80,7 +80,7 @@ module Feedzirra
     def self.add_common_feed_entry_element(element_tag, options = {})
       call_on_each_feed_entry :element, element_tag, options
     end
-    
+
     # Makes all registered entry types look for the passed in elements to parse.
     # This is actually just a call to element (a SAXMachine call) in the class.
     #
@@ -144,7 +144,7 @@ module Feedzirra
     #                 * all parameters defined in setup_easy
     # === Returns
     # A String of XML if a single URL is passed.
-    # 
+    #
     # A Hash if multiple URL's are passed. The key will be the URL, and the value the XML.
     def self.fetch_raw(urls, options = {})
       url_queue = [*urls]
@@ -181,6 +181,9 @@ module Feedzirra
     # * :if_none_match - String, an etag for the request that was stored previously.
     # * :on_success - Block that gets executed after a successful request.
     # * :on_failure - Block that gets executed after a failed request.
+    # * :on_complete - Block that gets executed after a request in both success and failure cases.
+    # * :correlated_objects - The collection of objects used to correlate the feedzirra objects with yours.
+    #                         Your object will be available via the method correlated_object on the returned feed.
     # === Returns
     # A Feed object if a single URL is passed.
     #
@@ -189,13 +192,17 @@ module Feedzirra
       url_queue = [*urls]
       multi = Curl::Multi.new
       responses = {}
-      
+
+      if options.has_key?(:correlated_objects)
+        options[:full_queue] ||= url_queue.clone
+      end
+
       # I broke these down so I would only try to do 30 simultaneously because
       # I was getting weird errors when doing a lot. As one finishes it pops another off the queue.
       url_queue.slice!(0, 30).each do |url|
         add_url_to_multi(multi, url, url_queue, responses, options)
       end
- 
+
       multi.perform
       return urls.is_a?(String) ? responses.values.first : responses
     end
@@ -212,7 +219,7 @@ module Feedzirra
           gz =  Zlib::GzipReader.new(StringIO.new(c.body_str))
           xml = gz.read
           gz.close
-        rescue Zlib::GzipFile::Error 
+        rescue Zlib::GzipFile::Error
           # Maybe this is not gzipped?
           xml = c.body_str
         end
@@ -232,6 +239,7 @@ module Feedzirra
     # [options<Hash>] Valid keys for this argument as as followed:
     #                 * :on_success - Block that gets executed after a successful request.
     #                 * :on_failure - Block that gets executed after a failed request.
+    #                 * :on_complete - Block that gets executed after a request in both success and failure cases.
     #                 * all parameters defined in setup_easy
     # === Returns
     # A updated Feed object if a single URL is passed.
@@ -241,15 +249,15 @@ module Feedzirra
       feed_queue = [*feeds]
       multi = Curl::Multi.new
       responses = {}
-      
+
       feed_queue.slice!(0, 30).each do |feed|
         add_feed_to_multi(multi, feed, feed_queue, responses, options)
       end
-    
+
       multi.perform
       feeds.is_a?(Array) ? responses : responses.values.first
     end
-    
+
     # An abstraction for adding a feed by URL to the passed Curb::multi stack.
     #
     # === Parameters
@@ -261,6 +269,7 @@ module Feedzirra
     # [options<Hash>] Valid keys for this argument as as followed:
     #                 * :on_success - Block that gets executed after a successful request.
     #                 * :on_failure - Block that gets executed after a failed request.
+    #                 * :on_complete - Block that gets executed after a request in both success and failure cases.
     #                 * all parameters defined in setup_easy
     # === Returns
     # The updated Curl::Multi object with the request details added to it's stack.
@@ -271,16 +280,19 @@ module Feedzirra
         curl.headers["If-None-Match"]     = options[:if_none_match] if options.has_key?(:if_none_match)
 
         curl.on_success do |c|
+
+          correlated_object = options[:correlated_objects][options[:full_queue].index(url)] if options.has_key?(:correlated_objects)
           add_url_to_multi(multi, url_queue.shift, url_queue, responses, options) unless url_queue.empty?
           xml = decode_content(c)
           klass = determine_feed_parser_for_xml(xml)
-          
+
           if klass
             begin
               feed = klass.parse(xml, Proc.new{|message| warn "Error while parsing [#{url}] #{message}" })
               feed.feed_url = c.last_effective_url
               feed.etag = etag_from_header(c.header_str)
               feed.last_modified = last_modified_from_header(c.header_str)
+              feed.correlated_object = correlated_object if options.has_key?(:correlated_objects)
               responses[url] = feed
               options[:on_success].call(url, feed) if options.has_key?(:on_success)
             rescue Exception => e
@@ -299,10 +311,10 @@ module Feedzirra
         curl.on_complete do |c|
           add_url_to_multi(multi, url_queue.shift, url_queue, responses, options) unless url_queue.empty?
           responses[url] = c.response_code
-
           if c.response_code == 404 && options.has_key?(:on_failure)
             options[:on_failure].call(url, c.response_code, c.header_str, c.body_str)
           end
+          options[:on_complete].call(url) if options.has_key?(:on_complete)
         end
 
         curl.on_failure do |c, err|
@@ -329,10 +341,11 @@ module Feedzirra
     # [options<Hash>] Valid keys for this argument as as followed:
     #                 * :on_success - Block that gets executed after a successful request.
     #                 * :on_failure - Block that gets executed after a failed request.
+    #                 * :on_complete - Block that gets executed after a request in both success and failure cases.
     #                 * all parameters defined in setup_easy
     # === Returns
     # The updated Curl::Multi object with the request details added to it's stack.
-    def self.add_feed_to_multi(multi, feed, feed_queue, responses, options) 
+    def self.add_feed_to_multi(multi, feed, feed_queue, responses, options)
       easy = Curl::Easy.new(feed.feed_url) do |curl|
         setup_easy curl, options
         curl.headers["If-Modified-Since"] = feed.last_modified.httpdate if feed.last_modified
@@ -354,6 +367,10 @@ module Feedzirra
           end
         end
 
+        curl.on_complete do |c|
+          options[:on_complete].call(feed) if options.has_key?(:on_complete)
+        end
+
         curl.on_failure do |c, err|
           add_feed_to_multi(multi, feed_queue.shift, feed_queue, responses, options) unless feed_queue.empty?
           response_code = c.response_code
@@ -370,7 +387,7 @@ module Feedzirra
     end
 
     # Determines the etag from the request headers.
-    # 
+    #
     # === Parameters
     # [header<String>] Raw request header returned from the request
     # === Returns

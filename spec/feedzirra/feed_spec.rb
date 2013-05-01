@@ -563,7 +563,22 @@ describe Feedzirra::Feed do
       it 'should slice the feeds into groups of thirty for processing'
       it "should return a feed object if a single feed is passed in"
       it "should return an return an array of feed objects if multiple feeds are passed in"
-      
+
+      it "should set the correlated object properly" do
+        @my_objects = {
+          sample_feedburner_atom_feed: 'crazytown',
+          sample_wfw_feed: 'andanotherone'
+        }
+        on_success = lambda { |url, feed|
+          feed.correlated_object.should == @my_objects[url]
+        }
+        Feedzirra::Feed.fetch_and_parse(
+          [sample_feedburner_atom_feed, sample_wfw_feed], {
+          correlated_objects: @my_objects.values,
+          on_success: on_success
+        })
+      end
+
       it "should set if modified since as an option if passed" do
         modified_time = Time.parse_safely("Wed, 28 Jan 2009 04:10:32 GMT")
         Feedzirra::Feed.should_receive(:add_url_to_multi).with(anything, anything, anything, anything, {:if_modified_since => modified_time}).any_number_of_times
