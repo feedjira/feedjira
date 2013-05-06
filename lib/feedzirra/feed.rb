@@ -129,6 +129,8 @@ module Feedzirra
       curl.max_redirects = options[:max_redirects] if options[:max_redirects]
       curl.timeout = options[:timeout] if options[:timeout]
       curl.ssl_verify_host = options[:ssl_verify_host] if options.has_key?(:ssl_verify_host)
+      curl.ssl_version = options[:ssl_version] if options.has_key?(:ssl_version)
+      curl.ssl_verify_peer = options[:ssl_verify_peer] if options.has_key?(:ssl_verify_peer)
 
       curl.follow_location = true
     end
