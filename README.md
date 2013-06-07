@@ -101,7 +101,7 @@ In MRI the date parsing code is written in ruby and is optimized for readability
 
 ### Adding attributes to only one class
 
-If you want to add attributes for only on class you simply have to declare them in the class
+If you want to add attributes for only one class you simply have to declare them in the class
 
     # Add some GeoRss information
     require 'lib/feedzirra/parser/rss_entry'
@@ -152,9 +152,9 @@ Here are some more specific TODOs.
 ## LICENSE
 
 (The MIT License)
- 
+
 Copyright (c) 2009-2012:
- 
+
 - [Paul Dix](http://pauldix.net)
 - [Julien Kirch](http://archiloque.net/)
 - [Ezekiel Templin](http://zeke.templ.in/)
@@ -166,10 +166,10 @@ without limitation the rights to use, copy, modify, merge, publish,
 distribute, sublicense, and/or sell copies of the Software, and to
 permit persons to whom the Software is furnished to do so, subject to
 the following conditions:
- 
+
 The above copyright notice and this permission notice shall be
 included in all copies or substantial portions of the Software.
- 
+
 THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
 EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
 MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
