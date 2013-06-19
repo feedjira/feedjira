@@ -22,6 +22,8 @@ module Feedzirra
       element :"itunes:keywords", :as => :itunes_keywords
       element :"itunes:subtitle", :as => :itunes_subtitle
       element :"itunes:image", :value => :href, :as => :itunes_image
+      element :"itunes:isClosedCaptioned", :as => :itunes_closed_captioned
+      element :"itunes:order", :as => :itunes_order
       # If summary is not present, use the description tag
       element :"itunes:summary", :as => :itunes_summary
       element :enclosure, :value => :length, :as => :enclosure_length
