@@ -13,7 +13,7 @@ module Feedzirra
     end
 
     def updated?
-      @updated
+      @updated || false
     end
 
     def new_entries
