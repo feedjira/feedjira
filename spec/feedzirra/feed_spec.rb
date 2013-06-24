@@ -473,7 +473,7 @@ describe Feedzirra::Feed do
           complete = lambda { |url| }
           complete.should_receive(:call).with(@paul_feed[:url], 404, @headers, @body)
           Feedzirra::Feed.add_url_to_multi(@multi, @paul_feed[:url], [], {}, { :on_failure => complete })
-          @easy_curl.on_complete.call(@easy_curl)
+          @easy_curl.on_missing.call(@easy_curl)
         end
 
         it 'should return the http code in the responses' do
@@ -608,7 +608,7 @@ describe Feedzirra::Feed do
           success.should_receive(:call).with(@feed)
           @easy_curl.should_receive(:response_code).and_return(304)
           Feedzirra::Feed.add_feed_to_multi(@multi, @feed, [], {}, { :on_success => success })
-          @easy_curl.on_failure.call(@easy_curl)
+          @easy_curl.on_redirect.call(@easy_curl)
         end
 
         it 'should return the http code in the responses' do
