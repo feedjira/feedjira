@@ -182,7 +182,7 @@ describe Feedzirra::Feed do
         @cmock = stub('cmock', :header_str => '', :body_str => @paul_feed[:xml] )
         @multi = stub('curl_multi', :add => true, :perform => true)
         @curl_easy = stub('curl_easy')
-        @curl = stub('curl', :headers => {}, :follow_location= => true, :on_failure => true)
+        @curl = stub('curl', :headers => {}, :follow_location= => true, :on_failure => true, :on_complete => true)
         @curl.stub!(:on_success).and_yield(@cmock)
         
         Curl::Multi.stub!(:new).and_return(@multi)
@@ -230,10 +230,10 @@ describe Feedzirra::Feed do
         paul_response = stub('paul_response', :header_str => '', :body_str => @paul_feed[:xml] )
         trotter_response = stub('trotter_response', :header_str => '', :body_str => @trotter_feed[:xml] )
 
-        paul_curl = stub('paul_curl', :headers => {}, :follow_location= => true, :on_failure => true)
+        paul_curl = stub('paul_curl', :headers => {}, :follow_location= => true, :on_failure => true, :on_complete => true)
         paul_curl.stub!(:on_success).and_yield(paul_response)
 
-        trotter_curl = stub('trotter_curl', :headers => {}, :follow_location= => true, :on_failure => true)
+        trotter_curl = stub('trotter_curl', :headers => {}, :follow_location= => true, :on_failure => true, :on_complete => true)
         trotter_curl.stub!(:on_success).and_yield(trotter_response)
         
         Curl::Easy.should_receive(:new).with(@paul_feed[:url]).ordered.and_yield(paul_curl)
@@ -408,7 +408,7 @@ describe Feedzirra::Feed do
           complete = lambda { |url| }
           complete.should_receive(:call).with(@paul_feed[:url], 404, @headers, @body)
           Feedzirra::Feed.add_url_to_multi(@multi, @paul_feed[:url], [], {}, { :on_failure => complete })
-          @easy_curl.on_complete.call(@easy_curl)
+          @easy_curl.on_missing.call(@easy_curl)
         end
         
         it 'should return the http code in the responses' do
@@ -543,7 +543,7 @@ describe Feedzirra::Feed do
           success.should_receive(:call).with(@feed)
           @easy_curl.should_receive(:response_code).and_return(304)
           Feedzirra::Feed.add_feed_to_multi(@multi, @feed, [], {}, { :on_success => success })
-          @easy_curl.on_failure.call(@easy_curl)
+          @easy_curl.on_redirect.call(@easy_curl)
         end
         
         it 'should return the http code in the responses' do

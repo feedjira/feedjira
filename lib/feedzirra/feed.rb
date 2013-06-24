@@ -160,8 +160,9 @@ module Feedzirra
           curl.on_success do |c|
             responses[url] = decode_content(c)
           end
-          curl.on_failure do |c, err|
-            responses[url] = c.response_code
+
+          curl.on_complete do |c, err|
+            responses[url] = c.response_code unless responses.has_key?(url)
           end
         end
         multi.add(easy)
@@ -271,7 +272,6 @@ module Feedzirra
         curl.headers["If-None-Match"]     = options[:if_none_match] if options.has_key?(:if_none_match)
 
         curl.on_success do |c|
-          add_url_to_multi(multi, url_queue.shift, url_queue, responses, options) unless url_queue.empty?
           xml = decode_content(c)
           klass = determine_feed_parser_for_xml(xml)
           
@@ -298,21 +298,24 @@ module Feedzirra
         #
         curl.on_complete do |c|
           add_url_to_multi(multi, url_queue.shift, url_queue, responses, options) unless url_queue.empty?
-          responses[url] = c.response_code
+          responses[url] = c.response_code unless responses.has_key?(url)
+        end
 
+        curl.on_redirect do |c|
+          if c.response_code == 304 # it's not modified. this isn't an error condition
+            options[:on_success].call(url, nil) if options.has_key?(:on_success)
+          end
+        end
+
+        curl.on_missing do |c|
           if c.response_code == 404 && options.has_key?(:on_failure)
             options[:on_failure].call(url, c.response_code, c.header_str, c.body_str)
           end
         end
 
         curl.on_failure do |c, err|
-          add_url_to_multi(multi, url_queue.shift, url_queue, responses, options) unless url_queue.empty?
           responses[url] = c.response_code
-          if c.response_code == 304 # it's not modified. this isn't an error condition
-            options[:on_success].call(url, nil) if options.has_key?(:on_success)
-          else
-            options[:on_failure].call(url, c.response_code, c.header_str, c.body_str) if options.has_key?(:on_failure)
-          end
+          options[:on_failure].call(url, c.response_code, c.header_str, c.body_str) if options.has_key?(:on_failure)
         end
       end
       multi.add(easy)
@@ -341,7 +344,6 @@ module Feedzirra
 
         curl.on_success do |c|
           begin
-            add_feed_to_multi(multi, feed_queue.shift, feed_queue, responses, options) unless feed_queue.empty?
             updated_feed = Feed.parse(c.body_str){ |message| warn "Error while parsing [#{feed.feed_url}] #{message}" }
             updated_feed.feed_url = c.last_effective_url
             updated_feed.etag = etag_from_header(c.header_str)
@@ -354,16 +356,20 @@ module Feedzirra
           end
         end
 
-        curl.on_failure do |c, err|
-          add_feed_to_multi(multi, feed_queue.shift, feed_queue, responses, options) unless feed_queue.empty?
-          response_code = c.response_code
-          if response_code == 304 # it's not modified. this isn't an error condition
-            responses[feed.feed_url] = feed
+        curl.on_failure do |c, err| # response code 50X
+          responses[feed.url] = c.response_code
+          options[:on_failure].call(feed, c.response_code, c.header_str, c.body_str) if options.has_key?(:on_failure)
+        end
+
+        curl.on_redirect do |c, err| # response code 30X
+          if c.response_code == 304
             options[:on_success].call(feed) if options.has_key?(:on_success)
-          else
-            responses[feed.url] = c.response_code
-            options[:on_failure].call(feed, c.response_code, c.header_str, c.body_str) if options.has_key?(:on_failure)
           end
+        end
+
+        curl.on_complete do |c|
+          add_feed_to_multi(multi, feed_queue.shift, feed_queue, responses, options) unless feed_queue.empty?
+          responses[feed.feed_url] = feed unless responses.has_key?(feed.feed_url)
         end
       end
       multi.add(easy)
