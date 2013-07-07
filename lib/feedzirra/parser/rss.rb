@@ -11,6 +11,7 @@ module Feedzirra
       elements :item, :as => :entries, :class => RSSEntry
 
       attr_accessor :feed_url
+      attr_accessor :hubs
 
       def self.able_to_parse?(xml) #:nodoc:
         (/\<rss|\<rdf/ =~ xml) && !(/feedburner/ =~ xml)
