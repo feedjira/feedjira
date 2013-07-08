@@ -45,4 +45,7 @@ describe Feedzirra::Parser::ITunesRSSItem do
     @item.itunes_keywords.should == "salt, pepper, shaker, exciting"
   end  
 
+  it "should parse the image" do
+    @item.itunes_image.should == "http://example.com/podcasts/everything/AllAboutEverything.jpg"
+  end  
 end
