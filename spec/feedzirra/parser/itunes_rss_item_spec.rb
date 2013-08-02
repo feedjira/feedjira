@@ -29,8 +29,8 @@ describe Feedzirra::Parser::ITunesRSSItem do
     @item.enclosure_url.should == "http://example.com/podcasts/everything/AllAboutEverythingEpisode3.m4a"
   end
 
-  it "should parse the guid" do
-    @item.guid.should == "http://example.com/podcasts/archive/aae20050615.m4a"
+  it "should parse the guid as id" do
+    @item.id.should == "http://example.com/podcasts/archive/aae20050615.m4a"
   end
 
   it "should parse the published date" do
