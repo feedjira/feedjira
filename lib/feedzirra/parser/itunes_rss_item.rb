@@ -8,7 +8,7 @@ module Feedzirra
       include FeedEntryUtilities
 
       element :author
-      element :guid
+      element :guid, :as => :entry_id
       element :title
       element :link, :as => :url
       element :description, :as => :summary
