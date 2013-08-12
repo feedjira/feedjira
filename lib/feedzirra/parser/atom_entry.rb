@@ -19,7 +19,7 @@ module Feedzirra
       element :id, :as => :entry_id
       element :created, :as => :published
       element :issued, :as => :published
-      element :updated
+      element :updated, :as => :published
       element :modified, :as => :updated
       elements :category, :as => :categories, :value => :term
       elements :link, :as => :links, :value => :href

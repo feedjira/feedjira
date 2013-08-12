@@ -8,11 +8,12 @@ module Feedzirra
       include FeedEntryUtilities
 
       element :author
-      element :guid
+      element :guid, :as => :entry_id
       element :title
       element :link, :as => :url
       element :description, :as => :summary
       element :pubDate, :as => :published
+      element :"content:encoded", :as => :content
 
       # If author is not present use author tag on the item
       element :"itunes:author", :as => :itunes_author
