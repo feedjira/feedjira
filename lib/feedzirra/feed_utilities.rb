@@ -29,9 +29,9 @@ module Feedzirra
       self.entries.unshift(*self.new_entries)
 
       @updated = false
+
       UPDATABLE_ATTRIBUTES.each do |name|
-        updated = update_attribute(feed, name)
-        @updated ||= updated
+        @updated ||= update_attribute(feed, name)
       end
     end
 
@@ -40,6 +40,9 @@ module Feedzirra
 
       if old_value != new_value
         send("#{name}=", new_value)
+        true
+      else
+        false
       end
     end
 
@@ -54,19 +57,19 @@ module Feedzirra
       # it's to get around the fact that not all feeds have a published date.
       # however, they're always ordered with the newest one first.
       # So we go through the entries just parsed and insert each one as a new entry
-      # until we get to one that has the same url as the the newest for the feed
+      # until we get to one that has the same id as the the newest for the feed
       return feed.entries if self.entries.length == 0
       latest_entry = self.entries.first
       found_new_entries = []
       feed.entries.each do |entry|
-        break if entry.url == latest_entry.url
+        break if entry.id == latest_entry.id
         found_new_entries << entry
       end
       found_new_entries
     end
 
     def existing_entry?(test_entry)
-      entries.any? { |entry| entry.url == test_entry.url }
+      entries.any? { |entry| entry.id == test_entry.id }
     end
   end
 end

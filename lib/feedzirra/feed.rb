@@ -44,7 +44,7 @@ module Feedzirra
     # === Returns
     # A array of class names.
     def self.feed_classes
-      @feed_classes ||= [Feedzirra::Parser::RSSFeedBurner, Feedzirra::Parser::RSS, Feedzirra::Parser::GoogleDocsAtom, Feedzirra::Parser::AtomFeedBurner, Feedzirra::Parser::Atom, Feedzirra::Parser::ITunesRSS]
+      @feed_classes ||= [Feedzirra::Parser::RSSFeedBurner, Feedzirra::Parser::GoogleDocsAtom, Feedzirra::Parser::AtomFeedBurner, Feedzirra::Parser::Atom, Feedzirra::Parser::ITunesRSS, Feedzirra::Parser::RSS]
     end
     
     # Makes all registered feeds types look for the passed in element to parse.
@@ -247,7 +247,7 @@ module Feedzirra
       end
     
       multi.perform
-      responses.is_a?(Array)? responses.values : responses.values.first
+      feeds.is_a?(Array) ? responses : responses.values.first
     end
     
     # An abstraction for adding a feed by URL to the passed Curb::multi stack.
@@ -292,7 +292,19 @@ module Feedzirra
             options[:on_failure].call(url, c.response_code, c.header_str, c.body_str) if options.has_key?(:on_failure)
           end
         end
-        
+
+        #
+        # trigger on_failure for 404s
+        #
+        curl.on_complete do |c|
+          add_url_to_multi(multi, url_queue.shift, url_queue, responses, options) unless url_queue.empty?
+          responses[url] = c.response_code
+
+          if c.response_code == 404 && options.has_key?(:on_failure)
+            options[:on_failure].call(url, c.response_code, c.header_str, c.body_str)
+          end
+        end
+
         curl.on_failure do |c, err|
           add_url_to_multi(multi, url_queue.shift, url_queue, responses, options) unless url_queue.empty?
           responses[url] = c.response_code
@@ -376,7 +388,7 @@ module Feedzirra
     # A Time object of the last modified date or nil if it cannot be found in the headers.
     def self.last_modified_from_header(header)
       header =~ /.*Last-Modified:\s(.*)\r/
-      Time.parse($1) if $1
+      Time.parse_safely($1) if $1
     end
   end
 end

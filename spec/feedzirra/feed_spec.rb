@@ -68,14 +68,10 @@ describe Feedzirra::Feed do
         feed.entries.size.should == 5
       end      
 
-      it "should parse an itunes feed as a standard RSS feed" do
+      it "should parse an itunes feed" do
         feed = Feedzirra::Feed.parse(sample_itunes_feed)
         feed.title.should == "All About Everything"
         feed.entries.first.published.should == Time.parse_safely("Wed, 15 Jun 2005 19:00:00 GMT")
-        
-        # Since the commit 621957879, iTunes feeds will be parsed as standard RSS, so this
-        # entry should now not have a method for itunes_author.
-        feed.entries.first.should_not respond_to(:itunes_author)
         feed.entries.size.should == 3
       end
     end
@@ -122,7 +118,7 @@ describe Feedzirra::Feed do
     end
 
     it "should return a Feedzirra::Parser::RSS object for an itunes feed" do
-      Feedzirra::Feed.determine_feed_parser_for_xml(sample_itunes_feed).should == Feedzirra::Parser::RSS
+      Feedzirra::Feed.determine_feed_parser_for_xml(sample_itunes_feed).should == Feedzirra::Parser::ITunesRSS
     end
 
   end
@@ -373,6 +369,33 @@ describe Feedzirra::Feed do
 
       describe 'on failure' do
         before(:each) do
+          @headers = "HTTP/1.0 500 Something Bad\r\nDate: Thu, 29 Jan 2009 03:55:24 GMT\r\nServer: Apache\r\nX-FB-Host: chi-write6\r\nLast-Modified: Wed, 28 Jan 2009 04:10:32 GMT\r\n"
+          @body = 'Sorry, something broke'
+
+          @easy_curl.stub!(:response_code).and_return(500)
+          @easy_curl.stub!(:header_str).and_return(@headers)
+          @easy_curl.stub!(:body_str).and_return(@body)
+        end
+
+        it 'should call proc if :on_failure option is passed' do
+          failure = lambda { |url, feed| }
+          failure.should_receive(:call).with(@paul_feed[:url], 500, @headers, @body)
+          Feedzirra::Feed.add_url_to_multi(@multi, @paul_feed[:url], [], {}, { :on_failure => failure })
+          @easy_curl.on_failure.call(@easy_curl)
+        end
+        
+        it 'should return the http code in the responses' do
+          responses = {}
+          Feedzirra::Feed.add_url_to_multi(@multi, @paul_feed[:url], [], responses, {})
+          @easy_curl.on_failure.call(@easy_curl)
+
+          responses.length.should == 1
+          responses[@paul_feed[:url]].should == 500
+        end
+      end
+
+      describe 'on complete for 404s' do
+        before(:each) do
           @headers = "HTTP/1.0 404 Not Found\r\nDate: Thu, 29 Jan 2009 03:55:24 GMT\r\nServer: Apache\r\nX-FB-Host: chi-write6\r\nLast-Modified: Wed, 28 Jan 2009 04:10:32 GMT\r\n"
           @body = 'Page could not be found.'
 
@@ -382,16 +405,16 @@ describe Feedzirra::Feed do
         end
 
         it 'should call proc if :on_failure option is passed' do
-          failure = lambda { |url, feed| }
-          failure.should_receive(:call).with(@paul_feed[:url], 404, @headers, @body)
-          Feedzirra::Feed.add_url_to_multi(@multi, @paul_feed[:url], [], {}, { :on_failure => failure })
-          @easy_curl.on_failure.call(@easy_curl)
+          complete = lambda { |url| }
+          complete.should_receive(:call).with(@paul_feed[:url], 404, @headers, @body)
+          Feedzirra::Feed.add_url_to_multi(@multi, @paul_feed[:url], [], {}, { :on_failure => complete })
+          @easy_curl.on_complete.call(@easy_curl)
         end
         
         it 'should return the http code in the responses' do
           responses = {}
           Feedzirra::Feed.add_url_to_multi(@multi, @paul_feed[:url], [], responses, {})
-          @easy_curl.on_failure.call(@easy_curl)
+          @easy_curl.on_complete.call(@easy_curl)
 
           responses.length.should == 1
           responses[@paul_feed[:url]].should == 404
