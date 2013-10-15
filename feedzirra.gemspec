@@ -19,13 +19,7 @@ Gem::Specification.new do |s|
   s.platform = Gem::Platform::RUBY
 
   s.add_dependency 'nokogiri',          '~> 1.6.0'
-  #
-  # TODO Update sax-machine dependency as soon as a new version is released with the changes of this pull request: https://github.com/pauldix/sax-machine/pull/45
-  # The current released version of sax-machine has a dependency for an older version of Nokogiri, causing compatibility issues.
-  # 
-  # Also remove temporary gem dependency in Gemfile
-  #
-  # s.add_dependency 'sax-machine',       '~> 0.2.0.rc1'
+  s.add_dependency 'sax-machine',       '~> 0.2.1'
   s.add_dependency 'curb',              '~> 0.8.1'
   s.add_dependency 'loofah',            '~> 1.2.1'
 
