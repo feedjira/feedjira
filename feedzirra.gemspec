@@ -18,8 +18,8 @@ Gem::Specification.new do |s|
   
   s.platform = Gem::Platform::RUBY
 
-  s.add_dependency 'nokogiri',          '~> 1.5.3'
-  s.add_dependency 'sax-machine',       '~> 0.2.0.rc1'
+  s.add_dependency 'nokogiri',          '~> 1.6.0'
+  s.add_dependency 'sax-machine',       '~> 0.2.1'
   s.add_dependency 'curb',              '~> 0.8.1'
   s.add_dependency 'loofah',            '~> 1.2.1'
 
