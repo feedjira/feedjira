@@ -1,5 +1,6 @@
 begin
   require 'simplecov'
+  require 'json'
   SimpleCov.start do
     add_filter "/spec/"
   end
@@ -62,11 +63,11 @@ end
 
 def sample_wfw_feed
   load_sample("PaulDixExplainsNothingWFW.xml")
-end       
+end
 
 def sample_google_docs_list_feed
   load_sample("GoogleDocsList.xml")
-end       
+end
 
 RSpec.configure do |config|
   config.treat_symbols_as_metadata_keys_with_true_values = true
