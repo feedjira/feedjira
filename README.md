@@ -16,7 +16,7 @@ The final feature of Feedzirra is the ability to define custom parsing classes. 
 
 ## Speedup date parsing
 
-In MRI the date parsing code is written in ruby and is optimized for readability over speed, to speed up this part you can install the [home_run](https://github.com/jeremyevans/home_run) gem to replace it with an optimized C version.
+In MRI before 1.9.3 the date parsing code was written in Ruby and was optimized for readability over speed, to speed up this part you can install the [home_run](https://github.com/jeremyevans/home_run) gem to replace it with an optimized C version. In most cases, if you are using Ruby 1.9.3+, you will not need to use [home_run](https://github.com/jeremyevans/home_run).
 
 ## Usage
 
