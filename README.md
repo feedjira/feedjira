@@ -16,7 +16,7 @@ The final feature of Feedzirra is the ability to define custom parsing classes. 
 
 ## Speedup date parsing
 
-In MRI the date parsing code is written in ruby and is optimized for readability over speed, to speed up this part you can install the [home_run](https://github.com/jeremyevans/home_run) gem to replace it with an optimized C version.
+In MRI before 1.9.3 the date parsing code was written in Ruby and was optimized for readability over speed, to speed up this part you can install the [home_run](https://github.com/jeremyevans/home_run) gem to replace it with an optimized C version. In most cases, if you are using Ruby 1.9.3+, you will not need to use [home_run](https://github.com/jeremyevans/home_run).
 
 ## Usage
 
@@ -152,9 +152,9 @@ Here are some more specific TODOs.
 ## LICENSE
 
 (The MIT License)
- 
+
 Copyright (c) 2009-2012:
- 
+
 - [Paul Dix](http://pauldix.net)
 - [Julien Kirch](http://archiloque.net/)
 - [Ezekiel Templin](http://zeke.templ.in/)
@@ -166,10 +166,10 @@ without limitation the rights to use, copy, modify, merge, publish,
 distribute, sublicense, and/or sell copies of the Software, and to
 permit persons to whom the Software is furnished to do so, subject to
 the following conditions:
- 
+
 The above copyright notice and this permission notice shall be
 included in all copies or substantial portions of the Software.
- 
+
 THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
 EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
 MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
