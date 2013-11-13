@@ -4,6 +4,7 @@ require File.expand_path('../lib/feedzirra/version', __FILE__)
 Gem::Specification.new do |s|
   s.name    = 'feedzirra'
   s.version = Feedzirra::VERSION
+  s.license = 'MIT'
 
   s.authors  = ['Paul Dix', 'Julien Kirch', "Ezekiel Templin"]
   s.email    = 'feedzirra@googlegroups.com'
