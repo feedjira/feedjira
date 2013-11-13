@@ -21,6 +21,10 @@ describe Feedzirra::FeedUtilities do
       @entry = @feed.entries.first
     end
 
+    it "doesn't fail when no elements are defined on includer" do
+      expect { @klass.new.sanitize!  }.to_not raise_error
+    end
+
     it "should provide a sanitized title" do
       new_title = "<script>this is not safe</script>" + @entry.title
       @entry.title = new_title
