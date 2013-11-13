@@ -8,7 +8,7 @@ include Benchmark
 iterations = 50
 xml = File.read(File.dirname(__FILE__) + '/../sample_feeds/PaulDixExplainsNothing.xml')
 
-benchmark do |t|    
+benchmark do |t|
   t.report("feedzirra") do
     iterations.times do
       Feedzirra::Feed.parse(xml)

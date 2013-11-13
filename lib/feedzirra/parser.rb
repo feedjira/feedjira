@@ -4,7 +4,7 @@ module Feedzirra
     autoload :RSSEntry,           'feedzirra/parser/rss_entry'
     autoload :RSSFeedBurner,      'feedzirra/parser/rss_feed_burner'
     autoload :RSSFeedBurnerEntry, 'feedzirra/parser/rss_feed_burner_entry'
-    
+
     autoload :ITunesRSS,      'feedzirra/parser/itunes_rss'
     autoload :ITunesRSSItem,  'feedzirra/parser/itunes_rss_item'
     autoload :ITunesRSSOwner, 'feedzirra/parser/itunes_rss_owner'

@@ -22,7 +22,7 @@ describe Feedzirra::Parser::RSSFeedBurnerEntry do
   it "should parse the original url" do
     @entry.url.should == "http://techcrunch.com/2011/11/02/angies-list-prices-ipo-at-11-to-13-per-share-valued-at-over-600m/"
   end
-  
+
   it "should parse the author" do
     @entry.author.should == "Leena Rao"
   end

@@ -10,11 +10,11 @@ describe Feedzirra::Parser::RSS do
     # it "should return false for an rdf feed" do
     #   Feedzirra::RSS.should_not be_able_to_parse(sample_rdf_feed)
     # end
-    
+
     it "should return false for an atom feed" do
       Feedzirra::Parser::RSS.should_not be_able_to_parse(sample_atom_feed)
     end
-    
+
     it "should return false for an rss feedburner feed" do
       Feedzirra::Parser::RSS.should_not be_able_to_parse(sample_rss_feed_burner_feed)
     end
@@ -24,7 +24,7 @@ describe Feedzirra::Parser::RSS do
     before(:each) do
       @feed = Feedzirra::Parser::RSS.parse(sample_rss_feed)
     end
-    
+
     it "should parse the title" do
       @feed.title.should == "Tender Lovemaking"
     end
@@ -36,12 +36,12 @@ describe Feedzirra::Parser::RSS do
     it "should parse the url" do
       @feed.url.should == "http://tenderlovemaking.com"
     end
-    
+
     it "should provide an accessor for the feed_url" do
       @feed.respond_to?(:feed_url).should == true
       @feed.respond_to?(:feed_url=).should == true
     end
-    
+
     it "should parse entries" do
       @feed.entries.size.should == 10
     end

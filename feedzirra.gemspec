@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.require_paths = ['lib']
-  
+
   s.platform = Gem::Platform::RUBY
 
   s.add_dependency 'nokogiri',          '~> 1.6.0'

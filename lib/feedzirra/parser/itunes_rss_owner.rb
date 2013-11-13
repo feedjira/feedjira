@@ -1,5 +1,5 @@
 module Feedzirra
-  
+
   module Parser
     class ITunesRSSOwner
       include SAXMachine
@@ -8,5 +8,5 @@ module Feedzirra
       element :"itunes:email", :as => :email
     end
   end
-  
+
 end

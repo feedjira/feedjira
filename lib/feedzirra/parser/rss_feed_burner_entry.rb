@@ -35,7 +35,7 @@ module Feedzirra
         def url
           @url || @link
         end
-      
+
     end
 
   end

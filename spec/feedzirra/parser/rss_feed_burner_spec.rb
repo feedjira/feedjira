@@ -5,19 +5,19 @@ describe Feedzirra::Parser::RSSFeedBurner do
     it "should return true for a feedburner rss feed" do
       Feedzirra::Parser::RSSFeedBurner.should be_able_to_parse(sample_rss_feed_burner_feed)
     end
-    
+
     it "should return false for a regular RSS feed" do
        Feedzirra::Parser::RSSFeedBurner.should_not be_able_to_parse(sample_rss_feed)
      end
-    
+
     it "should return false for a feedburner atom feed" do
       Feedzirra::Parser::RSSFeedBurner.should_not be_able_to_parse(sample_feedburner_atom_feed)
     end
-    
+
     it "should return false for an rdf feed" do
       Feedzirra::Parser::RSSFeedBurner.should_not be_able_to_parse(sample_rdf_feed)
     end
-    
+
     it "should return false for a regular atom feed" do
       Feedzirra::Parser::RSSFeedBurner.should_not be_able_to_parse(sample_atom_feed)
     end
@@ -27,7 +27,7 @@ describe Feedzirra::Parser::RSSFeedBurner do
     before(:each) do
       @feed = Feedzirra::Parser::RSSFeedBurner.parse(sample_rss_feed_burner_feed)
     end
-    
+
     it "should parse the title" do
       @feed.title.should == "TechCrunch"
     end
@@ -39,12 +39,12 @@ describe Feedzirra::Parser::RSSFeedBurner do
     it "should parse the url" do
       @feed.url.should == "http://techcrunch.com"
     end
-    
+
     it "should provide an accessor for the feed_url" do
       @feed.respond_to?(:feed_url).should == true
       @feed.respond_to?(:feed_url=).should == true
     end
-    
+
     it "should parse entries" do
       @feed.entries.size.should == 20
     end

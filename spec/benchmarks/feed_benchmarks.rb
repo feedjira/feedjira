@@ -44,14 +44,14 @@ benchmark do |t|
 #      puts res.slice(0, 500)
     end
   end
-  
+
   require 'rfuzz/session'
-  include RFuzz 
+  include RFuzz
   t.report("rfuzz") do
     GET_COUNT.times do
       http = HttpClient.new("www.pauldix.net", 80)
       response = http.get("/")
-      if response.http_status != "200" 
+      if response.http_status != "200"
         puts "***** #{response.http_status}"
       else
 #        puts response.http_status
@@ -59,7 +59,7 @@ benchmark do |t|
       end
     end
   end
-  
+
   require 'eventmachine'
   t.report("eventmachine") do
     counter = GET_COUNT
@@ -76,8 +76,8 @@ benchmark do |t|
       end
     end
   end
-  
-  
+
+
   require 'curl-multi'
   t.report("curl multi") do
     multi = Curl::Multi.new

@@ -3,7 +3,7 @@ module Feedzirra
     class GoogleDocsAtomEntry
       include SAXMachine
       include FeedEntryUtilities
-      
+
       element :title
       element :link, :as => :url, :value => :href, :with => {:type => "text/html", :rel => "alternate"}
       element :name, :as => :author

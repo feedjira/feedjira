@@ -10,7 +10,7 @@ iterations = 10
 urls = File.readlines(File.dirname(__FILE__) + "/../sample_feeds/successful_feed_urls.txt").slice(0, 20)
 puts "benchmarks on #{urls.size} feeds"
 puts "************************************"
-benchmark do |t|    
+benchmark do |t|
   t.report("feedzirra open uri") do
     iterations.times do
       urls.each do |url|
@@ -24,5 +24,5 @@ benchmark do |t|
     iterations.times do
       Feedzirra::Feed.fetch_and_parse(urls, :on_success => lambda { |url, feed| $stdout.print '.'; $stdout.flush })
     end
-  end  
+  end
 end
