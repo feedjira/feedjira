@@ -1,5 +1,6 @@
 begin
   require 'simplecov'
+  require 'json'
   SimpleCov.start do
     add_filter "/spec/"
   end

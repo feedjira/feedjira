@@ -126,7 +126,7 @@ describe Feedzirra::Feed do
   describe "when adding feed types" do
     it "should prioritize added types over the built in ones" do
       feed_text = "Atom asdf"
-      Feedzirra::Parser::Atom.stub!(:able_to_parse?).and_return(true)
+      Feedzirra::Parser::Atom.stub(:able_to_parse?).and_return(true)
       new_feed_type = Class.new do
         def self.able_to_parse?(val)
           true
@@ -179,14 +179,14 @@ describe Feedzirra::Feed do
 
     describe "#fetch_raw" do
       before(:each) do
-        @cmock = stub('cmock', :header_str => '', :body_str => @paul_feed[:xml] )
-        @multi = stub('curl_multi', :add => true, :perform => true)
-        @curl_easy = stub('curl_easy')
-        @curl = stub('curl', :headers => {}, :follow_location= => true, :on_failure => true)
-        @curl.stub!(:on_success).and_yield(@cmock)
+        @cmock = double('cmock', :header_str => '', :body_str => @paul_feed[:xml] )
+        @multi = double('curl_multi', :add => true, :perform => true)
+        @curl_easy = double('curl_easy')
+        @curl = double('curl', :headers => {}, :follow_location= => true, :on_failure => true)
+        @curl.stub(:on_success).and_yield(@cmock)
 
-        Curl::Multi.stub!(:new).and_return(@multi)
-        Curl::Easy.stub!(:new).and_yield(@curl).and_return(@curl_easy)
+        Curl::Multi.stub(:new).and_return(@multi)
+        Curl::Easy.stub(:new).and_yield(@curl).and_return(@curl_easy)
       end
 
       it "should set user agent if it's passed as an option" do
@@ -224,17 +224,17 @@ describe Feedzirra::Feed do
       end
 
       it "should take multiple feed urls and return a hash of urls and response xml" do
-        multi = stub('curl_multi', :add => true, :perform => true)
-        Curl::Multi.stub!(:new).and_return(multi)
+        multi = double('curl_multi', :add => true, :perform => true)
+        Curl::Multi.stub(:new).and_return(multi)
 
-        paul_response = stub('paul_response', :header_str => '', :body_str => @paul_feed[:xml] )
-        trotter_response = stub('trotter_response', :header_str => '', :body_str => @trotter_feed[:xml] )
+        paul_response = double('paul_response', :header_str => '', :body_str => @paul_feed[:xml] )
+        trotter_response = double('trotter_response', :header_str => '', :body_str => @trotter_feed[:xml] )
 
-        paul_curl = stub('paul_curl', :headers => {}, :follow_location= => true, :on_failure => true)
-        paul_curl.stub!(:on_success).and_yield(paul_response)
+        paul_curl = double('paul_curl', :headers => {}, :follow_location= => true, :on_failure => true)
+        paul_curl.stub(:on_success).and_yield(paul_response)
 
-        trotter_curl = stub('trotter_curl', :headers => {}, :follow_location= => true, :on_failure => true)
-        trotter_curl.stub!(:on_success).and_yield(trotter_response)
+        trotter_curl = double('trotter_curl', :headers => {}, :follow_location= => true, :on_failure => true)
+        trotter_curl.stub(:on_success).and_yield(trotter_response)
 
         Curl::Easy.should_receive(:new).with(@paul_feed[:url]).ordered.and_yield(paul_curl)
         Curl::Easy.should_receive(:new).with(@trotter_feed[:url]).ordered.and_yield(trotter_curl)
@@ -256,7 +256,7 @@ describe Feedzirra::Feed do
       before(:each) do
         allow_message_expectations_on_nil
         @multi = Curl::Multi.get([@paul_feed[:url]], {:follow_location => true}, {:pipeline => true})
-        @multi.stub!(:add)
+        @multi.stub(:add)
         @easy_curl = Curl::Easy.new(@paul_feed[:url])
 
         Curl::Easy.should_receive(:new).and_yield(@easy_curl)
@@ -299,12 +299,12 @@ describe Feedzirra::Feed do
 
       describe 'on success' do
         before(:each) do
-          @feed = mock('feed', :feed_url= => true, :etag= => true, :last_modified= => true)
-          Feedzirra::Feed.stub!(:decode_content).and_return(@paul_feed[:xml])
-          Feedzirra::Feed.stub!(:determine_feed_parser_for_xml).and_return(Feedzirra::Parser::AtomFeedBurner)
-          Feedzirra::Parser::AtomFeedBurner.stub!(:parse).and_return(@feed)
-          Feedzirra::Feed.stub!(:etag_from_header).and_return('ziEyTl4q9GH04BR4jgkImd0GvSE')
-          Feedzirra::Feed.stub!(:last_modified_from_header).and_return('Wed, 28 Jan 2009 04:10:32 GMT')
+          @feed = double('feed', :feed_url= => true, :etag= => true, :last_modified= => true)
+          Feedzirra::Feed.stub(:decode_content).and_return(@paul_feed[:xml])
+          Feedzirra::Feed.stub(:determine_feed_parser_for_xml).and_return(Feedzirra::Parser::AtomFeedBurner)
+          Feedzirra::Parser::AtomFeedBurner.stub(:parse).and_return(@feed)
+          Feedzirra::Feed.stub(:etag_from_header).and_return('ziEyTl4q9GH04BR4jgkImd0GvSE')
+          Feedzirra::Feed.stub(:last_modified_from_header).and_return('Wed, 28 Jan 2009 04:10:32 GMT')
         end
 
         it 'should decode the response body' do
@@ -372,9 +372,9 @@ describe Feedzirra::Feed do
           @headers = "HTTP/1.0 500 Something Bad\r\nDate: Thu, 29 Jan 2009 03:55:24 GMT\r\nServer: Apache\r\nX-FB-Host: chi-write6\r\nLast-Modified: Wed, 28 Jan 2009 04:10:32 GMT\r\n"
           @body = 'Sorry, something broke'
 
-          @easy_curl.stub!(:response_code).and_return(500)
-          @easy_curl.stub!(:header_str).and_return(@headers)
-          @easy_curl.stub!(:body_str).and_return(@body)
+          @easy_curl.stub(:response_code).and_return(500)
+          @easy_curl.stub(:header_str).and_return(@headers)
+          @easy_curl.stub(:body_str).and_return(@body)
         end
 
         it 'should call proc if :on_failure option is passed' do
@@ -399,9 +399,9 @@ describe Feedzirra::Feed do
           @headers = "HTTP/1.0 404 Not Found\r\nDate: Thu, 29 Jan 2009 03:55:24 GMT\r\nServer: Apache\r\nX-FB-Host: chi-write6\r\nLast-Modified: Wed, 28 Jan 2009 04:10:32 GMT\r\n"
           @body = 'Page could not be found.'
 
-          @easy_curl.stub!(:response_code).and_return(404)
-          @easy_curl.stub!(:header_str).and_return(@headers)
-          @easy_curl.stub!(:body_str).and_return(@body)
+          @easy_curl.stub(:response_code).and_return(404)
+          @easy_curl.stub(:header_str).and_return(@headers)
+          @easy_curl.stub(:body_str).and_return(@body)
         end
 
         it 'should call proc if :on_failure option is passed' do
@@ -426,7 +426,7 @@ describe Feedzirra::Feed do
       before(:each) do
         allow_message_expectations_on_nil
         @multi = Curl::Multi.get([@paul_feed[:url]], {:follow_location => true}, {:pipeline => true})
-        @multi.stub!(:add)
+        @multi.stub(:add)
         @easy_curl = Curl::Easy.new(@paul_feed[:url])
         @feed = Feedzirra::Feed.parse(sample_feedburner_atom_feed)
 
@@ -470,12 +470,12 @@ describe Feedzirra::Feed do
       describe 'on success' do
         before(:each) do
           @new_feed = @feed.clone
-          @feed.stub!(:update_from_feed)
-          Feedzirra::Feed.stub!(:decode_content).and_return(@paul_feed[:xml])
-          Feedzirra::Feed.stub!(:determine_feed_parser_for_xml).and_return(Feedzirra::Parser::AtomFeedBurner)
-          Feedzirra::Parser::AtomFeedBurner.stub!(:parse).and_return(@new_feed)
-          Feedzirra::Feed.stub!(:etag_from_header).and_return('ziEyTl4q9GH04BR4jgkImd0GvSE')
-          Feedzirra::Feed.stub!(:last_modified_from_header).and_return('Wed, 28 Jan 2009 04:10:32 GMT')
+          @feed.stub(:update_from_feed)
+          Feedzirra::Feed.stub(:decode_content).and_return(@paul_feed[:xml])
+          Feedzirra::Feed.stub(:determine_feed_parser_for_xml).and_return(Feedzirra::Parser::AtomFeedBurner)
+          Feedzirra::Parser::AtomFeedBurner.stub(:parse).and_return(@new_feed)
+          Feedzirra::Feed.stub(:etag_from_header).and_return('ziEyTl4q9GH04BR4jgkImd0GvSE')
+          Feedzirra::Feed.stub(:last_modified_from_header).and_return('Wed, 28 Jan 2009 04:10:32 GMT')
         end
 
         it 'should process the next feed in the queue'
@@ -533,9 +533,9 @@ describe Feedzirra::Feed do
           @headers = "HTTP/1.0 404 Not Found\r\nDate: Thu, 29 Jan 2009 03:55:24 GMT\r\nServer: Apache\r\nX-FB-Host: chi-write6\r\nLast-Modified: Wed, 28 Jan 2009 04:10:32 GMT\r\n"
           @body = 'Page could not be found.'
 
-          @easy_curl.stub!(:response_code).and_return(404)
-          @easy_curl.stub!(:header_str).and_return(@headers)
-          @easy_curl.stub!(:body_str).and_return(@body)
+          @easy_curl.stub(:response_code).and_return(404)
+          @easy_curl.stub(:header_str).and_return(@headers)
+          @easy_curl.stub(:body_str).and_return(@body)
         end
 
         it 'should call on success callback if the response code is 304' do
@@ -566,7 +566,7 @@ describe Feedzirra::Feed do
 
       it "should set if modified since as an option if passed" do
         modified_time = Time.parse_safely("Wed, 28 Jan 2009 04:10:32 GMT")
-        Feedzirra::Feed.should_receive(:add_url_to_multi).with(anything, anything, anything, anything, {:if_modified_since => modified_time}).any_number_of_times
+        Feedzirra::Feed.should_receive(:add_url_to_multi).with(anything, anything, anything, anything, {:if_modified_since => modified_time})
 
         @feed = Feedzirra::Feed.fetch_and_parse(sample_feedburner_atom_feed, {:if_modified_since => modified_time})
       end
@@ -575,39 +575,39 @@ describe Feedzirra::Feed do
 
     describe "#decode_content" do
       before(:each) do
-        @curl_easy = mock('curl_easy', :body_str => '<xml></xml>')
+        @curl_easy = double('curl_easy', :body_str => '<xml></xml>')
       end
 
       it 'should decode the response body using gzip if the Content-Encoding: is gzip' do
-        @curl_easy.stub!(:header_str).and_return('Content-Encoding: gzip')
-        string_io = mock('stringio', :read => @curl_easy.body_str, :close => true)
+        @curl_easy.stub(:header_str).and_return('Content-Encoding: gzip')
+        string_io = double('stringio', :read => @curl_easy.body_str, :close => true)
         StringIO.should_receive(:new).and_return(string_io)
         Zlib::GzipReader.should_receive(:new).with(string_io).and_return(string_io)
         Feedzirra::Feed.decode_content(@curl_easy)
       end
 
       it 'should decode the response body using gzip if the Content-Encoding: is gzip even when the case is wrong' do
-        @curl_easy.stub!(:header_str).and_return('content-encoding: gzip')
-        string_io = mock('stringio', :read => @curl_easy.body_str, :close => true)
+        @curl_easy.stub(:header_str).and_return('content-encoding: gzip')
+        string_io = double('stringio', :read => @curl_easy.body_str, :close => true)
         StringIO.should_receive(:new).and_return(string_io)
         Zlib::GzipReader.should_receive(:new).with(string_io).and_return(string_io)
         Feedzirra::Feed.decode_content(@curl_easy)
       end
 
       it 'should deflate the response body using inflate if the Content-Encoding: is deflate' do
-        @curl_easy.stub!(:header_str).and_return('Content-Encoding: deflate')
+        @curl_easy.stub(:header_str).and_return('Content-Encoding: deflate')
         Zlib::Inflate.should_receive(:inflate).with(@curl_easy.body_str)
         Feedzirra::Feed.decode_content(@curl_easy)
       end
 
       it 'should deflate the response body using inflate if the Content-Encoding: is deflate event if the case is wrong' do
-        @curl_easy.stub!(:header_str).and_return('content-encoding: deflate')
+        @curl_easy.stub(:header_str).and_return('content-encoding: deflate')
         Zlib::Inflate.should_receive(:inflate).with(@curl_easy.body_str)
         Feedzirra::Feed.decode_content(@curl_easy)
       end
 
       it 'should return the response body if it is not encoded' do
-        @curl_easy.stub!(:header_str).and_return('')
+        @curl_easy.stub(:header_str).and_return('')
         Feedzirra::Feed.decode_content(@curl_easy).should == '<xml></xml>'
       end
     end
