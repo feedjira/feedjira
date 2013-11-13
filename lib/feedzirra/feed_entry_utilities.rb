@@ -40,7 +40,7 @@ module Feedzirra
       self.title.sanitize! if self.title
       self.author.sanitize! if self.author
       self.summary.sanitize! if self.summary
-      self.content.sanitize! if self.content
+      self.content.sanitize! if self.respond_to?(:content) && self.content
       self.image.sanitize! if self.image
     end
 
