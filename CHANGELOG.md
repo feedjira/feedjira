@@ -1,5 +1,21 @@
 # Feedzirra Changelog
 
+## 0.2.2
+
+* General
+  * Switch to CHANGELOG
+  * Set LICENSE in gemspec
+  * Lots of whitespace cleaning
+  * README updates
+
+* Enhancements
+  * Also use dc:identifier for `entry_id` [[#182](https://github.com/pauldix/feedzirra/pull/182)]
+
+* Bug fixes
+  * Don't try to sanitize non-existent elements [[#174](https://github.com/pauldix/feedzirra/pull/174)]
+  * Fix Rspec deprecations [[#188](https://github.com/pauldix/feedzirra/pull/188)]
+  * Fix Travis [[#191](https://github.com/pauldix/feedzirra/pull/191)]
+
 ## 0.2.1
 
 * Use `Time.parse_safely` in `Feed.last_modified_from_header` [[#129](https://github.com/pauldix/feedzirra/pull/129)].
