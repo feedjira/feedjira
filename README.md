@@ -56,7 +56,7 @@ In MRI before 1.9.3 the date parsing code was written in Ruby and was optimized 
   updated_feed = Feedzirra::Feed.update(feed)
 
   # an updated feed has the following extra accessors
-  updated_feed.updated?     # returns true if any of the feed attributes have been modified. will return false if only new entries
+  updated_feed.updated?     # returns true if any of the feed attributes have been modified. will return false if no new entries
   updated_feed.new_entries  # a collection of the entry objects that are newer than the latest in the feed before update
 
   # fetching multiple feeds
