@@ -1,5 +1,6 @@
 .DS_Store
 .rvmrc
+.ruby-version
 TODO
 Gemfile.lock
 rdoc/
