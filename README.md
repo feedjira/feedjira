@@ -150,7 +150,6 @@ Here are some more specific TODOs.
 * Make a feedzirra-rails gem to integrate feedzirra seamlessly with Rails and ActiveRecord.
 * Add support for authenticated feeds.
 * Create a super sweet DSL for defining new parsers.
-* Test against Ruby 1.9.1 and fix any bugs.
 * I'm not keeping track of modified on entries. Should I add this?
 * Clean up the fetching code inside feed.rb so it doesn't suck so hard.
 * Make the feed_spec actually mock stuff out so it doesn't hit the net.
