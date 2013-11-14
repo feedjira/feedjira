@@ -123,6 +123,15 @@ If you want to add attributes for only one class you simply have to declare them
       p "lat: #[e.lat}, long: #{e.long]"
   end
 ```
+
+## Testing
+
+Feedzirra uses [curb](https://github.com/taf2/curb) to perform requests. `curb` provides bindings for [libcurl](http://curl.haxx.se/libcurl/) and supports numerous protocols, including FILE. To test Feedzirra with local file use `file://` protocol:
+```ruby
+feed = Feedzirra::Feed.fetch_and_parse('file:///home/feedzirra/examples/feed.rss')
+```
+
+
 ## Benchmarks
 
 One of the goals of Feedzirra is speed. This includes not only parsing, but fetching multiple feeds as quickly as possible. I ran a benchmark getting 20 feeds 10 times using Feedzirra, rFeedParser, and FeedNormalizer. For more details the [benchmark code can be found in the project in spec/benchmarks/feedzirra_benchmarks.rb](https://github.com/pauldix/feedzirra/blob/7fb5634c5c16e9c6ec971767b462c6518cd55f5d/spec/benchmarks/feedzirra_benchmarks.rb)
