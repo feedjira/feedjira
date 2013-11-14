@@ -1,5 +1,17 @@
 # Feedzirra Changelog
 
+## 0.3.0
+
+* General
+  * Add CodeClimate badge [[#192](https://github.com/pauldix/feedzirra/pull/192)]
+
+* Enhancements
+  * CURL SSL Version option [[#156](https://github.com/pauldix/feedzirra/pull/156)]
+  * Cookie support for Curb [[#98](https://github.com/pauldix/feedzirra/pull/98)]
+
+* Deprecations
+  * For `ITunesRSSItem`, use `id` instead of `guid` [[#169](https://github.com/pauldix/feedzirra/pull/169)]
+
 ## 0.2.2
 
 * General
