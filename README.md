@@ -101,7 +101,7 @@ In MRI before 1.9.3 the date parsing code was written in Ruby and was optimized 
 
 ### Adding attributes to only one class
 
-If you want to add attributes for only on class you simply have to declare them in the class
+If you want to add attributes for only one class you simply have to declare them in the class
 
     # Add some GeoRss information
     require 'lib/feedzirra/parser/rss_entry'
