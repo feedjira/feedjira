@@ -4,7 +4,7 @@ I'd like feedback on the api and any bugs encountered on feeds in the wild. I've
 
 ## Description
 
-Feedzirra is a feed library that is designed to get and update many feeds as quickly as possible. This includes using libcurl-multi through the [curb](https://github.com/taf2/curb) gem for faster http gets, and libxml through [nokogiri](https://github.com/tenderlove/nokogiri) and [sax-machine](https://github.com/pauldix/sax-machine) for faster parsing.
+Feedzirra is a feed library that is designed to get and update many feeds as quickly as possible. This includes using libcurl-multi through the [curb](https://github.com/taf2/curb) gem for faster http gets, and libxml through [nokogiri](https://github.com/tenderlove/nokogiri) and [sax-machine](https://github.com/pauldix/sax-machine) for faster parsing. Feedzirra requires at least Ruby 1.9.2.
 
 Once you have fetched feeds using Feedzirra, they can be updated using the feed objects. Feedzirra automatically inserts etag and last-modified information from the http response headers to lower bandwidth usage, eliminate unnecessary parsing, and make things speedier in general.
 
