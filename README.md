@@ -78,7 +78,7 @@ In MRI before 1.9.3 the date parsing code was written in Ruby and was optimized 
     # the updated feed with the standard updated accessors. on failure it will be the original feed object passed into update
 
     # fetching a feed via a proxy (optional)
-    feed = Feedzirra::Feed.fetch_and_parse("http://feeds.feedburner.com/PaulDixExplainsNothing", [:proxy_url => '10.0.0.1', :proxy_port => 3084])
+    feed = Feedzirra::Feed.fetch_and_parse("http://feeds.feedburner.com/PaulDixExplainsNothing", {:proxy_url => '10.0.0.1', :proxy_port => 3084})
 
 ## Extending
 
