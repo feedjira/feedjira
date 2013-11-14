@@ -29,6 +29,7 @@ module Feedzirra
       elements :category, :as => :categories
 
       element :guid, :as => :entry_id
+      element :"dc:identifier", :as => :entry_id
     end
 
   end
