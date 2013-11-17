@@ -123,6 +123,66 @@ describe Feedzirra::Feed do
 
   end
 
+  describe "#setup_easy" do
+    class MockCurl
+      attr_accessor :follow_location, :userpwd, :proxy_url, :proxy_port, :max_redirects, :timeout, :ssl_verify_host
+
+      def headers
+        @headers ||= {}
+      end
+    end
+
+    let(:curl) { MockCurl.new }
+
+    it "sets defaults on curl" do
+      Feedzirra::Feed.setup_easy curl
+
+      curl.headers["User-Agent"].should eq Feedzirra::Feed::USER_AGENT
+      curl.follow_location.should eq true
+    end
+
+    it "allows user agent over-ride" do
+      Feedzirra::Feed.setup_easy(curl, user_agent: '007')
+      curl.headers["User-Agent"].should eq '007'
+    end
+
+    it "enables compression" do
+      Feedzirra::Feed.setup_easy(curl, compress: true)
+      curl.headers["Accept-encoding"].should eq 'gzip, deflate'
+    end
+
+    it "enables compression even when you act like you don't want it" do
+      Feedzirra::Feed.setup_easy(curl, compress: false)
+      curl.headers["Accept-encoding"].should eq 'gzip, deflate'
+    end
+
+    it "sets up http auth" do
+      Feedzirra::Feed.setup_easy(curl, http_authentication: ['user', 'pass'])
+      curl.userpwd.should eq 'user:pass'
+    end
+
+    it "passes known options to curl" do
+      known_options = {
+        proxy_url: 'http://proxy.url.com',
+        proxy_port: '1234',
+        max_redirects: 2,
+        timeout: 500,
+        ssl_verify_host: true
+      }
+
+      Feedzirra::Feed.setup_easy curl, known_options
+
+      known_options.each do |option|
+        key, value = option
+        curl.send(key).should eq value
+      end
+    end
+
+    it "ignores unknown options" do
+      expect { Feedzirra::Feed.setup_easy curl, foo: :bar }.to_not raise_error
+    end
+  end
+
   describe "when adding feed types" do
     it "should prioritize added types over the built in ones" do
       feed_text = "Atom asdf"

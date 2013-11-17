@@ -113,12 +113,13 @@ module Feedzirra
     # Possible parameters:
     # * :user_agent          - overrides the default user agent.
     # * :compress            - any value to enable compression
-    # * :http_authentication - array containing http authentication parameters
+    # * :http_authentication - array containing username, then password
     # * :proxy_url           - proxy url
     # * :proxy_port          - proxy port
     # * :max_redirects       - max number of redirections
     # * :timeout             - timeout
-    def self.setup_easy curl, options
+    # * :ssl_verify_host     - boolean
+    def self.setup_easy(curl, options={})
       curl.headers["Accept-encoding"]   = 'gzip, deflate' if options.has_key?(:compress)
       curl.headers["User-Agent"]        = (options[:user_agent] || USER_AGENT)
 
