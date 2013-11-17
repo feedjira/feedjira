@@ -118,6 +118,8 @@ module Feedzirra
     # * :proxy_port          - proxy port
     # * :max_redirects       - max number of redirections
     # * :timeout             - timeout
+    # * :ssl_verify_host     - enable/disable verification of ssl host
+    # * :ssl_verify_peer     - enable/disable verification of ssl peer
     def self.setup_easy curl, options
       curl.headers["Accept-encoding"]   = 'gzip, deflate' if options.has_key?(:compress)
       curl.headers["User-Agent"]        = (options[:user_agent] || USER_AGENT)
@@ -128,6 +130,7 @@ module Feedzirra
       curl.max_redirects = options[:max_redirects] if options[:max_redirects]
       curl.timeout = options[:timeout] if options[:timeout]
       curl.ssl_verify_host = options[:ssl_verify_host] if options.has_key?(:ssl_verify_host)
+      curl.ssl_verify_peer = options[:ssl_verify_peer] if options.has_key?(:ssl_verify_peer)
 
       curl.follow_location = true
     end
