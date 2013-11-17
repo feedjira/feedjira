@@ -113,6 +113,8 @@ module Feedzirra
     # Possible parameters:
     # * :user_agent          - overrides the default user agent.
     # * :compress            - any value to enable compression
+    # * :cookiefile          - read the initial set of cookies from the given file.
+    # * :cookies             - exact contents of a cookie header
     # * :http_authentication - array containing http authentication parameters
     # * :proxy_url           - proxy url
     # * :proxy_port          - proxy port
@@ -121,6 +123,9 @@ module Feedzirra
     def self.setup_easy curl, options
       curl.headers["Accept-encoding"]   = 'gzip, deflate' if options.has_key?(:compress)
       curl.headers["User-Agent"]        = (options[:user_agent] || USER_AGENT)
+      curl.enable_cookies               = options[:enable_cookies] if options.has_key?(:enable_cookies)
+      curl.cookiefile                   = options[:cookiefile] if options.has_key?(:cookiefile)
+      curl.cookies                      = options[:cookies] if options.has_key?(:cookies)
 
       curl.userpwd = options[:http_authentication].join(':') if options.has_key?(:http_authentication)
       curl.proxy_url = options[:proxy_url] if options.has_key?(:proxy_url)
