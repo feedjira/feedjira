@@ -113,12 +113,17 @@ module Feedzirra
     # Possible parameters:
     # * :user_agent          - overrides the default user agent.
     # * :compress            - any value to enable compression
+    # * :enable_cookies      - boolean
+    # * :cookiefile          - file to read cookies
+    # * :cookies             - contents of cookies header
     # * :http_authentication - array containing username, then password
     # * :proxy_url           - proxy url
     # * :proxy_port          - proxy port
     # * :max_redirects       - max number of redirections
     # * :timeout             - timeout
     # * :ssl_verify_host     - boolean
+    # * :ssl_verify_peer     - boolean
+    # * :ssl_version         - the ssl version to use, see OpenSSL::SSL::SSLContext::METHODS for options
     def self.setup_easy(curl, options={})
       curl.headers["Accept-encoding"]   = 'gzip, deflate' if options.has_key?(:compress)
       curl.headers["User-Agent"]        = (options[:user_agent] || USER_AGENT)
@@ -132,8 +137,8 @@ module Feedzirra
       curl.max_redirects = options[:max_redirects] if options[:max_redirects]
       curl.timeout = options[:timeout] if options[:timeout]
       curl.ssl_verify_host = options[:ssl_verify_host] if options.has_key?(:ssl_verify_host)
-      curl.ssl_version = options[:ssl_version] if options.has_key?(:ssl_version)
       curl.ssl_verify_peer = options[:ssl_verify_peer] if options.has_key?(:ssl_verify_peer)
+      curl.ssl_version = options[:ssl_version] if options.has_key?(:ssl_version)
 
       curl.follow_location = true
     end

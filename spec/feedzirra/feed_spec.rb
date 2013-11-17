@@ -125,7 +125,7 @@ describe Feedzirra::Feed do
 
   describe "#setup_easy" do
     class MockCurl
-      attr_accessor :follow_location, :userpwd, :proxy_url, :proxy_port, :max_redirects, :timeout, :ssl_verify_host
+      attr_accessor :follow_location, :userpwd, :proxy_url, :proxy_port, :max_redirects, :timeout, :ssl_verify_host, :ssl_verify_peer, :ssl_version, :enable_cookies, :cookiefile, :cookies
 
       def headers
         @headers ||= {}
@@ -163,11 +163,16 @@ describe Feedzirra::Feed do
 
     it "passes known options to curl" do
       known_options = {
+        enable_cookies: true,
+        cookiefile: 'cookies.txt',
+        cookies: 'asdf',
         proxy_url: 'http://proxy.url.com',
         proxy_port: '1234',
         max_redirects: 2,
         timeout: 500,
-        ssl_verify_host: true
+        ssl_verify_host: true,
+        ssl_verify_peer: true,
+        ssl_version: :omg
       }
 
       Feedzirra::Feed.setup_easy curl, known_options
