@@ -428,7 +428,15 @@ describe Feedzirra::Feed do
         end
 
         describe 'when no compatible xml parser class is found' do
-          it 'should raise a NoParserAvailable exception'
+          it 'invokes the on_failure callback' do
+            failure = lambda { |url, feed| }
+            failure.should_receive(:call).with(@paul_feed[:url], 0, nil, nil)
+
+            Feedzirra::Feed.should_receive(:determine_feed_parser_for_xml).and_return nil
+            Feedzirra::Feed.add_url_to_multi(@multi, @paul_feed[:url], [], {}, { on_failure: failure })
+
+            @easy_curl.on_success.call(@easy_curl)
+          end
         end
       end
 
