@@ -295,12 +295,12 @@ module Feedzirra
               responses[url] = feed
               options[:on_success].call(url, feed) if options.has_key?(:on_success)
             rescue Exception => e
-              options[:on_failure].call(url, c.response_code, c.header_str, c.body_str) if options.has_key?(:on_failure)
+              options[:on_failure].call(url, c.response_code, c.header_str, c.body_str, e) if options.has_key?(:on_failure)
             end
           else
             # puts "Error determining parser for #{url} - #{c.last_effective_url}"
             # raise NoParserAvailable.new("no valid parser for content.") (this would unfortunately fail the whole 'multi', so it's not really usable)
-            options[:on_failure].call(url, c.response_code, c.header_str, c.body_str) if options.has_key?(:on_failure)
+            options[:on_failure].call(url, c.response_code, c.header_str, c.body_str, "Can't determine a parser") if options.has_key?(:on_failure)
           end
         end
 
@@ -312,7 +312,7 @@ module Feedzirra
           responses[url] = c.response_code
 
           if c.response_code == 404 && options.has_key?(:on_failure)
-            options[:on_failure].call(url, c.response_code, c.header_str, c.body_str)
+            options[:on_failure].call(url, c.response_code, c.header_str, c.body_str, "Server returned a 404")
           end
         end
 
@@ -322,7 +322,7 @@ module Feedzirra
           if c.response_code == 304 # it's not modified. this isn't an error condition
             options[:on_success].call(url, nil) if options.has_key?(:on_success)
           else
-            options[:on_failure].call(url, c.response_code, c.header_str, c.body_str) if options.has_key?(:on_failure)
+            options[:on_failure].call(url, c.response_code, c.header_str, c.body_str, err) if options.has_key?(:on_failure)
           end
         end
       end
@@ -361,7 +361,7 @@ module Feedzirra
             responses[feed.feed_url] = feed
             options[:on_success].call(feed) if options.has_key?(:on_success)
           rescue Exception => e
-            options[:on_failure].call(feed, c.response_code, c.header_str, c.body_str) if options.has_key?(:on_failure)
+            options[:on_failure].call(feed, c.response_code, c.header_str, c.body_str, e) if options.has_key?(:on_failure)
           end
         end
 
@@ -373,7 +373,7 @@ module Feedzirra
             options[:on_success].call(feed) if options.has_key?(:on_success)
           else
             responses[feed.url] = c.response_code
-            options[:on_failure].call(feed, c.response_code, c.header_str, c.body_str) if options.has_key?(:on_failure)
+            options[:on_failure].call(feed, c.response_code, c.header_str, c.body_str, err) if options.has_key?(:on_failure)
           end
         end
       end
