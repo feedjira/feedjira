@@ -240,6 +240,7 @@ describe Feedzirra::Feed do
     before(:each) do
       @paul_feed = { :xml => load_sample("PaulDixExplainsNothing.xml"), :url => "http://feeds.feedburner.com/PaulDixExplainsNothing" }
       @trotter_feed = { :xml => load_sample("TrotterCashionHome.xml"), :url => "http://feeds2.feedburner.com/trottercashion" }
+      @invalid_feed = { :xml => 'This feed is invalid', :url => "http://feeds.feedburner.com/InvalidFeed" }
     end
 
     describe "#fetch_raw" do
@@ -427,9 +428,6 @@ describe Feedzirra::Feed do
           end
         end
 
-        describe 'when no compatible xml parser class is found' do
-          it 'should raise a NoParserAvailable exception'
-        end
       end
 
       describe 'on failure' do
@@ -442,9 +440,9 @@ describe Feedzirra::Feed do
           @easy_curl.stub(:body_str).and_return(@body)
         end
 
-        it 'should call proc if :on_failure option is passed' do
+        it 'should call proc if :on_fauilure option is passed' do
           failure = lambda { |url, feed| }
-          failure.should_receive(:call).with(@paul_feed[:url], 500, @headers, @body)
+          failure.should_receive(:call).with(@paul_feed[:url], 500, @headers, @body, nil)
           Feedzirra::Feed.add_url_to_multi(@multi, @paul_feed[:url], [], {}, { :on_failure => failure })
           @easy_curl.on_failure.call(@easy_curl)
         end
@@ -471,7 +469,7 @@ describe Feedzirra::Feed do
 
         it 'should call proc if :on_failure option is passed' do
           complete = lambda { |url| }
-          complete.should_receive(:call).with(@paul_feed[:url], 404, @headers, @body)
+          complete.should_receive(:call).with(@paul_feed[:url], 404, @headers, @body, 'Server returned a 404')
           Feedzirra::Feed.add_url_to_multi(@multi, @paul_feed[:url], [], {}, { :on_failure => complete })
           @easy_curl.on_complete.call(@easy_curl)
         end
