@@ -72,7 +72,7 @@ In MRI before 1.9.3 the date parsing code was written in Ruby and was optimized 
   # defining custom behavior on failure or success. note that a return status of 304 (not updated) will call the on_success handler
   feed = Feedzirra::Feed.fetch_and_parse("http://feeds.feedburner.com/PaulDixExplainsNothing",
       :on_success => lambda [|url, feed| puts feed.title ],
-      :on_failure => lambda [|url, response_code, response_header, response_body| puts response_body ])
+      :on_failure => lambda [|url, response_code, response_header, response_body, error| puts response_body ])
   # if a collection was passed into fetch_and_parse, the handlers will be called for each one
 
   # the behavior for the handlers when using Feedzirra::Feed.update is slightly different. The feed passed into on_success will be
