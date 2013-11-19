@@ -425,6 +425,18 @@ describe Feedzirra::Feed do
             Feedzirra::Feed.add_url_to_multi(@multi, @paul_feed[:url], [], {}, { :on_success => success })
             @easy_curl.on_success.call(@easy_curl)
           end
+
+          describe 'when the parser raises an exception' do
+            it 'invokes the on_failure callback' do
+              failure = lambda { |url, feed| }
+              failure.should_receive(:call).with(@paul_feed[:url], 0, nil, nil)
+
+              Feedzirra::Parser::AtomFeedBurner.should_receive(:parse).and_raise Exception
+              Feedzirra::Feed.add_url_to_multi(@multi, @paul_feed[:url], [], {}, { on_failure: failure })
+
+              @easy_curl.on_success.call(@easy_curl)
+            end
+          end
         end
 
         describe 'when no compatible xml parser class is found' do
