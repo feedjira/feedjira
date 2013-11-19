@@ -551,8 +551,6 @@ describe Feedzirra::Feed do
           Feedzirra::Feed.stub(:last_modified_from_header).and_return('Wed, 28 Jan 2009 04:10:32 GMT')
         end
 
-        it 'should process the next feed in the queue'
-
         it 'should parse the updated feed' do
           Feedzirra::Parser::AtomFeedBurner.should_receive(:parse).and_return(@new_feed)
           Feedzirra::Feed.add_feed_to_multi(@multi, @feed, [], {}, {})
