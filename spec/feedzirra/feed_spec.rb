@@ -247,7 +247,7 @@ describe Feedzirra::Feed do
         @cmock = double('cmock', :header_str => '', :body_str => @paul_feed[:xml] )
         @multi = double('curl_multi', :add => true, :perform => true)
         @curl_easy = double('curl_easy')
-        @curl = double('curl', :headers => {}, :follow_location= => true, :on_failure => true)
+        @curl = double('curl', :headers => {}, :follow_location= => true, :on_failure => true, :on_complete => true)
         @curl.stub(:on_success).and_yield(@cmock)
 
         Curl::Multi.stub(:new).and_return(@multi)
@@ -295,10 +295,10 @@ describe Feedzirra::Feed do
         paul_response = double('paul_response', :header_str => '', :body_str => @paul_feed[:xml] )
         trotter_response = double('trotter_response', :header_str => '', :body_str => @trotter_feed[:xml] )
 
-        paul_curl = double('paul_curl', :headers => {}, :follow_location= => true, :on_failure => true)
+        paul_curl = double('paul_curl', :headers => {}, :follow_location= => true, :on_failure => true, :on_complete => true)
         paul_curl.stub(:on_success).and_yield(paul_response)
 
-        trotter_curl = double('trotter_curl', :headers => {}, :follow_location= => true, :on_failure => true)
+        trotter_curl = double('trotter_curl', :headers => {}, :follow_location= => true, :on_failure => true, :on_complete => true)
         trotter_curl.stub(:on_success).and_yield(trotter_response)
 
         Curl::Easy.should_receive(:new).with(@paul_feed[:url]).ordered.and_yield(paul_curl)
