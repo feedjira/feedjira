@@ -288,7 +288,11 @@ module Feedzirra
 
           if klass
             begin
-              feed = klass.parse(xml, Proc.new{|message| warn "Error while parsing [#{url}] #{message}" })
+              parser_on_failure = Proc.new do |message|
+                raise "Error while parsing [#{url}] #{message}"
+              end
+              feed = klass.parse xml, parser_on_failure
+
               feed.feed_url = c.last_effective_url
               feed.etag = etag_from_header(c.header_str)
               feed.last_modified = last_modified_from_header(c.header_str)
@@ -353,7 +357,11 @@ module Feedzirra
 
         curl.on_success do |c|
           begin
-            updated_feed = Feed.parse(c.body_str){ |message| warn "Error while parsing [#{feed.feed_url}] #{message}" }
+            parser_on_failure = Proc.new do |message|
+              raise "Error while parsing [#{feed.feed_url}] #{message}"
+            end
+            updated_feed = Feed.parse c.body_str, &parser_on_failure
+
             updated_feed.feed_url = c.last_effective_url
             updated_feed.etag = etag_from_header(c.header_str)
             updated_feed.last_modified = last_modified_from_header(c.header_str)

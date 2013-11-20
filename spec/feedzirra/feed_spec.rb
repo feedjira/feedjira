@@ -1,5 +1,11 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 
+class FailParser
+  def self.parse(_, on_failure)
+    on_failure.call
+  end
+end
+
 describe Feedzirra::Feed do
 
   describe "#add_common_feed_element" do
@@ -437,6 +443,20 @@ describe Feedzirra::Feed do
               @easy_curl.on_success.call(@easy_curl)
             end
           end
+
+          describe 'when the parser invokes its on_failure callback' do
+            before(:each) do
+              Feedzirra::Feed.stub(:determine_feed_parser_for_xml).and_return FailParser
+            end
+
+            it 'invokes the on_failure callback' do
+              failure = lambda { |url, feed| }
+              failure.should_receive(:call).with(@paul_feed[:url], 0, nil, nil)
+
+              Feedzirra::Feed.add_url_to_multi(@multi, @paul_feed[:url], [], {}, { on_failure: failure })
+              @easy_curl.on_success.call(@easy_curl)
+            end
+          end
         end
 
         describe 'when no compatible xml parser class is found' do
@@ -608,6 +628,20 @@ describe Feedzirra::Feed do
           @feed.should_receive(:update_from_feed).with(@new_feed)
           Feedzirra::Feed.add_feed_to_multi(@multi, @feed, [], {}, {})
           @easy_curl.on_success.call(@easy_curl)
+        end
+
+        describe 'when the parser invokes its on_failure callback' do
+          before(:each) do
+            Feedzirra::Feed.stub(:determine_feed_parser_for_xml).and_return FailParser
+          end
+
+          it 'invokes the on_failure callback' do
+            failure = lambda { |feed| }
+            failure.should_receive(:call)
+
+            Feedzirra::Feed.add_feed_to_multi(@multi, @feed, [], {}, { on_failure: failure })
+            @easy_curl.on_success.call(@easy_curl)
+          end
         end
       end
 
