@@ -1,5 +1,15 @@
 # Feedzirra Changelog
 
+## 0.4.0
+
+* Enhancements
+  * Raise when parser invokes its failure callback [[#159](https://github.com/pauldix/feedzirra/issues/159)]
+  * Add PubSubHubbub hub urls as feed element [[#138](https://github.com/pauldix/feedzirra/pull/138)]
+  * Add support for iTunes image in iTunes RSS item [[#164](https://github.com/pauldix/feedzirra/pull/164)]
+
+* Bug fixes
+  * Use curb callbacks rather than response codes [[#161](https://github.com/pauldix/feedzirra/pull/161)]
+
 ## 0.3.0
 
 * General
