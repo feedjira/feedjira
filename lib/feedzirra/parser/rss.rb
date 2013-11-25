@@ -5,6 +5,7 @@ module Feedzirra
     class RSS
       include SAXMachine
       include FeedUtilities
+      element :rss, as: :version, value: :version
       element :title
       element :description
       element :link, :as => :url

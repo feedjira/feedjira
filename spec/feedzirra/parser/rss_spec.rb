@@ -25,6 +25,10 @@ describe Feedzirra::Parser::RSS do
       @feed = Feedzirra::Parser::RSS.parse(sample_rss_feed)
     end
 
+    it "should parse the version" do
+      @feed.version.should == "2.0"
+    end
+
     it "should parse the title" do
       @feed.title.should == "Tender Lovemaking"
     end
