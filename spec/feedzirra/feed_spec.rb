@@ -675,19 +675,14 @@ describe Feedzirra::Feed do
     end
 
     describe "#fetch_and_parse" do
-      it 'should initiate the fetching and parsing using multicurl'
-      it "should pass any request options through to add_url_to_multi"
-      it 'should slice the feeds into groups of thirty for processing'
-      it "should return a feed object if a single feed is passed in"
-      it "should return an return an array of feed objects if multiple feeds are passed in"
+      it "passes options to multicurl" do
+        options = { user_agent: '007' }
 
-      it "should set if modified since as an option if passed" do
-        modified_time = Time.parse_safely("Wed, 28 Jan 2009 04:10:32 GMT")
-        Feedzirra::Feed.should_receive(:add_url_to_multi).with(anything, anything, anything, anything, {:if_modified_since => modified_time})
+        Feedzirra::Feed.should_receive(:add_url_to_multi).
+          with(anything, anything, anything, anything, options)
 
-        @feed = Feedzirra::Feed.fetch_and_parse(sample_feedburner_atom_feed, {:if_modified_since => modified_time})
+        Feedzirra::Feed.fetch_and_parse(sample_rss_feed, options)
       end
-
     end
 
     describe "#decode_content" do
@@ -730,10 +725,14 @@ describe Feedzirra::Feed do
     end
 
     describe "#update" do
-      it 'should perform the updating using multicurl'
-      it "should pass any request options through to add_feed_to_multi"
-      it "should return a feed object if a single feed is passed in"
-      it "should return an return an array of feed objects if multiple feeds are passed in"
+      it "passes options to multicurl" do
+        options = { user_agent: '007' }
+
+        Feedzirra::Feed.should_receive(:add_feed_to_multi).
+          with(anything, anything, anything, anything, options)
+
+        Feedzirra::Feed.update(sample_rss_feed, options)
+      end
     end
   end
 end
