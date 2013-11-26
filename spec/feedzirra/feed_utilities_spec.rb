@@ -192,57 +192,46 @@ describe Feedzirra::FeedUtilities do
       end
     end
 
-    describe "detecting the end of new posts" do
-      before(:each) do
-        @feed = Feedzirra::Parser::Atom.new
-        @feed.title    = "A title"
-        @feed.url      = "http://pauldix.net"
-        @feed.feed_url = "http://feeds.feedburner.com/PaulDixExplainsNothing"
-        @feed.updated  = false
-        @updated_feed = @feed.dup
+    describe 'updating with a feed' do
+      let(:id_one) { '1' }
+      let(:id_two) { '2' }
 
-        @entry = Feedzirra::Parser::AtomEntry.new
-        @entry.published = (Time.now + 10).to_s
-        @entry.entry_id = "entry_id"
-        @entry.url = "http://pauldix.net/entry.html"
+      let(:url_one) { 'http://example.com/post_one.html' }
+      let(:url_two) { 'http://example.com/post_two.html' }
 
-        @feed.entries << @entry
+      let(:entry_one) { double 'Entry One', entry_id: id_one, url: url_one }
+      let(:entry_two) { double 'Entry Two', entry_id: id_two, url: url_two }
+
+      let(:feed_one) { Feedzirra::Parser::Atom.new }
+      let(:feed_two) { double 'Feed Two', entries: [entry_two] }
+
+      before do
+        stub_const("Feedzirra::FeedUtilities::UPDATABLE_ATTRIBUTES", [])
+        feed_one.entries << entry_one
       end
 
-      it "should not include entries with the same entry_id" do
-        dup_entry_id = @entry.dup
-
-        @updated_feed.entries << dup_entry_id
-
-        @feed.update_from_feed(@updated_feed)
-
-        @feed.new_entries.size.should == 0
+      it 'finds entries with unique ids and urls' do
+        feed_one.update_from_feed feed_two
+        feed_one.new_entries.should eq [entry_two]
       end
 
-      it "should not include entries with the same url" do
-        dup_url = @entry.dup
-        dup_url.entry_id = "entry_id_new"
+      context 'when the entries have the same id' do
+        let(:id_two) { id_one }
 
-        @updated_feed.entries << dup_url
-
-        @feed.update_from_feed(@updated_feed)
-
-        @feed.new_entries.size.should == 0
+        it 'does not find a new entry' do
+          feed_one.update_from_feed feed_two
+          feed_one.new_entries.should eq []
+        end
       end
 
-      it "should include entries with unique entry_id and urls" do
-        non_dup = @entry.dup
-        non_dup.entry_id = "not-a-dup"
-        non_dup.url = "http://pauldix.net/not-a-dup.html"
+      context 'when the entries have the same url' do
+        let(:url_two) { url_one }
 
-        @updated_feed.entries << non_dup
-
-        @feed.update_from_feed(@updated_feed)
-
-        @feed.new_entries.size.should == 1
-        @feed.new_entries.should include(non_dup)
+        it 'does not find a new entry' do
+          feed_one.update_from_feed feed_two
+          feed_one.new_entries.should eq []
+        end
       end
-
     end
   end
 end
