@@ -122,9 +122,11 @@ describe Feedzirra::FeedUtilities do
         @old_entry = Feedzirra::Parser::AtomEntry.new
         @old_entry.url = "http://pauldix.net/old.html"
         @old_entry.published = Time.now.to_s
+        @old_entry.entry_id = "entry_id_old"
         @new_entry = Feedzirra::Parser::AtomEntry.new
         @new_entry.url = "http://pauldix.net/new.html"
         @new_entry.published = (Time.now + 10).to_s
+        @new_entry.entry_id = "entry_id_new"
         @feed.entries << @old_entry
         @updated_feed.entries << @new_entry
         @updated_feed.entries << @old_entry
@@ -188,6 +190,59 @@ describe Feedzirra::FeedUtilities do
         @feed.new_entries.size.should == 0
         @feed.new_entries.size.should_not == 2
       end
+    end
+
+    describe "detecting the end of new posts" do
+      before(:each) do
+        @feed = Feedzirra::Parser::Atom.new
+        @feed.title    = "A title"
+        @feed.url      = "http://pauldix.net"
+        @feed.feed_url = "http://feeds.feedburner.com/PaulDixExplainsNothing"
+        @feed.updated  = false
+        @updated_feed = @feed.dup
+
+        @entry = Feedzirra::Parser::AtomEntry.new
+        @entry.published = (Time.now + 10).to_s
+        @entry.entry_id = "entry_id"
+        @entry.url = "http://pauldix.net/entry.html"
+
+        @feed.entries << @entry
+      end
+
+      it "should not include entries with the same entry_id" do
+        dup_entry_id = @entry.dup
+
+        @updated_feed.entries << dup_entry_id
+
+        @feed.update_from_feed(@updated_feed)
+
+        @feed.new_entries.size.should == 0
+      end
+
+      it "should not include entries with the same url" do
+        dup_url = @entry.dup
+        dup_url.entry_id = "entry_id_new"
+
+        @updated_feed.entries << dup_url
+
+        @feed.update_from_feed(@updated_feed)
+
+        @feed.new_entries.size.should == 0
+      end
+
+      it "should include entries with unique entry_id and urls" do
+        non_dup = @entry.dup
+        non_dup.entry_id = "not-a-dup"
+        non_dup.url = "http://pauldix.net/not-a-dup.html"
+
+        @updated_feed.entries << non_dup
+
+        @feed.update_from_feed(@updated_feed)
+
+        @feed.new_entries.size.should == 1
+        @feed.new_entries.should include(non_dup)
+      end
+
     end
   end
 end
