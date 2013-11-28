@@ -1,5 +1,22 @@
 # Feedzirra Changelog
 
+## 0.5.0
+
+* General
+  * Lots of README cleanup
+  * Remove pending specs
+  * Rewrite benchmarks and move them out of the spec folder
+  * Upgrade to latest Rspec
+
+* Enhancements
+  * Allow spaces in rss tag when checking parse-ability [[#127][]]
+  * Compare `entry_id` and `url` for finding new entries [[#195][]]
+  * Add closed captioned and order tags for iTunesRSSItem [[#160][]]
+
+[#127]: https://github.com/pauldix/feedzirra/pull/127
+[#160]: https://github.com/pauldix/feedzirra/pull/160
+[#195]: https://github.com/pauldix/feedzirra/pull/195
+
 ## 0.4.0
 
 * Enhancements
