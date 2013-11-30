@@ -15,9 +15,9 @@ Curl::Easy    0.140000   0.260000   0.400000 ( 14.692383)
 Curl::Multi   0.100000   0.170000   0.270000 (  3.334533)
 ```
 
-See the [fetching options code][fetching_options] for more details.
+See the [fetching systems code][fetching_systems] for more details.
 
-[fetching_options]: https://github.com/pauldix/feedzirra/blob/master/benchmarks/fetching_options.rb
+[fetching_systems]: https://github.com/pauldix/feedzirra/blob/master/benchmarks/fetching_systems.rb
 
 ## Basic Benchmarks
 

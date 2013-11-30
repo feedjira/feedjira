@@ -172,7 +172,7 @@ feed = Feedzirra::Feed.fetch_and_parse('file:///home/feedzirra/examples/feed.rss
 Since a major goal of Feedzirra is speed, benchmarks are provided--see the
 [Benchmark README][benchmark_readme] for more details.
 
-[benchmark_readme]: https://github.com/pauldix/feedzirra/blob/master/benchmarks/README
+[benchmark_readme]: https://github.com/pauldix/feedzirra/blob/master/benchmarks/README.md
 
 ## TODO
 
