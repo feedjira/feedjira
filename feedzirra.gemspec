@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.version = Feedzirra::VERSION
   s.license = 'MIT'
 
-  s.authors  = ['Paul Dix', 'Julien Kirch', "Ezekiel Templin", "Jon Allured"]
+  s.authors  = ['Paul Dix', 'Julien Kirch', 'Ezekiel Templin', 'Jon Allured']
   s.email    = 'feedzirra@googlegroups.com'
   s.homepage = 'http://github.com/pauldix/feedzirra'
 
@@ -19,7 +19,6 @@ Gem::Specification.new do |s|
 
   s.platform = Gem::Platform::RUBY
 
-  s.add_dependency 'nokogiri',    '~> 1.6.0'
   s.add_dependency 'sax-machine', '~> 0.2.1'
   s.add_dependency 'curb',        '~> 0.8.1'
   s.add_dependency 'loofah',      '~> 1.2.1'
