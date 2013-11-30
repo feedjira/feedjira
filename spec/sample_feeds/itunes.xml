@@ -31,6 +31,8 @@
 <itunes:duration>7:04</itunes:duration>
 <itunes:keywords>salt, pepper, shaker, exciting</itunes:keywords>
 <itunes:image href="http://example.com/podcasts/everything/AllAboutEverything.jpg" />
+<itunes:order>12</itunes:order>
+<itunes:isClosedCaptioned>yes</itunes:isClosedCaptioned>
 </item>
  
 <item>

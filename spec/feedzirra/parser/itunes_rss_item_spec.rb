@@ -48,4 +48,12 @@ describe Feedzirra::Parser::ITunesRSSItem do
   it "should parse the image" do
     @item.itunes_image.should == "http://example.com/podcasts/everything/AllAboutEverything.jpg"
   end
+
+  it "should parse the order" do
+    @item.itunes_order.should eq '12'
+  end
+
+  it "should parse the closed captioned flag" do
+    @item.itunes_closed_captioned.should eq 'yes'
+  end
 end
