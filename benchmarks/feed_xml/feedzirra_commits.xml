@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xml:lang="en-US">
+  <id>tag:github.com,2008:/pauldix/feedzirra/commits/master</id>
+  <link type="text/html" rel="alternate" href="https://github.com/pauldix/feedzirra/commits/master"/>
+  <link type="application/atom+xml" rel="self" href="https://github.com/pauldix/feedzirra/commits/master.atom"/>
+  <title>Recent Commits to feedzirra:master</title>
+  <updated>2013-11-26T06:12:50-08:00</updated>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/515b1671192e8270a478c0d41dd4f894f6c0b734</id>
+    <link type="text/html" rel="alternate" href="https://github.com/pauldix/feedzirra/commit/515b1671192e8270a478c0d41dd4f894f6c0b734"/>
+    <title>
+        Remove pending specs
+    </title>
+    <updated>2013-11-26T06:12:50-08:00</updated>
+    <media:thumbnail height="30" width="30" url="https://2.gravatar.com/avatar/61111801d406cb2516deb768315a1813?d=https%3A%2F%2Fidenticons.github.com%2F95452ea29caea2a49ecc4d1c10789c67.png&amp;r=x&amp;s=30"/>
+    <author>
+      <name>jonallured</name>
+      <uri>https://github.com/jonallured</uri>
+    </author>
+    <content type="html">
+      &lt;pre style='white-space:pre-wrap;width:81ex'>Remove pending specs
+
+Its very difficult to spec the `fetch_and_parse` and `update` methods
+because they both rely on the side effect of another class-level method
+that&#39;s mutating the response hash they are passed. Rather than pretend
+that at some point we&#39;ll get specs around this, I&#39;m removing the pending
+specs.
+
+I did find that I could easily spec the options-passing behavior, so I
+did that.&lt;/pre>
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/d2bd2809c3b7ba9c32db346a647ee2ebe7ae63ea</id>
+    <link type="text/html" rel="alternate" href="https://github.com/pauldix/feedzirra/commit/d2bd2809c3b7ba9c32db346a647ee2ebe7ae63ea"/>
+    <title>
+        Refactor spec for updating with feed
+    </title>
+    <updated>2013-11-25T17:30:06-08:00</updated>
+    <media:thumbnail height="30" width="30" url="https://2.gravatar.com/avatar/61111801d406cb2516deb768315a1813?d=https%3A%2F%2Fidenticons.github.com%2F95452ea29caea2a49ecc4d1c10789c67.png&amp;r=x&amp;s=30"/>
+    <author>
+      <name>jonallured</name>
+      <uri>https://github.com/jonallured</uri>
+    </author>
+    <content type="html">
+      &lt;pre style='white-space:pre-wrap;width:81ex'>Refactor spec for updating with feed&lt;/pre>
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/358398ea5a1b86ed0eab7551f11f5807d708a99b</id>
+    <link type="text/html" rel="alternate" href="https://github.com/pauldix/feedzirra/commit/358398ea5a1b86ed0eab7551f11f5807d708a99b"/>
+    <title>
+        add specs
+    </title>
+    <updated>2013-11-25T17:28:29-08:00</updated>
+    <media:thumbnail height="30" width="30" url="https://2.gravatar.com/avatar/e88c3a272a15086332786cda54bacacc?d=https%3A%2F%2Fidenticons.github.com%2F66768e0e15536977dee85c79af296f69.png&amp;r=x&amp;s=30"/>
+    <author>
+      <name>swanson</name>
+      <uri>https://github.com/swanson</uri>
+    </author>
+    <content type="html">
+      &lt;pre style='white-space:pre-wrap;width:81ex'>add specs&lt;/pre>
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/f6e5e799578290d30150b068130ea8ad433f111c</id>
+    <link type="text/html" rel="alternate" href="https://github.com/pauldix/feedzirra/commit/f6e5e799578290d30150b068130ea8ad433f111c"/>
+    <title>
+        Compare url and entry_id for checking when to break when fetching new entries
+    </title>
+    <updated>2013-11-25T17:27:16-08:00</updated>
+    <media:thumbnail height="30" width="30" url="https://2.gravatar.com/avatar/e88c3a272a15086332786cda54bacacc?d=https%3A%2F%2Fidenticons.github.com%2F66768e0e15536977dee85c79af296f69.png&amp;r=x&amp;s=30"/>
+    <author>
+      <name>swanson</name>
+      <uri>https://github.com/swanson</uri>
+    </author>
+    <content type="html">
+      &lt;pre style='white-space:pre-wrap;width:81ex'>Compare url and entry_id for checking when to break when fetching new entries&lt;/pre>
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/2199dba9cb5aae1240ea504af85ec5005f56cd05</id>
+    <link type="text/html" rel="alternate" href="https://github.com/pauldix/feedzirra/commit/2199dba9cb5aae1240ea504af85ec5005f56cd05"/>
+    <title>
+        Update authors
+    </title>
+    <updated>2013-11-24T05:21:28-08:00</updated>
+    <media:thumbnail height="30" width="30" url="https://2.gravatar.com/avatar/61111801d406cb2516deb768315a1813?d=https%3A%2F%2Fidenticons.github.com%2F95452ea29caea2a49ecc4d1c10789c67.png&amp;r=x&amp;s=30"/>
+    <author>
+      <name>jonallured</name>
+      <uri>https://github.com/jonallured</uri>
+    </author>
+    <content type="html">
+      &lt;pre style='white-space:pre-wrap;width:81ex'>Update authors&lt;/pre>
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/d1bb7e0c36eedefa8caed71ee58cc44438bca7a6</id>
+    <link type="text/html" rel="alternate" href="https://github.com/pauldix/feedzirra/commit/d1bb7e0c36eedefa8caed71ee58cc44438bca7a6"/>
+    <title>
+        Allow whitespace between attribute name, equals sign, and attribute value when checking for Atom or iTunes formats
+    </title>
+    <updated>2013-11-23T07:08:15-08:00</updated>
+    <media:thumbnail height="30" width="30" url="https://1.gravatar.com/avatar/a570bf6a4b63ab79120459bb82c2017c?d=https%3A%2F%2Fidenticons.github.com%2F4d8fdeac0c37c4b07e8319be6c33b03e.png&amp;r=x&amp;s=30"/>
+    <author>
+      <name>unclebilly</name>
+      <uri>https://github.com/unclebilly</uri>
+    </author>
+    <content type="html">
+      &lt;pre style='white-space:pre-wrap;width:81ex'>Allow whitespace between attribute name, equals sign, and attribute value when checking for Atom or iTunes formats&lt;/pre>
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/8b1db220d3f5027335a2c960b908c17f45e72cf9</id>
+    <link type="text/html" rel="alternate" href="https://github.com/pauldix/feedzirra/commit/8b1db220d3f5027335a2c960b908c17f45e72cf9"/>
+    <title>
+        Lots of README cleanup
+    </title>
+    <updated>2013-11-22T16:19:46-08:00</updated>
+    <media:thumbnail height="30" width="30" url="https://2.gravatar.com/avatar/61111801d406cb2516deb768315a1813?d=https%3A%2F%2Fidenticons.github.com%2F95452ea29caea2a49ecc4d1c10789c67.png&amp;r=x&amp;s=30"/>
+    <author>
+      <name>jonallured</name>
+      <uri>https://github.com/jonallured</uri>
+    </author>
+    <content type="html">
+      &lt;pre style='white-space:pre-wrap;width:81ex'>Lots of README cleanup&lt;/pre>
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/942771f5001d9928d9f33a000b62f760f7c71e19</id>
+    <link type="text/html" rel="alternate" href="https://github.com/pauldix/feedzirra/commit/942771f5001d9928d9f33a000b62f760f7c71e19"/>
+    <title>
+        Update CHANGELOG for 0.4.0
+    </title>
+    <updated>2013-11-22T14:25:17-08:00</updated>
+    <media:thumbnail height="30" width="30" url="https://2.gravatar.com/avatar/61111801d406cb2516deb768315a1813?d=https%3A%2F%2Fidenticons.github.com%2F95452ea29caea2a49ecc4d1c10789c67.png&amp;r=x&amp;s=30"/>
+    <author>
+      <name>jonallured</name>
+      <uri>https://github.com/jonallured</uri>
+    </author>
+    <content type="html">
+      &lt;pre style='white-space:pre-wrap;width:81ex'>Update CHANGELOG for 0.4.0&lt;/pre>
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/6e5092d421e301cfde1fb4054ffb9016612fabd4</id>
+    <link type="text/html" rel="alternate" href="https://github.com/pauldix/feedzirra/commit/6e5092d421e301cfde1fb4054ffb9016612fabd4"/>
+    <title>
+        Bump version for 0.4.0
+    </title>
+    <updated>2013-11-22T14:21:47-08:00</updated>
+    <media:thumbnail height="30" width="30" url="https://2.gravatar.com/avatar/61111801d406cb2516deb768315a1813?d=https%3A%2F%2Fidenticons.github.com%2F95452ea29caea2a49ecc4d1c10789c67.png&amp;r=x&amp;s=30"/>
+    <author>
+      <name>jonallured</name>
+      <uri>https://github.com/jonallured</uri>
+    </author>
+    <content type="html">
+      &lt;pre style='white-space:pre-wrap;width:81ex'>Bump version for 0.4.0&lt;/pre>
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/9251ed99fa0a1cc568a890ff8eb3039f3a2142eb</id>
+    <link type="text/html" rel="alternate" href="https://github.com/pauldix/feedzirra/commit/9251ed99fa0a1cc568a890ff8eb3039f3a2142eb"/>
+    <title>
+        add support for iTunes image in iTunes RSS item
+    </title>
+    <updated>2013-11-22T14:21:47-08:00</updated>
+    <media:thumbnail height="30" width="30" url="https://1.gravatar.com/avatar/164b6584480a6d58ca1dad6d4cb71bed?d=https%3A%2F%2Fidenticons.github.com%2F511ce85a75cef28a2df1f4ad9fd67685.png&amp;r=x&amp;s=30"/>
+    <author>
+      <name>sebastianmarr</name>
+      <uri>https://github.com/sebastianmarr</uri>
+    </author>
+    <content type="html">
+      &lt;pre style='white-space:pre-wrap;width:81ex'>add support for iTunes image in iTunes RSS item
+
+add spec for iTunes RSS item image
+
+add image to iTunes sample feed
+
+Conflicts:
+	spec/feedzirra/parser/itunes_rss_item_spec.rb&lt;/pre>
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/12d6a3bf016fce78e6d2ad870a74e67ea50204a1</id>
+    <link type="text/html" rel="alternate" href="https://github.com/pauldix/feedzirra/commit/12d6a3bf016fce78e6d2ad870a74e67ea50204a1"/>
+    <title>
+        Add PubSubHubbub hub urls as feed element
+    </title>
+    <updated>2013-11-22T14:21:47-08:00</updated>
+    <media:thumbnail height="30" width="30" url="https://0.gravatar.com/avatar/f81281c11185cb99e7b782c17677373c?d=https%3A%2F%2Fidenticons.github.com%2Fa461b2d6e2dcd85ebbce05ccf6e8b4ff.png&amp;r=x&amp;s=30"/>
+    <author>
+      <name>ryanwi</name>
+      <uri>https://github.com/ryanwi</uri>
+    </author>
+    <content type="html">
+      &lt;pre style='white-space:pre-wrap;width:81ex'>Add PubSubHubbub hub urls as feed element
+
+Conflicts:
+	spec/feedzirra/parser/atom_feed_burner_spec.rb
+	spec/feedzirra/parser/atom_spec.rb
+	spec/feedzirra/parser/rss_feed_burner_spec.rb
+	spec/feedzirra/parser/rss_spec.rb&lt;/pre>
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/fef35747fca363ded7002152784f88a9b28db9d7</id>
+    <link type="text/html" rel="alternate" href="https://github.com/pauldix/feedzirra/commit/fef35747fca363ded7002152784f88a9b28db9d7"/>
+    <title>
+        Extract callback for when the parser fails
+    </title>
+    <updated>2013-11-22T14:16:23-08:00</updated>
+    <media:thumbnail height="30" width="30" url="https://2.gravatar.com/avatar/61111801d406cb2516deb768315a1813?d=https%3A%2F%2Fidenticons.github.com%2F95452ea29caea2a49ecc4d1c10789c67.png&amp;r=x&amp;s=30"/>
+    <author>
+      <name>jonallured</name>
+      <uri>https://github.com/jonallured</uri>
+    </author>
+    <content type="html">
+      &lt;pre style='white-space:pre-wrap;width:81ex'>Extract callback for when the parser fails&lt;/pre>
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/d6b66c7045881db6b619f96d56d30edbd3217284</id>
+    <link type="text/html" rel="alternate" href="https://github.com/pauldix/feedzirra/commit/d6b66c7045881db6b619f96d56d30edbd3217284"/>
+    <title>
+        Raise when parser invokes its failure callback
+    </title>
+    <updated>2013-11-22T14:16:23-08:00</updated>
+    <media:thumbnail height="30" width="30" url="https://2.gravatar.com/avatar/61111801d406cb2516deb768315a1813?d=https%3A%2F%2Fidenticons.github.com%2F95452ea29caea2a49ecc4d1c10789c67.png&amp;r=x&amp;s=30"/>
+    <author>
+      <name>jonallured</name>
+      <uri>https://github.com/jonallured</uri>
+    </author>
+    <content type="html">
+      &lt;pre style='white-space:pre-wrap;width:81ex'>Raise when parser invokes its failure callback
+
+Inspired by a commit from @filiptepper on #159, I took a closer look at
+stuff and wanted to get more specs around this behavior.&lt;/pre>
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/aabac139d21f061793fafa5963ab812ca3774811</id>
+    <link type="text/html" rel="alternate" href="https://github.com/pauldix/feedzirra/commit/aabac139d21f061793fafa5963ab812ca3774811"/>
+    <title>
+        Add missing spec for parser exceptions
+    </title>
+    <updated>2013-11-22T14:16:23-08:00</updated>
+    <media:thumbnail height="30" width="30" url="https://2.gravatar.com/avatar/61111801d406cb2516deb768315a1813?d=https%3A%2F%2Fidenticons.github.com%2F95452ea29caea2a49ecc4d1c10789c67.png&amp;r=x&amp;s=30"/>
+    <author>
+      <name>jonallured</name>
+      <uri>https://github.com/jonallured</uri>
+    </author>
+    <content type="html">
+      &lt;pre style='white-space:pre-wrap;width:81ex'>Add missing spec for parser exceptions
+
+Specify what happens when the parser raises an exception.&lt;/pre>
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/d8f2ec80d6772bf4645106196dab0de95cd1b542</id>
+    <link type="text/html" rel="alternate" href="https://github.com/pauldix/feedzirra/commit/d8f2ec80d6772bf4645106196dab0de95cd1b542"/>
+    <title>
+        Remove spec for recursion
+    </title>
+    <updated>2013-11-22T14:16:23-08:00</updated>
+    <media:thumbnail height="30" width="30" url="https://2.gravatar.com/avatar/61111801d406cb2516deb768315a1813?d=https%3A%2F%2Fidenticons.github.com%2F95452ea29caea2a49ecc4d1c10789c67.png&amp;r=x&amp;s=30"/>
+    <author>
+      <name>jonallured</name>
+      <uri>https://github.com/jonallured</uri>
+    </author>
+    <content type="html">
+      &lt;pre style='white-space:pre-wrap;width:81ex'>Remove spec for recursion
+
+If its hard to test, then you&#39;re doing it wrong, but I couldn&#39;t think of
+a better approach, so I&#39;m just removing this pending spec.&lt;/pre>
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/7065e2b7c90fef1f88dd5625ea124a4c87bcdc5b</id>
+    <link type="text/html" rel="alternate" href="https://github.com/pauldix/feedzirra/commit/7065e2b7c90fef1f88dd5625ea124a4c87bcdc5b"/>
+    <title>
+        Write missing spec for add_url_to_multi
+    </title>
+    <updated>2013-11-22T14:16:23-08:00</updated>
+    <media:thumbnail height="30" width="30" url="https://2.gravatar.com/avatar/61111801d406cb2516deb768315a1813?d=https%3A%2F%2Fidenticons.github.com%2F95452ea29caea2a49ecc4d1c10789c67.png&amp;r=x&amp;s=30"/>
+    <author>
+      <name>jonallured</name>
+      <uri>https://github.com/jonallured</uri>
+    </author>
+    <content type="html">
+      &lt;pre style='white-space:pre-wrap;width:81ex'>Write missing spec for add_url_to_multi
+
+Specifies what happens when no compatible parser can be found.&lt;/pre>
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/7094ba77e1b020b2ac842628d8fe930cdd057af8</id>
+    <link type="text/html" rel="alternate" href="https://github.com/pauldix/feedzirra/commit/7094ba77e1b020b2ac842628d8fe930cdd057af8"/>
+    <title>
+        Fix specs to pull in #161
+    </title>
+    <updated>2013-11-20T14:19:07-08:00</updated>
+    <media:thumbnail height="30" width="30" url="https://2.gravatar.com/avatar/61111801d406cb2516deb768315a1813?d=https%3A%2F%2Fidenticons.github.com%2F95452ea29caea2a49ecc4d1c10789c67.png&amp;r=x&amp;s=30"/>
+    <author>
+      <name>jonallured</name>
+      <uri>https://github.com/jonallured</uri>
+    </author>
+    <content type="html">
+      &lt;pre style='white-space:pre-wrap;width:81ex'>Fix specs to pull in #161
+
+When we changed to doubles, I think we broke this PR. This fixes it and
+makes it ready to be pulled in.&lt;/pre>
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/283b7fe4591629b263520c8cf099146e24e6085d</id>
+    <link type="text/html" rel="alternate" href="https://github.com/pauldix/feedzirra/commit/283b7fe4591629b263520c8cf099146e24e6085d"/>
+    <title>
+        Adapt feed spec
+    </title>
+    <updated>2013-11-20T14:00:23-08:00</updated>
+    <media:thumbnail height="30" width="30" url="https://0.gravatar.com/avatar/cc3661971714a03d18eb342759829deb?d=https%3A%2F%2Fidenticons.github.com%2F6ef7349b5e6ac8736fb5b75f4685abe0.png&amp;r=x&amp;s=30"/>
+    <author>
+      <name>fudanchii</name>
+      <uri>https://github.com/fudanchii</uri>
+    </author>
+    <content type="html">
+      &lt;pre style='white-space:pre-wrap;width:81ex'>Adapt feed spec
+
+Conflicts:
+	spec/feedzirra/feed_spec.rb&lt;/pre>
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/1d806cc3ef82aecfa3f1eeedf59fd5d4802a4606</id>
+    <link type="text/html" rel="alternate" href="https://github.com/pauldix/feedzirra/commit/1d806cc3ef82aecfa3f1eeedf59fd5d4802a4606"/>
+    <title>
+        Make sure callbacks triggered respectively
+    </title>
+    <updated>2013-11-20T13:59:05-08:00</updated>
+    <media:thumbnail height="30" width="30" url="https://0.gravatar.com/avatar/cc3661971714a03d18eb342759829deb?d=https%3A%2F%2Fidenticons.github.com%2F6ef7349b5e6ac8736fb5b75f4685abe0.png&amp;r=x&amp;s=30"/>
+    <author>
+      <name>fudanchii</name>
+      <uri>https://github.com/fudanchii</uri>
+    </author>
+    <content type="html">
+      &lt;pre style='white-space:pre-wrap;width:81ex'>Make sure callbacks triggered respectively
+
+Current version of Curb only trigger `on_failure&#39; on http error 50x code.
+Move 304 related code to `on_redirect&#39;, and use `on_complete&#39; to handle
+the rest.&lt;/pre>
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/fab215dd4f4820be9e5297080a71ce1b9343117b</id>
+    <link type="text/html" rel="alternate" href="https://github.com/pauldix/feedzirra/commit/fab215dd4f4820be9e5297080a71ce1b9343117b"/>
+    <title>
+        Consistently return boolean
+    </title>
+    <updated>2013-11-20T13:58:50-08:00</updated>
+    <media:thumbnail height="30" width="30" url="https://0.gravatar.com/avatar/cc3661971714a03d18eb342759829deb?d=https%3A%2F%2Fidenticons.github.com%2F6ef7349b5e6ac8736fb5b75f4685abe0.png&amp;r=x&amp;s=30"/>
+    <author>
+      <name>fudanchii</name>
+      <uri>https://github.com/fudanchii</uri>
+    </author>
+    <content type="html">
+      &lt;pre style='white-space:pre-wrap;width:81ex'>Consistently return boolean&lt;/pre>
+    </content>
+  </entry>
+</feed>

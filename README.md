@@ -169,42 +169,10 @@ feed = Feedzirra::Feed.fetch_and_parse('file:///home/feedzirra/examples/feed.rss
 
 ## Benchmarks
 
-One of the goals of Feedzirra is speed. This includes not only parsing, but
-fetching multiple feeds as quickly as possible. I ran a benchmark getting 20
-feeds 10 times using Feedzirra, rFeedParser, and FeedNormalizer:
+Since a major goal of Feedzirra is speed, benchmarks are provided--see the
+[Benchmark README][benchmark_readme] for more details.
 
-    feedzirra          5.170000   1.290000   6.460000 ( 18.917796)
-    rfeedparser      104.260000  12.220000 116.480000 (244.799063)
-    feed-normalizer   66.250000   4.010000  70.260000 (191.589862)
-
-See the [fetching benchmark code][] for more details.
-
-[fetching benchmark code]: https://github.com/pauldix/feedzirra/blob/7fb5634c5c16e9c6ec971767b462c6518cd55f5d/spec/benchmarks/feedzirra_benchmarks.rb
-
-The result of that benchmark is a bit sketchy because of the network
-variability. Running 10 times against the same 20 feeds was meant to smooth some
-of that out, however, I also compared parsing speed on an atom feed:
-
-    feedzirra        0.500000   0.030000   0.530000 (  0.658744)
-    rfeedparser      8.400000   1.110000   9.510000 ( 11.839827)
-    feed-normalizer  5.980000   0.160000   6.140000 (  7.576140)
-
-See the [parsing benchmark code][] for more details.
-
-[parsing benchmark code]: https://github.com/pauldix/feedzirra/blob/7fb5634c5c16e9c6ec971767b462c6518cd55f5d/spec/benchmarks/parsing_benchmark.rb
-
-There's also a benchmark that shows the results of using Feedzirra to perform
-updates on feeds you've already pulled in. I tested against 179 feeds. The first
-is the initial pull and the second is an update 65 seconds later. I'm not sure
-how many of them support etag and last-modified, so performance may be better or
-worse depending on what feeds you're requesting.
-
-    feedzirra fetch and parse  4.010000   0.710000   4.720000 ( 15.110101)
-    feedzirra update           0.660000   0.280000   0.940000 (  5.152709)
-
-See the [updating benchmark code][] for more details.
-
-[updating benchmark code]: https://github.com/pauldix/feedzirra/blob/45d64319544c61a4c9eb9f7f825c73b9f9030cb3/spec/benchmarks/updating_benchmarks.rb
+[benchmark_readme]: https://github.com/pauldix/feedzirra/blob/master/benchmarks/README
 
 ## TODO
 
