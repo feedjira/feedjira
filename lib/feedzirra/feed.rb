@@ -7,7 +7,9 @@ module Feedzirra
     # === Parameters
     # [xml<String>] The XML that you would like parsed.
     # === Returns
-    # An instance of the determined feed type. By default a Feedzirra::Atom, Feedzirra::AtomFeedBurner, Feedzirra::RDF, or Feedzirra::RSS object.
+    # An instance of the determined feed type. By default a Feedzirra::Parser::RSSFeedBurner,
+    # Feedzirra::Parser::GoogleDocsAtom, Feedzirra::Parser::AtomFeedBurner, Feedzirra::Parser::Atom,
+    # Feedzirra::Parser::ITunesRSS, or Feedzirra::Parser::RSS object.
     # === Raises
     # Feedzirra::NoParserAvailable : If no valid parser classes could be found for the feed.
     def self.parse(xml, &block)
