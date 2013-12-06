@@ -7,9 +7,13 @@ module Feedzirra
     # === Parameters
     # [xml<String>] The XML that you would like parsed.
     # === Returns
-    # An instance of the determined feed type. By default a Feedzirra::Parser::RSSFeedBurner,
-    # Feedzirra::Parser::GoogleDocsAtom, Feedzirra::Parser::AtomFeedBurner, Feedzirra::Parser::Atom,
-    # Feedzirra::Parser::ITunesRSS, or Feedzirra::Parser::RSS object.
+    # An instance of the determined feed type. By default, one of these:
+    # * Feedzirra::Parser::RSSFeedBurner
+    # * Feedzirra::Parser::GoogleDocsAtom
+    # * Feedzirra::Parser::AtomFeedBurner
+    # * Feedzirra::Parser::Atom
+    # * Feedzirra::Parser::ITunesRSS
+    # * Feedzirra::Parser::RSS
     # === Raises
     # Feedzirra::NoParserAvailable : If no valid parser classes could be found for the feed.
     def self.parse(xml, &block)
@@ -46,7 +50,14 @@ module Feedzirra
     # === Returns
     # A array of class names.
     def self.feed_classes
-      @feed_classes ||= [Feedzirra::Parser::RSSFeedBurner, Feedzirra::Parser::GoogleDocsAtom, Feedzirra::Parser::AtomFeedBurner, Feedzirra::Parser::Atom, Feedzirra::Parser::ITunesRSS, Feedzirra::Parser::RSS]
+      @feed_classes ||= [
+        Feedzirra::Parser::RSSFeedBurner,
+        Feedzirra::Parser::GoogleDocsAtom,
+        Feedzirra::Parser::AtomFeedBurner,
+        Feedzirra::Parser::Atom,
+        Feedzirra::Parser::ITunesRSS,
+        Feedzirra::Parser::RSS
+      ]
     end
 
     # Makes all registered feeds types look for the passed in element to parse.
