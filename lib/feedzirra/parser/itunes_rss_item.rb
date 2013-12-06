@@ -12,6 +12,7 @@ module Feedzirra
       element :title
       element :link, :as => :url
       element :description, :as => :summary
+      element :"content:encoded", :as => :content
       element :pubDate, :as => :published
 
       # If author is not present use author tag on the item
