@@ -33,6 +33,7 @@
 <itunes:image href="http://example.com/podcasts/everything/AllAboutEverything.jpg" />
 <itunes:order>12</itunes:order>
 <itunes:isClosedCaptioned>yes</itunes:isClosedCaptioned>
+<content:encoded>&lt;p&gt;&lt;strong&gt;TOPIC&lt;/strong&gt;: Gooseneck Options&lt;/p&gt;</content:encoded>
 </item>
  
 <item>

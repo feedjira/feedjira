@@ -56,4 +56,8 @@ describe Feedzirra::Parser::ITunesRSSItem do
   it "should parse the closed captioned flag" do
     @item.itunes_closed_captioned.should eq 'yes'
   end
+
+  it "should parse the encoded content" do
+    @item.content.should == "<p><strong>TOPIC</strong>: Gooseneck Options</p>"
+  end
 end
