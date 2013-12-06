@@ -1,5 +1,26 @@
 # Feedzirra Changelog
 
+## 0.6.0
+
+* General
+  * Update expected parser classes in docs [[#200][]]
+  * Fix Rubinius issue with Travis
+
+* Enhancements
+  * Added content to `itunes_rss_item` [[#198][]]
+  * Allow user to pass a particular parser using `parse_with`
+  * Strip leading whitespace from XML [[#196][]]
+  * Parse out RSS version [[#172][]]
+  * Add generic preprocessing hook for Parsers
+  * Add preprocessing hook for Atom XHTML content [[#58][]] [[#130][]]
+
+[#58]: https://github.com/pauldix/feedzirra/pull/58
+[#130]: https://github.com/pauldix/feedzirra/issues/130
+[#172]: https://github.com/pauldix/feedzirra/issues/172
+[#196]: https://github.com/pauldix/feedzirra/pull/196
+[#198]: https://github.com/pauldix/feedzirra/pull/198
+[#200]: https://github.com/pauldix/feedzirra/pull/200
+
 ## 0.5.0
 
 * General
