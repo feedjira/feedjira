@@ -151,7 +151,7 @@ end
 
 # Fetch a feed containing GeoRss info and print them
 Feedzirra::Feed.fetch_and_parse("http://www.earthpublisher.com/georss.php").entries.each do |e|
-  p "lat: #[e.lat}, long: #{e.long]"
+  p "lat: #{e.lat}, long: #{e.long}"
 end
 ```
 
