@@ -116,9 +116,31 @@ feed = Feedzirra::Feed.fetch_and_parse("http://feeds.feedburner.com/PaulDixExpla
 
 ### Adding a feed parsing class
 
+When determining which parser to use for a given XML document, the following
+list of parser classes is used:
+
+* `Feedzirra::Parser::RSSFeedBurner`
+* `Feedzirra::Parser::GoogleDocsAtom`
+* `Feedzirra::Parser::AtomFeedBurner`
+* `Feedzirra::Parser::Atom`
+* `Feedzirra::Parser::ITunesRSS`
+* `Feedzirra::Parser::RSS`
+
+You can insert your own parser at the front of this stack by calling
+`add_feed_class`, like this:
+
 ```ruby
-# Adds a new feed parsing class, this class will be used first
-Feedzirra::Feed.add_feed_class MyFeedClass
+Feedzirra::Feed.add_feed_class MyAwesomeParser
+```
+
+Now when you `fetch_and_parse`, `MyAwesomeParser` will be the first one to get a
+chance to parse the feed.
+
+If you have the XML and just want to provide a parser class for one parse, you
+can specify that using `parse_with`:
+
+```ruby
+Feedzirra::Feed.parse_with MyAwesomeParser, xml
 ```
 
 ### Adding attributes to all feeds types / all entries types

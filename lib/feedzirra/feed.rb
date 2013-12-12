@@ -2,6 +2,17 @@ module Feedzirra
   class Feed
     USER_AGENT = "feedzirra http://github.com/pauldix/feedzirra/tree/master"
 
+    # Passes raw XML and callbacks to a parser.
+    # === Parameters
+    # [parser<Object>] The parser to pass arguments to - must respond to
+    # `parse` and should return a Feed object.
+    # [xml<String>] The XML that you would like parsed.
+    # === Returns
+    # An instance of the parser feed type.
+    def self.parse_with(parser, xml, &block)
+      parser.parse xml, &block
+    end
+
     # Takes a raw XML feed and attempts to parse it. If no parser is available a Feedzirra::NoParserAvailable exception is raised.
     # You can pass a block to be called when there's an error during the parsing.
     # === Parameters
@@ -18,7 +29,7 @@ module Feedzirra
     # Feedzirra::NoParserAvailable : If no valid parser classes could be found for the feed.
     def self.parse(xml, &block)
       if parser = determine_feed_parser_for_xml(xml)
-        parser.parse(xml, block)
+        parse_with parser, xml, &block
       else
         raise NoParserAvailable.new("No valid parser for XML.")
       end
@@ -301,7 +312,7 @@ module Feedzirra
 
           if klass
             begin
-              feed = klass.parse xml, on_parser_failure(url)
+              feed = parse_with klass, xml, &on_parser_failure(url)
 
               feed.feed_url = c.last_effective_url
               feed.etag = etag_from_header(c.header_str)

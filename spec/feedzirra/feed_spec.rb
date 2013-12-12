@@ -1,7 +1,9 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 
+class Hell < StandardError; end
+
 class FailParser
-  def self.parse(_, on_failure)
+  def self.parse(_, &on_failure)
     on_failure.call
   end
 end
@@ -41,6 +43,26 @@ describe Feedzirra::Feed do
 
     it "should parse the added element out of RSS feeds entries" do
       Feedzirra::Parser::RSSEntry.new.should respond_to(:comment_rss)
+    end
+  end
+
+  describe '#parse_with' do
+    let(:xml) { '<xml></xml>' }
+
+    it 'invokes the parser and passes the xml' do
+      parser = double 'Parser', parse: nil
+      parser.should_receive(:parse).with xml
+      Feedzirra::Feed.parse_with parser, xml
+    end
+
+    context 'with a callback block' do
+      it 'passes the callback to the parser' do
+        callback = -> { raise Hell }
+
+        expect do
+          Feedzirra::Feed.parse_with FailParser, xml, &callback
+        end.to raise_error Hell
+      end
     end
   end
 
@@ -391,7 +413,8 @@ describe Feedzirra::Feed do
         end
 
         it 'should parse the xml' do
-          Feedzirra::Parser::AtomFeedBurner.should_receive(:parse).with(@paul_feed[:xml], an_instance_of(Proc)).and_return(@feed)
+          Feedzirra::Parser::AtomFeedBurner.should_receive(:parse).
+            with(@paul_feed[:xml]).and_return(@feed)
           Feedzirra::Feed.add_url_to_multi(@multi, @paul_feed[:url], [], {}, {})
           @easy_curl.on_success.call(@easy_curl)
         end
