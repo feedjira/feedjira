@@ -297,6 +297,7 @@ module Feedzirra
 
         curl.on_success do |c|
           xml = decode_content(c)
+          xml = xml.lstrip if xml.respond_to?(:lstrip)
           klass = determine_feed_parser_for_xml(xml)
 
           if klass
