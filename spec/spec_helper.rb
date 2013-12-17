@@ -17,6 +17,10 @@ def sample_atom_feed
   load_sample("AmazonWebServicesBlog.xml")
 end
 
+def sample_atom_xhtml_feed
+  load_sample("pet_atom.xml")
+end
+
 def sample_atom_feed_line_breaks
   load_sample("AtomFeedWithSpacesAroundEquals.xml")
 end

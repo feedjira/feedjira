@@ -62,4 +62,15 @@ describe Feedzirra::Parser::Atom do
       @feed.entries.size.should == 10
     end
   end
+
+  describe "preprocessing" do
+    it "retains markup in xhtml content" do
+      Feedzirra::Parser::Atom.preprocess_xml = true
+
+      feed = Feedzirra::Parser::Atom.parse sample_atom_xhtml_feed
+      entry = feed.entries.first
+
+      entry.content.should match /\<div/
+    end
+  end
 end
