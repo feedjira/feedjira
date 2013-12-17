@@ -11,7 +11,21 @@ module Feedzirra
 
     module ClassMethods
       def parse(xml, &block)
+        xml = preprocess(xml) if preprocess_xml
         super xml.lstrip, &block
+      end
+
+      def preprocess(xml)
+        # noop
+        xml
+      end
+
+      def preprocess_xml=(value)
+        @preprocess_xml = value
+      end
+
+      def preprocess_xml
+        @preprocess_xml
       end
     end
 
