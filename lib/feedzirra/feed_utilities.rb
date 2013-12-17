@@ -5,6 +5,16 @@ module Feedzirra
     attr_writer   :new_entries, :updated, :last_modified
     attr_accessor :etag
 
+    def self.included(base)
+      base.extend ClassMethods
+    end
+
+    module ClassMethods
+      def parse(xml, &block)
+        super xml.lstrip, &block
+      end
+    end
+
     def last_modified
       @last_modified ||= begin
         entry = entries.reject {|e| e.published.nil? }.sort_by { |entry| entry.published if entry.published }.last
