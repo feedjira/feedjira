@@ -4,7 +4,7 @@ class Hell < StandardError; end
 
 class FailParser
   def self.parse(_, &on_failure)
-    on_failure.call
+    on_failure.call 'this parser always fails.'
   end
 end
 
@@ -57,7 +57,7 @@ describe Feedzirra::Feed do
 
     context 'with a callback block' do
       it 'passes the callback to the parser' do
-        callback = -> { raise Hell }
+        callback = ->(*) { raise Hell }
 
         expect do
           Feedzirra::Feed.parse_with FailParser, xml, &callback
@@ -457,11 +457,11 @@ describe Feedzirra::Feed do
           end
 
           describe 'when the parser raises an exception' do
-            it 'invokes the on_failure callback' do
-              failure = lambda { |url, feed| }
-              failure.should_receive(:call).with(@paul_feed[:url], 0, nil, nil)
+            it 'invokes the on_failure callback with that exception' do
+              failure = double 'Failure callback', arity: 5
+              failure.should_receive(:call).with(@paul_feed[:url], 0, nil, nil, an_instance_of(Hell))
 
-              Feedzirra::Parser::AtomFeedBurner.should_receive(:parse).and_raise Exception
+              Feedzirra::Parser::AtomFeedBurner.should_receive(:parse).and_raise Hell
               Feedzirra::Feed.add_url_to_multi(@multi, @paul_feed[:url], [], {}, { on_failure: failure })
 
               @easy_curl.on_success.call(@easy_curl)
@@ -474,8 +474,8 @@ describe Feedzirra::Feed do
             end
 
             it 'invokes the on_failure callback' do
-              failure = lambda { |url, feed| }
-              failure.should_receive(:call).with(@paul_feed[:url], 0, nil, nil)
+              failure = double 'Failure callback', arity: 5
+              failure.should_receive(:call).with(@paul_feed[:url], 0, nil, nil, an_instance_of(RuntimeError))
 
               Feedzirra::Feed.add_url_to_multi(@multi, @paul_feed[:url], [], {}, { on_failure: failure })
               @easy_curl.on_success.call(@easy_curl)
@@ -485,8 +485,8 @@ describe Feedzirra::Feed do
 
         describe 'when no compatible xml parser class is found' do
           it 'invokes the on_failure callback' do
-            failure = lambda { |url, feed| }
-            failure.should_receive(:call).with(@paul_feed[:url], 0, nil, nil)
+            failure = double 'Failure callback', arity: 5
+            failure.should_receive(:call).with(@paul_feed[:url], 0, nil, nil, "Can't determine a parser")
 
             Feedzirra::Feed.should_receive(:determine_feed_parser_for_xml).and_return nil
             Feedzirra::Feed.add_url_to_multi(@multi, @paul_feed[:url], [], {}, { on_failure: failure })
@@ -506,8 +506,8 @@ describe Feedzirra::Feed do
           @easy_curl.stub(:body_str).and_return(@body)
         end
 
-        it 'should call proc if :on_fauilure option is passed' do
-          failure = lambda { |url, feed| }
+        it 'should call proc if :on_failure option is passed' do
+          failure = double 'Failure callback', arity: 5
           failure.should_receive(:call).with(@paul_feed[:url], 500, @headers, @body, nil)
           Feedzirra::Feed.add_url_to_multi(@multi, @paul_feed[:url], [], {}, { :on_failure => failure })
           @easy_curl.on_failure.call(@easy_curl)
@@ -534,7 +534,7 @@ describe Feedzirra::Feed do
         end
 
         it 'should call proc if :on_failure option is passed' do
-          complete = lambda { |url| }
+          complete = double 'Failure callback', arity: 5
           complete.should_receive(:call).with(@paul_feed[:url], 404, @headers, @body, 'Server returned a 404')
           Feedzirra::Feed.add_url_to_multi(@multi, @paul_feed[:url], [], {}, { :on_failure => complete })
           @easy_curl.on_missing.call(@easy_curl)
@@ -660,7 +660,7 @@ describe Feedzirra::Feed do
           end
 
           it 'invokes the on_failure callback' do
-            failure = lambda { |feed| }
+            failure = double 'Failure callback', arity: 5
             failure.should_receive(:call)
 
             Feedzirra::Feed.add_feed_to_multi(@multi, @feed, [], {}, { on_failure: failure })
@@ -693,7 +693,7 @@ describe Feedzirra::Feed do
           @easy_curl.on_failure.call(@easy_curl)
 
           responses.length.should == 1
-          responses['http://www.pauldix.net/'].should == 404
+          responses[@paul_feed[:url]].should == 404
         end
       end
     end

@@ -387,21 +387,21 @@ module Feedzirra
             responses[feed.feed_url] = feed
             options[:on_success].call(feed) if options.has_key?(:on_success)
           rescue Exception => e
-            call_on_failure(url, c, e, options[:on_failure])
+            call_on_failure(feed.feed_url, c, e, options[:on_failure])
           end
         end
 
         curl.on_failure do |c, err| # response code 50X
-          responses[feed.url] = c.response_code
-          options[:on_failure].call(feed, c.response_code, c.header_str, c.body_str) if options.has_key?(:on_failure)
+          responses[feed.feed_url] = c.response_code
+          call_on_failure(feed.feed_url, c, 'Server returned a 404', options[:on_failure])
         end
 
         curl.on_redirect do |c, err| # response code 30X
           if c.response_code == 304
             options[:on_success].call(feed) if options.has_key?(:on_success)
           else
-            responses[feed.url] = c.response_code
-            call_on_failure(url, c, err, options[:on_failure])
+            responses[feed.feed_url] = c.response_code
+            call_on_failure(feed.feed_url, c, err, options[:on_failure])
           end
         end
 
