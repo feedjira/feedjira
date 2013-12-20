@@ -1,5 +1,19 @@
 # Feedzirra Changelog
 
+## 0.7.0
+
+* General
+  * README update for callback arity [[#202][]]
+
+* Enhancements
+  * Add error info to `on_failure` callback [[#194][]]
+  * On failure callbacks get curl and error as args
+  * Bugfix for parsing dates that are ISO 8601 with milliseconds [[#203][]]
+
+[#194]: https://github.com/pauldix/feedzirra/pull/194
+[#202]: https://github.com/pauldix/feedzirra/pull/202
+[#203]: https://github.com/pauldix/feedzirra/pull/203
+
 ## 0.6.0
 
 * General
