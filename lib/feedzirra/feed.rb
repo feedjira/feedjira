@@ -413,26 +413,6 @@ module Feedzirra
       multi.add(easy)
     end
 
-    # Call the on_failure callback if present
-    #
-    # === Parameters
-    # [url<String>] The URL of the feed.
-    # [c<Curl::Easy>] The response.
-    # [error<String>] The error message.
-    # [on_failure<Proc>] The proc to be called, may be nil.
-    def self.call_on_failure(url, c, error, on_failure)
-      if on_failure
-        if on_failure.arity == 5
-          on_failure.call(url, c.response_code, c.header_str, c.body_str, error)
-        elsif on_failure.arity == 4
-          warn 'on_failure proc with deprecated arity 4 should include a fifth parameter containing the error'
-          on_failure.call(url, c.response_code, c.header_str, c.body_str)
-        else
-          warn "on_failure proc with invalid parameters number #{on_failure.arity} instead of 5, ignoring it"
-        end
-      end
-    end
-
     # Determines the etag from the request headers.
     #
     # === Parameters
@@ -460,6 +440,19 @@ module Feedzirra
 
       def on_parser_failure(url)
         Proc.new { |message| raise "Error while parsing [#{url}] #{message}" }
+      end
+
+      def call_on_failure(url, c, error, on_failure)
+        if on_failure
+          if on_failure.arity == 5
+            on_failure.call(url, c.response_code, c.header_str, c.body_str, error)
+          elsif on_failure.arity == 4
+            warn 'on_failure proc with deprecated arity 4 should include a fifth parameter containing the error'
+            on_failure.call(url, c.response_code, c.header_str, c.body_str)
+          else
+            warn "on_failure proc with invalid parameters number #{on_failure.arity} instead of 5, ignoring it"
+          end
+        end
       end
     end
   end
