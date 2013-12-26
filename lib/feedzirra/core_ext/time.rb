@@ -17,6 +17,8 @@ class Time
         dt.utc
       when dt.respond_to?(:empty?) && dt.empty?
         nil
+      when dt.respond_to?(:to_datetime)
+        dt.to_datetime.utc
       when dt.to_s =~ /\A\d{14}\z/
         parse("#{dt.to_s}Z", true)
       else
