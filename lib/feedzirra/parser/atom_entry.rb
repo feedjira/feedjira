@@ -34,7 +34,6 @@ module Feedzirra
       end
 
       def replies_url
-        puts link(:replies).href
         @replies_url ||= uri_join(base, link(:replies).href)
       end
 
