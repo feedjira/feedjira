@@ -320,10 +320,10 @@ module Feedzirra
               responses[url] = feed
               options[:on_success].call(url, feed) if options.has_key?(:on_success)
             rescue Exception => e
-              call_on_failure(url, c, e, options[:on_failure])
+              call_on_failure(c, e, options[:on_failure])
             end
           else
-            call_on_failure(url, c, "Can't determine a parser", options[:on_failure])
+            call_on_failure(c, "Can't determine a parser", options[:on_failure])
           end
         end
 
@@ -343,13 +343,13 @@ module Feedzirra
 
         curl.on_missing do |c|
           if c.response_code == 404 && options.has_key?(:on_failure)
-            call_on_failure(url, c, 'Server returned a 404', options[:on_failure])
+            call_on_failure(c, 'Server returned a 404', options[:on_failure])
           end
         end
 
         curl.on_failure do |c, err|
           responses[url] = c.response_code
-          call_on_failure(url, c, err, options[:on_failure])
+          call_on_failure(c, err, options[:on_failure])
         end
       end
       multi.add(easy)
@@ -387,13 +387,13 @@ module Feedzirra
             responses[feed.feed_url] = feed
             options[:on_success].call(feed) if options.has_key?(:on_success)
           rescue Exception => e
-            call_on_failure(feed.feed_url, c, e, options[:on_failure])
+            call_on_failure(c, e, options[:on_failure])
           end
         end
 
         curl.on_failure do |c, err| # response code 50X
           responses[feed.feed_url] = c.response_code
-          call_on_failure(feed.feed_url, c, 'Server returned a 404', options[:on_failure])
+          call_on_failure(c, 'Server returned a 404', options[:on_failure])
         end
 
         curl.on_redirect do |c, err| # response code 30X
@@ -401,7 +401,7 @@ module Feedzirra
             options[:on_success].call(feed) if options.has_key?(:on_success)
           else
             responses[feed.feed_url] = c.response_code
-            call_on_failure(feed.feed_url, c, err, options[:on_failure])
+            call_on_failure(c, err, options[:on_failure])
           end
         end
 
@@ -442,15 +442,15 @@ module Feedzirra
         Proc.new { |message| raise "Error while parsing [#{url}] #{message}" }
       end
 
-      def call_on_failure(url, c, error, on_failure)
+      def call_on_failure(c, error, on_failure)
         if on_failure
-          if on_failure.arity == 5
-            on_failure.call(url, c.response_code, c.header_str, c.body_str, error)
-          elsif on_failure.arity == 4
+          if on_failure.arity == 4
             warn 'on_failure proc with deprecated arity 4 should include a fifth parameter containing the error'
-            on_failure.call(url, c.response_code, c.header_str, c.body_str)
+            on_failure.call(c.url, c.response_code, c.header_str, c.body_str)
+          elsif on_failure.arity == 2
+            on_failure.call(c, error)
           else
-            warn "on_failure proc with invalid parameters number #{on_failure.arity} instead of 5, ignoring it"
+            warn "on_failure proc with invalid parameters number #{on_failure.arity} instead of 2, ignoring it"
           end
         end
       end

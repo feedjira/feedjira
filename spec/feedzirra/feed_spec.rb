@@ -458,8 +458,8 @@ describe Feedzirra::Feed do
 
           describe 'when the parser raises an exception' do
             it 'invokes the on_failure callback with that exception' do
-              failure = double 'Failure callback', arity: 5
-              failure.should_receive(:call).with(@paul_feed[:url], 0, nil, nil, an_instance_of(Hell))
+              failure = double 'Failure callback', arity: 2
+              failure.should_receive(:call).with(@easy_curl, an_instance_of(Hell))
 
               Feedzirra::Parser::AtomFeedBurner.should_receive(:parse).and_raise Hell
               Feedzirra::Feed.add_url_to_multi(@multi, @paul_feed[:url], [], {}, { on_failure: failure })
@@ -474,8 +474,8 @@ describe Feedzirra::Feed do
             end
 
             it 'invokes the on_failure callback' do
-              failure = double 'Failure callback', arity: 5
-              failure.should_receive(:call).with(@paul_feed[:url], 0, nil, nil, an_instance_of(RuntimeError))
+              failure = double 'Failure callback', arity: 2
+              failure.should_receive(:call).with(@easy_curl, an_instance_of(RuntimeError))
 
               Feedzirra::Feed.add_url_to_multi(@multi, @paul_feed[:url], [], {}, { on_failure: failure })
               @easy_curl.on_success.call(@easy_curl)
@@ -485,8 +485,8 @@ describe Feedzirra::Feed do
 
         describe 'when no compatible xml parser class is found' do
           it 'invokes the on_failure callback' do
-            failure = double 'Failure callback', arity: 5
-            failure.should_receive(:call).with(@paul_feed[:url], 0, nil, nil, "Can't determine a parser")
+            failure = double 'Failure callback', arity: 2
+            failure.should_receive(:call).with(@easy_curl, "Can't determine a parser")
 
             Feedzirra::Feed.should_receive(:determine_feed_parser_for_xml).and_return nil
             Feedzirra::Feed.add_url_to_multi(@multi, @paul_feed[:url], [], {}, { on_failure: failure })
@@ -507,8 +507,8 @@ describe Feedzirra::Feed do
         end
 
         it 'should call proc if :on_failure option is passed' do
-          failure = double 'Failure callback', arity: 5
-          failure.should_receive(:call).with(@paul_feed[:url], 500, @headers, @body, nil)
+          failure = double 'Failure callback', arity: 2
+          failure.should_receive(:call).with(@easy_curl, nil)
           Feedzirra::Feed.add_url_to_multi(@multi, @paul_feed[:url], [], {}, { :on_failure => failure })
           @easy_curl.on_failure.call(@easy_curl)
         end
@@ -534,8 +534,8 @@ describe Feedzirra::Feed do
         end
 
         it 'should call proc if :on_failure option is passed' do
-          complete = double 'Failure callback', arity: 5
-          complete.should_receive(:call).with(@paul_feed[:url], 404, @headers, @body, 'Server returned a 404')
+          complete = double 'Failure callback', arity: 2
+          complete.should_receive(:call).with(@easy_curl, 'Server returned a 404')
           Feedzirra::Feed.add_url_to_multi(@multi, @paul_feed[:url], [], {}, { :on_failure => complete })
           @easy_curl.on_missing.call(@easy_curl)
         end
@@ -660,7 +660,7 @@ describe Feedzirra::Feed do
           end
 
           it 'invokes the on_failure callback' do
-            failure = double 'Failure callback', arity: 5
+            failure = double 'Failure callback', arity: 2
             failure.should_receive(:call)
 
             Feedzirra::Feed.add_feed_to_multi(@multi, @feed, [], {}, { on_failure: failure })
