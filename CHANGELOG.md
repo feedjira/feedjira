@@ -1,5 +1,9 @@
 # Feedzirra Changelog
 
+## 0.8.0
+
+* This project has been renamed Feedjira, find out more at feedjira.com.
+
 ## 0.7.1
 
 * Bugfix
