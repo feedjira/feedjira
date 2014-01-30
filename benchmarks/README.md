@@ -1,11 +1,11 @@
-# Feedzirra Benchmarks
+# Feedjira Benchmarks
 
-Speed is an important feature of Feedzirra and we use benchmarks to ensure we're
+Speed is an important feature of Feedjira and we use benchmarks to ensure we're
 fast and we stay that way.
 
 ## Fetching Options
 
-One way Feedzirra achieves its speed is by fetching feeds in parallel. This
+One way Feedjira achieves its speed is by fetching feeds in parallel. This
 benchmark compares ways to fetch feed urls:
 
 ```
@@ -17,11 +17,11 @@ Curl::Multi   0.100000   0.170000   0.270000 (  3.334533)
 
 See the [fetching systems code][fetching_systems] for more details.
 
-[fetching_systems]: https://github.com/pauldix/feedzirra/blob/master/benchmarks/fetching_systems.rb
+[fetching_systems]: https://github.com/feedjira/feedjira/blob/master/benchmarks/fetching_systems.rb
 
 ## Basic Benchmarks
 
-The basics to using Feedzirra are the `parse`, `fetch_and_parse` and `update`
+The basics to using Feedjira are the `parse`, `fetch_and_parse` and `update`
 methods, so this benchmark compares them:
 
 ```
@@ -33,17 +33,17 @@ update            1.030000   0.270000   1.300000 ( 29.359274)
 
 See the [basic benchmark code][basic] for more details.
 
-[basic]: https://github.com/pauldix/feedzirra/blob/master/benchmarks/basic.rb
+[basic]: https://github.com/feedjira/feedjira/blob/master/benchmarks/basic.rb
 
 ## Other Libraries
 
-This benchmark compares various alternatives to Feedzirra. As of 11/29/13, these
+This benchmark compares various alternatives to Feedjira. As of 11/29/13, these
 are the top 10 gems in the [Atom & RSS Feed Parsing category][alternatives] on
 Ruby Toolbox:
 
 [alternatives]: https://www.ruby-toolbox.com/categories/feed_parsing
 
-* Feedzirra
+* Feedjira
 * Simple-rss
 * Feed-normalizer
 * Ratom
@@ -73,7 +73,7 @@ their benchmarks can't be run at the same time.
 ```
 Parsing benchmarks
                       user     system      total        real
-feedzirra         1.560000   0.000000   1.560000 (  1.573555)
+feedjira         1.560000   0.000000   1.560000 (  1.573555)
 simple-rss       43.140000   0.150000  43.290000 ( 43.421603)
 feed-normalizer  39.870000   0.130000  40.000000 ( 40.404832)
 feed_parser       0.240000   0.000000   0.240000 (  0.249771)
@@ -81,10 +81,10 @@ feed_me           0.220000   0.010000   0.230000 (  0.229034)
 
 Fetch and parse benchmarks
                       user     system      total        real
-feedzirra         2.250000   0.320000   2.570000 ( 11.224833)
+feedjira         2.250000   0.320000   2.570000 ( 11.224833)
 feed_parser       1.700000   0.290000   1.990000 ( 28.941270)
 ```
 
 See the [other benchmark code][other_benchmark] for more details.
 
-[other_benchmark]: https://github.com/pauldix/feedzirra/blob/master/benchmarks/other_libraries.rb
+[other_benchmark]: https://github.com/feedjira/feedjira/blob/master/benchmarks/other_libraries.rb

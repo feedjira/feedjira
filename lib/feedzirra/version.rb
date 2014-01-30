@@ -1,3 +1,0 @@
-module Feedzirra
-  VERSION = '0.7.1'
-end

@@ -7,4 +7,4 @@ http://www.engadget.com/rss.xml
 http://www.loopinsight.com/feed/
 http://www.whitehouse.gov/feed/blog/white-house
 http://xkcd.com/atom.xml
-https://github.com/pauldix/feedzirra/commits/master.atom
+https://github.com/feedjira/feedjira/commits/master.atom

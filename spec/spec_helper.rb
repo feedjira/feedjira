@@ -7,7 +7,7 @@ begin
 rescue LoadError
 end
 
-require File.expand_path(File.dirname(__FILE__) + '/../lib/feedzirra')
+require File.expand_path(File.dirname(__FILE__) + '/../lib/feedjira')
 
 def load_sample(filename)
   File.read("#{File.dirname(__FILE__)}/sample_feeds/#{filename}")

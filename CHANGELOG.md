@@ -1,4 +1,8 @@
-# Feedzirra Changelog
+# Feedjira Changelog
+
+## 0.9.0
+
+* Project renamed to Feedjira
 
 ## 0.7.1
 
