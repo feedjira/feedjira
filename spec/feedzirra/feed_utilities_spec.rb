@@ -169,7 +169,10 @@ describe Feedzirra::FeedUtilities do
       end
     end
 
-    describe "changing the url of an existing entry" do
+    describe "#update_from_feed" do
+      let(:recent_entry_id) { 'entry_id' }
+      let(:old_entry_id) { nil }
+
       before(:each) do
         # I'm using the Atom class when I know I should be using a different one. However, this update_from_feed
         # method would only be called against a feed item.
@@ -182,11 +185,12 @@ describe Feedzirra::FeedUtilities do
 
         @old_entry = Feedzirra::Parser::AtomEntry.new
         @old_entry.url = "http://pauldix.net/old.html"
+        @old_entry.entry_id = old_entry_id
         @old_entry.published = (Time.now - 10).to_s
 
         @entry = Feedzirra::Parser::AtomEntry.new
         @entry.published = (Time.now + 10).to_s
-        @entry.entry_id = "entry_id"
+        @entry.entry_id = recent_entry_id
         @entry.url = "http://pauldix.net/entry.html"
 
         # only difference is a changed url
@@ -200,15 +204,27 @@ describe Feedzirra::FeedUtilities do
         @updated_feed.entries << @old_entry
       end
 
-      it "should not put the complete feed into new_entries" do
-        @feed.update_from_feed(@updated_feed)
+      context "changing the url of an existing entry" do
+        it "should not put the complete feed into new_entries" do
+          @feed.update_from_feed(@updated_feed)
+          @feed.new_entries.should_not include(@entry_changed_url)
+          @feed.new_entries.should_not include(@old_entry)
+          @feed.new_entries.size.should == 0
+          @feed.new_entries.size.should_not == 2
+        end
+      end
 
-        @feed.new_entries.should_not include(@entry_changed_url)
-        @feed.new_entries.should_not include(@old_entry)
+      context "feed not have entry id and only difference is a url" do
+        let(:recent_entry_id) { nil }
+        let(:old_entry_id) { nil }
 
-        # don't return complete feed
-        @feed.new_entries.size.should == 0
-        @feed.new_entries.size.should_not == 2
+        it "should put the complete feed into new_entries" do
+          @feed.update_from_feed(@updated_feed)
+          @feed.new_entries.should include(@entry_changed_url)
+          @feed.new_entries.should include(@old_entry)
+          @feed.new_entries.size.should == 2
+          @feed.new_entries.size.should_not == 0
+        end
       end
     end
 
