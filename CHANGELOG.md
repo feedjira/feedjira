@@ -1,5 +1,12 @@
 # Feedzirra Changelog
 
+## 0.7.1
+
+* Bugfix
+  * Don't use entry id for updating when feed doesn't provide it [[#205][]]
+
+[#205]: https://github.com/pauldix/feedzirra/pull/205
+
 ## 0.7.0
 
 * General
