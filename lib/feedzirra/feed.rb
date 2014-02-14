@@ -136,6 +136,7 @@ module Feedzirra
     # Setup curl from options.
     # Possible parameters:
     # * :user_agent          - overrides the default user agent.
+    # * :language            - accept language value.
     # * :compress            - any value to enable compression
     # * :enable_cookies      - boolean
     # * :cookiefile          - file to read cookies
@@ -151,6 +152,7 @@ module Feedzirra
     def self.setup_easy(curl, options={})
       curl.headers["Accept-encoding"]   = 'gzip, deflate' if options.has_key?(:compress)
       curl.headers["User-Agent"]        = (options[:user_agent] || USER_AGENT)
+      curl.headers["Accept-Language"]   = options[:language] if options.has_key?(:language)
       curl.enable_cookies               = options[:enable_cookies] if options.has_key?(:enable_cookies)
       curl.cookiefile                   = options[:cookiefile] if options.has_key?(:cookiefile)
       curl.cookies                      = options[:cookies] if options.has_key?(:cookies)

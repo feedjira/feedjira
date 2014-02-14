@@ -174,6 +174,11 @@ describe Feedzirra::Feed do
       curl.headers["User-Agent"].should eq '007'
     end
 
+    it "allows to set language" do
+      Feedzirra::Feed.setup_easy(curl, language: 'en-US')
+      curl.headers["Accept-Language"].should eq 'en-US'
+    end
+
     it "enables compression" do
       Feedzirra::Feed.setup_easy(curl, compress: true)
       curl.headers["Accept-encoding"].should eq 'gzip, deflate'
