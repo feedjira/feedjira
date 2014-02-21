@@ -1,5 +1,9 @@
 # Feedjira Changelog
 
+## 1.0.0
+
+* Removed deprecated features
+
 ## 0.9.0
 
 * Project renamed to Feedjira
