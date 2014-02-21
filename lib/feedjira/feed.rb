@@ -444,10 +444,7 @@ module Feedjira
 
       def call_on_failure(c, error, on_failure)
         if on_failure
-          if on_failure.arity == 4
-            warn 'on_failure proc with deprecated arity 4 should include a fifth parameter containing the error'
-            on_failure.call(c.url, c.response_code, c.header_str, c.body_str)
-          elsif on_failure.arity == 2
+          if on_failure.arity == 2
             on_failure.call(c, error)
           else
             warn "on_failure proc with invalid parameters number #{on_failure.arity} instead of 2, ignoring it"

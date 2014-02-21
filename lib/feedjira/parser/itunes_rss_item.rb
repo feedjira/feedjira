@@ -30,11 +30,6 @@ module Feedjira
       element :enclosure, :value => :length, :as => :enclosure_length
       element :enclosure, :value => :type, :as => :enclosure_type
       element :enclosure, :value => :url, :as => :enclosure_url
-
-      def guid
-        warn "Feedjira: ITunesRSSItem.guid is deprecated, please use `id` or `entry_id` instead. This will be removed in version 1.0"
-        id
-      end
     end
   end
 
