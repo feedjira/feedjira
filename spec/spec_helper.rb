@@ -1,12 +1,3 @@
-begin
-  require 'simplecov'
-  require 'json'
-  SimpleCov.start do
-    add_filter "/spec/"
-  end
-rescue LoadError
-end
-
 require File.expand_path(File.dirname(__FILE__) + '/../lib/feedjira')
 
 def load_sample(filename)
