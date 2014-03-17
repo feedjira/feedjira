@@ -149,7 +149,7 @@ Feedjira::Feed.parse_with MyAwesomeParser, xml
 ```ruby
 # Add the generator attribute to all feed types
 Feedjira::Feed.add_common_feed_element('generator')
-Feedjira::Feed.fetch_and_parse("href="http://www.pauldix.net/atom.xml").generator # => 'TypePad'
+Feedjira::Feed.fetch_and_parse("http://www.pauldix.net/atom.xml").generator # => 'TypePad'
 
 # Add some GeoRss information
 Feedjira::Feed.add_common_feed_entry_element('geo:lat', :as => :lat)
