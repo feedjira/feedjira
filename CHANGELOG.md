@@ -1,5 +1,21 @@
 # Feedjira Changelog
 
+## 1.1.0
+
+* General
+  * Add 2.1 to list of supported Rubies, drop 1.9.2
+  * Remove Guard and Simplecov
+  * Extract sample feeds into RSpec helper module
+  * Random cleanup
+  * Quiet down default rake task
+  * Fix CHANGELOG links
+  * Point README at new site
+
+* Enhancements
+  * Add language setting to curl options [#206][]
+
+[#206]: https://github.com/feedjira/feedjira/pull/206
+
 ## 1.0.0
 
 * Removed deprecated features
