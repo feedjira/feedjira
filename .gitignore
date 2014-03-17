@@ -1,14 +1,7 @@
-.DS_Store
-.rvmrc
-.ruby-version
+.bundle
 .ruby-gemset
-TODO
+.ruby-version
 Gemfile.lock
-rdoc/
 doc/
 pkg/
-coverage/
-.rbx
-.bundle
-*.swp
-*.swo
+rdoc/

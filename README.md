@@ -1,42 +1,42 @@
-# Feedzirra [![Build Status][travis-badge]][travis] [![Code Climate][code-climate-badge]][code-climate]
+# Feedjira [![Build Status][travis-badge]][travis] [![Code Climate][code-climate-badge]][code-climate]
 
-[travis-badge]: https://secure.travis-ci.org/pauldix/feedzirra.png
-[travis]: http://travis-ci.org/pauldix/feedzirra
-[code-climate-badge]: https://codeclimate.com/github/pauldix/feedzirra.png
-[code-climate]: https://codeclimate.com/github/pauldix/feedzirra
+[travis-badge]: https://travis-ci.org/feedjira/feedjira.png
+[travis]: http://travis-ci.org/feedjira/feedjira
+[code-climate-badge]: https://codeclimate.com/github/feedjira/feedjira.png
+[code-climate]: https://codeclimate.com/github/feedjira/feedjira
 
 I'd like feedback on the api and any bugs encountered on feeds in the wild. I've
 set up a [google group][].
 
-[google group]: http://groups.google.com/group/feedzirra
+[google group]: http://groups.google.com/group/feedjira
 
 ## Description
 
-Feedzirra is a feed library that is designed to get and update many feeds as
+Feedjira is a feed library that is designed to get and update many feeds as
 quickly as possible. This includes using libcurl-multi through the [curb][] gem
 for faster http gets, and libxml through [nokogiri][] and [sax-machine][] for
-faster parsing.  Feedzirra requires at least Ruby 1.9.2.
+faster parsing.  Feedjira requires at least Ruby 1.9.2.
 
 [curb]: https://github.com/taf2/curb
 [nokogiri]: https://github.com/sparklemotion/nokogiri
 [sax-machine]: https://github.com/pauldix/sax-machine
 
-Once you have fetched feeds using Feedzirra, they can be updated using the feed
-objects. Feedzirra automatically inserts etag and last-modified information from
+Once you have fetched feeds using Feedjira, they can be updated using the feed
+objects. Feedjira automatically inserts etag and last-modified information from
 the http response headers to lower bandwidth usage, eliminate unnecessary
 parsing, and make things speedier in general.
 
-Another feature present in Feedzirra is the ability to create callback functions
+Another feature present in Feedjira is the ability to create callback functions
 that get called "on success" and "on failure" when getting a feed. This makes it
 easy to do things like log errors or update data stores.
 
 The fetching and parsing logic have been decoupled so that either of them can be
-used in isolation if you'd prefer not to use everything that Feedzirra offers.
+used in isolation if you'd prefer not to use everything that Feedjira offers.
 However, the code examples below use helper methods in the Feed class that put
 everything together to make things as simple as possible.
 
-The final feature of Feedzirra is the ability to define custom parsing classes.
-In truth, Feedzirra could be used to parse much more than feeds. Microformats,
+The final feature of Feedjira is the ability to define custom parsing classes.
+In truth, Feedjira could be used to parse much more than feeds. Microformats,
 page scraping, and almost anything else are fair game.
 
 ## Speedup date parsing
@@ -53,10 +53,10 @@ you are using Ruby 1.9.3+, you will not need to use home\_run.
 [A gist of the following code](http://gist.github.com/57285)
 
 ```ruby
-require 'feedzirra'
+require 'feedjira'
 
 # fetching a single feed
-feed = Feedzirra::Feed.fetch_and_parse("http://feeds.feedburner.com/PaulDixExplainsNothing")
+feed = Feedjira::Feed.fetch_and_parse("http://feeds.feedburner.com/PaulDixExplainsNothing")
 
 # feed and entries accessors
 feed.title          # => "Paul Dix Explains Nothing"
@@ -83,7 +83,7 @@ entry.sanitize!         # => sanitizes the entry's title, author, and content in
 feed.sanitize_entries!  # => sanitizes all entries in place
 
 # updating a single feed
-updated_feed = Feedzirra::Feed.update(feed)
+updated_feed = Feedjira::Feed.update(feed)
 
 # an updated feed has the following extra accessors
 updated_feed.updated?     # returns true if any of the feed attributes have been modified. will return false if no new entries
@@ -91,26 +91,26 @@ updated_feed.new_entries  # a collection of the entry objects that are newer tha
 
 # fetching multiple feeds
 feed_urls = ["http://feeds.feedburner.com/PaulDixExplainsNothing", "http://feeds.feedburner.com/trottercashion"]
-feeds = Feedzirra::Feed.fetch_and_parse(feed_urls)
+feeds = Feedjira::Feed.fetch_and_parse(feed_urls)
 
 # feeds is now a hash with the feed_urls as keys and the parsed feed objects as values. If an error was thrown
 # there will be a Fixnum of the http response code instead of a feed object
 
 # updating multiple feeds. it expects a collection of feed objects
-updated_feeds = Feedzirra::Feed.update(feeds.values)
+updated_feeds = Feedjira::Feed.update(feeds.values)
 
 # defining custom behavior on failure or success. note that a return status of 304 (not updated) will call the on_success handler
-feed = Feedzirra::Feed.fetch_and_parse("http://feeds.feedburner.com/PaulDixExplainsNothing",
+feed = Feedjira::Feed.fetch_and_parse("http://feeds.feedburner.com/PaulDixExplainsNothing",
 	:on_success => lambda {|url, feed| puts feed.title },
 	:on_failure => lambda {|curl, error| puts error })
 
 # if a collection was passed into fetch_and_parse, the handlers will be called for each one
 
-# the behavior for the handlers when using Feedzirra::Feed.update is slightly different. The feed passed into on_success will be
+# the behavior for the handlers when using Feedjira::Feed.update is slightly different. The feed passed into on_success will be
 # the updated feed with the standard updated accessors. on failure it will be the original feed object passed into update
 
 # fetching a feed via a proxy (optional)
-feed = Feedzirra::Feed.fetch_and_parse("http://feeds.feedburner.com/PaulDixExplainsNothing", {:proxy_url => '10.0.0.1', :proxy_port => 3084})
+feed = Feedjira::Feed.fetch_and_parse("http://feeds.feedburner.com/PaulDixExplainsNothing", {:proxy_url => '10.0.0.1', :proxy_port => 3084})
 ```
 
 ## Extending
@@ -120,18 +120,18 @@ feed = Feedzirra::Feed.fetch_and_parse("http://feeds.feedburner.com/PaulDixExpla
 When determining which parser to use for a given XML document, the following
 list of parser classes is used:
 
-* `Feedzirra::Parser::RSSFeedBurner`
-* `Feedzirra::Parser::GoogleDocsAtom`
-* `Feedzirra::Parser::AtomFeedBurner`
-* `Feedzirra::Parser::Atom`
-* `Feedzirra::Parser::ITunesRSS`
-* `Feedzirra::Parser::RSS`
+* `Feedjira::Parser::RSSFeedBurner`
+* `Feedjira::Parser::GoogleDocsAtom`
+* `Feedjira::Parser::AtomFeedBurner`
+* `Feedjira::Parser::Atom`
+* `Feedjira::Parser::ITunesRSS`
+* `Feedjira::Parser::RSS`
 
 You can insert your own parser at the front of this stack by calling
 `add_feed_class`, like this:
 
 ```ruby
-Feedzirra::Feed.add_feed_class MyAwesomeParser
+Feedjira::Feed.add_feed_class MyAwesomeParser
 ```
 
 Now when you `fetch_and_parse`, `MyAwesomeParser` will be the first one to get a
@@ -141,19 +141,19 @@ If you have the XML and just want to provide a parser class for one parse, you
 can specify that using `parse_with`:
 
 ```ruby
-Feedzirra::Feed.parse_with MyAwesomeParser, xml
+Feedjira::Feed.parse_with MyAwesomeParser, xml
 ```
 
 ### Adding attributes to all feeds types / all entries types
 
 ```ruby
 # Add the generator attribute to all feed types
-Feedzirra::Feed.add_common_feed_element('generator')
-Feedzirra::Feed.fetch_and_parse("href="http://www.pauldix.net/atom.xml").generator # => 'TypePad'
+Feedjira::Feed.add_common_feed_element('generator')
+Feedjira::Feed.fetch_and_parse("http://www.pauldix.net/atom.xml").generator # => 'TypePad'
 
 # Add some GeoRss information
-Feedzirra::Feed.add_common_feed_entry_element('geo:lat', :as => :lat)
-Feedzirra::Feed.fetch_and_parse("http://www.earthpublisher.com/georss.php").entries.each do |e|
+Feedjira::Feed.add_common_feed_entry_element('geo:lat', :as => :lat)
+Feedjira::Feed.fetch_and_parse("http://www.earthpublisher.com/georss.php").entries.each do |e|
   p "lat: #[e.lat}, long: #{e.long]"
 end
 ```
@@ -165,37 +165,37 @@ in the class
 
 ```ruby
 # Add some GeoRss information
-require 'lib/feedzirra/parser/rss_entry'
+require 'lib/feedjira/parser/rss_entry'
 
-class Feedzirra::Parser::RSSEntry
+class Feedjira::Parser::RSSEntry
   element 'geo:lat', :as => :lat
   element 'geo:long', :as => :long
 end
 
 # Fetch a feed containing GeoRss info and print them
-Feedzirra::Feed.fetch_and_parse("http://www.earthpublisher.com/georss.php").entries.each do |e|
+Feedjira::Feed.fetch_and_parse("http://www.earthpublisher.com/georss.php").entries.each do |e|
   p "lat: #{e.lat}, long: #{e.long}"
 end
 ```
 
 ## Testing
 
-Feedzirra uses [curb][] to perform requests. `curb` provides bindings for
-[libcurl][] and supports numerous protocols, including FILE. To test Feedzirra
+Feedjira uses [curb][] to perform requests. `curb` provides bindings for
+[libcurl][] and supports numerous protocols, including FILE. To test Feedjira
 with local file use `file://` protocol:
 
 [libcurl]: http://curl.haxx.se/libcurl/
 
 ```ruby
-feed = Feedzirra::Feed.fetch_and_parse('file:///home/feedzirra/examples/feed.rss')
+feed = Feedjira::Feed.fetch_and_parse('file:///home/feedjira/examples/feed.rss')
 ```
 
 ## Benchmarks
 
-Since a major goal of Feedzirra is speed, benchmarks are provided--see the
+Since a major goal of Feedjira is speed, benchmarks are provided--see the
 [Benchmark README][benchmark_readme] for more details.
 
-[benchmark_readme]: https://github.com/pauldix/feedzirra/blob/master/benchmarks/README.md
+[benchmark_readme]: https://github.com/feedjira/feedjira/blob/master/benchmarks/README.md
 
 ## TODO
 
@@ -205,7 +205,7 @@ suite for feedparser. i wanted to start fresh.
 
 Here are some more specific TODOs.
 
-* Make a feedzirra-rails gem to integrate feedzirra seamlessly with Rails and ActiveRecord.
+* Make a feedjira-rails gem to integrate feedjira seamlessly with Rails and ActiveRecord.
 * Add support for authenticated feeds.
 * Create a super sweet DSL for defining new parsers.
 * I'm not keeping track of modified on entries. Should I add this?

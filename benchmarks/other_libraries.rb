@@ -1,5 +1,5 @@
 require 'benchmark'
-require 'feedzirra'
+require 'feedjira'
 require 'simple-rss'
 require 'feed-normalizer'
 require 'feed_me'
@@ -15,9 +15,9 @@ $VERBOSE = nil
 puts 'Parsing benchmarks'
 
 Benchmark.bm(15) do |b|
-  b.report('feedzirra') do
+  b.report('feedjira') do
     iterations.times do
-      xmls.each { |xml| Feedzirra::Feed.parse xml }
+      xmls.each { |xml| Feedjira::Feed.parse xml }
     end
   end
 
@@ -59,8 +59,8 @@ end
 puts "\nFetch and parse benchmarks"
 
 Benchmark.bm(15) do |b|
-  b.report('feedzirra') do
-    iterations.times { Feedzirra::Feed.fetch_and_parse urls }
+  b.report('feedjira') do
+    iterations.times { Feedjira::Feed.fetch_and_parse urls }
   end
 
   # incompatible with `ruby-feedparser`, same constant used
