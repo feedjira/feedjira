@@ -1,6 +1,6 @@
 # Feedjira [![Build Status][travis-badge]][travis] [![Code Climate][code-climate-badge]][code-climate]
 
-[travis-badge]: https://secure.travis-ci.org/feedjira/feedjira.png
+[travis-badge]: https://travis-ci.org/feedjira/feedjira.png
 [travis]: http://travis-ci.org/feedjira/feedjira
 [code-climate-badge]: https://codeclimate.com/github/feedjira/feedjira.png
 [code-climate]: https://codeclimate.com/github/feedjira/feedjira
