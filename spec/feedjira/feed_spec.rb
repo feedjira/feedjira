@@ -175,7 +175,7 @@ describe Feedjira::Feed do
     end
 
     it "allows to set language" do
-      Feedzirra::Feed.setup_easy(curl, language: 'en-US')
+      Feedjira::Feed.setup_easy(curl, language: 'en-US')
       curl.headers["Accept-Language"].should eq 'en-US'
     end
 
