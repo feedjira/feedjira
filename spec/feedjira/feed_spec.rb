@@ -760,7 +760,7 @@ describe Feedjira::Feed do
         Feedjira::Feed.should_receive(:add_feed_to_multi).
           with(anything, anything, anything, anything, options)
 
-        Feedjira::Feed.update(sample_rss_feed, options)
+        Feedjira::Feed.update([nil], options)
       end
     end
   end
