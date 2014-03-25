@@ -1,5 +1,24 @@
 # Feedjira Changelog
 
+## 1.2.0
+
+* General
+  * Benchmarks have been moved to [feedjira-benchmarks][bench]
+
+* Enhancements
+  * For Atom feeds, use self link for `feed_url` [#212][] [#213][]
+  * For Atom feeds, don't use self link for `url` [#212][] [#213][]
+
+* Bug fixes
+  * Remove div that wraps xhtml content in Atom feeds [#214][]
+  * Properly parse itunes:new-feed-url [#217][]
+
+[bench]: https://github.com/feedjira/feedjira-benchmarks
+[#212]: https://github.com/feedjira/feedjira/issues/212
+[#213]: https://github.com/feedjira/feedjira/pull/213
+[#214]: https://github.com/feedjira/feedjira/issues/214
+[#217]: https://github.com/feedjira/feedjira/pull/217
+
 ## 1.1.0
 
 * General
@@ -26,7 +45,7 @@
 
 ## 0.7.1
 
-* Bugfix
+* Bug fixes
   * Don't use entry id for updating when feed doesn't provide it [#205][]
 
 [#205]: https://github.com/feedjira/feedjira/pull/205
