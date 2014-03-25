@@ -73,4 +73,18 @@ describe Feedjira::Parser::Atom do
       entry.content.should match /\<div/
     end
   end
+
+  describe "parsing url and feed url based on rel attribute" do
+    before :each do
+      @feed = Feedjira::Parser::Atom.parse(sample_atom_middleman_feed)
+    end
+
+    it "should parse url" do
+      @feed.url.should == "http://feedjira.com/blog"
+    end
+
+    it "should parse feed url" do
+      @feed.feed_url.should == "http://feedjira.com/blog/feed.xml"
+    end
+  end
 end

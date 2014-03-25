@@ -17,17 +17,7 @@ module Feedjira
       end
 
       def url
-        if !@url.nil?
-          return @url
-        else
-          links.reverse_each do |link|
-            if link == links.first
-              return link
-            else
-              return link if link!=feed_url
-            end
-          end
-        end
+        @url || (links - [feed_url]).last || links.last
       end
 
       def feed_url
