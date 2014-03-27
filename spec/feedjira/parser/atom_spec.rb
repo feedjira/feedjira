@@ -70,7 +70,7 @@ describe Feedjira::Parser::Atom do
       feed = Feedjira::Parser::Atom.parse sample_atom_xhtml_feed
       entry = feed.entries.first
 
-      entry.content.should match /\<div/
+      entry.content.should match /\A\<p/
     end
   end
 
