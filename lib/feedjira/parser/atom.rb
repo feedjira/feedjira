@@ -34,17 +34,19 @@ module Feedjira
         end
 
         def to_xml
-          process_nodes
+          process_content
           doc.to_xml
         end
 
         private
 
-        def process_nodes
-          nodes.each { |node| node.content = raw_html(node) unless node.cdata? }
+        def process_content
+          content_nodes.each do |node|
+            node.content = raw_html(node) unless node.cdata?
+          end
         end
 
-        def nodes
+        def content_nodes
           doc.search 'entry > content[type="xhtml"]'
         end
 
