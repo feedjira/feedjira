@@ -11,8 +11,9 @@ module Feedjira
 
     module ClassMethods
       def parse(xml, &block)
+        xml = xml.lstrip
         xml = preprocess(xml) if preprocess_xml
-        super xml.lstrip, &block
+        super xml, &block
       end
 
       def preprocess(xml)
