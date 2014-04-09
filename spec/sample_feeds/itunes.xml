@@ -8,6 +8,7 @@
 <language>en-us</language>
 <copyright>&#x2117; &amp; &#xA9; 2005 John Doe &amp; Family</copyright>
 <itunes:subtitle>A show about everything</itunes:subtitle>
+<itunes:new-feed-url>http://example.com/new.xml</itunes:new-feed-url>
 <itunes:author>John Doe</itunes:author>
 <itunes:summary>All About Everything is a show about everything. Each week we dive into any subject known to man and talk about it as much as we can. Look for our Podcast in the iTunes Music Store</itunes:summary>
 <description>All About Everything is a show about everything. Each week we dive into any subject known to man and talk about it as much as we can. Look for our Podcast in the iTunes Music Store</description>
