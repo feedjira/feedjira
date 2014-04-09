@@ -54,5 +54,9 @@ describe Feedjira::Parser::ITunesRSS do
     it "should parse entries" do
       @feed.entries.size.should == 3
     end
+
+    it "should parse the new-feed-url" do
+      @feed.itunes_new_feed_url.should == "http://example.com/new.xml"
+    end
   end
 end

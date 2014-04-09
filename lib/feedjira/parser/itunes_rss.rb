@@ -24,7 +24,7 @@ module Feedjira
       element :"itunes:explicit", :as => :itunes_explicit
       element :"itunes:keywords", :as => :itunes_keywords
       # New URL for the podcast feed
-      element :"itunes:new-feed-url", :as => :itunes_new_feed_url
+      element :"itunes:new_feed_url", :as => :itunes_new_feed_url
       element :"itunes:subtitle", :as => :itunes_subtitle
       # If summary is not present, use the description tag
       element :"itunes:summary", :as => :itunes_summary
