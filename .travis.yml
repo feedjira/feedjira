@@ -1,5 +1,10 @@
 language: ruby
+
 bundler_args: --without tools
+
+branches:
+  only:
+    - master
 
 rvm:
   - 1.9.3
