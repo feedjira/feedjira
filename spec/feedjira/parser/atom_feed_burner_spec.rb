@@ -53,4 +53,15 @@ describe Feedjira::Parser::AtomFeedBurner do
       @feed.entries.size.should == 5
     end
   end
+
+  describe "preprocessing" do
+    it "retains markup in xhtml content" do
+      Feedjira::Parser::AtomFeedBurner.preprocess_xml = true
+
+      feed = Feedjira::Parser::AtomFeedBurner.parse sample_feed_burner_atom_xhtml_feed
+      entry = feed.entries.first
+
+      entry.content.should match /\A\<p/
+    end
+  end
 end

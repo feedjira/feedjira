@@ -12,6 +12,7 @@ require 'feedjira/parser/rss_entry'
 require 'feedjira/parser/rss'
 require 'feedjira/parser/atom_entry'
 require 'feedjira/parser/atom'
+require 'feedjira/preprocessor'
 require 'feedjira/version'
 
 require 'feedjira/parser/rss_feed_burner_entry'
