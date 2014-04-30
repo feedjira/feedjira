@@ -15,6 +15,10 @@ module Feedjira
       def self.able_to_parse?(xml) #:nodoc:
         ((/Atom/ =~ xml) && (/feedburner/ =~ xml) && !(/\<rss|\<rdf/ =~ xml)) || false
       end
+
+      def self.preprocess(xml)
+        Preprocessor.new(xml).to_xml
+      end
     end
 
   end
