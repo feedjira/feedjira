@@ -1,5 +1,20 @@
 # Feedjira Changelog
 
+## 1.3.0
+
+* General
+  * Only build the master branch on Travis
+  * Fix RBX on Travis
+
+* Enhancements
+  * Bump loofah to 2.0.0 [#223][]
+
+* Bug fixes
+  * Support preprocessing for AtomFeedBurner feeds [#222][]
+
+[#222]: https://github.com/feedjira/feedjira/pull/222
+[#223]: https://github.com/feedjira/feedjira/pull/223
+
 ## 1.2.0
 
 * General
