@@ -31,6 +31,10 @@ describe Feedjira::Parser::RSSFeedBurnerEntry do
     @entry.content.should == sample_rss_feed_burner_entry_content
   end
 
+  it "should parse the image" do
+    @entry.image.should == "http://tctechcrunch2011.files.wordpress.com/2011/11/angies-list.jpeg?w=150"
+  end
+
   it "should provide a summary" do
     @entry.summary.should == sample_rss_feed_burner_entry_description
   end
