@@ -18,7 +18,8 @@ module SampleFeeds
     sample_feedburner_atom_entry_content: "PaulDixExplainsNothingFirstEntryContent.xml",
     sample_wfw_feed: "PaulDixExplainsNothingWFW.xml",
     sample_google_docs_list_feed: "GoogleDocsList.xml",
-    sample_feed_burner_atom_xhtml_feed: "FeedBurnerXHTML.xml"
+    sample_feed_burner_atom_xhtml_feed: "FeedBurnerXHTML.xml",
+    sample_duplicate_content_atom_feed: "DuplicateContentAtomFeed.xml"
   }
 
   FEEDS.each do |method, filename|

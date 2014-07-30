@@ -72,6 +72,14 @@ describe Feedjira::Parser::Atom do
 
       entry.content.should match /\A\<p/
     end
+
+    it "should not duplicate content when there are divs in content" do
+      Feedjira::Parser::Atom.preprocess_xml = true
+
+      feed = Feedjira::Parser::Atom.parse sample_duplicate_content_atom_feed
+      content = Nokogiri::HTML(feed.entries[1].content)
+      content.css('img').length.should == 11
+    end
   end
 
   describe "parsing url and feed url based on rel attribute" do
