@@ -1,5 +1,13 @@
 # Feedjira Changelog
 
+## 1.3.1
+
+* Bug fixes
+  * Don't duplicate content in preprocessed feeds [#236][] [#237][]
+
+[#236]: https://github.com/feedjira/feedjira/issues/236
+[#237]: https://github.com/feedjira/feedjira/pull/237
+
 ## 1.3.0
 
 * General
