@@ -20,8 +20,8 @@ Gem::Specification.new do |s|
   s.platform = Gem::Platform::RUBY
 
   s.add_dependency 'sax-machine', '~> 1.0'
-  s.add_dependency 'curb',        '~> 0.8.1'
-  s.add_dependency 'loofah',      '~> 2.0.0'
+  s.add_dependency 'curb',        '~> 0.8'
+  s.add_dependency 'loofah',      '~> 2.0'
 
   s.add_development_dependency 'rspec', '~> 2.14.0'
 end
