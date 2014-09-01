@@ -3,19 +3,19 @@ require File.join(File.dirname(__FILE__), %w[.. .. spec_helper])
 describe Feedjira::Parser::ITunesRSS do
   describe "#will_parse?" do
     it "should return true for an itunes RSS feed" do
-      Feedjira::Parser::ITunesRSS.should be_able_to_parse(sample_itunes_feed)
+      expect(Feedjira::Parser::ITunesRSS).to be_able_to_parse(sample_itunes_feed)
     end
 
     it "should return true for an itunes RSS feed with spaces between attribute names, equals sign, and values" do
-      Feedjira::Parser::ITunesRSS.should be_able_to_parse(sample_itunes_feed_with_spaces)
+      expect(Feedjira::Parser::ITunesRSS).to be_able_to_parse(sample_itunes_feed_with_spaces)
     end
 
     it "should return fase for an atom feed" do
-      Feedjira::Parser::ITunesRSS.should_not be_able_to_parse(sample_atom_feed)
+      expect(Feedjira::Parser::ITunesRSS).to_not be_able_to_parse(sample_atom_feed)
     end
 
     it "should return false for an rss feedburner feed" do
-      Feedjira::Parser::ITunesRSS.should_not be_able_to_parse(sample_rss_feed_burner_feed)
+      expect(Feedjira::Parser::ITunesRSS).to_not be_able_to_parse(sample_rss_feed_burner_feed)
     end
   end
 
@@ -25,38 +25,38 @@ describe Feedjira::Parser::ITunesRSS do
     end
 
     it "should parse the subtitle" do
-      @feed.itunes_subtitle.should == "A show about everything"
+      expect(@feed.itunes_subtitle).to eq "A show about everything"
     end
 
     it "should parse the author" do
-      @feed.itunes_author.should == "John Doe"
+      expect(@feed.itunes_author).to eq "John Doe"
     end
 
     it "should parse an owner" do
-      @feed.itunes_owners.size.should == 1
+      expect(@feed.itunes_owners.size).to eq 1
     end
 
     it "should parse an image" do
-      @feed.itunes_image.should == "http://example.com/podcasts/everything/AllAboutEverything.jpg"
+      expect(@feed.itunes_image).to eq "http://example.com/podcasts/everything/AllAboutEverything.jpg"
     end
 
     it "should parse categories" do
-      @feed.itunes_categories.size == 3
-      @feed.itunes_categories[0] == "Technology"
-      @feed.itunes_categories[1] == "Gadgets"
-      @feed.itunes_categories[2] == "TV &amp; Film"
+      expect(@feed.itunes_categories.size).to eq 3
+      expect(@feed.itunes_categories[0]).to eq "Technology"
+      expect(@feed.itunes_categories[1]).to eq "Gadgets"
+      expect(@feed.itunes_categories[2]).to eq "TV & Film"
     end
 
     it "should parse the summary" do
-      @feed.itunes_summary.should == "All About Everything is a show about everything. Each week we dive into any subject known to man and talk about it as much as we can. Look for our Podcast in the iTunes Music Store"
+      expect(@feed.itunes_summary).to eq "All About Everything is a show about everything. Each week we dive into any subject known to man and talk about it as much as we can. Look for our Podcast in the iTunes Music Store"
     end
 
     it "should parse entries" do
-      @feed.entries.size.should == 3
+      expect(@feed.entries.size).to eq 3
     end
 
     it "should parse the new-feed-url" do
-      @feed.itunes_new_feed_url.should == "http://example.com/new.xml"
+      expect(@feed.itunes_new_feed_url).to eq "http://example.com/new.xml"
     end
   end
 end

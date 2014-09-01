@@ -8,15 +8,15 @@ describe Feedjira::Parser::GoogleDocsAtomEntry do
     end
 
     it 'should have the custom checksum element' do
-      @entry.checksum.should eql '2b01142f7481c7b056c4b410d28f33cf'
+      expect(@entry.checksum).to eq '2b01142f7481c7b056c4b410d28f33cf'
     end
 
     it 'should have the custom filename element' do
-      @entry.original_filename.should eql "MyFile.pdf"
+      expect(@entry.original_filename).to eq "MyFile.pdf"
     end
 
     it 'should have the custom suggested filename element' do
-      @entry.suggested_filename.should eql "TaxDocument.pdf"
+      expect(@entry.suggested_filename).to eq "TaxDocument.pdf"
     end
   end
 end

@@ -3,7 +3,7 @@ require File.join(File.dirname(__FILE__), %w[.. .. spec_helper])
 describe Feedjira::Parser::RSS do
   describe "#will_parse?" do
     it "should return true for an RSS feed" do
-      Feedjira::Parser::RSS.should be_able_to_parse(sample_rss_feed)
+      expect(Feedjira::Parser::RSS).to be_able_to_parse(sample_rss_feed)
     end
 
     # this is no longer true. combined rdf and rss into one
@@ -12,11 +12,11 @@ describe Feedjira::Parser::RSS do
     # end
 
     it "should return false for an atom feed" do
-      Feedjira::Parser::RSS.should_not be_able_to_parse(sample_atom_feed)
+      expect(Feedjira::Parser::RSS).to_not be_able_to_parse(sample_atom_feed)
     end
 
     it "should return false for an rss feedburner feed" do
-      Feedjira::Parser::RSS.should_not be_able_to_parse(sample_rss_feed_burner_feed)
+      expect(Feedjira::Parser::RSS).to_not be_able_to_parse(sample_rss_feed_burner_feed)
     end
   end
 
@@ -26,32 +26,32 @@ describe Feedjira::Parser::RSS do
     end
 
     it "should parse the version" do
-      @feed.version.should == "2.0"
+      expect(@feed.version).to eq "2.0"
     end
 
     it "should parse the title" do
-      @feed.title.should == "Tender Lovemaking"
+      expect(@feed.title).to eq "Tender Lovemaking"
     end
 
     it "should parse the description" do
-      @feed.description.should == "The act of making love, tenderly."
+      expect(@feed.description).to eq "The act of making love, tenderly."
     end
 
     it "should parse the url" do
-      @feed.url.should == "http://tenderlovemaking.com"
+      expect(@feed.url).to eq "http://tenderlovemaking.com"
     end
 
     it "should not parse hub urls" do
-      @feed.hubs.should == nil
+      expect(@feed.hubs).to be_nil
     end
 
     it "should provide an accessor for the feed_url" do
-      @feed.respond_to?(:feed_url).should == true
-      @feed.respond_to?(:feed_url=).should == true
+      expect(@feed).to respond_to :feed_url
+      expect(@feed).to respond_to :feed_url=
     end
 
     it "should parse entries" do
-      @feed.entries.size.should == 10
+      expect(@feed.entries.size).to eq 10
     end
   end
 end

@@ -23,5 +23,5 @@ Gem::Specification.new do |s|
   s.add_dependency 'curb',        '~> 0.8'
   s.add_dependency 'loofah',      '~> 2.0'
 
-  s.add_development_dependency 'rspec', '~> 2.14.0'
+  s.add_development_dependency 'rspec', '~> 3.0'
 end

@@ -3,19 +3,19 @@ require File.join(File.dirname(__FILE__), %w[.. .. spec_helper])
 describe Feedjira::Parser::Atom do
   describe "#will_parse?" do
     it "should return true for an atom feed" do
-      Feedjira::Parser::Atom.should be_able_to_parse(sample_atom_feed)
+      expect(Feedjira::Parser::Atom).to be_able_to_parse(sample_atom_feed)
     end
 
     it "should return false for an rdf feed" do
-      Feedjira::Parser::Atom.should_not be_able_to_parse(sample_rdf_feed)
+      expect(Feedjira::Parser::Atom).to_not be_able_to_parse(sample_rdf_feed)
     end
 
     it "should return false for an rss feedburner feed" do
-      Feedjira::Parser::Atom.should_not be_able_to_parse(sample_rss_feed_burner_feed)
+      expect(Feedjira::Parser::Atom).to_not be_able_to_parse(sample_rss_feed_burner_feed)
     end
 
     it "should return true for an atom feed that has line breaks in between attributes in the <feed> node" do
-      Feedjira::Parser::Atom.should be_able_to_parse(sample_atom_feed_line_breaks)
+      expect(Feedjira::Parser::Atom).to be_able_to_parse(sample_atom_feed_line_breaks)
     end
   end
 
@@ -25,41 +25,43 @@ describe Feedjira::Parser::Atom do
     end
 
     it "should parse the title" do
-      @feed.title.should == "Amazon Web Services Blog"
+      expect(@feed.title).to eq "Amazon Web Services Blog"
     end
 
     it "should parse the description" do
-      @feed.description.should == "Amazon Web Services, Products, Tools, and Developer Information..."
+      expect(@feed.description).to eq "Amazon Web Services, Products, Tools, and Developer Information..."
     end
 
     it "should parse the url" do
-      @feed.url.should == "http://aws.typepad.com/aws/"
+      expect(@feed.url).to eq "http://aws.typepad.com/aws/"
     end
 
     it "should parse the url even when it doesn't have the type='text/html' attribute" do
-      Feedjira::Parser::Atom.parse(load_sample("atom_with_link_tag_for_url_unmarked.xml")).url.should == "http://www.innoq.com/planet/"
+      feed = Feedjira::Parser::Atom.parse(load_sample("atom_with_link_tag_for_url_unmarked.xml"))
+      expect(feed.url).to eq "http://www.innoq.com/planet/"
     end
 
     it "should parse the feed_url even when it doesn't have the type='application/atom+xml' attribute" do
-      Feedjira::Parser::Atom.parse(load_sample("atom_with_link_tag_for_url_unmarked.xml")).feed_url.should == "http://www.innoq.com/planet/atom.xml"
+      feed = Feedjira::Parser::Atom.parse(load_sample("atom_with_link_tag_for_url_unmarked.xml"))
+      expect(feed.feed_url).to eq "http://www.innoq.com/planet/atom.xml"
     end
 
     it "should parse the feed_url" do
-      @feed.feed_url.should == "http://aws.typepad.com/aws/atom.xml"
+      expect(@feed.feed_url).to eq "http://aws.typepad.com/aws/atom.xml"
     end
 
     it "should parse no hub urls" do
-      @feed.hubs.count.should == 0
+      expect(@feed.hubs.count).to eq 0
     end
 
     it "should parse the hub urls" do
       feed_with_hub = Feedjira::Parser::Atom.parse(load_sample("SamRuby.xml"))
-      feed_with_hub.hubs.count.should == 1
-      feed_with_hub.hubs.first.should == "http://pubsubhubbub.appspot.com/"
+      expect(feed_with_hub.hubs.count).to eq 1
+      expect(feed_with_hub.hubs.first).to eq "http://pubsubhubbub.appspot.com/"
     end
 
     it "should parse entries" do
-      @feed.entries.size.should == 10
+      expect(@feed.entries.size).to eq 10
     end
   end
 
@@ -70,7 +72,7 @@ describe Feedjira::Parser::Atom do
       feed = Feedjira::Parser::Atom.parse sample_atom_xhtml_feed
       entry = feed.entries.first
 
-      entry.content.should match /\A\<p/
+      expect(entry.content).to match /\A\<p/
     end
 
     it "should not duplicate content when there are divs in content" do
@@ -78,7 +80,7 @@ describe Feedjira::Parser::Atom do
 
       feed = Feedjira::Parser::Atom.parse sample_duplicate_content_atom_feed
       content = Nokogiri::HTML(feed.entries[1].content)
-      content.css('img').length.should == 11
+      expect(content.css('img').length).to eq 11
     end
   end
 
@@ -88,11 +90,11 @@ describe Feedjira::Parser::Atom do
     end
 
     it "should parse url" do
-      @feed.url.should == "http://feedjira.com/blog"
+      expect(@feed.url).to eq "http://feedjira.com/blog"
     end
 
     it "should parse feed url" do
-      @feed.feed_url.should == "http://feedjira.com/blog/feed.xml"
+      expect(@feed.feed_url).to eq "http://feedjira.com/blog/feed.xml"
     end
   end
 end

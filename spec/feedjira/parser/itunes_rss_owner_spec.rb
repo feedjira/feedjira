@@ -8,11 +8,11 @@ describe Feedjira::Parser::ITunesRSSOwner do
   end
 
   it "should parse the name" do
-    @owner.name.should == "John Doe"
+    expect(@owner.name).to eq "John Doe"
   end
 
   it "should parse the email" do
-    @owner.email.should == "john.doe@example.com"
+    expect(@owner.email).to eq "john.doe@example.com"
   end
 
 end

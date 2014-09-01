@@ -8,56 +8,56 @@ describe Feedjira::Parser::ITunesRSSItem do
   end
 
   it "should parse the title" do
-    @item.title.should == "Shake Shake Shake Your Spices"
+    expect(@item.title).to eq "Shake Shake Shake Your Spices"
   end
 
   it "should parse the author" do
-    @item.itunes_author.should == "John Doe"
+    expect(@item.itunes_author).to eq "John Doe"
   end
 
   it "should parse the subtitle" do
-    @item.itunes_subtitle.should == "A short primer on table spices"
+    expect(@item.itunes_subtitle).to eq "A short primer on table spices"
   end
 
   it "should parse the summary" do
-    @item.itunes_summary.should == "This week we talk about salt and pepper shakers, comparing and contrasting pour rates, construction materials, and overall aesthetics. Come and join the party!"
+    expect(@item.itunes_summary).to eq "This week we talk about salt and pepper shakers, comparing and contrasting pour rates, construction materials, and overall aesthetics. Come and join the party!"
   end
 
   it "should parse the enclosure" do
-    @item.enclosure_length.should == "8727310"
-    @item.enclosure_type.should == "audio/x-m4a"
-    @item.enclosure_url.should == "http://example.com/podcasts/everything/AllAboutEverythingEpisode3.m4a"
+    expect(@item.enclosure_length).to eq "8727310"
+    expect(@item.enclosure_type).to eq "audio/x-m4a"
+    expect(@item.enclosure_url).to eq "http://example.com/podcasts/everything/AllAboutEverythingEpisode3.m4a"
   end
 
   it "should parse the guid as id" do
-    @item.id.should == "http://example.com/podcasts/archive/aae20050615.m4a"
+    expect(@item.id).to eq "http://example.com/podcasts/archive/aae20050615.m4a"
   end
 
   it "should parse the published date" do
-    @item.published.should == Time.parse_safely("Wed Jun 15 19:00:00 UTC 2005")
+    expect(@item.published).to eq Time.parse_safely("Wed Jun 15 19:00:00 UTC 2005")
   end
 
   it "should parse the duration" do
-    @item.itunes_duration.should == "7:04"
+    expect(@item.itunes_duration).to eq "7:04"
   end
 
   it "should parse the keywords" do
-    @item.itunes_keywords.should == "salt, pepper, shaker, exciting"
+    expect(@item.itunes_keywords).to eq "salt, pepper, shaker, exciting"
   end
 
   it "should parse the image" do
-    @item.itunes_image.should == "http://example.com/podcasts/everything/AllAboutEverything.jpg"
+    expect(@item.itunes_image).to eq "http://example.com/podcasts/everything/AllAboutEverything.jpg"
   end
 
   it "should parse the order" do
-    @item.itunes_order.should eq '12'
+    expect(@item.itunes_order).to eq '12'
   end
 
   it "should parse the closed captioned flag" do
-    @item.itunes_closed_captioned.should eq 'yes'
+    expect(@item.itunes_closed_captioned).to eq 'yes'
   end
 
   it "should parse the encoded content" do
-    @item.content.should == "<p><strong>TOPIC</strong>: Gooseneck Options</p>"
+    expect(@item.content).to eq "<p><strong>TOPIC</strong>: Gooseneck Options</p>"
   end
 end
