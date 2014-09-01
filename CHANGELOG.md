@@ -1,5 +1,19 @@
 # Feedjira Changelog
 
+## 1.4.0
+
+* General
+  * Test OX on Travis
+  * Loosen dependency requirements
+
+* Enhancements
+  * Upgrade to SaxMachine 1 [#234][]
+  * Upgrade to Rspec 3
+  * Move lstrip before preprocess [#216][]
+
+[#216]: https://github.com/feedjira/feedjira/pull/216
+[#234]: https://github.com/feedjira/feedjira/pull/234
+
 ## 1.3.1
 
 * Bug fixes
