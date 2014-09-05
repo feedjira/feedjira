@@ -16,8 +16,8 @@ module Feedjira
         element :"content:encoded", :as => :content
         element :description, :as => :summary
 
-        element :"media:content", :as => :image, :value => :url
-        element :enclosure, :as => :image, :value => :url
+        element :"media:content", :as => :image, :value => :url, :with => {:medium => 'image'}
+        element :enclosure, :as => :image, :value => :url, :with => {:type => /image/}
 
         element :pubDate, :as => :published
         element :pubdate, :as => :published
