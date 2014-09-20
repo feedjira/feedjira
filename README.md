@@ -5,7 +5,7 @@
 [code-climate-badge]: https://codeclimate.com/github/feedjira/feedjira.png
 [code-climate]: https://codeclimate.com/github/feedjira/feedjira
 
-Feedjira (formerly Feedzilla) is a Ruby library designed to fetch and parse
+Feedjira (formerly Feedzirra) is a Ruby library designed to fetch and parse
 feeds as quickly as possible. Version 1.0 was recently released and with it an
 [awesome new website][f].
 
