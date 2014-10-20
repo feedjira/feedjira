@@ -72,6 +72,8 @@ describe Feedjira::Parser::Atom do
       feed = Feedjira::Parser::Atom.parse sample_atom_xhtml_feed
       entry = feed.entries.first
 
+      expect(entry.title).to match /\<i/
+      expect(entry.summary).to match /\<b/
       expect(entry.content).to match /\A\<p/
     end
 

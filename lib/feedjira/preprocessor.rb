@@ -18,7 +18,7 @@ module Feedjira
     end
 
     def content_nodes
-      doc.search 'entry > content[type="xhtml"]'
+      doc.search 'entry > content[type="xhtml"], entry > summary[type="xhtml"], entry > title[type="xhtml"]'
     end
 
     def raw_html(node)
