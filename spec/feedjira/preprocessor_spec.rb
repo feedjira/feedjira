@@ -14,6 +14,8 @@ describe Feedjira::Preprocessor do
     processor = Feedjira::Preprocessor.new sample_atom_xhtml_feed
     escaped = processor.to_xml
 
-    expect(escaped.split("\n")[26]).to match /&lt;p&gt;$/
+    expect(escaped.split("\n")[10]).to match /&lt;i&gt;dogs&lt;\/i&gt;/ #title
+    expect(escaped.split("\n")[16]).to match /&lt;b&gt;XHTML&lt;\/b&gt;/ #summary
+    expect(escaped.split("\n")[26]).to match /&lt;p&gt;$/ #content
   end
 end
