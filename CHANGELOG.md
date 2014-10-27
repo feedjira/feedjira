@@ -1,5 +1,12 @@
 # Feedjira Changelog
 
+## 1.5.0
+
+* Enhancements
+  * Handle XHTML content in summary and title [#250][]
+
+[#250]: https://github.com/feedjira/feedjira/pull/250
+
 ## 1.4.0
 
 * General
