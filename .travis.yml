@@ -16,3 +16,4 @@ env:
   matrix:
     - HANDLER="nokogiri"
     - HANDLER="ox"
+    - HANDLER="oga"
