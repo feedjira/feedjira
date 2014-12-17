@@ -10,9 +10,9 @@ module Feedjira
       element :description
       element :link, :as => :url
       elements :item, :as => :entries, :class => RSSEntry
+      elements :"atom:link", :as => :hubs, :value => :href, :with => {:rel => "hub"}
 
       attr_accessor :feed_url
-      attr_accessor :hubs
 
       def self.able_to_parse?(xml) #:nodoc:
         (/\<rss|\<rdf/ =~ xml) && !(/feedburner/ =~ xml)
