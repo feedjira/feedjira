@@ -18,13 +18,14 @@
 	<language>en</language>
 	<sy:updatePeriod>hourly</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
+    <atom:link rel="hub" href="http://pubsubhubbub.appspot.com/"/>
 			<item>
 		<title>Nokogiri&#8217;s Slop Feature</title>
 		<link>http://tenderlovemaking.com/2008/12/04/nokogiris-slop-feature/</link>
 		<comments>http://tenderlovemaking.com/2008/12/04/nokogiris-slop-feature/#comments</comments>
 		<pubDate>Thu, 04 Dec 2008 17:17:49 +0000</pubDate>
 		<dc:creator>Aaron Patterson</dc:creator>
-		
+
 		<category><![CDATA[computadora]]></category>
 
 		<category><![CDATA[nokogiri]]></category>
@@ -114,7 +115,7 @@ foo.<span class="me1">extend</span><span class="br0">&#40;</span>UpperCaseResult
 		<comments>http://tenderlovemaking.com/2008/11/21/cross-compiling-ruby-gems-for-win32/#comments</comments>
 		<pubDate>Sat, 22 Nov 2008 04:27:02 +0000</pubDate>
 		<dc:creator>Aaron Patterson</dc:creator>
-		
+
 		<category><![CDATA[computadora]]></category>
 
 		<category><![CDATA[nokogiri]]></category>
@@ -255,7 +256,7 @@ end </span></div>
 		<comments>http://tenderlovemaking.com/2008/11/18/underpant-free-excitement/#comments</comments>
 		<pubDate>Tue, 18 Nov 2008 21:17:38 +0000</pubDate>
 		<dc:creator>Aaron Patterson</dc:creator>
-		
+
 		<category><![CDATA[computadora]]></category>
 
 		<category><![CDATA[nokogiri]]></category>
@@ -301,7 +302,7 @@ doc.<span class="me1">search</span><span class="br0">&#40;</span>'h3.<span class
 		<comments>http://tenderlovemaking.com/2008/11/11/rubyconf-slides/#comments</comments>
 		<pubDate>Wed, 12 Nov 2008 03:49:30 +0000</pubDate>
 		<dc:creator>Aaron Patterson</dc:creator>
-		
+
 		<category><![CDATA[life]]></category>
 
 		<guid isPermaLink="false">http://tenderlovemaking.com/?p=172</guid>
@@ -321,7 +322,7 @@ Enjoy!
 		<comments>http://tenderlovemaking.com/2008/11/03/easily-add-growl-notifications-to-autotest/#comments</comments>
 		<pubDate>Mon, 03 Nov 2008 23:06:39 +0000</pubDate>
 		<dc:creator>Aaron Patterson</dc:creator>
-		
+
 		<category><![CDATA[computadora]]></category>
 
 		<category><![CDATA[meow]]></category>
@@ -346,7 +347,7 @@ Here is a screencast.  [...]]]></description>
 		<comments>http://tenderlovemaking.com/2008/10/30/nokogiri-is-released/#comments</comments>
 		<pubDate>Fri, 31 Oct 2008 03:36:31 +0000</pubDate>
 		<dc:creator>Aaron Patterson</dc:creator>
-		
+
 		<category><![CDATA[life]]></category>
 
 		<guid isPermaLink="false">http://tenderlovemaking.com/?p=156</guid>
@@ -400,7 +401,7 @@ eohtml</div>
 		<comments>http://tenderlovemaking.com/2008/09/08/mushrooms-beef-jerky-and-programming/#comments</comments>
 		<pubDate>Mon, 08 Sep 2008 15:41:14 +0000</pubDate>
 		<dc:creator>Aaron Patterson</dc:creator>
-		
+
 		<category><![CDATA[life]]></category>
 
 		<guid isPermaLink="false">http://tenderlovemaking.com/?p=151</guid>
@@ -436,7 +437,7 @@ agent.<span class="me1">get</span><span class="br0">&#40;</span>'http://google.<
 		<comments>http://tenderlovemaking.com/2008/08/04/identifying-unknown-music-with-ruby/#comments</comments>
 		<pubDate>Mon, 04 Aug 2008 18:44:49 +0000</pubDate>
 		<dc:creator>Aaron Patterson</dc:creator>
-		
+
 		<category><![CDATA[earworm]]></category>
 
 		<category><![CDATA[icanhasaudio]]></category>
@@ -472,7 +473,7 @@ info = ew.<span class="me1">identify</span><span class="br0">&#40;</span>:file =
 		<comments>http://tenderlovemaking.com/2008/07/08/back-home/#comments</comments>
 		<pubDate>Tue, 08 Jul 2008 18:34:06 +0000</pubDate>
 		<dc:creator>Aaron Patterson</dc:creator>
-		
+
 		<category><![CDATA[life]]></category>
 
 		<guid isPermaLink="false">http://tenderlovemaking.com/?p=146</guid>
@@ -489,7 +490,7 @@ info = ew.<span class="me1">identify</span><span class="br0">&#40;</span>:file =
 		<comments>http://tenderlovemaking.com/2008/06/06/meow-meow-meow-meow-meow/#comments</comments>
 		<pubDate>Fri, 06 Jun 2008 19:56:52 +0000</pubDate>
 		<dc:creator>Aaron Patterson</dc:creator>
-		
+
 		<category><![CDATA[computadora]]></category>
 
 		<category><![CDATA[meow]]></category>

@@ -41,8 +41,9 @@ describe Feedjira::Parser::RSS do
       expect(@feed.url).to eq "http://tenderlovemaking.com"
     end
 
-    it "should not parse hub urls" do
-      expect(@feed.hubs).to be_nil
+    it "should parse the hub urls" do
+      expect(@feed.hubs.count).to eq 1
+      expect(@feed.hubs.first).to eq "http://pubsubhubbub.appspot.com/"
     end
 
     it "should provide an accessor for the feed_url" do
