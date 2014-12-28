@@ -1,5 +1,5 @@
 require 'zlib'
-require 'curb'
+require 'faraday'
 require 'sax-machine'
 require 'loofah'
 
@@ -27,4 +27,5 @@ require 'feedjira/parser/google_docs_atom'
 
 module Feedjira
   class NoParserAvailable < StandardError; end
+  class FetchFailure < StandardError; end
 end
