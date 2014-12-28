@@ -263,31 +263,6 @@ module Feedjira
       xml
     end
 
-    # Updates each feed for each Feed object provided.
-    #
-    # === Parameters
-    # [feeds<Feed> or <Array>] A single feed object, or an array of feed objects.
-    # [options<Hash>] Valid keys for this argument as as followed:
-    #                 * :on_success - Block that gets executed after a successful request.
-    #                 * :on_failure - Block that gets executed after a failed request.
-    #                 * all parameters defined in setup_easy
-    # === Returns
-    # A updated Feed object if a single URL is passed.
-    #
-    # A Hash if multiple Feeds are passed. The key will be the URL, and the value the updated Feed object.
-    def self.update(feeds, options = {})
-      feed_queue = [*feeds]
-      multi = Curl::Multi.new
-      responses = {}
-
-      feed_queue.slice!(0, 30).each do |feed|
-        add_feed_to_multi(multi, feed, feed_queue, responses, options)
-      end
-
-      multi.perform
-      feeds.is_a?(Array) ? responses : responses.values.first
-    end
-
     # An abstraction for adding a feed by URL to the passed Curb::multi stack.
     #
     # === Parameters
@@ -352,64 +327,6 @@ module Feedjira
         curl.on_failure do |c, err|
           responses[url] = c.response_code
           call_on_failure(c, err, options[:on_failure])
-        end
-      end
-      multi.add(easy)
-    end
-
-    # An abstraction for adding a feed by a Feed object to the passed Curb::multi stack.
-    #
-    # === Parameters
-    # [multi<Curl::Multi>] The Curl::Multi object that the request should be added too.
-    # [feed<Feed>] A feed object that you would like to be fetched.
-    # [url_queue<Array>] An array of feed objects that are queued for request.
-    # [responses<Hash>] Existing responses that you want the response from the request added to.
-    # [feeds<String>] or <Array> A single feed object, or an array of feed objects.
-    # [options<Hash>] Valid keys for this argument as as followed:
-    #                 * :on_success - Block that gets executed after a successful request.
-    #                 * :on_failure - Block that gets executed after a failed request.
-    #                 * all parameters defined in setup_easy
-    # === Returns
-    # The updated Curl::Multi object with the request details added to it's stack.
-    def self.add_feed_to_multi(multi, feed, feed_queue, responses, options)
-      easy = Curl::Easy.new(feed.feed_url) do |curl|
-        setup_easy curl, options
-        curl.headers["If-Modified-Since"] = feed.last_modified.httpdate if feed.last_modified
-        curl.headers["If-Modified-Since"] = options[:if_modified_since] if options[:if_modified_since] && (!feed.last_modified || (Time.parse(options[:if_modified_since].to_s) > feed.last_modified))
-        curl.headers["If-None-Match"]     = feed.etag if feed.etag
-
-        curl.on_success do |c|
-          begin
-            updated_feed = Feed.parse c.body_str, &on_parser_failure(feed.feed_url)
-
-            updated_feed.feed_url = c.last_effective_url
-            updated_feed.etag = etag_from_header(c.header_str)
-            updated_feed.last_modified = last_modified_from_header(c.header_str)
-            feed.update_from_feed(updated_feed)
-            responses[feed.feed_url] = feed
-            options[:on_success].call(feed) if options.has_key?(:on_success)
-          rescue Exception => e
-            call_on_failure(c, e, options[:on_failure])
-          end
-        end
-
-        curl.on_failure do |c, err| # response code 50X
-          responses[feed.feed_url] = c.response_code
-          call_on_failure(c, 'Server returned a 404', options[:on_failure])
-        end
-
-        curl.on_redirect do |c, err| # response code 30X
-          if c.response_code == 304
-            options[:on_success].call(feed) if options.has_key?(:on_success)
-          else
-            responses[feed.feed_url] = c.response_code
-            call_on_failure(c, err, options[:on_failure])
-          end
-        end
-
-        curl.on_complete do |c|
-          add_feed_to_multi(multi, feed_queue.shift, feed_queue, responses, options) unless feed_queue.empty?
-          responses[feed.feed_url] = feed unless responses.has_key?(feed.feed_url)
         end
       end
       multi.add(easy)
