@@ -1,5 +1,12 @@
 # Feedjira Changelog
 
+## 1.6.0
+
+* Enhancements
+  * PuSH support for RSS [#256][]
+
+[#256]: https://github.com/feedjira/feedjira/pull/256
+
 ## 1.5.0
 
 * Enhancements
