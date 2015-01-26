@@ -60,4 +60,5 @@ describe Feedjira::Parser::ITunesRSSItem do
   it "should parse the encoded content" do
     expect(@item.content).to eq "<p><strong>TOPIC</strong>: Gooseneck Options</p>"
   end
+
 end

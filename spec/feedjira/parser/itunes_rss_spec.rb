@@ -58,5 +58,6 @@ describe Feedjira::Parser::ITunesRSS do
     it "should parse the new-feed-url" do
       expect(@feed.itunes_new_feed_url).to eq "http://example.com/new.xml"
     end
+
   end
 end

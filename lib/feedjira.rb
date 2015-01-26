@@ -17,6 +17,7 @@ require 'feedjira/version'
 
 require 'feedjira/parser/rss_feed_burner_entry'
 require 'feedjira/parser/rss_feed_burner'
+require 'feedjira/parser/podlove_chapter'
 require 'feedjira/parser/itunes_rss_owner'
 require 'feedjira/parser/itunes_rss_item'
 require 'feedjira/parser/itunes_rss'
