@@ -31,7 +31,7 @@ describe Feedjira::Parser::PodloveChapter do
     expect(@chapter.url).to eq 'https://example.com'
   end
 
-  it "should parse the title" do
+  it "should parse the image" do
     expect(@chapter.image).to eq 'https://pics.example.com/pic.png'
   end
 
