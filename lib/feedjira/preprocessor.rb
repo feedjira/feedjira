@@ -22,7 +22,7 @@ module Feedjira
     end
 
     def raw_html(node)
-      CGI.unescape_html node.search('./div').inner_html
+      node.search('./div').inner_html
     end
 
     def doc
