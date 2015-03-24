@@ -17,6 +17,10 @@ describe Feedjira::Parser::AtomFeedBurner do
     it "should return false for an rss feedburner feed" do
       expect(Feedjira::Parser::AtomFeedBurner).to_not be_able_to_parse(sample_rss_feed_burner_feed)
     end
+
+    it "should return false for a atypon rss feed" do
+      expect(Feedjira::Parser::AtomFeedBurner).to_not be_able_to_parse(sample_atypon_rss_feed)
+    end
   end
 
   describe "parsing" do

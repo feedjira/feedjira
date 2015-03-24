@@ -125,28 +125,32 @@ describe Feedjira::Feed do
       expect(Feedjira::Feed.determine_feed_parser_for_xml(sample_google_docs_list_feed)).to eq Feedjira::Parser::GoogleDocsAtom
     end
 
-    it "should return the expect(Feedjira::Parser::Atom class for an atom feed" do
+    it "should return the Feedjira::Parser::Atom class for an atom feed" do
       expect(Feedjira::Feed.determine_feed_parser_for_xml(sample_atom_feed)).to eq Feedjira::Parser::Atom
     end
 
-    it "should return the expect(Feedjira::Parser::AtomFeedBurner class for an atom feedburner feed" do
+    it "should return the Feedjira::Parser::AtomFeedBurner class for an atom feedburner feed" do
       expect(Feedjira::Feed.determine_feed_parser_for_xml(sample_feedburner_atom_feed)).to eq Feedjira::Parser::AtomFeedBurner
     end
 
-    it "should return the expect(Feedjira::Parser::RSS class for an rdf/rss 1.0 feed" do
+    it "should return the Feedjira::Parser::RSS class for an rdf/rss 1.0 feed" do
       expect(Feedjira::Feed.determine_feed_parser_for_xml(sample_rdf_feed)).to eq Feedjira::Parser::RSS
     end
 
-    it "should return the expect(Feedjira::Parser::RSSFeedBurner class for an rss feedburner feed" do
+    it "should return the Feedjira::Parser::RSSFeedBurner class for an rss feedburner feed" do
       expect(Feedjira::Feed.determine_feed_parser_for_xml(sample_rss_feed_burner_feed)).to eq Feedjira::Parser::RSSFeedBurner
     end
 
-    it "should return the expect(Feedjira::Parser::RSS object for an rss 2.0 feed" do
+    it "should return the Feedjira::Parser::RSS object for an rss 2.0 feed" do
       expect(Feedjira::Feed.determine_feed_parser_for_xml(sample_rss_feed)).to eq Feedjira::Parser::RSS
     end
 
-    it "should return a expect(Feedjira::Parser::RSS object for an itunes feed" do
+    it "should return a Feedjira::Parser::RSS object for an itunes feed" do
       expect(Feedjira::Feed.determine_feed_parser_for_xml(sample_itunes_feed)).to eq Feedjira::Parser::ITunesRSS
+    end
+
+    it "should return a Feedjira::Parser::RSSAtypon object for an Atypon RSS feed" do
+      expect(Feedjira::Feed.determine_feed_parser_for_xml(sample_atypon_rss_feed)).to eq Feedjira::Parser::RSSAtypon
     end
 
   end

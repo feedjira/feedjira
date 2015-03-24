@@ -1,0 +1,714 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:content="http://purl.org/rss/1.0/modules/content/"
+         xmlns:rss="http://purl.org/rss/1.0/"
+         xmlns:cc="http://web.resource.org/cc/"
+         xmlns:prism="http://prismstandard.org/namespaces/basic/2.0/">
+   <rss:channel rdf:about="http://ajph.aphapublications.org/loi/ajph?af=R">
+      <rss:title>American Public Health Association: American Journal of Public Health: Table of Contents</rss:title>
+      <rss:description>Table of Contents for American Journal of Public Health. List of articles from both the latest and ahead of print issues.</rss:description>
+      <rss:link>http://ajph.aphapublications.org/loi/ajph?af=R</rss:link>
+      <dc:title>American Public Health Association: American Journal of Public Health: Table of Contents</dc:title>
+      <dc:publisher>American Public Health Association</dc:publisher>
+      <dc:language>en-US</dc:language>
+      <prism:publicationName>American Journal of Public Health</prism:publicationName>
+      <rss:items>
+         <rdf:Seq>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302274?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302272?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302354?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302486?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302513?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2015.302564?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2015.302624?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2015.302625?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302410?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302247?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302198?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302533?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302450?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302238?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302306?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302182?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302511?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302500?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302077?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302303?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302256?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302277?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302288?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302173?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302350?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302499?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302378?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302456?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302323?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302278?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302353?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302419?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302388?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302446?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302449?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302488?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2015.302555?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2015.302568?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302548?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2015.302606?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302532?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2015.302647?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2015.302601?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2015.302607?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2015.302604?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2015.302608?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302368e?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2015.302634?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302498?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302469?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302453?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302455?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302497?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302512?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302507?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302476?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302471?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302347?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302344?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2015.302609?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2015.302603?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2015.302600?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302424?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302432?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302422?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302454?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302452?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.301994?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302355?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302363?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302433?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.301926?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302401?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302536?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.301906?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302008?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302343?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302243?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.301886?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.301905?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302374?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.301964?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302340?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302342?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302328?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302360?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302060?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302122?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302377?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302357?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302105?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302349?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302112?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302076?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2015.1054831?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2015.1054832?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302381?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302383?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302391?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302397?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302398?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302400?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302402?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302403?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302406?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302411?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302421?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302423?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302425?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302427?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302428?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302430?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302431?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302435?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302436?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302445?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302472?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302481?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302483?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302484?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302485?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302496?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302514?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302515?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302517?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302521?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302526?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302537?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302546?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2015.302552?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2015.302557?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2015.302559?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2015.302565?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2015.302566?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2015.302570?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2015.302575?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2015.302576?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2015.302587?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2015.302592?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2015.302632?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2015.302648?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2015.302649?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2015.302650?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2015.302651?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2015.302605?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302341?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302346?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302366?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2015.302550?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302193?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302415?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302434?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302276?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302280?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302287?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302307?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302315?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302220?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302224?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302228?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302229?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302248?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302251?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302056?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302102?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302196?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302048?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302155?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302172?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302176?af=R"/>
+            <rdf:li rdf:resource="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302177?af=R"/>
+         </rdf:Seq>
+      </rss:items>
+   </rss:channel>
+   <rss:image rdf:about="http://ajph.aphapublications.org/na101/home/literatum/publisher/apha/journals/content/ajph/2015/ajph.2015.105.issue-s2/ajph.2015.105.issue-s2/20150306/ajph.2015.105.issue-s2.cover.jpg">
+      <rss:title>American Journal of Public Health</rss:title>
+      <rss:url>http://ajph.aphapublications.org/na101/home/literatum/publisher/apha/journals/content/ajph/2015/ajph.2015.105.issue-s2/ajph.2015.105.issue-s2/20150306/ajph.2015.105.issue-s2.cover.jpg</rss:url>
+      <rss:link>http://ajph.aphapublications.org/loi/ajph?af=R</rss:link>
+   </rss:image>
+   <rss:item rdf:about="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302274?af=R">
+      <rss:title>Effect of Systems Change and Use of Electronic Health Records on Quit Rates Among Tobacco Users in a Public Hospital System</rss:title>
+      <rss:link>http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302274?af=R</rss:link>
+      <content:encoded>American Journal of Public Health, &lt;a href="/toc/ajph/105/S2"&gt;Volume 105, Issue S2&lt;/a&gt;, Page e1-e7, April 2015. &lt;br/&gt;</content:encoded>
+      <rss:description>American Journal of Public Health, Volume 105, Issue S2, Page e1-e7, April 2015. &lt;br/&gt;</rss:description>
+      <dc:title>Effect of Systems Change and Use of Electronic Health Records on Quit Rates Among Tobacco Users in a Public Hospital System</dc:title>
+      <dc:identifier>doi:10.2105/AJPH.2014.302274</dc:identifier>
+      <dc:source>American Journal of Public Health</dc:source>
+      <dc:date>Fri, 06 Mar 2015 21:09:13 GMT</dc:date>
+      <dc:rights>© American Public Health Association 2015</dc:rights>
+      <dc:creator>Sarah Moody-Thomas</dc:creator>
+      <dc:creator>Laura Nasuti</dc:creator>
+      <dc:creator>Yong Yi</dc:creator>
+      <dc:creator>Michael D. Celestin</dc:creator>
+      <dc:creator>Ronald Horswell</dc:creator>
+      <dc:creator>Thomas G. Land</dc:creator>
+      <prism:publicationName>Effect of Systems Change and Use of Electronic Health Records on Quit Rates Among Tobacco Users in a Public Hospital System</prism:publicationName>
+      <prism:volume>105</prism:volume>
+      <prism:number>S2</prism:number>
+      <prism:startingPage>e1</prism:startingPage>
+      <prism:endingPage>e7</prism:endingPage>
+      <prism:coverDate>Wed, 01 Apr 2015 07:00:00 GMT</prism:coverDate>
+      <prism:coverDisplayDate>Wed, 01 Apr 2015 07:00:00 GMT</prism:coverDisplayDate>
+      <prism:doi>10.2105/AJPH.2014.302274</prism:doi>
+      <prism:url>http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302274?af=R</prism:url>
+      <prism:copyright>© American Public Health Association 2015</prism:copyright>
+      <rss:category><![CDATA[A]]></rss:category>
+      <rss:category><![CDATA[B]]></rss:category>
+   </rss:item>
+   <rss:item rdf:about="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302272?af=R">
+      <rss:title>Cervical Cancer Screening in a Sexually Transmitted Disease Clinic: Screening Adoption Experiences From a Midwestern Clinic</rss:title>
+      <rss:link>http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302272?af=R</rss:link>
+      <content:encoded>American Journal of Public Health, &lt;a href="/toc/ajph/105/S2"&gt;Volume 105, Issue S2&lt;/a&gt;, Page e8-e14, April 2015. &lt;br/&gt;</content:encoded>
+      <rss:description>American Journal of Public Health, Volume 105, Issue S2, Page e8-e14, April 2015. &lt;br/&gt;</rss:description>
+      <dc:title>Cervical Cancer Screening in a Sexually Transmitted Disease Clinic: Screening Adoption Experiences From a Midwestern Clinic</dc:title>
+      <dc:identifier>doi:10.2105/AJPH.2014.302272</dc:identifier>
+      <dc:source>American Journal of Public Health</dc:source>
+      <dc:date>Fri, 06 Mar 2015 21:09:15 GMT</dc:date>
+      <dc:rights>© American Public Health Association 2015</dc:rights>
+      <dc:creator>Beth E. Meyerson</dc:creator>
+      <dc:creator>M. Aaron Sayegh</dc:creator>
+      <dc:creator>Alissa Davis</dc:creator>
+      <dc:creator>Janet N. Arno</dc:creator>
+      <dc:creator>Gregory D. Zimet</dc:creator>
+      <dc:creator>Ann M. LeMonte</dc:creator>
+      <dc:creator>James A. Williams</dc:creator>
+      <dc:creator>Lynn Barclay</dc:creator>
+      <dc:creator>Barbara Van Der Pol</dc:creator>
+      <prism:publicationName>Cervical Cancer Screening in a Sexually Transmitted Disease Clinic: Screening Adoption Experiences From a Midwestern Clinic</prism:publicationName>
+      <prism:volume>105</prism:volume>
+      <prism:number>S2</prism:number>
+      <prism:startingPage>e8</prism:startingPage>
+      <prism:endingPage>e14</prism:endingPage>
+      <prism:coverDate>Wed, 01 Apr 2015 07:00:00 GMT</prism:coverDate>
+      <prism:coverDisplayDate>Wed, 01 Apr 2015 07:00:00 GMT</prism:coverDisplayDate>
+      <prism:doi>10.2105/AJPH.2014.302272</prism:doi>
+      <prism:url>http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302272?af=R</prism:url>
+      <prism:copyright>© American Public Health Association 2015</prism:copyright>
+   </rss:item>
+   <rss:item rdf:about="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302354?af=R">
+      <rss:title>A Case Study Examination of Structure and Function in a State Health Department Chronic Disease Unit</rss:title>
+      <rss:link>http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302354?af=R</rss:link>
+      <content:encoded>American Journal of Public Health, &lt;a href="/toc/ajph/105/S2"&gt;Volume 105, Issue S2&lt;/a&gt;, Page e15-e22, April 2015. &lt;br/&gt;</content:encoded>
+      <rss:description>American Journal of Public Health, Volume 105, Issue S2, Page e15-e22, April 2015. &lt;br/&gt;</rss:description>
+      <dc:title>A Case Study Examination of Structure and Function in a State Health Department Chronic Disease Unit</dc:title>
+      <dc:identifier>doi:10.2105/AJPH.2014.302354</dc:identifier>
+      <dc:source>American Journal of Public Health</dc:source>
+      <dc:date>Fri, 06 Mar 2015 21:09:46 GMT</dc:date>
+      <dc:rights>© American Public Health Association 2015</dc:rights>
+      <dc:creator>Jeanne Alongi</dc:creator>
+      <prism:publicationName>A Case Study Examination of Structure and Function in a State Health Department Chronic Disease Unit</prism:publicationName>
+      <prism:volume>105</prism:volume>
+      <prism:number>S2</prism:number>
+      <prism:startingPage>e15</prism:startingPage>
+      <prism:endingPage>e22</prism:endingPage>
+      <prism:coverDate>Wed, 01 Apr 2015 07:00:00 GMT</prism:coverDate>
+      <prism:coverDisplayDate>Wed, 01 Apr 2015 07:00:00 GMT</prism:coverDisplayDate>
+      <prism:doi>10.2105/AJPH.2014.302354</prism:doi>
+      <prism:url>http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302354?af=R</prism:url>
+      <prism:copyright>© American Public Health Association 2015</prism:copyright>
+   </rss:item>
+   <rss:item rdf:about="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302486?af=R">
+      <rss:title>Improving Access and Provision of Preventive Oral Health Care for Very Young, Poor, and Low-Income Children Through a New Interdisciplinary Partnership</rss:title>
+      <rss:link>http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302486?af=R</rss:link>
+      <content:encoded>American Journal of Public Health, &lt;a href="/toc/ajph/105/S2"&gt;Volume 105, Issue S2&lt;/a&gt;, Page e23-e29, April 2015. &lt;br/&gt;</content:encoded>
+      <rss:description>American Journal of Public Health, Volume 105, Issue S2, Page e23-e29, April 2015. &lt;br/&gt;</rss:description>
+      <dc:title>Improving Access and Provision of Preventive Oral Health Care for Very Young, Poor, and Low-Income Children Through a New Interdisciplinary Partnership</dc:title>
+      <dc:identifier>doi:10.2105/AJPH.2014.302486</dc:identifier>
+      <dc:source>American Journal of Public Health</dc:source>
+      <dc:date>Fri, 06 Mar 2015 21:08:32 GMT</dc:date>
+      <dc:rights>© American Public Health Association 2015</dc:rights>
+      <dc:creator>Diana L. Biordi</dc:creator>
+      <dc:creator>Marjet Heitzer</dc:creator>
+      <dc:creator>Eric Mundy</dc:creator>
+      <dc:creator>Marguerite DiMarco</dc:creator>
+      <dc:creator>Sherrey Thacker</dc:creator>
+      <dc:creator>Evelyn Taylor</dc:creator>
+      <dc:creator>Marlene Huff</dc:creator>
+      <dc:creator>Deborah Marino</dc:creator>
+      <dc:creator>Karen Fitzgerald</dc:creator>
+      <prism:publicationName>Improving Access and Provision of Preventive Oral Health Care for Very Young, Poor, and Low-Income Children Through a New Interdisciplinary Partnership</prism:publicationName>
+      <prism:volume>105</prism:volume>
+      <prism:number>S2</prism:number>
+      <prism:startingPage>e23</prism:startingPage>
+      <prism:endingPage>e29</prism:endingPage>
+      <prism:coverDate>Wed, 01 Apr 2015 07:00:00 GMT</prism:coverDate>
+      <prism:coverDisplayDate>Wed, 01 Apr 2015 07:00:00 GMT</prism:coverDisplayDate>
+      <prism:doi>10.2105/AJPH.2014.302486</prism:doi>
+      <prism:url>http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302486?af=R</prism:url>
+      <prism:copyright>© American Public Health Association 2015</prism:copyright>
+   </rss:item>
+   <rss:item rdf:about="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302513?af=R">
+      <rss:title>Profile of the Public Health Workforce: Registered TRAIN Learners in the United States</rss:title>
+      <rss:link>http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302513?af=R</rss:link>
+      <content:encoded>American Journal of Public Health, &lt;a href="/toc/ajph/105/S2"&gt;Volume 105, Issue S2&lt;/a&gt;, Page e30-e36, April 2015. &lt;br/&gt;</content:encoded>
+      <rss:description>American Journal of Public Health, Volume 105, Issue S2, Page e30-e36, April 2015. &lt;br/&gt;</rss:description>
+      <dc:title>Profile of the Public Health Workforce: Registered TRAIN Learners in the United States</dc:title>
+      <dc:identifier>doi:10.2105/AJPH.2014.302513</dc:identifier>
+      <dc:source>American Journal of Public Health</dc:source>
+      <dc:date>Fri, 06 Mar 2015 21:08:59 GMT</dc:date>
+      <dc:rights>© American Public Health Association 2015</dc:rights>
+      <dc:creator>Jeffery A. Jones</dc:creator>
+      <dc:creator>Lois Banks</dc:creator>
+      <dc:creator>Ilya Plotkin</dc:creator>
+      <dc:creator>Sunny Chanthavongsa</dc:creator>
+      <dc:creator>Nathan Walker</dc:creator>
+      <prism:publicationName>Profile of the Public Health Workforce: Registered TRAIN Learners in the United States</prism:publicationName>
+      <prism:volume>105</prism:volume>
+      <prism:number>S2</prism:number>
+      <prism:startingPage>e30</prism:startingPage>
+      <prism:endingPage>e36</prism:endingPage>
+      <prism:coverDate>Wed, 01 Apr 2015 07:00:00 GMT</prism:coverDate>
+      <prism:coverDisplayDate>Wed, 01 Apr 2015 07:00:00 GMT</prism:coverDisplayDate>
+      <prism:doi>10.2105/AJPH.2014.302513</prism:doi>
+      <prism:url>http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302513?af=R</prism:url>
+      <prism:copyright>© American Public Health Association 2015</prism:copyright>
+   </rss:item>
+   <rss:item rdf:about="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2015.302564?af=R">
+      <rss:title>A New Era for Population Health: Government, Academia, and Community Moving Upstream Together</rss:title>
+      <rss:link>http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2015.302564?af=R</rss:link>
+      <content:encoded>American Journal of Public Health, &lt;a href="/toc/ajph/105/S2"&gt;Volume 105, Issue S2&lt;/a&gt;, Page S144-S144, April 2015. &lt;br/&gt;</content:encoded>
+      <rss:description>American Journal of Public Health, Volume 105, Issue S2, Page S144-S144, April 2015. &lt;br/&gt;</rss:description>
+      <dc:title>A New Era for Population Health: Government, Academia, and Community Moving Upstream Together</dc:title>
+      <dc:identifier>doi:10.2105/AJPH.2015.302564</dc:identifier>
+      <dc:source>American Journal of Public Health</dc:source>
+      <dc:date>Fri, 06 Mar 2015 21:09:42 GMT</dc:date>
+      <dc:rights>© American Public Health Association 2015</dc:rights>
+      <dc:creator>Bechair Choucair</dc:creator>
+      <dc:creator>Jay D. Bhatt</dc:creator>
+      <prism:publicationName>A New Era for Population Health: Government, Academia, and Community Moving Upstream Together</prism:publicationName>
+      <prism:volume>105</prism:volume>
+      <prism:number>S2</prism:number>
+      <prism:startingPage>S144</prism:startingPage>
+      <prism:endingPage>S144</prism:endingPage>
+      <prism:coverDate>Wed, 01 Apr 2015 07:00:00 GMT</prism:coverDate>
+      <prism:coverDisplayDate>Wed, 01 Apr 2015 07:00:00 GMT</prism:coverDisplayDate>
+      <prism:doi>10.2105/AJPH.2015.302564</prism:doi>
+      <prism:url>http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2015.302564?af=R</prism:url>
+      <prism:copyright>© American Public Health Association 2015</prism:copyright>
+   </rss:item>
+   <rss:item rdf:about="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2015.302624?af=R">
+      <rss:title>Improving Population Health by Learning From Systems and Services</rss:title>
+      <rss:link>http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2015.302624?af=R</rss:link>
+      <content:encoded>American Journal of Public Health, &lt;a href="/toc/ajph/105/S2"&gt;Volume 105, Issue S2&lt;/a&gt;, Page S145-S147, April 2015. &lt;br/&gt;</content:encoded>
+      <rss:description>American Journal of Public Health, Volume 105, Issue S2, Page S145-S147, April 2015. &lt;br/&gt;</rss:description>
+      <dc:title>Improving Population Health by Learning From Systems and Services</dc:title>
+      <dc:identifier>doi:10.2105/AJPH.2015.302624</dc:identifier>
+      <dc:source>American Journal of Public Health</dc:source>
+      <dc:date>Fri, 06 Mar 2015 21:08:57 GMT</dc:date>
+      <dc:rights>© American Public Health Association 2015</dc:rights>
+      <dc:creator>Glen P. Mays</dc:creator>
+      <dc:creator>F. Douglas Scutchfield</dc:creator>
+      <prism:publicationName>Improving Population Health by Learning From Systems and Services</prism:publicationName>
+      <prism:volume>105</prism:volume>
+      <prism:number>S2</prism:number>
+      <prism:startingPage>S145</prism:startingPage>
+      <prism:endingPage>S147</prism:endingPage>
+      <prism:coverDate>Wed, 01 Apr 2015 07:00:00 GMT</prism:coverDate>
+      <prism:coverDisplayDate>Wed, 01 Apr 2015 07:00:00 GMT</prism:coverDisplayDate>
+      <prism:doi>10.2105/AJPH.2015.302624</prism:doi>
+      <prism:url>http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2015.302624?af=R</prism:url>
+      <prism:copyright>© American Public Health Association 2015</prism:copyright>
+   </rss:item>
+   <rss:item rdf:about="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2015.302625?af=R">
+      <rss:title>The Value of the “System” in Public Health Services and Systems Research</rss:title>
+      <rss:link>http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2015.302625?af=R</rss:link>
+      <content:encoded>American Journal of Public Health, &lt;a href="/toc/ajph/105/S2"&gt;Volume 105, Issue S2&lt;/a&gt;, Page S147-S149, April 2015. &lt;br/&gt;</content:encoded>
+      <rss:description>American Journal of Public Health, Volume 105, Issue S2, Page S147-S149, April 2015. &lt;br/&gt;</rss:description>
+      <dc:title>The Value of the “System” in Public Health Services and Systems Research</dc:title>
+      <dc:identifier>doi:10.2105/AJPH.2015.302625</dc:identifier>
+      <dc:source>American Journal of Public Health</dc:source>
+      <dc:date>Fri, 06 Mar 2015 21:08:52 GMT</dc:date>
+      <dc:rights>© American Public Health Association 2015</dc:rights>
+      <dc:creator>Craig W. Thomas</dc:creator>
+      <dc:creator>Liza Corso</dc:creator>
+      <dc:creator>Judith A. Monroe</dc:creator>
+      <prism:publicationName>The Value of the “System” in Public Health Services and Systems Research</prism:publicationName>
+      <prism:volume>105</prism:volume>
+      <prism:number>S2</prism:number>
+      <prism:startingPage>S147</prism:startingPage>
+      <prism:endingPage>S149</prism:endingPage>
+      <prism:coverDate>Wed, 01 Apr 2015 07:00:00 GMT</prism:coverDate>
+      <prism:coverDisplayDate>Wed, 01 Apr 2015 07:00:00 GMT</prism:coverDisplayDate>
+      <prism:doi>10.2105/AJPH.2015.302625</prism:doi>
+      <prism:url>http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2015.302625?af=R</prism:url>
+      <prism:copyright>© American Public Health Association 2015</prism:copyright>
+   </rss:item>
+   <rss:item rdf:about="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302410?af=R">
+      <rss:title>Building a Culture of Health: A Critical Role for Public Health Services and Systems Research</rss:title>
+      <rss:link>http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302410?af=R</rss:link>
+      <content:encoded>American Journal of Public Health, &lt;a href="/toc/ajph/105/S2"&gt;Volume 105, Issue S2&lt;/a&gt;, Page S150-S152, April 2015. &lt;br/&gt;</content:encoded>
+      <rss:description>American Journal of Public Health, Volume 105, Issue S2, Page S150-S152, April 2015. &lt;br/&gt;</rss:description>
+      <dc:title>Building a Culture of Health: A Critical Role for Public Health Services and Systems Research</dc:title>
+      <dc:identifier>doi:10.2105/AJPH.2014.302410</dc:identifier>
+      <dc:source>American Journal of Public Health</dc:source>
+      <dc:date>Fri, 06 Mar 2015 21:09:14 GMT</dc:date>
+      <dc:rights>© American Public Health Association 2015</dc:rights>
+      <dc:creator>Alonzo L. Plough</dc:creator>
+      <prism:publicationName>Building a Culture of Health: A Critical Role for Public Health Services and Systems Research</prism:publicationName>
+      <prism:volume>105</prism:volume>
+      <prism:number>S2</prism:number>
+      <prism:startingPage>S150</prism:startingPage>
+      <prism:endingPage>S152</prism:endingPage>
+      <prism:coverDate>Wed, 01 Apr 2015 07:00:00 GMT</prism:coverDate>
+      <prism:coverDisplayDate>Wed, 01 Apr 2015 07:00:00 GMT</prism:coverDisplayDate>
+      <prism:doi>10.2105/AJPH.2014.302410</prism:doi>
+      <prism:url>http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302410?af=R</prism:url>
+      <prism:copyright>© American Public Health Association 2015</prism:copyright>
+   </rss:item>
+   <rss:item rdf:about="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302247?af=R">
+      <rss:title>Marshaling the Evidence: The Prioritized Public Health Accreditation Research Agenda</rss:title>
+      <rss:link>http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302247?af=R</rss:link>
+      <content:encoded>American Journal of Public Health, &lt;a href="/toc/ajph/105/S2"&gt;Volume 105, Issue S2&lt;/a&gt;, Page S153-S158, April 2015. &lt;br/&gt;</content:encoded>
+      <rss:description>American Journal of Public Health, Volume 105, Issue S2, Page S153-S158, April 2015. &lt;br/&gt;</rss:description>
+      <dc:title>Marshaling the Evidence: The Prioritized Public Health Accreditation Research Agenda</dc:title>
+      <dc:identifier>doi:10.2105/AJPH.2014.302247</dc:identifier>
+      <dc:source>American Journal of Public Health</dc:source>
+      <dc:date>Fri, 06 Mar 2015 21:08:02 GMT</dc:date>
+      <dc:rights>© American Public Health Association 2015</dc:rights>
+      <dc:creator>Jessica Kronstadt</dc:creator>
+      <dc:creator>Leslie M. Beitsch</dc:creator>
+      <dc:creator>Kaye Bender</dc:creator>
+      <prism:publicationName>Marshaling the Evidence: The Prioritized Public Health Accreditation Research Agenda</prism:publicationName>
+      <prism:volume>105</prism:volume>
+      <prism:number>S2</prism:number>
+      <prism:startingPage>S153</prism:startingPage>
+      <prism:endingPage>S158</prism:endingPage>
+      <prism:coverDate>Wed, 01 Apr 2015 07:00:00 GMT</prism:coverDate>
+      <prism:coverDisplayDate>Wed, 01 Apr 2015 07:00:00 GMT</prism:coverDisplayDate>
+      <prism:doi>10.2105/AJPH.2014.302247</prism:doi>
+      <prism:url>http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302247?af=R</prism:url>
+      <prism:copyright>© American Public Health Association 2015</prism:copyright>
+   </rss:item>
+   <rss:item rdf:about="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302198?af=R">
+      <rss:title>Defining the Functions of Public Health Governance</rss:title>
+      <rss:link>http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302198?af=R</rss:link>
+      <content:encoded>American Journal of Public Health, &lt;a href="/toc/ajph/105/S2"&gt;Volume 105, Issue S2&lt;/a&gt;, Page S159-S166, April 2015. &lt;br/&gt;</content:encoded>
+      <rss:description>American Journal of Public Health, Volume 105, Issue S2, Page S159-S166, April 2015. &lt;br/&gt;</rss:description>
+      <dc:title>Defining the Functions of Public Health Governance</dc:title>
+      <dc:identifier>doi:10.2105/AJPH.2014.302198</dc:identifier>
+      <dc:source>American Journal of Public Health</dc:source>
+      <dc:date>Fri, 06 Mar 2015 21:08:46 GMT</dc:date>
+      <dc:rights>© American Public Health Association 2015</dc:rights>
+      <dc:creator>Valeria Carlson</dc:creator>
+      <dc:creator>Marita J. Chilton</dc:creator>
+      <dc:creator>Liza C. Corso</dc:creator>
+      <dc:creator>Leslie M. Beitsch</dc:creator>
+      <prism:publicationName>Defining the Functions of Public Health Governance</prism:publicationName>
+      <prism:volume>105</prism:volume>
+      <prism:number>S2</prism:number>
+      <prism:startingPage>S159</prism:startingPage>
+      <prism:endingPage>S166</prism:endingPage>
+      <prism:coverDate>Wed, 01 Apr 2015 07:00:00 GMT</prism:coverDate>
+      <prism:coverDisplayDate>Wed, 01 Apr 2015 07:00:00 GMT</prism:coverDisplayDate>
+      <prism:doi>10.2105/AJPH.2014.302198</prism:doi>
+      <prism:url>http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302198?af=R</prism:url>
+      <prism:copyright>© American Public Health Association 2015</prism:copyright>
+   </rss:item>
+   <rss:item rdf:about="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302533?af=R">
+      <rss:title>Defining and Assessing Quality Improvement Outcomes: A Framework for Public Health</rss:title>
+      <rss:link>http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302533?af=R</rss:link>
+      <content:encoded>American Journal of Public Health, &lt;a href="/toc/ajph/105/S2"&gt;Volume 105, Issue S2&lt;/a&gt;, Page S167-S173, April 2015. &lt;br/&gt;</content:encoded>
+      <rss:description>American Journal of Public Health, Volume 105, Issue S2, Page S167-S173, April 2015. &lt;br/&gt;</rss:description>
+      <dc:title>Defining and Assessing Quality Improvement Outcomes: A Framework for Public Health</dc:title>
+      <dc:identifier>doi:10.2105/AJPH.2014.302533</dc:identifier>
+      <dc:source>American Journal of Public Health</dc:source>
+      <dc:date>Fri, 06 Mar 2015 21:08:41 GMT</dc:date>
+      <dc:rights>© American Public Health Association 2015</dc:rights>
+      <dc:creator>Anita W. McLees</dc:creator>
+      <dc:creator>Saira Nawaz</dc:creator>
+      <dc:creator>Craig Thomas</dc:creator>
+      <dc:creator>Andrea Young</dc:creator>
+      <prism:publicationName>Defining and Assessing Quality Improvement Outcomes: A Framework for Public Health</prism:publicationName>
+      <prism:volume>105</prism:volume>
+      <prism:number>S2</prism:number>
+      <prism:startingPage>S167</prism:startingPage>
+      <prism:endingPage>S173</prism:endingPage>
+      <prism:coverDate>Wed, 01 Apr 2015 07:00:00 GMT</prism:coverDate>
+      <prism:coverDisplayDate>Wed, 01 Apr 2015 07:00:00 GMT</prism:coverDisplayDate>
+      <prism:doi>10.2105/AJPH.2014.302533</prism:doi>
+      <prism:url>http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302533?af=R</prism:url>
+      <prism:copyright>© American Public Health Association 2015</prism:copyright>
+   </rss:item>
+   <rss:item rdf:about="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302450?af=R">
+      <rss:title>The Impacts of Local Health Department Consolidation on Public Health Expenditures: Evidence From Ohio</rss:title>
+      <rss:link>http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302450?af=R</rss:link>
+      <content:encoded>American Journal of Public Health, &lt;a href="/toc/ajph/105/S2"&gt;Volume 105, Issue S2&lt;/a&gt;, Page S174-S180, April 2015. &lt;br/&gt;</content:encoded>
+      <rss:description>American Journal of Public Health, Volume 105, Issue S2, Page S174-S180, April 2015. &lt;br/&gt;</rss:description>
+      <dc:title>The Impacts of Local Health Department Consolidation on Public Health Expenditures: Evidence From Ohio</dc:title>
+      <dc:identifier>doi:10.2105/AJPH.2014.302450</dc:identifier>
+      <dc:source>American Journal of Public Health</dc:source>
+      <dc:date>Fri, 06 Mar 2015 21:09:01 GMT</dc:date>
+      <dc:rights>© American Public Health Association 2015</dc:rights>
+      <dc:creator>John Hoornbeek</dc:creator>
+      <dc:creator>Michael E. Morris</dc:creator>
+      <dc:creator>Matthew Stefanak</dc:creator>
+      <dc:creator>Joshua Filla</dc:creator>
+      <dc:creator>Rohit Prodhan</dc:creator>
+      <dc:creator>Sharla A. Smith</dc:creator>
+      <prism:publicationName>The Impacts of Local Health Department Consolidation on Public Health Expenditures: Evidence From Ohio</prism:publicationName>
+      <prism:volume>105</prism:volume>
+      <prism:number>S2</prism:number>
+      <prism:startingPage>S174</prism:startingPage>
+      <prism:endingPage>S180</prism:endingPage>
+      <prism:coverDate>Wed, 01 Apr 2015 07:00:00 GMT</prism:coverDate>
+      <prism:coverDisplayDate>Wed, 01 Apr 2015 07:00:00 GMT</prism:coverDisplayDate>
+      <prism:doi>10.2105/AJPH.2014.302450</prism:doi>
+      <prism:url>http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302450?af=R</prism:url>
+      <prism:copyright>© American Public Health Association 2015</prism:copyright>
+   </rss:item>
+   <rss:item rdf:about="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302238?af=R">
+      <rss:title>Measuring Public Health Practice and Outcomes in Chronic Disease: A Call for Coordination</rss:title>
+      <rss:link>http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302238?af=R</rss:link>
+      <content:encoded>American Journal of Public Health, &lt;a href="/toc/ajph/105/S2"&gt;Volume 105, Issue S2&lt;/a&gt;, Page S180-S188, April 2015. &lt;br/&gt;</content:encoded>
+      <rss:description>American Journal of Public Health, Volume 105, Issue S2, Page S180-S188, April 2015. &lt;br/&gt;</rss:description>
+      <dc:title>Measuring Public Health Practice and Outcomes in Chronic Disease: A Call for Coordination</dc:title>
+      <dc:identifier>doi:10.2105/AJPH.2014.302238</dc:identifier>
+      <dc:source>American Journal of Public Health</dc:source>
+      <dc:date>Fri, 06 Mar 2015 21:09:07 GMT</dc:date>
+      <dc:rights>© American Public Health Association 2015</dc:rights>
+      <dc:creator>Deborah S. Porterfield</dc:creator>
+      <dc:creator>Todd Rogers</dc:creator>
+      <dc:creator>LaShawn M. Glasgow</dc:creator>
+      <dc:creator>Leslie M. Beitsch</dc:creator>
+      <prism:publicationName>Measuring Public Health Practice and Outcomes in Chronic Disease: A Call for Coordination</prism:publicationName>
+      <prism:volume>105</prism:volume>
+      <prism:number>S2</prism:number>
+      <prism:startingPage>S180</prism:startingPage>
+      <prism:endingPage>S188</prism:endingPage>
+      <prism:coverDate>Wed, 01 Apr 2015 07:00:00 GMT</prism:coverDate>
+      <prism:coverDisplayDate>Wed, 01 Apr 2015 07:00:00 GMT</prism:coverDisplayDate>
+      <prism:doi>10.2105/AJPH.2014.302238</prism:doi>
+      <prism:url>http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302238?af=R</prism:url>
+      <prism:copyright>© American Public Health Association 2015</prism:copyright>
+   </rss:item>
+   <rss:item rdf:about="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302306?af=R">
+      <rss:title>Laying the Groundwork for Evidence-Based Public Health: Why Some Local Health Departments Use More Evidence-Based Decision-Making Practices Than Others</rss:title>
+      <rss:link>http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302306?af=R</rss:link>
+      <content:encoded>American Journal of Public Health, &lt;a href="/toc/ajph/105/S2"&gt;Volume 105, Issue S2&lt;/a&gt;, Page S189-S197, April 2015. &lt;br/&gt;</content:encoded>
+      <rss:description>American Journal of Public Health, Volume 105, Issue S2, Page S189-S197, April 2015. &lt;br/&gt;</rss:description>
+      <dc:title>Laying the Groundwork for Evidence-Based Public Health: Why Some Local Health Departments Use More Evidence-Based Decision-Making Practices Than Others</dc:title>
+      <dc:identifier>doi:10.2105/AJPH.2014.302306</dc:identifier>
+      <dc:source>American Journal of Public Health</dc:source>
+      <dc:date>Fri, 06 Mar 2015 21:09:40 GMT</dc:date>
+      <dc:rights>© American Public Health Association 2015</dc:rights>
+      <dc:creator>Kay A. Lovelace</dc:creator>
+      <dc:creator>Robert E. Aronson</dc:creator>
+      <dc:creator>Kelly L. Rulison</dc:creator>
+      <dc:creator>Jeffrey D. Labban</dc:creator>
+      <dc:creator>Gulzar H. Shah</dc:creator>
+      <dc:creator>Mark Smith</dc:creator>
+      <prism:publicationName>Laying the Groundwork for Evidence-Based Public Health: Why Some Local Health Departments Use More Evidence-Based Decision-Making Practices Than Others</prism:publicationName>
+      <prism:volume>105</prism:volume>
+      <prism:number>S2</prism:number>
+      <prism:startingPage>S189</prism:startingPage>
+      <prism:endingPage>S197</prism:endingPage>
+      <prism:coverDate>Wed, 01 Apr 2015 07:00:00 GMT</prism:coverDate>
+      <prism:coverDisplayDate>Wed, 01 Apr 2015 07:00:00 GMT</prism:coverDisplayDate>
+      <prism:doi>10.2105/AJPH.2014.302306</prism:doi>
+      <prism:url>http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302306?af=R</prism:url>
+      <prism:copyright>© American Public Health Association 2015</prism:copyright>
+   </rss:item>
+   <rss:item rdf:about="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302182?af=R">
+      <rss:title>Persons With Disabilities as an Unrecognized Health Disparity Population</rss:title>
+      <rss:link>http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302182?af=R</rss:link>
+      <content:encoded>American Journal of Public Health, &lt;a href="/toc/ajph/105/S2"&gt;Volume 105, Issue S2&lt;/a&gt;, Page S198-S206, April 2015. &lt;br/&gt;</content:encoded>
+      <rss:description>American Journal of Public Health, Volume 105, Issue S2, Page S198-S206, April 2015. &lt;br/&gt;</rss:description>
+      <dc:title>Persons With Disabilities as an Unrecognized Health Disparity Population</dc:title>
+      <dc:identifier>doi:10.2105/AJPH.2014.302182</dc:identifier>
+      <dc:source>American Journal of Public Health</dc:source>
+      <dc:date>Fri, 06 Mar 2015 21:09:49 GMT</dc:date>
+      <dc:rights>© American Public Health Association 2015</dc:rights>
+      <dc:creator>Gloria L. Krahn</dc:creator>
+      <dc:creator>Deborah Klein Walker</dc:creator>
+      <dc:creator>Rosaly Correa-De-Araujo</dc:creator>
+      <prism:publicationName>Persons With Disabilities as an Unrecognized Health Disparity Population</prism:publicationName>
+      <prism:volume>105</prism:volume>
+      <prism:number>S2</prism:number>
+      <prism:startingPage>S198</prism:startingPage>
+      <prism:endingPage>S206</prism:endingPage>
+      <prism:coverDate>Wed, 01 Apr 2015 07:00:00 GMT</prism:coverDate>
+      <prism:coverDisplayDate>Wed, 01 Apr 2015 07:00:00 GMT</prism:coverDisplayDate>
+      <prism:doi>10.2105/AJPH.2014.302182</prism:doi>
+      <prism:url>http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302182?af=R</prism:url>
+      <prism:copyright>© American Public Health Association 2015</prism:copyright>
+   </rss:item>
+   <rss:item rdf:about="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302511?af=R">
+      <rss:title>Association Between HIV Programs and Quality of Maternal Health Inputs and Processes in Kenya</rss:title>
+      <rss:link>http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302511?af=R</rss:link>
+      <content:encoded>American Journal of Public Health, &lt;a href="/toc/ajph/105/S2"&gt;Volume 105, Issue S2&lt;/a&gt;, Page S207-S210, April 2015. &lt;br/&gt;</content:encoded>
+      <rss:description>American Journal of Public Health, Volume 105, Issue S2, Page S207-S210, April 2015. &lt;br/&gt;</rss:description>
+      <dc:title>Association Between HIV Programs and Quality of Maternal Health Inputs and Processes in Kenya</dc:title>
+      <dc:identifier>doi:10.2105/AJPH.2014.302511</dc:identifier>
+      <dc:source>American Journal of Public Health</dc:source>
+      <dc:date>Fri, 06 Mar 2015 21:08:50 GMT</dc:date>
+      <dc:rights>© American Public Health Association 2015</dc:rights>
+      <dc:creator>Margaret E. Kruk</dc:creator>
+      <dc:creator>Aleksandra Jakubowski</dc:creator>
+      <dc:creator>Miriam Rabkin</dc:creator>
+      <dc:creator>Davies O. Kimanga</dc:creator>
+      <dc:creator>Francis Kundu</dc:creator>
+      <dc:creator>Travis Lim</dc:creator>
+      <dc:creator>Vane Lumumba</dc:creator>
+      <dc:creator>Tom Oluoch</dc:creator>
+      <dc:creator>Katherine A. Robinson</dc:creator>
+      <dc:creator>Wafaa El-Sadr</dc:creator>
+      <prism:publicationName>Association Between HIV Programs and Quality of Maternal Health Inputs and Processes in Kenya</prism:publicationName>
+      <prism:volume>105</prism:volume>
+      <prism:number>S2</prism:number>
+      <prism:startingPage>S207</prism:startingPage>
+      <prism:endingPage>S210</prism:endingPage>
+      <prism:coverDate>Wed, 01 Apr 2015 07:00:00 GMT</prism:coverDate>
+      <prism:coverDisplayDate>Wed, 01 Apr 2015 07:00:00 GMT</prism:coverDisplayDate>
+      <prism:doi>10.2105/AJPH.2014.302511</prism:doi>
+      <prism:url>http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302511?af=R</prism:url>
+      <prism:copyright>© American Public Health Association 2015</prism:copyright>
+   </rss:item>
+   <rss:item rdf:about="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302500?af=R">
+      <rss:title>Building the Evidence for Decision-Making: The Relationship Between Local Public Health Capacity and Community Mortality</rss:title>
+      <rss:link>http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302500?af=R</rss:link>
+      <content:encoded>American Journal of Public Health, &lt;a href="/toc/ajph/105/S2"&gt;Volume 105, Issue S2&lt;/a&gt;, Page S211-S216, April 2015. &lt;br/&gt;</content:encoded>
+      <rss:description>American Journal of Public Health, Volume 105, Issue S2, Page S211-S216, April 2015. &lt;br/&gt;</rss:description>
+      <dc:title>Building the Evidence for Decision-Making: The Relationship Between Local Public Health Capacity and Community Mortality</dc:title>
+      <dc:identifier>doi:10.2105/AJPH.2014.302500</dc:identifier>
+      <dc:source>American Journal of Public Health</dc:source>
+      <dc:date>Fri, 06 Mar 2015 21:09:59 GMT</dc:date>
+      <dc:rights>© American Public Health Association 2015</dc:rights>
+      <dc:creator>Anna P. Schenck</dc:creator>
+      <dc:creator>Anne Marie Meyer</dc:creator>
+      <dc:creator>Tzy-Mey Kuo</dc:creator>
+      <dc:creator>Dorothy Cilenti</dc:creator>
+      <prism:publicationName>Building the Evidence for Decision-Making: The Relationship Between Local Public Health Capacity and Community Mortality</prism:publicationName>
+      <prism:volume>105</prism:volume>
+      <prism:number>S2</prism:number>
+      <prism:startingPage>S211</prism:startingPage>
+      <prism:endingPage>S216</prism:endingPage>
+      <prism:coverDate>Wed, 01 Apr 2015 07:00:00 GMT</prism:coverDate>
+      <prism:coverDisplayDate>Wed, 01 Apr 2015 07:00:00 GMT</prism:coverDisplayDate>
+      <prism:doi>10.2105/AJPH.2014.302500</prism:doi>
+      <prism:url>http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302500?af=R</prism:url>
+      <prism:copyright>© American Public Health Association 2015</prism:copyright>
+   </rss:item>
+   <rss:item rdf:about="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302077?af=R">
+      <rss:title>Advancing the Use of Evidence-Based Decision-Making in Local Health Departments With Systems Science Methodologies</rss:title>
+      <rss:link>http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302077?af=R</rss:link>
+      <content:encoded>American Journal of Public Health, &lt;a href="/toc/ajph/105/S2"&gt;Volume 105, Issue S2&lt;/a&gt;, Page S217-S222, April 2015. &lt;br/&gt;</content:encoded>
+      <rss:description>American Journal of Public Health, Volume 105, Issue S2, Page S217-S222, April 2015. &lt;br/&gt;</rss:description>
+      <dc:title>Advancing the Use of Evidence-Based Decision-Making in Local Health Departments With Systems Science Methodologies</dc:title>
+      <dc:identifier>doi:10.2105/AJPH.2014.302077</dc:identifier>
+      <dc:source>American Journal of Public Health</dc:source>
+      <dc:date>Fri, 06 Mar 2015 21:08:29 GMT</dc:date>
+      <dc:rights>© American Public Health Association 2015</dc:rights>
+      <dc:creator>Yan Li</dc:creator>
+      <dc:creator>Nan Kong</dc:creator>
+      <dc:creator>Mark Lawley</dc:creator>
+      <dc:creator>Linda Weiss</dc:creator>
+      <dc:creator>José A. Pagán</dc:creator>
+      <prism:publicationName>Advancing the Use of Evidence-Based Decision-Making in Local Health Departments With Systems Science Methodologies</prism:publicationName>
+      <prism:volume>105</prism:volume>
+      <prism:number>S2</prism:number>
+      <prism:startingPage>S217</prism:startingPage>
+      <prism:endingPage>S222</prism:endingPage>
+      <prism:coverDate>Wed, 01 Apr 2015 07:00:00 GMT</prism:coverDate>
+      <prism:coverDisplayDate>Wed, 01 Apr 2015 07:00:00 GMT</prism:coverDisplayDate>
+      <prism:doi>10.2105/AJPH.2014.302077</prism:doi>
+      <prism:url>http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302077?af=R</prism:url>
+      <prism:copyright>© American Public Health Association 2015</prism:copyright>
+   </rss:item>
+   <rss:item rdf:about="http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302303?af=R">
+      <rss:title>Simulating the Dynamic Effect of Land Use and Transport Policies on the Health of Populations</rss:title>
+      <rss:link>http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302303?af=R</rss:link>
+      <content:encoded>American Journal of Public Health, &lt;a href="/toc/ajph/105/S2"&gt;Volume 105, Issue S2&lt;/a&gt;, Page S223-S229, April 2015. &lt;br/&gt;</content:encoded>
+      <rss:description>American Journal of Public Health, Volume 105, Issue S2, Page S223-S229, April 2015. &lt;br/&gt;</rss:description>
+      <dc:title>Simulating the Dynamic Effect of Land Use and Transport Policies on the Health of Populations</dc:title>
+      <dc:identifier>doi:10.2105/AJPH.2014.302303</dc:identifier>
+      <dc:source>American Journal of Public Health</dc:source>
+      <dc:date>Fri, 06 Mar 2015 21:08:17 GMT</dc:date>
+      <dc:rights>© American Public Health Association 2015</dc:rights>
+      <dc:creator>Roderick J. McClure</dc:creator>
+      <dc:creator>Claudia Adriazola-Steil</dc:creator>
+      <dc:creator>Christine Mulvihill</dc:creator>
+      <dc:creator>Michael Fitzharris</dc:creator>
+      <dc:creator>Paul Salmon</dc:creator>
+      <dc:creator>C. Paul Bonnington</dc:creator>
+      <dc:creator>Mark Stevenson</dc:creator>
+      <prism:publicationName>Simulating the Dynamic Effect of Land Use and Transport Policies on the Health of Populations</prism:publicationName>
+      <prism:volume>105</prism:volume>
+      <prism:number>S2</prism:number>
+      <prism:startingPage>S223</prism:startingPage>
+      <prism:endingPage>S229</prism:endingPage>
+      <prism:coverDate>Wed, 01 Apr 2015 07:00:00 GMT</prism:coverDate>
+      <prism:coverDisplayDate>Wed, 01 Apr 2015 07:00:00 GMT</prism:coverDisplayDate>
+      <prism:doi>10.2105/AJPH.2014.302303</prism:doi>
+      <prism:url>http://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2014.302303?af=R</prism:url>
+      <prism:copyright>© American Public Health Association 2015</prism:copyright>
+   </rss:item>
+</rdf:RDF>
