@@ -13,7 +13,7 @@ module Feedjira
       attr_accessor :feed_url
 
       def self.able_to_parse?(xml) #:nodoc:
-        (/\<rdf\:RDF/ =~ xml) && (/\<rss\:channel/ =~ xml)
+        (/\<rdf\:RDF/ =~ xml) && (/xmlns\:rss/ =~ xml)
       end
     end
 

@@ -25,6 +25,7 @@ module Feedjira
     # * Feedjira::Parser::Atom
     # * Feedjira::Parser::ITunesRSS
     # * Feedjira::Parser::RSS
+    # * Feedjira::Parser::RSSAtypon
     # === Raises
     # Feedjira::NoParserAvailable : If no valid parser classes could be found for the feed.
     def self.parse(xml, &block)
