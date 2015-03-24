@@ -67,7 +67,8 @@ module Feedjira
         Feedjira::Parser::AtomFeedBurner,
         Feedjira::Parser::Atom,
         Feedjira::Parser::ITunesRSS,
-        Feedjira::Parser::RSS
+        Feedjira::Parser::RSS,
+        Feedjira::Parser::RSSAtypon
       ]
     end
 
