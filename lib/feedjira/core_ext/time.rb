@@ -22,7 +22,7 @@ class Time
       when dt.to_s =~ /\A\d{14}\z/
         parse("#{dt.to_s}Z", true)
       else
-        parse(dt.to_s, true).utc
+        parse(dt.to_s).utc
       end
     end
   rescue StandardError
