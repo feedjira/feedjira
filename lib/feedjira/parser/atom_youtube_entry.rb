@@ -10,7 +10,6 @@ module Feedjira
       element :"media:description", :as => :summary
       element :published
       element :id, :as => :entry_id
-      element :created, :as => :published
       element :updated
       element :"yt:videoId", :as => :youtube_video_id
       element :"media:title", :as => :media_title
