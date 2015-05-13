@@ -21,6 +21,7 @@ module Feedjira
     # An instance of the determined feed type. By default, one of these:
     # * Feedjira::Parser::RSSFeedBurner
     # * Feedjira::Parser::GoogleDocsAtom
+    # * Feedjira::Parser::AtomYoutube
     # * Feedjira::Parser::AtomFeedBurner
     # * Feedjira::Parser::Atom
     # * Feedjira::Parser::ITunesRSS
@@ -64,6 +65,7 @@ module Feedjira
       @feed_classes ||= [
         Feedjira::Parser::RSSFeedBurner,
         Feedjira::Parser::GoogleDocsAtom,
+        Feedjira::Parser::AtomYoutube,
         Feedjira::Parser::AtomFeedBurner,
         Feedjira::Parser::Atom,
         Feedjira::Parser::ITunesRSS,
