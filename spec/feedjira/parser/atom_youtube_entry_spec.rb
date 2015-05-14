@@ -31,6 +31,10 @@ describe Feedjira::Parser::AtomYoutubeEntry do
       expect(@entry.content).to eq 'A question is the most powerful force in the world. It can start you on an adventure or spark a connection. See where a question can take you. The Google app is available on iOS and Android. Download the app here: http://www.google.com/search/about/download'
     end
 
+    it 'should have the summary but blank' do
+      expect(@entry.summary).to be_nil
+    end
+
     it 'should have the custom youtube video id' do
       expect(@entry.youtube_video_id).to eq '5shykyfmb28'
     end

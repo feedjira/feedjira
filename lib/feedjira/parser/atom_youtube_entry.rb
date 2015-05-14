@@ -8,6 +8,7 @@ module Feedjira
       element :link, :as => :url, :value => :href, :with => {:rel => "alternate"}
       element :name, :as => :author
       element :"media:description", :as => :content
+      element :summary
       element :published
       element :id, :as => :entry_id
       element :updated
