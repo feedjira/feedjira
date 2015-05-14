@@ -27,8 +27,8 @@ describe Feedjira::Parser::AtomYoutubeEntry do
       expect(@entry.updated).to eq Time.parse_safely("2015-05-13T17:38:30+00:00")
     end
 
-    it 'should have the summary populated from the media:description element' do
-      expect(@entry.summary).to eq 'A question is the most powerful force in the world. It can start you on an adventure or spark a connection. See where a question can take you. The Google app is available on iOS and Android. Download the app here: http://www.google.com/search/about/download'
+    it 'should have the content populated from the media:description element' do
+      expect(@entry.content).to eq 'A question is the most powerful force in the world. It can start you on an adventure or spark a connection. See where a question can take you. The Google app is available on iOS and Android. Download the app here: http://www.google.com/search/about/download'
     end
 
     it 'should have the custom youtube video id' do
