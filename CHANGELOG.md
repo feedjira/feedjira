@@ -4,7 +4,7 @@
 
 * General
   * Replaced curb with faraday
-  * Removed update funcionality
+  * Removed update functionality
 
 ## 1.6.0
 
