@@ -1,5 +1,11 @@
 # Feedjira Changelog
 
+## 2.0.0
+
+* General
+  * Replaced curb with faraday
+  * Removed update funcionality
+
 ## 1.6.0
 
 * Enhancements
