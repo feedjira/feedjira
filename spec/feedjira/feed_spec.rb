@@ -29,10 +29,10 @@ describe Feedjira::Feed do
       feed = Feedjira::Feed.fetch_and_parse url
 
       expect(feed.class).to eq Feedjira::Parser::Atom
-      expect(feed.entries.count).to eq 3
+      expect(feed.entries.count).to eq 4
       expect(feed.feed_url).to eq url
-      expect(feed.etag).to eq 'a22ad-3190-5037e71966e80'
-      expect(feed.last_modified).to eq 'Sat, 20 Sep 2014 12:34:50 GMT'
+      expect(feed.etag).to eq 'a20cd-393e-517c9e38bab40'
+      expect(feed.last_modified).to eq 'Fri, 05 Jun 2015 18:59:17 GMT'
     end
   end
 
