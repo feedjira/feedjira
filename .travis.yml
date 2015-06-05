@@ -5,6 +5,7 @@ bundler_args: --without tools
 branches:
   only:
     - master
+    - travis
 
 rvm:
   - 1.9.3
