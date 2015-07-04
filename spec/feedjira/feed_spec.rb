@@ -29,7 +29,7 @@ describe Feedjira::Feed do
       feed = Feedjira::Feed.fetch_and_parse url
 
       expect(feed.class).to eq Feedjira::Parser::Atom
-      expect(feed.entries.count).to be > 0
+      expect(feed.entries.count).to eq 4
       expect(feed.feed_url).to eq url
       expect(feed.etag).to eq 'a20cd-393e-517c9e38bab40'
       expect(feed.last_modified).to eq 'Fri, 05 Jun 2015 18:59:17 GMT'
@@ -44,7 +44,7 @@ describe Feedjira::Feed do
       feed = Feedjira::Feed.fetch_and_parse(url, faraday_object)
 
       expect(feed.class).to eq Feedjira::Parser::Atom
-      expect(feed.entries.count).to eq 4
+      expect(feed.entries.count).to be > 0
       expect(feed.feed_url).to eq url
       expect(feed.etag).to be_truthy
       expect(feed.last_modified).to be_truthy
