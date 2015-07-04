@@ -62,13 +62,8 @@ module Feedjira
       end
     end
 
-<<<<<<< Updated upstream
-    def self.fetch_and_parse(url)
-      response = connection(url).get
-=======
-    def self.fetch_and_parse(url, custom_connection)
-      response = custom_connection ||= connection(url).get
->>>>>>> Stashed changes
+    def self.fetch_and_parse(url, custom_connection = nil )
+      response = custom_connection ? custom_connection.get(url) : connection(url).get
       raise FetchFailure.new("Fetch failed - #{response.status}") unless response.success?
       xml = response.body
       parser_klass = determine_feed_parser_for_xml xml
