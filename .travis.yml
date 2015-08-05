@@ -19,3 +19,8 @@ env:
   matrix:
     - HANDLER="nokogiri"
     - HANDLER="ox"
+
+gemfile:
+  - gemfiles/0.7.gemfile
+  - gemfiles/0.8.gemfile
+  - gemfiles/0.9.gemfile
