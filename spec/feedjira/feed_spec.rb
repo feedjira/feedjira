@@ -34,6 +34,13 @@ describe Feedjira::Feed do
       expect(feed.etag).to eq 'a21c2-393e-518529acc04c0'
       expect(feed.last_modified).to eq 'Fri, 12 Jun 2015 14:05:47 GMT'
     end
+
+    it 'fetches a feed url with a trailing slash' do
+      url = 'http://twitrss.me/twitter_user_to_rss/'
+      expect {
+        Feedjira::Feed.fetch_and_parse url
+      }.to_not raise_error
+    end
   end
 
   describe "#add_common_feed_element" do
