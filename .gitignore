@@ -2,6 +2,7 @@
 .ruby-gemset
 .ruby-version
 Gemfile.lock
+gemfiles/*.lock
 doc/
 pkg/
 rdoc/
