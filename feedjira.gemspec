@@ -25,4 +25,5 @@ Gem::Specification.new do |s|
   s.add_dependency 'loofah',             '~> 2.0'
 
   s.add_development_dependency 'rspec', '~> 3.0'
+  s.add_development_dependency 'webmock', '~> 1.21'
 end
