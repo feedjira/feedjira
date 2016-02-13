@@ -11,7 +11,7 @@ module Feedjira
       begin
         DateTime.parse(string).feed_utils_to_gm_time
       rescue
-        warn "Did fail to parse date #{string.inspect}"
+        #warn "Did fail to parse date #{string.inspect}"
         begin
           DateTime.strptime(string.downcase, '%m/%d/%Y %H:%M:%s %p')
         rescue
