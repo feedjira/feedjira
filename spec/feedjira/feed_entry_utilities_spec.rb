@@ -19,6 +19,24 @@ describe Feedjira::FeedUtilities do
       expect(time.class).to eq Time
       expect(time).to eq Time.parse_safely("Tue Sep 17 12:20:13 UTC 2013")
     end
+
+    it "should parse a US Format into Time" do
+      time = @klass.new.parse_datetime("8/23/2016 12:29:58 PM")
+      expect(time.class).to eq Time
+      expect(time).to eq Time.parse_safely("Wed Aug 23 12:29:58 UTC 2016")
+    end
+
+    it "should parse a Spanish Format into Time" do
+      time = @klass.new.parse_datetime("Wed, 31 Ago 2016 11:08:22 GMT")
+      expect(time.class).to eq Time
+      expect(time).to eq Time.parse_safely("Wed Aug 31 11:08:22 UTC 2016")
+    end
+
+    it "should parse Format with japanese symbols into Time" do
+      time = @klass.new.parse_datetime("水, 31 8 2016 07:37:00 PDT")
+      expect(time.class).to eq Time
+      expect(time).to eq Time.parse_safely("Wed Aug 31 14:37:00 UTC 2016")
+    end
   end
 
   describe "sanitizing" do
