@@ -5,6 +5,7 @@ require 'sax-machine'
 require 'loofah'
 
 require 'feedjira/core_ext'
+require 'feedjira/date_time_utilities'
 require 'feedjira/feed_entry_utilities'
 require 'feedjira/feed_utilities'
 require 'feedjira/feed'
