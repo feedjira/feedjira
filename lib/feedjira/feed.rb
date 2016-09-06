@@ -72,7 +72,9 @@ module Feedjira
       feed = parse_with parser_klass, xml
       feed.feed_url = url
       feed.etag = response.headers['etag'].to_s.gsub(/"/, '')
-      feed.last_modified = response.headers['last-modified']
+
+      last_modified = response.headers['last-modified']
+      feed.last_modified = DateTime.parse(last_modified).to_time rescue nil
       feed
     end
 
