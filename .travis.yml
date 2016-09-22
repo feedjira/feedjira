@@ -16,3 +16,6 @@ env:
   matrix:
     - HANDLER="nokogiri"
     - HANDLER="ox"
+
+before_install:
+  - gem update bundler
