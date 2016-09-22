@@ -1,7 +1,5 @@
 language: ruby
 
-bundler_args: --without tools
-
 branches:
   only:
     - master
