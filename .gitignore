@@ -1,4 +1,5 @@
 .bundle
+.projections.json
 .ruby-gemset
 .ruby-version
 Gemfile.lock
