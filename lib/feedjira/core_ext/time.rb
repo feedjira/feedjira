@@ -1,5 +1,5 @@
-require "time"
-require "date"
+require 'time'
+require 'date'
 
 class Time
   # Parse a time string and convert it to UTC without raising errors.
@@ -11,19 +11,16 @@ class Time
   # === Returns
   # A Time instance in UTC or nil if there were errors while parsing.
   def self.parse_safely(dt)
-    if dt
-      case
-      when dt.is_a?(Time)
-        dt.utc
-      when dt.respond_to?(:empty?) && dt.empty?
-        nil
-      when dt.respond_to?(:to_datetime)
-        dt.to_datetime.utc
-      when dt.to_s =~ /\A\d{14}\z/
-        parse("#{dt.to_s}Z", true)
-      else
-        parse(dt.to_s).utc
-      end
+    if dt.is_a?(Time)
+      dt.utc
+    elsif dt.respond_to?(:empty?) && dt.empty?
+      nil
+    elsif dt.respond_to?(:to_datetime)
+      dt.to_datetime.utc
+    elsif dt.to_s =~ /\A\d{14}\z/
+      parse("#{dt}Z", true)
+    else
+      parse(dt.to_s).utc
     end
   rescue StandardError
     nil

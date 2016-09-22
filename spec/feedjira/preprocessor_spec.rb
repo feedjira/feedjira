@@ -13,9 +13,10 @@ describe Feedjira::Preprocessor do
   it 'escapes markup in xhtml content' do
     processor = Feedjira::Preprocessor.new sample_atom_xhtml_feed
     escaped = processor.to_xml
+    escaped_parts = escaped.split "\n"
 
-    expect(escaped.split("\n")[10]).to match /&lt;i&gt;dogs&lt;\/i&gt;/ #title
-    expect(escaped.split("\n")[16]).to match /&lt;b&gt;XHTML&lt;\/b&gt;/ #summary
-    expect(escaped.split("\n")[26]).to match /&lt;p&gt;$/ #content
+    expect(escaped_parts[10]).to match(%r{&lt;i&gt;dogs&lt;/i&gt;}) # title
+    expect(escaped_parts[16]).to match(%r{&lt;b&gt;XHTML&lt;/b&gt;}) # summary
+    expect(escaped_parts[26]).to match(/&lt;p&gt;$/) # content
   end
 end

@@ -1,9 +1,10 @@
-require File.join(File.dirname(__FILE__), %w[.. .. spec_helper])
+require 'spec_helper'
 
 describe Feedjira::Parser::GoogleDocsAtomEntry do
   describe 'parsing' do
     before do
-      @feed = Feedjira::Parser::GoogleDocsAtom.parse(sample_google_docs_list_feed)
+      xml = sample_google_docs_list_feed
+      @feed = Feedjira::Parser::GoogleDocsAtom.parse xml
       @entry = @feed.entries.first
     end
 
@@ -12,11 +13,11 @@ describe Feedjira::Parser::GoogleDocsAtomEntry do
     end
 
     it 'should have the custom filename element' do
-      expect(@entry.original_filename).to eq "MyFile.pdf"
+      expect(@entry.original_filename).to eq 'MyFile.pdf'
     end
 
     it 'should have the custom suggested filename element' do
-      expect(@entry.suggested_filename).to eq "TaxDocument.pdf"
+      expect(@entry.suggested_filename).to eq 'TaxDocument.pdf'
     end
   end
 end

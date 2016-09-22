@@ -5,16 +5,14 @@ module Feedjira
     end
 
     def self.parse(xml, &block)
-      if parser = determine_feed_parser_for_xml(xml)
-        parse_with parser, xml, &block
-      else
-        raise NoParserAvailable.new("No valid parser for XML.")
-      end
+      parser = determine_feed_parser_for_xml(xml)
+      raise NoParserAvailable, 'No valid parser for XML.' unless parser
+      parse_with parser, xml, &block
     end
 
     def self.determine_feed_parser_for_xml(xml)
       start_of_doc = xml.slice(0, 2000)
-      feed_classes.detect {|klass| klass.able_to_parse?(start_of_doc)}
+      feed_classes.detect { |klass| klass.able_to_parse?(start_of_doc) }
     end
 
     def self.add_feed_class(klass)
@@ -53,10 +51,14 @@ module Feedjira
     end
 
     def self.call_on_each_feed_entry(method, *parameters)
-      feed_classes.each do |k|
-        k.sax_config.collection_elements.each_value do |vl|
-          vl.find_all{|v| (v.accessor == 'entries') && (v.data_class.class == Class)}.each do |v|
-              v.data_class.send(method, *parameters)
+      feed_classes.each do |klass|
+        klass.sax_config.collection_elements.each_value do |value|
+          collection_configs = value.select do |v|
+            v.accessor == 'entries' && v.data_class.class == Class
+          end
+
+          collection_configs.each do |config|
+            config.data_class.send(method, *parameters)
           end
         end
       end
@@ -64,14 +66,15 @@ module Feedjira
 
     def self.fetch_and_parse(url)
       response = connection(url).get
-      raise FetchFailure.new("Fetch failed - #{response.status}") unless response.success?
+      error_message = "Fetch failed - #{response.status}"
+      raise FetchFailure, error_message unless response.success?
       xml = response.body
       parser_klass = determine_feed_parser_for_xml xml
-      raise NoParserAvailable.new("No valid parser for XML.") unless parser_klass
+      raise NoParserAvailable, 'No valid parser for XML.' unless parser_klass
 
       feed = parse_with parser_klass, xml
       feed.feed_url = url
-      feed.etag = response.headers['etag'].to_s.gsub(/"/, '')
+      feed.etag = response.headers['etag'].to_s.delete '"'
       feed.last_modified = response.headers['last-modified']
       feed
     end

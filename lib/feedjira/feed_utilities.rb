@@ -1,6 +1,6 @@
 module Feedjira
   module FeedUtilities
-    UPDATABLE_ATTRIBUTES = %w(title feed_url url last_modified etag)
+    UPDATABLE_ATTRIBUTES = %w(title feed_url url last_modified etag).freeze
 
     attr_writer   :new_entries, :updated, :last_modified
     attr_accessor :etag
@@ -32,7 +32,8 @@ module Feedjira
 
     def last_modified
       @last_modified ||= begin
-        entry = entries.reject {|e| e.published.nil? }.sort_by { |entry| entry.published if entry.published }.last
+        published = entries.reject { |e| e.published.nil? }
+        entry = published.sort_by { |e| e.published if e.published }.last
         entry ? entry.published : nil
       end
     end
@@ -45,13 +46,13 @@ module Feedjira
       @new_entries ||= []
     end
 
-    def has_new_entries?
-      new_entries.size > 0
+    def new_entries?
+      !new_entries.empty?
     end
 
     def update_from_feed(feed)
       self.new_entries += find_new_entries_for(feed)
-      self.entries.unshift(*self.new_entries)
+      entries.unshift(*self.new_entries)
 
       @updated = false
 
@@ -61,7 +62,8 @@ module Feedjira
     end
 
     def update_attribute(feed, name)
-      old_value, new_value = send(name), feed.send(name)
+      old_value = send(name)
+      new_value = feed.send(name)
 
       if old_value != new_value
         send("#{name}=", new_value)
@@ -72,25 +74,27 @@ module Feedjira
     end
 
     def sanitize_entries!
-      entries.each {|entry| entry.sanitize!}
+      entries.each(&:sanitize!)
     end
 
     private
 
+    # This implementation is a hack, which is why it's so ugly. It's to get
+    # around the fact that not all feeds have a published date. However,
+    # they're always ordered with the newest one first. So we go through the
+    # entries just parsed and insert each one as a new entry until we get to
+    # one that has the same id as the the newest for the feed.
     def find_new_entries_for(feed)
-      # this implementation is a hack, which is why it's so ugly.
-      # it's to get around the fact that not all feeds have a published date.
-      # however, they're always ordered with the newest one first.
-      # So we go through the entries just parsed and insert each one as a new entry
-      # until we get to one that has the same id as the the newest for the feed
-      return feed.entries if self.entries.length == 0
-      latest_entry = self.entries.first
+      return feed.entries if entries.length.zero?
+      latest_entry = entries.first
       found_new_entries = []
       feed.entries.each do |entry|
         if entry.entry_id.nil? && latest_entry.entry_id.nil?
           break if entry.url == latest_entry.url
         else
-          break if entry.entry_id == latest_entry.entry_id || entry.url == latest_entry.url
+          entry_id_match = entry.entry_id == latest_entry.entry_id
+          entry_url_match = entry.url == latest_entry.url
+          break if entry_id_match || entry_url_match
         end
         found_new_entries << entry
       end

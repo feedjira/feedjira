@@ -1,5 +1,4 @@
 module Feedjira
-
   module Parser
     # iTunes is RSS 2.0 + some apple extensions
     # Source: http://www.apple.com/itunes/whatson/podcasts/specs.html
@@ -15,36 +14,32 @@ module Feedjira
       element :language
       element :managingEditor
       element :title
-      element :link, :as => :url
+      element :link, as: :url
 
       # If author is not present use managingEditor on the channel
-      element :"itunes:author", :as => :itunes_author
-      element :"itunes:block", :as => :itunes_block
-      element :"itunes:image", :value => :href, :as => :itunes_image
-      element :"itunes:explicit", :as => :itunes_explicit
-      element :"itunes:keywords", :as => :itunes_keywords
+      element :"itunes:author", as: :itunes_author
+      element :"itunes:block", as: :itunes_block
+      element :"itunes:image", value: :href, as: :itunes_image
+      element :"itunes:explicit", as: :itunes_explicit
+      element :"itunes:keywords", as: :itunes_keywords
+
       # New URL for the podcast feed
-      element :"itunes:new_feed_url", :as => :itunes_new_feed_url
-      element :"itunes:subtitle", :as => :itunes_subtitle
+      element :"itunes:new_feed_url", as: :itunes_new_feed_url
+      element :"itunes:subtitle", as: :itunes_subtitle
+
       # If summary is not present, use the description tag
-      element :"itunes:summary", :as => :itunes_summary
+      element :"itunes:summary", as: :itunes_summary
 
-      # iTunes RSS feeds can have multiple main categories...
-      # ...and multiple sub-categories per category
-      # TODO subcategories not supported correctly - they are at the same level
-      #   as the main categories
-      elements :"itunes:category", :as => :itunes_categories, :value => :text
-
-      elements :"itunes:owner", :as => :itunes_owners, :class => ITunesRSSOwner
-
-      elements :item, :as => :entries, :class => ITunesRSSItem
+      # iTunes RSS feeds can have multiple main categories and multiple
+      # sub-categories per category. Subcategories are not supported correctly
+      # because they are at the same level as the main categories.
+      elements :"itunes:category", as: :itunes_categories, value: :text
+      elements :"itunes:owner", as: :itunes_owners, class: ITunesRSSOwner
+      elements :item, as: :entries, class: ITunesRSSItem
 
       def self.able_to_parse?(xml)
-        /xmlns:itunes\s?=\s?\"http:\/\/www.itunes.com\/dtds\/podcast-1.0.dtd\"/i =~ xml
+        %r{xmlns:itunes\s?=\s?\"http://www.itunes.com/dtds/podcast-1.0.dtd\"}i =~ xml # rubocop:disable Metrics/LineLength
       end
-
     end
-
   end
-
 end

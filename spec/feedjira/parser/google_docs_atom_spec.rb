@@ -1,19 +1,19 @@
-require File.join(File.dirname(__FILE__), %w[.. .. spec_helper])
+require 'spec_helper'
 
-describe Feedjira::Parser::GoogleDocsAtom do
+module Feedjira::Parser
   describe '.able_to_parser?' do
     it 'should return true for Google Docs feed' do
-      expect(Feedjira::Parser::GoogleDocsAtom).to be_able_to_parse(sample_google_docs_list_feed)
+      expect(GoogleDocsAtom).to be_able_to_parse(sample_google_docs_list_feed)
     end
 
     it 'should not be able to parse another Atom feed' do
-      expect(Feedjira::Parser::GoogleDocsAtom).to_not be_able_to_parse(sample_atom_feed)
+      expect(GoogleDocsAtom).to_not be_able_to_parse(sample_atom_feed)
     end
   end
 
   describe 'parsing' do
     before do
-      @feed = Feedjira::Parser::GoogleDocsAtom.parse(sample_google_docs_list_feed)
+      @feed = GoogleDocsAtom.parse(sample_google_docs_list_feed)
     end
 
     it 'should return a bunch of objects' do
@@ -25,7 +25,7 @@ describe Feedjira::Parser::GoogleDocsAtom do
     end
 
     it 'should return a bunch of entries of type GoogleDocsAtomEntry' do
-      expect(@feed.entries.first).to be_a Feedjira::Parser::GoogleDocsAtomEntry
+      expect(@feed.entries.first).to be_a GoogleDocsAtomEntry
     end
   end
 end

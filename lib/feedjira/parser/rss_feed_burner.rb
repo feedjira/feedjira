@@ -1,5 +1,4 @@
 module Feedjira
-
   module Parser
     # Parser for dealing with RSS feeds.
     class RSSFeedBurner
@@ -7,9 +6,9 @@ module Feedjira
       include FeedUtilities
       element :title
       element :description
-      element :link, :as => :url
-      elements :"atom10:link", :as => :hubs, :value => :href, :with => {:rel => "hub"}
-      elements :item, :as => :entries, :class => RSSFeedBurnerEntry
+      element :link, as: :url
+      elements :"atom10:link", as: :hubs, value: :href, with: { rel: 'hub' }
+      elements :item, as: :entries, class: RSSFeedBurnerEntry
 
       attr_accessor :feed_url
 
@@ -17,7 +16,5 @@ module Feedjira
         (/\<rss|\<rdf/ =~ xml) && (/feedburner/ =~ xml)
       end
     end
-
   end
-
 end

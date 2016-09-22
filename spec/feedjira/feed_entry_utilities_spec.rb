@@ -7,21 +7,21 @@ describe Feedjira::FeedUtilities do
     end
   end
 
-  describe "handling dates" do
-    it "should parse an ISO 8601 formatted datetime into Time" do
-      time = @klass.new.parse_datetime("2008-02-20T8:05:00-010:00")
+  describe 'handling dates' do
+    it 'should parse an ISO 8601 formatted datetime into Time' do
+      time = @klass.new.parse_datetime('2008-02-20T8:05:00-010:00')
       expect(time.class).to eq Time
-      expect(time).to eq Time.parse_safely("Wed Feb 20 18:05:00 UTC 2008")
+      expect(time).to eq Time.parse_safely('Wed Feb 20 18:05:00 UTC 2008')
     end
 
-    it "should parse a ISO 8601 with milliseconds into Time" do
-      time = @klass.new.parse_datetime("2013-09-17T08:20:13.931-04:00")
+    it 'should parse a ISO 8601 with milliseconds into Time' do
+      time = @klass.new.parse_datetime('2013-09-17T08:20:13.931-04:00')
       expect(time.class).to eq Time
-      expect(time).to eq Time.parse_safely("Tue Sep 17 12:20:13 UTC 2013")
+      expect(time).to eq Time.parse_safely('Tue Sep 17 12:20:13 UTC 2013')
     end
   end
 
-  describe "sanitizing" do
+  describe 'sanitizing' do
     before(:each) do
       @feed = Feedjira::Feed.parse(sample_atom_feed)
       @entry = @feed.entries.first
@@ -31,23 +31,27 @@ describe Feedjira::FeedUtilities do
       expect { @klass.new.sanitize! }.to_not raise_error
     end
 
-    it "should provide a sanitized title" do
-      new_title = "<script>this is not safe</script>" + @entry.title
+    it 'should provide a sanitized title' do
+      new_title = '<script>this is not safe</script>' + @entry.title
       @entry.title = new_title
-      expect(@entry.title.sanitize).to eq Loofah.scrub_fragment(new_title, :prune).to_s
+      scrubbed_title = Loofah.scrub_fragment(new_title, :prune).to_s
+      expect(@entry.title.sanitize).to eq scrubbed_title
     end
 
-    it "should sanitize content in place" do
-      new_content = "<script>" + @entry.content
+    it 'should sanitize content in place' do
+      new_content = '<script>' + @entry.content
       @entry.content = new_content.dup
-      expect(@entry.content.sanitize!).to eq Loofah.scrub_fragment(new_content, :prune).to_s
-      expect(@entry.content).to eq Loofah.scrub_fragment(new_content, :prune).to_s
+
+      scrubbed_content = Loofah.scrub_fragment(new_content, :prune).to_s
+
+      expect(@entry.content.sanitize!).to eq scrubbed_content
+      expect(@entry.content).to eq scrubbed_content
     end
 
-    it "should sanitize things in place" do
-      @entry.title   += "<script>"
-      @entry.author  += "<script>"
-      @entry.content += "<script>"
+    it 'should sanitize things in place' do
+      @entry.title   += '<script>'
+      @entry.author  += '<script>'
+      @entry.content += '<script>'
 
       cleaned_title   = Loofah.scrub_fragment(@entry.title, :prune).to_s
       cleaned_author  = Loofah.scrub_fragment(@entry.author, :prune).to_s
