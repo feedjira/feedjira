@@ -17,6 +17,8 @@ env:
   - HANDLER=ox
 
 matrix:
+  allow_failures:
+    - rvm: jruby
   exclude:
     - rvm: jruby
       env: HANDLER=ox
