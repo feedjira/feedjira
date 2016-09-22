@@ -13,9 +13,13 @@ rvm:
   - rbx
 
 env:
-  matrix:
-    - HANDLER="nokogiri"
-    - HANDLER="ox"
+  - HANDLER=nokogiri
+  - HANDLER=ox
+
+matrix:
+  exclude:
+    - rvm: jruby
+      env: HANDLER=ox
 
 before_install:
   - gem update bundler
