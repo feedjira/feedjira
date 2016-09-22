@@ -3,10 +3,10 @@ require File.join(File.dirname(__FILE__), %w[.. .. spec_helper])
 
 describe Feedjira::Parser::RSSFeedBurnerEntry do
   before(:each) do
+    Feedjira::Feed.add_common_feed_entry_element("wfw:commentRss", :as => :comment_rss)
     # I don't really like doing it this way because these unit test should only rely on RSSEntry,
     # but this is actually how it should work. You would never just pass entry xml straight to the AtomEnry
     @entry = Feedjira::Parser::RSSFeedBurner.parse(sample_rss_feed_burner_feed).entries.first
-    Feedjira::Feed.add_common_feed_entry_element("wfw:commentRss", :as => :comment_rss)
   end
 
   after(:each) do

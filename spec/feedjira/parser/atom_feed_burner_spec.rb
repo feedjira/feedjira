@@ -45,6 +45,7 @@ describe Feedjira::Parser::AtomFeedBurner do
     end
 
     it "should parse hub urls" do
+      Feedjira::Parser::AtomFeedBurner.preprocess_xml = false
       feed_with_hub = Feedjira::Parser::AtomFeedBurner.parse(load_sample("TypePadNews.xml"))
       expect(feed_with_hub.hubs.count).to eq 1
     end

@@ -2,6 +2,7 @@ require File.join(File.dirname(__FILE__), %w[.. .. spec_helper])
 
 describe Feedjira::Parser::AtomFeedBurnerEntry do
   before(:each) do
+    Feedjira::Parser::AtomFeedBurner.preprocess_xml = false
     # I don't really like doing it this way because these unit test should only rely on AtomEntry,
     # but this is actually how it should work. You would never just pass entry xml straight to the AtomEnry
     @entry = Feedjira::Parser::AtomFeedBurner.parse(sample_feedburner_atom_feed).entries.first
