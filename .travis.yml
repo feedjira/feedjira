@@ -12,6 +12,7 @@ env:
   - HANDLER=ox
 
 matrix:
+  fast_finish: true
   allow_failures:
     - rvm: jruby
   exclude:
