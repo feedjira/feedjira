@@ -4,7 +4,7 @@ rvm:
   - 2.1
   - 2.2
   - 2.3
-  - jruby
+  - jruby-9
   - rbx
 
 env:
@@ -14,9 +14,9 @@ env:
 matrix:
   fast_finish: true
   allow_failures:
-    - rvm: jruby
+    - rvm: jruby-9
   exclude:
-    - rvm: jruby
+    - rvm: jruby-9
       env: HANDLER=ox
 
 before_install:
