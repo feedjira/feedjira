@@ -62,7 +62,7 @@ module Feedjira
       end
     end
 
-    def self.fetch_and_parse(url, timeout)
+    def self.fetch_and_parse(url, timeout = nil)
       response = connection(url, timeout).get
       raise FetchFailure.new("Fetch failed - #{response.status}") unless response.success?
       xml = response.body
