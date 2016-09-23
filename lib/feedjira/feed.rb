@@ -62,8 +62,8 @@ module Feedjira
       end
     end
 
-    def self.fetch_and_parse(url)
-      response = connection(url).get
+    def self.fetch_and_parse(url, timeout = nil)
+      response = connection(url, timeout).get
       raise FetchFailure.new("Fetch failed - #{response.status}") unless response.success?
       xml = response.body
       parser_klass = determine_feed_parser_for_xml xml
@@ -76,10 +76,13 @@ module Feedjira
       feed
     end
 
-    def self.connection(url)
+    def self.connection(url, timeout)
+      raise ArgumentError.new("Timeout need to be an integer.") if timeout && !timeout.is_a?(Numeric)
+
       Faraday.new(url: url) do |conn|
         conn.use FaradayMiddleware::FollowRedirects, limit: 3
         conn.adapter :net_http
+        conn.options.timeout = timeout if timeout
       end
     end
   end

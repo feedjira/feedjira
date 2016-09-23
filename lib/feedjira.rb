@@ -29,4 +29,5 @@ require 'feedjira/parser/google_docs_atom'
 module Feedjira
   class NoParserAvailable < StandardError; end
   class FetchFailure < StandardError; end
+  class ArgumentError < StandardError; end
 end

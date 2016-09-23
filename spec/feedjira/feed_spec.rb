@@ -34,6 +34,14 @@ describe Feedjira::Feed do
       expect(feed.etag).to eq 'a21c2-393e-518529acc04c0'
       expect(feed.last_modified).to eq 'Fri, 12 Jun 2015 14:05:47 GMT'
     end
+
+    it 'throws and error when timeout not numeric' do
+      url = 'http://feedjira.com/blog/feed.xml'
+
+      expect {
+        feed = Feedjira::Feed.fetch_and_parse url, "1"
+      }.to raise_error Feedjira::ArgumentError
+    end
   end
 
   describe "#add_common_feed_element" do
