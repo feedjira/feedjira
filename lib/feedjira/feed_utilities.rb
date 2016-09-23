@@ -86,19 +86,24 @@ module Feedjira
     # one that has the same id as the the newest for the feed.
     def find_new_entries_for(feed)
       return feed.entries if entries.length.zero?
+
       latest_entry = entries.first
       found_new_entries = []
+
       feed.entries.each do |entry|
-        if entry.entry_id.nil? && latest_entry.entry_id.nil?
-          break if entry.url == latest_entry.url
-        else
-          entry_id_match = entry.entry_id == latest_entry.entry_id
-          entry_url_match = entry.url == latest_entry.url
-          break if entry_id_match || entry_url_match
-        end
+        break unless new_entry?(entry, latest_entry)
         found_new_entries << entry
       end
+
       found_new_entries
+    end
+
+    def new_entry?(entry, latest)
+      nil_ids = entry.entry_id.nil? && latest.entry_id.nil?
+      new_id = entry.entry_id != latest.entry_id
+      new_url = entry.url != latest.url
+
+      (nil_ids || new_id) && new_url
     end
   end
 end
