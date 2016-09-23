@@ -68,11 +68,8 @@ module Feedjira
       response = connection(url).get
       error_message = "Fetch failed - #{response.status}"
       raise FetchFailure, error_message unless response.success?
-      xml = response.body
-      parser_klass = determine_feed_parser_for_xml xml
-      raise NoParserAvailable, 'No valid parser for XML.' unless parser_klass
 
-      feed = parse_with parser_klass, xml
+      feed = parse response.body
       feed.feed_url = url
       feed.etag = response.headers['etag'].to_s.delete '"'
       feed.last_modified = response.headers['last-modified']
