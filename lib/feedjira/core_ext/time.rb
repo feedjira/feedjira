@@ -13,16 +13,22 @@ class Time
   def self.parse_safely(dt)
     if dt.is_a?(Time)
       dt.utc
-    elsif dt.respond_to?(:empty?) && dt.empty?
-      nil
     elsif dt.respond_to?(:to_datetime)
       dt.to_datetime.utc
-    elsif dt.to_s =~ /\A\d{14}\z/
-      parse("#{dt}Z", true)
-    else
-      parse(dt.to_s).utc
+    elsif dt.respond_to? :to_s
+      parse_string_safely dt.to_s
     end
   rescue StandardError
     nil
-  end unless method_defined?(:parse_safely)
+  end
+
+  def self.parse_string_safely(string)
+    return nil if string.empty?
+
+    if string =~ /\A\d{14}\z/
+      parse("#{string}Z", true)
+    else
+      parse(string).utc
+    end
+  end
 end
