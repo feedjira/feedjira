@@ -77,6 +77,8 @@ module Feedjira
     end
 
     def self.connection(url, timeout)
+      raise ArgumentError.new("Timeout need to be an integer.") if timeout && !timeout.is_a?(Numeric)
+
       Faraday.new(url: url) do |conn|
         conn.use FaradayMiddleware::FollowRedirects, limit: 3
         conn.adapter :net_http
