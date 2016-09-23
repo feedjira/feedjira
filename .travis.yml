@@ -26,3 +26,4 @@ before_install:
 
 script:
   - bundle exec rake
+  - bundle exec danger
