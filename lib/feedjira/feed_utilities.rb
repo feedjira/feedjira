@@ -100,9 +100,5 @@ module Feedjira
       end
       found_new_entries
     end
-
-    def existing_entry?(test_entry)
-      entries.any? { |entry| entry.id == test_entry.id }
-    end
   end
 end
