@@ -27,3 +27,9 @@ before_install:
 script:
   - bundle exec rake
   - bundle exec danger
+
+notifications:
+  email: false
+  webhooks:
+    urls:
+      - https://uplink-app.herokuapp.com/travis_hooks
