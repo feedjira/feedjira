@@ -38,7 +38,7 @@ module Feedjira
       elements :item, as: :entries, class: ITunesRSSItem
 
       def self.able_to_parse?(xml)
-        %r{xmlns:itunes\s?=\s?\"http://www\.itunes\.com/dtds/podcast-1\.0\.dtd\"}i =~ xml # rubocop:disable Metrics/LineLength
+        %r{xmlns:itunes\s?=\s?[\"\']http://www\.itunes\.com/dtds/podcast-1\.0\.dtd[\"\']}i =~ xml # rubocop:disable Metrics/LineLength
       end
     end
   end

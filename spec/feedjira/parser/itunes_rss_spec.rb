@@ -10,6 +10,10 @@ module Feedjira::Parser
       expect(ITunesRSS).to be_able_to_parse(sample_itunes_feed_with_spaces)
     end
 
+    it 'should return true for an itunes RSS feed with single-quoted attributes' do # rubocop:disable Metrics/LineLength
+      expect(ITunesRSS).to be_able_to_parse(sample_itunes_feed_with_single_quotes)  # rubocop:disable Metrics/LineLength
+    end
+
     it 'should return fase for an atom feed' do
       expect(ITunesRSS).to_not be_able_to_parse(sample_atom_feed)
     end
