@@ -33,8 +33,8 @@ describe Feedjira::Feed do
       expect(feed.class).to eq Feedjira::Parser::Atom
       expect(feed.entries.count).to eq 4
       expect(feed.feed_url).to eq url
-      expect(feed.etag).to eq 'a21c2-393e-518529acc04c0'
-      expect(feed.last_modified).to eq 'Fri, 12 Jun 2015 14:05:47 GMT'
+      expect(feed.etag).to eq '393e-53e4757c9db00-gzip'
+      expect(feed.last_modified).to eq 'Fri, 07 Oct 2016 14:37:00 GMT'
     end
   end
 

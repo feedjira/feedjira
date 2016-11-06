@@ -8,6 +8,7 @@ module SampleFeeds
     sample_atom_feed_line_breaks: 'AtomFeedWithSpacesAroundEquals.xml',
     sample_atom_entry_content: 'AmazonWebServicesBlogFirstEntryContent.xml',
     sample_itunes_feed: 'itunes.xml',
+    sample_itunes_feed_with_single_quotes: 'ITunesWithSingleQuotedAttributes.xml',
     sample_itunes_feed_with_spaces: 'ITunesWithSpacesInAttributes.xml',
     sample_rdf_feed: 'HREFConsideredHarmful.xml',
     sample_rdf_entry_content: 'HREFConsideredHarmfulFirstEntry.xml',
