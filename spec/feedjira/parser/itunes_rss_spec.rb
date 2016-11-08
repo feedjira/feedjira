@@ -56,6 +56,10 @@ module Feedjira::Parser
       expect(@feed.itunes_summary).to eq summary
     end
 
+    it 'should parse the complete tag' do
+      expect(@feed.itunes_complete).to eq 'yes'
+    end
+
     it 'should parse entries' do
       expect(@feed.entries.size).to eq 3
     end

@@ -12,6 +12,7 @@
 <itunes:author>John Doe</itunes:author>
 <itunes:summary>All About Everything is a show about everything. Each week we dive into any subject known to man and talk about it as much as we can. Look for our Podcast in the iTunes Music Store</itunes:summary>
 <description>All About Everything is a show about everything. Each week we dive into any subject known to man and talk about it as much as we can. Look for our Podcast in the iTunes Music Store</description>
+<itunes:complete>yes</itunes:complete>
 <itunes:owner>
 <itunes:name>John Doe</itunes:name>
 <itunes:email>john.doe@example.com</itunes:email>
