@@ -21,6 +21,10 @@
     <itunes:category text="Gadgets"/>
   </itunes:category>
   <itunes:category text="TV &amp; Film"/>
+  <itunes:category text="Arts">
+    <itunes:category text="Design"/>
+    <itunes:category text="Food"/>
+  </itunes:category>
 <item>
 <title>Shake Shake Shake Your Spices</title>
 <itunes:author>John Doe</itunes:author>
