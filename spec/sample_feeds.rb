@@ -10,6 +10,7 @@ module SampleFeeds
     sample_itunes_feed: 'itunes.xml',
     sample_itunes_feed_with_single_quotes: 'ITunesWithSingleQuotedAttributes.xml',
     sample_itunes_feed_with_spaces: 'ITunesWithSpacesInAttributes.xml',
+    sample_podlove_feed: 'CRE.xml',
     sample_rdf_feed: 'HREFConsideredHarmful.xml',
     sample_rdf_entry_content: 'HREFConsideredHarmfulFirstEntry.xml',
     sample_rss_feed_burner_feed: 'TechCrunch.xml',
