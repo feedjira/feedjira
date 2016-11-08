@@ -10,8 +10,9 @@ rvm:
   - rbx
 
 env:
-  - HANDLER=nokogiri
-  - HANDLER=ox
+  - HANDLER="nokogiri"
+  - HANDLER="ox"
+  - HANDLER="oga"
 
 matrix:
   fast_finish: true
