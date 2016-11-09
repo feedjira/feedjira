@@ -17,7 +17,7 @@
 <itunes:email>john.doe@example.com</itunes:email>
 </itunes:owner>
 <itunes:image href="http://example.com/podcasts/everything/AllAboutEverything.jpg" />
-<itunes:category text="Technology">
+<itunes:category text="Technology"/>
 <itunes:category text="Gadgets"/>
 <itunes:category text="TV &amp; Film"/>
  
