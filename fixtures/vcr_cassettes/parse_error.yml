@@ -1,0 +1,222 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://feedjira.com/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Mon, 31 Oct 2016 02:29:13 GMT
+      server:
+      - Apache/2.4.18 (Ubuntu)
+      last-modified:
+      - Fri, 07 Oct 2016 14:50:31 GMT
+      etag:
+      - '"3678-53e47882c0305-gzip"'
+      accept-ranges:
+      - bytes
+      vary:
+      - Accept-Encoding
+      content-length:
+      - '3519'
+      connection:
+      - close
+      content-type:
+      - text/html
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        <!DOCTYPE html>
+        <html>
+        <head>
+        <meta charset='utf-8'>
+        <meta content='IE=edge;chrome=1' http-equiv='X-UA-Compatible'>
+        <meta content='width=device-width, initial-scale=.7, maximum-scale=1' name='viewport'>
+        <title>Feedjira</title>
+        <link href="http://fonts.googleapis.com/css?family=Merriweather+Sans:400,300,400italic,700,700italic,300italic" rel="stylesheet" type="text/css" media="screen" />
+        <link href="/css/syntax.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="/css/style.css" media="screen" rel="stylesheet" type="text/css" />
+        <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
+        </head>
+        <body>
+        <div id='content'>
+        <header>
+        <h1><a href="/">Feedjira</a></h1>
+        </header>
+        <nav>
+        <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a target="_blank" href="https://github.com/feedjira/feedjira">Source</a></li>
+        </ul>
+        </nav>
+        <section><h1>The Feedjira Ruby Gem</h1>
+
+        <p><a href="https://github.com/feedjira/feedjira">Feedjira</a> (formerly Feedzirra) is a Ruby gem for fetching and parsing
+        RSS feeds. Version 2.0 <a href="/blog/2015/06/05/feedjira-two-point-oh.html">was recently released</a>.</p>
+
+        <h2>Getting Started</h2>
+
+        <p>Feedjira is tested with Ruby version 1.9.3 and 2.x so like any Ruby gem, the
+        first step is to install the gem:</p>
+        <pre class="highlight text"><table><tbody><tr><td class="gutter gl"><div class="lineno">1</div></td><td class="code">$ gem install feedjira
+        </td></tr></tbody></table></pre>
+        <p>Or add it to your Gemfile:</p>
+        <pre class="highlight ruby"><table><tbody><tr><td class="gutter gl"><div class="lineno">1</div></td><td class="code"><span class="n">gem</span> <span class="s1">&#39;feedjira&#39;</span>
+        </td></tr></tbody></table></pre>
+        <h2>Fetching and Parsing</h2>
+
+        <p>For many users, the <code>fetch_and_parse</code> method is what they use Feedjira for. This
+        method takes a url and returns a Parser object:</p>
+        <pre class="highlight ruby"><table><tbody><tr><td class="gutter gl"><div class="lineno">1</div><div class="lineno">2</div><div class="lineno">3</div></td><td class="code"><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://feedjira.com/blog/feed.xml&quot;</span>
+        <span class="n">feed</span> <span class="o">=</span> <span class="no">Feedjira</span><span class="o">::</span><span class="no">Feed</span><span class="nf">.fetch_and_parse</span> <span class="n">url</span>
+        <span class="c1"># =&gt; #&lt;Feedjira::Parser::Atom...&gt;</span>
+        </td></tr></tbody></table></pre>
+        <p>These feed objects have both the meta data for a feed and an <code>entries</code>
+        collection that contains all the entries that were found:</p>
+        <pre class="highlight ruby"><table><tbody><tr><td class="gutter gl"><div class="lineno">1</div><div class="lineno">2</div><div class="lineno">3</div><div class="lineno">4</div><div class="lineno">5</div><div class="lineno">6</div></td><td class="code"><span class="n">feed</span><span class="nf">.title</span>
+        <span class="c1"># =&gt; &quot;Feedjira Blog&quot;</span>
+        <span class="n">feed</span><span class="nf">.url</span>
+        <span class="c1"># =&gt; &quot;http://feedjira.com/blog&quot;</span>
+        <span class="n">feed</span><span class="nf">.entries</span> <span class="c1"># returns an array of Entry objects</span>
+        <span class="c1"># =&gt; [&lt;Feedjira::Feed::Entry ...&gt;, &lt;Feedjira::Feed::Entry ...&gt;, ...]</span>
+        </td></tr></tbody></table></pre>
+        <p>These entry objects contain the data parsed from the feed XML:</p>
+        <pre class="highlight ruby"><table><tbody><tr><td class="gutter gl"><div class="lineno">1</div><div class="lineno">2</div><div class="lineno">3</div><div class="lineno">4</div><div class="lineno">5</div></td><td class="code"><span class="n">entry</span> <span class="o">=</span> <span class="n">feed</span><span class="nf">.entries.first</span>
+        <span class="n">entry</span><span class="nf">.title</span>
+        <span class="c1"># =&gt; &quot;Announcing verison 1.0&quot;</span>
+        <span class="n">entry</span><span class="nf">.url</span>
+        <span class="c1"># =&gt; &quot;http://feedjira.com/blog/2014-02-12-announcing-version-10.html&quot;</span>
+        </td></tr></tbody></table></pre>
+        <h2>Just Parsing</h2>
+
+        <p>The parsing functionality of Feedjira has been exposed so that it can be used in
+        isolation:</p>
+        <pre class="highlight ruby"><table><tbody><tr><td class="gutter gl"><div class="lineno">1</div><div class="lineno">2</div><div class="lineno">3</div><div class="lineno">4</div></td><td class="code"><span class="n">xml</span> <span class="o">=</span> <span class="no">Faraday</span><span class="nf">.get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="nf">.body</span>
+        <span class="n">feed</span> <span class="o">=</span> <span class="no">Feedjira</span><span class="o">::</span><span class="no">Feed</span><span class="nf">.parse</span> <span class="n">xml</span>
+        <span class="n">feed</span><span class="nf">.entries.first.title</span>
+        <span class="c1"># =&gt; &quot;Announcing verison 1.0&quot;</span>
+        </td></tr></tbody></table></pre>
+        <h2>Adding a feed parsing class</h2>
+
+        <p>When determining which parser to use for a given XML document, the following
+        list of parser classes is used:</p>
+
+        <ul>
+        <li><code>Feedjira::Parser::RSSFeedBurner</code></li>
+        <li><code>Feedjira::Parser::GoogleDocsAtom</code></li>
+        <li><code>Feedjira::Parser::AtomFeedBurner</code></li>
+        <li><code>Feedjira::Parser::Atom</code></li>
+        <li><code>Feedjira::Parser::ITunesRSS</code></li>
+        <li><code>Feedjira::Parser::RSS</code></li>
+        </ul>
+
+        <p>You can insert your own parser at the front of this stack by calling
+        <code>add_feed_class</code>, like this:</p>
+        <pre class="highlight ruby"><table><tbody><tr><td class="gutter gl"><div class="lineno">1</div></td><td class="code"><span class="no">Feedjira</span><span class="o">::</span><span class="no">Feed</span><span class="nf">.add_feed_class</span> <span class="no">MyAwesomeParser</span>
+        </td></tr></tbody></table></pre>
+        <p>Now when you <code>fetch_and_parse</code>, <code>MyAwesomeParser</code> will be the first one to get a
+        chance to parse the feed.</p>
+
+        <p>If you have the XML and just want to provide a parser class for one parse, you
+        can specify that using <code>parse_with</code>:</p>
+        <pre class="highlight ruby"><table><tbody><tr><td class="gutter gl"><div class="lineno">1</div></td><td class="code"><span class="no">Feedjira</span><span class="o">::</span><span class="no">Feed</span><span class="nf">.parse_with</span> <span class="no">MyAwesomeParser</span><span class="p">,</span> <span class="n">xml</span>
+        </td></tr></tbody></table></pre>
+        <h2>Adding attributes to all feeds types / all entries types</h2>
+        <pre class="highlight ruby"><table><tbody><tr><td class="gutter gl"><div class="lineno">1</div><div class="lineno">2</div><div class="lineno">3</div><div class="lineno">4</div><div class="lineno">5</div><div class="lineno">6</div><div class="lineno">7</div><div class="lineno">8</div><div class="lineno">9</div><div class="lineno">10</div></td><td class="code"><span class="c1"># Add the generator attribute to all feed types</span>
+        <span class="no">Feedjira</span><span class="o">::</span><span class="no">Feed</span><span class="nf">.add_common_feed_element</span><span class="p">(</span><span class="s1">&#39;generator&#39;</span><span class="p">)</span>
+        <span class="no">Feedjira</span><span class="o">::</span><span class="no">Feed</span><span class="nf">.fetch_and_parse</span><span class="p">(</span><span class="s2">&quot;http://www.pauldix.net/atom.xml&quot;</span><span class="p">)</span><span class="nf">.generator</span> <span class="c1"># =&gt; &#39;TypePad&#39;</span>
+
+        <span class="c1"># Add some GeoRss information</span>
+        <span class="no">Feedjira</span><span class="o">::</span><span class="no">Feed</span><span class="nf">.add_common_feed_entry_element</span><span class="p">(</span><span class="s1">&#39;geo:lat&#39;</span><span class="p">,</span> <span class="ss">:as</span> <span class="o">=&gt;</span> <span class="ss">:lat</span><span class="p">)</span>
+        <span class="no">Feedjira</span><span class="o">::</span><span class="no">Feed</span><span class="nf">.fetch_and_parse</span><span class="p">(</span><span class="s2">&quot;http://www.earthpublisher.com/georss.php&quot;</span><span class="p">)</span><span class="nf">.entries.each</span> <span class="k">do</span> <span class="o">|</span><span class="n">e</span><span class="o">|</span>
+          <span class="nb">p</span> <span class="s2">&quot;lat: #[e.lat}, long: </span><span class="si">#{</span><span class="n">e</span><span class="nf">.long</span><span class="o">]</span><span class="s2">&quot;
+        end
+        </span></td></tr></tbody></table></pre>
+        <h2>Adding attributes to only one class</h2>
+
+        <p>If you want to add attributes for only one class you simply have to declare them
+        in the class</p>
+        <pre class="highlight ruby"><table><tbody><tr><td class="gutter gl"><div class="lineno">1</div><div class="lineno">2</div><div class="lineno">3</div><div class="lineno">4</div><div class="lineno">5</div><div class="lineno">6</div><div class="lineno">7</div><div class="lineno">8</div><div class="lineno">9</div><div class="lineno">10</div><div class="lineno">11</div><div class="lineno">12</div></td><td class="code"><span class="c1"># Add some GeoRss information</span>
+        <span class="nb">require</span> <span class="s1">&#39;lib/feedzirra/parser/rss_entry&#39;</span>
+
+        <span class="k">class </span><span class="nc">Feedjira</span><span class="o">::</span><span class="no">Parser</span><span class="o">::</span><span class="no">RSSEntry</span>
+          <span class="n">element</span> <span class="s1">&#39;geo:lat&#39;</span><span class="p">,</span> <span class="ss">:as</span> <span class="o">=&gt;</span> <span class="ss">:lat</span>
+          <span class="n">element</span> <span class="s1">&#39;geo:long&#39;</span><span class="p">,</span> <span class="ss">:as</span> <span class="o">=&gt;</span> <span class="ss">:long</span>
+        <span class="k">end</span>
+
+        <span class="c1"># Fetch a feed containing GeoRss info and print them</span>
+        <span class="no">Feedjira</span><span class="o">::</span><span class="no">Feed</span><span class="nf">.fetch_and_parse</span><span class="p">(</span><span class="s2">&quot;http://www.earthpublisher.com/georss.php&quot;</span><span class="p">)</span><span class="nf">.entries.each</span> <span class="k">do</span> <span class="o">|</span><span class="n">e</span><span class="o">|</span>
+          <span class="nb">p</span> <span class="s2">&quot;lat: </span><span class="si">#{</span><span class="n">e</span><span class="nf">.lat</span><span class="si">}</span><span class="s2">, long: </span><span class="si">#{</span><span class="n">e</span><span class="nf">.long</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="k">end</span>
+        </td></tr></tbody></table></pre>
+        <h2>Testing</h2>
+
+        <p>Feedjira uses <a href="https://github.com/lostisland/faraday">faraday</a> to perform requests, so testing Feedjira is really
+        about <a href="https://github.com/lostisland/faraday#using-faraday-for-testing">stubbing out faraday requests</a>.</p>
+
+        <h2>Projects that use Feedjira</h2>
+
+        <p>Feedjira is used in some awesome projects around the web - from RSS readers to
+        add-ons and everything in between. Here are some of them:</p>
+
+        <ul>
+        <li><p><a href="https://feedbin.com/">Feedbin</a>: Feedbin bills itself as a fast, simple RSS reader that delivers a
+        great reading experience. It&rsquo;s a paid RSS reader that integrates with mobile
+        apps and it even has a fully featured API!</p></li>
+        <li><p><a href="https://github.com/swanson/stringer">Stringer</a>: Stringer is a self-hosted, anti-social RSS reader. It&rsquo;s an
+        open-source project that&rsquo;s easy to deploy to any host, there&rsquo;s even a
+        one-click button to deploy on Heroku.</p></li>
+        <li><p><a href="https://apps.shopify.com/blogfeeder">BlogFeeder</a>: BlogFeeder is a paid Shopify App that makes it easy for you to
+        import any external blog into your Shopify store. It helps improve your
+        store&rsquo;s SEO and keeps your blogs in sync, plus a lot more.</p></li>
+        <li><p><a href="https://github.com/amatriain/feedbunch">Feedbunch</a>: Feedbunch is an open source feed reader built to fill the hole
+        left by Google Reader. It aims to support all features of Google Reader and
+        actually improve on others.</p></li>
+        <li><p><a href="http://theoldreader.com/">The Old Reader</a>: The Old Reader advertises as the ultimate social RSS
+        reader. It&rsquo;s free to start and also has a paid premium version. There&rsquo;s an API
+        and it integrates with many different mobile apps.</p></li>
+        <li><p><a href="https://solveforall.com/">Solve for All</a>: Solve for All combines search engine and feed parsing
+        while protecting your privacy. It&rsquo;s even extendable by the community!</p></li>
+        </ul>
+
+        <p>Note: to get your project on this list, simply <a href="mailto:feedjira@gmail.com">send an email</a>
+        with your project&rsquo;s details.</p>
+        </section>
+        </div>
+        <footer>
+        <div class='column'>
+        <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/blog/feed.xml">Feed</a></li>
+        <li><a target="_blank" href="https://github.com/feedjira/feedjira">Source</a></li>
+        <li><a target="_blank" href="https://twitter.com/feedjira">@feedjira</a></li>
+        </ul>
+        <p>Maintained by <a href="http://jonallured.com">Jon Allured</a>, Created by <a href="http://www.pauldix.net">Paul Dix</a>, Site design by <a href="http://danielariza.com">Daniel Ariza</a></p>
+        </div>
+        </footer>
+        <script type="text/javascript">
+          var _gaq = _gaq || [];
+          _gaq.push(["_setAccount", "UA-3137727-7"]);
+          _gaq.push(["_trackPageview"]);
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+        </script>
+        </body>
+        </html>
+    http_version: 
+  recorded_at: Mon, 31 Oct 2016 02:29:13 GMT
+recorded_with: VCR 3.0.3
