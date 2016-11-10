@@ -45,10 +45,21 @@ module Feedjira::Parser
     end
 
     it 'should parse categories' do
-      expect(@feed.itunes_categories.size).to eq 3
-      expect(@feed.itunes_categories[0]).to eq 'Technology'
-      expect(@feed.itunes_categories[1]).to eq 'Gadgets'
-      expect(@feed.itunes_categories[2]).to eq 'TV & Film'
+      expect(@feed.itunes_categories).to eq [
+        'Technology',
+        'Gadgets',
+        'TV & Film',
+        'Arts',
+        'Design',
+        'Food'
+      ]
+
+      expect(@feed.itunes_category_paths).to eq [
+        %w(Technology Gadgets),
+        ['TV & Film'],
+        %w(Arts Design),
+        %w(Arts Food)
+      ]
     end
 
     it 'should parse the summary' do
