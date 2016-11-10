@@ -55,10 +55,10 @@ module Feedjira::Parser
       ]
 
       expect(@feed.itunes_category_paths).to eq [
-        ['Technology', 'Gadgets'],
+        %w(Technology Gadgets),
         ['TV & Film'],
-        ['Arts', 'Design'],
-        ['Arts', 'Food']
+        %w(Arts Design),
+        %w(Arts Food)
       ]
     end
 

@@ -7,7 +7,8 @@ module Feedjira
 
       attribute :text
 
-      elements :"itunes:category", as: :itunes_categories, class: ITunesRSSCategory
+      elements :"itunes:category", as: :itunes_categories,
+                                   class: ITunesRSSCategory
 
       def each_subcategory
         return to_enum(__method__) unless block_given?

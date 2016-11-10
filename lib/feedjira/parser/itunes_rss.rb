@@ -32,19 +32,20 @@ module Feedjira
 
       # iTunes RSS feeds can have multiple main categories and multiple
       # sub-categories per category.
-      elements :"itunes:category", as: :_itunes_categories, class: ITunesRSSCategory
+      elements :"itunes:category", as: :_itunes_categories,
+                                   class: ITunesRSSCategory
       private :_itunes_categories
 
       def itunes_categories
-        _itunes_categories.flat_map { |itunes_category|
+        _itunes_categories.flat_map do |itunes_category|
           itunes_category.enum_for(:each_subcategory).to_a
-        }
+        end
       end
 
       def itunes_category_paths
-        _itunes_categories.flat_map { |itunes_category|
+        _itunes_categories.flat_map do |itunes_category|
           itunes_category.enum_for(:each_path).to_a
-        }
+        end
       end
 
       elements :"itunes:owner", as: :itunes_owners, class: ITunesRSSOwner
