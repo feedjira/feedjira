@@ -21,6 +21,7 @@ module Feedjira
       element :"itunes:block", as: :itunes_block
       element :"itunes:image", value: :href, as: :itunes_image
       element :"itunes:explicit", as: :itunes_explicit
+      element :"itunes:complete", as: :itunes_complete
       element :"itunes:keywords", as: :itunes_keywords
 
       # New URL for the podcast feed
