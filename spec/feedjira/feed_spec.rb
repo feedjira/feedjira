@@ -39,7 +39,7 @@ describe Feedjira::Feed do
         expect(feed.entries.count).to eq 4
         expect(feed.feed_url).to eq url
         expect(feed.etag).to eq('393e-53e4757c9db00-gzip')
-        expect(feed.last_modified).to eq('Fri, 07 Oct 2016 14:37:00 GMT')
+        expect(feed.last_modified).to eq(DateTime.parse('Fri, 07 Oct 2016 14:37:00 GMT').to_time)
       end
     end
   end
