@@ -23,6 +23,7 @@ module Feedjira
       @feed_classes ||= [
         Feedjira::Parser::RSSFeedBurner,
         Feedjira::Parser::GoogleDocsAtom,
+        Feedjira::Parser::AtomYoutube,
         Feedjira::Parser::AtomFeedBurner,
         Feedjira::Parser::Atom,
         Feedjira::Parser::ITunesRSS,
