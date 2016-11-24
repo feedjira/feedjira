@@ -24,7 +24,8 @@ module SampleFeeds
     sample_google_docs_list_feed: 'GoogleDocsList.xml',
     sample_feed_burner_atom_xhtml_feed: 'FeedBurnerXHTML.xml',
     sample_duplicate_content_atom_feed: 'DuplicateContentAtomFeed.xml',
-    sample_youtube_atom_feed: 'youtube_atom.xml'
+    sample_youtube_atom_feed: 'youtube_atom.xml',
+    sample_atom_xhtml_with_escpaed_html_in_pre_tag_feed: 'AtomEscapedHTMLInPreTag.xml'
   }.freeze
 
   FEEDS.each do |method, filename|

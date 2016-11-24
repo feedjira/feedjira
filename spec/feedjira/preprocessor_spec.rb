@@ -19,4 +19,11 @@ describe Feedjira::Preprocessor do
     expect(escaped_parts[16]).to match(%r{&lt;b&gt;XHTML&lt;/b&gt;}) # summary
     expect(escaped_parts[26]).to match(/&lt;p&gt;$/) # content
   end
+
+  it 'leaves escaped html within pre tag' do
+    processor = Feedjira::Preprocessor.new(sample_atom_xhtml_with_escpaed_html_in_pre_tag_feed) # rubocop:disable Metrics/LineLength
+    escaped = processor.to_xml
+    expected_pre_tag = '        &lt;pre&gt;&amp;lt;b&amp;gt;test&amp;lt;b&amp;gt;&lt;/pre&gt;' # rubocop:disable Metrics/LineLength
+    expect(escaped.split("\n")[7]).to eq(expected_pre_tag)
+  end
 end
