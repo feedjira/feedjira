@@ -7,18 +7,18 @@ rvm:
   - 2.2
   - 2.3
   - jruby-9
-  - rbx
+  - ruby-head
 
 env:
   - HANDLER=nokogiri
   - HANDLER=ox
-  - HANDLER="oga"
+  - HANDLER=oga
 
 matrix:
   fast_finish: true
   allow_failures:
     - rvm: jruby-9
-    - rvm: rbx
+    - rvm: ruby-head
   exclude:
     - rvm: jruby-9
       env: HANDLER=ox

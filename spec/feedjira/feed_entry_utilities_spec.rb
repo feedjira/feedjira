@@ -21,7 +21,7 @@ describe Feedjira::FeedUtilities do
     end
   end
 
-  describe "sanitizing" do
+  describe 'sanitizing' do
     before(:each) do
       @feed = Feedjira::Feed.parse(sample_atom_feed)
       @entry = @feed.entries.first
