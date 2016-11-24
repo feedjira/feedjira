@@ -5,6 +5,7 @@ require 'sax-machine'
 require 'loofah'
 
 require 'feedjira/core_ext'
+require 'feedjira/date_time_utilities'
 require 'feedjira/feed_entry_utilities'
 require 'feedjira/feed_utilities'
 require 'feedjira/feed'
@@ -27,6 +28,8 @@ require 'feedjira/parser/atom_feed_burner_entry'
 require 'feedjira/parser/atom_feed_burner'
 require 'feedjira/parser/google_docs_atom_entry'
 require 'feedjira/parser/google_docs_atom'
+require 'feedjira/parser/atom_youtube_entry'
+require 'feedjira/parser/atom_youtube'
 
 module Feedjira
   class NoParserAvailable < StandardError; end

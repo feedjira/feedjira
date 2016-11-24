@@ -23,6 +23,7 @@ module Feedjira
       @feed_classes ||= [
         Feedjira::Parser::RSSFeedBurner,
         Feedjira::Parser::GoogleDocsAtom,
+        Feedjira::Parser::AtomYoutube,
         Feedjira::Parser::AtomFeedBurner,
         Feedjira::Parser::Atom,
         Feedjira::Parser::ITunesRSS,
@@ -72,7 +73,9 @@ module Feedjira
       feed = parse response.body
       feed.feed_url = url
       feed.etag = response.headers['etag'].to_s.delete '"'
-      feed.last_modified = response.headers['last-modified']
+
+      last_modified = response.headers['last-modified']
+      feed.last_modified = DateTime.parse(last_modified).to_time rescue nil
       feed
     end
 
