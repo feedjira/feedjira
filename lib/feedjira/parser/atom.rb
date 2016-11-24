@@ -14,7 +14,7 @@ module Feedjira
       elements :entry, as: :entries, class: AtomEntry
 
       def self.able_to_parse?(xml)
-        %r{\<feed[^\>]+xmlns\s?=\s?[\"|\'](http://www\.w3\.org/2005/Atom|http://purl\.org/atom/ns\#)[\"|\'][^\>]*\>} =~ xml # rubocop:disable Metrics/LineLength
+        %r{\<feed[^\>]+xmlns\s?=\s?[\"\'](http://www\.w3\.org/2005/Atom|http://purl\.org/atom/ns\#)[\"\'][^\>]*\>} =~ xml # rubocop:disable Metrics/LineLength
       end
 
       def url

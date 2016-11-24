@@ -15,13 +15,16 @@ Gem::Specification.new do |s|
   s.require_paths = ['lib']
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
 
-  s.add_runtime_dependency 'faraday'
-  s.add_runtime_dependency 'faraday_middleware'
-  s.add_runtime_dependency 'loofah'
-  s.add_runtime_dependency 'sax-machine'
+  s.required_ruby_version = '>=1.9.3'
+
+  s.add_dependency 'faraday',            '>= 0.9'
+  s.add_dependency 'faraday_middleware', '>= 0.9'
+  s.add_dependency 'loofah',             '>= 2.0'
+  s.add_dependency 'sax-machine',        '>= 1.0'
 
   s.add_development_dependency 'danger'
   s.add_development_dependency 'danger-commit_lint'
   s.add_development_dependency 'rspec'
   s.add_development_dependency 'rubocop'
+  s.add_development_dependency 'vcr'
 end

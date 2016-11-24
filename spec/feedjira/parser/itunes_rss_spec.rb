@@ -10,6 +10,10 @@ module Feedjira::Parser
       expect(ITunesRSS).to be_able_to_parse(sample_itunes_feed_with_spaces)
     end
 
+    it 'should return true for an itunes RSS feed with single-quoted attributes' do # rubocop:disable Metrics/LineLength
+      expect(ITunesRSS).to be_able_to_parse(sample_itunes_feed_with_single_quotes)  # rubocop:disable Metrics/LineLength
+    end
+
     it 'should return fase for an atom feed' do
       expect(ITunesRSS).to_not be_able_to_parse(sample_atom_feed)
     end
@@ -41,15 +45,30 @@ module Feedjira::Parser
     end
 
     it 'should parse categories' do
-      expect(@feed.itunes_categories.size).to eq 3
-      expect(@feed.itunes_categories[0]).to eq 'Technology'
-      expect(@feed.itunes_categories[1]).to eq 'Gadgets'
-      expect(@feed.itunes_categories[2]).to eq 'TV & Film'
+      expect(@feed.itunes_categories).to eq [
+        'Technology',
+        'Gadgets',
+        'TV & Film',
+        'Arts',
+        'Design',
+        'Food'
+      ]
+
+      expect(@feed.itunes_category_paths).to eq [
+        %w(Technology Gadgets),
+        ['TV & Film'],
+        %w(Arts Design),
+        %w(Arts Food)
+      ]
     end
 
     it 'should parse the summary' do
       summary = 'All About Everything is a show about everything. Each week we dive into any subject known to man and talk about it as much as we can. Look for our Podcast in the iTunes Music Store' # rubocop:disable Metrics/LineLength
       expect(@feed.itunes_summary).to eq summary
+    end
+
+    it 'should parse the complete tag' do
+      expect(@feed.itunes_complete).to eq 'yes'
     end
 
     it 'should parse entries' do

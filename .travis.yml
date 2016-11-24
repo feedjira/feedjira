@@ -7,16 +7,18 @@ rvm:
   - 2.2
   - 2.3
   - jruby-9
-  - rbx
+  - ruby-head
 
 env:
   - HANDLER=nokogiri
   - HANDLER=ox
+  - HANDLER=oga
 
 matrix:
   fast_finish: true
   allow_failures:
     - rvm: jruby-9
+    - rvm: ruby-head
   exclude:
     - rvm: jruby-9
       env: HANDLER=ox
@@ -27,3 +29,9 @@ before_install:
 script:
   - bundle exec rake
   - bundle exec danger
+
+notifications:
+  email: false
+  webhooks:
+    urls:
+      - https://uplink-app.herokuapp.com/travis_hooks

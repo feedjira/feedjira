@@ -23,6 +23,7 @@ module Feedjira
       @feed_classes ||= [
         Feedjira::Parser::RSSFeedBurner,
         Feedjira::Parser::GoogleDocsAtom,
+        Feedjira::Parser::AtomYoutube,
         Feedjira::Parser::AtomFeedBurner,
         Feedjira::Parser::Atom,
         Feedjira::Parser::ITunesRSS,
@@ -66,13 +67,14 @@ module Feedjira
 
     def self.fetch_and_parse(url)
       response = connection(url).get
-      error_message = "Fetch failed - #{response.status}"
-      raise FetchFailure, error_message unless response.success?
-
+      unless response.success?
+        raise FetchFailure, "Fetch failed - #{response.status}"
+      end
       feed = parse response.body
       feed.feed_url = url
       feed.etag = response.headers['etag'].to_s.delete '"'
-      feed.last_modified = response.headers['last-modified']
+
+      feed.last_modified = parse_last_modified(response)
       feed
     end
 
@@ -82,5 +84,12 @@ module Feedjira
         conn.adapter :net_http
       end
     end
+
+    def self.parse_last_modified(response)
+      DateTime.parse(response.headers['last-modified']).to_time
+    rescue
+      nil
+    end
+    private_class_method :parse_last_modified
   end
 end
