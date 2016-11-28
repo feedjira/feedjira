@@ -9,6 +9,8 @@ module Feedjira
       element :description
       element :link, as: :url
       element :language
+      element :lastBuildDate, as: :last_built
+      element :ttl
       elements :item, as: :entries, class: RSSEntry
       elements :"atom:link", as: :hubs, value: :href, with: { rel: 'hub' }
 

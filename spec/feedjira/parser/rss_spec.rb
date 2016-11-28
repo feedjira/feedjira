@@ -37,6 +37,14 @@ describe Feedjira::Parser::RSS do
       expect(@feed.url).to eq 'http://tenderlovemaking.com'
     end
 
+    it 'should parse the ttl' do
+      expect(@feed.ttl).to eq '60'
+    end
+
+    it 'should parse the last build date' do
+      expect(@feed.last_built).to eq 'Sat, 07 Sep 2002 09:42:31 GMT'
+    end
+
     it 'should parse the hub urls' do
       expect(@feed.hubs.count).to eq 1
       expect(@feed.hubs.first).to eq 'http://pubsubhubbub.appspot.com/'

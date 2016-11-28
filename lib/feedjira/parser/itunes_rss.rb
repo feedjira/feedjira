@@ -15,6 +15,8 @@ module Feedjira
       element :managingEditor
       element :title
       element :link, as: :url
+      element :lastBuildDate, as: :last_built
+      element :ttl
 
       # If author is not present use managingEditor on the channel
       element :"itunes:author", as: :itunes_author

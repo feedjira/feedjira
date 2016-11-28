@@ -7,6 +7,7 @@ module Feedjira
       element :title
       element :description
       element :link, as: :url
+      element :lastBuildDate, as: :last_built
       elements :"atom10:link", as: :hubs, value: :href, with: { rel: 'hub' }
       elements :item, as: :entries, class: RSSFeedBurnerEntry
 

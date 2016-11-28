@@ -41,6 +41,10 @@ module Feedjira::Parser
       expect(@feed.url).to eq 'http://techcrunch.com'
     end
 
+    it 'should parse the last build date' do
+      expect(@feed.last_built).to eq 'Wed, 02 Nov 2011 17:29:59 +0000'
+    end
+
     it 'should parse the hub urls' do
       expect(@feed.hubs.count).to eq 2
       expect(@feed.hubs.first).to eq 'http://pubsubhubbub.appspot.com/'

@@ -28,6 +28,14 @@ module Feedjira::Parser
       @feed = ITunesRSS.parse(sample_itunes_feed)
     end
 
+    it 'should parse the ttl' do
+      expect(@feed.ttl).to eq '60'
+    end
+
+    it 'should parse the last build date' do
+      expect(@feed.last_built).to eq 'Sat, 07 Sep 2002 09:42:31 GMT'
+    end
+
     it 'should parse the subtitle' do
       expect(@feed.itunes_subtitle).to eq 'A show about everything'
     end
