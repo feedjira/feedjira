@@ -47,6 +47,10 @@ describe Feedjira::Parser::RSS do
       expect(@feed).to respond_to :feed_url=
     end
 
+    it 'should parse the language' do
+      expect(@feed.language).to eq 'en'
+    end
+
     it 'should parse entries' do
       expect(@feed.entries.size).to eq 10
     end
