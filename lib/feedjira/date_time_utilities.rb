@@ -3,9 +3,9 @@ module Feedjira
     # This is our date parsing heuristic.
     # Date Parsers are attempted in order.
     DATE_PARSERS = [
-      DateTime,
       DateTimePatternParser,
-      DateTimeLanguageParser
+      DateTimeLanguageParser,
+      DateTime
     ].freeze
 
     # Parse the given string starting with the most common parser (default ruby)
