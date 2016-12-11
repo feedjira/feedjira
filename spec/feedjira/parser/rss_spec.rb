@@ -59,6 +59,30 @@ describe Feedjira::Parser::RSS do
       expect(@feed.language).to eq 'en'
     end
 
+    it 'should parse the image url' do
+      expect(@feed.image.url).to eq 'https://tenderlovemaking.com/images/header-logo-text-trimmed.png'
+    end
+
+    it 'should parse the image title' do
+      expect(@feed.image.title).to eq 'Tender Lovemaking'
+    end
+
+    it 'should parse the image link' do
+      expect(@feed.image.link).to eq 'http://tenderlovemaking.com'
+    end
+
+    it 'should parse the image width' do
+      expect(@feed.image.width).to eq '766'
+    end
+
+    it 'should parse the image height' do
+      expect(@feed.image.height).to eq '138'
+    end
+
+    it 'should parse the image description' do
+      expect(@feed.image.description).to eq 'The act of making love, tenderly.'
+    end
+
     it 'should parse entries' do
       expect(@feed.entries.size).to eq 10
     end

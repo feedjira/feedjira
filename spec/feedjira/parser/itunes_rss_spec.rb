@@ -52,6 +52,31 @@ module Feedjira::Parser
       expect(@feed.itunes_image).to eq 'http://example.com/podcasts/everything/AllAboutEverything.jpg'
     end
 
+    it 'should parse the image url' do
+      expect(@feed.image.url).to eq 'http://example.com/podcasts/everything/AllAboutEverything.jpg'
+    end
+
+    it 'should parse the image title' do
+      expect(@feed.image.title).to eq 'All About Everything'
+    end
+
+    it 'should parse the image link' do
+      expect(@feed.image.link).to eq 'http://www.example.com/podcasts/everything/index.html'
+    end
+
+    it 'should parse the image width' do
+      expect(@feed.image.width).to eq '88'
+    end
+
+    it 'should parse the image height' do
+      expect(@feed.image.height).to eq '31'
+    end
+
+    it 'should parse the image description' do
+      description = 'All About Everything is a show about everything. Each week we dive into any subject known to man and talk about it as much as we can. Look for our Podcast in the iTunes Music Store' # rubocop:disable Metrics/LineLength
+      expect(@feed.image.description).to eq description
+    end
+
     it 'should parse categories' do
       expect(@feed.itunes_categories).to eq [
         'Technology',

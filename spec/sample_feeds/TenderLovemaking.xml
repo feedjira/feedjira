@@ -18,10 +18,18 @@
 	<language>en</language>
 	<lastBuildDate>Sat, 07 Sep 2002 09:42:31 GMT</lastBuildDate>
 	<ttl>60</ttl>
+	<image>
+		<url>https://tenderlovemaking.com/images/header-logo-text-trimmed.png</url>
+		<title>Tender Lovemaking</title>
+		<link>http://tenderlovemaking.com</link>
+		<width>766</width>
+		<height>138</height>
+		<description>The act of making love, tenderly.</description>
+	</image>
 	<sy:updatePeriod>hourly</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
-    <atom:link rel="hub" href="http://pubsubhubbub.appspot.com/"/>
-			<item>
+		<atom:link rel="hub" href="http://pubsubhubbub.appspot.com/"/>
+		<item>
 		<title>Nokogiri&#8217;s Slop Feature</title>
 		<link>http://tenderlovemaking.com/2008/12/04/nokogiris-slop-feature/</link>
 		<comments>http://tenderlovemaking.com/2008/12/04/nokogiris-slop-feature/#comments</comments>
