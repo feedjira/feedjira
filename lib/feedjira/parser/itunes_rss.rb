@@ -1,7 +1,10 @@
 module Feedjira
   module Parser
     # iTunes is RSS 2.0 + some apple extensions
-    # Source: http://www.apple.com/itunes/whatson/podcasts/specs.html
+    # Sources:
+    #   * https://cyber.harvard.edu/rss/rss.html
+    #   * http://lists.apple.com/archives/syndication-dev/2005/Nov/msg00002.html
+    #   * https://help.apple.com/itc/podcasts_connect/
     class ITunesRSS
       include SAXMachine
       include FeedUtilities
@@ -15,6 +18,8 @@ module Feedjira
       element :managingEditor
       element :title
       element :link, as: :url
+      element :lastBuildDate, as: :last_built
+      element :ttl
 
       # If author is not present use managingEditor on the channel
       element :"itunes:author", as: :itunes_author
