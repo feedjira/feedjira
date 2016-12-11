@@ -1,6 +1,7 @@
 module Feedjira
   module Parser
     # Parser for dealing with RSS feeds.
+    # Source: https://cyber.harvard.edu/rss/rss.html
     class RSS
       include SAXMachine
       include FeedUtilities
