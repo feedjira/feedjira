@@ -18,7 +18,7 @@ module Feedjira::Parser
       expect(Atom).to be_able_to_parse(sample_atom_feed_line_breaks)
     end
 
-    it 'should return true for an atom feed with a root element namespace prefix' do
+    it 'should return true for an atom feed with a root element namespace prefix' do # rubocop:disable Metrics/LineLength
       expect(Atom).to be_able_to_parse(sample_atom_feed_with_prefix)
     end
   end
