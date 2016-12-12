@@ -14,11 +14,13 @@ module Feedjira
       # RSS 2.0 elements that need including
       element :copyright
       element :description
+      element :image, class: RSSImage
       element :language
-      element :managingEditor
-      element :title
-      element :link, as: :url
       element :lastBuildDate, as: :last_built
+      element :link, as: :url
+      element :managingEditor
+      element :rss, as: :version, value: :version
+      element :title
       element :ttl
 
       # If author is not present use managingEditor on the channel

@@ -5,15 +5,16 @@ module Feedjira
     class RSS
       include SAXMachine
       include FeedUtilities
-      element :rss, as: :version, value: :version
-      element :title
       element :description
-      element :link, as: :url
+      element :image, class: RSSImage
       element :language
       element :lastBuildDate, as: :last_built
+      element :link, as: :url
+      element :rss, as: :version, value: :version
+      element :title
       element :ttl
-      elements :item, as: :entries, class: RSSEntry
       elements :"atom:link", as: :hubs, value: :href, with: { rel: 'hub' }
+      elements :item, as: :entries, class: RSSEntry
 
       attr_accessor :feed_url
 
