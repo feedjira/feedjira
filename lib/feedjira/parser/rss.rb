@@ -19,7 +19,9 @@ module Feedjira
       attr_accessor :feed_url
 
       def self.able_to_parse?(xml)
-        (/\<rss|\<rdf/ =~ xml) && !(/feedburner/ =~ xml)
+        (/\<rss|\<rdf/ =~ xml) &&
+          !((/\<rdf\:RDF/ =~ xml) && (/\<rss\:channel/ =~ xml)) &&
+          !(/feedburner/ =~ xml)
       end
     end
   end
