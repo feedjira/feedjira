@@ -1,3 +1,4 @@
+# rubocop:disable Style/Documentation
 module Feedjira
   class Feed
     def self.parse_with(parser, xml, &block)
