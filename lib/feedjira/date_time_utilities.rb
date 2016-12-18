@@ -1,3 +1,4 @@
+# rubocop:disable Style/Documentation
 module Feedjira
   module DateTimeUtilities
     # This is our date parsing heuristic.

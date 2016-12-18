@@ -4,5 +4,6 @@
 .ruby-version
 Gemfile.lock
 doc/
+.yardoc/
 pkg/
 rdoc/

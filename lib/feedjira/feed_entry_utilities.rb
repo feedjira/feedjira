@@ -1,3 +1,4 @@
+# rubocop:disable Style/Documentation
 module Feedjira
   module FeedEntryUtilities
     include Enumerable
