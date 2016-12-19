@@ -26,6 +26,24 @@ describe Feedjira::FeedUtilities do
     end
   end
 
+  describe 'strip whitespace' do
+    context 'strip_whitespace config is true' do
+      it 'strips all XML whitespace' do
+        Feedjira.configure { |config| config.strip_whitespace = true }
+
+        expect(@klass.strip_whitespace("\nfoobar\n")).to eq('foobar')
+
+        Feedjira.configure { |config| config.strip_whitespace = false }
+      end
+    end
+
+    context 'strip_whitespace config is false' do
+      it 'lstrips XML whitespace' do
+        expect(@klass.strip_whitespace("\nfoobar\n")).to eq("foobar\n")
+      end
+    end
+  end
+
   describe 'instance methods' do
     it 'should provide an updated? accessor' do
       feed = @klass.new
