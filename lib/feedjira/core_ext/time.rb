@@ -1,7 +1,8 @@
 require 'time'
 require 'date'
 
-class Time # rubocop:disable Style/Documentation
+# rubocop:disable Style/DocumentationMethod
+class Time
   # Parse a time string and convert it to UTC without raising errors.
   # Parses a flattened 14-digit time (YYYYmmddHHMMMSS) as UTC.
   #

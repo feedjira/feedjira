@@ -1,4 +1,5 @@
-class String # rubocop:disable Style/Documentation
+# rubocop:disable Style/DocumentationMethod Style/Documentation
+class String
   def sanitize!
     replace(sanitize)
   end

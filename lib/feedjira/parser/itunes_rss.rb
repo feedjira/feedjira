@@ -1,3 +1,4 @@
+# rubocop:disable Style/DocumentationMethod
 module Feedjira
   module Parser
     # iTunes is RSS 2.0 + some apple extensions

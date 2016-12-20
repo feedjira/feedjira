@@ -1,3 +1,4 @@
+# rubocop:disable Style/DocumentationMethod
 module Feedjira
   module Parser
     # iTunes extensions to the standard RSS2.0 item
