@@ -1,5 +1,6 @@
 require File.expand_path('./atom', File.dirname(__FILE__))
 # rubocop:disable Style/Documentation
+# rubocop:disable Style/DocumentationMethod
 module Feedjira
   module Parser
     class GoogleDocsAtom

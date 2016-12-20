@@ -1,4 +1,5 @@
 # rubocop:disable Style/Documentation
+# rubocop:disable Style/DocumentationMethod
 module Feedjira
   module FeedUtilities
     UPDATABLE_ATTRIBUTES = %w(title feed_url url last_modified etag).freeze
