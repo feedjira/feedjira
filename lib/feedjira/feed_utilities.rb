@@ -13,7 +13,7 @@ module Feedjira
 
     module ClassMethods
       def parse(xml, &block)
-        xml = xml.lstrip
+        xml = strip_whitespace(xml)
         xml = preprocess(xml) if preprocess_xml
         super xml, &block
       end
@@ -29,6 +29,14 @@ module Feedjira
 
       def preprocess_xml
         @preprocess_xml
+      end
+
+      def strip_whitespace(xml)
+        if Feedjira.strip_whitespace
+          xml.strip
+        else
+          xml.lstrip
+        end
       end
     end
 
