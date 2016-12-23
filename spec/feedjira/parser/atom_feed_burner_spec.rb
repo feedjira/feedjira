@@ -19,7 +19,7 @@ module Feedjira::Parser
     end
   end
 
-  describe 'parsing' do
+  describe 'parsing old style feeds' do
     before(:each) do
       @feed = AtomFeedBurner.parse(sample_feedburner_atom_feed)
     end
@@ -53,6 +53,37 @@ module Feedjira::Parser
 
     it 'should parse entries' do
       expect(@feed.entries.size).to eq 5
+    end
+  end
+
+  describe 'parsing alternate style feeds' do
+    before(:each) do
+      @feed = AtomFeedBurner.parse(sample_feedburner_atom_feed_alternate)
+    end
+
+    it 'should parse the title' do
+      expect(@feed.title).to eq 'Giant Robots Smashing Into Other Giant Robots'
+    end
+
+    it 'should parse the description' do
+      description = 'Written by thoughtbot' # rubocop:disable Metrics/LineLength
+      expect(@feed.description).to eq description
+    end
+
+    it 'should parse the url' do
+      expect(@feed.url).to eq 'https://robots.thoughtbot.com'
+    end
+
+    it 'should parse the feed_url' do
+      expect(@feed.feed_url).to eq 'http://feeds.feedburner.com/GiantRobotsSmashingIntoOtherGiantRobots'
+    end
+
+    it 'should parse hub urls' do
+      expect(@feed.hubs.count).to eq 1
+    end
+
+    it 'should parse entries' do
+      expect(@feed.entries.size).to eq 3
     end
   end
 
