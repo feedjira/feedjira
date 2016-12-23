@@ -66,7 +66,7 @@ module Feedjira::Parser
     end
 
     it 'should parse the description' do
-      description = 'Written by thoughtbot' # rubocop:disable Metrics/LineLength
+      description = 'Written by thoughtbot'
       expect(@feed.description).to eq description
     end
 
