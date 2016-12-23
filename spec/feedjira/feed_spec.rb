@@ -224,8 +224,26 @@ describe Feedjira::Feed do
       parser = Feedjira::Feed.determine_feed_parser_for_xml xml
       expect(parser).to eq new_parser
 
-      # this is a hack so that this doesn't break the rest of the tests
-      Feedjira::Feed.feed_classes.reject! { |o| o == new_parser }
+      Feedjira::Feed.reset_parsers!
+    end
+  end
+
+  describe 'when parsers are configured' do
+    it 'does not use default parsers' do
+      xml = 'Atom asdf'
+      new_parser = Class.new do
+        def self.able_to_parse?(_)
+          true
+        end
+      end
+
+      Feedjira.configure { |config| config.parsers = [new_parser] }
+
+      parser = Feedjira::Feed.determine_feed_parser_for_xml(xml)
+      expect(parser).to eq(new_parser)
+
+      Feedjira.reset_configuration!
+      Feedjira::Feed.reset_parsers!
     end
   end
 end
