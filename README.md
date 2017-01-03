@@ -1,11 +1,13 @@
 # Feedjira
 
-[![Build Status][travis-badge]][travis] [![Code Climate][code-climate-badge]][code-climate]
+[![Build Status][travis-badge]][travis] [![Code Climate][code-climate-badge]][code-climate] [![Gitter][gitter-badge]][gitter]
 
 [travis-badge]: https://travis-ci.org/feedjira/feedjira.svg?branch=master
 [travis]: http://travis-ci.org/feedjira/feedjira
 [code-climate-badge]: https://codeclimate.com/github/feedjira/feedjira/badges/gpa.svg
 [code-climate]: https://codeclimate.com/github/feedjira/feedjira
+[gitter-badge]: https://badges.gitter.im/feedjira/feedjira.svg
+[gitter]: https://gitter.im/feedjira/feedjira?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge
 
 Feedjira (formerly Feedzirra) is a Ruby library designed to fetch and parse
 feeds as quickly as possible.
