@@ -9,6 +9,10 @@ module Feedjira::Parser
     it 'should not be able to parse another Atom feed' do
       expect(GoogleDocsAtom).to_not be_able_to_parse(sample_atom_feed)
     end
+
+    it 'should return false for a atypon rss feed' do
+      expect(GoogleDocsAtom).to_not be_able_to_parse(sample_atypon_rss_feed)
+    end
   end
 
   describe 'parsing' do
