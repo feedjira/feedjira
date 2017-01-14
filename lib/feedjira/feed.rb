@@ -23,12 +23,12 @@ module Feedjira
 
     def self.feed_classes
       @feed_classes ||= [
+        Feedjira::Parser::ITunesRSS,
         Feedjira::Parser::RSSFeedBurner,
         Feedjira::Parser::GoogleDocsAtom,
         Feedjira::Parser::AtomYoutube,
         Feedjira::Parser::AtomFeedBurner,
         Feedjira::Parser::Atom,
-        Feedjira::Parser::ITunesRSS,
         Feedjira::Parser::RSS
       ]
     end
