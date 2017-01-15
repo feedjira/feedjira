@@ -6,13 +6,14 @@ module Feedjira
     DATE_PARSERS = [
       DateTimePatternParser,
       DateTimeLanguageParser,
+      DateTimeEpochParser,
       DateTime
     ].freeze
 
     # Parse the given string starting with the most common parser (default ruby)
     # and going over all other available parsers
     def parse_datetime(string)
-      DATE_PARSERS.find do |parser|
+      DATE_PARSERS.each do |parser|
         begin
           return parser.parse(string).feed_utils_to_gm_time
         rescue

@@ -37,5 +37,11 @@ describe Feedjira::FeedUtilities do
       expect(time.class).to eq Time
       expect(time).to eq Time.parse_safely('Wed Aug 31 14:37:00 UTC 2016')
     end
+
+    it 'should parse epoch into Time' do
+      time = @klass.new.parse_datetime('1472654220')
+      expect(time.class).to eq Time
+      expect(time).to eq Time.parse_safely('Wed Aug 31 14:37:00 UTC 2016')
+    end
   end
 end
