@@ -130,11 +130,43 @@ end
 
 ## Configuration
 
-Feedjira configuration options can be set by using a block
+#### Stripping whitespace from XML
+
+Feedjira can be configured to strip all whitespace but defaults to lstrip only:
 
 ```ruby
 Feedjira.configure do |config|
   config.strip_whitespace = true
+end
+```
+
+#### Follow redirect limit
+
+For fetching feeds, the follow redirect limit defaults to 3 but can be set:
+
+```ruby
+Feedjira.configure do |config|
+  config.follow_redirect_limit = 5
+end
+```
+
+#### Request timeout
+
+The request timeout defaults to 30 but can be set:
+
+```ruby
+Feedjira.configure do |config|
+  config.request_timeout = 45
+end
+```
+
+#### User agent
+
+The default user agent is "Feedjira #{Version}" but can be set:
+
+```ruby
+Feedjira.configure do |config|
+  config.user_agent = "Awesome Feed Reader"
 end
 ```
 
