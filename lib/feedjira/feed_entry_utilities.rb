@@ -9,6 +9,14 @@ module Feedjira
       @published ||= @updated
     end
 
+    def parse_datetime(string)
+      DateTime.parse(string).feed_utils_to_gm_time
+    rescue StandardError => e
+      Feedjira::Logger.warn { "Failed to parse date #{string.inspect}" }
+      Feedjira::Logger.exception(e)
+      nil
+    end
+
     ##
     # Returns the id of the entry or its url if not id is present, as some
     # formats don't support it

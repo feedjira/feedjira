@@ -19,7 +19,8 @@ class Time
     elsif dt.respond_to? :to_s
       parse_string_safely dt.to_s
     end
-  rescue StandardError
+  rescue StandardError => e
+    Feedjira::Logger.exception(e) { "Failed to parse time #{dt}" }
     nil
   end
 
