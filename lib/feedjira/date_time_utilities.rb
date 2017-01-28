@@ -17,14 +17,14 @@ module Feedjira
         begin
           return parser.parse(string).feed_utils_to_gm_time
         rescue StandardError => e
-          Feedjira.logger.fatal("Failed to parse date #{string}")
+          Feedjira.logger.fatal { "Failed to parse date #{string}" }
           Feedjira.logger.fatal(e)
           nil
         end
       end
 
       if res.nil?
-        Feedjira.logger.warn("Failed to parse date #{string}")
+        Feedjira.logger.warn { "Failed to parse date #{string}" }
       end
 
       res
