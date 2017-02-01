@@ -20,8 +20,7 @@ class Time
       parse_string_safely dt.to_s
     end
   rescue StandardError => e
-    Feedjira.logger.fatal { "Failed to parse time #{dt}" }
-    Feedjira.logger.fatal(e)
+    Feedjira::Logger.exception(e) { "Failed to parse time #{dt}" }
     nil
   end
 

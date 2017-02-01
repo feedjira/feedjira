@@ -9,10 +9,11 @@ module Feedjira
   module Configuration
     attr_accessor(
       :follow_redirect_limit,
-      :logger,
       :request_timeout,
       :strip_whitespace,
-      :user_agent
+      :user_agent,
+      :logger_io,
+      :logger_level
     )
 
     # Modify Feedjira's current configuration
@@ -37,17 +38,8 @@ module Feedjira
       self.request_timeout = 30
       self.strip_whitespace = false
       self.user_agent = "Feedjira #{Feedjira::VERSION}"
-      self.logger = default_logger
-    end
-
-    private
-
-    # @private
-    def default_logger
-      Logger.new(STDOUT).tap do |logger|
-        logger.progname = 'Feedjira'
-        logger.level = Logger::WARN
-      end
+      self.logger_io = STDOUT
+      self.logger_level = ::Logger::WARN
     end
   end
 end
