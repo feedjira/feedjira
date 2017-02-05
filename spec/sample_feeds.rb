@@ -19,6 +19,7 @@ module SampleFeeds
     sample_rss_feed: 'TenderLovemaking.xml',
     sample_rss_entry_content: 'TenderLovemakingFirstEntry.xml',
     sample_feedburner_atom_feed: 'PaulDixExplainsNothing.xml',
+    sample_feedburner_atom_feed_alternate: 'GiantRobotsSmashingIntoOtherGiantRobots.xml',
     sample_feedburner_atom_entry_content: 'PaulDixExplainsNothingFirstEntryContent.xml',
     sample_wfw_feed: 'PaulDixExplainsNothingWFW.xml',
     sample_google_docs_list_feed: 'GoogleDocsList.xml',
