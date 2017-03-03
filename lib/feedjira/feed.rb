@@ -109,7 +109,7 @@ module Feedjira
         DateTime.parse(lm).to_time
       rescue StandardError => e
         Feedjira.logger.warn { "Failed to parse last modified '#{lm}'" }
-        Feedjira.logger.fatal(e)
+        Feedjira.logger.debug(e)
         nil
       end
     end

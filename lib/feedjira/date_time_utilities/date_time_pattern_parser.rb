@@ -15,8 +15,8 @@ module Feedjira
             datetime = DateTime.strptime(prepare(string), p)
             return datetime
           rescue StandardError => e
-            Feedjira.logger.fatal("Failed to parse date #{string}")
-            Feedjira.logger.fatal(e)
+            Feedjira.logger.debug("Failed to parse date #{string}")
+            Feedjira.logger.debug(e)
             nil
           end
         end
