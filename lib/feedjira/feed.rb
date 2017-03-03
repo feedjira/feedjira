@@ -23,15 +23,11 @@ module Feedjira
       end
 
       def feed_classes
-        @feed_classes ||= [
-          Feedjira::Parser::RSSFeedBurner,
-          Feedjira::Parser::GoogleDocsAtom,
-          Feedjira::Parser::AtomYoutube,
-          Feedjira::Parser::AtomFeedBurner,
-          Feedjira::Parser::Atom,
-          Feedjira::Parser::ITunesRSS,
-          Feedjira::Parser::RSS
-        ]
+        @feed_classes ||= Feedjira.parsers
+      end
+
+      def reset_parsers!
+        @feed_classes = nil
       end
 
       def add_common_feed_element(element_tag, options = {})

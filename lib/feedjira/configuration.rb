@@ -10,6 +10,7 @@ module Feedjira
     attr_accessor(
       :follow_redirect_limit,
       :logger,
+      :parsers,
       :request_timeout,
       :strip_whitespace,
       :user_agent
@@ -26,6 +27,14 @@ module Feedjira
       yield self
     end
 
+    # Reset Feedjira's configuration to defaults
+    #
+    # @example
+    #   Feedjira.reset_configuration!
+    def reset_configuration!
+      set_default_configuration
+    end
+
     # @private
     def self.extended(base)
       base.set_default_configuration
@@ -34,10 +43,11 @@ module Feedjira
     # @private
     def set_default_configuration
       self.follow_redirect_limit = 3
+      self.logger = default_logger
+      self.parsers = default_parsers
       self.request_timeout = 30
       self.strip_whitespace = false
       self.user_agent = "Feedjira #{Feedjira::VERSION}"
-      self.logger = default_logger
     end
 
     private
@@ -48,6 +58,19 @@ module Feedjira
         logger.progname = 'Feedjira'
         logger.level = Logger::WARN
       end
+    end
+
+    # @private
+    def default_parsers
+      [
+        Feedjira::Parser::RSSFeedBurner,
+        Feedjira::Parser::GoogleDocsAtom,
+        Feedjira::Parser::AtomYoutube,
+        Feedjira::Parser::AtomFeedBurner,
+        Feedjira::Parser::Atom,
+        Feedjira::Parser::ITunesRSS,
+        Feedjira::Parser::RSS
+      ]
     end
   end
 end
