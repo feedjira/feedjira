@@ -105,8 +105,11 @@ module Feedjira
       end
 
       def parse_last_modified(response)
-        DateTime.parse(response.headers['last-modified']).to_time
-      rescue
+        lm = response.headers['last-modified']
+        DateTime.parse(lm).to_time
+      rescue StandardError => e
+        Feedjira.logger.warn { "Failed to parse last modified '#{lm}'" }
+        Feedjira.logger.debug(e)
         nil
       end
     end

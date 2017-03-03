@@ -3,6 +3,7 @@ require 'faraday'
 require 'faraday_middleware'
 require 'sax-machine'
 require 'loofah'
+require 'logger'
 
 require 'feedjira/core_ext'
 require 'feedjira/configuration'
