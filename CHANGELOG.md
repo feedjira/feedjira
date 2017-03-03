@@ -1,5 +1,9 @@
 # Feedjira Changelog
 
+## 2.1.1
+
+configurable logging and parsing
+
 ## 2.1.0
 
 * Enhancements
