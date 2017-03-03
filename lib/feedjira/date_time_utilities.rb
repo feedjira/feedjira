@@ -12,6 +12,7 @@ module Feedjira
 
     # Parse the given string starting with the most common parser (default ruby)
     # and going over all other available parsers
+    # rubocop:disable Metrics/MethodLength
     def parse_datetime(string)
       res = DATE_PARSERS.find do |parser|
         begin

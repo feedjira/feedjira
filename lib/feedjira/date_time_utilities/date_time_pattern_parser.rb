@@ -9,6 +9,7 @@ module Feedjira
       JAPANESE_SYMBOLS = %w(日 月 火 水 木 金 土).freeze
       PATTERNS = ['%m/%d/%Y %T %p', '%d %m %Y %T %Z'].freeze
 
+      # rubocop:disable Metrics/MethodLength
       def self.parse(string)
         PATTERNS.each do |p|
           begin
