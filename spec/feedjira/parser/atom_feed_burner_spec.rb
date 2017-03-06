@@ -54,6 +54,18 @@ module Feedjira::Parser
     it 'should parse entries' do
       expect(@feed.entries.size).to eq 5
     end
+
+    it 'should change url' do
+      new_url = 'http://some.url.com'
+      expect{@feed.url=new_url}.not_to raise_error
+      expect(@feed.url).to eq new_url
+    end
+
+    it 'should change feed_url' do
+      new_url = 'http://some.url.com'
+      expect{@feed.feed_url=new_url}.not_to raise_error
+      expect(@feed.feed_url).to eq new_url
+    end
   end
 
   describe 'parsing alternate style feeds' do
@@ -84,6 +96,18 @@ module Feedjira::Parser
 
     it 'should parse entries' do
       expect(@feed.entries.size).to eq 3
+    end
+
+    it 'should change url' do
+      new_url = 'http://some.url.com'
+      expect{@feed.url=new_url}.not_to raise_error
+      expect(@feed.url).to eq new_url
+    end
+
+    it 'should change feed_url' do
+      new_url = 'http://some.url.com'
+      expect{@feed.feed_url=new_url}.not_to raise_error
+      expect(@feed.feed_url).to eq new_url
     end
   end
 
