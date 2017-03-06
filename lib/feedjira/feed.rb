@@ -81,7 +81,7 @@ module Feedjira
       def connection(url)
         Faraday.new(url: url, headers: headers, request: request_options) do |conn|
           conn.use FaradayMiddleware::FollowRedirects, limit: Feedjira.follow_redirect_limit
-          conn.adapter :net_http
+          conn.adapter Faraday.default_adapter
         end
       end
       # rubocop:enable LineLength
