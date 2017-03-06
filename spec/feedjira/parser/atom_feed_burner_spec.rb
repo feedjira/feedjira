@@ -57,13 +57,13 @@ module Feedjira::Parser
 
     it 'should change url' do
       new_url = 'http://some.url.com'
-      expect{@feed.url=new_url}.not_to raise_error
+      expect{ @feed.url = new_url }.not_to raise_error
       expect(@feed.url).to eq new_url
     end
 
     it 'should change feed_url' do
       new_url = 'http://some.url.com'
-      expect{@feed.feed_url=new_url}.not_to raise_error
+      expect{ @feed.feed_url = new_url }.not_to raise_error
       expect(@feed.feed_url).to eq new_url
     end
   end
@@ -100,13 +100,13 @@ module Feedjira::Parser
 
     it 'should change url' do
       new_url = 'http://some.url.com'
-      expect{@feed.url=new_url}.not_to raise_error
+      expect{ @feed.url = new_url }.not_to raise_error
       expect(@feed.url).to eq new_url
     end
 
     it 'should change feed_url' do
       new_url = 'http://some.url.com'
-      expect{@feed.feed_url=new_url}.not_to raise_error
+      expect{ @feed.feed_url = new_url }.not_to raise_error
       expect(@feed.feed_url).to eq new_url
     end
   end
