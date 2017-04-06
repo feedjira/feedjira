@@ -12,19 +12,24 @@
 Feedjira (formerly Feedzirra) is a Ruby library designed to fetch and parse
 feeds as quickly as possible.
 
-## Getting Started
+## Installation
 
-Feedjira is tested with Ruby version 1.9.3 and 2.x so like any Ruby gem, the
-first step is to install the gem:
-
-```
-$ gem install feedjira
-```
-
-Or add it to your Gemfile:
+Add this line to your application's Gemfile:
 
 ```ruby
 gem "feedjira"
+```
+
+And then execute:
+
+```bash
+bundle
+```
+
+Or install it yourself as:
+
+```bash
+gem install feedjira
 ```
 
 ## Fetching and Parsing
@@ -129,6 +134,20 @@ end
 ```
 
 ## Configuration
+
+#### Parsers
+
+Feedjira can be configured to use a specific set of parsers and in a specific order:
+
+```ruby
+Feedjira.configure do |config|
+  config.parsers = [
+    Feedjira::Parser::ITunesRSS,
+    MyAwesomeParser,
+    Feedjira::Parser::RSS
+  ]
+end
+```
 
 #### Stripping whitespace from XML
 
