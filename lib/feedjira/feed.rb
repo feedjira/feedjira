@@ -64,41 +64,7 @@ module Feedjira
         end
       end
 
-      def fetch_and_parse(url)
-        response = connection(url).get
-        unless response.success?
-          raise FetchFailure, "Fetch failed - #{response.status}"
-        end
-        feed = parse response.body
-        feed.feed_url = url
-        feed.etag = response.headers['etag'].to_s.delete '"'
-
-        feed.last_modified = parse_last_modified(response)
-        feed
-      end
-
-      # rubocop:disable LineLength
-      def connection(url)
-        Faraday.new(url: url, headers: headers, request: request_options) do |conn|
-          conn.use FaradayMiddleware::FollowRedirects, limit: Feedjira.follow_redirect_limit
-          conn.adapter(*Faraday.default_adapter)
-        end
-      end
-      # rubocop:enable LineLength
-
       private
-
-      def headers
-        {
-          user_agent: Feedjira.user_agent
-        }
-      end
-
-      def request_options
-        {
-          timeout: Feedjira.request_timeout
-        }
-      end
 
       def parse_last_modified(response)
         lm = response.headers['last-modified']

@@ -11,40 +11,6 @@ class FailParser
 end
 
 describe Feedjira::Feed do
-  describe '.fetch_and_parse' do
-    it 'raises an error when the fetch fails' do
-      VCR.use_cassette('fetch_failure') do
-        url = 'http://www.example.com/feed.xml'
-        expect {
-          Feedjira::Feed.fetch_and_parse url
-        }.to raise_error Feedjira::FetchFailure
-      end
-    end
-
-    it 'raises an error when no parser can be found' do
-      VCR.use_cassette('parse_error') do
-        url = 'http://feedjira.com'
-        expect {
-          Feedjira::Feed.fetch_and_parse url
-        }.to raise_error Feedjira::NoParserAvailable
-      end
-    end
-
-    it 'fetches and parses the feed' do
-      VCR.use_cassette('success') do
-        url = 'http://feedjira.com/blog/feed.xml'
-        expected_time = DateTime.parse('Fri, 07 Oct 2016 14:37:00 GMT').to_time
-        feed = Feedjira::Feed.fetch_and_parse url
-
-        expect(feed.class).to eq Feedjira::Parser::Atom
-        expect(feed.entries.count).to eq 4
-        expect(feed.feed_url).to eq url
-        expect(feed.etag).to eq('393e-53e4757c9db00-gzip')
-        expect(feed.last_modified).to eq(expected_time)
-      end
-    end
-  end
-
   describe '#add_common_feed_element' do
     before(:all) do
       Feedjira::Feed.add_common_feed_element('generator')
