@@ -19,18 +19,6 @@ Add this line to your application's Gemfile:
 gem "feedjira"
 ```
 
-And then execute:
-
-```bash
-bundle
-```
-
-Or install it yourself as:
-
-```bash
-gem install feedjira
-```
-
 ## Parsing
 
 An example of parsing a feed with Feedjira:

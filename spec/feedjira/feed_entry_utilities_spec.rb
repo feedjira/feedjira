@@ -23,7 +23,7 @@ describe Feedjira::FeedUtilities do
 
   describe "sanitizing" do
     before(:each) do
-      @feed = Feedjira::Feed.parse(sample_atom_feed)
+      @feed = Feedjira.parse(sample_atom_feed)
       @entry = @feed.entries.first
     end
 
