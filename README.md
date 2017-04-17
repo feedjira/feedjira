@@ -9,8 +9,7 @@
 [gitter-badge]: https://badges.gitter.im/feedjira/feedjira.svg
 [gitter]: https://gitter.im/feedjira/feedjira?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge
 
-Feedjira (formerly Feedzirra) is a Ruby library designed to fetch and parse
-feeds as quickly as possible.
+Feedjira is a Ruby library designed to parse feeds.
 
 ## Installation
 
@@ -32,46 +31,12 @@ Or install it yourself as:
 gem install feedjira
 ```
 
-## Fetching and Parsing
+## Parsing
 
-For many users, the `fetch_and_parse` method is what they use Feedjira for. This
-method takes a url and returns a Parser object:
-
-```ruby
-url = "http://feedjira.com/blog/feed.xml"
-feed = Feedjira::Feed.fetch_and_parse(url)
-# => #<Feedjira::Parser::Atom...>
-```
-
-These feed objects have both the meta data for a feed and an `entries`
-collection that contains all the entries that were found:
+An example of parsing a feed with Feedjira:
 
 ```ruby
-feed.title
-# => "Feedjira Blog"
-feed.url
-# => "http://feedjira.com/blog"
-feed.entries # returns an array of Entry objects
-# => [<Feedjira::Feed::Entry ...>, <Feedjira::Feed::Entry ...>, ...]
-```
-
-These entry objects contain the data parsed from the feed XML:
-
-```ruby
-entry = feed.entries.first
-entry.title
-# => "Announcing verison 1.0"
-entry.url
-# => "http://feedjira.com/blog/2014-02-12-announcing-version-10.html"
-```
-
-## Just Parsing
-
-The parsing functionality of Feedjira has been exposed so that it can be used in
-isolation:
-
-```ruby
-xml = Faraday.get(url).body
+xml = HTTParty.get(url).body
 feed = Feedjira::Feed.parse xml
 feed.entries.first.title
 # => "Announcing verison 1.0"
@@ -96,7 +61,7 @@ You can insert your own parser at the front of this stack by calling
 Feedjira::Feed.add_feed_class(MyAwesomeParser)
 ```
 
-Now when you `fetch_and_parse`, `MyAwesomeParser` will be the first one to get a
+Now when you `parse`, `MyAwesomeParser` will be the first one to get a
 chance to parse the feed.
 
 If you have the XML and just want to provide a parser class for one parse, you
@@ -111,7 +76,8 @@ Feedjira::Feed.parse_with(MyAwesomeParser, xml)
 ```ruby
 # Add the generator attribute to all feed types
 Feedjira::Feed.add_common_feed_element("generator")
-Feedjira::Feed.fetch_and_parse("http://www.pauldix.net/atom.xml").generator
+xml = HTTParty.get("http://www.pauldix.net/atom.xml").body
+Feedjira::Feed.parse(xml).generator
 # => "TypePad"
 ```
 
@@ -128,7 +94,8 @@ end
 
 # Fetch a feed containing GeoRss info and print them
 url = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_week.atom"
-Feedjira::Feed.fetch_and_parse(url).entries.each do |entry|
+xml = HTTParty.get(url).body
+Feedjira::Feed.parse(xml).entries.each do |entry|
   puts "Elevation: #{entry.elevation}"
 end
 ```
@@ -158,44 +125,6 @@ Feedjira.configure do |config|
   config.strip_whitespace = true
 end
 ```
-
-#### Follow redirect limit
-
-For fetching feeds, the follow redirect limit defaults to 3 but can be set:
-
-```ruby
-Feedjira.configure do |config|
-  config.follow_redirect_limit = 5
-end
-```
-
-#### Request timeout
-
-The request timeout defaults to 30 but can be set:
-
-```ruby
-Feedjira.configure do |config|
-  config.request_timeout = 45
-end
-```
-
-#### User agent
-
-The default user agent is "Feedjira #{Version}" but can be set:
-
-```ruby
-Feedjira.configure do |config|
-  config.user_agent = "Awesome Feed Reader"
-end
-```
-
-## Testing
-
-Feedjira uses [faraday][] to perform requests, so testing Feedjira is really
-about [stubbing out faraday requests][stub].
-
-[faraday]: https://github.com/lostisland/faraday
-[stub]: https://github.com/lostisland/faraday#using-faraday-for-testing
 
 ## Projects that use Feedjira
 

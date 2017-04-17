@@ -8,12 +8,9 @@ module Feedjira
   #   end
   module Configuration
     attr_accessor(
-      :follow_redirect_limit,
       :logger,
       :parsers,
-      :request_timeout,
-      :strip_whitespace,
-      :user_agent
+      :strip_whitespace
     )
 
     # Modify Feedjira's current configuration
@@ -42,12 +39,9 @@ module Feedjira
 
     # @private
     def set_default_configuration
-      self.follow_redirect_limit = 3
       self.logger = default_logger
       self.parsers = default_parsers
-      self.request_timeout = 30
       self.strip_whitespace = false
-      self.user_agent = "Feedjira #{Feedjira::VERSION}"
     end
 
     private

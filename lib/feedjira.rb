@@ -41,7 +41,6 @@ require 'feedjira/parser/atom_youtube'
 # Feedjira
 module Feedjira
   class NoParserAvailable < StandardError; end
-  class FetchFailure < StandardError; end
 
   extend Configuration
 end

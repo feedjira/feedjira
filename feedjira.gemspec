@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.license  = 'MIT'
   s.name     = 'feedjira'
   s.platform = Gem::Platform::RUBY
-  s.summary  = 'A feed fetching and parsing library'
+  s.summary  = 'A feed parsing library'
   s.version  = Feedjira::VERSION
 
   s.files         = `git ls-files`.split("\n")
