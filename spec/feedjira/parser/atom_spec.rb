@@ -17,6 +17,10 @@ module Feedjira::Parser
     it 'should return true for an atom feed that has line breaks in between attributes in the <feed> node' do # rubocop:disable Metrics/LineLength
       expect(Atom).to be_able_to_parse(sample_atom_feed_line_breaks)
     end
+
+    it 'should return true for an atom feed with a root element namespace prefix' do # rubocop:disable Metrics/LineLength
+      expect(Atom).to be_able_to_parse(sample_atom_feed_with_prefix)
+    end
   end
 
   describe 'parsing' do
@@ -85,6 +89,14 @@ module Feedjira::Parser
       feed = Atom.parse sample_duplicate_content_atom_feed
       content = Nokogiri::HTML(feed.entries[1].content)
       expect(content.css('img').length).to eq 11
+    end
+
+    it 'should parse a feed that is completely prefixed' do
+      Atom.preprocess_xml = true
+
+      feed = Atom.parse sample_atom_feed_with_prefix
+      content = Nokogiri::HTML(feed.entries[1].content)
+      expect(content.text).to match(/type publicatie:/i)
     end
   end
 
