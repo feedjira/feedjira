@@ -7,14 +7,14 @@ module Feedjira
       DateTimePatternParser,
       DateTimeLanguageParser,
       DateTimeEpochParser,
-      DateTime
+      DateTime,
     ].freeze
 
     # Parse the given string starting with the most common parser (default ruby)
     # and going over all other available parsers
     # rubocop:disable Metrics/MethodLength
     def parse_datetime(string)
-      res = DATE_PARSERS.find do |parser|
+      res = DATE_PARSERS.detect do |parser|
         begin
           return parser.parse(string).feed_utils_to_gm_time
         rescue StandardError => e

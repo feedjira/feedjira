@@ -10,7 +10,7 @@ module Feedjira
     attr_accessor(
       :logger,
       :parsers,
-      :strip_whitespace
+      :strip_whitespace,
     )
 
     # Modify Feedjira's current configuration
@@ -49,7 +49,7 @@ module Feedjira
     # @private
     def default_logger
       Logger.new(STDOUT).tap do |logger|
-        logger.progname = 'Feedjira'
+        logger.progname = "Feedjira"
         logger.level = Logger::WARN
       end
     end
@@ -63,7 +63,7 @@ module Feedjira
         Feedjira::Parser::AtomFeedBurner,
         Feedjira::Parser::Atom,
         Feedjira::Parser::ITunesRSS,
-        Feedjira::Parser::RSS
+        Feedjira::Parser::RSS,
       ]
     end
   end

@@ -1,4 +1,4 @@
-require File.expand_path('./atom', File.dirname(__FILE__))
+require File.expand_path("./atom", File.dirname(__FILE__))
 # rubocop:disable Style/Documentation
 # rubocop:disable Style/DocumentationMethod
 module Feedjira
@@ -8,8 +8,8 @@ module Feedjira
       include FeedUtilities
       element :title
       element :subtitle, as: :description
-      element :link, as: :url, value: :href, with: { type: 'text/html' }
-      element :link, as: :feed_url, value: :href, with: { type: 'application/atom+xml' } # rubocop:disable Metrics/LineLength
+      element :link, as: :url, value: :href, with: { type: "text/html" }
+      element :link, as: :feed_url, value: :href, with: { type: "application/atom+xml" } # rubocop:disable Metrics/LineLength
       elements :link, as: :links, value: :href
       elements :entry, as: :entries, class: GoogleDocsAtomEntry
 

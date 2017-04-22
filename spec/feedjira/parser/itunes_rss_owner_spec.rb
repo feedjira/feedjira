@@ -1,4 +1,4 @@
-require 'spec_helper'
+require "spec_helper"
 
 describe Feedjira::Parser::ITunesRSSOwner do
   before(:each) do
@@ -9,11 +9,11 @@ describe Feedjira::Parser::ITunesRSSOwner do
     @owner = feed.itunes_owners.first
   end
 
-  it 'should parse the name' do
-    expect(@owner.name).to eq 'John Doe'
+  it "should parse the name" do
+    expect(@owner.name).to eq "John Doe"
   end
 
-  it 'should parse the email' do
-    expect(@owner.email).to eq 'john.doe@example.com'
+  it "should parse the email" do
+    expect(@owner.email).to eq "john.doe@example.com"
   end
 end

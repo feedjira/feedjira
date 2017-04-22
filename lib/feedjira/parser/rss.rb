@@ -14,7 +14,7 @@ module Feedjira
       element :rss, as: :version, value: :version
       element :title
       element :ttl
-      elements :"atom:link", as: :hubs, value: :href, with: { rel: 'hub' }
+      elements :"atom:link", as: :hubs, value: :href, with: { rel: "hub" }
       elements :item, as: :entries, class: RSSEntry
 
       attr_accessor :feed_url

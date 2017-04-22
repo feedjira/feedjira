@@ -30,7 +30,7 @@ module Feedjira
       element :enclosure, value: :length, as: :enclosure_length
       element :enclosure, value: :type, as: :enclosure_type
       element :enclosure, value: :url, as: :enclosure_url
-      elements 'psc:chapter', as: :raw_chapters, class: Feedjira::Parser::PodloveChapter # rubocop:disable Metrics/LineLength
+      elements "psc:chapter", as: :raw_chapters, class: Feedjira::Parser::PodloveChapter # rubocop:disable Metrics/LineLength
 
       # Podlove requires clients to re-order by start time in the
       # event the publisher doesn't provide them in that

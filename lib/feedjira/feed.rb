@@ -9,7 +9,7 @@ module Feedjira
 
       def parse(xml, &block)
         parser = determine_feed_parser_for_xml(xml)
-        raise NoParserAvailable, 'No valid parser for XML.' unless parser
+        raise NoParserAvailable, "No valid parser for XML." unless parser
         parse_with parser, xml, &block
       end
 
@@ -54,7 +54,7 @@ module Feedjira
         feed_classes.each do |klass|
           klass.sax_config.collection_elements.each_value do |value|
             collection_configs = value.select do |v|
-              v.accessor == 'entries' && v.data_class.class == Class
+              v.accessor == "entries" && v.data_class.class == Class
             end
 
             collection_configs.each do |config|
@@ -67,7 +67,7 @@ module Feedjira
       private
 
       def parse_last_modified(response)
-        lm = response.headers['last-modified']
+        lm = response.headers["last-modified"]
         DateTime.parse(lm).to_time
       rescue StandardError => e
         Feedjira.logger.warn { "Failed to parse last modified '#{lm}'" }

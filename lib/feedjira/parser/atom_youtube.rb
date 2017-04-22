@@ -6,8 +6,8 @@ module Feedjira
       include SAXMachine
       include FeedUtilities
       element :title
-      element :link, as: :url, value: :href, with: { rel: 'alternate' }
-      element :link, as: :feed_url, value: :href, with: { rel: 'self' }
+      element :link, as: :url, value: :href, with: { rel: "alternate" }
+      element :link, as: :feed_url, value: :href, with: { rel: "self" }
       element :name, as: :author
       element :"yt:channelId", as: :youtube_channel_id
 
