@@ -8,7 +8,7 @@ module Feedjira
 
       element :title
       element :name, as: :author
-      element :link, as: :url, value: :href, with: { type: 'text/html', rel: 'alternate' } # rubocop:disable Metrics/LineLength
+      element :link, as: :url, value: :href, with: { type: "text/html", rel: "alternate" } # rubocop:disable Metrics/LineLength
       element :"feedburner:origLink", as: :url
       element :summary
       element :content

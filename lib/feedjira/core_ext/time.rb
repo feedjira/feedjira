@@ -1,5 +1,5 @@
-require 'time'
-require 'date'
+require "time"
+require "date"
 
 # rubocop:disable Style/DocumentationMethod
 class Time

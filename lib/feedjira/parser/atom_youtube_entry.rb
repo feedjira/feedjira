@@ -6,7 +6,7 @@ module Feedjira
       include FeedEntryUtilities
 
       element :title
-      element :link, as: :url, value: :href, with: { rel: 'alternate' }
+      element :link, as: :url, value: :href, with: { rel: "alternate" }
       element :name, as: :author
       element :"media:description", as: :content
       element :summary

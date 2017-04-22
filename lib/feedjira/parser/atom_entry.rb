@@ -7,7 +7,7 @@ module Feedjira
       include FeedEntryUtilities
 
       element :title
-      element :link, as: :url, value: :href, with: { type: 'text/html', rel: 'alternate' } # rubocop:disable Metrics/LineLength
+      element :link, as: :url, value: :href, with: { type: "text/html", rel: "alternate" } # rubocop:disable Metrics/LineLength
       element :name, as: :author
       element :content
       element :summary

@@ -52,7 +52,7 @@ module Feedjira
       @rss_fields ||= instance_variables
 
       @rss_fields.each do |field|
-        yield(field.to_s.sub('@', ''), instance_variable_get(field))
+        yield(field.to_s.sub("@", ""), instance_variable_get(field))
       end
     end
 

@@ -1,8 +1,8 @@
-require 'spec_helper'
+require "spec_helper"
 
 describe Feedjira::Preprocessor do
-  it 'returns the xml as parsed by Nokogiri' do
-    xml = '<xml></xml>'
+  it "returns the xml as parsed by Nokogiri" do
+    xml = "<xml></xml>"
     doc = Nokogiri::XML(xml).remove_namespaces!
     processor = Feedjira::Preprocessor.new xml
     escaped = processor.to_xml
@@ -10,7 +10,7 @@ describe Feedjira::Preprocessor do
     expect(escaped).to eq doc.to_xml
   end
 
-  it 'escapes markup in xhtml content' do
+  it "escapes markup in xhtml content" do
     processor = Feedjira::Preprocessor.new sample_atom_xhtml_feed
     escaped = processor.to_xml
     escaped_parts = escaped.split "\n"
@@ -20,10 +20,10 @@ describe Feedjira::Preprocessor do
     expect(escaped_parts[26]).to match(/&lt;p&gt;$/) # content
   end
 
-  it 'leaves escaped html within pre tag' do
+  it "leaves escaped html within pre tag" do
     processor = Feedjira::Preprocessor.new(sample_atom_xhtml_with_escpaed_html_in_pre_tag_feed) # rubocop:disable Metrics/LineLength
     escaped = processor.to_xml
-    expected_pre_tag = '        &lt;pre&gt;&amp;lt;b&amp;gt;test&amp;lt;b&amp;gt;&lt;/pre&gt;' # rubocop:disable Metrics/LineLength
+    expected_pre_tag = "        &lt;pre&gt;&amp;lt;b&amp;gt;test&amp;lt;b&amp;gt;&lt;/pre&gt;" # rubocop:disable Metrics/LineLength
     expect(escaped.split("\n")[7]).to eq(expected_pre_tag)
   end
 end
