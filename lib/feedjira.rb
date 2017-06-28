@@ -4,6 +4,7 @@ require "faraday_middleware"
 require "sax-machine"
 require "loofah"
 require "logger"
+require "json"
 
 require "feedjira/core_ext"
 require "feedjira/configuration"
@@ -37,6 +38,8 @@ require "feedjira/parser/google_docs_atom_entry"
 require "feedjira/parser/google_docs_atom"
 require "feedjira/parser/atom_youtube_entry"
 require "feedjira/parser/atom_youtube"
+require "feedjira/parser/json_feed"
+require "feedjira/parser/json_feed_item"
 
 # Feedjira
 module Feedjira
