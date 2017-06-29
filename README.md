@@ -41,6 +41,7 @@ list of parser classes is used:
 * `Feedjira::Parser::Atom`
 * `Feedjira::Parser::ITunesRSS`
 * `Feedjira::Parser::RSS`
+* `Feedjira::Parser::JSONFeed`
 
 You can insert your own parser at the front of this stack by calling
 `add_feed_class`, like this:
