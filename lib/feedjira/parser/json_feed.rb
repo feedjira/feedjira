@@ -13,10 +13,11 @@ module Feedjira
         new(JSON.parse(json))
       end
 
-      attr_reader :version, :title, :url, :feed_url, :description,
+      attr_reader :json, :version, :title, :url, :feed_url, :description,
         :expired, :entries
 
       def initialize(json)
+        @json = json
         @version = json.fetch("version")
         @title = json.fetch("title")
         @url = json.fetch("home_page_url", nil)
