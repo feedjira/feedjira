@@ -24,6 +24,10 @@ module Feedjira
       element :"itunes:image", value: :href, as: :itunes_image
       element :"itunes:isClosedCaptioned", as: :itunes_closed_captioned
       element :"itunes:order", as: :itunes_order
+      element :"itunes:season", as: :itunes_season
+      element :"itunes:episode", as: :itunes_episode
+      element :"itunes:title", as: :itunes_title
+      element :"itunes:episodeType", as: :itunes_episode_type
 
       # If summary is not present, use the description tag
       element :"itunes:summary", as: :itunes_summary
