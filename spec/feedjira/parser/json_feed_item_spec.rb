@@ -47,17 +47,19 @@ describe Feedjira::Parser::JSONFeedItem do
     expected_fields = %w(
       author
       banner_image
+      categories
       content
       entry_id
       external_url
       image
+      json
       published
       summary
       title
       updated
       url
     )
-    expect(all_fields.sort).to eq expected_fields
+    expect(all_fields).to match_array expected_fields
   end
 
   it "should support checking if a field exists in the entry" do

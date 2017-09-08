@@ -4,10 +4,11 @@ module Feedjira
     class JSONFeedItem
       include FeedEntryUtilities
 
-      attr_reader :entry_id, :url, :external_url, :title, :content, :summary,
-        :published, :updated, :image, :banner_image, :author
+      attr_reader :json, :entry_id, :url, :external_url, :title, :content, :summary,
+        :published, :updated, :image, :banner_image, :author, :categories
 
       def initialize(json)
+        @json = json
         @entry_id = json.fetch("id")
         @url = json.fetch("url")
         @external_url = json.fetch("external_url", nil)
@@ -19,6 +20,7 @@ module Feedjira
         @published = parse_published(json.fetch("date_published", nil))
         @updated = parse_updated(json.fetch("date_modified", nil))
         @author = author_name(json.fetch("author", nil))
+        @categories = json.fetch("tags", [])
       end
 
       private
