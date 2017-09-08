@@ -31,6 +31,7 @@ module Feedjira
       element :"itunes:explicit", as: :itunes_explicit
       element :"itunes:complete", as: :itunes_complete
       element :"itunes:keywords", as: :itunes_keywords
+      element :"itunes:type", as: :itunes_type
 
       # New URL for the podcast feed
       element :"itunes:new_feed_url", as: :itunes_new_feed_url

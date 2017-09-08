@@ -9,6 +9,7 @@
 <copyright>&#x2117; &amp; &#xA9; 2005 John Doe &amp; Family</copyright>
 <lastBuildDate>Sat, 07 Sep 2002 09:42:31 GMT</lastBuildDate>
 <ttl>60</ttl>
+<itunes:type>episodic</itunes:type>
 <itunes:subtitle>A show about everything</itunes:subtitle>
 <itunes:new-feed-url>http://example.com/new.xml</itunes:new-feed-url>
 <itunes:author>John Doe</itunes:author>
@@ -39,6 +40,10 @@
 </itunes:category>
 <item>
 <title>Shake Shake Shake Your Spices</title>
+<itunes:title>Shake Shake Shake Your Spices</itunes:title>
+<itunes:episodeType>full</itunes:episodeType>
+<itunes:season>1</itunes:season>
+<itunes:episode>3</itunes:episode>
 <itunes:author>John Doe</itunes:author>
 <itunes:subtitle>A short primer on table spices</itunes:subtitle>
 <itunes:summary>This week we talk about salt and pepper shakers, comparing and contrasting pour rates, construction materials, and overall aesthetics. Come and join the party!</itunes:summary>
@@ -55,6 +60,10 @@
  
 <item>
 <title>Socket Wrench Shootout</title>
+<itunes:title>Socket Wrench Shootout</itunes:title>
+<itunes:episodeType>full</itunes:episodeType>
+<itunes:season>1</itunes:season>
+<itunes:episode>2</itunes:episode>
 <itunes:author>Jane Doe</itunes:author>
 <itunes:subtitle>Comparing socket wrenches is fun!</itunes:subtitle>
 <itunes:summary>This week we talk about metric vs. old english socket wrenches. Which one is better? Do you really need both? Get all of your answers here.</itunes:summary>
@@ -68,6 +77,10 @@
  
 <item>
 <title>Red, Whine, &amp; Blue</title>
+<itunes:title>Red, Whine, &amp; Blue</itunes:title>
+<itunes:episodeType>full</itunes:episodeType>
+<itunes:season>1</itunes:season>
+<itunes:episode>1</itunes:episode>
 <itunes:author>Various</itunes:author>
 <itunes:subtitle>Red + Blue != Purple</itunes:subtitle>
 <itunes:summary>This week we talk about surviving in a Red state if you are a Blue person. Or vice versa.</itunes:summary>
