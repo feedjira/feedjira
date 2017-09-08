@@ -12,6 +12,10 @@ describe Feedjira::Parser::ITunesRSSItem do
     expect(@item.title).to eq "Shake Shake Shake Your Spices"
   end
 
+  it "should parse the itunes title" do
+    expect(@item.itunes_title).to eq "Shake Shake Shake Your Spices"
+  end
+
   it "should parse the author" do
     expect(@item.itunes_author).to eq "John Doe"
   end
@@ -23,6 +27,18 @@ describe Feedjira::Parser::ITunesRSSItem do
   it "should parse the summary" do
     summary = "This week we talk about salt and pepper shakers, comparing and contrasting pour rates, construction materials, and overall aesthetics. Come and join the party!" # rubocop:disable Metrics/LineLength
     expect(@item.itunes_summary).to eq summary
+  end
+
+  it "should parse the itunes season" do
+    expect(@item.itunes_season).to eq "1"
+  end
+
+  it "should parse the itunes episode number" do
+    expect(@item.itunes_episode).to eq "3"
+  end
+
+  it "should parse the itunes episode type" do
+    expect(@item.itunes_episode_type).to eq "full"
   end
 
   it "should parse the enclosure" do
