@@ -27,7 +27,11 @@ module Feedjira
       elements :category, as: :categories
 
       element :guid, as: :entry_id
-      element :"dc:identifier", as: :entry_id
+      element :"dc:identifier", as: :dc_identifier
+
+      def id
+        @entry_id ||= @dc_identifier || @url
+      end
     end
   end
 end

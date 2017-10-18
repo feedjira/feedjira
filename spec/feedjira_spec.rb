@@ -54,6 +54,14 @@ RSpec.describe Feedjira do
         expect(feed.entries.first.published).to eq published
         expect(feed.entries.size).to eq 3
       end
+
+      it "with nested dc:identifier it does not overwrite entry_id" do
+        feed = Feedjira.parse(sample_rss_feed_huffpost_ca)
+        expect(feed.title).to eq "HuffPost Canada - Athena2 - All Posts"
+        expect(feed.entries.size).to eq 2
+        expect(feed.entries.first.id).to eq "23246627"
+        expect(feed.entries.last.id).to eq "1"
+      end
     end
 
     context "when there's no available parser" do
