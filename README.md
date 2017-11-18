@@ -25,7 +25,7 @@ An example of parsing a feed with Feedjira:
 
 ```ruby
 xml = HTTParty.get(url).body
-feed = Feedjira::Feed.parse xml
+feed = Feedjira.parse(xml)
 feed.entries.first.title
 # => "Announcing verison 1.0"
 ```
@@ -57,7 +57,7 @@ If you have the XML and just want to provide a parser class for one parse, you
 can specify that using `parse_with`:
 
 ```ruby
-Feedjira::Feed.parse_with(MyAwesomeParser, xml)
+Feedjira.parse(xml, parser: MyAwesomeParser)
 ```
 
 ## Adding attributes to all feeds types / all entries types
@@ -66,7 +66,7 @@ Feedjira::Feed.parse_with(MyAwesomeParser, xml)
 # Add the generator attribute to all feed types
 Feedjira::Feed.add_common_feed_element("generator")
 xml = HTTParty.get("http://www.pauldix.net/atom.xml").body
-Feedjira::Feed.parse(xml).generator
+Feedjira.parse(xml).generator
 # => "TypePad"
 ```
 
@@ -84,7 +84,7 @@ end
 # Fetch a feed containing GeoRss info and print them
 url = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_week.atom"
 xml = HTTParty.get(url).body
-Feedjira::Feed.parse(xml).entries.each do |entry|
+Feedjira.parse(xml).entries.each do |entry|
   puts "Elevation: #{entry.elevation}"
 end
 ```
