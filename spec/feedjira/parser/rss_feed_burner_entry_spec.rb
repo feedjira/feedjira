@@ -25,7 +25,7 @@ describe Feedjira::Parser::RSSFeedBurnerEntry do
   end
 
   it "should parse the original url" do
-    expect(@entry.url).to eq "http://techcrunch.com/2011/11/02/angies-list-prices-ipo-at-11-to-13-per-share-valued-at-over-600m/"
+    expect(@entry.url).to eq "http://techcrunch.com/2011/11/02/angies-list-prices-ipo-at-11-to-13-per-share-valued-at-over-600m/" # rubocop:disable Metrics/LineLength
   end
 
   it "should parse the author" do

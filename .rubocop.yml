@@ -1,10 +1,8 @@
 AllCops:
-  TargetRubyVersion: 2.4
   Exclude:
     - db/schema.rb
-    - vendor/**/*
 
-Style/AccessorMethodName:
+Naming/AccessorMethodName:
   Description: Check the naming of accessor methods for get_/set_.
   Enabled: false
 
@@ -23,7 +21,7 @@ Style/AsciiComments:
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#english-comments'
   Enabled: false
 
-Style/AsciiIdentifiers:
+Naming/AsciiIdentifiers:
   Description: 'Use only ascii symbols in identifiers.'
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#english-identifiers'
   Enabled: false
@@ -50,7 +48,7 @@ Style/CharacterLiteral:
 
 Style/ClassAndModuleChildren:
   Description: 'Checks style of children classes and modules.'
-  Enabled: false
+  Enabled: true
   EnforcedStyle: nested
 
 Metrics/ClassLength:
@@ -92,6 +90,13 @@ Metrics/AbcSize:
                  branches, and conditions.
   Enabled: false
 
+Metrics/BlockLength:
+  CountComments: true  # count full line comments?
+  Max: 25
+  ExcludedMethods: []
+  Exclude:
+    - "spec/**/*"
+
 Metrics/CyclomaticComplexity:
   Description: >-
                  A complexity metric that is strongly correlated to the number
@@ -110,11 +115,6 @@ Style/PreferredHashMethods:
 Style/Documentation:
   Description: 'Document classes and non-namespace modules.'
   Enabled: false
-
-Style/DotPosition:
-  Description: 'Checks the position of the dot in multi-line method calls.'
-  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#consistent-multi-line-chains'
-  EnforcedStyle: leading
 
 Style/DoubleNegation:
   Description: 'Checks for uses of double negation (!!).'
@@ -141,11 +141,7 @@ Style/EvenOdd:
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#predicate-methods'
   Enabled: false
 
-Style/ExtraSpacing:
-  Description: 'Do not use unnecessary spacing.'
-  Enabled: true
-
-Style/FileName:
+Naming/FileName:
   Description: 'Use snake_case for source file names.'
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#snake-case-files'
   Enabled: false
@@ -209,10 +205,17 @@ Style/LineEndConcatenation:
                  line end.
   Enabled: false
 
+Style/SymbolArray:
+  Enabled: true
+  EnforcedStyle: brackets
+
+Style/DateTime:
+  Enabled: false
+
 Metrics/LineLength:
-  Description: 'Limit lines to 150 characters.'
+  Description: 'Limit lines to 120 characters.'
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#80-character-limits'
-  Max: 150
+  Max: 120
 
 Metrics/MethodLength:
   Description: 'Avoid methods longer than 10 lines of code.'
@@ -224,24 +227,10 @@ Style/ModuleFunction:
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#module-function'
   Enabled: false
 
-Style/MultilineOperationIndentation:
-  Description: >-
-                 Checks indentation of binary operations that span more than
-                 one line.
-  Enabled: true
-  EnforcedStyle: indented
-
 Style/MultilineBlockChain:
   Description: 'Avoid multi-line chains of blocks.'
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#single-line-blocks'
   Enabled: false
-
-Style/MultilineMethodCallIndentation:
-  Description: >-
-                 Checks indentation of method calls with the dot operator
-                 that span more than one line.
-  Enabled: true
-  EnforcedStyle: indented
 
 Style/NegatedIf:
   Description: >-
@@ -284,7 +273,7 @@ Style/OneLineConditional:
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#ternary-operator'
   Enabled: false
 
-Style/OpMethod:
+Naming/BinaryOperatorParameterName:
   Description: 'When defining binary operators, name the argument other.'
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#other-arg'
   Enabled: false
@@ -304,7 +293,7 @@ Style/PerlBackrefs:
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#no-perl-regexp-last-matchers'
   Enabled: false
 
-Style/PredicateName:
+Naming/PredicateName:
   Description: 'Check the names of predicate methods.'
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#bool-methods-qmark'
   NamePrefixBlacklist:
@@ -342,7 +331,7 @@ Style/SingleLineBlockParams:
 Style/SingleLineMethods:
   Description: 'Avoid single-line methods.'
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#no-single-line-methods'
-  Enabled: true
+  Enabled: false
 
 Style/SignalException:
   Description: 'Checks for proper usage of fail and raise.'
@@ -364,7 +353,7 @@ Style/TrailingCommaInArguments:
   Description: 'Checks for trailing comma in argument lists.'
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#no-trailing-array-commas'
   EnforcedStyleForMultiline: comma
-  SupportedStyles:
+  SupportedStylesForMultiline:
     - comma
     - consistent_comma
     - no_comma
@@ -374,7 +363,7 @@ Style/TrailingCommaInLiteral:
   Description: 'Checks for trailing comma in array and hash literals.'
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#no-trailing-array-commas'
   EnforcedStyleForMultiline: comma
-  SupportedStyles:
+  SupportedStylesForMultiline:
     - comma
     - consistent_comma
     - no_comma
@@ -409,9 +398,40 @@ Style/WordArray:
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#percent-w'
   Enabled: false
 
-Style/AlignParameters:
-  EnforcedStyle: with_fixed_indentation
+# Layout
+
+Layout/AlignParameters:
+  Description: 'Here we check if the parameters on a multi-line method call or definition are aligned.'
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#no-double-indent'
+  Enabled: false
+
+Layout/DotPosition:
+  Description: 'Checks the position of the dot in multi-line method calls.'
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#consistent-multi-line-chains'
+  EnforcedStyle: trailing
+
+Layout/ExtraSpacing:
+  Description: 'Do not use unnecessary spacing.'
   Enabled: true
+
+Layout/MultilineOperationIndentation:
+  Description: >-
+                 Checks indentation of binary operations that span more than
+                 one line.
+  Enabled: true
+  EnforcedStyle: indented
+
+Layout/MultilineMethodCallIndentation:
+  Description: >-
+                 Checks indentation of method calls with the dot operator
+                 that span more than one line.
+  Enabled: true
+  EnforcedStyle: indented
+
+Layout/InitialIndentation:
+  Description: >-
+    Checks the indentation of the first non-blank non-comment line in a file.
+  Enabled: false
 
 # Lint
 
@@ -467,21 +487,6 @@ Lint/FormatParameterMismatch:
 Lint/HandleExceptions:
   Description: "Don't suppress exception."
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#dont-hide-exceptions'
-  Enabled: false
-
-Lint/InvalidCharacterLiteral:
-  Description: >-
-                 Checks for invalid character literals with a non-escaped
-                 whitespace character.
-  Enabled: false
-
-Style/InitialIndentation:
-  Description: >-
-    Checks the indentation of the first non-blank non-comment line in a file.
-  Enabled: false
-
-Lint/LiteralInCondition:
-  Description: 'Checks of literals used in conditions.'
   Enabled: false
 
 Lint/LiteralInInterpolation:

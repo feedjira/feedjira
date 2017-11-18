@@ -17,7 +17,7 @@ describe Feedjira::Parser::AtomFeedBurnerEntry do
   it "should be able to fetch a url via the 'alternate' rel if no origLink exists" do # rubocop:disable Metrics/LineLength
     xml = File.read("#{File.dirname(__FILE__)}/../../sample_feeds/PaulDixExplainsNothingAlternate.xml") # rubocop:disable Metrics/LineLength
     entry = Feedjira::Parser::AtomFeedBurner.parse(xml).entries.first
-    expect(entry.url).to eq "http://feeds.feedburner.com/~r/PaulDixExplainsNothing/~3/519925023/making-a-ruby-c-library-even-faster.html"
+    expect(entry.url).to eq("http://feeds.feedburner.com/~r/PaulDixExplainsNothing/~3/519925023/making-a-ruby-c-library-even-faster.html") # rubocop:disable Metrics/LineLength
   end
 
   it "should parse the url" do

@@ -1,1 +1,4 @@
-module Feedjira::Parser; end # rubocop:disable Style/Documentation
+module Feedjira
+  module Parser
+  end
+end
