@@ -57,10 +57,10 @@ RSpec.describe Feedjira do
 
       it "with nested dc:identifier it does not overwrite entry_id" do
         feed = Feedjira.parse(sample_rss_feed_huffpost_ca)
-        expect(feed.title).to eq "HuffPost Canada - Athena2 - All Posts"
+        expect(feed.title.strip).to eq "HuffPost Canada - Athena2 - All Posts"
         expect(feed.entries.size).to eq 2
         expect(feed.entries.first.id).to eq "23246627"
-        expect(feed.entries.last.id).to eq "1"
+        expect(feed.entries.last.id.strip).to eq "1"
       end
     end
 
