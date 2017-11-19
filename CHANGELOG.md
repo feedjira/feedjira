@@ -6,6 +6,8 @@
   * `Feedjira::Feed.parse` has moved to `Feedjira.parse`
   * `Feedjira::Feed.fetch_and_parse` has been removed. See README examples for
       how to request XML and parse.
+* General
+  * Drop support for Ruby 2.1
 
 ## 2.1.1
 
