@@ -70,9 +70,9 @@ end
 
 ## Configuration
 
-#### Parsers
+### Parsers
 
-## Adding a custom parser
+#### Adding a custom parser
 
 You can insert your own parser at the front of the available parser list by:
 
@@ -85,7 +85,7 @@ end
 Now when you call `Feedjira.parse`, `MyAwesomeParser` will be the first one to
 get a chance to parse the feed.
 
-## Explicitly set all available parsers
+#### Explicitly set all available parsers
 
 Feedjira can be configured to use a specific set of parsers and in a specific order:
 
