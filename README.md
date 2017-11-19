@@ -27,7 +27,7 @@ An example of parsing a feed with Feedjira:
 xml = HTTParty.get(url).body
 feed = Feedjira.parse(xml)
 feed.entries.first.title
-# => "Announcing verison 1.0"
+# => "Announcing verison 3.0"
 ```
 
 ## Specifying parser
