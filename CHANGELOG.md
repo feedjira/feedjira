@@ -1,5 +1,10 @@
 # Feedjira Changelog
 
+## 2.1.3
+
+* Enhancements
+  * No longer log date parsing errors as warnings, they are now debug messages
+
 ## 2.1.1
 
 configurable logging and parsing
