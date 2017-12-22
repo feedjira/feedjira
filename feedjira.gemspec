@@ -2,8 +2,16 @@
 
 require File.expand_path("../lib/feedjira/version", __FILE__)
 
+# rubocop:disable Metrics/BlockLength
 Gem::Specification.new do |s|
-  s.authors  = ["Paul Dix", "Julien Kirch", "Ezekiel Templin", "Jon Allured"]
+  s.authors = [
+    "Adam Hess",
+    "Ezekiel Templin",
+    "Jon Allured",
+    "Julien Kirch",
+    "Michael Stock",
+    "Paul Dix",
+  ]
   s.email    = "feedjira@gmail.com"
   s.homepage = "http://feedjira.com"
   s.license  = "MIT"
@@ -28,3 +36,4 @@ Gem::Specification.new do |s|
   s.add_development_dependency "vcr"
   s.add_development_dependency "yard"
 end
+# rubocop:enable Metrics/BlockLength
