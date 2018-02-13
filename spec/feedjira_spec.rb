@@ -62,6 +62,16 @@ RSpec.describe Feedjira do
         expect(feed.entries.first.id).to eq "23246627"
         expect(feed.entries.last.id.strip).to eq "1"
       end
+
+      it "does not fail if multiple published dates exist and some are unparseable" do
+        expect(Feedjira.logger).to receive(:warn).twice
+
+        feed = Feedjira.parse(sample_invalid_date_format_feed)
+        expect(feed.title).to eq "Invalid date format feed"
+        published = Time.parse_safely "Mon, 16 Oct 2017 15:10:00 GMT"
+        expect(feed.entries.first.published).to eq published
+        expect(feed.entries.size).to eq 2
+      end
     end
 
     context "when there's no available parser" do

@@ -28,14 +28,14 @@ module Feedjira
     # Writer for published. By default, we keep the "oldest" publish time found.
     def published=(val)
       parsed = parse_datetime(val)
-      @published = parsed if !@published || parsed < @published
+      @published = parsed if parsed && (!@published || parsed < @published)
     end
 
     ##
     # Writer for updated. By default, we keep the most recent update time found.
     def updated=(val)
       parsed = parse_datetime(val)
-      @updated = parsed if !@updated || parsed > @updated
+      @updated = parsed if parsed && (!@updated || parsed > @updated)
     end
 
     def sanitize!
