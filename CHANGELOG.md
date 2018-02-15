@@ -1,5 +1,10 @@
 # Feedjira Changelog
 
+## 2.1.4
+
+* Bug fixes
+  * Prevent errors when a feed has multiple dates and some are unparseable
+
 ## 2.1.3
 
 * Enhancements
