@@ -2,7 +2,6 @@
 # Ruby Cookbook by Lucas Carlson and Leonard Richardson
 # Published by O'Reilly
 # ISBN: 0-596-52369-6
-# rubocop:disable Style/DocumentationMethod
 class Date
   def feed_utils_to_gm_time
     feed_utils_to_time(new_offset, :gm)

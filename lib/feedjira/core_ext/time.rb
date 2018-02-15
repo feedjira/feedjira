@@ -1,7 +1,6 @@
 require "time"
 require "date"
 
-# rubocop:disable Style/DocumentationMethod
 class Time
   # Parse a time string and convert it to UTC without raising errors.
   # Parses a flattened 14-digit time (YYYYmmddHHMMMSS) as UTC.
@@ -25,6 +24,7 @@ class Time
     Feedjira.logger.debug(e)
     nil
   end
+  # rubocop:enable Metrics/MethodLength
 
   def self.parse_string_safely(string)
     return nil if string.empty?

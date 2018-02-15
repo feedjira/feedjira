@@ -1,4 +1,3 @@
-# rubocop:disable Style/Documentation
 module Feedjira
   module Parser
     class AtomYoutubeEntry

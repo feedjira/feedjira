@@ -1,5 +1,3 @@
-# rubocop:disable Style/Documentation
-# rubocop:disable Style/DocumentationMethod
 module Feedjira
   class Preprocessor
     def initialize(xml)

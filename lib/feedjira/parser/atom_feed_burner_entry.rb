@@ -1,4 +1,3 @@
-# rubocop:disable Style/DocumentationMethod
 module Feedjira
   module Parser
     # Parser for dealing with Feedburner Atom feed entries.
