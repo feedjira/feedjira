@@ -10,7 +10,6 @@ class Time
   #
   # === Returns
   # A Time instance in UTC or nil if there were errors while parsing.
-  # rubocop:disable Metrics/MethodLength
   def self.parse_safely(dt)
     if dt.is_a?(Time)
       dt.utc
@@ -24,7 +23,6 @@ class Time
     Feedjira.logger.debug(e)
     nil
   end
-  # rubocop:enable Metrics/MethodLength
 
   def self.parse_string_safely(string)
     return nil if string.empty?
