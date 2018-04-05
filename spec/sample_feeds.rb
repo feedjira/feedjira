@@ -1,5 +1,3 @@
-# rubocop:disable Metrics/LineLength
-
 module SampleFeeds
   FEEDS = {
     sample_atom_feed: "AmazonWebServicesBlog.xml",
@@ -40,5 +38,3 @@ module SampleFeeds
     File.read("#{File.dirname(__FILE__)}/sample_feeds/#{filename}")
   end
 end
-
-# rubocop:enable Metrics/LineLength
