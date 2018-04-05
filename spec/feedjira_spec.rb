@@ -138,7 +138,7 @@ RSpec.describe Feedjira do
       it "does not use default parsers" do
         xml = "Atom asdf"
         new_parser = Class.new do
-          def self.able_to_parse?(_)
+          def self.able_to_parse?(_xml)
             true
           end
         end
