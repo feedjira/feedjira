@@ -18,9 +18,11 @@ module Feedjira
     ##
     # Returns the id of the entry or its url if not id is present, as some
     # formats don't support it
+    # rubocop:disable Naming/MemoizedInstanceVariableName
     def id
       @entry_id ||= @url
     end
+    # rubocop:enable Naming/MemoizedInstanceVariableName
 
     ##
     # Writer for published. By default, we keep the "oldest" publish time found.

@@ -3,7 +3,7 @@ require "spec_helper"
 class Hell < StandardError; end
 
 class FailParser
-  def self.parse(_, &on_failure)
+  def self.parse(_xml, &on_failure)
     on_failure.call "this parser always fails."
   end
 end

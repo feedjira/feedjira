@@ -29,9 +29,11 @@ module Feedjira
       element :guid, as: :entry_id
       element :"dc:identifier", as: :dc_identifier
 
+      # rubocop:disable Naming/MemoizedInstanceVariableName
       def id
         @entry_id ||= @dc_identifier || @url
       end
+      # rubocop:enable Naming/MemoizedInstanceVariableName
     end
   end
 end
