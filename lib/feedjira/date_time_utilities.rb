@@ -6,7 +6,7 @@ module Feedjira
       DateTimePatternParser,
       DateTimeLanguageParser,
       DateTimeEpochParser,
-      DateTime
+      DateTime,
     ].freeze
 
     # Parse the given string starting with the most common parser (default ruby)

@@ -85,14 +85,14 @@ module Feedjira
           "TV & Film",
           "Arts",
           "Design",
-          "Food"
+          "Food",
         ]
 
         expect(@feed.itunes_category_paths).to eq [
           %w(Technology Gadgets),
           ["TV & Film"],
           %w(Arts Design),
-          %w(Arts Food)
+          %w(Arts Food),
         ]
       end
 
