@@ -20,11 +20,11 @@ describe Feedjira::Parser::AtomYoutubeEntry do
     end
 
     it "should have the published date" do
-      expect(@entry.published).to eq Time.parse_safely("2015-05-04T00:01:27+00:00") # rubocop:disable Metrics/LineLength
+      expect(@entry.published).to eq Time.parse_safely("2015-05-04T00:01:27+00:00")
     end
 
     it "should have the updated date" do
-      expect(@entry.updated).to eq Time.parse_safely("2015-05-13T17:38:30+00:00") # rubocop:disable Metrics/LineLength
+      expect(@entry.updated).to eq Time.parse_safely("2015-05-13T17:38:30+00:00")
     end
 
     it "should have the content populated from the media:description element" do
