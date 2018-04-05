@@ -20,8 +20,8 @@ module Feedjira
       element :"media:content", as: :media_width, value: :width
       element :"media:content", as: :media_height, value: :height
       element :"media:thumbnail", as: :image, value: :url
-      element :"media:thumbnail", as: :image, value: :width
-      element :"media:thumbnail", as: :image, value: :height
+      element :"media:thumbnail", as: :image_width, value: :width
+      element :"media:thumbnail", as: :image_height, value: :height
       element :"media:starRating", as: :media_star_count, value: :count
       element :"media:starRating", as: :media_star_average, value: :average
       element :"media:statistics", as: :media_views, value: :views
