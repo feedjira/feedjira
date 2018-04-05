@@ -32,6 +32,3 @@ script:
 
 notifications:
   email: false
-  webhooks:
-    urls:
-      secure: XjoUz2rPXFHnitw//jN4qA92jq7bH19iOI/5KnuptLzz5HrWq1VAXxAr/Fh0KxYZT29G/9i5szaHX1QacfO7he4xa2tZKudRL70Dw3KRLgqLi70G6kFuZYlh+MgMHZy6KwZ/4/250wO31fpv24PCb2M56iTsev2g2uporeobO0Q=
