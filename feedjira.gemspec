@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
     "Jon Allured",
     "Julien Kirch",
     "Michael Stock",
-    "Paul Dix",
+    "Paul Dix"
   ]
   s.email    = "feedjira@gmail.com"
   s.homepage = "http://feedjira.com"
