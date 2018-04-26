@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 
-require File.expand_path("../lib/feedjira/version", __FILE__)
+require File.expand_path("lib/feedjira/version", __dir__)
 
 # rubocop:disable Metrics/BlockLength
 Gem::Specification.new do |s|

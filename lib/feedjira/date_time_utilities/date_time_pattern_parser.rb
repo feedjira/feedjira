@@ -1,14 +1,11 @@
 module Feedjira
   module DateTimeUtilities
     class DateTimePatternParser
-      # rubocop:disable Style/AsciiComments
       # Japanese Symbols are required for strange Date Strings like
       # '水, 31 8 2016 07:37:00 PDT'
-      # rubocop:enable Style/AsciiComments
       JAPANESE_SYMBOLS = %w(日 月 火 水 木 金 土).freeze
       PATTERNS = ["%m/%d/%Y %T %p", "%d %m %Y %T %Z"].freeze
 
-      # rubocop:disable Metrics/MethodLength
       def self.parse(string)
         PATTERNS.each do |p|
           begin
@@ -22,7 +19,6 @@ module Feedjira
         end
         raise "No pattern matched #{string}"
       end
-      # rubocop:enable Metrics/MethodLength
 
       def self.prepare(string)
         rgx = Regexp.new("^(#{JAPANESE_SYMBOLS.join('|')}),\s")

@@ -10,21 +10,19 @@ class Time
   #
   # === Returns
   # A Time instance in UTC or nil if there were errors while parsing.
-  # rubocop:disable Metrics/MethodLength
-  def self.parse_safely(dt)
-    if dt.is_a?(Time)
-      dt.utc
-    elsif dt.respond_to?(:to_datetime)
-      dt.to_datetime.utc
-    elsif dt.respond_to? :to_s
-      parse_string_safely dt.to_s
+  def self.parse_safely(datetime)
+    if datetime.is_a?(Time)
+      datetime.utc
+    elsif datetime.respond_to?(:to_datetime)
+      datetime.to_datetime.utc
+    elsif datetime.respond_to? :to_s
+      parse_string_safely datetime.to_s
     end
   rescue StandardError => e
-    Feedjira.logger.debug { "Failed to parse time #{dt}" }
+    Feedjira.logger.debug { "Failed to parse time #{datetime}" }
     Feedjira.logger.debug(e)
     nil
   end
-  # rubocop:enable Metrics/MethodLength
 
   def self.parse_string_safely(string)
     return nil if string.empty?
