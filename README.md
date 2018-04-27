@@ -25,7 +25,7 @@ An example of parsing a feed with Feedjira:
 
 ```ruby
 xml = HTTParty.get(url).body
-feed = Feedjira.parse(xml)
+feed = Feedjira::Feed.parse(xml)
 feed.entries.first.title
 # => "Announcing verison 3.0"
 ```
@@ -144,10 +144,10 @@ add-ons and everything in between. Here are some of them:
 * [Solve for All][solve]: Solve for All combines search engine and feed parsing
   while protecting your privacy. It's even extendable by the community!
 
-[Feedbin]: https://feedbin.com/
-[Stringer]: https://github.com/swanson/stringer
-[BlogFeeder]: https://apps.shopify.com/blogfeeder
-[Feedbunch]: https://github.com/amatriain/feedbunch
+[feedbin]: https://feedbin.com/
+[stringer]: https://github.com/swanson/stringer
+[blogfeeder]: https://apps.shopify.com/blogfeeder
+[feedbunch]: https://github.com/amatriain/feedbunch
 [old]: http://theoldreader.com/
 [solve]: https://solveforall.com/
 
