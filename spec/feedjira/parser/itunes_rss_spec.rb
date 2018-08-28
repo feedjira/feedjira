@@ -96,7 +96,7 @@ module Feedjira::Parser
     end
 
     it 'should parse the itunes type' do
-      expect(@feed.itunes_type).to eq "episodic"
+      expect(@feed.itunes_type).to eq 'episodic'
     end
 
     it 'should parse the summary' do

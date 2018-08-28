@@ -145,6 +145,7 @@ describe Feedjira::Feed do
         expect(feed.entries.size).to eq 3
       end
 
+      # rubocop:disable Metrics/LineLength
       it 'does not fail if multiple published dates exist and some are unparseable' do
         expect(Feedjira.logger).to receive(:warn).once
 
@@ -154,6 +155,7 @@ describe Feedjira::Feed do
         expect(feed.entries.first.published).to eq published
         expect(feed.entries.size).to eq 2
       end
+      # rubocop:enable Metrics/LineLength
     end
 
     context "when there's no available parser" do

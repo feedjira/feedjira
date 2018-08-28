@@ -30,15 +30,15 @@ describe Feedjira::Parser::ITunesRSSItem do
   end
 
   it 'should parse the itunes season' do
-    expect(@item.itunes_season).to eq "1"
+    expect(@item.itunes_season).to eq '1'
   end
 
   it 'should parse the itunes episode number' do
-    expect(@item.itunes_episode).to eq "3"
+    expect(@item.itunes_episode).to eq '3'
   end
 
   it 'should parse the itunes episode type' do
-    expect(@item.itunes_episode_type).to eq "full"
+    expect(@item.itunes_episode_type).to eq 'full'
   end
 
   it 'should parse the enclosure' do
