@@ -95,6 +95,10 @@ module Feedjira::Parser
       ]
     end
 
+    it 'should parse the itunes type' do
+      expect(@feed.itunes_type).to eq 'episodic'
+    end
+
     it 'should parse the summary' do
       summary = 'All About Everything is a show about everything. Each week we dive into any subject known to man and talk about it as much as we can. Look for our Podcast in the iTunes Music Store' # rubocop:disable Metrics/LineLength
       expect(@feed.itunes_summary).to eq summary
