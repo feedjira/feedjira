@@ -1,5 +1,10 @@
 # Feedjira Changelog
 
+## 2.2.0
+
+* General
+  * Backport support for parsing new iTunes podcasting tags
+
 ## 2.1.4
 
 * Bug fixes
