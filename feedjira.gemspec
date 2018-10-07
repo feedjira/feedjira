@@ -20,6 +20,12 @@ Gem::Specification.new do |s|
   s.summary  = "A feed parsing library"
   s.version  = Feedjira::VERSION
 
+  s.metadata = {
+    "homepage_uri"    => "http://feedjira.com",
+    "source_code_uri" => "https://github.com/feedjira/feedjira",
+    "changelog_uri"   => "https://github.com/feedjira/feedjira/blob/master/CHANGELOG.md",
+  }
+
   s.files         = `git ls-files`.split("\n")
   s.require_paths = ["lib"]
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
