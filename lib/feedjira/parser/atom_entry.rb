@@ -11,6 +11,7 @@ module Feedjira
       element :content
       element :summary
 
+      element :"media:thumbnail", as: :image, value: :url
       element :"media:content", as: :image, value: :url
       element :enclosure, as: :image, value: :href
 
