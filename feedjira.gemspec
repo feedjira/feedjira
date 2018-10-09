@@ -32,7 +32,7 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = ">=2.2"
 
-  s.add_dependency "loofah",             ">= 2.0"
+  s.add_dependency "loofah",             ">= 2.2.1"
   s.add_dependency "sax-machine",        ">= 1.0"
 
   s.add_development_dependency "danger"
