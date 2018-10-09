@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
   s.metadata = {
     "homepage_uri"    => "http://feedjira.com",
     "source_code_uri" => "https://github.com/feedjira/feedjira",
-    "changelog_uri"   => "https://github.com/feedjira/feedjira/blob/master/CHANGELOG.md",
+    "changelog_uri"   => "https://github.com/feedjira/feedjira/blob/master/CHANGELOG.md"
   }
 
   s.files         = `git ls-files`.split("\n")
