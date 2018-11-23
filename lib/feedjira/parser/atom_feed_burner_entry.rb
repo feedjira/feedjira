@@ -4,29 +4,16 @@ module Feedjira
     class AtomFeedBurnerEntry
       include SAXMachine
       include FeedEntryUtilities
+      include AtomEntryUtilities
 
-      element :title
-      element :name, as: :author
-      element :link, as: :url, value: :href, with: { type: "text/html", rel: "alternate" } # rubocop:disable Metrics/LineLength
-      element :"feedburner:origLink", as: :url
-      element :summary
-      element :content
+      element :"feedburner:origLink", as: :orig_link
+      private :orig_link
 
       element :"media:thumbnail", as: :image, value: :url
       element :"media:content", as: :image, value: :url
-      element :enclosure, as: :image, value: :href
-
-      element :published
-      element :id, as: :entry_id
-      element :issued, as: :published
-      element :created, as: :published
-      element :updated
-      element :modified, as: :updated
-      elements :category, as: :categories, value: :term
-      elements :link, as: :links, value: :href
 
       def url
-        @url ||= links.first
+        orig_link || super
       end
     end
   end
