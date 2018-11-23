@@ -75,7 +75,9 @@ module Feedjira
         feed = Atom.parse sample_atom_xhtml_feed
         entry = feed.entries.first
 
-        expect(entry.title).to match(/\<i/)
+        expect(entry.raw_title).to match(/\<i/)
+        expect(entry.title).to eq("Sentry Calming Collar for dogs")
+        expect(entry.title_type).to eq("xhtml")
         expect(entry.summary).to match(/\<b/)
         expect(entry.content).to match(/\A\<p/)
       end

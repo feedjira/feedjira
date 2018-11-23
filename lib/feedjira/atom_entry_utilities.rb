@@ -4,7 +4,13 @@ module Feedjira
   module AtomEntryUtilities
     def self.included(mod)
       mod.class_exec do
-        element :title
+        element :title, as: :raw_title, with: { type: "html" }
+        element :title, as: :raw_title, with: { type: "xhtml" }
+        element :title, as: :raw_title, with: { type: "xml" }
+        element :title, as: :title, with: { type: "text" }
+        element :title, as: :title, with: { type: nil }
+        element :title, as: :title_type, value: :type
+
         element :name, as: :author
         element :content
         element :summary
@@ -26,6 +32,16 @@ module Feedjira
 
         elements :link, as: :links, value: :href
       end
+    end
+
+    def title
+      @title ||=
+        case @raw_title
+        when String
+          Loofah.fragment(@raw_title).xpath("normalize-space(.)")
+        else
+          @title
+        end
     end
 
     def url
