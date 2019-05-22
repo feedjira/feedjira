@@ -143,6 +143,8 @@ add-ons and everything in between. Here are some of them:
 
 * [Solve for All][solve]: Solve for All combines search engine and feed parsing
   while protecting your privacy. It's even extendable by the community!
+  
+* [Feedi API][feedi]: Feedi simplifies how you handle RSS, Atom, or JSON feeds. You can add and keep track of your favourite           feed data with a simple and clean REST API. All entries are enriched by Machine Learning and Semantic engines.
 
 [Feedbin]: https://feedbin.com/
 [Stringer]: https://github.com/swanson/stringer
@@ -150,6 +152,7 @@ add-ons and everything in between. Here are some of them:
 [Feedbunch]: https://github.com/amatriain/feedbunch
 [old]: http://theoldreader.com/
 [solve]: https://solveforall.com/
+[feedi]: https://github.com/davidesantangelo/feedi
 
 Note: to get your project on this list, simply [send an email](mailto:feedjira@gmail.com)
 with your project's details.
