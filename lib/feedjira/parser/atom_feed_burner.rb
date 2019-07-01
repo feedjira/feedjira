@@ -19,7 +19,7 @@ module Feedjira
       attr_writer :url, :feed_url
 
       def self.able_to_parse?(xml)
-        ((/Atom/ =~ xml) && (/feedburner/ =~ xml) && !(/\<rss|\<rdf/ =~ xml)) || false # rubocop:disable Metrics/LineLength
+        ((/<feed/ =~ xml) && (/Atom/ =~ xml) && (/feedburner/ =~ xml) && !(/\<rss|\<rdf/ =~ xml)) || false # rubocop:disable Metrics/LineLength
       end
 
       # Feed url is <link> with type="text/html" if present,
