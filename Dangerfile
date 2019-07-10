@@ -1,1 +1,1 @@
-commit_lint.check(warn: :all)
+# commit_lint.check(warn: :all)
