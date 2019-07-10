@@ -5,14 +5,9 @@ module Feedjira
     class ITunesRSSItem
       include SAXMachine
       include FeedEntryUtilities
+      include RSSEntryUtilities
 
-      element :author
-      element :guid, as: :entry_id
-      element :title
-      element :link, as: :url
-      element :description, as: :summary
-      element :"content:encoded", as: :content
-      element :pubDate, as: :published
+      sax_config.top_level_elements["enclosure"].clear
 
       # If author is not present use author tag on the item
       element :"itunes:author", as: :itunes_author
