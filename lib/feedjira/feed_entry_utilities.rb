@@ -49,12 +49,12 @@ module Feedjira
     alias last_modified published
 
     def each
-      @rss_fields ||= instance_variables.map { |ivar|
+      @rss_fields ||= instance_variables.map do |ivar|
         ivar.to_s.sub("@", "")
-      }.select { |field|
+      end.select do |field|
         # select callable (public) methods only
         respond_to?(field)
-      }
+      end
 
       @rss_fields.each do |field|
         yield(field, instance_variable_get(:"@#{field}"))

@@ -7,7 +7,9 @@ module Feedjira
       include RSSEntryUtilities
 
       element :"feedburner:origLink", as: :orig_link
+      # rubocop:disable Style/AccessModifierDeclarations
       private :orig_link
+      # rubocop:enable Style/AccessModifierDeclarations
 
       def url
         orig_link || super
