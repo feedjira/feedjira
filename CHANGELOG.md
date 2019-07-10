@@ -13,6 +13,7 @@
 
 * Enhancements
   * `raw_title` and `title_type` are added to Atom entry classes. [#423][] (@knu)
+  * AtomGoogleAlerts is now a supported parser [#424][] (@knu)
 
 ## 2.1.1
 
