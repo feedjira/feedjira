@@ -78,6 +78,7 @@ describe Feedjira::Parser::AtomEntry do
       published
       summary
       title
+      title_type
       updated
       url
     )
