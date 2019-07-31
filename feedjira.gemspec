@@ -6,6 +6,7 @@ require File.expand_path("lib/feedjira/version", __dir__)
 Gem::Specification.new do |s|
   s.authors = [
     "Adam Hess",
+    "Akinori Musha",
     "Ezekiel Templin",
     "Jon Allured",
     "Julien Kirch",
