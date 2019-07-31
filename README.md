@@ -148,6 +148,8 @@ add-ons and everything in between. Here are some of them:
 
 * [Breaker][breaker]: The social podcast app
 
+* [Huginn][huginn]: Huginn is a system for building agents that perform automated tasks for you online.
+
 [Feedbin]: https://feedbin.com/
 [Stringer]: https://github.com/swanson/stringer
 [BlogFeeder]: https://apps.shopify.com/blogfeeder
@@ -156,6 +158,7 @@ add-ons and everything in between. Here are some of them:
 [solve]: https://solveforall.com/
 [feedi]: https://github.com/davidesantangelo/feedi
 [breaker]: https://breaker.audio
+[huginn]: https://github.com/huginn/huginn
 
 Note: to get your project on this list, simply [send an email](mailto:feedjira@gmail.com)
 with your project's details.
