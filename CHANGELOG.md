@@ -1,19 +1,23 @@
 # Feedjira Changelog
 
+## (Unreleased)
+
+* Breaking Changes
+  * `title` of Atom entry classes always return a plain text even in case the entry has a title of the HTML or XML type. [#423][] (@knu)
+
+* Enhancements
+  * `raw_title` and `title_type` are added to Atom entry classes. [#423][] (@knu)
+  * AtomGoogleAlerts is now a supported parser [#424][] (@knu)
+
 ## 3.0.0
 
 * Breaking Changes
   * `Feedjira::Feed.parse` has moved to `Feedjira.parse`
   * `Feedjira::Feed.fetch_and_parse` has been removed. See README examples for
       how to request XML and parse.
-  * `title` of Atom entry classes always return a plain text even in case the entry has a title of the HTML or XML type. [#423][] (@knu)
 
 * General
   * Drop support for Ruby 2.1
-
-* Enhancements
-  * `raw_title` and `title_type` are added to Atom entry classes. [#423][] (@knu)
-  * AtomGoogleAlerts is now a supported parser [#424][] (@knu)
 
 ## 2.1.1
 
