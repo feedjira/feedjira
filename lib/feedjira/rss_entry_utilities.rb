@@ -26,9 +26,12 @@ module Feedjira
         element :guid, as: :entry_id
         element :"dc:identifier", as: :dc_identifier
 
-        element :"media:thumbnail", as: :image, value: :url
-        element :"media:content", as: :image, value: :url
-        element :enclosure, as: :image, value: :url
+        element :"media:thumbnail", value: :url, as: :media_thumbnail
+        element :"media:content", value: :url, as: :media_content
+
+        element :enclosure, value: :length, as: :enclosure_length
+        element :enclosure, value: :type, as: :enclosure_type
+        element :enclosure, value: :url, as: :enclosure_url
 
         elements :category, as: :categories
       end
