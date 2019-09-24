@@ -94,4 +94,24 @@ describe Feedjira::Parser::RSSEntry do
     @entry["title"] = "Foobar"
     expect(@entry.title).to eq "Foobar"
   end
+
+  it "should ignore urls from guids with isPermaLink='false'" do
+    feed = Feedjira.parse(sample_rss_feed_permalinks)
+    expect(feed.entries[0].url).to eq nil
+  end
+
+  it "should get urls from guids with isPermaLink='true'" do
+    feed = Feedjira.parse(sample_rss_feed_permalinks)
+    expect(feed.entries[1].url).to eq "http://example.com/2"
+  end
+
+  it "should get urls from guid where isPermaLink is unspecified" do
+    feed = Feedjira.parse(sample_rss_feed_permalinks)
+    expect(feed.entries[2].url).to eq "http://example.com/3"
+  end
+
+  it "should prefer urls from <link> when both guid and link are specified" do
+    feed = Feedjira.parse(sample_rss_feed_permalinks)
+    expect(feed.entries[3].url).to eq "http://example.com/4"
+  end
 end

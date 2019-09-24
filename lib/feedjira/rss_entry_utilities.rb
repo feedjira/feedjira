@@ -23,7 +23,7 @@ module Feedjira
 
         element :"dcterms:modified", as: :updated
 
-        element :guid, as: :entry_id
+        element :guid, as: :entry_id, class: Feedjira::Parser::GloballyUniqueIdentifier
         element :"dc:identifier", as: :dc_identifier
 
         element :"media:thumbnail", as: :image, value: :url
@@ -34,12 +34,16 @@ module Feedjira
       end
     end
 
-    attr_reader :url
-
-    # rubocop:disable Naming/MemoizedInstanceVariableName
-    def id
-      @entry_id ||= @dc_identifier || @url
+    def entry_id
+      @entry_id && @entry_id.guid
     end
-    # rubocop:enable Naming/MemoizedInstanceVariableName
+
+    def url
+      @url || (@entry_id && @entry_id.url)
+    end
+
+    def id
+      entry_id || @dc_identifier || @url
+    end
   end
 end
