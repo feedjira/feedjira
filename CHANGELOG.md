@@ -1,6 +1,6 @@
 # Feedjira Changelog
 
-## (Unreleased)
+## 3.1.0
 
 * Breaking Changes
   * `title` of Atom entry classes always return a plain text even in case the entry has a title of the HTML or XML type. [#423][] (@knu)
