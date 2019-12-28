@@ -10,17 +10,17 @@ module Feedjira
       elements :"itunes:category", as: :itunes_categories,
                                    class: ITunesRSSCategory
 
-      def each_subcategory
+      def each_subcategory(&block)
         return to_enum(__method__) unless block_given?
 
         yield text
 
         itunes_categories.each do |itunes_category|
-          itunes_category.each_subcategory(&proc)
+          itunes_category.each_subcategory(&block)
         end
       end
 
-      def each_path(ancestors = [])
+      def each_path(ancestors = [], &block)
         return to_enum(__method__, ancestors) unless block_given?
 
         category_hierarchy = ancestors + [text]
@@ -29,7 +29,7 @@ module Feedjira
           yield category_hierarchy
         else
           itunes_categories.each do |itunes_category|
-            itunes_category.each_path(category_hierarchy, &proc)
+            itunes_category.each_path(category_hierarchy, &block)
           end
         end
       end
