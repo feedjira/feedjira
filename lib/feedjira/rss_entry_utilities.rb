@@ -7,12 +7,15 @@ module Feedjira
         element :title
 
         element :"content:encoded", as: :content
+        element :"a10:content", as: :content
         element :description, as: :summary
 
         element :link, as: :url
+        element :"a10:link", as: :url, value: :href
 
         element :author
         element :"dc:creator", as: :author
+        element :"a10:name", as: :author
 
         element :pubDate, as: :published
         element :pubdate, as: :published
@@ -22,6 +25,7 @@ module Feedjira
         element :"dcterms:created", as: :published
 
         element :"dcterms:modified", as: :updated
+        element :"a10:updated", as: :updated
 
         element :guid, as: :entry_id, class: Feedjira::Parser::GloballyUniqueIdentifier
         element :"dc:identifier", as: :dc_identifier
