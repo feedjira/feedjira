@@ -29,7 +29,8 @@ module SampleFeeds
     sample_json_feed: "json_feed.json",
     sample_rss_feed_huffpost_ca: "HuffPostCanada.xml",
     sample_invalid_date_format_feed: "InvalidDateFormat.xml",
-    sample_rss_feed_permalinks: "Permalinks.xml"
+    sample_rss_feed_permalinks: "Permalinks.xml",
+    sample_rss_feed_with_a10_namespace: "a10.xml"
   }.freeze
 
   FEEDS.each do |method, filename|

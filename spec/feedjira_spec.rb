@@ -89,6 +89,15 @@ RSpec.describe Feedjira do
       expect(feed.entries.first.published).to eq published
       expect(feed.entries.size).to eq 20
     end
+
+    it "should parse an RSS feed with an a10 namespace" do
+      feed = Feedjira.parse(sample_rss_feed_with_a10_namespace)
+      expect(feed.url).to eq "http://www.example.com/"
+      expect(feed.entries.first.url).to eq "http://www.example.com/5"
+      expect(feed.entries.first.updated).to eq Time.parse_safely("2020-05-14T10:00:18Z")
+      expect(feed.entries.first.author).to eq "John Doe"
+      expect(feed.entries.size).to eq 5
+    end
   end
 
   describe ".parser_for_xml" do

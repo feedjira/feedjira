@@ -10,6 +10,7 @@ module Feedjira
       element :language
       element :lastBuildDate, as: :last_built
       element :link, as: :url
+      element :"a10:link", as: :url, value: :href
       element :rss, as: :version, value: :version
       element :title
       element :ttl
