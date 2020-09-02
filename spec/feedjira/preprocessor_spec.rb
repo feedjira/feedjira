@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "spec_helper"
 
 describe Feedjira::Preprocessor do
@@ -21,9 +23,9 @@ describe Feedjira::Preprocessor do
   end
 
   it "leaves escaped html within pre tag" do
-    processor = Feedjira::Preprocessor.new(sample_atom_xhtml_with_escpaed_html_in_pre_tag_feed) # rubocop:disable Metrics/LineLength
+    processor = Feedjira::Preprocessor.new(sample_atom_xhtml_with_escpaed_html_in_pre_tag_feed)
     escaped = processor.to_xml
-    expected_pre_tag = "        &lt;pre&gt;&amp;lt;b&amp;gt;test&amp;lt;b&amp;gt;&lt;/pre&gt;" # rubocop:disable Metrics/LineLength
+    expected_pre_tag = "        &lt;pre&gt;&amp;lt;b&amp;gt;test&amp;lt;b&amp;gt;&lt;/pre&gt;"
     expect(escaped.split("\n")[7]).to eq(expected_pre_tag)
   end
 end

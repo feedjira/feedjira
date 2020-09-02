@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 module Feedjira
   module FeedUtilities
-    UPDATABLE_ATTRIBUTES = %w(title feed_url url last_modified etag).freeze
+    UPDATABLE_ATTRIBUTES = %w[title feed_url url last_modified etag].freeze
 
     attr_writer   :new_entries, :updated, :last_modified
     attr_accessor :etag
@@ -41,7 +43,7 @@ module Feedjira
     def last_modified
       @last_modified ||= begin
         published = entries.reject { |e| e.published.nil? }
-        entry = published.sort_by { |e| e.published if e.published }.last
+        entry = published.max_by(&:published)
         entry ? entry.published : nil
       end
     end
@@ -100,6 +102,7 @@ module Feedjira
 
       feed.entries.each do |entry|
         break unless new_entry?(entry, latest_entry)
+
         found_new_entries << entry
       end
 

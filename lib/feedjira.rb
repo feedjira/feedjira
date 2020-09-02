@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "zlib"
 require "sax-machine"
 require "loofah"
@@ -9,7 +11,6 @@ require "feedjira/configuration"
 require "feedjira/date_time_utilities/date_time_epoch_parser"
 require "feedjira/date_time_utilities/date_time_language_parser"
 require "feedjira/date_time_utilities/date_time_pattern_parser"
-require "feedjira/date_time_utilities"
 require "feedjira/date_time_utilities"
 require "feedjira/feed_entry_utilities"
 require "feedjira/feed_utilities"
@@ -64,7 +65,7 @@ module Feedjira
 
     parser.parse(xml, &block)
   end
-  module_function :parse
+  module_function :parse # rubocop:disable Style/AccessModifierDeclarations
 
   # Find compatible parser for given XML
   #
@@ -76,5 +77,5 @@ module Feedjira
     start_of_doc = xml.slice(0, 2000)
     Feedjira.parsers.detect { |klass| klass.able_to_parse?(start_of_doc) }
   end
-  module_function :parser_for_xml
+  module_function :parser_for_xml # rubocop:disable Style/AccessModifierDeclarations
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Feedjira
   module Parser
     # Parser for dealing with JSON Feeds.
@@ -6,7 +8,7 @@ module Feedjira
       include FeedUtilities
 
       def self.able_to_parse?(json)
-        %r{https:\/\/jsonfeed.org\/version\/} =~ json
+        %r{https://jsonfeed.org/version/} =~ json
       end
 
       def self.parse(json)
@@ -14,7 +16,7 @@ module Feedjira
       end
 
       attr_reader :json, :version, :title, :url, :feed_url, :description,
-        :expired, :entries
+                  :expired, :entries
 
       def initialize(json)
         @json = json

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "spec_helper"
 
 describe Feedjira::FeedUtilities do
@@ -73,13 +75,13 @@ describe Feedjira::FeedUtilities do
       expect(feed.last_modified.class).to eq Time
     end
 
-    it "should return new_entries? as true when entries are put into new_entries" do # rubocop:disable Metrics/LineLength
+    it "should return new_entries? as true when entries are put into new_entries" do
       feed = @klass.new
       feed.new_entries << :foo
       expect(feed.new_entries?).to eq true
     end
 
-    it "should return a last_modified value from the entry with the most recent published date if the last_modified date hasn't been set" do # rubocop:disable Metrics/LineLength
+    it "should return a last_modified value from the entry with the most recent published date if the last_modified date hasn't been set" do
       feed = Feedjira::Parser::Atom.new
       entry = Feedjira::Parser::AtomEntry.new
       entry.published = Time.now.to_s
@@ -87,7 +89,7 @@ describe Feedjira::FeedUtilities do
       expect(feed.last_modified).to eq entry.published
     end
 
-    it "should not throw an error if one of the entries has published date of nil" do # rubocop:disable Metrics/LineLength
+    it "should not throw an error if one of the entries has published date of nil" do
       feed = Feedjira::Parser::Atom.new
       entry = Feedjira::Parser::AtomEntry.new
       entry.published = Time.now.to_s

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Feedjira::Configuration
 module Feedjira
   # Provides global configuration options for Feedjira
@@ -10,7 +12,7 @@ module Feedjira
     attr_accessor(
       :logger,
       :parsers,
-      :strip_whitespace,
+      :strip_whitespace
     )
 
     # Modify Feedjira's current configuration
@@ -48,7 +50,7 @@ module Feedjira
 
     # @private
     def default_logger
-      Logger.new(STDOUT).tap do |logger|
+      Logger.new($stdout).tap do |logger|
         logger.progname = "Feedjira"
         logger.level = Logger::WARN
       end
@@ -65,7 +67,7 @@ module Feedjira
         Feedjira::Parser::Atom,
         Feedjira::Parser::ITunesRSS,
         Feedjira::Parser::RSS,
-        Feedjira::Parser::JSONFeed,
+        Feedjira::Parser::JSONFeed
       ]
     end
   end

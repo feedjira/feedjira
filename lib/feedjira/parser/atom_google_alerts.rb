@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Feedjira
   module Parser
     # Parser for dealing with Feedburner Atom feeds.
@@ -13,7 +15,7 @@ module Feedjira
       elements :entry, as: :entries, class: AtomGoogleAlertsEntry
 
       def self.able_to_parse?(xml)
-        Atom.able_to_parse?(xml) && (%r{<id>tag:google\.com,2005:[^<]+/com\.google/alerts/} === xml) # rubocop:disable Metrics/LineLength
+        Atom.able_to_parse?(xml) && (%r{<id>tag:google\.com,2005:[^<]+/com\.google/alerts/} === xml) # rubocop:disable Style/CaseEquality
       end
 
       def self.preprocess(xml)

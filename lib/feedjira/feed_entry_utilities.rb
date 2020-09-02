@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Feedjira
   module FeedEntryUtilities
     include Enumerable
@@ -39,9 +41,9 @@ module Feedjira
     end
 
     def sanitize!
-      %w(title author summary content image).each do |name|
+      %w[title author summary content image].each do |name|
         if respond_to?(name) && send(name).respond_to?(:sanitize!)
-          send(name).send :sanitize!
+          send(name).send(:sanitize!)
         end
       end
     end
@@ -51,7 +53,7 @@ module Feedjira
     def each
       @rss_fields ||= instance_variables.map do |ivar|
         ivar.to_s.sub("@", "")
-      end.select do |field|
+      end.select do |field| # rubocop:disable Style/MultilineBlockChain
         # select callable (public) methods only
         respond_to?(field)
       end

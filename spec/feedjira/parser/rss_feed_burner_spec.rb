@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "spec_helper"
 
 module Feedjira
@@ -34,7 +36,7 @@ module Feedjira
       end
 
       it "should parse the description" do
-        description = "TechCrunch is a group-edited blog that profiles the companies, products and events defining and transforming the new web." # rubocop:disable Metrics/LineLength
+        description = "TechCrunch is a group-edited blog that profiles the companies, products and events defining and transforming the new web."
         expect(@feed.description).to eq description
       end
 

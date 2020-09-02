@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "spec_helper"
 
 describe Feedjira::Parser::AtomGoogleAlertsEntry do
@@ -7,17 +9,17 @@ describe Feedjira::Parser::AtomGoogleAlertsEntry do
   end
 
   it "should parse the title" do
-    expect(@entry.title).to eq "Report offers Prediction of Automotive Slack Market by Top key players like Haldex, Meritor, Bendix ..." # rubocop:disable Metrics/LineLength
-    expect(@entry.raw_title).to eq "Report offers Prediction of Automotive <b>Slack</b> Market by Top key players like Haldex, Meritor, Bendix ..." # rubocop:disable Metrics/LineLength
+    expect(@entry.title).to eq "Report offers Prediction of Automotive Slack Market by Top key players like Haldex, Meritor, Bendix ..."
+    expect(@entry.raw_title).to eq "Report offers Prediction of Automotive <b>Slack</b> Market by Top key players like Haldex, Meritor, Bendix ..."
     expect(@entry.title_type).to eq "html"
   end
 
   it "should parse the url" do
-    expect(@entry.url).to eq "https://www.aglobalmarketresearch.com/report-offers-prediction-of-automotive-slack-market-by-top-key-players-like-haldex-meritor-bendix-mei-wabco-accuride-stemco-tbk-febi-aydinsan/" # rubocop:disable Metrics/LineLength
+    expect(@entry.url).to eq "https://www.aglobalmarketresearch.com/report-offers-prediction-of-automotive-slack-market-by-top-key-players-like-haldex-meritor-bendix-mei-wabco-accuride-stemco-tbk-febi-aydinsan/"
   end
 
   it "should parse the content" do
-    expect(@entry.content).to eq "Automotive <b>Slack</b> Market reports provides a comprehensive overview of the global market size and share. It provides strategists, marketers and senior&nbsp;..." # rubocop:disable Metrics/LineLength
+    expect(@entry.content).to eq "Automotive <b>Slack</b> Market reports provides a comprehensive overview of the global market size and share. It provides strategists, marketers and senior&nbsp;..."
   end
 
   it "should parse the published date" do

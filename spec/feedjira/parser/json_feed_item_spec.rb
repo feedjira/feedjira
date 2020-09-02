@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "spec_helper"
 
 describe Feedjira::Parser::JSONFeedItem do
@@ -21,7 +23,7 @@ describe Feedjira::Parser::JSONFeedItem do
   end
 
   it "should parse the content" do
-    content = "<p>On Wednesday night I know where I’ll be — playing keyboard for a few songs at the James Dempsey and the Breakpoints concert benefitting App Camp for Girls.</p>\n\n<p><a href=\"https://www.classy.org/events/-/e126329\">You should get tickets</a>. It’s a fun time for a great cause.</p>\n\n<p>Bonus: James writes about how <a href=\"http://jamesdempsey.net/2017/06/02/wwdc-in-san-jose-full-circle/\">this concert is full circle for him</a>. It’s a special night.</p>" # rubocop:disable Metrics/LineLength
+    content = "<p>On Wednesday night I know where I’ll be — playing keyboard for a few songs at the James Dempsey and the Breakpoints concert benefitting App Camp for Girls.</p>\n\n<p><a href=\"https://www.classy.org/events/-/e126329\">You should get tickets</a>. It’s a fun time for a great cause.</p>\n\n<p>Bonus: James writes about how <a href=\"http://jamesdempsey.net/2017/06/02/wwdc-in-san-jose-full-circle/\">this concert is full circle for him</a>. It’s a special night.</p>"
     expect(@entry.content).to eq content
   end
 
@@ -44,7 +46,7 @@ describe Feedjira::Parser::JSONFeedItem do
 
     expect(title_value).to eq "James Dempsey and the Breakpoints Benefit App Camp for Girls"
 
-    expected_fields = %w(
+    expected_fields = %w[
       author
       banner_image
       categories
@@ -58,7 +60,7 @@ describe Feedjira::Parser::JSONFeedItem do
       title
       updated
       url
-    )
+    ]
     expect(all_fields).to match_array expected_fields
   end
 

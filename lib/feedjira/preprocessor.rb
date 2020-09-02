@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Feedjira
   class Preprocessor
     def initialize(xml)
@@ -18,7 +20,7 @@ module Feedjira
     end
 
     def content_nodes
-      doc.search 'entry > content[type="xhtml"], entry > summary[type="xhtml"], entry > title[type="xhtml"]' # rubocop:disable Metrics/LineLength
+      doc.search 'entry > content[type="xhtml"], entry > summary[type="xhtml"], entry > title[type="xhtml"]'
     end
 
     def raw_html(node)

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "spec_helper"
 
 describe Feedjira::FeedUtilities do
@@ -32,14 +34,14 @@ describe Feedjira::FeedUtilities do
     end
 
     it "should provide a sanitized title" do
-      new_title = "<script>this is not safe</script>" + @entry.title
+      new_title = "<script>this is not safe</script>#{@entry.title}"
       @entry.title = new_title
       scrubbed_title = Loofah.scrub_fragment(new_title, :prune).to_s
       expect(@entry.title.sanitize).to eq scrubbed_title
     end
 
     it "should sanitize content in place" do
-      new_content = "<script>" + @entry.content
+      new_content = "<script>#{@entry.content}"
       @entry.content = new_content.dup
 
       scrubbed_content = Loofah.scrub_fragment(new_content, :prune).to_s

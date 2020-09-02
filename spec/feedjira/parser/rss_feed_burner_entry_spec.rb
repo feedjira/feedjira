@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "spec_helper"
 
 describe Feedjira::Parser::RSSFeedBurnerEntry do
@@ -13,19 +15,19 @@ describe Feedjira::Parser::RSSFeedBurnerEntry do
 
   after(:each) do
     # We change the title in one or more specs to test []=
-    if @entry.title != "Angie’s List Sets Price Range IPO At $11 To $13 Per Share; Valued At Over $600M" # rubocop:disable Metrics/LineLength
+    if @entry.title != "Angie’s List Sets Price Range IPO At $11 To $13 Per Share; Valued At Over $600M"
       feed = Feedjira::Parser::RSS.parse sample_rss_feed_burner_feed
       @entry.title = feed.entries.first.title
     end
   end
 
   it "should parse the title" do
-    title = "Angie’s List Sets Price Range IPO At $11 To $13 Per Share; Valued At Over $600M" # rubocop:disable Metrics/LineLength
+    title = "Angie’s List Sets Price Range IPO At $11 To $13 Per Share; Valued At Over $600M"
     expect(@entry.title).to eq title
   end
 
   it "should parse the original url" do
-    expect(@entry.url).to eq "http://techcrunch.com/2011/11/02/angies-list-prices-ipo-at-11-to-13-per-share-valued-at-over-600m/" # rubocop:disable Metrics/LineLength
+    expect(@entry.url).to eq "http://techcrunch.com/2011/11/02/angies-list-prices-ipo-at-11-to-13-per-share-valued-at-over-600m/"
   end
 
   it "should parse the author" do
@@ -66,10 +68,10 @@ describe Feedjira::Parser::RSSFeedBurnerEntry do
       title_value = value if field == "title"
     end
 
-    title = "Angie’s List Sets Price Range IPO At $11 To $13 Per Share; Valued At Over $600M" # rubocop:disable Metrics/LineLength
+    title = "Angie’s List Sets Price Range IPO At $11 To $13 Per Share; Valued At Over $600M"
     expect(title_value).to eq title
 
-    expected_fields = %w(
+    expected_fields = %w[
       author
       categories
       comment_rss
@@ -80,7 +82,7 @@ describe Feedjira::Parser::RSSFeedBurnerEntry do
       summary
       title
       url
-    )
+    ]
     expect(all_fields.sort).to eq expected_fields
   end
 
@@ -91,7 +93,7 @@ describe Feedjira::Parser::RSSFeedBurnerEntry do
 
   it "should allow access to fields with hash syntax" do
     expect(@entry["author"]).to eq "Leena Rao"
-    title = "Angie’s List Sets Price Range IPO At $11 To $13 Per Share; Valued At Over $600M" # rubocop:disable Metrics/LineLength
+    title = "Angie’s List Sets Price Range IPO At $11 To $13 Per Share; Valued At Over $600M"
     expect(@entry["title"]).to eq title
   end
 

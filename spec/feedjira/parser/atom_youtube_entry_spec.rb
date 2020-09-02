@@ -1,4 +1,6 @@
-require File.join(File.dirname(__FILE__), %w(.. .. spec_helper))
+# frozen_string_literal: true
+
+require File.join(File.dirname(__FILE__), %w[.. .. spec_helper])
 
 describe Feedjira::Parser::AtomYoutubeEntry do
   describe "parsing" do
@@ -28,7 +30,7 @@ describe Feedjira::Parser::AtomYoutubeEntry do
     end
 
     it "should have the content populated from the media:description element" do
-      expect(@entry.content).to eq "A question is the most powerful force in the world. It can start you on an adventure or spark a connection. See where a question can take you. The Google app is available on iOS and Android. Download the app here: http://www.google.com/search/about/download" # rubocop:disable Metrics/LineLength
+      expect(@entry.content).to eq "A question is the most powerful force in the world. It can start you on an adventure or spark a connection. See where a question can take you. The Google app is available on iOS and Android. Download the app here: http://www.google.com/search/about/download"
     end
 
     it "should have the summary but blank" do
@@ -44,7 +46,7 @@ describe Feedjira::Parser::AtomYoutubeEntry do
     end
 
     it "should have the custom media url" do
-      expect(@entry.media_url).to eq "https://www.youtube.com/v/5shykyfmb28?version=3" # rubocop:disable Metrics/LineLength
+      expect(@entry.media_url).to eq "https://www.youtube.com/v/5shykyfmb28?version=3"
     end
 
     it "should have the custom media type" do
@@ -60,7 +62,7 @@ describe Feedjira::Parser::AtomYoutubeEntry do
     end
 
     it "should have the custom media thumbnail url" do
-      expect(@entry.media_thumbnail_url).to eq "https://i2.ytimg.com/vi/5shykyfmb28/hqdefault.jpg" # rubocop:disable Metrics/LineLength
+      expect(@entry.media_thumbnail_url).to eq "https://i2.ytimg.com/vi/5shykyfmb28/hqdefault.jpg"
     end
 
     it "should have the custom media thumbnail width" do

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "spec_helper"
 
 describe Feedjira::Parser::AtomEntry do
@@ -32,7 +34,7 @@ describe Feedjira::Parser::AtomEntry do
   end
 
   it "should provide a summary" do
-    summary = "Late last year an entrepreneur from Turkey visited me at Amazon HQ in Seattle. We talked about his plans to use AWS as part of his new social video portal startup. I won't spill any beans before he's ready to..." # rubocop:disable Metrics/LineLength
+    summary = "Late last year an entrepreneur from Turkey visited me at Amazon HQ in Seattle. We talked about his plans to use AWS as part of his new social video portal startup. I won't spill any beans before he's ready to..."
     expect(@entry.summary).to eq summary
   end
 
@@ -42,7 +44,7 @@ describe Feedjira::Parser::AtomEntry do
   end
 
   it "should parse the categories" do
-    expect(@entry.categories).to eq %w(Turkey Seattle)
+    expect(@entry.categories).to eq %w[Turkey Seattle]
   end
 
   it "should parse the updated date" do
@@ -69,7 +71,7 @@ describe Feedjira::Parser::AtomEntry do
 
     expect(title_value).to eq "AWS Job: Architect & Designer Position in Turkey"
 
-    expected_fields = %w(
+    expected_fields = %w[
       author
       categories
       content
@@ -81,7 +83,7 @@ describe Feedjira::Parser::AtomEntry do
       title_type
       updated
       url
-    )
+    ]
     expect(all_fields.sort).to eq expected_fields
   end
 

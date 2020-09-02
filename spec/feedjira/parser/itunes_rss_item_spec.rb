@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "spec_helper"
 
 describe Feedjira::Parser::ITunesRSSItem do
@@ -25,7 +27,7 @@ describe Feedjira::Parser::ITunesRSSItem do
   end
 
   it "should parse the summary" do
-    summary = "This week we talk about salt and pepper shakers, comparing and contrasting pour rates, construction materials, and overall aesthetics. Come and join the party!" # rubocop:disable Metrics/LineLength
+    summary = "This week we talk about salt and pepper shakers, comparing and contrasting pour rates, construction materials, and overall aesthetics. Come and join the party!"
     expect(@item.itunes_summary).to eq summary
   end
 

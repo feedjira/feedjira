@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module SampleFeeds
   FEEDS = {
     sample_atom_feed: "AmazonWebServicesBlog.xml",

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "spec_helper"
 
 module Feedjira
@@ -7,12 +9,12 @@ module Feedjira
         expect(ITunesRSS).to be_able_to_parse(sample_itunes_feed)
       end
 
-      it "should return true for an itunes RSS feed with spaces between attribute names, equals sign, and values" do # rubocop:disable Metrics/LineLength
+      it "should return true for an itunes RSS feed with spaces between attribute names, equals sign, and values" do
         expect(ITunesRSS).to be_able_to_parse(sample_itunes_feed_with_spaces)
       end
 
-      it "should return true for an itunes RSS feed with single-quoted attributes" do # rubocop:disable Metrics/LineLength
-        expect(ITunesRSS).to be_able_to_parse(sample_itunes_feed_with_single_quotes)  # rubocop:disable Metrics/LineLength
+      it "should return true for an itunes RSS feed with single-quoted attributes" do
+        expect(ITunesRSS).to be_able_to_parse(sample_itunes_feed_with_single_quotes)
       end
 
       it "should return fase for an atom feed" do
@@ -74,7 +76,7 @@ module Feedjira
       end
 
       it "should parse the image description" do
-        description = "All About Everything is a show about everything. Each week we dive into any subject known to man and talk about it as much as we can. Look for our Podcast in the iTunes Music Store" # rubocop:disable Metrics/LineLength
+        description = "All About Everything is a show about everything. Each week we dive into any subject known to man and talk about it as much as we can. Look for our Podcast in the iTunes Music Store"
         expect(@feed.image.description).to eq description
       end
 
@@ -85,14 +87,14 @@ module Feedjira
           "TV & Film",
           "Arts",
           "Design",
-          "Food",
+          "Food"
         ]
 
         expect(@feed.itunes_category_paths).to eq [
-          %w(Technology Gadgets),
+          %w[Technology Gadgets],
           ["TV & Film"],
-          %w(Arts Design),
-          %w(Arts Food),
+          %w[Arts Design],
+          %w[Arts Food]
         ]
       end
 
@@ -101,7 +103,7 @@ module Feedjira
       end
 
       it "should parse the summary" do
-        summary = "All About Everything is a show about everything. Each week we dive into any subject known to man and talk about it as much as we can. Look for our Podcast in the iTunes Music Store" # rubocop:disable Metrics/LineLength
+        summary = "All About Everything is a show about everything. Each week we dive into any subject known to man and talk about it as much as we can. Look for our Podcast in the iTunes Music Store"
         expect(@feed.itunes_summary).to eq summary
       end
 

@@ -1,4 +1,6 @@
-require File.expand_path(File.dirname(__FILE__) + "/../lib/feedjira")
+# frozen_string_literal: true
+
+require File.expand_path("#{File.dirname(__FILE__)}/../lib/feedjira")
 require "sample_feeds"
 require "vcr"
 

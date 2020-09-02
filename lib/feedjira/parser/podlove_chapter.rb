@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Feedjira
   module Parser
     class PodloveChapter
@@ -10,6 +12,7 @@ module Feedjira
 
       def start
         return unless start_ntp
+
         parts = start_ntp.split(":")
         parts.reverse.to_enum.with_index.map do |part, index|
           part.to_f * (60**index)
