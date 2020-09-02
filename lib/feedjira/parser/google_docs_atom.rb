@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require File.expand_path("./atom", File.dirname(__FILE__))
 module Feedjira
   module Parser
@@ -7,7 +9,7 @@ module Feedjira
       element :title
       element :subtitle, as: :description
       element :link, as: :url, value: :href, with: { type: "text/html" }
-      element :link, as: :feed_url, value: :href, with: { type: "application/atom+xml" } # rubocop:disable Metrics/LineLength
+      element :link, as: :feed_url, value: :href, with: { type: "application/atom+xml" }
       elements :link, as: :links, value: :href
       elements :entry, as: :entries, class: GoogleDocsAtomEntry
 
@@ -16,7 +18,7 @@ module Feedjira
       end
 
       def self.able_to_parse?(xml) #:nodoc:
-        %r{<id>https?://docs\.google\.com/.*\</id\>} =~ xml
+        %r{<id>https?://docs\.google\.com/.*</id>} =~ xml
       end
 
       def feed_url

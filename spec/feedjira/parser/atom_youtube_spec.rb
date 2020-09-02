@@ -1,17 +1,19 @@
-require File.join(File.dirname(__FILE__), %w(.. .. spec_helper))
+# frozen_string_literal: true
+
+require File.join(File.dirname(__FILE__), %w[.. .. spec_helper])
 
 describe Feedjira::Parser::AtomYoutube do
   describe "#will_parse?" do
     it "should return true for an atom youtube feed" do
-      expect(Feedjira::Parser::AtomYoutube).to be_able_to_parse(sample_youtube_atom_feed) # rubocop:disable Metrics/LineLength
+      expect(Feedjira::Parser::AtomYoutube).to be_able_to_parse(sample_youtube_atom_feed)
     end
 
     it "should return fase for an atom feed" do
-      expect(Feedjira::Parser::AtomYoutube).to_not be_able_to_parse(sample_atom_feed) # rubocop:disable Metrics/LineLength
+      expect(Feedjira::Parser::AtomYoutube).to_not be_able_to_parse(sample_atom_feed)
     end
 
     it "should return false for an rss feedburner feed" do
-      expect(Feedjira::Parser::AtomYoutube).to_not be_able_to_parse(sample_rss_feed_burner_feed) # rubocop:disable Metrics/LineLength
+      expect(Feedjira::Parser::AtomYoutube).to_not be_able_to_parse(sample_rss_feed_burner_feed)
     end
   end
 

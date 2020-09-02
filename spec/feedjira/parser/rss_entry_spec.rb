@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "spec_helper"
 
 describe Feedjira::Parser::RSSEntry do
@@ -35,7 +37,7 @@ describe Feedjira::Parser::RSSEntry do
   end
 
   it "should provide a summary" do
-    summary = "Oops!  When I released nokogiri version 1.0.7, I totally forgot to talk about Nokogiri::Slop() feature that was added.  Why is it called \"slop\"?  It lets you sloppily explore documents.  Basically, it decorates your document with method_missing() that allows you to search your document via method calls.\nGiven this document:\n\ndoc = Nokogiri::Slop&#40;&#60;&#60;-eohtml&#41;\n&#60;html&#62;\n&#160; &#60;body&#62;\n&#160; [...]" # rubocop:disable Metrics/LineLength
+    summary = "Oops!  When I released nokogiri version 1.0.7, I totally forgot to talk about Nokogiri::Slop() feature that was added.  Why is it called \"slop\"?  It lets you sloppily explore documents.  Basically, it decorates your document with method_missing() that allows you to search your document via method calls.\nGiven this document:\n\ndoc = Nokogiri::Slop&#40;&#60;&#60;-eohtml&#41;\n&#60;html&#62;\n&#160; &#60;body&#62;\n&#160; [...]"
     expect(@entry.summary).to eq summary
   end
 
@@ -45,7 +47,7 @@ describe Feedjira::Parser::RSSEntry do
   end
 
   it "should parse the categories" do
-    expect(@entry.categories).to eq %w(computadora nokogiri rails)
+    expect(@entry.categories).to eq %w[computadora nokogiri rails]
   end
 
   it "should parse the guid as id" do
@@ -66,7 +68,7 @@ describe Feedjira::Parser::RSSEntry do
 
     expect(title_value).to eq "Nokogiri’s Slop Feature"
 
-    expected_fields = %w(
+    expected_fields = %w[
       author
       categories
       comment_rss
@@ -76,7 +78,7 @@ describe Feedjira::Parser::RSSEntry do
       summary
       title
       url
-    )
+    ]
     expect(all_fields.sort).to eq expected_fields
   end
 

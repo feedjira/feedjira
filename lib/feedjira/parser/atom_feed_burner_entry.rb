@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Feedjira
   module Parser
     # Parser for dealing with Feedburner Atom feed entries.
@@ -7,9 +9,7 @@ module Feedjira
       include AtomEntryUtilities
 
       element :"feedburner:origLink", as: :orig_link
-      # rubocop:disable Style/AccessModifierDeclarations
       private :orig_link
-      # rubocop:enable Style/AccessModifierDeclarations
 
       element :"media:thumbnail", as: :image, value: :url
       element :"media:content", as: :image, value: :url

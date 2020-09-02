@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Feedjira
   module Parser
     # Parser for dealing with Feedburner Atom feed entries.
@@ -8,12 +10,11 @@ module Feedjira
 
       def url
         url = super
+        return unless url&.start_with?("https://www.google.com/url?")
 
-        if url && url.start_with?("https://www.google.com/url?")
-          uri = URI(url)
-          cons = URI.decode_www_form(uri.query).assoc("url")
-          cons && cons[1]
-        end
+        uri = URI(url)
+        cons = URI.decode_www_form(uri.query).assoc("url")
+        cons && cons[1]
       end
     end
   end

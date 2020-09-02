@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "rspec/core/rake_task"
 require "rubocop/rake_task"
 require "yard"
@@ -14,4 +16,4 @@ YARD::Rake::YardocTask.new do |t|
   t.files   = ["lib/**/*.rb", "-", "LICENSE"]
 end
 
-task default: [:spec, :rubocop]
+task default: %i[spec rubocop]

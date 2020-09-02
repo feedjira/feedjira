@@ -1,8 +1,7 @@
-# -*- encoding: utf-8 -*-
+# frozen_string_literal: true
 
 require File.expand_path("lib/feedjira/version", __dir__)
 
-# rubocop:disable Metrics/BlockLength
 Gem::Specification.new do |s|
   s.authors = [
     "Adam Hess",
@@ -11,7 +10,7 @@ Gem::Specification.new do |s|
     "Jon Allured",
     "Julien Kirch",
     "Michael Stock",
-    "Paul Dix",
+    "Paul Dix"
   ]
   s.email    = "feedjira@gmail.com"
   s.homepage = "http://feedjira.com"
@@ -22,9 +21,9 @@ Gem::Specification.new do |s|
   s.version  = Feedjira::VERSION
 
   s.metadata = {
-    "homepage_uri"    => "http://feedjira.com",
+    "homepage_uri" => "http://feedjira.com",
     "source_code_uri" => "https://github.com/feedjira/feedjira",
-    "changelog_uri"   => "https://github.com/feedjira/feedjira/blob/master/CHANGELOG.md"
+    "changelog_uri" => "https://github.com/feedjira/feedjira/blob/master/CHANGELOG.md"
   }
 
   s.files         = `git ls-files`.split("\n")
@@ -36,11 +35,9 @@ Gem::Specification.new do |s|
   s.add_dependency "loofah",             ">= 2.3.1"
   s.add_dependency "sax-machine",        ">= 1.0"
 
-  s.add_development_dependency "danger"
-  s.add_development_dependency "danger-commit_lint"
+  s.add_development_dependency "faraday"
   s.add_development_dependency "rspec"
   s.add_development_dependency "rubocop"
   s.add_development_dependency "vcr"
   s.add_development_dependency "yard"
 end
-# rubocop:enable Metrics/BlockLength

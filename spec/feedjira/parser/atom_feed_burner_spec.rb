@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "spec_helper"
 
 module Feedjira
@@ -30,7 +32,7 @@ module Feedjira
       end
 
       it "should parse the description" do
-        description = "Entrepreneurship, programming, software development, politics, NYC, and random thoughts." # rubocop:disable Metrics/LineLength
+        description = "Entrepreneurship, programming, software development, politics, NYC, and random thoughts."
         expect(@feed.description).to eq description
       end
 
@@ -119,7 +121,7 @@ module Feedjira
         feed = AtomFeedBurner.parse sample_feed_burner_atom_xhtml_feed
         entry = feed.entries.first
 
-        expect(entry.content).to match(/\A\<p/)
+        expect(entry.content).to match(/\A<p/)
       end
     end
   end

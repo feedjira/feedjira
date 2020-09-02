@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 module Feedjira
   module DateTimeUtilities
     class DateTimeLanguageParser
       MONTHS_ENGLISH =
-        %w(Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec).freeze
+        %w[Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec].freeze
       MONTHS_SPANISH =
-        %w(Ene Feb Mar Abr May Jun Jul Ago Sep Oct Nov Dic).freeze
+        %w[Ene Feb Mar Abr May Jun Jul Ago Sep Oct Nov Dic].freeze
 
       def self.parse(string)
         DateTime.parse(translate(string))

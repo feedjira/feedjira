@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Feedjira
   module Parser
     # Parser for dealing with Feedburner Atom feeds.
@@ -10,7 +12,7 @@ module Feedjira
       element :link, as: :url_text_html, value: :href,
                      with: { type: "text/html" }
       element :link, as: :url_notype, value: :href, with: { type: nil }
-      element :link, as: :feed_url_link, value: :href, with: { type: "application/atom+xml" } # rubocop:disable Metrics/LineLength
+      element :link, as: :feed_url_link, value: :href, with: { type: "application/atom+xml" }
       element :"atom10:link", as: :feed_url_atom10_link, value: :href,
                               with: { type: "application/atom+xml" }
       elements :"atom10:link", as: :hubs, value: :href, with: { rel: "hub" }
@@ -19,7 +21,7 @@ module Feedjira
       attr_writer :url, :feed_url
 
       def self.able_to_parse?(xml)
-        ((/<feed/ =~ xml) && (/Atom/ =~ xml) && (/feedburner/ =~ xml) && !(/\<rss|\<rdf/ =~ xml)) || false # rubocop:disable Metrics/LineLength
+        ((/<feed/ =~ xml) && (/Atom/ =~ xml) && (/feedburner/ =~ xml) && !(/<rss|<rdf/ =~ xml)) || false
       end
 
       # Feed url is <link> with type="text/html" if present,
