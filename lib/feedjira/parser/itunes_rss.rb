@@ -20,7 +20,7 @@ module Feedjira
       element :language
       element :lastBuildDate, as: :last_built
       element :link, as: :url
-      element :managingEditor
+      element :managingEditor, as: :managing_editor
       element :rss, as: :version, value: :version
       element :title
       element :ttl
