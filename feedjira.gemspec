@@ -12,8 +12,7 @@ Gem::Specification.new do |s|
     "Michael Stock",
     "Paul Dix"
   ]
-  s.email    = "feedjira@gmail.com"
-  s.homepage = "http://feedjira.com"
+  s.homepage = "https://github.com/feedjira/feedjira"
   s.license  = "MIT"
   s.name     = "feedjira"
   s.platform = Gem::Platform::RUBY
