@@ -29,7 +29,7 @@ module Feedjira
         Feedjira.parsers.each do |klass|
           klass.sax_config.collection_elements.each_value do |value|
             collection_configs = value.select do |v|
-              v.accessor == "entries" && v.data_class.class == Class
+              v.accessor == "entries" && v.data_class.is_a?(Class)
             end
 
             collection_configs.each do |config|

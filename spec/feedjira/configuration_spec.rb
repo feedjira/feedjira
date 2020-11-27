@@ -10,10 +10,10 @@ describe Feedjira::Configuration do
     end
 
     it "allows parsers to be modified" do
-      CustomParser = Class.new
+      custom_parser = Class.new
 
-      Feedjira.configure { |config| config.parsers.unshift(CustomParser) }
-      expect(Feedjira.parsers.first).to eq(CustomParser)
+      Feedjira.configure { |config| config.parsers.unshift(custom_parser) }
+      expect(Feedjira.parsers.first).to eq(custom_parser)
       Feedjira.reset_configuration!
     end
   end
