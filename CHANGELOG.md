@@ -7,6 +7,17 @@
 
 [#440]: https://github.com/feedjira/feedjira/pull/440
 
+## 3.1.1
+
+* Enhancements
+  * Fix warnings in Ruby 2.7 [#434][] ([@sferik][])
+
+* General
+  * Test on Ruby 2.5, 2.6 and 2.7 [#435][] ([@HParker][])
+
+[#434]: https://github.com/feedjira/feedjira/pull/434
+[#435]: https://github.com/feedjira/feedjira/pull/435
+
 ## 3.1.0
 
 * Breaking Changes
@@ -314,6 +325,7 @@ configurable logging and parsing
 
 * lower builder requirement to make it rails-3 friendly
 
+[@HParker]: https://github.com/HParker
 [@PascalTurbo]: https://github.com/PascalTurbo
 [@jfiorato]: https://github.com/jfiorato
 [@knu]: https://github.com/knu
