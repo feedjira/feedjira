@@ -4,11 +4,6 @@ AllCops:
   TargetRubyVersion: 2.5
   NewCops: enable
 
-
-Gemspec/RequiredRubyVersion:
-  Exclude:
-    - 'feedjira.gemspec'
-
 # Offense count: 3
 # Configuration parameters: IgnoredMethods.
 Metrics/AbcSize:
