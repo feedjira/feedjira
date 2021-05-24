@@ -23,10 +23,6 @@ module Feedjira
         @url || (links - [feed_url]).last || links.last
       end
 
-      def feed_url
-        @feed_url ||= links.first
-      end
-
       def self.preprocess(xml)
         Preprocessor.new(xml).to_xml
       end
