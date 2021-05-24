@@ -93,7 +93,7 @@ module Feedjira
       end
     end
 
-    describe "parsing url and feed url based on rel attribute" do
+    describe "parsing url and feed_url" do
       before :each do
         @feed = Atom.parse(sample_atom_middleman_feed)
       end
@@ -102,8 +102,14 @@ module Feedjira
         expect(@feed.url).to eq "http://feedjira.com/blog"
       end
 
-      it "should parse feed url" do
+      it "should parse feed_url" do
         expect(@feed.feed_url).to eq "http://feedjira.com/blog/feed.xml"
+      end
+
+      it "should not parse links without the rel='self' attribute as feed_url" do
+        xml = load_sample "atom_simple_single_entry.xml"
+        feed = Atom.parse xml
+        expect(feed.feed_url).to be_nil
       end
     end
   end

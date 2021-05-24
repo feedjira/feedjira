@@ -3,6 +3,7 @@
 module SampleFeeds
   FEEDS = {
     sample_atom_feed: "AmazonWebServicesBlog.xml",
+    sample_atom_simple: "atom_simple_single_entry.xml",
     sample_atom_middleman_feed: "FeedjiraBlog.xml",
     sample_atom_xhtml_feed: "pet_atom.xml",
     sample_atom_feed_line_breaks: "AtomFeedWithSpacesAroundEquals.xml",
