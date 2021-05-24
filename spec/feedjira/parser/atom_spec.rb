@@ -111,6 +111,12 @@ module Feedjira
         feed = Atom.parse xml
         expect(feed.feed_url).to be_nil
       end
+
+      it "should not parse links with the rel='self' attribute as url" do
+        xml = load_sample "atom_simple_single_entry_link_self.xml"
+        feed = Atom.parse xml
+        expect(feed.url).to be_nil
+      end
     end
   end
 end
