@@ -20,7 +20,7 @@ module Feedjira
       end
 
       def url
-        @url || (links - [feed_url]).last || links.last
+        @url || (links - [feed_url]).last
       end
 
       def self.preprocess(xml)
