@@ -36,6 +36,11 @@ module Feedjira
         expect(@feed.description).to eq description
       end
 
+      it "should parse the icon url" do
+        feed_with_icon = Atom.parse(load_sample("SamRuby.xml"))
+        expect(feed_with_icon.icon).to eq "../favicon.ico"
+      end
+
       it "should parse the url" do
         expect(@feed.url).to eq "http://aws.typepad.com/aws/"
       end
