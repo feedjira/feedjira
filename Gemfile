@@ -5,7 +5,7 @@ source "https://rubygems.org/"
 gemspec
 
 gem "pry"
-gem "rubocop", "~> 0.90"
+gem "rubocop"
 
 group :test do
   gem "oga"

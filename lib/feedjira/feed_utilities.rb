@@ -75,11 +75,11 @@ module Feedjira
       old_value = send(name)
       new_value = feed.send(name)
 
-      if old_value != new_value
+      if old_value == new_value
+        false
+      else
         send("#{name}=", new_value)
         true
-      else
-        false
       end
     end
 
