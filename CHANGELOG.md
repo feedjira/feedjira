@@ -1,5 +1,11 @@
 # Feedjira Changelog
 
+## 3.2.0
+
+* Atom `feed_url` no longer falls back to `url` via https://github.com/feedjira/feedjira/pull/451 (@frederfred)
+
+* Atom feeds now have an icon field via https://github.com/feedjira/feedjira/pull/452 (@jswanner)
+
 ## 3.1.2
 
 * Enhancements

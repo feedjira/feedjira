@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
   s.version  = Feedjira::VERSION
 
   s.metadata = {
-    "homepage_uri" => "http://feedjira.com",
+    "homepage_uri" => "https://github.com/feedjira/feedjira",
     "source_code_uri" => "https://github.com/feedjira/feedjira",
     "changelog_uri" => "https://github.com/feedjira/feedjira/blob/master/CHANGELOG.md"
   }
