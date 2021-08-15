@@ -3,7 +3,7 @@
 require "spec_helper"
 
 describe Feedjira::FeedUtilities do
-  before(:each) do
+  before do
     @klass = Class.new do
       include SAXMachine
       include Feedjira::FeedUtilities
@@ -14,7 +14,7 @@ describe Feedjira::FeedUtilities do
     context "when the flag is not set" do
       it "does not call the preprocessing method" do
         @klass.preprocess_xml = false
-        expect(@klass).to_not receive :preprocess
+        expect(@klass).not_to receive :preprocess
         @klass.parse sample_rss_feed
       end
     end
@@ -22,14 +22,14 @@ describe Feedjira::FeedUtilities do
     context "when the flag is set" do
       it "calls the preprocessing method" do
         @klass.preprocess_xml = true
-        expect(@klass).to receive(:preprocess).and_return sample_rss_feed
+        allow(@klass).to receive(:preprocess).and_return sample_rss_feed
         @klass.parse sample_rss_feed
       end
     end
   end
 
-  describe "strip whitespace" do
-    context "strip_whitespace config is true" do
+  describe "when configured to strip whitespace" do
+    context "when strip_whitespace config is true" do
       it "strips all XML whitespace" do
         Feedjira.configure { |config| config.strip_whitespace = true }
 
@@ -39,7 +39,7 @@ describe Feedjira::FeedUtilities do
       end
     end
 
-    context "strip_whitespace config is false" do
+    context "when strip_whitespace is configured false" do
       it "lstrips XML whitespace" do
         expect(@klass.strip_whitespace("\nfoobar\n")).to eq("foobar\n")
       end
@@ -47,27 +47,27 @@ describe Feedjira::FeedUtilities do
   end
 
   describe "instance methods" do
-    it "should provide an updated? accessor" do
+    it "provides an updated? accessor" do
       feed = @klass.new
-      expect(feed).to_not be_updated
+      expect(feed).not_to be_updated
       feed.updated = true
       expect(feed).to be_updated
     end
 
-    it "should provide a new_entries accessor" do
+    it "provides a new_entries accessor" do
       feed = @klass.new
       expect(feed.new_entries).to eq []
       feed.new_entries = [:foo]
       expect(feed.new_entries).to eq [:foo]
     end
 
-    it "should provide an etag accessor" do
+    it "provides an etag accessor" do
       feed = @klass.new
       feed.etag = "foo"
       expect(feed.etag).to eq "foo"
     end
 
-    it "should provide a last_modified accessor" do
+    it "provides a last_modified accessor" do
       feed = @klass.new
       time = Time.now
       feed.last_modified = time
@@ -75,13 +75,13 @@ describe Feedjira::FeedUtilities do
       expect(feed.last_modified.class).to eq Time
     end
 
-    it "should return new_entries? as true when entries are put into new_entries" do
+    it "returns new_entries? as true when entries are put into new_entries" do
       feed = @klass.new
       feed.new_entries << :foo
       expect(feed.new_entries?).to eq true
     end
 
-    it "should return a last_modified value from the entry with the most recent published date if the last_modified date hasn't been set" do
+    it "returns a last_modified value from the entry with the most recent published date if the last_modified date hasn't been set" do
       feed = Feedjira::Parser::Atom.new
       entry = Feedjira::Parser::AtomEntry.new
       entry.published = Time.now.to_s
@@ -89,7 +89,7 @@ describe Feedjira::FeedUtilities do
       expect(feed.last_modified).to eq entry.published
     end
 
-    it "should not throw an error if one of the entries has published date of nil" do
+    it "does not throw an error if one of the entries has published date of nil" do
       feed = Feedjira::Parser::Atom.new
       entry = Feedjira::Parser::AtomEntry.new
       entry.published = Time.now.to_s
@@ -101,7 +101,7 @@ describe Feedjira::FeedUtilities do
 
   describe "#update_from_feed" do
     describe "updating feed attributes" do
-      before(:each) do
+      before do
         # I'm using the Atom class when I know I should be using a different
         # one. However, this update_from_feed method would only be called
         # against a feed item.
@@ -113,44 +113,39 @@ describe Feedjira::FeedUtilities do
         @updated_feed = @feed.dup
       end
 
-      it "should update the title if changed" do
+      it "updates the title if changed" do
         @updated_feed.title = "new title"
         @feed.update_from_feed(@updated_feed)
         expect(@feed.title).to eq @updated_feed.title
         expect(@feed).to be_updated
       end
 
-      it "should not update the title if the same" do
+      it "does not update the title if the same" do
         @feed.update_from_feed(@updated_feed)
-        expect(@feed).to_not be_updated
+        expect(@feed).not_to be_updated
       end
 
-      it "should update the feed_url if changed" do
+      it "updates the feed_url if changed" do
         @updated_feed.feed_url = "a new feed url"
         @feed.update_from_feed(@updated_feed)
         expect(@feed.feed_url).to eq @updated_feed.feed_url
         expect(@feed).to be_updated
       end
 
-      it "should not update the feed_url if the same" do
-        @feed.update_from_feed(@updated_feed)
-        expect(@feed).to_not be_updated
-      end
-
-      it "should update the url if changed" do
+      it "updates the url if changed" do
         @updated_feed.url = "a new url"
         @feed.update_from_feed(@updated_feed)
         expect(@feed.url).to eq @updated_feed.url
       end
 
-      it "should not update the url if not changed" do
+      it "does not update the url if not changed" do
         @feed.update_from_feed(@updated_feed)
-        expect(@feed).to_not be_updated
+        expect(@feed).not_to be_updated
       end
     end
 
     describe "updating entries" do
-      before(:each) do
+      before do
         # I'm using the Atom class when I know I should be using a different
         # one. However, this update_from_feed method would only be called
         # against a feed item.
@@ -173,17 +168,17 @@ describe Feedjira::FeedUtilities do
         @updated_feed.entries << @old_entry
       end
 
-      it "should update last-modified from the latest entry date" do
+      it "updates last-modified from the latest entry date" do
         @feed.update_from_feed(@updated_feed)
         expect(@feed.last_modified).to eq @new_entry.published
       end
 
-      it "should put new entries into new_entries" do
+      it "puts new entries into new_entries" do
         @feed.update_from_feed(@updated_feed)
         expect(@feed.new_entries).to eq [@new_entry]
       end
 
-      it "should also put new entries into the entries collection" do
+      it "alsoes put new entries into the entries collection" do
         @feed.update_from_feed(@updated_feed)
         expect(@feed.entries).to include(@new_entry)
         expect(@feed.entries).to include(@old_entry)
@@ -194,7 +189,7 @@ describe Feedjira::FeedUtilities do
       let(:recent_entry_id) { "entry_id" }
       let(:old_entry_id) { nil }
 
-      before(:each) do
+      before do
         # I'm using the Atom class when I know I should be using a different
         # one. However, this update_from_feed method would only be called
         # against a feed item.
@@ -226,26 +221,26 @@ describe Feedjira::FeedUtilities do
         @updated_feed.entries << @old_entry
       end
 
-      context "changing the url of an existing entry" do
-        it "should not put the complete feed into new_entries" do
+      context "when changing the url of an existing entry" do
+        it "does not put the complete feed into new_entries" do
           @feed.update_from_feed(@updated_feed)
-          expect(@feed.new_entries).to_not include(@entry_changed_url)
-          expect(@feed.new_entries).to_not include(@old_entry)
+          expect(@feed.new_entries).not_to include(@entry_changed_url)
+          expect(@feed.new_entries).not_to include(@old_entry)
           expect(@feed.new_entries.size).to eq 0
-          expect(@feed.new_entries.size).to_not eq 2
+          expect(@feed.new_entries.size).not_to eq 2
         end
       end
 
-      context "feed not have entry id and only difference is a url" do
+      context "when feed does not have entry id and only difference is a url" do
         let(:recent_entry_id) { nil }
         let(:old_entry_id) { nil }
 
-        it "should put the complete feed into new_entries" do
+        it "puts the complete feed into new_entries" do
           @feed.update_from_feed(@updated_feed)
           expect(@feed.new_entries).to include(@entry_changed_url)
           expect(@feed.new_entries).to include(@old_entry)
           expect(@feed.new_entries.size).to eq 2
-          expect(@feed.new_entries.size).to_not eq 0
+          expect(@feed.new_entries.size).not_to eq 0
         end
       end
     end

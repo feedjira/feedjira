@@ -17,7 +17,7 @@ module Feedjira
         @url ||= links.first
       end
 
-      def self.able_to_parse?(xml) #:nodoc:
+      def self.able_to_parse?(xml) # :nodoc:
         %r{<id>https?://docs\.google\.com/.*</id>} =~ xml
       end
 

@@ -21,7 +21,7 @@ module Feedjira
       attr_writer :url, :feed_url
 
       def self.able_to_parse?(xml)
-        ((/<feed/ =~ xml) && (/Atom/ =~ xml) && (/feedburner/ =~ xml) && !(/<rss|<rdf/ =~ xml)) || false
+        (xml.include?("<feed") && xml.include?("Atom") && xml.include?("feedburner") && !(/<rss|<rdf/ =~ xml)) || false
       end
 
       # Feed url is <link> with type="text/html" if present,

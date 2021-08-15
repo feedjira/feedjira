@@ -14,8 +14,8 @@ module Feedjira
 
       elements :entry, as: :entries, class: AtomYoutubeEntry
 
-      def self.able_to_parse?(xml) #:nodoc:
-        %r{xmlns:yt="http://www.youtube.com/xml/schemas/2015"} =~ xml
+      def self.able_to_parse?(xml) # :nodoc:
+        xml.include?("xmlns:yt=\"http://www.youtube.com/xml/schemas/2015\"")
       end
     end
   end

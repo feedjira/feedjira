@@ -29,7 +29,7 @@ class Time
   def self.parse_string_safely(string)
     return nil if string.empty?
 
-    if string =~ /\A\d{14}\z/
+    if /\A\d{14}\z/.match?(string)
       parse("#{string}Z", true)
     else
       parse(string).utc

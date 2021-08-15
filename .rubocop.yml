@@ -1,5 +1,10 @@
 inherit_from: .rubocop_todo.yml
 
+require:
+  - rubocop-rake
+  - rubocop-rspec
+  - rubocop-performance
+
 AllCops:
   TargetRubyVersion: 2.5
   NewCops: enable
@@ -32,3 +37,30 @@ Style/IfUnlessModifier:
 
 Style/StringLiterals:
   EnforcedStyle: double_quotes
+
+RSpec/MultipleExpectations:
+  Max: 10
+
+RSpec/ExampleLength:
+  Max: 30
+
+RSpec/InstanceVariable:
+  Enabled: false
+
+RSpec/MessageSpies:
+  Enabled: false
+
+RSpec/NestedGroups:
+  Max: 5
+
+RSpec/MultipleMemoizedHelpers:
+  Max: 10
+
+RSpec/BeforeAfterAll:
+  Enabled: false
+
+RSpec/VerifiedDoubles:
+  Enabled: false
+
+RSpec/RepeatedExample:
+  Enabled: false

@@ -6,14 +6,14 @@ describe Feedjira::Preprocessor do
   it "returns the xml as parsed by Nokogiri" do
     xml = "<xml></xml>"
     doc = Nokogiri::XML(xml).remove_namespaces!
-    processor = Feedjira::Preprocessor.new xml
+    processor = described_class.new xml
     escaped = processor.to_xml
 
     expect(escaped).to eq doc.to_xml
   end
 
   it "escapes markup in xhtml content" do
-    processor = Feedjira::Preprocessor.new sample_atom_xhtml_feed
+    processor = described_class.new sample_atom_xhtml_feed
     escaped = processor.to_xml
     escaped_parts = escaped.split "\n"
 
@@ -23,7 +23,7 @@ describe Feedjira::Preprocessor do
   end
 
   it "leaves escaped html within pre tag" do
-    processor = Feedjira::Preprocessor.new(sample_atom_xhtml_with_escpaed_html_in_pre_tag_feed)
+    processor = described_class.new(sample_atom_xhtml_with_escpaed_html_in_pre_tag_feed)
     escaped = processor.to_xml
     expected_pre_tag = "        &lt;pre&gt;&amp;lt;b&amp;gt;test&amp;lt;b&amp;gt;&lt;/pre&gt;"
     expect(escaped.split("\n")[7]).to eq(expected_pre_tag)
