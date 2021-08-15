@@ -14,9 +14,9 @@ module Feedjira
         return unless start_ntp
 
         parts = start_ntp.split(":")
-        parts.reverse.to_enum.with_index.map do |part, index|
+        parts.reverse.to_enum.with_index.sum do |part, index|
           part.to_f * (60**index)
-        end.reduce(:+)
+        end
       end
     end
   end

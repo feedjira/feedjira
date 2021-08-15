@@ -13,7 +13,7 @@ module Feedjira
                                    class: ITunesRSSCategory
 
       def each_subcategory(&block)
-        return to_enum(__method__) unless block_given?
+        return to_enum(__method__) unless block
 
         yield text
 
@@ -23,7 +23,7 @@ module Feedjira
       end
 
       def each_path(ancestors = [], &block)
-        return to_enum(__method__, ancestors) unless block_given?
+        return to_enum(__method__, ancestors) unless block
 
         category_hierarchy = ancestors + [text]
 

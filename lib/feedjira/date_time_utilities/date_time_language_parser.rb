@@ -15,7 +15,7 @@ module Feedjira
       def self.translate(string)
         MONTHS_SPANISH.each_with_index do |m, i|
           rgx = Regexp.new("\s#{m}\s", Regexp::IGNORECASE)
-          return string.gsub(rgx, MONTHS_ENGLISH[i]) if string =~ rgx
+          return string.gsub(rgx, MONTHS_ENGLISH[i]) if string&.match?(rgx)
         end
         raise "No translation found for #{string}"
       end
