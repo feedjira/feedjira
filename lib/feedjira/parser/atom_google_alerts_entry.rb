@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'uri'
+
 module Feedjira
   module Parser
     # Parser for dealing with Feedburner Atom feed entries.
