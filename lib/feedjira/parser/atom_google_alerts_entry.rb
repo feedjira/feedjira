@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'uri'
+require "uri"
 
 module Feedjira
   module Parser
