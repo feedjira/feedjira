@@ -75,6 +75,7 @@ describe Feedjira::Parser::RSSFeedBurnerEntry do
       author
       categories
       comment_rss
+      comments
       content
       entry_id
       image

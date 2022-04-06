@@ -34,6 +34,8 @@ module Feedjira
         element :"media:content", as: :image, value: :url
         element :enclosure, as: :image, value: :url
 
+        element :comments
+
         elements :category, as: :categories
       end
     end

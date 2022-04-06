@@ -72,6 +72,7 @@ describe Feedjira::Parser::RSSEntry do
       author
       categories
       comment_rss
+      comments
       content
       entry_id
       published
@@ -115,5 +116,10 @@ describe Feedjira::Parser::RSSEntry do
   it "prefers urls from <link> when both guid and link are specified" do
     feed = Feedjira.parse(sample_rss_feed_permalinks)
     expect(feed.entries[3].url).to eq "http://example.com/4"
+  end
+
+  it "exposes comments URL" do
+    feed = Feedjira.parse(sample_rss_feed_with_comments)
+    expect(feed.entries[0].comments).to eq "https://news.ycombinator.com/item?id=30937433"
   end
 end
