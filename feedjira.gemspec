@@ -28,9 +28,8 @@ Gem::Specification.new do |s|
 
   s.files         = `git ls-files`.split("\n")
   s.require_paths = ["lib"]
-  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
 
-  s.required_ruby_version = ">=2.5"
+  s.required_ruby_version = ">=2.7"
 
   s.add_dependency "loofah",             ">= 2.3.1"
   s.add_dependency "sax-machine",        ">= 1.0"

@@ -44,7 +44,7 @@ module Feedjira
       end
 
       it "parses expired and return default (nil)" do
-        expect(@feed.expired).to be nil
+        expect(@feed.expired).to be_nil
       end
 
       it "parses entries" do
