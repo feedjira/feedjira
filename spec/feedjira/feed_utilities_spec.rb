@@ -20,7 +20,7 @@ describe Feedjira::FeedUtilities do
     end
 
     context "when the flag is set" do
-      it "calls the preprocessing method" do
+      it "calls the preprocessing method" do # rubocop:todo RSpec/NoExpectationExample
         @klass.preprocess_xml = true
         allow(@klass).to receive(:preprocess).and_return sample_rss_feed
         @klass.parse sample_rss_feed
@@ -78,7 +78,7 @@ describe Feedjira::FeedUtilities do
     it "returns new_entries? as true when entries are put into new_entries" do
       feed = @klass.new
       feed.new_entries << :foo
-      expect(feed.new_entries?).to eq true
+      expect(feed.new_entries?).to be true
     end
 
     it "returns a last_modified value from the entry with the most recent published date if the last_modified date hasn't been set" do

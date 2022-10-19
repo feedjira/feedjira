@@ -14,7 +14,7 @@ describe Feedjira::Parser::RSS do
 
     it "returns false for an rss feedburner feed" do
       able = described_class.able_to_parse? sample_rss_feed_burner_feed
-      expect(able).to eq false
+      expect(able).to be false
     end
   end
 

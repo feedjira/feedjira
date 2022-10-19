@@ -2,7 +2,8 @@
 
 module Feedjira
   module RSSEntryUtilities
-    def self.included(mod)
+    # rubocop:todo Metrics/MethodLength
+    def self.included(mod) # rubocop:todo Metrics/AbcSize, Metrics/MethodLength
       mod.class_exec do
         element :title
 
@@ -39,6 +40,7 @@ module Feedjira
         elements :category, as: :categories
       end
     end
+    # rubocop:enable Metrics/MethodLength
 
     def entry_id
       @entry_id&.guid

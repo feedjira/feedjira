@@ -100,7 +100,7 @@ describe Feedjira::Parser::RSSEntry do
 
   it "ignores urls from guids with isPermaLink='false'" do
     feed = Feedjira.parse(sample_rss_feed_permalinks)
-    expect(feed.entries[0].url).to eq nil
+    expect(feed.entries[0].url).to be_nil
   end
 
   it "gets urls from guids with isPermaLink='true'" do
