@@ -1,5 +1,12 @@
 # Feedjira Changelog
 
+## 3.2.2
+
+* Fix time handling again usec is not a timezone
+
+* Update rubocop * drop official support for eol Ruby
+
+
 ## 3.2.1
 
 * Fix time handling in ruby 3.1
