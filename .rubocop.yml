@@ -29,9 +29,6 @@ Layout/LineLength:
   Exclude:
     - 'spec/**/*.rb'
 
-Style/AsciiComments:
-  Enabled: false
-
 Style/IfUnlessModifier:
   Enabled: false
 
@@ -57,9 +54,6 @@ RSpec/MultipleMemoizedHelpers:
   Max: 10
 
 RSpec/BeforeAfterAll:
-  Enabled: false
-
-RSpec/VerifiedDoubles:
   Enabled: false
 
 RSpec/RepeatedExample:

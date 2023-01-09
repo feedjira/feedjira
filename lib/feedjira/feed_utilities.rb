@@ -41,11 +41,7 @@ module Feedjira
     end
 
     def last_modified
-      @last_modified ||= begin
-        published = entries.reject { |e| e.published.nil? }
-        entry = published.max_by(&:published)
-        entry ? entry.published : nil
-      end
+      @last_modified ||= entries.reject { |e| e.published.nil? }.max_by(&:published)&.published
     end
 
     def updated?
@@ -95,7 +91,7 @@ module Feedjira
     # entries just parsed and insert each one as a new entry until we get to
     # one that has the same id as the the newest for the feed.
     def find_new_entries_for(feed)
-      return feed.entries if entries.length.zero?
+      return feed.entries if entries.empty?
 
       latest_entry = entries.first
       found_new_entries = []

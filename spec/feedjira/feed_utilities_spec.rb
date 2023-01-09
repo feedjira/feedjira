@@ -116,6 +116,7 @@ describe Feedjira::FeedUtilities do
       it "updates the title if changed" do
         @updated_feed.title = "new title"
         @feed.update_from_feed(@updated_feed)
+
         expect(@feed.title).to eq @updated_feed.title
         expect(@feed).to be_updated
       end
@@ -252,11 +253,12 @@ describe Feedjira::FeedUtilities do
       let(:url_one) { "http://example.com/post_one.html" }
       let(:url_two) { "http://example.com/post_two.html" }
 
-      let(:entry_one) { double "Entry One", entry_id: id_one, url: url_one }
-      let(:entry_two) { double "Entry Two", entry_id: id_two, url: url_two }
+      let(:entry_one) { object_double(Feedjira::Parser::AtomEntry.new, entry_id: id_one, url: url_one) }
+
+      let(:entry_two) { object_double(Feedjira::Parser::AtomEntry.new, entry_id: id_two, url: url_two) }
 
       let(:feed_one) { Feedjira::Parser::Atom.new }
-      let(:feed_two) { double "Feed Two", entries: [entry_two] }
+      let(:feed_two) { object_double(Feedjira::Parser::Atom.new, entries: [entry_two]) }
 
       before do
         stub_const("Feedjira::FeedUtilities::UPDATABLE_ATTRIBUTES", [])
