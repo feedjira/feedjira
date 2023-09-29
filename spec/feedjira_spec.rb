@@ -57,6 +57,16 @@ RSpec.describe Feedjira do
         expect(feed.entries.size).to eq 3
       end
 
+      it "parses an itunes feedburner feed" do
+        feed = described_class.parse(sample_itunes_feedburner_feed)
+        expect(feed.title).to eq "Welcome to Night Vale"
+        published = Time.parse_safely "2023-09-22 16:30:15 UTC"
+        expect(feed.entries.first.published).to eq published
+        expect(feed.entries.size).to eq 3
+        url = "https://www.podtrac.com/pts/redirect.mp3/dovetail.prxu.org/_/126/e3dafc45-a202-42d0-a55b-216e733a2d7a/2023_09_17_BTS_Episode_EXCERPT_v2.mp3"
+        expect(feed.entries.first.enclosure_url).to eq url
+      end
+
       it "with nested dc:identifier it does not overwrite entry_id" do
         feed = described_class.parse(sample_rss_feed_huffpost_ca)
         expect(feed.title.strip).to eq "HuffPost Canada - Athena2 - All Posts"
