@@ -59,13 +59,13 @@ module Feedjira
     # @private
     def default_parsers
       [
+        Feedjira::Parser::ITunesRSS,
         Feedjira::Parser::RSSFeedBurner,
         Feedjira::Parser::GoogleDocsAtom,
         Feedjira::Parser::AtomYoutube,
         Feedjira::Parser::AtomFeedBurner,
         Feedjira::Parser::AtomGoogleAlerts,
         Feedjira::Parser::Atom,
-        Feedjira::Parser::ITunesRSS,
         Feedjira::Parser::RSS,
         Feedjira::Parser::JSONFeed
       ]
