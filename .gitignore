@@ -7,3 +7,4 @@ doc/
 .yardoc/
 pkg/
 rdoc/
+coverage/
