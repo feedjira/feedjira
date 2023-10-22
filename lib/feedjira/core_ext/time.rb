@@ -16,12 +16,12 @@ class Time
     if datetime.is_a?(Time)
       datetime.utc
     elsif datetime.respond_to?(:to_datetime)
-      datetime.to_datetime.utc
-    elsif datetime.respond_to? :to_s
+      datetime.to_time.utc
+    else
       parse_string_safely datetime.to_s
     end
   rescue StandardError => e
-    Feedjira.logger.debug { "Failed to parse time #{datetime}" }
+    Feedjira.logger.debug("Failed to parse time #{datetime}")
     Feedjira.logger.debug(e)
     nil
   end
