@@ -7,4 +7,4 @@ SimpleCov.start do
   add_filter "_spec.rb"
 end
 
-SimpleCov.minimum_coverage(line: 97, branch: 69)
+SimpleCov.minimum_coverage(line: 98, branch: 75)
