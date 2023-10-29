@@ -3,7 +3,6 @@
 module Feedjira
   module FeedEntryUtilities
     include Enumerable
-    include DateTimeUtilities
 
     def published
       @published ||= @updated
