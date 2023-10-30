@@ -9,10 +9,6 @@ class Date
     feed_utils_to_time(new_offset, :gm)
   end
 
-  def feed_utils_to_local_time
-    feed_utils_to_time(new_offset(DateTime.now.offset - offset), :local)
-  end
-
   private
 
   def feed_utils_to_time(dest, method)
