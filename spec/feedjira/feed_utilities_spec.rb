@@ -7,6 +7,8 @@ describe Feedjira::FeedUtilities do
     @klass = Class.new do
       include SAXMachine
       include Feedjira::FeedUtilities
+
+      elements :item, as: :entries, class: Feedjira::Parser::RSSEntry
     end
   end
 
@@ -25,6 +27,23 @@ describe Feedjira::FeedUtilities do
         allow(@klass).to receive(:preprocess).and_return sample_rss_feed
         @klass.parse sample_rss_feed
       end
+    end
+  end
+
+  describe "#preprocess" do
+    it "returns the xml without changes when not overridden" do
+      expect(@klass.preprocess(sample_rss_feed)).to eq sample_rss_feed
+    end
+  end
+
+  describe "#sanitize_entries!" do
+    it "sanitizes all entries" do
+      result = @klass.parse(sample_rss_feed)
+
+      entry = result.entries.first
+
+      expect { result.sanitize_entries! }.to change(entry, :content)
+        .from(/onclick="javascript/)
     end
   end
 
