@@ -14,8 +14,23 @@ describe Feedjira::Parser::AtomGoogleAlertsEntry do
     expect(@entry.title_type).to eq "html"
   end
 
-  it "parses the url" do
-    expect(@entry.url).to eq "https://www.aglobalmarketresearch.com/report-offers-prediction-of-automotive-slack-market-by-top-key-players-like-haldex-meritor-bendix-mei-wabco-accuride-stemco-tbk-febi-aydinsan/"
+  it "parses the url out of the params when the host is google" do
+    url = "https://www.exampoo.com"
+    entry = described_class.new(url: "https://www.google.com/url?url=#{url}")
+
+    expect(entry.url).to eq url
+  end
+
+  it "returns nil when the url is not present" do
+    entry = described_class.new
+
+    expect(entry.url).to be_nil
+  end
+
+  it "returns nil when the host is not google" do
+    entry = described_class.new(url: "https://www.exampoo.com")
+
+    expect(entry.url).to be_nil
   end
 
   it "parses the content" do
