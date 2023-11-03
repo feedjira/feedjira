@@ -16,13 +16,21 @@ describe Feedjira::Parser::PodloveChapter do
     expect(@item.chapters.last.title).to eq "Abschied"
   end
 
-  it "parses the start time" do
-    expect(@chapter.start_ntp).to eq "00:00:26.407"
-    expect(@chapter.start).to eq 26.407
-    expect(@item.chapters[1].start).to eq 50
-    expect(@item.chapters[2].start).to eq 59.12
-    expect(@item.chapters[3].start).to eq 89.201
-    expect(@item.chapters.last.start).to eq 5700.034
+  describe "#start" do
+    it "returns the start time" do
+      expect(@chapter.start_ntp).to eq "00:00:26.407"
+      expect(@chapter.start).to eq 26.407
+      expect(@item.chapters[1].start).to eq 50
+      expect(@item.chapters[2].start).to eq 59.12
+      expect(@item.chapters[3].start).to eq 89.201
+      expect(@item.chapters.last.start).to eq 5700.034
+    end
+
+    it "returns nil when start_ntp is not present" do
+      chapter = described_class.new
+
+      expect(chapter.start).to be_nil
+    end
   end
 
   it "parses the title" do
