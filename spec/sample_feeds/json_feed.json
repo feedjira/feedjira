@@ -6,6 +6,8 @@
   "feed_url": "http://inessential.com/feed.json",
   "user_comment": "This feed allows you to read the posts from this site in any feed reader that supports the JSON Feed format. To add this feed to your reader, copy the following URL — http://inessential.com/feed.json — and add it your reader.",
   "favicon": "http://inessential.com/favicon.ico",
+  "icon": "http://inessential.com/icon.png",
+  "language": "en-US",
   "author": {
     "name": "Brent Simmons",
     "url": "http://inessential.com/",
