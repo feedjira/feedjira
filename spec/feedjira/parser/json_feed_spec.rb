@@ -42,7 +42,7 @@ module Feedjira
       it "parses the description" do
         expect(@feed.description).to eq "Brent Simmons’s weblog."
       end
-      
+
       it "parses the favicon" do
         expect(@feed.favicon).to eq "http://inessential.com/favicon.ico"
       end
@@ -50,7 +50,7 @@ module Feedjira
       it "parses the icon" do
         expect(@feed.icon).to eq "http://inessential.com/icon.png"
       end
-      
+
       it "parses the language" do
         expect(@feed.language).to eq "en-US"
       end
