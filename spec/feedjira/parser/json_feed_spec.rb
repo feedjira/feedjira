@@ -43,6 +43,18 @@ module Feedjira
         expect(@feed.description).to eq "Brent Simmons’s weblog."
       end
 
+      it "parses the favicon" do
+        expect(@feed.favicon).to eq "http://inessential.com/favicon.ico"
+      end
+
+      it "parses the icon" do
+        expect(@feed.icon).to eq "http://inessential.com/icon.png"
+      end
+
+      it "parses the language" do
+        expect(@feed.language).to eq "en-US"
+      end
+
       it "parses expired and return default (nil)" do
         expect(@feed.expired).to be_nil
       end

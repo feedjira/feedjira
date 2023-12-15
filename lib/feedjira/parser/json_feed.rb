@@ -15,8 +15,8 @@ module Feedjira
         new(JSON.parse(json))
       end
 
-      attr_reader :json, :version, :title, :url, :feed_url, :description,
-                  :expired, :entries
+      attr_reader :json, :version, :title, :description, :url, :feed_url, :icon, :favicon,
+                  :language, :expired, :entries
 
       def initialize(json)
         @json = json
@@ -24,7 +24,10 @@ module Feedjira
         @title = json.fetch("title")
         @url = json.fetch("home_page_url", nil)
         @feed_url = json.fetch("feed_url", nil)
+        @icon = json.fetch("icon", nil)
+        @favicon = json.fetch("favicon", nil)
         @description = json.fetch("description", nil)
+        @language = json.fetch("language", nil)
         @expired = json.fetch("expired", nil)
         @entries = parse_items(json["items"])
       end
