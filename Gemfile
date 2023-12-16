@@ -17,5 +17,5 @@ gem "yard", "~> 0.9.34"
 group :test do
   gem "oga", "~> 3.4"
   gem "ox", "~> 2.14.17", platforms: %i[mri rbx]
-  gem "rake", "~> 13.0.6"
+  gem "rake", "~> 13.1.0"
 end
