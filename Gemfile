@@ -7,7 +7,7 @@ gemspec
 gem "faraday", "~> 2.7.11"
 gem "pry", "~> 0.14.2"
 gem "rspec", "~> 3.12.0"
-gem "rubocop", "~> 1.56.4"
+gem "rubocop", "~> 1.59.0"
 gem "rubocop-performance", "~> 1.19.1"
 gem "rubocop-rake", "~> 0.6.0"
 gem "rubocop-rspec", "~> 2.24.1"
