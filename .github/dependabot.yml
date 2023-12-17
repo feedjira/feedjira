@@ -11,3 +11,7 @@ updates:
       interval: "weekly"
     assignees:
       - "mockdeep"
+    groups:
+      all:
+        patterns:
+          - "*"
