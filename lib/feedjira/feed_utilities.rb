@@ -74,7 +74,7 @@ module Feedjira
       if old_value == new_value
         false
       else
-        send("#{name}=", new_value)
+        send(:"#{name}=", new_value)
         true
       end
     end
