@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
   s.metadata = {
     "homepage_uri" => "https://github.com/feedjira/feedjira",
     "source_code_uri" => "https://github.com/feedjira/feedjira",
-    "changelog_uri" => "https://github.com/feedjira/feedjira/blob/master/CHANGELOG.md",
+    "changelog_uri" => "https://github.com/feedjira/feedjira/blob/main/CHANGELOG.md",
     "rubygems_mfa_required" => "true"
   }
 
