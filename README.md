@@ -1,9 +1,9 @@
 # Feedjira
 
-[![Build Status][travis-badge]][travis] [![Code Climate][code-climate-badge]][code-climate]
+[![Build Status][actions-badge]][actions] [![Code Climate][code-climate-badge]][code-climate]
 
-[travis-badge]: https://travis-ci.org/feedjira/feedjira.svg?branch=master
-[travis]: http://travis-ci.org/feedjira/feedjira
+[actions-badge]: https://github.com/feedjira/feedjira/actions/workflows/ruby.yml/badge.svg?branch=main
+[actions]: https://github.com/feedjira/feedjira/actions?query=branch%3Amain
 [code-climate-badge]: https://codeclimate.com/github/feedjira/feedjira/badges/gpa.svg
 [code-climate]: https://codeclimate.com/github/feedjira/feedjira
 [gitter-badge]: https://badges.gitter.im/feedjira/feedjira.svg
