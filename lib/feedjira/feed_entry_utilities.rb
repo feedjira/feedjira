@@ -63,11 +63,11 @@ module Feedjira
     end
 
     def [](field)
-      instance_variable_get("@#{field}")
+      instance_variable_get(:"@#{field}")
     end
 
     def []=(field, value)
-      instance_variable_set("@#{field}", value)
+      instance_variable_set(:"@#{field}", value)
     end
   end
 end
