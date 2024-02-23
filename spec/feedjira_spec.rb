@@ -76,7 +76,7 @@ RSpec.describe Feedjira do
       end
 
       it "does not fail if multiple published dates exist and some are unparseable" do
-        expect(described_class.logger).to receive(:warn).twice
+        expect(described_class.logger).to receive(:debug).twice
 
         feed = described_class.parse(sample_invalid_date_format_feed)
         expect(feed.title).to eq "Invalid date format feed"
