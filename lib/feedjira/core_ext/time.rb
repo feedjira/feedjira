@@ -30,7 +30,7 @@ class Time
     return nil if string.empty?
 
     if /\A\d{14}\z/.match?(string)
-      parse("#{string}Z", true)
+      parse("#{string}Z")
     else
       parse(string).utc
     end

@@ -32,7 +32,8 @@ RSpec.describe Time do
       time = described_class.now.utc
       timestamp = time.strftime("%Y%m%d%H%M%S")
 
-      expect(described_class.parse_safely(timestamp)).to eq(time.floor)
+      expected_time = described_class.at(time.to_i)
+      expect(described_class.parse_safely(timestamp)).to eq(expected_time)
     end
 
     context "when given an invalid time string" do
