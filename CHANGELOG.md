@@ -1,5 +1,9 @@
 # Feedjira Changelog
 
+## 3.2.3
+
+* Switch date parse error to debug (#492)
+
 ## 3.2.2
 
 * Fix time handling again usec is not a timezone
