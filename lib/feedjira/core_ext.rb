@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
-require "feedjira/core_ext/time"
-require "feedjira/core_ext/date"
-require "feedjira/core_ext/string"
+require_relative "core_ext/time"
+require_relative "core_ext/date"
+require_relative "core_ext/string"
