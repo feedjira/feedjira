@@ -10,7 +10,7 @@ gem "rspec", "~> 3.13.0"
 gem "rubocop", "~> 1.67.0"
 gem "rubocop-performance", "~> 1.22.1"
 gem "rubocop-rake", "~> 0.6.0"
-gem "rubocop-rspec", "~> 3.1.0"
+gem "rubocop-rspec", "~> 3.2.0"
 gem "simplecov", "~> 0.22.0"
 gem "yard", "~> 0.9.34"
 
