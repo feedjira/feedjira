@@ -8,7 +8,7 @@ module Feedjira
       include FeedUtilities
 
       def self.able_to_parse?(json)
-        %r{https://jsonfeed.org/version/} =~ json
+        %r{https:\\?/\\?/jsonfeed.org\\?/version\\?/} =~ json
       end
 
       def self.parse(json)
