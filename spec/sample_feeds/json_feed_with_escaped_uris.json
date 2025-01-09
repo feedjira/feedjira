@@ -1,0 +1,632 @@
+{
+  "version": "https:\/\/jsonfeed.org\/version\/1.1",
+  "title": "Luke Dorny's v6",
+  "home_page_url": "https:\/\/lukedorny.com",
+  "feed_url": "https:\/\/lukedorny.com\/feed",
+  "description": "<p>LukeDorny.com is the digital record of Artist and Designer Luke Dorny, just some old nerd from the '80s who likes design and tech from the analog days of the 20th Century. -ish. He paints and designs for himself and others.<\/p>",
+  "icon": "",
+  "favicon": "https:\/\/lukedorny.com\/assets\/images\/favicon\/favicon.ico",
+  "language": "en-US",
+  "expired": false,
+  "items": [
+    {
+      "id": "https:\/\/lukedorny.com\/updates\/new-font",
+      "url": "https:\/\/lukedorny.com\/updates\/new-font",
+      "slug": "new-font",
+      "title": "New Font",
+      "summary": "A Journey with links",
+      "content_html": "<img src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/new-font\/4d77b179bd-1736211467\/asketch1-500x-crop.jpg\" alt=\"screenshot of sketches for typeface\" \/><figcaption style=\"font-size: 0.7em; font-style: italic; opacity: .7;margin-bottom:1rem;\">What are some common letter shapes?<\/figcaption><p>Okay. Today we start a new typeface design and create a font. Luke-style. Could be boring, could be interesting. Let\u2019s start.<\/p>\n<h2>Goal<\/h2>\n<p>Create a font and share the entire process.<\/p>\n<h3>Background<\/h3>\n<p>I\u2019ve tinkered with typefaces before, and not too long ago, and the three to six unfinished typefaces gave me a real sandbox of experience making type, but not start to finish. So with this in mind, let\u2019s make a typeface and put it online. <\/p>\n<h3>Updates<\/h3>\n<p>All my work will be posted here, but I\u2019ll also be putting occasional updates on my Mastodon account <a href=\"https:\/\/typo.social\/@Luke\">https:\/\/typo.social\/@Luke<\/a>, so you could follow me there, and also you could subscribe to my JSON RSS feed <a href=\"https:\/\/lukedorny.com\/feed\">https:\/\/lukedorny.com\/feed<\/a>, if that\u2019s a thing you prefer.<\/p>\n<p>NOTE: No affiliation with Glyphs. I bought it full price with my own money. You\u2019ll have to use some of the links at the end to find solutions for your budget or platform.<\/p>\n<hr \/>\n<h3>Step 1<\/h3>\n<p>First off, naming. How to find a unique font name? My first step was to look at <a href=\"https:\/\/namecheck.fontdata.com\">https:\/\/namecheck.fontdata.com<\/a> and see if the name I wanted was taken. You can also add your own font there if you like. Nice tool!<\/p>\n<h3>Step 2<\/h3>\n<p>Begin sketches and ideas. What features will it have? What character sets will be designed? Upper and lower case glyphs?<\/p>\n<ul>\n<li>Sans-serif<\/li>\n<li>Variable weight?<\/li>\n<li>Variable width?<\/li>\n<li>Variable rounded corners?<\/li>\n<\/ul>\n<figure><img alt=\"screenshot of sketches for typeface\" src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/new-font\/4d77b179bd-1736211467\/asketch1.jpeg\"><figcaption>What are some common letter shapes?<\/figcaption><\/figure>\n<figure><img alt=\"screenshot of sketches for typeface\" src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/new-font\/b01ec5323e-1736211498\/sketch2.jpeg\"><figcaption>Are the shapes specifically affected by the grid? Rigid or flowy shapes?<\/figcaption><\/figure>\n<figure><img alt=\"screenshot of sketches for typeface\" src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/new-font\/cc265795b2-1736211520\/sketch3.jpeg\"><figcaption>Which forms of variability could it have?<\/figcaption><\/figure>\n<figure><img alt=\"screenshot of sketches for typeface\" src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/new-font\/ba7911e912-1736211545\/sketch4.jpeg\"><figcaption>Explore the common shapes and forms pf the glyphs.<\/figcaption><\/figure>\n<h3>Step 3<\/h3>\n<p>Open Glyphs.app and begin.<br \/>\n<a href=\"https:\/\/glyphsapp.com\">https:\/\/glyphsapp.com<\/a><\/p>\n<figure><img alt=\"screenshot of Glyphs\" src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/new-font\/72a6231692-1736191635\/new.png\"><figcaption>Opening Glyphs.app and creating a new font file project. You can grab Glyphs from <a href=\"https:\/\/glyphsapp.com\">https:\/\/glyphsapp.com<\/a> and they have a smaller and cheaper version called Glyphs Mini if that\u2019s your speed.<\/figcaption><\/figure>\n<h3>Step 4<\/h3>\n<p>Review the steps for making a variable typeface, if prep or setup steps are needed:<br \/>\n<a href=\"https:\/\/glyphsapp.com\/learn\/creating-a-variable-font\">https:\/\/glyphsapp.com\/learn\/creating-a-variable-font<\/a> which mentioned this article as a primer: <a href=\"https:\/\/medium.com\/variable-fonts\/https-medium-com-tiro-introducing-opentype-variable-fonts-12ba6cd2369\">https:\/\/medium.com\/variable-fonts\/https-medium-com-tiro-introducing-opentype-variable-fonts-12ba6cd2369<\/a><\/p>\n<p>Let\u2019s just start with one axes and go from there.<br \/>\nSettings posted here when that\u2019s done.<\/p>\n<h2>Links<\/h2>\n<p>General links:<br \/>\n<a href=\"https:\/\/typedesignresources.com\">https:\/\/typedesignresources.com<\/a><\/p>\n<p>Shared:<br \/>\n<a href=\"https:\/\/typo.social\/@Luke\/113778884376882225\">https:\/\/typo.social\/@Luke\/113778884376882225<\/a><\/p><p><a href=\"https:\/\/lukedorny.com\/updates\/new-font\">Read the full post<\/a><\/p><p>\u2014 Luke<\/p>\n<hr \/>\n<p>Thank you for <a href=\"https:\/\/lukedorny.com\/feed\">reading via RSS<\/a> (this is JSON). If you'd like to browse the site <a href=\"https:\/\/lukedorny.com\" rel=\"me\">lukedorny.com<\/a>, or give me feedback I'd love to hear it via email <a href=\"mailto:&#x6c;&#117;&#x6b;&#x65;&#32;&#64;&#108;&#x75;&#x6b;&#101;&#x64;&#x6f;&#x72;&#110;&#121;&#46;&#x63;&#111;&#x6d;\">luke@lukedorny.com<\/a> or via Mastodon as <a href=\"https:\/\/typo.social\/@Luke\" rel=\"me\">@Luke@typo.social<\/a> \/ <a href=\"https:\/\/typo.social\/@Luke\" rel=\"me\">typo.social\/@Luke<\/a>.<\/p>\n<p>If you'd like to support my efforts to write about design, art, and the analog design world, please consider contributing to the Luke Dorny coffee\/cocoa fund on <a href=\"https:\/\/Ko-fi.com\/lukedorny\" rel=\"me\">Ko-fi.com\/lukedorny<\/a> or on <a href=\"https:\/\/buymeacoffee.com\/lukedorny\" rel=\"me\">buymeacoffee.com\/lukedorny<\/a><\/p>",
+      "date_published": "2025-01-05T20:40:00-05:00",
+      "date_modified": "2025-01-06T20:02:25-05:00",
+      "tags": [
+        "Design"
+      ],
+      "image": "https:\/\/lukedorny.com\/media\/pages\/updates\/new-font\/4d77b179bd-1736211467\/asketch1-500x-crop.jpg",
+      "authors": [
+        {
+          "name": "Author: Luke, most likely.",
+          "url": "https:\/\/lukedorny.com",
+          "avatar": ""
+        }
+      ]
+    },
+    {
+      "id": "https:\/\/lukedorny.com\/updates\/top-2024",
+      "url": "https:\/\/lukedorny.com\/updates\/top-2024",
+      "slug": "top-2024",
+      "title": "Top 2024",
+      "summary": "Revisiting music posts",
+      "content_html": "<img src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/top-2024\/1c350487e0-1735872053\/south-from-here-on-in-500x-crop.jpg\" alt=\"album cover\" \/><figcaption style=\"font-size: 0.7em; font-style: italic; opacity: .7;margin-bottom:1rem;\">The US cover of the album \u201cFrom Here On In\u201d by Brit band South from 2002<\/figcaption><h2>I Need to Post More About Music<\/h2>\n<p>Music is such a large part of my daily life that I feel I need to share more about it. Sure, there are times when I enjoy silence\u2014like while driving\u2014but that\u2019s rare. Most days, I\u2019m listening to music nearly all the time.<\/p>\n<p>There\u2019s something magical about music. The beat, the melody, the lyrics, the pauses, the solo instrumentals, the beat breaks\u2014all of it together gives a song its character. It\u2019s hard to explain, but music is definitely one of the constants in my life.<\/p>\n<p>Magic. <\/p>\n<p>Let\u2019s take a quick look at 2024. I\u2019m including some song links for your convenience, but support your favorite music artists when you can.<\/p>\n<hr \/>\n<h2>Some Facts<\/h2>\n<p>According to Last.fm, I\u2019ve played 219,752 tracks since 2005. That\u2019s a lot of music. <a href=\"https:\/\/www.last.fm\/user\/luxuryluke\">https:\/\/www.last.fm\/user\/luxuryluke<\/a><\/p>\n<p>In 2024 alone, 36% of what I listened to was new music released that year. That surprised me \u2014 I might be more of an explorer than I think!  <\/p>\n<p>Apparently, I\u2019m in the top 0.03% of listeners of DJ Shadow. <\/p>\n<p>I\u2019m also ranked 9th among top listeners of Boozoo Bajou, a mellow band from the \u201990s that still resonates with me.  <\/p>\n<p>Last.fm calls me a \"NOSTALGIC VERSATILE EXPLORER.\u201d I suppose that\u2019s fitting!<\/p>\n<hr \/>\n<h2>Most Played and Favorite Music of 2024<\/h2>\n<h3>Artists<\/h3>\n<ul>\n<li>Duran Duran \u2013 \"Future Past\" still has a grip on me<\/li>\n<li>DJ Shadow \u2013 Somehow continues to crank out inventive material  <\/li>\n<li>Boozoo Bajou \u2013 Swampy beats resonate for some reason<\/li>\n<li>Moderat \u2013 Their last album is upbeat with great breaks  <\/li>\n<li>Underworld \u2013 Atmospheric electronic beats of the ages  <\/li>\n<li>Queens of the Stone Age \u2013 Their drums and Homme\u2019s voice hit differently<\/li>\n<li>New Order \u2013 Their older tunes have reemerged for me in recent years<\/li>\n<\/ul>\n<p>What a strange mixture.<\/p>\n<h3>Albums<\/h3>\n<ul>\n<li>\"Action Adventure\" \u2013 DJ Shadow  <a href=\"https:\/\/album.link\/us\/i\/1702336934\">https:\/\/album.link\/us\/i\/1702336934<\/a><\/li>\n<li>\"Future Past\" (Deluxe) \u2013 Duran Duran  <a href=\"https:\/\/album.link\/us\/i\/1607812674\">https:\/\/album.link\/us\/i\/1607812674<\/a><\/li>\n<li>\u201cFinist\u00e8re\" (the extended mixes) \u2013 Boozoo Bajou  <a href=\"https:\/\/album.link\/i\/1711189624\">https:\/\/album.link\/i\/1711189624<\/a><\/li>\n<li>\"MORE D4TA\" \u2013 Leftfield  <a href=\"https:\/\/album.link\/us\/i\/1680000397\">https:\/\/album.link\/us\/i\/1680000397<\/a><\/li>\n<li>\"Strawberry Hotel\" \u2013 Underworld  <a href=\"https:\/\/album.link\/us\/i\/1761865594\">https:\/\/album.link\/us\/i\/1761865594<\/a><\/li>\n<li>\"Songs of a Lost World\" \u2013 The Cure  <a href=\"https:\/\/album.link\/us\/i\/1782345790\">https:\/\/album.link\/us\/i\/1782345790<\/a><\/li>\n<\/ul>\n<h3>Tracks<\/h3>\n<ul>\n<li>\"Invocation\" \u2013 Duran Duran: Go ahead, try to sing along \u2014 it\u2019s impossible.  <\/li>\n<li>\"\u2026Like Clockwork\" \u2013 Queens of the Stone Age  <a href=\"https:\/\/song.link\/us\/i\/1586476465\">https:\/\/song.link\/us\/i\/1586476465<\/a><\/li>\n<li>Oh, you also better listen to \"\u2026Like Clockwork (UNKLE Remix)\" \u2013 Queens of the Stone Age  <a href=\"https:\/\/song.link\/us\/i\/1047776584\">https:\/\/song.link\/us\/i\/1047776584<\/a>  <\/li>\n<li>\u201cLight Blue Movers\" \u2013 Zero 7 <a href=\"https:\/\/song.link\/us\/i\/1469406985\">https:\/\/song.link\/us\/i\/1469406985<\/a><\/li>\n<li>\u201cMORE LOVE\u201d \u2014 Moderat <a href=\"https:\/\/song.link\/us\/i\/1680001481\">https:\/\/song.link\/us\/i\/1680001481<\/a><\/li>\n<\/ul>\n<p>Choosing a \"top tracks\" list is almost impossible for me. So much of my music discovery comes from letting the kids play their favorites in the car. That\u2019s how I ended up listening to bands like Mac Demarco, TV Girl, Mitski, and Good Kid.  <\/p>\n<p>Then, out of nowhere, Snow puts on \"How Soon Is Now?\" by The Smiths, and my eyes go wide. Sad to have lost the Smiths\u2019 bassist Andy Rourke in 2023.<br \/>\n<a href=\"https:\/\/song.link\/us\/i\/803460027\">https:\/\/song.link\/us\/i\/803460027<\/a><\/p>\n<p>Watch Andy play on Top of the Pops in 1985:<\/p>\n<figure class=\"video\"><iframe allow=\"fullscreen\" allowfullscreen src=\"https:\/\/www.youtube.com\/embed\/Svhiw-XK3aU\"><\/iframe><\/figure>\n<hr \/>\n<h2>Thoughts on Music Discovery<\/h2>\n<p>Friends and colleagues post their polished reviews of the year in music. I admire their effort \u2014 it takes dedication and finesse. I haven\u2019t done much with the music on this site in a while.<\/p>\n<p>Jon: <a href=\"https:\/\/hicks.design\/journal\/hicks-design-s-music-of-2024\">https:\/\/hicks.design\/journal\/hicks-design-s-music-of-2024<\/a><br \/>\nSimon: <a href=\"https:\/\/colly.com\/journal\/twenty-twentyfour-in-music\">https:\/\/colly.com\/journal\/twenty-twentyfour-in-music<\/a><br \/>\nNaz: <a href=\"https:\/\/nazhamid.com\/journal\/music-in-2024\/\">https:\/\/nazhamid.com\/journal\/music-in-2024\/<\/a><br \/>\nScott: <a href=\"https:\/\/scottboms.com\/documenting\/12-good-ones\">https:\/\/scottboms.com\/documenting\/12-good-ones<\/a><\/p>\n<p>And Greg lists a few more in the recent Dice post <a href=\"https:\/\/www.brilliantcrank.com\/the-dice-031\/\">https:\/\/www.brilliantcrank.com\/the-dice-031\/<\/a><\/p>\n<p>But music discovery can be deeply personal. Encouraging someone to listen is the the best tactic. Sometimes being told to listen to something makes it feel like a task, not a pleasure, and that awareness of my own stubbornness helps me stay open to new sounds.<\/p>\n<hr \/>\n<h2>Looking Ahead<\/h2>\n<p>If this isn\u2019t enough to chew on to help you familiarize yourself with my musical tastes, maybe browse my Last.fm profile @ <a href=\"https:\/\/www.last.fm\/user\/luxuryluke\">https:\/\/www.last.fm\/user\/luxuryluke<\/a> will help, I\u2019d love to see what music you like, too, if only to connect but also to explore and discover. So even if one track or album becomes a favorite for you, this post will have been a roaring success.  <\/p>\n<p>For 2025, I aim to post more about the music I love. Discovering the artists and designers behind the album artwork for music I love is also a satisfying deep dive.<br \/>\nFor now, I\u2019m off to revisit \"From Here On In\" by South \u2014 a perfect way to kick off the year.<br \/>\n<a href=\"https:\/\/album.link\/us\/i\/1450119075\">https:\/\/album.link\/us\/i\/1450119075<\/a><\/p>\n<p>Enjoy your musical journey in 2025!<\/p>\n<p>Shared:<br \/>\n<a href=\"https:\/\/typo.social\/@Luke\/113762132435083318\">https:\/\/typo.social\/@Luke\/113762132435083318<\/a><\/p><p><a href=\"https:\/\/lukedorny.com\/updates\/top-2024\">Read the full post<\/a><\/p><p>\u2014 Luke<\/p>\n<hr \/>\n<p>Thank you for <a href=\"https:\/\/lukedorny.com\/feed\">reading via RSS<\/a> (this is JSON). If you'd like to browse the site <a href=\"https:\/\/lukedorny.com\" rel=\"me\">lukedorny.com<\/a>, or give me feedback I'd love to hear it via email <a href=\"mailto:&#108;&#117;&#107;&#x65;&#x20;&#x40;&#x6c;&#117;&#107;&#101;&#100;&#x6f;&#x72;&#x6e;&#121;&#x2e;&#x63;&#111;&#109;\">luke@lukedorny.com<\/a> or via Mastodon as <a href=\"https:\/\/typo.social\/@Luke\" rel=\"me\">@Luke@typo.social<\/a> \/ <a href=\"https:\/\/typo.social\/@Luke\" rel=\"me\">typo.social\/@Luke<\/a>.<\/p>\n<p>If you'd like to support my efforts to write about design, art, and the analog design world, please consider contributing to the Luke Dorny coffee\/cocoa fund on <a href=\"https:\/\/Ko-fi.com\/lukedorny\" rel=\"me\">Ko-fi.com\/lukedorny<\/a> or on <a href=\"https:\/\/buymeacoffee.com\/lukedorny\" rel=\"me\">buymeacoffee.com\/lukedorny<\/a><\/p>",
+      "date_published": "2025-01-02T14:05:00-05:00",
+      "date_modified": "2025-01-05T20:09:25-05:00",
+      "tags": [
+        "Music"
+      ],
+      "image": "https:\/\/lukedorny.com\/media\/pages\/updates\/top-2024\/1c350487e0-1735872053\/south-from-here-on-in-500x-crop.jpg",
+      "authors": [
+        {
+          "name": "Author: Luke, most likely.",
+          "url": "https:\/\/lukedorny.com",
+          "avatar": ""
+        }
+      ],
+      "external_url": "https:\/\/www.discogs.com\/master\/114483-South-From-Here-On-In"
+    },
+    {
+      "id": "https:\/\/lukedorny.com\/updates\/f37",
+      "url": "https:\/\/lukedorny.com\/updates\/f37",
+      "slug": "f37",
+      "title": "F37",
+      "summary": "Blackletter &amp; thick Tschichold beauty",
+      "content_html": "<img src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/f37\/a04bdfa1e8-1735511389\/f37-bella-500x-crop.jpg\" alt=\"font screenshot\" \/><figcaption style=\"font-size: 0.7em; font-style: italic; opacity: .7;margin-bottom:1rem;\">What an incredible design, go see the numerals, you will pass out with appreciation.<\/figcaption><p>F37 is a new foundry\/design agency to me, but their work in Manchester with a wide variety of companies with type and logos, as well as a project with Milton Glaser sealed the deal, which got me nodding that they\u2019re on a roll and demonstrating their type prowess. <\/p>\n<h2>Most impressive.<\/h2>\n<p>Images of their \u201cBella\u201d and \u201cCaligari\u201d typefaces here for your entertainment and temptation. <\/p>\n<p>Go see their type, then their logos, then their fantastic demo reel, and finally grab a massive print (in several sizes!) showing Bella numbers really large for your wall, next to your other prized subway style band and concert posters. Or a hat, or book, etc.<\/p>\n<h2>Nodding to Manchester.<\/h2>\n<figure><img alt=\"font screenshot\" src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/f37\/a04bdfa1e8-1735511389\/f37-bella.jpg\"><figcaption>What an incredible design, go see the numerals, you will pass out with appreciation.<\/figcaption><\/figure>\n<figure><img alt=\"font screenshot\" src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/f37\/4b4ccdb83a-1735511389\/f37-caligari.jpg\"><figcaption>Always up for an innovative blackletter design, so many weights!<\/figcaption><\/figure>\n<p><a href=\"https:\/\/f37foundry.com\/fonts\/f37-caligari\">https:\/\/f37foundry.com\/fonts\/f37-caligari<\/a><\/p>\n<p><a href=\"https:\/\/f37foundry.com\/fonts\/f37-bella\">https:\/\/f37foundry.com\/fonts\/f37-bella<\/a><\/p>\n<p>Shared:<br \/>\n<a href=\"https:\/\/typo.social\/@Luke\/113738510038523547\">https:\/\/typo.social\/@Luke\/113738510038523547<\/a><\/p><p><a href=\"https:\/\/lukedorny.com\/updates\/f37\">Read the full post<\/a><\/p><p>\u2014 Luke<\/p>\n<hr \/>\n<p>Thank you for <a href=\"https:\/\/lukedorny.com\/feed\">reading via RSS<\/a> (this is JSON). If you'd like to browse the site <a href=\"https:\/\/lukedorny.com\" rel=\"me\">lukedorny.com<\/a>, or give me feedback I'd love to hear it via email <a href=\"mailto:&#x6c;&#117;&#x6b;&#x65;&#x20;&#64;&#108;&#117;&#107;&#101;&#100;&#x6f;&#114;&#110;&#x79;&#x2e;&#99;&#x6f;&#x6d;\">luke@lukedorny.com<\/a> or via Mastodon as <a href=\"https:\/\/typo.social\/@Luke\" rel=\"me\">@Luke@typo.social<\/a> \/ <a href=\"https:\/\/typo.social\/@Luke\" rel=\"me\">typo.social\/@Luke<\/a>.<\/p>\n<p>If you'd like to support my efforts to write about design, art, and the analog design world, please consider contributing to the Luke Dorny coffee\/cocoa fund on <a href=\"https:\/\/Ko-fi.com\/lukedorny\" rel=\"me\">Ko-fi.com\/lukedorny<\/a> or on <a href=\"https:\/\/buymeacoffee.com\/lukedorny\" rel=\"me\">buymeacoffee.com\/lukedorny<\/a><\/p>",
+      "date_published": "2024-12-29T17:25:00-05:00",
+      "date_modified": "2024-12-29T17:43:47-05:00",
+      "tags": [],
+      "image": "https:\/\/lukedorny.com\/media\/pages\/updates\/f37\/a04bdfa1e8-1735511389\/f37-bella-500x-crop.jpg",
+      "authors": [
+        {
+          "name": "Author: Luke, most likely.",
+          "url": "https:\/\/lukedorny.com",
+          "avatar": ""
+        }
+      ],
+      "external_url": "https:\/\/f37foundry.com"
+    },
+    {
+      "id": "https:\/\/lukedorny.com\/updates\/bondiblock",
+      "url": "https:\/\/lukedorny.com\/updates\/bondiblock",
+      "slug": "bondiblock",
+      "title": "BondiBlock",
+      "summary": "Miraculously molded millenial iMac",
+      "content_html": "<img src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/bondiblock\/45bb641516-1735452324\/lego-imac-500x-crop.jpg\" alt=\"\" \/><p>After stumbling upon a few crazy Lego\u00ae block creations over the years on their creator\u2019s site, I\u2019ve decided to share a few of my favorites. I won\u2019t go overboard, I hope. <\/p>\n<p>I blame their ingenius product design and inspiration from good friends like Scott Boms\u2019 pleasantly presented presentation platform, his blog.<\/p>\n<p><a href=\"https:\/\/scottboms.com\/documenting\/through-lines-238\">scottboms.com<\/a><\/p><p><a href=\"https:\/\/lukedorny.com\/updates\/bondiblock\">Read the full post<\/a><\/p><p>\u2014 Luke<\/p>\n<hr \/>\n<p>Thank you for <a href=\"https:\/\/lukedorny.com\/feed\">reading via RSS<\/a> (this is JSON). If you'd like to browse the site <a href=\"https:\/\/lukedorny.com\" rel=\"me\">lukedorny.com<\/a>, or give me feedback I'd love to hear it via email <a href=\"mailto:&#x6c;&#117;&#107;&#x65;&#x20;&#x40;&#x6c;&#117;&#x6b;&#101;&#x64;&#111;&#x72;&#x6e;&#121;&#46;&#99;&#x6f;&#x6d;\">luke@lukedorny.com<\/a> or via Mastodon as <a href=\"https:\/\/typo.social\/@Luke\" rel=\"me\">@Luke@typo.social<\/a> \/ <a href=\"https:\/\/typo.social\/@Luke\" rel=\"me\">typo.social\/@Luke<\/a>.<\/p>\n<p>If you'd like to support my efforts to write about design, art, and the analog design world, please consider contributing to the Luke Dorny coffee\/cocoa fund on <a href=\"https:\/\/Ko-fi.com\/lukedorny\" rel=\"me\">Ko-fi.com\/lukedorny<\/a> or on <a href=\"https:\/\/buymeacoffee.com\/lukedorny\" rel=\"me\">buymeacoffee.com\/lukedorny<\/a><\/p>",
+      "date_published": "2024-12-29T01:05:00-05:00",
+      "date_modified": "2024-12-29T01:12:21-05:00",
+      "tags": [],
+      "image": "https:\/\/lukedorny.com\/media\/pages\/updates\/bondiblock\/45bb641516-1735452324\/lego-imac-500x-crop.jpg",
+      "authors": [
+        {
+          "name": "Author: Luke, most likely.",
+          "url": "https:\/\/lukedorny.com",
+          "avatar": ""
+        }
+      ],
+      "external_url": "https:\/\/ideas.lego.com\/projects\/de0eda3f-84aa-4cfa-9fab-c9eb155ada80"
+    },
+    {
+      "id": "https:\/\/lukedorny.com\/updates\/phonoblock",
+      "url": "https:\/\/lukedorny.com\/updates\/phonoblock",
+      "slug": "phonoblock",
+      "title": "PhonoBlock",
+      "summary": "Vinyl meets plastic",
+      "content_html": "<img src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/phonoblock\/d51c196bdb-1735452399\/lego-phono-500x-crop.jpg\" alt=\"\" \/><p>After stumbling upon a few crazy Lego\u00ae block creations over the years on their creator\u2019s site, I\u2019ve decided to share a few of my favorites. I won\u2019t go overboard, I hope. <\/p>\n<p>I blame their ingenius product design and inspiration from good friends like Scott Boms\u2019 pleasantly presented presentation platform, his blog.<\/p>\n<p><a href=\"https:\/\/scottboms.com\/documenting\/through-lines-238\">scottboms.com<\/a><\/p><p><a href=\"https:\/\/lukedorny.com\/updates\/phonoblock\">Read the full post<\/a><\/p><p>\u2014 Luke<\/p>\n<hr \/>\n<p>Thank you for <a href=\"https:\/\/lukedorny.com\/feed\">reading via RSS<\/a> (this is JSON). If you'd like to browse the site <a href=\"https:\/\/lukedorny.com\" rel=\"me\">lukedorny.com<\/a>, or give me feedback I'd love to hear it via email <a href=\"mailto:&#x6c;&#x75;&#107;&#101;&#x20;&#x40;&#108;&#x75;&#107;&#x65;&#100;&#x6f;&#114;&#110;&#121;&#x2e;&#99;&#111;&#x6d;\">luke@lukedorny.com<\/a> or via Mastodon as <a href=\"https:\/\/typo.social\/@Luke\" rel=\"me\">@Luke@typo.social<\/a> \/ <a href=\"https:\/\/typo.social\/@Luke\" rel=\"me\">typo.social\/@Luke<\/a>.<\/p>\n<p>If you'd like to support my efforts to write about design, art, and the analog design world, please consider contributing to the Luke Dorny coffee\/cocoa fund on <a href=\"https:\/\/Ko-fi.com\/lukedorny\" rel=\"me\">Ko-fi.com\/lukedorny<\/a> or on <a href=\"https:\/\/buymeacoffee.com\/lukedorny\" rel=\"me\">buymeacoffee.com\/lukedorny<\/a><\/p>",
+      "date_published": "2024-12-29T01:05:00-05:00",
+      "date_modified": "2024-12-29T01:13:15-05:00",
+      "tags": [],
+      "image": "https:\/\/lukedorny.com\/media\/pages\/updates\/phonoblock\/d51c196bdb-1735452399\/lego-phono-500x-crop.jpg",
+      "authors": [
+        {
+          "name": "Author: Luke, most likely.",
+          "url": "https:\/\/lukedorny.com",
+          "avatar": ""
+        }
+      ],
+      "external_url": "https:\/\/ideas.lego.com\/projects\/140c179e-788a-448a-b5a4-9526fa651410"
+    },
+    {
+      "id": "https:\/\/lukedorny.com\/updates\/synthablock",
+      "url": "https:\/\/lukedorny.com\/updates\/synthablock",
+      "slug": "synthablock",
+      "title": "SynthaBlock",
+      "summary": "Rhythmically ridiculousness rack",
+      "content_html": "<img src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/synthablock\/aada494b54-1735452282\/lego-synth-500x-crop.jpg\" alt=\"\" \/><p>After stumbling upon a few crazy Lego\u00ae block creations over the years on their creator\u2019s site, I\u2019ve decided to share a few of my favorites. I won\u2019t go overboard, I hope. <\/p>\n<p>I blame their ingenius product design and inspiration from good friends like Scott Boms\u2019 pleasantly presented presentation platform, his blog.<\/p>\n<p><a href=\"https:\/\/scottboms.com\/documenting\/through-lines-238\">scottboms.com<\/a><\/p><p><a href=\"https:\/\/lukedorny.com\/updates\/synthablock\">Read the full post<\/a><\/p><p>\u2014 Luke<\/p>\n<hr \/>\n<p>Thank you for <a href=\"https:\/\/lukedorny.com\/feed\">reading via RSS<\/a> (this is JSON). If you'd like to browse the site <a href=\"https:\/\/lukedorny.com\" rel=\"me\">lukedorny.com<\/a>, or give me feedback I'd love to hear it via email <a href=\"mailto:&#108;&#117;&#107;&#101;&#x20;&#64;&#108;&#x75;&#107;&#x65;&#x64;&#x6f;&#114;&#x6e;&#121;&#x2e;&#x63;&#x6f;&#109;\">luke@lukedorny.com<\/a> or via Mastodon as <a href=\"https:\/\/typo.social\/@Luke\" rel=\"me\">@Luke@typo.social<\/a> \/ <a href=\"https:\/\/typo.social\/@Luke\" rel=\"me\">typo.social\/@Luke<\/a>.<\/p>\n<p>If you'd like to support my efforts to write about design, art, and the analog design world, please consider contributing to the Luke Dorny coffee\/cocoa fund on <a href=\"https:\/\/Ko-fi.com\/lukedorny\" rel=\"me\">Ko-fi.com\/lukedorny<\/a> or on <a href=\"https:\/\/buymeacoffee.com\/lukedorny\" rel=\"me\">buymeacoffee.com\/lukedorny<\/a><\/p>",
+      "date_published": "2024-12-29T01:05:00-05:00",
+      "date_modified": "2024-12-29T01:13:31-05:00",
+      "tags": [],
+      "image": "https:\/\/lukedorny.com\/media\/pages\/updates\/synthablock\/aada494b54-1735452282\/lego-synth-500x-crop.jpg",
+      "authors": [
+        {
+          "name": "Author: Luke, most likely.",
+          "url": "https:\/\/lukedorny.com",
+          "avatar": ""
+        }
+      ],
+      "external_url": "https:\/\/ideas.lego.com\/projects\/6c5ba1de-c5d4-4221-9f3d-0a4be46b8db2"
+    },
+    {
+      "id": "https:\/\/lukedorny.com\/updates\/deckablock",
+      "url": "https:\/\/lukedorny.com\/updates\/deckablock",
+      "slug": "deckablock",
+      "title": "DeckaBlock",
+      "summary": "Technical Turntable trickery",
+      "content_html": "<img src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/deckablock\/fabad29a15-1735452101\/lego-technics-500x-crop.jpg\" alt=\"\" \/><p>After stumbling upon a few crazy Lego\u00ae block creations over the years on their creator\u2019s site, I\u2019ve decided to share a few of my favorites. I won\u2019t go overboard, I hope. <\/p>\n<p>I blame their ingenius product design and inspiration from good friends like Scott Boms\u2019 pleasantly presented presentation platform, his blog.<\/p>\n<p><a href=\"https:\/\/scottboms.com\/documenting\/through-lines-238\">scottboms.com<\/a><\/p>\n<p>Shared:<br \/>\n<a href=\"https:\/\/typo.social\/@Luke\/113734650919336127\">https:\/\/typo.social\/@Luke\/113734650919336127<\/a><\/p><p><a href=\"https:\/\/lukedorny.com\/updates\/deckablock\">Read the full post<\/a><\/p><p>\u2014 Luke<\/p>\n<hr \/>\n<p>Thank you for <a href=\"https:\/\/lukedorny.com\/feed\">reading via RSS<\/a> (this is JSON). If you'd like to browse the site <a href=\"https:\/\/lukedorny.com\" rel=\"me\">lukedorny.com<\/a>, or give me feedback I'd love to hear it via email <a href=\"mailto:&#x6c;&#x75;&#107;&#101;&#x20;&#64;&#108;&#x75;&#107;&#x65;&#100;&#111;&#x72;&#x6e;&#x79;&#x2e;&#x63;&#111;&#x6d;\">luke@lukedorny.com<\/a> or via Mastodon as <a href=\"https:\/\/typo.social\/@Luke\" rel=\"me\">@Luke@typo.social<\/a> \/ <a href=\"https:\/\/typo.social\/@Luke\" rel=\"me\">typo.social\/@Luke<\/a>.<\/p>\n<p>If you'd like to support my efforts to write about design, art, and the analog design world, please consider contributing to the Luke Dorny coffee\/cocoa fund on <a href=\"https:\/\/Ko-fi.com\/lukedorny\" rel=\"me\">Ko-fi.com\/lukedorny<\/a> or on <a href=\"https:\/\/buymeacoffee.com\/lukedorny\" rel=\"me\">buymeacoffee.com\/lukedorny<\/a><\/p>",
+      "date_published": "2024-12-29T00:50:00-05:00",
+      "date_modified": "2024-12-29T01:25:37-05:00",
+      "tags": [],
+      "image": "https:\/\/lukedorny.com\/media\/pages\/updates\/deckablock\/fabad29a15-1735452101\/lego-technics-500x-crop.jpg",
+      "authors": [
+        {
+          "name": "Author: Luke, most likely.",
+          "url": "https:\/\/lukedorny.com",
+          "avatar": ""
+        }
+      ],
+      "external_url": "https:\/\/ideas.lego.com\/projects\/4dcdbdd5-0731-41a2-92eb-5e908b695da9"
+    },
+    {
+      "id": "https:\/\/lukedorny.com\/updates\/stickablock",
+      "url": "https:\/\/lukedorny.com\/updates\/stickablock",
+      "slug": "stickablock",
+      "title": "StickaBlock",
+      "summary": "A precisely pressed popsicle \u2026project",
+      "content_html": "<img src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/stickablock\/bdb0bebbca-1735452133\/lego-skate-500x-crop.jpg\" alt=\"\" \/><p>After stumbling upon a few crazy Lego\u00ae block creations over the years on their creator\u2019s site, I\u2019ve decided to share a few of my favorites. I won\u2019t go overboard, I hope. <\/p>\n<p>I blame their ingenius product design and inspiration from good friends like Scott Boms\u2019 pleasantly presented presentation platform, his blog.<\/p>\n<p><a href=\"https:\/\/scottboms.com\/documenting\/through-lines-238\">scottboms.com<\/a><\/p><p><a href=\"https:\/\/lukedorny.com\/updates\/stickablock\">Read the full post<\/a><\/p><p>\u2014 Luke<\/p>\n<hr \/>\n<p>Thank you for <a href=\"https:\/\/lukedorny.com\/feed\">reading via RSS<\/a> (this is JSON). If you'd like to browse the site <a href=\"https:\/\/lukedorny.com\" rel=\"me\">lukedorny.com<\/a>, or give me feedback I'd love to hear it via email <a href=\"mailto:&#x6c;&#x75;&#x6b;&#101;&#x20;&#x40;&#x6c;&#x75;&#x6b;&#x65;&#x64;&#x6f;&#x72;&#110;&#121;&#46;&#x63;&#x6f;&#x6d;\">luke@lukedorny.com<\/a> or via Mastodon as <a href=\"https:\/\/typo.social\/@Luke\" rel=\"me\">@Luke@typo.social<\/a> \/ <a href=\"https:\/\/typo.social\/@Luke\" rel=\"me\">typo.social\/@Luke<\/a>.<\/p>\n<p>If you'd like to support my efforts to write about design, art, and the analog design world, please consider contributing to the Luke Dorny coffee\/cocoa fund on <a href=\"https:\/\/Ko-fi.com\/lukedorny\" rel=\"me\">Ko-fi.com\/lukedorny<\/a> or on <a href=\"https:\/\/buymeacoffee.com\/lukedorny\" rel=\"me\">buymeacoffee.com\/lukedorny<\/a><\/p>",
+      "date_published": "2024-12-29T00:50:00-05:00",
+      "date_modified": "2024-12-29T01:12:46-05:00",
+      "tags": [],
+      "image": "https:\/\/lukedorny.com\/media\/pages\/updates\/stickablock\/bdb0bebbca-1735452133\/lego-skate-500x-crop.jpg",
+      "authors": [
+        {
+          "name": "Author: Luke, most likely.",
+          "url": "https:\/\/lukedorny.com",
+          "avatar": ""
+        }
+      ],
+      "external_url": "https:\/\/ideas.lego.com\/projects\/9f396fe9-0c54-4d99-9135-1dacaf454cde"
+    },
+    {
+      "id": "https:\/\/lukedorny.com\/updates\/garbage",
+      "url": "https:\/\/lukedorny.com\/updates\/garbage",
+      "slug": "garbage",
+      "title": "Garbage",
+      "summary": "\u201cI love trash.\u201d",
+      "content_html": "<img src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/garbage\/4d95d3575d-1734221721\/img_0717-500x-crop.jpg\" alt=\"Art print\" \/><figcaption style=\"font-size: 0.7em; font-style: italic; opacity: .7;margin-bottom:1rem;\">Signed, numbered, and fresh.<\/figcaption><p>Scott does it again and creates a multi-faceted piece of art with references to all the right gems of the past.<\/p>\n<p>He explains most of this on his page, so I\u2019ll let you go read it yourself. <\/p>\n<p>High quality prints for a price that\u2019s a fraction of the cost of two hot drinks. This is great art for the people. Especially people like me. \ud83d\ude06\ud83d\udda5\ufe0f\ud83d\udcbe<\/p>\n<p>Luckily I managed to get the number 1 of this riso print, it pays to subscribe to his RSS.<\/p>\n<p>Shared:<\/p><p><a href=\"https:\/\/lukedorny.com\/updates\/garbage\">Read the full post<\/a><\/p><p>\u2014 Luke<\/p>\n<hr \/>\n<p>Thank you for <a href=\"https:\/\/lukedorny.com\/feed\">reading via RSS<\/a> (this is JSON). If you'd like to browse the site <a href=\"https:\/\/lukedorny.com\" rel=\"me\">lukedorny.com<\/a>, or give me feedback I'd love to hear it via email <a href=\"mailto:&#x6c;&#117;&#x6b;&#x65;&#32;&#x40;&#108;&#117;&#107;&#101;&#100;&#x6f;&#x72;&#x6e;&#x79;&#x2e;&#99;&#x6f;&#109;\">luke@lukedorny.com<\/a> or via Mastodon as <a href=\"https:\/\/typo.social\/@Luke\" rel=\"me\">@Luke@typo.social<\/a> \/ <a href=\"https:\/\/typo.social\/@Luke\" rel=\"me\">typo.social\/@Luke<\/a>.<\/p>\n<p>If you'd like to support my efforts to write about design, art, and the analog design world, please consider contributing to the Luke Dorny coffee\/cocoa fund on <a href=\"https:\/\/Ko-fi.com\/lukedorny\" rel=\"me\">Ko-fi.com\/lukedorny<\/a> or on <a href=\"https:\/\/buymeacoffee.com\/lukedorny\" rel=\"me\">buymeacoffee.com\/lukedorny<\/a><\/p>",
+      "date_published": "2024-12-14T19:15:00-05:00",
+      "date_modified": "2024-12-14T19:25:06-05:00",
+      "tags": [
+        "Design"
+      ],
+      "image": "https:\/\/lukedorny.com\/media\/pages\/updates\/garbage\/4d95d3575d-1734221721\/img_0717-500x-crop.jpg",
+      "authors": [
+        {
+          "name": "Author: Luke, most likely.",
+          "url": "https:\/\/lukedorny.com",
+          "avatar": ""
+        }
+      ],
+      "external_url": "https:\/\/scottboms.com\/shop\/the-grouch-risograph-print"
+    },
+    {
+      "id": "https:\/\/lukedorny.com\/updates\/m4-lamp",
+      "url": "https:\/\/lukedorny.com\/updates\/m4-lamp",
+      "slug": "m4-lamp",
+      "title": "M4 Lamp",
+      "summary": "No shade for M4 Lamp",
+      "content_html": "<img src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/m4-lamp\/ea6f3bd387-1734031222\/img_1583-500x-crop.jpg\" alt=\"screenshot of YouTube video of Action Retro channel with iMac G4\" \/><figcaption style=\"font-size: 0.7em; font-style: italic; opacity: .7;margin-bottom:1rem;\">Apple Macintosh iMac G4 modded by \u201dAction Retro\u201d channel.<\/figcaption><p>Okay, here\u2019s another video, this time a brilliant mod to an M4 iMac PowerMac G4 by the \u201cAction Retro\u201d channel. I hade a small version of this machine when they came out and I loved it. Such an incredible form factor for a computer \/ desk lamp\u2026 combo.<\/p>\n<figure class=\"video\"><iframe allow=\"fullscreen\" allowfullscreen src=\"https:\/\/www.youtube.com\/embed\/WFTQ9OsPQyY?si=m8ZTp82_HS-mihaX\"><\/iframe><\/figure>\n<p>Find him on Mastodon: <a href=\"https:\/\/bitbang.social\/@ActionRetro\">https:\/\/bitbang.social\/@ActionRetro<\/a><\/p>\n<p>Shared:<br \/>\n<a href=\"https:\/\/typo.social\/@Luke\/113641484831132749\">https:\/\/typo.social\/@Luke\/113641484831132749<\/a><\/p><p><a href=\"https:\/\/lukedorny.com\/updates\/m4-lamp\">Read the full post<\/a><\/p><p>\u2014 Luke<\/p>\n<hr \/>\n<p>Thank you for <a href=\"https:\/\/lukedorny.com\/feed\">reading via RSS<\/a> (this is JSON). If you'd like to browse the site <a href=\"https:\/\/lukedorny.com\" rel=\"me\">lukedorny.com<\/a>, or give me feedback I'd love to hear it via email <a href=\"mailto:&#108;&#117;&#x6b;&#101;&#32;&#64;&#108;&#x75;&#107;&#x65;&#100;&#x6f;&#114;&#x6e;&#121;&#x2e;&#99;&#111;&#109;\">luke@lukedorny.com<\/a> or via Mastodon as <a href=\"https:\/\/typo.social\/@Luke\" rel=\"me\">@Luke@typo.social<\/a> \/ <a href=\"https:\/\/typo.social\/@Luke\" rel=\"me\">typo.social\/@Luke<\/a>.<\/p>\n<p>If you'd like to support my efforts to write about design, art, and the analog design world, please consider contributing to the Luke Dorny coffee\/cocoa fund on <a href=\"https:\/\/Ko-fi.com\/lukedorny\" rel=\"me\">Ko-fi.com\/lukedorny<\/a> or on <a href=\"https:\/\/buymeacoffee.com\/lukedorny\" rel=\"me\">buymeacoffee.com\/lukedorny<\/a><\/p>",
+      "date_published": "2024-12-12T14:05:00-05:00",
+      "date_modified": "2024-12-12T14:27:47-05:00",
+      "tags": [
+        "Design"
+      ],
+      "image": "https:\/\/lukedorny.com\/media\/pages\/updates\/m4-lamp\/ea6f3bd387-1734031222\/img_1583-500x-crop.jpg",
+      "authors": [
+        {
+          "name": "Author: Luke, most likely.",
+          "url": "https:\/\/lukedorny.com",
+          "avatar": ""
+        }
+      ],
+      "external_url": "https:\/\/youtu.be\/WFTQ9OsPQyY?si=m8ZTp82_HS-mihaX"
+    },
+    {
+      "id": "https:\/\/lukedorny.com\/updates\/macinglass",
+      "url": "https:\/\/lukedorny.com\/updates\/macinglass",
+      "slug": "macinglass",
+      "title": "MacinGlass",
+      "summary": "Brand New Retro",
+      "content_html": "<img src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/macinglass\/bd9d956350-1733862152\/ascreenshot-2024-12-10-at-12-08-32-1024-500x-crop.jpg\" alt=\"Macintosh SE\/30 screenshot\" \/><figcaption style=\"font-size: 0.7em; font-style: italic; opacity: .7;margin-bottom:1rem;\">The Macintosh SE\/30 like we\u2019ve never seen it before.<\/figcaption><p>I know that I just posted about the \u201cflatmac\u201d as the \u201cPad\u201d, but this one is also a stunner. Why do I keep posting about the Macintosh? I enjoy it, and it reminds me of when I was a teen.<\/p>\n<p>So, in this video, the \u201cThis Does Not Compute\u201d channel builds a practically new and maxed-out Apple Macintosh SE\/30 out of plexiglass. \u2026and it is fantastic.<\/p>\n<figure class=\"video\"><iframe allow=\"fullscreen\" allowfullscreen src=\"https:\/\/www.youtube.com\/embed\/zc3sPoqOFG8\"><\/iframe><\/figure>\n<figure><img alt=\"Macintosh SE\/30 screenshot\" src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/macinglass\/67164adf52-1733862152\/screenshot-2024-12-10-at-12.03.54-1024.jpeg\"><figcaption>Transister bokeh<\/figcaption><\/figure>\n<figure><img alt=\"Macintosh SE\/30 screenshot\" src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/macinglass\/4974a7b1dc-1733862152\/screenshot-2024-12-10-at-12.04.18-1024.jpeg\"><figcaption>Internal glowy chips<\/figcaption><\/figure>\n<figure><img alt=\"Macintosh SE\/30 screenshot\" src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/macinglass\/399007ac7d-1733862152\/screenshot-2024-12-10-at-12.05.42-1024.jpeg\"><figcaption>Internal Mac circuit boards<\/figcaption><\/figure>\n<figure><img alt=\"Macintosh SE\/30 screenshot\" src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/macinglass\/32e4567ce3-1733862152\/screenshot-2024-12-10-at-12.05.59-1024.jpeg\"><figcaption>Grinding away on the internal frame<\/figcaption><\/figure>\n<figure><img alt=\"Macintosh SE\/30 screenshot\" src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/macinglass\/114e03e648-1733862152\/screenshot-2024-12-10-at-12.07.01-1024.jpeg\"><figcaption>Internal circuit boards<\/figcaption><\/figure>\n<figure><img alt=\"Macintosh SE\/30 screenshot\" src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/macinglass\/0be053a8d2-1733862152\/screenshot-2024-12-10-at-12.08.46-1024.jpeg\"><figcaption>Loading up the OS<\/figcaption><\/figure>\n<figure><img alt=\"Macintosh SE\/30 screenshot\" src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/macinglass\/75bee760c2-1733862152\/screenshot-2024-12-10-at-12.09.40-1024.jpeg\"><figcaption>Look at all of that RAM<\/figcaption><\/figure>\n<figure><img alt=\"Macintosh SE\/30 screenshot\" src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/macinglass\/5ade02b040-1733862152\/screenshot-2024-12-10-at-12.10.20-1024.jpeg\"><figcaption>So shiny<\/figcaption><\/figure>\n<figure><img alt=\"Macintosh SE\/30 screenshot\" src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/macinglass\/7599b6532f-1733862152\/screenshot-2024-12-10-at-12.11.50-1024.jpeg\"><figcaption>Mac plus wallpaper<\/figcaption><\/figure>\n<figure><img alt=\"Macintosh SE\/30 screenshot\" src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/macinglass\/ae6ab2d520-1733862152\/screenshot-2024-12-10-at-12.12.11-1024.jpeg\"><figcaption>The plexiglass Mac just shining in the dark.<\/figcaption><\/figure>\n<p>Shared:<br \/>\n<a href=\"https:\/\/typo.social\/@Luke\/113641447274091171\">https:\/\/typo.social\/@Luke\/113641447274091171<\/a><\/p><p><a href=\"https:\/\/lukedorny.com\/updates\/macinglass\">Read the full post<\/a><\/p><p>\u2014 Luke<\/p>\n<hr \/>\n<p>Thank you for <a href=\"https:\/\/lukedorny.com\/feed\">reading via RSS<\/a> (this is JSON). If you'd like to browse the site <a href=\"https:\/\/lukedorny.com\" rel=\"me\">lukedorny.com<\/a>, or give me feedback I'd love to hear it via email <a href=\"mailto:&#x6c;&#x75;&#x6b;&#x65;&#x20;&#64;&#108;&#117;&#107;&#x65;&#x64;&#111;&#114;&#x6e;&#121;&#x2e;&#x63;&#x6f;&#109;\">luke@lukedorny.com<\/a> or via Mastodon as <a href=\"https:\/\/typo.social\/@Luke\" rel=\"me\">@Luke@typo.social<\/a> \/ <a href=\"https:\/\/typo.social\/@Luke\" rel=\"me\">typo.social\/@Luke<\/a>.<\/p>\n<p>If you'd like to support my efforts to write about design, art, and the analog design world, please consider contributing to the Luke Dorny coffee\/cocoa fund on <a href=\"https:\/\/Ko-fi.com\/lukedorny\" rel=\"me\">Ko-fi.com\/lukedorny<\/a> or on <a href=\"https:\/\/buymeacoffee.com\/lukedorny\" rel=\"me\">buymeacoffee.com\/lukedorny<\/a><\/p>",
+      "date_published": "2024-12-12T10:00:00-05:00",
+      "date_modified": "2024-12-12T16:27:24-05:00",
+      "tags": [
+        "Design"
+      ],
+      "image": "https:\/\/lukedorny.com\/media\/pages\/updates\/macinglass\/bd9d956350-1733862152\/ascreenshot-2024-12-10-at-12-08-32-1024-500x-crop.jpg",
+      "authors": [
+        {
+          "name": "Author: Luke, most likely.",
+          "url": "https:\/\/lukedorny.com",
+          "avatar": ""
+        }
+      ],
+      "external_url": "https:\/\/www.youtube.com\/watch?v=zc3sPoqOFG8"
+    },
+    {
+      "id": "https:\/\/lukedorny.com\/updates\/pad",
+      "url": "https:\/\/lukedorny.com\/updates\/pad",
+      "slug": "pad",
+      "title": "Pad",
+      "summary": "Pre iPad prototype design recreated",
+      "content_html": "<img src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/pad\/6c4b047cc9-1733533915\/aimg-0661-500x-crop.jpg\" alt=\"screenshot\" \/><figcaption style=\"font-size: 0.7em; font-style: italic; opacity: .7;margin-bottom:1rem;\">Screenshot of Kevin installing the OS by touching onscreen, from the youtube video of Kevin Noki<\/figcaption><p>From an early mockup in the 1980s til now, this device waited for it\u2019s chance to shine, which it does.<\/p>\n<p>That disk eject action gets me every time.<\/p>\n<figure class=\"video\"><iframe allow=\"fullscreen\" allowfullscreen src=\"https:\/\/www.youtube.com\/embed\/Grd_a4oi7qU\"><\/iframe><\/figure>\n<p>From asking the original creator Hartmut Esslinger from frog design for permission, to updating the exact design to allow for HDMI and other style ports while staying mostly true to the original design, there\u2019s lots to enjoy about this walkthrough of reimagining a beautifully designed device for the current age.<\/p>\n<p>Here are some teasers, and they\u2019re hardly spoilers as the video is truly a complete process to enjoy:<\/p>\n<figure><img alt=\"screenshot\" src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/pad\/6c4b047cc9-1733533915\/aimg-0661.jpeg\"><figcaption>Screenshot of Kevin installing the OS by touching onscreen, from the youtube video of Kevin Noki<\/figcaption><\/figure>\n<figure><img alt=\"screenshot\" src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/pad\/9a8bc5a85a-1733533915\/img_0658.jpeg\"><figcaption>Screenshot of Kevin installing the OS via floppy disk, from the youtube video of Kevin Noki<\/figcaption><\/figure>\n<figure><img alt=\"screenshot\" src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/pad\/dd8758c14e-1733533915\/img_0659.jpeg\"><figcaption>Screenshot of Kevin inserting an Apple OS diskette, from the youtube video of Kevin Noki<\/figcaption><\/figure>\n<figure><img alt=\"screenshot\" src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/pad\/7ada6728d2-1733533915\/img_0662.jpeg\"><figcaption>Screenshot of the bus interfaces, and inserting a chip into the device, from the youtube video of Kevin Noki<\/figcaption><\/figure>\n<figure><img alt=\"screenshot\" src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/pad\/369ef18957-1733533915\/img_0663.jpeg\"><figcaption>Screenshot of Kevin playing a breakout-style game like it\u2019s an iPad, from the youtube video of Kevin Noki<\/figcaption><\/figure>\n<figure><img alt=\"screenshot\" src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/pad\/45028cf5d9-1733533915\/img_0664.jpeg\"><figcaption>Screenshot of Kevin mousing around the device, from the youtube video of Kevin Noki<\/figcaption><\/figure>\n<figure><img alt=\"screenshot\" src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/pad\/de9e375f93-1733533915\/img_0665.jpeg\"><figcaption>Screenshot of Kevin touching the device like an iPad, from the youtube video of Kevin Noki<\/figcaption><\/figure>\n<p>Well done, Kevin Noki!<\/p>\n<p>Shared:<br \/>\n<a href=\"https:\/\/typo.social\/@Luke\/113637716581769911\">https:\/\/typo.social\/@Luke\/113637716581769911<\/a><\/p><p><a href=\"https:\/\/lukedorny.com\/updates\/pad\">Read the full post<\/a><\/p><p>\u2014 Luke<\/p>\n<hr \/>\n<p>Thank you for <a href=\"https:\/\/lukedorny.com\/feed\">reading via RSS<\/a> (this is JSON). If you'd like to browse the site <a href=\"https:\/\/lukedorny.com\" rel=\"me\">lukedorny.com<\/a>, or give me feedback I'd love to hear it via email <a href=\"mailto:&#x6c;&#117;&#107;&#101;&#x20;&#x40;&#108;&#117;&#107;&#101;&#x64;&#x6f;&#x72;&#110;&#x79;&#46;&#x63;&#x6f;&#x6d;\">luke@lukedorny.com<\/a> or via Mastodon as <a href=\"https:\/\/typo.social\/@Luke\" rel=\"me\">@Luke@typo.social<\/a> \/ <a href=\"https:\/\/typo.social\/@Luke\" rel=\"me\">typo.social\/@Luke<\/a>.<\/p>\n<p>If you'd like to support my efforts to write about design, art, and the analog design world, please consider contributing to the Luke Dorny coffee\/cocoa fund on <a href=\"https:\/\/Ko-fi.com\/lukedorny\" rel=\"me\">Ko-fi.com\/lukedorny<\/a> or on <a href=\"https:\/\/buymeacoffee.com\/lukedorny\" rel=\"me\">buymeacoffee.com\/lukedorny<\/a><\/p>",
+      "date_published": "2024-12-11T18:00:00-05:00",
+      "date_modified": "2024-12-12T14:30:23-05:00",
+      "tags": [
+        "Design"
+      ],
+      "image": "https:\/\/lukedorny.com\/media\/pages\/updates\/pad\/6c4b047cc9-1733533915\/aimg-0661-500x-crop.jpg",
+      "authors": [
+        {
+          "name": "Author: Luke, most likely.",
+          "url": "https:\/\/lukedorny.com",
+          "avatar": ""
+        }
+      ],
+      "external_url": "https:\/\/www.youtube.com\/watch?v=Grd_a4oi7qU"
+    },
+    {
+      "id": "https:\/\/lukedorny.com\/updates\/knife",
+      "url": "https:\/\/lukedorny.com\/updates\/knife",
+      "slug": "knife",
+      "title": "Knife",
+      "summary": "Cut the colorful layer cake",
+      "content_html": "<img src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/knife\/2e94aa7b3d-1733527467\/screenshot-2024-12-06-at-15.22.02-1024-500x-crop.jpg\" alt=\"Screenshot from youtube\" \/><figcaption style=\"font-size: 0.7em; font-style: italic; opacity: .7;margin-bottom:1rem;\">The fantastic Christian Jequel paints with his palette knife<\/figcaption><p>Discovered someone who is known for their palette knife painting techniques, and it is a wonder to behold. The artist Christian Jequel from Provence, France shows here that he has mastered his own genius technique with oils. Not only that, his skill, once you\u2019re into the video, is peppered with emotion all along the way. Amazing.<\/p>\n<p>I\u2019ve used the palette knife several times on paintings that I\u2019m proud of, but they aren\u2019t as ridiculously nice as Christian Jequel\u2019s. Deep respect, lots to learn.<\/p>\n<p>Enjoy.<\/p>\n<figure class=\"video\"><iframe allow=\"fullscreen\" allowfullscreen src=\"https:\/\/www.youtube.com\/embed\/wFOWEFm866w\"><\/iframe><\/figure>\n<p>Shared:<br \/>\n<a href=\"https:\/\/typo.social\/@Luke\/113608520547079936\">https:\/\/typo.social\/@Luke\/113608520547079936<\/a><\/p><p><a href=\"https:\/\/lukedorny.com\/updates\/knife\">Read the full post<\/a><\/p><p>\u2014 Luke<\/p>\n<hr \/>\n<p>Thank you for <a href=\"https:\/\/lukedorny.com\/feed\">reading via RSS<\/a> (this is JSON). If you'd like to browse the site <a href=\"https:\/\/lukedorny.com\" rel=\"me\">lukedorny.com<\/a>, or give me feedback I'd love to hear it via email <a href=\"mailto:&#108;&#x75;&#x6b;&#x65;&#32;&#x40;&#108;&#117;&#107;&#101;&#x64;&#x6f;&#114;&#110;&#121;&#x2e;&#x63;&#111;&#x6d;\">luke@lukedorny.com<\/a> or via Mastodon as <a href=\"https:\/\/typo.social\/@Luke\" rel=\"me\">@Luke@typo.social<\/a> \/ <a href=\"https:\/\/typo.social\/@Luke\" rel=\"me\">typo.social\/@Luke<\/a>.<\/p>\n<p>If you'd like to support my efforts to write about design, art, and the analog design world, please consider contributing to the Luke Dorny coffee\/cocoa fund on <a href=\"https:\/\/Ko-fi.com\/lukedorny\" rel=\"me\">Ko-fi.com\/lukedorny<\/a> or on <a href=\"https:\/\/buymeacoffee.com\/lukedorny\" rel=\"me\">buymeacoffee.com\/lukedorny<\/a><\/p>",
+      "date_published": "2024-12-06T15:35:00-05:00",
+      "date_modified": "2024-12-06T18:41:19-05:00",
+      "tags": [
+        "Travel"
+      ],
+      "image": "https:\/\/lukedorny.com\/media\/pages\/updates\/knife\/2e94aa7b3d-1733527467\/screenshot-2024-12-06-at-15.22.02-1024-500x-crop.jpg",
+      "authors": [
+        {
+          "name": "Author: Luke, most likely.",
+          "url": "https:\/\/lukedorny.com",
+          "avatar": ""
+        }
+      ],
+      "external_url": "https:\/\/youtu.be\/wFOWEFm866w?si=nJmJNxWmXUoZxPC4"
+    },
+    {
+      "id": "https:\/\/lukedorny.com\/updates\/trucking",
+      "url": "https:\/\/lukedorny.com\/updates\/trucking",
+      "slug": "trucking",
+      "title": "Trucking",
+      "summary": "Driven by passion and patience",
+      "content_html": "<img src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/trucking\/467b2ce9b5-1733535309\/trucking-500x-crop.jpg\" alt=\"screenshot\" \/><figcaption style=\"font-size: 0.7em; font-style: italic; opacity: .7;margin-bottom:1rem;\">RV19 restores this Renault R2087 4x4 from 1960 on youtube<\/figcaption><p>I just saw that Chris Glass loves to watch resto videos, so this one is for him.<\/p>\n<p><a href=\"https:\/\/chrisglass.com\/2024\/10\/13\/pressure-washing\/\">https:\/\/chrisglass.com\/2024\/10\/13\/pressure-washing\/<\/a><\/p>\n<p>RV19 restores this Renault R2087 4x4 from 1960 on youtube:<\/p>\n<figure class=\"video\"><iframe allow=\"fullscreen\" allowfullscreen src=\"https:\/\/www.youtube.com\/embed\/Y5R_jTuX2f8\"><\/iframe><\/figure>\n<p>Shared:<br \/>\n<a href=\"https:\/\/typo.social\/@Luke\/113608511281588972\">https:\/\/typo.social\/@Luke\/113608511281588972<\/a><\/p><p><a href=\"https:\/\/lukedorny.com\/updates\/trucking\">Read the full post<\/a><\/p><p>\u2014 Luke<\/p>\n<hr \/>\n<p>Thank you for <a href=\"https:\/\/lukedorny.com\/feed\">reading via RSS<\/a> (this is JSON). If you'd like to browse the site <a href=\"https:\/\/lukedorny.com\" rel=\"me\">lukedorny.com<\/a>, or give me feedback I'd love to hear it via email <a href=\"mailto:&#108;&#117;&#107;&#x65;&#x20;&#x40;&#108;&#117;&#x6b;&#101;&#x64;&#x6f;&#x72;&#110;&#x79;&#x2e;&#x63;&#x6f;&#x6d;\">luke@lukedorny.com<\/a> or via Mastodon as <a href=\"https:\/\/typo.social\/@Luke\" rel=\"me\">@Luke@typo.social<\/a> \/ <a href=\"https:\/\/typo.social\/@Luke\" rel=\"me\">typo.social\/@Luke<\/a>.<\/p>\n<p>If you'd like to support my efforts to write about design, art, and the analog design world, please consider contributing to the Luke Dorny coffee\/cocoa fund on <a href=\"https:\/\/Ko-fi.com\/lukedorny\" rel=\"me\">Ko-fi.com\/lukedorny<\/a> or on <a href=\"https:\/\/buymeacoffee.com\/lukedorny\" rel=\"me\">buymeacoffee.com\/lukedorny<\/a><\/p>",
+      "date_published": "2024-12-06T02:35:00-05:00",
+      "date_modified": "2024-12-06T18:38:56-05:00",
+      "tags": [
+        "Cars"
+      ],
+      "image": "https:\/\/lukedorny.com\/media\/pages\/updates\/trucking\/467b2ce9b5-1733535309\/trucking-500x-crop.jpg",
+      "authors": [
+        {
+          "name": "Author: Luke, most likely.",
+          "url": "https:\/\/lukedorny.com",
+          "avatar": ""
+        }
+      ],
+      "external_url": "https:\/\/www.youtube.com\/watch?v=Y5R_jTuX2f8"
+    },
+    {
+      "id": "https:\/\/lukedorny.com\/updates\/prix",
+      "url": "https:\/\/lukedorny.com\/updates\/prix",
+      "slug": "prix",
+      "title": "Prix",
+      "summary": "Mouton\u2019s rally racing",
+      "content_html": "<img src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/prix\/cdcc6ef9bc-1718211880\/ab-rally-michele-500x-crop.png\" alt=\"Screenshot of Mich\u00e8le Mouton racing\" \/><figcaption style=\"font-size: 0.7em; font-style: italic; opacity: .7;margin-bottom:1rem;\">Mich\u00e8le Mouton racing<\/figcaption><p>Rally, omg.<\/p>\n<p>Before we talk briefly about Mich\u00e8le Mouton\u2019s achievements, I just want to say that rally racing is my favorite. <\/p>\n<h2>Rally &amp; Baja<\/h2>\n<p>The origins of auto racing in the last 120 years are interesting to me. This video about Mich\u00e8le Mouton rally racing with the Audi Rally team and the events of the \u201870s and \u201880s was even more interesting to me. Growing up I rarely heard about Rally racing, except maybe the Baja racing going on at the time. <\/p>\n<p>Oh, boy, Baja.<\/p>\n<p>By far, my favorite auto sport to watch or talk about is Rally (sitting just in front of Formula 1). Rally, one of the harshest versions of motor racing, but in fact, they\u2019re all dangerous. This one, though, is more dangerous for the audience who dares lean out to see.<\/p>\n<p>Also, speaking of Formula 1, I had a chance to walk the Monaco Gran Prix course in Monte Carlo back in 2000. Amazing.<\/p>\n<h2>RC<\/h2>\n<p>By the way, closer to home, I recently purchased my first RC (radio-controlled) race car \u2014 if only to battle my oldest son against his RC car \u2014 and it was a difficult choice. If only because the Audi Rally Quattro model turned out to be so rare and expensive. So, ultimately, I went with the classic Mini (another post about that soon).<\/p>\n<h2>Video<\/h2>\n<p>Back to Ms. Mouton, watch this:<\/p>\n<figure class=\"video\"><iframe allow=\"fullscreen\" allowfullscreen src=\"https:\/\/www.youtube.com\/embed\/FN93WoPDJS0?si=fSLnAUvS52LB2wN8\"><\/iframe><\/figure>\n<h2>Audi &amp; Mich\u00e8le Mouton<\/h2>\n<figure><img alt=\"Screenshot of video still by Luke Dorny\" src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/prix\/6f6ab34e23-1718141126\/b-rally-jump.jpeg\"><figcaption>Snapshot from the video, the moment when the Quattro appeared and destroyed the competition.<\/figcaption><\/figure>\n<p>What I didn't know until today, was that <a href=\"https:\/\/en.wikipedia.org\/wiki\/Mich&egrave;le_Mouton\">Mich&egrave;le Mouton<\/a> was such an incredibly fast race car driver and set records all over the industry, including at <a href=\"https:\/\/en.wikipedia.org\/wiki\/Pikes_Peak\">Pike&#039;s Peak<\/a>(wikipedia), one of the more crazy tracks for anyone to \u2018race\u2019.<\/p>\n<figure><img alt=\"Screenshot of Mich&egrave;le Mouton racing\" src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/prix\/cdcc6ef9bc-1718211880\/ab-rally-michele.png\"><figcaption>Mich\u00e8le Mouton racing<\/figcaption><\/figure>\n<figure><img alt=\"Image of Mich&egrave;le Mouton in front of her Audi on the Albon channel\" src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/prix\/936993881d-1718211880\/b-rally-video-hq720-transformed.jpeg\"><figcaption>Video from Albon about Mich\u00e8le Mouton and the Audi cars she drove.<\/figcaption><\/figure>\n<h2>B<\/h2>\n<p>But most notable to me, was her racing with Audi, which lasted several years, driving the legendary Audi Quattro A1, A2, S1, and S2 rally cars.<\/p>\n<p>Here's a video about her accomplishments:<\/p>\n<figure class=\"video\"><iframe allow=\"fullscreen\" allowfullscreen src=\"https:\/\/www.youtube.com\/embed\/l7u9PoBFI7k\"><\/iframe><\/figure>\n<h2>Hall of Fame<\/h2>\n<figure><img alt=\"Screenshot from the RedBull website article about Audi and Mich&egrave;le Mouton\" src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/prix\/375d764106-1718211880\/b-rally-redbull-michele-article.jpeg\"><figcaption>Screenshot from the RedBull website article about Audi and Mich\u00e8le Mouton<\/figcaption><\/figure>\n<p><a href=\"https:\/\/www.redbull.com\/gb-en\/my-pikes-peak-michele-mouton\">https:\/\/www.redbull.com\/gb-en\/my-pikes-peak-michele-mouton<\/a><\/p>\n<p>Congratulations, Ms. Mouton, on being inducted into the Hall of Fame and doing so much for the sport, and for representing the women of racing.<\/p>\n<p>Legend. You win the prize.<\/p>\n<p>Shared:<br \/>\n<a href=\"https:\/\/typo.social\/@Luke\/113596225426394321\">https:\/\/typo.social\/@Luke\/113596225426394321<\/a><\/p><p><a href=\"https:\/\/lukedorny.com\/updates\/prix\">Read the full post<\/a><\/p><p>\u2014 Luke<\/p>\n<hr \/>\n<p>Thank you for <a href=\"https:\/\/lukedorny.com\/feed\">reading via RSS<\/a> (this is JSON). If you'd like to browse the site <a href=\"https:\/\/lukedorny.com\" rel=\"me\">lukedorny.com<\/a>, or give me feedback I'd love to hear it via email <a href=\"mailto:&#108;&#117;&#107;&#101;&#x20;&#x40;&#108;&#x75;&#x6b;&#x65;&#x64;&#x6f;&#114;&#x6e;&#121;&#46;&#x63;&#111;&#109;\">luke@lukedorny.com<\/a> or via Mastodon as <a href=\"https:\/\/typo.social\/@Luke\" rel=\"me\">@Luke@typo.social<\/a> \/ <a href=\"https:\/\/typo.social\/@Luke\" rel=\"me\">typo.social\/@Luke<\/a>.<\/p>\n<p>If you'd like to support my efforts to write about design, art, and the analog design world, please consider contributing to the Luke Dorny coffee\/cocoa fund on <a href=\"https:\/\/Ko-fi.com\/lukedorny\" rel=\"me\">Ko-fi.com\/lukedorny<\/a> or on <a href=\"https:\/\/buymeacoffee.com\/lukedorny\" rel=\"me\">buymeacoffee.com\/lukedorny<\/a><\/p>",
+      "date_published": "2024-12-04T11:35:00-05:00",
+      "date_modified": "2024-12-06T18:27:13-05:00",
+      "tags": [],
+      "image": "https:\/\/lukedorny.com\/media\/pages\/updates\/prix\/cdcc6ef9bc-1718211880\/ab-rally-michele-500x-crop.png",
+      "authors": [
+        {
+          "name": "Author: Luke, most likely.",
+          "url": "https:\/\/lukedorny.com",
+          "avatar": ""
+        }
+      ],
+      "external_url": "https:\/\/www.youtube.com\/watch?v=FN93WoPDJS0"
+    },
+    {
+      "id": "https:\/\/lukedorny.com\/updates\/mini-bowie",
+      "url": "https:\/\/lukedorny.com\/updates\/mini-bowie",
+      "slug": "mini-bowie",
+      "title": "Mini Bowie",
+      "summary": "Reflections of Time and Place",
+      "content_html": "<img src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/mini-bowie\/b50790dd75-1717710076\/mini-bowie-front-500x-crop.png\" alt=\"Photo of the David Bowie Mini classic\" \/><figcaption style=\"font-size: 0.7em; font-style: italic; opacity: .7;margin-bottom:1rem;\">The chrome Mini as conceived by David Bowie that reflects yourself into its image<\/figcaption><p>Unbelievable.<\/p>\n<p>This is the <a href=\"https:\/\/www.mini.com\/en_MS\/home\/heritage\/designer-mini-david-bowie.html\">David Bowie Mini<\/a>. <\/p>\n<figure><img alt=\"Photo of the David Bowie Mini classic\" src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/mini-bowie\/b50790dd75-1717710076\/mini-bowie-front.png\"><figcaption>The chrome Mini as conceived by David Bowie that reflects yourself into its image<\/figcaption><\/figure>\n<figure><img alt=\"3\/4 angle of the David Bowie Mini\" src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/mini-bowie\/ee92af428e-1717710076\/mini-bowie-side.png\"><figcaption>Nothing but tires and lights were left unchromed<\/figcaption><\/figure>\n<figure><img alt=\"Hood of the David Bowie Mini\" src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/mini-bowie\/e3c6bcca0c-1717710076\/mini-bowie-hood.png\"><figcaption>Look at the shine on this piece of art<\/figcaption><\/figure>\n<p>I have a knack for stumbling upon admirable things that David Bowie has said or wrote and usually end up playing an interview video of Mr. Bowie sharing his thoughts on the power of art, creativity, and more, and then feel inspired to create even more. <\/p>\n<p>Here is a very truncated clip from one of his famously charming interviews:<\/p>\n<figure class=\"video\"><iframe allow=\"fullscreen\" allowfullscreen src=\"https:\/\/www.youtube.com\/embed\/cNbnef_eXBM\"><\/iframe><\/figure>\n<h2>Reflections<\/h2>\n<p>My son and I recently restored the dual carburators on the family bus Sandy and discovered the joy that is polishing raw aluminum. Now the carbs are a shiny symbol of Aidan and I working to improve and restore something we enjoy. <\/p>\n<p>The Mini is a car design that I\u2019ve always admired from an efficiency and size point of view. That it won so many rally races only helped its case. They keep creeping into my life, too, as recently we almost picked up an imported classic model from Japan via an importer here in Seattle across the Sound. <\/p>\n<p>Marlo, my wife, has also wanted one instead of the bulky things people drive these last few decades, and so we almost made it happen. Then someday converting it to electric would've been just ideal. <\/p>\n<p>Years ago on a trip with my brother to travel across southern Europe in the late \u201890s, as we wandered the streets of several towns in France, Monaco, Italy, Switzerland, and Austria via Euro rail passes, staying in hostels, it was such a powerful adventure. <\/p>\n<p>At one point, we walked past a small showroom in downtown Vienna that had a classic Mini in the window, almost pressed up against the glass wanting to escape. Squished against the glass barrier it sat, in Monte Carlo racing red with decals and with the requisite amount if rally lights. Then we noticed that it was selling for less than $9k USD. We instantly started planning how we could make it happen. It didn't happen, sadly. <\/p>\n<p>Automotive design is one of my favorite types of design as it is a large mixture of materials, surface textures, geometry, style, science, electrics and electronics, etc., and I\u2019d wanted to get into the Auto design world as a kid. <\/p>\n<h2>This Mini<\/h2>\n<p>This chromed up version of the Mini checks a lot of boxes for me designwise, and yet clearly as a daily driver, this mirror finish car should be the last thing on the road for safety reasons, and so this should stay in a museum, but I\u2019ve been drawn to this car design all my life.<\/p>\n<figure><img alt=\"The David Bowie Mini long shot\" src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/mini-bowie\/ab3020a2b8-1717710076\/mini-bowie-top.png\"><figcaption>Wait, are the windows chromed, too?<\/figcaption><\/figure>\n<h2>Inspired<\/h2>\n<p>I\u2019ve had this post in draft for a long time and figured it needed to be finished up and shared to inspire somebody else along their own art\/design\/polished-metal journey, so here it is.<\/p>\n<p>Shared:<br \/>\n<a href=\"https:\/\/typo.social\/@Luke\/113595428450774694\">https:\/\/typo.social\/@Luke\/113595428450774694<\/a><\/p><p><a href=\"https:\/\/lukedorny.com\/updates\/mini-bowie\">Read the full post<\/a><\/p><p>\u2014 Luke<\/p>\n<hr \/>\n<p>Thank you for <a href=\"https:\/\/lukedorny.com\/feed\">reading via RSS<\/a> (this is JSON). If you'd like to browse the site <a href=\"https:\/\/lukedorny.com\" rel=\"me\">lukedorny.com<\/a>, or give me feedback I'd love to hear it via email <a href=\"mailto:&#x6c;&#x75;&#x6b;&#x65;&#x20;&#x40;&#108;&#x75;&#x6b;&#101;&#100;&#111;&#114;&#x6e;&#x79;&#46;&#x63;&#111;&#109;\">luke@lukedorny.com<\/a> or via Mastodon as <a href=\"https:\/\/typo.social\/@Luke\" rel=\"me\">@Luke@typo.social<\/a> \/ <a href=\"https:\/\/typo.social\/@Luke\" rel=\"me\">typo.social\/@Luke<\/a>.<\/p>\n<p>If you'd like to support my efforts to write about design, art, and the analog design world, please consider contributing to the Luke Dorny coffee\/cocoa fund on <a href=\"https:\/\/Ko-fi.com\/lukedorny\" rel=\"me\">Ko-fi.com\/lukedorny<\/a> or on <a href=\"https:\/\/buymeacoffee.com\/lukedorny\" rel=\"me\">buymeacoffee.com\/lukedorny<\/a><\/p>",
+      "date_published": "2024-12-04T08:10:00-05:00",
+      "date_modified": "2024-12-04T14:12:20-05:00",
+      "tags": [],
+      "image": "https:\/\/lukedorny.com\/media\/pages\/updates\/mini-bowie\/b50790dd75-1717710076\/mini-bowie-front-500x-crop.png",
+      "authors": [
+        {
+          "name": "Author: Luke, most likely.",
+          "url": "https:\/\/lukedorny.com",
+          "avatar": ""
+        }
+      ],
+      "external_url": "https:\/\/www.mini.com\/en_MS\/home\/heritage\/designer-mini-david-bowie.html"
+    },
+    {
+      "id": "https:\/\/lukedorny.com\/updates\/beauty",
+      "url": "https:\/\/lukedorny.com\/updates\/beauty",
+      "slug": "beauty",
+      "title": "Beauty",
+      "summary": "Beauty versus the World",
+      "content_html": "<img src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/beauty\/af2aab6f11-1729467518\/beauty-blog-shot-500x-crop.jpg\" alt=\"Birth of Venus, via Wikipedia\" \/><figcaption style=\"font-size: 0.7em; font-style: italic; opacity: .7;margin-bottom:1rem;\">Close up of Sandro Boticelli\u2019s *Birth of Venus*<\/figcaption><p><a href=\"https:\/\/watchdocumentaries.com\/why-beauty-matters\/\">https:\/\/watchdocumentaries.com\/why-beauty-matters\/<\/a><\/p>\n<p><em>\u201cWhy Beauty Matters\u201d<\/em>, a documentary by Roger Scruton.<\/p>\n<p>Beauty versus the world. Indeed.<br \/>\nWe now put \u201cusefulness\u201d first, and \u201cbeauty\u201d as a pointless also-ran.<\/p>\n<p>Marketing has run over \"beauty\u201d.<\/p>\n<p>A fantastic documentary about Beauty in the recent everyday world. <\/p>\n<p>Worth a watch.<\/p>\n<p>Shared:<br \/>\n<a href=\"https:\/\/typo.social\/@Luke\/113592844172791577\">https:\/\/typo.social\/@Luke\/113592844172791577<\/a><\/p><p><a href=\"https:\/\/lukedorny.com\/updates\/beauty\">Read the full post<\/a><\/p><p>\u2014 Luke<\/p>\n<hr \/>\n<p>Thank you for <a href=\"https:\/\/lukedorny.com\/feed\">reading via RSS<\/a> (this is JSON). If you'd like to browse the site <a href=\"https:\/\/lukedorny.com\" rel=\"me\">lukedorny.com<\/a>, or give me feedback I'd love to hear it via email <a href=\"mailto:&#108;&#117;&#107;&#101;&#32;&#x40;&#x6c;&#117;&#x6b;&#101;&#100;&#x6f;&#x72;&#110;&#121;&#x2e;&#x63;&#x6f;&#x6d;\">luke@lukedorny.com<\/a> or via Mastodon as <a href=\"https:\/\/typo.social\/@Luke\" rel=\"me\">@Luke@typo.social<\/a> \/ <a href=\"https:\/\/typo.social\/@Luke\" rel=\"me\">typo.social\/@Luke<\/a>.<\/p>\n<p>If you'd like to support my efforts to write about design, art, and the analog design world, please consider contributing to the Luke Dorny coffee\/cocoa fund on <a href=\"https:\/\/Ko-fi.com\/lukedorny\" rel=\"me\">Ko-fi.com\/lukedorny<\/a> or on <a href=\"https:\/\/buymeacoffee.com\/lukedorny\" rel=\"me\">buymeacoffee.com\/lukedorny<\/a><\/p>",
+      "date_published": "2024-12-03T15:15:00-05:00",
+      "date_modified": "2024-12-04T14:12:08-05:00",
+      "tags": [],
+      "image": "https:\/\/lukedorny.com\/media\/pages\/updates\/beauty\/af2aab6f11-1729467518\/beauty-blog-shot-500x-crop.jpg",
+      "authors": [
+        {
+          "name": "Author: Luke, most likely.",
+          "url": "https:\/\/lukedorny.com",
+          "avatar": ""
+        }
+      ],
+      "external_url": "https:\/\/watchdocumentaries.com\/why-beauty-matters\/"
+    },
+    {
+      "id": "https:\/\/lukedorny.com\/updates\/leaves",
+      "url": "https:\/\/lukedorny.com\/updates\/leaves",
+      "slug": "leaves",
+      "title": "Leaves",
+      "summary": "Gathering leaves",
+      "content_html": "<img src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/leaves\/c0dede4c78-1731089953\/l1000342-noexif-500x-crop.jpg\" alt=\"Sunrise and Sandy the bus\" \/><figcaption style=\"font-size: 0.7em; font-style: italic; opacity: .7;margin-bottom:1rem;\">Leaves near Sandy as the sun rises this morning. Leica TL2 Zeiss BIOGON 35mm f\/2.<\/figcaption><p>Decided to do some chores this morning before the real rains begin and turn all of these beautiful leaves into a mushy tea of dirt. The rains start tomorrow and winter is coming fast.<\/p>\n<p>Just now I read Carl Sagan\u2019s inspiring speach about this us on Earth and our \u201cresponsibility to deal more kindly with one another and to preserve and cherish the Pale Blue Dot \u2026the only home we\u2019ve ever known.\u201d <\/p>\n<p>Spending the day thinking about this.<\/p>\n<p>Follow the linkt to watch the short video on his site.<\/p><p><a href=\"https:\/\/lukedorny.com\/updates\/leaves\">Read the full post<\/a><\/p><p>\u2014 Luke<\/p>\n<hr \/>\n<p>Thank you for <a href=\"https:\/\/lukedorny.com\/feed\">reading via RSS<\/a> (this is JSON). If you'd like to browse the site <a href=\"https:\/\/lukedorny.com\" rel=\"me\">lukedorny.com<\/a>, or give me feedback I'd love to hear it via email <a href=\"mailto:&#108;&#x75;&#107;&#x65;&#32;&#x40;&#108;&#117;&#x6b;&#101;&#100;&#x6f;&#x72;&#110;&#121;&#x2e;&#x63;&#x6f;&#x6d;\">luke@lukedorny.com<\/a> or via Mastodon as <a href=\"https:\/\/typo.social\/@Luke\" rel=\"me\">@Luke@typo.social<\/a> \/ <a href=\"https:\/\/typo.social\/@Luke\" rel=\"me\">typo.social\/@Luke<\/a>.<\/p>\n<p>If you'd like to support my efforts to write about design, art, and the analog design world, please consider contributing to the Luke Dorny coffee\/cocoa fund on <a href=\"https:\/\/Ko-fi.com\/lukedorny\" rel=\"me\">Ko-fi.com\/lukedorny<\/a> or on <a href=\"https:\/\/buymeacoffee.com\/lukedorny\" rel=\"me\">buymeacoffee.com\/lukedorny<\/a><\/p>",
+      "date_published": "2024-11-08T20:20:00-05:00",
+      "date_modified": "2024-11-08T14:04:58-05:00",
+      "tags": [],
+      "image": "https:\/\/lukedorny.com\/media\/pages\/updates\/leaves\/c0dede4c78-1731089953\/l1000342-noexif-500x-crop.jpg",
+      "authors": [
+        {
+          "name": "Author: Luke, most likely.",
+          "url": "https:\/\/lukedorny.com",
+          "avatar": ""
+        }
+      ],
+      "external_url": "https:\/\/carlsagan.com"
+    },
+    {
+      "id": "https:\/\/lukedorny.com\/updates\/pumped",
+      "url": "https:\/\/lukedorny.com\/updates\/pumped",
+      "slug": "pumped",
+      "title": "Pumped",
+      "summary": "This little guy is surrounded",
+      "content_html": "<img src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/pumped\/1172230149-1730595006\/img_0420-500x-crop.jpg\" alt=\"pumpkins\" \/><figcaption style=\"font-size: 0.7em; font-style: italic; opacity: .7;margin-bottom:1rem;\">Here are five of the most recent pumpkins from the patch, with a little ice pumpkin thrown in the mix.<\/figcaption><p>Our oldest planted a pumpkin batch in the back hill but got on it a little later in the spring. We ran some water lines up there and he managed the garden the whole summer. <\/p>\n<p>At least twelve pumpkins of various styles emerged and he\u2019s become quite the gardener.<\/p>\n<p>So I grabbed a mini ghostie and painted a face. <\/p>\n<p>Proud parent moment. Well done, Aidan!<\/p><p><a href=\"https:\/\/lukedorny.com\/updates\/pumped\">Read the full post<\/a><\/p><p>\u2014 Luke<\/p>\n<hr \/>\n<p>Thank you for <a href=\"https:\/\/lukedorny.com\/feed\">reading via RSS<\/a> (this is JSON). If you'd like to browse the site <a href=\"https:\/\/lukedorny.com\" rel=\"me\">lukedorny.com<\/a>, or give me feedback I'd love to hear it via email <a href=\"mailto:&#x6c;&#x75;&#107;&#101;&#x20;&#x40;&#108;&#x75;&#x6b;&#101;&#100;&#x6f;&#x72;&#110;&#121;&#x2e;&#99;&#x6f;&#x6d;\">luke@lukedorny.com<\/a> or via Mastodon as <a href=\"https:\/\/typo.social\/@Luke\" rel=\"me\">@Luke@typo.social<\/a> \/ <a href=\"https:\/\/typo.social\/@Luke\" rel=\"me\">typo.social\/@Luke<\/a>.<\/p>\n<p>If you'd like to support my efforts to write about design, art, and the analog design world, please consider contributing to the Luke Dorny coffee\/cocoa fund on <a href=\"https:\/\/Ko-fi.com\/lukedorny\" rel=\"me\">Ko-fi.com\/lukedorny<\/a> or on <a href=\"https:\/\/buymeacoffee.com\/lukedorny\" rel=\"me\">buymeacoffee.com\/lukedorny<\/a><\/p>",
+      "date_published": "2024-11-02T20:20:00-04:00",
+      "date_modified": "2024-11-02T20:24:43-04:00",
+      "tags": [
+        "Thoughts"
+      ],
+      "image": "https:\/\/lukedorny.com\/media\/pages\/updates\/pumped\/1172230149-1730595006\/img_0420-500x-crop.jpg",
+      "authors": [
+        {
+          "name": "Author: Luke, most likely.",
+          "url": "https:\/\/lukedorny.com",
+          "avatar": ""
+        }
+      ]
+    },
+    {
+      "id": "https:\/\/lukedorny.com\/updates\/creep",
+      "url": "https:\/\/lukedorny.com\/updates\/creep",
+      "slug": "creep",
+      "title": "Creep",
+      "summary": "A dying plant in our forest",
+      "content_html": "<img src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/creep\/cfa51ba40c-1730227014\/l1000315-500x-crop.jpg\" alt=\"Dying plant photo\" \/><figcaption style=\"font-size: 0.7em; font-style: italic; opacity: .7;margin-bottom:1rem;\">A dying plant.<\/figcaption><p>Winter is here, but some green remains still. <\/p>\n<p>Leica TL2 Voigtlander Nokton 40mm 1:1.4<\/p><p><a href=\"https:\/\/lukedorny.com\/updates\/creep\">Read the full post<\/a><\/p><p>\u2014 Luke<\/p>\n<hr \/>\n<p>Thank you for <a href=\"https:\/\/lukedorny.com\/feed\">reading via RSS<\/a> (this is JSON). If you'd like to browse the site <a href=\"https:\/\/lukedorny.com\" rel=\"me\">lukedorny.com<\/a>, or give me feedback I'd love to hear it via email <a href=\"mailto:&#108;&#x75;&#x6b;&#x65;&#32;&#x40;&#108;&#117;&#107;&#101;&#100;&#111;&#x72;&#x6e;&#121;&#46;&#x63;&#x6f;&#109;\">luke@lukedorny.com<\/a> or via Mastodon as <a href=\"https:\/\/typo.social\/@Luke\" rel=\"me\">@Luke@typo.social<\/a> \/ <a href=\"https:\/\/typo.social\/@Luke\" rel=\"me\">typo.social\/@Luke<\/a>.<\/p>\n<p>If you'd like to support my efforts to write about design, art, and the analog design world, please consider contributing to the Luke Dorny coffee\/cocoa fund on <a href=\"https:\/\/Ko-fi.com\/lukedorny\" rel=\"me\">Ko-fi.com\/lukedorny<\/a> or on <a href=\"https:\/\/buymeacoffee.com\/lukedorny\" rel=\"me\">buymeacoffee.com\/lukedorny<\/a><\/p>",
+      "date_published": "2024-10-29T14:35:00-04:00",
+      "date_modified": "2024-10-30T18:07:46-04:00",
+      "tags": [],
+      "image": "https:\/\/lukedorny.com\/media\/pages\/updates\/creep\/cfa51ba40c-1730227014\/l1000315-500x-crop.jpg",
+      "authors": [
+        {
+          "name": "Author: Luke, most likely.",
+          "url": "https:\/\/lukedorny.com",
+          "avatar": ""
+        }
+      ]
+    },
+    {
+      "id": "https:\/\/lukedorny.com\/updates\/bloom",
+      "url": "https:\/\/lukedorny.com\/updates\/bloom",
+      "slug": "bloom",
+      "title": "Bloom",
+      "summary": "Blocks In Bloom",
+      "content_html": "<img src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/bloom\/73aa98d596-1729799599\/l1000276-500x-crop.jpg\" alt=\"\" \/><p>Just out doing some nature photography.<\/p><p><a href=\"https:\/\/lukedorny.com\/updates\/bloom\">Read the full post<\/a><\/p><p>\u2014 Luke<\/p>\n<hr \/>\n<p>Thank you for <a href=\"https:\/\/lukedorny.com\/feed\">reading via RSS<\/a> (this is JSON). If you'd like to browse the site <a href=\"https:\/\/lukedorny.com\" rel=\"me\">lukedorny.com<\/a>, or give me feedback I'd love to hear it via email <a href=\"mailto:&#x6c;&#x75;&#107;&#101;&#x20;&#x40;&#108;&#x75;&#x6b;&#x65;&#x64;&#111;&#x72;&#x6e;&#121;&#46;&#x63;&#111;&#x6d;\">luke@lukedorny.com<\/a> or via Mastodon as <a href=\"https:\/\/typo.social\/@Luke\" rel=\"me\">@Luke@typo.social<\/a> \/ <a href=\"https:\/\/typo.social\/@Luke\" rel=\"me\">typo.social\/@Luke<\/a>.<\/p>\n<p>If you'd like to support my efforts to write about design, art, and the analog design world, please consider contributing to the Luke Dorny coffee\/cocoa fund on <a href=\"https:\/\/Ko-fi.com\/lukedorny\" rel=\"me\">Ko-fi.com\/lukedorny<\/a> or on <a href=\"https:\/\/buymeacoffee.com\/lukedorny\" rel=\"me\">buymeacoffee.com\/lukedorny<\/a><\/p>",
+      "date_published": "2024-10-24T15:55:00-04:00",
+      "date_modified": "2024-10-24T15:55:17-04:00",
+      "tags": [],
+      "image": "https:\/\/lukedorny.com\/media\/pages\/updates\/bloom\/73aa98d596-1729799599\/l1000276-500x-crop.jpg",
+      "authors": [
+        {
+          "name": "Author: Luke, most likely.",
+          "url": "https:\/\/lukedorny.com",
+          "avatar": ""
+        }
+      ]
+    },
+    {
+      "id": "https:\/\/lukedorny.com\/updates\/support-independent-type",
+      "url": "https:\/\/lukedorny.com\/updates\/support-independent-type",
+      "slug": "support-independent-type",
+      "title": "Support Independent Type",
+      "summary": "the new culture of type specimens",
+      "content_html": "<img src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/support-independent-type\/c81f257630-1729466563\/aimg-0231-500x-crop.jpg\" alt=\"Photography by Luke Dorny\" \/><figcaption style=\"font-size: 0.7em; font-style: italic; opacity: .7;margin-bottom:1rem;\">The dustcover as poster. Or the reverse.<\/figcaption><figure><img alt=\"Photography by Luke Dorny\" src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/support-independent-type\/4a44cd627f-1729466563\/img_0230.jpeg\"><figcaption>The bare cover, still quite stylish.<\/figcaption><\/figure>\n<p>294 pages of type specimens! <\/p>\n<p>A very large collection of type specimens all in one book. I have thought about such a thing before, but this is quite vast.<\/p>\n<p>On permanent loan (I think!) from one of my best friends <a href=\"https:\/\/airbagindustries.com\">Greg<\/a> <a href=\"https:\/\/brilliantcrank.com\">Storey<\/a>, this book will take some time to digest, and I am really enjoying it. By the way, it comes with a dust jacket that transforms into a fine poster print.<\/p>\n<p>By Lars Harmsen and Marian Misiak.<\/p>\n<p>From the authors, they believe that \u201cindependent type design reflects culture in its ambition to build an exciting alternative to the monolithic corporate font giants. In that spirit, we put together a collection of the most trendsetting, forward-thinking and provocative type specimens produced in the last decade.\u201d<\/p>\n<figure><img alt=\"Photography by Luke Dorny\" src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/support-independent-type\/e3f8e0139e-1729466563\/img_0228.jpeg\"><figcaption>Interior of the type specimen book is well layed out and the type is stunning.<\/figcaption><\/figure><p><a href=\"https:\/\/lukedorny.com\/updates\/support-independent-type\">Read the full post<\/a><\/p><p>\u2014 Luke<\/p>\n<hr \/>\n<p>Thank you for <a href=\"https:\/\/lukedorny.com\/feed\">reading via RSS<\/a> (this is JSON). If you'd like to browse the site <a href=\"https:\/\/lukedorny.com\" rel=\"me\">lukedorny.com<\/a>, or give me feedback I'd love to hear it via email <a href=\"mailto:&#108;&#117;&#107;&#101;&#32;&#64;&#x6c;&#117;&#107;&#101;&#100;&#x6f;&#114;&#110;&#x79;&#x2e;&#99;&#111;&#109;\">luke@lukedorny.com<\/a> or via Mastodon as <a href=\"https:\/\/typo.social\/@Luke\" rel=\"me\">@Luke@typo.social<\/a> \/ <a href=\"https:\/\/typo.social\/@Luke\" rel=\"me\">typo.social\/@Luke<\/a>.<\/p>\n<p>If you'd like to support my efforts to write about design, art, and the analog design world, please consider contributing to the Luke Dorny coffee\/cocoa fund on <a href=\"https:\/\/Ko-fi.com\/lukedorny\" rel=\"me\">Ko-fi.com\/lukedorny<\/a> or on <a href=\"https:\/\/buymeacoffee.com\/lukedorny\" rel=\"me\">buymeacoffee.com\/lukedorny<\/a><\/p>",
+      "date_published": "2024-10-20T19:20:00-04:00",
+      "date_modified": "2024-10-20T20:56:55-04:00",
+      "tags": [
+        "Design"
+      ],
+      "image": "https:\/\/lukedorny.com\/media\/pages\/updates\/support-independent-type\/c81f257630-1729466563\/aimg-0231-500x-crop.jpg",
+      "authors": [
+        {
+          "name": "Author: Luke, most likely.",
+          "url": "https:\/\/lukedorny.com",
+          "avatar": ""
+        }
+      ],
+      "external_url": "https:\/\/www.slanted.de\/product\/support-independent-type\/"
+    },
+    {
+      "id": "https:\/\/lukedorny.com\/updates\/maple",
+      "url": "https:\/\/lukedorny.com\/updates\/maple",
+      "slug": "maple",
+      "title": "Maple",
+      "summary": "Hmm, nothing looks photo worthy. Oh, wait!",
+      "content_html": "<img src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/maple\/8582a4f6bd-1732663960\/l1000045-500x-crop.jpg\" alt=\"Photography by Luke Dorny\" \/><figcaption style=\"font-size: 0.7em; font-style: italic; opacity: .7;margin-bottom:1rem;\">Maples leaves.<\/figcaption><p>Yes, fall is here.<\/p>\n<p>Just when you think there\u2019s nothing to take a photo of, you realize you\u2019re taking it for granted.<\/p>\n<p>Leica TL2, Lumix S 20-60mm, \u01925.6, 60mm, 1\/60s<\/p><p><a href=\"https:\/\/lukedorny.com\/updates\/maple\">Read the full post<\/a><\/p><p>\u2014 Luke<\/p>\n<hr \/>\n<p>Thank you for <a href=\"https:\/\/lukedorny.com\/feed\">reading via RSS<\/a> (this is JSON). If you'd like to browse the site <a href=\"https:\/\/lukedorny.com\" rel=\"me\">lukedorny.com<\/a>, or give me feedback I'd love to hear it via email <a href=\"mailto:&#108;&#117;&#107;&#101;&#x20;&#64;&#x6c;&#117;&#107;&#101;&#100;&#111;&#114;&#110;&#121;&#x2e;&#x63;&#x6f;&#x6d;\">luke@lukedorny.com<\/a> or via Mastodon as <a href=\"https:\/\/typo.social\/@Luke\" rel=\"me\">@Luke@typo.social<\/a> \/ <a href=\"https:\/\/typo.social\/@Luke\" rel=\"me\">typo.social\/@Luke<\/a>.<\/p>\n<p>If you'd like to support my efforts to write about design, art, and the analog design world, please consider contributing to the Luke Dorny coffee\/cocoa fund on <a href=\"https:\/\/Ko-fi.com\/lukedorny\" rel=\"me\">Ko-fi.com\/lukedorny<\/a> or on <a href=\"https:\/\/buymeacoffee.com\/lukedorny\" rel=\"me\">buymeacoffee.com\/lukedorny<\/a><\/p>",
+      "date_published": "2024-10-18T18:30:00-04:00",
+      "date_modified": "2024-11-26T18:35:37-05:00",
+      "tags": [
+        "Thoughts"
+      ],
+      "image": "https:\/\/lukedorny.com\/media\/pages\/updates\/maple\/8582a4f6bd-1732663960\/l1000045-500x-crop.jpg",
+      "authors": [
+        {
+          "name": "Author: Luke, most likely.",
+          "url": "https:\/\/lukedorny.com",
+          "avatar": ""
+        }
+      ]
+    },
+    {
+      "id": "https:\/\/lukedorny.com\/updates\/suquamish",
+      "url": "https:\/\/lukedorny.com\/updates\/suquamish",
+      "slug": "suquamish",
+      "title": "Suquamish",
+      "summary": "Suquamish Welcome Pole, Indigenous People\u2019s Day",
+      "content_html": "<img src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/suquamish\/8c77d88cd9-1728956373\/al1000259-500x-crop.jpg\" alt=\"\" \/><p>Last week a special monument was lifted for Chief Seattle\u2019s father, Schweabe, on Bainbridge Island, Washington, carved by x\u02b7ibulic\u01dd (Randi Purser).<\/p>\n<p>I\u2019ve taken a few photographs to show how impressive it is. If you have a chance, make the trek out here to see it (more info below).<\/p>\n<figure><img alt=\"\" src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/suquamish\/97e0728398-1728956372\/l1000240.jpeg\"><\/figure>\n<figure><img alt=\"\" src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/suquamish\/665aebcd59-1728956372\/l1000242.jpeg\"><\/figure>\n<figure><img alt=\"\" src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/suquamish\/04f247212c-1728956373\/l1000243.jpeg\"><\/figure>\n<figure><img alt=\"\" src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/suquamish\/ae12196bc1-1728956372\/l1000245.jpeg\"><\/figure>\n<figure><img alt=\"\" src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/suquamish\/9763b0227c-1728956373\/l1000246.jpeg\"><\/figure>\n<figure><img alt=\"\" src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/suquamish\/deba0d02e9-1728956373\/l1000247.jpeg\"><\/figure>\n<figure><img alt=\"\" src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/suquamish\/7483374196-1728956373\/l1000248.jpeg\"><\/figure>\n<figure><img alt=\"\" src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/suquamish\/cdbf46eab6-1728956372\/l1000249.jpeg\"><\/figure>\n<figure><img alt=\"\" src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/suquamish\/6b0e378048-1728956372\/l1000250.jpeg\"><\/figure>\n<figure><img alt=\"\" src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/suquamish\/d9f36ccd3c-1728956372\/l1000251.jpeg\"><\/figure>\n<figure><img alt=\"\" src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/suquamish\/aefef39867-1728956372\/l1000252.jpeg\"><\/figure>\n<figure><img alt=\"\" src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/suquamish\/eb0d4ddde0-1728956373\/l1000253.jpeg\"><\/figure>\n<figure><img alt=\"\" src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/suquamish\/afcd916e52-1728956373\/l1000254.jpeg\"><\/figure>\n<figure><img alt=\"\" src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/suquamish\/000f3af6b8-1728956373\/l1000255.jpeg\"><\/figure>\n<figure><img alt=\"\" src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/suquamish\/b952d55cd7-1728956374\/l1000260.jpeg\"><\/figure>\n<figure><img alt=\"\" src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/suquamish\/fbfea52254-1728956372\/l1000261.jpeg\"><\/figure>\n<p>From the plaque\u2019s text:<\/p>\n<p>\u201c1<br \/>\n\u201cThis 14-foot Welcome Pole represents Chief Seattle's father, Schweabe*, who was Suquamish. The Thunderbird atop the figure represents the power of his family. As a new father at the time of first European contact, he is depicted here with a frog of the new year, representing a family and a people at the cusp of a time of great change.<\/p>\n<p>2<br \/>\n\u201cThe pole complements a carved post, across Puget Sound on the Seattle Waterfront, representing Chief Seattle's mother Scholitza*, who was Duwamish, holding him as a baby.<br \/>\nBoth were designed, carved from old-growth cedar, and painted by Suquamish tribal elder and carver x\u02b7ibulic\u01dd (Randi Purser).<\/p>\n<p>3<br \/>\n\u201cOld Man House, located at x\u02b7s\u01ddq'\u02b7\u01ddb in Suquamish, was the largest longhouse in the region and built by Chief Seattle's father, Schweabe, and Chief Kitsap.<br \/>\n*This name is an approximation of a traditional name.<\/p>\n<p>\u201cTo learn more about the rich culture and history of the Suquamish People, please visit the Suquamish Museum at the Port Madison Indian Reservation.\"<\/p>\n<figure><img alt=\"\" src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/suquamish\/b7d2b04583-1728955742\/img_0327.jpeg\"><\/figure>\n<figure><img alt=\"\" src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/suquamish\/d39c960a44-1728955742\/img_0326.jpeg\"><\/figure>\n<figure><img alt=\"\" src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/suquamish\/9b7b66f935-1728955742\/img_0324.jpeg\"><\/figure>\n<figure><img alt=\"\" src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/suquamish\/504ea34ac3-1728955742\/img_0323.jpeg\"><\/figure>\n<figure><img alt=\"\" src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/suquamish\/0c4c450a60-1728955742\/img_0322.jpeg\"><\/figure>\n<figure><img alt=\"\" src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/suquamish\/642ac62d0f-1728955742\/img_0321.jpeg\"><\/figure>\n<figure><img alt=\"\" src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/suquamish\/7216b51c7d-1728955742\/img_0320.jpeg\"><\/figure>\n<figure><img alt=\"\" src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/suquamish\/af7f21be2a-1728955742\/img_0319.jpeg\"><\/figure>\n<figure><img alt=\"\" src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/suquamish\/db6db87322-1728955742\/img_0325.jpeg\"><\/figure>\n<p>The Welcome Pole can be found on the <a href=\"https:\/\/bainbridgewa.gov\/532\/Sound-to-Olympics-Trail\">Sound to Olympics Trail<\/a> as it passes through Bainbridge Island in Kitsap County, just across the water from Seattle.<\/p>\n<p>\u201cEvery part of this soil is sacred in the estimation of my people. Every hillside, every valley, every plain and grove, has been hallowed by some sad or happy event in days long vanished.\u201d<br \/>\n\u2014 Chief Seattle  1854<\/p>\n<p>I would like to acknowledge that the land on which we gather is within the ancestral territory of the suq\u0300\u02b7ab\u0161 \u201cPeople of Clear Salt Water\u201d (Suquamish People). Expert fisherman, canoe builders and basket weavers, the suq\u0300\u02b7ab\u0161 live in harmony with the lands and waterways along Washington\u2019s Central Salish Sea as they have for thousands of years. Here, the suq\u0300\u02b7ab\u0161 live and protect the land and waters of their ancestors for future generations as promised by the Point Elliot Treaty of 1855.<\/p>\n<p>The QR code leads you to: <a href=\"https:\/\/bit.ly\/SuqMuseum\">https:\/\/bit.ly\/SuqMuseum<\/a><\/p><p><a href=\"https:\/\/lukedorny.com\/updates\/suquamish\">Read the full post<\/a><\/p><p>\u2014 Luke<\/p>\n<hr \/>\n<p>Thank you for <a href=\"https:\/\/lukedorny.com\/feed\">reading via RSS<\/a> (this is JSON). If you'd like to browse the site <a href=\"https:\/\/lukedorny.com\" rel=\"me\">lukedorny.com<\/a>, or give me feedback I'd love to hear it via email <a href=\"mailto:&#x6c;&#x75;&#107;&#x65;&#x20;&#x40;&#108;&#117;&#107;&#x65;&#100;&#x6f;&#x72;&#x6e;&#x79;&#x2e;&#x63;&#x6f;&#109;\">luke@lukedorny.com<\/a> or via Mastodon as <a href=\"https:\/\/typo.social\/@Luke\" rel=\"me\">@Luke@typo.social<\/a> \/ <a href=\"https:\/\/typo.social\/@Luke\" rel=\"me\">typo.social\/@Luke<\/a>.<\/p>\n<p>If you'd like to support my efforts to write about design, art, and the analog design world, please consider contributing to the Luke Dorny coffee\/cocoa fund on <a href=\"https:\/\/Ko-fi.com\/lukedorny\" rel=\"me\">Ko-fi.com\/lukedorny<\/a> or on <a href=\"https:\/\/buymeacoffee.com\/lukedorny\" rel=\"me\">buymeacoffee.com\/lukedorny<\/a><\/p>",
+      "date_published": "2024-10-14T21:15:00-04:00",
+      "date_modified": "2024-10-14T22:10:18-04:00",
+      "tags": [],
+      "image": "https:\/\/lukedorny.com\/media\/pages\/updates\/suquamish\/8c77d88cd9-1728956373\/al1000259-500x-crop.jpg",
+      "authors": [
+        {
+          "name": "Author: Luke, most likely.",
+          "url": "https:\/\/lukedorny.com",
+          "avatar": ""
+        }
+      ],
+      "external_url": "https:\/\/suquamish.nsn.us"
+    },
+    {
+      "id": "https:\/\/lukedorny.com\/updates\/musician-s-friends",
+      "url": "https:\/\/lukedorny.com\/updates\/musician-s-friends",
+      "slug": "musician-s-friends",
+      "title": "Musician\u2019s Friends",
+      "summary": "Some of my best friends make music",
+      "content_html": "<img src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/musician-s-friends\/d269cb3806-1728691360\/obd-trent-echowolf-cleanshot-2024-10-11-at-16.45.52@2xfinished-500x-crop.jpg\" alt=\"\" \/><p>After <a href=\"https:\/\/lukedorny.com\/updates\/island-tunes\">doing more work<\/a> to clean up my music library, I stopped to realize how many of my friends and acquaintances are musical talents. So here\u2019s a post to them.<\/p>\n<p>Thank you. Huge fan. Love your work.<\/p>\n<p>I\u2019ll post as many links to them as I can muster.<\/p>\n<p>Other Brother Darryl (Dan Cederholm on drums):<br \/>\n<a href=\"https:\/\/otherbrotherdarrylband.bandcamp.com\/track\/sometimes\">https:\/\/otherbrotherdarrylband.bandcamp.com\/track\/sometimes<\/a><br \/>\n<a href=\"https:\/\/dancederholm.bandcamp.com\">https:\/\/dancederholm.bandcamp.com<\/a><\/p>\n<p>Trent Walton &amp; his Echo Wolf bands:<br \/>\n<a href=\"https:\/\/echowolf.bandcamp.com\">https:\/\/echowolf.bandcamp.com<\/a><br \/>\n<a href=\"https:\/\/trentwalton.bandcamp.com\">https:\/\/trentwalton.bandcamp.com<\/a><\/p>\n<p>Simon Collison &amp; his band Site NonSite:<br \/>\n<a href=\"https:\/\/sitenonsite.bandcamp.com\/music\">https:\/\/sitenonsite.bandcamp.com\/music<\/a><\/p>\n<p>Corey Holms:<br \/>\n<a href=\"https:\/\/coreyholms.bandcamp.com\/album\/exhausted-calm\">https:\/\/coreyholms.bandcamp.com\/album\/exhausted-calm<\/a><\/p>\n<p>Todd Waller:<br \/>\n<a href=\"https:\/\/omn1verse.bandcamp.com\/music\">https:\/\/omn1verse.bandcamp.com\/music<\/a><\/p>\n<p>Naz Hamid\u2019s band Murders &amp; Mysteries:<br \/>\n<a href=\"https:\/\/www.discogs.com\/release\/14478066-Murders-Mysteries-Its-All-In-Our-Histories\">https:\/\/www.discogs.com\/release\/14478066-Murders-Mysteries-Its-All-In-Our-Histories<\/a><br \/>\n<a href=\"https:\/\/murdersandmysteries.bandcamp.com\/community\">https:\/\/murdersandmysteries.bandcamp.com\/community<\/a><\/p>\n<p>Scott Boms\u2019 band George (he\u2019s on drums):<br \/>\n<a href=\"https:\/\/ournameisgeorge.bandcamp.com\/album\/life-in-the-dead-of-winter\">https:\/\/ournameisgeorge.bandcamp.com\/album\/life-in-the-dead-of-winter<\/a><\/p>\n<p>Scott also played with Canadian bands The Darns and Beru\u2019s Nephew.<\/p>\n<p>I\u2019m sure that there are other people I know personally that likely make music but haven\u2019t shared it with me. To them, I send a wink. I\u2019d love to hear it.<\/p><p><a href=\"https:\/\/lukedorny.com\/updates\/musician-s-friends\">Read the full post<\/a><\/p><p>\u2014 Luke<\/p>\n<hr \/>\n<p>Thank you for <a href=\"https:\/\/lukedorny.com\/feed\">reading via RSS<\/a> (this is JSON). If you'd like to browse the site <a href=\"https:\/\/lukedorny.com\" rel=\"me\">lukedorny.com<\/a>, or give me feedback I'd love to hear it via email <a href=\"mailto:&#108;&#117;&#x6b;&#101;&#x20;&#x40;&#108;&#117;&#107;&#101;&#100;&#x6f;&#x72;&#x6e;&#x79;&#x2e;&#99;&#111;&#x6d;\">luke@lukedorny.com<\/a> or via Mastodon as <a href=\"https:\/\/typo.social\/@Luke\" rel=\"me\">@Luke@typo.social<\/a> \/ <a href=\"https:\/\/typo.social\/@Luke\" rel=\"me\">typo.social\/@Luke<\/a>.<\/p>\n<p>If you'd like to support my efforts to write about design, art, and the analog design world, please consider contributing to the Luke Dorny coffee\/cocoa fund on <a href=\"https:\/\/Ko-fi.com\/lukedorny\" rel=\"me\">Ko-fi.com\/lukedorny<\/a> or on <a href=\"https:\/\/buymeacoffee.com\/lukedorny\" rel=\"me\">buymeacoffee.com\/lukedorny<\/a><\/p>",
+      "date_published": "2024-10-11T20:00:00-04:00",
+      "date_modified": "2024-10-14T22:19:34-04:00",
+      "tags": [],
+      "image": "https:\/\/lukedorny.com\/media\/pages\/updates\/musician-s-friends\/d269cb3806-1728691360\/obd-trent-echowolf-cleanshot-2024-10-11-at-16.45.52@2xfinished-500x-crop.jpg",
+      "authors": [
+        {
+          "name": "Author: Luke, most likely.",
+          "url": "https:\/\/lukedorny.com",
+          "avatar": ""
+        }
+      ],
+      "external_url": "https:\/\/bandcamp.com\/luxuryluke"
+    },
+    {
+      "id": "https:\/\/lukedorny.com\/updates\/island-tunes",
+      "url": "https:\/\/lukedorny.com\/updates\/island-tunes",
+      "slug": "island-tunes",
+      "title": "Island Tunes",
+      "summary": "Streaming music all day?",
+      "content_html": "<img src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/island-tunes\/0ea4cd30a4-1728691505\/island-tunes-500x-crop.jpg\" alt=\"\" \/><p>Since picking up an old iPod and jamming it with music files, I started thinking about how much and which music I\u2019d like with me while exercising or driving.<\/p>\n<p>So I\u2019m revisiting the music I\u2019ve purchased over the years from various outlets and collecting them all again.<\/p>\n<p>If you enjoyed music before 2015, it\u2019s likely you had a digital music library at least for a few years. You know, during the whole Napster and licensed music files unpleasantness.<\/p>\n<p>One driving force behind getting all of these files wrangled and adding to them with ones I\u2019ve appreciated over the years, is giving back to bands and artists that I enjoy listening to, instead of paying the monthly leach money to stream them.<\/p>\n<p>More on the iPod idea soon, but if you look out there, you\u2019ll see there\u2019s a move to go offline and not be in the clouds so much.<\/p><p><a href=\"https:\/\/lukedorny.com\/updates\/island-tunes\">Read the full post<\/a><\/p><p>\u2014 Luke<\/p>\n<hr \/>\n<p>Thank you for <a href=\"https:\/\/lukedorny.com\/feed\">reading via RSS<\/a> (this is JSON). If you'd like to browse the site <a href=\"https:\/\/lukedorny.com\" rel=\"me\">lukedorny.com<\/a>, or give me feedback I'd love to hear it via email <a href=\"mailto:&#x6c;&#x75;&#x6b;&#x65;&#x20;&#64;&#108;&#117;&#107;&#101;&#100;&#x6f;&#114;&#110;&#121;&#x2e;&#x63;&#111;&#109;\">luke@lukedorny.com<\/a> or via Mastodon as <a href=\"https:\/\/typo.social\/@Luke\" rel=\"me\">@Luke@typo.social<\/a> \/ <a href=\"https:\/\/typo.social\/@Luke\" rel=\"me\">typo.social\/@Luke<\/a>.<\/p>\n<p>If you'd like to support my efforts to write about design, art, and the analog design world, please consider contributing to the Luke Dorny coffee\/cocoa fund on <a href=\"https:\/\/Ko-fi.com\/lukedorny\" rel=\"me\">Ko-fi.com\/lukedorny<\/a> or on <a href=\"https:\/\/buymeacoffee.com\/lukedorny\" rel=\"me\">buymeacoffee.com\/lukedorny<\/a><\/p>",
+      "date_published": "2024-10-08T22:40:00-04:00",
+      "date_modified": "2024-10-08T23:02:52-04:00",
+      "tags": [
+        "Music"
+      ],
+      "image": "https:\/\/lukedorny.com\/media\/pages\/updates\/island-tunes\/0ea4cd30a4-1728691505\/island-tunes-500x-crop.jpg",
+      "authors": [
+        {
+          "name": "Author: Luke, most likely.",
+          "url": "https:\/\/lukedorny.com",
+          "avatar": ""
+        }
+      ]
+    },
+    {
+      "id": "https:\/\/lukedorny.com\/updates\/hydrant",
+      "url": "https:\/\/lukedorny.com\/updates\/hydrant",
+      "slug": "hydrant",
+      "title": "Hydrant",
+      "summary": "Floating Hydrants?",
+      "content_html": "<img src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/hydrant\/f074f861b3-1732664629\/l1000077-2-500x-crop.jpg\" alt=\"Photo by Luke Dorny\" \/><figcaption style=\"font-size: 0.7em; font-style: italic; opacity: .7;margin-bottom:1rem;\">Hydrant!<\/figcaption><p>Went out to shoot and then took a snap of this hydrant, as a photo test for the lens, and looking at it now, the hydrant seems to float.<\/p>\n<p>Leica TL2, Sigma 30mm F1.4 DC DN Contemporary, \u01924, 45mm, ISO100, 1\/500s<\/p><p><a href=\"https:\/\/lukedorny.com\/updates\/hydrant\">Read the full post<\/a><\/p><p>\u2014 Luke<\/p>\n<hr \/>\n<p>Thank you for <a href=\"https:\/\/lukedorny.com\/feed\">reading via RSS<\/a> (this is JSON). If you'd like to browse the site <a href=\"https:\/\/lukedorny.com\" rel=\"me\">lukedorny.com<\/a>, or give me feedback I'd love to hear it via email <a href=\"mailto:&#108;&#117;&#x6b;&#x65;&#32;&#64;&#x6c;&#117;&#x6b;&#x65;&#x64;&#x6f;&#114;&#x6e;&#x79;&#46;&#99;&#111;&#109;\">luke@lukedorny.com<\/a> or via Mastodon as <a href=\"https:\/\/typo.social\/@Luke\" rel=\"me\">@Luke@typo.social<\/a> \/ <a href=\"https:\/\/typo.social\/@Luke\" rel=\"me\">typo.social\/@Luke<\/a>.<\/p>\n<p>If you'd like to support my efforts to write about design, art, and the analog design world, please consider contributing to the Luke Dorny coffee\/cocoa fund on <a href=\"https:\/\/Ko-fi.com\/lukedorny\" rel=\"me\">Ko-fi.com\/lukedorny<\/a> or on <a href=\"https:\/\/buymeacoffee.com\/lukedorny\" rel=\"me\">buymeacoffee.com\/lukedorny<\/a><\/p>",
+      "date_published": "2024-09-20T18:40:00-04:00",
+      "date_modified": "2024-11-26T18:45:22-05:00",
+      "tags": [],
+      "image": "https:\/\/lukedorny.com\/media\/pages\/updates\/hydrant\/f074f861b3-1732664629\/l1000077-2-500x-crop.jpg",
+      "authors": [
+        {
+          "name": "Author: Luke, most likely.",
+          "url": "https:\/\/lukedorny.com",
+          "avatar": ""
+        }
+      ]
+    },
+    {
+      "id": "https:\/\/lukedorny.com\/updates\/bima",
+      "url": "https:\/\/lukedorny.com\/updates\/bima",
+      "slug": "bima",
+      "title": "BIMA",
+      "summary": "Local Art Museum",
+      "content_html": "<img src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/bima\/36f028a9fa-1728442296\/img_0022-500x-crop.jpg\" alt=\"\" \/><p>Happy 10th birthday, Bainbridge Island Art Museum. <\/p>\n<p>I love you.<\/p><p><a href=\"https:\/\/lukedorny.com\/updates\/bima\">Read the full post<\/a><\/p><p>\u2014 Luke<\/p>\n<hr \/>\n<p>Thank you for <a href=\"https:\/\/lukedorny.com\/feed\">reading via RSS<\/a> (this is JSON). If you'd like to browse the site <a href=\"https:\/\/lukedorny.com\" rel=\"me\">lukedorny.com<\/a>, or give me feedback I'd love to hear it via email <a href=\"mailto:&#108;&#117;&#107;&#x65;&#32;&#x40;&#x6c;&#x75;&#107;&#x65;&#100;&#111;&#x72;&#x6e;&#x79;&#46;&#99;&#x6f;&#x6d;\">luke@lukedorny.com<\/a> or via Mastodon as <a href=\"https:\/\/typo.social\/@Luke\" rel=\"me\">@Luke@typo.social<\/a> \/ <a href=\"https:\/\/typo.social\/@Luke\" rel=\"me\">typo.social\/@Luke<\/a>.<\/p>\n<p>If you'd like to support my efforts to write about design, art, and the analog design world, please consider contributing to the Luke Dorny coffee\/cocoa fund on <a href=\"https:\/\/Ko-fi.com\/lukedorny\" rel=\"me\">Ko-fi.com\/lukedorny<\/a> or on <a href=\"https:\/\/buymeacoffee.com\/lukedorny\" rel=\"me\">buymeacoffee.com\/lukedorny<\/a><\/p>",
+      "date_published": "2024-09-05T15:30:00-04:00",
+      "date_modified": "2024-09-05T15:31:54-04:00",
+      "tags": [],
+      "image": "https:\/\/lukedorny.com\/media\/pages\/updates\/bima\/36f028a9fa-1728442296\/img_0022-500x-crop.jpg",
+      "authors": [
+        {
+          "name": "Author: Luke, most likely.",
+          "url": "https:\/\/lukedorny.com",
+          "avatar": ""
+        }
+      ],
+      "external_url": "https:\/\/biartmuseum.org"
+    },
+    {
+      "id": "https:\/\/lukedorny.com\/updates\/innit",
+      "url": "https:\/\/lukedorny.com\/updates\/innit",
+      "slug": "innit",
+      "title": "Innit",
+      "summary": "Gorilla art rings a gnarly tune",
+      "content_html": "<img src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/innit\/657071e1c6-1715034070\/jh-cover-500x-crop.jpg\" alt=\"Cover art photo\" \/><figcaption style=\"font-size: 0.7em; font-style: italic; opacity: .7;margin-bottom:1rem;\">Jamie Hewlett\u2019s Taschen Book<\/figcaption><h3>Where<\/h3>\n<p>I\u2019m here on the porch next to my younger brother who lives in Australia. It\u2019s \u201cwinter\u201d here. It\u2019s 70\u00b0F (18\u00b0C). <\/p>\n<h3>What<\/h3>\n<p>I had recently picked up Jamie Hewlitt\u2019s work book full of sketches and artwork for his last 25 years or so of his incredibly well-packed and famous career. <\/p>\n<figure><img alt=\"\" src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/innit\/91ff7c2fee-1715034152\/jh-rider.jpeg\"><\/figure>\n<h2>Who?<\/h2>\n<p>You may know him from his work such as Tank Girl, Doom Patrol, or possibly elsewhere, but most likely from the British Pop Punk Combo Hologram Anime Band The Gorillaz with his childhood friend Damon Albarn. <\/p>\n<h3>Why<\/h3>\n<p>It\u2019s a fantastic, high-quality Taschen printing, and this one\u2019s actually a second edition, with more bonus artwork added. At over 501+ pages, it is deceptively small, measuring a paltry 6 x 9\u201d ish, so while it won\u2019t fit in your pocket, it still qualifies as a coffee table book in our home. <\/p>\n<p>I love it. Cheeky, raw, and very well done Mr. Hewlitt &amp; Taschen.<\/p>\n<h2>Live<\/h2>\n<p>Managed to see the Gorillaz with one of my best friends <a href=\"https:\/\/xerx.es\">X<\/a> when they toured into Seattle in 2023 and it was incredible. Damon Albarn &amp; family were on it and blazing brightly (and loudly).<\/p>\n<p>Here's one of my favorite videos from the band Gorillaz with Mos Def and Bobby Womack(!) featuring the characters from Hewlitt's brain:<\/p>\n<figure class=\"video\"><iframe allow=\"fullscreen\" allowfullscreen src=\"https:\/\/www.youtube.com\/embed\/nhPaWIeULKk\"><\/iframe><\/figure>\n<p>So many of their videos are a treat to watch.<\/p>\n<figure class=\"video\"><iframe allow=\"fullscreen\" allowfullscreen src=\"https:\/\/www.youtube.com\/embed\/HyHNuVaZJ-k\"><\/iframe><\/figure>\n<figure class=\"video\"><iframe allow=\"fullscreen\" allowfullscreen src=\"https:\/\/www.youtube.com\/embed\/xc6DpCXkucY\"><\/iframe><\/figure>\n<p>Here's the lot:<br \/>\n<a href=\"https:\/\/www.youtube.com\/channel\/UCfIXdjDQH9Fau7y99_Orpjw\">Gorillaz on Youtube<\/a><\/p>\n<figure><img alt=\"\" src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/innit\/4301876248-1715122848\/videos-innit.jpeg\"><\/figure>\n<h3>So<\/h3>\n<p>Great art book for collectors or fans of the bands and comics mentioned, and a great live act, too.<\/p><p><a href=\"https:\/\/lukedorny.com\/updates\/innit\">Read the full post<\/a><\/p><p>\u2014 Luke<\/p>\n<hr \/>\n<p>Thank you for <a href=\"https:\/\/lukedorny.com\/feed\">reading via RSS<\/a> (this is JSON). If you'd like to browse the site <a href=\"https:\/\/lukedorny.com\" rel=\"me\">lukedorny.com<\/a>, or give me feedback I'd love to hear it via email <a href=\"mailto:&#108;&#x75;&#x6b;&#x65;&#32;&#x40;&#108;&#117;&#107;&#101;&#x64;&#111;&#x72;&#x6e;&#x79;&#x2e;&#99;&#111;&#x6d;\">luke@lukedorny.com<\/a> or via Mastodon as <a href=\"https:\/\/typo.social\/@Luke\" rel=\"me\">@Luke@typo.social<\/a> \/ <a href=\"https:\/\/typo.social\/@Luke\" rel=\"me\">typo.social\/@Luke<\/a>.<\/p>\n<p>If you'd like to support my efforts to write about design, art, and the analog design world, please consider contributing to the Luke Dorny coffee\/cocoa fund on <a href=\"https:\/\/Ko-fi.com\/lukedorny\" rel=\"me\">Ko-fi.com\/lukedorny<\/a> or on <a href=\"https:\/\/buymeacoffee.com\/lukedorny\" rel=\"me\">buymeacoffee.com\/lukedorny<\/a><\/p>",
+      "date_published": "2024-08-05T18:20:00-04:00",
+      "date_modified": "2024-08-05T02:09:07-04:00",
+      "tags": [],
+      "image": "https:\/\/lukedorny.com\/media\/pages\/updates\/innit\/657071e1c6-1715034070\/jh-cover-500x-crop.jpg",
+      "authors": [
+        {
+          "name": "Author: Luke, most likely.",
+          "url": "https:\/\/lukedorny.com",
+          "avatar": ""
+        }
+      ],
+      "external_url": "https:\/\/jamiehewlett.com\/pages\/about"
+    },
+    {
+      "id": "https:\/\/lukedorny.com\/updates\/play",
+      "url": "https:\/\/lukedorny.com\/updates\/play",
+      "slug": "play",
+      "title": "Play",
+      "summary": "",
+      "content_html": "<img src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/play\/b393993e54-1718242530\/playdate-500x-crop.jpg\" alt=\"Artwork and Photography by Luke Dorny\" \/><figcaption style=\"font-size: 0.7em; font-style: italic; opacity: .7;margin-bottom:1rem;\">My playdate is about one year old here and still works wonderfully.<\/figcaption><p>There's a <a href=\"https:\/\/play.date\/dev\/\">Developer site<\/a><br \/>\nThere's a font creator: <a href=\"https:\/\/play.date\/caps\/\">Caps<\/a><br \/>\nThere's a <a href=\"https:\/\/podcast.play.date\/\">Podcast<\/a><br \/>\nThere's a game maker: <a href=\"https:\/\/play.date\/pulp\/\">Pulp<\/a><br \/>\nThere's an app for local dev: <a href=\"https:\/\/play.date\/mirror\/\">Mirror<\/a><br \/>\nThere's a <a href=\"https:\/\/play.date\/games\/\">Game directory<\/a><\/p>\n<p>And there's a <a href=\"https:\/\/news.play.date\/\">News site<\/a> (Okay, okay)<\/p>\n<figure><img alt=\"Artwork and Photography by Luke Dorny\" src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/play\/d35200bf28-1718242531\/playdates-stereo-dock.png\"><\/figure>\n<figure><img alt=\"Artwork and Photography by Luke Dorny\" src=\"https:\/\/lukedorny.com\/media\/pages\/updates\/play\/4022b23f80-1718242531\/playdates-game-catalog.png\"><\/figure>\n<p>I sat on this post for nine months so I'd have time to write more, but I haven't written more. These links should keep you busy, right?<\/p><p><a href=\"https:\/\/lukedorny.com\/updates\/play\">Read the full post<\/a><\/p><p>\u2014 Luke<\/p>\n<hr \/>\n<p>Thank you for <a href=\"https:\/\/lukedorny.com\/feed\">reading via RSS<\/a> (this is JSON). If you'd like to browse the site <a href=\"https:\/\/lukedorny.com\" rel=\"me\">lukedorny.com<\/a>, or give me feedback I'd love to hear it via email <a href=\"mailto:&#x6c;&#117;&#107;&#101;&#x20;&#64;&#108;&#117;&#107;&#x65;&#x64;&#x6f;&#114;&#x6e;&#x79;&#46;&#x63;&#111;&#109;\">luke@lukedorny.com<\/a> or via Mastodon as <a href=\"https:\/\/typo.social\/@Luke\" rel=\"me\">@Luke@typo.social<\/a> \/ <a href=\"https:\/\/typo.social\/@Luke\" rel=\"me\">typo.social\/@Luke<\/a>.<\/p>\n<p>If you'd like to support my efforts to write about design, art, and the analog design world, please consider contributing to the Luke Dorny coffee\/cocoa fund on <a href=\"https:\/\/Ko-fi.com\/lukedorny\" rel=\"me\">Ko-fi.com\/lukedorny<\/a> or on <a href=\"https:\/\/buymeacoffee.com\/lukedorny\" rel=\"me\">buymeacoffee.com\/lukedorny<\/a><\/p>",
+      "date_published": "2024-07-16T02:25:00-04:00",
+      "date_modified": "2024-07-16T18:26:29-04:00",
+      "tags": [
+        "Design"
+      ],
+      "image": "https:\/\/lukedorny.com\/media\/pages\/updates\/play\/b393993e54-1718242530\/playdate-500x-crop.jpg",
+      "authors": [
+        {
+          "name": "Author: Luke, most likely.",
+          "url": "https:\/\/lukedorny.com",
+          "avatar": ""
+        }
+      ],
+      "external_url": "https:\/\/play.date"
+    }
+  ]
+}

@@ -9,6 +9,10 @@ module Feedjira
         expect(JSONFeed).to be_able_to_parse(sample_json_feed)
       end
 
+      it "returns true for a JSON feed with escaped URIs" do
+        expect(JSONFeed).to be_able_to_parse(sample_json_feed_with_escaped_uris)
+      end
+
       it "returns false for an RSS feed" do
         expect(JSONFeed).not_to be_able_to_parse(sample_rss_feed)
       end
