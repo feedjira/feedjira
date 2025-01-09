@@ -1,5 +1,10 @@
 # Feedjira Changelog
 
+## 3.2.4
+
+* Increasing slice limit regarding able_to_parse? (#514)
+* Enable parsing of JSON feeds with escaped version URL (#515)
+
 ## 3.2.3
 
 * Switch date parse error to debug (#492)
