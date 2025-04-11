@@ -1,5 +1,9 @@
 # Feedjira Changelog
 
+## 3.2.5
+
+* Removing start_of_doc slice limit altogether (#525)
+
 ## 3.2.4
 
 * Increasing slice limit regarding able_to_parse? (#514)
