@@ -70,8 +70,7 @@ module Feedjira
   #   parser = Feedjira.parser_for_xml(xml)
   #   parser.parse(xml)
   def parser_for_xml(xml)
-    start_of_doc = xml.slice(0, 4000)
-    Feedjira.parsers.detect { |klass| klass.able_to_parse?(start_of_doc) }
+    Feedjira.parsers.detect { |klass| klass.able_to_parse?(xml) }
   end
   module_function :parser_for_xml
 end
