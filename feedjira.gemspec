@@ -33,5 +33,5 @@ Gem::Specification.new do |s|
 
   s.add_dependency "loofah", ">= 2.3.1", "< 3"
   s.add_dependency "sax-machine", ">= 1.0", "< 2"
-  s.add_dependency "logger"
+  s.add_dependency "logger", ">= 1.0", "< 2"
 end
