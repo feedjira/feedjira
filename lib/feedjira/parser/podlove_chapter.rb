@@ -5,6 +5,7 @@ module Feedjira
     class PodloveChapter
       include SAXMachine
       include FeedEntryUtilities
+
       attribute :start, as: :start_ntp
       attribute :title
       attribute :href, as: :url

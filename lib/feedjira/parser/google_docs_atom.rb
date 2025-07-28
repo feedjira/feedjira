@@ -6,6 +6,7 @@ module Feedjira
     class GoogleDocsAtom
       include SAXMachine
       include FeedUtilities
+
       element :title
       element :subtitle, as: :description
       element :link, as: :url, value: :href, with: { type: "text/html" }
