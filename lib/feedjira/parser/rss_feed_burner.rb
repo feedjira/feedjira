@@ -6,6 +6,7 @@ module Feedjira
     class RSSFeedBurner
       include SAXMachine
       include FeedUtilities
+
       element :title
       element :description
       element :link, as: :url
