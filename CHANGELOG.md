@@ -1,5 +1,9 @@
 # Feedjira Changelog
 
+## 3.2.6
+
+* Add explicit logger dependency in gemspec for ruby 3.5+ (#532)
+
 ## 3.2.5
 
 * Removing start_of_doc slice limit altogether (#525)
