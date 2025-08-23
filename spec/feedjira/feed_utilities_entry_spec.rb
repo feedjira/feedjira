@@ -36,17 +36,17 @@ describe Feedjira::FeedUtilities do
     it "provides a sanitized title" do
       new_title = "<script>this is not safe</script>#{@entry.title}"
       @entry.title = new_title
-      scrubbed_title = Feedjira::Util::Sanitizer.sanitize(new_title)
-      expect(Feedjira::Util::Sanitizer.sanitize(@entry.title)).to eq scrubbed_title
+      scrubbed_title = Loofah.scrub_fragment(new_title, :prune).to_s
+      expect(Loofah.scrub_fragment(@entry.title, :prune).to_s).to eq scrubbed_title
     end
 
     it "sanitizes content in place" do
       new_content = "<script>#{@entry.content}"
       @entry.content = new_content.dup
 
-      scrubbed_content = Feedjira::Util::Sanitizer.sanitize(new_content)
+      scrubbed_content = Loofah.scrub_fragment(new_content, :prune).to_s
 
-      expect(Feedjira::Util::Sanitizer.sanitize!(@entry.content)).to eq scrubbed_content
+      @entry.sanitize!
       expect(@entry.content).to eq scrubbed_content
     end
 
@@ -55,9 +55,9 @@ describe Feedjira::FeedUtilities do
       @entry.author  += "<script>"
       @entry.content += "<script>"
 
-      cleaned_title   = Feedjira::Util::Sanitizer.sanitize(@entry.title)
-      cleaned_author  = Feedjira::Util::Sanitizer.sanitize(@entry.author)
-      cleaned_content = Feedjira::Util::Sanitizer.sanitize(@entry.content)
+      cleaned_title   = Loofah.scrub_fragment(@entry.title, :prune).to_s
+      cleaned_author  = Loofah.scrub_fragment(@entry.author, :prune).to_s
+      cleaned_content = Loofah.scrub_fragment(@entry.content, :prune).to_s
 
       @entry.sanitize!
       expect(@entry.title).to   eq cleaned_title

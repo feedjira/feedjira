@@ -45,7 +45,7 @@ module Feedjira
 
         current_value = send(name)
         if current_value.is_a?(String)
-          Util::Sanitizer.sanitize!(current_value)
+          send(:"#{name}=", Loofah.scrub_fragment(current_value, :prune).to_s)
         end
       end
     end
