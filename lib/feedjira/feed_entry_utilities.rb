@@ -9,7 +9,7 @@ module Feedjira
     end
 
     def parse_datetime(string)
-      DateTime.parse(string).feed_utils_to_gm_time
+      Feedjira::Utils.date_to_gm_time(DateTime.parse(string))
     rescue StandardError => e
       Feedjira.logger.debug("Failed to parse date #{string.inspect}")
       Feedjira.logger.debug(e)
@@ -41,8 +41,9 @@ module Feedjira
 
     def sanitize!
       %w[title author summary content image].each do |name|
-        if respond_to?(name) && send(name).respond_to?(:sanitize!)
-          send(name).send(:sanitize!)
+        if respond_to?(name) && send(name).respond_to?(:to_s)
+          sanitized_value = Feedjira::Utils.sanitize_string(send(name).to_s)
+          instance_variable_set(:"@#{name}", sanitized_value)
         end
       end
     end
