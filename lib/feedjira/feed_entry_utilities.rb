@@ -41,8 +41,11 @@ module Feedjira
 
     def sanitize!
       %w[title author summary content image].each do |name|
-        if respond_to?(name) && send(name).respond_to?(:sanitize!)
-          send(name).send(:sanitize!)
+        next unless respond_to?(name)
+
+        current_value = send(name)
+        if current_value.is_a?(String)
+          send(:"#{name}=", Loofah.scrub_fragment(current_value, :prune).to_s)
         end
       end
     end

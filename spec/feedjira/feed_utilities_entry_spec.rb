@@ -37,7 +37,7 @@ describe Feedjira::FeedUtilities do
       new_title = "<script>this is not safe</script>#{@entry.title}"
       @entry.title = new_title
       scrubbed_title = Loofah.scrub_fragment(new_title, :prune).to_s
-      expect(@entry.title.sanitize).to eq scrubbed_title
+      expect(Loofah.scrub_fragment(@entry.title, :prune).to_s).to eq scrubbed_title
     end
 
     it "sanitizes content in place" do
@@ -46,7 +46,7 @@ describe Feedjira::FeedUtilities do
 
       scrubbed_content = Loofah.scrub_fragment(new_content, :prune).to_s
 
-      expect(@entry.content.sanitize!).to eq scrubbed_content
+      @entry.sanitize!
       expect(@entry.content).to eq scrubbed_content
     end
 

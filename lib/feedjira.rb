@@ -6,7 +6,6 @@ require "loofah"
 require "logger"
 require "json"
 
-require_relative "feedjira/core_ext"
 require_relative "feedjira/util"
 require_relative "feedjira/util/parse_time"
 require_relative "feedjira/configuration"
