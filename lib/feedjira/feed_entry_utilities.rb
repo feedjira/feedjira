@@ -9,7 +9,7 @@ module Feedjira
     end
 
     def parse_datetime(string)
-      DateTime.parse(string).feed_utils_to_gm_time
+      DateTime.parse(string).to_time.utc
     rescue StandardError => e
       Feedjira.logger.debug("Failed to parse date #{string.inspect}")
       Feedjira.logger.debug(e)
