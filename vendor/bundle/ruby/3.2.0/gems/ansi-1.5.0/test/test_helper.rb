@@ -1,3 +1,0 @@
-require 'lemon'
-require 'ae'
-
