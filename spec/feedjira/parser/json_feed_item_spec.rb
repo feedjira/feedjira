@@ -28,7 +28,7 @@ describe Feedjira::Parser::JSONFeedItem do
   end
 
   it "parses the published date" do
-    published = Time.parse_safely "2017-06-02T22:05:47-07:00"
+    published = Feedjira::TimeParser.parse_safely "2017-06-02T22:05:47-07:00"
     expect(@entry.published).to eq published
   end
 

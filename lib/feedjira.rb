@@ -7,6 +7,7 @@ require "logger"
 require "json"
 
 require_relative "feedjira/core_ext"
+require_relative "feedjira/time_parser"
 require_relative "feedjira/configuration"
 require_relative "feedjira/feed_entry_utilities"
 require_relative "feedjira/feed_utilities"

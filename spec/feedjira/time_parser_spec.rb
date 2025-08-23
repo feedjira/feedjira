@@ -2,10 +2,10 @@
 
 require "spec_helper"
 
-RSpec.describe Time do
-  describe "#parse_safely" do
+RSpec.describe Feedjira::TimeParser do
+  describe ".parse_safely" do
     it "returns the datetime in utc when given a Time" do
-      time = described_class.now
+      time = Time.now
 
       expect(described_class.parse_safely(time)).to eq(time.utc)
     end
@@ -19,7 +19,7 @@ RSpec.describe Time do
     it "returns the datetime in utc when given a String" do
       timestamp = "2016-01-01 00:00:00"
 
-      expect(described_class.parse_safely(timestamp)).to eq(described_class.parse(timestamp).utc)
+      expect(described_class.parse_safely(timestamp)).to eq(Time.parse(timestamp).utc)
     end
 
     it "returns nil when given an empty String" do
@@ -29,7 +29,7 @@ RSpec.describe Time do
     end
 
     it "returns the the datetime in utc given a 14-digit time" do
-      time = described_class.now.utc
+      time = Time.now.utc
       timestamp = time.strftime("%Y%m%d%H%M%S")
 
       expect(described_class.parse_safely(timestamp)).to eq(time.floor)

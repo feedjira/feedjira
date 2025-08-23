@@ -30,13 +30,13 @@ module Feedjira
       def parse_published(date_published)
         return nil unless date_published
 
-        Time.parse_safely(date_published)
+        Feedjira::TimeParser.parse_safely(date_published)
       end
 
       def parse_updated(date_modified)
         return nil unless date_modified
 
-        Time.parse_safely(date_modified)
+        Feedjira::TimeParser.parse_safely(date_modified)
       end
 
       # Convenience method to return the included content type.

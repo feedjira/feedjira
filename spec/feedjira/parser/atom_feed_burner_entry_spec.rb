@@ -46,7 +46,7 @@ describe Feedjira::Parser::AtomFeedBurnerEntry do
   end
 
   it "parses the published date" do
-    published = Time.parse_safely "Thu Jan 22 15:50:22 UTC 2009"
+    published = Feedjira::TimeParser.parse_safely "Thu Jan 22 15:50:22 UTC 2009"
     expect(@entry.published).to eq published
   end
 
