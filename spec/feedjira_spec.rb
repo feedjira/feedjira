@@ -10,7 +10,7 @@ RSpec.describe Feedjira do
         feed = described_class.parse(sample_rss_feed, parser: parser)
 
         expect(feed.title).to eq "Tender Lovemaking"
-        published = Time.parse_safely "Thu Dec 04 17:17:49 UTC 2008"
+        published = Feedjira::Util::ParseTime.call "Thu Dec 04 17:17:49 UTC 2008"
         expect(feed.entries.first.published).to eq published
         expect(feed.entries.size).to eq 10
       end
@@ -20,7 +20,7 @@ RSpec.describe Feedjira do
       it "parses an rdf feed" do
         feed = described_class.parse(sample_rdf_feed)
         expect(feed.title).to eq "HREF Considered Harmful"
-        published = Time.parse_safely("Tue Sep 02 19:50:07 UTC 2008")
+        published = Feedjira::Util::ParseTime.call("Tue Sep 02 19:50:07 UTC 2008")
         expect(feed.entries.first.published).to eq published
         expect(feed.entries.size).to eq 10
       end
@@ -28,7 +28,7 @@ RSpec.describe Feedjira do
       it "parses an rss feed" do
         feed = described_class.parse(sample_rss_feed)
         expect(feed.title).to eq "Tender Lovemaking"
-        published = Time.parse_safely "Thu Dec 04 17:17:49 UTC 2008"
+        published = Feedjira::Util::ParseTime.call "Thu Dec 04 17:17:49 UTC 2008"
         expect(feed.entries.first.published).to eq published
         expect(feed.entries.size).to eq 10
       end
@@ -36,7 +36,7 @@ RSpec.describe Feedjira do
       it "parses an atom feed" do
         feed = described_class.parse(sample_atom_feed)
         expect(feed.title).to eq "Amazon Web Services Blog"
-        published = Time.parse_safely "Fri Jan 16 18:21:00 UTC 2009"
+        published = Feedjira::Util::ParseTime.call "Fri Jan 16 18:21:00 UTC 2009"
         expect(feed.entries.first.published).to eq published
         expect(feed.entries.size).to eq 10
       end
@@ -44,7 +44,7 @@ RSpec.describe Feedjira do
       it "parses an feedburner atom feed" do
         feed = described_class.parse(sample_feedburner_atom_feed)
         expect(feed.title).to eq "Paul Dix Explains Nothing"
-        published = Time.parse_safely "Thu Jan 22 15:50:22 UTC 2009"
+        published = Feedjira::Util::ParseTime.call "Thu Jan 22 15:50:22 UTC 2009"
         expect(feed.entries.first.published).to eq published
         expect(feed.entries.size).to eq 5
       end
@@ -52,7 +52,7 @@ RSpec.describe Feedjira do
       it "parses an itunes feed" do
         feed = described_class.parse(sample_itunes_feed)
         expect(feed.title).to eq "All About Everything"
-        published = Time.parse_safely "Wed, 15 Jun 2005 19:00:00 GMT"
+        published = Feedjira::Util::ParseTime.call "Wed, 15 Jun 2005 19:00:00 GMT"
         expect(feed.entries.first.published).to eq published
         expect(feed.entries.size).to eq 3
       end
@@ -60,7 +60,7 @@ RSpec.describe Feedjira do
       it "parses an itunes feedburner feed" do
         feed = described_class.parse(sample_itunes_feedburner_feed)
         expect(feed.title).to eq "Welcome to Night Vale"
-        published = Time.parse_safely "2023-09-22 16:30:15 UTC"
+        published = Feedjira::Util::ParseTime.call "2023-09-22 16:30:15 UTC"
         expect(feed.entries.first.published).to eq published
         expect(feed.entries.size).to eq 3
         url = "https://www.podtrac.com/pts/redirect.mp3/dovetail.prxu.org/_/126/e3dafc45-a202-42d0-a55b-216e733a2d7a/2023_09_17_BTS_Episode_EXCERPT_v2.mp3"
@@ -80,7 +80,7 @@ RSpec.describe Feedjira do
 
         feed = described_class.parse(sample_invalid_date_format_feed)
         expect(feed.title).to eq "Invalid date format feed"
-        published = Time.parse_safely "Mon, 16 Oct 2017 15:10:00 GMT"
+        published = Feedjira::Util::ParseTime.call "Mon, 16 Oct 2017 15:10:00 GMT"
         expect(feed.entries.first.published).to eq published
         expect(feed.entries.size).to eq 2
       end
@@ -97,7 +97,7 @@ RSpec.describe Feedjira do
     it "parses an feedburner rss feed" do
       feed = described_class.parse(sample_rss_feed_burner_feed)
       expect(feed.title).to eq "TechCrunch"
-      published = Time.parse_safely "Wed Nov 02 17:25:27 UTC 2011"
+      published = Feedjira::Util::ParseTime.call "Wed Nov 02 17:25:27 UTC 2011"
       expect(feed.entries.first.published).to eq published
       expect(feed.entries.size).to eq 20
     end
@@ -106,7 +106,7 @@ RSpec.describe Feedjira do
       feed = described_class.parse(sample_rss_feed_with_a10_namespace)
       expect(feed.url).to eq "http://www.example.com/"
       expect(feed.entries.first.url).to eq "http://www.example.com/5"
-      expect(feed.entries.first.updated).to eq Time.parse_safely("2020-05-14T10:00:18Z")
+      expect(feed.entries.first.updated).to eq Feedjira::Util::ParseTime.call("2020-05-14T10:00:18Z")
       expect(feed.entries.first.author).to eq "John Doe"
       expect(feed.entries.size).to eq 5
     end
