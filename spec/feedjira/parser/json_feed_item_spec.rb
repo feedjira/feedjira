@@ -3,6 +3,10 @@
 require "spec_helper"
 
 describe Feedjira::Parser::JSONFeedItem do
+  def params(**overrides)
+    { "id" => "my_id", "url" => "my_url", **overrides }
+  end
+
   before do
     # I don't really like doing it this way because these unit test should only
     # rely on JSONFeed, but this is actually how it should work. You would
@@ -30,6 +34,38 @@ describe Feedjira::Parser::JSONFeedItem do
   it "parses the published date" do
     published = Feedjira::Util::ParseTime.call "2017-06-02T22:05:47-07:00"
     expect(@entry.published).to eq published
+  end
+
+  it "sets the published date to nil when not present" do
+    entry = described_class.new(params)
+
+    expect(entry.published).to be_nil
+  end
+
+  it "sets updated to date_modified when present" do
+    updated = "2017-06-02T22:05:47-07:00"
+    entry = described_class.new(params("date_modified" => updated))
+
+    updated = Feedjira::Util::ParseTime.call "2017-06-02T22:05:47-07:00"
+    expect(entry.updated).to eq updated
+  end
+
+  it "sets updated to nil when date_modified is not present" do
+    entry = described_class.new(params)
+
+    expect(entry.updated).to be_nil
+  end
+
+  it "sets the author when nested author object is present" do
+    entry = described_class.new(params("author" => { "name" => "John Doe" }))
+
+    expect(entry.author).to eq "John Doe"
+  end
+
+  it "sets the author to nil when nested author object is not present" do
+    entry = described_class.new(params)
+
+    expect(entry.author).to be_nil
   end
 
   it "supports each" do
