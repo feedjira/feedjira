@@ -22,11 +22,11 @@ describe Feedjira::Parser::AtomYoutubeEntry do
     end
 
     it "has the published date" do
-      expect(@entry.published).to eq Feedjira::TimeParser.parse_safely("2015-05-04T00:01:27+00:00")
+      expect(@entry.published).to eq Feedjira::Util::ParseTime.call("2015-05-04T00:01:27+00:00")
     end
 
     it "has the updated date" do
-      expect(@entry.updated).to eq Feedjira::TimeParser.parse_safely("2015-05-13T17:38:30+00:00")
+      expect(@entry.updated).to eq Feedjira::Util::ParseTime.call("2015-05-13T17:38:30+00:00")
     end
 
     it "has the content populated from the media:description element" do

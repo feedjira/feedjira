@@ -23,12 +23,12 @@ describe Feedjira::Parser::AtomGoogleAlertsEntry do
   end
 
   it "parses the published date" do
-    published = Feedjira::TimeParser.parse_safely "2019-07-10T11:53:37Z"
+    published = Feedjira::Util::ParseTime.call "2019-07-10T11:53:37Z"
     expect(@entry.published).to eq published
   end
 
   it "parses the updated date" do
-    updated = Feedjira::TimeParser.parse_safely "2019-07-10T11:53:37Z"
+    updated = Feedjira::Util::ParseTime.call "2019-07-10T11:53:37Z"
     expect(@entry.updated).to eq updated
   end
 end

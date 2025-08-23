@@ -54,7 +54,7 @@ describe Feedjira::Parser::ITunesRSSItem do
   end
 
   it "parses the published date" do
-    published = Feedjira::TimeParser.parse_safely "Wed Jun 15 19:00:00 UTC 2005"
+    published = Feedjira::Util::ParseTime.call "Wed Jun 15 19:00:00 UTC 2005"
     expect(@item.published).to eq published
   end
 

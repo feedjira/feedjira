@@ -13,7 +13,7 @@ describe Feedjira::FeedUtilities do
     it "parses an ISO 8601 formatted datetime into Time" do
       time = @klass.new.parse_datetime("2008-02-20T8:05:00-010:00")
       expect(time.class).to eq Time
-      expect(time).to eq Feedjira::TimeParser.parse_safely("Wed Feb 20 18:05:00 UTC 2008")
+      expect(time).to eq Feedjira::Util::ParseTime.call("Wed Feb 20 18:05:00 UTC 2008")
     end
 
     it "parses a ISO 8601 with milliseconds into Time" do

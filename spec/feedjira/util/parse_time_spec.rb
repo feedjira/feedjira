@@ -2,44 +2,44 @@
 
 require "spec_helper"
 
-RSpec.describe Feedjira::TimeParser do
-  describe ".parse_safely" do
+RSpec.describe Feedjira::Util::ParseTime do
+  describe ".call" do
     it "returns the datetime in utc when given a Time" do
       time = Time.now
 
-      expect(described_class.parse_safely(time)).to eq(time.utc)
+      expect(described_class.call(time)).to eq(time.utc)
     end
 
     it "returns the datetime in utc when given a Date" do
       date = Date.today
 
-      expect(described_class.parse_safely(date)).to eq(date.to_time.utc)
+      expect(described_class.call(date)).to eq(date.to_time.utc)
     end
 
     it "returns the datetime in utc when given a String" do
       timestamp = "2016-01-01 00:00:00"
 
-      expect(described_class.parse_safely(timestamp)).to eq(Time.parse(timestamp).utc)
+      expect(described_class.call(timestamp)).to eq(Time.parse(timestamp).utc)
     end
 
     it "returns nil when given an empty String" do
       timestamp = ""
 
-      expect(described_class.parse_safely(timestamp)).to be_nil
+      expect(described_class.call(timestamp)).to be_nil
     end
 
     it "returns the the datetime in utc given a 14-digit time" do
       time = Time.now.utc
       timestamp = time.strftime("%Y%m%d%H%M%S")
 
-      expect(described_class.parse_safely(timestamp)).to eq(time.floor)
+      expect(described_class.call(timestamp)).to eq(time.floor)
     end
 
     context "when given an invalid time string" do
       it "returns nil" do
         timestamp = "2016-51-51 00:00:00"
 
-        expect(described_class.parse_safely(timestamp)).to be_nil
+        expect(described_class.call(timestamp)).to be_nil
       end
 
       it "logs an error" do
@@ -50,7 +50,7 @@ RSpec.describe Feedjira::TimeParser do
         expect(Feedjira.logger)
           .to receive(:debug).with(an_instance_of(ArgumentError))
 
-        described_class.parse_safely(timestamp)
+        described_class.call(timestamp)
       end
     end
   end
