@@ -19,7 +19,7 @@ Run tests specifically:
 - `bundle exec rake rubocop` -- runs code style checks, takes ~3 seconds. NEVER CANCEL. Set timeout to 60+ seconds.
 
 Generate documentation:
-- `bundle exec yard doc` -- generates API documentation, takes ~10 seconds. NEVER CANCEL. Set timeout to 60+ seconds.
+- `bundle exec yard doc` -- generates API documentation, takes ~2 seconds. NEVER CANCEL. Set timeout to 60+ seconds.
 
 ## Validation
 
