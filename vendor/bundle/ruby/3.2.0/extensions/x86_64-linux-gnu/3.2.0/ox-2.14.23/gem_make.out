@@ -1,0 +1,43 @@
+current directory: /home/runner/work/feedjira/feedjira/vendor/bundle/ruby/3.2.0/gems/ox-2.14.23/ext/ox
+/usr/bin/ruby3.2 -I/usr/lib/ruby/vendor_ruby extconf.rb
+>>>>> Creating Makefile for ruby version 3.2.3 on x86_64-linux-gnu <<<<<
+checking for rb_ext_ractor_safe() in ruby.h... yes
+checking for pthread_mutex_init()... yes
+checking for rb_enc_interned_str()... yes
+checking for index()... yes
+checking for ruby/st.h... yes
+checking for sys/uio.h... yes
+checking for struct tm.tm_gmtoff... yes
+creating Makefile
+
+current directory: /home/runner/work/feedjira/feedjira/vendor/bundle/ruby/3.2.0/gems/ox-2.14.23/ext/ox
+make DESTDIR\= sitearchdir\=./.gem.20250823-3348-m17o81 sitelibdir\=./.gem.20250823-3348-m17o81 clean
+
+current directory: /home/runner/work/feedjira/feedjira/vendor/bundle/ruby/3.2.0/gems/ox-2.14.23/ext/ox
+make DESTDIR\= sitearchdir\=./.gem.20250823-3348-m17o81 sitelibdir\=./.gem.20250823-3348-m17o81
+compiling base64.c
+compiling builder.c
+compiling cache.c
+compiling cache8.c
+compiling dump.c
+compiling err.c
+compiling gen_load.c
+compiling hash_load.c
+compiling intern.c
+compiling obj_load.c
+compiling ox.c
+compiling parse.c
+compiling sax.c
+compiling sax_as.c
+compiling sax_buf.c
+compiling sax_hint.c
+compiling slotcache.c
+compiling special.c
+linking shared-object ox.so
+
+current directory: /home/runner/work/feedjira/feedjira/vendor/bundle/ruby/3.2.0/gems/ox-2.14.23/ext/ox
+make DESTDIR\= sitearchdir\=./.gem.20250823-3348-m17o81 sitelibdir\=./.gem.20250823-3348-m17o81 install
+/usr/bin/install -c -m 0755 ox.so ./.gem.20250823-3348-m17o81
+
+current directory: /home/runner/work/feedjira/feedjira/vendor/bundle/ruby/3.2.0/gems/ox-2.14.23/ext/ox
+make DESTDIR\= sitearchdir\=./.gem.20250823-3348-m17o81 sitelibdir\=./.gem.20250823-3348-m17o81 clean

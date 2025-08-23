@@ -1,0 +1,13 @@
+./lib/oga/**/*.rb ./lib/oga.rb
+-m markdown
+-M kramdown
+-o yardoc
+-r ./README.md
+--protected
+--asset ./doc/css/common.css:css/common.css
+--verbose
+-
+./doc/*.md
+LICENSE
+CONTRIBUTING.md
+CHANGELOG.md
