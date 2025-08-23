@@ -31,5 +31,41 @@ module Feedjira
         expect(@feed.entries.first).to be_a GoogleDocsAtomEntry
       end
     end
+
+    describe "#url" do
+      it "returns the url when set" do
+        feed = GoogleDocsAtom.new
+
+        feed.url = "http://exampoo.com/feed"
+
+        expect(feed.url).to eq "http://exampoo.com/feed"
+      end
+
+      it "returns the first link when not set" do
+        feed = GoogleDocsAtom.new
+
+        feed.links = ["http://exampoo.com/feed"]
+
+        expect(feed.url).to eq "http://exampoo.com/feed"
+      end
+    end
+
+    describe "#feed_url" do
+      it "returns the feed_url when set" do
+        feed = GoogleDocsAtom.new
+
+        feed.feed_url = "http://exampoo.com/feed"
+
+        expect(feed.feed_url).to eq "http://exampoo.com/feed"
+      end
+
+      it "returns the first link when not set" do
+        feed = GoogleDocsAtom.new
+
+        feed.links = ["http://exampoo.com/feed"]
+
+        expect(feed.feed_url).to eq "http://exampoo.com/feed"
+      end
+    end
   end
 end
