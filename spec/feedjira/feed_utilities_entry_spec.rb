@@ -23,6 +23,78 @@ describe Feedjira::FeedUtilities do
     end
   end
 
+  describe "updated= method" do
+    it "sets updated when no existing updated value and parsed date is valid" do
+      instance = @klass.new
+      instance.updated = "2023-01-01T10:00:00Z"
+      expect(instance["updated"]).to eq Time.parse("2023-01-01T10:00:00Z").utc
+    end
+
+    it "updates to newer date when existing updated value is older" do
+      instance = @klass.new
+      instance.updated = "2023-01-01T10:00:00Z"
+      instance.updated = "2023-01-02T10:00:00Z"
+      expect(instance["updated"]).to eq Time.parse("2023-01-02T10:00:00Z").utc
+    end
+
+    it "keeps existing updated value when new date is older" do
+      instance = @klass.new
+      instance.updated = "2023-01-02T10:00:00Z"
+      instance.updated = "2023-01-01T10:00:00Z"
+      expect(instance["updated"]).to eq Time.parse("2023-01-02T10:00:00Z").utc
+    end
+
+    it "does not set updated when date parsing fails" do
+      instance = @klass.new
+      instance.updated = "invalid-date"
+      expect(instance["updated"]).to be_nil
+    end
+
+    it "does not change existing updated when new date is invalid" do
+      instance = @klass.new
+      instance.updated = "2023-01-01T10:00:00Z"
+      original_updated = instance["updated"]
+      instance.updated = "invalid-date"
+      expect(instance["updated"]).to eq original_updated
+    end
+  end
+
+  describe "published= method" do
+    it "sets published when no existing published value and parsed date is valid" do
+      instance = @klass.new
+      instance.published = "2023-01-01T10:00:00Z"
+      expect(instance["published"]).to eq Time.parse("2023-01-01T10:00:00Z").utc
+    end
+
+    it "updates to older date when existing published value is newer" do
+      instance = @klass.new
+      instance.published = "2023-01-02T10:00:00Z"
+      instance.published = "2023-01-01T10:00:00Z"
+      expect(instance["published"]).to eq Time.parse("2023-01-01T10:00:00Z").utc
+    end
+
+    it "keeps existing published value when new date is newer" do
+      instance = @klass.new
+      instance.published = "2023-01-01T10:00:00Z"
+      instance.published = "2023-01-02T10:00:00Z"
+      expect(instance["published"]).to eq Time.parse("2023-01-01T10:00:00Z").utc
+    end
+
+    it "does not set published when date parsing fails" do
+      instance = @klass.new
+      instance.published = "invalid-date"
+      expect(instance["published"]).to be_nil
+    end
+
+    it "does not change existing published when new date is invalid" do
+      instance = @klass.new
+      instance.published = "2023-01-01T10:00:00Z"
+      original_published = instance["published"]
+      instance.published = "invalid-date"
+      expect(instance["published"]).to eq original_published
+    end
+  end
+
   describe "sanitizing" do
     before do
       @feed = Feedjira.parse(sample_atom_feed)
