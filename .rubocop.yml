@@ -6,8 +6,8 @@ plugins:
   - rubocop-performance
 
 AllCops:
+  EnabledByDefault: true
   TargetRubyVersion: 2.7
-  NewCops: enable
 
 # Offense count: 3
 # Configuration parameters: IgnoredMethods.
@@ -58,3 +58,5 @@ RSpec/BeforeAfterAll:
 
 RSpec/RepeatedExample:
   Enabled: false
+
+Style/Copyright: { Enabled: false }
