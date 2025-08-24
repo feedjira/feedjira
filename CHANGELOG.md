@@ -1,5 +1,15 @@
 # Feedjira Changelog
 
+## 4.0.0
+
+* Drop support for Ruby 2.7 and 3.0 (#555)
+* Remove core extensions (#539) (#542) (#549). This is unlikely to impact most
+  users, but if you were relying on any of the following methods, you'll need
+  to find an alternative:
+  * `Time.parse_safely` or `Time.parse_string_safely`
+  * `String#sanitize` or `String#sanitize!`
+  * `Date#feed_utils_to_gm_time`
+
 ## 3.2.6
 
 * Add explicit logger dependency in gemspec for ruby 3.5+ (#532)
