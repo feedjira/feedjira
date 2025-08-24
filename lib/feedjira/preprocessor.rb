@@ -15,7 +15,7 @@ module Feedjira
 
     def process_content
       content_nodes.each do |node|
-        node.content = raw_html(node) unless node.cdata?
+        node.content = raw_html(node)
       end
     end
 
