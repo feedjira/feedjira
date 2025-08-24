@@ -109,7 +109,7 @@ When you require the library, these parsers are available in order:
 Feedjira version: 3.2.6
 
 ### Dependencies
-The project requires Ruby >= 2.7 and depends on:
+The project requires Ruby >= 3.1 and depends on:
 - `sax-machine` for XML parsing
 - `loofah` for HTML sanitization
 - `logger` for logging
@@ -166,7 +166,7 @@ Run with: `bundle exec ruby /tmp/test_feedjira.rb`
 - If rubocop fails: Run `bundle exec rubocop -a` to auto-correct style issues
 
 ### Environment Requirements
-- Ruby 2.7+ (tested on 2.7, 3.0, 3.1, 3.2, 3.3)
+- Ruby 3.1+ (tested on 3.1, 3.2, 3.3, 3.4)
 - Bundler gem manager
 - Standard UNIX environment (Linux/macOS)
 

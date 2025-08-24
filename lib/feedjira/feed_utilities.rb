@@ -12,10 +12,10 @@ module Feedjira
     end
 
     module ClassMethods
-      def parse(xml, &block)
+      def parse(xml, &)
         xml = strip_whitespace(xml)
         xml = preprocess(xml) if preprocess_xml
-        super xml, &block
+        super(xml, &)
       end
 
       def preprocess(xml)

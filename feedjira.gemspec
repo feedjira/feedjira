@@ -29,7 +29,7 @@ Gem::Specification.new do |s|
   s.files         = `git ls-files`.split("\n")
   s.require_paths = ["lib"]
 
-  s.required_ruby_version = ">=2.7"
+  s.required_ruby_version = ">=3.1"
 
   s.add_dependency "logger", ">= 1.0", "< 2"
   s.add_dependency "loofah", ">= 2.3.1", "< 3"
