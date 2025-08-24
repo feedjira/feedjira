@@ -122,4 +122,40 @@ describe Feedjira::Parser::RSSEntry do
     feed = Feedjira.parse(sample_rss_feed_with_comments)
     expect(feed.entries[0].comments).to eq "https://news.ycombinator.com/item?id=30937433"
   end
+
+  it "returns nil when no URL is available from link or guid" do
+    xml = <<~XML
+      <rss version="2.0">
+        <channel>
+          <item>
+            <title>Entry without URL</title>
+            <description>This entry has no link or guid</description>
+          </item>
+        </channel>
+      </rss>
+    XML
+
+    feed = Feedjira.parse(xml)
+    entry = feed.entries.first
+
+    expect(entry.url).to be_nil
+  end
+
+  it "returns nil when guid exists but is not a permalink" do
+    xml = <<~XML
+      <rss version="2.0">
+        <channel>
+          <item>
+            <title>Entry with non-permalink GUID</title>
+            <guid isPermaLink="false">some-guid-123</guid>
+          </item>
+        </channel>
+      </rss>
+    XML
+
+    feed = Feedjira.parse(xml)
+    entry = feed.entries.first
+
+    expect(entry.url).to be_nil
+  end
 end
