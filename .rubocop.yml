@@ -7,7 +7,7 @@ plugins:
 
 AllCops:
   EnabledByDefault: true
-  TargetRubyVersion: 2.7
+  TargetRubyVersion: 3.1
 
 # Offense count: 3
 # Configuration parameters: IgnoredMethods.
