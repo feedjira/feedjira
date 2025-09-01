@@ -30,6 +30,11 @@ module Feedjira
           xml = "<feed xmlns='http://www.w3.org/2005/Atom'></feed>"
           expect(Atom).to be_able_to_parse(xml)
         end
+
+        it "returns true with whitespace around the equals sign" do
+          xml = '<feed xmlns = "http://www.w3.org/2005/Atom"></feed>'
+          expect(Atom).to be_able_to_parse(xml)
+        end
       end
 
       describe "with a purl.org URL present" do
@@ -40,6 +45,11 @@ module Feedjira
 
         it "returns true if contains the expected xmlns value with single quotes" do
           xml = "<feed xmlns='http://purl.org/atom/ns#'></feed>"
+          expect(Atom).to be_able_to_parse(xml)
+        end
+
+        it "returns true with whitespace around the equals sign" do
+          xml = '<feed xmlns = "http://purl.org/atom/ns#"></feed>'
           expect(Atom).to be_able_to_parse(xml)
         end
       end
