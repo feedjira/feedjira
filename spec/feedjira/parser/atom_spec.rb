@@ -4,7 +4,7 @@ require "spec_helper"
 
 module Feedjira
   module Parser
-    describe "#will_parse?" do
+    describe "#able_to_parse?" do
       it "returns false if the xmlns value is not the expected value" do
         xml = '<feed xmlns="http://www.example.org/"></feed>'
         expect(Atom).not_to be_able_to_parse(xml)
