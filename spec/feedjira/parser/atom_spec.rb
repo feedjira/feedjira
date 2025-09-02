@@ -4,21 +4,72 @@ require "spec_helper"
 
 module Feedjira
   module Parser
-    describe "#will_parse?" do
-      it "returns true for an atom feed" do
-        expect(Atom).to be_able_to_parse(sample_atom_feed)
+    describe "#able_to_parse?" do
+      it "returns false if the xmlns value is not the expected value" do
+        xml = '<feed xmlns="http://www.example.org/"></feed>'
+        expect(Atom).not_to be_able_to_parse(xml)
       end
 
-      it "returns false for an rdf feed" do
-        expect(Atom).not_to be_able_to_parse(sample_rdf_feed)
+      it "returns false if there is no xmlns value" do
+        xml = "<feed></feed>"
+        expect(Atom).not_to be_able_to_parse(xml)
       end
 
-      it "returns false for an rss feedburner feed" do
-        expect(Atom).not_to be_able_to_parse(sample_rss_feed_burner_feed)
+      describe "with a w3.org URL present" do
+        it "returns true if contains the expected w3.org URL as xmlns value" do
+          xml = '<feed xmlns="http://www.w3.org/2005/Atom"></feed>'
+          expect(Atom).to be_able_to_parse(xml)
+        end
+
+        it "returns true if contains the HTTPS variant of the expected w3.org URL as xmlns value" do
+          xml = '<feed xmlns="https://www.w3.org/2005/Atom"></feed>'
+          expect(Atom).to be_able_to_parse(xml)
+        end
+
+        it "returns true if contains the expected xmlns value with single quotes" do
+          xml = "<feed xmlns='http://www.w3.org/2005/Atom'></feed>"
+          expect(Atom).to be_able_to_parse(xml)
+        end
+
+        it "returns true with whitespace around the equals sign" do
+          xml = '<feed xmlns = "http://www.w3.org/2005/Atom"></feed>'
+          expect(Atom).to be_able_to_parse(xml)
+        end
       end
 
-      it "returns true for an atom feed that has line breaks in between attributes in the <feed> node" do
-        expect(Atom).to be_able_to_parse(sample_atom_feed_line_breaks)
+      describe "with a purl.org URL present" do
+        it "returns true if contains the expected purl.org URL as xmlns value" do
+          xml = '<feed xmlns="http://purl.org/atom/ns#"></feed>'
+          expect(Atom).to be_able_to_parse(xml)
+        end
+
+        it "returns true if contains the expected xmlns value with single quotes" do
+          xml = "<feed xmlns='http://purl.org/atom/ns#'></feed>"
+          expect(Atom).to be_able_to_parse(xml)
+        end
+
+        it "returns true with whitespace around the equals sign" do
+          xml = '<feed xmlns = "http://purl.org/atom/ns#"></feed>'
+          expect(Atom).to be_able_to_parse(xml)
+        end
+      end
+
+      context "with full sample feeds" do
+        it "returns true for an atom feed" do
+          expect(Atom).to be_able_to_parse(sample_atom_feed)
+        end
+
+        it "returns false for an rdf feed" do
+          expect(Atom).not_to be_able_to_parse(sample_rdf_feed)
+        end
+
+        it "returns false for an rss feedburner feed" do
+          expect(Atom).not_to be_able_to_parse(sample_rss_feed_burner_feed)
+        end
+
+        it "returns true for an atom feed that has line breaks in between attributes in the <feed> node" do
+          expect(Atom).to be_able_to_parse(sample_atom_feed_line_breaks)
+        end
       end
     end
 
