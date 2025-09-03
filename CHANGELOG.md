@@ -1,5 +1,9 @@
 # Feedjira Changelog
 
+## 4.0.1
+
+* Amend Atom parser able_to_parse regex to also match the HTTPS variant of the xmlns attribute value (#558)
+
 ## 4.0.0
 
 * Drop support for Ruby 2.7 and 3.0 (#555)
