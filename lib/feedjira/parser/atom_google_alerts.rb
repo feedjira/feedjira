@@ -15,7 +15,7 @@ module Feedjira
       elements :entry, as: :entries, class: AtomGoogleAlertsEntry
 
       def self.able_to_parse?(xml)
-        Atom.able_to_parse?(xml) && (%r{<id>tag:google\.com,2005:[^<]+/com\.google/alerts/} === xml) # rubocop:disable Style/CaseEquality
+        Atom.able_to_parse?(xml) && (%r{<id>tag:google\.com,2005:[^<]+/com\.google/alerts/} === xml)
       end
 
       def self.preprocess(xml)
