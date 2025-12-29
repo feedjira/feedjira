@@ -5,7 +5,7 @@ source "https://rubygems.org/"
 gemspec
 
 gem "faraday", "~> 2.14.0"
-gem "pry", "~> 0.15.0"
+gem "pry", "~> 0.16.0"
 gem "rspec", "~> 3.13.0"
 gem "rubocop", "~> 1.82.0"
 gem "rubocop-performance", "~> 1.26.0"
