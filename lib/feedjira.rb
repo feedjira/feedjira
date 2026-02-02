@@ -44,7 +44,8 @@ require_relative "feedjira/parser/json_feed_item"
 
 # Feedjira
 module Feedjira
-  NoParserAvailable = Class.new(StandardError)
+  class NoParserAvailable < StandardError
+  end
 
   extend Configuration
 
