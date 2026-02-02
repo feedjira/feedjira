@@ -60,3 +60,6 @@ RSpec/RepeatedExample:
   Enabled: false
 
 Style/Copyright: { Enabled: false }
+
+Style/HashLookupMethod:
+  Enabled: false
