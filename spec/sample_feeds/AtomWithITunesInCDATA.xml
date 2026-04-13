@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Test Blog</title>
+  <link rel="alternate" href="https://example.com/" />
+  <id>tag:example.com,2024:blog</id>
+  <updated>2024-01-01T00:00:00Z</updated>
+  <entry>
+    <title>How to set up a podcast RSS feed</title>
+    <link href="https://example.com/post/1" />
+    <id>tag:example.com,2024:post-1</id>
+    <published>2024-01-01T00:00:00Z</published>
+    <content type="html"><![CDATA[
+      <p>Here is an example RSS feed:</p>
+      <pre><code>&lt;rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"&gt;</code></pre>
+    ]]></content>
+  </entry>
+</feed>

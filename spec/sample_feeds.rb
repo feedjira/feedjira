@@ -37,7 +37,8 @@ module SampleFeeds
     sample_invalid_date_format_feed: "InvalidDateFormat.xml",
     sample_rss_feed_permalinks: "Permalinks.xml",
     sample_rss_feed_with_a10_namespace: "a10.xml",
-    sample_rss_feed_with_comments: "RSSWithComments.xml"
+    sample_rss_feed_with_comments: "RSSWithComments.xml",
+    sample_atom_with_itunes_in_cdata: "AtomWithITunesInCDATA.xml"
   }.freeze
 
   FEEDS.each do |method, filename|
