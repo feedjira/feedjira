@@ -24,6 +24,10 @@ module Feedjira
       it "returns false for an rss feedburner feed" do
         expect(ITunesRSS).not_to be_able_to_parse(sample_rss_feed_burner_feed)
       end
+
+      it "returns false for an atom feed with xmlns:itunes inside CDATA" do
+        expect(ITunesRSS).not_to be_able_to_parse(sample_atom_with_itunes_in_cdata)
+      end
     end
 
     describe "parsing" do

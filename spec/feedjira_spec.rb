@@ -155,6 +155,12 @@ RSpec.describe Feedjira do
       expect(actual_parser).to eq described_class::Parser::ITunesRSS
     end
 
+    it "with an atom feed containing xmlns:itunes in CDATA it returns the Atom parser" do
+      xml = sample_atom_with_itunes_in_cdata
+      actual_parser = described_class.parser_for_xml(xml)
+      expect(actual_parser).to eq described_class::Parser::Atom
+    end
+
     context "when parsers are configured" do
       it "does not use default parsers" do
         xml = "Atom asdf"
