@@ -1,5 +1,9 @@
 # Feedjira Changelog
 
+## 4.0.2
+
+* Fix ITunesRSS.able_to_parse? false positive on CDATA content (#570)
+
 ## 4.0.1
 
 * Amend Atom parser able_to_parse regex to also match the HTTPS variant of the xmlns attribute value (#558)
