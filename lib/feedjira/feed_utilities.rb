@@ -58,7 +58,7 @@ module Feedjira
 
     def update_from_feed(feed)
       self.new_entries += find_new_entries_for(feed)
-      entries.unshift(*self.new_entries)
+      entries.unshift(*new_entries)
 
       @updated = false
 
