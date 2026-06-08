@@ -17,8 +17,8 @@ describe Feedjira::Preprocessor do
     escaped = processor.to_xml
     escaped_parts = escaped.split "\n"
 
-    expect(escaped_parts[10]).to match(%r{&lt;i&gt;dogs&lt;/i&gt;}) # title
-    expect(escaped_parts[16]).to match(%r{&lt;b&gt;XHTML&lt;/b&gt;}) # summary
+    expect(escaped_parts[10]).to include("&lt;i&gt;dogs&lt;/i&gt;") # title
+    expect(escaped_parts[16]).to include("&lt;b&gt;XHTML&lt;/b&gt;") # summary
     expect(escaped_parts[26]).to match(/&lt;p&gt;$/) # content
   end
 
