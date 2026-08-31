@@ -14,7 +14,7 @@ RuboCop::RakeTask.new(:rubocop) do |t|
 end
 
 YARD::Rake::YardocTask.new do |t|
-  t.files   = ["lib/**/*.rb", "-", "LICENSE"]
+  t.files = ["lib/**/*.rb", "-", "LICENSE"]
 end
 
 task default: %i[spec rubocop]
