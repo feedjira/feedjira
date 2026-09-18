@@ -49,12 +49,96 @@ describe Feedjira::FeedUtilities do
 
   describe "when configured to strip whitespace" do
     context "when strip_whitespace config is true" do
+      after do
+        Feedjira.configure { |config| config.strip_whitespace = false }
+      end
+
       it "strips all XML whitespace" do
         Feedjira.configure { |config| config.strip_whitespace = true }
 
         expect(@klass.strip_whitespace("\nfoobar\n")).to eq("foobar")
 
         Feedjira.configure { |config| config.strip_whitespace = false }
+      end
+
+      it "strips parsed property whitespace without changing internal spaces" do
+        xml = <<~XML
+          <rss version="2.0">
+            <channel>
+              <title> Feed title </title>
+              <link> https://example.com/feed </link>
+              <description> Feed description </description>
+              <item>
+                <guid> entry-1 </guid>
+                <title> Entry title </title>
+                <link> https://example.com/1 </link>
+                <description><![CDATA[ She went to <a href="/store">the store</a> to get tea. ]]></description>
+                <category> news </category>
+                <pubDate>Wed, 02 Oct 2002 08:00:00 EST</pubDate>
+              </item>
+            </channel>
+          </rss>
+        XML
+        Feedjira.configure { |config| config.strip_whitespace = true }
+
+        feed = Feedjira::Parser::RSS.parse(xml)
+        entry = feed.entries.first
+
+        expect(feed.title).to eq("Feed title")
+        expect(feed.url).to eq("https://example.com/feed")
+        expect(entry.id).to eq("entry-1")
+        expect(entry.title).to eq("Entry title")
+        expect(entry.url).to eq("https://example.com/1")
+        expect(entry.summary).to eq('She went to <a href="/store">the store</a> to get tea.')
+        expect(entry.categories).to eq(["news"])
+
+        Feedjira.configure { |config| config.strip_whitespace = false }
+        unstripped_entry = Feedjira::Parser::RSS.parse(xml).entries.first
+        expect(unstripped_entry.id).to eq(" entry-1 ")
+      end
+
+      it "strips JSON feed and entry properties" do
+        json = JSON.parse(sample_json_feed)
+        json["title"] = " Feed title "
+        json["items"].first["title"] = " Entry title "
+        Feedjira.configure { |config| config.strip_whitespace = true }
+
+        feed = Feedjira::Parser::JSONFeed.parse(JSON.generate(json))
+
+        expect(feed.title).to eq("Feed title")
+        expect(feed.entries.first.title).to eq("Entry title")
+      end
+
+      it "strips public properties on custom parsers without touching internal state" do
+        entry_class = Class.new do
+          include Feedjira::FeedEntryUtilities
+
+          attr_reader :title
+
+          def initialize
+            @title = " Entry title "
+            @internal_state = " keep surrounding spaces "
+          end
+        end
+        feed_class = Class.new do
+          include Feedjira::FeedUtilities
+
+          attr_reader :entries, :title
+
+          define_method(:initialize) do
+            @title = " Feed title "
+            @entries = [entry_class.new]
+            @internal_state = " keep surrounding spaces "
+          end
+        end
+        feed = feed_class.new
+
+        feed.strip_whitespace!
+
+        expect(feed.title).to eq("Feed title")
+        expect(feed.entries.first.title).to eq("Entry title")
+        expect(feed.instance_variable_get(:@internal_state)).to eq(" keep surrounding spaces ")
+        expect(feed.entries.first.instance_variable_get(:@internal_state)).to eq(" keep surrounding spaces ")
       end
     end
 

@@ -13,7 +13,9 @@ module Feedjira
       end
 
       def self.parse(json)
-        new(JSON.parse(json))
+        new(JSON.parse(json)).tap do |feed|
+          feed.strip_whitespace! if Feedjira.strip_whitespace
+        end
       end
 
       attr_reader :json, :version, :title, :description, :url, :feed_url, :icon, :favicon,
