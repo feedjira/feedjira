@@ -1,5 +1,10 @@
 # Feedjira Changelog
 
+## 4.0.3
+
+* Security: stop loading external entities declared in a feed's DOCTYPE when
+  parsing with the Nokogiri handler (GHSA-frpm-47cm-rg8f)
+
 ## 4.0.2
 
 * Fix ITunesRSS.able_to_parse? false positive on CDATA content (#570)

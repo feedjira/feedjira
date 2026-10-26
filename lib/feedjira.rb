@@ -6,6 +6,7 @@ require "loofah"
 require "logger"
 require "json"
 
+require_relative "feedjira/sax_nokogiri_handler_patch"
 require_relative "feedjira/util"
 require_relative "feedjira/util/parse_time"
 require_relative "feedjira/configuration"
