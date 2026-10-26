@@ -4,7 +4,7 @@ source "https://rubygems.org/"
 
 gemspec
 
-gem "faraday", "~> 2.14.0"
+gem "faraday", "~> 2.15.0"
 gem "pry", "~> 0.16.0"
 gem "rspec", "~> 3.13.0"
 gem "rubocop", "~> 1.92.0"
