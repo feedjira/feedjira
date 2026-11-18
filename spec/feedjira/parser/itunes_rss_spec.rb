@@ -28,6 +28,10 @@ module Feedjira
       it "returns false for an atom feed with xmlns:itunes inside CDATA" do
         expect(ITunesRSS).not_to be_able_to_parse(sample_atom_with_itunes_in_cdata)
       end
+
+      it "returns false for an atom feed that declares the itunes namespace" do
+        expect(ITunesRSS).not_to be_able_to_parse(sample_atom_with_itunes_namespace)
+      end
     end
 
     describe "parsing" do

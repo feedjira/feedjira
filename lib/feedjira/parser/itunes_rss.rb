@@ -64,7 +64,8 @@ module Feedjira
 
       def self.able_to_parse?(xml)
         xml_without_cdata = xml.gsub(/<!\[CDATA\[.*?\]\]>/m, "")
-        %r{xmlns:itunes\s?=\s?["']http://www\.itunes\.com/dtds/podcast-1\.0\.dtd["']}i =~ xml_without_cdata
+        xml_without_cdata.include?("<rss") &&
+          %r{xmlns:itunes\s?=\s?["']http://www\.itunes\.com/dtds/podcast-1\.0\.dtd["']}i.match?(xml_without_cdata)
       end
     end
   end
