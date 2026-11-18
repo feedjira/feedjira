@@ -1,5 +1,9 @@
 # Feedjira Changelog
 
+## 4.0.4
+
+* Detect Atom feeds that declare the iTunes namespace as Atom, not ITunesRSS (#584)
+
 ## 4.0.3
 
 * Security: stop loading external entities declared in a feed's DOCTYPE when
