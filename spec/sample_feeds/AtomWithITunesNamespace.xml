@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+  <id>tag:example.com,2013:/posts</id>
+  <title>Example</title>
+  <updated>2026-11-17T17:58:10Z</updated>
+  <itunes:author>Jane Doe</itunes:author>
+  <entry>
+    <id>tag:example.com,2013:Post/1</id>
+    <updated>2026-11-17T17:58:10Z</updated>
+    <link rel="alternate" type="text/html" href="https://example.com/post-1"/>
+    <title>Post 1</title>
+  </entry>
+</feed>
