@@ -15,7 +15,9 @@ module Feedjira
       def parse(xml, &)
         xml = strip_whitespace(xml)
         xml = preprocess(xml) if preprocess_xml
-        super(xml, &)
+        super(xml, &).tap do |feed|
+          feed.strip_whitespace! if Feedjira.strip_whitespace
+        end
       end
 
       def preprocess(xml)
@@ -83,7 +85,40 @@ module Feedjira
       entries.each(&:sanitize!)
     end
 
+    def strip_whitespace!
+      strip_object_whitespace(self)
+      self
+    end
+
     private
+
+    def strip_object_whitespace(object)
+      object.instance_variables.each do |name|
+        attribute = name.to_s.delete_prefix("@").to_sym
+        next unless object.respond_to?(attribute)
+
+        value = object.instance_variable_get(name)
+        object.instance_variable_set(name, strip_value_whitespace(value))
+      end
+    end
+
+    def strip_value_whitespace(value)
+      case value
+      when String
+        value.strip
+      when Array
+        value.map { |item| strip_value_whitespace(item) }
+      else
+        strip_object_whitespace(value) if whitespace_container?(value)
+        value
+      end
+    end
+
+    def whitespace_container?(value)
+      value.class.name.to_s.start_with?("Feedjira::Parser::") ||
+        value.is_a?(Feedjira::FeedUtilities) ||
+        value.is_a?(Feedjira::FeedEntryUtilities)
+    end
 
     # This implementation is a hack, which is why it's so ugly. It's to get
     # around the fact that not all feeds have a published date. However,
